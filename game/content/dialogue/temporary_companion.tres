@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+stable_id = "prototype-companion-greeting"
+display_name = "Temporary greeting (prototype fixture)"
+prototype_fixture = true
+speaker_actor_id = "prototype-companion"
+lines = PackedStringArray("[Prototype fixture; noncanonical] Ready to test this room together.")

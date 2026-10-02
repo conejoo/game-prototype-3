@@ -35,6 +35,10 @@ func _run() -> void:
 	if attacks.size() == 1 and attacks[0] is InputEventMouseButton:
 		_check((attacks[0] as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT, "Wrong attack button")
 	var session: GameSession = game.session
+	_check(session.initialized and game.catalog.initialized, "Root services were not initialized")
+	_check(session.current_location_id == "prototype-test-room", "Root location ID is wrong")
+	_check(game.player_placeholder.state == session.actors[GameSession.PLAYER_INSTANCE_ID], "Wrapper does not receive authoritative session actor state")
+	_check(game.player_placeholder.has_node("VisualRoot"), "Actor visual wrapper missing")
 	var independent: GameSession = GameSession.new()
 	var beacon: Node3D = game.get_node("WorldHost/TestRoom/TestBeacon")
 	for frame: int in range(8):

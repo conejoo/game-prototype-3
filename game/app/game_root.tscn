@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" path="res://world/test_room.tscn" id="2_room"]
 [ext_resource type="Script" path="res://app/camera_rig.gd" id="3_camera"]
 [ext_resource type="PackedScene" path="res://ui/prototype_ui.tscn" id="4_ui"]
+[ext_resource type="Script" path="res://features/actors/actor_placeholder.gd" id="5_actor"]
 
 [sub_resource type="StandardMaterial3D" id="Material_player"]
 albedo_color = Color(0.15, 0.73, 0.72, 1)
@@ -42,6 +43,7 @@ process_mode = 1
 process_mode = 1
 
 [node name="PlayerPlaceholder" type="Node3D" parent="Party"]
+script = ExtResource("5_actor")
 
 [node name="VisualRoot" type="Node3D" parent="Party/PlayerPlaceholder"]
 

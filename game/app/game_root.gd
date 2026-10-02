@@ -2,20 +2,35 @@ extends Node3D
 ## Persistent composition root. Future travel replaces WorldHost's child.
 
 @onready var camera_rig: PrototypeCameraRig = $CameraRig
-@onready var player_placeholder: Node3D = $Party/PlayerPlaceholder
+@onready var player_placeholder: ActorPlaceholder = $Party/PlayerPlaceholder
 @onready var ui: PrototypeUI = $UI
 
 var session: GameSession = GameSession.new()
+var catalog: ContentCatalog = ContentCatalog.new()
+
+@export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
+	var errors: PackedStringArray = catalog.initialize(content_manifest)
+	if errors.is_empty():
+		errors = session.initialize(catalog, "prototype-test-room", "prototype-start", "prototype-hero")
+	if not errors.is_empty():
+		set_process(false)
+		set_process_unhandled_input(false)
+		for error: String in errors:
+			push_error("Application initialization failed: %s" % error)
+		get_tree().quit(1)
+		return
+	player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
 	camera_rig.set_target(player_placeholder)
 	ui.pause_requested.connect(_toggle_pause)
 	ui.resume_requested.connect(_resume)
 	ui.quit_requested.connect(_quit)
 	ui.show_paused(false)
 	print("P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.")
+	print("P002: %d definitions validated; player instance '%s' initialized." % [catalog.definition_count(), player_placeholder.state.instance_id])
 
 
 func _process(delta: float) -> void:

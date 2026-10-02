@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ContentManifest" format=3]
+
+[ext_resource type="Script" path="res://core/content_manifest.gd" id="1"]
+[ext_resource type="Script" path="res://core/content_definition.gd" id="2"]
+[ext_resource type="Resource" path="res://content/actors/hero.tres" id="3"]
+[ext_resource type="Resource" path="res://content/actors/maris.tres" id="4"]
+[ext_resource type="Resource" path="res://content/actors/temporary_companion.tres" id="5"]
+[ext_resource type="Resource" path="res://content/locations/test_room.tres" id="6"]
+[ext_resource type="Resource" path="res://content/dialogue/temporary_companion.tres" id="7"]
+
+[resource]
+script = ExtResource("1")
+definitions = Array[ExtResource("2")]([ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7")])

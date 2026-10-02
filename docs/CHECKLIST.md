@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001 verified complete; P002 is next eligible. Subsequent tasks remain pending.
+P001–P002 verified complete; P003 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -23,7 +23,7 @@ P001 verified complete; P002 is next eligible. Subsequent tasks remain pending.
 - Acceptance: headless editor import succeeds; interactive game opens, pauses,
   resumes, and quits without script errors. Record actual engine version.
 
-## [ ] P002 — Definition catalog and runtime-state ownership
+## [x] P002 — Definition catalog and runtime-state ownership
 
 - Add stable-ID definitions for locations, actors, and the minimal prototype
   content. Keep authored Resources separate from mutable actor/session state.
@@ -178,3 +178,24 @@ Next eligible task:
   owns time, UI submits commands. Logical Esc/F10 repaired after real input
   check; physical WASD reserved for movement. No architecture/canon changes.
 - Next eligible task: P002 — Definition catalog and runtime-state ownership.
+
+### P002 — completed 2026-10-01
+
+- Changed: typed actor/location/dialogue definitions and five authored fixtures,
+  explicit manifest/catalog validation, separate per-instance ActorState/session
+  progress, root initialization and wrapper injection, focused checks and README.
+- Checks/evidence: Godot `4.7.2.stable.mono.official.ed1daf0bf`; import exit 0,
+  catalog rejection/isolation checks PASS exit 0; root composition/input/pause
+  smoke PASS exit 0; malformed-catalog application abort expected exit 1 with
+  useful errors; real Windows main-scene startup exit 0; `git diff --check` exit 0.
+  Exact commands/logs and acceptance mapping: `evidence/P002/VALIDATION.md`.
+- Limits: source reference checkout empty (only .git, no commits); no additional
+  canon facts imported. Maris uses user-supplied `npc-03` identity; health remains
+  fixture data. Companion/dialogue catalog-only and explicitly noncanonical.
+  Spawn IDs are metadata until P004. No new visual/gameplay/export claim.
+  Existing missing C# SDK warning does not block GDScript checks.
+- Decisions/repair: authored resources immutable by contract; mutable health/
+  progress never stored in definitions. Negative fixtures explicitly copy each
+  external definition after manifest-only deep copy proved insufficient.
+  No architecture change; existing P001 commit and source preserved.
+- Next eligible task: P003 — Hero movement and overhead camera.

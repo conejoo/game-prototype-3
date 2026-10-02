@@ -1,7 +1,8 @@
 # Returning Fair prototype
 
-P001 is runnable: a primitive 3D test room, application composition root, and
-pause/resume/quit. Hero is stationary; room content is a prototype fixture.
+P001–P002 are runnable: primitive 3D test room, application composition root,
+pause/resume/quit, validated definition catalog, and separate actor/session state.
+Hero is stationary; room content is a prototype fixture.
 
 ## Run and check
 
@@ -15,6 +16,7 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --editor --path $gamePath --import
 & $godotExe --path $gamePath
 & $godotExe --headless --path $gamePath --script res://tests/application_smoke.gd
+& $godotExe --headless --path $gamePath --script res://tests/content_catalog_checks.gd
 ```
 
 Verified engine: `4.7.2.stable.mono.official.ed1daf0bf`. Esc pauses/resumes; F10
@@ -31,10 +33,16 @@ Godot cache/certificate access; final checks used normal local application acces
 ## Layout and ownership
 
 - `game/app/game_root.tscn`: persistent root, WorldHost, Party, CameraRig, UI.
-- `game/app/game_session.gd`: separate mutable state, currently elapsed play time.
+- `game/core/`: typed catalog manifest, definition base, atomic validation/indexes.
+- `game/content/`: authored actor/location/dialogue `.tres` definitions.
+- `game/app/game_session.gd`: mutable time, location/spawn IDs, actor instances.
+- `game/features/actors/`: authored health defaults, independent runtime state,
+  wrapper receiving session state; no movement/combat implementation yet.
 - `game/world/test_room.*`: graybox and rotating simulation marker.
 - `game/ui/prototype_ui.*`: display/command signals, no session authority.
 - `game/tests/application_smoke.gd`: actual root loaded headlessly; playtest separate.
+- `game/tests/content_catalog_checks.gd`: malformed content/reference/duplicate
+  rejection, startup failure, independent health/progress; detached test fixtures.
 - `docs/`: architecture contract, sequential checklist, durable current state.
 
 Root/UI process while paused; world/party/camera explicitly stop. Camera gets
@@ -46,5 +54,12 @@ private export credentials are ignored. Dedicated local repo on `main`; P001
 source, documentation, and evidence recorded in the initial progress commit.
 No remote configured.
 
-Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md).
-Next eligible task: P002. Read [current state](docs/CURRENT_STATE.md) before work.
+Maris retains supplied `npc-03` identity. Her health is a prototype default;
+no additional canon facts imported. Source `D:/development/game-prototype-2`
+currently contains only an empty `.git` repository; restore/reference-check canon
+before adapting named story content. Companion/greeting are labeled noncanonical
+fixtures, catalog-only. Spawn ID is metadata until P004 adds world anchors.
+
+Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
+[P002 validation](docs/evidence/P002/VALIDATION.md).
+Next eligible task: P003. Read [current state](docs/CURRENT_STATE.md) before work.
