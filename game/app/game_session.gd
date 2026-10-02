@@ -8,6 +8,8 @@ var current_location_id: String = ""
 var current_spawn_id: String = ""
 var actors: Dictionary[String, ActorState] = {}
 var party_member_ids: PackedStringArray = []
+var quests: Dictionary[String, QuestState] = {}
+var completed_effect_ids: PackedStringArray = []
 
 const PLAYER_INSTANCE_ID: String = "party-player"
 
@@ -32,6 +34,8 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 	party_member_ids = PackedStringArray([PLAYER_INSTANCE_ID])
 	current_location_id = location_id
 	current_spawn_id = spawn_id
+	for definition: QuestDefinition in catalog.quest_definitions():
+		quests[definition.stable_id] = QuestState.new()
 	initialized = true
 	return errors
 

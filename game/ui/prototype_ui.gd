@@ -10,6 +10,7 @@ signal load_requested
 signal dialogue_advance_requested
 signal dialogue_choice_requested(choice_id: String)
 signal dialogue_cancel_requested
+signal journal_requested
 
 @onready var pause_overlay: Control = $Screen/PauseOverlay
 @onready var resume_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Resume
@@ -29,9 +30,19 @@ signal dialogue_cancel_requested
 @onready var dialogue_next: Button = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Next
 @onready var dialogue_close: Button = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Close
 @onready var dialogue_status: Label = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Status
+@onready var journal_overlay: Control = $Screen/JournalOverlay
+@onready var journal_panel: PanelContainer = $Screen/JournalOverlay/Center/Panel
+@onready var journal_text: Label = $Screen/JournalOverlay/Center/Panel/Margin/Options/Text
+@onready var journal_close: Button = $Screen/JournalOverlay/Center/Panel/Margin/Options/Close
+@onready var journal_button: Button = $Screen/Header/Margin/Row/Journal
+@onready var objective_label: Label = $Screen/Objective
 
 
 func _ready() -> void:
+	journal_close.focus_next = NodePath(".")
+	journal_close.focus_previous = NodePath(".")
+	journal_button.pressed.connect(func() -> void: journal_requested.emit())
+	journal_close.pressed.connect(func() -> void: journal_requested.emit())
 	dialogue_next.pressed.connect(func() -> void: dialogue_advance_requested.emit())
 	dialogue_close.pressed.connect(func() -> void: dialogue_cancel_requested.emit())
 	pause_button.pressed.connect(func() -> void: pause_requested.emit())
@@ -47,6 +58,7 @@ func show_paused(paused: bool) -> void:
 	pause_overlay.visible = paused
 	travel_label.visible = not paused and not dialogue_overlay.visible
 	pause_button.disabled = paused
+	journal_button.disabled = paused or dialogue_overlay.visible
 	if paused:
 		resume_button.grab_focus()
 	else:
@@ -62,6 +74,7 @@ func show_play_time(seconds: float) -> void:
 func accepts_world_pointer(point: Vector2) -> bool:
 	return (
 		not pause_overlay.visible
+		and not journal_overlay.visible
 		and not dialogue_overlay.visible
 		and not $Screen/Header.get_global_rect().has_point(point)
 		and not $Screen/Footer.get_global_rect().has_point(point)
@@ -70,11 +83,11 @@ func accepts_world_pointer(point: Vector2) -> bool:
 
 
 func show_camera(description: String) -> void:
-	camera_label.text = "WASD: move · Mouse: face · E: interact / travel · Wheel / +/-: zoom\n%s · P: projection · Esc: close dialogue / pause · F10: quit" % description
+	camera_label.text = "WASD: move · Mouse: face · E: interact / travel · J: journal · Wheel / +/-: zoom\n%s · P: projection · Esc: close / pause · F10: quit" % description
 
 
 func show_location(description: String) -> void:
-	location_label.text = "P006 / " + description
+	location_label.text = "P007 / " + description
 
 
 func show_travel(message: String) -> void:
@@ -103,6 +116,7 @@ func show_dialogue(service: DialogueService, result: DialogueService.ActionResul
 	dialogue_overlay.visible = service.active()
 	travel_label.visible = not service.active() and not pause_overlay.visible
 	pause_button.disabled = pause_overlay.visible or service.active()
+	journal_button.disabled = pause_overlay.visible or service.active()
 	if not service.active():
 		if was_visible:
 			var focused: Control = get_viewport().gui_get_focus_owner()
@@ -114,6 +128,7 @@ func show_dialogue(service: DialogueService, result: DialogueService.ActionResul
 	dialogue_status.text = result.message
 	dialogue_next.visible = not service.awaiting_choice()
 	dialogue_next.text = "Continue" if service.line_index + 1 < service.current_lines().size() else "Finish"
+	var focus_buttons: Array[Button] = []
 	if service.awaiting_choice():
 		for choice: DialogueChoice in service.definition.choices:
 			var button: Button = Button.new()
@@ -122,6 +137,30 @@ func show_dialogue(service: DialogueService, result: DialogueService.ActionResul
 			button.custom_minimum_size.y = 44
 			button.pressed.connect(func() -> void: dialogue_choice_requested.emit(choice.stable_id))
 			dialogue_choices.add_child(button)
+			focus_buttons.append(button)
 		(dialogue_choices.get_child(0) as Button).grab_focus()
 	else:
+		focus_buttons.append(dialogue_next)
 		dialogue_next.grab_focus()
+	focus_buttons.append(dialogue_close)
+	for index: int in range(focus_buttons.size()):
+		var button: Button = focus_buttons[index]
+		button.focus_next = button.get_path_to(focus_buttons[(index + 1) % focus_buttons.size()])
+		button.focus_previous = button.get_path_to(focus_buttons[(index + focus_buttons.size() - 1) % focus_buttons.size()])
+
+
+func show_objective(text: String) -> void:
+	objective_label.text = "Quest · " + text
+
+
+func show_journal(open: bool, text: String) -> void:
+	journal_overlay.visible = open
+	journal_text.text = text
+	travel_label.visible = not open and not dialogue_overlay.visible and not pause_overlay.visible
+	pause_button.disabled = open or pause_overlay.visible or dialogue_overlay.visible
+	if open:
+		journal_close.grab_focus()
+	else:
+		var focused: Control = get_viewport().gui_get_focus_owner()
+		if focused != null and journal_panel.is_ancestor_of(focused):
+			focused.release_focus()

@@ -12,6 +12,10 @@ window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 
 [input]
+journal={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"keycode":74)]
+}
 move_forward={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"keycode":87)]

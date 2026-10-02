@@ -1,105 +1,121 @@
 # Current prototype state
 
-Last updated: 2026-10-02 (America/Vancouver). Verified through P006.
+Last updated: 2026-10-02 (America/Vancouver). Verified through P007.
 
 ## Current task
 
-P006 complete; P007 next eligible, not started. Normal start: Alderwake. WASD
-moves, mouse faces, E selects nearest visible purple companion/gold marker/gate.
-NPC talk and prop inspection work in both rooms; mouse or Tab/Enter chooses,
-Finish/Close/Esc returns control. Esc pauses only after dialogue closes.
-Pause Save/Load restores last arrival anchor; no autosave. No combat, quest,
-active companion AI or Blender assets yet.
+P007 complete. P008 next eligible, not started. Normal start: Alderwake; WASD,
+mouse facing, E interaction/travel, J journal, Esc close/pause, F10 quit. Accept
+Maris's lead at southwest prototype counter, travel north to Tollworks. Normal
+play stops at guardian objective; actual combat remains P008. Pause Save/Load
+persists quest/effects and returns to last arrival anchor; no autosave.
+
+For downstream P007 checks only, debug --quest-test-fixtures adds labeled TEST
+ONLY clearance prop in southwest Tollworks. E/choice explicitly simulates the
+objective through quest rules. Then recover southeast vessel, return north to
+Alderwake, and choose reconnection at Maris's counter. Six stable completion/effect
+IDs persist. Full return scene/shop presentation remains P011.
 
 ## Implementation and changed files
 
-Root: D:/development/game-dev-blender/returning-fair-prototype; Godot path /game.
-Git baseline c953ce8 (P005), initially clean; P006 source, documentation and
-evidence recorded in local Git at user request. No unrelated change found.
-Source project read-only, no push/publication.
+Root: D:/development/game-dev-blender/returning-fair-prototype; Godot project /game.
+Git baseline 544f505 (P006), initially clean; no unrelated user changes found.
+P007 source, documentation and evidence committed locally at user request.
+Source D:/development/game-prototype-2 read-only;
+no push/publication. Applicable workspace AGENTS.md/caveman skill read.
 
-- game/features/interaction/: PrototypeInteractable wrapper IDs/kind/prompt/reach/
-  dialogue ID, NPC/prop reusable scenes, replaceable VisualRoot and wrapper-owned
-  collision. InteractionSelector chooses nearest in-range LOS target, ID tie order.
-- game/features/dialogue/: authored DialogueChoice and extended DialogueDefinition;
-  transient node-independent DialogueService separates cursor/source/choice/result
-  from definitions. Explicit ActionResult returns ok/message/action ID; malformed,
-  duplicate/unknown/out-of-order/repeated choices fail. Intro then terminal choice
-  response is sufficient for P006; no general graph engine.
-- game/content/dialogue/temporary_companion.tres, practice_marker.tres and
-  prototype_catalog.tres: two choices each, eight catalog definitions. All temporary,
-  noncanonical/presentation-only. No NPC facts, quest rewards or trust changes.
-- game/app/game_root.gd: same selector routes E to talk/inspect or existing WorldHost
-  travel. Reselects on command; clears held movement, disables actor input, blocks
-  world keys/mouse during dialogue, keeps GUI usable. Esc cancels before pause;
-  pause cannot stack. Unload cancels dialogue/stale target; save/load rejects active
-  dialogue even if forced paused. Root owns orchestration; UI owns no rules.
-- game/ui/prototype_ui.gd/.tscn: dialogue modal/choices, typed command signals and
-  results, focus release, no world prompt under modals; readable P006 controls.
-- game/world/prototype_location.gd, alderwake.tscn, tollworks.tscn: validate interaction
-  IDs/references; NPC at (-2,0,0), prop at (2,0,1), distinct room instance IDs; gate
-  retains 1.6m reach. Enlarged fixture signs; redundant clipping room signs removed,
-  room identity remains in HUD. Existing spawn safety, floor/walls/plinth preserved.
-- game/tests/interaction_dialogue_checks.gd: meaningful rules/lifecycle/input checks.
-  content_catalog_checks expects eight definitions; save_checks expects new prompt.
-  New script .uid and scene UIDs retained.
-- game/tests/live_playtest_bridge.gd, tools/send_playtest.ps1, PLAYTEST.md: read-only
-  interaction/dialogue observations. One transient request read failure rejected
-  before input; client now publishes via native File.Move, bridge checks open/read
-  before deletion. Rechecked protocol and actual windowed reader.
-- README, CHECKLIST, architecture delivered-boundary note and P006 evidence updated.
-  Ownership architecture unchanged; transient/save-boundary decisions documented.
+- game/features/quests/: immutable QuestDefinition/QuestStep Resources, independent
+  QuestState, node-independent QuestService. Previous ordered step is prerequisite;
+  location/source/action validation precedes atomic step/effect commit. Retry returns
+  success without granting/notifying twice. Effects are durable facts, not currency.
+- game/content/quests/maris_recovery.tres and dialogue/maris_counter.tres,
+  recovery_vessel.tres, guardian_test.tres; catalog now 12 definitions. Stable Maris
+  npc-03. Shortened labeled adaptation from source MQ03's missing fitting judgment,
+  vessel identification/return path and familiar-counter reconnection. No campaign
+  reorder, runtime port, retired currencies or permanent companion/story invention.
+- game/app/game_session.gd owns quest states/effects; core/content_catalog.gd
+  validates quest steps/references/global effect uniqueness and dialogue quest/action.
+- core/save_codec.gd: schema2/content1 exact quest set, ordered completion prefixes,
+  matching unique effects. Exact schema1/content1 migrates to unstarted quest/no
+  effects while preserving validated old facts. Copies candidate; read leaves files
+  unchanged. core/save_repository.gd carries migration notice; explicit Save writes2.
+- features/dialogue/dialogue_choice.gd/service.gd: authored quest/action IDs,
+  injected owner command. Rejected choices preserve cursor and show prerequisite
+  message; practice/temporary companion remain presentation-only.
+- app/game_root.gd: composition/service injection, eligible successful-travel arrival
+  events, service rebind after safe restore, no arrival replay on load; debug fixture
+  opt-in only. Journal input/save arbitration; no world/UI quest authority.
+- ui/prototype_ui.gd/.tscn, project.godot: J/header journal, objective HUD, modal
+  Close/J/Esc with held-input clearing and contained Tab focus. Pause copy includes
+  quest/effects. world/alderwake.tscn/tollworks.tscn add replaceable gameplay wrappers
+  at (-4,0,3)/(4,0,3); base P006 fixtures preserved.
+- tests/quest_checks.gd/quest_process_checks.gd (+ UIDs): rules, migration/files,
+  journal/root lifecycle and separate-process persistence. Existing catalog count,
+  future-schema tests and P006 fixture-presence check adjusted. live_playtest_bridge
+  adds J and read-only quest/journal observations; still no state/objective commands.
+- README, ARCHITECTURE delivered P007 boundary, CHECKLIST, tools/PLAYTEST.md and
+  docs/evidence/P007 updated. Ownership architecture unchanged; ordered-step and
+  strict migration choices documented. All new script UIDs retained.
 
 ## Checks and evidence
 
-Engine 4.7.2.stable.mono.official.ed1daf0bf. Exact commands/exits, acceptance
-mapping and selected inspected PNGs: evidence/P006/VALIDATION.md.
+Engine 4.7.2.stable.mono.official.ed1daf0bf. Both provided executable paths verified.
+Exact commands, per-command exits, repaired failure, logs and inspected PNG/JSON:
+docs/evidence/P007/VALIDATION.md and check-results.txt. Commands from project root:
 
-- Prerequisites P001–P004 PASS/exit0; initial restricted save test hit denied
-  user:// IO and was interrupted. Normal-access isolated save rerun PASS/exit0.
-- Final headless editor import, including last scene/UID changes: exit0. Existing
-  unused Mono SDK10.0.9 error only; no GDScript errors. No dependencies installed.
-- Seven headless scripts PASS/exit0: application_smoke, content_catalog_checks,
-  movement_camera_checks, live_playtest_checks, location_travel_checks, save_checks,
-  interaction_dialogue_checks. Separate process write/read PASS/exit0. Relevant
-  smoke/save/dialogue/bridge checks repeated after UI/reader repairs PASS/exit0.
-- P006 tests: rejected actions/choices, independent runtime state/multiline intro,
-  both-room normal viewport E + GUI Enter, held movement clearing, attack-input
-  probe, camera/reentry lock, cancel/fresh movement, save boundary, LOS and unload.
-  Positioned fixtures prove rules, not ordinary play; actual rendered walk separate.
-- Windows Compatibility renderer, RTX4070 Laptop/driver581.29, 960x640: normal
-  WASD/E reaches both-room NPC/prop, all four choices via keyboard/mouse, Esc/Close/
-  Finish, blocked movement/click, held keys remain cleared after cancel, fresh input
-  works. Normal gate travel, GUI Save/Load and replayed NPC after load pass.
-  assert-live.ps1 PASS/exit0; full reviewed replay boot 1790976207.97-7732.
-- Final layout boot 1790976462.745-67352: both rooms load/visible signs and modal
-  inspected; E travel/talk and F10 quit while dialogue active exit0. Five windowed
-  runs all quit0. Reader/labels logs and focused final logs have no runtime errors.
-  Reviewed log retains one pre-repair harness empty-read rejection, safely retried;
-  no gameplay input executed on that rejected request.
-- git diff --check exit0. See git-check.txt, check-results.txt and raw response files.
+```powershell
+$taskEngine = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe'
+& $taskEngine --headless --path game --editor --quit
+foreach ($check in @('application_smoke','content_catalog_checks','movement_camera_checks','live_playtest_checks','location_travel_checks','save_checks','interaction_dialogue_checks','quest_checks')) {
+    & $taskEngine --headless --path game --script "res://tests/$check.gd"
+}
+foreach ($check in @('save_process_checks','quest_process_checks')) {
+    foreach ($phase in @('write','read')) {
+        & $taskEngine --headless --path game --script "res://tests/$check.gd" -- "--phase=$phase"
+    }
+}
+git diff --check
+```
+
+- Prerequisites and final eight focused scripts PASS/exit0; both writer/reader pairs
+  PASS/exit0. After final UI/content edits, affected six scripts + quest writer/reader
+  repeated PASS/exit0. Final normal-access editor import exit0, no GDScript errors;
+  existing unused Mono SDK10.0.9 warning only. No installations.
+- Initial sandbox denied isolated user:// save IO; interrupted old test exit1, normal
+  access rerun passed. Initial new prop placement interfered with P006 tests; moved
+  new wrappers apart, updated fixed prop-count assumption, rechecked PASS/exit0.
+  HUD overlap repaired; explicit modal focus loops fix Tab reaching background UI.
+- Rule checks cover out-of-order/unknown/wrong-source/location actions, atomic
+  notifications, repeat/decode replay idempotency, independent mutable state,
+  malformed quest/effect save rejection, exact v1 migration and unchanged read bytes.
+- Actual Windows Compatibility renderer, RTX4070 Laptop/driver581.29, 960x640:
+  normal WASD/E/GUI reaches lead, travel, vessel and reconnection. Guardian action
+  is explicitly simulated test fixture. Journal blocks held movement/E/click,
+  Esc clears holds, fresh movement works; Tab remains modal. Vessel/reconnect
+  retries retain effect count. GUI Save/quit/new-process Load tested at vessel and
+  completed state; counts4/6 and correct rooms/anchors restored. No-flag normal
+  Tollworks has no test prop. Four windowed runs quit via F10 exit0, logs clean.
+- git diff --check exit0; source files/evidence paths recorded. Normal user save
+  untouched; isolated playtest-p007-validation and p007-migration/root/process files
+  only, alongside prior test-specific slots.
 
 ## Decisions, limitations, blockers
 
-No blocker. Save schema/content stay v1: only additive presentation definitions,
-no persistent fields. Dialogue is transient and cannot be saved mid-conversation;
-P007 must deliberately migrate v1 before adding quest/effect data. Future persistent
-dialogue actions route through quest/relationship owners with durable once-only IDs.
+No P007 blocker. Schema2/content1 migration is deliberate; strict v2 never defaults
+missing quest data. Journal/dialogue transient and unsaveable while open. Saves
+remain arrival-anchor/stable pause boundary, not arbitrary mid-scene snapshots.
 
-Attack/dodge remain bindings only; input blocking is tested, damage/combat is P008.
-Temporary companion is stationary dialogue stand-in, not P009 active party member.
-No permanent narrative decision made. Source game is now populated: game-story.txt,
-docs/market-of-borrowed-days.md and docs/towns/alderwake.md read; older empty-source
-handoffs stale. Maris npc-03 remains unchanged; no Flutter runtime port or retired
-currency ideas. No Blender source/export or Windows build claim.
-
-Rendered input uses ordinary viewport InputMap/GUI, not physical keyboard/OS focus.
-Normal user save untouched; playtest-p006-* and existing isolated p005-check/process
-fixtures only. Existing Mono SDK warning nonblocking for GDScript.
+Simulated clearance is not combat proof. Reconnection is labeled text checkpoint,
+not P011 service world variant. No actual attack/dodge, active companion AI, trust,
+upgrade, Blender assets or verified Windows export. Viewport injection verifies
+integration/rendering, not hardware/OS focus. Source story/market/town canon read
+selectively; no source project edits or permanent narrative decision required.
 
 ## Next eligible task
 
-P007 only: one shortened recovery quest, legal prerequisite transitions, journal,
-stable action/effect IDs and durable once-only effects. Extend/migrate schema v1
-deliberately and prove progress across travel/process restart. Combat objective
-may use clearly labeled test setup until P008; do not claim normal combat.
+P008 only: hero attack/dodge/health/damage windows, protective guardian defeat and
+retry feedback. Replace prototype-guardian-test event source with actual guardian
+instance defeat. Preserve existing saved quest/step/effect IDs deliberately; decide
+schema compatibility before persisting new guardian/combat facts. Normal gameplay
+must clear guardian and death/retry must not duplicate effects. Do not begin P009
+in the same session unless explicitly authorized.

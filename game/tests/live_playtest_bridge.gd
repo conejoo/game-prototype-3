@@ -3,7 +3,7 @@ extends Node
 
 const KEYS: Dictionary[String, int] = {
 	"W": KEY_W, "A": KEY_A, "S": KEY_S, "D": KEY_D,
-	"P": KEY_P, "E": KEY_E, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
+	"P": KEY_P, "E": KEY_E, "J": KEY_J, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
 	"+": KEY_EQUAL, "-": KEY_MINUS,
 }
 var game: Node3D
@@ -250,6 +250,10 @@ func _observe() -> Dictionary:
 		"dialogue_choice_id": game.dialogue.selected_choice_id,
 		"dialogue_result": game.dialogue.last_result.message,
 		"dialogue_action_id": game.dialogue.last_result.action_id,
+		"quest_snapshot": SaveCodec.snapshot(game.session).quests,
+		"completed_effect_ids": Array(game.session.completed_effect_ids),
+		"journal_open": game.journal_open, "journal_text": game.ui.journal_text.text,
+		"quest_objective": game.ui.objective_label.text,
 	}
 
 

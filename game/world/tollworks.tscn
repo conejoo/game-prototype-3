@@ -180,3 +180,12 @@ instance_id = "tollworks-temporary-companion"
 [node name="PracticeMarker" parent="." instance=ExtResource("5_prop")]
 position = Vector3(2, 0, 1)
 instance_id = "tollworks-practice-marker"
+
+[node name="RecoveryVessel" parent="." instance=ExtResource("5_prop")]
+position = Vector3(4, 0, 3)
+instance_id = "maris-recovery-vessel"
+prompt = "Inspect Maris's recovery vessel"
+dialogue_id = "prototype-maris-vessel"
+
+[node name="Sign" parent="RecoveryVessel" index="2"]
+text = "Maris's vessel\nPrototype adaptation"

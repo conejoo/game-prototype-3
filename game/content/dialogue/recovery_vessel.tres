@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
+[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
+
+[sub_resource type="Resource" id="Recover"]
+script = ExtResource("2")
+stable_id = "maris-vessel-choice"
+label = "Identify Maris's experience and open its return path."
+quest_id = "prototype-maris-recovery"
+action_id = "maris-open-return-path"
+response = PackedStringArray("[Prototype adaptation] The refuge index identifies Maris's early fitting experience. Its local return path opens. Return to her counter for reconnection; touching the vessel does not restore the shop or repair the ship.")
+
+[sub_resource type="Resource" id="Leave"]
+script = ExtResource("2")
+stable_id = "maris-vessel-leave"
+label = "Leave the vessel."
+action_id = "prototype-leave"
+response = PackedStringArray("The vessel remains here.")
+
+[resource]
+script = ExtResource("1")
+stable_id = "prototype-maris-vessel"
+display_name = "Recovery vessel — prototype adaptation"
+prototype_fixture = true
+speaker_actor_id = "prototype-hero"
+lines = PackedStringArray("[Prototype vessel] A small vessel and refuge index identify Maris's fitting experience. The protective guardian must be cleared before its return path can open.")
+choices = Array[ExtResource("2")]([SubResource("Recover"), SubResource("Leave")])

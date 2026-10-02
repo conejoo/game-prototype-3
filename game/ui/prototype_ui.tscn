@@ -85,6 +85,22 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "Pause  [Esc]"
 
+[node name="Journal" type="Button" parent="Screen/Header/Margin/Row"]
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Journal [J]"
+
+[node name="Objective" type="Label" parent="Screen"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 84.0
+offset_right = 936.0
+offset_bottom = 130.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 2
+
 [node name="Footer" type="PanelContainer" parent="Screen"]
 layout_mode = 1
 anchors_preset = 12
@@ -164,7 +180,7 @@ horizontal_alignment = 1
 [node name="Hint" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Save health, party and play time while paused.
+text = "Save health, party, quest progress and effects while paused.
 Load returns to last arrival anchor, not current position.
 No autosave. Esc resumes."
 horizontal_alignment = 1
@@ -199,9 +215,9 @@ text = "Quit prototype"
 [node name="TravelPrompt" type="Label" parent="Screen"]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 94.0
+offset_top = 133.0
 offset_right = 820.0
-offset_bottom = 125.0
+offset_bottom = 164.0
 mouse_filter = 2
 text = "Loading prototype location…"
 theme_override_font_sizes/font_size = 18
@@ -278,3 +294,62 @@ text = "Close [Esc]"
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 autowrap_mode = 2
+[node name="JournalOverlay" type="Control" parent="Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shade" type="ColorRect" parent="Screen/JournalOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.01, 0.02, 0.03, 0.68)
+
+[node name="Center" type="CenterContainer" parent="Screen/JournalOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Screen/JournalOverlay/Center"]
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Style_panel")
+
+[node name="Margin" type="MarginContainer" parent="Screen/JournalOverlay/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="Options" type="VBoxContainer" parent="Screen/JournalOverlay/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Recovery journal"
+autowrap_mode = 2
+
+[node name="Text" type="Label" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 80)
+autowrap_mode = 2
+
+[node name="Close" type="Button" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
+text = "Close journal [J / Esc]"

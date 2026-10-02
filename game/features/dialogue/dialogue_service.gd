@@ -1,7 +1,7 @@
 class_name DialogueService
 extends RefCounted
 ## Transient runtime conversation, separate from definitions/session/physical NPC.
-## Only presentation actions exist in P006. Persistent effects belong to P007+.
+## Quest commands delegate to injected owner; rejected commands leave cursor intact.
 
 class ActionResult extends RefCounted:
 	var ok: bool
@@ -14,6 +14,7 @@ class ActionResult extends RefCounted:
 		action_id = action
 
 var definition: DialogueDefinition
+var quest_command: Callable
 var source_instance_id: String = ""
 var line_index: int = 0
 var selected_choice_id: String = ""
@@ -66,11 +67,19 @@ func choose(choice_id: String) -> ActionResult:
 	for choice: DialogueChoice in definition.choices:
 		if choice.stable_id == choice_id:
 			# Explicit dispatch. Unknown commands never succeed or mutate run state.
-			if choice.action_id not in ["prototype-observe", "prototype-leave"]:
+			var message: String = "Prototype response shown; no persistent effects."
+			if not choice.quest_id.is_empty():
+				if not quest_command.is_valid():
+					return _result(false, "Quest owner unavailable.")
+				var result: ActionResult = quest_command.call(choice.quest_id, choice.action_id, source_instance_id)
+				if not result.ok:
+					return _result(false, result.message, choice.action_id)
+				message = result.message
+			elif choice.action_id not in ["prototype-observe", "prototype-leave"]:
 				return _result(false, "Unsupported dialogue action.")
 			selected_choice_id = choice_id
 			line_index = 0
-			return _result(true, "Prototype response shown; no persistent effects.", choice.action_id)
+			return _result(true, message, choice.action_id)
 	return _result(false, "Unknown choice '%s'." % choice_id)
 
 

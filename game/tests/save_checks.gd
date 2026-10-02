@@ -31,7 +31,7 @@ func _run() -> void:
 		var broken: Dictionary = data.duplicate(true)
 		broken.erase(key)
 		_reject(broken, "missing " + key)
-	for pair: Array in [["schema_version", 2], ["content_version", 2], ["schema_version", 0], ["schema_version", 1.5], ["schema_version", true], ["location_id", "unknown"], ["spawn_id", "unknown"], ["player_instance_id", "npc-03"], ["party_member_ids", ["party-player", "party-player"]], ["actors", []], ["elapsed_play_seconds", -1], ["elapsed_play_seconds", INF], ["elapsed_play_seconds", true]]:
+	for pair: Array in [["schema_version", 3], ["content_version", 2], ["schema_version", 0], ["schema_version", 1.5], ["schema_version", true], ["location_id", "unknown"], ["spawn_id", "unknown"], ["player_instance_id", "npc-03"], ["party_member_ids", ["party-player", "party-player"]], ["actors", []], ["elapsed_play_seconds", -1], ["elapsed_play_seconds", INF], ["elapsed_play_seconds", true]]:
 		var broken: Dictionary = data.duplicate(true)
 		broken[pair[0]] = pair[1]
 		_reject(broken, str(pair))
@@ -83,7 +83,7 @@ func _run() -> void:
 	_check(repository.read(catalog).recovered, "Missing primary did not recover backup")
 	_write(repository.path, good_primary)
 	var future: Dictionary = data.duplicate(true)
-	future.schema_version = 2
+	future.schema_version = 3
 	var future_raw: String = JSON.stringify(future)
 	_write(repository.path, future_raw)
 	_check(repository.read(catalog).session == null, "Newer primary silently fell back to old backup")

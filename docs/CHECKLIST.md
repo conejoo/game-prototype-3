@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P006 verified complete; P007 next eligible. Subsequent tasks remain pending.
+P001–P007 verified complete; P008 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -69,7 +69,7 @@ P001–P006 verified complete; P007 next eligible. Subsequent tasks remain pendi
 - Acceptance: talk to NPC and inspect prop in either room; dialogue blocks
   attacks/movement as intended; cancellation restores control; no stuck UI.
 
-## [ ] P007 — Quest progression, journal, and durable effects
+## [x] P007 — Quest progression, journal, and durable effects
 
 - Implement one shortened recovery quest definition and quest service with
   prerequisites, legal transitions, stable action/effect IDs, and journal.
@@ -291,3 +291,27 @@ Next eligible task:
   not hardware/OS-focus proof. Existing Mono SDK warning remains nonblocking.
 - Next eligible task: P007 — Quest progression, journal, and durable effects.
   Not started; deliberately bump/migrate schema v1 before quest data.
+
+### P007 — completed 2026-10-02
+
+- Changed: ordered authored recovery steps, independent quest state/service,
+  prerequisite/location/source validation, atomic once-only effects and journal;
+  Maris/vessel dialogue commands and normal travel arrivals; schema2/content1 with
+  exact v1 migration; root restore rebinding and modal input/focus/save boundaries.
+- Checks/evidence: normal editor import exit0 (existing unused Mono SDK warning);
+  eight focused scripts and both separate-process writer/reader pairs PASS/exit0.
+  Affected checks repeated after repairs PASS/exit0. Actual Windows WASD/E/GUI lead,
+  expedition, explicit TEST ONLY guardian setup, vessel/return/reconnection; journal
+  locks/Tab focus, retries, GUI save/restart at vessel and completed state pass.
+  Four windowed runs quit0; no-flag Tollworks has no test prop. Exact commands,
+  logs, JSON and inspected PNGs: evidence/P007/VALIDATION.md. git diff --check exit0.
+- Repairs/decisions: separate new props from existing P006 fixture reach; update
+  fixed prop-count test, fix HUD spacing and contain modal Tab focus. Strict ordered
+  prefix/effect-set validation; legacy read migrates candidate only, explicit Save
+  publishes v2. Effects are durable facts, no new currency/reward-point abstraction.
+- Limits: guardian simulated explicitly, not combat evidence; reconnection is a
+  labeled text checkpoint, full return/shop variant P011. Normal play stops at
+  guardian pending P008. No active companion/trust/upgrades/Blender/export claim.
+  Viewport input is injected, not hardware/OS-focus proof; normal save/source untouched.
+  Initial sandbox save IO denial resolved by normal-access rerun. No push/publication.
+- Next eligible task: P008 — Hero action combat and guardian. Not started.

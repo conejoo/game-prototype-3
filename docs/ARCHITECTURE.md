@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P006.
+Status: implementation contract; runnable Godot prototype through P007.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -170,13 +170,13 @@ travel; loading stays paused and locks repeated requests until safe placement
 and root-owned session/actor rebinding complete. Future combat/dialogue owners
 must extend this boundary before those features can save.
 
-Schema/content versions are both 1. Strict plain JSON contains location/spawn IDs,
+At P005 delivery, schema/content versions were both 1. Strict plain JSON contains location/spawn IDs,
 player instance ID, ordered party member IDs, actor instance/definition/health,
 and elapsed seconds. P005 supports only `party-player` / `prototype-hero`; maximum
 health is derived from content, never trusted from disk. Unknown/missing fields,
 IDs, versions and invalid numeric data fail before live-session replacement.
-This is the first save schema; no older migration exists. P007 must deliberately
-bump/migrate schema v1 when quest/effect data arrives. Additive compatible content
+This was the first save schema. P007's delivered v2 migration is specified below.
+Additive compatible content
 may retain content version 1; incompatible ID/stat changes require a documented
 version/migration decision, never silent remapping/defaulting.
 
@@ -200,7 +200,7 @@ GameRoot composes a transient, node-independent DialogueService. Immutable
 DialogueDefinition/DialogueChoice Resources contain introduction lines and
 terminal choice responses. Runtime cursor/source/selection/result stay in the
 service, never in authored Resources or UI. P006 needs no general graph engine:
-explicit prototype-observe/prototype-leave actions only present responses;
+at P006, explicit prototype-observe/prototype-leave actions only present responses;
 unknown actions fail. Quest/reward/trust commands must be routed to their owning
 services when those features arrive, with durable once-only IDs there.
 
@@ -211,6 +211,44 @@ fresh movement presses are required. Location unload cancels dialogue/source
 references. Save/load rejects active dialogue, even if externally forced paused;
 dialogue has no resumable checkpoint. Existing schema/content v1 remain compatible:
 only additive presentation fixtures were added, no durable data fields changed.
+
+### Delivered quest, journal and migration boundary (P007)
+
+QuestDefinition contains ordered QuestStep Resources with arbitrary stable quest,
+step, action, effect, location and source IDs. The previous step is the prerequisite;
+no general graph/event bus is needed. Session owns separate QuestState completion
+prefixes and completed effect IDs. QuestService validates action/order/location/source,
+commits both facts before its changed signal, and acknowledges retries without
+granting or notifying again. Effects are durable recovery facts, not currency or
+upgrade points. Scene/service presentation of reconnection remains P011 work.
+
+DialogueChoice can reference a catalog-validated quest/action. DialogueService
+delegates to an injected root command; root checks live source and input mode,
+QuestService owns rules. Rejection preserves choices and displays a useful error.
+Successful physical travel records an eligible arrival only after placement;
+restoring a save rebinds QuestService and never replays arrival effects. Journal
+reads service state; J/Esc/Close exits its exclusive input mode. Journal/dialogue
+focus cycles stay inside their modal; save/load requires closing both first.
+
+Schema v2/content v1 adds `quests` (quest ID -> ordered completed step IDs) and
+`completed_effect_ids` (unique strings). Decode requires exactly the compatible
+quest set, legal prefixes and the corresponding complete effect set. Unknown,
+duplicate, skipped, missing or inconsistent IDs fail before replacing a session.
+Exact schema-v1/content-v1 envelopes migrate to empty quest/effect state while
+preserving all existing validated actor/location/time facts. Migration copies data;
+Read leaves disk unchanged and announces migration. Explicit Save publishes v2
+using the existing checked repository. Newer schemas/content remain incompatible;
+there is no fallback to older saves for an incompatible primary.
+
+One labeled shortened Maris (`npc-03`) adaptation covers lead, expedition,
+guardian clearance, vessel return path, return and reconnection checkpoint.
+Normal play stops at the unimplemented guardian objective. Only debug builds
+launched with `--quest-test-fixtures` add the labeled TEST ONLY Tollworks prop;
+choosing its dialogue requests simulated clearance through normal quest rules.
+It never changes facts automatically or supplies combat evidence. P008 must
+replace its event source with actual guardian defeat, preserving saved step/effect
+IDs deliberately. Live bridge adds read-only quest/journal observations and J input;
+it still has no objective/state mutation command.
 
 ## Blender/Godot asset boundary
 

@@ -47,7 +47,7 @@ remain in the ignored session directory. Use a fresh directory for each run.
 | capture | none | Save actual viewport PNG; requires windowed renderer |
 | quit | none | Last step only; publish response, then normal F10 quit |
 
-Keys: W, A, S, D, E, P, ESC, TAB, ENTER, +, -. Coordinates use viewport pixels
+Keys: W, A, S, D, E, J, P, ESC, TAB, ENTER, +, -. Coordinates use viewport pixels
 (current prototype captures are 960x640), not desktop coordinates. Holds/waits
 are 16–5000 ms, up to 32 steps/30 seconds per request. Monotonic deadlines never
 release early; scheduling and physics quantization can extend observed duration.
@@ -68,6 +68,12 @@ NPC/prop/gate through normal range/line-of-sight selection. Choose with mouse or
 Tab/Enter; Esc cancels dialogue before pause. The bridge adds no dialogue command
 or persistent-state mutation. Attack remains unimplemented; modal mouse blocking
 checks input arbitration only, not combat/damage behavior.
+
+P007 adds read-only quest completion/effect IDs, journal visibility/text and HUD
+objective. J operates the normal journal modal. No quest command exists in the
+bridge. An explicitly enabled debug `--quest-test-fixtures` interaction can simulate
+guardian clearance via E/dialogue; it is labeled TEST ONLY and cannot prove combat.
+Normal runs omit it. Use an isolated `--save-slot` for this validation.
 
 All held keys/buttons release at request end. key_down does not persist between
 requests. Movement may be ignored while paused, UI-focused or after application

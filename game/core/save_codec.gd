@@ -2,7 +2,7 @@ class_name SaveCodec
 extends RefCounted
 ## Versioned plain-data boundary. Validation creates a detached candidate only.
 
-const SCHEMA_VERSION: int = 1
+const SCHEMA_VERSION: int = 2
 const CONTENT_VERSION: int = 1
 const MAX_BYTES: int = 131072
 
@@ -11,10 +11,14 @@ class DecodeResult:
 	var session: GameSession
 	var errors: PackedStringArray = []
 	var incompatible: bool = false
+	var migrated: bool = false
 
 
 static func snapshot(run: GameSession) -> Dictionary:
 	var actor_data: Array[Dictionary] = []
+	var quest_data: Dictionary = {}
+	for id: String in run.quests:
+		quest_data[id] = Array(run.quests[id].completed_step_ids)
 	for id: String in run.party_member_ids:
 		var actor: ActorState = run.actors.get(id)
 		if actor != null:
@@ -25,6 +29,7 @@ static func snapshot(run: GameSession) -> Dictionary:
 		"player_instance_id": GameSession.PLAYER_INSTANCE_ID,
 		"party_member_ids": Array(run.party_member_ids), "actors": actor_data,
 		"elapsed_play_seconds": run.elapsed_play_seconds,
+		"quests": quest_data, "completed_effect_ids": Array(run.completed_effect_ids),
 	}
 
 
@@ -40,8 +45,9 @@ static func decode(raw: String, catalog: ContentCatalog) -> DecodeResult:
 	return validate(parser.data, catalog)
 
 
-static func validate(data: Variant, catalog: ContentCatalog) -> DecodeResult:
+static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult:
 	var result: DecodeResult = DecodeResult.new()
+	var data: Variant = raw_data
 	if catalog == null or not catalog.initialized:
 		result.errors.append("save requires initialized catalog")
 		return result
@@ -53,13 +59,28 @@ static func validate(data: Variant, catalog: ContentCatalog) -> DecodeResult:
 			result.errors.append("%s must be a positive integer" % key)
 			return result
 		var supported: int = SCHEMA_VERSION if key == "schema_version" else CONTENT_VERSION
-		if int(data[key]) != supported:
+		if int(data[key]) != supported and not (key == "schema_version" and int(data[key]) == 1):
 			result.incompatible = true
 			result.errors.append("unsupported %s %s; supported %d; files left unchanged" % [key, data[key], supported])
 			return result
 	var fields: Array[String] = ["schema_version", "content_version", "location_id", "spawn_id", "player_instance_id", "party_member_ids", "actors", "elapsed_play_seconds"]
+	var legacy: bool = int(data.schema_version) == 1
+	if not legacy:
+		fields.append_array(["quests", "completed_effect_ids"])
 	if not _exact_fields(data, fields):
-		result.errors.append("schema v1 requires exactly: " + ", ".join(fields))
+		result.errors.append("schema v%d requires exactly: " % int(data.schema_version) + ", ".join(fields))
+		return result
+	if legacy:
+		# Only exact v1 content-v1 envelopes migrate. Preserve caller and disk bytes.
+		data = data.duplicate(true)
+		data.schema_version = SCHEMA_VERSION
+		data["quests"] = {}
+		for quest: QuestDefinition in catalog.quest_definitions():
+			data.quests[quest.stable_id] = []
+		data["completed_effect_ids"] = []
+		result.migrated = true
+	result.errors = QuestService.validate_progress(data.quests, data.completed_effect_ids, catalog)
+	if not result.errors.is_empty():
 		return result
 	if not data.location_id is String or not data.spawn_id is String:
 		result.errors.append("location_id/spawn_id must be strings")
@@ -70,10 +91,10 @@ static func validate(data: Variant, catalog: ContentCatalog) -> DecodeResult:
 		return result
 	# P005 owns one hero. Expand this contract when active companions arrive.
 	if data.player_instance_id != GameSession.PLAYER_INSTANCE_ID or not data.party_member_ids is Array or data.party_member_ids != [GameSession.PLAYER_INSTANCE_ID]:
-		result.errors.append("schema v1 party must contain only party-player")
+		result.errors.append("party must contain only party-player")
 		return result
 	if not data.actors is Array or data.actors.size() != 1 or not data.actors[0] is Dictionary:
-		result.errors.append("schema v1 requires one actor record")
+		result.errors.append("save requires one actor record")
 		return result
 	var actor: Dictionary = data.actors[0]
 	if not _exact_fields(actor, ["instance_id", "definition_id", "health"]) or actor.get("instance_id") != GameSession.PLAYER_INSTANCE_ID or actor.get("definition_id") != "prototype-hero":
@@ -92,6 +113,9 @@ static func validate(data: Variant, catalog: ContentCatalog) -> DecodeResult:
 	if result.errors.is_empty():
 		candidate.actors[GameSession.PLAYER_INSTANCE_ID].health = int(actor.health)
 		candidate.elapsed_play_seconds = float(seconds)
+		for id: String in candidate.quests:
+			candidate.quests[id].completed_step_ids = PackedStringArray(data.quests[id])
+		candidate.completed_effect_ids = PackedStringArray(data.completed_effect_ids)
 		result.session = candidate
 	return result
 

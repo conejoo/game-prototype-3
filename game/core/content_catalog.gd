@@ -19,7 +19,7 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 			errors.append("definition[%d] is null" % index)
 			continue
 		var label: String = "definition[%d] '%s'" % [index, definition.stable_id]
-		if not (definition is ActorDefinition or definition is LocationDefinition or definition is DialogueDefinition):
+		if not (definition is ActorDefinition or definition is LocationDefinition or definition is DialogueDefinition or definition is QuestDefinition):
 			errors.append("%s has unsupported definition type" % label)
 		for error: String in definition.validation_errors():
 			errors.append("%s: %s" % [label, error])
@@ -33,6 +33,30 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 				_validate_actor_reference(candidate, definition.stable_id, actor_id, errors)
 		elif definition is DialogueDefinition:
 			_validate_actor_reference(candidate, definition.stable_id, (definition as DialogueDefinition).speaker_actor_id, errors)
+			for choice: DialogueChoice in (definition as DialogueDefinition).choices:
+				if choice != null and not choice.quest_id.is_empty():
+					var quest: QuestDefinition = candidate.get(choice.quest_id) as QuestDefinition
+					var found: bool = false
+					if quest != null:
+						for step: QuestStep in quest.steps:
+							if step != null and step.action_id == choice.action_id:
+								found = true
+					if not found:
+						errors.append("dialogue references absent quest/action")
+		elif definition is QuestDefinition:
+			for step: QuestStep in (definition as QuestDefinition).steps:
+				if step != null and not candidate.get(step.location_id) is LocationDefinition:
+					errors.append("quest references absent location '%s'" % step.location_id)
+	# Effect identities must be unique across quests, too.
+	var effects: PackedStringArray = []
+	for definition: ContentDefinition in manifest.definitions:
+		if definition is QuestDefinition:
+			for step: QuestStep in (definition as QuestDefinition).steps:
+				if step == null:
+					continue
+				if step.effect_id in effects:
+					errors.append("duplicate global quest effect ID")
+				effects.append(step.effect_id)
 	if errors.is_empty():
 		_definitions = candidate
 		initialized = true
@@ -53,6 +77,19 @@ func get_dialogue(id: String) -> DialogueDefinition:
 
 func definition_count() -> int:
 	return _definitions.size()
+
+
+func get_quest(id: String) -> QuestDefinition:
+	return _definitions.get(id) as QuestDefinition
+
+
+func quest_definitions() -> Array[QuestDefinition]:
+	var result: Array[QuestDefinition] = []
+	for id: String in _definitions:
+		if _definitions[id] is QuestDefinition:
+			result.append(_definitions[id] as QuestDefinition)
+	result.sort_custom(func(a: QuestDefinition, b: QuestDefinition) -> bool: return a.stable_id < b.stable_id)
+	return result
 
 
 func _validate_actor_reference(candidate: Dictionary[String, ContentDefinition], owner_id: String, actor_id: String, errors: PackedStringArray) -> void:

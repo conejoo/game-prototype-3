@@ -15,6 +15,8 @@ var loading_save: bool = false
 var _pending_restore: GameSession
 var dialogue: DialogueService = DialogueService.new()
 var selected_interaction: PrototypeInteractable
+var quests: QuestService = QuestService.new()
+var journal_open: bool = false
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -44,6 +46,9 @@ func _ready() -> void:
 		get_tree().quit(1)
 		return
 	player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
+	quests.initialize(catalog, session)
+	quests.changed.connect(_refresh_journal)
+	dialogue.quest_command = _quest_command
 	camera_rig.set_target(player_placeholder)
 	player_placeholder.configure_controls(camera_rig, ui)
 	ui.show_camera(camera_rig.description())
@@ -55,6 +60,7 @@ func _ready() -> void:
 	ui.dialogue_advance_requested.connect(func() -> void: _present_dialogue(dialogue.advance()))
 	ui.dialogue_choice_requested.connect(func(id: String) -> void: _present_dialogue(dialogue.choose(id)))
 	ui.dialogue_cancel_requested.connect(_cancel_dialogue)
+	ui.journal_requested.connect(_toggle_journal)
 	ui.show_paused(false)
 	world_host.initialize(catalog, session, party)
 	world_host.transition_started.connect(_on_transition_started)
@@ -88,6 +94,16 @@ func _process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if journal_open:
+		if (event.is_action_pressed("pause") or event.is_action_pressed("journal")) and not event.is_echo():
+			_toggle_journal()
+			get_viewport().set_input_as_handled()
+		elif event is InputEventKey and not event.is_action("quit"):
+			if event.keycode not in [KEY_TAB, KEY_ENTER]:
+				get_viewport().set_input_as_handled()
+		elif event is InputEventMouseButton and not ui.journal_panel.get_global_rect().has_point(event.position):
+			get_viewport().set_input_as_handled()
+		return
 	# Escape cancels dialogue even while a choice has GUI focus. World keys do
 	# not reach actors; mouse clicks remain available to the modal's buttons.
 	if dialogue.active():
@@ -103,7 +119,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if dialogue.active() and not event.is_action("quit"):
+	if (dialogue.active() or journal_open) and not event.is_action("quit"):
 		get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("pause") and not event.is_echo():
@@ -115,6 +131,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif not get_tree().paused and not world_host.transitioning and window_focused and get_viewport().gui_get_focus_owner() == null:
 		if event.is_action_pressed("interact") and not event.is_echo():
 			interact()
+			get_viewport().set_input_as_handled()
+			return
+		if event.is_action_pressed("journal") and not event.is_echo():
+			_toggle_journal()
 			get_viewport().set_input_as_handled()
 			return
 		if event is InputEventMouseButton and not ui.accepts_world_pointer(event.position):
@@ -153,7 +173,7 @@ func _resume() -> void:
 
 
 func _set_paused(paused: bool) -> void:
-	if loading_save or dialogue.active():
+	if loading_save or dialogue.active() or journal_open:
 		return
 	get_tree().paused = paused
 	_update_controls()
@@ -162,11 +182,13 @@ func _set_paused(paused: bool) -> void:
 
 
 func _update_controls() -> void:
-	player_placeholder.set_controls_enabled(window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active())
-	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active())
+	player_placeholder.set_controls_enabled(window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open)
+	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open)
 
 
 func _on_transition_started() -> void:
+	journal_open = false
+	ui.show_journal(false, "")
 	_cancel_dialogue()
 	selected_interaction = null
 	ui.show_travel("Travelling…")
@@ -176,15 +198,21 @@ func _on_transition_started() -> void:
 func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 	# Root commits candidate only after WorldHost proves physical placement safe.
 	# This handler is connected before other observers; UI sees one restored run.
-	if success and _pending_restore != null:
+	var restoring: bool = _pending_restore != null
+	if success and restoring:
 		session = _pending_restore
 		world_host.session = session
 		player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
+		quests.initialize(catalog, session)
 	_pending_restore = null
 	camera_rig.set_target(player_placeholder)
 	camera_rig.reset_physics_interpolation()
 	_update_controls()
 	if success:
+		_configure_quest_fixture()
+		if not restoring:
+			quests.record_arrival(session.current_location_id)
+		_refresh_journal()
 		ui.show_location(catalog.get_location(session.current_location_id).display_name)
 		_refresh_interaction()
 	else:
@@ -192,6 +220,8 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 
 
 func _save_boundary_errors() -> PackedStringArray:
+	if journal_open:
+		return PackedStringArray(["close journal before save/load"])
 	if dialogue.active():
 		return PackedStringArray(["close dialogue before save/load"])
 	if not session.initialized or world_host.current_location == null:
@@ -213,16 +243,16 @@ func save_run() -> PackedStringArray:
 
 
 func _refresh_interaction() -> void:
-	if dialogue.active():
+	if dialogue.active() or journal_open:
 		selected_interaction = null
-		ui.show_travel("Dialogue open · Esc: close")
+		ui.show_travel("Journal open · J / Esc: close" if journal_open else "Dialogue open · Esc: close")
 		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
 	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "Walk near purple companion, gold marker, or glowing gate")
 
 
 func interact() -> DialogueService.ActionResult:
-	if dialogue.active() or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
+	if dialogue.active() or journal_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
 		return DialogueService.ActionResult.new(false, "Interaction blocked by current input mode.")
 	# Never trust last frame's prompt or hold an old room's node after travel.
 	var target: PrototypeInteractable = InteractionSelector.select(player_placeholder, world_host.current_location)
@@ -275,6 +305,8 @@ func load_run() -> PackedStringArray:
 	_update_controls()
 	ui.show_play_time(session.elapsed_play_seconds)
 	var message: String = "Recovered backup. Primary left unchanged." if saved.recovered else "Loaded saved run at arrival anchor."
+	if saved.migrated:
+		message += " Migrated v1: quest unstarted; Save writes v2."
 	ui.show_save_status(message if errors.is_empty() else "Load failed: " + "; ".join(errors))
 	print("P005 load: ", message if errors.is_empty() else errors)
 	return errors
@@ -283,3 +315,44 @@ func load_run() -> PackedStringArray:
 func _quit() -> void:
 	print("P001: Quit requested%s." % [" while paused" if get_tree().paused else ""])
 	get_tree().quit(0)
+
+
+func _quest_command(quest_id: String, action_id: String, source_id: String) -> DialogueService.ActionResult:
+	if world_host.transitioning or loading_save or get_tree().paused or not dialogue.active():
+		return DialogueService.ActionResult.new(false, "Quest command blocked by input mode.", action_id)
+	var exists: bool = false
+	for target: PrototypeInteractable in world_host.current_location.interactables():
+		if target.instance_id == source_id and target.dialogue_id == dialogue.definition.stable_id:
+			exists = true
+	if not exists:
+		return DialogueService.ActionResult.new(false, "Quest source unloaded.", action_id)
+	return quests.apply(quest_id, action_id, session.current_location_id, source_id)
+
+
+func _refresh_journal() -> void:
+	ui.show_objective(quests.objective("prototype-maris-recovery"))
+	if journal_open:
+		ui.show_journal(true, quests.journal())
+
+
+func _toggle_journal() -> void:
+	if dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
+		return
+	journal_open = not journal_open
+	ui.show_journal(journal_open, quests.journal())
+	_update_controls()
+	_refresh_interaction()
+
+
+func _configure_quest_fixture() -> void:
+	# Explicit, debug-only simulated objective. No fact mutation on boot/load.
+	if session.current_location_id != "prototype-tollworks" or not OS.is_debug_build() or "--quest-test-fixtures" not in OS.get_cmdline_user_args():
+		return
+	var fixture: PrototypeInteractable = preload("res://features/interaction/prop_interaction.tscn").instantiate()
+	fixture.name = "GuardianTestFixture"
+	fixture.instance_id = "prototype-guardian-test"
+	fixture.dialogue_id = "prototype-guardian-test-dialogue"
+	fixture.prompt = "TEST ONLY: simulate guardian clearance (P008 pending)"
+	fixture.position = Vector3(-4, 0, 3)
+	fixture.get_node("Sign").text = "TEST ONLY\nGuardian clearance"
+	world_host.current_location.add_child(fixture)

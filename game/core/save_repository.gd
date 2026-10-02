@@ -11,6 +11,7 @@ class ReadResult:
 	var recovered: bool = false
 	var source: String = ""
 	var status: String = ""
+	var migrated: bool = false
 
 
 func _init(save_path: String = "user://saves/returning-fair.json") -> void:
@@ -110,5 +111,6 @@ func _read_file(filename: String, catalog: ContentCatalog) -> ReadResult:
 	var decoded: SaveCodec.DecodeResult = SaveCodec.decode(bytes.get_string_from_utf8(), catalog)
 	result.session = decoded.session
 	result.errors = decoded.errors
+	result.migrated = decoded.migrated
 	result.status = "valid" if decoded.session != null else ("incompatible" if decoded.incompatible else "malformed")
 	return result

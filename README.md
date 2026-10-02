@@ -1,10 +1,12 @@
 # Returning Fair prototype
 
-P001–P006 complete. Start in Alderwake; approach purple temporary companion or
+P001–P007 complete. Start in Alderwake; approach purple temporary companion or
 gold practice marker and press E to talk/inspect. Choose with mouse or Tab/Enter;
 Finish/Close or Esc returns control. E at glowing gate travels to Tollworks/back.
 Both rooms reuse labeled prototype interactions. Physical hero, mouse facing,
-overhead follow, projection and zoom remain.
+overhead follow, projection and zoom remain. Maris's prototype counter is southwest;
+accept her lead, travel north, and read J journal. Normal play reaches the guardian
+objective, whose actual combat is P008. See the explicit test fixture below.
 
 ## Run and check
 
@@ -24,8 +26,11 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --path $gamePath --script res://tests/location_travel_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/save_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/interaction_dialogue_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/quest_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=write
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=read
+& $godotExe --headless --path $gamePath --script res://tests/quest_process_checks.gd -- --phase=write
+& $godotExe --headless --path $gamePath --script res://tests/quest_process_checks.gd -- --phase=read
 ```
 
 Verified engine: `4.7.2.stable.mono.official.ed1daf0bf`. Esc pauses/resumes; F10
@@ -38,18 +43,36 @@ speed. Pause/UI focus/window focus loss clears held controls; press movement key
 again after control returns. HUD pointer regions block aim/wheel zoom. Attack,
 Space dodge remain configured only. E selects nearest visible interaction;
 dialogue blocks gameplay input, clears held movement, and excludes save/load.
-Dialogue choices are temporary presentation only; no quest/reward/trust effects.
+Practice-marker/companion choices remain presentation-only. Maris/vessel choices
+submit quest commands with prerequisite/source checks and durable once-only effects.
+J opens the journal; J/Esc/Close returns control. Both modals clear held movement,
+contain Tab focus, and block world input/save/load. No trust or upgrades yet.
 P003 rendered playtests and
 manual keyboard/collision confirmation passed; orthographic retained provisionally.
 
-Esc opens Save run / Load saved run. Save health, party and elapsed time while
-paused outside travel/dialogue; Load returns to the last arrival anchor in the saved room,
+Esc opens Save run / Load saved run. Save health, party, elapsed time, quest progress
+and effects while paused outside travel/dialogue/journal; Load returns to the last arrival anchor in the saved room,
 not the saved physical position. No autosave: reopen, pause, choose Load to resume.
 Normal slot is `user://saves/returning-fair.json` in Godot's application user-data
 directory, with `.bak` recovery. Missing/corrupt primary may recover validated
 backup visibly; incompatible versions are rejected and preserved. Both corrupt
 files require repair or archiving that slot before saving. Version rules and
-boundaries: [architecture](docs/ARCHITECTURE.md).
+boundaries: [architecture](docs/ARCHITECTURE.md). Schema v2/content v1 migrates exact
+old v1 saves to an unstarted quest with no effects, preserving old facts. Load does
+not rewrite the file; explicit Save writes v2. Malformed/newer data is rejected.
+
+For P007's downstream recovery validation only, run:
+
+```powershell
+& $godotExe --path $gamePath -- --quest-test-fixtures --save-slot=p007-manual
+```
+
+This debug-only flag adds a TEST ONLY guardian-clearance prop in southwest Tollworks.
+After accepting the lead and travelling, E/choice explicitly simulates clearance.
+Inspect Maris's southeast vessel, return north to Alderwake, and choose reconnection
+at her counter. Repeating choices grants no second effect. This is a shortened,
+labeled adaptation, not normal combat or the full campaign. The practical return
+scene/shop variant is P011; vessel recovery does not repair the ship.
 
 Installed Mono editor reports missing .NET SDK `10.0.9` during editor import.
 Import finishes with exit 0; this GDScript game and its headless check run cleanly.
@@ -62,8 +85,14 @@ Godot cache/certificate access; final checks used normal local application acces
 - `game/core/`: typed catalog manifest, definition base, atomic validation/indexes.
 - `game/core/save_codec.gd`, `save_repository.gd`: strict versioned plain-data
   validation, detached candidate runs, checked temporary writes and good backup.
-- `game/content/`: authored actor/location/dialogue `.tres` definitions.
-- `game/app/game_session.gd`: mutable time, location/spawn IDs, actor instances.
+- `game/content/`: authored actor/location/dialogue/quest `.tres` definitions.
+- `game/app/game_session.gd`: mutable time, location/spawn IDs, actor instances,
+  independent quest states and completed effect IDs.
+- `game/features/quests/`: ordered immutable steps, separate runtime progress,
+  legal command/effect transactions and journal queries.
+- `game/tests/quest_checks.gd`, `quest_process_checks.gd`: legality/idempotency,
+  strict save progress/migration, root journal/travel/rebinding and OS-process
+  persistence. Direct rule/guardian setup is explicitly synthetic test content.
 - `game/app/world_host.gd`, `party.gd`: synchronous travel lock, actor suspension,
   scene/anchor validation, physics/navigation synchronization, safe placement,
   rollback and resume. Actor wrappers/state survive room replacement.
@@ -106,7 +135,8 @@ source, documentation, and evidence recorded in the initial progress commit.
 No remote configured.
 
 Maris retains supplied `npc-03` identity. Her health is a prototype default;
-no additional canon facts imported. Source `D:/development/game-prototype-2`
+P007 selectively adapts her missing customer fitting experience and familiar-counter
+reconnection from source MQ03, without changing campaign order. Source `D:/development/game-prototype-2`
 now contains source files (rechecked 2026-10-02); previous empty-checkout note was
 stale. Consult relevant canon before story adaptation. Companion/greeting are labeled noncanonical
 fixtures; purple stand-ins demonstrate dialogue in both rooms, without companion
@@ -118,6 +148,7 @@ Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
 [P003 validation](docs/evidence/P003/VALIDATION.md),
 [P004 validation](docs/evidence/P004/VALIDATION.md),
 [P005 validation](docs/evidence/P005/VALIDATION.md),
-[P006 validation](docs/evidence/P006/VALIDATION.md).
-Next eligible task: P007 (not started). Read
+[P006 validation](docs/evidence/P006/VALIDATION.md),
+[P007 validation](docs/evidence/P007/VALIDATION.md).
+Next eligible task: P008 (not started). Read
 [current state](docs/CURRENT_STATE.md) before work.

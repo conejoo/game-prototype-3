@@ -62,7 +62,7 @@ func _run() -> void:
 			await game.world_host.transition_finished
 		await physics_frame
 		var room: PrototypeLocation = game.world_host.current_location
-		_check(room.interactables().size() == 3, "Room needs NPC, prop, gate")
+		_check(room.has_node("TemporaryCompanion") and room.has_node("PracticeMarker") and room.has_node("TravelGate"), "Room needs NPC, prop, gate")
 		for target_name: String in ["TemporaryCompanion", "PracticeMarker"]:
 			var target: PrototypeInteractable = room.get_node(target_name)
 			actor.global_position = target.global_position + Vector3(0, 0, 1.2)

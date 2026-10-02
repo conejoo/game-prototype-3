@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
+[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
+
+[sub_resource type="Resource" id="Simulate"]
+script = ExtResource("2")
+stable_id = "guardian-test-choice"
+label = "TEST ONLY: simulate guardian clearance (no combat)."
+quest_id = "prototype-maris-recovery"
+action_id = "maris-clear-guardian"
+response = PackedStringArray("TEST FIXTURE: guardian clearance recorded through quest rules. This is simulated, not combat evidence. P008 must replace this source with actual guardian defeat.")
+
+[resource]
+script = ExtResource("1")
+stable_id = "prototype-guardian-test-dialogue"
+display_name = "TEST ONLY — P007 simulated objective"
+prototype_fixture = true
+speaker_actor_id = "prototype-hero"
+lines = PackedStringArray("DEBUG TEST ONLY. No guardian/combat exists yet. This explicit fixture tests the downstream recovery sequence. Normal runs have no clearance interaction.")
+choices = Array[ExtResource("2")]([SubResource("Simulate")])

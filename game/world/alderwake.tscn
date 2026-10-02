@@ -180,3 +180,12 @@ instance_id = "alderwake-temporary-companion"
 [node name="PracticeMarker" parent="." instance=ExtResource("5_prop")]
 position = Vector3(2, 0, 1)
 instance_id = "alderwake-practice-marker"
+
+[node name="MarisCounter" parent="." instance=ExtResource("4_npc")]
+position = Vector3(-4, 0, 3)
+instance_id = "npc-03-counter"
+prompt = "Talk to Maris at prototype counter"
+dialogue_id = "prototype-maris-counter"
+
+[node name="Sign" parent="MarisCounter" index="2"]
+text = "Maris [npc-03]\nPrototype counter"
