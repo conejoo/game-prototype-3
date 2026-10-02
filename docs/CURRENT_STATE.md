@@ -1,101 +1,85 @@
 # Current prototype state
 
-Last updated: 2026-10-02 (America/Vancouver). Verified implementation state.
+Last updated: 2026-10-02 (America/Vancouver). Verified through P003.
 
 ## Current task
 
-- P002 complete; P001 prerequisite rechecked. P003 next eligible; P003–P014 pending.
-- Runnable stationary graybox with pause/resume/quit, validated content catalog,
-  explicit session initialization, separate mutable actor health and run progress.
-- No movement, quest runner, combat, companion AI, saves, Blender assets, or export.
+- P003 complete; P001/P002 prerequisites pass. P004 next eligible, not started.
+- Physical hero, camera-relative WASD, mouse ground-facing, overhead follow,
+  two projections, zoom, collidable graybox, pause/resume/quit and validated catalog.
+- No location travel, saves, combat, runtime dialogue, companions or Blender assets.
 
 ## Implementation and changed files
 
-Root: `D:/development/game-dev-blender/returning-fair-prototype`; Godot project:
-root plus `/game`. Architecture contract unchanged; source reference untouched.
+Root: `D:/development/game-dev-blender/returning-fair-prototype`; Godot path `/game`.
+Initial Git clean at `cddb606`. Existing scene/script UIDs and source preserved.
 
-- `game/core/content_definition.gd`, `content_manifest.gd`, `content_catalog.gd`:
-  typed authored data, global stable-ID uniqueness, field/reference validation,
-  typed lookups. Candidate errors return descriptive strings without publishing
-  partial indexes or replacing a good catalog.
-- `game/features/actors/actor_definition.gd`, `actor_state.gd`,
-  `actor_placeholder.gd`: authored max health, per-instance scalar copies, wrapper
-  receiving authoritative session state; visual remains under `VisualRoot`.
-- `game/world/location_definition.gd`,
-  `game/features/dialogue/dialogue_definition.gd`: scene/spawn/actor references,
-  speaker/line metadata. No room travel or dialogue runtime added.
-- `game/content/prototype_catalog.tres`, `actors/{hero,maris,temporary_companion}.tres`,
-  `locations/test_room.tres`, `dialogue/temporary_companion.tres`: five definitions.
-- `game/app/game_session.gd`: validated one-time initialization, actor dictionary,
-  current location/spawn IDs and time. Rejected initialization preserves progress.
-- `game/app/game_root.gd`, `.tscn`: catalog -> session -> actor wrapper initialization;
-  invalid content aborts startup with exit 1. Existing camera/UI composition kept.
-- `game/tests/content_catalog_checks.gd`, `application_smoke.gd`: focused negative,
-  ownership and integration checks. New generated script `.uid` files retained;
-  original scene/script UIDs preserved.
-- `README.md`, `docs/CHECKLIST.md`, this file, `docs/evidence/P002/`: commands,
-  completion, evidence and handoff. No P003 implementation started.
+- `game/features/actors/actor_placeholder.gd`: CharacterBody3D wrapper; accepted
+  unhandled presses/release clearing, 4 m/s normalized movement, gravity/sliding,
+  viewport mouse aim and visual-only facing. Session still supplies ActorState.
+- `game/app/game_root.tscn`: independent capsule collider/VisualRoot/aim marker.
+  Minimum wall slide angle zero permits shallow-angle movement along walls.
+- `game/app/camera_rig.gd`: supplied target follow, camera-relative axes/ground ray,
+  orthographic size18 or perspective45°, offset (10,14,16), zoom0.8–1.15.
+- `game/app/game_root.gd`, `game/project.godot`: explicit controls wiring; logical
+  WASD, P projection, wheel/+/- zoom; pause/window focus clears accepted movement.
+- `game/world/test_room.tscn`: four physical walls and beacon plinth; original
+  floor retained. Near front/right walls lower for visibility.
+- `game/ui/prototype_ui.gd`, `.tscn`: controls/camera label, UI/pointer isolation.
+- `game/tests/movement_camera_checks.gd`, `live_playtest_checks.gd`,
+  `application_smoke.gd`: focused physics/input/protocol checks; script UIDs kept.
+- `game/tests/live_playtest_bridge.gd`, `tools/send_playtest.ps1`, `tools/PLAYTEST.md`:
+  user-authorized opt-in local input/capture harness. Debug-only, no listener;
+  bounded timed keys/chords, mouse/GUI events, observations, captures and quit.
+  Normal InputMap/GUI paths; no direct actor/session/quest mutation.
+- README/checklist/current state/evidence updated. ARCHITECTURE adds deliberate
+  developer-tool boundary and records provisional camera decision.
 
 ## Checks and evidence
 
-Engine: `4.7.2.stable.mono.official.ed1daf0bf` (`--version`, exit 0).
-Executable: `D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe`.
-All commands below use `--path D:/development/game-dev-blender/returning-fair-prototype/game`.
-Exact complete commands, logs and acceptance mapping: `evidence/P002/VALIDATION.md`.
+Engine `4.7.2.stable.mono.official.ed1daf0bf`, --version exit0.
+Exact commands/exits, acceptance mapping and evidence: `evidence/P003/VALIDATION.md`.
 
-- `--headless --editor --import --log-file <P002>/editor-first.log`: exit 0,
-  imports/classes registered, no GDScript parse errors. Existing missing Mono
-  SDK `10.0.9` diagnostic remains; GDScript does not require C# tooling.
-- `--headless --script res://tests/content_catalog_checks.gd --log-file <P002>/catalog-final.log`:
-  exit 0/PASS. Duplicate IDs (including cross-kind), missing/wrong-kind references,
-  invalid fields, scenes/spawns/dialogue, missing/null/unsupported definitions,
-  atomic rejection, independent actor health/session time/location progress.
-- `--headless --script res://tests/application_smoke.gd --log-file <P002>/smoke-first.log`:
-  exit 0/PASS. Actual root initializes services/wrapper; P001 composition/input/
-  synthetic pause/resume regression passes without runtime errors.
-- `--headless --script res://tests/content_catalog_checks.gd --log-file <P002>/invalid-startup.log -- --invalid-startup`:
-  expected exit 1. Actual root reports empty hero ID and missing actor reference;
-  no partial usable session. These logged errors are deliberate negative evidence.
-- `--quit-after 30 --log-file <P002>/windowed-startup.log`: exit 0, real Windows
-  Compatibility renderer starts main scene cleanly (RTX 4070 Laptop, driver
-  581.29). Bounded startup only, no new interactive/gameplay quality claim.
-- `git diff --check`: exit 0. P001 baseline commit `237fdf9`; clean Git snapshot
-  immediately before P002 edits. Old handoff's no-commit claim was stale.
-  P002 implementation/docs/evidence recorded together in local Git at user's
-  request on 2026-10-02. No push or publication.
+- Editor import exit0; no GDScript errors. Existing unused C# SDK10.0.9 warning.
+- Final application smoke, movement/camera and live bridge checks exit0/PASS.
+  P002 catalog check exit0/PASS. Definitions/health/session isolation retained.
+- Git diff --check exit0; no unconsumed bridge readiness files after shutdown.
+- Real Windows Compatibility renderer: RTX4070 Laptop, driver581.29. Timed
+  viewport input traversed actual room (no teleports): all four walls, two corners,
+  escape and plinth contact. Screenshots inspected; responses retain exact state.
+- Same-position projection comparison and two aim directions inspected;
+  orthographic retained provisionally for consistent scale/readability.
+- Rendered pause/held-key resume, focused Pause button, mouse Pause/Resume,
+  HUD aim exclusion and zoom0.8/1.15 checks pass. Windowed quits exit0.
+- User manually confirmed: “Collisions work, I can walk around.” Hardware key
+  events/contact logs in interactive-verified.log; no normal-play debug setup.
 
-P001's actual interactive evidence remains in `evidence/P001/VALIDATION.md`.
-P002 changes data/ownership only; no new visual or playable feature claimed.
+## Decisions, repairs and limits
 
-## Decisions, repairs and limitations
+- Logical WASD and independent mouse facing are provisional controls. P/zoom
+  remain comparison controls. Attack/dodge/interact bindings have no behavior yet.
+- Default15° wall slide threshold caused shallow diagonal sticking; set zero,
+  rechecked both corners/escape. Headless viewport explicitly960x640; aim uses
+  viewport mouse events because synthetic motion does not update OS mouse query.
+- Windows automation key taps lacked a sustained physics interval and sent a
+  mismatched physical code. Logical bindings repaired mapping; user explicitly
+  authorized timed local tools. Monotonic deadlines fix short timers after slow
+  capture frames. Developer inputs still differ from OS hardware/focus behavior.
+- Initial desktop lock blocked computer-use; user unlocked and manually played.
+  Later rendered checks use in-game captures, not locked-desktop UI automation.
+  Historical failed/blocked attempts remain labeled in validation record.
+- Test harness starts only with explicit flag in a debug build, writes ignored
+  builds/playtest sessions and releases input afterward. It cannot prove normal
+  story progression, save behavior or an exported build. Commands/evidence reusable.
+- Source reference now restored (game-story.txt/docs/lib etc. present). Old empty
+  checkout note stale. Read-only inventory only; no P003 narrative adaptation.
+- P003 implementation, tools and evidence recorded in local Git at user request
+  on 2026-10-02. No unrelated user changes, source edits, push or publication.
+  Missing C# SDK, Blender connection/assets and export remain outside current item.
 
-- Definitions treated as immutable by contract. Session/ActorState retain IDs
-  and scalar values; UI/models do not own campaign state. No autoload, speculative
-  quest/combat/reward/save service or architecture change.
-- IDs: `prototype-hero`, `npc-03`, `prototype-companion`, `prototype-test-room`,
-  `prototype-companion-greeting`; player instance `party-player`; spawn metadata
-  `prototype-start`. Spawn placement/anchors remain P004 work.
-- Maris ID/name supplied by user; all health defaults are prototype content.
-  Source checkout has only `.git`, no HEAD commits, no requested story/canon files;
-  confirmed both sandbox and normal-access read. No extra named facts imported.
-  Restore or supply relevant source canon before later narrative adaptation;
-  no restoration/modification attempted here. This does not block P003 movement.
-- Companion and greeting explicitly labeled temporary/noncanonical; neither
-  spawned/run yet. No permanent companion, romance, household or hero motive
-  decision made. Retired currency concepts not introduced.
-- First catalog test failed because manifest `duplicate(true)` retained external
-  `.tres` references. Fixed by duplicating each definition explicitly; final
-  checks also prove cached authored resources stay unchanged. Disk content never
-  changed by tests. Initial failed log retained as `catalog-first.log`.
-- Initial sandbox prerequisite smoke passed with cache/certificate diagnostics;
-  final engine checks used normal application access and explicit evidence logs.
-- P002 acceptance has no remaining blocker. SDK warning affects unused C# tooling.
-  Blender connection/export templates remain unverified, outside current task.
+## Next eligible task
 
-## Next session
-
-P003 only: hero CharacterBody3D movement/facing/collision, camera-relative controls
-and aiming, pause/UI input isolation, modest zoom; compare orthographic and mild
-perspective in same room with actual interactive evidence. Recheck prerequisites,
-preserve P002 implementation, read instructions/docs first. No canon source
-needed for temporary movement fixture. Stop before P004 unless explicitly authorized.
+P004 only: connected Alderwake/Tollworks grayboxes, stable spawn anchors, explicit
+party suspend/load/place/resume lifecycle and repeated round-trip evidence.
+Read architecture/checklist first; recheck P003 and source canon before narrative
+adaptation. Live harness usage: `../tools/PLAYTEST.md`. No next-item work started.

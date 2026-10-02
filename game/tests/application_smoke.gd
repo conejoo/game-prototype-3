@@ -28,7 +28,7 @@ func _run() -> void:
 		_check(events.size() == 1 and events[0] is InputEventKey, "Bad key action %s" % action)
 		if events.size() == 1 and events[0] is InputEventKey:
 			var binding: InputEventKey = events[0] as InputEventKey
-			var code: int = binding.keycode if action in ["pause", "quit"] else binding.physical_keycode
+			var code: int = binding.physical_keycode if action in ["dodge", "interact"] else binding.keycode
 			_check(code == keys[action], "Wrong key for %s" % action)
 	var attacks: Array[InputEvent] = InputMap.action_get_events("attack")
 	_check(attacks.size() == 1 and attacks[0] is InputEventMouseButton, "Attack must use mouse")

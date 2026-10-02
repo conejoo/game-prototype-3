@@ -15,6 +15,19 @@ material = SubResource("Material_player")
 radius = 0.35
 height = 1.6
 
+[sub_resource type="CapsuleShape3D" id="Shape_player"]
+radius = 0.35
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="Material_aim"]
+albedo_color = Color(0.2, 1, 0.95, 1)
+shading_mode = 0
+
+[sub_resource type="TorusMesh" id="Mesh_aim"]
+material = SubResource("Material_aim")
+inner_radius = 0.14
+outer_radius = 0.2
+
 [sub_resource type="StandardMaterial3D" id="Material_heading"]
 albedo_color = Color(0.85, 0.96, 0.95, 1)
 
@@ -42,8 +55,17 @@ process_mode = 1
 [node name="Party" type="Node3D" parent="."]
 process_mode = 1
 
-[node name="PlayerPlaceholder" type="Node3D" parent="Party"]
+[node name="PlayerPlaceholder" type="CharacterBody3D" parent="Party"]
+wall_min_slide_angle = 0.0
 script = ExtResource("5_actor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Party/PlayerPlaceholder"]
+position = Vector3(0, 0.8, 0)
+shape = SubResource("Shape_player")
+
+[node name="AimMarker" type="MeshInstance3D" parent="Party/PlayerPlaceholder"]
+visible = false
+mesh = SubResource("Mesh_aim")
 
 [node name="VisualRoot" type="Node3D" parent="Party/PlayerPlaceholder"]
 

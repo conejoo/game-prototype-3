@@ -10,6 +10,7 @@ signal quit_requested
 @onready var resume_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Resume
 @onready var pause_button: Button = $Screen/Header/Margin/Row/Pause
 @onready var time_label: Label = $Screen/Header/Margin/Row/PlayTime
+@onready var camera_label: Label = $Screen/Footer/Margin/Text
 
 
 func _ready() -> void:
@@ -32,3 +33,16 @@ func show_paused(paused: bool) -> void:
 
 func show_play_time(seconds: float) -> void:
 	time_label.text = "Play time %03ds" % int(seconds)
+
+
+func accepts_world_pointer(point: Vector2) -> bool:
+	return (
+		not pause_overlay.visible
+		and not $Screen/Header.get_global_rect().has_point(point)
+		and not $Screen/Footer.get_global_rect().has_point(point)
+		and $Screen.get_global_rect().has_point(point)
+	)
+
+
+func show_camera(description: String) -> void:
+	camera_label.text = "WASD: move · Mouse: face cyan marker · Wheel / +/-: zoom · P: projection\n%s · Esc: pause/resume · F10: quit · Prototype movement room" % description

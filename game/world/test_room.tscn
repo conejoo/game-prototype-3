@@ -25,8 +25,31 @@ size = Vector3(14, 1.5, 0.4)
 material = SubResource("Material_wall")
 size = Vector3(0.4, 1.5, 12)
 
+[sub_resource type="BoxShape3D" id="Shape_back_wall"]
+size = Vector3(14, 1.5, 0.4)
+
+[sub_resource type="BoxShape3D" id="Shape_side_wall"]
+size = Vector3(0.4, 1.5, 12)
+
+[sub_resource type="BoxMesh" id="Mesh_front_wall"]
+material = SubResource("Material_wall")
+size = Vector3(14, 0.6, 0.4)
+
+[sub_resource type="BoxShape3D" id="Shape_front_wall"]
+size = Vector3(14, 0.6, 0.4)
+
+[sub_resource type="BoxMesh" id="Mesh_right_wall"]
+material = SubResource("Material_wall")
+size = Vector3(0.4, 0.6, 12)
+
+[sub_resource type="BoxShape3D" id="Shape_right_wall"]
+size = Vector3(0.4, 0.6, 12)
+
 [sub_resource type="BoxMesh" id="Mesh_plinth"]
 material = SubResource("Material_wall")
+size = Vector3(2, 0.6, 2)
+
+[sub_resource type="BoxShape3D" id="Shape_plinth"]
 size = Vector3(2, 0.6, 2)
 
 [sub_resource type="StandardMaterial3D" id="Material_beacon"]
@@ -50,17 +73,50 @@ mesh = SubResource("Mesh_floor")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("Shape_floor")
 
-[node name="BackWall" type="MeshInstance3D" parent="."]
+[node name="BackWall" type="StaticBody3D" parent="."]
 position = Vector3(0, 0.75, -6)
+
+[node name="Mesh" type="MeshInstance3D" parent="BackWall"]
 mesh = SubResource("Mesh_back_wall")
 
-[node name="SideWall" type="MeshInstance3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall"]
+shape = SubResource("Shape_back_wall")
+
+[node name="SideWall" type="StaticBody3D" parent="."]
 position = Vector3(-7, 0.75, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SideWall"]
 mesh = SubResource("Mesh_side_wall")
 
-[node name="Plinth" type="MeshInstance3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
+shape = SubResource("Shape_side_wall")
+
+[node name="FrontWall" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.3, 6)
+
+[node name="Mesh" type="MeshInstance3D" parent="FrontWall"]
+mesh = SubResource("Mesh_front_wall")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrontWall"]
+shape = SubResource("Shape_front_wall")
+
+[node name="RightWall" type="StaticBody3D" parent="."]
+position = Vector3(7, 0.3, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="RightWall"]
+mesh = SubResource("Mesh_right_wall")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall"]
+shape = SubResource("Shape_right_wall")
+
+[node name="Plinth" type="StaticBody3D" parent="."]
 position = Vector3(3, 0.3, -2)
+
+[node name="Mesh" type="MeshInstance3D" parent="Plinth"]
 mesh = SubResource("Mesh_plinth")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plinth"]
+shape = SubResource("Shape_plinth")
 
 [node name="TestBeacon" type="Node3D" parent="."]
 position = Vector3(3, 1.2, -2)

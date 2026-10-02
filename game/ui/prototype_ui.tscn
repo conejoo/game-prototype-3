@@ -73,7 +73,7 @@ text = "RETURNING FAIR"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.71, 0.73, 1)
 theme_override_font_sizes/font_size = 14
-text = "P001  /  Application test room  /  Prototype content"
+text = "P003  /  Movement + camera test room  /  Prototype content"
 
 [node name="PlayTime" type="Label" parent="Screen/Header/Margin/Row"]
 layout_mode = 2
@@ -108,8 +108,8 @@ theme_override_constants/margin_bottom = 12
 [node name="Text" type="Label" parent="Screen/Footer/Margin"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Esc or Pause button: pause / resume     |     F10: quit
-Rotating gold beacon tests simulation. Hero stationary; movement arrives in P003."
+text = "WASD: move · Mouse: face cyan marker · Wheel / +/-: zoom · P: projection
+Orthographic · Esc: pause/resume · F10: quit · Prototype movement room"
 
 [node name="PauseOverlay" type="Control" parent="Screen"]
 visible = false

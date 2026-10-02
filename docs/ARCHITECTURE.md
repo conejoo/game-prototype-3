@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: proposed implementation contract; no Godot prototype exists yet.
+Status: implementation contract; runnable Godot prototype through P003.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -194,9 +194,29 @@ replacement visual can be added without rewriting the session or first quest.
 Demonstrate extension with a small isolated content fixture, not by doubling
 the production scope. A runnable Windows export is the final prototype gate.
 
+### Local live playtest tooling (P003)
+
+An explicitly enabled debug-only bridge under `game/tests/` accepts bounded
+JSON commands from a local `builds/playtest/<session>` directory. GameRoot
+composes it only with `--playtest-dir=...`; normal runs and release builds do
+not start it. No listener, network endpoint, executable command or autoload.
+
+The bridge injects viewport key/mouse events through normal InputMap/GUI paths,
+schedules holds using monotonic time, and observes/captures the actual rendered
+application. It does not teleport actors, change session/quest/reward/save facts,
+or bypass gameplay input gates. Commands carry boot/request IDs, validate before
+input, avoid duplicate execution and release held input afterward. Outputs remain
+ignored local artifacts unless deliberately copied to validation evidence.
+
+This tool supports repeatable windowed playtests without OS key-hold automation.
+Injected input does not prove physical keyboard mappings or OS focus handling;
+those require separate real desktop/manual evidence. A synthetic objective still
+cannot establish normal quest gameplay. Harness observations never own game state.
+
 ## Decisions still open
 
-- Orthographic versus mild-perspective camera: compare the same playable room.
+- P003 chooses orthographic provisionally after same-room playable comparison;
+  revisit camera projection/feel with richer locations and combat.
 - First canonical companion and hero's reason for onward travel.
 - Combat timing, difficulty, aiming details, art palette, and minimum PC target.
 

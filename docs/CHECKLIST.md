@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P002 verified complete; P003 next eligible. Subsequent tasks remain pending.
+P001–P003 verified complete; P004 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -33,7 +33,7 @@ P001–P002 verified complete; P003 next eligible. Subsequent tasks remain pendi
 - Acceptance: duplicate IDs, absent references, and malformed definitions fail
   with useful errors; two instances do not share mutable health/progress.
 
-## [ ] P003 — Hero movement and overhead camera
+## [x] P003 — Hero movement and overhead camera
 
 - Implement CharacterBody3D movement, facing, collision, InputMap controls,
   camera-relative movement, and independent visual root.
@@ -199,3 +199,24 @@ Next eligible task:
   external definition after manifest-only deep copy proved insufficient.
   No architecture change; existing P001 commit and source preserved.
 - Next eligible task: P003 — Hero movement and overhead camera.
+
+### P003 — completed 2026-10-02
+
+- Changed: physical hero/independent VisualRoot, collidable walls/plinth,
+  camera-relative WASD/mouse facing, overhead follow, projection comparison/zoom,
+  pause/UI/focus input clearing; focused checks and opt-in local live playtest tools.
+- Checks/evidence: import exit 0 (no GDScript errors); P001 smoke, P002 catalog,
+  P003 movement/camera and bridge checks PASS/exit 0. Actual Windows renderer
+  inspected via viewport captures; timed normal input reached all walls, both
+  corners, escaped and contacted plinth. Pause/held-key/UI focus/zoom checks pass;
+  normal quit exit 0. User also confirmed normal keyboard walking/collision.
+  Exact commands, JSON responses and screenshots: `evidence/P003/VALIDATION.md`.
+- Decisions/repairs: provisional orthographic chosen from same-room comparison;
+  logical WASD, mouse facing, P and wheel/+/- comparison controls. Minimum wall
+  slide angle zero fixes shallow-angle sticking; monotonic harness timing avoids
+  short holds after capture stalls. Definitions/session ownership unchanged.
+- Limits: test input is injected into normal Godot viewport paths, not OS hardware.
+  Initial desktop lock/automation key-tap limits resolved for acceptance using
+  user manual evidence plus explicitly authorized rendered playtest harness.
+  Existing missing C# SDK warning remains; no Blender assets or Windows export.
+- Next eligible task: P004 — Connected locations and party lifecycle. Not started.

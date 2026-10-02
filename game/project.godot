@@ -14,19 +14,19 @@ window/stretch/mode="canvas_items"
 [input]
 move_forward={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":87)]
+"events": [Object(InputEventKey,"keycode":87)]
 }
 move_back={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":83)]
+"events": [Object(InputEventKey,"keycode":83)]
 }
 move_left={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":65)]
+"events": [Object(InputEventKey,"keycode":65)]
 }
 move_right={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"physical_keycode":68)]
+"events": [Object(InputEventKey,"keycode":68)]
 }
 attack={
 "deadzone": 0.2,
@@ -47,6 +47,18 @@ pause={
 quit={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"keycode":4194341)]
+}
+camera_projection={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"keycode":80)]
+}
+zoom_in={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"button_index":4), Object(InputEventKey,"keycode":61), Object(InputEventKey,"keycode":43)]
+}
+zoom_out={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"button_index":5), Object(InputEventKey,"keycode":45)]
 }
 
 [rendering]
