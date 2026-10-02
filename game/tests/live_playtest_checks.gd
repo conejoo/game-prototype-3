@@ -11,7 +11,10 @@ func _initialize() -> void:
 func _run() -> void:
 	root.size = Vector2i(960, 640)
 	var game: Node3D = (load("res://app/game_root.tscn") as PackedScene).instantiate()
+	game.initial_location_id = "prototype-test-room"
+	game.initial_spawn_id = "prototype-start"
 	root.add_child(game)
+	await game.world_host.transition_finished
 	await process_frame
 	_check(not game.has_node("LivePlaytestBridge"), "Bridge enabled without opt-in")
 	var bridge: Node = load("res://tests/live_playtest_bridge.gd").new()

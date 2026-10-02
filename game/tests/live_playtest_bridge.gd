@@ -3,7 +3,7 @@ extends Node
 
 const KEYS: Dictionary[String, int] = {
 	"W": KEY_W, "A": KEY_A, "S": KEY_S, "D": KEY_D,
-	"P": KEY_P, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
+	"P": KEY_P, "E": KEY_E, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
 	"+": KEY_EQUAL, "-": KEY_MINUS,
 }
 var game: Node3D
@@ -223,6 +223,12 @@ func _observe() -> Dictionary:
 		"paused": get_tree().paused, "controls_enabled": actor.controls_enabled,
 		"accepted_keys": actor.movement_buttons.keys(), "ui_focus": str(focus.name) if focus != null else "",
 		"play_seconds": game.session.elapsed_play_seconds,
+		"health": actor.state.health, "spawn_id": game.session.current_spawn_id,
+		"transitioning": game.world_host.transitioning,
+		"transition_count": game.world_host.transition_count,
+		"world_children": game.world_host.get_child_count(), "party_children": game.party.get_child_count(),
+		"party_suspended": game.party.suspended,
+		"actor_object_id": actor.get_instance_id(),
 	}
 
 

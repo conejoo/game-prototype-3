@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LocationDefinition" format=3]
+
+[ext_resource type="Script" path="res://world/location_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+stable_id = "prototype-tollworks"
+display_name = "Tollworks (prototype graybox)"
+prototype_fixture = true
+scene_path = "res://world/tollworks.tscn"
+spawn_ids = PackedStringArray("tollworks-start", "tollworks-from-alderwake")
+actor_ids = PackedStringArray("prototype-hero")

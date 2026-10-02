@@ -47,11 +47,14 @@ remain in the ignored session directory. Use a fresh directory for each run.
 | capture | none | Save actual viewport PNG; requires windowed renderer |
 | quit | none | Last step only; publish response, then normal F10 quit |
 
-Keys: W, A, S, D, P, ESC, TAB, ENTER, +, -. Coordinates use viewport pixels
+Keys: W, A, S, D, E, P, ESC, TAB, ENTER, +, -. Coordinates use viewport pixels
 (current prototype captures are 960x640), not desktop coordinates. Holds/waits
 are 16–5000 ms, up to 32 steps/30 seconds per request. Monotonic deadlines never
 release early; scheduling and physics quantization can extend observed duration.
 Responses report elapsed time, positions, contacts, headings, UI focus and PNGs.
+P004 observations also report location/spawn IDs, transition count/lock, actor
+object identity, health, room/party counts and party suspension. E uses the
+normal nearby travel-gate action; no direct transition command exists.
 
 All held keys/buttons release at request end. key_down does not persist between
 requests. Movement may be ignored while paused, UI-focused or after application

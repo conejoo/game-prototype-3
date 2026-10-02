@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bxqyi60lq2mjb"]
 
 [ext_resource type="Script" path="res://app/game_root.gd" id="1_root"]
-[ext_resource type="PackedScene" path="res://world/test_room.tscn" id="2_room"]
+[ext_resource type="Script" path="res://app/world_host.gd" id="2_room"]
+[ext_resource type="Script" path="res://app/party.gd" id="6_party"]
 [ext_resource type="Script" path="res://app/camera_rig.gd" id="3_camera"]
 [ext_resource type="PackedScene" path="res://ui/prototype_ui.tscn" id="4_ui"]
 [ext_resource type="Script" path="res://features/actors/actor_placeholder.gd" id="5_actor"]
@@ -49,11 +50,11 @@ script = ExtResource("1_root")
 
 [node name="WorldHost" type="Node3D" parent="."]
 process_mode = 1
-
-[node name="TestRoom" parent="WorldHost" instance=ExtResource("2_room")]
+script = ExtResource("2_room")
 
 [node name="Party" type="Node3D" parent="."]
 process_mode = 1
+script = ExtResource("6_party")
 
 [node name="PlayerPlaceholder" type="CharacterBody3D" parent="Party"]
 wall_min_slide_angle = 0.0

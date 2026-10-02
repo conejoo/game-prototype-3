@@ -177,3 +177,13 @@ text = "Resume"
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Quit prototype"
+
+[node name="TravelPrompt" type="Label" parent="Screen"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 94.0
+offset_right = 820.0
+offset_bottom = 125.0
+mouse_filter = 2
+text = "Loading prototype location…"
+theme_override_font_sizes/font_size = 18

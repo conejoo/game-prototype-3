@@ -11,6 +11,8 @@ signal quit_requested
 @onready var pause_button: Button = $Screen/Header/Margin/Row/Pause
 @onready var time_label: Label = $Screen/Header/Margin/Row/PlayTime
 @onready var camera_label: Label = $Screen/Footer/Margin/Text
+@onready var location_label: Label = $Screen/Header/Margin/Row/Titles/Subtitle
+@onready var travel_label: Label = $Screen/TravelPrompt
 
 
 func _ready() -> void:
@@ -45,4 +47,12 @@ func accepts_world_pointer(point: Vector2) -> bool:
 
 
 func show_camera(description: String) -> void:
-	camera_label.text = "WASD: move · Mouse: face cyan marker · Wheel / +/-: zoom · P: projection\n%s · Esc: pause/resume · F10: quit · Prototype movement room" % description
+	camera_label.text = "WASD: move · Mouse: face · E: travel at gate · Wheel / +/-: zoom\n%s · P: projection · Esc: pause/resume · F10: quit" % description
+
+
+func show_location(description: String) -> void:
+	location_label.text = "P004 / " + description
+
+
+func show_travel(message: String) -> void:
+	travel_label.text = message

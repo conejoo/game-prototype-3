@@ -1,6 +1,6 @@
 class_name LocationDefinition
 extends ContentDefinition
-## Authored scene and identities. Spawn placement/room travel arrive in P004.
+## Authored scene and identities. Physical anchors are validated by WorldHost.
 
 @export_file("*.tscn") var scene_path: String = ""
 @export var spawn_ids: PackedStringArray = []

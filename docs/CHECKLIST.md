@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P003 verified complete; P004 next eligible. Subsequent tasks remain pending.
+P001–P004 verified complete; P005 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -42,7 +42,7 @@ P001–P003 verified complete; P004 next eligible. Subsequent tasks remain pendi
 - Acceptance: wall/corner collisions work; camera and aiming agree; chosen
   projection and provisional controls are recorded with playable evidence.
 
-## [ ] P004 — Connected locations and party lifecycle
+## [x] P004 — Connected locations and party lifecycle
 
 - Add compact Alderwake and Tollworks grayboxes with stable spawn anchors.
 - WorldHost transitions locations while keeping session/party ownership clear.
@@ -220,3 +220,26 @@ Next eligible task:
   user manual evidence plus explicitly authorized rendered playtest harness.
   Existing missing C# SDK warning remains; no Blender assets or Windows export.
 - Next eligible task: P004 — Connected locations and party lifecycle. Not started.
+
+### P004 — completed 2026-10-02
+
+- Changed: compact Alderwake/Tollworks grayboxes, stable spawn anchors, nearby E
+  travel, persistent Party wrappers, WorldHost validate/suspend/load/place/resume
+  with physics/navigation synchronization, request lock and unsafe-spawn rollback.
+  Prior test room retained; earlier tests now await loader and select their fixture.
+- Checks/evidence: editor import exit0; P001/P002/P003 regressions, live bridge and
+  P004 lifecycle checks PASS/exit0. Ten headless round trips preserve actor/state,
+  health/time, valid arrivals and camera; invalid IDs/anchors/gates/floor/obstruction
+  reject safely; pause/focus/reentry input locked. Actual Windows normal viewport
+  WASD/E travel: four round trips plus final one after sign repair; captures
+  inspected, held keys clear, paused E blocked, normal F10 quit exit0 twice.
+  Exact commands/logs/JSON/screenshots: `evidence/P004/VALIDATION.md`.
+- Decisions/repair: candidate scene logic suspended while collision remains active
+  for spawn queries (disabling whole scene removed its physics bodies). Party stays
+  persistent; session location/spawn commit after placement only. Navigation map
+  refreshed; no agents/path cache exists until P009. Existing architecture retained.
+- Limits: prototype rooms/gates shorten geography; no new permanent story facts,
+  companions, saves, Blender assets or Windows export. Rendered input is injected
+  into normal gameplay paths, not hardware. Existing unused C# SDK warning remains.
+  P003 local commit `77aed4b` preserved; no source edits/push/publication.
+- Next eligible task: P005 — Versioned save/load foundation. Not started.

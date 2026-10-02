@@ -1,4 +1,4 @@
-extends Node3D
+extends PrototypeLocation
 ## Visible simulation marker for pause verification; no gameplay rules.
 
 @onready var beacon: Node3D = $TestBeacon

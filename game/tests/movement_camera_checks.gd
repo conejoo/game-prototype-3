@@ -14,7 +14,10 @@ func _initialize() -> void:
 func _run() -> void:
 	root.size = Vector2i(960, 640)
 	game = (load("res://app/game_root.tscn") as PackedScene).instantiate()
+	game.initial_location_id = "prototype-test-room"
+	game.initial_spawn_id = "prototype-start"
 	root.add_child(game)
+	await game.world_host.transition_finished
 	await process_frame
 	actor = game.player_placeholder
 	rig = game.camera_rig

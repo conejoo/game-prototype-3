@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ivcdj7b0nheu"]
+
+[ext_resource type="PackedScene" path="res://world/alderwake.tscn" id="1"]
+
+[node name="UnsafeLocation" instance=ExtResource("1")]
+location_id = "prototype-unsafe-location"
+
+[node name="Start" parent="Spawns" index="0"]
+position = Vector3(40, 0, 0)
+stable_id = "unsafe-no-floor"
+
+[node name="Arrival" parent="Spawns" index="1"]
+position = Vector3(3, 0, -2)
+stable_id = "unsafe-blocked"

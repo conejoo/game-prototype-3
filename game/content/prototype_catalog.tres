@@ -8,6 +8,9 @@
 [ext_resource type="Resource" path="res://content/locations/test_room.tres" id="6"]
 [ext_resource type="Resource" path="res://content/dialogue/temporary_companion.tres" id="7"]
 
+[ext_resource type="Resource" path="res://content/locations/alderwake.tres" id="8"]
+[ext_resource type="Resource" path="res://content/locations/tollworks.tres" id="9"]
+
 [resource]
 script = ExtResource("1")
-definitions = Array[ExtResource("2")]([ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7")])
+definitions = Array[ExtResource("2")]([ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9")])

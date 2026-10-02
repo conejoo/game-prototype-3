@@ -12,7 +12,10 @@ func _run() -> void:
 	print("P001 smoke: engine %s" % Engine.get_version_info()["string"])
 	var packed: PackedScene = load("res://app/game_root.tscn")
 	var game: Node3D = packed.instantiate()
+	game.initial_location_id = "prototype-test-room"
+	game.initial_spawn_id = "prototype-start"
 	root.add_child(game)
+	await game.world_host.transition_finished
 	await process_frame
 	for child_name: String in ["WorldHost", "Party", "CameraRig", "UI"]:
 		_check(game.has_node(child_name), "Root missing %s" % child_name)
