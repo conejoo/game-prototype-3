@@ -205,3 +205,76 @@ offset_bottom = 125.0
 mouse_filter = 2
 text = "Loading prototype location…"
 theme_override_font_sizes/font_size = 18
+
+[node name="DialogueOverlay" type="Control" parent="Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shade" type="ColorRect" parent="Screen/DialogueOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.01, 0.02, 0.03, 0.68)
+
+[node name="Center" type="CenterContainer" parent="Screen/DialogueOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Screen/DialogueOverlay/Center"]
+custom_minimum_size = Vector2(680, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Style_panel")
+
+[node name="Margin" type="MarginContainer" parent="Screen/DialogueOverlay/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="Options" type="VBoxContainer" parent="Screen/DialogueOverlay/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="Text" type="Label" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 80)
+autowrap_mode = 2
+
+[node name="Choices" type="VBoxContainer" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Next" type="Button" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
+text = "Continue"
+
+[node name="Close" type="Button" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
+text = "Close [Esc]"
+
+[node name="Status" type="Label" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 2

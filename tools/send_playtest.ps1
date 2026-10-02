@@ -18,7 +18,7 @@ $requestPath = Join-Path $taskSessionPath 'request.json'
 if (Test-Path -LiteralPath $requestPath) { throw 'An unconsumed request exists; do not overwrite.' }
 $temporaryPath = Join-Path $taskSessionPath ($requestId + '.tmp')
 $request | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $temporaryPath -Encoding utf8NoBOM
-Move-Item -LiteralPath $temporaryPath -Destination $requestPath
+[IO.File]::Move($temporaryPath, $requestPath)
 $responsePath = Join-Path $taskSessionPath ($requestId + '.json')
 $deadline = [DateTime]::UtcNow.AddSeconds($TimeoutSeconds)
 while (-not (Test-Path -LiteralPath $responsePath)) {

@@ -1,11 +1,27 @@
 [gd_resource type="Resource" script_class="DialogueDefinition" format=3]
 
 [ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
+[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
+
+[sub_resource type="Resource" id="Choice_look"]
+script = ExtResource("2")
+stable_id = "prototype-ask-room"
+label = "What should we look at?"
+action_id = "prototype-observe"
+response = PackedStringArray("Try the practice marker, then the glowing travel gate. This is temporary test dialogue, not a story objective.")
+
+[sub_resource type="Resource" id="Choice_leave"]
+script = ExtResource("2")
+stable_id = "prototype-keep-moving"
+label = "Let's keep moving."
+action_id = "prototype-leave"
+response = PackedStringArray("All right. This stand-in stays here until companion gameplay is ready.")
 
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-companion-greeting"
-display_name = "Temporary greeting (prototype fixture)"
+display_name = "Temporary companion (prototype fixture)"
 prototype_fixture = true
 speaker_actor_id = "prototype-companion"
 lines = PackedStringArray("[Prototype fixture; noncanonical] Ready to test this room together.")
+choices = Array[ExtResource("2")]([SubResource("Choice_look"), SubResource("Choice_leave")])

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cejcdiy2o8rxe"]
+
+[ext_resource type="Script" path="res://features/interaction/interactable.gd" id="1"]
+
+[sub_resource type="StandardMaterial3D" id="Material"]
+albedo_color = Color(0.75, 0.45, 0.85, 1)
+
+[sub_resource type="CapsuleMesh" id="Mesh"]
+material = SubResource("Material")
+radius = 0.35
+height = 1.6
+
+[sub_resource type="CapsuleShape3D" id="Shape"]
+radius = 0.35
+height = 1.6
+
+[node name="TemporaryCompanion" type="Node3D"]
+script = ExtResource("1")
+kind = "talk"
+prompt = "Talk to temporary companion"
+dialogue_id = "prototype-companion-greeting"
+
+[node name="VisualRoot" type="Node3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="VisualRoot"]
+position = Vector3(0, 0.8, 0)
+mesh = SubResource("Mesh")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0.8, 0)
+shape = SubResource("Shape")
+
+[node name="Sign" type="Label3D" parent="."]
+position = Vector3(0, 2.1, 0)
+billboard = 1
+pixel_size = 0.014
+font_size = 28
+text = "Temporary companion\nPrototype fixture"

@@ -62,6 +62,13 @@ so validation cannot overwrite the normal slot. Names accept 1–48 ASCII letter
 digits, underscore or hyphen; release builds ignore this option. No direct
 save/load or session-mutation bridge command is added.
 
+P006 adds read-only selected interaction ID/prompt and dialogue definition,
+source-instance ID, text, selected choice and explicit result/action ID. E reaches
+NPC/prop/gate through normal range/line-of-sight selection. Choose with mouse or
+Tab/Enter; Esc cancels dialogue before pause. The bridge adds no dialogue command
+or persistent-state mutation. Attack remains unimplemented; modal mouse blocking
+checks input arbitration only, not combat/damage behavior.
+
 All held keys/buttons release at request end. key_down does not persist between
 requests. Movement may be ignored while paused, UI-focused or after application
 focus loss; inspect controls_enabled and ui_focus instead of forcing game state.

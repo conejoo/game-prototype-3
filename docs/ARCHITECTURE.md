@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P005.
+Status: implementation contract; runnable Godot prototype through P006.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -187,6 +187,30 @@ load validated backup without rewriting files; incompatible versions or IO
 failures block fallback. Save refuses incompatible primary/backup and corrupt
 primary without valid backup. After recovery, explicit Save may replace corrupt
 primary while retaining good backup. Uncommitted temporary files are ignored.
+
+### Delivered interaction/dialogue boundary (P006)
+
+Location-owned interaction wrappers carry stable instance IDs, kind, prompt,
+reach and dialogue-definition ID. Replaceable visuals live under VisualRoot;
+collision stays on the wrapper. Nearest in-range, unobstructed target wins,
+with instance-ID ordering for ties; commands reselect rather than trust a stale
+prompt. Travel uses the same selector and existing WorldHost transaction.
+
+GameRoot composes a transient, node-independent DialogueService. Immutable
+DialogueDefinition/DialogueChoice Resources contain introduction lines and
+terminal choice responses. Runtime cursor/source/selection/result stay in the
+service, never in authored Resources or UI. P006 needs no general graph engine:
+explicit prototype-observe/prototype-leave actions only present responses;
+unknown actions fail. Quest/reward/trust commands must be routed to their owning
+services when those features arrive, with durable once-only IDs there.
+
+Dialogue is an exclusive input mode: clear held movement, disable actor controls,
+block world key/mouse actions, allow GUI choice/Finish/Close, and use Esc to cancel
+before pause. Pause UI cannot stack over dialogue. Closing releases GUI focus;
+fresh movement presses are required. Location unload cancels dialogue/source
+references. Save/load rejects active dialogue, even if externally forced paused;
+dialogue has no resumable checkpoint. Existing schema/content v1 remain compatible:
+only additive presentation fixtures were added, no durable data fields changed.
 
 ## Blender/Godot asset boundary
 

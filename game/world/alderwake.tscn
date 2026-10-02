@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" path="res://world/prototype_location.gd" id="1_room"]
 [ext_resource type="Script" path="res://world/spawn_anchor.gd" id="2_spawn"]
+[ext_resource type="Script" path="res://features/interaction/interactable.gd" id="3_interact"]
+[ext_resource type="PackedScene" path="res://features/interaction/npc_interaction.tscn" id="4_npc"]
+[ext_resource type="PackedScene" path="res://features/interaction/prop_interaction.tscn" id="5_prop"]
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.29, 0.36, 0.28, 1)
@@ -152,6 +155,11 @@ stable_id = "alderwake-from-tollworks"
 
 [node name="TravelGate" type="Marker3D" parent="."]
 position = Vector3(0, 0, -5)
+script = ExtResource("3_interact")
+instance_id = "alderwake-travel-gate"
+kind = "travel"
+prompt = "Enter Tollworks"
+reach = 1.6
 
 [node name="Ring" type="MeshInstance3D" parent="TravelGate"]
 position = Vector3(0, 0.03, 0)
@@ -165,10 +173,10 @@ font_size = 36
 text = "Enter Tollworks
 [E] nearby"
 
-[node name="LocationSign" type="Label3D" parent="."]
-position = Vector3(-3.5, 1.3, -2)
-billboard = 1
-pixel_size = 0.015
-font_size = 32
-text = "Alderwake
-Prototype graybox"
+[node name="TemporaryCompanion" parent="." instance=ExtResource("4_npc")]
+position = Vector3(-2, 0, 0)
+instance_id = "alderwake-temporary-companion"
+
+[node name="PracticeMarker" parent="." instance=ExtResource("5_prop")]
+position = Vector3(2, 0, 1)
+instance_id = "alderwake-practice-marker"

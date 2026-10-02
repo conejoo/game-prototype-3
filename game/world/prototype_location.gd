@@ -40,7 +40,27 @@ func validation_errors(definition: LocationDefinition, catalog: ContentCatalog) 
 			errors.append("gate destination '%s/%s' is absent" % [destination_id, destination_spawn_id])
 		if not has_node("TravelGate"):
 			errors.append("travel gate marker missing")
+	var interactions_seen: PackedStringArray = []
+	for target: PrototypeInteractable in interactables():
+		for error: String in target.validation_errors(catalog):
+			errors.append("interaction '%s': %s" % [target.instance_id, error])
+		if target.instance_id in interactions_seen:
+			errors.append("duplicate interaction instance '%s'" % target.instance_id)
+		interactions_seen.append(target.instance_id)
 	return errors
+
+
+func interactables() -> Array[PrototypeInteractable]:
+	var targets: Array[PrototypeInteractable] = []
+	_collect_interactables(self, targets)
+	return targets
+
+
+func _collect_interactables(parent: Node, targets: Array[PrototypeInteractable]) -> void:
+	for child: Node in parent.get_children():
+		if child is PrototypeInteractable:
+			targets.append(child as PrototypeInteractable)
+		_collect_interactables(child, targets)
 
 
 func can_travel(actor: ActorPlaceholder) -> bool:

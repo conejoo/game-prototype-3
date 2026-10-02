@@ -1,9 +1,10 @@
 class_name DialogueDefinition
 extends ContentDefinition
-## Catalog fixture only; no dialogue runner, choices, or narrative effects yet.
+## Immutable authored introduction and terminal choice responses, outside scenes.
 
 @export var speaker_actor_id: String = ""
 @export var lines: PackedStringArray = []
+@export var choices: Array[DialogueChoice] = []
 
 
 func validation_errors() -> PackedStringArray:
@@ -15,4 +16,14 @@ func validation_errors() -> PackedStringArray:
 	for line: String in lines:
 		if line.strip_edges().is_empty():
 			errors.append("lines contains a blank line")
+	var seen: PackedStringArray = []
+	for choice: DialogueChoice in choices:
+		if choice == null:
+			errors.append("dialogue choice is null")
+			continue
+		for error: String in choice.validation_errors():
+			errors.append("choice '%s': %s" % [choice.stable_id, error])
+		if choice.stable_id in seen:
+			errors.append("duplicate choice ID '%s'" % choice.stable_id)
+		seen.append(choice.stable_id)
 	return errors

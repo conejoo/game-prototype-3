@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P005 verified complete; P006 next eligible. Subsequent tasks remain pending.
+P001–P006 verified complete; P007 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -60,7 +60,7 @@ P001–P005 verified complete; P006 next eligible. Subsequent tasks remain pendi
 - Acceptance: close/reopen returns to the right location; malformed and newer
   saves do not overwrite the live session or a good save; recovery is tested.
 
-## [ ] P006 — Reusable interaction and dialogue
+## [x] P006 — Reusable interaction and dialogue
 
 - Add interaction selection, prompt, input arbitration, and reusable NPC/prop
   interactions. Author dialogue independently from physical actor scenes.
@@ -266,3 +266,28 @@ Next eligible task:
   staging obstructions, not physical power loss. User's normal save slot untouched;
   playtest slots isolated. Source/Git baseline preserved; no push/publication.
 - Next eligible task: P006 — Reusable interaction and dialogue. Not started.
+
+### P006 — completed 2026-10-02
+
+- Changed: reusable NPC/prop/gate selection with range/LOS and stable instance
+  IDs; authored dialogue choices, separate transient service and explicit action
+  results; root modal input/save arbitration; GUI choice/Finish/Close/Esc, held-key
+  clearing/focus release and unload cleanup. Both rooms contain labeled fixtures.
+- Checks/evidence: import exit0 (existing unused Mono SDK warning); seven focused
+  checks and separate save writer/reader PASS/exit0. Affected smoke/save/dialogue/
+  bridge checks repeated after repairs PASS/exit0. Actual Windows renderer:
+  normal WASD/E reaches NPC/prop in both rooms, four choices, blocked input,
+  held-key cancellation/fresh movement, three close paths, travel and GUI save/
+  load/replay pass. Five windowed runs quit0, including F10 during dialogue.
+  Commands/logs/raw responses/inspected PNGs: evidence/P006/VALIDATION.md.
+- Repairs/decisions: hide world prompt during modals, remove redundant clipping
+  room labels, enlarge fixture signs. Playtest client publishes with native file
+  rename; bridge checks open/read before consuming after one empty-read rejection.
+  Dialogue actions only show prototype responses; no durable effects. Save schema/
+  content remain v1. No general dialogue graph or new permanent narrative decision.
+- Limits: attack/dodge still unimplemented; blocking verifies attack input, not
+  damage. Temporary stand-ins have no companion AI. Source canon read-only and
+  now populated; no Blender work/export/push/publication. Viewport input is injected,
+  not hardware/OS-focus proof. Existing Mono SDK warning remains nonblocking.
+- Next eligible task: P007 — Quest progression, journal, and durable effects.
+  Not started; deliberately bump/migrate schema v1 before quest data.

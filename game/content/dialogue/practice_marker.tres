@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
+[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
+
+[sub_resource type="Resource" id="Choice_detail"]
+script = ExtResource("2")
+stable_id = "prototype-marker-detail"
+label = "Look closer."
+action_id = "prototype-observe"
+response = PackedStringArray("A replaceable graybox marker. Inspecting it changes no quest, reward, or recovery state.")
+
+[sub_resource type="Resource" id="Choice_leave"]
+script = ExtResource("2")
+stable_id = "prototype-marker-leave"
+label = "Leave it alone."
+action_id = "prototype-leave"
+response = PackedStringArray("You step back from the practice marker.")
+
+[resource]
+script = ExtResource("1")
+stable_id = "prototype-marker-inspection"
+display_name = "Practice marker (prototype fixture)"
+prototype_fixture = true
+speaker_actor_id = "prototype-hero"
+lines = PackedStringArray("[Prototype inspection] A practice marker for testing prop interactions in either room.")
+choices = Array[ExtResource("2")]([SubResource("Choice_detail"), SubResource("Choice_leave")])

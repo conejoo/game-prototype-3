@@ -46,7 +46,16 @@ func _process(_delta: float) -> void:
 	if directory.is_empty() or not FileAccess.file_exists(directory.path_join("request.json")):
 		return
 	var request_path: String = directory.path_join("request.json")
-	var raw: String = FileAccess.get_file_as_string(request_path)
+	# Windows publication can briefly deny a read while the sender's rename
+	# handle closes. Never delete a command whose bytes were not actually read.
+	var request_file: FileAccess = FileAccess.open(request_path, FileAccess.READ)
+	if request_file == null:
+		return
+	var raw: String = request_file.get_as_text()
+	var read_error: Error = request_file.get_error()
+	request_file.close()
+	if read_error != OK and read_error != ERR_FILE_EOF:
+		return
 	if DirAccess.remove_absolute(request_path) != OK:
 		push_error("Cannot consume playtest request")
 		return
@@ -232,6 +241,15 @@ func _observe() -> Dictionary:
 		"loading_save": game.loading_save, "save_status": game.ui.save_status.text,
 		"save_path": ProjectSettings.globalize_path(game.save_repository.path),
 		"party_member_ids": Array(game.session.party_member_ids),
+		"interaction_id": game.selected_interaction.instance_id if is_instance_valid(game.selected_interaction) else "",
+		"interaction_prompt": game.ui.travel_label.text,
+		"dialogue_active": game.dialogue.active(),
+		"dialogue_id": game.dialogue.definition.stable_id if game.dialogue.active() else "",
+		"dialogue_source_id": game.dialogue.source_instance_id,
+		"dialogue_text": game.ui.dialogue_text.text if game.dialogue.active() else "",
+		"dialogue_choice_id": game.dialogue.selected_choice_id,
+		"dialogue_result": game.dialogue.last_result.message,
+		"dialogue_action_id": game.dialogue.last_result.action_id,
 	}
 
 

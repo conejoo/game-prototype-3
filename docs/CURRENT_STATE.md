@@ -1,100 +1,105 @@
 # Current prototype state
 
-Last updated: 2026-10-02 (America/Vancouver). Verified through P005.
+Last updated: 2026-10-02 (America/Vancouver). Verified through P006.
 
 ## Current task
 
-P005 complete. P006 next eligible, not started. Normal start loads Alderwake;
-WASD moves, nearby E travels to Tollworks/back. Esc pause menu now saves/loads.
-Reopen, pause, choose Load to resume saved room at last arrival anchor. No autosave.
-No combat, runtime dialogue, active companion or Blender assets yet.
+P006 complete; P007 next eligible, not started. Normal start: Alderwake. WASD
+moves, mouse faces, E selects nearest visible purple companion/gold marker/gate.
+NPC talk and prop inspection work in both rooms; mouse or Tab/Enter chooses,
+Finish/Close/Esc returns control. Esc pauses only after dialogue closes.
+Pause Save/Load restores last arrival anchor; no autosave. No combat, quest,
+active companion AI or Blender assets yet.
 
 ## Implementation and changed files
 
-Root: `D:/development/game-dev-blender/returning-fair-prototype`; Godot path `/game`.
-Baseline `93b38f4` (P004), initial Git clean. P005 source, documentation and evidence
-recorded in local Git at user request. Existing source/UIDs preserved; no source-
-project edits/push/publication. One task only.
+Root: D:/development/game-dev-blender/returning-fair-prototype; Godot path /game.
+Git baseline c953ce8 (P005), initially clean; P006 source, documentation and
+evidence recorded in local Git at user request. No unrelated change found.
+Source project read-only, no push/publication.
 
-- `game/core/save_codec.gd`: schema/content v1, <=128KiB plain JSON, strict fields,
-  stable location/spawn/player/party/actor IDs, integer health and finite time.
-  Creates detached GameSession only after full validation. Definition health
-  limits remain authored; live health remains ActorState. No scene/Resource saves.
-- `game/core/save_repository.gd`: normal `user://saves/returning-fair.json`, `.bak`,
-  checked `.tmp` and `.bak.tmp` writes/flush/reopen/validate/rename. First save
-  creates recovery backup; later backup is previous valid primary. Recovery read
-  leaves disk untouched; corrupt primary never replaces good backup. Unsupported
-  versions and IO errors block fallback/write; both corrupt files require repair
-  or archiving before Save. Leftover uncommitted temporary files never load.
-- `game/app/game_session.gd`: explicit ordered `party_member_ids`; P005 one hero.
-- `game/app/game_root.gd`: pause-only stable save commands, loading/reentry/input
-  lock, WorldHost physical placement/rollback reused. Root adopts candidate and
-  rebinds wrapper only after success, before later transition observers. Same
-  actor node/camera remain. Debug named slot only isolates disk files for tests.
-- `game/ui/prototype_ui.gd/.tscn`: Save/Load command signals, visible results,
-  arrival-anchor/no-autosave explanation, loading disables commands. Resume now
-  clears any focused menu control. Paused arrival refreshes stale travel prompt.
-- `game/tests/save_checks.gd`, `save_process_checks.gd`: meaningful rejection,
-  isolation, filesystem recovery/failure, unsafe floor/obstruction rollback,
-  save boundaries and two-process tests. Health37/time42.5 are labeled test setup.
-  New script `.uid` files retained after editor import.
-- `game/tests/live_playtest_bridge.gd`: read-only save/party observations; Save/Load
-  exercised via normal GUI/input, no bypass command. `tools/PLAYTEST.md`, README,
-  checklist, architecture compatibility/boundary contract and P005 evidence updated.
+- game/features/interaction/: PrototypeInteractable wrapper IDs/kind/prompt/reach/
+  dialogue ID, NPC/prop reusable scenes, replaceable VisualRoot and wrapper-owned
+  collision. InteractionSelector chooses nearest in-range LOS target, ID tie order.
+- game/features/dialogue/: authored DialogueChoice and extended DialogueDefinition;
+  transient node-independent DialogueService separates cursor/source/choice/result
+  from definitions. Explicit ActionResult returns ok/message/action ID; malformed,
+  duplicate/unknown/out-of-order/repeated choices fail. Intro then terminal choice
+  response is sufficient for P006; no general graph engine.
+- game/content/dialogue/temporary_companion.tres, practice_marker.tres and
+  prototype_catalog.tres: two choices each, eight catalog definitions. All temporary,
+  noncanonical/presentation-only. No NPC facts, quest rewards or trust changes.
+- game/app/game_root.gd: same selector routes E to talk/inspect or existing WorldHost
+  travel. Reselects on command; clears held movement, disables actor input, blocks
+  world keys/mouse during dialogue, keeps GUI usable. Esc cancels before pause;
+  pause cannot stack. Unload cancels dialogue/stale target; save/load rejects active
+  dialogue even if forced paused. Root owns orchestration; UI owns no rules.
+- game/ui/prototype_ui.gd/.tscn: dialogue modal/choices, typed command signals and
+  results, focus release, no world prompt under modals; readable P006 controls.
+- game/world/prototype_location.gd, alderwake.tscn, tollworks.tscn: validate interaction
+  IDs/references; NPC at (-2,0,0), prop at (2,0,1), distinct room instance IDs; gate
+  retains 1.6m reach. Enlarged fixture signs; redundant clipping room signs removed,
+  room identity remains in HUD. Existing spawn safety, floor/walls/plinth preserved.
+- game/tests/interaction_dialogue_checks.gd: meaningful rules/lifecycle/input checks.
+  content_catalog_checks expects eight definitions; save_checks expects new prompt.
+  New script .uid and scene UIDs retained.
+- game/tests/live_playtest_bridge.gd, tools/send_playtest.ps1, PLAYTEST.md: read-only
+  interaction/dialogue observations. One transient request read failure rejected
+  before input; client now publishes via native File.Move, bridge checks open/read
+  before deletion. Rechecked protocol and actual windowed reader.
+- README, CHECKLIST, architecture delivered-boundary note and P006 evidence updated.
+  Ownership architecture unchanged; transient/save-boundary decisions documented.
 
 ## Checks and evidence
 
-Engine: `4.7.2.stable.mono.official.ed1daf0bf`; --version exit0.
-Exact commands/exits and acceptance mapping: `evidence/P005/VALIDATION.md`.
+Engine 4.7.2.stable.mono.official.ed1daf0bf. Exact commands/exits, acceptance
+mapping and selected inspected PNGs: evidence/P006/VALIDATION.md.
 
-- Final `--headless --path ./game --editor --quit` exit0; no GDScript errors.
-  Existing unused Mono .NET SDK10.0.9 error remains; GDScript checks clean.
-- `--headless --path ./game --script res://tests/<name>.gd`: application_smoke,
-  content_catalog_checks, movement_camera_checks, live_playtest_checks,
-  location_travel_checks, save_checks all PASS/exit0. Travel/save rechecked after
-  prompt repair; previous stages retain collision, pause, focus and lifecycle.
-- `save_process_checks.gd -- --phase=write`, then separate `--phase=read`: both
-  PASS/exit0; final PIDs22400/5752. Reader starts fresh Alderwake, loads Tollworks,
-  exact health37/time42.5, one hero, safe (0,0,-2.5) anchor.
-- Save checks reject invalid/missing fields, IDs, versions, party duplicates,
-  numeric bounds, malformed/oversized JSON. Temporary/backup staging directory
-  obstructions report failure and preserve both files. Invalid runtime snapshot
-  cannot overwrite good saves. Missing/truncated primary recovers valid backup;
-  read preserves bytes; subsequent Save retains backup. Newer primary cannot
-  downgrade via backup; newer backup cannot be overwritten; both corrupt reject.
-- Root rejects unpaused/in-flight/repeated requests. Invalid/newer candidates
-  preserve live owners; unsafe saved floor/obstruction restores exact old room,
-  state, position, controls and pause. Successful load rebinds authoritative state.
-- Actual Windows Compatibility renderer, RTX4070 Laptop/driver581.29, 960x640:
-  WASD/E reaches Tollworks; mouse Save; travel back without saving; F10 close0.
-  Fresh process mouse Load restores Tollworks/health100/exact time23.3421449999991;
-  Resume and A move, quit0. Third process Tab/Enter Load after prompt repair also
-  restores saved data, readable menu/correct travel prompt, movement and quit0.
-  Three distinct boot IDs retained in raw JSON. Selected PNGs inspected; assertion
-  script exit0 (`live-evidence-check.txt`); runtime error scan no matches.
-- Final Git diff --check exit0. Final runtime logs contain no errors/warnings.
-  Earlier restricted prerequisite logs have log/certificate access errors; final
-  tests used approved normal Godot access. No dependencies installed.
+- Prerequisites P001–P004 PASS/exit0; initial restricted save test hit denied
+  user:// IO and was interrupted. Normal-access isolated save rerun PASS/exit0.
+- Final headless editor import, including last scene/UID changes: exit0. Existing
+  unused Mono SDK10.0.9 error only; no GDScript errors. No dependencies installed.
+- Seven headless scripts PASS/exit0: application_smoke, content_catalog_checks,
+  movement_camera_checks, live_playtest_checks, location_travel_checks, save_checks,
+  interaction_dialogue_checks. Separate process write/read PASS/exit0. Relevant
+  smoke/save/dialogue/bridge checks repeated after UI/reader repairs PASS/exit0.
+- P006 tests: rejected actions/choices, independent runtime state/multiline intro,
+  both-room normal viewport E + GUI Enter, held movement clearing, attack-input
+  probe, camera/reentry lock, cancel/fresh movement, save boundary, LOS and unload.
+  Positioned fixtures prove rules, not ordinary play; actual rendered walk separate.
+- Windows Compatibility renderer, RTX4070 Laptop/driver581.29, 960x640: normal
+  WASD/E reaches both-room NPC/prop, all four choices via keyboard/mouse, Esc/Close/
+  Finish, blocked movement/click, held keys remain cleared after cancel, fresh input
+  works. Normal gate travel, GUI Save/Load and replayed NPC after load pass.
+  assert-live.ps1 PASS/exit0; full reviewed replay boot 1790976207.97-7732.
+- Final layout boot 1790976462.745-67352: both rooms load/visible signs and modal
+  inspected; E travel/talk and F10 quit while dialogue active exit0. Five windowed
+  runs all quit0. Reader/labels logs and focused final logs have no runtime errors.
+  Reviewed log retains one pre-repair harness empty-read rejection, safely retried;
+  no gameplay input executed on that rejected request.
+- git diff --check exit0. See git-check.txt, check-results.txt and raw response files.
 
-## Decisions and limits
+## Decisions, limitations, blockers
 
-- Save resumes last stable arrival anchor, not arbitrary position/heading/velocity.
-  Supported pause boundary excludes transitions; future combat/dialogue must
-  extend gates deliberately. Loading stays paused, no implicit startup load.
-- Strict v1 JSON supports one `party-player` / `prototype-hero`. No prior schema
-  exists to migrate. P007 must bump/migrate v1 for quests/effects; P009 extends
-  party state. Incompatible content IDs/stats require deliberate version policy.
-- Single-writer local slot; staged-write fault tests, no physical power-loss test.
-  User's normal slot untouched: windowed checks use playtest-p005-validation-20261002;
-  headless checks retain isolated p005-checks-* / p005-process-check files in user://.
-- Rendered input comes through ordinary viewport InputMap/GUI; does not claim
-  new hardware/OS focus evidence. No debug quest objective, Blender asset or
-  exported Windows build. Grayboxes and catalog-only companion/dialogue remain
-  labeled prototype fixtures. No permanent narrative decision required.
+No blocker. Save schema/content stay v1: only additive presentation definitions,
+no persistent fields. Dialogue is transient and cannot be saved mid-conversation;
+P007 must deliberately migrate v1 before adding quest/effect data. Future persistent
+dialogue actions route through quest/relationship owners with durable once-only IDs.
+
+Attack/dodge remain bindings only; input blocking is tested, damage/combat is P008.
+Temporary companion is stationary dialogue stand-in, not P009 active party member.
+No permanent narrative decision made. Source game is now populated: game-story.txt,
+docs/market-of-borrowed-days.md and docs/towns/alderwake.md read; older empty-source
+handoffs stale. Maris npc-03 remains unchanged; no Flutter runtime port or retired
+currency ideas. No Blender source/export or Windows build claim.
+
+Rendered input uses ordinary viewport InputMap/GUI, not physical keyboard/OS focus.
+Normal user save untouched; playtest-p006-* and existing isolated p005-check/process
+fixtures only. Existing Mono SDK warning nonblocking for GDScript.
 
 ## Next eligible task
 
-P006 only: reusable interaction selection/prompts/arbitration, authored NPC/prop
-interactions and dialogue choices; movement/attack gating, cancellation/control
-restoration, both-room playable evidence. Read architecture/checklist, inspect
-actual Git, recheck prerequisites. P006 not started.
+P007 only: one shortened recovery quest, legal prerequisite transitions, journal,
+stable action/effect IDs and durable once-only effects. Extend/migrate schema v1
+deliberately and prove progress across travel/process restart. Combat objective
+may use clearly labeled test setup until P008; do not claim normal combat.

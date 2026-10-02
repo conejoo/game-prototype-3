@@ -13,6 +13,8 @@ var window_focused: bool = true
 var save_repository: SaveRepository = SaveRepository.new()
 var loading_save: bool = false
 var _pending_restore: GameSession
+var dialogue: DialogueService = DialogueService.new()
+var selected_interaction: PrototypeInteractable
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -50,6 +52,9 @@ func _ready() -> void:
 	ui.quit_requested.connect(_quit)
 	ui.save_requested.connect(func() -> void: save_run())
 	ui.load_requested.connect(func() -> void: await load_run())
+	ui.dialogue_advance_requested.connect(func() -> void: _present_dialogue(dialogue.advance()))
+	ui.dialogue_choice_requested.connect(func(id: String) -> void: _present_dialogue(dialogue.choose(id)))
+	ui.dialogue_cancel_requested.connect(_cancel_dialogue)
 	ui.show_paused(false)
 	world_host.initialize(catalog, session, party)
 	world_host.transition_started.connect(_on_transition_started)
@@ -79,12 +84,28 @@ func _process(delta: float) -> void:
 	if not get_tree().paused and not world_host.transitioning:
 		session.advance(delta)
 		ui.show_play_time(session.elapsed_play_seconds)
-		var location: PrototypeLocation = world_host.current_location
-		if location != null:
-			ui.show_travel("E: " + location.gate_label if location.can_travel(player_placeholder) else "Walk to glowing travel gate")
+		_refresh_interaction()
+
+
+func _input(event: InputEvent) -> void:
+	# Escape cancels dialogue even while a choice has GUI focus. World keys do
+	# not reach actors; mouse clicks remain available to the modal's buttons.
+	if dialogue.active():
+		if event.is_action_pressed("pause") and not event.is_echo():
+			_cancel_dialogue()
+			get_viewport().set_input_as_handled()
+		elif event is InputEventKey and not event.is_action("quit"):
+			for action: String in ["move_left", "move_right", "move_forward", "move_back", "interact", "dodge", "camera_projection", "zoom_in", "zoom_out"]:
+				if event.is_action(action):
+					get_viewport().set_input_as_handled()
+		elif event is InputEventMouseButton and not ui.dialogue_accepts_pointer(event.position):
+			get_viewport().set_input_as_handled()
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if dialogue.active() and not event.is_action("quit"):
+		get_viewport().set_input_as_handled()
+		return
 	if event.is_action_pressed("pause") and not event.is_echo():
 		get_viewport().set_input_as_handled()
 		_toggle_pause()
@@ -93,11 +114,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_quit()
 	elif not get_tree().paused and not world_host.transitioning and window_focused and get_viewport().gui_get_focus_owner() == null:
 		if event.is_action_pressed("interact") and not event.is_echo():
-			var location: PrototypeLocation = world_host.current_location
-			if location != null and location.can_travel(player_placeholder):
-				var errors: PackedStringArray = world_host.request_transition(location.destination_id, location.destination_spawn_id)
-				if not errors.is_empty():
-					ui.show_travel("Travel failed: " + "; ".join(errors))
+			interact()
 			get_viewport().set_input_as_handled()
 			return
 		if event is InputEventMouseButton and not ui.accepts_world_pointer(event.position):
@@ -136,7 +153,7 @@ func _resume() -> void:
 
 
 func _set_paused(paused: bool) -> void:
-	if loading_save:
+	if loading_save or dialogue.active():
 		return
 	get_tree().paused = paused
 	_update_controls()
@@ -145,11 +162,13 @@ func _set_paused(paused: bool) -> void:
 
 
 func _update_controls() -> void:
-	player_placeholder.set_controls_enabled(window_focused and not get_tree().paused and not world_host.transitioning and not loading_save)
-	ui.set_save_busy(world_host.transitioning or loading_save)
+	player_placeholder.set_controls_enabled(window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active())
+	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active())
 
 
 func _on_transition_started() -> void:
+	_cancel_dialogue()
+	selected_interaction = null
 	ui.show_travel("Travelling…")
 	_update_controls()
 
@@ -167,13 +186,14 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 	_update_controls()
 	if success:
 		ui.show_location(catalog.get_location(session.current_location_id).display_name)
-		var location: PrototypeLocation = world_host.current_location
-		ui.show_travel("E: " + location.gate_label if location.can_travel(player_placeholder) else "Walk to glowing travel gate")
+		_refresh_interaction()
 	else:
 		ui.show_travel("Travel failed: " + "; ".join(errors))
 
 
 func _save_boundary_errors() -> PackedStringArray:
+	if dialogue.active():
+		return PackedStringArray(["close dialogue before save/load"])
 	if not session.initialized or world_host.current_location == null:
 		return PackedStringArray(["run is not ready"])
 	if world_host.transitioning or loading_save:
@@ -190,6 +210,45 @@ func save_run() -> PackedStringArray:
 	ui.show_save_status("Saved. Load returns to last arrival anchor." if errors.is_empty() else "Save failed: " + "; ".join(errors))
 	print("P005 save: ", "OK" if errors.is_empty() else errors)
 	return errors
+
+
+func _refresh_interaction() -> void:
+	if dialogue.active():
+		selected_interaction = null
+		ui.show_travel("Dialogue open · Esc: close")
+		return
+	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
+	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "Walk near purple companion, gold marker, or glowing gate")
+
+
+func interact() -> DialogueService.ActionResult:
+	if dialogue.active() or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
+		return DialogueService.ActionResult.new(false, "Interaction blocked by current input mode.")
+	# Never trust last frame's prompt or hold an old room's node after travel.
+	var target: PrototypeInteractable = InteractionSelector.select(player_placeholder, world_host.current_location)
+	if target == null:
+		return DialogueService.ActionResult.new(false, "No nearby visible interaction.")
+	if target.kind == "travel":
+		var location: PrototypeLocation = world_host.current_location
+		var errors: PackedStringArray = world_host.request_transition(location.destination_id, location.destination_spawn_id)
+		var result: DialogueService.ActionResult = DialogueService.ActionResult.new(errors.is_empty(), "Travel started." if errors.is_empty() else "; ".join(errors), "travel")
+		if not result.ok:
+			ui.show_travel(result.message)
+		return result
+	var result: DialogueService.ActionResult = dialogue.begin(catalog.get_dialogue(target.dialogue_id), target.instance_id)
+	_present_dialogue(result)
+	return result
+
+
+func _present_dialogue(result: DialogueService.ActionResult) -> void:
+	ui.show_dialogue(dialogue, result)
+	_update_controls()
+	if not world_host.transitioning:
+		_refresh_interaction()
+
+
+func _cancel_dialogue() -> void:
+	_present_dialogue(dialogue.cancel())
 
 
 func load_run() -> PackedStringArray:

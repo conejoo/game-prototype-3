@@ -150,7 +150,7 @@ func _root_checks() -> void:
 	_check(game.player_placeholder.state == game.session.actors[GameSession.PLAYER_INSTANCE_ID] and game.player_placeholder.state.health == 37, "Wrapper not rebound to restored actor")
 	_check(game.session.current_location_id == "prototype-tollworks" and game.session.elapsed_play_seconds == 42.5, "Root restore lost location/time")
 	_check(game.player_placeholder.global_position.distance_to(Vector3(0, 0, -2.5)) < 0.01 and paused and not game.player_placeholder.controls_enabled, "Load did not respect arrival anchor/pause")
-	_check(game.ui.travel_label.text == "Walk to glowing travel gate", "Paused restore retained stale loading prompt")
+	_check(game.ui.travel_label.text == "Walk near purple companion, gold marker, or glowing gate", "Paused restore retained stale loading prompt")
 	_check(game.player_placeholder.get_instance_id() == actor_id and game.party.members().size() == 1, "Load duplicated actor wrapper")
 
 	var live: GameSession = game.session

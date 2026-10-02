@@ -10,7 +10,8 @@
 
 [ext_resource type="Resource" path="res://content/locations/alderwake.tres" id="8"]
 [ext_resource type="Resource" path="res://content/locations/tollworks.tres" id="9"]
+[ext_resource type="Resource" path="res://content/dialogue/practice_marker.tres" id="10"]
 
 [resource]
 script = ExtResource("1")
-definitions = Array[ExtResource("2")]([ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9")])
+definitions = Array[ExtResource("2")]([ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10")])
