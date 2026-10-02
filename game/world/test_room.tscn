@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://tppgko34kbx4"]
+
+[ext_resource type="Script" path="res://world/test_room.gd" id="1_room"]
+
+[sub_resource type="StandardMaterial3D" id="Material_floor"]
+albedo_color = Color(0.27, 0.32, 0.35, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_floor"]
+material = SubResource("Material_floor")
+size = Vector3(14, 0.4, 12)
+
+[sub_resource type="BoxShape3D" id="Shape_floor"]
+size = Vector3(14, 0.4, 12)
+
+[sub_resource type="StandardMaterial3D" id="Material_wall"]
+albedo_color = Color(0.42, 0.46, 0.47, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="Mesh_back_wall"]
+material = SubResource("Material_wall")
+size = Vector3(14, 1.5, 0.4)
+
+[sub_resource type="BoxMesh" id="Mesh_side_wall"]
+material = SubResource("Material_wall")
+size = Vector3(0.4, 1.5, 12)
+
+[sub_resource type="BoxMesh" id="Mesh_plinth"]
+material = SubResource("Material_wall")
+size = Vector3(2, 0.6, 2)
+
+[sub_resource type="StandardMaterial3D" id="Material_beacon"]
+albedo_color = Color(0.94, 0.63, 0.26, 1)
+emission_enabled = true
+emission = Color(0.35, 0.15, 0.03, 1)
+
+[sub_resource type="BoxMesh" id="Mesh_beacon"]
+material = SubResource("Material_beacon")
+size = Vector3(0.65, 0.65, 0.65)
+
+[node name="TestRoom" type="Node3D"]
+script = ExtResource("1_room")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.2, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("Mesh_floor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("Shape_floor")
+
+[node name="BackWall" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.75, -6)
+mesh = SubResource("Mesh_back_wall")
+
+[node name="SideWall" type="MeshInstance3D" parent="."]
+position = Vector3(-7, 0.75, 0)
+mesh = SubResource("Mesh_side_wall")
+
+[node name="Plinth" type="MeshInstance3D" parent="."]
+position = Vector3(3, 0.3, -2)
+mesh = SubResource("Mesh_plinth")
+
+[node name="TestBeacon" type="Node3D" parent="."]
+position = Vector3(3, 1.2, -2)
+
+[node name="Mesh" type="MeshInstance3D" parent="TestBeacon"]
+rotation = Vector3(0.45, 0, 0.35)
+mesh = SubResource("Mesh_beacon")

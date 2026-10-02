@@ -1,0 +1,10 @@
+# Godot regenerates this cache. Scene and script UIDs remain tracked.
+game/.godot/
+game/export_credentials.cfg
+
+# Local builds and operating-system noise.
+builds/
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store

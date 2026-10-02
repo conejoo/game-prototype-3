@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://btqrtm12khtky"]
+
+[ext_resource type="Script" path="res://ui/prototype_ui.gd" id="1_ui"]
+
+[sub_resource type="Theme" id="Theme_ui"]
+default_font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="Style_header"]
+bg_color = Color(0.035, 0.055, 0.07, 0.95)
+border_width_bottom = 2
+border_color = Color(0.16, 0.48, 0.48, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_panel"]
+bg_color = Color(0.055, 0.085, 0.105, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.65, 0.62, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ui")
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_ui")
+
+[node name="Header" type="PanelContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Style_header")
+
+[node name="Margin" type="MarginContainer" parent="Screen/Header"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="Row" type="HBoxContainer" parent="Screen/Header/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+
+[node name="Titles" type="VBoxContainer" parent="Screen/Header/Margin/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Screen/Header/Margin/Row/Titles"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.86, 0.95, 0.93, 1)
+theme_override_font_sizes/font_size = 24
+text = "RETURNING FAIR"
+
+[node name="Subtitle" type="Label" parent="Screen/Header/Margin/Row/Titles"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.71, 0.73, 1)
+theme_override_font_sizes/font_size = 14
+text = "P001  /  Application test room  /  Prototype content"
+
+[node name="PlayTime" type="Label" parent="Screen/Header/Margin/Row"]
+layout_mode = 2
+text = "Play time 000s"
+
+[node name="Pause" type="Button" parent="Screen/Header/Margin/Row"]
+custom_minimum_size = Vector2(140, 40)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Pause  [Esc]"
+
+[node name="Footer" type="PanelContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Style_header")
+
+[node name="Margin" type="MarginContainer" parent="Screen/Footer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="Text" type="Label" parent="Screen/Footer/Margin"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Esc or Pause button: pause / resume     |     F10: quit
+Rotating gold beacon tests simulation. Hero stationary; movement arrives in P003."
+
+[node name="PauseOverlay" type="Control" parent="Screen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shade" type="ColorRect" parent="Screen/PauseOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.01, 0.02, 0.03, 0.72)
+
+[node name="Center" type="CenterContainer" parent="Screen/PauseOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Screen/PauseOverlay/Center"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Style_panel")
+
+[node name="Margin" type="MarginContainer" parent="Screen/PauseOverlay/Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 28
+
+[node name="Options" type="VBoxContainer" parent="Screen/PauseOverlay/Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "World and play time suspended.
+Esc also resumes."
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Resume"
+
+[node name="Quit" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Quit prototype"
