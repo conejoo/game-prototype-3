@@ -55,6 +55,12 @@ Responses report elapsed time, positions, contacts, headings, UI focus and PNGs.
 P004 observations also report location/spawn IDs, transition count/lock, actor
 object identity, health, room/party counts and party suspension. E uses the
 normal nearby travel-gate action; no direct transition command exists.
+P005 adds read-only save status/path, loading lock and ordered party observations.
+Save/Load uses ordinary pause-menu click or Tab/Enter input. Debug-only
+`--save-slot=p005-validation` selects `user://saves/playtest-p005-validation.json`
+so validation cannot overwrite the normal slot. Names accept 1–48 ASCII letters,
+digits, underscore or hyphen; release builds ignore this option. No direct
+save/load or session-mutation bridge command is added.
 
 All held keys/buttons release at request end. key_down does not persist between
 requests. Movement may be ignored while paused, UI-focused or after application

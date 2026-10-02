@@ -1,6 +1,6 @@
 # Returning Fair prototype
 
-P001–P004 complete. Start in Alderwake, walk to the glowing gate and press E to
+P001–P005 complete. Start in Alderwake, walk to the glowing gate and press E to
 travel to Tollworks and back. Both compact grayboxes are labeled prototype
 content. Physical hero, mouse facing, overhead follow, projection and zoom remain.
 
@@ -20,6 +20,9 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --path $gamePath --script res://tests/movement_camera_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/live_playtest_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/location_travel_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/save_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=write
+& $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=read
 ```
 
 Verified engine: `4.7.2.stable.mono.official.ed1daf0bf`. Esc pauses/resumes; F10
@@ -34,6 +37,15 @@ Space dodge remain configured only. E currently handles nearby travel gates;
 reusable interaction/dialogue belongs to P006. P003 rendered playtests and
 manual keyboard/collision confirmation passed; orthographic retained provisionally.
 
+Esc opens Save run / Load saved run. Save health, party and elapsed time while
+paused outside travel; Load returns to the last arrival anchor in the saved room,
+not the saved physical position. No autosave: reopen, pause, choose Load to resume.
+Normal slot is `user://saves/returning-fair.json` in Godot's application user-data
+directory, with `.bak` recovery. Missing/corrupt primary may recover validated
+backup visibly; incompatible versions are rejected and preserved. Both corrupt
+files require repair or archiving that slot before saving. Version rules and
+boundaries: [architecture](docs/ARCHITECTURE.md).
+
 Installed Mono editor reports missing .NET SDK `10.0.9` during editor import.
 Import finishes with exit 0; this GDScript game and its headless check run cleanly.
 No C# build is needed for this stage. Restricted automation can block normal
@@ -43,6 +55,8 @@ Godot cache/certificate access; final checks used normal local application acces
 
 - `game/app/game_root.tscn`: persistent root, WorldHost, Party, CameraRig, UI.
 - `game/core/`: typed catalog manifest, definition base, atomic validation/indexes.
+- `game/core/save_codec.gd`, `save_repository.gd`: strict versioned plain-data
+  validation, detached candidate runs, checked temporary writes and good backup.
 - `game/content/`: authored actor/location/dialogue `.tres` definitions.
 - `game/app/game_session.gd`: mutable time, location/spawn IDs, actor instances.
 - `game/app/world_host.gd`, `party.gd`: synchronous travel lock, actor suspension,
@@ -65,6 +79,9 @@ Godot cache/certificate access; final checks used normal local application acces
   Usage and limits: [live playtest tools](tools/PLAYTEST.md).
 - `game/tests/location_travel_checks.gd`: ten round trips, actor/state identity,
   unsafe spawn rollback, reentry/input lock, pause/focus and stale-room release.
+- `game/tests/save_checks.gd`, `save_process_checks.gd`: isolated user:// files,
+  corrupt/newer save rejection, backup recovery, write failures, physical restore
+  rollback and separate OS-process round trip; health changes are test fixtures.
 - `docs/`: architecture contract, sequential checklist, durable current state.
 
 Root/UI process while paused; world/party/camera explicitly stop. Camera gets
@@ -86,6 +103,7 @@ Navigation map synchronizes on travel; no companion paths exist yet (P009).
 Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
 [P002 validation](docs/evidence/P002/VALIDATION.md),
 [P003 validation](docs/evidence/P003/VALIDATION.md),
-[P004 validation](docs/evidence/P004/VALIDATION.md).
-Next eligible task: P005 (not started). Read
+[P004 validation](docs/evidence/P004/VALIDATION.md),
+[P005 validation](docs/evidence/P005/VALIDATION.md).
+Next eligible task: P006 (not started). Read
 [current state](docs/CURRENT_STATE.md) before work.

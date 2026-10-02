@@ -140,7 +140,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Panel" type="PanelContainer" parent="Screen/PauseOverlay/Center"]
-custom_minimum_size = Vector2(380, 0)
+custom_minimum_size = Vector2(560, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("Style_panel")
 
@@ -164,14 +164,32 @@ horizontal_alignment = 1
 [node name="Hint" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "World and play time suspended.
-Esc also resumes."
+text = "Save health, party and play time while paused.
+Load returns to last arrival anchor, not current position.
+No autosave. Esc resumes."
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Resume"
+
+[node name="Save" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Save run"
+
+[node name="Load" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Load saved run"
+
+[node name="SaveStatus" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Save/load available outside travel."
+autowrap_mode = 2
+horizontal_alignment = 1
 
 [node name="Quit" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
 custom_minimum_size = Vector2(0, 48)

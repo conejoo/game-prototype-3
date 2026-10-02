@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P003.
+Status: implementation contract; runnable Godot prototype through P005.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -160,6 +160,33 @@ world changes must survive both location unloading and process restart.
 Load order: validate definitions and snapshot, initialize session, load location,
 apply persistent facts, place actors at valid anchors, connect UI, enable input.
 World presentation reads authoritative facts whenever a location loads.
+
+### Delivered save boundary and compatibility (P005)
+
+Normal pause UI explicitly saves/loads `user://saves/returning-fair.json`; no
+autosave or implicit startup load. Restore uses the saved location's last arrival
+anchor, never an arbitrary position/heading/velocity. Save/load rejects unfinished
+travel; loading stays paused and locks repeated requests until safe placement
+and root-owned session/actor rebinding complete. Future combat/dialogue owners
+must extend this boundary before those features can save.
+
+Schema/content versions are both 1. Strict plain JSON contains location/spawn IDs,
+player instance ID, ordered party member IDs, actor instance/definition/health,
+and elapsed seconds. P005 supports only `party-player` / `prototype-hero`; maximum
+health is derived from content, never trusted from disk. Unknown/missing fields,
+IDs, versions and invalid numeric data fail before live-session replacement.
+This is the first save schema; no older migration exists. P007 must deliberately
+bump/migrate schema v1 when quest/effect data arrives. Additive compatible content
+may retain content version 1; incompatible ID/stat changes require a documented
+version/migration decision, never silent remapping/defaulting.
+
+Repository is a single-writer local slot: validate/flush/reopen sibling `.tmp`,
+stage and publish a validated `.bak`, then publish primary with checked same-folder
+rename. First save also creates a recovery copy. Missing/malformed primary can
+load validated backup without rewriting files; incompatible versions or IO
+failures block fallback. Save refuses incompatible primary/backup and corrupt
+primary without valid backup. After recovery, explicit Save may replace corrupt
+primary while retaining good backup. Uncommitted temporary files are ignored.
 
 ## Blender/Godot asset boundary
 

@@ -10,6 +10,9 @@ extends Node3D
 var session: GameSession = GameSession.new()
 var catalog: ContentCatalog = ContentCatalog.new()
 var window_focused: bool = true
+var save_repository: SaveRepository = SaveRepository.new()
+var loading_save: bool = false
+var _pending_restore: GameSession
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -18,6 +21,16 @@ var window_focused: bool = true
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
+	# Debug-only named slot isolates playtest files; normal runs use the main slot.
+	if OS.is_debug_build():
+		for argument: String in OS.get_cmdline_user_args():
+			if argument.begins_with("--save-slot="):
+				var slot: String = argument.trim_prefix("--save-slot=")
+				if RegEx.create_from_string("^[A-Za-z0-9_-]{1,48}$").search(slot) == null:
+					push_error("Invalid debug save slot name")
+					get_tree().quit(1)
+					return
+				save_repository = SaveRepository.new("user://saves/playtest-" + slot + ".json")
 	var errors: PackedStringArray = catalog.initialize(content_manifest)
 	if errors.is_empty():
 		errors = session.initialize(catalog, initial_location_id, initial_spawn_id, "prototype-hero")
@@ -35,6 +48,8 @@ func _ready() -> void:
 	ui.pause_requested.connect(_toggle_pause)
 	ui.resume_requested.connect(_resume)
 	ui.quit_requested.connect(_quit)
+	ui.save_requested.connect(func() -> void: save_run())
+	ui.load_requested.connect(func() -> void: await load_run())
 	ui.show_paused(false)
 	world_host.initialize(catalog, session, party)
 	world_host.transition_started.connect(_on_transition_started)
@@ -121,6 +136,8 @@ func _resume() -> void:
 
 
 func _set_paused(paused: bool) -> void:
+	if loading_save:
+		return
 	get_tree().paused = paused
 	_update_controls()
 	ui.show_paused(paused)
@@ -128,7 +145,8 @@ func _set_paused(paused: bool) -> void:
 
 
 func _update_controls() -> void:
-	player_placeholder.set_controls_enabled(window_focused and not get_tree().paused and not world_host.transitioning)
+	player_placeholder.set_controls_enabled(window_focused and not get_tree().paused and not world_host.transitioning and not loading_save)
+	ui.set_save_busy(world_host.transitioning or loading_save)
 
 
 func _on_transition_started() -> void:
@@ -137,13 +155,70 @@ func _on_transition_started() -> void:
 
 
 func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
+	# Root commits candidate only after WorldHost proves physical placement safe.
+	# This handler is connected before other observers; UI sees one restored run.
+	if success and _pending_restore != null:
+		session = _pending_restore
+		world_host.session = session
+		player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
+	_pending_restore = null
 	camera_rig.set_target(player_placeholder)
 	camera_rig.reset_physics_interpolation()
 	_update_controls()
 	if success:
 		ui.show_location(catalog.get_location(session.current_location_id).display_name)
+		var location: PrototypeLocation = world_host.current_location
+		ui.show_travel("E: " + location.gate_label if location.can_travel(player_placeholder) else "Walk to glowing travel gate")
 	else:
 		ui.show_travel("Travel failed: " + "; ".join(errors))
+
+
+func _save_boundary_errors() -> PackedStringArray:
+	if not session.initialized or world_host.current_location == null:
+		return PackedStringArray(["run is not ready"])
+	if world_host.transitioning or loading_save:
+		return PackedStringArray(["save/load unavailable during transition"])
+	if not get_tree().paused:
+		return PackedStringArray(["pause first; save/load only at stable pause boundary"])
+	return PackedStringArray()
+
+
+func save_run() -> PackedStringArray:
+	var errors: PackedStringArray = _save_boundary_errors()
+	if errors.is_empty():
+		errors = save_repository.write(session, catalog)
+	ui.show_save_status("Saved. Load returns to last arrival anchor." if errors.is_empty() else "Save failed: " + "; ".join(errors))
+	print("P005 save: ", "OK" if errors.is_empty() else errors)
+	return errors
+
+
+func load_run() -> PackedStringArray:
+	var errors: PackedStringArray = _save_boundary_errors()
+	if not errors.is_empty():
+		ui.show_save_status("Load failed: " + "; ".join(errors))
+		return errors
+	var saved: SaveRepository.ReadResult = save_repository.read(catalog)
+	if saved.session == null:
+		ui.show_save_status("Load failed: " + "; ".join(saved.errors))
+		print("P005 load rejected: ", saved.errors)
+		return saved.errors
+	loading_save = true
+	_pending_restore = saved.session
+	_update_controls()
+	ui.show_save_status("Loading saved run…")
+	errors = world_host.request_transition(saved.session.current_location_id, saved.session.current_spawn_id)
+	if errors.is_empty():
+		var arrival: Array = await world_host.transition_finished
+		if not arrival[0]:
+			errors = arrival[1]
+	_pending_restore = null
+	loading_save = false
+	_update_controls()
+	ui.show_play_time(session.elapsed_play_seconds)
+	var message: String = "Recovered backup. Primary left unchanged." if saved.recovered else "Loaded saved run at arrival anchor."
+	ui.show_save_status(message if errors.is_empty() else "Load failed: " + "; ".join(errors))
+	print("P005 load: ", message if errors.is_empty() else errors)
+	return errors
 
 
 func _quit() -> void:

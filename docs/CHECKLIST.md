@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P004 verified complete; P005 next eligible. Subsequent tasks remain pending.
+P001–P005 verified complete; P006 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -51,7 +51,7 @@ P001–P004 verified complete; P005 next eligible. Subsequent tasks remain pendi
 - Acceptance: repeated round trips work without duplicate actors, lost session
   state, invalid spawns, stale references, or input during transitions.
 
-## [ ] P005 — Versioned save/load foundation
+## [x] P005 — Versioned save/load foundation
 
 - Implement plain-data snapshot, validation, checked temporary-file write,
   backup recovery, and `user://` storage. Define stable save boundaries.
@@ -243,3 +243,26 @@ Next eligible task:
   into normal gameplay paths, not hardware. Existing unused C# SDK warning remains.
   P003 local commit `77aed4b` preserved; no source edits/push/publication.
 - Next eligible task: P005 — Versioned save/load foundation. Not started.
+
+### P005 — completed 2026-10-02
+
+- Changed: schema/content-v1 plain-data codec, isolated candidate validation,
+  checked user:// temporary writes/backup publication/recovery, explicit ordered
+  hero party IDs, pause-menu Save/Load, safe root restore after physical placement,
+  focused filesystem/lifecycle checks and two-process fixture. Script UIDs kept.
+- Checks/evidence: editor import exit0 (existing unused Mono SDK warning only);
+  all six focused checks PASS/exit0, separate writer/reader PASS/exit0. Invalid
+  versions/IDs/types/health/size and corrupt files reject; failed staging preserves
+  files; backup recovery and unsafe-spawn rollback pass. Actual Windows normal
+  WASD/E travel, GUI Save, F10 close, new process mouse/keyboard Load restore exact
+  time/location/health/party/anchor; Resume movement/focus passes, three exits0.
+  Commands, logs, raw responses and inspected PNGs: `evidence/P005/VALIDATION.md`.
+- Repairs/decisions: Resume releases any pause-menu focus; completed paused load
+  refreshes travel prompt. Saves resume last arrival anchor, no autosave. Strict
+  v1 compatibility documented; P007 must migrate before extending schema. Backup
+  read does not rewrite primary; newer versions never silently downgrade.
+- Limits: one hero, no arbitrary-position/mid-action saves, active companion,
+  combat/dialogue state, Blender work or Windows export. Disk-failure checks use
+  staging obstructions, not physical power loss. User's normal save slot untouched;
+  playtest slots isolated. Source/Git baseline preserved; no push/publication.
+- Next eligible task: P006 — Reusable interaction and dialogue. Not started.

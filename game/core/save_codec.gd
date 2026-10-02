@@ -1,0 +1,109 @@
+class_name SaveCodec
+extends RefCounted
+## Versioned plain-data boundary. Validation creates a detached candidate only.
+
+const SCHEMA_VERSION: int = 1
+const CONTENT_VERSION: int = 1
+const MAX_BYTES: int = 131072
+
+class DecodeResult:
+	extends RefCounted
+	var session: GameSession
+	var errors: PackedStringArray = []
+	var incompatible: bool = false
+
+
+static func snapshot(run: GameSession) -> Dictionary:
+	var actor_data: Array[Dictionary] = []
+	for id: String in run.party_member_ids:
+		var actor: ActorState = run.actors.get(id)
+		if actor != null:
+			actor_data.append({"instance_id": id, "definition_id": actor.definition_id, "health": actor.health})
+	return {
+		"schema_version": SCHEMA_VERSION, "content_version": CONTENT_VERSION,
+		"location_id": run.current_location_id, "spawn_id": run.current_spawn_id,
+		"player_instance_id": GameSession.PLAYER_INSTANCE_ID,
+		"party_member_ids": Array(run.party_member_ids), "actors": actor_data,
+		"elapsed_play_seconds": run.elapsed_play_seconds,
+	}
+
+
+static func decode(raw: String, catalog: ContentCatalog) -> DecodeResult:
+	var result: DecodeResult = DecodeResult.new()
+	if raw.to_utf8_buffer().size() > MAX_BYTES:
+		result.errors.append("save exceeds 128KiB limit")
+		return result
+	var parser: JSON = JSON.new()
+	if parser.parse(raw) != OK:
+		result.errors.append("invalid save JSON at line %d: %s" % [parser.get_error_line(), parser.get_error_message()])
+		return result
+	return validate(parser.data, catalog)
+
+
+static func validate(data: Variant, catalog: ContentCatalog) -> DecodeResult:
+	var result: DecodeResult = DecodeResult.new()
+	if catalog == null or not catalog.initialized:
+		result.errors.append("save requires initialized catalog")
+		return result
+	if not data is Dictionary:
+		result.errors.append("save envelope must be an object")
+		return result
+	for key: String in ["schema_version", "content_version"]:
+		if not _integer(data.get(key), 1, 2147483647):
+			result.errors.append("%s must be a positive integer" % key)
+			return result
+		var supported: int = SCHEMA_VERSION if key == "schema_version" else CONTENT_VERSION
+		if int(data[key]) != supported:
+			result.incompatible = true
+			result.errors.append("unsupported %s %s; supported %d; files left unchanged" % [key, data[key], supported])
+			return result
+	var fields: Array[String] = ["schema_version", "content_version", "location_id", "spawn_id", "player_instance_id", "party_member_ids", "actors", "elapsed_play_seconds"]
+	if not _exact_fields(data, fields):
+		result.errors.append("schema v1 requires exactly: " + ", ".join(fields))
+		return result
+	if not data.location_id is String or not data.spawn_id is String:
+		result.errors.append("location_id/spawn_id must be strings")
+		return result
+	var location: LocationDefinition = catalog.get_location(data.location_id)
+	if location == null or not data.spawn_id in location.spawn_ids:
+		result.errors.append("unknown saved location/spawn '%s/%s'; no ID remapping available" % [data.location_id, data.spawn_id])
+		return result
+	# P005 owns one hero. Expand this contract when active companions arrive.
+	if data.player_instance_id != GameSession.PLAYER_INSTANCE_ID or not data.party_member_ids is Array or data.party_member_ids != [GameSession.PLAYER_INSTANCE_ID]:
+		result.errors.append("schema v1 party must contain only party-player")
+		return result
+	if not data.actors is Array or data.actors.size() != 1 or not data.actors[0] is Dictionary:
+		result.errors.append("schema v1 requires one actor record")
+		return result
+	var actor: Dictionary = data.actors[0]
+	if not _exact_fields(actor, ["instance_id", "definition_id", "health"]) or actor.get("instance_id") != GameSession.PLAYER_INSTANCE_ID or actor.get("definition_id") != "prototype-hero":
+		result.errors.append("invalid player actor identity/fields")
+		return result
+	var definition: ActorDefinition = catalog.get_actor(actor.definition_id)
+	if definition == null or not _integer(actor.health, 0, definition.max_health):
+		result.errors.append("saved health must be an integer within actor definition limits")
+		return result
+	var seconds: Variant = data.elapsed_play_seconds
+	if not (seconds is float or seconds is int) or not is_finite(float(seconds)) or float(seconds) < 0.0 or float(seconds) > 315360000.0:
+		result.errors.append("elapsed_play_seconds must be finite, nonnegative, <=10 years")
+		return result
+	var candidate: GameSession = GameSession.new()
+	result.errors = candidate.initialize(catalog, data.location_id, data.spawn_id, actor.definition_id)
+	if result.errors.is_empty():
+		candidate.actors[GameSession.PLAYER_INSTANCE_ID].health = int(actor.health)
+		candidate.elapsed_play_seconds = float(seconds)
+		result.session = candidate
+	return result
+
+
+static func _integer(value: Variant, minimum: int, maximum: int) -> bool:
+	return (value is int or value is float) and is_finite(float(value)) and float(value) == floor(float(value)) and float(value) >= minimum and float(value) <= maximum
+
+
+static func _exact_fields(data: Dictionary, fields: Array[String]) -> bool:
+	if data.size() != fields.size():
+		return false
+	for field: String in fields:
+		if not data.has(field):
+			return false
+	return true

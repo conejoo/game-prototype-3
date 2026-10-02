@@ -229,6 +229,9 @@ func _observe() -> Dictionary:
 		"world_children": game.world_host.get_child_count(), "party_children": game.party.get_child_count(),
 		"party_suspended": game.party.suspended,
 		"actor_object_id": actor.get_instance_id(),
+		"loading_save": game.loading_save, "save_status": game.ui.save_status.text,
+		"save_path": ProjectSettings.globalize_path(game.save_repository.path),
+		"party_member_ids": Array(game.session.party_member_ids),
 	}
 
 

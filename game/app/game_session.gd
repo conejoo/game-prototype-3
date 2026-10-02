@@ -7,6 +7,7 @@ var initialized: bool = false
 var current_location_id: String = ""
 var current_spawn_id: String = ""
 var actors: Dictionary[String, ActorState] = {}
+var party_member_ids: PackedStringArray = []
 
 const PLAYER_INSTANCE_ID: String = "party-player"
 
@@ -28,6 +29,7 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 	if not errors.is_empty():
 		return errors
 	actors[PLAYER_INSTANCE_ID] = ActorState.new(PLAYER_INSTANCE_ID, player)
+	party_member_ids = PackedStringArray([PLAYER_INSTANCE_ID])
 	current_location_id = location_id
 	current_spawn_id = spawn_id
 	initialized = true
