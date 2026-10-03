@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M002 verified complete; M003–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M003 verified complete; M004–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -41,7 +41,7 @@ acceptance again against the resulting map build.
   report. Validate rotated group fixture, polygon, fractional Moonwell and
   all 7 portal records. Runtime uses no source checkout path.
 
-## [ ] M003 Runnable exterior terrain graybox
+## [x] M003 Runnable exterior terrain graybox
 
 - Build isolated candidate location and focused launch harness using normalized
   layout, without selecting it as normal game's Alderwake yet.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001 contract and M002 extraction complete; candidate implementation starts at M003. Append one concise record per item:
+M001 contract, M002 extraction and M003 terrain candidate complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -231,3 +231,11 @@ Checks and exact exit results: extractor/generate-repeat/check exit0 with identi
 Evidence: docs/evidence/M002/VALIDATION.md with commands, acceptance mapping, hashes and logs.
 Decisions or retained limits: source ID namespaces preserved; default grass/explicit clears and point-versus-cell transforms retained; inert portal destinations never exterior-transformed; all routes still disabled. Snapshot matches M001 identity. Parent P014 native evidence complete for compact build, M019 must revalidate map build. No normal runtime/save/art edits or candidate/playability claim.
 Next eligible task: M003 runnable exterior terrain graybox only.
+
+M003 — completed 2026-10-03
+Result: isolated runnable 147×80m flat terrain candidate, seven batched material/grid-marker meshes, separate floor/perimeter and safe two-party start/return pads; normal compact game unchanged.
+Files: game/world/map_candidate/; game/tests/map_candidate.tscn, map_candidate_root.gd, map_candidate_checks.gd and UIDs, fixtures/map_candidate_location.tres; tools/map_migration/CANDIDATE.md; migration CHECKLIST/CURRENT_STATE; docs/evidence/M003/.
+Checks and exact exit results: pinned extractor --check exit0; import exit0 with known SDK/certificate diagnostics; map_candidate_checks PASS/exit0; application_smoke PASS/exit0. Rendered bridge commands exit0 and inspected 960×640 captures; ordinary movement from start through forest material regions to return pad/east wall, dodge blocked. Final return-start and normal-startup processes quit through F10, exit0. git diff --check exit0.
+Evidence: docs/evidence/M003/VALIDATION.md, focused logs, exact command JSONs/raw bridge responses, observations and inspected PNGs.
+Decisions or retained limits: source snapshot unchanged; candidate-only catalog and named test save, no normal user save; flat water walkable until M004, heights M008, provisional flat nav M009. Raw decorations are explicit source-grid dots, not sprites; no portals, quests, prop/art blockers or production activation. Parent P014 compact-build completion preserved; M019 still owes map-build gate. Initial readiness race and overly strict 1mm contact assertion retained/repaired; perimeter visuals lowered for party readability without changing collider.
+Next eligible task: M004 river lake and basin blockers only.
