@@ -1,6 +1,6 @@
 class_name AlderwakeTerrainPreview
 extends PrototypeLocation
-## M003–M006: flat preview with independent water, crossings and town wrappers.
+## M003–M007: flat preview with independent water, crossing and prop wrappers.
 
 const LAYOUT_PATH: String = "res://content/maps/alderwake_layout.json"
 const COLORS: Dictionary[String, Color] = {
@@ -20,6 +20,7 @@ var batch_count: int = 0
 var water_blockers: AlderwakeWaterBlockers
 var crossings: AlderwakeCrossings
 var town: AlderwakeTownFootprints
+var forest: AlderwakeForestPopulation
 
 
 func _init() -> void:
@@ -64,6 +65,10 @@ func _init() -> void:
 	town.build(layout)
 	add_child(town)
 	build_errors.append_array(town.build_errors)
+	forest = AlderwakeForestPopulation.new()
+	forest.build(layout)
+	add_child(forest)
+	build_errors.append_array(forest.build_errors)
 	var spawns: Node3D = Node3D.new()
 	spawns.name = "Spawns"
 	add_child(spawns)
@@ -72,7 +77,8 @@ func _init() -> void:
 	preview_report["water"] = {"authored_records": water_blockers.records.size(), "authored_half_metre_cells": water_blockers.authored_water_cells.size(), "union_half_metre_cells": water_blockers.water_cells.size(), "dock_cutout_count": water_blockers.dock_cutouts.size(), "closed_exit": true}
 	preview_report["crossings"] = {"bridge_rect": str(crossings.bridge_rect), "ford_rect": str(crossings.ford_rect), "bridge_clear_width_m": 2.8, "floor_y_m": 0.0}
 	preview_report["town"] = {"props": town.prop_records.size(), "authored_colliders": town.collider_records.size(), "blocking_footprints": town.footprints.size(), "inert_portal_pads": town.portal_pads.size()}
-	preview_report["limits"] = "M006 town/dock grayboxes; water/gate blocked; flat elevation M008; provisional navigation M009; trees/forest props M007; final art M011-M014; all portals/interactions inactive."
+	preview_report["forest"] = {"props": forest.prop_records.size(), "species": forest.species_counts, "sizes": forest.size_counts, "blocking_footprints": forest.footprints.size(), "markers": forest.marker_records.size(), "inert_data_records": forest.inert_records.size()}
+	preview_report["limits"] = "M007 complete pinned prop/marker grayboxes; water/gate blocked; flat elevation M008; provisional navigation M009; final art M011-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities are retained data only; no source sprites/lights/behavior."
 
 
 func resolve_layer(layer: Dictionary) -> Dictionary:
@@ -224,6 +230,14 @@ func prepare_navigation() -> PackedStringArray:
 	var geometry: NavigationMeshSourceGeometryData3D = NavigationMeshSourceGeometryData3D.new()
 	geometry.add_faces(crossings.navigation_faces(water_blockers.surface_faces(bounds, false)), Transform3D.IDENTITY)
 	town.add_navigation_obstructions(geometry)
+	forest.add_navigation_obstructions(geometry)
+	# Tree detours exposed Recast corner cuts at the thin bridge rails. Apply
+	# the same conservative voxel margin as props; physical rails stay exact.
+	for rail: Rect2 in crossings.rail_rects:
+		var points: PackedVector3Array = []
+		for point: Vector2 in AlderwakePropGrayboxes._rectangle(rail.grow(0.2)):
+			points.append(Vector3(point.x, 0, point.y))
+		geometry.add_projected_obstruction(points, -0.2, 0.6, false)
 	water_blockers.add_shore_navigation_margin(geometry)
 	NavigationServer3D.bake_from_source_geometry_data(mesh, geometry)
 	if mesh.get_polygon_count() == 0:

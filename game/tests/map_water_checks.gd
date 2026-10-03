@@ -90,6 +90,11 @@ func _run() -> void:
 	await physics_frame
 	await process_frame
 	NavigationServer3D.map_force_update(nav_map)
+	for sync_attempt: int in range(120):
+		if NavigationServer3D.map_get_closest_point_owner(nav_map, Vector3.ZERO) == location.navigation_region.get_rid():
+			break
+		await create_timer(0.01).timeout
+	_check(NavigationServer3D.map_get_closest_point_owner(nav_map, Vector3.ZERO) == location.navigation_region.get_rid(), "Water nav did not synchronize")
 	_check(NavigationServer3D.map_get_regions(nav_map).has(location.navigation_region.get_rid()), "Dry navigation region absent from server")
 	var dry_start: Vector3 = NavigationServer3D.map_get_closest_point(nav_map, Vector3.ZERO)
 	_check(dry_start.distance_to(Vector3.ZERO) <= 0.3, "Provisional dry start not navigable")

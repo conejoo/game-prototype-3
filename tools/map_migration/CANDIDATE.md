@@ -1,4 +1,4 @@
-# M003–M006 isolated terrain, water, crossing and town candidate
+# M003–M007 isolated terrain, water, crossing, town and forest candidate
 
 From the target repository root:
 
@@ -11,6 +11,7 @@ $godotExe = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_m
 & $godotExe --headless --path game --script res://tests/map_water_checks.gd
 & $godotExe --headless --path game --script res://tests/map_crossing_checks.gd
 & $godotExe --headless --path game --script res://tests/map_town_checks.gd
+& $godotExe --headless --path game --script res://tests/map_forest_checks.gd
 ```
 
 Normal main scene and catalog remain unchanged. The alternate root extends the
@@ -51,8 +52,9 @@ M004 retains 90 source-authored water rectangles (`moonwood-water-*`,
 IDs/original X/Z bounds. Independent static boxes span Y[-0.2,3], guarding the full capsule
 and dodge; the separate base floor remains intact. One neutral blue union mesh
 at Y0.015 shows effective occupied footprint (8,598 half-metre cells after M006), including
-lake/river, southern shore and basin. Gate has a low 0.6m diagnostic rim; M007/M014
-still own landmark wrapper/art. Other authored/catalog blockers remain pending.
+lake/river, southern shore and basin. Gate has a low 0.6m diagnostic rim under
+M007's disabled source prop wrapper; water owner keeps its single collider.
+M014 owns final landmark art.
 
 M005 adds a 6×3m bridge deck at X[95,101), Z[-2,1), derived from all18 pinned
 bridge art cells. Two thin0.1m edge rails leave2.8m clear width; no inward posts
@@ -102,13 +104,26 @@ with an extra 0.2m nav-only margin to prevent measured fractional corner cuts.
 M009 owns complete physical-surface navigation, loading and route acceptance.
 M010 still owns connected companion recovery. No new AI/service/save ownership.
 
-Trees (including town trees), other forest props, Moonwell, final imported art,
-active portals, NPCs, routines/resources, zones and activities remain pending/inert.
-Their IDs/provenance remain in pinned data. Maris has a reserved pad only; no
+M007 adds all 395 trees (nine species; 65 small/266 standard/64 large) and 17 remaining
+props, bringing candidate to 468 unique prop wrappers / 455 enabled footprints.
+Exact catalog trunk boxes/polygons, fractional feet, yaw and complete source
+records are retained. Species colors and 0.9/1.4/1.8m size prisms are diagnostic
+grayboxes, with flat preview feet; source heights stay in metadata for M008.
+Shared prop_grayboxes.gd preserves M006's exact triangular-prism physics and
+replaceable VisualRoot. Moonwell keeps its eight-corner outline, gate art adds no
+second body, and six retained source markers plus Tollworks entrance are labeled
+but inactive. 85 routines/resources/NPCs,25 zones/three activities stay data only.
+Source sprites/lights/animation/canopies and final appearance remain deferred.
+Provisional 0.2m nav-only margin also guards forest polygons and thin bridge
+rails. Server iteration is asynchronous; focused checks wait for region readiness.
+Pinned bridge supply cache occupies part of northwest landing, so lane checks
+explicitly account for that record rather than placing actors inside its blocker.
+Inventory, omitted-content disposition and routes: docs/evidence/M007/.
+Maris has a reserved pad only; no
 counter/service/actor exists in the candidate before M015. Normal game remains compact.
 
 For rendered evidence, use the existing opt-in bridge and `send_playtest.ps1` from
-[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m006-*` directory and
+[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m007-*` directory and
 named test slot. Its commands inject ordinary viewport input, with no teleport
 or session mutation. Use short resume/actions/pause batches and confirm pause.
 Headless checks label their synthetic actor placements/physics stepping explicitly.

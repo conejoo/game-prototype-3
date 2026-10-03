@@ -88,6 +88,11 @@ func _run() -> void:
 	hero.player_controlled = false
 	hero.combat_enabled = true # Shared non-player movement API guard, as other physics fixtures.
 	var map: RID = location.get_world_3d().navigation_map
+	for sync_attempt: int in range(120):
+		if NavigationServer3D.map_get_closest_point_owner(map, Vector3.ZERO) == location.navigation_region.get_rid():
+			break
+		await create_timer(0.01).timeout
+	_check(NavigationServer3D.map_get_closest_point_owner(map, Vector3.ZERO) == location.navigation_region.get_rid(), "Town nav did not synchronize")
 	for id: String in goals:
 		var goal: Vector3 = goals[id]
 		_check(_clear(space, capsule, goal), "Town approach capsule blocked: " + id)

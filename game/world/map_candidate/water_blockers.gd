@@ -67,13 +67,7 @@ func build(layout: Dictionary, bounds: Rect2, cutouts: Array[Rect2] = []) -> voi
 	material.cull_mode = BaseMaterial3D.CULL_DISABLED
 	instance.material_override = material
 	visuals.add_child(instance)
-	var gate_visual: MeshInstance3D = MeshInstance3D.new()
-	gate_visual.name = "ClosedExitPreview"
-	var gate_mesh: BoxMesh = BoxMesh.new()
-	gate_mesh.size = Vector3(gate_rect.size.x, 0.6, gate_rect.size.y)
-	gate_visual.mesh = gate_mesh
-	gate_visual.position = Vector3(gate_rect.get_center().x, 0.3, gate_rect.get_center().y)
-	visuals.add_child(gate_visual)
+	# M007 source prop wrapper owns replaceable gate art; this owner keeps physics.
 
 
 func _add_collider(id: String, rect: Rect2, cutouts: Array[Rect2]) -> void:

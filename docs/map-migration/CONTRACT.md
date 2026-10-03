@@ -1,6 +1,6 @@
 # Alderwake map migration contract
 
-M001–M006 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
+M001–M007 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
 and acceptance targets; it does not certify an implemented exterior. M002 pinned
 inputs; M003–M014 build an isolated candidate, M015 activates it, and M019 verifies
 the resulting Windows build against the native release gate. Parent P014 completed
@@ -323,5 +323,34 @@ benchmark is claimed. Parent P014 subsequently completed with
 [native evidence](../evidence/P014/native-holds/VALIDATION.md); M019 must revalidate
 the resulting map build. Import exit 0 still reports the pre-existing missing
 .NET SDK 10.0.9 and restricted certificate-store access; typed GDScript checks pass.
-M006 town/dock footprints are now verified; M007 is next eligible. This includes
+M007 forest/landmark grayboxes are now verified; M008 is next eligible. This includes
 the explicitly approved dock exception above, not an automatic snapshot refresh.
+
+### M007 population and provisional navigation
+
+All 468 retained props now have one candidate wrapper each: 56 town/passenger
+records and 412 forest/deferred records, including all 395 trees. Preserve nine
+species, three size values, original fractional X/Z and full source metadata.
+Graybox trunks use exact enabled catalog polygons; diagnostic heights/colors are
+not final tree art. Moonwell retains its eight-corner polygon and fractional foot,
+with preview Y0 and original Y0.5 retained for M008. Six source markers and the
+Tollworks entrance have inert labeled visuals. Other 85 routine/resource/NPC
+records, 25 zones and three activities remain data only, with explicit disposition
+in [M007 inventory](../evidence/M007/inventory.json).
+
+Gate art belongs to the disabled `future-exit-gate-prop` wrapper; unchanged M004
+`future-exit-gate` remains the sole authored body. Its X[123,125) reaches the east
+perimeter, so the beyond-gate probe is inside that body; no safe reverse-side actor
+start exists. Walking/dodge from the west contact the gate, and the beyond probe
+stays blocked. Do not manufacture a reverse traversal fixture inside collision.
+
+The existing 0.2m conservative provisional navigation outline margin also applies
+to forest footprints and bridge rail rectangles. Tree detours exposed thin rail
+contour cuts; this nav-only repair preserves exact physical rail/trunk outlines.
+Pinned `survey-supply-cache-prop-01` partly occupies the northwest bridge landing;
+keep its footprint rather than promising every old empty-stage lane remains empty.
+94 clear walking/dodge lanes plus four rail slides and both source endpoint routes
+pass. Navigation server iteration is asynchronous at this population size; focused
+checks wait for the expected region to become queryable before testing paths.
+Final physical-height navigation/loading and companion recovery remain M009/M010.
+See [M007 validation](../evidence/M007/VALIDATION.md); no new movement-mask exception.

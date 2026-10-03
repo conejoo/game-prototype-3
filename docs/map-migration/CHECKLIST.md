@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M006 verified complete; M007–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M007 verified complete; M008–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -77,7 +77,7 @@ acceptance again against the resulting map build.
 - Acceptance: town circulation works; rotated/grouped footprint fixtures align;
   doors/Maris reserved pad remain accessible. No new interiors or NPC behaviors.
 
-## [ ] M007 Forest population and landmark grayboxes
+## [x] M007 Forest population and landmark grayboxes
 
 - Place source forest trees from pinned data with original IDs, species/size
   metadata, fractional positions and enabled trunk footprints. No reseeding.
@@ -263,3 +263,11 @@ Checks and exact exit results: extractor --check/report/import exit0; accepted t
 Evidence: docs/evidence/M006/VALIDATION.md, dock-reconciliation/inventory/hash JSON, accepted and failed logs, exact bridge commands/responses and inspected PNGs.
 Decisions or retained limits: user approved named dock cutouts after all three source dock art bounds measured fully inside authored water. Seven target-only floor/landing rectangles remove exactly42m2/168 cells from south-water-01 through07; source records/8,766 authored cells/snapshot unchanged. Town and southern-water nav-only0.2m margin repairs measured Recast corner cuts; physics polygons exact. Heights/nav/recovery/final art/activation/native map-release gates remain later. Shared prop/collider node namespace, synthetic movement setup, typed empty array, nav corners/dock neck and a rejected33-step bridge request repaired; failed/unaccepted evidence retained. No source write/refresh, normal save, Blender, commit, export or next item started.
 Next eligible task: M007 forest population and landmark grayboxes only.
+
+M007 — completed 2026-10-03
+Result: all395 pinned trees/nine species/three sizes plus17 deferred props, fractional Moonwell, six inert markers and Tollworks entrance;468 unique prop wrappers/455 catalog footprints/102 authored collider IDs, sole closed gate.
+Files: forest_population.gd/prop_grayboxes.gd and UIDs; terrain/town/water candidate scripts; candidate root; map_forest_checks.gd/UID and focused existing checks; CANDIDATE/CONTRACT/CHECKLIST/CURRENT_STATE; docs/evidence/M007/.
+Checks and exact exit results: pinned extractor/report/final review PASS0; import exit0 with known SDK/certificate diagnostics; forest/town/water/crossing/candidate/application checks PASS0;64,178 forest polygon probes,16,728 path samples,16 bidirectional physical approach routes;74 town routes;94 clear crossing walking/dodge lanes plus4 rail slides; rendered Moonwell round trip,ford/bridge both directions,Tollworks approach,E inert,closed gate walk/dodge; two normal F10 quits0;git diff --check0.
+Evidence: docs/evidence/M007/VALIDATION.md,inventory/hashes/physics report,accepted and failed logs,raw ordinary-input commands/responses and inspected PNGs.
+Decisions or retained limits: flat Y preview/source heights retained; tree prisms diagnostic only; source supply cache retained on northwest bridge landing;0.2m nav-only margin includes forest/rails; checks wait for asynchronous region readiness; routines/resources/NPCs/zones/activities data only; schema4/content1/production/save/source snapshot unchanged. Parent P014 compact completion preserved; M019 owes map release.
+Next eligible task: M008 physical elevation and ramps only.

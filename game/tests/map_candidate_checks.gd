@@ -56,9 +56,10 @@ func _run() -> void:
 			excluded_blockers.append(body.get_rid())
 	# Town blockers are tested independently; this ray inventory checks the
 	# underlying floor, including beneath all independent prop wrappers.
-	for wrapper: Node in location.town.get_children():
-		if wrapper.has_node("Collision"):
-			excluded_blockers.append(wrapper.get_node("Collision").get_rid())
+	for population: Node in [location.town, location.forest]:
+		for wrapper: Node in population.get_children():
+			if wrapper.has_node("Collision"):
+				excluded_blockers.append(wrapper.get_node("Collision").get_rid())
 	for z: int in range(-18, 62):
 		for x: int in range(-22, 125):
 			var feet: Vector3 = Vector3(x + 0.5, 0, z + 0.5)
@@ -110,7 +111,7 @@ func _run() -> void:
 			_check(absf(hero.global_position.y) < 0.05, "Hero lost flat floor")
 			_check(hero.get_slide_collision_count() > 0, "No perimeter contact")
 			print("M003 edge fixture ", test.axis, " dodge=", dodge, " feet=", hero.global_position)
-	# Full-width/height real capsule traversal in synthetic physics stepping.
+	# Full-width movement and authored trunk stop in synthetic physics stepping.
 	hero.global_position = Vector3(-20, 0, 60)
 	hero.velocity = Vector3.ZERO
 	hero.combat.cancel()
@@ -122,12 +123,18 @@ func _run() -> void:
 	hero.move_direction(Vector3.FORWARD)
 	for step: int in range(1100):
 		hero._physics_process(1.0 / 60.0)
-	_check(hero.global_position.z < -12 and absf(hero.global_position.y) < 0.05, "Hero cannot traverse full map depth")
+	# M007 installs authored trees in this old straight-line depth fixture.
+	# Forest route checks now prove full approaches by walking around trunks.
+	var trunk_contact: bool = false
+	for contact: int in range(hero.get_slide_collision_count()):
+		var body: Node = hero.get_slide_collision(contact).get_collider()
+		trunk_contact = trunk_contact or (body.get_parent().has_meta("tree") and body.get_parent().get_meta("tree") != null)
+	_check((hero.global_position.z < -12 or trunk_contact) and absf(hero.global_position.y) < 0.05, "Depth fixture fell or stopped without authored trunk")
 	print("M003 full-footprint synthetic traversal end: ", hero.global_position)
 	game.queue_free()
 	await process_frame
 	if failures.is_empty():
-		print("M003 map_candidate_checks PASS: batching/defaults/grids/registration/full floor/party pads/save isolation/physical edges and full-footprint movement")
+		print("M003 map_candidate_checks PASS: batching/defaults/grids/registration/full floor/party pads/save isolation/physical edges, full-width movement and authored trunk stop; forest checks own depth routes")
 	else:
 		for failure: String in failures:
 			push_error(failure)
