@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P011 verified complete; P012 next eligible. Subsequent tasks remain pending.
+P001–P012 verified complete; P013 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -117,7 +117,7 @@ P001–P011 verified complete; P012 next eligible. Subsequent tasks remain pendi
 - Acceptance: recovery changes the correct shop state after reconnection;
   leaving/reloading preserves the result; unrecovered saves show original state.
 
-## [ ] P012 — Reusable Blender asset pipeline
+## [x] P012 — Reusable Blender asset pipeline
 
 - Read applicable Blender skills; inspect live connection/scene and preserve
   unrelated work. Create isolated prototype source files/collection.
@@ -423,3 +423,31 @@ Next eligible task:
   commit/push/publication. Failed first bridge launch corrected; successful runtime
   scans clean. Ship/fair recovery remain separate.
 - Next eligible task: P012 — Reusable Blender asset pipeline. Not started.
+
+### P012 — completed 2026-10-02
+
+- Changed: three isolated editable .blend sources/original low-poly meshes, mesh-only
+  GLBs/import UIDs, meter/origin/forward/PBR export contract and scoped helpers;
+  guardian/vessel/plinth imported under Godot VisualRoots. Existing actor/interaction
+  scripts, stable IDs, collider shapes, collision-only navigation and quest rules kept.
+  Focused import/lifecycle check and rendered gallery, README/pipeline/handoff added.
+- Checks/evidence: initial missing live connection resolved after user started MCP;
+  Blender5.2.2/addon1.7 current; original unsaved Scene preserved. Three sources
+  reopen/render exit0, PNGs inspected; four Godot imports exit0 (existing unused
+  Mono SDK warning). Six checks at v1/v2 PASS0, final asset/companion PASS0. Actual
+  Windows lead/upgrade/guardian/vessel4, GUI save, visible vessel re-export, new-process
+  Load4/hero75/ally75/guardian0, replay unchanged, return/revisit5 and physical plinth
+  contact pass. Window b and Godot gallery quit0, runtime scan clean; Git check0.
+  140 exact normal input traces, source/Godot PNGs, logs and before/after unchanged
+  gameplay hashes: evidence/P012/VALIDATION.md.
+- Repairs/decisions: active-scene-only export fixes cross-scene selection leakage;
+  library snapshots normalized to ordinary source mainfiles; two-sided bronze vessel
+  emblems prove geometry revision with unchanged bounds. Architecture/schema4/content1
+  unchanged; no new persistent data, canon decisions or general asset manager.
+- Limits: static faceted prototype art, no rig/animation/textures, hero/ally/beacon
+  placeholders remain. Godot metal look differs from Blender studio. Initial restricted
+  save check rerun with normal access; window a exact quit code unavailable after
+  late handle acquisition, window b verified0. Input injected, no new hardware or
+  Windows export claim. Source/normal save preserved; committed locally at user
+  request. No subagents/push/publication.
+- Next eligible task: P013 — Complete playable recovery slice. Not started.

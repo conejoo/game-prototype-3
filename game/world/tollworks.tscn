@@ -5,6 +5,8 @@
 [ext_resource type="Script" path="res://features/interaction/interactable.gd" id="3_interact"]
 [ext_resource type="PackedScene" path="res://features/interaction/npc_interaction.tscn" id="4_npc"]
 [ext_resource type="PackedScene" path="res://features/interaction/prop_interaction.tscn" id="5_prop"]
+[ext_resource type="PackedScene" path="res://features/interaction/recovery_vessel.tscn" id="6_vessel"]
+[ext_resource type="PackedScene" path="res://assets/models/tollworks_plinth.glb" id="7_plinth"]
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.18, 0.24, 0.29, 1)
@@ -48,10 +50,6 @@ size = Vector3(0.4, 0.6, 12)
 
 [sub_resource type="BoxShape3D" id="Shape_right_wall"]
 size = Vector3(0.4, 0.6, 12)
-
-[sub_resource type="BoxMesh" id="Mesh_plinth"]
-material = SubResource("Material_wall")
-size = Vector3(2, 0.6, 2)
 
 [sub_resource type="BoxShape3D" id="Shape_plinth"]
 size = Vector3(2, 0.6, 2)
@@ -129,8 +127,10 @@ shape = SubResource("Shape_right_wall")
 [node name="Plinth" type="StaticBody3D" parent="."]
 position = Vector3(3, 0.3, -2)
 
-[node name="Mesh" type="MeshInstance3D" parent="Plinth"]
-mesh = SubResource("Mesh_plinth")
+[node name="VisualRoot" type="Node3D" parent="Plinth"]
+position = Vector3(0, -0.3, 0)
+
+[node name="PlinthModel" parent="Plinth/VisualRoot" instance=ExtResource("7_plinth")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plinth"]
 shape = SubResource("Shape_plinth")
@@ -181,11 +181,8 @@ instance_id = "tollworks-temporary-companion"
 position = Vector3(2, 0, 1)
 instance_id = "tollworks-practice-marker"
 
-[node name="RecoveryVessel" parent="." instance=ExtResource("5_prop")]
+[node name="RecoveryVessel" parent="." instance=ExtResource("6_vessel")]
 position = Vector3(4, 0, 3)
 instance_id = "maris-recovery-vessel"
 prompt = "Inspect Maris's recovery vessel"
 dialogue_id = "prototype-maris-vessel"
-
-[node name="Sign" parent="RecoveryVessel" index="2"]
-text = "Maris's vessel\nPrototype adaptation"

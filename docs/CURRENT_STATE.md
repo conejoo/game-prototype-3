@@ -1,89 +1,111 @@
 # Current prototype state
 
-Last updated: 2026-10-02 (America/Vancouver). Verified through P011.
+Last updated: 2026-10-02 (America/Vancouver). Verified through P012.
 
 ## Current task
 
-P011 complete. P012 next eligible, not started. Maris now has basic, returned/fitting
-and restored specialist counter variants. WASD/mouse/Space combat, E interaction,
-J journal/upgrade, Esc modal/pause, R retry and F10 quit remain runnable.
-
-Normal path: accept southwest Maris lead, optionally select Deliberate Strike in J,
-travel north, defeat guardian, inspect southeast vessel, return to Alderwake.
-E at Maris opens labeled return/comparison/practical fitting scene. Final choice
-restores service; Esc or pause choice leaves fitting unfinished. E afterward
-previews specialist river gear/repair fittings. Basic supplies stay available.
+P012 complete — reusable Blender asset pipeline. P013 next eligible, not started.
+Normal gameplay remains: accept southwest Maris lead; optionally select Deliberate
+Strike in J; travel north with temporary ally; defeat guardian; inspect southeast
+vessel; return; complete Maris's labeled practical fitting; preview restored service.
+WASD/mouse/Space combat, E interaction, J journal/upgrade, Esc modal/pause,
+R retry and F10 quit. Saves remain explicit at stable boundaries/arrival anchors.
 
 ## Implementation and changed files
 
-Git initially clean; P010 prerequisite consequence checks PASS0. Applicable
-workspace AGENTS/caveman skill, architecture/checklist/handoff, actual files and
-read-only source story/MQ03/town canon inspected. Godot MCP project info confirmed
-correct game path/version. Source project and normal save slot preserved. No
-subagents, Blender work, installations, commits, push/publication or export.
+Git initially clean. Workspace AGENTS/caveman, architecture/checklist/handoff and
+actual wrappers/rules inspected. P011 recovery and root smoke prerequisites PASS0.
+Initial Blender connection absent; user started Blender/MCP and live retry succeeded:
+5.2.2 LTS, addon1.7/protocol11 current, telemetry off. Original unsaved Scene with
+Cube/Light/Camera preserved; authoring uses three isolated RF-* scenes. Source
+game and normal save untouched. P012 committed locally at user request; no push,
+publication, subagents, installations or Windows export. Architecture rules and
+schema4/content1 unchanged.
 
-- game/world/maris_counter.gd/.uid/.tscn: location-owned interaction wrapper retains
-  npc-03-counter; fixed collision and replaceable VisualRoot. Basic shelf always
-  visible; fitting prop or specialist gear/sign/service board derives from effects.
-  Missing variant definitions fail scene validation. Alderwake instances wrapper.
-- game/content/dialogue/maris_fitting.tres and maris_specialist.tres: immutable,
-  labeled return/practice and specialist preview. Unnamed customer/helper temporary
-  fixtures; no new permanent narrative facts. maris_counter.tres removes stale
-  P011-future response. prototype_catalog.tres adds both definitions (17 total).
-- game/app/game_root.gd: refresh presentation on quest change and successful
-  transition/load after session rebinding. QuestService remains once-only authority.
-  game/features/quests/quest_service.gd and ui/prototype_ui.gd show delivered result.
-- game/tests/recovery_presentation_checks.gd/.uid: stage fixtures, cancel/leave/input,
-  effect replay, unchanged definitions/collision, travel, bidirectional root restores,
-  and separate writer/reader loading basic/fitting/specialist saves.
-  content_catalog_checks.gd updated count; live_playtest_bridge.gd adds read-only
-  counter/line/button observations, no mutation commands.
-- README, tools/PLAYTEST, ARCHITECTURE, CHECKLIST, CURRENT_STATE and docs/evidence/P011 updated.
+- art/source/{guardian,recovery_vessel,tollworks_plinth}.blend: ordinary editable
+  source mainfiles, each with scoped art root and excluded studio camera/lights.
+  Original faceted stone/clay/bronze forms with teal emission. Ground origins,
+  meter scale; Blender +Y maps to Godot -Z forward. Budgets1744/2052/756 triangles
+  (vessel/guardian/plinth). Sizes and exact workflow: art/exports/PIPELINE.md.
+- art/source/build_assets.py, reexport_vessel.py, prepare_sources.py,
+  render_assets.py: scoped authoring/export, repeat-safe visible vessel revision,
+  background conversion from library snapshots to mainfiles, saved-source renders.
+- game/assets/models/*.glb and .import: mesh-only static exports with retained
+  import UIDs. Active-scene-only selected export prevents cross-scene selection
+  leakage. Applied bevels, PBR colors/metal/roughness/emission; no texture dependency.
+- game/features/combat/guardian.tscn: imported GuardianModel under VisualRoot;
+  existing actor script, capsule, combat marker and scene UID preserved.
+- game/features/interaction/recovery_vessel.tscn: dedicated gameplay wrapper owns
+  maris-recovery-vessel ID, existing dialogue/interaction script, box collision,
+  sign and imported VesselModel. Generic practice markers remain unchanged.
+- game/world/tollworks.tscn: vessel wrapper instance and Plinth/VisualRoot/
+  PlinthModel. Existing collider center compensated by -0.3m visual offset.
+  Collision, navigation, stable IDs and authored quest definition unchanged.
+- game/tests/asset_pipeline_checks.gd/.uid: meaningful import/scale/ground/forward/
+  material checks plus wrapper ownership, physical collision/nav, selector,
+  prerequisite rejection, once-only quest effects and save restore. Direct
+  positions/death are labeled synthetic fixtures.
+- game/tests/asset_gallery.gd/.uid: rendered import inspection only, no session or
+  quest fixture. README, CHECKLIST, CURRENT_STATE and docs/evidence/P012 updated.
+  ARCHITECTURE unchanged: this implements its existing imported-art boundary.
 
 ## Checks and evidence
 
-Exact commands and acceptance map: docs/evidence/P011/VALIDATION.md.
-Engine 4.7.2.stable.mono.official.ed1daf0bf; both supplied paths verified.
+Exact commands, acceptance map and caveats: docs/evidence/P012/VALIDATION.md.
+Godot4.7.2.stable.mono.official.ed1daf0bf; both supplied engine paths verified.
 
-- P010 consequence prerequisite PASS0 with normal local access. Restricted first
-  run passed rules but lacked log/certificate access; normal rerun clean.
-- Initial/final editor import exit0; existing unused Mono SDK10.0.9 error remains.
-  Nine focused scripts PASS0: recovery_presentation, content_catalog, quest,
-  interaction_dialogue, save, companion, consequence, live_playtest, application_smoke.
-  Final recovery/companion/smoke/catalog reruns PASS0 after label repair.
-- Separate recovery writer/reader processes PASS0: exact 0/5/6 step states show
-  basic/fitting/specialist variants. Root load replaces restored and unrecovered
-  sessions both directions without arrival/effect replay. Schema4/content1 unchanged.
-- Five Windows Compatibility renderer runs b–f quit0. Normal viewport WASD/E/GUI
-  lead, upgrade40, actual guardian defeat, vessel, town return, three fitting lines,
-  Esc cancel, final completion and specialist preview inspected. GUI save/restart
-  preserves recovered result; room round trip preserves it. Separate GUI unrecovered
-  save/restart/load shows basic shelf and no specialist gear. 213 exact input traces,
-  PNG/JSON and logs retained. No simulated objective or state-mutation playtest path.
-- Initial run a had malformed shell bridge argument and was closed; successful
-  launches corrected it. Board initially clipped by bench; shortened/raised and
-  no_depth_test fixed it, verified in final d/f captures. Runtime checks/windows
-  clean; import SDK message recorded separately. Git whitespace check exit0.
+- P011 recovery_presentation and application_smoke prerequisites PASS/exit0.
+  Initial restricted recovery run exit1 could not access isolated user:// saves
+  and Windows certificate store; normal-access repeat passes.
+- v1/v2/final/UID editor imports exit0; existing editor-only missing C# SDK10.0.9
+  message remains. Six focused checks at v1 and v2 PASS0: asset_pipeline, combat,
+  companion, interaction_dialogue, recovery_presentation, application_smoke.
+  After final back emblem, asset_pipeline and companion reruns PASS0.
+- Three .blend mainfiles prepared/reopened/rendered exit0; all source PNGs
+  inspected. Background preference-read/temporary-cleanup warnings nonblocking.
+  Native live scene/object/viewport inspections plus blender-preservation.json
+  verify new art and preserved original scene/file.
+- Godot gallery Compatibility render exit0, inspected godot-asset-gallery.png:
+  all three assets, materials, ground placement and recognizable silhouettes.
+  Normal room screenshots inspect actual gameplay wrappers too.
+- Window a normal viewport lead/J upgrade, guardian fight and vessel recovery
+  reaches4 effects. GUI Save before re-export preserves hero75/ally75/Tollworks.
+  Window b fresh process GUI Load after revised GLB restores4/guardian0;
+  E/vessel replay grants nothing. Normal return/revisit retains5 and cleared
+  guardian; normal D+S hits Plinth and stops hero x1.649 at collider edge2.
+  Window b F10 exit0; runtime scan clean.
+- Before/after hashes prove only vessel GLB changed during re-export; guardian/
+  plinth GLBs, wrapper scenes, scripts and quest definition identical. Visible
+  bronze diamond emblems: vessel14->16 meshes,1528->1744 triangles, bounds unchanged.
+  Live trace retains140 exact input requests/responses; PNG/JSON evidence retained.
+- Final default-workspace git diff --check exit0. Earlier escalated Git call
+  could not see repository (129); normal check resolved it.
 
-## Decisions, limitations, blockers
+## Decisions, limits, blockers
 
-No P011 blocker. Shop service is visible availability/preview, with no coin,
-transactions or inventory. Reconnection is short dialogue-led scene with practical
-work; no full MQ03/cinematic claim. Existing trust/companion/upgrade fixtures remain
-noncanonical. Ship salvage/repair and fair reopening remain separate future work.
-No new persistent flags, reward counters, effects or migration. Completed older
-schema4-compatible saves display service from existing maris-reconnected effect.
+No P012 blocker. P012 adds art only; definitions/mutable state, once-only effects,
+save schema/IDs and root ownership unchanged. Godot keeps collision/navigation/
+lighting; imported child names have no gameplay authority. No generalized art
+manager or animation abstraction. Companion/dialogue remain noncanonical fixtures;
+no new permanent narrative facts, retired currency ideas or source-game edits.
 
-Low room walls and counter do not hide standing actors; no camera fade added.
-Service board alone ignores depth to avoid billboard/bench clipping. Imported art
-can replace visuals later; collision/navigation remain Godot-owned. Tiny-room nav,
-transient unfinished combat, stable arrival-anchor saves remain prior limits.
-Input injected into actual rendered viewport proves gameplay integration, not new
-OS/hardware-focus evidence. No Blender connection or Windows export claimed.
+Art is provisional low-poly static PBR, no rig/animation/textures/full art-direction
+claim. Godot Compatibility metal reflections differ from Blender studio; inspected
+results are readable. Hero/ally capsules, rotating test beacon and P011/graybox
+stage label remain. Guardian visuals extend0.02m beyond unchanged capsule each side.
+No Windows build claim. Injected viewport input proves gameplay integration, not
+new hardware bindings or OS-focus evidence.
+
+Initial exporter selected other scenes; corrected active-scene export and inspected
+final imports. Harness startup preceded ready.json once; retried. First revisit
+attempt used E outside gate reach; corrected walk/E passes. Collision assertion
+initially read wrong field; actual contacts_during_step confirms Plinth. Window a
+normal quit/process termination observed, but exit handle acquired too late:
+exact exit code unavailable. Window b and gallery exit0 captured properly.
 
 ## Next eligible task
 
-P012 only — Reusable Blender asset pipeline. Read applicable skills, verify live
-connection/current scene and preserve unrelated work; save .blend in art/source,
-export vessel/guardian/modular prop GLBs into Godot wrappers. Validate replacement
-and re-export in game. No P012 work started this session.
+P013 only — Complete playable recovery slice. Validate normal start-to-restored
+service, companion reaction/upgrade and restart boundaries without debug setup;
+review prompts/save flow and remaining canon deviations. Do not start P014
+extension/export work in same session. P012 requires no follow-up before P013.

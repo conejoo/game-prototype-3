@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://features/interaction/interactable.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/recovery_vessel.glb" id="2_model"]
+
+[sub_resource type="BoxShape3D" id="Shape"]
+size = Vector3(0.7, 1.2, 0.7)
+
+[node name="RecoveryVessel" type="Node3D"]
+script = ExtResource("1")
+instance_id = "maris-recovery-vessel"
+kind = "inspect"
+prompt = "Inspect Maris's recovery vessel"
+dialogue_id = "prototype-maris-vessel"
+
+[node name="VisualRoot" type="Node3D" parent="."]
+
+[node name="VesselModel" parent="VisualRoot" instance=ExtResource("2_model")]
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Body"]
+position = Vector3(0, 0.6, 0)
+shape = SubResource("Shape")
+
+[node name="Sign" type="Label3D" parent="."]
+position = Vector3(0, 2.1, 0)
+billboard = 1
+pixel_size = 0.014
+font_size = 28
+text = "Maris's vessel\nPrototype adaptation"

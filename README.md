@@ -199,6 +199,13 @@ Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
 [P007 validation](docs/evidence/P007/VALIDATION.md),
 [P008 validation](docs/evidence/P008/VALIDATION.md),
 [P009 validation](docs/evidence/P009/VALIDATION.md),
-[P010 validation](docs/evidence/P010/VALIDATION.md).
-Next eligible task: P011 (not started). Read
+[P010 validation](docs/evidence/P010/VALIDATION.md),
+[P011 validation](docs/evidence/P011/VALIDATION.md),
+[P012 validation](docs/evidence/P012/VALIDATION.md).
+Blender sources and reusable export workflow: [asset pipeline](art/exports/PIPELINE.md).
+Imported guardian, recovery vessel and Tollworks plinth live under gameplay
+VisualRoots; Godot retains collision/navigation/IDs. Focused checks:
+`res://tests/asset_pipeline_checks.gd`; rendered inspection:
+`res://tests/asset_gallery.gd` (windowed only).
+Next eligible task: P013 (not started). Read
 [current state](docs/CURRENT_STATE.md) before work.
