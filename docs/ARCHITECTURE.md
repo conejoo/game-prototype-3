@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P007.
+Status: implementation contract; runnable Godot prototype through P008.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -242,13 +242,40 @@ there is no fallback to older saves for an incompatible primary.
 
 One labeled shortened Maris (`npc-03`) adaptation covers lead, expedition,
 guardian clearance, vessel return path, return and reconnection checkpoint.
-Normal play stops at the unimplemented guardian objective. Only debug builds
+At P007 delivery, normal play stopped at the unimplemented guardian objective. Only debug builds
 launched with `--quest-test-fixtures` add the labeled TEST ONLY Tollworks prop;
 choosing its dialogue requests simulated clearance through normal quest rules.
-It never changes facts automatically or supplies combat evidence. P008 must
-replace its event source with actual guardian defeat, preserving saved step/effect
+It never changed facts automatically or supplied combat evidence. P008 replaces
+its event source with actual guardian defeat, preserving saved step/effect
 IDs deliberately. Live bridge adds read-only quest/journal observations and J input;
 it still has no objective/state mutation command.
+
+### Delivered combat and durable guardian boundary (P008)
+
+ActorPlaceholder supplies movement, facing, attack, dodge and damage APIs to both
+hero input and an injected GuardianController. CombatState owns transient action
+timers, locked swing direction and contacted target IDs; it has no UI/model/tree
+dependency. Actor wrappers resolve range/cone and world-obstruction queries, then
+apply damage through the target API. A target consumes one contact per swing,
+including a dodged contact; active frames cannot repeatedly damage that target.
+Combat feedback belongs to wrapper markers/VisualRoot and HUD, not damage rules.
+
+One guardian instance `tollworks-guardian-01` appears after expedition eligibility.
+Its actual death callback requests quest clearance using that source ID. P007's
+simulation prop/dialogue is removed. Quest/step/action/effect IDs remain unchanged;
+schema2/content1 stays compatible, including previously saved P007 clearance.
+The existing `tollworks-guardian-cleared` effect is the authoritative durable
+instance fact; no redundant guardian boolean or save migration is needed. On load
+or revisit, presentation creates a defeated, nonblocking wrapper from that fact.
+
+Unfinished guardian health/actions are transient and reset on room reload/retry;
+hero health stays session-owned. Death disables actions; R performs validated
+arrival-anchor placement, then restores hero health while retaining quest/effects.
+Failed travel preserves old guardian/state/targets and resumes input. Save/load
+requires a living hero with no attack/dodge and no living guardian within 5m or
+engaged; pause freezes combat and permits Resume, while save/load stays disabled.
+Interactions/journal reject this unstable combat boundary. No mid-fight snapshot,
+healing economy, companion behavior or general AI framework is introduced.
 
 ## Blender/Godot asset boundary
 

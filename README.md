@@ -1,12 +1,13 @@
 # Returning Fair prototype
 
-P001–P007 complete. Start in Alderwake; approach purple temporary companion or
+P001–P008 complete. Start in Alderwake; approach purple temporary companion or
 gold practice marker and press E to talk/inspect. Choose with mouse or Tab/Enter;
 Finish/Close or Esc returns control. E at glowing gate travels to Tollworks/back.
 Both rooms reuse labeled prototype interactions. Physical hero, mouse facing,
 overhead follow, projection and zoom remain. Maris's prototype counter is southwest;
-accept her lead, travel north, and read J journal. Normal play reaches the guardian
-objective, whose actual combat is P008. See the explicit test fixture below.
+accept her lead, travel north, and read J journal. Defeat the protective guardian
+with mouse clicks; Space dodges its gold windup/red strike. R retries after death.
+Then inspect the southeast vessel, return north, and reconnect at Maris's counter.
 
 ## Run and check
 
@@ -27,6 +28,7 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --path $gamePath --script res://tests/save_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/interaction_dialogue_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/quest_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/combat_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=write
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=read
 & $godotExe --headless --path $gamePath --script res://tests/quest_process_checks.gd -- --phase=write
@@ -40,8 +42,11 @@ WASD moves relative to camera; mouse faces cyan ground marker. P switches betwee
 orthographic (provisional default) and 45° perspective. Wheel or +/- zooms between
 0.8 and 1.15 framing factors. Walls/plinth block movement; diagonals retain normal
 speed. Pause/UI focus/window focus loss clears held controls; press movement keys
-again after control returns. HUD pointer regions block aim/wheel zoom. Attack,
-Space dodge remain configured only. E selects nearest visible interaction;
+again after control returns. HUD pointer regions block aim/wheel zoom/attack.
+Click starts one swing with windup, active and recovery windows; each target is
+contacted once per swing, through range/facing and world-obstruction checks.
+Space dodges in held movement direction, or current facing when stationary;
+dodge lasts 0.30s and blocks damage. E selects nearest visible interaction;
 dialogue blocks gameplay input, clears held movement, and excludes save/load.
 Practice-marker/companion choices remain presentation-only. Maris/vessel choices
 submit quest commands with prerequisite/source checks and durable once-only effects.
@@ -51,7 +56,8 @@ P003 rendered playtests and
 manual keyboard/collision confirmation passed; orthographic retained provisionally.
 
 Esc opens Save run / Load saved run. Save health, party, elapsed time, quest progress
-and effects while paused outside travel/dialogue/journal; Load returns to the last arrival anchor in the saved room,
+and effects while paused outside travel/dialogue/journal/combat/action/death;
+Load returns to the last arrival anchor in the saved room,
 not the saved physical position. No autosave: reopen, pause, choose Load to resume.
 Normal slot is `user://saves/returning-fair.json` in Godot's application user-data
 directory, with `.bak` recovery. Missing/corrupt primary may recover validated
@@ -61,18 +67,16 @@ boundaries: [architecture](docs/ARCHITECTURE.md). Schema v2/content v1 migrates 
 old v1 saves to an unstarted quest with no effects, preserving old facts. Load does
 not rewrite the file; explicit Save writes v2. Malformed/newer data is rejected.
 
-For P007's downstream recovery validation only, run:
-
-```powershell
-& $godotExe --path $gamePath -- --quest-test-fixtures --save-slot=p007-manual
-```
-
-This debug-only flag adds a TEST ONLY guardian-clearance prop in southwest Tollworks.
-After accepting the lead and travelling, E/choice explicitly simulates clearance.
-Inspect Maris's southeast vessel, return north to Alderwake, and choose reconnection
-at her counter. Repeating choices grants no second effect. This is a shortened,
-labeled adaptation, not normal combat or the full campaign. The practical return
-scene/shop variant is P011; vessel recovery does not repair the ship.
+Guardian appears after accepting the lead and entering Tollworks. Its stable
+instance `tollworks-guardian-01` reports actual death to the quest owner. Clearance
+uses the existing durable `tollworks-guardian-cleared` effect; saved P007 completion
+remains compatible. No simulated guardian prop/flag remains. An unfinished fight
+resets on room reload; hero health persists. R restores full hero health at the
+arrival anchor after death, preserving quest facts. Cleared guardians stay defeated
+through retry, travel and save/restart. Combat pause permits Resume, but locks
+Save/Load; retreat outside guardian engagement to use other interactions.
+This remains a shortened, labeled adaptation. Practical return scene/shop variant
+is P011; vessel recovery does not repair the ship.
 
 Installed Mono editor reports missing .NET SDK `10.0.9` during editor import.
 Import finishes with exit 0; this GDScript game and its headless check run cleanly.
@@ -98,7 +102,13 @@ Godot cache/certificate access; final checks used normal local application acces
   rollback and resume. Actor wrappers/state survive room replacement.
 - `game/features/actors/`: authored health defaults, independent runtime state,
   physical hero wrapper receiving session state and supplied camera/UI controls;
-  facing rotates VisualRoot only. Combat not implemented.
+  facing rotates VisualRoot only. Both hero and guardian use its movement, attack,
+  dodge and damage APIs.
+- `game/features/combat/`: node-independent transient CombatState rules, shared
+  guardian wrapper with replaceable VisualRoot, injected approach/strike controller.
+- `game/tests/combat_checks.gd`: windows, single hit, dodge, range/facing/LOS,
+  pause, rollback, death/retry, durable defeat and save restore. Direct fixtures are
+  rule/lifecycle checks; normal rendered combat is recorded separately.
 - `game/features/interaction/`: reusable NPC/prop wrappers and range/LOS selector;
   stable gameplay identities and collision outside replaceable VisualRoot.
 - `game/features/dialogue/`: authored choices and node-independent transient
@@ -149,6 +159,7 @@ Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
 [P004 validation](docs/evidence/P004/VALIDATION.md),
 [P005 validation](docs/evidence/P005/VALIDATION.md),
 [P006 validation](docs/evidence/P006/VALIDATION.md),
-[P007 validation](docs/evidence/P007/VALIDATION.md).
-Next eligible task: P008 (not started). Read
+[P007 validation](docs/evidence/P007/VALIDATION.md),
+[P008 validation](docs/evidence/P008/VALIDATION.md).
+Next eligible task: P009 (not started). Read
 [current state](docs/CURRENT_STATE.md) before work.

@@ -27,8 +27,8 @@ stable_id = "maris-guardian"
 action_id = "maris-clear-guardian"
 effect_id = "tollworks-guardian-cleared"
 location_id = "prototype-tollworks"
-source_id = "prototype-guardian-test"
-objective = "Clear guardian (P008 combat pending; TEST ONLY debug fixture with --quest-test-fixtures)."
+source_id = "tollworks-guardian-01"
+objective = "Defeat protective guardian in Tollworks. Click: attack; Space: dodge its gold windup."
 
 [sub_resource type="Resource" id="Vessel"]
 script = ExtResource("2")

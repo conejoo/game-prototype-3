@@ -21,9 +21,11 @@ func _run() -> void:
 		_check(game.quests.apply(QUEST, lead.action_id, lead.location_id, lead.source_id).ok, "Writer lead failed")
 		game.world_host.request_transition("prototype-tollworks", "tollworks-from-alderwake")
 		await game.world_host.transition_finished
-		for index: int in [2, 3]:
-			var step: QuestStep = definition.steps[index]
-			_check(game.quests.apply(QUEST, step.action_id, step.location_id, step.source_id).ok, "Writer synthetic step failed")
+		# P008 requires physical defeat state and quest fact to agree at save boundary.
+		# Direct damage is TEST SETUP, never normal-combat acceptance evidence.
+		_check(game.guardian.receive_damage(100), "Writer synthetic guardian damage failed")
+		var step: QuestStep = definition.steps[3]
+		_check(game.quests.apply(QUEST, step.action_id, step.location_id, step.source_id).ok, "Writer synthetic vessel failed")
 		game._set_paused(true)
 		failures.append_array(game.save_run())
 	else:

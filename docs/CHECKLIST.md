@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P007 verified complete; P008 next eligible. Subsequent tasks remain pending.
+P001–P008 verified complete; P009 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -80,7 +80,7 @@ P001–P007 verified complete; P008 next eligible. Subsequent tasks remain pendi
 - Acceptance: illegal/out-of-order actions fail; repeated completion grants
   effects once; quest progress survives room travel and process restart.
 
-## [ ] P008 — Hero action combat and guardian
+## [x] P008 — Hero action combat and guardian
 
 - Implement attack, dodge, health, damage/attack windows, one guardian behavior,
   defeat/retry flow, and clear hit/death feedback.
@@ -315,3 +315,34 @@ Next eligible task:
   Viewport input is injected, not hardware/OS-focus proof; normal save/source untouched.
   Initial sandbox save IO denial resolved by normal-access rerun. No push/publication.
 - Next eligible task: P008 — Hero action combat and guardian. Not started.
+
+### P008 — completed 2026-10-02
+
+- Changed: shared actor attack/dodge/damage APIs and transient CombatState windows,
+  one-contact swing rules, range/facing/LOS, guardian pursuit/telegraph/strike,
+  health/hit/death feedback and R retry. Actual guardian defeat replaces simulated
+  quest source; existing durable clearance effect drives defeated room presentation.
+  Combat/save/modal gates, input bridge observations, focused checks and docs added.
+- Checks/evidence: final import exit0; nine focused scripts PASS/exit0; separate
+  save writer/reader and repaired quest writer/reader PASS/exit0. Normal Windows
+  WASD/E/GUI lead/travel, guardian death/R retry, four clicks kill100->0 in25-point
+  steps; effects2->3 once. Dodge consumes strike without damage. Combat pause freezes
+  and locks Save/Load while Resume works. GUI save/new-process load, room revisit
+  preserve clearance; normal vessel advances4 and restarts correctly. Five windowed
+  runs quit0; final death/retry run clean. Exact commands/logs/JSON/inspected PNGs:
+  evidence/P008/VALIDATION.md.
+- Repairs/decisions: lower LOS ray blocks low plinth; P006 fixture waits real swing
+  recovery; process writer uses labeled physical-defeat setup instead of quest-only
+  mutation. HUD overlap/layering fixed from captures; rollback retains guardian
+  references/state. Cached freed-collider tracing guarded after final log scan;
+  normal death/retry/fight and affected checks rerun clean. Schema2/content1 unchanged;
+  quest/step/action/effect IDs preserved,
+  stable actual source tollworks-guardian-01. Prior P007 clearance remains compatible.
+- Limits: unfinished guardian health/actions reset on room reload; hero health
+  persists, death retry heals after validated anchor placement and keeps quest facts.
+  Timing/difficulty provisional; direct pursuit can be blocked. Viewport input is
+  injected, new hardware bindings/OS focus not separately tested. Existing unused
+  Mono SDK warning only; no companion AI/trust/upgrades/Blender/export claim.
+  Normal save/source untouched; committed locally at user request. No push/publication
+  or permanent canon added.
+- Next eligible task: P009 — One active companion. Not started.

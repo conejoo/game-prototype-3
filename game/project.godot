@@ -12,6 +12,10 @@ window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 
 [input]
+retry={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"keycode":82)]
+}
 journal={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"keycode":74)]

@@ -44,6 +44,14 @@ ambient_light_color = Color(0.65, 0.76, 0.86, 1)
 ambient_light_energy = 0.65
 reflected_light_source = 2
 
+[sub_resource type="StandardMaterial3D" id="Combat_material"]
+albedo_color = Color(1, 0.72, 0.1, 1)
+shading_mode = 0
+
+[sub_resource type="TorusMesh" id="Combat_mesh"]
+inner_radius = 0.65
+outer_radius = 0.9
+
 [node name="GameRoot" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_root")
@@ -57,6 +65,8 @@ process_mode = 1
 script = ExtResource("6_party")
 
 [node name="PlayerPlaceholder" type="CharacterBody3D" parent="Party"]
+collision_layer = 2
+collision_mask = 3
 wall_min_slide_angle = 0.0
 script = ExtResource("5_actor")
 
@@ -97,3 +107,8 @@ light_energy = 1.1
 shadow_enabled = true
 
 [node name="UI" parent="." instance=ExtResource("4_ui")]
+
+[node name="CombatMarker" type="MeshInstance3D" parent="Party/PlayerPlaceholder"]
+visible = false
+mesh = SubResource("Combat_mesh")
+material_override = SubResource("Combat_material")

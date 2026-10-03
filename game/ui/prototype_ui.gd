@@ -83,21 +83,39 @@ func accepts_world_pointer(point: Vector2) -> bool:
 
 
 func show_camera(description: String) -> void:
-	camera_label.text = "WASD: move · Mouse: face · E: interact / travel · J: journal · Wheel / +/-: zoom\n%s · P: projection · Esc: close / pause · F10: quit" % description
+	camera_label.text = "WASD: move · Mouse: face / click attack · Space: dodge · E: interact · J: journal\n%s · Wheel / +/-: zoom · P: projection · Esc: pause · F10: quit" % description
 
 
 func show_location(description: String) -> void:
-	location_label.text = "P007 / " + description
+	location_label.text = "P008 / " + description
+
+
+func show_combat(actor: ActorState, guardian: ActorPlaceholder, retrying: bool) -> void:
+	$Screen/CombatStatus.visible = not pause_overlay.visible and not dialogue_overlay.visible and not journal_overlay.visible
+	var message: String = "Hero %d / %d" % [actor.health, actor.max_health]
+	if actor.health == 0:
+		message = "DEFEATED · R: retry at arrival anchor (quest progress kept)"
+	elif is_instance_valid(guardian):
+		message += " · Guardian %d / %d" % [guardian.state.health, guardian.state.max_health]
+		if guardian.state.health == 0:
+			message += " · CLEARED"
+		elif guardian.combat.attacking:
+			message += " · " + ("STRIKE!" if guardian.combat.active() else ("Gold windup — dodge!" if guardian.combat.elapsed < guardian.combat.windup else "Recovering"))
+		else:
+			message += " · Approaching"
+	if retrying:
+		message = "Retrying…"
+	$Screen/CombatStatus.text = message
 
 
 func show_travel(message: String) -> void:
 	travel_label.text = message
 
 
-func set_save_busy(busy: bool) -> void:
+func set_save_busy(busy: bool, block_resume: bool = false) -> void:
 	save_button.disabled = busy
 	load_button.disabled = busy
-	resume_button.disabled = busy
+	resume_button.disabled = block_resume
 
 
 func show_save_status(message: String) -> void:

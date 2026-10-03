@@ -5,6 +5,7 @@ const KEYS: Dictionary[String, int] = {
 	"W": KEY_W, "A": KEY_A, "S": KEY_S, "D": KEY_D,
 	"P": KEY_P, "E": KEY_E, "J": KEY_J, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
 	"+": KEY_EQUAL, "-": KEY_MINUS,
+	"SPACE": KEY_SPACE, "R": KEY_R,
 }
 var game: Node3D
 var directory: String
@@ -38,8 +39,9 @@ func _process(_delta: float) -> void:
 	if busy:
 		for index: int in range(game.player_placeholder.get_slide_collision_count()):
 			var collision: KinematicCollision3D = game.player_placeholder.get_slide_collision(index)
-			if absf(collision.get_normal().y) < 0.5:
-				var name: String = str(collision.get_collider().name)
+			var collider: Object = collision.get_collider()
+			if is_instance_valid(collider) and absf(collision.get_normal().y) < 0.5:
+				var name: String = str(collider.name)
 				if not contacts.has(name):
 					contacts.append(name)
 		return
@@ -224,6 +226,10 @@ func _observe() -> Dictionary:
 	var rig: PrototypeCameraRig = game.camera_rig
 	var focus: Control = get_viewport().gui_get_focus_owner()
 	return {
+		"combat_attacking": actor.combat.attacking, "combat_elapsed": actor.combat.elapsed,
+		"dodge_left": actor.combat.dodge_left,
+		"guardian": {"health": game.guardian.state.health, "position": _vector(game.guardian.global_position), "screen": _point(rig.camera.unproject_position(game.guardian.global_position)), "attacking": game.guardian.combat.attacking, "elapsed": game.guardian.combat.elapsed, "hit_ids": Array(game.guardian.combat.hit_ids)} if is_instance_valid(game.guardian) else {},
+		"player_screen": _point(rig.camera.unproject_position(actor.global_position)),
 		"player_id": actor.state.instance_id, "location_id": game.session.current_location_id,
 		"position": _vector(actor.global_position), "velocity": _vector(actor.velocity),
 		"heading": _vector(-actor.visual_root.global_basis.z),
@@ -259,6 +265,10 @@ func _observe() -> Dictionary:
 
 func _vector(value: Vector3) -> Array[float]:
 	return [value.x, value.y, value.z]
+
+
+func _point(value: Vector2) -> Array[float]:
+	return [value.x, value.y]
 
 
 func _write_json(name: String, value: Dictionary) -> void:

@@ -109,6 +109,9 @@ func _run() -> void:
 			_check(actor.global_position.distance_to(before) > 0.1, "Fresh input failed after cancel")
 			_click(Vector2(20, 300))
 			_check(probe.requests == attacks_before + 1, "Attack input remained locked after cancel")
+			_check(actor.combat.attacking, "Fresh attack did not start real combat window")
+			# P008 makes this a real swing; finish recovery before next interaction.
+			await create_timer(0.7).timeout
 			_check(actor.state.health == 100 and game.session.party_member_ids.size() == 1, "Presentation dialogue changed durable actor/party state")
 		# Occluded nearby target must not be reachable through a collider.
 		var npc: PrototypeInteractable = room.get_node("TemporaryCompanion")

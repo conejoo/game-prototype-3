@@ -17,6 +17,9 @@ var dialogue: DialogueService = DialogueService.new()
 var selected_interaction: PrototypeInteractable
 var quests: QuestService = QuestService.new()
 var journal_open: bool = false
+var guardian: ActorPlaceholder
+var guardian_ai: GuardianController
+var retrying: bool = false
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -46,6 +49,7 @@ func _ready() -> void:
 		get_tree().quit(1)
 		return
 	player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
+	player_placeholder.defeated.connect(_on_player_defeated)
 	quests.initialize(catalog, session)
 	quests.changed.connect(_refresh_journal)
 	dialogue.quest_command = _quest_command
@@ -91,6 +95,8 @@ func _process(delta: float) -> void:
 		session.advance(delta)
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
+	ui.show_combat(player_placeholder.state, guardian, retrying)
+	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
 func _input(event: InputEvent) -> void:
@@ -119,6 +125,10 @@ func _input(event: InputEvent) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("retry") and not event.is_echo() and player_placeholder.state.health == 0:
+		get_viewport().set_input_as_handled()
+		retry_encounter()
+		return
 	if (dialogue.active() or journal_open) and not event.is_action("quit"):
 		get_viewport().set_input_as_handled()
 		return
@@ -178,15 +188,31 @@ func _set_paused(paused: bool) -> void:
 	get_tree().paused = paused
 	_update_controls()
 	ui.show_paused(paused)
+	if paused and not _combat_stable():
+		ui.show_save_status("Combat paused. Resume or R: retry after death; save/load locked.")
 	print("P001: %s at play time %.2fs." % ["Paused" if paused else "Resumed", session.elapsed_play_seconds])
 
 
 func _update_controls() -> void:
-	player_placeholder.set_controls_enabled(window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open)
-	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open)
+	var enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open
+	player_placeholder.set_controls_enabled(enabled and player_placeholder.state.health > 0)
+	player_placeholder.combat_enabled = enabled
+	if is_instance_valid(guardian):
+		guardian.combat_enabled = enabled and player_placeholder.state.health > 0
+		guardian_ai.enabled = guardian.combat_enabled
+		if not guardian.combat_enabled:
+			guardian.clear_input()
+	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
 func _on_transition_started() -> void:
+	player_placeholder.combat.cancel()
+	player_placeholder.combat_targets.clear()
+	if is_instance_valid(guardian):
+		guardian.combat.cancel()
+		guardian.combat_enabled = false
+		guardian_ai.enabled = false
+		guardian.clear_input()
 	journal_open = false
 	ui.show_journal(false, "")
 	_cancel_dialogue()
@@ -209,17 +235,25 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 	camera_rig.reset_physics_interpolation()
 	_update_controls()
 	if success:
-		_configure_quest_fixture()
+		guardian = null
+		guardian_ai = null
 		if not restoring:
 			quests.record_arrival(session.current_location_id)
+		_configure_guardian()
+		_update_controls()
 		_refresh_journal()
 		ui.show_location(catalog.get_location(session.current_location_id).display_name)
 		_refresh_interaction()
 	else:
+		if is_instance_valid(guardian):
+			player_placeholder.combat_targets = [guardian]
+			_update_controls()
 		ui.show_travel("Travel failed: " + "; ".join(errors))
 
 
 func _save_boundary_errors() -> PackedStringArray:
+	if not _combat_stable():
+		return PackedStringArray(["save/load requires living hero outside combat/action windows; retreat or retry first"])
 	if journal_open:
 		return PackedStringArray(["close journal before save/load"])
 	if dialogue.active():
@@ -247,11 +281,17 @@ func _refresh_interaction() -> void:
 		selected_interaction = null
 		ui.show_travel("Journal open · J / Esc: close" if journal_open else "Dialogue open · Esc: close")
 		return
+	if not _combat_stable():
+		selected_interaction = null
+		ui.show_travel("Quest progress kept; retry restarts at last arrival anchor." if player_placeholder.state.health == 0 else "Click: attack · Space: dodge · Finish fight or retreat to interact / save")
+		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
 	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "Walk near purple companion, gold marker, or glowing gate")
 
 
 func interact() -> DialogueService.ActionResult:
+	if not _combat_stable():
+		return DialogueService.ActionResult.new(false, "Finish combat or retreat before interaction.")
 	if dialogue.active() or journal_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
 		return DialogueService.ActionResult.new(false, "Interaction blocked by current input mode.")
 	# Never trust last frame's prompt or hold an old room's node after travel.
@@ -336,6 +376,8 @@ func _refresh_journal() -> void:
 
 
 func _toggle_journal() -> void:
+	if not journal_open and not _combat_stable():
+		return
 	if dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
 		return
 	journal_open = not journal_open
@@ -344,15 +386,63 @@ func _toggle_journal() -> void:
 	_refresh_interaction()
 
 
-func _configure_quest_fixture() -> void:
-	# Explicit, debug-only simulated objective. No fact mutation on boot/load.
-	if session.current_location_id != "prototype-tollworks" or not OS.is_debug_build() or "--quest-test-fixtures" not in OS.get_cmdline_user_args():
+func _configure_guardian() -> void:
+	# Existing stable quest effect is the authoritative guardian instance fact.
+	if session.current_location_id != "prototype-tollworks" or "maris-expedition-started" not in session.completed_effect_ids:
 		return
-	var fixture: PrototypeInteractable = preload("res://features/interaction/prop_interaction.tscn").instantiate()
-	fixture.name = "GuardianTestFixture"
-	fixture.instance_id = "prototype-guardian-test"
-	fixture.dialogue_id = "prototype-guardian-test-dialogue"
-	fixture.prompt = "TEST ONLY: simulate guardian clearance (P008 pending)"
-	fixture.position = Vector3(-4, 0, 3)
-	fixture.get_node("Sign").text = "TEST ONLY\nGuardian clearance"
-	world_host.current_location.add_child(fixture)
+	guardian = preload("res://features/combat/guardian.tscn").instantiate()
+	world_host.current_location.add_child(guardian)
+	guardian.global_position = Vector3(0, 0, 1.8)
+	guardian.team = "guardian"
+	guardian.move_speed = 2.0
+	guardian.initialize(ActorState.new("tollworks-guardian-01", catalog.get_actor("prototype-guardian")))
+	guardian.combat.windup = 0.75
+	guardian.combat.recovery = 0.85
+	guardian.combat.reach = 2.0
+	if "tollworks-guardian-cleared" in session.completed_effect_ids:
+		guardian.state.health = 0
+	guardian.combat_targets = [player_placeholder]
+	player_placeholder.combat_targets = [guardian]
+	guardian.defeated.connect(_on_guardian_defeated)
+	guardian_ai = GuardianController.new()
+	guardian_ai.actor = guardian
+	guardian_ai.target = player_placeholder
+	guardian.add_child(guardian_ai)
+
+
+func _combat_stable() -> bool:
+	return player_placeholder.state != null and player_placeholder.state.health > 0 and not player_placeholder.combat.busy() and not retrying and not (is_instance_valid(guardian) and guardian.state.health > 0 and (guardian_ai.engaged or guardian.global_position.distance_to(player_placeholder.global_position) < 5.0))
+
+
+func _on_guardian_defeated(actor: ActorPlaceholder) -> void:
+	if actor != guardian or actor.state.health != 0 or session.current_location_id != "prototype-tollworks":
+		return
+	var result: DialogueService.ActionResult = quests.apply("prototype-maris-recovery", "maris-clear-guardian", session.current_location_id, actor.state.instance_id)
+	if not result.ok:
+		push_error("Guardian clearance failed: " + result.message)
+	print("P008 guardian defeat: ", result.message)
+
+
+func _on_player_defeated(_actor: ActorPlaceholder) -> void:
+	_update_controls()
+	print("P008 hero defeated; R retries at arrival anchor, quest facts retained.")
+
+
+func retry_encounter() -> void:
+	if player_placeholder.state.health > 0 or retrying or world_host.transitioning or loading_save:
+		return
+	retrying = true
+	get_tree().paused = false
+	ui.show_paused(false)
+	var errors: PackedStringArray = world_host.request_transition(session.current_location_id, session.current_spawn_id)
+	if errors.is_empty():
+		var arrival: Array = await world_host.transition_finished
+		if arrival[0]:
+			player_placeholder.state.health = player_placeholder.state.max_health
+			player_placeholder.initialize(player_placeholder.state)
+		else:
+			push_error("Retry placement failed: " + "; ".join(arrival[1]))
+	else:
+		push_error("Retry failed: " + "; ".join(errors))
+	retrying = false
+	_update_controls()

@@ -353,3 +353,13 @@ autowrap_mode = 2
 layout_mode = 2
 custom_minimum_size = Vector2(0, 44)
 text = "Close journal [J / Esc]"
+
+[node name="CombatStatus" type="Label" parent="Screen"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 168.0
+offset_right = 936.0
+offset_bottom = 194.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.8, 0.4, 1)
