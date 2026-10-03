@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M004 verified complete; M005–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M005 verified complete; M006–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -60,7 +60,7 @@ acceptance again against the resulting map build.
   seams or edges; no falling through base. Bounds/gate work; preserve authored
   crossing openings without claiming crossing completion yet.
 
-## [ ] M005 Footbridge and sand ford traversal
+## [x] M005 Footbridge and sand ford traversal
 
 - Add graybox deck/rails and ford at recorded positions, source-sized landings
   and safe clearance. No swimming/ferry implementation.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001 contract, M002 extraction, M003 terrain candidate and M004 water blockers complete. Append one concise record per item:
+M001 contract, M002 extraction, M003 terrain candidate, M004 water blockers and M005 crossings complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -247,3 +247,11 @@ Checks and exact exit results: pinned extractor --check PASS0; import exit0 with
 Evidence: docs/evidence/M004/VALIDATION.md, exact command JSONs/raw responses, inspected PNGs, observations/hash records and accepted/failed logs.
 Decisions or retained limits: source snapshot/schema4/content1/production IDs unchanged; candidate only, no normal save. Water paint inventoried but diagnostic mesh follows authored occupied union. Tightened provisional Recast contour error0.1 to prevent bank-corner cuts; final nav/height/companion recovery remain M009/M008/M010. Gate collision needed for M004; M007/M014 still own wrapper/art. Wrong winding/fixture rays/base-floor query/nav corner and rendered steering failures retained and repaired. No crossing construction or completion, production activation, export or native map-build gate claimed; parent P014 compact completion preserved.
 Next eligible task: M005 footbridge and sand ford traversal only.
+
+M005 — completed 2026-10-03
+Result: source-registered6×3m bridge with flush deck/2×3m landings/thin edge rails (2.8m clear),7×3m ford with1×3m landings; ordinary rendered hero walking both directions on both routes; adjacent water blocked,no rail-end snags or new water route.
+Files: game/world/map_candidate/crossings.gd plus UID,terrain_preview.gd; game/tests/map_crossing_checks.gd plus UID,map_water_checks.gd,map_candidate_root.gd; tools/map_migration/CANDIDATE.md; migration CHECKLIST/CURRENT_STATE; docs/evidence/M005/.
+Checks and exact exit results: extractor --check PASS0; import exit0 with known SDK/certificate diagnostics; final map_crossing_checks/map_water_checks/map_candidate_checks/application_smoke PASS0;4,032 clearance/floor probes,104 bidirectional walk/dodge runs,4 rail-slide runs,30,728 displacement samples;91 water/gate bodies,8,766 cells,4,157 edge sweeps,22 blocker cases,11,760 floor probes; nav clearance min0.430115m. Rendered commands exit0,inspected960×640 moving/paused captures,normal F10 process exit0; final review/diff check exit0.
+Evidence: docs/evidence/M005/VALIDATION.md,exact command JSONs/raw responses,inspected PNGs,observation/hash records and logs.
+Decisions or retained limits: snapshot/schema4/content1/production IDs unchanged; candidate only,no saves. Edge rails preserve source movement corridor; ford local name is not source ID/western old-ford. VisualRoot separate from physics; provisional dry nav clips rails. Heights/art/nav/recovery/activation/native map-build gate remain later; parent P014 compact completion preserved. No source refresh,Blender,commit,export or next item started.
+Next eligible task: M006 town building and dock footprints only.

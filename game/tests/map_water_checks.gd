@@ -83,10 +83,11 @@ func _run() -> void:
 		var closest: Vector3 = NavigationServer3D.map_get_closest_point(nav_map, point)
 		_check(Vector2(closest.x, closest.z).distance_to(Vector2(point.x, point.z)) >= 0.4, "Blocked point remained navigable: " + str(point))
 		_check(absf(closest.y) <= 0.21, "Navigation baked blocker top")
-	# Both authored three-metre openings remain empty, without deck/rail claims.
+	# M005 rails use 0.1m of each bridge edge. The inset retains >=0.4m
+	# clearance from rails/water for a real radius0.35m capsule.
 	for opening: Rect2 in [Rect2(95, -2, 8, 3), Rect2(67, 11, 7, 3)]:
-		var z: float = opening.position.y + 0.4
-		while z < opening.end.y - 0.39:
+		var z: float = opening.position.y + 0.5
+		while z < opening.end.y - 0.49:
 			var x: float = opening.position.x + 0.4
 			while x < opening.end.x - 0.39:
 				var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()

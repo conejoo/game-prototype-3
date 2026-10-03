@@ -1,6 +1,6 @@
 class_name AlderwakeTerrainPreview
 extends PrototypeLocation
-## M003/M004: source-registered flat preview with independent water blockers.
+## M003–M005: registered flat preview, independent water and crossing wrappers.
 
 const LAYOUT_PATH: String = "res://content/maps/alderwake_layout.json"
 const COLORS: Dictionary[String, Color] = {
@@ -18,6 +18,7 @@ var preview_report: Dictionary = {}
 var bounds: Rect2
 var batch_count: int = 0
 var water_blockers: AlderwakeWaterBlockers
+var crossings: AlderwakeCrossings
 
 
 func _init() -> void:
@@ -54,13 +55,18 @@ func _init() -> void:
 	water_blockers = AlderwakeWaterBlockers.new()
 	water_blockers.build(layout, bounds)
 	add_child(water_blockers)
+	crossings = AlderwakeCrossings.new()
+	crossings.build(layout)
+	add_child(crossings)
+	build_errors.append_array(crossings.build_errors)
 	var spawns: Node3D = Node3D.new()
 	spawns.name = "Spawns"
 	add_child(spawns)
 	_add_spawn(spawns, "alderwake-start", Vector3(float(layout.spawn_xyz_m[0]), 0, float(layout.spawn_xyz_m[2])))
 	_add_spawn(spawns, "alderwake-from-tollworks", Vector3(107.25, 0, 1.25))
 	preview_report["water"] = {"authored_records": water_blockers.records.size(), "union_half_metre_cells": water_blockers.water_cells.size(), "closed_exit": true}
-	preview_report["limits"] = "M004 authored water/gate blocked; flat elevation M008; dry-only provisional navigation M009; crossings M005; raw grid markers, landscape M011; art/props/portals inactive."
+	preview_report["crossings"] = {"bridge_rect": str(crossings.bridge_rect), "ford_rect": str(crossings.ford_rect), "bridge_clear_width_m": 2.8, "floor_y_m": 0.0}
+	preview_report["limits"] = "M005 crossing grayboxes; water/gate blocked; flat elevation M008; provisional navigation M009; raw grid markers, landscape M011; other art/props/portals inactive."
 
 
 func resolve_layer(layer: Dictionary) -> Dictionary:
@@ -210,7 +216,7 @@ func prepare_navigation() -> PackedStringArray:
 	mesh.agent_height = 1.6
 	mesh.agent_max_climb = 0.1
 	var geometry: NavigationMeshSourceGeometryData3D = NavigationMeshSourceGeometryData3D.new()
-	geometry.add_faces(water_blockers.surface_faces(bounds, false), Transform3D.IDENTITY)
+	geometry.add_faces(crossings.navigation_faces(water_blockers.surface_faces(bounds, false)), Transform3D.IDENTITY)
 	NavigationServer3D.bake_from_source_geometry_data(mesh, geometry)
 	if mesh.get_polygon_count() == 0:
 		return PackedStringArray(["candidate has no dry navigation"])
