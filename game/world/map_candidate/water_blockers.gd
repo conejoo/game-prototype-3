@@ -5,12 +5,15 @@ extends Node3D
 const GRID: float = 0.5
 var records: Array[Dictionary] = []
 var water_cells: Dictionary[Vector2i, bool] = {}
+var authored_water_cells: Dictionary[Vector2i, bool] = {}
 var blocked_cells: Dictionary[Vector2i, bool] = {}
 var gate_rect: Rect2
+var dock_cutouts: Array[Rect2] = []
 
 
-func build(layout: Dictionary, bounds: Rect2) -> void:
+func build(layout: Dictionary, bounds: Rect2, cutouts: Array[Rect2] = []) -> void:
 	name = "WaterBlockers"
+	dock_cutouts = cutouts
 	for value: Variant in layout.colliders:
 		var record: Dictionary = value
 		var id: String = record.id
@@ -19,7 +22,10 @@ func build(layout: Dictionary, bounds: Rect2) -> void:
 			continue
 		var values: Array = record.rect_xz_m
 		var rect: Rect2 = Rect2(float(values[0]), float(values[1]), float(values[2]), float(values[3]))
-		_add_collider(id, rect)
+		var collider_cutouts: Array[Rect2] = []
+		if water:
+			collider_cutouts.assign(cutouts)
+		_add_collider(id, rect, collider_cutouts)
 		if water:
 			records.append(record)
 		else:
@@ -33,6 +39,14 @@ func build(layout: Dictionary, bounds: Rect2) -> void:
 				blocked_cells[Vector2i(x, z)] = true
 				if water:
 					water_cells[Vector2i(x, z)] = true
+	authored_water_cells = water_cells.duplicate()
+	# User-approved dock exception changes effective water only. Preserve all
+	# source records and original union for provenance/regression accounting.
+	for cell: Vector2i in water_cells.keys():
+		var center: Vector2 = bounds.position + Vector2(cell) * GRID + Vector2.ONE * GRID / 2
+		if on_dock(center):
+			water_cells.erase(cell)
+			blocked_cells.erase(cell)
 	# No sprite/paint rectangle owns physics. One independent union mesh shows
 	# exact authored water footprint, including overlaps and basin omissions.
 	var visuals: Node3D = Node3D.new()
@@ -62,19 +76,43 @@ func build(layout: Dictionary, bounds: Rect2) -> void:
 	visuals.add_child(gate_visual)
 
 
-func _add_collider(id: String, rect: Rect2) -> void:
+func _add_collider(id: String, rect: Rect2, cutouts: Array[Rect2]) -> void:
 	var body: StaticBody3D = StaticBody3D.new()
 	body.name = id
 	body.set_meta("source_collider_id", id)
 	body.position = Vector3(rect.get_center().x, 1.4, rect.get_center().y)
 	body.collision_layer = 1
 	body.collision_mask = 0
-	var collider: CollisionShape3D = CollisionShape3D.new()
-	var shape: BoxShape3D = BoxShape3D.new()
-	shape.size = Vector3(rect.size.x, 3.2, rect.size.y)
-	collider.shape = shape
-	body.add_child(collider)
+	body.set_meta("source_rect_xz_m", rect)
+	for piece: Rect2 in AlderwakeDockSurfaces.subtract(rect, cutouts):
+		var collider: CollisionShape3D = CollisionShape3D.new()
+		var shape: BoxShape3D = BoxShape3D.new()
+		shape.size = Vector3(piece.size.x, 3.2, piece.size.y)
+		collider.shape = shape
+		collider.position = Vector3(piece.get_center().x - rect.get_center().x, 0, piece.get_center().y - rect.get_center().y)
+		body.add_child(collider)
 	add_child(body)
+
+
+func on_dock(point: Vector2) -> bool:
+	for rect: Rect2 in dock_cutouts:
+		if rect.has_point(point):
+			return true
+	return false
+
+
+func add_shore_navigation_margin(geometry: NavigationMeshSourceGeometryData3D) -> void:
+	# Town routes exposed fractional shoreline corner cuts in Recast's 0.2m
+	# voxels. Conservative 0.2m outline margin is nav-only; physics stays exact.
+	for record: Dictionary in records:
+		if not str(record.id).begins_with("south-water-"):
+			continue
+		var r: Array = record.rect_xz_m
+		for piece: Rect2 in AlderwakeDockSurfaces.subtract(Rect2(r[0], r[1], r[2], r[3]), dock_cutouts):
+			var expanded: Rect2 = piece.grow(0.2)
+			geometry.add_projected_obstruction(PackedVector3Array([
+				Vector3(expanded.position.x, 0, expanded.position.y), Vector3(expanded.end.x, 0, expanded.position.y),
+				Vector3(expanded.end.x, 0, expanded.end.y), Vector3(expanded.position.x, 0, expanded.end.y)]), -0.2, 3, false)
 
 
 func surface_faces(bounds: Rect2, water: bool, height: float = 0.0) -> PackedVector3Array:

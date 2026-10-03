@@ -1,4 +1,4 @@
-# M003–M005 isolated terrain, water and crossing candidate
+# M003–M006 isolated terrain, water, crossing and town candidate
 
 From the target repository root:
 
@@ -10,6 +10,7 @@ $godotExe = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_m
 & $godotExe --headless --path game --script res://tests/map_candidate_checks.gd
 & $godotExe --headless --path game --script res://tests/map_water_checks.gd
 & $godotExe --headless --path game --script res://tests/map_crossing_checks.gd
+& $godotExe --headless --path game --script res://tests/map_town_checks.gd
 ```
 
 Normal main scene and catalog remain unchanged. The alternate root extends the
@@ -45,11 +46,11 @@ physical Y=0. Start (0,0,0) and return (107.25,0,1.25) have the existing +1m X a
 offset and validated clearance after M004 water. Return is safe in this flat stage only; revalidate
 after water/props/heights. Torus/labels identify pads and add no collision.
 
-M004 instantiates 90 source-authored water rectangles (`moonwood-water-*`,
+M004 retains 90 source-authored water rectangles (`moonwood-water-*`,
 `south-water-*`, `passenger-basin-water-01`) and `future-exit-gate` with exact
-IDs/X/Z bounds. Independent static boxes span Y[-0.2,3], guarding the full capsule
+IDs/original X/Z bounds. Independent static boxes span Y[-0.2,3], guarding the full capsule
 and dodge; the separate base floor remains intact. One neutral blue union mesh
-at Y0.015 shows the exact occupied footprint (8,766 half-metre cells), including
+at Y0.015 shows effective occupied footprint (8,598 half-metre cells after M006), including
 lake/river, southern shore and basin. Gate has a low 0.6m diagnostic rim; M007/M014
 still own landmark wrapper/art. Other authored/catalog blockers remain pending.
 
@@ -66,22 +67,48 @@ to route probes X66 and75. `moonwood-sand-ford` is a candidate wrapper name, not
 a source record ID; its cell range is metadata. The unrelated western `old-ford`
 zone remains inert. Both crossings pass rendered ordinary hero walking both ways;
 rails slide without end snags, adjacent water blocks walking/dodge, and all90
-water rectangles/8,766 occupied cells remain unchanged. No swimming/ferry.
+water records/8,766 authored cells remain unchanged. M006's explicitly approved
+southern dock cutouts affect effective occupancy only. No swimming/ferry.
+
+M006 adds 56 town/passenger props (44 enabled catalog footprints, 12 nonblocking
+records), 11 independent authored town colliders, 165 art-only quay deck tiles,
+six labeled inactive portal pads and three Maris/fitting foot markers. All source
+IDs, fractional feet, group provenance/yaw, enabled flags and vertices remain
+in data/wrapper metadata. Triangulated convex prisms preserve polygon outlines,
+including concave test fixtures; no box/convex hull substitutes for a polygon.
+Prop and authored-collider namespaces may share IDs; collider wrapper names use
+`collider--` while metadata keeps original ID. VisualRoot never owns collision.
+Structure rims are 1m high, other blockers 0.6m, on the flat preview only.
+
+All three original western dock art bounds overlap authored southern water fully.
+User approved a deliberate target-only exception: seven registered deck/landing
+rectangles in `dock_surfaces.gd`, 48m² total with 42m² previously blocked water.
+Straight 5×2m bars and a T junction retain source feet/5m width; safe landings
+connect shore. Their floor tops are Y0, visuals Y0.022. The water owner subtracts
+the masks from `south-water-01`–`07`, preserving original records/union and exact
+remaining shapes. 168 half-metre cells become deck, no other cell changes.
+Moonwood crossings/gate/basin unchanged. Both rendered directions and water-edge
+walking/dodge pass; this is a documented art/movement adaptation, not source
+regeneration or swimming. See [contract](../../docs/map-migration/CONTRACT.md) and
+[reconciliation](../../docs/evidence/M006/dock-reconciliation.json).
 
 Physical elevations/ramps remain flat until M008. Provisional navigation bakes
-only explicit dry row-run triangles, clipping rail footprints and omitting water/gate before baking; it never
+only explicit dry row-run triangles, clipping rail footprints and omitting effective water/gate before baking; it never
 parses blocker tops, art or the full base floor. Radius0.4m, height1.6m, climb0.1m,
 cell0.2m/height0.1m, contour error0.1 preserve bank corners. Recast surface is
 Y0.2; gameplay floor remains Y0. This is temporary flat lifecycle support;
+M006 projects town footprints and effective southern-water pieces as obstructions
+with an extra 0.2m nav-only margin to prevent measured fractional corner cuts.
 M009 owns complete physical-surface navigation, loading and route acceptance.
 M010 still owns connected companion recovery. No new AI/service/save ownership.
 
-No prop/catalog blockers, trees, Moonwell wrapper, buildings, imported art
-layers, portals, NPCs, routines/resources, zones or activities are instantiated.
-Their IDs/provenance remain in pinned data. Normal game remains compact.
+Trees (including town trees), other forest props, Moonwell, final imported art,
+active portals, NPCs, routines/resources, zones and activities remain pending/inert.
+Their IDs/provenance remain in pinned data. Maris has a reserved pad only; no
+counter/service/actor exists in the candidate before M015. Normal game remains compact.
 
 For rendered evidence, use the existing opt-in bridge and `send_playtest.ps1` from
-[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m005-*` directory and
+[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m006-*` directory and
 named test slot. Its commands inject ordinary viewport input, with no teleport
 or session mutation. Use short resume/actions/pause batches and confirm pause.
 Headless checks label their synthetic actor placements/physics stepping explicitly.

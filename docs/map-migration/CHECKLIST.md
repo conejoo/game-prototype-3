@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M005 verified complete; M006–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M006 verified complete; M007–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -68,7 +68,7 @@ acceptance again against the resulting map build.
   ordinary movement; nearby water stays blocked; no rail collision snags or
   accidental third route. Route probes from investigation converted by contract.
 
-## [ ] M006 Town building and dock footprints
+## [x] M006 Town building and dock footprints
 
 - Place western grouped structures and other retained town props as primitive
   wrappers; apply catalog foot-relative collision, not sprite rectangles.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001 contract, M002 extraction, M003 terrain candidate, M004 water blockers and M005 crossings complete. Append one concise record per item:
+M001 contract through M006 town/dock footprints complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -255,3 +255,11 @@ Checks and exact exit results: extractor --check PASS0; import exit0 with known 
 Evidence: docs/evidence/M005/VALIDATION.md,exact command JSONs/raw responses,inspected PNGs,observation/hash records and logs.
 Decisions or retained limits: snapshot/schema4/content1/production IDs unchanged; candidate only,no saves. Edge rails preserve source movement corridor; ford local name is not source ID/western old-ford. VisualRoot separate from physics; provisional dry nav clips rails. Heights/art/nav/recovery/activation/native map-build gate remain later; parent P014 compact completion preserved. No source refresh,Blender,commit,export or next item started.
 Next eligible task: M006 town building and dock footprints only.
+
+M006 — completed 2026-10-03
+Result: 56 retained town/passenger props with exact catalog polygons/feet/yaw, 11 authored colliders, three walkable docks and quays, six inactive door pads and clear Maris/fitting reservations. Normal compact game unchanged.
+Files: town_footprints.gd, dock_surfaces.gd and UIDs; terrain_preview.gd/water_blockers.gd; map_town_checks.gd and UID; focused candidate/water/crossing checks and candidate root; CONTRACT/CHECKLIST/CURRENT_STATE/CANDIDATE; docs/evidence/M006/.
+Checks and exact exit results: extractor --check/report/import exit0; accepted town/water/crossing/candidate/application smoke checks PASS0 with no script errors; 37,325 polygon queries, 74 bidirectional physical town routes, 18,036 path samples at<=0.1m; 8,598 effective water-cell probes, 4,124 edge sweeps, 22 water/gate walk/dodge cases; 104 crossing runs/4 rail-slide runs/30,728 displacement samples; 11,760 base-floor rays. Rendered normal WASD/E town and docks both directions, Space blocked by nearby water; inspected 960x640 captures and confirmed pause batches; normal F10 process exit0. Final evidence review/git diff --check exit0.
+Evidence: docs/evidence/M006/VALIDATION.md, dock-reconciliation/inventory/hash JSON, accepted and failed logs, exact bridge commands/responses and inspected PNGs.
+Decisions or retained limits: user approved named dock cutouts after all three source dock art bounds measured fully inside authored water. Seven target-only floor/landing rectangles remove exactly42m2/168 cells from south-water-01 through07; source records/8,766 authored cells/snapshot unchanged. Town and southern-water nav-only0.2m margin repairs measured Recast corner cuts; physics polygons exact. Heights/nav/recovery/final art/activation/native map-release gates remain later. Shared prop/collider node namespace, synthetic movement setup, typed empty array, nav corners/dock neck and a rejected33-step bridge request repaired; failed/unaccepted evidence retained. No source write/refresh, normal save, Blender, commit, export or next item started.
+Next eligible task: M007 forest population and landmark grayboxes only.

@@ -1,6 +1,6 @@
 # Alderwake map migration contract
 
-M001/M002 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
+M001–M006 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
 and acceptance targets; it does not certify an implemented exterior. M002 pinned
 inputs; M003–M014 build an isolated candidate, M015 activates it, and M019 verifies
 the resulting Windows build against the native release gate. Parent P014 completed
@@ -122,6 +122,51 @@ keep at least 1.6m clear usable width, enough for existing nav and capsule plus
 margin; M014 records any visual rail/deck adaptation. Ford cells x89–95,y29–31
 span Godot X `[67,74)`, Z `[11,14)`. Water remains blocked on both adjacent sides;
 no third crossing, swimming or ferry.
+
+### M006 western dock reconciliation
+
+The pinned three western docks have `collision:none`, but their complete sprite
+bounds lie inside `south-water-01`–`south-water-07`. Source docs call docks
+walkable; that statement does not override the explicit shipping water colliders.
+M006 measured this contradiction and the user explicitly chose: **"Add documented
+walkable dock cutouts; preserve surrounding water."** No snapshot refresh occurred.
+
+The target-only exception in `dock_surfaces.gd` authors these **X/Z rectangles**
+(`left,top,width,depth` metres), attached to the unchanged source prop IDs/feet:
+
+| Source prop | Deck / landing rectangles |
+| --- | --- |
+| `dock-row-dock-straight-west-building` | Deck `(-20.5,17,5,2)`; landing `(-19,14.5,2,2.5)` |
+| `dock-row-dock-junction-building` | Bar `(-15.5,17,5,2)`; stem `(-14,19,2,1)`; landing `(-14,14,2,3)` |
+| `dock-row-dock-straight-east-building` | Deck `(-10.5,17,5,2)`; landing `(-7.5,14.5,2,2.5)` |
+
+Straight bars and the T junction deliberately adapt the inspected source artwork;
+they are authored floor geometry, not automatic sprite-sized blockers. The seven
+surfaces cover 48m², including 6m² already dry. Subtract their union from the seven
+named southern water colliders only: remove **42m² / 168 half-metre cells** from
+effective water, changing 8,766 authored cells to **8,598 effective cells**. Retain
+all 90 water records, original bounds/IDs and authored union as provenance. Remaining
+collision pieces keep exact source rectangle edges and full Y[-0.2,3] coverage.
+Render water and feed navigation from effective occupancy. No Moonwood water,
+bridge, ford, basin, closed gate or source paint/data changes; no third Moonwood
+crossing, swimming, ferry or new destination.
+
+Deck physical tops are Y0; independent visual tops Y0.022 match existing flat
+preview tolerance. Deck-floor shapes add no blocking catalog volumes. The source
+prop wrapper foot/yaw stays unchanged; authored landings connect safe shore
+approaches. Both directions pass real capsule paths and rendered ordinary input;
+surrounding water still blocks walking/dodge. M008 must revalidate these seven
+surfaces with physical heights, M009 their navigation, M010 ally recovery, and
+M013 dock art without changing this movement mask silently.
+
+Provisional nav adds a conservative **0.2m outline margin** to town prop/collider
+footprints and effective southern water pieces before the existing 0.4m-radius
+bake. Measured Recast voxel contours otherwise cut fractional town/shore corners.
+This changes navigation clearance only; physical polygons stay exact. M006 samples
+all 74 town paths at ≤0.1m with actual 0.4m capsule clearance; final full-map nav
+and budget gates remain M009. Evidence and original overlaps:
+[M006 reconciliation](../evidence/M006/dock-reconciliation.json),
+[M006 validation](../evidence/M006/VALIDATION.md).
 
 Party arrival retains hero at anchor and ally at `anchor + (1,0,0)`. Require
 0.4m horizontal clearance around both feet, 1.6m headroom plus 0.02m collision
@@ -278,4 +323,5 @@ benchmark is claimed. Parent P014 subsequently completed with
 [native evidence](../evidence/P014/native-holds/VALIDATION.md); M019 must revalidate
 the resulting map build. Import exit 0 still reports the pre-existing missing
 .NET SDK 10.0.9 and restricted certificate-store access; typed GDScript checks pass.
-M002 data extraction is now verified; M003 is next eligible.
+M006 town/dock footprints are now verified; M007 is next eligible. This includes
+the explicitly approved dock exception above, not an automatic snapshot refresh.

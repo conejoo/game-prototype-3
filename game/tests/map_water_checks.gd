@@ -22,13 +22,37 @@ func _run() -> void:
 			continue
 		expected += 1
 		var body: StaticBody3D = water.get_node(str(record.id))
-		var shape: BoxShape3D = body.get_child(0).shape
 		var r: Array = record.rect_xz_m
+		var original: Rect2 = Rect2(r[0], r[1], r[2], r[3])
 		_check(body.get_meta("source_collider_id") == record.id, "Lost authored collider ID")
+		_check(body.get_meta("source_rect_xz_m") == original, "Lost original water rectangle")
 		_check(body.position.distance_to(Vector3(r[0] + r[2] / 2, 1.4, r[1] + r[3] / 2)) < 0.001, "Collider registration: " + str(record.id))
-		_check(shape.size.distance_to(Vector3(r[2], 3.2, r[3])) < 0.001, "Collider extents: " + str(record.id))
+		var affected: bool = false
+		for cut: Rect2 in water.dock_cutouts:
+			affected = affected or original.intersection(cut).has_area()
+		for collider: CollisionShape3D in body.get_children():
+			var shape: BoxShape3D = collider.shape
+			var center: Vector3 = collider.global_position
+			var piece: Rect2 = Rect2(center.x - shape.size.x / 2, center.z - shape.size.z / 2, shape.size.x, shape.size.z)
+			_check(original.encloses(piece) and absf(shape.size.y - 3.2) < 0.001, "Water piece outside source bounds: " + record.id)
+			for cut: Rect2 in water.dock_cutouts:
+				_check(not piece.intersection(cut).has_area(), "Water blocks approved dock: " + record.id)
+			if not affected:
+				_check(shape.size.distance_to(Vector3(r[2], 3.2, r[3])) < 0.001 and collider.position == Vector3.ZERO, "Unaffected water extents changed: " + record.id)
 	_check(water.records.size() + 1 == expected, "Water inventory mismatch")
-	print("M004 exact authored blockers: ", expected, " (water=", water.records.size(), ") union cells=", water.water_cells.size())
+	_check(water.authored_water_cells.size() == 8766, "Authored water union changed")
+	var cut_cells: int = 0
+	for cell: Vector2i in water.authored_water_cells:
+		var center: Vector2 = location.bounds.position + Vector2(cell) * 0.5 + Vector2.ONE * 0.25
+		var expected_dry: bool = false
+		for cut: Rect2 in AlderwakeDockSurfaces.cutouts():
+			expected_dry = expected_dry or cut.has_point(center)
+		_check(water.water_cells.has(cell) == not expected_dry, "Water removed outside approved dock masks")
+		if expected_dry:
+			cut_cells += 1
+			var hit: Dictionary = space.intersect_ray(PhysicsRayQueryParameters3D.create(Vector3(center.x, 4, center.y), Vector3(center.x, 0.8, center.y), 1))
+			_check(hit.is_empty(), "Approved dock has tall water/body: " + str(center))
+	print("M004/M006 authored blockers: ", expected, " water=", water.records.size(), " authored cells=8766 effective cells=", water.water_cells.size(), " approved dock cells=", cut_cells)
 	# Every occupied half-metre cell has real physics; every exposed edge gets
 	# radius-aware motion sweeps at <=0.1m spacing, including tile/record seams.
 	var capsule: CapsuleShape3D = CapsuleShape3D.new()

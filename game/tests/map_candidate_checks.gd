@@ -54,6 +54,11 @@ func _run() -> void:
 	for body: Node in location.water_blockers.get_children():
 		if body is StaticBody3D:
 			excluded_blockers.append(body.get_rid())
+	# Town blockers are tested independently; this ray inventory checks the
+	# underlying floor, including beneath all independent prop wrappers.
+	for wrapper: Node in location.town.get_children():
+		if wrapper.has_node("Collision"):
+			excluded_blockers.append(wrapper.get_node("Collision").get_rid())
 	for z: int in range(-18, 62):
 		for x: int in range(-22, 125):
 			var feet: Vector3 = Vector3(x + 0.5, 0, z + 0.5)

@@ -108,7 +108,7 @@ func _run() -> void:
 					rail_contact = rail_contact or str(hero.get_slide_collision(contact).get_collider().name).ends_with("Rail")
 			_check(rail_contact, "Diagonal fixture missed rail")
 			_check(hero.global_position.x > 102 if sign_value == 1 else hero.global_position.x < 94, "Rail end snag")
-	_check(location.water_blockers.records.size() == 90 and location.water_blockers.water_cells.size() == 8766, "Crossings changed authored water inventory")
+	_check(location.water_blockers.records.size() == 90 and location.water_blockers.authored_water_cells.size() == 8766, "Crossings changed authored water inventory")
 	print("M005 physics: bodies=", body_count, " clearance/floor probes=", clearance_count, " bidirectional walk/dodge lane runs=", runs, " rail slide runs=4 displacement samples=", sample_count)
 	game.queue_free()
 	await process_frame

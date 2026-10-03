@@ -12,15 +12,15 @@ func _ready() -> void:
 	save_repository = SaveRepository.new("user://saves/playtest-map-candidate.json")
 	await super._ready()
 	ui.get_node("Screen/Header/Margin/Row/Titles/Title").text = "ALDERWAKE · TERRAIN CANDIDATE"
-	ui.location_label.text = "M005 isolated preview · No active portals or quest interactions"
+	ui.location_label.text = "M006 isolated preview · Town / docks · No active portals or quest interactions"
 	ui.journal_button.visible = false
-	print("M005 candidate ready: ", JSON.stringify(world_host.current_location.preview_report))
+	print("M006 candidate ready: ", JSON.stringify(world_host.current_location.preview_report))
 	if "--candidate-paused" in OS.get_cmdline_user_args():
 		_set_paused(true)
 
 
 func _refresh_journal() -> void:
-	ui.show_objective("M005 · Bridge / sand ford open · Blue water blocked · Heights pending M008.\nGrass / dirt / cobblestone / sand · Small dots: source decoration grid markers")
+	ui.show_objective("M006 · Town footprints / dock decks · Blue water blocked · Heights pending M008.\nDoor pads inactive · Maris fitting pad reserved · Trees pending M007")
 
 
 func _refresh_interaction() -> void:
