@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M003 verified complete; M004–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M004 verified complete; M005–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -51,7 +51,7 @@ acceptance again against the resulting map build.
   align with source coordinates; boundary blocks escape. Existing game launches.
   Water and elevation are explicitly provisional until M004/M008.
 
-## [ ] M004 River lake and basin blockers
+## [x] M004 River lake and basin blockers
 
 - Add source-authored water blockers, including lake/basin where represented;
   use neutral water preview distinct from grass. Separate blocker geometry
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001 contract, M002 extraction and M003 terrain candidate complete. Append one concise record per item:
+M001 contract, M002 extraction, M003 terrain candidate and M004 water blockers complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -239,3 +239,11 @@ Checks and exact exit results: pinned extractor --check exit0; import exit0 with
 Evidence: docs/evidence/M003/VALIDATION.md, focused logs, exact command JSONs/raw bridge responses, observations and inspected PNGs.
 Decisions or retained limits: source snapshot unchanged; candidate-only catalog and named test save, no normal user save; flat water walkable until M004, heights M008, provisional flat nav M009. Raw decorations are explicit source-grid dots, not sprites; no portals, quests, prop/art blockers or production activation. Parent P014 compact-build completion preserved; M019 still owes map-build gate. Initial readiness race and overly strict 1mm contact assertion retained/repaired; perimeter visuals lowered for party readability without changing collider.
 Next eligible task: M004 river lake and basin blockers only.
+
+M004 — completed 2026-10-03
+Result: all90 authored river/lake/south-shore/basin water blockers plus closed-exit collider, independent blue union preview, intact base floor/bounds/party pads and dry-only provisional nav; both crossing openings preserved.
+Files: game/world/map_candidate/water_blockers.gd plus UID, terrain_preview.gd; game/tests/map_water_checks.gd plus UID, map_candidate_checks.gd, map_candidate_root.gd; tools/map_migration/CANDIDATE.md; migration CHECKLIST/CURRENT_STATE; docs/evidence/M004/.
+Checks and exact exit results: pinned extractor --check PASS0; import exit0 with known SDK/certificate diagnostics; final map_water_checks/map_candidate_checks/application_smoke PASS0;90 water/91 total bodies,8,766 occupied-cell probes,4,195 capsule edge sweeps,22 hero walk/dodge cases,11,760 base-floor probes; synchronized water/nav clearance min0.430115m. Rendered ordinary WASD/Space on four crossing banks and final closed gate, inspected pause/contact captures; two normal F10 quits exit0. git diff --check/final review exit0.
+Evidence: docs/evidence/M004/VALIDATION.md, exact command JSONs/raw responses, inspected PNGs, observations/hash records and accepted/failed logs.
+Decisions or retained limits: source snapshot/schema4/content1/production IDs unchanged; candidate only, no normal save. Water paint inventoried but diagnostic mesh follows authored occupied union. Tightened provisional Recast contour error0.1 to prevent bank-corner cuts; final nav/height/companion recovery remain M009/M008/M010. Gate collision needed for M004; M007/M014 still own wrapper/art. Wrong winding/fixture rays/base-floor query/nav corner and rendered steering failures retained and repaired. No crossing construction or completion, production activation, export or native map-build gate claimed; parent P014 compact completion preserved.
+Next eligible task: M005 footbridge and sand ford traversal only.

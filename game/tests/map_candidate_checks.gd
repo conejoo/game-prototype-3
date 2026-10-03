@@ -16,7 +16,7 @@ func _run() -> void:
 	var location: AlderwakeTerrainPreview = game.world_host.current_location
 	_check(location != null and location.build_errors.is_empty(), "Candidate did not initialize")
 	_check(location.bounds == Rect2(-22, -18, 147, 80), "Full logical bounds differ")
-	_check(location.batch_count == 7, "Terrain must use seven layer/material batches, not per-cell nodes")
+	_check(location.batch_count == 6, "Terrain must use six layer/material batches plus separate water union, not per-cell nodes")
 	_check(location.interactables().is_empty() and location.destination_id.is_empty(), "Candidate activated gameplay records")
 	_check(game.party.members().size() == 2, "Candidate changed party ownership")
 	_check(game.save_repository.path == "user://saves/playtest-map-candidate.json", "Candidate must default to isolated save slot")
@@ -50,10 +50,14 @@ func _run() -> void:
 	# Raycast centers across all 11,760 gameplay cells; one authoritative flat floor.
 	var space: PhysicsDirectSpaceState3D = location.get_world_3d().direct_space_state
 	var floor_count: int = 0
+	var excluded_blockers: Array[RID] = []
+	for body: Node in location.water_blockers.get_children():
+		if body is StaticBody3D:
+			excluded_blockers.append(body.get_rid())
 	for z: int in range(-18, 62):
 		for x: int in range(-22, 125):
 			var feet: Vector3 = Vector3(x + 0.5, 0, z + 0.5)
-			var hit: Dictionary = space.intersect_ray(PhysicsRayQueryParameters3D.create(feet + Vector3.UP, feet + Vector3.DOWN, 1))
+			var hit: Dictionary = space.intersect_ray(PhysicsRayQueryParameters3D.create(feet + Vector3.UP, feet + Vector3.DOWN, 1, excluded_blockers))
 			if not hit.is_empty() and absf((hit.position as Vector3).y) < 0.005 and (hit.normal as Vector3).y > 0.99:
 				floor_count += 1
 	_check(floor_count == 11760, "Flat floor contains holes or wrong heights")

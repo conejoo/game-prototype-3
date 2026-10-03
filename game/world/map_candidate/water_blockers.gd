@@ -1,0 +1,107 @@
+class_name AlderwakeWaterBlockers
+extends Node3D
+## M004: authored water occupancy, independent of tile art and walkable floor.
+
+const GRID: float = 0.5
+var records: Array[Dictionary] = []
+var water_cells: Dictionary[Vector2i, bool] = {}
+var blocked_cells: Dictionary[Vector2i, bool] = {}
+var gate_rect: Rect2
+
+
+func build(layout: Dictionary, bounds: Rect2) -> void:
+	name = "WaterBlockers"
+	for value: Variant in layout.colliders:
+		var record: Dictionary = value
+		var id: String = record.id
+		var water: bool = id.begins_with("moonwood-water-") or id.begins_with("south-water-") or id == "passenger-basin-water-01"
+		if not water and id != "future-exit-gate":
+			continue
+		var values: Array = record.rect_xz_m
+		var rect: Rect2 = Rect2(float(values[0]), float(values[1]), float(values[2]), float(values[3]))
+		_add_collider(id, rect)
+		if water:
+			records.append(record)
+		else:
+			gate_rect = rect
+		# Pinned water/gate bounds lie exactly on the half-metre grid. Reject
+		# future incompatible records rather than silently snapping geometry.
+		for coordinate: float in [rect.position.x, rect.position.y, rect.end.x, rect.end.y]:
+			assert(is_equal_approx(coordinate / GRID, roundf(coordinate / GRID)), "water/gate bounds must fit preview grid")
+		for z: int in range(roundi((rect.position.y - bounds.position.y) / GRID), roundi((rect.end.y - bounds.position.y) / GRID)):
+			for x: int in range(roundi((rect.position.x - bounds.position.x) / GRID), roundi((rect.end.x - bounds.position.x) / GRID)):
+				blocked_cells[Vector2i(x, z)] = true
+				if water:
+					water_cells[Vector2i(x, z)] = true
+	# No sprite/paint rectangle owns physics. One independent union mesh shows
+	# exact authored water footprint, including overlaps and basin omissions.
+	var visuals: Node3D = Node3D.new()
+	visuals.name = "WaterVisuals"
+	add_child(visuals)
+	var faces: PackedVector3Array = surface_faces(bounds, true, 0.015)
+	var surface: SurfaceTool = SurfaceTool.new()
+	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+	for vertex: Vector3 in faces:
+		surface.set_normal(Vector3.UP)
+		surface.add_vertex(vertex)
+	var instance: MeshInstance3D = MeshInstance3D.new()
+	instance.name = "AuthoredWaterPreview"
+	instance.mesh = surface.commit()
+	var material: StandardMaterial3D = StandardMaterial3D.new()
+	material.albedo_color = Color(0.22, 0.39, 0.53)
+	material.roughness = 1.0
+	material.cull_mode = BaseMaterial3D.CULL_DISABLED
+	instance.material_override = material
+	visuals.add_child(instance)
+	var gate_visual: MeshInstance3D = MeshInstance3D.new()
+	gate_visual.name = "ClosedExitPreview"
+	var gate_mesh: BoxMesh = BoxMesh.new()
+	gate_mesh.size = Vector3(gate_rect.size.x, 0.6, gate_rect.size.y)
+	gate_visual.mesh = gate_mesh
+	gate_visual.position = Vector3(gate_rect.get_center().x, 0.3, gate_rect.get_center().y)
+	visuals.add_child(gate_visual)
+
+
+func _add_collider(id: String, rect: Rect2) -> void:
+	var body: StaticBody3D = StaticBody3D.new()
+	body.name = id
+	body.set_meta("source_collider_id", id)
+	body.position = Vector3(rect.get_center().x, 1.4, rect.get_center().y)
+	body.collision_layer = 1
+	body.collision_mask = 0
+	var collider: CollisionShape3D = CollisionShape3D.new()
+	var shape: BoxShape3D = BoxShape3D.new()
+	shape.size = Vector3(rect.size.x, 3.2, rect.size.y)
+	collider.shape = shape
+	body.add_child(collider)
+	add_child(body)
+
+
+func surface_faces(bounds: Rect2, water: bool, height: float = 0.0) -> PackedVector3Array:
+	# Row runs form explicit dry navigation input or water visual triangles.
+	# Navigation never parses blocker tops, terrain art or the full base floor.
+	var faces: PackedVector3Array = []
+	var width: int = roundi(bounds.size.x / GRID)
+	var depth: int = roundi(bounds.size.y / GRID)
+	for z: int in range(depth):
+		var x: int = 0
+		while x < width:
+			var include: bool = water_cells.has(Vector2i(x, z)) if water else not blocked_cells.has(Vector2i(x, z))
+			if not include:
+				x += 1
+				continue
+			var start: int = x
+			x += 1
+			while x < width and (water_cells.has(Vector2i(x, z)) if water else not blocked_cells.has(Vector2i(x, z))):
+				x += 1
+			var left: float = bounds.position.x + start * GRID
+			var right: float = bounds.position.x + x * GRID
+			var top: float = bounds.position.y + z * GRID
+			var bottom: float = top + GRID
+			var a: Vector3 = Vector3(left, height, top)
+			var b: Vector3 = Vector3(right, height, top)
+			var c: Vector3 = Vector3(right, height, bottom)
+			var d: Vector3 = Vector3(left, height, bottom)
+			# Godot front faces use clockwise winding when viewed from above.
+			faces.append_array(PackedVector3Array([a, b, c, a, c, d]))
+	return faces

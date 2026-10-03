@@ -1,4 +1,4 @@
-# M003 isolated terrain candidate
+# M003/M004 isolated terrain and water candidate
 
 From the target repository root:
 
@@ -8,6 +8,7 @@ $godotExe = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_m
 # Optional alternate safe arrival, not a travel interaction:
 & $godotExe --path game res://tests/map_candidate.tscn -- --candidate-return
 & $godotExe --headless --path game --script res://tests/map_candidate_checks.gd
+& $godotExe --headless --path game --script res://tests/map_water_checks.gd
 ```
 
 Normal main scene and catalog remain unchanged. The alternate root extends the
@@ -26,8 +27,10 @@ before further migration work; do not refresh pinned source inputs automatically
 Preview resolves each visible tile layer separately, preserving layer order, defaults,
 explicit null clears, layer origins and 0.5m/1m grids. Center/connected paints use
 their named solid material color; masks, variants and animation are deferred to M011.
-Adjacent same-material cells merge into row rectangles and seven render batches:
-grass, four terrain materials, shoreline, and raw decoration markers. All 183 raw
+Adjacent same-material cells merge into row rectangles and six terrain render batches:
+grass, three dry terrain materials, shoreline, and raw decoration markers. Water paint
+is inventoried unchanged but its M004 preview is a separate authored-blocker union
+mesh, preventing painted crossing/dock openings from being shown as blocked water. All 183 raw
 records keep a 0.12m dot at the center of their source 1m cell; these are explicitly
 diagnostic markers, not source artwork. Individual tile IDs and paint kinds remain
 in the unchanged layout and preview report. Unsupported material/kind fails scene
@@ -38,20 +41,33 @@ walls; their visible graybox rims are 0.6m tall to keep party readable. There is
 no jump mechanic; taller separate colliders guard the full capsule/dodge. Visual
 offsets of 0.003m per layer prevent overlapping planes without changing
 physical Y=0. Start (0,0,0) and return (107.25,0,1.25) have the existing +1m X ally
-offset and no local blockers. Return is safe in this flat stage only; revalidate
+offset and validated clearance after M004 water. Return is safe in this flat stage only; revalidate
 after water/props/heights. Torus/labels identify pads and add no collision.
 
-Water is a neutral blue-gray **walkable preview** until M004. Physical elevations
-and ramps are flat until M008. A single perimeter-inset flat navigation polygon
-allows existing party lifecycle/follow to operate in this empty stage; M009 must
-replace it using complete physical surfaces. This does not certify river routes or
-companion recovery. No authored water/prop/catalog blockers, bridge/deck, trees,
-landmarks, buildings, art layers, portals, NPCs, routine/resources, zones or activities
-are instantiated in M003. Their IDs/provenance remain in pinned data. Future-exit
-blocking belongs to M007; only map perimeter is implemented here.
+M004 instantiates 90 source-authored water rectangles (`moonwood-water-*`,
+`south-water-*`, `passenger-basin-water-01`) and `future-exit-gate` with exact
+IDs/X/Z bounds. Independent static boxes span Y[-0.2,3], guarding the full capsule
+and dodge; the separate base floor remains intact. One neutral blue union mesh
+at Y0.015 shows the exact occupied footprint (8,766 half-metre cells), including
+lake/river, southern shore and basin. Gate has a low 0.6m diagnostic rim; M007/M014
+still own landmark wrapper/art. Other authored/catalog blockers remain pending.
+
+Bridge Z[-2,1) and ford Z[11,14) openings remain dry and unobstructed. No bridge
+deck/rails or ford traversal acceptance yet: M005 owns construction and routes.
+Physical elevations/ramps remain flat until M008. Provisional navigation bakes
+only explicit dry row-run triangles, omitting water/gate before baking; it never
+parses blocker tops, art or the full base floor. Radius0.4m, height1.6m, climb0.1m,
+cell0.2m/height0.1m, contour error0.1 preserve bank corners. Recast surface is
+Y0.2; gameplay floor remains Y0. This is temporary flat lifecycle support;
+M009 owns complete physical-surface navigation, loading and route acceptance.
+M010 still owns connected companion recovery. No new AI/service/save ownership.
+
+No prop/catalog blockers, bridge/deck, trees, Moonwell wrapper, buildings, art
+layers, portals, NPCs, routines/resources, zones or activities are instantiated.
+Their IDs/provenance remain in pinned data. Normal game remains compact.
 
 For rendered evidence, use the existing opt-in bridge and `send_playtest.ps1` from
-[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m003-*` directory and
+[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m004-*` directory and
 named test slot. Its commands inject ordinary viewport input, with no teleport
 or session mutation. Use short resume/actions/pause batches and confirm pause.
 Headless checks label their synthetic actor placements/physics stepping explicitly.

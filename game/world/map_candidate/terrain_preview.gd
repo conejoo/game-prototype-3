@@ -1,6 +1,6 @@
 class_name AlderwakeTerrainPreview
 extends PrototypeLocation
-## M003 only: source-registered flat preview. No water/prop/cliff blockers yet.
+## M003/M004: source-registered flat preview with independent water blockers.
 
 const LAYOUT_PATH: String = "res://content/maps/alderwake_layout.json"
 const COLORS: Dictionary[String, Color] = {
@@ -17,6 +17,7 @@ var build_errors: PackedStringArray = []
 var preview_report: Dictionary = {}
 var bounds: Rect2
 var batch_count: int = 0
+var water_blockers: AlderwakeWaterBlockers
 
 
 func _init() -> void:
@@ -50,12 +51,16 @@ func _init() -> void:
 	_add_box("BoundaryEast", Vector3(bounds.end.x + 0.2, 1.5, center.y), Vector3(0.4, 3.0, bounds.size.y + 0.8))
 	_add_box("BoundaryNorth", Vector3(center.x, 1.5, bounds.position.y - 0.2), Vector3(bounds.size.x + 0.8, 3.0, 0.4))
 	_add_box("BoundarySouth", Vector3(center.x, 1.5, bounds.end.y + 0.2), Vector3(bounds.size.x + 0.8, 3.0, 0.4))
+	water_blockers = AlderwakeWaterBlockers.new()
+	water_blockers.build(layout, bounds)
+	add_child(water_blockers)
 	var spawns: Node3D = Node3D.new()
 	spawns.name = "Spawns"
 	add_child(spawns)
 	_add_spawn(spawns, "alderwake-start", Vector3(float(layout.spawn_xyz_m[0]), 0, float(layout.spawn_xyz_m[2])))
 	_add_spawn(spawns, "alderwake-from-tollworks", Vector3(107.25, 0, 1.25))
-	preview_report["limits"] = "Flat level-zero preview; water walkable until M004; elevation M008; provisional flat navigation M009; raw decoration grid markers, sprites M011; art/props/portals inactive."
+	preview_report["water"] = {"authored_records": water_blockers.records.size(), "union_half_metre_cells": water_blockers.water_cells.size(), "closed_exit": true}
+	preview_report["limits"] = "M004 authored water/gate blocked; flat elevation M008; dry-only provisional navigation M009; crossings M005; raw grid markers, landscape M011; art/props/portals inactive."
 
 
 func resolve_layer(layer: Dictionary) -> Dictionary:
@@ -113,6 +118,10 @@ func _build_layer(parent: Node3D, layer_id: String, rectangles: Array, height: f
 	for value: Variant in rectangles:
 		var record: Dictionary = value
 		var key: String = "raw-marker" if str(record.key).begins_with("raw:") else str(record.key)
+		# Water paint remains inventoried; authored occupancy owns the M004
+		# neutral preview. This keeps painted crossing/dock openings visibly dry.
+		if key == "water":
+			continue
 		if not batches.has(key):
 			var surface: SurfaceTool = SurfaceTool.new()
 			surface.begin(Mesh.PRIMITIVE_TRIANGLES)
@@ -188,18 +197,23 @@ func _add_spawn(parent: Node3D, id: String, feet: Vector3) -> void:
 
 
 func prepare_navigation() -> PackedStringArray:
-	# Provisional unobstructed flat surface so existing party lifecycle can run.
-	# M009 must replace this after real water, props and heights exist.
+	# M004 provisional dry-only bake; M009 owns complete exterior strategy.
 	if navigation_region != null:
 		return PackedStringArray()
-	var inner: Rect2 = bounds.grow(-0.4)
 	var mesh: NavigationMesh = NavigationMesh.new()
+	mesh.cell_size = 0.2
+	mesh.cell_height = 0.1
+	# Tight contour error preserves stepped bank corners rather than allowing
+	# simplified polygons to cut into the authored water occupancy.
+	mesh.edge_max_error = 0.1
 	mesh.agent_radius = 0.4
 	mesh.agent_height = 1.6
-	mesh.vertices = PackedVector3Array([
-		Vector3(inner.position.x, 0, inner.position.y), Vector3(inner.end.x, 0, inner.position.y),
-		Vector3(inner.end.x, 0, inner.end.y), Vector3(inner.position.x, 0, inner.end.y)])
-	mesh.add_polygon(PackedInt32Array([0, 1, 2, 3]))
+	mesh.agent_max_climb = 0.1
+	var geometry: NavigationMeshSourceGeometryData3D = NavigationMeshSourceGeometryData3D.new()
+	geometry.add_faces(water_blockers.surface_faces(bounds, false), Transform3D.IDENTITY)
+	NavigationServer3D.bake_from_source_geometry_data(mesh, geometry)
+	if mesh.get_polygon_count() == 0:
+		return PackedStringArray(["candidate has no dry navigation"])
 	navigation_region = NavigationRegion3D.new()
 	navigation_region.navigation_mesh = mesh
 	add_child(navigation_region)

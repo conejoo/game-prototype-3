@@ -1,152 +1,147 @@
 # Current map migration state
 
-Updated 2026-10-03, America/Vancouver. M001–M003 verified complete.
+Updated 2026-10-03, America/Vancouver. M001–M004 verified complete.
 
 ## Selection and next action
 
-- Active migration item: none. Selected M003 completed this session.
-- Completed: M001 coordinate/compatibility contract; M002 pinned extraction;
-  M003 isolated runnable exterior terrain graybox.
-- Next eligible: M004 river lake and basin blockers only. M004–M019 pending.
-- Normal Alderwake remains the compact prototype; candidate requires explicit
-  alternate scene launch. Production activation is M015.
-- Parent P001–P014 complete for compact prototype; [native P014 evidence](../evidence/P014/native-holds/VALIDATION.md)
-  and parent state preserved. M019 must revalidate the resulting larger-map build
-  with ordinary native inputs. Candidate evidence does not complete that gate.
+- Active migration item: none. Selected M004 completed this session.
+- Completed: M001 contract, M002 pinned extraction, M003 terrain candidate,
+  M004 river/lake/basin blockers and closed-exit collision.
+- Next eligible: M005 footbridge and sand ford traversal only. M005–M019 pending.
+- Normal Alderwake remains compact; explicit alternate candidate scene only.
+  Production activation M015. Parent P001–P014 compact-build completion preserved;
+  M019 must verify the resulting map build with ordinary native inputs.
+- Full acceptance/commands/failures: [M004 validation](../evidence/M004/VALIDATION.md).
 
-## Workspace and source authority
+## Preparation, workspace and authority
 
-Target `D:/development/game-dev-blender/returning-fair-prototype`; Godot project
-`game/`. Workspace parent is not Git repository. Initial Git clean; inspected
-HEAD `b0982e93ef35331d8f5a6a54b017fbe2446ba239`. Existing parent implementation,
-art and P014/M001/M002 evidence preserved. No source edits/generators, snapshot
-refresh, installs, subagents, pushes, exports or publication. User subsequently
-authorized committing the completed M003 implementation and evidence.
+Target D:/development/game-dev-blender/returning-fair-prototype, Godot project game/.
+Initial Git clean, HEAD8a05a8d (M003). Read applicable workspace AGENTS, parent
+architecture/state, full migration prompt/investigation/checklist/state/contract,
+pinned layout/provenance/extractor and candidate implementation/evidence/playtest
+instructions. M003 artifacts/checks inspected before selecting M004; marked in
+progress before edits. Used caveman and Returning Fair gameplay-testing skills.
+No source edits/generators, refresh, dependencies, subagents, Blender, exports,
+commit, push or publication. Prior P014/M001–M003 evidence preserved.
+User subsequently authorized committing the completed M004 changes and evidence.
 
-Read-only source `D:/development/game-prototype-2`; pinned authority remains
-snapshot `alderwake-f4630f9-m002`, source commit
-`f4630f9966d6637ef6579cd87623ea354758191c`. Do not refresh automatically.
-[Manifest](../../tools/map_migration/reference/manifest.json) retains five byte-exact
-map/catalog/material/raw-tile/art-registry inputs. Source images not imported.
+Pinned authority remains snapshot `alderwake-f4630f9-m002`, source commit
+`f4630f9966d6637ef6579cd87623ea354758191c`. Source checkout read-only; runtime reads
+only target-local layout. Manifest retains five byte-exact map/catalog/material/
+raw-tile/art-registry inputs. Extractor --check PASS0, no refresh.
 
 - Map SHA256 `af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f`.
 - Catalog SHA256 `59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2`.
-- Layout `game/content/maps/alderwake_layout.json` SHA256
-  `7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be`.
-- Extraction report SHA256
-  `66b17789874f382f9e3c3ba6f95927dca8c90d24e2328bdabb6771480360b0e9`.
+- Layout SHA256 `7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be`.
+- Extraction report SHA256 `66b17789874f382f9e3c3ba6f95927dca8c90d24e2328bdabb6771480360b0e9`.
+- [Current hashes](../evidence/M004/snapshot-hashes.json); M002 data acceptance
+  retains468 props/455 enabled footprints,102 authored colliders,31 groups,
+  8 art layers,4 tile layers,7 portals,472 elevations/16 slopes,25 zones,
+  3 activities and91 inert records. No new gameplay records enabled.
 
-M003 reran pinned extractor `--check` before work, exit0. Layout/report unchanged.
-M002 [validation](../evidence/M002/VALIDATION.md) remains authority for 15 extraction
-tests, transforms, fractional Moonwell/polygon, enabled catalog footprints and
-inventories:468 props/455 enabled catalog footprints,102 authored colliders,
-31 groups,8 art layers,4 tile layers,7 portals,472 elevations/16 slopes,
-25 zones/3 activities,91 inert records. Runtime reads only target-local JSON.
+## M004 changed files and implementation
 
-## M003 implementation and changed files
+- `game/world/map_candidate/water_blockers.gd` plus UID:90 water rectangles and
+  `future-exit-gate`, exact source IDs/X/Z bounds, independent layer1 static boxes
+  spanning Y[-0.2,3]. Select only moonwood-water-*, south-water-* and passenger-
+  basin-water-01; other authored/catalog blockers remain pending.
+- `terrain_preview.gd`: composes water builder; six dry terrain/marker batches
+  plus one water union. Tile water inventory remains unchanged, but diagnostic
+  water visual follows authored occupancy so bridge/dock openings remain dry.
+  Independent base floor/perimeter remain; no physics from art.
+- Separate blue union mesh atY0.015 covers8,766 half-metre cells/2,191.5m²,
+  including river/lake, southern shore and passenger basin. Gate diagnostic rim
+  only0.6m; M007/M014 still own landmark wrapper/art.
+- Provisional nav bakes explicit dry-only row triangles, excludes water/gate,
+  never parses art/blocker tops/full base floor. Radius0.4m/height1.6m/climb0.1m;
+  cell0.2m/height0.1m, contour error0.1. Final497 polygons, Recast rasterY0.2
+  versus physicalY0. M009 owns complete physical-surface nav/routes/timings.
+- `game/tests/map_water_checks.gd` plus UID: actual body inventory/registration,
+  every occupied cell, radius-aware exposed-edge sweeps, synchronized nav audit,
+  dry pad positives/river/lake/basin/shore/gate negatives, opening clearance,
+  real hero walk/dodge at probes/seams/edges/gate with <=0.1m displacement samples.
+- `map_candidate_checks.gd`: six terrain batches+water; base-floor rays exclude
+  only new blocker bodies, keep existing party/save/bounds/full-footprint checks.
+- `map_candidate_root.gd`: honest M004 HUD/readiness labels. Existing alternate
+  catalog/root/services/party/camera controls unchanged.
+- `tools/map_migration/CANDIDATE.md`, migration CHECKLIST/this state and
+  `docs/evidence/M004/` updated. CONTRACT and parent production files unchanged.
 
-- `game/world/map_candidate/terrain_preview.gd` plus UID and
-  `alderwake_candidate.tscn`: typed PrototypeLocation subclass, seven batched
-  material/diagnostic-marker meshes, independent flat floor and four perimeter
-  bodies, safe start/return anchors, provisional flat nav polygon.
-- `game/tests/map_candidate.tscn`, `map_candidate_root.gd` plus UID,
-  `fixtures/map_candidate_location.tres`: explicit alternate root inherits normal
-  GameRoot, appends one location to detached manifest, reuses session/services/
-  WorldHost/persistent party/camera/UI. Candidate HUD labels limitations; no journal
-  or gameplay interactions. Optional `--candidate-return` selects safe return
-  arrival; `--candidate-paused` provides a verified initial playtest checkpoint.
-- `game/tests/map_candidate_checks.gd` plus UID: meaningful data/actual emitted
-  mesh registration/default/clear/grid checks, all-floor coverage, real WorldHost
-  two-party placement/identity, normal-catalog/save rejection, synthetic physical
-  edge/dodge and full-width/depth traversal. Synthetic placements are labeled.
-- `tools/map_migration/CANDIDATE.md`: launch commands, preview dispositions,
-  save isolation and handoff boundaries. Migration CHECKLIST/this state updated.
-- `docs/evidence/M003/`: full validation, exact command JSONs/summaries/raw bridge
-  responses, observed PNGs, headless/import/runtime logs, hashes/final review.
+## Verification and actual rendered observations
 
-No normal game/service/save/art files changed. Parent architecture and CONTRACT
-unchanged: this is the already-authorized provisional stage, not production scope.
+Both installed Godot paths exist; version4.7.2.stable.mono.official.ed1daf0bf.
+Exact commands from target root and logs in M004 VALIDATION.md:
 
-## Terrain, collision and candidate isolation
+- Bundled Python -B tools/map_migration/extract_layout.py --check: PASS/exit0.
+- Godot --headless --editor --path game --import --quit: exit0. Known missing
+  .NET SDK10.0.9/certificate diagnostics retained; no clean-import claim.
+- Godot --headless --path game --script res://tests/map_water_checks.gd:
+  final PASS/exit0;91 bodies/90 water,8,766 occupied cells,4,195 capsule edge
+  sweeps at<=0.1m;22 hero walking/dodge cases grounded and blocked. All8,766
+  water centers >=0.430115m horizontal distance from synchronized nav; positive
+  dry start/return nearest points validated, no blocker-top navigation.
+- Same command for map_candidate_checks.gd: final PASS/exit0;11,760 actual
+  base-floor probes, both WorldHost party pads and reload identity/save isolation,
+  all four bounds/corner and full-width/depth actual capsule movement.
+- Same command for application_smoke.gd: PASS/exit0, normal compact composition,
+  input/pause/resume. Accepted runtime logs only known certificate diagnostic.
+- Rendered A: alternate return spawn, inspected paused0s; ordinary viewport
+  WASD/Space on bridge north/south contacts moonwood-water-014/-015; ordinary
+  dry-bank walk to ford, north/south contacts -024/-025. GroundedY<0.001m,
+  no water entry. No teleports/state mutations or Save/Load. Inspected960×640
+  contact and pause captures; exact commands/raw responses/timings retained.
+- A north end(100.0956,0.000942,-1.65558); south(98.3586,0.000940,0.649058);
+  ford north(71.1788,0.000942,11.35094); south(69.8146,0.000405,13.64906).
+- Rendered B after final nav refinement: return placement, ordinary north/east
+  walk+Space blocked by future-exit-gate at(122.6491,0.000941,-3.92174), before
+  colliderX123. Hero/ally readable; final inspected pause. Both A/B normal F10
+  quit with retained process handles, exit0. These are debug viewport-input
+  checks, not native hardware/export/full-quest evidence.
+- Process-local APPDATA=builds/m004-user-data, LOCALAPPDATA=builds/m004-local-data;
+  named candidate slots playtest-m004-water-a/playtest-m004-gate-b. No saves written.
+- git diff --check exit0; final-review.log verifies intended files, text whitespace,
+  local documentation links, hashes, headless results, raw commands/PNGs and exits.
 
-Contract scale/origin/axes unchanged:32 units/metre, source origin(704,576), source
-X/Y -> Godot X/Z; full bounds X[-22,125),Z[-18,62),147×80m. Physical Y=0 preview.
-Floor/collision never comes from render meshes or source sprite rectangles.
+## Failures retained and repaired
 
-Each layer preserves source order/visibility/origin and 0.5m/1m grid. Absent cells
-resolve layer default; explicit null suppresses only its layer. Grass default
-fills47,040 subcells with zero ground overrides. Terrain counts: cobblestone1,113,
-dirt2,851,sand1,140,water8,374; shoreline156. Same-material row runs produce1,156
-rectangles and seven render batches, not thousands of scripted tile nodes.
-Center/connected materials preview solid semantic colors; masks/variants/animation
-remain M011. All183 raw decorations get explicit0.12m dots at their1m cell centers;
-source tile IDs stay in unchanged layout/report. These dots are not source artwork.
+Wrong navigation face winding initially produced no dry nav (exit1); corrected
+clockwise faces. Initial water rays started inside boxes and sweep capsules touched
+floor (exit1); corrected ray origin/2cm lift without changing collision. Old M003
+floor test hit new blockers (exit1); exclude those bodies for base-floor coverage.
+Broader synchronized nav audit found10 bank-corner water centers below0.4m under
+default contour simplification (exit1); set edge_max_error0.1, keep radius0.4,
+final minimum0.430115m. Failed logs remain; earlier narrow nav checks not accepted
+as final proof. First rendered bridge-south chord moved east; retained as steering
+failure, corrected A+S and rechecked. Initial final-review used Windows default
+codec for UTF-8 state (exit1); fixed explicit UTF-8 read, final PASS0. No blocker remains.
 
-Four3m perimeter colliders sit outside logical bounds;0.6m visible rims keep hero/
-ally readable. No jumping exists. Surface offsets0.003m per layer are visual only.
-Start(0,0,0) and return(107.25,0,1.25) use existing +1m X ally offset. Real floor/
-capsule safety passes for both party members; revalidate when new blockers arrive.
-Single0.4m-inset flat navigation polygon is provisional lifecycle support only;
-M009 must replace it using complete physical surfaces.
+## Contract, timing and limits for next session
 
-Candidate ID `candidate-alderwake` exists only in detached catalog. Normal main
-scene/catalog and stable production IDs remain unchanged, schema4/content1.
-Default test save `user://saves/playtest-map-candidate.json`; debug named test slots
-remain `playtest-*.json`. Normal catalog rejects candidate saves. No Save/Load
-invoked in rendered checks. Process-local APPDATA=`<target>/builds/m003-user-data`,
-LOCALAPPDATA=`<target>/builds/m003-local-data`; no normal user save touched.
+Coordinates unchanged:32units/m, origin(704,576), X[-22,125),Z[-18,62),147×80m,
+physicalY0 preview. Both3m crossing gaps preserved: bridgeZ[-2,1), fordZ[11,14).
+Real radius0.35m capsule clearance queries at0.1m over0.4m-inset opening grids
+pass. No bridge deck/rail construction or bidirectional traversal completion.
+Both start(0,0,0)/return(107.25,0,1.25) full-party pads safe after water; retain
+existing+1m X ally offset and revalidate after later props/heights.
 
-## Verification and evidence
+Normal catalog/main scene/production location and spawn IDs, schema4/content1,
+quest/once-only services, imported art and normal user save untouched. Candidate
+remains detached/test-only. Heights/ramps/cliffs M008, complete nav M009,
+connected companion recovery M010, landscape M011, trees/town/landmark art and
+normal activation M015 pending. Six unused routes remain inactive. No larger-map
+performance/save/export/native release claim. Parent P014 compact-build complete;
+M019 must reverify resulting map build.
 
-[M003 validation](../evidence/M003/VALIDATION.md) records commands/exits, acceptance
-mapping, failed attempts, raw inputs, actual observations and durable PNG links.
-Godot supplied paths verified; engine4.7.2.stable.mono.official.ed1daf0bf.
+Pause overlays inspected after every input batch before reasoning. Game runs
+between tool calls until confirmed paused; duration is wall-driven, not physics
+stepping. Brief pause during unfinished dodge can keep save locked until resumed
+cooldown finishes; later batches settle before pause. A+S points roughly south,
+D+W north, D+S east, A+W west for current camera; use observed coordinates rather
+than assuming global WASD axes. No helper/game process left running.
 
-- Bundled Python `-B tools/map_migration/extract_layout.py --check`: PASS/exit0.
-- Godot `--headless --editor --path game --import --quit`: exit0. Known missing
-  .NET SDK10.0.9/certificate-store diagnostics retained; no clean-import claim.
-- `--headless --path game res://tests/map_candidate.tscn --quit-after 180`: exit0,
-  candidate root ready, two-party safe arrival,18 definitions; normal catalog17.
-- `--headless --path game --script res://tests/map_candidate_checks.gd`: PASS/exit0
-  after final visual-rim change.11,760 floor probes; actual capsule crosses full
-  width/depth; four edges and northwest corner block walking/dodge. Both anchor
-  placements and same party wrappers verified, meshes registered to source cells.
-- `--headless --path game --script res://tests/application_smoke.gd`: PASS/exit0,
-  normal composition/input/pause/resume. Rendered default startup also inspected.
-- Windowed bridge A: ordinary viewport WASD from(0,0,0) through town/forest/sand
-  to return pad(107.13,0,1.21), then east perimeter. No teleport/state mutations.
-  Walking/dodge contact BoundaryEast; X124.6491, groundedY0.000944. Confirmed pause
-  checkpoints between batches. Captures960×640 show registered terrain/materials.
-- Final windowed C: starts at exact return anchor; inspected party arrival and
-  walking/dodge against low visual rim, hero/ally visible. Normal F10 quit exit0.
-- Windowed B: normal compact Alderwake with Maris/station/gate/objective and two
-  party members unchanged; pause/F10 quit exit0. No quest/Save/Load actions.
-- Accepted runtime logs have only known certificate diagnostic, no GDScript error.
-- `git diff --check` and untracked text/local-link/state/intended-file review exit0.
-
-Initial A renderer not ready after2s: failed sender executed no input; launcher
-shell exit1. Same process reobserved once ready. A normal F10 quit logged, exact
-child exit unavailable; final B/C process handles captured exit0. Initial focused
-test exit1 used overly strict1mm boundary-contact tolerance; observed7mm recovery
-remained contained, repaired test to1cm margin without weakening collision. Both
-failures retained. Initial tall perimeter visuals hid hero; lowered visual only,
-final rendered C and focused check pass after correction.
-
-## Remaining limits and next-session preparation
-
-No M003 blocker. Water remains visibly labeled **walkable preview** until M004;
-elevation/ramps/cliffs flat until M008. No authored water/prop/catalog blockers,
-bridge/deck, buildings/trees, Moonwell/closed-exit wrappers, art layers, portals,
-NPCs/routines/resources/zones/activities or production quests activated. All records
-remain in pinned data. No crossing, complete nav/companion recovery, height/aim,
-landscape/art, larger-map save compatibility, performance, export or native release
-acceptance claimed. Preserve parent P014 compact-build status.
-
-Select M004 only. Read full prompt, contract, this state, layout/colliders and M003
-candidate README/checks/evidence. Add source-authored river/lake/basin blockers and
-distinct neutral water preview, retaining openings for M005. Separate water render
-from physical blockers/navigation. Test real walk/dodge at four negative probes,
-seams/edges and perimeter; do not implement crossings/forest/elevation/activation
-yet. Recheck both party pads. Existing base floor must prevent falling; water must
-leave provisional nav before any complete-navigation acceptance. M009 owns final
-route/nav strategy. Never use normal save or refresh pinned source automatically.
+Select M005 only: read full prompt/contract, this state, pinned bridge art/ford
+records and M004 blockers/tests/evidence. Add graybox deck/edge rails/landings and
+ford treatment; prove ordinary movement both directions, adjacent water blocked,
+no snags/third route. Keep all90 water footprints and source gap boundaries;
+recheck pad/bounds/nav exclusion after changes. Do not activate normal exterior,
+refresh source snapshot, use normal save or start forest/elevation/navigation item.
