@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001 verified complete; M002–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M002 verified complete; M003–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -13,7 +13,8 @@ Repair only regressions needed for selected item; do not expand into next item.
 Each completion needs changed files, exact checks/results and evidence in
 CURRENT_STATE.md plus short completion record below. Proposed new paths below
 are suggestions, not claims that files exist. Main P001–P014 checklist remains
-separate; its open release gate does not prevent candidate map work.
+separate. P014 now complete for the compact prototype; M019 must verify native
+acceptance again against the resulting map build.
 
 ## [x] M001 Coordinate and compatibility contract
 
@@ -27,7 +28,7 @@ separate; its open release gate does not prevent candidate map work.
 - Acceptance: contract includes converted spawn, Maris, bridge, ford, Moonwell,
   Tollworks and exit probes; baseline results or concrete regressions recorded.
 
-## [ ] M002 Pinned source snapshot and layout extraction
+## [x] M002 Pinned source snapshot and layout extraction
 
 - Add target-local `tools/map_migration/` extraction command, pinned source
   inputs under `tools/map_migration/reference/`, and normalized layout under
@@ -203,7 +204,7 @@ separate; its open release gate does not prevent candidate map work.
 
 ## Completion records
 
-M001 contract preparation complete; runtime implementation starts at M002. Append one concise record per item:
+M001 contract and M002 extraction complete; candidate implementation starts at M003. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -222,3 +223,11 @@ Checks and exact exit results: isolated import exit0 with documented .NET/certif
 Evidence: docs/evidence/M001/VALIDATION.md (exact commands, logs and acceptance mapping).
 Decisions or retained limits: schema4/content1 and production IDs unchanged; six portals inert, existing Tollworks route only; physical routes/arrival pads/performance not yet verified; P014 native gate open. No runtime/source edits.
 Next eligible task: M002 pinned source snapshot and layout extraction.
+
+M002 — completed 2026-10-03
+Result: target-local byte-exact snapshot, deterministic layout/extractor/check mode and explicit inert/exclusion/unused-registry report; all 468 props, 102 authored colliders, 7 portals, 472 height cells and 16 slopes retained.
+Files: tools/map_migration/ command/tests/README/reference/report; game/content/maps/alderwake_layout.json; game/tests/map_layout_checks.gd plus UID; migration CONTRACT/CHECKLIST/CURRENT_STATE; docs/evidence/M002/.
+Checks and exact exit results: extractor/generate-repeat/check exit0 with identical layout/report SHA256; 15 Python acceptance tests exit0 (negative CLI drift probes assert exit1); Godot import, map_layout_checks and application_smoke exit0; final review/diff check exit0. Import retains known SDK/certificate errors. Failed initial fixture serializer log retained and repaired.
+Evidence: docs/evidence/M002/VALIDATION.md with commands, acceptance mapping, hashes and logs.
+Decisions or retained limits: source ID namespaces preserved; default grass/explicit clears and point-versus-cell transforms retained; inert portal destinations never exterior-transformed; all routes still disabled. Snapshot matches M001 identity. Parent P014 native evidence complete for compact build, M019 must revalidate map build. No normal runtime/save/art edits or candidate/playability claim.
+Next eligible task: M003 runnable exterior terrain graybox only.

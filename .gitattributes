@@ -1,0 +1,6 @@
+# M002 snapshot hashes refer to the original bytes, including source line endings.
+tools/map_migration/reference/* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Keep extractor/generated hashes stable across Windows and Unix checkouts.
+tools/map_migration/extract_layout.py text eol=lf
+tools/map_migration/extraction_report.json text eol=lf
+game/content/maps/alderwake_layout.json text eol=lf

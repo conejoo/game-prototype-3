@@ -1,9 +1,10 @@
 # Alderwake map migration contract
 
-M001 verified 2026-10-03 (America/Vancouver). This contract fixes conversion and
-acceptance targets; it does not certify an implemented exterior. M002 pins inputs,
-M003–M014 build an isolated candidate, M015 activates it, and M019 reconciles the
-Windows build with the still-open native P014 release gate.
+M001/M002 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
+and acceptance targets; it does not certify an implemented exterior. M002 pinned
+inputs; M003–M014 build an isolated candidate, M015 activates it, and M019 verifies
+the resulting Windows build against the native release gate. Parent P014 completed
+for the compact prototype after M001; that evidence does not certify a future map build.
 
 ## Authority and ownership
 
@@ -12,10 +13,15 @@ map `alderwake`, source HEAD `f4630f9966d6637ef6579cd87623ea354758191c`.
 Map SHA-256 `af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f`.
 Object catalog: `assets/data/world_objects/catalog.json`, SHA-256
 `59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2`.
-No target-local snapshot exists at M001. These are observed identities, not a
-claim that inputs are already pinned. M002 must compare them before copying;
-after pinning, the target snapshot wins and source drift requires reconciliation.
+M002 compared these hashes before pinning byte-exact inputs under
+`tools/map_migration/reference/`. Snapshot `alderwake-f4630f9-m002` and its manifest
+also pin terrain/raw-tile/art registries needed for exterior record resolution.
+Normalized layout is `game/content/maps/alderwake_layout.json`; its provenance and
+the extraction report carry input/manifest/extractor hashes. The target snapshot
+wins; source drift requires deliberate reconciliation, never automatic refresh.
 Older forest-document hashes and generators cannot replace shipping geography.
+See [extractor schema and commands](../../tools/map_migration/README.md) and
+[M002 acceptance](../evidence/M002/VALIDATION.md).
 
 Godot 4.7.2 typed GDScript remains the runtime. GameRoot composes existing
 GameSession/services, WorldHost, persistent Party, CameraRig and UI. Location
@@ -267,7 +273,9 @@ slice headless checks pass, with exact commands/results and initial sandbox
 failures in [M001 validation](../evidence/M001/VALIDATION.md). Measurements verify
 19 converted probes, seven portals and nominal crossing/actor clearance.
 
-No candidate scene, runtime map port, native journey, source tests or performance
-benchmark is claimed. P014 remains in progress. Import exit 0 still reports the
-pre-existing missing .NET SDK 10.0.9 and restricted certificate-store access;
-typed GDScript gameplay checks pass. M002 is the next eligible item.
+No candidate scene, runtime map port, native map journey, source tests or performance
+benchmark is claimed. Parent P014 subsequently completed with
+[native evidence](../evidence/P014/native-holds/VALIDATION.md); M019 must revalidate
+the resulting map build. Import exit 0 still reports the pre-existing missing
+.NET SDK 10.0.9 and restricted certificate-store access; typed GDScript checks pass.
+M002 data extraction is now verified; M003 is next eligible.

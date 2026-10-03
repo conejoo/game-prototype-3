@@ -1,122 +1,155 @@
 # Current map migration state
 
-Updated 2026-10-03, America/Vancouver. M001 verified complete.
+Updated 2026-10-03, America/Vancouver. M001–M002 verified complete.
 
-## Selection and progress
+## Selection and next action
 
-- Active migration item: none.
-- Completed migration items: M001, coordinate and compatibility contract.
-- Next eligible item: M002, pinned source snapshot and layout extraction.
-- M002–M019 remain pending; no extraction/candidate implementation started.
-- Existing prototype P001–P013 complete. P014 native full release walkthrough
-  remains in progress; candidate contract work does not resolve it.
+- Active migration item: none. Selected M002 completed this session.
+- Completed: M001 coordinate/compatibility contract; M002 pinned snapshot/extraction.
+- Next eligible: M003 runnable exterior terrain graybox only.
+- M003–M019 pending. No candidate scene or larger-map runtime implementation begun.
+- Parent P001–P014 now complete for the compact prototype. Migration M001 memory
+  predated P014 native completion. Existing evidence at
+  [P014 native validation](../evidence/P014/native-holds/VALIDATION.md) and parent
+  CURRENT_STATE/CHECKLIST verified and preserved. M019 must revalidate the resulting
+  larger-map build with ordinary native inputs; older compact-build evidence does
+  not complete that migration gate.
 
-## Workspace and source identity
+## Workspace, source and pinned identity
 
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Godot project: `game/`. Workspace parent is not the Git repository.
-Target inspected HEAD: `073c924142cb0551a14510d6cd2e85c7f1b8678b`.
-Initial unrelated changes preserved: tracked README migration links, untracked
-`docs/evidence/P014/resume-2026-10-03/`, existing migration planning files.
-No gameplay/source edits, dependency installs, Blender edits, subagents, commits,
-pushes or publication. Parent ARCHITECTURE/CURRENT_STATE/P014 remain unchanged.
+Godot project: `game/`. Workspace parent is not Git repository.
+Inspected target HEAD: `2729d4a5063e34c1f79777760cb373c5bb18a045`; initial Git clean.
+Prior P014 evidence, gameplay/art and parent implementation/state preserved.
+No source edits/generators, dependency installs, subagents, commits, pushes or
+publication. Personal gameplay-testing skill read for context; selected item is
+pure data, so no interactive gameplay or new native input was needed.
 
-Source read-only: `D:/development/game-prototype-2`.
-Observed HEAD: `f4630f9966d6637ef6579cd87623ea354758191c`.
-Shipping exterior: `assets/maps/mvp_world.json`, `alderwake`, 147 × 80 cells,
-4704 × 2560 units. Observed SHA-256:
-`af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f`.
-Object catalog `assets/data/world_objects/catalog.json` SHA-256:
-`59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2`.
-Both match M001 source measurements. These are observed identities; **no pinned
-snapshot or normalized runtime layout exists yet**. M002 must compare before
-pinning; after pinning do not auto-refresh from a drifting source checkout.
+Read-only source: `D:/development/game-prototype-2`.
+Observed source HEAD unchanged: `f4630f9966d6637ef6579cd87623ea354758191c`.
+M001 map/catalog hashes compared before copying; both match:
 
-## M001 result and changed files
+- Map `assets/maps/mvp_world.json`, SHA256
+  `af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f`.
+- Catalog `assets/data/world_objects/catalog.json`, SHA256
+  `59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2`.
 
-- Added [CONTRACT.md](CONTRACT.md): metres/origin/axes, grids/defaults/empty paints,
-  group transforms and catalog footprints, physical height/ramps/cliffs, converted
-  probes, IDs/portal/save mappings, retained/inert/excluded scope and measured gates.
-- Updated CHECKLIST.md: M001 complete, completion record, M002 next.
-- Rewrote this state with verified result and next-session memory.
-- Added [M001 validation](../evidence/M001/VALIDATION.md), read-only measurement
-  script/JSON, import and focused baseline logs, final document-check log.
-- Runtime files and production ownership unchanged; no architecture update needed.
+Pinned snapshot `alderwake-f4630f9-m002` now exists under
+`tools/map_migration/reference/`. [Manifest](../../tools/map_migration/reference/manifest.json)
+records original relative paths/byte-exact SHA256 for map, catalog, terrain
+material registry, raw tile manifest and art catalog reference text. Only these
+inputs copied; no images/interiors/campaign/cache/generator imported. Registry
+files contain unused entries to retain original hash identity; exclusion report
+lists unreferenced IDs, normalized runtime layout retains used definitions only.
+Pinned snapshot is authority. Do not auto-refresh from source drift.
 
-## Contract decisions
+## M002 result and changed files
 
-Confirmed 32 source units = 1m; source (704,576) -> Godot (0,0,0), source X/Y ->
-Godot X/Z. Exterior bounds X[-22,125), Z[-18,62). Terrain layers 16 units=0.5m;
-decorations/gameplay/art 32 units=1m. Group pivots use gameplay cells. Preserve
-fractional feet and point-versus-cell rotation; current groups q0 only, so M002
-needs explicit rotated fixtures. Ground's empty cell list still paints grass.
+- `tools/map_migration/extract_layout.py`: standard-library offline extraction,
+  explicit schema/record/reference validation, point/cell transforms, catalog
+  collision resolution, default/clear semantics, height metadata, inert records,
+  deterministic bytes and read-only `--check` with pinned/manifest/tool hashes.
+- `tools/map_migration/test_extract_layout.py`: 15 acceptance cases using temporary
+  snapshot copies; real source inventories and independent M001 probes plus
+  hand-calculated rotated/height fixtures and malformed/stale negative probes.
+- `tools/map_migration/reference/`: five raw inputs plus manifest.
+- `tools/map_migration/extraction_report.json`: per-record inert/exclusion reasons,
+  unused registry inventory, counts and provenance. `.gitignore` ignores Python
+  bytecode; README documents commands/schema/disposition and remaining limits.
+- `game/content/maps/alderwake_layout.json`: schema1 target-local candidate data.
+- `game/tests/map_layout_checks.gd` plus Godot-generated UID: typed JSON-consumption
+  check, with no runtime scene/ownership changes.
+- `docs/evidence/M002/`: validation, exact commands/logs/hashes, retained initial
+  test failure and final intended-file/state/link/whitespace review.
+- Migration CHECKLIST/CONTRACT/this state: completion, snapshot and accurate P014
+  handoff. No parent architecture update: production scope/ownership unchanged.
+- Commit preparation: root `.gitattributes` preserves raw reference bytes and LF
+  extractor/generated outputs despite Windows core.autocrlf. Staged Git blobs
+  checked against working bytes; snapshot/output hashes remain unchanged.
 
-Height 0.25m/level, max 1.75m; one-cell directional ramps interpolate low->high,
-other elevation edges block traversal. Moonwell foot maps to
-(31.51317596435547,0.5,4.621034622192383). M003–M007 flat preview explicitly
-provisional; M008 owns physical grounding, M009 correct walkable navigation.
+## Verified layout and contract decisions
 
-Bridge/ford authored blocker gaps 3m; party diameter 0.7m, nav diameter 0.8m.
-Scale fits nominal clearance. Bridge art's middle deck row is only 1m: do not
-turn art rows into solid rails that shrink traversal; require >=1.6m clear width
-and documented art adaptation. Static measurement does not certify routes.
+Retains 468 props (443 standalone/25 grouped), 455 enabled catalog footprints,
+102 authored colliders, 31 groups, eight flattened art layers, four tile layers,
+seven portals, 25 zones, three activities, 472 elevation overrides and 16 slopes.
+91 inert objects: 78 routine anchors, six markers, four resources and three NPCs.
+All tree IDs/species/size/feet retained; no reseeding or duplication.
 
-Keep production IDs/schema4/content1. Only `tollworks-entrance-01` maps to active
-`alderwake-travel-gate` -> existing Tollworks arrival at (0,0,-2.5). Six other
-portals stay inert. Retain `tollworks-start` too. One existing `npc-03-counter`
-maps source Maris; do not add duplicate NPC/quest effects. Proposed forest return
-pad source (4136,616) -> (107.25,0,1.25), 2.5m south of gate, needs full geometry
-and two-member physical/navigation safety checks before acceptance/activation.
+32 units/metre, origin (704,576), source X/Y -> Godot X/Z; bounds rectangle
+[-22,-18,147,80] is left/top/width/depth, equivalent to X[-22,125),Z[-18,62).
+Terrain grids 0.5m, decor/art/gameplay 1m. Empty ground overrides preserve default
+grass. Explicit null paint clears only its layer. Paint kinds/art references stay
+semantic metadata; source sprites/connected-mask/lighting runtime is not ported.
+Groups use gameplay-cell pivots, normalized quarter turns, distinct point/cell
+rotation; catalog boxes/polygon vertices rotate around each foot.
+Source namespaces allow `passenger-broken-piling-01` as prop and collider, and
+`passenger-basin-south-wall-01` as group and collider. Preserve IDs; duplicates
+inside a namespace fail. No design/scale/height adaptation made.
 
-Candidate first, normal compact room until M015. Preserve source props/trees,
-record inert anchors/resource/NPC/portal metadata and exclusions; no full source
-campaign, schedules, interiors, economy, romance or retired memory currency.
-Contract declares landmark tolerances, route-length/time, visual readability and
-frame/draw/memory/nav/load budgets; later stages must measure, not assume passes.
+Moonwell exact foot [31.51317596435547,0.5,4.621034622192383] and eight vertices
+retained. Chandlery box [-9.8125,7.75,5.28125,2.125] verified, no sprite blockers.
+Gate art collision-disabled; authoritative future-exit-gate rectangle preserved.
+Heights 0.25m/level, max1.75m; slope low/high neighbors/directions retained and
+point heights interpolate. Physical ramps/cliffs remain M008 work.
 
-## Exact verification and evidence
+All portals have runtime_enabled=false. Only source `tollworks-entrance-01`
+carries deferred M015 mapping to existing alderwake-travel-gate ->
+prototype-tollworks/tollworks-from-alderwake at [0,0,-2.5]. Original destination
+units retained without exterior transform. Six other destinations remain inert.
+Maris source placement maps to existing npc-03-counter later; no duplicate NPC.
+Production location/spawn/party/quest/effect/reaction/upgrade IDs and
+schema4/content1 unchanged. Candidate data never enters normal catalog/save.
 
-Full commands, individual outcomes, failure labels and acceptance mapping:
-[docs/evidence/M001/VALIDATION.md](../evidence/M001/VALIDATION.md).
-Installed Godot console/editor paths verified; engine ed1daf0bf.
-All Godot commands use target root and `--headless --path game`.
+## Verification and evidence
 
-Final checks use process-local APPDATA=`<target>/builds/m001-user-data` and
-LOCALAPPDATA=`<target>/builds/m001-local-data`. No normal save is accessed.
+[Full M002 acceptance](../evidence/M002/VALIDATION.md) records exact commands,
+per-criterion evidence and failed attempts. Commands from target root:
 
-- `--editor --import --quit`: exit 0, initialization complete with known missing
-  .NET SDK10.0.9/certificate-store errors; not claimed error-free.
-- `--script res://tests/application_smoke.gd`: PASS, exit 0.
-- `--script res://tests/location_travel_checks.gd`: PASS, exit 0, ten round trips,
-  party/identity/health preserved, unsafe-placement rollback and room release.
-- `--quit-after 1800 --script res://tests/save_checks.gd`: PASS before guard,
-  exit 0; codec, isolated IO/backups, root restore and unsafe-arrival rollback.
-- `--script res://tests/playable_slice_checks.gd`: PASS, exit 0; presentation/
-  lifecycle/synthetic rules only, no full ordinary-input walkthrough claim.
-- `& ./docs/evidence/M001/inspect_contract.ps1`: process exit 0, PASS; 19 converted
-  probes, seven portals, mixed grids, fractional Moonwell/catalog/nominal clearance.
-- Final document links/fences/required topics/inventory/status check: exit 0.
-- `git diff --check` plus untracked-document whitespace/intended-file review: exit 0.
+- Bundled Python `-B tools/map_migration/test_extract_layout.py`: 15 tests PASS,
+  exit0, 28.907s; detached CLI negative drift probes assert exit1 and no repairs.
+- `-B tools/map_migration/extract_layout.py`, repeated command, then `--check`:
+  each exit0; identical layout/report SHA256 across actual reruns.
+- Godot `--headless --editor --path game --import --quit`: exit0, existing missing
+  .NET SDK10.0.9/certificate errors retained; not an error-free import claim.
+- `--headless --path game --script res://tests/map_layout_checks.gd`: PASS/exit0;
+  final regenerated layout rechecked once, exit0.
+- `--headless --path game --script res://tests/application_smoke.gd`: PASS/exit0;
+  normal root composition/InputMap/state/pause/resume intact. Both runtime logs
+  retain restricted certificate-store error but no GDScript errors.
+- `git diff --check` and final-review.ps1: exit0, intended scopes, data hashes,
+  local links/state and new non-snapshot text whitespace reviewed.
 
-Initial default-AppData import/application/travel logs retain sandbox IO errors.
-Initial save test dereferenced nil after inaccessible IO; no PASS, interrupted
-launcher exit 1; isolated rerun fixed environment without runtime changes.
-Measurement script's initial PowerShell array-parenthesis error repaired; final
-run passes. Final runtime logs retain restricted certificate-store error but no
-GDScript errors. No source tests, rendered gameplay or performance benchmark run.
+Godot console/editor supplied paths verified; engine ed1daf0bf. Process-local
+APPDATA=`<target>/builds/m002-user-data` and LOCALAPPDATA=`<target>/builds/m002-local-data`
+isolate engine writes; no normal user save accessed. Python temporary fixtures
+clean themselves. No source tests, rendered scene, physics/nav/performance or
+packaged-export checks run because M002 implements data only.
 
-## Unresolved issues and next-session handoff
+Final layout SHA256:
+`7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be`.
+Final report SHA256:
+`66b17789874f382f9e3c3ba6f95927dca8c90d24e2328bdabb6771480360b0e9`.
 
-No M001 blocker. Source snapshot/extractor/normalized layout/candidate scene are
-absent by design. Safe forest return pad, actual crossings/rail clearance, ramps,
-nav bake cost, cross-bank catch-up connectivity, slope aiming/canopy visibility,
-large-map hints, runtime performance and pre-migration save placement remain
-owned by their sequential checklist items. P014 native release gate still open;
-M019 must reconcile resulting build and native ordinary-input evidence.
+Initial extractor failures (registry template then global ID uniqueness) repaired
+without source edits. Initial Infinity-negative fixture failed in its serializer,
+exit1; retained extractor-tests-initial.log. Corrected test serialization; strict
+production writer still forbids nonfinite data, extractor rejects numeric field.
+Final suite includes additional four-direction slope cases and passes.
 
-Select M002 only. Read applicable instructions/contract, inspect Git and actual
-source identity; pin required supported inputs under tools/map_migration/reference,
-write target-local extraction/check command and game/content/maps normalized
-layout with provenance/exclusion reporting. Verify deterministic regeneration,
-stale check, malformed/unknown data, rotation/cell transform fixture, polygon,
-fractional Moonwell and all seven portals. Do not begin M003 this session.
+## Unresolved limits and next-session preparation
+
+No M002 blocker. Runtime layout stores appearance references; source images are
+not packaged Godot assets. Source art/light/depth/shadow and inert gameplay have
+explicit dispositions. JSON is data only: no candidate scene, physical water,
+crossings, buildings/trees, ramps/navigation, companion connectivity, canopy
+visibility, route timing or larger-map save/export acceptance yet. Normal room
+remains runnable. All subsequent acceptance gates stay pending.
+
+Select M003 only. Read full agent prompt, current contract/extractor README,
+normalized layout/provenance and Git changes. Use pinned inputs; run --check
+before building isolated candidate location/harness. Resolve layer defaults and
+mixed grids into batched grass/path/sand preview over full footprint, safe
+candidate start/return anchors and perimeter. Keep flat water/elevation explicitly
+provisional, candidate outside normal catalog and normal save slot. Verify actual
+rendered candidate movement/material registration/bounds plus existing startup.
+Do not begin M004 in that session.

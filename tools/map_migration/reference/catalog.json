@@ -1,0 +1,4288 @@
+{
+  "schemaVersion": 8,
+  "objects": [
+    {
+      "id": "moonwell",
+      "label": "Moonwell",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/moonwell.png",
+        "textureWidth": 384,
+        "textureHeight": 384,
+        "worldWidth": 96,
+        "worldHeight": 96
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 96
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -27,
+            "y": -81
+          },
+          {
+            "x": 29,
+            "y": -81
+          },
+          {
+            "x": 45,
+            "y": -65
+          },
+          {
+            "x": 45,
+            "y": -21
+          },
+          {
+            "x": 29,
+            "y": -5
+          },
+          {
+            "x": -27,
+            "y": -5
+          },
+          {
+            "x": -43,
+            "y": -21
+          },
+          {
+            "x": -43,
+            "y": -65
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 30,
+        "crossAxisScale": 1,
+        "minVerticalDisplacement": 0.6,
+        "maxVerticalDisplacement": 0.75
+      }
+    },
+    {
+      "id": "direction-sign",
+      "label": "Direction Sign",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/direction-sign.png",
+        "textureWidth": 256,
+        "textureHeight": 192,
+        "worldWidth": 64,
+        "worldHeight": 48
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 48
+      },
+      "collision": {
+        "kind": "box",
+        "left": -10,
+        "top": -14,
+        "width": 13,
+        "height": 13
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "village-notice-sign",
+      "label": "Village Notice Sign",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/village-notice-sign.png",
+        "textureWidth": 256,
+        "textureHeight": 192,
+        "worldWidth": 64,
+        "worldHeight": 48
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 48
+      },
+      "collision": {
+        "kind": "box",
+        "left": -27,
+        "top": -16,
+        "width": 54,
+        "height": 15
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "dock-lamp",
+      "label": "Dock Lamp",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/dock-lamp.png",
+        "textureWidth": 128,
+        "textureHeight": 256,
+        "worldWidth": 32,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -14,
+        "top": -16,
+        "width": 16,
+        "height": 15
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "lantern",
+          "label": "Lantern",
+          "asset": "images/world/lights/dock-lamp-light.png",
+          "textureWidth": 128,
+          "textureHeight": 256,
+          "worldWidth": 32,
+          "worldHeight": 64,
+          "glowProfile": "lamp",
+          "origin": {
+            "x": 16,
+            "y": 64
+          },
+          "initiallyOn": true,
+          "switchable": true,
+          "groundLight": {
+            "minAngleDegrees": 0,
+            "maxAngleDegrees": 360,
+            "radius": 32
+          }
+        }
+      ]
+    },
+    {
+      "id": "garden-wall-horizontal",
+      "label": "Garden Wall Horizontal",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/garden-wall-horizontal.png",
+        "textureWidth": 512,
+        "textureHeight": 128,
+        "worldWidth": 128,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -64,
+        "top": -17,
+        "width": 128,
+        "height": 16
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "garden-wall-vertical",
+      "label": "Garden Wall Vertical",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/garden-wall-vertical.png",
+        "textureWidth": 128,
+        "textureHeight": 512,
+        "worldWidth": 32,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 128
+      },
+      "collision": {
+        "kind": "box",
+        "left": -10,
+        "top": -127,
+        "width": 20,
+        "height": 125
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "boulder",
+      "label": "Boulder",
+      "kind": "prop",
+      "category": "boulders",
+      "sprite": {
+        "asset": "images/world/props/boulder.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "worldWidth": 64,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -22,
+        "top": -32,
+        "width": 48,
+        "height": 28
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "boulder-round",
+      "label": "Boulder · Round",
+      "kind": "prop",
+      "category": "boulders",
+      "sprite": {
+        "asset": "images/world/props/boulder-round.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "worldWidth": 64,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -24,
+        "top": -32,
+        "width": 48,
+        "height": 28
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "boulder-tall",
+      "label": "Boulder · Tall",
+      "kind": "prop",
+      "category": "boulders",
+      "sprite": {
+        "asset": "images/world/props/boulder-tall.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "worldWidth": 64,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -14,
+        "top": -40,
+        "width": 28,
+        "height": 37
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "boulder-slab",
+      "label": "Boulder · Slab",
+      "kind": "prop",
+      "category": "boulders",
+      "sprite": {
+        "asset": "images/world/props/boulder-slab.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "worldWidth": 64,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -30,
+        "top": -26,
+        "width": 60,
+        "height": 20
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "boulder-craggy",
+      "label": "Boulder · Craggy",
+      "kind": "prop",
+      "category": "boulders",
+      "sprite": {
+        "asset": "images/world/props/boulder-craggy.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "worldWidth": 64,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -24,
+        "top": -38,
+        "width": 48,
+        "height": 32
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "boulder-twin",
+      "label": "Boulder · Twin",
+      "kind": "prop",
+      "category": "boulders",
+      "sprite": {
+        "asset": "images/world/props/boulder-twin.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "worldWidth": 64,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -29,
+        "top": -30,
+        "width": 58,
+        "height": 26
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "boulder-cluster",
+      "label": "Boulder Cluster",
+      "kind": "prop",
+      "category": "boulders",
+      "sprite": {
+        "asset": "images/world/props/boulder-cluster.png",
+        "textureWidth": 640,
+        "textureHeight": 256,
+        "worldWidth": 160,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 160,
+        "height": 64
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -70,
+            "y": -20
+          },
+          {
+            "x": -48,
+            "y": -33
+          },
+          {
+            "x": -19,
+            "y": -40
+          },
+          {
+            "x": 40,
+            "y": -25
+          },
+          {
+            "x": 66,
+            "y": -11
+          },
+          {
+            "x": 68,
+            "y": -3
+          },
+          {
+            "x": -72,
+            "y": -6
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "blocked-gate",
+      "label": "Blocked Gate",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/blocked-gate.png",
+        "textureWidth": 256,
+        "textureHeight": 768,
+        "worldWidth": 64,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -28,
+        "top": -184,
+        "width": 56,
+        "height": 176
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "birch-tree",
+      "label": "Birch Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/birch_tree_288x384.png",
+        "textureWidth": 576,
+        "textureHeight": 768,
+        "worldWidth": 144,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 144,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -20,
+        "top": -20,
+        "width": 34,
+        "height": 18
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 10,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "birch-tree-small",
+      "label": "Birch Tree · Small",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/birch_tree_small.png",
+        "textureWidth": 384,
+        "textureHeight": 512,
+        "worldWidth": 96,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 128
+      },
+      "collision": {
+        "kind": "box",
+        "left": -16,
+        "top": -20,
+        "width": 24,
+        "height": 16
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "birch-tree-large",
+      "label": "Birch Tree · Large",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/birch_tree_large.png",
+        "textureWidth": 768,
+        "textureHeight": 1024,
+        "worldWidth": 192,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 256
+      },
+      "collision": {
+        "kind": "box",
+        "left": -33,
+        "top": -37,
+        "width": 59,
+        "height": 34
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 14,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "maple-tree",
+      "label": "Maple Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/maple_tree_288x384.png",
+        "textureWidth": 576,
+        "textureHeight": 768,
+        "worldWidth": 144,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 144,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -24,
+        "top": -22,
+        "width": 48,
+        "height": 18
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 10,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "maple-tree-small",
+      "label": "Maple Tree · Small",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/maple_tree_small.png",
+        "textureWidth": 384,
+        "textureHeight": 512,
+        "worldWidth": 96,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 128
+      },
+      "collision": {
+        "kind": "box",
+        "left": -16,
+        "top": -18,
+        "width": 32,
+        "height": 14
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "maple-tree-large",
+      "label": "Maple Tree · Large",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/maple_tree_large.png",
+        "textureWidth": 768,
+        "textureHeight": 1024,
+        "worldWidth": 192,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 256
+      },
+      "collision": {
+        "kind": "box",
+        "left": -43,
+        "top": -27,
+        "width": 89,
+        "height": 23
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 14,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "oak-tree",
+      "label": "Oak Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/oak_tree_288x384.png",
+        "textureWidth": 576,
+        "textureHeight": 768,
+        "worldWidth": 144,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 144,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -24,
+        "top": -20,
+        "width": 48,
+        "height": 16
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 10,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "oak-tree-small",
+      "label": "Oak Tree · Small",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/oak_tree_small.png",
+        "textureWidth": 384,
+        "textureHeight": 512,
+        "worldWidth": 96,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 128
+      },
+      "collision": {
+        "kind": "box",
+        "left": -16,
+        "top": -17,
+        "width": 32,
+        "height": 13
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "oak-tree-large",
+      "label": "Oak Tree · Large",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/oak_tree_large.png",
+        "textureWidth": 768,
+        "textureHeight": 1024,
+        "worldWidth": 192,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 256
+      },
+      "collision": {
+        "kind": "box",
+        "left": -43,
+        "top": -33,
+        "width": 98,
+        "height": 29
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 14,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "pine-tree",
+      "label": "Pine Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/pine_tree_288x384.png",
+        "textureWidth": 576,
+        "textureHeight": 768,
+        "worldWidth": 144,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 144,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -16,
+        "top": -21,
+        "width": 34,
+        "height": 17
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 10,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "pine-tree-small",
+      "label": "Pine Tree · Small",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/pine_tree_small.png",
+        "textureWidth": 384,
+        "textureHeight": 512,
+        "worldWidth": 96,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 128
+      },
+      "collision": {
+        "kind": "box",
+        "left": -14,
+        "top": -17,
+        "width": 32,
+        "height": 15
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "pine-tree-large",
+      "label": "Pine Tree · Large",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/pine_tree_large.png",
+        "textureWidth": 768,
+        "textureHeight": 1024,
+        "worldWidth": 192,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 256
+      },
+      "collision": {
+        "kind": "box",
+        "left": -32,
+        "top": -30,
+        "width": 54,
+        "height": 26
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 14,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "willow-tree",
+      "label": "Willow Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/willow_tree_288x384.png",
+        "textureWidth": 576,
+        "textureHeight": 768,
+        "worldWidth": 144,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 144,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -24,
+        "top": -24,
+        "width": 45,
+        "height": 20
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 10,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "willow-tree-small",
+      "label": "Willow Tree · Small",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/willow_tree_small.png",
+        "textureWidth": 384,
+        "textureHeight": 512,
+        "worldWidth": 96,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 128
+      },
+      "collision": {
+        "kind": "box",
+        "left": -16,
+        "top": -23,
+        "width": 32,
+        "height": 19
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "willow-tree-large",
+      "label": "Willow Tree · Large",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/willow_tree_large.png",
+        "textureWidth": 768,
+        "textureHeight": 1024,
+        "worldWidth": 192,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 256
+      },
+      "collision": {
+        "kind": "box",
+        "left": -42,
+        "top": -32,
+        "width": 74,
+        "height": 28
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 14,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "cherry-tree",
+      "label": "Cherry Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/cherry_tree_288x384.png",
+        "textureWidth": 576,
+        "textureHeight": 768,
+        "worldWidth": 144,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 144,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -24,
+        "top": -25,
+        "width": 48,
+        "height": 21
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 10,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "cherry-tree-small",
+      "label": "Cherry Tree · Small",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/cherry_tree_small.png",
+        "textureWidth": 384,
+        "textureHeight": 512,
+        "worldWidth": 96,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 128
+      },
+      "collision": {
+        "kind": "box",
+        "left": -16,
+        "top": -18,
+        "width": 32,
+        "height": 14
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "cherry-tree-large",
+      "label": "Cherry Tree · Large",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/cherry_tree_large.png",
+        "textureWidth": 768,
+        "textureHeight": 1024,
+        "worldWidth": 192,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 256
+      },
+      "collision": {
+        "kind": "box",
+        "left": -26,
+        "top": -40,
+        "width": 63,
+        "height": 36
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 14,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "alder-tree",
+      "label": "Alder Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/alder_tree.png",
+        "textureWidth": 576,
+        "textureHeight": 768,
+        "worldWidth": 144,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 144,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -24,
+        "top": -27,
+        "width": 48,
+        "height": 23
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 10,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "spruce-tree",
+      "label": "Spruce Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/spruce_tree.png",
+        "textureWidth": 512,
+        "textureHeight": 896,
+        "worldWidth": 128,
+        "worldHeight": 224
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 224
+      },
+      "collision": {
+        "kind": "box",
+        "left": -20,
+        "top": -25,
+        "width": 40,
+        "height": 21
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 12,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "rowan-tree",
+      "label": "Rowan Tree",
+      "kind": "prop",
+      "category": "trees",
+      "sprite": {
+        "asset": "images/world/props/trees/rowan_tree.png",
+        "textureWidth": 448,
+        "textureHeight": 640,
+        "worldWidth": 112,
+        "worldHeight": 160
+      },
+      "hitbox": {
+        "width": 112,
+        "height": 160
+      },
+      "collision": {
+        "kind": "box",
+        "left": -18,
+        "top": -20,
+        "width": 36,
+        "height": 18
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 8,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "mayor-interior-dining-table",
+      "label": "Mayor Interior · Dining Table",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/dining-table.png",
+        "textureWidth": 192,
+        "textureHeight": 128,
+        "worldWidth": 48,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 48,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-chair-east",
+      "label": "Mayor Interior · Chair East",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/chair-east.png",
+        "textureWidth": 88,
+        "textureHeight": 128,
+        "worldWidth": 22,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-chair-west",
+      "label": "Mayor Interior · Chair West",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/chair-west.png",
+        "textureWidth": 88,
+        "textureHeight": 128,
+        "worldWidth": 22,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-chair-north",
+      "label": "Mayor Interior · Chair North",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/chair-north.png",
+        "textureWidth": 88,
+        "textureHeight": 128,
+        "worldWidth": 22,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-chair-south",
+      "label": "Mayor Interior · Chair South",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/chair-south.png",
+        "textureWidth": 88,
+        "textureHeight": 128,
+        "worldWidth": 22,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-counter",
+      "label": "Mayor Interior · Kitchen Counter",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-counter.png",
+        "textureWidth": 208,
+        "textureHeight": 96,
+        "worldWidth": 52,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 52,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-counter-worktop",
+      "label": "Mayor Interior · Counter Worktop",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-counter-worktop.png",
+        "textureWidth": 280,
+        "textureHeight": 128,
+        "worldWidth": 70,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 70,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-counter-sink",
+      "label": "Mayor Interior · Counter Sink",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-counter-sink.png",
+        "textureWidth": 280,
+        "textureHeight": 160,
+        "worldWidth": 70,
+        "worldHeight": 40
+      },
+      "hitbox": {
+        "width": 70,
+        "height": 40
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-counter-stove",
+      "label": "Mayor Interior · Counter Stove",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-counter-stove.png",
+        "textureWidth": 280,
+        "textureHeight": 128,
+        "worldWidth": 70,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 70,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-island",
+      "label": "Mayor Interior · Kitchen Island",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-island.png",
+        "textureWidth": 216,
+        "textureHeight": 152,
+        "worldWidth": 54,
+        "worldHeight": 38
+      },
+      "hitbox": {
+        "width": 54,
+        "height": 38
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-side-counter",
+      "label": "Mayor Interior · Kitchen Side Counter",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-side-counter.png",
+        "textureWidth": 128,
+        "textureHeight": 280,
+        "worldWidth": 32,
+        "worldHeight": 70
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 70
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-plant",
+      "label": "Mayor Interior · Potted Plant",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/plant.png",
+        "textureWidth": 88,
+        "textureHeight": 144,
+        "worldWidth": 22,
+        "worldHeight": 36
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 36
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bed",
+      "label": "Mayor Interior · Bed",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bed.png",
+        "textureWidth": 160,
+        "textureHeight": 256,
+        "worldWidth": 40,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 40,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bath",
+      "label": "Mayor Interior · Bath",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bath.png",
+        "textureWidth": 96,
+        "textureHeight": 168,
+        "worldWidth": 24,
+        "worldHeight": 42
+      },
+      "hitbox": {
+        "width": 24,
+        "height": 42
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-desk",
+      "label": "Mayor Interior · Writing Desk",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/desk.png",
+        "textureWidth": 176,
+        "textureHeight": 128,
+        "worldWidth": 44,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 44,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bookcase",
+      "label": "Mayor Interior · Bookcase",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bookcase.png",
+        "textureWidth": 112,
+        "textureHeight": 184,
+        "worldWidth": 28,
+        "worldHeight": 46
+      },
+      "hitbox": {
+        "width": 28,
+        "height": 46
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bookcase-narrow",
+      "label": "Mayor Interior · Bookcase Narrow",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bookcase-narrow.png",
+        "textureWidth": 80,
+        "textureHeight": 184,
+        "worldWidth": 20,
+        "worldHeight": 46
+      },
+      "hitbox": {
+        "width": 20,
+        "height": 46
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bookcase-wide",
+      "label": "Mayor Interior · Bookcase Wide",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bookcase-wide.png",
+        "textureWidth": 216,
+        "textureHeight": 248,
+        "worldWidth": 54,
+        "worldHeight": 62
+      },
+      "hitbox": {
+        "width": 54,
+        "height": 62
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bookcase-low",
+      "label": "Mayor Interior · Bookcase Low",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bookcase-low.png",
+        "textureWidth": 144,
+        "textureHeight": 104,
+        "worldWidth": 36,
+        "worldHeight": 26
+      },
+      "hitbox": {
+        "width": 36,
+        "height": 26
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-display-cabinet",
+      "label": "Mayor Interior · Display Cabinet",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/display-cabinet.png",
+        "textureWidth": 128,
+        "textureHeight": 184,
+        "worldWidth": 32,
+        "worldHeight": 46
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 46
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-sofa",
+      "label": "Mayor Interior · Sofa",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/sofa.png",
+        "textureWidth": 240,
+        "textureHeight": 152,
+        "worldWidth": 60,
+        "worldHeight": 38
+      },
+      "hitbox": {
+        "width": 60,
+        "height": 38
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-armchair",
+      "label": "Mayor Interior · Armchair",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/armchair.png",
+        "textureWidth": 120,
+        "textureHeight": 152,
+        "worldWidth": 30,
+        "worldHeight": 38
+      },
+      "hitbox": {
+        "width": 30,
+        "height": 38
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-coffee-table",
+      "label": "Mayor Interior · Coffee Table",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/coffee-table.png",
+        "textureWidth": 152,
+        "textureHeight": 96,
+        "worldWidth": 38,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 38,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wardrobe",
+      "label": "Mayor Interior · Wardrobe",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wardrobe.png",
+        "textureWidth": 192,
+        "textureHeight": 256,
+        "worldWidth": 48,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 48,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-fireplace",
+      "label": "Mayor Interior · Unlit Fireplace",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/fireplace.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "worldWidth": 64,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-window",
+      "label": "Mayor Interior · Window",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/window.png",
+        "textureWidth": 128,
+        "textureHeight": 192,
+        "worldWidth": 32,
+        "worldHeight": 48
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 48
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-painting-small",
+      "label": "Mayor Interior · Small Painting",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/painting-small.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-painting-wide",
+      "label": "Mayor Interior · Wide Painting",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/painting-wide.png",
+        "textureWidth": 256,
+        "textureHeight": 128,
+        "worldWidth": 64,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-globe",
+      "label": "Mayor Interior · Globe",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/globe.png",
+        "textureWidth": 128,
+        "textureHeight": 176,
+        "worldWidth": 32,
+        "worldHeight": 44
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 44
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bedside-table",
+      "label": "Mayor Interior · Bedside Table",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bedside-table.png",
+        "textureWidth": 112,
+        "textureHeight": 128,
+        "worldWidth": 28,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 28,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-side-table",
+      "label": "Mayor Interior · Side Table",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/side-table.png",
+        "textureWidth": 112,
+        "textureHeight": 96,
+        "worldWidth": 28,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 28,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.65,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-table-lamp-brass",
+      "label": "Mayor Interior · Brass Table Lamp",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/table-lamp-brass.png",
+        "textureWidth": 64,
+        "textureHeight": 104,
+        "worldWidth": 16,
+        "worldHeight": 26
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 26
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.5,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-table-lamp-ivory",
+      "label": "Mayor Interior · Ivory Table Lamp",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/table-lamp-ivory.png",
+        "textureWidth": 64,
+        "textureHeight": 104,
+        "worldWidth": 16,
+        "worldHeight": 26
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 26
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.5,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-plant-small",
+      "label": "Mayor Interior · Small Potted Plant",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/plant-small.png",
+        "textureWidth": 64,
+        "textureHeight": 96,
+        "worldWidth": 16,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.55,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-plant-spiky",
+      "label": "Mayor Interior · Spiky Potted Plant",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/plant-spiky.png",
+        "textureWidth": 80,
+        "textureHeight": 152,
+        "worldWidth": 20,
+        "worldHeight": 38
+      },
+      "hitbox": {
+        "width": 20,
+        "height": 38
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.55,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-plant-trailing",
+      "label": "Mayor Interior · Trailing Potted Plant",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/plant-trailing.png",
+        "textureWidth": 96,
+        "textureHeight": 136,
+        "worldWidth": 24,
+        "worldHeight": 34
+      },
+      "hitbox": {
+        "width": 24,
+        "height": 34
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.55,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-plant-flowers",
+      "label": "Mayor Interior · Flowering Potted Plant",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/plant-flowers.png",
+        "textureWidth": 80,
+        "textureHeight": 120,
+        "worldWidth": 20,
+        "worldHeight": 30
+      },
+      "hitbox": {
+        "width": 20,
+        "height": 30
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.55,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-paper",
+      "label": "Mayor Interior · Paper",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/paper.png",
+        "textureWidth": 56,
+        "textureHeight": 64,
+        "worldWidth": 14,
+        "worldHeight": 16
+      },
+      "hitbox": {
+        "width": 14,
+        "height": 16
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "mayor-interior-quill-and-ink",
+      "label": "Mayor Interior · Quill and Ink",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/quill-and-ink.png",
+        "textureWidth": 56,
+        "textureHeight": 88,
+        "worldWidth": 14,
+        "worldHeight": 22
+      },
+      "hitbox": {
+        "width": 14,
+        "height": 22
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "mayor-interior-sideboard",
+      "label": "Mayor Interior · Sideboard",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/sideboard.png",
+        "textureWidth": 256,
+        "textureHeight": 160,
+        "worldWidth": 64,
+        "worldHeight": 40
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 40
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-north",
+      "label": "Mayor Interior · Modular North Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-north.png",
+        "textureWidth": 128,
+        "textureHeight": 256,
+        "worldWidth": 32,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-north-128",
+      "label": "Mayor Interior · Long North Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-north-128.png",
+        "textureWidth": 512,
+        "textureHeight": 256,
+        "worldWidth": 128,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-south",
+      "label": "Mayor Interior · Modular South Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-south.png",
+        "textureWidth": 128,
+        "textureHeight": 64,
+        "worldWidth": 32,
+        "worldHeight": 16
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 16
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-south-128",
+      "label": "Mayor Interior · Long South Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-south-128.png",
+        "textureWidth": 512,
+        "textureHeight": 64,
+        "worldWidth": 128,
+        "worldHeight": 16
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 16
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-west",
+      "label": "Mayor Interior · Modular West Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-west.png",
+        "textureWidth": 64,
+        "textureHeight": 128,
+        "worldWidth": 16,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-west-128",
+      "label": "Mayor Interior · Long West Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-west-128.png",
+        "textureWidth": 64,
+        "textureHeight": 512,
+        "worldWidth": 16,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 128
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-east",
+      "label": "Mayor Interior · Modular East Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-east.png",
+        "textureWidth": 64,
+        "textureHeight": 128,
+        "worldWidth": 16,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-east-128",
+      "label": "Mayor Interior · Long East Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-east-128.png",
+        "textureWidth": 64,
+        "textureHeight": 512,
+        "worldWidth": 16,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 128
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-post",
+      "label": "Mayor Interior · Modular Wall Post",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-post.png",
+        "textureWidth": 64,
+        "textureHeight": 256,
+        "worldWidth": 16,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "house-timber-terracotta",
+      "label": "House · Timber / Terracotta",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/house-timber-terracotta.png",
+        "textureWidth": 640,
+        "textureHeight": 640,
+        "worldWidth": 160,
+        "worldHeight": 160
+      },
+      "hitbox": {
+        "width": 160,
+        "height": 160
+      },
+      "collision": {
+        "kind": "box",
+        "left": -77,
+        "top": -75,
+        "width": 139,
+        "height": 69
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/house-timber-terracotta-light.png",
+          "textureWidth": 640,
+          "textureHeight": 640,
+          "worldWidth": 160,
+          "worldHeight": 160,
+          "glowProfile": "window",
+          "origin": {
+            "x": 80,
+            "y": 80
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "house-timber-slate",
+      "label": "House · Timber / Slate",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/house-timber-slate.png",
+        "textureWidth": 640,
+        "textureHeight": 640,
+        "worldWidth": 160,
+        "worldHeight": 160
+      },
+      "hitbox": {
+        "width": 160,
+        "height": 160
+      },
+      "collision": {
+        "kind": "box",
+        "left": -70,
+        "top": -56,
+        "width": 122,
+        "height": 49
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/house-timber-slate-light.png",
+          "textureWidth": 640,
+          "textureHeight": 640,
+          "worldWidth": 160,
+          "worldHeight": 160,
+          "glowProfile": "window",
+          "origin": {
+            "x": 80,
+            "y": 80
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "house-plaster-terracotta",
+      "label": "House · Plaster / Terracotta",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/house-plaster-terracotta.png",
+        "textureWidth": 640,
+        "textureHeight": 640,
+        "worldWidth": 160,
+        "worldHeight": 160
+      },
+      "hitbox": {
+        "width": 160,
+        "height": 160
+      },
+      "collision": {
+        "kind": "box",
+        "left": -74,
+        "top": -60,
+        "width": 136,
+        "height": 45
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 11,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/house-plaster-terracotta-light.png",
+          "textureWidth": 640,
+          "textureHeight": 640,
+          "worldWidth": 160,
+          "worldHeight": 160,
+          "glowProfile": "window",
+          "origin": {
+            "x": 80,
+            "y": 80
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "house-plaster-slate",
+      "label": "House · Plaster / Slate",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/house-plaster-slate.png",
+        "textureWidth": 640,
+        "textureHeight": 640,
+        "worldWidth": 160,
+        "worldHeight": 160
+      },
+      "hitbox": {
+        "width": 160,
+        "height": 160
+      },
+      "collision": {
+        "kind": "box",
+        "left": -73,
+        "top": -71,
+        "width": 135,
+        "height": 62
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 8,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "house-dockside",
+      "label": "House · Dockside",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/house-dockside.png",
+        "textureWidth": 640,
+        "textureHeight": 640,
+        "worldWidth": 160,
+        "worldHeight": 160
+      },
+      "hitbox": {
+        "width": 160,
+        "height": 160
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -71,
+            "y": -24
+          },
+          {
+            "x": -44,
+            "y": -84
+          },
+          {
+            "x": 56,
+            "y": -53
+          },
+          {
+            "x": 0,
+            "y": -4
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 15,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/house-dockside-light.png",
+          "textureWidth": 640,
+          "textureHeight": 640,
+          "worldWidth": 160,
+          "worldHeight": 160,
+          "glowProfile": "window",
+          "origin": {
+            "x": 80,
+            "y": 80
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "house-woodland-cottage",
+      "label": "House · Woodland Cottage",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/house-woodland-cottage.png",
+        "textureWidth": 512,
+        "textureHeight": 576,
+        "worldWidth": 128,
+        "worldHeight": 144
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 144
+      },
+      "collision": {
+        "kind": "box",
+        "left": -57,
+        "top": -63,
+        "width": 105,
+        "height": 56
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 9,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/house-woodland-cottage-light.png",
+          "textureWidth": 512,
+          "textureHeight": 576,
+          "worldWidth": 128,
+          "worldHeight": 144,
+          "glowProfile": "window",
+          "origin": {
+            "x": 64,
+            "y": 72
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "alderwake-hall",
+      "label": "Alderwake Hall",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/alderwake-hall.png",
+        "textureWidth": 896,
+        "textureHeight": 768,
+        "worldWidth": 224,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 224,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -108,
+        "top": -79,
+        "width": 198,
+        "height": 74
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 6,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "mayor-vale-home",
+      "label": "Mayor Vale’s Home",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/mayor-vale-home.png",
+        "textureWidth": 768,
+        "textureHeight": 704,
+        "worldWidth": 192,
+        "worldHeight": 176
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 176
+      },
+      "collision": {
+        "kind": "box",
+        "left": -83,
+        "top": -79,
+        "width": 162,
+        "height": 71
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 8,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/mayor-vale-home-light.png",
+          "textureWidth": 768,
+          "textureHeight": 704,
+          "worldWidth": 192,
+          "worldHeight": 176,
+          "glowProfile": "window",
+          "origin": {
+            "x": 96,
+            "y": 88
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "lantern-rest",
+      "label": "Lantern Rest",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/lantern-rest.png",
+        "textureWidth": 896,
+        "textureHeight": 768,
+        "worldWidth": 224,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 224,
+        "height": 192
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -108,
+            "y": -17
+          },
+          {
+            "x": -84,
+            "y": -62
+          },
+          {
+            "x": 99,
+            "y": -41
+          },
+          {
+            "x": 73,
+            "y": -1
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 9,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/lantern-rest-light.png",
+          "textureWidth": 896,
+          "textureHeight": 768,
+          "worldWidth": 224,
+          "worldHeight": 192,
+          "glowProfile": "window",
+          "origin": {
+            "x": 112,
+            "y": 96
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "mill-road-schoolhouse",
+      "label": "Mill Road Schoolhouse",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/mill-road-schoolhouse.png",
+        "textureWidth": 896,
+        "textureHeight": 704,
+        "worldWidth": 224,
+        "worldHeight": 176
+      },
+      "hitbox": {
+        "width": 224,
+        "height": 176
+      },
+      "collision": {
+        "kind": "box",
+        "left": -106,
+        "top": -52,
+        "width": 199,
+        "height": 47
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 6,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "reed-chandlery",
+      "label": "Reed Chandlery",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/reed-chandlery.png",
+        "textureWidth": 768,
+        "textureHeight": 640,
+        "worldWidth": 192,
+        "worldHeight": 160
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 160
+      },
+      "collision": {
+        "kind": "box",
+        "left": -90,
+        "top": -72,
+        "width": 169,
+        "height": 68
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 6,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/reed-chandlery-light.png",
+          "textureWidth": 768,
+          "textureHeight": 640,
+          "worldWidth": 192,
+          "worldHeight": 160,
+          "glowProfile": "window",
+          "origin": {
+            "x": 96,
+            "y": 80
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "tess-general-goods",
+      "label": "Tess General Goods",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/tess-general-goods.png",
+        "textureWidth": 768,
+        "textureHeight": 640,
+        "worldWidth": 192,
+        "worldHeight": 160
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 160
+      },
+      "collision": {
+        "kind": "box",
+        "left": -82,
+        "top": -69,
+        "width": 157,
+        "height": 66
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 5,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/tess-general-goods-light.png",
+          "textureWidth": 768,
+          "textureHeight": 640,
+          "worldWidth": 192,
+          "worldHeight": 160,
+          "glowProfile": "window",
+          "origin": {
+            "x": 96,
+            "y": 80
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "net-shed",
+      "label": "Net Shed",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/net-shed.png",
+        "textureWidth": 384,
+        "textureHeight": 448,
+        "worldWidth": 96,
+        "worldHeight": 112
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 112
+      },
+      "collision": {
+        "kind": "box",
+        "left": -43,
+        "top": -39,
+        "width": 79,
+        "height": 32
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 7,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "dock-straight",
+      "label": "Dock · Straight",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/dock-straight.png",
+        "textureWidth": 640,
+        "textureHeight": 384,
+        "worldWidth": 160,
+        "worldHeight": 96
+      },
+      "hitbox": {
+        "width": 160,
+        "height": 96
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "dock-junction",
+      "label": "Dock · Junction",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/dock-junction.png",
+        "textureWidth": 640,
+        "textureHeight": 512,
+        "worldWidth": 160,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 160,
+        "height": 128
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "passenger-control-shelter",
+      "label": "Manual Sluice Control Shelter",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/passenger-control-shelter.png",
+        "textureWidth": 512,
+        "textureHeight": 384,
+        "worldWidth": 128,
+        "worldHeight": 96
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 96
+      },
+      "collision": {
+        "kind": "box",
+        "left": -64,
+        "top": -32,
+        "width": 128,
+        "height": 16
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "passenger-level-gauge",
+      "label": "Basin Level Gauge",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/passenger-level-gauge.png",
+        "textureWidth": 64,
+        "textureHeight": 256,
+        "worldWidth": 16,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -3,
+        "top": -5,
+        "width": 6,
+        "height": 4
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.5,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.14
+      }
+    },
+    {
+      "id": "passenger-ship-sound",
+      "label": "Passenger Ship · Sound",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/passenger-ship-sound.png",
+        "textureWidth": 1536,
+        "textureHeight": 1024,
+        "worldWidth": 384,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 384,
+        "height": 256
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -184,
+            "y": -72
+          },
+          {
+            "x": -164,
+            "y": -124
+          },
+          {
+            "x": 176,
+            "y": -124
+          },
+          {
+            "x": 184,
+            "y": -76
+          },
+          {
+            "x": 144,
+            "y": -12
+          },
+          {
+            "x": -136,
+            "y": -12
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "manual-sluice-gate",
+      "label": "Manual Sluice Gate",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/manual-sluice-gate.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -16,
+        "top": -32,
+        "width": 32,
+        "height": 32
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.5,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.14
+      }
+    },
+    {
+      "id": "berth-broken-piling",
+      "label": "Broken Berth Piling",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/berth-broken-piling.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -8,
+        "top": -24,
+        "width": 16,
+        "height": 24
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.5,
+        "minVerticalDisplacement": 0.01,
+        "maxVerticalDisplacement": 0.04
+      }
+    },
+    {
+      "id": "berth-capped-piling",
+      "label": "Capped Berth Piling",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/berth-capped-piling.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -8,
+        "top": -24,
+        "width": 16,
+        "height": 24
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.5,
+        "minVerticalDisplacement": 0.01,
+        "maxVerticalDisplacement": 0.04
+      }
+    },
+    {
+      "id": "passenger-ship-sunken",
+      "label": "Passenger Ship · Sunken",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/passenger-ship-sunken.png",
+        "textureWidth": 1536,
+        "textureHeight": 1024,
+        "worldWidth": 384,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 384,
+        "height": 256
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -184,
+            "y": -72
+          },
+          {
+            "x": -164,
+            "y": -124
+          },
+          {
+            "x": 176,
+            "y": -124
+          },
+          {
+            "x": 184,
+            "y": -76
+          },
+          {
+            "x": 144,
+            "y": -12
+          },
+          {
+            "x": -136,
+            "y": -12
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "passenger-salvage-rig-rear",
+      "label": "Passenger Salvage Rig · Rear",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/passenger-salvage-rig-rear.png",
+        "textureWidth": 1344,
+        "textureHeight": 960,
+        "worldWidth": 336,
+        "worldHeight": 240
+      },
+      "hitbox": {
+        "width": 336,
+        "height": 240
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.1
+      }
+    },
+    {
+      "id": "passenger-salvage-rig-front",
+      "label": "Passenger Salvage Rig · Front",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/passenger-salvage-rig-front.png",
+        "textureWidth": 1344,
+        "textureHeight": 384,
+        "worldWidth": 336,
+        "worldHeight": 96
+      },
+      "hitbox": {
+        "width": 336,
+        "height": 96
+      },
+      "collision": {
+        "kind": "box",
+        "left": -128,
+        "top": -24,
+        "width": 256,
+        "height": 24
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.1
+      }
+    },
+    {
+      "id": "passenger-ship-raised",
+      "label": "Passenger Ship · Raised",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/passenger-ship-raised.png",
+        "textureWidth": 1536,
+        "textureHeight": 1024,
+        "worldWidth": 384,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 384,
+        "height": 256
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -184,
+            "y": -72
+          },
+          {
+            "x": -164,
+            "y": -124
+          },
+          {
+            "x": 176,
+            "y": -124
+          },
+          {
+            "x": 184,
+            "y": -76
+          },
+          {
+            "x": 144,
+            "y": -12
+          },
+          {
+            "x": -136,
+            "y": -12
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "passenger-ship-rebuilding",
+      "label": "Passenger Ship · Rebuilding",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/passenger-ship-rebuilding.png",
+        "textureWidth": 1536,
+        "textureHeight": 1024,
+        "worldWidth": 384,
+        "worldHeight": 256
+      },
+      "hitbox": {
+        "width": 384,
+        "height": 256
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -184,
+            "y": -72
+          },
+          {
+            "x": -164,
+            "y": -124
+          },
+          {
+            "x": 176,
+            "y": -124
+          },
+          {
+            "x": 184,
+            "y": -76
+          },
+          {
+            "x": 144,
+            "y": -12
+          },
+          {
+            "x": -136,
+            "y": -12
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "fair-stall",
+      "label": "Fair Stall",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/fair-stall.png",
+        "textureWidth": 384,
+        "textureHeight": 384,
+        "worldWidth": 96,
+        "worldHeight": 96
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 96
+      },
+      "collision": {
+        "kind": "box",
+        "left": -35,
+        "top": -16,
+        "width": 70,
+        "height": 16
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 1,
+        "minVerticalDisplacement": 0.15,
+        "maxVerticalDisplacement": 0.45
+      }
+    },
+    {
+      "id": "tollworks-maintenance-control",
+      "label": "Tollworks Maintenance Control",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/tollworks-maintenance-control.png",
+        "textureWidth": 384,
+        "textureHeight": 256,
+        "worldWidth": 96,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 64
+      },
+      "collision": {
+        "kind": "box",
+        "left": -36,
+        "top": -28,
+        "width": 72,
+        "height": 12
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.75,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.18
+      }
+    },
+    {
+      "id": "refuge-record-book",
+      "label": "Refuge Record Book",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/refuge-record-book.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.75,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "refuge-memory-vessel",
+      "label": "Refuge Memory Vessel",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/refuge-memory-vessel.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -7,
+        "top": -5,
+        "width": 14,
+        "height": 5
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.75,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.18
+      },
+      "lightSources": [
+        {
+          "id": "memory-glow",
+          "label": "Memory Glow",
+          "asset": "images/world/lights/refuge-memory-vessel-glow.png",
+          "textureWidth": 128,
+          "textureHeight": 128,
+          "worldWidth": 32,
+          "worldHeight": 32,
+          "glowProfile": "lamp",
+          "origin": {
+            "x": 16,
+            "y": 21
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "festival-beacon",
+      "label": "Festival Beacon",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/festival-beacon.png",
+        "textureWidth": 512,
+        "textureHeight": 768,
+        "worldWidth": 128,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -36,
+        "top": -22,
+        "width": 72,
+        "height": 22
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.65,
+        "minVerticalDisplacement": 0.1,
+        "maxVerticalDisplacement": 0.45
+      },
+      "lightSources": [
+        {
+          "id": "beacon-lantern",
+          "label": "Beacon Lantern",
+          "asset": "images/world/lights/festival-beacon-light.png",
+          "textureWidth": 512,
+          "textureHeight": 768,
+          "worldWidth": 128,
+          "worldHeight": 192,
+          "glowProfile": "lamp",
+          "origin": {
+            "x": 64,
+            "y": 44
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "luminous-net-display",
+      "label": "Luminous Net Display",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/luminous-net-display.png",
+        "textureWidth": 768,
+        "textureHeight": 512,
+        "worldWidth": 192,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 128
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 2,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.18
+      },
+      "lightSources": [
+        {
+          "id": "woven-lights",
+          "label": "Woven Lights",
+          "asset": "images/world/lights/luminous-net-display-light.png",
+          "textureWidth": 768,
+          "textureHeight": 512,
+          "worldWidth": 192,
+          "worldHeight": 128,
+          "glowProfile": "lamp",
+          "origin": {
+            "x": 96,
+            "y": 72
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "shallow-water-demo-boat",
+      "label": "Shallow-Water Demonstration Boat",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/shallow-water-demo-boat.png",
+        "textureWidth": 384,
+        "textureHeight": 256,
+        "worldWidth": 96,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 64
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -46,
+            "y": -18
+          },
+          {
+            "x": -40,
+            "y": -31
+          },
+          {
+            "x": 40,
+            "y": -31
+          },
+          {
+            "x": 46,
+            "y": -18
+          },
+          {
+            "x": 39,
+            "y": -4
+          },
+          {
+            "x": -39,
+            "y": -4
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.1
+      }
+    },
+    {
+      "id": "craft-rope-coil",
+      "label": "Craft · Rope Coil",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/craft-rope-coil.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.75,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "craft-fitting-tray",
+      "label": "Craft · Fitting Tray",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/craft-fitting-tray.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "craft-tool-roll",
+      "label": "Craft · Tool Roll",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/craft-tool-roll.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "craft-short-offcuts",
+      "label": "Craft · Short Offcuts",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/craft-short-offcuts.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "supply-parcel",
+      "label": "Supply Parcel",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/supply-parcel.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.75,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "weaving-sample",
+      "label": "Weaving Sample",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/weaving-sample.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "safeguard-waylight",
+      "label": "Safeguard Waylight",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/safeguard-waylight.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -12,
+        "top": -8,
+        "width": 24,
+        "height": 8
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.7,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.12
+      },
+      "lightSources": [
+        {
+          "id": "answer-light",
+          "label": "Answer Light",
+          "asset": "images/world/lights/safeguard-waylight-light.png",
+          "textureWidth": 128,
+          "textureHeight": 128,
+          "worldWidth": 32,
+          "worldHeight": 32,
+          "glowProfile": "lamp",
+          "origin": {
+            "x": 16,
+            "y": 22
+          },
+          "initiallyOn": true,
+          "switchable": false,
+          "groundLight": {
+            "minAngleDegrees": 0,
+            "maxAngleDegrees": 360,
+            "radius": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "refuge-service-barrier",
+      "label": "Refuge Service Barrier",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/refuge-service-barrier.png",
+        "textureWidth": 256,
+        "textureHeight": 128,
+        "worldWidth": 64,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -32,
+        "top": -8,
+        "width": 64,
+        "height": 8
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "refuge-chime",
+      "label": "Refuge Chime",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/refuge-chime.png",
+        "textureWidth": 384,
+        "textureHeight": 512,
+        "worldWidth": 96,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 96,
+        "height": 128
+      },
+      "collision": {
+        "kind": "box",
+        "left": -46,
+        "top": -22,
+        "width": 92,
+        "height": 21
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      }
+    },
+    {
+      "id": "house-of-echoes",
+      "label": "House of Echoes",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/house-of-echoes.png",
+        "textureWidth": 2048,
+        "textureHeight": 896,
+        "worldWidth": 512,
+        "worldHeight": 224
+      },
+      "hitbox": {
+        "width": 512,
+        "height": 224
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.18
+      },
+      "lightSources": [
+        {
+          "id": "refuge-windows",
+          "label": "Refuge Windows",
+          "asset": "images/world/lights/house-of-echoes-light.png",
+          "textureWidth": 2048,
+          "textureHeight": 896,
+          "worldWidth": 512,
+          "worldHeight": 224,
+          "glowProfile": "window",
+          "origin": {
+            "x": 256,
+            "y": 171
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "preservation-heart",
+      "label": "Preservation Heart",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/preservation-heart.png",
+        "textureWidth": 512,
+        "textureHeight": 768,
+        "worldWidth": 128,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 192
+      },
+      "collision": {
+        "kind": "box",
+        "left": -49,
+        "top": -38,
+        "width": 98,
+        "height": 37
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "heart-status",
+          "label": "Heart Status",
+          "asset": "images/world/lights/preservation-heart-light.png",
+          "textureWidth": 512,
+          "textureHeight": 768,
+          "worldWidth": 128,
+          "worldHeight": 192,
+          "glowProfile": "lamp",
+          "origin": {
+            "x": 64,
+            "y": 92
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "heirloom-skiff",
+      "label": "Repaired Heirloom Skiff",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/heirloom-skiff.png",
+        "textureWidth": 512,
+        "textureHeight": 384,
+        "worldWidth": 128,
+        "worldHeight": 96
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 96
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -60,
+            "y": -24
+          },
+          {
+            "x": -46,
+            "y": -42
+          },
+          {
+            "x": 58,
+            "y": -42
+          },
+          {
+            "x": 61,
+            "y": -12
+          },
+          {
+            "x": 44,
+            "y": -2
+          },
+          {
+            "x": -30,
+            "y": -2
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.1
+      }
+    },
+    {
+      "id": "pressed-flower-keepsake",
+      "label": "Pressed Flower Keepsake",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/pressed-flower-keepsake.png",
+        "textureWidth": 96,
+        "textureHeight": 96,
+        "worldWidth": 24,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 24,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.05
+      }
+    },
+    {
+      "id": "family-memory-bowl",
+      "label": "Family Memory Bowl",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/family-memory-bowl.png",
+        "textureWidth": 128,
+        "textureHeight": 96,
+        "worldWidth": 32,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.05
+      }
+    },
+    {
+      "id": "classroom-story-book",
+      "label": "Classroom Story Book",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/classroom-story-book.png",
+        "textureWidth": 128,
+        "textureHeight": 96,
+        "worldWidth": 32,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.05
+      }
+    },
+    {
+      "id": "miniature-woven-light",
+      "label": "Miniature Woven Light",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/miniature-woven-light.png",
+        "textureWidth": 96,
+        "textureHeight": 128,
+        "worldWidth": 24,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 24,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.05
+      },
+      "lightSources": [
+        {
+          "id": "woven-light",
+          "label": "Woven Light",
+          "asset": "images/world/lights/miniature-woven-light-light.png",
+          "textureWidth": 96,
+          "textureHeight": 128,
+          "worldWidth": 24,
+          "worldHeight": 32,
+          "glowProfile": "lamp",
+          "origin": {
+            "x": 13,
+            "y": 23
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "miniature-wooden-boat",
+      "label": "Miniature Wooden Boat",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/miniature-wooden-boat.png",
+        "textureWidth": 128,
+        "textureHeight": 96,
+        "worldWidth": 32,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.05
+      }
+    },
+    {
+      "id": "survey-stake",
+      "label": "Survey Stake",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/survey-stake.png",
+        "textureWidth": 64,
+        "textureHeight": 128,
+        "worldWidth": 16,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -2,
+        "top": -4,
+        "width": 4,
+        "height": 3
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.16
+      }
+    },
+    {
+      "id": "survey-supply-cache",
+      "label": "Survey Supply Cache",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/survey-supply-cache.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -12,
+        "top": -9,
+        "width": 24,
+        "height": 8
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "ranger-warning-bell",
+      "label": "Ranger Warning Bell",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/ranger-warning-bell.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -12,
+        "top": -9,
+        "width": 24,
+        "height": 8
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "flood-lookout-marker",
+      "label": "Flood Lookout Marker",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/flood-lookout-marker.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -12,
+        "top": -10,
+        "width": 24,
+        "height": 9
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "remedy-display-shelf",
+      "label": "Remedy Display Shelf",
+      "kind": "prop",
+      "category": "outdoorProps",
+      "sprite": {
+        "asset": "images/world/props/remedy-display-shelf.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "box",
+        "left": -14,
+        "top": -10,
+        "width": 28,
+        "height": 9
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.8,
+        "minVerticalDisplacement": 0.02,
+        "maxVerticalDisplacement": 0.16
+      }
+    }
+  ]
+}

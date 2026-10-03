@@ -1,0 +1,31 @@
+{
+  "snapshot_id": "alderwake-f4630f9-m002",
+  "source_commit": "f4630f9966d6637ef6579cd87623ea354758191c",
+  "inputs": [
+    {
+      "file": "mvp_world.json",
+      "source_path": "assets/maps/mvp_world.json",
+      "sha256": "af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f"
+    },
+    {
+      "file": "catalog.json",
+      "source_path": "assets/data/world_objects/catalog.json",
+      "sha256": "59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2"
+    },
+    {
+      "file": "terrain_materials.json",
+      "source_path": "assets/generated/terrain_atlas/terrain_materials.json",
+      "sha256": "20d0ac3e8c6a5151998ed285c09c8a8309c75e5a1181fc3af90480a2f09f9faa"
+    },
+    {
+      "file": "tile_manifest.csv",
+      "source_path": "assets/tiles/tile_manifest.csv",
+      "sha256": "bb8531c956a98377ee258717b1fb4d532a6ce679569159eaa9bc3b2c5d0f50f7"
+    },
+    {
+      "file": "art_tile_catalog.dart",
+      "source_path": "lib/world_map/art_tile_catalog.dart",
+      "sha256": "daf008686aa5a847e31b8938fe8817014fddcc9e072e2ace1dfcf6e16065dbfe"
+    }
+  ]
+}
