@@ -22,7 +22,7 @@ func build(layout: Dictionary) -> void:
 		if not retains_prop(record):
 			continue
 		prop_records.append(record)
-		var foot: Vector3 = Vector3(record.foot_xyz_m[0], 0, record.foot_xyz_m[2])
+		var foot: Vector3 = Vector3(record.foot_xyz_m[0], record.foot_xyz_m[1], record.foot_xyz_m[2])
 		var wrapper: Node3D = _wrapper(record.id, foot)
 		wrapper.rotation.y = deg_to_rad(float(record.yaw_degrees))
 		wrapper.set_meta("source_prop_id", record.id)

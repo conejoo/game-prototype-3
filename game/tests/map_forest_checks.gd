@@ -42,7 +42,7 @@ func _run() -> void:
 	_check(ids.size() == 468 and collision_ids.size() == 455, "Whole-map exact prop/collision inventory")
 	for record: Dictionary in forest.prop_records:
 		var wrapper: Node3D = forest.get_node(NodePath(record.id))
-		_check(wrapper.position.distance_to(Vector3(record.foot_xyz_m[0], 0, record.foot_xyz_m[2])) < 0.001, "Rounded prop foot: " + record.id)
+		_check(wrapper.position.distance_to(Vector3(record.foot_xyz_m[0], record.foot_xyz_m[1], record.foot_xyz_m[2])) < 0.001, "Rounded prop foot: " + record.id)
 		for field: String in ["definition_id", "source", "quarter_turns", "collision_enabled", "tree", "foot_xyz_m", "light_source_states", "render_depth_offset_units"]:
 			_check((wrapper.get_meta(field) if wrapper.has_meta(field) else null) == record[field], "Lost metadata: %s %s" % [record.id, field])
 		_check(wrapper.get_meta("source_record") == record, "Lost full source record")
@@ -52,7 +52,7 @@ func _run() -> void:
 		if record.collision != null:
 			_audit_polygon(space, wrapper, AlderwakePropGrayboxes._outline(record.collision.vertices_xz_m))
 	var moonwell: Node3D = forest.get_node("moonwell-prop")
-	_check(moonwell.position.distance_to(Vector3(31.51317596435547, 0, 4.621034622192383)) < 0.001, "Moonwell fractional foot")
+	_check(moonwell.position.distance_to(Vector3(31.51317596435547, 0.5, 4.621034622192383)) < 0.001, "Moonwell fractional foot")
 	_check(moonwell.get_node("Collision").get_child_count() == 6, "Moonwell eight-corner polygon replaced")
 	_check(not forest.get_node("future-exit-gate-prop").has_node("Collision"), "Duplicate gate catalog blocker")
 	_check(location.water_blockers.get_node("future-exit-gate").get_meta("source_rect_xz_m") == Rect2(123, -11, 2, 8), "Authored gate changed")
@@ -87,7 +87,7 @@ func _run() -> void:
 	var goals: Dictionary[String, Vector3] = {
 		"bridge-west": Vector3(93, 0, -0.5), "bridge-east": Vector3(103, 0, -0.5),
 		"ford-west": Vector3(66, 0, 12.5), "ford-east": Vector3(75, 0, 12.5),
-		"moonwell-approach": Vector3(31.51317596435547, 0, 5.621034622192383),
+		"moonwell-approach": Vector3(31.51317596435547, 0.5, 5.25),
 		"tollworks-approach": Vector3(107.25, 0, -1.25),
 		"return-pad": Vector3(107.25, 0, 1.25), "closed-exit-approach": Vector3(121.5, 0, -7),
 	}
@@ -122,7 +122,7 @@ func _run() -> void:
 				var count: int = ceili(path[index - 1].distance_to(path[index]) / 0.1)
 				for sample: int in range(count + 1):
 					var point: Vector3 = path[index - 1].lerp(path[index], float(sample) / maxf(count, 1))
-					point.y = 0
+					point.y = location.elevation.height_at(Vector2(point.x, point.z))
 					_check(_clear(space, capsule, point), "Unsafe forest path: %s at %s" % [id, point])
 					path_samples += 1
 			hero.global_position = start
@@ -144,7 +144,7 @@ func _run() -> void:
 					if stalled > 12:
 						_check(false, "Physical forest path stalled: %s at %s" % [id, hero.global_position])
 						break
-				_check(absf(hero.global_position.y) < 0.05, "Forest lost grounding")
+				_check(absf(hero.global_position.y - location.elevation.height_at(Vector2(hero.global_position.x, hero.global_position.z))) < 0.05, "Forest lost grounding")
 			_check(Vector2(hero.global_position.x - end.x, hero.global_position.z - end.z).length() < 0.3, "Physical approach snag: " + id)
 			walked_routes += 1
 			route_report[id + ("-reverse" if backwards else "-forward")] = {"length_m": length, "path": _plain_path(path)}
@@ -170,7 +170,7 @@ func _run() -> void:
 		_check(gate_contact, "Gate negative never contacted authored body")
 		_check(hero.global_position.x < 123, "Gate opened")
 	var report: Dictionary = {"props": ids.size(), "catalog_collisions": collision_ids.size(), "authored_colliders": authored_ids.size(), "forest_props": forest.prop_records.size(), "species": forest.species_counts, "sizes": forest.size_counts, "physics_probes": physics_probes, "path_samples": path_samples, "walked_routes": walked_routes, "routes": route_report, "failures": failures}
-	var output: FileAccess = FileAccess.open("res://../docs/evidence/M007/physics-report.json", FileAccess.WRITE)
+	var output: FileAccess = FileAccess.open("res://../docs/evidence/M009/forest-report.json", FileAccess.WRITE)
 	if output != null:
 		output.store_string(JSON.stringify(report, "\t") + "\n")
 	print("M007 counts: ", JSON.stringify(report.duplicate().merged({"routes": "see physics-report.json"}, true)))
@@ -221,7 +221,7 @@ func _audit_polygon(space: PhysicsDirectSpaceState3D, wrapper: Node3D, expected:
 				continue
 			var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
 			query.shape = sphere
-			query.transform.origin = Vector3(point.x, 0.3, point.y)
+			query.transform.origin = Vector3(point.x, wrapper.position.y + 0.3, point.y)
 			query.collision_mask = 1
 			var contact: bool = false
 			for hit: Dictionary in space.intersect_shape(query, 32):

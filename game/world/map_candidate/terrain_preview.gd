@@ -1,6 +1,6 @@
 class_name AlderwakeTerrainPreview
 extends PrototypeLocation
-## M003–M007: flat preview with independent water, crossing and prop wrappers.
+## Isolated source-derived graybox with independent physical elevation/props.
 
 const LAYOUT_PATH: String = "res://content/maps/alderwake_layout.json"
 const COLORS: Dictionary[String, Color] = {
@@ -21,6 +21,7 @@ var water_blockers: AlderwakeWaterBlockers
 var crossings: AlderwakeCrossings
 var town: AlderwakeTownFootprints
 var forest: AlderwakeForestPopulation
+var elevation: AlderwakeElevationSurfaces
 
 
 func _init() -> void:
@@ -35,6 +36,9 @@ func _init() -> void:
 		return
 	var values: Array = layout.coordinates.bounds_xz_m
 	bounds = Rect2(float(values[0]), float(values[1]), float(values[2]), float(values[3]))
+	elevation = AlderwakeElevationSurfaces.new()
+	elevation.build(layout)
+	add_child(elevation)
 	var visuals: Node3D = Node3D.new()
 	visuals.name = "TerrainVisuals"
 	add_child(visuals)
@@ -48,7 +52,9 @@ func _init() -> void:
 			_build_layer(visuals, layer.id, resolved.rectangles, 0.003 * (layer_index + 1))
 		layer_index += 1
 	var center: Vector2 = bounds.get_center()
-	_add_box("FlatFloor", Vector3(center.x, -0.2, center.y), Vector3(bounds.size.x, 0.4, bounds.size.y), false)
+	# Retain the continuous zero-level support beneath the height surface. It
+	# avoids concave-triangle seam recovery at floor/perimeter dodge contacts.
+	_add_box("BaseFloor", Vector3(center.x, -0.2, center.y), Vector3(bounds.size.x, 0.4, bounds.size.y), false)
 	# Outside-facing wall surfaces coincide with the logical map boundary.
 	_add_box("BoundaryWest", Vector3(bounds.position.x - 0.2, 1.5, center.y), Vector3(0.4, 3.0, bounds.size.y + 0.8))
 	_add_box("BoundaryEast", Vector3(bounds.end.x + 0.2, 1.5, center.y), Vector3(0.4, 3.0, bounds.size.y + 0.8))
@@ -62,10 +68,12 @@ func _init() -> void:
 	add_child(crossings)
 	build_errors.append_array(crossings.build_errors)
 	town = AlderwakeTownFootprints.new()
+	town.elevation = elevation
 	town.build(layout)
 	add_child(town)
 	build_errors.append_array(town.build_errors)
 	forest = AlderwakeForestPopulation.new()
+	forest.elevation = elevation
 	forest.build(layout)
 	add_child(forest)
 	build_errors.append_array(forest.build_errors)
@@ -78,7 +86,8 @@ func _init() -> void:
 	preview_report["crossings"] = {"bridge_rect": str(crossings.bridge_rect), "ford_rect": str(crossings.ford_rect), "bridge_clear_width_m": 2.8, "floor_y_m": 0.0}
 	preview_report["town"] = {"props": town.prop_records.size(), "authored_colliders": town.collider_records.size(), "blocking_footprints": town.footprints.size(), "inert_portal_pads": town.portal_pads.size()}
 	preview_report["forest"] = {"props": forest.prop_records.size(), "species": forest.species_counts, "sizes": forest.size_counts, "blocking_footprints": forest.footprints.size(), "markers": forest.marker_records.size(), "inert_data_records": forest.inert_records.size()}
-	preview_report["limits"] = "M007 complete pinned prop/marker grayboxes; water/gate blocked; flat elevation M008; provisional navigation M009; final art M011-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities are retained data only; no source sprites/lights/behavior."
+	preview_report["elevation"] = {"cells": elevation.levels.size(), "ramps": elevation.slopes.size(), "cliffs": elevation.cliffs.size(), "height_per_level_m": 0.25}
+	preview_report["limits"] = "M008 physical height/ramp graybox; water/gate/cliffs blocked; provisional navigation M009; final art M011-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
 
 
 func resolve_layer(layer: Dictionary) -> Dictionary:
@@ -146,11 +155,7 @@ func _build_layer(parent: Node3D, layer_id: String, rectangles: Array, height: f
 			batches[key] = surface
 		var rect: Rect2 = record.rect
 		var surface: SurfaceTool = batches[key]
-		var a: Vector3 = Vector3(rect.position.x, height, rect.position.y)
-		var b: Vector3 = Vector3(rect.end.x, height, rect.position.y)
-		var c: Vector3 = Vector3(rect.end.x, height, rect.end.y)
-		var d: Vector3 = Vector3(rect.position.x, height, rect.end.y)
-		for vertex: Vector3 in [a, b, c, a, c, d]:
+		for vertex: Vector3 in elevation.rectangle_faces(rect, height):
 			surface.set_normal(Vector3.UP)
 			surface.add_vertex(vertex)
 	for key: String in batches:
@@ -169,6 +174,8 @@ func _build_layer(parent: Node3D, layer_id: String, rectangles: Array, height: f
 func _add_box(id: String, center: Vector3, size: Vector3, visible_box: bool = true) -> void:
 	var body: StaticBody3D = StaticBody3D.new()
 	body.name = id
+	if id == "BaseFloor":
+		body.set_meta("candidate_walkable_floor", true)
 	body.position = center
 	body.collision_layer = 1
 	body.collision_mask = 0
@@ -196,7 +203,7 @@ func _add_spawn(parent: Node3D, id: String, feet: Vector3) -> void:
 	var anchor: SpawnAnchor = SpawnAnchor.new()
 	anchor.name = id
 	anchor.stable_id = id
-	anchor.position = feet
+	anchor.position = Vector3(feet.x, elevation.height_at(Vector2(feet.x, feet.z)), feet.z)
 	parent.add_child(anchor)
 	var ring: MeshInstance3D = MeshInstance3D.new()
 	var mesh: TorusMesh = TorusMesh.new()
@@ -220,7 +227,7 @@ func prepare_navigation() -> PackedStringArray:
 		return PackedStringArray()
 	var mesh: NavigationMesh = NavigationMesh.new()
 	mesh.cell_size = 0.2
-	mesh.cell_height = 0.1
+	mesh.cell_height = 0.05
 	# Tight contour error preserves stepped bank corners rather than allowing
 	# simplified polygons to cut into the authored water occupancy.
 	mesh.edge_max_error = 0.1
@@ -228,7 +235,14 @@ func prepare_navigation() -> PackedStringArray:
 	mesh.agent_height = 1.6
 	mesh.agent_max_climb = 0.1
 	var geometry: NavigationMeshSourceGeometryData3D = NavigationMeshSourceGeometryData3D.new()
-	geometry.add_faces(crossings.navigation_faces(water_blockers.surface_faces(bounds, false)), Transform3D.IDENTITY)
+	var faces: PackedVector3Array = []
+	var dry_faces: PackedVector3Array = crossings.navigation_faces(water_blockers.surface_faces(bounds, false))
+	for index: int in range(0, dry_faces.size(), 6):
+		var a: Vector3 = dry_faces[index]
+		var c: Vector3 = dry_faces[index + 2]
+		faces.append_array(elevation.rectangle_faces(Rect2(Vector2(a.x, a.z), Vector2(c.x - a.x, c.z - a.z))))
+	geometry.add_faces(faces, Transform3D.IDENTITY)
+	elevation.add_navigation_obstructions(geometry)
 	town.add_navigation_obstructions(geometry)
 	forest.add_navigation_obstructions(geometry)
 	# Tree detours exposed Recast corner cuts at the thin bridge rails. Apply

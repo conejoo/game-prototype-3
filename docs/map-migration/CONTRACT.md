@@ -1,6 +1,6 @@
 # Alderwake map migration contract
 
-M001–M007 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
+M001–M008 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
 and acceptance targets; it does not certify an implemented exterior. M002 pinned
 inputs; M003–M014 build an isolated candidate, M015 activates it, and M019 verifies
 the resulting Windows build against the native release gate. Parent P014 completed
@@ -323,7 +323,7 @@ benchmark is claimed. Parent P014 subsequently completed with
 [native evidence](../evidence/P014/native-holds/VALIDATION.md); M019 must revalidate
 the resulting map build. Import exit 0 still reports the pre-existing missing
 .NET SDK 10.0.9 and restricted certificate-store access; typed GDScript checks pass.
-M007 forest/landmark grayboxes are now verified; M008 is next eligible. This includes
+M008 physical elevation/ramps are now verified; M009 is next eligible. This includes
 the explicitly approved dock exception above, not an automatic snapshot refresh.
 
 ### M007 population and provisional navigation
@@ -354,3 +354,44 @@ pass. Navigation server iteration is asynchronous at this population size; focus
 checks wait for the expected region to become queryable before testing paths.
 Final physical-height navigation/loading and companion recovery remain M009/M010.
 See [M007 validation](../evidence/M007/VALIDATION.md); no new movement-mask exception.
+
+### M008 physical surfaces and grounding
+
+All 472 elevation overrides and 16 slopes implement the original height policy,
+with maximum1.75m, unchanged0.25m levels and14.04-degree ramps. The solid Y0 base
+supports default cells; independent raised/ramp collision avoids duplicate
+coplanar contacts. Batched terrain follows those surfaces, with visible risers.
+238 differing edge profiles (including ramp sides) have0.02m-thick independent
+barriers extending0.01m at ends to prevent both directions/diagonal shortcuts.
+Matching parallel ramps and valid low/high joins remain traversable. These
+derived `cliff-x-y-east/south` IDs are collision identities, not new save facts.
+Exact source prop feet use their pinned physical Y. Diagnostic blocker vertical
+extents cover nearby ground; source X/Z polygons, flags/yaw/IDs stay unchanged.
+All crossings/approved dock floors and both full-party arrival pads remain Y0.
+No source height, grid, scale, movement mask or authored ID adaptation.
+
+Measured0.10m engine floor snap produced a0.099m transient downward wall contact.
+Candidate snap is0.04m; an optional root-injected actor callback then raycasts
+actual marked walkable physics within0.11m, requires normalY>=0.96 and full
+capsule clearance before stabilizing Y. This also handles fast downhill dodge
+that0.04m snap alone missed. X/Z movement remains physics-authoritative;0.25m
+cliff steps remain out of correction range and blocked. Normal rooms retain
+their snap and inject no callback; session/save/party ownership unchanged.
+Final64 ramp runs/2,646 cliff runs have maximum grounding error0.019152m.
+
+The former Moonwell evidence approach1m south of its unchanged fractional foot
+lies too close to the new physical cliff. Revalidated waypoint is
+`(31.51317596435547,0.5,5.25)`,0.629m south; this is a test/route approach change,
+not a prop/spawn/interaction shift. Actual rendered hero ascends and descends
+entry and Moonwell ramps; walking/dodge cannot leave the upper cliff.
+
+Provisional nav now consumes physical dry surfaces, vertical voxel0.05m,
+horizontal0.2m/radius0.4m/climb0.1m unchanged. All effective water pieces receive
+the existing0.2m nav-only outline margin after height tessellation exposed river/
+lake contour cuts. Cliff projection follows exact barrier width. This supports
+candidate lifecycle, not M009 acceptance: the strict forest check remains exit1
+on12 radius0.4m probes near the narrow corridor/Moonwell ramp turn, even though
+all16 real hero routes finish. M009 must repair this contour/erosion defect and
+meet full path/loading targets without weakening clearance or changing physical
+outlines. [M008 validation](../evidence/M008/VALIDATION.md) and
+[exact failed probes](../evidence/M008/navigation-known-limit.json).

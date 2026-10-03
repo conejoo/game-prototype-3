@@ -4,6 +4,7 @@ extends Node3D
 
 var footprints: Array[PackedVector2Array] = []
 var build_errors: PackedStringArray = []
+var elevation: AlderwakeElevationSurfaces
 
 
 func _wrapper(id: String, foot: Vector3) -> Node3D:
@@ -20,6 +21,7 @@ func _wrapper(id: String, foot: Vector3) -> Node3D:
 func _add_dock_floor(wrapper: Node3D, rect: Rect2, index: int) -> void:
 	var body: StaticBody3D = StaticBody3D.new()
 	body.name = "DeckFloor%d" % index
+	body.set_meta("candidate_walkable_floor", true)
 	body.collision_layer = 1
 	body.collision_mask = 0
 	body.position = wrapper.transform.affine_inverse() * Vector3(rect.get_center().x, -0.06, rect.get_center().y)
@@ -54,12 +56,21 @@ func _add_prism(wrapper: Node3D, id: String, outline: PackedVector2Array, height
 		wrapper.add_child(body)
 	var surface: SurfaceTool = SurfaceTool.new()
 	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var low: float = -0.2 if blocking else 0.0
+	if blocking and elevation != null:
+		# Keep source polygon blocking where it straddles a height edge. The
+		# primitive's vertical extent adapts; its exact X/Z outline never changes.
+		for point: Vector2 in outline:
+			var world: Vector3 = wrapper.transform * Vector3(point.x, 0, point.y)
+			var ground: float = elevation.height_at(Vector2(world.x, world.z)) - wrapper.position.y
+			low = minf(low, ground - 0.2)
+			height = maxf(height, ground + 0.6)
 	for index: int in range(0, indices.size(), 3):
 		var points: PackedVector3Array = []
 		for vertex_index: int in range(3):
 			var point: Vector2 = outline[indices[index + vertex_index]]
 			points.append(Vector3(point.x, height, point.y))
-			points.append(Vector3(point.x, -0.2 if blocking else 0.0, point.y))
+			points.append(Vector3(point.x, low, point.y))
 		if blocking:
 			# One convex prism per triangle preserves concave footprints exactly.
 			var shape: ConvexPolygonShape3D = ConvexPolygonShape3D.new()
@@ -72,7 +83,6 @@ func _add_prism(wrapper: Node3D, id: String, outline: PackedVector2Array, height
 	for index: int in range(outline.size()):
 		var a: Vector2 = outline[index]
 		var b: Vector2 = outline[(index + 1) % outline.size()]
-		var low: float = -0.2 if blocking else 0.0
 		for vertex: Vector3 in [Vector3(a.x, low, a.y), Vector3(a.x, height, a.y), Vector3(b.x, height, b.y),
 			Vector3(a.x, low, a.y), Vector3(b.x, height, b.y), Vector3(b.x, low, b.y)]:
 			surface.add_vertex(vertex)

@@ -47,7 +47,7 @@ func _run() -> void:
 	fixture.cells = [{"cell": [0, 0], "paint": null}]
 	_check(location.resolve_layer(fixture).counts == {"grass": 1}, "1m defaults/clear resolution failed")
 	location.bounds = real_bounds
-	# Raycast centers across all 11,760 gameplay cells; one authoritative flat floor.
+	# Raycast all 11,760 centers against the authoritative physical terrain.
 	var space: PhysicsDirectSpaceState3D = location.get_world_3d().direct_space_state
 	var floor_count: int = 0
 	var excluded_blockers: Array[RID] = []
@@ -60,13 +60,15 @@ func _run() -> void:
 		for wrapper: Node in population.get_children():
 			if wrapper.has_node("Collision"):
 				excluded_blockers.append(wrapper.get_node("Collision").get_rid())
+	for cliff: Dictionary in location.elevation.cliffs:
+		excluded_blockers.append(cliff.body.get_rid())
 	for z: int in range(-18, 62):
 		for x: int in range(-22, 125):
-			var feet: Vector3 = Vector3(x + 0.5, 0, z + 0.5)
+			var feet: Vector3 = Vector3(x + 0.5, location.elevation.height_at(Vector2(x + 0.5, z + 0.5)), z + 0.5)
 			var hit: Dictionary = space.intersect_ray(PhysicsRayQueryParameters3D.create(feet + Vector3.UP, feet + Vector3.DOWN, 1, excluded_blockers))
-			if not hit.is_empty() and absf((hit.position as Vector3).y) < 0.005 and (hit.normal as Vector3).y > 0.99:
+			if not hit.is_empty() and absf((hit.position as Vector3).y - feet.y) < 0.005 and (hit.normal as Vector3).y > 0.96:
 				floor_count += 1
-	_check(floor_count == 11760, "Flat floor contains holes or wrong heights")
+	_check(floor_count == 11760, "Physical floor contains holes or wrong heights")
 	print("M003 floor probes: ", floor_count)
 	# WorldHost verifies both real capsules at both anchors, preserving party identity.
 	var hero_id: int = game.player_placeholder.get_instance_id()
@@ -99,8 +101,12 @@ func _run() -> void:
 			hero.global_position = test.start
 			hero.velocity = Vector3.ZERO
 			hero.combat.cancel()
-			hero.move_direction(test.direction)
+			hero.move_direction(Vector3.ZERO)
 			await physics_frame
+			# Clear floor/contact state after synthetic relocation before a dodge.
+			for settle: int in range(3):
+				hero._physics_process(1.0 / 60.0)
+			hero.move_direction(test.direction)
 			if dodge:
 				_check(hero.request_dodge(test.direction), "Synthetic dodge rejected")
 			for step: int in range(90):

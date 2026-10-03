@@ -1,4 +1,4 @@
-# M003–M007 isolated terrain, water, crossing, town and forest candidate
+# M003–M008 isolated terrain, water, crossings, props and physical heights
 
 From the target repository root:
 
@@ -12,7 +12,13 @@ $godotExe = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_m
 & $godotExe --headless --path game --script res://tests/map_crossing_checks.gd
 & $godotExe --headless --path game --script res://tests/map_town_checks.gd
 & $godotExe --headless --path game --script res://tests/map_forest_checks.gd
+& $godotExe --headless --path game --script res://tests/map_elevation_checks.gd
 ```
+
+M008 elevation/candidate/crossing/town/water checks pass. The strict forest check
+currently exits1 on12 radius0.4m Moonwell ramp-corner clearance probes;16 real
+hero routes finish. Keep that failure visible for M009. See
+[M008 acceptance and exact commands](../../docs/evidence/M008/VALIDATION.md).
 
 Normal main scene and catalog remain unchanged. The alternate root extends the
 existing root and appends one location to a detached manifest. Session/services,
@@ -80,7 +86,8 @@ in data/wrapper metadata. Triangulated convex prisms preserve polygon outlines,
 including concave test fixtures; no box/convex hull substitutes for a polygon.
 Prop and authored-collider namespaces may share IDs; collider wrapper names use
 `collider--` while metadata keeps original ID. VisualRoot never owns collision.
-Structure rims are 1m high, other blockers 0.6m, on the flat preview only.
+Structure rims start at 1m high, other blockers at 0.6m, using pinned physical
+feet; M008 extends vertical bounds where needed to cover adjacent terrain.
 
 All three original western dock art bounds overlap authored southern water fully.
 User approved a deliberate target-only exception: seven registered deck/landing
@@ -94,21 +101,32 @@ walking/dodge pass; this is a documented art/movement adaptation, not source
 regeneration or swimming. See [contract](../../docs/map-migration/CONTRACT.md) and
 [reconciliation](../../docs/evidence/M006/dock-reconciliation.json).
 
-Physical elevations/ramps remain flat until M008. Provisional navigation bakes
+M003–M007 used flat physical elevations. M008 now implements472 raised cells,
+16 directional ramps and238 independent cliff barriers, with matching batched
+terrain/riser visuals and exact pinned prop Y. Solid base owns default Y0;
+raised/ramp collision does not duplicate it. Candidate actors use0.04m floor
+snap plus actual-nearby-floor ray/full-capsule correction, bounded0.11m; normal
+rooms inject no callback. Both candidate party pads,crossings and seven approved
+dock surfaces remain Y0. See contract/evidence for measured grounding repairs.
+
+Provisional navigation bakes
 only explicit dry row-run triangles, clipping rail footprints and omitting effective water/gate before baking; it never
 parses blocker tops, art or the full base floor. Radius0.4m, height1.6m, climb0.1m,
-cell0.2m/height0.1m, contour error0.1 preserve bank corners. Recast surface is
-Y0.2; gameplay floor remains Y0. This is temporary flat lifecycle support;
+cell0.2m/height0.05m, contour error0.1. Dry faces follow physical terrain,cliff
+barriers are projected obstructions,and Recast surfaces are slightly above actual
+floors. This is temporary lifecycle support;
 M006 projects town footprints and effective southern-water pieces as obstructions
 with an extra 0.2m nav-only margin to prevent measured fractional corner cuts.
-M009 owns complete physical-surface navigation, loading and route acceptance.
+M008 extends water's same conservative margin to river/lake pieces. The strict
+Moonwell corner capsule-clearance check remains failed; hero walking/grounding
+passes. M009 owns complete physical-surface navigation, loading and route acceptance.
 M010 still owns connected companion recovery. No new AI/service/save ownership.
 
 M007 adds all 395 trees (nine species; 65 small/266 standard/64 large) and 17 remaining
 props, bringing candidate to 468 unique prop wrappers / 455 enabled footprints.
 Exact catalog trunk boxes/polygons, fractional feet, yaw and complete source
 records are retained. Species colors and 0.9/1.4/1.8m size prisms are diagnostic
-grayboxes, with flat preview feet; source heights stay in metadata for M008.
+grayboxes; M008 now uses pinned physical feet with source heights retained in metadata.
 Shared prop_grayboxes.gd preserves M006's exact triangular-prism physics and
 replaceable VisualRoot. Moonwell keeps its eight-corner outline, gate art adds no
 second body, and six retained source markers plus Tollworks entrance are labeled
@@ -123,7 +141,7 @@ Maris has a reserved pad only; no
 counter/service/actor exists in the candidate before M015. Normal game remains compact.
 
 For rendered evidence, use the existing opt-in bridge and `send_playtest.ps1` from
-[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m007-*` directory and
+[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m008-*` directory and
 named test slot. Its commands inject ordinary viewport input, with no teleport
 or session mutation. Use short resume/actions/pause batches and confirm pause.
 Headless checks label their synthetic actor placements/physics stepping explicitly.

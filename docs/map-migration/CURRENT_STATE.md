@@ -1,151 +1,142 @@
 # Current map migration state
 
-Updated 2026-10-03, America/Vancouver. M001–M007 verified complete.
+Updated 2026-10-03, America/Vancouver. M001–M008 verified complete.
 
 ## Selection and next action
 
-- Active item: none. Selected M007 completed this session.
-- Next eligible: **M008 physical elevation and ramps only**. M008–M019 pending;
-  no physical elevation, final navigation or subsequent item started.
-- Candidate remains isolated/test-only; normal compact Alderwake unchanged until M015.
+- Active item: none. **M008 physical elevation and ramps completed** this session.
+- Next eligible: **M009 navigation for complete exterior only**. Begin with the
+  retained Moonwell corridor/ramp corner clearance failure; do not weaken radius,
+  climb, source footprints or movement masks. M009–M019 remain pending.
+- Candidate remains isolated/test-only; normal compact Alderwake selected until M015.
   Parent P001–P014 compact build complete; M019 must revalidate resulting map release.
-- Acceptance and exact evidence: [M007 validation](../evidence/M007/VALIDATION.md).
+- Acceptance: [M008 validation](../evidence/M008/VALIDATION.md). No M008 blocker remains.
 
 ## Preparation and authority
 
 Target D:/development/game-dev-blender/returning-fair-prototype; Godot project game/.
-Initial Git clean at HEAD 9584875ba195f9260978f355ec0ddbddab54583d (M006).
-Read workspace AGENTS (no nested AGENTS), full map prompt, parent architecture/state,
-migration investigation/checklist/state/contract, pinned layout/catalog/manifest/report,
-M006 evidence, actual candidate/actor/camera/WorldHost/party and playtest bridge.
-Marked M007 in progress before implementation. Caveman and Returning Fair gameplay
-skills used. Exactly one item. No subagents, source writes/generators/snapshot refresh,
-Blender, installation, commit, push, export or publication. Prior evidence preserved.
+Initial Git clean at HEAD00c9110a27a434c49c2be89c00a1e1272d49d067 (M007).
+Read workspace AGENTS (no nested), full map prompt, parent architecture/state,
+migration investigation/checklist/state/contract, pinned map/catalog/manifest/layout/
+report, M007 evidence and actual candidate/actor/party/WorldHost/camera/input bridge.
+M008 marked in progress before edits. Caveman and Returning Fair gameplay-testing
+skills used. Exactly one item. No subagents, source writes/generators/snapshot
+refresh, installation, Blender, commit, push, export or publication. Prior evidence preserved.
 
 Snapshot alderwake-f4630f9-m002; source commit
 f4630f9966d6637ef6579cd87623ea354758191c. Five pinned inputs unchanged; runtime
-reads target-local normalized layout only. [Current hashes](../evidence/M007/snapshot-hashes.json).
+reads target-local normalized layout only. [Hashes](../evidence/M008/snapshot-hashes.json).
 
 - Map SHA256 af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f.
 - Catalog SHA256 59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2.
 - Layout SHA256 7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be.
 - Report SHA256 66b17789874f382f9e3c3ba6f95927dca8c90d24e2328bdabb6771480360b0e9.
 
-## M007 implementation and changed files
+## M008 implementation and changed files
 
-- game/world/map_candidate/forest_population.gd plus UID: 412 original deferred
-  props, including 395 trees and 17 other props. All 468 map props now have exactly
-  one wrapper (56 town + 412 forest), with 455 enabled catalog collision bodies
-  (44 town + 411 forest), and all 102 independent authored collider identities.
-  Exact fractional X/Z, yaw/group provenance, source collision flags, tree metadata,
-  original height/light/depth metadata and complete source records retained.
-- Trees: alder70, birch37, cherry22, maple36, oak38, pine48, rowan36, spruce60,
-  willow48. Sizes small65/standard266/large64. Diagnostic colored polygon prisms
-  at heights0.9/1.4/1.8m use exact enabled trunk outlines; no reseeding, sprite
-  blockers, source rendering behavior or final canopy/art claim.
-- Moonwell eight-corner polygon remains exact at X31.51317596435547,
-  Z4.621034622192383; preview Y0, source Y0.5 retained for M008. Disabled gate
-  prop has replaceable art matching unchanged authored body; water_blockers.gd
-  removes its duplicate preview mesh, keeping sole future-exit-gate collision.
-- Six source markers and Tollworks entrance retain IDs/feet/provenance with inert
-  labels, no collisions/interactions. Other85 routine/resource/NPC records remain
-  data only. Seven portals inactive;25 zones/three activities retained data only.
-  [Inventory and omitted-content disposition](../evidence/M007/inventory.json).
-- prop_grayboxes.gd plus UID: extracted unchanged shared polygon/prism/wrapper/nav
-  utilities from town_footprints.gd. Town/dock geometry and approved water cutouts
-  unchanged; art still owns no physics. Terrain composes forest and reports limits.
-  Existing0.2m nav-only outline margin also applies to forest and thin bridge rails.
-  Tree detours exposed rail contour cuts; projected rail margin repairs them while
-  physical source/rail outlines stay fixed. Final height/nav remains M008/M009.
-- game/tests/map_forest_checks.gd plus UID: inventory/provenance/null flags, exact
-  physical polygon vertices and interior/exterior queries, actual0.4m capsule
-  path clearance at<=0.1m,16 bidirectional real hero capsule routes, party pads,
-  sole gate walking/dodge negatives and beyond-gate obstruction.
-- Updated existing town/water checks to wait for expected asynchronous nav region
-  before queries. Candidate floor rays exclude forest blockers; old straight depth
-  fixture now checks authentic tree stop, while M007 routes prove real approaches.
-  Crossing checks explicitly account for pinned supply-cache overlap on northwest
-  landing; do not start actors inside source collision.94 clear walk/dodge lanes
-  plus four rail-slide runs remain, source center routes pass in both directions.
-- Candidate root HUD, CANDIDATE, CONTRACT, CHECKLIST and this state updated.
-  Evidence scripts/logs/inventory/routes/input JSON/raw responses/captures under
-  docs/evidence/M007/. Parent architecture/state and normal production files unchanged.
+- game/world/map_candidate/elevation_surfaces.gd plus UID: analytical pinned height
+  field, 472 raised cells/16 ramps,238 differing-profile cliff barriers,independent
+  riser visuals and physical/nav input. Default floor remains original solid Y0
+  base; raised/ramp concave physics avoids coplanar default contacts. Matching
+  ramps/high-low joins open; all other differing profiles block both directions.
+  Levels remain0.25m,maximum1.75m,ramps14.04degrees. No height/grid/scale adaptation.
+- terrain_preview.gd: height-following batched surfaces, physical spawn heights,
+  independent base floor,forest/town height injection and provisional height-aware
+  dry nav. Six material batches/defaults/mixed grids unchanged. Nav voxel height
+  now0.05m; horizontal0.2m,radius0.4m,climb0.1m unchanged. water_blockers.gd extends
+  existing0.2m nav-only margin to all effective water pieces after measured river/
+  lake contour cuts. Physical water masks/records,sole gate and dock cuts unchanged.
+- forest_population.gd/town_footprints.gd: exact physical source feet, including
+  Moonwell(31.51317596435547,0.5,4.621034622192383). prop_grayboxes.gd extends blocker
+  vertical bounds to nearby terrain while preserving exact X/Z polygons/flags/yaw.
+  crossings.gd/shared dock helper mark actual floor bodies for grounding queries.
+  All468 props/455 catalog footprints/102 authored collider identities retained.
+  Graybox art/inert records remain as M007; no new interactions/NPC behavior.
+- game/features/actors/actor_placeholder.gd: optional transient floor-height
+  callback after move_and_slide; normal rooms leave it empty. Candidate root sets
+  snap0.04m and injects actual nearby-floor ray/full-capsule validation,normalY>=0.96,
+  range0.11m. X/Z movement stays physics-authoritative;0.25m cliffs cannot be snapped
+  across. No persistent field,save schema,party/service authority or normal setting change.
+- game/tests/map_elevation_checks.gd plus UID: all height rays,64 bidirectional
+  ramp walk/dodge cases,476 cliff casts and2,646 real walking/dodge/diagonal cases.
+  Existing candidate/forest/town tests now use physical heights,exact Y metadata,
+  full-map floor rays and height-aware grounding. Forest report writes M008 evidence,
+  preserving M007 files. Candidate root/HUD labels physical heights/inactive routes.
+- CANDIDATE/CONTRACT/CHECKLIST/this state and docs/evidence/M008/ updated. Parent
+  architecture/state/P014 remain unchanged: ownership/production scope unchanged.
 
-## Exact checks and results
+## Exact final checks
 
 Both supplied engine executables exist;4.7.2.stable.mono.official.ed1daf0bf.
-Commands run from target root. Process-local APPDATA/LOCALAPPDATA point to
-builds/m007-user-data and builds/m007-local-data; normal save untouched.
-Exact commands and logs in VALIDATION.md; accepted runtime logs have no SCRIPT
-ERROR and only pre-existing certificate-store diagnostic. Import exit0 retains
-known missing .NET SDK10.0.9 diagnostics; no diagnostic-free import claim.
+All commands from target root;process-local APPDATA/LOCALAPPDATA use
+builds/m008-user-data and builds/m008-local-data. Normal user save untouched.
+See VALIDATION.md for full commands/logs and accepted-versus-failed attempts.
 
 - Bundled Python -B tools/map_migration/extract_layout.py --check: PASS/exit0.
-- Godot --headless --editor --path game --import --quit: initial/final exit0.
-- --headless --path game --script res://tests/map_forest_checks.gd: PASS0;
-  64,178 polygon physics probes,16,728 path samples,16 physical routes,
-  5,563 provisional nav polygons. Paths/lengths in physics-report.json.
-- map_town_checks: PASS0;37,325 polygon queries,18,316 path samples,74 physical
-  routes; all doors/Maris/quays/western docks and rotated/concave fixtures.
-- map_water_checks: PASS0; original90 records/8,766 authored cells,8,598 effective
-  cells/168 approved dock cuts; exposed edges/seams,water negatives,gate/nav.
-- map_crossing_checks: PASS0;4,032 floor/clearance probes,94 clear walking/dodge
-  lanes,4 rail slides,27,780 displacement samples. Named supply-cache overlap
-  stays blocked; no movement-mask exception or third river crossing.
-- map_candidate_checks: PASS0;11,760 base-floor rays,both party pads,reload/identity,
-  candidate save isolation,bounds/full-width traversal and authored trunk stop.
-- application_smoke: PASS0; normal compact startup/input/pause/resume.
-- report_m007.py and final_review.py: PASS0; snapshot hashes,full dispositions,
-  captured ordinary-input evidence,accepted-log/state/link/scope checks.
-- git diff --check: exit0; intended diff reviewed, no unrelated files changed.
+- Godot --headless --editor --path game --import --quit: initial/final exit0;
+  known missing SDK10.0.9/certificate diagnostics retained,no clean-import claim.
+- --headless --path game --script res://tests/map_elevation_checks.gd: final
+  *-ground-policy.log PASS0;4,392 height rays,64 ramp runs,476 cliff casts,2,646
+  cliff runs,67,945 motion samples,max grounding error0.019152m. No tolerance raised.
+- map_candidate_checks: final PASS0;11,760 physical floor rays,original1cm perimeter
+  gate,both full-party pads,reload/identity/save isolation/full-width movement.
+- map_crossing_checks: final PASS0;4,032 probes,94 clear walk/dodge lanes,four rail
+  slides,27,780 motion samples;water/gate footprints and source cache retained.
+- map_town_checks: final PASS0;37,325 polygon queries,18,290 path samples,74 physical
+  routes;Maris/fitting pads,doors/quays and all three approved docks remain usable.
+- map_water_checks: final PASS0;90 original records,8,766 authored/8,598 effective
+  cells,seams/edge sweeps,four negatives and gate walking/dodge blocked.
+- application_smoke,movement_camera_checks,location_travel_checks: final PASS0,
+  normal composition/input/camera/modal/party/travel behavior preserved.
+- map_forest_checks: **FAILED/exit1**,strict0.4m nav-corner clearance gate below.
+  Inventory/polygon audits and16 actual hero routes finish;not a passing nav check.
+- report_m008.py/final_review.py: PASS0;source hashes,accepted logs,retained24 PNGs/
+  raw final-run observations,explicit M009 failure,status/links/scope review.
+- git diff --check: exit0;intended files reviewed,no unrelated changes.
 
-## Rendered evidence
+Accepted runtime logs have no SCRIPT ERROR;only known certificate-store diagnostic.
+Parent P014 evidence and previous M001–M007 evidence stay intact.
 
-Compatibility/OpenGL960x640,RTX4070 Laptop/NVIDIA581.29; ordinary viewport inputs
-through opt-in bridge, no actor/session mutation or teleport. Retained driver
-windowed/drive_route.py selects bounded WASD chords from measured path waypoints
-and actual read-only observations. Every batch starts/ends confirmed paused;
-wall time and input duration are not deterministic physics. Moving and pause
-captures inspected. Raw responses/captures/index retained under M007/windowed/.
+## Rendered final evidence
 
-Run a: fresh town start -> Moonwell approach(31.53853,0.00094,5.63327), return
-(-0.02962,0.00094,0.04154), ordinary route through dense forest -> ford east
-(74.90612,0.00094,12.49661), cross back west(65.97948,0.00094,12.51687).
-Hero/ally visible,clear sand/dry approach,water remains distinct. Timer0->44.919s.
-Run b: fresh --candidate-return pad(107.25,0,1.25), walk bridge east->west
-(92.93686,0.00094,-0.45661), west->east->Tollworks approach
-(107.29085,0.00094,-1.25632), E inert, walk closed-exit approach
-(121.50024,0.00094,-7.02414), walk+Space dodge+E contact future-exit-gate,
-stopX122.64906,Z-5.68997. Timer0->14.941s. Gate reads closed; no prompt/transition.
-Both preserve empty quest/effects and two party wrappers; no catch-up needed in
-these rendered routes (not M010 recovery proof). Both normal F10 quits exit0.
-No Save/Load or save-slot write. Named slot playtest-m007-forest.json isolated.
+Final accepted run m008-hills-d,Compatibility/OpenGL960x640,RTX4070 Laptop/NVIDIA581.29.
+Fresh town start,normal viewport WASD/Space through opt-in bridge,no teleport or
+actor/health/quest mutation. Bounded movement batches start/end confirmed paused;
+wall time is not fixed physics. Raw responses/24 PNGs retained in M008/windowed/d/;
+[per-step index](../evidence/M008/rendered-index.json). Driver uses measured physical
+path waypoints and read-only actual positions; no save/load command or slot write.
 
-## Failed attempts and remaining limits
+Town->entry ramp->Moonwell ramp->well(31.62564087,0.5,5.27000380),paused10.15860s.
+Walking/dodge contacts cliff-53-23-south/cliff-52-23-south,staysZ5.63906,Y0.5.
+Ordinary reverse route observes Moonwell slopeY0.424187/0.348141/0.279863 and entry
+slopeY0.191421/0.124837,then town(-0.05073712,0,-0.04928150),paused21.37805s.
+Hero/ally/ramp/platform readable;moving views and pause overlays inspected.
+Both party wrappers/empty quest/effects retained;no catch-up/recovery claim.
+Final process normal F10 exit0;earlier a/b/c diagnostic processes also quit0.
+No new game/helper remains. Named slot playtest-m008-hills.json not written.
 
-Retained initial/second/nav diagnostic logs: null Node metadata is omitted by
-Godot (full source record now retained), authored collider identity lives on town
-wrapper rather than body (inventory now scans correct owners), asynchronous map
-iteration initially empty (checks now wait for expected region). Invalid reverse
-gate fixture started inside body; removed, west walk/dodge plus beyond-gate query
-used instead. Gate reaches eastern perimeter; no safe east-side start exists.
-Third forest run exposed thin bridge rail path cuts; nav-only margin repaired.
-Initial prior-check logs retained: stale nav queries,old straight depth fixture
-now encountering source tree,and old landing lanes overlapping pinned supply
-cache. All final runs pass after focused repairs; no failure counted as acceptance.
+## Repairs and remaining limits
 
-No M007 blocker remains. Heights/cliffs/ramps M008,complete physical nav/loading
-M009,connected ally catch-up/recovery M010,final art M011–M014,normal activation
-M015,camera M016,save/performance/native map-build release M017–M019 remain.
-Parent P014 compact completion preserved. No new export/full quest/performance gate.
+Preliminary evidence retained. Coplanar default concave floor contacts caused
+1.7cm perimeter penetration;solid default base plus raised/ramp collision repairs
+original gate. Full cliff sweep exposed9.9cm wall snap;settling contacts alone
+failed.4cm snap alone then missed fast downhill dodge at highest ramp. Final
+actual-floor ray/full-capsule policy passes all,maximum1.92cm error. Only final
+*-ground-policy.log files are accepted;earlier elevation *-accepted/*-final logs
+include failures. No failing check counted as a pass.
 
-Select M008 only. Build472 authored elevation cells/16 slopes with0.25m levels;
-keep exact prop X/Z,place wrappers on real surfaces,implement cliffs/grounding,
-validate both party pads,all crossings/Maris approaches and seven approved dock
-surfaces. Preserve exact footprints,sole gate,snapshot,schema4/content1,existing
-ownership and isolated saves. Reuse M007 inventory/routes as evidence targets;
-do not silently refresh snapshot or widen movement masks.
+Old Moonwell approach1m south sits near physical cliff;revalidated waypoint
+(31.51317596435547,0.5,5.25) is0.629m south of unchanged well. No source placement
+change. Water contour cuts repaired with existing nav-only margin. Larger cliff
+margin disconnected one-metre corridor;0.1m horizontal voxel/merge/corner-buffer
+experiments failed other routes and were reverted. Current physical hero routes
+finish;strict0.4m nav capsule still intersects the corridor/ramp corner at12
+probes nearX26.60–27.14,Z1.90–2.36. This is the next M009 repair target:
+[known limit](../evidence/M008/navigation-known-limit.json),
+[paths/counts](../evidence/M008/forest-report.json). Preserve0.4m radius,0.1m climb,
+cliffs/footprints and gates;repair contour/erosion strategy and measure loading.
 
-Final review initially rejected Windows CP1252/newline output; new handoff files
-normalized to UTF-8/LF. Failed encoding/newline review logs retained; final review
-passes after repair. No game behavior or source snapshot change.
+M008 complete. M009 nav/loading,M010 connected companion recovery,M011–M014 art,
+M015 activation,M016 height aiming,M017–M019 saves/performance/native map release
+remain. Parent P014 compact-build completion preserved;no export/performance/
+full native map-build gate claimed. Next session selects M009 only.

@@ -13,6 +13,7 @@ var pointer_position: Vector2 = Vector2(-1, -1)
 var combat: CombatState = CombatState.new()
 var combat_targets: Array[ActorPlaceholder] = []
 var requested_direction: Vector3 = Vector3.ZERO
+var floor_contact_height: Callable
 var team: String = "hero"
 var combat_enabled: bool = false
 var _death_reported: bool = false
@@ -116,6 +117,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = 0.0
 	move_and_slide()
+	# Optional location-supplied physical floor policy. Empty in normal rooms.
+	# Horizontal movement/collision remains move_and_slide's responsibility.
+	if floor_contact_height.is_valid():
+		var floor_y: float = floor_contact_height.call(global_position)
+		if is_finite(floor_y) and absf(global_position.y - floor_y) <= 0.11:
+			global_position.y = floor_y
+			velocity.y = 0.0
 	if trace_evidence:
 		_trace_contacts()
 

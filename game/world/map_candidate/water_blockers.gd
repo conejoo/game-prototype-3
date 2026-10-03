@@ -96,11 +96,9 @@ func on_dock(point: Vector2) -> bool:
 
 
 func add_shore_navigation_margin(geometry: NavigationMeshSourceGeometryData3D) -> void:
-	# Town routes exposed fractional shoreline corner cuts in Recast's 0.2m
-	# voxels. Conservative 0.2m outline margin is nav-only; physics stays exact.
+	# Cell-split physical terrain also exposes river/lake contour corner cuts.
+	# Conservative 0.2m outline margin is nav-only; all physics stays exact.
 	for record: Dictionary in records:
-		if not str(record.id).begins_with("south-water-"):
-			continue
 		var r: Array = record.rect_xz_m
 		for piece: Rect2 in AlderwakeDockSurfaces.subtract(Rect2(r[0], r[1], r[2], r[3]), dock_cutouts):
 			var expanded: Rect2 = piece.grow(0.2)

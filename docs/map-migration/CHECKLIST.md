@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M007 verified complete; M008–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M008 verified complete; M009–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -87,7 +87,7 @@ acceptance again against the resulting map build.
   Moonwell approach, Tollworks approach and exit approach remain reachable;
   no duplicate props or open future exit. Label omitted content explicitly.
 
-## [ ] M008 Physical elevation and ramps
+## [x] M008 Physical elevation and ramps
 
 - Build authored levels/slopes as terrain heights, ramps and cliff boundaries.
   Adapt grounding/floor snap and party safe placement only where necessary.
@@ -271,3 +271,11 @@ Checks and exact exit results: pinned extractor/report/final review PASS0; impor
 Evidence: docs/evidence/M007/VALIDATION.md,inventory/hashes/physics report,accepted and failed logs,raw ordinary-input commands/responses and inspected PNGs.
 Decisions or retained limits: flat Y preview/source heights retained; tree prisms diagnostic only; source supply cache retained on northwest bridge landing;0.2m nav-only margin includes forest/rails; checks wait for asynchronous region readiness; routines/resources/NPCs/zones/activities data only; schema4/content1/production/save/source snapshot unchanged. Parent P014 compact completion preserved; M019 owes map release.
 Next eligible task: M008 physical elevation and ramps only.
+
+M008 — completed 2026-10-03
+Result: 472 physical height cells, 16 directional ramps, 238 bidirectional cliff barriers and matching batched terrain; physical prop feet restored, candidate-only ray/capsule-validated grounding. Heights remain 0.25m per level.
+Files: elevation_surfaces.gd/map_elevation_checks.gd and UIDs; actor optional floor callback; candidate root/terrain/props/crossings/water and focused existing checks; CANDIDATE/CONTRACT/CHECKLIST/CURRENT_STATE; docs/evidence/M008/.
+Checks and exact exit results: final eight focused elevation/candidate/crossing/town/water/application/movement-camera/travel checks PASS/exit0; extractor/report/final-review/diff-check exit0; import exit0 with known SDK/certificate diagnostics. 4,392 height rays,11,760 full-map floor rays,64 ramp runs,476 cliff casts,2,646 cliff walking/dodge/diagonal runs,67,945 motion samples,max grounding error0.019152m;94 crossing lanes/four rail slides;74 town routes. Final rendered fresh town->ramps->Moonwell,cliff walk/dodge,descent->town with24 retained captures,normal F10 exit0.
+Evidence: docs/evidence/M008/VALIDATION.md,elevation/forest reports,known-nav-limit/hashes/rendered-index,accepted and failed logs,ordinary input commands/raw responses/PNG captures.
+Decisions or retained limits: solid default base plus raised/ramp collision; exact prop X/Z/flags/IDs preserved,vertical graybox bounds cover terrain. Candidate snap0.04m plus optional actual-floor callback prevents measured wall-snap/downhill artifacts; normal callback empty. Moonwell evidence approach moves toZ5.25 within0.629m of unchanged foot. Strict forest nav check remains FAILED/exit1 on12 radius0.4m ramp-corner probes while16 hero routes walk; M009 must repair without weakening gates. Schema4/content1,snapshot,normal save/production selection and parent P014 compact completion unchanged. No M009 implementation/performance/export/native map gate claimed.
+Next eligible task: M009 navigation for complete exterior only, beginning with retained Moonwell contour/erosion failure.

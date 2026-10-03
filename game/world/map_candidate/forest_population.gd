@@ -1,6 +1,6 @@
 class_name AlderwakeForestPopulation
 extends AlderwakePropGrayboxes
-## M007 pinned population. Flat Y preview; exact X/Z, IDs and trunk polygons.
+## Pinned population at physical source feet; exact X/Z, IDs and trunk polygons.
 
 const SPECIES_COLORS: Dictionary[String, Color] = {
 	"alder": Color(0.34, 0.47, 0.29), "birch": Color(0.56, 0.62, 0.41),
@@ -48,7 +48,7 @@ func build(layout: Dictionary) -> void:
 		else:
 			_add_prism(wrapper, "NonblockingFoot", _rectangle(Rect2(-0.12, -0.12, 0.24, 0.24)), 0.06, false, color)
 		if record.id == "moonwell-prop":
-			_label(wrapper.get_node("VisualRoot"), "MOONWELL GRAYBOX\nPHYSICAL HEIGHT M008", Vector3(0, 1.0, -0.6))
+			_label(wrapper.get_node("VisualRoot"), "MOONWELL GRAYBOX\nPHYSICAL HEIGHT 0.50m", Vector3(0, 1.0, -0.6))
 		elif record.id == "future-exit-gate-prop":
 			# Disabled catalog art uses the existing source-authored collider's
 			# footprint, adding no second body or sprite-sized collision.
@@ -86,4 +86,4 @@ func build(layout: Dictionary) -> void:
 
 
 static func _flat_foot(record: Dictionary) -> Vector3:
-	return Vector3(record.foot_xyz_m[0], 0, record.foot_xyz_m[2])
+	return Vector3(record.foot_xyz_m[0], record.foot_xyz_m[1], record.foot_xyz_m[2])

@@ -72,6 +72,8 @@ func _floor(parent: Node3D, id: String, rect: Rect2, color: Color) -> void:
 func _box(parent: Node3D, id: String, rect: Rect2, low: float, high: float, color: Color, visual_top: float = NAN) -> void:
 	var body: StaticBody3D = StaticBody3D.new()
 	body.name = id
+	if not id.ends_with("Rail"):
+		body.set_meta("candidate_walkable_floor", true)
 	body.position = Vector3(rect.get_center().x, (low + high) * 0.5, rect.get_center().y)
 	body.collision_layer = 1
 	body.collision_mask = 0

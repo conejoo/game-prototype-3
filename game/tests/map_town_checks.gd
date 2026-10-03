@@ -28,7 +28,7 @@ func _run() -> void:
 		ids[record.id] = true
 		var wrapper: Node3D = town.get_node(NodePath(record.id))
 		_check(wrapper.get_meta("source_prop_id") == record.id and wrapper.get_meta("source") == record.source, "Lost prop provenance")
-		_check(wrapper.position.distance_to(Vector3(record.foot_xyz_m[0], 0, record.foot_xyz_m[2])) < 0.001, "Rounded or misplaced prop foot: " + record.id)
+		_check(wrapper.position.distance_to(Vector3(record.foot_xyz_m[0], record.foot_xyz_m[1], record.foot_xyz_m[2])) < 0.001, "Rounded or misplaced prop foot: " + record.id)
 		_check(is_equal_approx(wrapper.rotation.y, deg_to_rad(record.yaw_degrees)), "Rotation missing: " + record.id)
 		_check(wrapper.has_node("Collision") == (record.collision != null), "Collision-enabled/none boundary: " + record.id)
 		_check(wrapper.get_node("VisualRoot").find_children("*", "CollisionObject3D", true, false).is_empty(), "Art owns collision")
@@ -110,7 +110,7 @@ func _run() -> void:
 				var count: int = ceili(path[index - 1].distance_to(path[index]) / 0.1)
 				for sample: int in range(count + 1):
 					var point: Vector3 = path[index - 1].lerp(path[index], float(sample) / maxf(count, 1))
-					point.y = 0
+					point.y = location.elevation.height_at(Vector2(point.x, point.z))
 					_check(_clear(space, capsule, point), "Unsafe town nav path: %s at %s" % [id, point])
 					path_samples += 1
 			# Actual shared hero movement, synthetic placement/manual stepping.
@@ -133,7 +133,7 @@ func _run() -> void:
 					if stalled > 12:
 						_check(false, "Synthetic path stalled: %s at %s" % [id, hero.global_position])
 						break
-				_check(absf(hero.global_position.y) < 0.05, "Town route lost grounding: " + id)
+				_check(absf(hero.global_position.y - location.elevation.height_at(Vector2(hero.global_position.x, hero.global_position.z))) < 0.05, "Town route lost grounding: " + id)
 			_check(Vector2(hero.global_position.x - end.x, hero.global_position.z - end.z).length() < 0.3, "Physical town circulation snag: " + id)
 			walked_routes += 1
 		print("M006 circulation ", id, " bidirectional paths/walking")
@@ -212,7 +212,7 @@ func _audit_polygon(space: PhysicsDirectSpaceState3D, wrapper: Node3D, expected:
 				continue
 			var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
 			query.shape = sphere
-			query.transform.origin = Vector3(point.x, 0.3, point.y)
+			query.transform.origin = Vector3(point.x, wrapper.position.y + 0.3, point.y)
 			query.collision_mask = 1
 			var contact: bool = false
 			for hit: Dictionary in space.intersect_shape(query, 32):
