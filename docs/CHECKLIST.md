@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P012 verified complete; P013 next eligible. Subsequent tasks remain pending.
+P001–P013 verified complete; P014 next eligible, not started.
 
 ## [x] P001 — Runnable project and application root
 
@@ -129,7 +129,7 @@ P001–P012 verified complete; P013 next eligible. Subsequent tasks remain pendi
   sources and record import/render evidence. Missing live connection leaves
   this item incomplete, with exact blocker and runnable placeholders retained.
 
-## [ ] P013 — Complete playable recovery slice
+## [x] P013 — Complete playable recovery slice
 
 - Connect normal start, lead, companion, expedition, guardian, recovery,
   reconnection, trust reaction, upgrade, and visible town result.
@@ -451,3 +451,31 @@ Next eligible task:
   Windows export claim. Source/normal save preserved; committed locally at user
   request. No subagents/push/publication.
 - Next eligible task: P013 — Complete playable recovery slice. Not started.
+
+### P013 — completed 2026-10-02
+
+- Changed: player-facing slice/room labels, location-aware objectives, optional
+  trust/earned-upgrade reminders, companion route guidance and explicit pause-save
+  flow. Practice markers/beacons isolated behind debug-only --developer-fixtures;
+  normal companion station stays labeled. Focused isolation/routing checks, two
+  affected older checks, README canon deviations and handoff/evidence updated.
+- Checks/evidence: prerequisite root/art/recovery PASS0 with normal app access;
+  initial/final editor imports exit0 (existing unused Mono SDK message). Thirteen
+  focused scripts PASS0; final affected reruns PASS0. Two normal-input full slices:
+  uninterrupted +1 trust/40 damage/guardian/vessel/fitting/service, then -1 repeat
+  across lead1/vessel4/completed6 GUI-save/process-restart boundaries. Replay grants
+  no effects; alternate trust rejected; fitting cancel retains5; spent upgrade,
+  restored shop and cleared guardian survive restart/round trip. Five bridge runs
+  and no-flag native startup/pause/resume/quit all exit0. 298 exact input traces,
+  inspected PNG/JSON and save snapshots: evidence/P013/VALIDATION.md. Runtime scan
+  and git diff --check clean.
+- Repairs/decisions: stale save-prompt assertion corrected; early Tollworks travel
+  now routes back to Alderwake. Fixtures removed before collision/navigation setup.
+  Schema4/content1, stable IDs, once-only rules and visual wrappers unchanged.
+  Architecture documents only developer/presentation boundary; canon stays temporary.
+- Limits: shortened MQ03 adaptation, dialogue station/customer/helper fixtures,
+  provisional combat/static art, service preview only; ship/fair/salvage unchanged.
+  Viewport and native SendInput automation are not physical-hardware evidence.
+  Restricted initial save checks required normal local app access. Normal save and
+  source preserved; no Blender edits, subagents, commit/push/publication or export.
+- Next eligible task: P014 — Extension check and Windows export. Not started.

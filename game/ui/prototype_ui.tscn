@@ -73,7 +73,7 @@ text = "RETURNING FAIR"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.71, 0.73, 1)
 theme_override_font_sizes/font_size = 14
-text = "P003  /  Movement + camera test room  /  Prototype content"
+text = "Recovery slice · Prototype adaptation"
 
 [node name="PlayTime" type="Label" parent="Screen/Header/Margin/Row"]
 layout_mode = 2
@@ -184,9 +184,9 @@ horizontal_alignment = 1
 [node name="Hint" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Save health, party, quest progress and effects while paused.
-Load returns to last arrival anchor, not current position.
-No autosave. Esc resumes."
+text = "Save after closing dialogue/journal, outside combat and travel.
+Load restores progress and health at last arrival anchor.
+No autosave. Reopen, pause, choose Load, then Resume."
 horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
@@ -207,7 +207,7 @@ text = "Load saved run"
 [node name="SaveStatus" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Save/load available outside travel."
+text = "Explicit saves only; quit does not save."
 autowrap_mode = 2
 horizontal_alignment = 1
 

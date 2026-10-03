@@ -136,7 +136,7 @@ mesh = SubResource("Mesh_plinth")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plinth"]
 shape = SubResource("Shape_plinth")
 
-[node name="TestBeacon" type="Node3D" parent="."]
+[node name="TestBeacon" type="Node3D" parent="." groups=["developer_fixture"]]
 position = Vector3(3, 1.2, -2)
 
 [node name="Mesh" type="MeshInstance3D" parent="TestBeacon"]
@@ -178,7 +178,7 @@ text = "Enter Tollworks
 position = Vector3(-2, 0, 0)
 instance_id = "alderwake-temporary-companion"
 
-[node name="PracticeMarker" parent="." instance=ExtResource("5_prop")]
+[node name="PracticeMarker" parent="." groups=["developer_fixture"] instance=ExtResource("5_prop")]
 position = Vector3(2, 0, 1)
 instance_id = "alderwake-practice-marker"
 

@@ -50,6 +50,7 @@ func _run() -> void:
 	first.cancel()
 
 	game = (load("res://app/game_root.tscn") as PackedScene).instantiate()
+	game.developer_fixtures = true # Explicit P006 reusable practice-prop fixture.
 	root.add_child(game)
 	await game.world_host.transition_finished
 	await process_frame

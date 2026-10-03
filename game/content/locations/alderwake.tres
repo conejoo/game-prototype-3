@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-alderwake"
-display_name = "Alderwake (prototype graybox)"
+display_name = "Alderwake (prototype)"
 prototype_fixture = true
 scene_path = "res://world/alderwake.tscn"
 spawn_ids = PackedStringArray("alderwake-start", "alderwake-from-tollworks")

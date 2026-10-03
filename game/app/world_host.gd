@@ -11,6 +11,7 @@ var party: PrototypeParty
 var current_location: PrototypeLocation
 var transitioning: bool = false
 var transition_count: int = 0
+var developer_fixtures: bool = false
 
 
 func initialize(content: ContentCatalog, run: GameSession, persistent_party: PrototypeParty) -> void:
@@ -32,6 +33,12 @@ func request_transition(location_id: String, spawn_id: String) -> PackedStringAr
 			candidate_node.free()
 		return PackedStringArray(["location scene requires PrototypeLocation"])
 	var candidate: PrototypeLocation = candidate_node as PrototypeLocation
+	# Remove test props before validation/navigation/placement. Dialogue station
+	# remains normal prototype content; it provides the active ally's choice.
+	if not developer_fixtures:
+		for child: Node in candidate.get_children():
+			if child.is_in_group("developer_fixture"):
+				child.free()
 	var errors: PackedStringArray = candidate.validation_errors(definition, catalog)
 	if not errors.is_empty():
 		candidate.free()

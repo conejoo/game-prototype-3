@@ -109,3 +109,9 @@ relationship, point, upgrade or objective mutation command exists.
 P011 adds read-only counter presentation/sign/gear visibility, dialogue line index,
 Continue and choice-button screen coordinates. Return/fitting/service commands
 still use ordinary E/GUI input; no quest or shop mutation path was added.
+
+P013 normal rooms hide practice markers/test beacons. Explicit debug-only
+`--developer-fixtures` retains those reusable test props; it grants no progress.
+The purple station remains labeled prototype dialogue for the active ally.
+Full slice evidence uses only `--playtest-dir` and isolated `--save-slot`, without
+developer fixtures or any state setup. Normal no-flag startup has no bridge.

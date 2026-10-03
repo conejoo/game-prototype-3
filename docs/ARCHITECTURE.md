@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P011.
+Status: implementation contract; runnable Godot prototype through P013.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -416,6 +416,23 @@ This tool supports repeatable windowed playtests without OS key-hold automation.
 Injected input does not prove physical keyboard mappings or OS focus handling;
 those require separate real desktop/manual evidence. A synthetic objective still
 cannot establish normal quest gameplay. Harness observations never own game state.
+
+### Delivered normal slice presentation (P013)
+
+Normal startup remains a fresh run; explicit pause-menu Load resumes an existing
+save. The root derives optional reaction/upgrade reminders and wrong-room routing
+from the existing services/quest definitions. UI displays those hints and the
+stable save boundary; it owns no new completion or reward state. Schema4/content1,
+quest/effect/actor IDs and imported-art wrappers are unchanged.
+
+Practice markers and test beacons in the two gameplay rooms use the
+`developer_fixture` group. WorldHost removes them before validation, collision
+placement and navigation unless root enables explicit debug-only
+`--developer-fixtures` (or a test sets the root's fixture property). The companion
+dialogue station remains labeled normal prototype content for the active ally's
+reaction. This narrowly isolates existing P006 props; no new setup/objective
+mutation path or generalized developer framework is added. Test-room fixtures
+and the separately opt-in playtest bridge retain their existing contracts.
 
 ## Decisions still open
 

@@ -19,7 +19,7 @@ action_id = "maris-enter-tollworks"
 effect_id = "maris-expedition-started"
 location_id = "prototype-tollworks"
 source_id = "location-arrival"
-objective = "Travel through the north gate to the Tollworks."
+objective = "E at north gate: travel to Tollworks with your temporary companion."
 
 [sub_resource type="Resource" id="Guardian"]
 script = ExtResource("2")
@@ -28,7 +28,7 @@ action_id = "maris-clear-guardian"
 effect_id = "tollworks-guardian-cleared"
 location_id = "prototype-tollworks"
 source_id = "tollworks-guardian-01"
-objective = "Defeat protective guardian in Tollworks. Click: attack; Space: dodge its gold windup."
+objective = "Tollworks: defeat guardian. Click: attack; Space: dodge its gold windup."
 
 [sub_resource type="Resource" id="Vessel"]
 script = ExtResource("2")

@@ -28,10 +28,12 @@ var companion_ai: CompanionController
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
 @export var initial_spawn_id: String = "alderwake-start"
+@export var developer_fixtures: bool = false
 
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
+	world_host.developer_fixtures = OS.is_debug_build() and (developer_fixtures or "--developer-fixtures" in OS.get_cmdline_user_args())
 	# Debug-only named slot isolates playtest files; normal runs use the main slot.
 	if OS.is_debug_build():
 		for argument: String in OS.get_cmdline_user_args():
@@ -213,8 +215,8 @@ func _set_paused(paused: bool) -> void:
 	get_tree().paused = paused
 	_update_controls()
 	ui.show_paused(paused)
-	if paused and not _combat_stable():
-		ui.show_save_status("Combat paused. Resume or R: retry after death; save/load locked.")
+	if paused:
+		ui.show_save_status("No autosave. Save here; reopen and choose Load to continue." if _combat_stable() else "Combat paused. Resume and retreat, or R: retry after death; save/load locked.")
 	print("P001: %s at play time %.2fs." % ["Paused" if paused else "Resumed", session.elapsed_play_seconds])
 
 
@@ -327,7 +329,7 @@ func _refresh_interaction() -> void:
 		ui.show_travel("Quest progress kept; retry restarts at last arrival anchor." if player_placeholder.state.health == 0 else "Click: attack · Space: dodge · Finish fight or retreat to interact / save")
 		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
-	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "Walk near dialogue stand-in, gold marker, or glowing gate")
+	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "E near Maris / purple companion station / glowing gate" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
 
 
 func interact() -> DialogueService.ActionResult:
@@ -411,7 +413,20 @@ func _quest_command(quest_id: String, action_id: String, source_id: String) -> D
 
 
 func _refresh_journal() -> void:
-	ui.show_objective(quests.objective("prototype-maris-recovery"))
+	var objective: String = quests.objective("prototype-maris-recovery")
+	var definition: QuestDefinition = catalog.get_quest("prototype-maris-recovery")
+	var count: int = session.quests[definition.stable_id].completed_step_ids.size()
+	if count < definition.steps.size():
+		var step: QuestStep = definition.steps[count]
+		if step.source_id != "location-arrival" and step.location_id != session.current_location_id:
+			objective = "E at north gate: travel to %s for next objective." % catalog.get_location(step.location_id).display_name
+	var optional: PackedStringArray = []
+	if session.relationship.reaction_ids.is_empty():
+		optional.append("purple station: companion choice")
+	if progression.available_points() > 0:
+		optional.append("J: spend preparation point")
+	var hint: String = "Optional · " + " · ".join(optional) if not optional.is_empty() else "Esc: save outside combat · No autosave; reopen then Load"
+	ui.show_objective(objective + "\n" + hint)
 	if journal_open:
 		ui.show_journal(true, _journal_text())
 		ui.show_upgrade(progression)

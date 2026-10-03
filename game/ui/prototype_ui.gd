@@ -90,7 +90,7 @@ func show_camera(description: String) -> void:
 
 
 func show_location(description: String) -> void:
-	location_label.text = "P011 / " + description
+	location_label.text = "Recovery slice · " + description
 
 
 func show_companion(actor: ActorState, mode: String, trust: int = 0) -> void:
@@ -195,7 +195,7 @@ func show_upgrade(service: ProgressionService) -> void:
 	var selected: bool = ProgressionService.UPGRADE_ID in service.session.progression.upgrade_ids
 	upgrade_button.disabled = selected or service.available_points() < 1
 	upgrade_button.text = "Deliberate Strike selected · damage 40" if selected else "Spend 1 preparation point: Deliberate Strike (+15 damage)"
-	upgrade_status.text = "Preparation points: %d · Accept Maris's lead to earn 1. Prototype training." % service.available_points()
+	upgrade_status.text = "Preparation complete · Deliberate Strike: 25 → 40 damage (prototype training)." if selected else "Preparation points: %d · %s" % [service.available_points(), "Select below before entering Tollworks." if service.available_points() > 0 else "Accept Maris's lead to earn 1. Prototype training."]
 	var buttons: Array[Button] = []
 	if not upgrade_button.disabled:
 		buttons.append(upgrade_button)

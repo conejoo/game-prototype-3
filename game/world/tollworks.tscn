@@ -135,7 +135,7 @@ position = Vector3(0, -0.3, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plinth"]
 shape = SubResource("Shape_plinth")
 
-[node name="TestBeacon" type="Node3D" parent="."]
+[node name="TestBeacon" type="Node3D" parent="." groups=["developer_fixture"]]
 position = Vector3(3, 1.2, -2)
 
 [node name="Mesh" type="MeshInstance3D" parent="TestBeacon"]
@@ -177,7 +177,7 @@ text = "Return to Alderwake
 position = Vector3(-2, 0, 0)
 instance_id = "tollworks-temporary-companion"
 
-[node name="PracticeMarker" parent="." instance=ExtResource("5_prop")]
+[node name="PracticeMarker" parent="." groups=["developer_fixture"] instance=ExtResource("5_prop")]
 position = Vector3(2, 0, 1)
 instance_id = "tollworks-practice-marker"
 

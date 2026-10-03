@@ -1,10 +1,11 @@
 # Returning Fair prototype
 
-P001–P011 complete. One labeled temporary ally follows from normal start, routes
-around obstacles and assists combat. Approach purple dialogue stand-in or
-gold practice marker and press E to talk/inspect. Choose with mouse or Tab/Enter;
+P001–P013 complete. Full shortened recovery slice is playable from a fresh run.
+One labeled temporary ally follows, routes around obstacles and assists combat.
+Approach the purple companion station and press E for its optional trust choice.
+Choose with mouse or Tab/Enter;
 Finish/Close or Esc returns control. E at glowing gate travels to Tollworks/back.
-Both rooms reuse labeled prototype interactions. Physical hero, mouse facing,
+Both rooms retain labeled prototype companion stations. Physical hero, mouse facing,
 overhead follow, projection and zoom remain. Maris's prototype counter is southwest;
 accept her lead, travel north, and read J journal. Defeat the protective guardian
 with mouse clicks; Space dodges its gold windup/red strike. R retries after death.
@@ -29,6 +30,7 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --editor --path $gamePath --import
 & $godotExe --path $gamePath
 & $godotExe --headless --path $gamePath --script res://tests/application_smoke.gd
+& $godotExe --headless --path $gamePath --script res://tests/playable_slice_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/content_catalog_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/movement_camera_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/live_playtest_checks.gd
@@ -63,7 +65,9 @@ contacted once per swing, through range/facing and world-obstruction checks.
 Space dodges in held movement direction, or current facing when stationary;
 dodge lasts 0.30s and blocks damage. E selects nearest visible interaction;
 dialogue blocks gameplay input, clears held movement, and excludes save/load.
-Practice-marker and the first two companion choices remain presentation-only.
+The first two companion choices remain presentation-only guidance.
+Practice markers/test beacons appear only with explicit debug-only
+`--developer-fixtures`; P006 checks enable their fixtures deliberately.
 The other companion choices record mutually exclusive once-only trust reactions. Maris/vessel choices
 submit quest commands with prerequisite/source checks and durable once-only effects.
 J opens the journal; J/Esc/Close returns control. Both modals clear held movement,
@@ -95,8 +99,8 @@ resets on room reload; party health persists. R restores full party health at th
 arrival anchor after death, preserving quest facts. Cleared guardians stay defeated
 through retry, travel and save/restart. Combat pause permits Resume, but locks
 Save/Load; retreat outside guardian engagement to use other interactions.
-This remains a shortened, labeled adaptation. Practical return scene/shop variant
-is P011; vessel recovery does not repair the ship.
+This remains a shortened, labeled adaptation. The practical fitting restores
+specialist service; vessel recovery does not repair the ship.
 
 Ally deals 10 damage through the same swing/LOS rules, follows within 1.6m and
 returns outside its 6m combat leash. Health zero means incapacitated; after 3s
@@ -201,11 +205,25 @@ Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
 [P009 validation](docs/evidence/P009/VALIDATION.md),
 [P010 validation](docs/evidence/P010/VALIDATION.md),
 [P011 validation](docs/evidence/P011/VALIDATION.md),
-[P012 validation](docs/evidence/P012/VALIDATION.md).
+[P012 validation](docs/evidence/P012/VALIDATION.md),
+[P013 validation](docs/evidence/P013/VALIDATION.md).
 Blender sources and reusable export workflow: [asset pipeline](art/exports/PIPELINE.md).
 Imported guardian, recovery vessel and Tollworks plinth live under gameplay
 VisualRoots; Godot retains collision/navigation/IDs. Focused checks:
 `res://tests/asset_pipeline_checks.gd`; rendered inspection:
 `res://tests/asset_gallery.gd` (windowed only).
-Next eligible task: P013 (not started). Read
+Next eligible task: P014 (not started). Read
 [current state](docs/CURRENT_STATE.md) before work.
+
+## Remaining canon deviations
+
+This slice starts directly at Maris's lead, skipping MQ00–MQ02 and the full fair
+opening. A direct room gate replaces the Old Ford/Moonwood approach; one guardian
+and one vessel shorten the Tollworks. The unnamed companion, trust dialogue,
+lead-earned strike training and customer/helper stand-ins remain noncanonical
+prototype content. The helper stands in for the authored Helena reconnection.
+Maris retains `npc-03`, basic supplies remain available, and a practical fitting
+restores specialist judgment. Service is a preview without purchases/inventory.
+Salvage gear, Ivo's work scene, hull lift and onward Night Orchard leads remain
+outside this slice; the ship and fair are not restored. No retired currency idea
+was adopted. Reference: read-only source `docs/market-of-borrowed-days.md`, MQ03.
