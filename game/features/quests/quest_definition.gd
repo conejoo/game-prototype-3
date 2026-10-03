@@ -3,10 +3,14 @@ extends ContentDefinition
 ## Immutable shortened adaptation. No mutable progress in Resources.
 
 @export var steps: Array[QuestStep] = []
+@export var journal_note: String = ""
+@export var completion_text: String = "Complete."
 
 
 func validation_errors() -> PackedStringArray:
 	var errors: PackedStringArray = super.validation_errors()
+	if completion_text.strip_edges().is_empty():
+		errors.append("quest completion text must be nonempty")
 	if steps.is_empty():
 		errors.append("quest requires ordered steps")
 	var ids: PackedStringArray = []

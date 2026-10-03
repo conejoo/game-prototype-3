@@ -49,14 +49,15 @@ func record_arrival(location_id: String) -> void:
 func objective(quest_id: String) -> String:
 	var definition: QuestDefinition = catalog.get_quest(quest_id)
 	var count: int = session.quests[quest_id].completed_step_ids.size()
-	return definition.steps[count].objective if count < definition.steps.size() else "Complete: Maris reconnected; specialist fitting service restored (prototype)."
+	return definition.steps[count].objective if count < definition.steps.size() else definition.completion_text
 
 
 func journal() -> String:
 	var entries: PackedStringArray = []
 	for definition: QuestDefinition in catalog.quest_definitions():
 		entries.append(definition.display_name)
-		entries.append("Shortened prototype adaptation; not full MQ00–MQ03.\n")
+		if not definition.journal_note.is_empty():
+			entries.append(definition.journal_note + "\n")
 		var count: int = session.quests[definition.stable_id].completed_step_ids.size()
 		for index: int in range(definition.steps.size()):
 			entries.append(("[done] " if index < count else ("[next] " if index == count else "[later] ")) + definition.steps[index].objective)

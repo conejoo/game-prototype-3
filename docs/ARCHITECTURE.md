@@ -434,6 +434,28 @@ reaction. This narrowly isolates existing P006 props; no new setup/objective
 mutation path or generalized developer framework is added. Test-room fixtures
 and the separately opt-in playtest bridge retain their existing contracts.
 
+### P014 extension and export evidence boundary
+
+QuestDefinition owns journal_note and completion_text. QuestService presents those
+authored strings; legal transitions, session ownership and save rules are unchanged.
+Normal Maris wording stays identical. Tests append a separate quest, 60-health
+guardian definition and inherited test room to a detached manifest. Existing
+session/service/wrapper/WorldHost APIs handle them without changing normal content.
+Exact quest-set validation deliberately rejects fixture saves in the normal catalog;
+no production content-version change or save migration is implied.
+
+Windows presets use project-local official 4.7.2 standard templates for pure
+GDScript. Release excludes tests; separate debug validation retains only the
+opt-in bridge. Exported bridge paths derive from the executable's adjacent
+builds/playtest directory; editor paths retain their original rule. Release still
+cannot start the bridge or use debug save-slot/developer flags.
+
+Export text-resource binary conversion is disabled: the initial export lost packed
+spawn/dialogue arrays and failed validation; text resources restore standalone
+behavior. This observed workaround changes no authored IDs/values or schema4/content1.
+Recheck conversion when changing engine/template versions. P014's native release
+journey remains an open gate; debug-export evidence is recorded separately.
+
 ## Decisions still open
 
 - P003 chooses orthographic provisionally after same-room playable comparison;

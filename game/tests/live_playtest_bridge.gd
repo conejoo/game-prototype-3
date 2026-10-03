@@ -20,7 +20,10 @@ var contacts: PackedStringArray = []
 func start(root_game: Node3D, output_directory: String) -> void:
 	game = root_game
 	directory = output_directory.simplify_path().trim_suffix("/")
-	var allowed: String = ProjectSettings.globalize_path("res://../builds/playtest/").simplify_path().trim_suffix("/")
+	# Exported validation executables live in builds/windows-validation; their
+	# adjacent playtest directory remains inside the project's ignored builds.
+	var allowed: String = ProjectSettings.globalize_path("res://../builds/playtest/") if OS.has_feature("editor") else OS.get_executable_path().get_base_dir().path_join("../playtest/")
+	allowed = allowed.replace("\\", "/").simplify_path().trim_suffix("/")
 	if not directory.begins_with(allowed + "/") or directory == allowed:
 		push_error("Playtest directory must be a child of builds/playtest")
 		queue_free()

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="QuestDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/quests/quest_definition.gd" id="1"]
+[ext_resource type="Script" path="res://features/quests/quest_step.gd" id="2"]
+
+[sub_resource type="Resource" id="Lead"]
+script = ExtResource("2")
+stable_id = "test-extension-lead"
+action_id = "test-extension-accept"
+effect_id = "test-extension-accepted"
+location_id = "test-extension-room"
+source_id = "test-extension-board"
+objective = "TEST ONLY: accept isolated training request."
+
+[sub_resource type="Resource" id="Guardian"]
+script = ExtResource("2")
+stable_id = "test-extension-defeat"
+action_id = "test-extension-clear"
+effect_id = "test-extension-cleared"
+location_id = "test-extension-room"
+source_id = "test-extension-guardian-01"
+objective = "TEST ONLY: defeat fragile guardian variant."
+
+[resource]
+script = ExtResource("1")
+stable_id = "test-extension-quest"
+display_name = "TEST ONLY: independent training request"
+prototype_fixture = true
+journal_note = "Isolated extension fixture; no campaign or canonical story claim."
+completion_text = "Complete: TEST ONLY training request cleared."
+steps = Array[ExtResource("2")]([SubResource("Lead"), SubResource("Guardian")])

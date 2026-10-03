@@ -1,6 +1,6 @@
 # Returning Fair prototype
 
-P001–P013 complete. Full shortened recovery slice is playable from a fresh run.
+P001–P013 complete; P014 in progress. Full shortened recovery slice is playable from a fresh run.
 One labeled temporary ally follows, routes around obstacles and assists combat.
 Approach the purple companion station and press E for its optional trust choice.
 Choose with mouse or Tab/Enter;
@@ -31,6 +31,7 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --path $gamePath
 & $godotExe --headless --path $gamePath --script res://tests/application_smoke.gd
 & $godotExe --headless --path $gamePath --script res://tests/playable_slice_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/extension_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/content_catalog_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/movement_camera_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/live_playtest_checks.gd
@@ -212,8 +213,34 @@ Imported guardian, recovery vessel and Tollworks plinth live under gameplay
 VisualRoots; Godot retains collision/navigation/IDs. Focused checks:
 `res://tests/asset_pipeline_checks.gd`; rendered inspection:
 `res://tests/asset_gallery.gd` (windowed only).
-Next eligible task: P014 (not started). Read
+Next eligible task: resume P014 (release walkthrough gate open). Read
 [current state](docs/CURRENT_STATE.md) before work.
+
+## Local Windows exports (P014 in progress)
+
+`game/export_presets.cfg`: Windows Desktop (release, tests excluded) and Windows
+Validation (debug, input bridge only). Official standard 4.7.2 template executables
+are extracted under ignored `builds/p014/templates`; pure GDScript needs no C#
+runtime/SDK. Package/version/hash records: [P014 validation](docs/evidence/P014/VALIDATION.md).
+No system template install. From project root, using console executable above:
+
+```powershell
+& $godotExe --headless --path game --export-release 'Windows Desktop' ../builds/windows/ReturningFair.exe
+& $godotExe --headless --path game --export-debug 'Windows Validation' ../builds/windows-validation/ReturningFairValidation.exe
+```
+
+Keep each `.exe` beside matching `.pck`. Run directly without editor or `--path game`.
+Debug export completed normal slice and restored/revisited progress in new processes.
+Native release startup/pause/save/restart/load/resume/quit passed; full release
+journey remains unverified because native API cannot hold WASD. Human release
+walkthrough is P014's final gate. No build published.
+
+Current local release directory contains `override.cfg`, isolating validation saves
+under `%APPDATA%/ReturningFair-P014-ReleaseValidation/saves`. Keep it for remaining
+validation; normal slot stays untouched. File lives outside source/export tree.
+Without override, release uses normal application directory; it ignores debug
+`--save-slot`. Text-resource conversion is disabled after binary exports lost
+packed spawn/dialogue arrays. Isolated extension fixture remains only under tests.
 
 ## Remaining canon deviations
 

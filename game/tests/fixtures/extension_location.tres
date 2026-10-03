@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LocationDefinition" format=3]
+
+[ext_resource type="Script" path="res://world/location_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+stable_id = "test-extension-room"
+display_name = "TEST ONLY: extension room"
+prototype_fixture = true
+scene_path = "res://tests/fixtures/extension_room.tscn"
+spawn_ids = PackedStringArray("prototype-start")
+actor_ids = PackedStringArray("prototype-hero", "test-extension-guardian")

@@ -62,4 +62,6 @@ script = ExtResource("1")
 stable_id = "prototype-maris-recovery"
 display_name = "Maris: a familiar fitting (prototype adaptation)"
 prototype_fixture = true
+journal_note = "Shortened prototype adaptation; not full MQ00–MQ03."
+completion_text = "Complete: Maris reconnected; specialist fitting service restored (prototype)."
 steps = Array[ExtResource("2")]([SubResource("Lead"), SubResource("Expedition"), SubResource("Guardian"), SubResource("Vessel"), SubResource("Return"), SubResource("Reconnect")])

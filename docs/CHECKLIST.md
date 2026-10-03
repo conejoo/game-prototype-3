@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P013 verified complete; P014 next eligible, not started.
+P001–P013 verified complete; P014 in progress.
 
 ## [x] P001 — Runnable project and application root
 
@@ -138,7 +138,7 @@ P001–P013 verified complete; P014 next eligible, not started.
 - Acceptance: complete full slice without inspector/debug setup; repeat after
   save/restart at supported boundaries. Record remaining deviations from canon.
 
-## [ ] P014 — Extension check and Windows export
+## [-] P014 — Extension check and Windows export
 
 - Add a small test-only second quest/actor-definition variant to demonstrate
   content extension without changing first quest/session rules.
@@ -148,6 +148,16 @@ P001–P013 verified complete; P014 next eligible, not started.
 - Acceptance: exported executable completes slice and reloads progress outside
   editor. Record build path, tested machine/context, performance observations,
   and limitations. No completion claim based only on editor/headless execution.
+
+P014 progress, 2026-10-03: isolated authored quest/actor/location fixture and
+shared presentation repair pass; checks/imports pass; release/debug exports succeed.
+Actual exported debug full slice, GUI save/restart/load, replay and room revisit
+pass. Native release startup/pause/save/restart/load/resume/F10 pass (two exits0);
+full native release journey remains unverified. App access was granted, but native
+API provides taps without held keys; observed WASD taps did not move actor.
+Keep in progress until human or supported held-input tool completes release
+journey and reloads progress. Evidence/build paths/safe next action:
+`evidence/P014/VALIDATION.md`. No completion record yet; resume P014 only.
 
 ## Completion record template
 
