@@ -17,7 +17,7 @@ height = 1.6
 [node name="TemporaryCompanion" type="Node3D"]
 script = ExtResource("1")
 kind = "talk"
-prompt = "Talk to temporary companion"
+prompt = "Talk to prototype dialogue stand-in"
 dialogue_id = "prototype-companion-greeting"
 
 [node name="VisualRoot" type="Node3D" parent="."]
@@ -37,4 +37,4 @@ position = Vector3(0, 2.1, 0)
 billboard = 1
 pixel_size = 0.014
 font_size = 28
-text = "Temporary companion\nPrototype fixture"
+text = "Dialogue stand-in\nPrototype fixture"

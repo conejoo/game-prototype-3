@@ -1,6 +1,7 @@
 # Returning Fair prototype
 
-P001–P008 complete. Start in Alderwake; approach purple temporary companion or
+P001–P009 complete. One labeled temporary ally follows from normal start, routes
+around obstacles and assists combat. Approach purple dialogue stand-in or
 gold practice marker and press E to talk/inspect. Choose with mouse or Tab/Enter;
 Finish/Close or Esc returns control. E at glowing gate travels to Tollworks/back.
 Both rooms reuse labeled prototype interactions. Physical hero, mouse facing,
@@ -29,6 +30,7 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --path $gamePath --script res://tests/interaction_dialogue_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/quest_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/combat_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/companion_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=write
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=read
 & $godotExe --headless --path $gamePath --script res://tests/quest_process_checks.gd -- --phase=write
@@ -63,20 +65,29 @@ Normal slot is `user://saves/returning-fair.json` in Godot's application user-da
 directory, with `.bak` recovery. Missing/corrupt primary may recover validated
 backup visibly; incompatible versions are rejected and preserved. Both corrupt
 files require repair or archiving that slot before saving. Version rules and
-boundaries: [architecture](docs/ARCHITECTURE.md). Schema v2/content v1 migrates exact
-old v1 saves to an unstarted quest with no effects, preserving old facts. Load does
-not rewrite the file; explicit Save writes v2. Malformed/newer data is rejected.
+boundaries: [architecture](docs/ARCHITECTURE.md). Schema v3/content v1 requires hero
+and temporary companion records. Exact v1/v2 saves add the fixture ally at full
+health, preserving old facts; v1 starts with no quest effects. Load does not rewrite
+files; explicit Save writes v3. Malformed/newer data is rejected.
 
 Guardian appears after accepting the lead and entering Tollworks. Its stable
 instance `tollworks-guardian-01` reports actual death to the quest owner. Clearance
 uses the existing durable `tollworks-guardian-cleared` effect; saved P007 completion
 remains compatible. No simulated guardian prop/flag remains. An unfinished fight
-resets on room reload; hero health persists. R restores full hero health at the
+resets on room reload; party health persists. R restores full party health at the
 arrival anchor after death, preserving quest facts. Cleared guardians stay defeated
 through retry, travel and save/restart. Combat pause permits Resume, but locks
 Save/Load; retreat outside guardian engagement to use other interactions.
 This remains a shortened, labeled adaptation. Practical return scene/shop variant
 is P011; vessel recovery does not repair the ship.
+
+Ally deals 10 damage through the same swing/LOS rules, follows within 1.6m and
+returns outside its 6m combat leash. Health zero means incapacitated; after 3s
+outside enemy threat, it recovers at a verified safe point near the living hero.
+Stuck routes (2.5s) or large separation (8m) permit safe catch-up outside combat.
+Pause/dialogue/journal/focus loss freeze AI. Saves preserve ally health, including
+zero; route/action/recovery timers restart. Stationary dialogue stand-ins are
+separate prototype presentation fixtures. No permanent companion story or trust yet.
 
 Installed Mono editor reports missing .NET SDK `10.0.9` during editor import.
 Import finishes with exit 0; this GDScript game and its headless check run cleanly.
@@ -102,10 +113,14 @@ Godot cache/certificate access; final checks used normal local application acces
   rollback and resume. Actor wrappers/state survive room replacement.
 - `game/features/actors/`: authored health defaults, independent runtime state,
   physical hero wrapper receiving session state and supplied camera/UI controls;
-  facing rotates VisualRoot only. Both hero and guardian use its movement, attack,
+  facing rotates VisualRoot only. Hero, companion and guardian use its movement, attack,
   dodge and damage APIs.
 - `game/features/combat/`: node-independent transient CombatState rules, shared
   guardian wrapper with replaceable VisualRoot, injected approach/strike controller.
+- `game/features/actors/companion_controller.gd`, `companion.tscn`: injected follow/
+  fight/return, collision-derived navigation, safe recovery and persistent wrapper.
+- `game/tests/companion_checks.gd`: physical obstacle/barrier fixtures, safe catch-up,
+  incapacitation/recovery, combat assist, party restore and v1/v2 migration/rejection.
 - `game/tests/combat_checks.gd`: windows, single hit, dodge, range/facing/LOS,
   pause, rollback, death/retry, durable defeat and save restore. Direct fixtures are
   rule/lifecycle checks; normal rendered combat is recorded separately.

@@ -20,6 +20,8 @@ var journal_open: bool = false
 var guardian: ActorPlaceholder
 var guardian_ai: GuardianController
 var retrying: bool = false
+var companion: ActorPlaceholder
+var companion_ai: CompanionController
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -49,6 +51,18 @@ func _ready() -> void:
 		get_tree().quit(1)
 		return
 	player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
+	companion = preload("res://features/actors/companion.tscn").instantiate()
+	party.add_child(companion)
+	companion.initialize(session.actors[GameSession.COMPANION_INSTANCE_ID])
+	player_placeholder.add_collision_exception_with(companion)
+	companion.move_speed = 4.4
+	companion.combat.damage = 10
+	companion.combat.windup = 0.35
+	companion.combat.recovery = 0.6
+	companion_ai = CompanionController.new()
+	companion_ai.actor = companion
+	companion_ai.hero = player_placeholder
+	companion.add_child(companion_ai)
 	player_placeholder.defeated.connect(_on_player_defeated)
 	quests.initialize(catalog, session)
 	quests.changed.connect(_refresh_journal)
@@ -96,6 +110,8 @@ func _process(delta: float) -> void:
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
 	ui.show_combat(player_placeholder.state, guardian, retrying)
+	if is_instance_valid(companion):
+		ui.show_companion(companion.state, companion_ai.mode)
 	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
@@ -197,6 +213,11 @@ func _update_controls() -> void:
 	var enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open
 	player_placeholder.set_controls_enabled(enabled and player_placeholder.state.health > 0)
 	player_placeholder.combat_enabled = enabled
+	if is_instance_valid(companion):
+		companion.combat_enabled = enabled and player_placeholder.state.health > 0
+		companion_ai.enabled = companion.combat_enabled
+		if not companion_ai.enabled:
+			companion.clear_input()
 	if is_instance_valid(guardian):
 		guardian.combat_enabled = enabled and player_placeholder.state.health > 0
 		guardian_ai.enabled = guardian.combat_enabled
@@ -206,6 +227,9 @@ func _update_controls() -> void:
 
 
 func _on_transition_started() -> void:
+	companion_ai.reset_route()
+	companion.combat_targets.clear()
+	companion_ai.enemy = null
 	player_placeholder.combat.cancel()
 	player_placeholder.combat_targets.clear()
 	if is_instance_valid(guardian):
@@ -229,8 +253,10 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		session = _pending_restore
 		world_host.session = session
 		player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
+		companion.initialize(session.actors[GameSession.COMPANION_INSTANCE_ID])
 		quests.initialize(catalog, session)
 	_pending_restore = null
+	companion_ai.reset_route()
 	camera_rig.set_target(player_placeholder)
 	camera_rig.reset_physics_interpolation()
 	_update_controls()
@@ -240,11 +266,13 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		if not restoring:
 			quests.record_arrival(session.current_location_id)
 		_configure_guardian()
+		_refresh_combat_targets()
 		_update_controls()
 		_refresh_journal()
 		ui.show_location(catalog.get_location(session.current_location_id).display_name)
 		_refresh_interaction()
 	else:
+		_refresh_combat_targets()
 		if is_instance_valid(guardian):
 			player_placeholder.combat_targets = [guardian]
 			_update_controls()
@@ -286,7 +314,7 @@ func _refresh_interaction() -> void:
 		ui.show_travel("Quest progress kept; retry restarts at last arrival anchor." if player_placeholder.state.health == 0 else "Click: attack · Space: dodge · Finish fight or retreat to interact / save")
 		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
-	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "Walk near purple companion, gold marker, or glowing gate")
+	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "Walk near dialogue stand-in, gold marker, or glowing gate")
 
 
 func interact() -> DialogueService.ActionResult:
@@ -346,7 +374,7 @@ func load_run() -> PackedStringArray:
 	ui.show_play_time(session.elapsed_play_seconds)
 	var message: String = "Recovered backup. Primary left unchanged." if saved.recovered else "Loaded saved run at arrival anchor."
 	if saved.migrated:
-		message += " Migrated v1: quest unstarted; Save writes v2."
+		message += " Migrated legacy save: temporary companion joins at full health; Save writes v3."
 	ui.show_save_status(message if errors.is_empty() else "Load failed: " + "; ".join(errors))
 	print("P005 load: ", message if errors.is_empty() else errors)
 	return errors
@@ -407,11 +435,22 @@ func _configure_guardian() -> void:
 	guardian_ai = GuardianController.new()
 	guardian_ai.actor = guardian
 	guardian_ai.target = player_placeholder
+	guardian_ai.party_targets = party.members()
 	guardian.add_child(guardian_ai)
 
 
+func _refresh_combat_targets() -> void:
+	companion_ai.enemy = guardian if is_instance_valid(guardian) else null
+	companion.combat_targets.clear()
+	player_placeholder.combat_targets.clear()
+	if is_instance_valid(guardian):
+		companion.combat_targets.append(guardian)
+		player_placeholder.combat_targets.append(guardian)
+		guardian.combat_targets = party.members()
+
+
 func _combat_stable() -> bool:
-	return player_placeholder.state != null and player_placeholder.state.health > 0 and not player_placeholder.combat.busy() and not retrying and not (is_instance_valid(guardian) and guardian.state.health > 0 and (guardian_ai.engaged or guardian.global_position.distance_to(player_placeholder.global_position) < 5.0))
+	return player_placeholder.state != null and player_placeholder.state.health > 0 and not player_placeholder.combat.busy() and not retrying and (not is_instance_valid(companion) or (not companion.combat.busy() and not companion_ai.in_combat())) and not (is_instance_valid(guardian) and guardian.state.health > 0 and (guardian_ai.engaged or guardian.global_position.distance_to(player_placeholder.global_position) < 5.0))
 
 
 func _on_guardian_defeated(actor: ActorPlaceholder) -> void:
@@ -440,6 +479,8 @@ func retry_encounter() -> void:
 		if arrival[0]:
 			player_placeholder.state.health = player_placeholder.state.max_health
 			player_placeholder.initialize(player_placeholder.state)
+			companion.state.health = companion.state.max_health
+			companion.initialize(companion.state)
 		else:
 			push_error("Retry placement failed: " + "; ".join(arrival[1]))
 	else:

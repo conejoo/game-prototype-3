@@ -58,9 +58,11 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	await get_tree().process_frame
+	var navigation_errors: PackedStringArray = candidate.prepare_navigation()
 	NavigationServer3D.map_force_update(get_world_3d().navigation_map)
 	var anchor: SpawnAnchor = candidate.find_spawn(spawn_id)
 	var errors: PackedStringArray = _placement_errors(anchor)
+	errors.append_array(navigation_errors)
 	if not errors.is_empty():
 		remove_child(candidate)
 		candidate.free()

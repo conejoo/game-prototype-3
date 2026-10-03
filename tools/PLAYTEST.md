@@ -84,6 +84,13 @@ requests. Movement may be ignored while paused, UI-focused or after application
 focus loss; inspect controls_enabled and ui_focus instead of forcing game state.
 Do not send concurrent requests or mix human input during a timed sequence.
 
+P009 adds read-only companion health/position/screen, mode, swing contacts,
+path/repath/catch-up/recovery counters, wrapper identity and enabled state, plus
+actual window focus/retry lock. Companion acts autonomously through normal AI.
+There is still no teleport, AI control, health or quest mutation command. Inspect
+`window_focused` when injected input is ignored; restore actual desktop focus
+instead of bypassing the game's focus gate.
+
 The bridge is created only by an explicit --playtest-dir flag in debug builds,
 under this project's builds/playtest. It has no network listener or arbitrary
 code/path execution. Invalid/stale commands cannot execute input; duplicate

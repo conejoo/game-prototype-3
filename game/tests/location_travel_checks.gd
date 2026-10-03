@@ -34,6 +34,9 @@ func _run() -> void:
 	original_actor_id = actor.get_instance_id()
 	original_state = actor.state
 	original_state.health = 37
+	var companion_id: int = game.companion.get_instance_id()
+	var companion_state: ActorState = game.companion.state
+	companion_state.health = 43
 	game.session.elapsed_play_seconds = 12.0
 	_check(game.session.current_location_id == "prototype-alderwake", "Normal start must load Alderwake")
 	_check(actor.is_on_floor(), "Initial spawn not grounded")
@@ -68,6 +71,7 @@ func _run() -> void:
 		_check(actor.global_position.distance_to(position_before) < 0.01 and actor.is_on_floor(), "Failed placement lost old grounded position")
 		_check(actor.controls_enabled and not game.party.suspended and host.get_child_count() == 1, "Failed placement did not restore lifecycle")
 		_check(host.transition_count == 1, "Failed placement counted as travel")
+		_check(game.companion.get_instance_id() == companion_id and game.companion.state == companion_state and game.companion_ai.enabled, "Rollback lost companion ownership/control")
 
 	# Ten complete round trips, preserving node/state identity and input lock.
 	for trip: int in range(10):
@@ -97,8 +101,9 @@ func _run() -> void:
 			await _settle()
 			_check(previous.get_ref() == null, "Unloaded location still referenced/alive")
 			_check(game.session.current_location_id == location and game.session.current_spawn_id == spawn, "Session arrival IDs wrong")
-			_check(host.get_child_count() == 1 and game.party.get_child_count() == 1 and game.session.actors.size() == 1, "Travel duplicated location/party/state")
+			_check(host.get_child_count() == 1 and game.party.members().size() == 2 and game.session.actors.size() == 2, "Travel duplicated location/party/state")
 			_check(actor.get_instance_id() == original_actor_id and actor.state == original_state and actor.state.health == 37, "Travel recreated actor or lost mutable state")
+			_check(game.companion.get_instance_id() == companion_id and game.companion.state == companion_state and companion_state.health == 43 and game.companion.is_on_floor(), "Travel lost companion identity/health/floor")
 			_check(game.session.elapsed_play_seconds >= 12.0 and game.camera_rig.target == actor, "Session time/camera target lost")
 			_check(actor.global_position.distance_to(Vector3(0, 0, -2.5)) < 0.01 and actor.is_on_floor(), "Arrival unsafe or held W moved after travel")
 			_check(actor.movement_buttons.is_empty() and actor.velocity.length() < 0.001, "Velocity/accepted input leaked across travel")

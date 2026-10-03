@@ -56,11 +56,13 @@ func _run() -> void:
 			"unknown-effect": bad.completed_effect_ids[0] = "unknown"
 			"duplicate-effect": bad.completed_effect_ids[1] = bad.completed_effect_ids[0]
 			"missing-effect": bad.completed_effect_ids.pop_back()
-			"future": bad.schema_version = 3
+			"future": bad.schema_version = SaveCodec.SCHEMA_VERSION + 1
 			"legacy-with-extra": bad.schema_version = 1
 		_check(SaveCodec.validate(bad, catalog).session == null, "Malformed progress accepted: " + mutation)
 	var legacy: Dictionary = SaveCodec.snapshot(other)
 	legacy.schema_version = 1
+	legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
+	legacy.actors = [legacy.actors[0]]
 	legacy.erase("quests")
 	legacy.erase("completed_effect_ids")
 	legacy.elapsed_play_seconds = 42.5
@@ -82,7 +84,7 @@ func _run() -> void:
 	var repository: SaveRepository = SaveRepository.new(path)
 	_check(repository.read(catalog).migrated and FileAccess.get_file_as_string(path) == legacy_bytes, "Read migration changed disk")
 	_check(repository.write(migrated.session, catalog).is_empty(), "Explicit v2 publication failed")
-	_check(JSON.parse_string(FileAccess.get_file_as_string(path)).schema_version == 2 and repository.read(catalog).session != null, "Explicit save did not publish v2")
+	_check(JSON.parse_string(FileAccess.get_file_as_string(path)).schema_version == SaveCodec.SCHEMA_VERSION and repository.read(catalog).session != null, "Explicit save did not publish current schema")
 	# Negative authored content: duplicate step/action/effect, absent location/action.
 	for mutation: String in ["duplicate", "location", "dialogue"]:
 		var manifest: ContentManifest = ContentManifest.new()

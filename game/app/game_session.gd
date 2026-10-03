@@ -12,6 +12,7 @@ var quests: Dictionary[String, QuestState] = {}
 var completed_effect_ids: PackedStringArray = []
 
 const PLAYER_INSTANCE_ID: String = "party-player"
+const COMPANION_INSTANCE_ID: String = "party-companion"
 
 
 func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, player_id: String) -> PackedStringArray:
@@ -28,10 +29,14 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 		errors.append("session spawn '%s' is absent from location '%s'" % [spawn_id, location_id])
 	if player == null:
 		errors.append("session player '%s' is missing or is not an actor" % player_id)
+	var companion: ActorDefinition = catalog.get_actor("prototype-companion")
+	if companion == null:
+		errors.append("session companion definition 'prototype-companion' is missing")
 	if not errors.is_empty():
 		return errors
 	actors[PLAYER_INSTANCE_ID] = ActorState.new(PLAYER_INSTANCE_ID, player)
-	party_member_ids = PackedStringArray([PLAYER_INSTANCE_ID])
+	actors[COMPANION_INSTANCE_ID] = ActorState.new(COMPANION_INSTANCE_ID, companion)
+	party_member_ids = PackedStringArray([PLAYER_INSTANCE_ID, COMPANION_INSTANCE_ID])
 	current_location_id = location_id
 	current_spawn_id = spawn_id
 	for definition: QuestDefinition in catalog.quest_definitions():

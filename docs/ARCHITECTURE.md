@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P008.
+Status: implementation contract; runnable Godot prototype through P009.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -276,6 +276,43 @@ requires a living hero with no attack/dodge and no living guardian within 5m or
 engaged; pause freezes combat and permits Resume, while save/load stays disabled.
 Interactions/journal reject this unstable combat boundary. No mid-fight snapshot,
 healing economy, companion behavior or general AI framework is introduced.
+
+### Delivered active companion and save migration boundary (P009)
+
+Session owns ordered `party-player` / `party-companion` ActorStates; definitions
+remain immutable. Root creates one persistent companion wrapper using existing
+ActorPlaceholder movement/damage/swing APIs, injects hero/enemy into its transient
+CompanionController, and rebinds both states after validated restore. Location
+dialogue stand-ins remain labeled stationary fixtures, not extra party members.
+Hero/ally do not block each other; attacks still reject friendly targets.
+
+Each tiny graybox owns a NavigationRegion3D baked from layer-1 static gameplay
+collision before placement/server synchronization. Replaced art contributes no
+navigation. Radius 0.4m, height 1.6m and climb 0.1m keep routes off low plinths.
+The companion requests server paths every 0.4s, follows within 1.6m, assists nearby
+guardian combat, and returns when beyond its 6m combat leash. Guardian can choose
+either living party member; all damage and death callbacks use shared actor APIs.
+
+Stalled movement for 2.5s or separation over 8m permits catch-up only outside enemy
+threat. Candidate positions near hero require navigation, level floor, full capsule
+clearance including actors, and world LOS to hero. Unsafe candidates never place or
+heal. Health zero incapacitates; recovery to full health requires 3s outside threat,
+living hero and safe placement. R restores both members only after safe arrival.
+Travel/modal/focus changes suspend AI; travel resets route/action/source references,
+including failed-placement rollback. No navigation/action/recovery timers persist.
+
+Schema3/content1 contains the same plain fields as v2, now requiring exactly the
+two ordered stable party IDs and matching actor records with validated health.
+Exact v1/v2 content1 saves validate their original single-hero contract first;
+migration deliberately adds the labeled fixture companion at full health. V1 adds
+empty quest/effect state as before; v2 preserves it. Candidate creation does not
+mutate caller or disk. Explicit Save writes v3; incompatible versions still cannot
+fall back or overwrite good data. Downed companion health also round-trips.
+Save/load/modal entry additionally rejects ally action windows and enemy threat.
+
+Runtime baking is intentionally limited to these small rooms; richer levels may
+pre-bake regions. No recruitment, companion commands, permanent identity, trust,
+romance, upgrade, general AI framework or new persistent quest effects introduced.
 
 ## Blender/Godot asset boundary
 

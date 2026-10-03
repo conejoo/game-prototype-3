@@ -6,9 +6,17 @@ var actor: ActorPlaceholder
 var target: ActorPlaceholder
 var enabled: bool = false
 var engaged: bool = false
+var party_targets: Array[ActorPlaceholder] = []
 
 
 func _physics_process(_delta: float) -> void:
+	# Both allies can be attacked. Preserve the locked swing once windup starts.
+	if enabled and not actor.combat.busy():
+		var nearest: ActorPlaceholder
+		for member: ActorPlaceholder in party_targets:
+			if is_instance_valid(member) and member.state.health > 0 and (nearest == null or actor.global_position.distance_squared_to(member.global_position) < actor.global_position.distance_squared_to(nearest.global_position)):
+				nearest = member
+		target = nearest
 	if not enabled or not is_instance_valid(target) or actor.state.health <= 0 or target.state.health <= 0:
 		engaged = false
 		actor.move_direction(Vector3.ZERO)

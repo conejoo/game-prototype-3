@@ -20,7 +20,7 @@ func _run() -> void:
 	for child_name: String in ["WorldHost", "Party", "CameraRig", "UI"]:
 		_check(game.has_node(child_name), "Root missing %s" % child_name)
 	_check(game.get_node("WorldHost").get_child_count() == 1, "WorldHost must own one room")
-	_check(game.get_node("Party").get_child_count() == 1, "Party must own one placeholder")
+	_check(game.party.members().size() == 2, "Party must own hero and companion")
 	var keys: Dictionary[String, int] = {
 		"move_forward": KEY_W, "move_back": KEY_S, "move_left": KEY_A,
 		"move_right": KEY_D, "dodge": KEY_SPACE, "interact": KEY_E,

@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P008 verified complete; P009 next eligible. Subsequent tasks remain pending.
+P001–P009 verified complete; P010 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -90,7 +90,7 @@ P001–P008 verified complete; P009 next eligible. Subsequent tasks remain pendi
 - Acceptance: defeat guardian in normal play; one swing does not hit the same
   target repeatedly by accident; death/retry cannot duplicate quest rewards.
 
-## [ ] P009 — One active companion
+## [x] P009 — One active companion
 
 - Add follow, fight, return, navigation recovery, and safe catch-up behavior.
 - Companion uses the existing actor movement/combat components. Spawn and
@@ -346,3 +346,31 @@ Next eligible task:
   Normal save/source untouched; committed locally at user request. No push/publication
   or permanent canon added.
 - Next eligible task: P009 — One active companion. Not started.
+
+### P009 — completed 2026-10-02
+
+- Changed: one session-owned temporary ally, persistent gameplay wrapper/shared
+  actor APIs, follow/fight/return controller, collision-derived room navigation,
+  safe stuck/separated catch-up and incapacitation/recovery; root travel/restore/
+  modal/focus gates, guardian party targeting, both-member safe R retry, ally HUD.
+  Schema3/content1 with strict two-member records and exact v1/v2 migrations.
+- Checks/evidence: import exit0; ten focused scripts PASS/exit0 across first/final
+  runs; separate save and quest writer/readers PASS/exit0. Physical barrier/down/
+  recovery windowed fixture PASS/exit0, inspected PNGs. Normal Windows WASD/E/GUI
+  follow/obstacle routes in both rooms without catch-up; autonomous ally damages
+  guardian100->40, downed ally then recovers after normal victory/effects2->3 once.
+  GUI Save/new-process Load restores hero50/ally100/two members/clearance3; post-load
+  round trip/follow passes; final windowed quit exit0. Runtime error scan and Git
+  diff check clean. Commands/logs/input trace/PNGs: evidence/P009/VALIDATION.md.
+- Repairs/decisions: radius rounding and untyped array error fixed; ally status
+  moved into footer after capture overlap. Updated previous fixtures for two-member
+  state/current schema; isolated hero swing tests disable ally AI. Health persists,
+  timers/routes reset; old saves add labeled ally at full health. No permanent canon
+  choice, new reward fact, general AI abstraction, subagents or Blender work.
+- Limits: runtime baking for tiny static rooms, safe catch-up outside combat only,
+  provisional combat/art. Windowed barrier is explicitly synthetic recovery setup,
+  not normal quest evidence. Initial input attempts failed timing/focus; real focus
+  restored and normal gameplay repeated. Existing unused Mono SDK warning only.
+  Normal save/source untouched; external P008 commit preserved; no commit/push/export.
+- Next eligible task: P010 — Relationship consequence and character upgrade.
+  Not started.

@@ -129,6 +129,9 @@ func _run() -> void:
 
 
 func guardian_ai_off(game: Node3D) -> void:
+	game.companion_ai.enabled = false
+	game.companion.combat_enabled = false
+	game.companion.clear_input()
 	game.guardian_ai.enabled = false
 	game.guardian.move_direction(Vector3.ZERO)
 

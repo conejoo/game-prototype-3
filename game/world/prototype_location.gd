@@ -7,6 +7,30 @@ extends Node3D
 @export var destination_spawn_id: String = ""
 @export var gate_label: String = ""
 const GATE_RADIUS: float = 1.6
+var navigation_region: NavigationRegion3D
+
+
+func prepare_navigation() -> PackedStringArray:
+	# Tiny grayboxes bake from gameplay collision, never from replaceable art.
+	if navigation_region != null:
+		return PackedStringArray()
+	var mesh: NavigationMesh = NavigationMesh.new()
+	mesh.geometry_parsed_geometry_type = NavigationMesh.PARSED_GEOMETRY_STATIC_COLLIDERS
+	mesh.geometry_collision_mask = 1
+	mesh.cell_size = 0.2
+	mesh.cell_height = 0.1
+	mesh.agent_radius = 0.4
+	mesh.agent_height = 1.6
+	mesh.agent_max_climb = 0.1
+	var geometry: NavigationMeshSourceGeometryData3D = NavigationMeshSourceGeometryData3D.new()
+	NavigationServer3D.parse_source_geometry_data(mesh, geometry, self)
+	NavigationServer3D.bake_from_source_geometry_data(mesh, geometry)
+	if mesh.get_polygon_count() == 0:
+		return PackedStringArray(["location '%s' has no walkable navigation" % location_id])
+	navigation_region = NavigationRegion3D.new()
+	navigation_region.navigation_mesh = mesh
+	add_child(navigation_region)
+	return PackedStringArray()
 
 
 func find_spawn(id: String) -> SpawnAnchor:

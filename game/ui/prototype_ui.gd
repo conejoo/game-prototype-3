@@ -16,7 +16,7 @@ signal journal_requested
 @onready var resume_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Resume
 @onready var pause_button: Button = $Screen/Header/Margin/Row/Pause
 @onready var time_label: Label = $Screen/Header/Margin/Row/PlayTime
-@onready var camera_label: Label = $Screen/Footer/Margin/Text
+@onready var camera_label: Label = $Screen/Footer/Margin/TextBox/Text
 @onready var location_label: Label = $Screen/Header/Margin/Row/Titles/Subtitle
 @onready var travel_label: Label = $Screen/TravelPrompt
 @onready var save_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Save
@@ -87,7 +87,11 @@ func show_camera(description: String) -> void:
 
 
 func show_location(description: String) -> void:
-	location_label.text = "P008 / " + description
+	location_label.text = "P009 / " + description
+
+
+func show_companion(actor: ActorState, mode: String) -> void:
+	$Screen/Footer/Margin/TextBox/CompanionStatus.text = "Temporary companion (prototype) · %d/%d · %s" % [actor.health, actor.max_health, "Down — recovers 3s after combat" if actor.health == 0 else mode.capitalize()]
 
 
 func show_combat(actor: ActorState, guardian: ActorPlaceholder, retrying: bool) -> void:

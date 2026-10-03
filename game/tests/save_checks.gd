@@ -31,7 +31,7 @@ func _run() -> void:
 		var broken: Dictionary = data.duplicate(true)
 		broken.erase(key)
 		_reject(broken, "missing " + key)
-	for pair: Array in [["schema_version", 3], ["content_version", 2], ["schema_version", 0], ["schema_version", 1.5], ["schema_version", true], ["location_id", "unknown"], ["spawn_id", "unknown"], ["player_instance_id", "npc-03"], ["party_member_ids", ["party-player", "party-player"]], ["actors", []], ["elapsed_play_seconds", -1], ["elapsed_play_seconds", INF], ["elapsed_play_seconds", true]]:
+	for pair: Array in [["schema_version", SaveCodec.SCHEMA_VERSION + 1], ["content_version", 2], ["schema_version", 0], ["schema_version", 1.5], ["schema_version", true], ["location_id", "unknown"], ["spawn_id", "unknown"], ["player_instance_id", "npc-03"], ["party_member_ids", ["party-player", "party-player"]], ["actors", []], ["elapsed_play_seconds", -1], ["elapsed_play_seconds", INF], ["elapsed_play_seconds", true]]:
 		var broken: Dictionary = data.duplicate(true)
 		broken[pair[0]] = pair[1]
 		_reject(broken, str(pair))
@@ -83,7 +83,7 @@ func _run() -> void:
 	_check(repository.read(catalog).recovered, "Missing primary did not recover backup")
 	_write(repository.path, good_primary)
 	var future: Dictionary = data.duplicate(true)
-	future.schema_version = 3
+	future.schema_version = SaveCodec.SCHEMA_VERSION + 1
 	var future_raw: String = JSON.stringify(future)
 	_write(repository.path, future_raw)
 	_check(repository.read(catalog).session == null, "Newer primary silently fell back to old backup")
@@ -150,8 +150,8 @@ func _root_checks() -> void:
 	_check(game.player_placeholder.state == game.session.actors[GameSession.PLAYER_INSTANCE_ID] and game.player_placeholder.state.health == 37, "Wrapper not rebound to restored actor")
 	_check(game.session.current_location_id == "prototype-tollworks" and game.session.elapsed_play_seconds == 42.5, "Root restore lost location/time")
 	_check(game.player_placeholder.global_position.distance_to(Vector3(0, 0, -2.5)) < 0.01 and paused and not game.player_placeholder.controls_enabled, "Load did not respect arrival anchor/pause")
-	_check(game.ui.travel_label.text == "Walk near purple companion, gold marker, or glowing gate", "Paused restore retained stale loading prompt")
-	_check(game.player_placeholder.get_instance_id() == actor_id and game.party.members().size() == 1, "Load duplicated actor wrapper")
+	_check(game.ui.travel_label.text == "Walk near dialogue stand-in, gold marker, or glowing gate", "Paused restore retained stale loading prompt")
+	_check(game.player_placeholder.get_instance_id() == actor_id and game.party.members().size() == 2, "Load duplicated actor wrapper")
 
 	var live: GameSession = game.session
 	var room: PrototypeLocation = game.world_host.current_location
