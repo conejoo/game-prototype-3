@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P009.
+Status: implementation contract; runnable Godot prototype through P010.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -313,6 +313,35 @@ Save/load/modal entry additionally rejects ally action windows and enemy threat.
 Runtime baking is intentionally limited to these small rooms; richer levels may
 pre-bake regions. No recruitment, companion commands, permanent identity, trust,
 romance, upgrade, general AI framework or new persistent quest effects introduced.
+
+### Delivered relationship and progression boundary (P010)
+
+Immutable ReactionDefinition Resources identify temporary companion, decision
+and trust delta. DialogueChoice references a catalog-validated reaction; root
+validates active source/action/input mode and injects RelationshipService command.
+Session owns separate RelationshipState trust/reaction IDs. One prototype decision
+has +1/-1 alternatives: same outcome retry succeeds unchanged; alternate fails.
+Trust and reaction commit before notification. No romance or story eligibility gate.
+Stationary dialogue fixtures explicitly speak for the noncanonical active ally.
+
+One UpgradeDefinition identifies Deliberate Strike, +15 damage and earning effect
+`maris-lead-accepted`. Accepting lead earns one prototype preparation point, available
+before guardian combat. ProgressionService derives unspent point from authoritative
+quest effect minus selected upgrade IDs; no duplicate reward counter/effect exists.
+Session owns ProgressionState selected IDs. Selection requires earned point and
+stable journal mode; repeat selection acknowledges without spending/notifying again.
+Root applies derived hero strike damage 25→40 through existing combat wrapper.
+Journal scroll/upgrade button and HUD display state; UI owns no reward rules.
+
+Schema4/content1 adds exactly `relationship` (companion definition ID, integer trust,
+reaction ID array) and `progression` (upgrade ID array). Validate unknown/duplicate/
+conflicting reactions, trust disagreement, extra/missing fields and unearned/duplicate
+upgrades before candidate replacement. Exact schema1–3 envelopes validate original
+party/quest contract first, preserving old facts; v3 retains both actor health values.
+Legacy trust/reactions/upgrades start neutral/empty. Accepted lead in old saves makes
+one point available; no auto-selection. Read never rewrites disk. Explicit Save
+publishes v4; existing incompatible-version/backup policy remains. Restore rebinds
+both services and recomputes damage, avoiding cumulative bonuses on load/travel.
 
 ## Blender/Godot asset boundary
 

@@ -11,6 +11,7 @@ signal dialogue_advance_requested
 signal dialogue_choice_requested(choice_id: String)
 signal dialogue_cancel_requested
 signal journal_requested
+signal upgrade_requested
 
 @onready var pause_overlay: Control = $Screen/PauseOverlay
 @onready var resume_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Resume
@@ -32,15 +33,17 @@ signal journal_requested
 @onready var dialogue_status: Label = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Status
 @onready var journal_overlay: Control = $Screen/JournalOverlay
 @onready var journal_panel: PanelContainer = $Screen/JournalOverlay/Center/Panel
-@onready var journal_text: Label = $Screen/JournalOverlay/Center/Panel/Margin/Options/Text
+@onready var journal_text: Label = $Screen/JournalOverlay/Center/Panel/Margin/Options/Scroll/Text
 @onready var journal_close: Button = $Screen/JournalOverlay/Center/Panel/Margin/Options/Close
 @onready var journal_button: Button = $Screen/Header/Margin/Row/Journal
 @onready var objective_label: Label = $Screen/Objective
 
+@onready var upgrade_button: Button = $Screen/JournalOverlay/Center/Panel/Margin/Options/Upgrade
+@onready var upgrade_status: Label = $Screen/JournalOverlay/Center/Panel/Margin/Options/UpgradeStatus
+
 
 func _ready() -> void:
-	journal_close.focus_next = NodePath(".")
-	journal_close.focus_previous = NodePath(".")
+	upgrade_button.pressed.connect(func() -> void: upgrade_requested.emit())
 	journal_button.pressed.connect(func() -> void: journal_requested.emit())
 	journal_close.pressed.connect(func() -> void: journal_requested.emit())
 	dialogue_next.pressed.connect(func() -> void: dialogue_advance_requested.emit())
@@ -87,16 +90,16 @@ func show_camera(description: String) -> void:
 
 
 func show_location(description: String) -> void:
-	location_label.text = "P009 / " + description
+	location_label.text = "P010 / " + description
 
 
-func show_companion(actor: ActorState, mode: String) -> void:
-	$Screen/Footer/Margin/TextBox/CompanionStatus.text = "Temporary companion (prototype) · %d/%d · %s" % [actor.health, actor.max_health, "Down — recovers 3s after combat" if actor.health == 0 else mode.capitalize()]
+func show_companion(actor: ActorState, mode: String, trust: int = 0) -> void:
+	$Screen/Footer/Margin/TextBox/CompanionStatus.text = "Temporary companion (prototype) · %d/%d · Trust %d · %s" % [actor.health, actor.max_health, trust, "Down — recovers 3s after combat" if actor.health == 0 else mode.capitalize()]
 
 
-func show_combat(actor: ActorState, guardian: ActorPlaceholder, retrying: bool) -> void:
+func show_combat(actor: ActorState, guardian: ActorPlaceholder, retrying: bool, damage: int = 25) -> void:
 	$Screen/CombatStatus.visible = not pause_overlay.visible and not dialogue_overlay.visible and not journal_overlay.visible
-	var message: String = "Hero %d / %d" % [actor.health, actor.max_health]
+	var message: String = "Hero %d / %d · Strike %d" % [actor.health, actor.max_health, damage]
 	if actor.health == 0:
 		message = "DEFEATED · R: retry at arrival anchor (quest progress kept)"
 	elif is_instance_valid(guardian):
@@ -186,3 +189,17 @@ func show_journal(open: bool, text: String) -> void:
 		var focused: Control = get_viewport().gui_get_focus_owner()
 		if focused != null and journal_panel.is_ancestor_of(focused):
 			focused.release_focus()
+
+
+func show_upgrade(service: ProgressionService) -> void:
+	var selected: bool = ProgressionService.UPGRADE_ID in service.session.progression.upgrade_ids
+	upgrade_button.disabled = selected or service.available_points() < 1
+	upgrade_button.text = "Deliberate Strike selected · damage 40" if selected else "Spend 1 preparation point: Deliberate Strike (+15 damage)"
+	upgrade_status.text = "Preparation points: %d · Accept Maris's lead to earn 1. Prototype training." % service.available_points()
+	var buttons: Array[Button] = []
+	if not upgrade_button.disabled:
+		buttons.append(upgrade_button)
+	buttons.append(journal_close)
+	for index: int in range(buttons.size()):
+		buttons[index].focus_next = buttons[index].get_path_to(buttons[(index + 1) % buttons.size()])
+		buttons[index].focus_previous = buttons[index].get_path_to(buttons[(index + buttons.size() - 1) % buttons.size()])

@@ -2,7 +2,7 @@ class_name SaveCodec
 extends RefCounted
 ## Versioned plain-data boundary. Validation creates a detached candidate only.
 
-const SCHEMA_VERSION: int = 3
+const SCHEMA_VERSION: int = 4
 const CONTENT_VERSION: int = 1
 const MAX_BYTES: int = 131072
 
@@ -30,6 +30,8 @@ static func snapshot(run: GameSession) -> Dictionary:
 		"party_member_ids": Array(run.party_member_ids), "actors": actor_data,
 		"elapsed_play_seconds": run.elapsed_play_seconds,
 		"quests": quest_data, "completed_effect_ids": Array(run.completed_effect_ids),
+		"relationship": {"companion_id": "prototype-companion", "trust": run.relationship.trust, "reaction_ids": Array(run.relationship.reaction_ids)},
+		"progression": {"upgrade_ids": Array(run.progression.upgrade_ids)},
 	}
 
 
@@ -59,7 +61,7 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 			result.errors.append("%s must be a positive integer" % key)
 			return result
 		var supported: int = SCHEMA_VERSION if key == "schema_version" else CONTENT_VERSION
-		if int(data[key]) != supported and not (key == "schema_version" and int(data[key]) in [1, 2]):
+		if int(data[key]) != supported and not (key == "schema_version" and int(data[key]) in [1, 2, 3]):
 			result.incompatible = true
 			result.errors.append("unsupported %s %s; supported %d; files left unchanged" % [key, data[key], supported])
 			return result
@@ -68,6 +70,8 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 	var legacy_quests: bool = int(data.schema_version) == 1
 	if not legacy_quests:
 		fields.append_array(["quests", "completed_effect_ids"])
+	if not legacy:
+		fields.append_array(["relationship", "progression"])
 	if not _exact_fields(data, fields):
 		result.errors.append("schema v%d requires exactly: " % int(data.schema_version) + ", ".join(fields))
 		return result
@@ -93,7 +97,7 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 		return result
 	var expected_ids: Array[String] = [GameSession.PLAYER_INSTANCE_ID]
 	var expected_definitions: Array[String] = ["prototype-hero"]
-	if not legacy:
+	if int(raw_data.schema_version) >= 3:
 		expected_ids.append(GameSession.COMPANION_INSTANCE_ID)
 		expected_definitions.append("prototype-companion")
 	if data.player_instance_id != GameSession.PLAYER_INSTANCE_ID or not data.party_member_ids is Array or data.party_member_ids != expected_ids:
@@ -118,6 +122,11 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 	if not (seconds is float or seconds is int) or not is_finite(float(seconds)) or float(seconds) < 0.0 or float(seconds) > 315360000.0:
 		result.errors.append("elapsed_play_seconds must be finite, nonnegative, <=10 years")
 		return result
+	if not legacy:
+		result.errors = RelationshipService.validate_state(data.relationship, catalog)
+		result.errors.append_array(ProgressionService.validate_state(data.progression, data.completed_effect_ids, catalog))
+		if not result.errors.is_empty():
+			return result
 	var candidate: GameSession = GameSession.new()
 	result.errors = candidate.initialize(catalog, data.location_id, data.spawn_id, "prototype-hero")
 	if result.errors.is_empty():
@@ -127,6 +136,10 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 		for id: String in candidate.quests:
 			candidate.quests[id].completed_step_ids = PackedStringArray(data.quests[id])
 		candidate.completed_effect_ids = PackedStringArray(data.completed_effect_ids)
+		if not legacy:
+			candidate.relationship.trust = int(data.relationship.trust)
+			candidate.relationship.reaction_ids = PackedStringArray(data.relationship.reaction_ids)
+			candidate.progression.upgrade_ids = PackedStringArray(data.progression.upgrade_ids)
 		result.session = candidate
 	return result
 

@@ -10,6 +10,8 @@ var actors: Dictionary[String, ActorState] = {}
 var party_member_ids: PackedStringArray = []
 var quests: Dictionary[String, QuestState] = {}
 var completed_effect_ids: PackedStringArray = []
+var relationship: RelationshipState = RelationshipState.new()
+var progression: ProgressionState = ProgressionState.new()
 
 const PLAYER_INSTANCE_ID: String = "party-player"
 const COMPANION_INSTANCE_ID: String = "party-companion"

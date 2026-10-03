@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UpgradeDefinition" format=3]
+[ext_resource type="Script" path="res://features/progression/upgrade_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+stable_id = "prototype-deliberate-strike"
+display_name = "Deliberate Strike (prototype)"
+prototype_fixture = true
+earned_effect_id = "maris-lead-accepted"
+damage_bonus = 15

@@ -1,119 +1,103 @@
 # Current prototype state
 
-Last updated: 2026-10-02 (America/Vancouver). Verified through P009.
+Last updated: 2026-10-02 (America/Vancouver). Verified through P010.
 
 ## Current task
 
-P009 complete. P010 next eligible, not started. Normal start includes one active,
-explicitly noncanonical temporary companion. It follows, navigates obstacles,
-assists guardian combat, returns to hero, and safely recovers/catches up.
-Maris's shortened recovery loop remains playable; restored shop presentation P011.
+P010 complete. P011 next eligible, not started. Normal play includes temporary
+active companion, once-only prototype trust decision, lead-earned preparation
+point and selectable Deliberate Strike. Maris recovery remains shortened/labeled;
+practical return/shop presentation belongs to P011.
 
-WASD moves; mouse faces/click attacks; Space dodges; E interacts/travels; J journal;
-Esc closes/pauses; R retries after hero death; F10 quits. Stationary purple NPCs
-are labeled dialogue stand-ins; blue-violet actor is the active party companion.
+WASD moves; mouse faces/click attacks; Space dodges; E talks/travels; J journal;
+Esc closes/pauses; R retries after death; F10 quits. Stationary purple stand-ins
+host dialogue for noncanonical companion. Select +1 shared plan or -1 orders once.
+Accept Maris lead, open J, select upgrade; strike damage changes 25→40. Scroll
+journal to read saved reaction. Trust does not gate story or romance.
 
 ## Implementation and changed files
 
 Root D:/development/game-dev-blender/returning-fair-prototype; Godot project /game.
-Initial Git worktree contained P008 changes against b096c64. HEAD advanced externally
-to 08420ce (P008) during this session; preserved that baseline and all existing work.
-This session performed no Git commit/push/publication, source-project edits,
-subagents, Blender work or installation. Workspace AGENTS.md/caveman skill read;
-computer-use skill used only to restore actual game window focus.
+Initial Git status clean (P009 already committed); preserved baseline. No source
+project edits, subagents, Blender work, installations, commit/push/publication.
+Workspace AGENTS/caveman skill read. Godot MCP get_project_info confirmed version/
+project; installed console executable ran checks. Computer-use skill read as
+possible focus fallback; no desktop automation needed or performed.
 
-- app/game_session.gd: ordered party-player / party-companion states, existing
-  prototype-companion immutable definition; session owns both mutable health values.
-- features/actors/companion_controller.gd/.uid, companion.tscn (embedded UID):
-  transient follow/fight/return paths and safe catch-up/recovery. Reuses existing
-  ActorPlaceholder APIs/VisualRoot; 4.4m/s, damage10, swing0.35/0.14/0.6s. Hero/ally
-  do not block each other. No actor rules duplicated or new generic AI abstraction.
-- world/prototype_location.gd, app/world_host.gd: location-owned NavigationRegion3D
-  baked from static gameplay collision before placement/server synchronization;
-  radius0.4, height1.6, climb0.1. Old regions leave with room; rollback reactivates.
-- app/game_root.gd: persistent ally composition, AI/target suspension, restore
-  rebinding, party save/modal gates, both members healed only after safe R retry.
-  features/combat/guardian_controller.gd: nearest living party target; locked swings
-  unchanged. Existing real defeat callback/once-only quest effects remain authority.
-- core/save_codec.gd: schema3/content1, exact two-member identity/health validation;
-  exact v1/v2 single-hero migration deliberately adds fixture ally at full health.
-  v1 adds empty quest state; v2 retains progress. Reads do not alter caller/disk.
-- ui/prototype_ui.gd/.tscn, features/interaction/npc_interaction.tscn: ally health/
-  mode/down-state in footer; stationary fixtures labeled dialogue stand-ins. Footer
-  repaired after first render overlapped ally HUD with gate label. P009/hints updated.
-- tests/companion_checks.gd/.uid: both obstacle routes, physical blocked-route
-  catch-up, separation, safe floor/capsule placement, down/recovery, combat/leash,
-  migration/rejection, restore and party retry. Optional windowed fixture captures.
-- Existing smoke/travel/save/dialogue/quest/combat/process tests: two-member counts,
-  distinctive persisted ally health43, both wrapper identities through rollback/
-  ten trips, future-version constants, exact legacy fixture, isolated hero hit tests.
-- tests/live_playtest_bridge.gd: read-only ally path/combat/health/counters/identity,
-  actual focus and retry lock. Input only; no state/teleport/objective mutation.
-- README, tools/PLAYTEST.md, ARCHITECTURE, CHECKLIST and evidence/P009 updated.
+- features/relationships/: immutable ReactionDefinition, independent RelationshipState
+  and RelationshipService. Stable decision alternatives prototype-shared-plan /
+  prototype-orders; +1/-1 trust and reaction ID commit before signal. Same replay
+  succeeds unchanged; alternate fails. content/relationships/ contains fixtures.
+- features/progression/: immutable UpgradeDefinition, independent ProgressionState
+  and ProgressionService. prototype-deliberate-strike adds15; earned by existing
+  maris-lead-accepted effect. Unspent point = earned lead1 minus selected ID count.
+  No stored point/currency or duplicate quest reward/effect. content/progression/ fixture.
+- app/game_session.gd owns both states. app/game_root.gd composes/rebinds owners,
+  validates live dialogue source/action and stable journal upgrade mode, derives
+  wrapper damage on select/restore. Existing combat/companion APIs unchanged.
+- dialogue choice/service, content/dialogue/temporary_companion.tres and catalog:
+  authored reaction command injection/references; validate companion/effect IDs.
+  Existing observation/leave choices retained; stale stand-in response repaired.
+- core/save_codec.gd: schema4/content1 strict relationship/progression plain data;
+  exact v1/v2 single-hero and v3 two-member migrations preserve prior facts, neutral
+  trust/no selection. Existing accepted lead exposes unspent point. No disk rewrite
+  on Read. Unknown/duplicate/conflicting/unearned/inconsistent data rejects candidate.
+- ui/prototype_ui.gd/.tscn: Trust/damage HUD, journal upgrade command/state and bounded
+  scroll. Modal/input/save/focus rules preserved. Root remains gameplay authority.
+- tests/consequence_checks.gd/.uid: authored reference failures, positive/negative
+  once-only transactions, point/replay protection, v4 rejection and exact migration,
+  actual physical40 damage and separate-process negative trust/upgraded restore.
+  Existing catalog/companion/quest tests adapted for15 definitions/current schema.
+- tests/live_playtest_bridge.gd: read-only trust/upgrade/points/damage/button geometry;
+  ordinary viewport input only, no state mutation commands. README, PLAYTEST,
+  ARCHITECTURE, CHECKLIST and docs/evidence/P010 updated; script UIDs retained.
 
 ## Checks and evidence
 
 Engine 4.7.2.stable.mono.official.ed1daf0bf; both installed paths verified.
-No Godot MCP capability exposed this session; used installed console executable.
-Exact commands, acceptance map, repaired failures, logs, input trace and inspected
-PNGs/JSON: docs/evidence/P009/VALIDATION.md. Commands from project root:
+Exact commands/results/acceptance mapping: docs/evidence/P010/VALIDATION.md.
 
-```powershell
-$taskEngine = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe'
-& $taskEngine --headless --path game --editor --quit
-foreach ($check in @('application_smoke','content_catalog_checks','movement_camera_checks','live_playtest_checks','location_travel_checks','save_checks','interaction_dialogue_checks','quest_checks','combat_checks','companion_checks')) {
-    & $taskEngine --headless --path game --script "res://tests/$check.gd"
-}
-foreach ($check in @('save_process_checks','quest_process_checks')) {
-    foreach ($phase in @('write','read')) {
-        & $taskEngine --headless --path game --script "res://tests/$check.gd" -- "--phase=$phase"
-    }
-}
-& $taskEngine --path game --resolution 960x640 --script res://tests/companion_checks.gd
-git diff --check
-```
-
-- Final import exit0; ten scripts PASS/exit0 across first/final runs; runtime error
-  scan clean. Separate save and quest writer/readers PASS/exit0. Final affected
-  nine rerun after HUD/retry repairs. Existing editor-only unused Mono SDK10.0.9
-  warning remains; no GDScript installation dependency. Scene UID assignment exit0.
-- Windows Compatibility renderer RTX4070 Laptop/driver581.29, 960x640: normal
-  WASD/E/GUI follows in both rooms around plinth, zero catch-ups; same ally wrapper.
-  Lead/expedition normal input; autonomous ally deals60 guardian damage without hero
-  attacks, becomes downed; actual hero clicks clear guardian once, effects2->3.
-  Ally recovers0->100 after3s. GUI Save/restart/Load restores hero50/ally100, two
-  members, clearance3, arrival anchor and empty route. Post-load round trip and
-  obstacle follow preserve state. Final windowed run b quits normally, exit0.
-- Windowed physical test-only barrier blocks ally on stale route; verified safe
-  catch-up to hero side, no world overlap. Down/recovery renders inspected. Fixture
-  run PASS/exit0; it is not evidence of normal objective completion.
-- Initial prerequisite save IO denied in sandbox; normal-access rerun PASS. First
-  smoke exposed typed-Array assignment despite exit0/PASS: repaired, error scan now
-  clean. Rounded nav radius warning removed. First normal fight attempts missed
-  timing; later genuine window focus loss disabled input. Restored real focus with
-  computer-use, repeated normal clicks/recovery/save successfully. Failed captures
-  prefixed failed-. No focus bypass or game-state mutation was added.
+- P009 prerequisite companion check PASS/exit0 with normal isolated user:// access.
+  Initial restricted run failed save IO; no prerequisite behavior regression.
+- Import exit0; existing unused Mono SDK10.0.9 warning only after wiring repairs.
+- Eleven scripts PASS/exit0: application_smoke, content_catalog_checks,
+  movement_camera_checks, live_playtest_checks, location_travel_checks, save_checks,
+  interaction_dialogue_checks, quest_checks, combat_checks, companion_checks,
+  consequence_checks. Six affected scripts rerun after UI/validator repairs PASS0.
+- Separate save_process_checks, quest_process_checks, consequence_checks write/read:
+  all six processes PASS0. Consequence reader restores Trust-1/damage40 and rejects
+  conflicting outcome/repeated spending. Runtime SCRIPT ERROR/ERROR scan clean.
+- Windows Compatibility renderer, RTX4070 Laptop, 960x640: normal WASD/E/GUI positive
+  reaction0→1/replay1, fresh negative0→-1, accepted lead earns1, journal selection
+  point1→0/strike25→40. Ally assists; actual hero swing kills guardian40→0.
+  GUI Save/restart/Load restores Trust1/strike40/points0/clearance3. Alternative fails,
+  spent button disabled, recorded reaction readable via scroll; normal room round
+  trip retains facts. Three windowed processes quit0; error files empty.
+- 128 exact command/response traces in live-trace.json; selected captured PNGs/JSON
+  inspected. Initial idle fight died; labeled failed-idle-fight evidence superseded
+  by continuous-input retry. git diff --check exit0.
 
 ## Decisions, limitations, blockers
 
-No P009 blocker. Follow1.6m; combat leash6m; paths refreshed0.4s. Stalled2.5s or
-separated8m can catch up only outside living enemy threat. Candidate requires nav,
-level floor, full capsule/actor clearance and LOS to hero. No safe point means no
-placement/healing. Downed ally recovers after3s outside threat with living hero;
-R heals both only after safe placement. Health (including zero) persists; all
-route/action/recovery timers are transient. Saves lock on either actor's action
-or enemy threat; no mid-fight snapshot, recruitment, commands or trust yet.
+No P010 blocker. Preparation point/trust dialogue explicitly provisional and
+noncanonical. Trust consequence is recorded reaction plus visible score, no
+behavior multiplier, affinity story gate or romance. Point available before first
+fight allows normal upgrade evidence; existing quest reward authority retained.
+Old saves with accepted lead may choose upgrade once; no auto-selection.
 
-Runtime navigation baking suits these tiny static rooms; future large levels may
-pre-bake. Safe catch-up is a deliberate prototype fallback, not seamless large-world
-navigation. Guardian direct pursuit/timing and all art remain provisional.
-Companion identity/dialogue noncanonical. No retired currency ideas revived.
-Normal save slot untouched; only isolated test/playtest slots used. Viewport input
-verifies normal game integration/rendering; hardware control mappings are not newly
-claimed. No Blender assets or tested Windows export; P010/P011/P012 remain pending.
+Journal initial overflow repaired with250px scroll. Python helper initially used
+Windows default encoding and lacked PATH Python; bundled runtime/explicit UTF-8
+fixed affected text/wiring before final checks. No tool/runtime installation.
+
+Prior limits remain: tiny-room runtime navigation, safe companion catch-up outside
+combat, transient unfinished guardian actions/health, arrival-anchor stable saves,
+provisional art/difficulty. Viewport input proves normal gameplay integration, no
+new hardware/OS focus claim. Normal save slot/source untouched. No Blender assets
+or tested Windows export. No P011 work started.
 
 ## Next eligible task
 
-P010 only: authored prototype companion reaction/trust and earned selectable
-combat upgrade, with once-only transactions and deliberate save compatibility.
-Read architecture/checklist and verify P009 first. Not started this session.
+P011 only — Recovery and persistent world presentation. Implement Maris return/
+reconnection and restored specialist shop variant from authoritative quest/world
+facts. Verify recovered versus unrecovered saves and travel/reload; add camera
+occluder handling only where layout requires it. Read docs and verify P010 first.

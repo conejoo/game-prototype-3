@@ -15,7 +15,23 @@ script = ExtResource("2")
 stable_id = "prototype-keep-moving"
 label = "Let's keep moving."
 action_id = "prototype-leave"
-response = PackedStringArray("All right. This stand-in stays here until companion gameplay is ready.")
+response = PackedStringArray("All right. Our active companion follows you; this stationary fixture only hosts prototype dialogue.")
+
+[sub_resource type="Resource" id="Choice_shared"]
+script = ExtResource("2")
+stable_id = "prototype-plan-together"
+label = "Let us plan together. [Trust +1; once]"
+action_id = "companion-react"
+reaction_id = "prototype-shared-plan"
+response = PackedStringArray("[Noncanonical prototype] Thanks for hearing me. I would rather face this together.")
+
+[sub_resource type="Resource" id="Choice_orders"]
+script = ExtResource("2")
+stable_id = "prototype-give-orders"
+label = "Follow my orders. [Trust -1; once]"
+action_id = "companion-react"
+reaction_id = "prototype-orders"
+response = PackedStringArray("[Noncanonical prototype] I will help, but I wanted a say. This is companionship, not romance.")
 
 [resource]
 script = ExtResource("1")
@@ -24,4 +40,4 @@ display_name = "Temporary companion (prototype fixture)"
 prototype_fixture = true
 speaker_actor_id = "prototype-companion"
 lines = PackedStringArray("[Prototype fixture; noncanonical] Ready to test this room together.")
-choices = Array[ExtResource("2")]([SubResource("Choice_look"), SubResource("Choice_leave")])
+choices = Array[ExtResource("2")]([SubResource("Choice_look"), SubResource("Choice_leave"), SubResource("Choice_shared"), SubResource("Choice_orders")])

@@ -1,7 +1,7 @@
 class_name DialogueService
 extends RefCounted
 ## Transient runtime conversation, separate from definitions/session/physical NPC.
-## Quest commands delegate to injected owner; rejected commands leave cursor intact.
+## Quest/reaction commands delegate to injected owners; rejection keeps cursor intact.
 
 class ActionResult extends RefCounted:
 	var ok: bool
@@ -15,6 +15,7 @@ class ActionResult extends RefCounted:
 
 var definition: DialogueDefinition
 var quest_command: Callable
+var reaction_command: Callable
 var source_instance_id: String = ""
 var line_index: int = 0
 var selected_choice_id: String = ""
@@ -68,7 +69,14 @@ func choose(choice_id: String) -> ActionResult:
 		if choice.stable_id == choice_id:
 			# Explicit dispatch. Unknown commands never succeed or mutate run state.
 			var message: String = "Prototype response shown; no persistent effects."
-			if not choice.quest_id.is_empty():
+			if not choice.reaction_id.is_empty():
+				if not reaction_command.is_valid():
+					return _result(false, "Relationship owner unavailable.")
+				var result: ActionResult = reaction_command.call(choice.reaction_id, source_instance_id)
+				if not result.ok:
+					return _result(false, result.message, choice.action_id)
+				message = result.message
+			elif not choice.quest_id.is_empty():
 				if not quest_command.is_valid():
 					return _result(false, "Quest owner unavailable.")
 				var result: ActionResult = quest_command.call(choice.quest_id, choice.action_id, source_instance_id)

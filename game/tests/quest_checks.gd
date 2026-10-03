@@ -60,6 +60,8 @@ func _run() -> void:
 			"legacy-with-extra": bad.schema_version = 1
 		_check(SaveCodec.validate(bad, catalog).session == null, "Malformed progress accepted: " + mutation)
 	var legacy: Dictionary = SaveCodec.snapshot(other)
+	legacy.erase("relationship")
+	legacy.erase("progression")
 	legacy.schema_version = 1
 	legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
 	legacy.actors = [legacy.actors[0]]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ReactionDefinition" format=3]
+[ext_resource type="Script" path="res://features/relationships/reaction_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+stable_id = "prototype-orders"
+display_name = "Companion dislikes being ordered around (prototype)"
+prototype_fixture = true
+decision_id = "prototype-expedition-plan"
+trust_delta = -1

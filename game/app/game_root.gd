@@ -17,6 +17,8 @@ var dialogue: DialogueService = DialogueService.new()
 var selected_interaction: PrototypeInteractable
 var quests: QuestService = QuestService.new()
 var journal_open: bool = false
+var relationships: RelationshipService = RelationshipService.new()
+var progression: ProgressionService = ProgressionService.new()
 var guardian: ActorPlaceholder
 var guardian_ai: GuardianController
 var retrying: bool = false
@@ -65,7 +67,13 @@ func _ready() -> void:
 	companion.add_child(companion_ai)
 	player_placeholder.defeated.connect(_on_player_defeated)
 	quests.initialize(catalog, session)
+	relationships.initialize(catalog, session)
+	progression.initialize(catalog, session)
+	relationships.changed.connect(_refresh_journal)
+	progression.changed.connect(_refresh_progression)
 	quests.changed.connect(_refresh_journal)
+	dialogue.reaction_command = _reaction_command
+	ui.upgrade_requested.connect(_select_upgrade)
 	dialogue.quest_command = _quest_command
 	camera_rig.set_target(player_placeholder)
 	player_placeholder.configure_controls(camera_rig, ui)
@@ -109,9 +117,9 @@ func _process(delta: float) -> void:
 		session.advance(delta)
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
-	ui.show_combat(player_placeholder.state, guardian, retrying)
+	ui.show_combat(player_placeholder.state, guardian, retrying, player_placeholder.combat.damage)
 	if is_instance_valid(companion):
-		ui.show_companion(companion.state, companion_ai.mode)
+		ui.show_companion(companion.state, companion_ai.mode, session.relationship.trust)
 	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
@@ -255,6 +263,9 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
 		companion.initialize(session.actors[GameSession.COMPANION_INSTANCE_ID])
 		quests.initialize(catalog, session)
+		relationships.initialize(catalog, session)
+		progression.initialize(catalog, session)
+		_refresh_progression()
 	_pending_restore = null
 	companion_ai.reset_route()
 	camera_rig.set_target(player_placeholder)
@@ -374,7 +385,7 @@ func load_run() -> PackedStringArray:
 	ui.show_play_time(session.elapsed_play_seconds)
 	var message: String = "Recovered backup. Primary left unchanged." if saved.recovered else "Loaded saved run at arrival anchor."
 	if saved.migrated:
-		message += " Migrated legacy save: temporary companion joins at full health; Save writes v3."
+		message += " Migrated legacy save: v1/v2 add temporary companion; trust/reactions/upgrades start empty. Save writes v4."
 	ui.show_save_status(message if errors.is_empty() else "Load failed: " + "; ".join(errors))
 	print("P005 load: ", message if errors.is_empty() else errors)
 	return errors
@@ -400,7 +411,8 @@ func _quest_command(quest_id: String, action_id: String, source_id: String) -> D
 func _refresh_journal() -> void:
 	ui.show_objective(quests.objective("prototype-maris-recovery"))
 	if journal_open:
-		ui.show_journal(true, quests.journal())
+		ui.show_journal(true, _journal_text())
+		ui.show_upgrade(progression)
 
 
 func _toggle_journal() -> void:
@@ -409,7 +421,8 @@ func _toggle_journal() -> void:
 	if dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
 		return
 	journal_open = not journal_open
-	ui.show_journal(journal_open, quests.journal())
+	ui.show_journal(journal_open, _journal_text())
+	ui.show_upgrade(progression)
 	_update_controls()
 	_refresh_interaction()
 
@@ -487,3 +500,28 @@ func retry_encounter() -> void:
 		push_error("Retry failed: " + "; ".join(errors))
 	retrying = false
 	_update_controls()
+
+
+func _reaction_command(id: String, source_id: String) -> DialogueService.ActionResult:
+	if world_host.transitioning or loading_save or get_tree().paused or not dialogue.active() or not window_focused:
+		return DialogueService.ActionResult.new(false, "Reaction blocked by input mode.")
+	for target: PrototypeInteractable in world_host.current_location.interactables():
+		if target.instance_id == source_id and target.dialogue_id == dialogue.definition.stable_id:
+			for choice: DialogueChoice in dialogue.definition.choices:
+				if choice.reaction_id == id:
+					return relationships.apply(id)
+	return DialogueService.ActionResult.new(false, "Reaction source/action unavailable.")
+
+func _select_upgrade() -> void:
+	if not journal_open or not window_focused or get_tree().paused or dialogue.active() or world_host.transitioning or loading_save or not _combat_stable():
+		return
+	var result: DialogueService.ActionResult = progression.select_upgrade(ProgressionService.UPGRADE_ID)
+	_refresh_progression()
+	ui.upgrade_status.text = result.message
+
+func _refresh_progression() -> void:
+	player_placeholder.combat.damage = progression.hero_damage()
+	_refresh_journal()
+
+func _journal_text() -> String:
+	return quests.journal() + "\n\n" + relationships.description()

@@ -19,7 +19,7 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 			errors.append("definition[%d] is null" % index)
 			continue
 		var label: String = "definition[%d] '%s'" % [index, definition.stable_id]
-		if not (definition is ActorDefinition or definition is LocationDefinition or definition is DialogueDefinition or definition is QuestDefinition):
+		if not (definition is ActorDefinition or definition is LocationDefinition or definition is DialogueDefinition or definition is QuestDefinition or definition is ReactionDefinition or definition is UpgradeDefinition):
 			errors.append("%s has unsupported definition type" % label)
 		for error: String in definition.validation_errors():
 			errors.append("%s: %s" % [label, error])
@@ -34,6 +34,10 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 		elif definition is DialogueDefinition:
 			_validate_actor_reference(candidate, definition.stable_id, (definition as DialogueDefinition).speaker_actor_id, errors)
 			for choice: DialogueChoice in (definition as DialogueDefinition).choices:
+				if choice != null and not choice.reaction_id.is_empty():
+					var reaction: ReactionDefinition = candidate.get(choice.reaction_id) as ReactionDefinition
+					if reaction == null or reaction.companion_id != (definition as DialogueDefinition).speaker_actor_id:
+						errors.append("dialogue references absent/wrong companion reaction")
 				if choice != null and not choice.quest_id.is_empty():
 					var quest: QuestDefinition = candidate.get(choice.quest_id) as QuestDefinition
 					var found: bool = false
@@ -43,6 +47,10 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 								found = true
 					if not found:
 						errors.append("dialogue references absent quest/action")
+		elif definition is ReactionDefinition:
+			_validate_actor_reference(candidate, definition.stable_id, (definition as ReactionDefinition).companion_id, errors)
+			if (definition as ReactionDefinition).companion_id != "prototype-companion":
+				errors.append("reaction must target temporary companion")
 		elif definition is QuestDefinition:
 			for step: QuestStep in (definition as QuestDefinition).steps:
 				if step != null and not candidate.get(step.location_id) is LocationDefinition:
@@ -57,6 +65,9 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 				if step.effect_id in effects:
 					errors.append("duplicate global quest effect ID")
 				effects.append(step.effect_id)
+	for definition: ContentDefinition in manifest.definitions:
+		if definition is UpgradeDefinition and (definition as UpgradeDefinition).earned_effect_id not in effects:
+			errors.append("upgrade references absent earned effect")
 	if errors.is_empty():
 		_definitions = candidate
 		initialized = true
@@ -97,3 +108,11 @@ func _validate_actor_reference(candidate: Dictionary[String, ContentDefinition],
 		errors.append("'%s': missing actor reference '%s'" % [owner_id, actor_id])
 	elif not candidate[actor_id] is ActorDefinition:
 		errors.append("'%s': reference '%s' must be an ActorDefinition" % [owner_id, actor_id])
+
+
+func get_reaction(id: String) -> ReactionDefinition:
+	return _definitions.get(id) as ReactionDefinition
+
+
+func get_upgrade(id: String) -> UpgradeDefinition:
+	return _definitions.get(id) as UpgradeDefinition

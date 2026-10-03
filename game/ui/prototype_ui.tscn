@@ -348,10 +348,25 @@ theme_override_font_sizes/font_size = 24
 text = "Recovery journal"
 autowrap_mode = 2
 
-[node name="Text" type="Label" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
+[node name="Scroll" type="ScrollContainer" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2
+custom_minimum_size = Vector2(0, 250)
+horizontal_scroll_mode = 0
+
+[node name="Text" type="Label" parent="Screen/JournalOverlay/Center/Panel/Margin/Options/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
 custom_minimum_size = Vector2(0, 80)
 autowrap_mode = 2
+
+[node name="UpgradeStatus" type="Label" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+autowrap_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="Upgrade" type="Button" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
 
 [node name="Close" type="Button" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2

@@ -1,6 +1,6 @@
 # Returning Fair prototype
 
-P001–P009 complete. One labeled temporary ally follows from normal start, routes
+P001–P010 complete. One labeled temporary ally follows from normal start, routes
 around obstacles and assists combat. Approach purple dialogue stand-in or
 gold practice marker and press E to talk/inspect. Choose with mouse or Tab/Enter;
 Finish/Close or Esc returns control. E at glowing gate travels to Tollworks/back.
@@ -9,6 +9,9 @@ overhead follow, projection and zoom remain. Maris's prototype counter is southw
 accept her lead, travel north, and read J journal. Defeat the protective guardian
 with mouse clicks; Space dodges its gold windup/red strike. R retries after death.
 Then inspect the southeast vessel, return north, and reconnect at Maris's counter.
+Companion dialogue offers one mutually exclusive Trust +1 / -1 prototype decision.
+Accepting Maris's lead earns one preparation point; J journal lets you select
+Deliberate Strike, raising hero damage from 25 to 40. Choices/upgrades persist.
 
 ## Run and check
 
@@ -31,6 +34,9 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --path $gamePath --script res://tests/quest_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/combat_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/companion_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/consequence_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/consequence_checks.gd -- --phase=write
+& $godotExe --headless --path $gamePath --script res://tests/consequence_checks.gd -- --phase=read
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=write
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=read
 & $godotExe --headless --path $gamePath --script res://tests/quest_process_checks.gd -- --phase=write
@@ -50,10 +56,12 @@ contacted once per swing, through range/facing and world-obstruction checks.
 Space dodges in held movement direction, or current facing when stationary;
 dodge lasts 0.30s and blocks damage. E selects nearest visible interaction;
 dialogue blocks gameplay input, clears held movement, and excludes save/load.
-Practice-marker/companion choices remain presentation-only. Maris/vessel choices
+Practice-marker and the first two companion choices remain presentation-only.
+The other companion choices record mutually exclusive once-only trust reactions. Maris/vessel choices
 submit quest commands with prerequisite/source checks and durable once-only effects.
 J opens the journal; J/Esc/Close returns control. Both modals clear held movement,
-contain Tab focus, and block world input/save/load. No trust or upgrades yet.
+contain Tab focus, and block world input/save/load. Scroll journal to inspect recorded companion reaction; upgrade button spends the
+one earned point, then disables. Trust is companionship only, with no romance gate.
 P003 rendered playtests and
 manual keyboard/collision confirmation passed; orthographic retained provisionally.
 
@@ -65,10 +73,12 @@ Normal slot is `user://saves/returning-fair.json` in Godot's application user-da
 directory, with `.bak` recovery. Missing/corrupt primary may recover validated
 backup visibly; incompatible versions are rejected and preserved. Both corrupt
 files require repair or archiving that slot before saving. Version rules and
-boundaries: [architecture](docs/ARCHITECTURE.md). Schema v3/content v1 requires hero
-and temporary companion records. Exact v1/v2 saves add the fixture ally at full
-health, preserving old facts; v1 starts with no quest effects. Load does not rewrite
-files; explicit Save writes v3. Malformed/newer data is rejected.
+boundaries: [architecture](docs/ARCHITECTURE.md). Schema v4/content v1 requires hero
+and temporary companion records plus validated reaction/trust and upgrade IDs.
+Exact v1/v2 saves add fixture ally at full health; v1 starts with no quest effects.
+Exact v3 preserves both members. All legacy saves start with neutral trust and
+no selected upgrades; a previously accepted lead provides one unspent preparation
+point. Load does not rewrite files; explicit Save writes v4. Malformed/newer data is rejected.
 
 Guardian appears after accepting the lead and entering Tollworks. Its stable
 instance `tollworks-guardian-01` reports actual death to the quest owner. Clearance
@@ -87,7 +97,7 @@ outside enemy threat, it recovers at a verified safe point near the living hero.
 Stuck routes (2.5s) or large separation (8m) permit safe catch-up outside combat.
 Pause/dialogue/journal/focus loss freeze AI. Saves preserve ally health, including
 zero; route/action/recovery timers restart. Stationary dialogue stand-ins are
-separate prototype presentation fixtures. No permanent companion story or trust yet.
+separate prototype presentation fixtures. Temporary trust decisions are noncanonical; no permanent companion story.
 
 Installed Mono editor reports missing .NET SDK `10.0.9` during editor import.
 Import finishes with exit 0; this GDScript game and its headless check run cleanly.
@@ -103,6 +113,11 @@ Godot cache/certificate access; final checks used normal local application acces
 - `game/content/`: authored actor/location/dialogue/quest `.tres` definitions.
 - `game/app/game_session.gd`: mutable time, location/spawn IDs, actor instances,
   independent quest states and completed effect IDs.
+- `game/features/relationships/`, `progression/`: immutable authored outcomes and
+  upgrade, separate mutable session states, once-only rule services. Root applies
+  derived strike damage; journal/HUD display reactions and submit upgrade command.
+- `game/tests/consequence_checks.gd`: alternative/replay protection, earned point,
+  strict consequence data/legacy migrations, physical strike and separate-process save.
 - `game/features/quests/`: ordered immutable steps, separate runtime progress,
   legal command/effect transactions and journal queries.
 - `game/tests/quest_checks.gd`, `quest_process_checks.gd`: legality/idempotency,
@@ -164,9 +179,9 @@ P007 selectively adapts her missing customer fitting experience and familiar-cou
 reconnection from source MQ03, without changing campaign order. Source `D:/development/game-prototype-2`
 now contains source files (rechecked 2026-10-02); previous empty-checkout note was
 stale. Consult relevant canon before story adaptation. Companion/greeting are labeled noncanonical
-fixtures; purple stand-ins demonstrate dialogue in both rooms, without companion
-AI. Location/spawn IDs now map to validated physical anchors.
-Navigation map synchronizes on travel; no companion paths exist yet (P009).
+fixtures; purple stand-ins host dialogue in both rooms, separate from active ally
+AI. Location/spawn IDs map to validated physical anchors.
+Collision-derived navigation synchronizes on travel and supplies companion paths.
 
 Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
 [P002 validation](docs/evidence/P002/VALIDATION.md),
@@ -175,6 +190,8 @@ Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
 [P005 validation](docs/evidence/P005/VALIDATION.md),
 [P006 validation](docs/evidence/P006/VALIDATION.md),
 [P007 validation](docs/evidence/P007/VALIDATION.md),
-[P008 validation](docs/evidence/P008/VALIDATION.md).
-Next eligible task: P009 (not started). Read
+[P008 validation](docs/evidence/P008/VALIDATION.md),
+[P009 validation](docs/evidence/P009/VALIDATION.md),
+[P010 validation](docs/evidence/P010/VALIDATION.md).
+Next eligible task: P011 (not started). Read
 [current state](docs/CURRENT_STATE.md) before work.

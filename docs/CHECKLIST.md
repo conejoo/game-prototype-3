@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P009 verified complete; P010 next eligible. Subsequent tasks remain pending.
+P001–P010 verified complete; P011 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -100,7 +100,7 @@ P001–P009 verified complete; P010 next eligible. Subsequent tasks remain pendi
 - Acceptance: companion follows through both rooms and around obstacles,
   assists combat, recovers from a stuck route, and survives save/load/transition.
 
-## [ ] P010 — Relationship consequence and character upgrade
+## [x] P010 — Relationship consequence and character upgrade
 
 - Add one authored dialogue choice with recorded companion reaction and trust
   change. Keep reactions separate from romance and avoid canon invention.
@@ -374,3 +374,28 @@ Next eligible task:
   Normal save/source untouched; external P008 commit preserved; no commit/push/export.
 - Next eligible task: P010 — Relationship consequence and character upgrade.
   Not started.
+
+### P010 — completed 2026-10-02
+
+- Changed: authored noncanonical +1/-1 companion decision/reactions, separate
+  relationship/progression definitions/state/services, lead-earned preparation
+  point and selectable Deliberate Strike (+15 hero damage), journal scroll/UI/HUD,
+  root source/modal validation and restore rebinding; schema4/content1 with strict
+  consequence validation and exact v1–v3 migration; script UIDs, docs and checks.
+- Checks/evidence: prerequisite companion PASS/exit0; import exit0 (existing unused
+  Mono SDK warning only); eleven focused scripts PASS/exit0; six separate writer/
+  reader processes PASS/exit0; final affected six PASS/exit0. Normal Windows WASD/E/
+  GUI +1 choice/replay, fresh -1 choice, lead-earned point, journal select25→40,
+  guardian40→0 hero strike after ally assist, GUI save/process restart, alternate
+  rejection, disabled spent button and room round trip preserve consequences.
+  Three windowed quits exit0; runtime scans clean. Commands, 128 input traces,
+  logs and inspected PNG/JSON: evidence/P010/VALIDATION.md. Git diff check exit0.
+- Repairs/decisions: journal overflow fixed with bounded scroll; UTF-8 helper
+  encoding/partial wiring fixed before final checks. Point derives from existing
+  lead effect minus selected IDs; no new currency/duplicate reward counter.
+  Trust records companionship response only, no romance gate/canon invention.
+- Limits: first idle fight failed; continuous-input retry proves actual strike.
+  Input injected through normal rendered viewport, no new hardware/OS-focus claim.
+  Timing/art/training reward provisional; P011 shop presentation still pending.
+  Normal save/source untouched; no subagents, Blender, commit/push/export.
+- Next eligible task: P011 — Recovery and persistent world presentation. Not started.

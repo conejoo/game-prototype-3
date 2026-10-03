@@ -100,3 +100,8 @@ reward, relationship or save commands exist.
 Injected viewport input proves gameplay/GUI integration and rendered behavior;
 it does not verify OS/hardware keyboard or window focus. Test those separately.
 A rendered capture is not a Windows export test or a quest completion shortcut.
+
+P010 adds read-only relationship/progression snapshots, derived hero damage,
+unspent preparation points and upgrade-button screen coordinates. Select with
+normal J journal/GUI input; reactions use ordinary NPC dialogue choices. No
+relationship, point, upgrade or objective mutation command exists.

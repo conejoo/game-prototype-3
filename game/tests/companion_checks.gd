@@ -79,6 +79,8 @@ func _run() -> void:
 	# v1/v2 exact migration keeps old facts, deliberately adds fixture member.
 	for version: int in [1, 2]:
 		var legacy: Dictionary = data.duplicate(true)
+		legacy.erase("relationship")
+		legacy.erase("progression")
 		legacy.schema_version = version
 		legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
 		legacy.actors = [legacy.actors[0]]
