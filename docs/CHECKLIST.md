@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P013 verified complete; P014 in progress.
+P001–P014 verified complete. No further item defined in this checklist.
 
 ## [x] P001 — Runnable project and application root
 
@@ -138,7 +138,7 @@ P001–P013 verified complete; P014 in progress.
 - Acceptance: complete full slice without inspector/debug setup; repeat after
   save/restart at supported boundaries. Record remaining deviations from canon.
 
-## [-] P014 — Extension check and Windows export
+## [x] P014 — Extension check and Windows export
 
 - Add a small test-only second quest/actor-definition variant to demonstrate
   content extension without changing first quest/session rules.
@@ -149,15 +149,13 @@ P001–P013 verified complete; P014 in progress.
   editor. Record build path, tested machine/context, performance observations,
   and limitations. No completion claim based only on editor/headless execution.
 
-P014 progress, 2026-10-03: isolated authored quest/actor/location fixture and
-shared presentation repair pass; checks/imports pass; release/debug exports succeed.
-Actual exported debug full slice, GUI save/restart/load, replay and room revisit
-pass. Native release startup/pause/save/restart/load/resume/F10 pass (two exits0);
-full native release journey remains unverified. App access was granted, but native
-API provides taps without held keys; observed WASD taps did not move actor.
-Keep in progress until human or supported held-input tool completes release
-journey and reloads progress. Evidence/build paths/safe next action:
-`evidence/P014/VALIDATION.md`. No completion record yet; resume P014 only.
+P014 completed 2026-10-03. Original extension/debug-export evidence and native-tap
+blocker: `evidence/P014/VALIDATION.md`; focused recheck: resume-2026-10-03-b/.
+User-authorized native SendInput helper resolves hold blocker. Full release slice,
+GUI save/restart/load, trust replay/spent upgrade/guardian revisit/restored town,
+durable save comparison and two normal quits0 now verified. Final evidence:
+`evidence/P014/native-holds/VALIDATION.md`. Separate migration work preserved;
+no next task started.
 
 ## Completion record template
 
@@ -489,3 +487,26 @@ Next eligible task:
   Restricted initial save checks required normal local app access. Normal save and
   source preserved; no Blender edits, subagents, commit/push/publication or export.
 - Next eligible task: P014 — Extension check and Windows export. Not started.
+
+### P014 — completed 2026-10-03
+
+- Changed: earlier isolated second quest/60-health actor/inherited location fixture,
+  authored quest presentation and text-resource/export-path repairs; final native
+  release input helper, pause checkpoints, timing guidance and validation records.
+- Checks/evidence: original editor/import/export/focused checks and exported debug
+  walkthrough pass (evidence/P014/VALIDATION.md); resumed extension/save/slice PASS0,
+  audit112 entries/no tests; final isolated combat PASS0. Native release full fresh
+  slice, GUI Save/F10/reopen/GUI Load, once-only replay, selected upgrade, guardian0,
+  roundtrip/specialist pass. Both quits0, runtime scan clean; all durable saved fields
+  equal after restart/replay/revisit. Build SHA256 unchanged. Exact commands/JSON,
+  inspected PNGs, saves, machine/FPS: evidence/P014/native-holds/VALIDATION.md.
+- Decisions/limits: user authorized OS SendInput holds; short resume/action/pause
+  batches prevent uncontrolled combat between inspections. Holds are wall timing,
+  not deterministic physics stepping; native combined fight does not prove isolated
+  hero damage. Early idle death used normal R. One restart mouse Load missed; observed
+  Tab/Enter then verified actual restore. Local unsigned exe+pck, 960x640 client,
+  Windows11/Ultra9/RTX4070, sampled227–242FPS includes pauses/UI, not benchmark.
+  Schema4/content1/IDs/wrappers/gameplay unchanged. Original engine export caveats
+  retained; no new canon, source/normal-save edits, Blender work or publication.
+- Next eligible task: none defined here. Separate migration checklist preserved;
+  do not start it without user request.

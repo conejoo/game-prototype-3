@@ -1,6 +1,12 @@
 # Returning Fair prototype
 
-P001–P013 complete; P014 in progress. Full shortened recovery slice is playable from a fresh run.
+Town/river/forest migration planning: [source investigation](docs/map-migration/INVESTIGATION.md),
+[19 sequential tasks](docs/map-migration/CHECKLIST.md), and
+[fresh-session agent prompt](docs/map-migration/AGENT_PROMPT.md).
+Migration starts at M001 using its own [durable state](docs/map-migration/CURRENT_STATE.md);
+P014 release walkthrough is now verified complete.
+
+P001–P014 complete. Full shortened recovery slice is playable from a fresh run.
 One labeled temporary ally follows, routes around obstacles and assists combat.
 Approach the purple companion station and press E for its optional trust choice.
 Choose with mouse or Tab/Enter;
@@ -213,10 +219,10 @@ Imported guardian, recovery vessel and Tollworks plinth live under gameplay
 VisualRoots; Godot retains collision/navigation/IDs. Focused checks:
 `res://tests/asset_pipeline_checks.gd`; rendered inspection:
 `res://tests/asset_gallery.gd` (windowed only).
-Next eligible task: resume P014 (release walkthrough gate open). Read
+No further item defined in the prototype checklist. Read
 [current state](docs/CURRENT_STATE.md) before work.
 
-## Local Windows exports (P014 in progress)
+## Local Windows exports (P014 complete)
 
 `game/export_presets.cfg`: Windows Desktop (release, tests excluded) and Windows
 Validation (debug, input bridge only). Official standard 4.7.2 template executables
@@ -231,13 +237,14 @@ No system template install. From project root, using console executable above:
 
 Keep each `.exe` beside matching `.pck`. Run directly without editor or `--path game`.
 Debug export completed normal slice and restored/revisited progress in new processes.
-Native release startup/pause/save/restart/load/resume/quit passed; full release
-journey remains unverified because native API cannot hold WASD. Human release
-walkthrough is P014's final gate. No build published.
+Native release full slice, GUI save/process restart/load, replay and room revisit
+passed using project-local Windows SendInput holds; both normal quits exit0.
+[Final release evidence](docs/evidence/P014/native-holds/VALIDATION.md) records
+actual timing, pause checkpoints and limits. No build published.
 
 Current local release directory contains `override.cfg`, isolating validation saves
-under `%APPDATA%/ReturningFair-P014-ReleaseValidation/saves`. Keep it for remaining
-validation; normal slot stays untouched. File lives outside source/export tree.
+under `%APPDATA%/ReturningFair-P014-ReleaseValidation/saves`. Keep it for isolated
+playtests; normal slot stays untouched. File lives outside source/export tree.
 Without override, release uses normal application directory; it ignores debug
 `--save-slot`. Text-resource conversion is disabled after binary exports lost
 packed spawn/dialogue arrays. Isolated extension fixture remains only under tests.

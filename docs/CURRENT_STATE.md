@@ -1,95 +1,106 @@
 # Current prototype state
 
-Updated: 2026-10-03 (America/Vancouver). P001–P013 verified complete.
+Updated: 2026-10-03 (America/Vancouver). P001–P014 verified complete.
 
-## Current task
+## Current task and next action
 
-P014 in progress — extension check and Windows export. Resume P014 only.
-Extension and exported debug gameplay pass. Full native release journey remains
-unverified; no P014 completion record. No next checklist item defined.
+P014 complete — extension check and Windows export. No next item exists in this
+prototype checklist; no migration task started in this session. Separate existing
+map-migration/M001 work remains intact. Follow its own handoff only when requested.
 
-Fresh route: optional purple companion station; southwest Maris lead; J upgrade;
-north Tollworks gate; guardian; southeast vessel; north return; practical fitting;
-restored specialist preview. WASD/mouse/Space, E, J, Esc, R retry, F10 quit.
-Close modals/finish or retreat from combat -> pause Save. Reopen -> pause Load ->
-Resume. Explicit saves only; placement uses last arrival anchor.
+Final evidence: [native release validation](evidence/P014/native-holds/VALIDATION.md).
+Earlier extension/export/debug evidence: evidence/P014/VALIDATION.md; focused
+resume checks: evidence/P014/resume-2026-10-03-b/VALIDATION.md.
 
-## Implementation and files
+## Implementation and changed files
 
-Initial Git clean at 86d5756. Applicable rules, architecture/checklist/handoff,
-actual services/wrappers/imports/Git verified. P013 slice prerequisite PASS0.
-No unrelated changes. Source game and normal save untouched. No Blender edits,
-subagents, engine/SDK installs, commit, push or publication.
+Baseline 073c924. Actual fixtures/services/root guards/export presets/templates,
+Git and build hashes inspected. Extension/save/slice checks PASS0 before native
+work; no gameplay regression or additional production abstraction required.
 
-- game/features/quests/{quest_definition,quest_service}.gd and content/quests/maris_recovery.tres:
-  authored journal_note/completion_text replaces hardcoded Maris presentation.
-  First quest wording, transition rules and session ownership unchanged.
-- game/tests/extension_checks.gd/.uid; fixtures/extension_{guardian,quest,location}.tres,
-  extension_room.tscn: detached manifest adds second quest, 60-health guardian,
-  inherited room. Once-only effects, first-progress isolation, shared actor wrapper/
-  collision after visual swap, plain save round trip and room travel tested.
-  Fixture saves deliberately fail normal exact-quest-set validation.
-- game/export_presets.cfg: project-local standard templates; release excludes tests;
-  separate debug validation retains opt-in bridge, excludes other test content.
-- game/project.godot: disable text-to-binary export conversion after standalone
-  lost PackedStringArray spawn/dialogue values. Rebuilt runtime validates 17 defs.
-- game/tests/live_playtest_bridge.gd: exported guard derives builds/playtest from
-  executable directory. Editor contract retained; no state/objective command.
-- README, ARCHITECTURE narrow metadata/export boundary, CHECKLIST progress,
-  docs/evidence/P014 commands/logs/hashes/input traces/inspected captures.
+Earlier P014 implementation: QuestDefinition/QuestService authored journal_note
+and completion_text; isolated second quest, 60-health guardian/shared wrapper and
+inherited test room; Windows release/debug presets; text-resource conversion
+workaround and executable-relative debug bridge path. Schema4/content1 and all
+production IDs/once-only rules remain unchanged.
 
-## Checks and builds
+This continuation adds tools/native_input.ps1: target-restricted Windows SendInput
+scan-code holds/clicks, unlocked desktop/foreground guards, finally key release,
+client capture and timing traces. tools/PLAYTEST.md and local native-holds/driver.ps1
+record short resume/actions/Esc-pause/capture batches. No game bridge/debug flag,
+position/health/quest mutation or release rebuild. Game/art files unchanged.
 
-Full exact commands/results: [P014 validation](evidence/P014/VALIDATION.md).
-Supplied executables exist. Editor4.7.2.stable.mono.official.ed1daf0bf; templates
-4.7.2.stable; exported runtime same ed1daf0bf. Official standard package downloaded/
-extracted under ignored builds/p014; no global install. Restricted download exit7,
-normal-access retry exit0. Existing editor-only missing .NET SDK10.0.9 message.
+Updated README P014 status only (existing migration links retained), CHECKLIST
+completion, CURRENT_STATE and P014 evidence index/new native-holds evidence.
+Architecture contracts unchanged; its original P014 open-gate wording predates
+final release evidence. Preserve docs/map-migration/, docs/evidence/M001/ and
+both earlier P014 resume directories. Source game and normal save untouched.
+No Blender work, installation, subagents, commit, push or publication.
 
-Console from project root, all use --headless --path game:
+## Exact accepted checks
 
-- --editor --import --quit: initial/final exits0.
-- --script res://tests/{extension,content_catalog,quest,save,playable_slice,
-  live_playtest,asset_pipeline,recovery_presentation}_checks.gd: all PASS0.
-  Final extension/live_playtest/quest/save reruns PASS0 after repairs.
-- --export-release 'Windows Desktop' ../builds/windows/ReturningFair.exe: exit0.
-- --export-debug 'Windows Validation' ../builds/windows-validation/ReturningFairValidation.exe:
-  exit0; repaired final pack tested. --export-pack 'Windows Desktop'
-  ../builds/p014/release-audit.zip: exit0, inventory has zero test/extension entries.
-- git diff --check: exit0. Accepted debug/native release logs have no runtime errors.
+From project root, console executable is
+D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe.
+Both supplied engine paths exist. Editor4.7.2.stable.mono.official.ed1daf0bf;
+release4.7.2.stable.official.ed1daf0bf.
 
-Window b: exported debug fresh run; ordinary inputs trust+1/lead1/upgrade25->40/
-gate2/companion combat/guardian death3/vessel4/return5/fitting6/restored preview.
-Idle hero death required normal R before fight; no setup/mutation. GUI Save/F10 exit0.
-Window c new executable GUI Load6, trust replay unchanged, spent upgrade, guardian0,
-round trip and restored preview pass; F10 exit0. Window d from executable directory
-(no editor/project path) Load6/revisit6 pass, F10 exit0.
+- --headless --path game --script res://tests/{extension,save,playable_slice}_checks.gd:
+  PASS/exit0 with normal local app access. Initial restricted runs emitted log/
+  certificate diagnostics, retained separately. Release headless startup exit0.
+- --headless --path game --script res://tests/combat_checks.gd: final PASS/exit0;
+  isolated swing/range/LOS/dodge/pause/death/retry/once-only/save rules.
+- Original imports/exports/focused checks: PASS0; release audit112 entries, zero
+  tests/extension entries. Final release exe+pck SHA256 equal original evidence.
+- Native release a: fresh trust+1, lead, strike25->40, gate, actual combined-party
+  guardian defeat100->10->0, vessel, return, three-line fitting, specialist preview,
+  GUI Save, normal F10 exit0. Idle inspection delay caused death; normal R retry
+  restored party before fight. No exact hero-only damage inferred from combined HP.
+- Native release b: independent executable-directory start, fresh0, observed
+  Tab/Enter GUI Load6, hero75/ally75/trust1/strike40/specialist restored. Initial
+  mouse Load missed; fresh captures rejected as evidence, save6 stayed intact.
+  Trust replay unchanged; upgrade disabled/selected; guardian0 revisit, town round
+  trip, GUI Save/F10 exit0. All durable saved fields equal before/after, elapsed
+  708.729573002131 -> 751.670010002675 only. Runtime ERROR/SCRIPT ERROR scan0.
+- git diff --check exit0. Native helper parsed and executed; commands and exact
+  per-step durations/UTC completions retained in native-holds/*.json.
+  Final deadline sleep clamp checked in native smoke c: W500ms/Esc, paused timer
+  stays28s over600ms wait, normal F10 exit0; no save writes.
 
-Native release: app access authorized after initial approval timeout. Startup,
-canvas attack, Esc, GUI Save, F10 exit0; new process from build directory GUI Load
-restores elapsed135.476898/health100/party2/neutral quest, Resume/F10 exit0.
-These prove startup/empty-run persistence, not full release quest. Invalid initial
-foreground capture discarded and recaptured. Failed/forced-stop attempts retained
-separately, never accepted as passes.
+## Playtesting timing contract
 
-## Decisions, limits and remaining gate
+Game continues between tool calls and during helper startup; requested hold
+milliseconds do not bound that interval. Inspect a confirmed pause first, run
+one short resume/actions/pause/capture batch, verify overlay, then analyze while
+paused. Native b remains at708s across a measured32-second inspection gap.
+Dialogue/journal suspend actor controls but session time still advances. Esc may
+close a modal or be ignored during travel; never assume it paused without evidence.
+Wall timing is not deterministic physics stepping. Companion/enemy actions run
+within resumed batches; exact isolated damage belongs in focused rules checks.
 
-Schema4/content1 and production IDs unchanged; no permanent narrative decisions.
-Existing .blend/GLB/collision/navigation retained. Binary-resource export failure
-repaired using text resources; first debug guard failure repaired using executable
-directory. Release contains no test scripts/fixtures. Local unsigned exe+pck only.
+## Build, context and limits
 
-Windows11 Home10.0.26200 x64, Core Ultra9 185H, ~32GiB, RTX4070 Laptop,
-NVIDIA581.29/OpenGL3.3 Compatibility. Debug viewport960x640; independent load/revisit
---print-fps samples228–240FPS (4.16–4.38mspf), not broad benchmark. Native capture
-643x458 including chrome/scaled client. No minimum hardware or physical-keyboard claim.
+Release: D:/development/game-dev-blender/returning-fair-prototype/builds/windows/ReturningFair.exe
+beside ReturningFair.pck. Local override.cfg isolates user:// at
+%APPDATA%/ReturningFair-P014-ReleaseValidation/saves. Keep for isolated playtests;
+normal application slot remains separate. Debug slot: playtest-p014-standalone.json.
 
-Blocker: computer-use API exposes press_key taps, no held-key action. Observed
-WASD taps did not move actor even after canvas focus; native GUI/attack input works.
-Safe next action: human plays builds/windows/ReturningFair.exe from fresh start,
-full quest -> GUI Save -> F10 -> reopen -> GUI Load -> verify specialist/guardian/
-trust/upgrade and room revisit; or supported held-input API. Record release
-captures/save/logs and exact quits, then mark P014 complete only after this gate.
-Current local override.cfg isolates release user:// at
-%APPDATA%/ReturningFair-P014-ReleaseValidation; normal slot stays untouched.
-Debug slot: playtest-p014-standalone.json. No next item started.
+Windows11 Home10.0.26200 x64/Core Ultra9 185H/~32GiB/RTX4070 Laptop plus Intel Arc;
+NVIDIA driver32.0.15.8129. Native client960x640. Release-b286 print-fps samples
+227–242FPS/4.13–4.40mspf include pause/UI/revisit, not a combat/minimum-PC benchmark.
+Unsigned local exe+pck; no distribution/signing claim. Static prototype art,
+temporary ally/dialogue/customer/helper, shortened MQ03, service preview only;
+ship/fair/salvage and permanent companion decisions remain outside scope.
+
+## Reusable gameplay-testing skill
+
+User requested/installed `returning-fair-gameplay-testing` after P014 completion.
+Versioned source: tools/skills/returning-fair-gameplay-testing/SKILL.md; personal
+copy: C:/Users/aldoc/.codex/skills/returning-fair-gameplay-testing/SKILL.md.
+Scoped to this project; default automatic selection retained. Covers native/debug
+input choice, uncontrolled tool-call gaps, verified pause batches, isolated damage
+claims, fresh-process GUI save/load/replay and exact evidence/exit records.
+Supporting native-commands reference documents current executable/P014 output
+guards and fresh PID/run directory usage. Both copies pass quick_validate.py
+using bundled Python/cached PyYAML; three PowerShell examples parse; copies match
+SHA256. Skill creation ran no new gameplay and changed no production game/art.
+Keep both copies in sync on updates. No next checklist item started.

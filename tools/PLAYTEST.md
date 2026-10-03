@@ -1,5 +1,9 @@
 # Local live playtest tools
 
+Reusable project workflow: [returning-fair-gameplay-testing skill](skills/returning-fair-gameplay-testing/SKILL.md).
+Its personal installed copy can be invoked as `$returning-fair-gameplay-testing`.
+Keep the project source and installed copy in sync when changing the skill.
+
 The debug game can accept bounded input commands from a local directory. This
 lets an agent hold W for 100 ms, combine keys, click UI, observe state and capture
 the rendered viewport. Normal gameplay services and input gates remain active.
@@ -100,6 +104,26 @@ reward, relationship or save commands exist.
 Injected viewport input proves gameplay/GUI integration and rendered behavior;
 it does not verify OS/hardware keyboard or window focus. Test those separately.
 A rendered capture is not a Windows export test or a quest completion shortcut.
+
+## Native release input (P014)
+
+`native_input.ps1` sends bounded Windows scan-code key holds and mouse clicks to
+this project's existing `builds/windows/ReturningFair.exe` only. No game bridge,
+state mutation, installation or source-project change. It verifies the target
+process/window, unlocked input desktop and foreground focus; releases its keys
+and mouse button in `finally`; writes request timing/capture evidence under P014.
+See `docs/evidence/P014/native-holds/driver.ps1` for the local validation driver.
+
+Game simulation continues between shell calls and during helper startup. Key-hold
+duration does not limit that interval. For combat, inspect a paused screen first,
+then send one short batch: Resume, actions, Esc, settle, capture. Confirm the pause
+overlay before interpreting results or issuing another batch. Never blindly send
+Esc inside dialogue/journal/travel: it may close a modal or be ignored. Modal
+dialogue can be inspected between calls because gameplay controls are suspended.
+Record actual per-step wall time; this is not deterministic physics stepping.
+Companion/enemy actions remain active during each resumed batch. Combined health
+changes prove integration, not isolated hero damage. Use focused headless checks
+with isolated actors for exact damage/once-per-swing rules.
 
 P010 adds read-only relationship/progression snapshots, derived hero damage,
 unspent preparation points and upgrade-button screen coordinates. Select with
