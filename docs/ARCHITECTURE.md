@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P010.
+Status: implementation contract; runnable Godot prototype through P011.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -220,7 +220,7 @@ no general graph/event bus is needed. Session owns separate QuestState completio
 prefixes and completed effect IDs. QuestService validates action/order/location/source,
 commits both facts before its changed signal, and acknowledges retries without
 granting or notifying again. Effects are durable recovery facts, not currency or
-upgrade points. Scene/service presentation of reconnection remains P011 work.
+upgrade points. Scene/service presentation of reconnection is delivered in P011 below.
 
 DialogueChoice can reference a catalog-validated quest/action. DialogueService
 delegates to an injected root command; root checks live source and input mode,
@@ -342,6 +342,28 @@ Legacy trust/reactions/upgrades start neutral/empty. Accepted lead in old saves 
 one point available; no auto-selection. Read never rewrites disk. Explicit Save
 publishes v4; existing incompatible-version/backup policy remains. Restore rebinds
 both services and recomputes damage, avoiding cumulative bonuses on load/travel.
+
+### Delivered recovery presentation boundary (P011)
+
+The location-owned MarisCounter interaction wrapper retains `npc-03-counter`.
+Root supplies authoritative completed effects on quest change and after successful
+travel/restore, after candidate session rebinding. The wrapper maps these facts to
+basic supplies, returned-experience fitting, or restored specialist variants. It
+owns only transient presentation; no shop flag, inventory or second quest authority.
+Definitions and collision stay separate from replaceable VisualRoot children.
+
+`maris-returned-to-town` exposes a labeled three-line return/comparison/practical
+fitting scene using temporary unnamed customer/helper fixtures. Its final choice
+requests existing `maris-reconnect` through QuestService. Cancellation or pausing
+the fitting grants nothing; only `maris-reconnected` reveals specialist gear and
+service preview. Active dialogue retains its immutable definition through the
+variant update. Basic supplies remain available; ship/fair facts do not change.
+
+Schema4/content1 and all durable IDs remain compatible; older completed saves
+present restored service immediately from their validated effects. This small
+wrapper is sufficient; no general shop economy or world-variant framework added.
+Low perimeter walls/counter keep actors readable in this layout; camera fading is
+unnecessary. Billboard service text disables depth testing to avoid bench clipping.
 
 ## Blender/Godot asset boundary
 

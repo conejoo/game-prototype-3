@@ -1,6 +1,6 @@
 # Returning Fair prototype
 
-P001–P010 complete. One labeled temporary ally follows from normal start, routes
+P001–P011 complete. One labeled temporary ally follows from normal start, routes
 around obstacles and assists combat. Approach purple dialogue stand-in or
 gold practice marker and press E to talk/inspect. Choose with mouse or Tab/Enter;
 Finish/Close or Esc returns control. E at glowing gate travels to Tollworks/back.
@@ -9,6 +9,10 @@ overhead follow, projection and zoom remain. Maris's prototype counter is southw
 accept her lead, travel north, and read J journal. Defeat the protective guardian
 with mouse clicks; Space dodges its gold windup/red strike. R retries after death.
 Then inspect the southeast vessel, return north, and reconnect at Maris's counter.
+Read the returned experience, compare familiar gear and finish the practical fitting.
+Cancellation keeps specialist service unavailable. Completion restores displayed
+river gear and specialist service preview; basic supplies stay available. Both
+variants survive travel and save/restart. Purchases/inventory are outside this slice.
 Companion dialogue offers one mutually exclusive Trust +1 / -1 prototype decision.
 Accepting Maris's lead earns one preparation point; J journal lets you select
 Deliberate Strike, raising hero damage from 25 to 40. Choices/upgrades persist.
@@ -35,6 +39,9 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --path $gamePath --script res://tests/combat_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/companion_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/consequence_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/recovery_presentation_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/recovery_presentation_checks.gd -- --phase=write
+& $godotExe --headless --path $gamePath --script res://tests/recovery_presentation_checks.gd -- --phase=read
 & $godotExe --headless --path $gamePath --script res://tests/consequence_checks.gd -- --phase=write
 & $godotExe --headless --path $gamePath --script res://tests/consequence_checks.gd -- --phase=read
 & $godotExe --headless --path $gamePath --script res://tests/save_process_checks.gd -- --phase=write

@@ -17,7 +17,7 @@ stable_id = "maris-reconnect-choice"
 label = "Support reconnection and a familiar fitting."
 quest_id = "prototype-maris-recovery"
 action_id = "maris-reconnect"
-response = PackedStringArray("[Prototype reconnection checkpoint] At the counter, the recovered experience meets a familiar gear fitting. Recognition is recorded. Full return scene and specialist-service presentation follow in P011; the ship still needs practical repairs.")
+response = PackedStringArray("[Prototype adaptation] Recognition and specialist service return through a familiar practical fitting. The passenger ship still needs separate salvage and repairs.")
 
 [sub_resource type="Resource" id="Leave"]
 script = ExtResource("2")

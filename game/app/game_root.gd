@@ -72,6 +72,7 @@ func _ready() -> void:
 	relationships.changed.connect(_refresh_journal)
 	progression.changed.connect(_refresh_progression)
 	quests.changed.connect(_refresh_journal)
+	quests.changed.connect(_refresh_world_presentation)
 	dialogue.reaction_command = _reaction_command
 	ui.upgrade_requested.connect(_select_upgrade)
 	dialogue.quest_command = _quest_command
@@ -280,6 +281,7 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		_refresh_combat_targets()
 		_update_controls()
 		_refresh_journal()
+		_refresh_world_presentation()
 		ui.show_location(catalog.get_location(session.current_location_id).display_name)
 		_refresh_interaction()
 	else:
@@ -413,6 +415,14 @@ func _refresh_journal() -> void:
 	if journal_open:
 		ui.show_journal(true, _journal_text())
 		ui.show_upgrade(progression)
+
+
+func _refresh_world_presentation() -> void:
+	if world_host.current_location == null:
+		return
+	for target: PrototypeInteractable in world_host.current_location.interactables():
+		if target is MarisCounter:
+			(target as MarisCounter).apply_facts(session.completed_effect_ids)
 
 
 func _toggle_journal() -> void:

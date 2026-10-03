@@ -49,7 +49,7 @@ func record_arrival(location_id: String) -> void:
 func objective(quest_id: String) -> String:
 	var definition: QuestDefinition = catalog.get_quest(quest_id)
 	var count: int = session.quests[quest_id].completed_step_ids.size()
-	return definition.steps[count].objective if count < definition.steps.size() else "Complete: Maris reconnected (prototype). Service presentation follows in P011."
+	return definition.steps[count].objective if count < definition.steps.size() else "Complete: Maris reconnected; specialist fitting service restored (prototype)."
 
 
 func journal() -> String:

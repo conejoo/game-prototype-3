@@ -105,3 +105,7 @@ P010 adds read-only relationship/progression snapshots, derived hero damage,
 unspent preparation points and upgrade-button screen coordinates. Select with
 normal J journal/GUI input; reactions use ordinary NPC dialogue choices. No
 relationship, point, upgrade or objective mutation command exists.
+
+P011 adds read-only counter presentation/sign/gear visibility, dialogue line index,
+Continue and choice-button screen coordinates. Return/fitting/service commands
+still use ordinary E/GUI input; no quest or shop mutation path was added.

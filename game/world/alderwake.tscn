@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://features/interaction/interactable.gd" id="3_interact"]
 [ext_resource type="PackedScene" path="res://features/interaction/npc_interaction.tscn" id="4_npc"]
 [ext_resource type="PackedScene" path="res://features/interaction/prop_interaction.tscn" id="5_prop"]
+[ext_resource type="PackedScene" path="res://world/maris_counter.tscn" id="6_counter"]
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.29, 0.36, 0.28, 1)
@@ -181,11 +182,5 @@ instance_id = "alderwake-temporary-companion"
 position = Vector3(2, 0, 1)
 instance_id = "alderwake-practice-marker"
 
-[node name="MarisCounter" parent="." instance=ExtResource("4_npc")]
+[node name="MarisCounter" parent="." instance=ExtResource("6_counter")]
 position = Vector3(-4, 0, 3)
-instance_id = "npc-03-counter"
-prompt = "Talk to Maris at prototype counter"
-dialogue_id = "prototype-maris-counter"
-
-[node name="Sign" parent="MarisCounter" index="2"]
-text = "Maris [npc-03]\nPrototype counter"

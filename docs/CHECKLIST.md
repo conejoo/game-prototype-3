@@ -10,7 +10,7 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P010 verified complete; P011 next eligible. Subsequent tasks remain pending.
+P001–P011 verified complete; P012 next eligible. Subsequent tasks remain pending.
 
 ## [x] P001 — Runnable project and application root
 
@@ -109,7 +109,7 @@ P001–P010 verified complete; P011 next eligible. Subsequent tasks remain pendi
 - Acceptance: choice and upgrade matter in play and persist; replay/reload
   cannot repeat trust changes or spend the same upgrade point twice.
 
-## [ ] P011 — Recovery and persistent world presentation
+## [x] P011 — Recovery and persistent world presentation
 
 - Implement Maris's return/reconnection scene and practical restored-service
   presentation. Derive variants from authoritative quest/world facts.
@@ -399,3 +399,27 @@ Next eligible task:
   Timing/art/training reward provisional; P011 shop presentation still pending.
   Normal save/source untouched; no subagents, Blender, commit/push/export.
 - Next eligible task: P011 — Recovery and persistent world presentation. Not started.
+
+### P011 — completed 2026-10-02
+
+- Changed: MarisCounter wrapper with fixed collision/replaceable visuals and basic,
+  returned/fitting, restored specialist variants from existing quest effects;
+  labeled return/comparison/practical fitting scene, final once-only command and
+  specialist preview. Root refreshes after quest change and successful restore/travel;
+  two authored definitions, focused lifecycle/process checks, read-only bridge views.
+- Checks/evidence: P010 prerequisite PASS0; both imports exit0 (existing unused Mono
+  SDK10.0.9 error only). Nine focused scripts, separate writer/reader, final four
+  affected checks PASS0. Five Windows rendered runs quit0: normal guardian/vessel,
+  fitting cancel5/final6, service preview, GUI save/restart/load6, round trip6; separate
+  GUI unrecovered save/restart/load0 retains original shop. 213 exact input traces,
+  logs and inspected PNG/JSON: evidence/P011/VALIDATION.md. git diff --check exit0.
+- Repairs/decisions: service board shortened/raised and depth test disabled after
+  rendered bench clipping; final views verified. Low walls/counter keep actors clear,
+  so no camera fade added. Existing schema4/content1 and durable IDs unchanged;
+  no separate shop flag/economy. Temporary unnamed customer/helper remain fixtures.
+- Limits: short dialogue-led reconnection, service availability/preview only; no
+  purchase/inventory/full MQ03/cinematic claim. Input injected into actual viewport,
+  no new hardware evidence. Source/normal save preserved; no Blender/subagents/export,
+  commit/push/publication. Failed first bridge launch corrected; successful runtime
+  scans clean. Ship/fair recovery remain separate.
+- Next eligible task: P012 — Reusable Blender asset pipeline. Not started.

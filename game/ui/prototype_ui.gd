@@ -90,7 +90,7 @@ func show_camera(description: String) -> void:
 
 
 func show_location(description: String) -> void:
-	location_label.text = "P010 / " + description
+	location_label.text = "P011 / " + description
 
 
 func show_companion(actor: ActorState, mode: String, trust: int = 0) -> void:

@@ -258,6 +258,10 @@ func _observe() -> Dictionary:
 		"dialogue_choice_id": game.dialogue.selected_choice_id,
 		"dialogue_result": game.dialogue.last_result.message,
 		"dialogue_action_id": game.dialogue.last_result.action_id,
+		"dialogue_line_index": game.dialogue.line_index,
+		"dialogue_next_screen": _point(game.ui.dialogue_next.get_global_rect().get_center()),
+		"dialogue_choices": _choice_positions(),
+		"counter": _counter_observation(),
 		"relationship": SaveCodec.snapshot(game.session).relationship,
 		"progression": SaveCodec.snapshot(game.session).progression,
 		"hero_damage": actor.combat.damage, "upgrade_points": game.progression.available_points(),
@@ -271,6 +275,21 @@ func _observe() -> Dictionary:
 
 func _vector(value: Vector3) -> Array[float]:
 	return [value.x, value.y, value.z]
+
+
+func _choice_positions() -> Dictionary:
+	var positions: Dictionary = {}
+	for child: Node in game.ui.dialogue_choices.get_children():
+		if child is Button:
+			positions[str(child.name)] = _point((child as Button).get_global_rect().get_center())
+	return positions
+
+
+func _counter_observation() -> Dictionary:
+	if game.world_host.current_location == null or not game.world_host.current_location.has_node("MarisCounter"):
+		return {}
+	var counter: MarisCounter = game.world_host.current_location.get_node("MarisCounter") as MarisCounter
+	return {"instance_id": counter.instance_id, "presentation": counter.presentation, "dialogue_id": counter.dialogue_id, "sign": counter.get_node("Sign").text, "service_board": counter.get_node("VisualRoot/ServiceBoard").text, "basic_visible": counter.get_node("VisualRoot/BasicSupplies").visible, "specialist_visible": counter.get_node("VisualRoot/SpecialistGear").visible}
 
 
 func _point(value: Vector2) -> Array[float]:
