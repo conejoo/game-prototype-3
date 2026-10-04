@@ -31,7 +31,7 @@ navigation, interactions and durable IDs are separate. Visual replacement must
 not change blockers or IDs. No Dart runtime, source navigation caches or new
 global authority. Source is read-only; no source generators are run.
 
-Normal Alderwake remains the compact room until M015. Candidate harness uses a
+M015 selects the source-derived exterior as normal Alderwake. Candidate harness uses a
 detached catalog and explicit test-save slot. Candidate-only location IDs cannot
 enter the normal catalog or normal save. Tool output must be deterministic,
 target-local and independent of the source checkout at runtime/export; extraction
@@ -323,7 +323,7 @@ benchmark is claimed. Parent P014 subsequently completed with
 [native evidence](../evidence/P014/native-holds/VALIDATION.md); M019 must revalidate
 the resulting map build. Import exit 0 still reports the pre-existing missing
 .NET SDK 10.0.9 and restricted certificate-store access; typed GDScript checks pass.
-M010 exterior companion recovery is now verified; M011 is next eligible. This includes
+M001-M014 preparation is verified; M015 activates the existing recovery slice. This includes
 the explicitly approved dock exception above, not an automatic snapshot refresh.
 
 ### M007 population and provisional navigation
@@ -464,3 +464,20 @@ fixture, without inventing a connection to the main exterior.
 motion samples, five placement rejections, suspension/recovery/compact regressions
 and fresh rendered Moonwell/ford/bridge ordinary-input journey. Candidate remains
 isolated; source snapshot/schema4/content1/production IDs/normal save unchanged.
+
+
+### M015 production activation
+
+The production subclass explicitly maps the existing counter/station/single gate
+onto the pinned exterior, leaving snapshot/schema/IDs and all six unused portals
+unchanged. Maris foot is (-7.5,0,11); the labeled noncanonical companion dialogue
+station stays (-2,0,0), safely west of town start. Maris body/bench and station
+retain existing scene collision; three projected outlines plus the existing
+0.2m nav margin keep AI routes off these added service bodies. The fitting
+approach (-6,0,10.6) clears the Chandlery/bench aisle and selects the counter.
+Source fitting/customer anchor records remain unchanged data, not new actors.
+The approved forest return pad (107.25,0,1.25) is outside gate reach and supports
+both party members. Root applies the existing exterior grounding policy on all
+arrivals and restores compact-room defaults on travel. No new destination model
+or persistent authority is introduced. M015 evidence verifies activation; M016-
+M019 still own aim, comprehensive save compatibility, performance and native build.

@@ -1,10 +1,11 @@
 # Returning Fair prototype
 
-Town/river/forest migration planning: [source investigation](docs/map-migration/INVESTIGATION.md),
+Town/river/forest migration: [source investigation](docs/map-migration/INVESTIGATION.md),
 [19 sequential tasks](docs/map-migration/CHECKLIST.md), and
 [fresh-session agent prompt](docs/map-migration/AGENT_PROMPT.md).
-Migration starts at M001 using its own [durable state](docs/map-migration/CURRENT_STATE.md);
-P014 release walkthrough is now verified complete.
+M001-M015 complete; larger exterior now active. Next M016 follows its own
+[durable state](docs/map-migration/CURRENT_STATE.md). P014 compact release walkthrough
+is complete; M019 must verify the resulting larger-map native build.
 
 P001–P014 complete. Full shortened recovery slice is playable from a fresh run.
 One labeled temporary ally follows, routes around obstacles and assists combat.
@@ -12,10 +13,13 @@ Approach the purple companion station and press E for its optional trust choice.
 Choose with mouse or Tab/Enter;
 Finish/Close or Esc returns control. E at glowing gate travels to Tollworks/back.
 Both rooms retain labeled prototype companion stations. Physical hero, mouse facing,
-overhead follow, projection and zoom remain. Maris's prototype counter is southwest;
-accept her lead, travel north, and read J journal. Defeat the protective guardian
+overhead follow, projection and zoom remain. Maris's counter is at Reed Chandlery
+on Dock Row, southwest of town start;
+accept her lead, walk east into Moonwood, cross bridge or sand ford and enter
+Tollworks at the glowing forest gate. Read J journal. Defeat the protective guardian
 with mouse clicks; Space dodges its gold windup/red strike. R retries after death.
-Then inspect the southeast vessel, return north, and reconnect at Maris's counter.
+Then inspect the southeast vessel, use Tollworks north return gate, walk west
+through Moonwood to Reed Chandlery and reconnect at Maris's counter.
 Read the returned experience, compare familiar gear and finish the practical fitting.
 Cancellation keeps specialist service unavailable. Completion restores displayed
 river gear and specialist service preview; basic supplies stay available. Both

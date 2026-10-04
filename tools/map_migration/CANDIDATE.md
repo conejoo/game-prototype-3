@@ -1,3 +1,20 @@
+# M015 production activation
+
+Normal `res://app/game_root.tscn` now loads the larger exterior as
+`prototype-alderwake`. Existing Maris counter, labeled companion dialogue
+station and single forest Tollworks gate are active. Six other source portals
+stay inactive. Start/return IDs and schema4/content1 remain unchanged.
+
+The explicit `res://tests/map_candidate.tscn` remains an isolated no-interaction
+harness with detached candidate ID and named save slot. Root now configures
+exterior grounding on every transition for both harness and production.
+Pinned snapshot/data retain their original candidate-only metadata; production
+composition is the explicit activation adapter, not a snapshot refresh.
+The notes below are historical stage records, including prior statements that
+normal selection was compact or activation remained pending.
+See docs/evidence/M015/VALIDATION.md and docs/map-migration/CURRENT_STATE.md
+for current production acceptance and subsequent gates.
+
 # M003–M011 isolated exterior, navigation and landscape
 
 From the target repository root:

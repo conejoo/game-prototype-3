@@ -8,7 +8,7 @@ script = ExtResource("2")
 stable_id = "prototype-ask-room"
 label = "What should we look at?"
 action_id = "prototype-observe"
-response = PackedStringArray("Start with Maris at Alderwake's southwest counter. Her lead earns a preparation point: open J to choose Deliberate Strike. Then use the north gate, clear the guardian and inspect the southeast vessel. Return to Maris for the fitting. This stationary prototype station voices your active ally; our identity and dialogue are noncanonical.")
+response = PackedStringArray("Start with Maris at Reed Chandlery on Dock Row, southwest of town start. Her lead earns a preparation point: open J to choose Deliberate Strike. Then walk east into Moonwood, cross the bridge or sand ford to the forest Tollworks entrance, clear the guardian and inspect the southeast vessel. Return to Maris for the fitting. This stationary prototype station voices your active ally; our identity and dialogue are noncanonical.")
 
 [sub_resource type="Resource" id="Choice_leave"]
 script = ExtResource("2")
@@ -39,5 +39,5 @@ stable_id = "prototype-companion-greeting"
 display_name = "Temporary companion (prototype fixture)"
 prototype_fixture = true
 speaker_actor_id = "prototype-companion"
-lines = PackedStringArray("[Prototype fixture; noncanonical] Your temporary ally follows and helps in combat. This purple station voices our dialogue. We can share the plan or take orders: choose once to record a trust reaction. Maris's lead starts at Alderwake's southwest counter.")
+lines = PackedStringArray("[Prototype fixture; noncanonical] Your temporary ally follows and helps in combat. This purple station voices our dialogue. We can share the plan or take orders: choose once to record a trust reaction. Maris's lead starts at Reed Chandlery on Dock Row, southwest of town start.")
 choices = Array[ExtResource("2")]([SubResource("Choice_look"), SubResource("Choice_leave"), SubResource("Choice_shared"), SubResource("Choice_orders")])

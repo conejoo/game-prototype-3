@@ -11,11 +11,6 @@ func _ready() -> void:
 	initial_spawn_id = "alderwake-from-tollworks" if "--candidate-return" in OS.get_cmdline_user_args() else "alderwake-start"
 	save_repository = SaveRepository.new("user://saves/playtest-map-candidate.json")
 	await super._ready()
-	# Limit wall snap, then resolve fast downhill contacts against actual
-	# nearby walkable physics and full capsule clearance. Normal rooms opt out.
-	for actor: ActorPlaceholder in party.members():
-		actor.floor_snap_length = 0.04
-		actor.floor_contact_height = _candidate_floor_height.bind(actor)
 	ui.get_node("Screen/Header/Margin/Row/Titles/Title").text = "ALDERWAKE · TERRAIN CANDIDATE"
 	ui.location_label.text = "M014 isolated landmark kit · No active portals"
 	ui.journal_button.visible = false
@@ -36,17 +31,3 @@ func _refresh_interaction() -> void:
 
 func _toggle_journal() -> void:
 	pass
-
-
-func _candidate_floor_height(feet: Vector3, actor: ActorPlaceholder) -> float:
-	if not world_host.current_location is AlderwakeTerrainPreview:
-		return NAN
-	var space: PhysicsDirectSpaceState3D = actor.get_world_3d().direct_space_state
-	var hit: Dictionary = space.intersect_ray(PhysicsRayQueryParameters3D.create(feet + Vector3.UP * 0.11, feet + Vector3.DOWN * 0.11, 1))
-	if hit.is_empty() or hit.normal.y < 0.96 or not hit.collider.has_meta("candidate_walkable_floor"):
-		return NAN
-	var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
-	query.shape = actor.get_node("CollisionShape3D").shape
-	query.transform.origin = Vector3(feet.x, hit.position.y + 0.82, feet.z)
-	query.collision_mask = 1
-	return float(hit.position.y) if space.intersect_shape(query).is_empty() else NAN

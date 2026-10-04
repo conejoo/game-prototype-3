@@ -65,7 +65,7 @@ func _lifecycle(game: Node3D) -> void:
 	_check(game.save_repository.write(unrecovered, game.catalog).is_empty(), "Unrecovered fixture publication failed")
 	_check(service.apply(QUEST, "maris-return-to-town", "prototype-alderwake", "location-arrival").ok, "Return fixture failed")
 	_assert_view(game, "fitting")
-	game.player_placeholder.global_position = Vector3(-4, 0, 1.8)
+	game.player_placeholder.global_position = _counter(game).global_position + Vector3(1.5, 0, 0.5)
 	await physics_frame
 	await physics_frame
 	_check(game.interact().ok and game.dialogue.definition == returned, "Returned scene not selected")

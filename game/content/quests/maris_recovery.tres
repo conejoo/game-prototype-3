@@ -10,7 +10,7 @@ action_id = "maris-accept-lead"
 effect_id = "maris-lead-accepted"
 location_id = "prototype-alderwake"
 source_id = "npc-03-counter"
-objective = "Accept Maris's lead at her prototype counter (southwest)."
+objective = "Accept Maris's lead at Reed Chandlery on Dock Row (southwest of town start)."
 
 [sub_resource type="Resource" id="Expedition"]
 script = ExtResource("2")
@@ -19,7 +19,7 @@ action_id = "maris-enter-tollworks"
 effect_id = "maris-expedition-started"
 location_id = "prototype-tollworks"
 source_id = "location-arrival"
-objective = "E at north gate: travel to Tollworks with your temporary companion."
+objective = "Walk east into Moonwood with your ally. Cross timber bridge or sand ford; E at forest Tollworks entrance."
 
 [sub_resource type="Resource" id="Guardian"]
 script = ExtResource("2")
@@ -46,7 +46,7 @@ action_id = "maris-return-to-town"
 effect_id = "maris-returned-to-town"
 location_id = "prototype-alderwake"
 source_id = "location-arrival"
-objective = "Return through the north gate to Alderwake."
+objective = "Tollworks north return gate: return to Moonwood, then walk west to Reed Chandlery."
 
 [sub_resource type="Resource" id="Reconnect"]
 script = ExtResource("2")

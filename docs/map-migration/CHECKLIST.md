@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M014 verified complete; M015–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M015 verified complete; M016–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -148,7 +148,7 @@ acceptance again against the resulting map build.
   mapped foot, exit reads closed. Compare reference/gameplay views; swapping
   art changes no collision, navigation, interactions or stable IDs.
 
-## [ ] M015 Activate larger town and existing quest route
+## [x] M015 Activate larger town and existing quest route
 
 - Select candidate as `prototype-alderwake` while retaining stable production
   spawn IDs; place existing Maris counter/service at mapped Chandlery pad.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M013 complete. Append one concise record per item:
+M001–M015 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -327,3 +327,12 @@ Checks and exact exits: extractor/live Blender authoring-export/background rende
 Evidence: docs/evidence/M014/VALIDATION.md,art/nav/forest/audit/hash/source/preservation reports,gallery/contact sheet,exact input commands/raw responses/captures,accepted and retained failed logs.
 Decisions/limits: source one-row bridge art expands to existing3m corridor,thin0.1m rails preserve2.8m clearance;well exact octagon/static blue spiral,gate boards follow sole authored2x8m blocker. Vertex colors/no external textures;source feet/yaws/IDs/physics/nav/schema4/content1/snapshot/normal save fixed. User Blender scenes/vessel restored. Candidate isolated until M015;M016–M019 gates pending,parent P014 compact complete. No source write/refresh/install/subagent/commit/push/publication/next item.
 Next eligible task: M015 activate larger town and existing quest route only.
+
+
+M015 — completed 2026-10-03
+Result: production 147x80m exterior,exact Chandlery counter/single forest Tollworks gate,existing full recovery route and service;all stable IDs/schema4/content1 retained.
+Files: alderwake_exterior.gd/UID,alderwake.tscn,terrain nav hook,root grounding/hints,quest/dialogue content;activation test/UID,geography-sensitive tests,compact fixtures,debug observer;README/ARCHITECTURE/parent scope note/CONTRACT/CANDIDATE/CHECKLIST/CURRENT_STATE;docs/evidence/M015/.
+Checks and exact exits: extractor/initial-final imports/ten focused checks/post-repair observer/audit/diff PASS0;known SDK diagnostic retained.3,226 production route capsule samples,336,373 inherited nav samples,three rollbacks/four nav round trips/ten production round trips.628 accepted full-journey responses,44.016s outbound hold-step movement,HP100/50,187 repaths,zero catch-ups,six effects once,service restored,normal F10 exits0;fresh final-code labels inspected.
+Evidence: docs/evidence/M015/VALIDATION.md,activation/nav/audit/source-drift reports,views/index,exact request/response JSON and copied PNGs,runtime/accepted/failed logs.
+Decisions/limits: three service nav outlines,existing grounding generalized across arrivals;single destination API retained,six other portals inert. Source map added three NPCs externally; pinned snapshot unchanged,extras deliberately outside scope. Two detached-guardian observer errors retained/repaired with regression;no gameplay authority change. No Blender/source write/refresh/install/subagent/commit/push/publication. P014 compact completion preserved;M016-M019 pending;no next item started.
+Next eligible task: M016 camera ground aiming and canopy visibility only.

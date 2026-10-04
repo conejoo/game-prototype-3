@@ -272,6 +272,7 @@ func prepare_navigation() -> PackedStringArray:
 	elevation.add_navigation_obstructions(geometry)
 	town.add_navigation_obstructions(geometry)
 	forest.add_navigation_obstructions(geometry)
+	add_service_navigation_obstructions(geometry)
 	# Tree detours exposed Recast corner cuts at the thin bridge rails. Apply
 	# the same conservative voxel margin as props; physical rails stay exact.
 	for rail: Rect2 in crossings.rail_rects:
@@ -383,3 +384,7 @@ func validation_errors(definition: LocationDefinition, catalog: ContentCatalog) 
 	var errors: PackedStringArray = super.validation_errors(definition, catalog)
 	errors.append_array(build_errors)
 	return errors
+
+
+func add_service_navigation_obstructions(_geometry: NavigationMeshSourceGeometryData3D) -> void:
+	pass # Isolated harness has no recovery interactions.

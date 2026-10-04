@@ -9,7 +9,7 @@ stable_id = "maris-lead-choice"
 label = "Accept the recovery lead."
 quest_id = "prototype-maris-recovery"
 action_id = "maris-accept-lead"
-response = PackedStringArray("[Shortened prototype adaptation] The Tollworks refuge holds an experience of fitting river gear for a familiar customer. Follow the north gate to investigate.")
+response = PackedStringArray("[Shortened prototype adaptation] The Tollworks refuge holds an experience of fitting river gear for a familiar customer. Walk east into Moonwood, cross the timber bridge or sand ford, then use the glowing forest Tollworks entrance to investigate.")
 
 [sub_resource type="Resource" id="Reconnect"]
 script = ExtResource("2")

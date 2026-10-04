@@ -1,186 +1,27 @@
 [gd_scene format=3 uid="uid://uqa070stqp33"]
 
-[ext_resource type="Script" path="res://world/prototype_location.gd" id="1_room"]
-[ext_resource type="Script" path="res://world/spawn_anchor.gd" id="2_spawn"]
-[ext_resource type="Script" path="res://features/interaction/interactable.gd" id="3_interact"]
-[ext_resource type="PackedScene" path="res://features/interaction/npc_interaction.tscn" id="4_npc"]
-[ext_resource type="PackedScene" path="res://features/interaction/prop_interaction.tscn" id="5_prop"]
-[ext_resource type="PackedScene" path="res://world/maris_counter.tscn" id="6_counter"]
+[ext_resource type="Script" path="res://world/alderwake_exterior.gd" id="1"]
+[ext_resource type="PackedScene" path="res://features/interaction/prop_interaction.tscn" id="2"]
 
-[sub_resource type="StandardMaterial3D" id="Material_floor"]
-albedo_color = Color(0.29, 0.36, 0.28, 1)
-roughness = 0.9
-
-[sub_resource type="BoxMesh" id="Mesh_floor"]
-material = SubResource("Material_floor")
-size = Vector3(14, 0.4, 12)
-
-[sub_resource type="BoxShape3D" id="Shape_floor"]
-size = Vector3(14, 0.4, 12)
-
-[sub_resource type="StandardMaterial3D" id="Material_wall"]
-albedo_color = Color(0.42, 0.46, 0.47, 1)
-roughness = 0.85
-
-[sub_resource type="BoxMesh" id="Mesh_back_wall"]
-material = SubResource("Material_wall")
-size = Vector3(14, 1.5, 0.4)
-
-[sub_resource type="BoxMesh" id="Mesh_side_wall"]
-material = SubResource("Material_wall")
-size = Vector3(0.4, 1.5, 12)
-
-[sub_resource type="BoxShape3D" id="Shape_back_wall"]
-size = Vector3(14, 1.5, 0.4)
-
-[sub_resource type="BoxShape3D" id="Shape_side_wall"]
-size = Vector3(0.4, 1.5, 12)
-
-[sub_resource type="BoxMesh" id="Mesh_front_wall"]
-material = SubResource("Material_wall")
-size = Vector3(14, 0.6, 0.4)
-
-[sub_resource type="BoxShape3D" id="Shape_front_wall"]
-size = Vector3(14, 0.6, 0.4)
-
-[sub_resource type="BoxMesh" id="Mesh_right_wall"]
-material = SubResource("Material_wall")
-size = Vector3(0.4, 0.6, 12)
-
-[sub_resource type="BoxShape3D" id="Shape_right_wall"]
-size = Vector3(0.4, 0.6, 12)
-
-[sub_resource type="BoxMesh" id="Mesh_plinth"]
-material = SubResource("Material_wall")
-size = Vector3(2, 0.6, 2)
-
-[sub_resource type="BoxShape3D" id="Shape_plinth"]
-size = Vector3(2, 0.6, 2)
-
-[sub_resource type="StandardMaterial3D" id="Material_beacon"]
+[sub_resource type="StandardMaterial3D" id="BeaconMaterial"]
 albedo_color = Color(0.94, 0.63, 0.26, 1)
 emission_enabled = true
 emission = Color(0.35, 0.15, 0.03, 1)
 
-[sub_resource type="BoxMesh" id="Mesh_beacon"]
-material = SubResource("Material_beacon")
+[sub_resource type="BoxMesh" id="BeaconMesh"]
+material = SubResource("BeaconMaterial")
 size = Vector3(0.65, 0.65, 0.65)
 
-[sub_resource type="StandardMaterial3D" id="Gate_material"]
-albedo_color = Color(0.25, 0.9, 0.8, 1)
-shading_mode = 0
-
-[sub_resource type="TorusMesh" id="Gate_mesh"]
-material = SubResource("Gate_material")
-inner_radius = 0.8
-outer_radius = 1.0
-
 [node name="Alderwake" type="Node3D"]
-script = ExtResource("1_room")
-location_id = "prototype-alderwake"
-destination_id = "prototype-tollworks"
-destination_spawn_id = "tollworks-from-alderwake"
-gate_label = "Enter Tollworks"
+script = ExtResource("1")
 
-[node name="Floor" type="StaticBody3D" parent="."]
-position = Vector3(0, -0.2, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="Floor"]
-mesh = SubResource("Mesh_floor")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-shape = SubResource("Shape_floor")
-
-[node name="BackWall" type="StaticBody3D" parent="."]
-position = Vector3(0, 0.75, -6)
-
-[node name="Mesh" type="MeshInstance3D" parent="BackWall"]
-mesh = SubResource("Mesh_back_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall"]
-shape = SubResource("Shape_back_wall")
-
-[node name="SideWall" type="StaticBody3D" parent="."]
-position = Vector3(-7, 0.75, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="SideWall"]
-mesh = SubResource("Mesh_side_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
-shape = SubResource("Shape_side_wall")
-
-[node name="FrontWall" type="StaticBody3D" parent="."]
-position = Vector3(0, 0.3, 6)
-
-[node name="Mesh" type="MeshInstance3D" parent="FrontWall"]
-mesh = SubResource("Mesh_front_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FrontWall"]
-shape = SubResource("Shape_front_wall")
-
-[node name="RightWall" type="StaticBody3D" parent="."]
-position = Vector3(7, 0.3, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="RightWall"]
-mesh = SubResource("Mesh_right_wall")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall"]
-shape = SubResource("Shape_right_wall")
-
-[node name="Plinth" type="StaticBody3D" parent="."]
-position = Vector3(3, 0.3, -2)
-
-[node name="Mesh" type="MeshInstance3D" parent="Plinth"]
-mesh = SubResource("Mesh_plinth")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Plinth"]
-shape = SubResource("Shape_plinth")
+[node name="PracticeMarker" parent="." groups=["developer_fixture"] instance=ExtResource("2")]
+position = Vector3(2, 0, 1)
+instance_id = "alderwake-practice-marker"
 
 [node name="TestBeacon" type="Node3D" parent="." groups=["developer_fixture"]]
 position = Vector3(3, 1.2, -2)
 
 [node name="Mesh" type="MeshInstance3D" parent="TestBeacon"]
 rotation = Vector3(0.45, 0, 0.35)
-mesh = SubResource("Mesh_beacon")
-
-[node name="Spawns" type="Node3D" parent="."]
-
-[node name="Start" type="Marker3D" parent="Spawns"]
-script = ExtResource("2_spawn")
-stable_id = "alderwake-start"
-
-[node name="Arrival" type="Marker3D" parent="Spawns"]
-position = Vector3(0, 0, -2.5)
-script = ExtResource("2_spawn")
-stable_id = "alderwake-from-tollworks"
-
-[node name="TravelGate" type="Marker3D" parent="."]
-position = Vector3(0, 0, -5)
-script = ExtResource("3_interact")
-instance_id = "alderwake-travel-gate"
-kind = "travel"
-prompt = "Enter Tollworks"
-reach = 1.6
-
-[node name="Ring" type="MeshInstance3D" parent="TravelGate"]
-position = Vector3(0, 0.03, 0)
-mesh = SubResource("Gate_mesh")
-
-[node name="Sign" type="Label3D" parent="TravelGate"]
-position = Vector3(0, 1.5, 0)
-billboard = 1
-pixel_size = 0.012
-font_size = 36
-text = "Enter Tollworks
-[E] nearby"
-
-[node name="TemporaryCompanion" parent="." instance=ExtResource("4_npc")]
-position = Vector3(-2, 0, 0)
-instance_id = "alderwake-temporary-companion"
-
-[node name="PracticeMarker" parent="." groups=["developer_fixture"] instance=ExtResource("5_prop")]
-position = Vector3(2, 0, 1)
-instance_id = "alderwake-practice-marker"
-
-[node name="MarisCounter" parent="." instance=ExtResource("6_counter")]
-position = Vector3(-4, 0, 3)
+mesh = SubResource("BeaconMesh")

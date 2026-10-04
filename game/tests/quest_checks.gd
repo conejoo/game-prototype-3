@@ -104,7 +104,7 @@ func _run() -> void:
 	root.add_child(game)
 	await game.world_host.transition_finished
 	_check(not game.world_host.current_location.has_node("GuardianTestFixture"), "Test fixture leaked into normal boot")
-	game.player_placeholder.global_position = Vector3(-4, 0, 1.8)
+	game.player_placeholder.global_position = game.world_host.current_location.get_node("MarisCounter").global_position + Vector3(1.5, 0, -0.4)
 	await physics_frame
 	await physics_frame
 	_check(game.interact().ok and game.dialogue.definition.stable_id == "prototype-maris-counter", "Maris interaction absent")

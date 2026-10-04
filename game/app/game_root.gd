@@ -271,6 +271,9 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		_refresh_progression()
 	_pending_restore = null
 	companion_ai.reset_route()
+	for actor: ActorPlaceholder in party.members():
+		actor.floor_snap_length = 0.04 if world_host.current_location is AlderwakeTerrainPreview else 0.1
+		actor.floor_contact_height = _exterior_floor_height.bind(actor) if world_host.current_location is AlderwakeTerrainPreview else Callable()
 	camera_rig.set_target(player_placeholder)
 	camera_rig.reset_physics_interpolation()
 	_update_controls()
@@ -329,7 +332,7 @@ func _refresh_interaction() -> void:
 		ui.show_travel("Quest progress kept; retry restarts at last arrival anchor." if player_placeholder.state.health == 0 else "Click: attack · Space: dodge · Finish fight or retreat to interact / save")
 		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
-	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "E near Maris / purple companion station / glowing gate" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
+	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "E near Chandlery Maris / purple station by town start / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
 
 
 func interact() -> DialogueService.ActionResult:
@@ -419,7 +422,7 @@ func _refresh_journal() -> void:
 	if count < definition.steps.size():
 		var step: QuestStep = definition.steps[count]
 		if step.source_id != "location-arrival" and step.location_id != session.current_location_id:
-			objective = "E at north gate: travel to %s for next objective." % catalog.get_location(step.location_id).display_name
+			objective = "E at %s: travel to %s for next objective." % ["forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "north return gate", catalog.get_location(step.location_id).display_name]
 	var optional: PackedStringArray = []
 	if session.relationship.reaction_ids.is_empty():
 		optional.append("purple station: companion choice")
@@ -550,3 +553,17 @@ func _refresh_progression() -> void:
 
 func _journal_text() -> String:
 	return quests.journal() + "\n\n" + relationships.description()
+
+
+func _exterior_floor_height(feet: Vector3, actor: ActorPlaceholder) -> float:
+	if not world_host.current_location is AlderwakeTerrainPreview:
+		return NAN
+	var space: PhysicsDirectSpaceState3D = actor.get_world_3d().direct_space_state
+	var hit: Dictionary = space.intersect_ray(PhysicsRayQueryParameters3D.create(feet + Vector3.UP * 0.11, feet + Vector3.DOWN * 0.11, 1))
+	if hit.is_empty() or hit.normal.y < 0.96 or not hit.collider.has_meta("candidate_walkable_floor"):
+		return NAN
+	var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
+	query.shape = actor.get_node("CollisionShape3D").shape
+	query.transform.origin = Vector3(feet.x, hit.position.y + 0.82, feet.z)
+	query.collision_mask = 1
+	return float(hit.position.y) if space.intersect_shape(query).is_empty() else NAN

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ivcdj7b0nheu"]
 
-[ext_resource type="PackedScene" path="res://world/alderwake.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://tests/fixtures/compact_alderwake.tscn" id="1"]
 
 [node name="UnsafeLocation" instance=ExtResource("1")]
 location_id = "prototype-unsafe-location"

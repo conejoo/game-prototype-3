@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P013.
+Status: implementation contract; runnable Godot prototype through P014 with M015 exterior activation.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -28,7 +28,8 @@ have shipped. Do not silently change the existing campaign's canonical order.
 The source story puts a return scene and practical work after recovery; touching
 a vessel should not instantly restore the whole town or repair the ship.
 
-Use two compact connected locations, one companion, one recoverable NPC, one
+Use one continuous source-derived Alderwake exterior and the compact Tollworks,
+one companion, one recoverable NPC, one
 guardian type, one quest, one ability upgrade, a journal, and durable saves.
 Start with primitive geometry. Introduce one small Blender asset set after
 gameplay works. The full opening, farming, housing, romance, full NPC schedules,
@@ -485,3 +486,28 @@ map build. Native and debug-export evidence remain recorded separately.
 
 These do not block primitive movement and system work. Use labeled temporary
 content and record provisional decisions rather than inventing permanent canon.
+
+
+### Delivered larger exterior activation (M015)
+
+`prototype-alderwake` now selects the pinned 147 x 80m town/river/Moonwood
+through `world/alderwake.tscn` and `alderwake_exterior.gd`. The existing terrain
+builder supplies independent art, collision and explicit dry navigation. The
+production subclass composes exactly the existing Maris counter at (-7.5,0,11),
+one labeled temporary-companion dialogue station at (-2,0,0), and the existing
+single travel interaction at the mapped forest Tollworks entrance (107.25,0,-1.25).
+Six other source portals remain inert. Arrival IDs remain `alderwake-start` and
+`alderwake-from-tollworks` (107.25,0,1.25); Tollworks and all quest/actor/effect,
+trust and upgrade IDs remain unchanged, with schema4/content1.
+
+Service bodies contribute conservative projected navigation obstructions;
+render meshes never become navigable floors. Root configures the existing M008
+nearby-floor grounding callback and 0.04m snap on each exterior arrival/rollback,
+and restores ordinary 0.1m snap/no callback in compact rooms. Party/session and
+service authority stay unchanged. The former compact Alderwake scene remains a
+synthetic test fixture for unsafe-floor/navigation rejection checks.
+
+M015 verifies the debug rendered recovery route and focused rules/lifecycle.
+Camera/ground aim (M016), full save compatibility (M017), measured performance
+(M018), and the resulting packaged/native Windows gate (M019) remain separate.
+P014's completed compact release remains valid historical evidence.

@@ -231,7 +231,7 @@ func _observe() -> Dictionary:
 	return {
 		"combat_attacking": actor.combat.attacking, "combat_elapsed": actor.combat.elapsed,
 		"dodge_left": actor.combat.dodge_left,
-		"guardian": {"health": game.guardian.state.health, "position": _vector(game.guardian.global_position), "screen": _point(rig.camera.unproject_position(game.guardian.global_position)), "attacking": game.guardian.combat.attacking, "elapsed": game.guardian.combat.elapsed, "hit_ids": Array(game.guardian.combat.hit_ids)} if is_instance_valid(game.guardian) else {},
+		"guardian": {"health": game.guardian.state.health, "position": _vector(game.guardian.global_position), "screen": _point(rig.camera.unproject_position(game.guardian.global_position)), "attacking": game.guardian.combat.attacking, "elapsed": game.guardian.combat.elapsed, "hit_ids": Array(game.guardian.combat.hit_ids)} if is_instance_valid(game.guardian) and game.guardian.is_inside_tree() else {},
 		"player_screen": _point(rig.camera.unproject_position(actor.global_position)),
 		"companion": {"health": game.companion.state.health, "position": _vector(game.companion.global_position), "screen": _point(rig.camera.unproject_position(game.companion.global_position)), "mode": game.companion_ai.mode, "attacking": game.companion.combat.attacking, "hit_ids": Array(game.companion.combat.hit_ids), "repaths": game.companion_ai.repaths, "catchups": game.companion_ai.catchups, "recoveries": game.companion_ai.recoveries, "route": Array(game.companion_ai.route), "enabled": game.companion_ai.enabled, "object_id": game.companion.get_instance_id()},
 		"player_id": actor.state.instance_id, "location_id": game.session.current_location_id,

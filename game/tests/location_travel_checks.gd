@@ -52,7 +52,7 @@ func _run() -> void:
 	_check(not host.request_transition("prototype-tollworks", "absent-spawn").is_empty(), "Unknown spawn accepted")
 	_check(previous.get_ref() == host.current_location and actor.global_position == position_before and actor.controls_enabled, "Rejected command changed live scene/control")
 	var malformed: PrototypeLocation = (load("res://world/alderwake.tscn") as PackedScene).instantiate()
-	malformed.get_node("Spawns/Arrival").stable_id = "alderwake-start"
+	malformed.find_spawn("alderwake-from-tollworks").stable_id = "alderwake-start"
 	var errors: PackedStringArray = malformed.validation_errors(game.catalog.get_location("prototype-alderwake"), game.catalog)
 	_check("duplicate" in "; ".join(errors) and "missing" in "; ".join(errors), "Duplicate/missing physical anchors not rejected")
 	malformed.destination_spawn_id = "absent"
@@ -105,7 +105,7 @@ func _run() -> void:
 			_check(actor.get_instance_id() == original_actor_id and actor.state == original_state and actor.state.health == 37, "Travel recreated actor or lost mutable state")
 			_check(game.companion.get_instance_id() == companion_id and game.companion.state == companion_state and companion_state.health == 43 and game.companion.is_on_floor(), "Travel lost companion identity/health/floor")
 			_check(game.session.elapsed_play_seconds >= 12.0 and game.camera_rig.target == actor, "Session time/camera target lost")
-			_check(actor.global_position.distance_to(Vector3(0, 0, -2.5)) < 0.01 and actor.is_on_floor(), "Arrival unsafe or held W moved after travel")
+			_check(actor.global_position.distance_to(host.current_location.find_spawn(spawn).global_position) < 0.01 and actor.is_on_floor(), "Arrival unsafe or held W moved after travel")
 			_check(actor.movement_buttons.is_empty() and actor.velocity.length() < 0.001, "Velocity/accepted input leaked across travel")
 			_check(not host.current_location.can_travel(actor), "Arrival overlaps gate activation range")
 			_key(KEY_W, false)

@@ -5,8 +5,9 @@ Updated: 2026-10-03 (America/Vancouver). P001–P014 verified complete.
 ## Current task and next action
 
 P014 complete — extension check and Windows export. No next item exists in this
-prototype checklist; no migration task started in this session. Separate existing
-map-migration/M001 work remains intact. Follow its own handoff only when requested.
+prototype checklist; no migration task started in this session. Separate map migration has reached M015 production exterior activation; follow
+[its handoff](map-migration/CURRENT_STATE.md) when requested. P014 certifies the
+compact build only; M019 must verify the resulting larger-map native release.
 
 Final evidence: [native release validation](evidence/P014/native-holds/VALIDATION.md).
 Earlier extension/export/debug evidence: evidence/P014/VALIDATION.md; focused
