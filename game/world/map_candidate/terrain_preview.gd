@@ -25,6 +25,7 @@ var elevation: AlderwakeElevationSurfaces
 var construction_usec: int = 0
 var navigation_report: Dictionary = {}
 var landscape: AlderwakeLandscapeMaterials
+var tree_art: AlderwakeTreeArt
 
 
 func _init() -> void:
@@ -84,6 +85,10 @@ func _init() -> void:
 	forest.build(layout)
 	add_child(forest)
 	build_errors.append_array(forest.build_errors)
+	tree_art = AlderwakeTreeArt.new()
+	tree_art.build(forest)
+	add_child(tree_art)
+	build_errors.append_array(tree_art.build_errors)
 	var spawns: Node3D = Node3D.new()
 	spawns.name = "Spawns"
 	add_child(spawns)
@@ -95,7 +100,8 @@ func _init() -> void:
 	preview_report["forest"] = {"props": forest.prop_records.size(), "species": forest.species_counts, "sizes": forest.size_counts, "blocking_footprints": forest.footprints.size(), "markers": forest.marker_records.size(), "inert_data_records": forest.inert_records.size()}
 	preview_report["elevation"] = {"cells": elevation.levels.size(), "ramps": elevation.slopes.size(), "cliffs": elevation.cliffs.size(), "height_per_level_m": 0.25}
 	preview_report["landscape"] = {"semantic_mask_size": [294, 160], "world_space_materials": true, "water_vertex_motion": false, "runtime_source_images_reused": 0}
-	preview_report["limits"] = "M011 landscape; prop/landmark art M012-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
+	preview_report["tree_art"] = {"tree_ids": tree_art.tree_ids.size(), "kit_variants": tree_art.mappings.size(), "spatial_batches": tree_art.batches.size(), "chunk_size_m": AlderwakeTreeArt.CHUNK_SIZE}
+	preview_report["limits"] = "M012 tree kit; town/landmark art M013-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
 	construction_usec = Time.get_ticks_usec() - started
 
 

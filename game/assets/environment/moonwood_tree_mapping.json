@@ -1,0 +1,300 @@
+{
+  "snapshot_id": "alderwake-f4630f9-m002",
+  "asset": "res://assets/environment/moonwood_tree_kit.glb",
+  "mappings": [
+    {
+      "definition_id": "alder-tree",
+      "species": "alder",
+      "size": "standard",
+      "mesh_name": "GEO-alder-standard",
+      "height_m": 3.190000057220459,
+      "triangles": 972,
+      "source_base_box_xz_m": [
+        -0.75,
+        -0.84375,
+        1.5,
+        0.71875
+      ]
+    },
+    {
+      "definition_id": "birch-tree-small",
+      "species": "birch",
+      "size": "small",
+      "mesh_name": "GEO-birch-small",
+      "height_m": 2.5899999141693115,
+      "triangles": 854,
+      "source_base_box_xz_m": [
+        -0.5,
+        -0.625,
+        0.75,
+        0.5
+      ]
+    },
+    {
+      "definition_id": "birch-tree",
+      "species": "birch",
+      "size": "standard",
+      "mesh_name": "GEO-birch-standard",
+      "height_m": 3.190000057220459,
+      "triangles": 854,
+      "source_base_box_xz_m": [
+        -0.625,
+        -0.625,
+        1.0625,
+        0.5625
+      ]
+    },
+    {
+      "definition_id": "birch-tree-large",
+      "species": "birch",
+      "size": "large",
+      "mesh_name": "GEO-birch-large",
+      "height_m": 3.740000009536743,
+      "triangles": 854,
+      "source_base_box_xz_m": [
+        -1.03125,
+        -1.15625,
+        1.84375,
+        1.0625
+      ]
+    },
+    {
+      "definition_id": "cherry-tree-small",
+      "species": "cherry",
+      "size": "small",
+      "mesh_name": "GEO-cherry-small",
+      "height_m": 2.5899999141693115,
+      "triangles": 2778,
+      "source_base_box_xz_m": [
+        -0.5,
+        -0.5625,
+        1.0,
+        0.4375
+      ]
+    },
+    {
+      "definition_id": "cherry-tree",
+      "species": "cherry",
+      "size": "standard",
+      "mesh_name": "GEO-cherry-standard",
+      "height_m": 3.190000057220459,
+      "triangles": 2778,
+      "source_base_box_xz_m": [
+        -0.75,
+        -0.78125,
+        1.5,
+        0.65625
+      ]
+    },
+    {
+      "definition_id": "cherry-tree-large",
+      "species": "cherry",
+      "size": "large",
+      "mesh_name": "GEO-cherry-large",
+      "height_m": 3.740000009536743,
+      "triangles": 2778,
+      "source_base_box_xz_m": [
+        -0.8125,
+        -1.25,
+        1.96875,
+        1.125
+      ]
+    },
+    {
+      "definition_id": "maple-tree-small",
+      "species": "maple",
+      "size": "small",
+      "mesh_name": "GEO-maple-small",
+      "height_m": 2.5899999141693115,
+      "triangles": 972,
+      "source_base_box_xz_m": [
+        -0.5,
+        -0.5625,
+        1.0,
+        0.4375
+      ]
+    },
+    {
+      "definition_id": "maple-tree",
+      "species": "maple",
+      "size": "standard",
+      "mesh_name": "GEO-maple-standard",
+      "height_m": 3.190000057220459,
+      "triangles": 972,
+      "source_base_box_xz_m": [
+        -0.75,
+        -0.6875,
+        1.5,
+        0.5625
+      ]
+    },
+    {
+      "definition_id": "maple-tree-large",
+      "species": "maple",
+      "size": "large",
+      "mesh_name": "GEO-maple-large",
+      "height_m": 3.740000009536743,
+      "triangles": 972,
+      "source_base_box_xz_m": [
+        -1.34375,
+        -0.84375,
+        2.78125,
+        0.71875
+      ]
+    },
+    {
+      "definition_id": "oak-tree-small",
+      "species": "oak",
+      "size": "small",
+      "mesh_name": "GEO-oak-small",
+      "height_m": 2.5899999141693115,
+      "triangles": 972,
+      "source_base_box_xz_m": [
+        -0.5,
+        -0.53125,
+        1.0,
+        0.40625
+      ]
+    },
+    {
+      "definition_id": "oak-tree",
+      "species": "oak",
+      "size": "standard",
+      "mesh_name": "GEO-oak-standard",
+      "height_m": 3.190000057220459,
+      "triangles": 972,
+      "source_base_box_xz_m": [
+        -0.75,
+        -0.625,
+        1.5,
+        0.5
+      ]
+    },
+    {
+      "definition_id": "oak-tree-large",
+      "species": "oak",
+      "size": "large",
+      "mesh_name": "GEO-oak-large",
+      "height_m": 3.740000009536743,
+      "triangles": 972,
+      "source_base_box_xz_m": [
+        -1.34375,
+        -1.03125,
+        3.0625,
+        0.90625
+      ]
+    },
+    {
+      "definition_id": "pine-tree-small",
+      "species": "pine",
+      "size": "small",
+      "mesh_name": "GEO-pine-small",
+      "height_m": 2.9800000190734863,
+      "triangles": 396,
+      "source_base_box_xz_m": [
+        -0.4375,
+        -0.53125,
+        1.0,
+        0.46875
+      ]
+    },
+    {
+      "definition_id": "pine-tree",
+      "species": "pine",
+      "size": "standard",
+      "mesh_name": "GEO-pine-standard",
+      "height_m": 3.430000066757202,
+      "triangles": 396,
+      "source_base_box_xz_m": [
+        -0.5,
+        -0.65625,
+        1.0625,
+        0.53125
+      ]
+    },
+    {
+      "definition_id": "pine-tree-large",
+      "species": "pine",
+      "size": "large",
+      "mesh_name": "GEO-pine-large",
+      "height_m": 3.8424999713897705,
+      "triangles": 396,
+      "source_base_box_xz_m": [
+        -1.0,
+        -0.9375,
+        1.6875,
+        0.8125
+      ]
+    },
+    {
+      "definition_id": "rowan-tree",
+      "species": "rowan",
+      "size": "standard",
+      "mesh_name": "GEO-rowan-standard",
+      "height_m": 3.190000057220459,
+      "triangles": 2402,
+      "source_base_box_xz_m": [
+        -0.5625,
+        -0.625,
+        1.125,
+        0.5625
+      ]
+    },
+    {
+      "definition_id": "spruce-tree",
+      "species": "spruce",
+      "size": "standard",
+      "mesh_name": "GEO-spruce-standard",
+      "height_m": 3.509999990463257,
+      "triangles": 480,
+      "source_base_box_xz_m": [
+        -0.625,
+        -0.78125,
+        1.25,
+        0.65625
+      ]
+    },
+    {
+      "definition_id": "willow-tree-small",
+      "species": "willow",
+      "size": "small",
+      "mesh_name": "GEO-willow-small",
+      "height_m": 2.6500000953674316,
+      "triangles": 2176,
+      "source_base_box_xz_m": [
+        -0.5,
+        -0.71875,
+        1.0,
+        0.59375
+      ]
+    },
+    {
+      "definition_id": "willow-tree",
+      "species": "willow",
+      "size": "standard",
+      "mesh_name": "GEO-willow-standard",
+      "height_m": 3.25,
+      "triangles": 2176,
+      "source_base_box_xz_m": [
+        -0.75,
+        -0.75,
+        1.40625,
+        0.625
+      ]
+    },
+    {
+      "definition_id": "willow-tree-large",
+      "species": "willow",
+      "size": "large",
+      "mesh_name": "GEO-willow-large",
+      "height_m": 3.799999952316284,
+      "triangles": 2176,
+      "source_base_box_xz_m": [
+        -1.3125,
+        -1.0,
+        2.3125,
+        0.875
+      ]
+    }
+  ]
+}

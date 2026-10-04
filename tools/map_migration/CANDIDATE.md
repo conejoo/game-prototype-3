@@ -180,5 +180,22 @@ safe catch-up after removal, shared-API incapacitation/recovery and rejections.
 Northern isolated terrace is a direct-placement fixture only. Rendered acceptance
 uses ordinary WASD from fresh town through Moonwell and both crossings both ways;
 zero catch-ups,132 repaths,64 retained captures and normal F10 exit0. Evidence:
-`docs/evidence/M010/VALIDATION.md`. M011 landscape complete; M012 tree kit next.
-No production activation/export/native map release claim.
+`docs/evidence/M010/VALIDATION.md`. M011 landscape and M012 tree kit complete;
+M013 town exterior art kit next.
+No production activation/Windows export/native map release claim.
+
+M012 replaces all395 diagnostic tree visuals with a self-contained Blender GLB:
+nine species,21 actual catalog definitions,all three source sizes. Source wrappers,
+feet/yaw/records/catalog physics stay unchanged. VisualRoot metadata names mesh/
+batch/index; location-owned tree_art.gd groups repeated mesh resources into106
+MultiMesh batches by definition and32m spatial chunks. Bole bases follow exact
+catalog boxes; canopy heights deliberately compressed for overhead camera.
+Portable vertex-color matte PBR,zero external textures; Godot adapter explicitly
+enables imported COLOR_0. Source:art/source/moonwood_tree_kit.blend;
+exports/mapping:game/assets/environment/. map_tree_art_checks.gd requires real
+Compatibility renderer because dummy headless renderer returns identity instance
+transforms. Candidate/crossing/nav/application/companion regressions pass.
+Fresh ordinary WASD forest tour and both crossings both ways inspected;23 clear
+frames,zero catch-ups,normal quit0. Evidence:docs/evidence/M012/VALIDATION.md.
+M016 broader camera/aim/canopy gates and M018 performance remain pending.
+Town/landmark kit not started.

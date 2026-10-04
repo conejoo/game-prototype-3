@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M011 verified complete; M012–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M012 verified complete; M013–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -121,7 +121,7 @@ acceptance again against the resulting map build.
   cracks, water covering crossing deck, visual boundary contradicting collision,
   or missing default grass. Inspect static and moving views; gameplay unchanged.
 
-## [ ] M012 Reusable tree art kit
+## [x] M012 Reusable tree art kit
 
 - Build small reusable Blender tree kit with documented mapping for source
   species/size IDs. Save `.blend` under `art/source`, GLB under `game/assets`;
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M011 complete. Append one concise record per item:
+M001–M012 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -303,3 +303,11 @@ Checks and exact exit results: extractor/import/final import/landscape/candidate
 Evidence: docs/evidence/M011/VALIDATION.md,landscape report,source-art reference/hash sheet,snapshot hashes,rendered-index/contact sheets,exact input JSON/raw responses/runtime/driver logs/copied PNGs.
 Decisions or retained limits: six source swatches reference only,zero source images/runtime assets copied;3D shader adaptation/generic raw ground flecks explicit. Water flow colors only,exact fixed union/no displacement,continues cosmetically under pause. Physics/nav/IDs/schema4/content1/pinned snapshot/normal compact selection unchanged;prop/landmark art M012-M014,activation M015,aim/performance/native gates later.P014 compact completion preserved.No next item started.
 Next eligible task: M012 reusable tree art kit only.
+
+M012 — completed 2026-10-03
+Result: reusable authored Blender tree kit,all395 exact source trees/nine species/21 actual catalog variants/all three sizes,106 spatial visual batches; source trunk physics unchanged.
+Files: art/source/moonwood_tree_kit.blend; game/assets/environment/GLB/import/mapping; tree_art.gd/UID,terrain_preview.gd,map_candidate_root.gd,map_tree_art_checks.gd/UID; tools/map_migration/build_tree_kit.py,CANDIDATE.md; migration CHECKLIST/CURRENT_STATE; docs/evidence/M012/.
+Checks and exact exit results: pinned extractor/reference/audit PASS0; initial/final imports0 with known SDK/certificate diagnostics; actual Compatibility GPU art audit PASS0; candidate/crossing/navigation/application/companion PASS0;336,373 nav capsule samples,94 crossing walk/dodge lanes/four rail slides; rendered dense-forest/both crossings both ways,23 clear inspected frames,zero catch-ups,normal F10 exit0; final review/git diff --check0.
+Evidence: docs/evidence/M012/VALIDATION.md,tree/navigation reports,source/gallery/two contact sheets,48 PNGs,exact bridge requests/raw responses,accepted/failed logs,hash/index/audit records.
+Decisions or retained limits: deliberately compressed species canopies,portable vertex colors/zero external textures; feet/yaws/IDs/collision/elevation/water/nav/schema4/content1 unchanged. Live Blender scenes preserved/vessel restored,snapshot unchanged,normal save absent. Camera/performance/activation/native gates remain later; P014 compact completion preserved. No subagent,source write/refresh,installation,commit,push,publication or next item started.
+Next eligible task: M013 reusable town exterior art kit only.
