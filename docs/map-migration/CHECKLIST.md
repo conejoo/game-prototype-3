@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M016 verified complete; M017–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M017 verified complete; M018–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -171,7 +171,7 @@ acceptance again against the resulting map build.
   hero/ally/Maris/gate readable; no camera jumps or canopy collision changes;
   pause, dialogue, journal, focus loss and zoom checks pass.
 
-## [ ] M017 Save load retry and scene replacement compatibility
+## [x] M017 Save load retry and scene replacement compatibility
 
 - Verify pre-migration schema-4 saves at both old town spawn IDs and Tollworks;
   loads use new safe arrival positions while retaining all existing progress.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M016 complete. Append one concise record per item:
+M001–M017 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -344,3 +344,11 @@ Checks and exact exit results: final six focused headless checks PASS0; actual t
 Evidence: docs/evidence/M016/VALIDATION.md, camera-report.json, final-check-results.json, survey-final/audit.json, inspected final sheets, exact input/response arrays and retained failures.
 Decisions or retained limits: tree-only cutout preserves shadows/geometry/physics/nav/IDs. Final visual survey replays recorded feet, not ordinary quest flow. No roof treatment where service approach clear. Snapshot/schema4/content1 unchanged; M018 ray/shader costs and M019 larger-map native gate still pending. P014 compact completion preserved.
 Next eligible task: M017 save load retry and scene replacement compatibility only.
+
+M017 — completed 2026-10-03
+Result: historical schema4 town/Tollworks save compatibility, immediate paused actor/corpse collision/presentation, safe full-party restore/retry/rollback and replacement lifecycle.
+Files: actor_placeholder/game_root; map_save_checks/UID; historical save/provenance and two rejection fixtures; detached compact companion test; CHECKLIST/CURRENT_STATE; docs/evidence/M017/.
+Checks and exact exits: final import/extractor/audit0; five-fixture writer/reader/checks PASS0 in separate PIDs; save/combat/companion/recovery-presentation/application PASS0;24 swaps/four failed loads/five retry cases;three actual GUI save/restart/load processes normal F10 exits0,no runtime errors;git diff --check0.
+Evidence: docs/evidence/M017/VALIDATION.md,checks/write/read reports,process/final results,audit.json,14 exact request/response pairs and14PNG captures,GUI saved envelopes/launches/exits,accepted and retained failed logs.
+Decisions/limits: four byte-exact pre-map saves plus labeled synthetic downed-ally/Tollworks-start fixture;JSON comparisons normalized numeric types. P009 original obstacle assertions use detached compact fixture. Source snapshot/schema4/content1/IDs/authority unchanged;normal save untouched. Synthetic headless and historical-seeded GUI restore prove compatibility,not full fresh/native journey. Parent P014 compact complete;M018/M019 gates pending. No next item started.
+Next eligible task: M018 measured map performance only.

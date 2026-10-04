@@ -1,115 +1,113 @@
 # Current map migration state
 
-Updated2026-10-03, America/Vancouver. M001–M016 verified complete.
+Updated 2026-10-03, America/Vancouver. M001–M017 verified complete.
 
 ## Selection and next action
 
-- Active item:none. M016 camera/ground aim/canopy visibility complete.
-- Next eligible:M017 save load retry and scene replacement compatibility only.
-  Verify pre-migration schema4 town spawn IDs and Tollworks, full-party safe
-  arrival, preserved quest/defeat/trust/upgrade/health, retry/rollback/lifecycle,
-  isolated new-process save/load and invalid-save rejection/backup behavior.
-  Never use normal user save. Do not start M018/M019 in that session.
-- Evidence:[M016 validation](../evidence/M016/VALIDATION.md),
-  [measurements](../evidence/M016/camera-report.json),
-  [final rendering audit](../evidence/M016/survey-final/audit.json),
-  [dense forest repair](../evidence/M016/dense-forest-final-views.png).
-- Normal larger prototype-alderwake retained. P001–P014 compact native build
-  complete; M019 still owns resulting larger-map packaged/native acceptance.
+- Active item: none. M017 save/load/retry/scene compatibility complete.
+- Next eligible: M018 measured map performance only. Record actual machine,
+  renderer/settings and measure town/dense-forest/crossing frame/draw budgets,
+  memory after repeated swaps and navigation/load targets from CONTRACT.md.
+  Optimize measured rendering/navigation issues only; do not start M019.
+- Evidence: [M017 validation](../evidence/M017/VALIDATION.md),
+  [transaction/lifecycle report](../evidence/M017/checks-report.json),
+  [preservation/GUI audit](../evidence/M017/audit.json),
+  [final exits](../evidence/M017/final-results.json).
+- Normal larger `prototype-alderwake` retained. Parent P001–P014 compact native
+  completion remains historical; M019 owns larger-map packaged/native acceptance.
 
-## Preparation and snapshot
+## Preparation and source identity
 
-Full migration prompt, workspace AGENTS(no nested),parent architecture/state,
-investigation/checklist/state/contract, pinned layout/provenance and M015 actual
-artifacts/evidence read. Initial Git clean at343e7ac. M016 marked in progress
-before implementation. Exactly one item. Caveman/gameplay-testing/Computer Use
-focus skills applied. No source writes/generators/refresh, Blender, installs,
-subagents, commit, push or publication. M012/M015 reports restored to Git bytes.
+Full migration prompt, applicable AGENTS (workspace only), parent architecture/state,
+migration investigation/checklist/state/contract, retained layout/provenance, M016
+evidence and actual artifacts/Git inspected. Initial HEAD a4faeff, Git clean.
+M017 marked in progress before work; exactly one item. Caveman/gameplay-testing
+skills applied. No source write/generator/refresh, Blender, dependency installation,
+subagent, commit, push, publication or next-item work.
 
 Snapshot alderwake-f4630f9-m002/source commit
 f4630f9966d6637ef6579cd87623ea354758191c unchanged. MapSHA256
  af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f;
 layoutSHA2567477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be.
-Five pinned inputs/extractor unchanged. M015 source-drift.json retains last known
-live tess-store-01/npc-06,ivo-passenger-dock-01/npc-07,
-celia-basic-repairs-actor-01/npc-08:537 objects versus534 pinned. Extra NPCs outside
-slice, no refresh or live-source revalidation here. Schema4/content1 unchanged.
+Five pinned inputs/extractor remain unchanged, hashes audited. Prior M015 source
+NPC drift (537 objects versus534 pinned) remains recorded there, no source refresh
+or live-source revalidation in M017. Schema4/content1 and all production IDs fixed.
 
 ## Implementation and changed files
 
-- game/app/camera_rig.gd:marked physics-floor targeting, three tiny screen rays
-  (0,+/-(0.02,0.01)px) for concave seams. Skip unmarked blockers/art; reject hidden
-  candidate base through cliff side using vertical marked-floor check. No selected
-  floor hides marker. Existing camera offset/projections/zoom bounds unchanged.
-- game/world/prototype_location.gd/test_room.gd:compact floor aim metadata/super
-  ready. map_candidate/terrain_preview.gd:base support role metadata only, no
-  physical floor/height/collision/navigation changes.
-- actor_placeholder.gd:marker at physical hit+0.03m; horizontal visual yaw/attack
-  direction. Existing pointer/modal/focus arbitration retained.
-- map_candidate/tree_art.gd/canopy_visibility.gdshader:exported vertex palette/
-  matte roughness preserved; main-view-only foreground0.95m cutout around party
-  feet+0.8m, fragment at least0.45m in front, original shadows retained.
-  game_root.gd supplies transient camera matrices/party positions. All395 source
-  tree IDs/feet,21 variants/106 MultiMeshes/geometry/physics unchanged.
-  Inspected town roofs/services clear, so no roof treatment added.
-- game/tests/map_camera_checks.gd/UID:330 independent triangle/marker/facing/
-  attack samples, two exact cliff negatives, prop/miss/camera/modal checks and
-  read-only nav guide. map_camera_render.gd/UID:final renderer at recorded party
-  feet and moving-pose replay, explicitly synthetic visual evidence.
-  map_tree_art_checks.gd adapted shader palette audit. Opt-in live bridge adds
-  read-only combat_direction; no command/mutation/input bypass added.
-- docs/evidence/M016:exact logs/exits,input/response arrays, before/final images,
-  contact sheets,reports/local drivers. CHECKLIST/CURRENT_STATE updated. Parent
-  scope/ownership and CONTRACT scale/height/grid/movement masks unchanged.
+- `game/features/actors/actor_placeholder.gd`: initialize refreshes collision and
+  feedback immediately when ready; ready handles actors initialized before tree.
+  Fixes stale downed-ally/corpse collision and presentation during paused restore,
+  and refreshes living state immediately after retry.
+- `game/app/game_root.gd`: guardian state receives durable defeat health before
+  initialize; paused restored guardian is immediately nonblocking/flattened.
+  No session/save/quest/party authority or persistent field changes.
+- `game/tests/map_save_checks.gd` + UID: historical-save matrix, separate-process
+  writer/reader, owner bindings, safe party arrivals, load locking/rollback,
+  backup/future refusal,24 scene swaps, once-only replays and five retry cases.
+- `game/tests/fixtures/map_saves/`: four byte-exact P013/P014 pre-map gameplay saves,
+  one labeled synthetic Tollworks-start/downed-ally variant; PROVENANCE.json hashes.
+  `map_save_ally_blocked.tscn` and `map_save_retry_failure.tscn`: isolated fixtures.
+- `game/tests/companion_checks.gd`: original P009 obstacle coordinates now use
+  detached compact Alderwake definition. Assertions and original room retained;
+  M010/M017 cover new-map navigation/restore.
+- `docs/evidence/M017/`: exact logs/results/reports, launch/bridge/audit scripts,
+  three process launches/exits,14 request/response pairs and14 rendered PNGs,
+  two actual GUI saved envelopes and acceptance mapping. Migration CHECKLIST/state.
+
+Parent scope/ownership and CONTRACT require no change. Source data, art, terrain,
+physics footprints, nav policy, stable IDs, normal save and previous evidence fixed.
 
 ## Verification
 
-Exact commands/args in M016 VALIDATION.md/final-check-results.json. Both engine
-paths verified; console4.7.2.stable.mono.official.ed1daf0bf. Checks isolate APPDATA/
-LOCALAPPDATA under builds/m016-check-data and m016-check-local-data. Ordinary tour
-uses m016-user-data/m016-local-data with --save-slot=m016-final; normal save untouched.
+Exact argv and environment in M017 VALIDATION.md/final-results/process-results/
+launch JSONs. Supplied Godot console4.7.2.stable.mono.official.ed1daf0bf. Python
+C:/Users/aldoc/.local/share/blender-skills/.venv/Scripts/python.exe -B.
 
-- Python -B tools/map_migration/extract_layout.py --check exit0.
-- --headless --editor --path game --import --quit exit0,existing missing .NET
-  SDK10.0.9 diagnostic; no new script/asset error/install.
-- --headless --path game --script res://tests/{map_camera_checks,
-  movement_camera_checks,interaction_dialogue_checks,combat_checks,
-  map_activation_checks,application_smoke}.gd:all final PASS0. Braces summarize
-  script list, not literal command. Latest camera rerun0.
--330 samples:16 ramps+7 landmarks,2 projections,zoom0.8/1/1.15;
-  max0.000007691208m<=0.15m;18 intended targets hidden by nearer terrain correctly
-  select nearest visible triangle. Old plane max1.175598m. Two cliff-side pointers
-  now null. Marker/horizontal facing/attacks/stable camera/modal/focus checks pass.
-- --path game --script res://tests/map_tree_art_checks.gd:actual Compatibility
-  renderer PASS0:395 trees,21 variants,106 batches,28,298 triangles. Headless
-  dummy renderer intentionally refused1, historical failed log retained.
-- Ordinary10-site camera tour:Maris,entry ramp,Moonwell,ford/bridge both banks,
-  Tollworks,closed exit,dense forest.633 movement holds/73.097s requested;
-  106 unpaused views,100/100 HP,same two wrappers,179 repaths,zero catch-ups.
-  Accepted batches start/end focused/paused; normal F10 quit exact0. This tour
-  finds canopy/hidden-base faults; those pre-fix views are rejected for final pass.
-- --path game --script res://tests/map_camera_render.gd:60 final static views+
-  six recorded moving-pose replays,exit0/zero runtime or shader errors. Both
-  projections/all zooms. Final sheets/full-size images inspected; dense party
-  now visible, hero inspection-guide pixels753–1763 versus pre-fix perspective0–1.
-  Synthetic replay proves visual repair, not ordinary walking/quest/save flow.
-- Preservation audit:pinned layout/report/manifest and GLB bytes unchanged;
-  mapping/save codec content unchanged with checkout line endings. Historical
-  M012/M015 reports restored to Git bytes. git diff --check/final review0.
+- Final import0; known missing .NET SDK10.0.9 editor diagnostic remains, no new
+  script/asset error. Pinned extractor --check0 and preservation/GUI audit0.
+- `map_save_checks.gd -- --phase=write/read/checks`: final PASS0 each, distinct PIDs.
+  Five fixtures: fresh town/lead town/completed return/Tollworks vessel plus
+  synthetic Tollworks-start with hero37/ally0. Full envelope equality; schema4
+  needs no migration, Load leaves disk unchanged. Party at anchor/+1mX; safe floor/
+  capsule, owner binding, paused actor/corpse presentation/collision verified.
+- Four failed loads restore original session/room/positions/region, preserve
+  progress/health, release locks and remain paused. Companion-only obstruction
+  explicitly rejected. Concurrent Save/Load/Resume blocked during restore.
+- Two warm-ups plus ten round trips:24 swaps, old scene weakrefs null and regions
+  absent; one world/region and same two wrappers. All completed quest/reaction/
+  upgrade replays leave facts unchanged; no guardian respawn or duplicate reward.
+- Four successful synthetic death retries cover all production anchors, both100HP;
+  failed navigation retry retains hero0/ally13/original room and positions, no heal.
+  One expected rejection ERROR line is labeled in validation; checks PASS0.
+- Final save_checks/combat_checks/companion_checks/recovery_presentation_checks/
+  application_smoke PASS0. Existing malformed/newer-save, backup, IO/size, legacy
+  party migration, unsafe restore and actor/service regressions retained.
+- Three rendered current-code GUI processes, all normal F10 exits0 and zero
+  ERROR/SCRIPT ERROR runtime lines. Historical GUI Load -> ordinary WASD/E into
+  Tollworks -> GUI Save/quit -> new-process GUI Load -> ordinary return -> GUI
+  Save/quit -> new-process town GUI Load/resumed hero+ally. No bridge mutations.
+  All saved health/progress/trust/upgrades/time restored exactly,75/75HP, strike40,
+  trust1, six effects once, specialist restored.14 actual960x640 captures, core
+  startup/restore/gameplay/pause views inspected. Actual Compatibility/OpenGL3.3,
+  RTX4070 Laptop/NVIDIA581.29. No performance or native-release claim.
+- GUI APPDATA/LOCALAPPDATA redirected to builds/m017-windowed-data/local-data,
+  slot m017-gui. Headless checks use m017-check/regression directories and isolated
+  m017/PID-scoped slot names. Normal user save never opened.
+- Final Git review and git diff --check0; prior files/evidence unchanged.
 
-## Failures and remaining limits
+## Retained failures and limits
 
-Initial hidden-target fixture corrected with independent triangles; measured
-concave seam misses repaired. Ordinary buried-base pointers now negative tests;
-dense perspective canopy repaired. Initial shader builtin-scope error/dummy-tree
-renderer refusal/test-edit parse failures retained separately, not accepted.
-Windows camera-label decoding repaired with explicit UTF-8. One actual focus-loss
-batch stopped paused, observed game refocused then ordinary tour resumed; no gate
-bypass. Early baseline normal quit exact exit UNVERIFIED(lost handle), accepted
-main tour/final survey exact0. Git ownership solved command-scoped only. Preservation
-audit accounts for Git LF versus untouched CRLF text checkout. Failed evidence kept.
+Initial test property typo caused stalled script/interruption; numeric JSON type
+comparison/output-path errors and actual stale paused collision then failed1.
+Partial CRLF edit failed writer1 before final fix. Old compact companion positions
+failed1 before detached fixture repair; final0. Launcher encoding refused once
+before any game launch, then UTF-8 runs0. Failed logs/reports retained and separated
+from accepted evidence; no checks silently reclassified. Git ownership restriction
+handled with command-scoped safe.directory only when necessary.
 
-M016 complete; stable IDs/once-only/session/party/service/save authority unchanged.
-M017 comprehensive historical saves/new-process load/retry next. M018 must measure
-new shader/ray costs; no performance/minimum-PC claim. M019 native larger-map
-release pending; P014 compact completion retained. No next item started.
+Historical save seeding and direct headless placements/death/action retries are
+explicit synthetic setup. GUI evidence proves restoration and ordinary continuation,
+not a fresh quest journey or hardware/native release. M018 frame/memory/loading
+benchmarks and M019 packaged/native larger-map gate remain open. Parent P014 compact
+completion preserved. No unresolved M017 criterion; no next item started.

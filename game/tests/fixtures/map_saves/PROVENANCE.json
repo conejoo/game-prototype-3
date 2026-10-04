@@ -1,0 +1,32 @@
+[
+  {
+    "fixture": "town-fresh",
+    "origin": "docs/evidence/P014/release-fresh-save.json",
+    "sha256": "e6435f596cc456483469ddde922c85316477ecdb54277fc79ade8a4591aaf8d9",
+    "kind": "byte-exact pre-map schema-4 gameplay save"
+  },
+  {
+    "fixture": "town-lead",
+    "origin": "docs/evidence/P013/repeat-lead-save.json",
+    "sha256": "a239beffaab805f6fcb297ded8b48c8707751698cf57541dc111c96c25f1938b",
+    "kind": "byte-exact pre-map schema-4 gameplay save"
+  },
+  {
+    "fixture": "town-complete",
+    "origin": "docs/evidence/P014/native-holds/release-completed-save.json",
+    "sha256": "01f61ffce23d52f38580b87b18b4b146d98f72b794dad46b3a2cfb33f2b7ddae",
+    "kind": "byte-exact pre-map schema-4 gameplay save"
+  },
+  {
+    "fixture": "tollworks-vessel",
+    "origin": "docs/evidence/P013/repeat-vessel-save.json",
+    "sha256": "16c7547703565f45814ba379b18a37471868c909f85edb3d584d538a8cee8c91",
+    "kind": "byte-exact pre-map schema-4 gameplay save"
+  },
+  {
+    "fixture": "tollworks-start-downed",
+    "origin": "town-complete",
+    "kind": "synthetic legacy anchor / unequal health / downed ally; only location, spawn and health changed",
+    "sha256": "4e9c984560c19ca9003c62691bd120c90568d74dd6a619ea93dfc0d6e498eecb"
+  }
+]

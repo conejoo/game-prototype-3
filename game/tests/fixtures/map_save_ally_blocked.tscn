@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://tests/fixtures/compact_alderwake.tscn" id="1"]
+[sub_resource type="BoxShape3D" id="Shape"]
+size = Vector3(0.5, 1.6, 0.5)
+[node name="AllyBlocked" instance=ExtResource("1")]
+location_id = "m017-ally-blocked"
+[node name="AllyOnlyObstacle" type="StaticBody3D" parent="."]
+position = Vector3(1, 0.8, 0)
+collision_layer = 1
+collision_mask = 0
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AllyOnlyObstacle"]
+shape = SubResource("Shape")

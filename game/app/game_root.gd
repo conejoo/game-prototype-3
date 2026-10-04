@@ -466,12 +466,13 @@ func _configure_guardian() -> void:
 	guardian.global_position = Vector3(0, 0, 1.8)
 	guardian.team = "guardian"
 	guardian.move_speed = 2.0
-	guardian.initialize(ActorState.new("tollworks-guardian-01", catalog.get_actor("prototype-guardian")))
+	var guardian_state: ActorState = ActorState.new("tollworks-guardian-01", catalog.get_actor("prototype-guardian"))
+	if "tollworks-guardian-cleared" in session.completed_effect_ids:
+		guardian_state.health = 0
+	guardian.initialize(guardian_state)
 	guardian.combat.windup = 0.75
 	guardian.combat.recovery = 0.85
 	guardian.combat.reach = 2.0
-	if "tollworks-guardian-cleared" in session.completed_effect_ids:
-		guardian.state.health = 0
 	guardian.combat_targets = [player_placeholder]
 	player_placeholder.combat_targets = [guardian]
 	guardian.defeated.connect(_on_guardian_defeated)

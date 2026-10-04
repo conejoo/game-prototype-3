@@ -29,12 +29,17 @@ signal defeated(actor: ActorPlaceholder)
 func _ready() -> void:
 	if combat_marker != null:
 		combat_marker.material_override = combat_marker.material_override.duplicate()
+	if state != null:
+		_update_feedback()
 
 
 func initialize(actor_state: ActorState) -> void:
 	state = actor_state
 	combat.cancel()
 	_death_reported = false
+	# Restore/retry may occur while paused; collision and art must match now.
+	if is_node_ready():
+		_update_feedback()
 
 
 func configure_controls(rig: PrototypeCameraRig, interface: PrototypeUI) -> void:

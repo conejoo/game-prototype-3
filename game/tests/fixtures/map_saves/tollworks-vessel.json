@@ -1,0 +1,50 @@
+{
+	"actors": [
+		{
+			"definition_id": "prototype-hero",
+			"health": 100,
+			"instance_id": "party-player"
+		},
+		{
+			"definition_id": "prototype-companion",
+			"health": 100,
+			"instance_id": "party-companion"
+		}
+	],
+	"completed_effect_ids": [
+		"maris-lead-accepted",
+		"maris-expedition-started",
+		"tollworks-guardian-cleared",
+		"maris-return-path-open"
+	],
+	"content_version": 1,
+	"elapsed_play_seconds": 63.0277383333518,
+	"location_id": "prototype-tollworks",
+	"party_member_ids": [
+		"party-player",
+		"party-companion"
+	],
+	"player_instance_id": "party-player",
+	"progression": {
+		"upgrade_ids": [
+			"prototype-deliberate-strike"
+		]
+	},
+	"quests": {
+		"prototype-maris-recovery": [
+			"maris-lead",
+			"maris-expedition",
+			"maris-guardian",
+			"maris-vessel"
+		]
+	},
+	"relationship": {
+		"companion_id": "prototype-companion",
+		"reaction_ids": [
+			"prototype-orders"
+		],
+		"trust": -1
+	},
+	"schema_version": 4,
+	"spawn_id": "tollworks-from-alderwake"
+}

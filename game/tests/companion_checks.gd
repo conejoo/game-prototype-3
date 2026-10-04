@@ -11,6 +11,17 @@ func _initialize() -> void:
 
 func _run() -> void:
 	game = load("res://app/game_root.tscn").instantiate()
+	# The P009 obstacle coordinates belong to the compact room, not the M015 map.
+	# M010/M017 exercise production exterior navigation and save placement.
+	var manifest: ContentManifest = ContentManifest.new()
+	for definition: ContentDefinition in game.content_manifest.definitions:
+		if definition.stable_id == "prototype-alderwake":
+			var compact: LocationDefinition = definition.duplicate(true) as LocationDefinition
+			compact.scene_path = "res://tests/fixtures/compact_alderwake.tscn"
+			manifest.definitions.append(compact)
+		else:
+			manifest.definitions.append(definition)
+	game.content_manifest = manifest
 	root.add_child(game)
 	await game.world_host.transition_finished
 	var ally: ActorPlaceholder = game.companion

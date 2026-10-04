@@ -1,0 +1,54 @@
+{
+  "actors": [
+    {
+      "definition_id": "prototype-hero",
+      "health": 37,
+      "instance_id": "party-player"
+    },
+    {
+      "definition_id": "prototype-companion",
+      "health": 0,
+      "instance_id": "party-companion"
+    }
+  ],
+  "completed_effect_ids": [
+    "maris-lead-accepted",
+    "maris-expedition-started",
+    "tollworks-guardian-cleared",
+    "maris-return-path-open",
+    "maris-returned-to-town",
+    "maris-reconnected"
+  ],
+  "content_version": 1,
+  "elapsed_play_seconds": 708.729573002131,
+  "location_id": "prototype-tollworks",
+  "party_member_ids": [
+    "party-player",
+    "party-companion"
+  ],
+  "player_instance_id": "party-player",
+  "progression": {
+    "upgrade_ids": [
+      "prototype-deliberate-strike"
+    ]
+  },
+  "quests": {
+    "prototype-maris-recovery": [
+      "maris-lead",
+      "maris-expedition",
+      "maris-guardian",
+      "maris-vessel",
+      "maris-return",
+      "maris-reconnection"
+    ]
+  },
+  "relationship": {
+    "companion_id": "prototype-companion",
+    "reaction_ids": [
+      "prototype-shared-plan"
+    ],
+    "trust": 1
+  },
+  "schema_version": 4,
+  "spawn_id": "tollworks-start"
+}
