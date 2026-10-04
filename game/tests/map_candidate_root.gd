@@ -17,15 +17,15 @@ func _ready() -> void:
 		actor.floor_snap_length = 0.04
 		actor.floor_contact_height = _candidate_floor_height.bind(actor)
 	ui.get_node("Screen/Header/Margin/Row/Titles/Title").text = "ALDERWAKE · TERRAIN CANDIDATE"
-	ui.location_label.text = "M010 isolated preview · Companion recovery · No active portals"
+	ui.location_label.text = "M011 isolated landscape · No active portals"
 	ui.journal_button.visible = false
-	print("M010 candidate ready: ", JSON.stringify(world_host.current_location.preview_report))
+	print("M011 candidate ready: ", JSON.stringify(world_host.current_location.preview_report))
 	if "--candidate-paused" in OS.get_cmdline_user_args():
 		_set_paused(true)
 
 
 func _refresh_journal() -> void:
-	ui.show_objective("M010 · Companion follow and safe recovery · Cliffs and water blocked.\nAll doors inactive · Maris pad reserved · East trail closed")
+	ui.show_objective("M011 · Alderwake landscape · Cliffs and water blocked.\nAll doors inactive · Maris pad reserved · East trail closed")
 
 
 func _refresh_interaction() -> void:

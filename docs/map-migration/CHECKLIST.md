@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M010 verified complete; M011–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M011 verified complete; M012–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -113,7 +113,7 @@ acceptance again against the resulting map build.
   safely recovers from genuine stalls/incapacitation, and cannot teleport across
   blocked river/cliff or combat. Pause/dialogue/focus/travel still suspend AI.
 
-## [ ] M011 Landscape appearance
+## [x] M011 Landscape appearance
 
 - Replace terrain/water preview with coherent grass, paths, sand, banks and
   restrained river motion. Use source art as reference; record reused assets.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M010 complete. Append one concise record per item:
+M001–M011 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -295,3 +295,11 @@ Checks and exact exit results: final map/compact companion/application/movement-
 Evidence: docs/evidence/M010/VALIDATION.md,companion report/snapshot hashes,exact exits,accepted and failed logs,ordinary-input commands/raw responses/captures/rendered index/four contact sheets.
 Decisions or retained limits: direct corridor required even if distant crossing connects banks;unsafe ally stays stalled/down until safe placement. Nav-floor0.35m tolerance preserves compact0.25m/candidate0.05m offsets,changes no geometry. Northern terrace internal ramp synthetic only. Schema4/content1,pinned snapshot,normal save/production IDs/selection unchanged. No AI-all16-lanes/art/activation/native map release claim;P014 compact completion preserved,M019 owns native map gate. Early fixture/tolerance/sync failures retained/repaired.No next item started.
 Next eligible task: M011 landscape appearance only.
+
+M011 — completed 2026-10-03
+Result: world-space meadow/path/sand/cobble materials, exact masked wet banks and restrained fragment-only teal river flow; six registered terrain batches/default grass preserved, candidate isolated.
+Files: landscape_materials.gd, landscape.gdshader, river.gdshader and UIDs; terrain_preview.gd/candidate root; map_landscape_checks.gd/UID; CANDIDATE/CHECKLIST/CURRENT_STATE; docs/evidence/M011/.
+Checks and exact exit results: extractor/import/final import/landscape/candidate/water/crossing/application/companion/audit/diff check PASS0; known SDK/certificate diagnostics retained.26,600 height-registered quads,47,040 default/semantic samples,8,598 exact water samples;94 crossing walk/dodge lanes/four rail slides.74 retained captures/36 inspected clear views/five sheets;fresh ordinary town/Moonwell/ford both ways/bridge/Tollworks/closed-exit tour,HP100/100,138 repaths,zero catch-ups;two normal F10 exits0,no saves.
+Evidence: docs/evidence/M011/VALIDATION.md,landscape report,source-art reference/hash sheet,snapshot hashes,rendered-index/contact sheets,exact input JSON/raw responses/runtime/driver logs/copied PNGs.
+Decisions or retained limits: six source swatches reference only,zero source images/runtime assets copied;3D shader adaptation/generic raw ground flecks explicit. Water flow colors only,exact fixed union/no displacement,continues cosmetically under pause. Physics/nav/IDs/schema4/content1/pinned snapshot/normal compact selection unchanged;prop/landmark art M012-M014,activation M015,aim/performance/native gates later.P014 compact completion preserved.No next item started.
+Next eligible task: M012 reusable tree art kit only.

@@ -1,4 +1,4 @@
-# M003–M009 isolated physical exterior and navigation
+# M003–M011 isolated exterior, navigation and landscape
 
 From the target repository root:
 
@@ -14,11 +14,25 @@ $godotExe = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_m
 & $godotExe --headless --path game --script res://tests/map_forest_checks.gd
 & $godotExe --headless --path game --script res://tests/map_elevation_checks.gd
 & $godotExe --headless --path game --script res://tests/map_navigation_checks.gd
+& $godotExe --headless --path game --script res://tests/map_landscape_checks.gd
 ```
 
 M009 navigation/forest/town/water/candidate checks pass. The historical M008
 Moonwell corner failure remains in its evidence; M009 repairs it with exact
 agent-centre clipping. See [M009 acceptance and commands](../../docs/evidence/M009/VALIDATION.md).
+
+M011 replaces the neutral terrain/water materials with world-space meadow,
+warm paths, sand, irregular cobbles and restrained teal river flow. One nearest
+294x160 appearance mask preserves source half-metre paint registration and exact
+effective water edges, including approved dock cutouts. Six terrain batches,
+physical surfaces, navigation and wrapper IDs remain unchanged. River animation
+changes fragment color only; no displaced vertices, wet decks or transparency.
+Cosmetic flow continues during pause while gameplay time remains frozen.
+Six source swatches inform the palette; zero source images copied into runtime.
+Raw diagnostic dots become generic matte ground flecks, with original 183 raw
+IDs/positions retained. Tree/building/landmark art remains M012-M014. See
+[M011 validation](../../docs/evidence/M011/VALIDATION.md) for exact surface/mask
+checks and inspected ordinary-input town/ramps/forest/crossing/gate captures.
 
 Normal main scene and catalog remain unchanged. The alternate root extends the
 existing root and appends one location to a detached manifest. Session/services,
@@ -32,6 +46,9 @@ activation and quest interactions remain M015. The journal is hidden in this har
 Only normalized `res://content/maps/alderwake_layout.json` is read at runtime.
 Snapshot `alderwake-f4630f9-m002` stays authoritative. Run extractor `--check`
 before further migration work; do not refresh pinned source inputs automatically.
+
+The construction history below describes M003-M010 neutral materials; M011's
+materials above now replace that appearance. Underlying geometry stays identical.
 
 Preview resolves each visible tile layer separately, preserving layer order, defaults,
 explicit null clears, layer origins and 0.5m/1m grids. Center/connected paints use
@@ -146,7 +163,7 @@ Maris has a reserved pad only; no
 counter/service/actor exists in the candidate before M015. Normal game remains compact.
 
 For rendered evidence, use the existing opt-in bridge and `send_playtest.ps1` from
-[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m010-*` directory and
+[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m011-*` directory and
 named test slot. Its commands inject ordinary viewport input, with no teleport
 or session mutation. Use short resume/actions/pause batches and confirm pause.
 Headless checks label their synthetic actor placements/physics stepping explicitly.
@@ -163,4 +180,5 @@ safe catch-up after removal, shared-API incapacitation/recovery and rejections.
 Northern isolated terrace is a direct-placement fixture only. Rendered acceptance
 uses ordinary WASD from fresh town through Moonwell and both crossings both ways;
 zero catch-ups,132 repaths,64 retained captures and normal F10 exit0. Evidence:
-`docs/evidence/M010/VALIDATION.md`. M011 appearance is next; no art/activation/export.
+`docs/evidence/M010/VALIDATION.md`. M011 landscape complete; M012 tree kit next.
+No production activation/export/native map release claim.

@@ -1,6 +1,6 @@
 class_name AlderwakeTerrainPreview
 extends PrototypeLocation
-## Isolated source-derived graybox with independent physical elevation/props.
+## Isolated source-derived landscape with independent physical elevation/props.
 
 const LAYOUT_PATH: String = "res://content/maps/alderwake_layout.json"
 const COLORS: Dictionary[String, Color] = {
@@ -24,6 +24,7 @@ var forest: AlderwakeForestPopulation
 var elevation: AlderwakeElevationSurfaces
 var construction_usec: int = 0
 var navigation_report: Dictionary = {}
+var landscape: AlderwakeLandscapeMaterials
 
 
 func _init() -> void:
@@ -42,6 +43,12 @@ func _init() -> void:
 	elevation = AlderwakeElevationSurfaces.new()
 	elevation.build(layout)
 	add_child(elevation)
+	water_blockers = AlderwakeWaterBlockers.new()
+	water_blockers.build(layout, bounds, AlderwakeDockSurfaces.cutouts())
+	add_child(water_blockers)
+	landscape = AlderwakeLandscapeMaterials.new()
+	landscape.build(layout, water_blockers, bounds)
+	water_blockers.get_node("WaterVisuals/AuthoredWaterPreview").material_override = landscape.river()
 	var visuals: Node3D = Node3D.new()
 	visuals.name = "TerrainVisuals"
 	add_child(visuals)
@@ -63,9 +70,6 @@ func _init() -> void:
 	_add_box("BoundaryEast", Vector3(bounds.end.x + 0.2, 1.5, center.y), Vector3(0.4, 3.0, bounds.size.y + 0.8))
 	_add_box("BoundaryNorth", Vector3(center.x, 1.5, bounds.position.y - 0.2), Vector3(bounds.size.x + 0.8, 3.0, 0.4))
 	_add_box("BoundarySouth", Vector3(center.x, 1.5, bounds.end.y + 0.2), Vector3(bounds.size.x + 0.8, 3.0, 0.4))
-	water_blockers = AlderwakeWaterBlockers.new()
-	water_blockers.build(layout, bounds, AlderwakeDockSurfaces.cutouts())
-	add_child(water_blockers)
 	crossings = AlderwakeCrossings.new()
 	crossings.build(layout)
 	add_child(crossings)
@@ -90,7 +94,8 @@ func _init() -> void:
 	preview_report["town"] = {"props": town.prop_records.size(), "authored_colliders": town.collider_records.size(), "blocking_footprints": town.footprints.size(), "inert_portal_pads": town.portal_pads.size()}
 	preview_report["forest"] = {"props": forest.prop_records.size(), "species": forest.species_counts, "sizes": forest.size_counts, "blocking_footprints": forest.footprints.size(), "markers": forest.marker_records.size(), "inert_data_records": forest.inert_records.size()}
 	preview_report["elevation"] = {"cells": elevation.levels.size(), "ramps": elevation.slopes.size(), "cliffs": elevation.cliffs.size(), "height_per_level_m": 0.25}
-	preview_report["limits"] = "M009 physical exterior navigation; final art M011-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
+	preview_report["landscape"] = {"semantic_mask_size": [294, 160], "world_space_materials": true, "water_vertex_motion": false, "runtime_source_images_reused": 0}
+	preview_report["limits"] = "M011 landscape; prop/landmark art M012-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
 	construction_usec = Time.get_ticks_usec() - started
 
 
@@ -163,10 +168,7 @@ func _build_layer(parent: Node3D, layer_id: String, rectangles: Array, height: f
 			surface.set_normal(Vector3.UP)
 			surface.add_vertex(vertex)
 	for key: String in batches:
-		var material: StandardMaterial3D = StandardMaterial3D.new()
-		material.albedo_color = COLORS[key]
-		material.roughness = 1.0
-		material.cull_mode = BaseMaterial3D.CULL_DISABLED
+		var material: ShaderMaterial = landscape.terrain(key)
 		var instance: MeshInstance3D = MeshInstance3D.new()
 		instance.name = layer_id + "--" + key
 		instance.mesh = (batches[key] as SurfaceTool).commit()

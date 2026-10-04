@@ -1,126 +1,128 @@
 # Current map migration state
 
-Updated2026-10-03,America/Vancouver. M001–M010 verified complete.
+Updated 2026-10-03, America/Vancouver. M001–M011 verified complete.
 
 ## Selection and next action
 
-- Active item:none. M010 companion river/ramp recovery complete.
-- Next eligible:M011 landscape appearance only. Replace diagnostic terrain/water
-  with coherent grass,paths,sand,banks and restrained river motion;retain source
-  registration,default grass and all gameplay geometry/ownership.
-- Acceptance:[M010 validation](../evidence/M010/VALIDATION.md). No M010 blocker.
-- Candidate remains isolated/test-only;normal compact Alderwake until M015.
-  Parent P001–P014 compact build complete;M019 must verify native map build.
-  No M011 implementation,export/native map release claim.
+- Active item: none. M011 landscape appearance complete.
+- Next eligible: M012 reusable tree art kit only. Read applicable Blender skills,
+  inspect live scene, preserve user work; deliberately map all nine source species
+  and three size IDs without changing trunk wrappers, source feet or collisions.
+  Save .blend under art/source, GLB under game/assets; verify imports, textures,
+  dense-forest and crossing views. Do not start M013 in that session.
+- M011 acceptance: [validation](../evidence/M011/VALIDATION.md). No M011 blocker.
+- Candidate remains isolated/test-only; normal compact Alderwake until M015.
+  Parent P001–P014 compact build complete; M019 must verify native map build.
 
 ## Preparation and authority
 
-Read workspace AGENTS(no nested),full migration prompt,parent architecture/state,
-migration investigation/checklist/state/contract,pinned inputs/layout/provenance,
-M009 evidence and actual controller/actor/root/party/WorldHost/camera/bridge/tests.
-Clean Git at38adac28774c2d936dcaf88e2dc19a99fdac2a58;HEAD unchanged. M010 marked
-in progress before edits;exactly one item. Caveman and Returning Fair gameplay-
-testing skills used. No subagents,source writes/generators/refresh,installation,
-Blender,commit,push,publication or export. P014 and historical M evidence preserved.
+Read workspace AGENTS (no nested), full migration prompt, parent architecture/state,
+migration investigation/checklist/state/contract, target-local layout/provenance,
+M010 evidence and actual terrain/water/elevation/crossing/root/camera/bridge/tests.
+Git clean at 84f814660ee8fe48756336f71b6e8129ac852ee6; HEAD unchanged. M011 marked
+in progress before work; exactly one item. Caveman and Returning Fair gameplay-
+testing skills used. No subagents, source writes/generators/refresh, installation,
+Blender, commit, push, publication or export. P014 and historical M evidence intact.
 
-Snapshot alderwake-f4630f9-m002/source commit
-f4630f9966d6637ef6579cd87623ea354758191c. Five pinned inputs unchanged;runtime
-uses target-local normalized layout. [Hashes](../evidence/M010/snapshot-hashes.json).
+Snapshot alderwake-f4630f9-m002; source commit
+f4630f9966d6637ef6579cd87623ea354758191c. Five pinned inputs unchanged; runtime
+reads only normalized target layout. [Hashes](../evidence/M011/snapshot-hashes.json).
 Map SHA256 af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f;
 catalog59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2;
 layout7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be;
 report66b17789874f382f9e3c3ba6f95927dca8c90d24e2328bdabb6771480360b0e9.
-Schema4/content1,production location/spawn/actor/quest/effect IDs unchanged.
+Schema4/content1, production location/spawn/actor/quest/effect IDs unchanged.
 
 ## Implementation and changed files
 
-- companion_controller.gd:existing1.6m follow stop now needs height difference
-  <0.1m and low world LOS;nearby hero across cliff no longer stops ramp repathing.
-  Safe placement enforces enabled/living hero/no threat/nonzero nav iteration,
-  complete nav endpoints,actual capsule/floor corridors along path and directly
-  from actor to landing. Floor rays/samples<=0.1m plus sweeps reject stale/low/thin
-  blockers. Direct corridor checked before long path query;distant legal bridge
-  does not authorize teleport through river/cliff/trunk. Placement clears old
-  input/velocity. Normal speeds,repath/stall/separation/heal timers preserved.
-- map_companion_checks.gd/UID:14 physically stepped AI journeys,19,808 hero/ally
-  samples,true low-curb stall/no unsafe jump then safe catch-up after removal,
-  shared-API damage/3s recovery,five rejections,modal/focus/travel suspension,
-  same state/two wrappers. Synthetic setup/leader2.8m/s labeled;rendered separate.
-- companion_checks.gd:full-barrier fixture now rejects unsafe teleport;positive
-  separated catch-up uses clear northern room lane. Existing recovery/combat/
-  defeat/save/migrations/retry/identity assertions retained and pass.
-- map_candidate_root.gd:M010 labels only. CONTRACT/CHECKLIST/this state,CANDIDATE
-  and parent ARCHITECTURE document stricter shared safety;no authority/schema/
-  geography/production selection change.
-- docs/evidence/M010/:VALIDATION,accepted/failed logs,exact exits,companion report,
-  hash/audit script,rendered index/four contact sheets,windowed driver/commands/
-  raw responses/runtime and64 copied PNGs.
+- landscape_materials.gd/UID: appearance-only nearest 294x160 semantic texture
+  resolves pinned terrain/default/clears plus effective water occupancy; shared
+  world-space palette/material factories. Texture never used by physics/nav.
+- landscape.gdshader/UID: matte grass variation, warm paths, sand, irregular
+  cobbles, narrow dry grass shoulders, shoreline patches and generic ground
+  flecks. Original 183 raw IDs/positions remain; no individual 2D sprite-fidelity
+  claim for flowers/reeds/rocks/driftwood/lilies. Six source swatches inspected as
+  reference, hashes recorded; zero source images reused at runtime.
+- river.gdshader/UID: opaque teal, shallow edge and wet earth inside exact union;
+  slow fragment-only flow. No vertex movement, transparency/depth reads, new
+  collision or geometry. Cosmetic shader TIME continues under pause.
+- terrain_preview.gd: build effective water before appearance mask and assign
+  six terrain materials/one water material; original triangles, layer offsets,
+  source grids, physical risers/heights, floors, nav inputs/settings/IDs intact.
+- map_candidate_root.gd: M011 labels only. Normal scene/catalog/save unchanged.
+- map_landscape_checks.gd/UID: exhaustive actual mesh/default/mask/water/deck
+  registration and height checks, plus two query routes for input-tour planning.
+- tools/map_migration/CANDIDATE.md, CHECKLIST, this state; no ownership/contract
+  design change needing parent ARCHITECTURE or CONTRACT edits.
+- docs/evidence/M011/: VALIDATION, logs/exits, landscape report, source-art
+  reference/hash sheet, snapshot hashes, audit script/log, rendered-index,
+  five contact sheets, exact ordinary-input commands/raw responses, runtime/
+  driver logs and 74 copied PNGs. Prior evidence files untouched.
 
 ## Exact checks and results
 
-Commands in VALIDATION.md from target root. Both supplied engine paths exist;
-4.7.2.stable.mono.official.ed1daf0bf. Process-local APPDATA/LOCALAPPDATA isolate
-builds/m010-user-data,m010-local-data and compact counterparts. Normal save
-untouched;fresh named playtest-m010-follow-a.json absent.
+Full commands in VALIDATION.md, run from target root. Both supplied engine paths
+exist; engine4.7.2.stable.mono.official.ed1daf0bf. Process-local APPDATA/LOCALAPPDATA
+isolate builds/m011-user-data,m011-local-data and m011-check counterparts. Both
+fresh named playtest-m011-landscape-a.json / playtest-m011-town-b.json absent.
 
-- Pinned extractor --check:PASS/exit0;all inputs/layout/report unchanged.
-- Final import:exit0,new tracked test UID;known missing.NET SDK10.0.9/certificate
-  diagnostics retained. No clean-import claim.
-- map_companion_checks:PASS0;14 routes,19,808 samples,max grounding error
-  0.00000025332m;gaps<1.9m,nonzero repaths,zero follow catch-ups. Four crossing
-  routes,Moonwell round trip,western rise/upper Moonwood/western side rise round
-  trips plus isolated northern terrace internal up/down. Curb blocks360 fixed
-  ticks/stuck>=2.5s,no unsafe teleport;one catch-up after removal. Downed actor
-  remains0 before3s then heals100 once on same state. River/cliff healthy/downed
-  placement rejected;disconnected two-point partial nav path rejected;stale low
-  barrier/combat rejected. Pause/dialogue/focus/journal freeze240 explicitly
-  invoked AI ticks each;actual candidate/Tollworks round trip resets AI/identity.
-- Final companion/application_smoke/movement-camera/location-travel/interaction-
-  dialogue checks:PASS0. Compact real combat/post-defeat recovery/once-only
-  effects/save/migrations/retry and normal controls/party ownership retained.
-- report_m010.py:PASS0;audit eight import/extractor/Godot checks,hashes,recovery/
-  gates,64 captures/31 moving,seven ordinary-input routes,normal quit0/no save.
-- Final runtime/check logs:no SCRIPT ERROR,query-before-sync or nav mesh errors;
-  known certificate-store diagnostic only. git diff --check/final review exit0.
+- reference_art.py: exit0; six read-only source swatches inspected. Source paths
+  come from pinned registry; current image hashes reference only, not refreshed
+  snapshot. No source runtime image copies or dependencies added.
+- Pinned extractor --check: PASS/exit0, input/layout/report hashes unchanged.
+- Initial/final imports: exit0, tracked new GDScript/shader UIDs. Known missing
+  .NET SDK10.0.9/certificate diagnostics retained; no clean-import claim.
+- Final map_landscape_checks: PASS0; 26,600 terrain quads, each vertex within
+  0.0001m of physical cell height plus unchanged lift; exactly one grass coverage
+  per 47,040 half-metre samples,47,040 independent semantic probes,8,598 exact
+  rendered water cells. No water triangles over bridge/ford/seven approved docks.
+  Two fresh navigation-query endpoints connect to Tollworks/closed exit.
+- map_candidate_checks,map_water_checks,map_crossing_checks,application_smoke,
+  companion_checks: PASS0. 11,760 floor rays, safe full-party pads, water negative
+  probes/edges/seams/gate/walk/dodge,94 bidirectional crossing lanes/four rail
+  slides/27,780 motion samples. Compact companion/combat/save/recovery unchanged.
+- audit_m011.py: PASS0; five focused exits, final landscape report, five snapshot
+  hashes/layout/report,74 retained captures/36 clear views,32 tour movement batches
+  plus one town movement batch; stationary camera/hero water motion crop; both
+  normal process exits0/no save. Every response starts/ends paused/focused and
+  play time matches previous after across inspection/helper gaps.
+- Runtime/check logs: no SCRIPT ERROR,shader compilation or nav errors; known
+  certificate-store diagnostic only. Final source/UID/diff/evidence review and
+  git diff --check exit0. Nothing committed.
 
-## Rendered evidence
+## Rendered observations
 
-Fresh m010-follow-a paused town start,Compatibility/OpenGL3.3,960x640,RTX4070
-Laptop/NVIDIA581.29,Windows11 build26200,Core Ultra9 185H(fresh registry/runtime).
-Ordinary viewport WASD only,no teleport/health/quest/save mutation. Seven routes:
-town->Moonwell->town,town->ford east,ford west,west-bank forest to bridge west,
-bridge east then west. Every31 movement batch starts/ends confirmed paused and
-focused. Before.play_seconds equals previous after.play_seconds across model/
-helper gaps;wall timing is not fixed physics. All31 moving views inspected via
-four contact sheets;full Moonwell/ford/bridge and initial/final pause views also
-inspected. Both actors readable through ramps,crossings and trunk detours.
+Fresh Compatibility/OpenGL3.3,960x640,RTX4070 Laptop/NVIDIA581.29; default overhead
+orthographic camera zoom1.00. Ordinary WASD only; no position/health/quest mutation.
+Tour: town->Moonwell->town,town->ford east,ford west,west-bank forest->bridge west,
+bridge east,Tollworks approach,closed exit. Second fresh process supplies stationary
+and moving town views. All36 clear views inspected through five contact sheets;
+full town/Moonwell/ford/bridge/gate frames and pause checkpoints inspected separately.
+Grass/cobbles/warm paths/sand/teal water/banks readable, party visible, no terrain
+cracks, water over crossing decks or visual collision disagreement seen. Authored
+brown risers deliberately retain cliff height edges; tree/building/gate grayboxes
+are still expected until their individual art items.
 
-Final hero(92.9230728,0,-0.4866859),ally(94.4977341,0,-0.3891202),time
-72.1158944545612s;HP100/100,132 repaths,zero catch-ups,empty quest/effects,two
-stable wrappers. Normal F10 exit0;no live game/helper. [Rendered index](../evidence/M010/rendered-index.json)
-retains hashes,observations,commands/responses and route endpoints. Synthetic
-recovery separate;no native-release/M018 benchmark claim.
+Stationary river frames2.144253999998199s apart with identical camera/hero feet:
+crop(600,175,800,195),mean RGB delta2.5729166666666665/255,max channel13/255.
+Fragment color changes subtly, exact mesh outline fixed. Cosmetic flow during
+pause does not affect simulation. Not an M018 frame-time/performance measurement.
 
-## Decisions, repairs and remaining limits
+Final tour hero(121.635177612305,0,-7.0754542350769),ally
+(120.200263977051,0,-6.48665809631348),time78.0782083333386s;HP100/100,138 repaths,
+zero catch-ups,two original wrappers,empty quest/effects. Both normal F10 exits0;
+no game/helper left running. [Rendered index](../evidence/M011/rendered-index.json)
+retains hashes, response references, observations and exact motion measurements.
 
-Connected nav alone insufficient:direct physical corridor also required. Ally
-can remain stalled/down until safe connected landing exists;never bypass an
-impassable obstacle to force recovery. Floor tolerance0.35m preserves compact
-0.25m Recast/candidate0.05m offsets;physical geometry/heights/climb unchanged.
-Northern1.5/1.75m terrace is authored isolated island;internal ramp synthetic,
-no invented main-exterior link. No claim AI walked all16 distinct ramp lanes;
-full networks/internal terrace meet M010,historical M008 hero geometry preserved.
+## Repairs and remaining limits
 
-Early failures retained/labeled in VALIDATION:read-only World3D map assignment,
-empty asynchronous island query/-1 access,overlong short-plateau ramp fixtures,
-wrong window focus signal,unsafe curb expectation,too-small compact nav-height
-tolerance,and preliminary query-before-sync diagnostic despite exit0. Repaired
-fixtures/lifetime/sync,full journeys/isolated terrace,APPLICATION focus signal,
-blocked-then-cleared stall,physical-ground tolerance and zero-iteration guard.
-Only final named checks/windowed evidence accepted;diagnostic flag/helper removed.
+Initial inline Python reference-sheet command failed shell quoting before source
+reads; standalone script fixed it. First audit assumed nested observation fields,
+failed KeyError; bridge uses flat step fields. Corrected audit passes, and movement
+count now includes batches010/011. No game/visual failure or weakened acceptance.
 
-M011–M014 art,M015 activation/quest route,M016 aiming/canopies,M017 saves,M018
-frame/memory,M019 native map release pending.468 props/455 footprints/102 authored
-colliders,472 heights/16 slopes/238 cliffs,approved docks/source snapshot/save
-and production IDs unchanged. Parent P014 compact completion preserved.
-Next session selects M011 only.
+M011 no blocker. M012 tree art next; M013 town art,M014 landmarks,M015 activation,
+M016 aiming/canopies,M017 saves,M018 performance and M019 native release pending.
+Source masks/heights/props/IDs/nav/approved docks/schema/normal save unchanged.
+Parent P014 compact completion preserved. No full source-sprite recreation,
+new tree/town/landmark kit, performance benchmark or packaged/native map claim.
