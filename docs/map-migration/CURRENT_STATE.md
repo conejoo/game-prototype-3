@@ -1,113 +1,113 @@
 # Current map migration state
 
-Updated 2026-10-03, America/Vancouver. M001–M017 verified complete.
+Updated 2026-10-04, America/Vancouver. M001–M018 verified complete.
 
 ## Selection and next action
 
-- Active item: none. M017 save/load/retry/scene compatibility complete.
-- Next eligible: M018 measured map performance only. Record actual machine,
-  renderer/settings and measure town/dense-forest/crossing frame/draw budgets,
-  memory after repeated swaps and navigation/load targets from CONTRACT.md.
-  Optimize measured rendering/navigation issues only; do not start M019.
-- Evidence: [M017 validation](../evidence/M017/VALIDATION.md),
-  [transaction/lifecycle report](../evidence/M017/checks-report.json),
-  [preservation/GUI audit](../evidence/M017/audit.json),
-  [final exits](../evidence/M017/final-results.json).
-- Normal larger `prototype-alderwake` retained. Parent P001–P014 compact native
-  completion remains historical; M019 owns larger-map packaged/native acceptance.
+- Active item: none. M018 measured map performance complete.
+- Next eligible: M019 full walkthrough and Windows build only. Follow its full
+  acceptance: rendered fresh journey through both crossings/Moonwell/closed exit/
+  recovery/save/restart/revisit, then resulting packaged Windows/native gate.
+  M018 synthetic benchmark does not complete this gate. No M019 work started.
+- Evidence: [M018 validation](../evidence/M018/VALIDATION.md),
+  [independent raw-data audit](../evidence/M018/audit.json),
+  [full benchmark](../evidence/M018/acceptance/report.json),
+  [process/memory result](../evidence/M018/acceptance/process-results.json),
+  [focused exits](../evidence/M018/focused-results.json).
+- Normal larger prototype-alderwake retained. Parent P014 compact native completion
+  remains historical; M019 must certify the larger-map packaged/native build.
 
 ## Preparation and source identity
 
-Full migration prompt, applicable AGENTS (workspace only), parent architecture/state,
-migration investigation/checklist/state/contract, retained layout/provenance, M016
-evidence and actual artifacts/Git inspected. Initial HEAD a4faeff, Git clean.
-M017 marked in progress before work; exactly one item. Caveman/gameplay-testing
-skills applied. No source write/generator/refresh, Blender, dependency installation,
-subagent, commit, push, publication or next-item work.
+Full migration prompt, workspace AGENTS (no nested target instructions), parent
+architecture/state, migration investigation/checklist/state/contract, retained
+layout/provenance and M017 evidence/actual artifacts inspected. Initial HEAD
+8683729e276c8ddd97a3c7fe335ba5c7772459ee, Git clean. M018 marked in progress before
+work; exactly one item. Caveman/gameplay-testing skills applied. No source write,
+generator/refresh, Blender, dependency installation, subagent, commit, push,
+publication or next-item work.
 
 Snapshot alderwake-f4630f9-m002/source commit
 f4630f9966d6637ef6579cd87623ea354758191c unchanged. MapSHA256
  af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f;
 layoutSHA2567477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be.
-Five pinned inputs/extractor remain unchanged, hashes audited. Prior M015 source
-NPC drift (537 objects versus534 pinned) remains recorded there, no source refresh
-or live-source revalidation in M017. Schema4/content1 and all production IDs fixed.
+Five pinned inputs/extractor unchanged and audited. M015 source NPC drift
+(537 objects versus534 pinned) remains recorded there; no source refresh or live
+source revalidation. Schema4/content1, all production IDs and normal save fixed.
 
 ## Implementation and changed files
 
-- `game/features/actors/actor_placeholder.gd`: initialize refreshes collision and
-  feedback immediately when ready; ready handles actors initialized before tree.
-  Fixes stale downed-ally/corpse collision and presentation during paused restore,
-  and refreshes living state immediately after retry.
-- `game/app/game_root.gd`: guardian state receives durable defeat health before
-  initialize; paused restored guardian is immediately nonblocking/flattened.
-  No session/save/quest/party authority or persistent field changes.
-- `game/tests/map_save_checks.gd` + UID: historical-save matrix, separate-process
-  writer/reader, owner bindings, safe party arrivals, load locking/rollback,
-  backup/future refusal,24 scene swaps, once-only replays and five retry cases.
-- `game/tests/fixtures/map_saves/`: four byte-exact P013/P014 pre-map gameplay saves,
-  one labeled synthetic Tollworks-start/downed-ally variant; PROVENANCE.json hashes.
-  `map_save_ally_blocked.tscn` and `map_save_retry_failure.tscn`: isolated fixtures.
-- `game/tests/companion_checks.gd`: original P009 obstacle coordinates now use
-  detached compact Alderwake definition. Assertions and original room retained;
-  M010/M017 cover new-map navigation/restore.
-- `docs/evidence/M017/`: exact logs/results/reports, launch/bridge/audit scripts,
-  three process launches/exits,14 request/response pairs and14 rendered PNGs,
-  two actual GUI saved envelopes and acceptance mapping. Migration CHECKLIST/state.
+- game/world/map_candidate/elevation_surfaces.gd: exact original cliff appearance
+  batched into nine16m regions/shared material, replacing238 riser mesh/material
+  instances. Preserve original six vertices/order/normals per cliff, shadows,
+  all238 named bodies and independent navigation/physical geometry. Release
+  construction buffers. Trees remain original32m/106 batches.
+- game/tests/map_performance_profile.gd + UID: full-production rendered profiling,
+  exact source tree transforms/IDs/collision inventory and riser vertex multiset,
+  path/loading budgets, safe arrival/weakref/nav/party lifecycle checks. Synthetic
+  static placement at recorded M016 ordinary-tour poses; no save/quest writes.
+- tools/map_migration/profile_map.py: Windows runner, isolated AppData, fresh
+  evidence directories, exact argv, actual engine PID working-set/peak sampling,
+  bounded execution and runtime-error rejection. Console launcher PID is separate.
+- docs/evidence/M018/: raw12 acceptance CSVs/working-set stream, four inspected
+  captures, settings/report/launch/process logs, fresh machine/driver info, focused
+  checks and copied reports, independent audit/hashes, retained failed smokes.
+- tools/map_migration/README.md and CANDIDATE.md: reproducible profile command and
+  current measured riser batching note. Migration CHECKLIST/CURRENT_STATE updated.
 
-Parent scope/ownership and CONTRACT require no change. Source data, art, terrain,
-physics footprints, nav policy, stable IDs, normal save and previous evidence fixed.
+No production scope/ownership or contract target change, so parent ARCHITECTURE,
+CONTRACT and parent P014 state remain untouched. Prior evidence preserved; focused
+runner restores old M008/M015/M016 report bytes after copying new results locally.
 
 ## Verification
 
-Exact argv and environment in M017 VALIDATION.md/final-results/process-results/
-launch JSONs. Supplied Godot console4.7.2.stable.mono.official.ed1daf0bf. Python
+Machine: Windows11 Home10.0.26200 x64/Core Ultra9 185H/33,736,015,872 bytes RAM/
+RTX4070 Laptop, driver32.0.15.8129/API581.29. Godot4.7.2.stable.mono.official.ed1daf0bf,
+Compatibility/OpenGL3.3,960x640,orthographic zoom1,VSync0,cap0. Python
 C:/Users/aldoc/.local/share/blender-skills/.venv/Scripts/python.exe -B.
 
-- Final import0; known missing .NET SDK10.0.9 editor diagnostic remains, no new
-  script/asset error. Pinned extractor --check0 and preservation/GUI audit0.
-- `map_save_checks.gd -- --phase=write/read/checks`: final PASS0 each, distinct PIDs.
-  Five fixtures: fresh town/lead town/completed return/Tollworks vessel plus
-  synthetic Tollworks-start with hero37/ally0. Full envelope equality; schema4
-  needs no migration, Load leaves disk unchanged. Party at anchor/+1mX; safe floor/
-  capsule, owner binding, paused actor/corpse presentation/collision verified.
-- Four failed loads restore original session/room/positions/region, preserve
-  progress/health, release locks and remain paused. Companion-only obstruction
-  explicitly rejected. Concurrent Save/Load/Resume blocked during restore.
-- Two warm-ups plus ten round trips:24 swaps, old scene weakrefs null and regions
-  absent; one world/region and same two wrappers. All completed quest/reaction/
-  upgrade replays leave facts unchanged; no guardian respawn or duplicate reward.
-- Four successful synthetic death retries cover all production anchors, both100HP;
-  failed navigation retry retains hero0/ally13/original room and positions, no heal.
-  One expected rejection ERROR line is labeled in validation; checks PASS0.
-- Final save_checks/combat_checks/companion_checks/recovery_presentation_checks/
-  application_smoke PASS0. Existing malformed/newer-save, backup, IO/size, legacy
-  party migration, unsafe restore and actor/service regressions retained.
-- Three rendered current-code GUI processes, all normal F10 exits0 and zero
-  ERROR/SCRIPT ERROR runtime lines. Historical GUI Load -> ordinary WASD/E into
-  Tollworks -> GUI Save/quit -> new-process GUI Load -> ordinary return -> GUI
-  Save/quit -> new-process town GUI Load/resumed hero+ally. No bridge mutations.
-  All saved health/progress/trust/upgrades/time restored exactly,75/75HP, strike40,
-  trust1, six effects once, specialist restored.14 actual960x640 captures, core
-  startup/restore/gameplay/pause views inspected. Actual Compatibility/OpenGL3.3,
-  RTX4070 Laptop/NVIDIA581.29. No performance or native-release claim.
-- GUI APPDATA/LOCALAPPDATA redirected to builds/m017-windowed-data/local-data,
-  slot m017-gui. Headless checks use m017-check/regression directories and isolated
-  m017/PID-scoped slot names. Normal user save never opened.
-- Final Git review and git diff --check0; prior files/evidence unchanged.
+- Full acceptance exit0,798.339s. Four views each10s warm-up then three60s samples;
+  176,653 focused frame intervals, unpaused normal actor/companion/UI/aim/canopy
+  processing. Nearest-rank percentiles independently recomputed from all12 CSVs.
+  Worst three-run p95/p99/draws: town6.448/7.900ms/238; dense forest6.690/8.087/408;
+  bridge6.525/7.947/156; ford5.365/7.127/274. All<=16.67/25ms/500. Raw maximum41.995ms
+  retained; no maximum-frame or zero-spike claim. Four final captures inspected.
+- Cold generation/bake751.372ms<=5s, cold full arrival1025.819ms. Maximum24 warm
+  request-to-safe-commit arrivals873.942ms<=2s.120 connected full-map path queries,
+  30 per view, p95840us<=5ms.
+- Actual engine PID17280, launcher31636.0.25s working-set samples/historical peak:
+  peak438.621MiB<=2GiB. Two warm-up round trips+10s idle baseline409,694,208 bytes;
+  ten further round trips+10s idle final412,803,072: growth2.965MiB<=64MiB.
+  Every replaced scene/region gone; one world/region, same two safe party wrappers.
+  Baseline/final3702nodes/7321objects/271resources/zero orphan nodes.
+- Exact initial/final inventory:818 physics nodes,6352 nav polygons,395 trees,
+  21 variants/106 tree batches,24 structures/seven landmark instances/six terrain
+  batches/nine riser batches. All1428 original riser vertices preserved; all tree
+  batch transforms and source collision/metadata checked.
+- Final import0, known missing.NET SDK10.0.9 editor diagnostic; no new script/import
+  issue. map_elevation_checks/map_camera_checks/map_activation_checks/application_smoke
+  PASS0, no runtime errors:64 ramps/2646 cliffs,330 aim samples,3226 production
+  capsule samples plus one round trip. Final extractor check0, smoke-focus0,
+  independent audit0; final git diff --check0 and intended-file review.
+- Exact commands/environments in VALIDATION/launch/focused/import JSON and scripts.
+  All writes use builds/m018-* AppData; normal user save never opened. Historical
+  M001-M017/P014 evidence and pinned source/layout hashes unchanged.
 
 ## Retained failures and limits
 
-Initial test property typo caused stalled script/interruption; numeric JSON type
-comparison/output-path errors and actual stale paused collision then failed1.
-Partial CRLF edit failed writer1 before final fix. Old compact companion positions
-failed1 before detached fixture repair; final0. Launcher encoding refused once
-before any game launch, then UTF-8 runs0. Failed logs/reports retained and separated
-from accepted evidence; no checks silently reclassified. Git ownership restriction
-handled with command-scoped safe.directory only when necessary.
+Initial smoke drew637 dense/503 ford, failed1; its launcher-only memory invalid.
+64m tree experiment still609 draws, failed1/reverted. Original attribution failed1
+but isolated238 riser draws. First batched smoke assumed indexed mesh arrays,
+raised SCRIPT ERROR despite engine0; entire run invalid, fixed to handle unindexed
+meshes and reject runtime errors. Focus-lost smoke-final failed1; real foreground
+request after arrival/before warm-up fixed it, focus gates unchanged. One PowerShell
+edit request failed to parse before execution; corrected. Failed/invalid logs and
+partial reports retained, never reclassified. Final accepted runs have no runtime
+errors or acceptance failures.
 
-Historical save seeding and direct headless placements/death/action retries are
-explicit synthetic setup. GUI evidence proves restoration and ordinary continuation,
-not a fresh quest journey or hardware/native release. M018 frame/memory/loading
-benchmarks and M019 packaged/native larger-map gate remain open. Parent P014 compact
-completion preserved. No unresolved M017 criterion; no next item started.
+Static poses and direct WorldHost round trips are labeled synthetic benchmarks,
+not ordinary quest walking or native release evidence. Performance applies to
+recorded development machine/settings/views, not combat/minimum PC/all camera
+settings. Source drift remains outside scope. M019 packaged/native larger-map
+release gate remains open; parent P014 compact completion preserved. No unresolved
+M018 criterion; no next item started.

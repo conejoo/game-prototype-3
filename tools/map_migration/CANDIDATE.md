@@ -252,3 +252,16 @@ M009 reports restored;failed initial assertions/focus request retained explicitl
 See docs/evidence/M014/VALIDATION.md. Normal compact game remains selected.
 Next eligible M015 activation and existing quest route only;M016 camera,M017
 save compatibility,M018 performance,M019 packaged/native map gate remain pending.
+
+### M018 current performance batching
+
+Production cliff appearance now uses nine16m spatial batches for all238 exact
+risers; physics bodies/nav obstructions retain their original identities and
+geometry. The independent benchmark audits all1428 original face vertices and
+all395 tree transforms/metadata/collision records before/after24 swaps. Tree art
+remains original32m/106 batches; the tested64m experiment was reverted. Measured
+dense/ford total draws fell637->408/503->274 without removing visuals or shadows.
+Full four-view12x60s benchmark meets declared frame/draw/memory/loading/query gates
+on the recorded960x640 Compatibility development laptop; static synthetic profiling
+does not complete M019's fresh walkthrough/packaged/native release gate.
+See ../../docs/evidence/M018/VALIDATION.md and reproducible README profiler command.

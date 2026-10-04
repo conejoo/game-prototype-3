@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M017 verified complete; M018–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M018 verified complete; M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -181,7 +181,7 @@ acceptance again against the resulting map build.
   objects, misplaced ally, duplicated reward or load into river. Invalid saves
   retain current rejection/backup semantics. Use isolated slots, never user save.
 
-## [ ] M018 Measured map performance
+## [x] M018 Measured map performance
 
 - Profile town, dense forest, crossings and repeated travel on recorded machine.
   Capture frame times, draw calls, memory and navigation/load timings against
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M017 complete. Append one concise record per item:
+M001–M018 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -352,3 +352,11 @@ Checks and exact exits: final import/extractor/audit0; five-fixture writer/reade
 Evidence: docs/evidence/M017/VALIDATION.md,checks/write/read reports,process/final results,audit.json,14 exact request/response pairs and14PNG captures,GUI saved envelopes/launches/exits,accepted and retained failed logs.
 Decisions/limits: four byte-exact pre-map saves plus labeled synthetic downed-ally/Tollworks-start fixture;JSON comparisons normalized numeric types. P009 original obstacle assertions use detached compact fixture. Source snapshot/schema4/content1/IDs/authority unchanged;normal save untouched. Synthetic headless and historical-seeded GUI restore prove compatibility,not full fresh/native journey. Parent P014 compact complete;M018/M019 gates pending. No next item started.
 Next eligible task: M018 measured map performance only.
+
+M018 — completed 2026-10-04
+Result: measured riser optimization238 meshes->nine16m batches; declared frame/draw/memory/loading/path/lifecycle budgets met, source physics and tree batching preserved.
+Files: elevation_surfaces.gd; map_performance_profile.gd/UID; tools/map_migration/profile_map.py/README/CANDIDATE; CHECKLIST/CURRENT_STATE; docs/evidence/M018/.
+Checks and exact exits: full798.339s rendered acceptance0/176,653 focused frames/twelve60s samples; focused elevation/camera/activation/application PASS0; final import/extractor/smoke-focus/audit/diff check0. Worst p95/p99 6.690/8.087ms, draw408; peak438.621MiB/growth2.965MiB; cold751.372ms/warmmax873.942ms/pathp95840us.24 swaps,stable3702nodes/7321objects/271resources/zero orphans,one world/nav region/two wrappers; exact1428 riser vertices/395 tree transforms/inventory preserved.
+Evidence: docs/evidence/M018/VALIDATION.md,audit.json,acceptance raw CSVs/working-set/report/settings/launch/process/log/four inspected PNGs,fresh machine info,focused logs/reports/results,retained failed/invalid smokes.
+Decisions/limits: unchanged CONTRACT targets/source snapshot/schema4/content1/IDs/physics/nav/normal save; static unpaused960x640 orthographic Compatibility laptop benchmark,not combat/minimum PC/native journey. Raw max41.995ms retained.64m tree experiment reverted; launcher memory/unindexed audit/focus failures retained and fixed. Historical P014 compact completion preserved. No source refresh/Blender/install/subagent/commit/push/publication/next item.
+Next eligible task: M019 full walkthrough and Windows build only.

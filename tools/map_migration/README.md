@@ -97,3 +97,25 @@ Godot's focused `res://tests/map_layout_checks.gd` reads the runtime JSON throug
 `res://`, verifying data consumption without Flutter or the source checkout.
 No rendered terrain, physical crossing, navigation, packaged export or larger-map
 playability is claimed by M002.
+
+## M018 performance profiling
+
+Run the rendered production-root benchmark from the target root with the existing
+Python runtime; no dependencies or source checkout needed:
+
+```powershell
+$taskPython = 'C:/Users/aldoc/.local/share/blender-skills/.venv/Scripts/python.exe'
+& $taskPython -B tools/map_migration/profile_map.py --label my-smoke --smoke
+& $taskPython -B tools/map_migration/profile_map.py --label my-acceptance
+```
+
+Use a fresh label each time. Output lives under docs/evidence/M018/<label>;
+AppData is redirected under builds/m018-profile-{local-}data/<label>. Full run is
+four views x10s warm-up +3x60s samples, then two warm-up/ten measured round trips
+and idle memory checkpoints. Short smoke runs are not acceptance evidence.
+The actual engine PID comes from the GDScript stage file; the supplied console
+launcher is a separate process. Working set/peak are sampled at0.25s. Keep the
+game window focused and avoid concurrent workloads. Synthetic M016 recorded poses
+and direct scene transitions benchmark unpaused production processing; they do not
+prove ordinary quest walking/native release input. See M018 VALIDATION.md for
+sampling definitions, declared limits, raw data and independently audited results.

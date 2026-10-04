@@ -7,6 +7,10 @@ var levels: Dictionary[Vector2i, float] = {}
 var slopes: Dictionary[Vector2i, Dictionary] = {}
 var cliffs: Array[Dictionary] = []
 var floor_faces: PackedVector3Array = []
+# M018: spatially batch identical riser appearance; cliff bodies stay independent.
+const RISER_CHUNK_SIZE: float = 16.0
+var riser_surfaces: Dictionary[Vector2i, SurfaceTool] = {}
+var riser_batches: Dictionary[Vector2i, MeshInstance3D] = {}
 
 
 func build(layout: Dictionary) -> void:
@@ -43,6 +47,7 @@ func build(layout: Dictionary) -> void:
 	collider.shape = shape
 	body.add_child(collider)
 	add_child(body)
+	_finish_risers()
 
 
 func height_at(point: Vector2) -> float:
@@ -99,23 +104,35 @@ func _add_cliff(cell: Vector2i, direction: Vector2i, a: Vector2, b: Vector2, hei
 	body.add_child(collider)
 	add_child(body)
 	cliffs.append({"id": id, "a": a, "b": b, "heights": heights, "body": body})
-	var surface: SurfaceTool = SurfaceTool.new()
-	surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var chunk: Vector2i = Vector2i(floori(a.x / RISER_CHUNK_SIZE), floori(a.y / RISER_CHUNK_SIZE))
+	if not riser_surfaces.has(chunk):
+		var surface: SurfaceTool = SurfaceTool.new()
+		surface.begin(Mesh.PRIMITIVE_TRIANGLES)
+		riser_surfaces[chunk] = surface
+	var surface: SurfaceTool = riser_surfaces[chunk]
 	var p: Vector3 = Vector3(a.x, heights[0], a.y)
 	var q: Vector3 = Vector3(b.x, heights[1], b.y)
 	var r: Vector3 = Vector3(b.x, heights[3], b.y)
 	var s: Vector3 = Vector3(a.x, heights[2], a.y)
 	for point: Vector3 in [p, q, r, p, r, s]:
 		surface.add_vertex(point)
-	surface.generate_normals()
-	var visual: MeshInstance3D = MeshInstance3D.new()
-	visual.name = id + "--riser"
-	visual.mesh = surface.commit()
+
+
+func _finish_risers() -> void:
 	var material: StandardMaterial3D = StandardMaterial3D.new()
 	material.albedo_color = Color(0.36, 0.30, 0.22)
 	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	visual.material_override = material
-	add_child(visual)
+	for chunk: Vector2i in riser_surfaces:
+		var surface: SurfaceTool = riser_surfaces[chunk]
+		surface.generate_normals()
+		var visual: MeshInstance3D = MeshInstance3D.new()
+		visual.name = "Risers-%d-%d" % [chunk.x, chunk.y]
+		visual.mesh = surface.commit()
+		visual.material_override = material
+		add_child(visual)
+		riser_batches[chunk] = visual
+	# Release construction buffers before steady-state profiling/lifecycle checks.
+	riser_surfaces.clear()
 
 
 func add_navigation_obstructions(geometry: NavigationMeshSourceGeometryData3D) -> void:
