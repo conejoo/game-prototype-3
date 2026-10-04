@@ -129,6 +129,7 @@ func _physics_signature(location: Node3D) -> Array:
 
 
 func _write(name_id: String, data: Variant) -> void:
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M014"))
 	var file: FileAccess = FileAccess.open("res://../docs/evidence/M014/" + name_id, FileAccess.WRITE)
 	file.store_string(JSON.stringify(data, "\t") + "\n")
 

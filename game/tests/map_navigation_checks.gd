@@ -120,6 +120,7 @@ func _run() -> void:
 	await _lifecycle()
 	report["samples"] = samples
 	report["failures"] = failures
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M009"))
 	var output: FileAccess = FileAccess.open("res://../docs/evidence/M009/navigation-report.json", FileAccess.WRITE)
 	output.store_string(JSON.stringify(report, "\t") + "\n")
 	game.queue_free()

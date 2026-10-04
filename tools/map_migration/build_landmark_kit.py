@@ -94,6 +94,7 @@ camera_data=bpy.data.cameras.new('CAM-M014-gallery');camera=bpy.data.objects.new
 camera.location=(13,-19,22);camera.rotation_euler=(Vector((6,-2,0))-camera.location).to_track_quat('-Z','Y').to_euler();camera_data.type='ORTHO';camera_data.ortho_scale=20;scene.camera=camera
 for name,loc,energy in [('key',(3,-5,15),2300),('fill',(13,5,12),1800)]:
  data=bpy.data.lights.new('LGT-M014-'+name,'AREA');data.energy=energy;data.size=10;obj=bpy.data.objects.new(data.name,data);scene.collection.objects.link(obj);obj.location=loc;obj.rotation_euler=(Vector((6,-2,0))-obj.location).to_track_quat('-Z','Y').to_euler()
+(ROOT/'docs/evidence/M014').mkdir(parents=True,exist_ok=True)
 scene.render.resolution_x=1200;scene.render.resolution_y=850;scene.render.resolution_percentage=100;scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/'docs/evidence/M014/blender-gallery.png')
 scene.render.engine='BLENDER_EEVEE'
 bpy.data.libraries.write(str(ROOT/'art/source/alderwake_landmark_kit.blend'),{scene})

@@ -24,7 +24,7 @@ You are implementing the approved weather and interactive lighting feature in th
 3. Read `docs/weather-lighting/CHECKLIST.md`, `CURRENT_STATE.md`, and `CONTRACT.md` completely. This prompt is the fourth workflow document.
 4. Read `docs/ARCHITECTURE.md`, `docs/CURRENT_STATE.md`, `docs/map-migration/CURRENT_STATE.md` and relevant map CONTRACT/reference manifest. P/M workflows are historical baselines; never invoke their prompts to select work instead of W tasks.
 5. Inspect Git status, relevant current code/assets, applicable tool docs and any editor/Blender state needed for the task. Preserve existing modifications, saves and live user work. An initially dirty tree is not permission to reset or include unrelated files.
-6. Use current evidence to verify prerequisites. The initial baseline records P001-P014 and M001-M019 complete, but that does not certify weather. Source is read-only at `D:/development/game-prototype-2`; pinned target geography wins over source drift.
+6. Verify prerequisites from current code/tests, pinned references and concise durable acceptance records. Historical local logs/captures are optional; missing archives do not block work. Do not read the whole archive. The initial baseline records P001-P014 and M001-M019 complete, but that does not certify weather. Source is read-only at `D:/development/game-prototype-2`; pinned target geography wins over source drift.
 
 ### Selection
 
@@ -72,7 +72,7 @@ For playtests, read `tools/PLAYTEST.md` and the project or installed `returning-
 
 Always isolate save writes. Debug `--save-slot` is ignored by release builds: native release needs a verified separate application-data directory/config as documented by M019/tools. Never use or overwrite the user's normal save to prove a feature. Do not repurpose PowerShell HOME/CODEX_HOME variables.
 
-Keep evidence under `docs/evidence/Wxxx/` and disposable staging/build output under `builds/weather-lighting/`. Never overwrite prior P/M reports, snapshots, captures or raw logs. Record commands, cwd, environment/save paths, actual engine PID where measured, exit codes and runtime-error scans. Exit 0 with runtime SCRIPT ERROR is a failed check.
+Keep raw evidence under ignored `docs/evidence/Wxxx/` and disposable staging/build output under `builds/weather-lighting/`. Never overwrite prior P/M reports, snapshots, captures or raw logs. Record commands, cwd, environment/save paths, actual engine PID where measured, exit codes and runtime-error scans. Exit 0 with runtime SCRIPT ERROR is a failed check.
 
 Headless checks prove rules/lifecycle, not visual appearance. Inspect real rendered captures for visual criteria. Developer presets, forced weather, injected facts and setup placement are explicitly synthetic. They cannot prove ordinary movement, release controls, normal quest flow or native save/restart. W010 requires genuine packaged/native evidence.
 
@@ -82,7 +82,7 @@ Performance uses declared M018 method/settings and retained thresholds. If a tas
 
 1. Update selected task status in the ordered table and its detailed task section. Done requires evidence for every criterion. Otherwise retain In progress or record Blocked with the specific cause.
 2. Rewrite CURRENT_STATE with selected/completed/next task, exact changed files, commands/results, isolated paths, source/contract decisions, every failed/unrun criterion and the next safe action. Include any remaining live process/editor state. An interruption is not task completion.
-3. Append a concise completion record to CHECKLIST only when Done. Keep previous records and raw failure evidence intact.
-4. Update CONTRACT for justified implementation decisions and parent architecture/README/state only where production behavior changed. Preserve historical P/M completion evidence.
+3. Append a concise completion record to CHECKLIST only when Done. Keep previous concise results and local raw failure evidence intact. Never force-add the ignored archive. Promote only necessary reusable inputs to versioned fixtures/references.
+4. Update CONTRACT for justified implementation decisions and parent architecture/README/state only where production behavior changed. Preserve historical P/M completion summaries and optional local archives; do not make future agents depend on raw logs.
 5. Run `git diff --check`, inspect intended-file diff and verify local document links and checklist/handoff consistency.
 6. Final response: selected W ID and status, concrete result, verification, remaining limitation and next eligible W task. Stop. The user will start a new chat with this same prompt for the next task.

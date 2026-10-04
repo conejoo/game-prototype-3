@@ -1,0 +1,205 @@
+{
+  "provenance": "Exact M016 ordinary-tour observations. Replay placement is synthetic; not native route evidence.",
+  "goals": {
+    "maris": {
+      "position": [
+        -5.99597787857056,
+        0.0,
+        10.5802192687988
+      ],
+      "companion_position": [
+        -4.48360681533813,
+        0.0,
+        10.2835330963135
+      ]
+    },
+    "entry-ramp": {
+      "position": [
+        26.9980220794678,
+        0.25,
+        5.18308258056641
+      ],
+      "companion_position": [
+        26.4989109039307,
+        0.25,
+        3.7199854850769
+      ]
+    },
+    "moonwell": {
+      "position": [
+        31.5501327514648,
+        0.5,
+        5.27407550811768
+      ],
+      "companion_position": [
+        30.0271186828613,
+        0.5,
+        4.85836791992188
+      ]
+    },
+    "ford-west": {
+      "position": [
+        66.007926940918,
+        3.72529029846191e-09,
+        12.4766654968262
+      ],
+      "companion_position": [
+        64.4629516601563,
+        0.0,
+        12.1036586761475
+      ]
+    },
+    "ford-east": {
+      "position": [
+        74.9513931274414,
+        3.72529029846191e-09,
+        12.5570487976074
+      ],
+      "companion_position": [
+        73.3976898193359,
+        3.72529029846191e-09,
+        12.7643184661865
+      ]
+    },
+    "bridge-west": {
+      "position": [
+        92.9237289428711,
+        0.0,
+        -0.419571995735168
+      ],
+      "companion_position": [
+        91.3467712402344,
+        0.0,
+        -0.29133152961731
+      ]
+    },
+    "bridge-east": {
+      "position": [
+        102.982719421387,
+        3.72529029846191e-09,
+        -0.480530261993408
+      ],
+      "companion_position": [
+        101.429702758789,
+        3.72529029846191e-09,
+        -0.431726396083832
+      ]
+    },
+    "tollworks": {
+      "position": [
+        107.145942687988,
+        0.0,
+        0.141593456268311
+      ],
+      "companion_position": [
+        105.58765411377,
+        0.0,
+        -0.100195802748203
+      ]
+    },
+    "closed-exit": {
+      "position": [
+        121.427436828613,
+        0.0,
+        -7.0609974861145
+      ],
+      "companion_position": [
+        120.029693603516,
+        0.0,
+        -6.42854166030884
+      ]
+    },
+    "dense-forest": {
+      "position": [
+        81.9547424316406,
+        0.0,
+        35.1094398498535
+      ],
+      "companion_position": [
+        83.5087966918945,
+        0.0,
+        35.3465118408203
+      ]
+    }
+  },
+  "moving_poses": [
+    {
+      "position": [
+        116.355644226074,
+        0.0,
+        -3.11291265487671
+      ],
+      "companion_position": [
+        117.942710876465,
+        0.0,
+        -4.14936399459839
+      ],
+      "source_response": "tour-589-dense-forest-response.json"
+    },
+    {
+      "position": [
+        112.023483276367,
+        0.0,
+        0.984402060508728
+      ],
+      "companion_position": [
+        113.60888671875,
+        0.0,
+        -0.0568527951836586
+      ],
+      "source_response": "tour-598-dense-forest-response.json"
+    },
+    {
+      "position": [
+        107.751289367676,
+        0.0,
+        4.82187223434448
+      ],
+      "companion_position": [
+        109.231773376465,
+        0.0,
+        3.87620115280151
+      ],
+      "source_response": "tour-608-dense-forest-response.json"
+    },
+    {
+      "position": [
+        102.204574584961,
+        0.0,
+        23.407995223999
+      ],
+      "companion_position": [
+        102.63427734375,
+        0.0,
+        21.5927352905273
+      ],
+      "source_response": "tour-661-dense-forest-response.json"
+    },
+    {
+      "position": [
+        85.4546127319336,
+        0.0,
+        34.4174308776855
+      ],
+      "companion_position": [
+        86.9815902709961,
+        0.0,
+        33.4911613464355
+      ],
+      "source_response": "tour-714-dense-forest-response.json"
+    },
+    {
+      "position": [
+        83.3063278198242,
+        0.0,
+        35.7600364685059
+      ],
+      "companion_position": [
+        84.6685256958008,
+        0.0,
+        34.9096450805664
+      ],
+      "source_response": "tour-715-dense-forest-response.json"
+    }
+  ]
+}

@@ -39,7 +39,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W001 Source inventory and verified contract
 
-- [x] Done. Status: Done. Depends: verified M019 baseline. Evidence: [W001 validation](../evidence/W001/VALIDATION.md), [inventory](../evidence/W001/LIGHT_INVENTORY.md), [hash audit](../evidence/W001/audit-results.json).
+- [x] Done. Status: Done. Depends: verified M019 baseline. Evidence: [retained baseline](reference/README.md), [inventory](reference/light-inventory.json), [reproducible audit](reference/audit.py).
 - Inspect actual Godot project, applicable instructions, parent architecture/state, M019 release handoff, pinned map/catalog/layout and current Git changes. Preserve all prior work.
 - Hash and record the read-only behavior sources listed in CONTRACT. Retain a target-local, scoped reference copy or equivalent fixed test vectors for forecast/day/light rules; never refresh the old map snapshot automatically.
 - Complete an inventory of every in-scope exterior light: location, prop ID, source ID, default enabled state, switchability, 3D wrapper/anchor, emitter kind and required visual asset. Include six dock lamps, authored building window sources and the two exterior waylights where present in the pinned data.
@@ -152,7 +152,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## Validation and evidence rules
 
-Use current [architecture](../ARCHITECTURE.md), [playtest tools](../../tools/PLAYTEST.md) and project gameplay skill when playing. Evidence belongs under `docs/evidence/W001/` through `W010/`; disposable staging/build outputs use `builds/weather-lighting/`. Do not alter prior P/M evidence.
+Use current [architecture](../ARCHITECTURE.md), [playtest tools](../../tools/PLAYTEST.md) and project gameplay skill when playing. Raw evidence belongs under ignored `docs/evidence/W001/` through `W010/`; disposable staging/build outputs use `builds/weather-lighting/`. Preserve local prior reports. Track only concise acceptance results, durable decisions and reusable fixtures outside the archive.
 
 Record actual command, working directory, environment/save isolation, exit code, runtime-error scan and artifact path. Exit 0 with SCRIPT ERROR is not a pass. Rendered evidence requires inspecting pixels. Setup placements, forced times/weather and injected facts are explicitly synthetic; they prove only their stated checks. Normal saves are never test fixtures.
 
@@ -164,9 +164,21 @@ Before each final response, run `git diff --check`, review intended changes, rec
 
 W001 - completed 2026-10-04 (America/Vancouver)
 
-Result: 23 exterior sources/defaults/wrapper anchors inventoried; 23 exact behavior references pinned; clock/forecast/save/room/renderer/performance decisions verified.
-Files: weather CHECKLIST, CURRENT_STATE, CONTRACT; docs/evidence/W001/ audit/reference/inventory/vector/baseline/report artifacts. AGENT_PROMPT and production game/art unchanged.
-Commands and exact results: audit.py --capture-source PASS0; run_baseline.py PASS0 (engine probe0, standalone release startup0, no runtime errors); final audit/diff/link results in W001/final-review.json.
-Evidence and viewed captures: W001/VALIDATION.md, source-manifest.json, light-inventory.json, rule-vectors.json, baseline-results.json, engine-baseline.json. No new visual captures required or claimed for W001.
-Decisions and retained limits: pinned target geography wins over current source drift; four automatic window defaults false; luminous net included; conservative eight-emitter pool; schema4/content1 unchanged until W003. Headless baseline does not prove future weather visuals/performance.
+Result: all 23 exterior sources/defaults/wrapper anchors inventoried; clock,
+forecast, save, room, renderer and performance decisions fixed in CONTRACT.
+W001 original source audit, headless root and standalone startup passed (exit 0,
+no runtime errors). Documentation/link/diff review passed. No visual/performance
+claim or production weather implementation.
+Retained inputs: [reference README](reference/README.md), four exact rule sources,
+inspection hashes, fixed vectors and light inventory. Raw logs and broad snapshots
+are optional local archives; missing archives do not block W002.
+Limits: pinned geography wins over source drift; four automatic windows disabled;
+luminous net included; eight-emitter pool; schema4/content1 until W003.
 Next eligible task: W002 only; not started.
+
+Repository cleanup - 2026-10-04 (user request, no additional W task)
+
+Raw evidence untracked/ignored; all local files preserved. Retained four exact rule
+sources, inspection hashes, vectors, compact light registry and independent map
+fixtures. Clean-checkout reference audit/extractor tests, affected map checks and
+script parsing pass. Current states shortened; task criteria/statuses unchanged.

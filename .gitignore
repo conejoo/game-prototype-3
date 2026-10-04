@@ -8,3 +8,6 @@ builds/
 *.bak
 Thumbs.db
 .DS_Store
+
+# Generated validation evidence stays local; reusable fixtures live elsewhere.
+/docs/evidence/

@@ -36,7 +36,7 @@ $godotExe = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_m
 
 M009 navigation/forest/town/water/candidate checks pass. The historical M008
 Moonwell corner failure remains in its evidence; M009 repairs it with exact
-agent-centre clipping. See [M009 acceptance and commands](../../docs/evidence/M009/VALIDATION.md).
+agent-centre clipping. See M009 acceptance and commands (optional local archive).
 
 M011 replaces the neutral terrain/water materials with world-space meadow,
 warm paths, sand, irregular cobbles and restrained teal river flow. One nearest
@@ -48,7 +48,7 @@ Cosmetic flow continues during pause while gameplay time remains frozen.
 Six source swatches inform the palette; zero source images copied into runtime.
 Raw diagnostic dots become generic matte ground flecks, with original 183 raw
 IDs/positions retained. Tree/building/landmark art remains M012-M014. See
-[M011 validation](../../docs/evidence/M011/VALIDATION.md) for exact surface/mask
+M011 validation (optional local archive) for exact surface/mask
 checks and inspected ordinary-input town/ramps/forest/crossing/gate captures.
 
 Normal main scene and catalog remain unchanged. The alternate root extends the
@@ -133,7 +133,7 @@ remaining shapes. 168 half-metre cells become deck, no other cell changes.
 Moonwood crossings/gate/basin unchanged. Both rendered directions and water-edge
 walking/dodge pass; this is a documented art/movement adaptation, not source
 regeneration or swimming. See [contract](../../docs/map-migration/CONTRACT.md) and
-[reconciliation](../../docs/evidence/M006/dock-reconciliation.json).
+reconciliation (optional local archive).
 
 M003–M007 used flat physical elevations. M008 now implements472 raised cells,
 16 directional ramps and238 independent cliff barriers, with matching batched

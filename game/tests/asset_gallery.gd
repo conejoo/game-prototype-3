@@ -42,6 +42,7 @@ func _show() -> void:
 		await process_frame
 	await RenderingServer.frame_post_draw
 	var path: String = ProjectSettings.globalize_path("res://../docs/evidence/P012/godot-asset-gallery.png")
+	DirAccess.make_dir_recursive_absolute(path.get_base_dir())
 	var result: Error = root.get_texture().get_image().save_png(path)
 	print("P012 Godot gallery: ", path, "; save result=", result)
 	quit(0 if result == OK else 1)

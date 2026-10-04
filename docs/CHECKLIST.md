@@ -10,9 +10,9 @@ Every task depends on the preceding task. Fix a prerequisite regression before
 continuing. Each completion updates CURRENT_STATE.md with concrete evidence,
 changed files, known limitations, and the next eligible task.
 
-P001–P014 verified complete. No further item defined in this checklist.
+P001â€“P014 verified complete. No further item defined in this checklist.
 
-## [x] P001 — Runnable project and application root
+## [x] P001 â€” Runnable project and application root
 
 - Create `../game/project.godot` using installed Godot 4.7.2 and typed GDScript.
 - Create persistent GameRoot with WorldHost, Party, CameraRig, and UI entry
@@ -23,7 +23,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: headless editor import succeeds; interactive game opens, pauses,
   resumes, and quits without script errors. Record actual engine version.
 
-## [x] P002 — Definition catalog and runtime-state ownership
+## [x] P002 â€” Definition catalog and runtime-state ownership
 
 - Add stable-ID definitions for locations, actors, and the minimal prototype
   content. Keep authored Resources separate from mutable actor/session state.
@@ -33,7 +33,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: duplicate IDs, absent references, and malformed definitions fail
   with useful errors; two instances do not share mutable health/progress.
 
-## [x] P003 — Hero movement and overhead camera
+## [x] P003 â€” Hero movement and overhead camera
 
 - Implement CharacterBody3D movement, facing, collision, InputMap controls,
   camera-relative movement, and independent visual root.
@@ -42,7 +42,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: wall/corner collisions work; camera and aiming agree; chosen
   projection and provisional controls are recorded with playable evidence.
 
-## [x] P004 — Connected locations and party lifecycle
+## [x] P004 â€” Connected locations and party lifecycle
 
 - Add compact Alderwake and Tollworks grayboxes with stable spawn anchors.
 - WorldHost transitions locations while keeping session/party ownership clear.
@@ -51,7 +51,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: repeated round trips work without duplicate actors, lost session
   state, invalid spawns, stale references, or input during transitions.
 
-## [x] P005 — Versioned save/load foundation
+## [x] P005 â€” Versioned save/load foundation
 
 - Implement plain-data snapshot, validation, checked temporary-file write,
   backup recovery, and `user://` storage. Define stable save boundaries.
@@ -60,7 +60,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: close/reopen returns to the right location; malformed and newer
   saves do not overwrite the live session or a good save; recovery is tested.
 
-## [x] P006 — Reusable interaction and dialogue
+## [x] P006 â€” Reusable interaction and dialogue
 
 - Add interaction selection, prompt, input arbitration, and reusable NPC/prop
   interactions. Author dialogue independently from physical actor scenes.
@@ -69,7 +69,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: talk to NPC and inspect prop in either room; dialogue blocks
   attacks/movement as intended; cancellation restores control; no stuck UI.
 
-## [x] P007 — Quest progression, journal, and durable effects
+## [x] P007 â€” Quest progression, journal, and durable effects
 
 - Implement one shortened recovery quest definition and quest service with
   prerequisites, legal transitions, stable action/effect IDs, and journal.
@@ -80,7 +80,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: illegal/out-of-order actions fail; repeated completion grants
   effects once; quest progress survives room travel and process restart.
 
-## [x] P008 — Hero action combat and guardian
+## [x] P008 â€” Hero action combat and guardian
 
 - Implement attack, dodge, health, damage/attack windows, one guardian behavior,
   defeat/retry flow, and clear hit/death feedback.
@@ -90,7 +90,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: defeat guardian in normal play; one swing does not hit the same
   target repeatedly by accident; death/retry cannot duplicate quest rewards.
 
-## [x] P009 — One active companion
+## [x] P009 â€” One active companion
 
 - Add follow, fight, return, navigation recovery, and safe catch-up behavior.
 - Companion uses the existing actor movement/combat components. Spawn and
@@ -100,7 +100,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: companion follows through both rooms and around obstacles,
   assists combat, recovers from a stuck route, and survives save/load/transition.
 
-## [x] P010 — Relationship consequence and character upgrade
+## [x] P010 â€” Relationship consequence and character upgrade
 
 - Add one authored dialogue choice with recorded companion reaction and trust
   change. Keep reactions separate from romance and avoid canon invention.
@@ -109,7 +109,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: choice and upgrade matter in play and persist; replay/reload
   cannot repeat trust changes or spend the same upgrade point twice.
 
-## [x] P011 — Recovery and persistent world presentation
+## [x] P011 â€” Recovery and persistent world presentation
 
 - Implement Maris's return/reconnection scene and practical restored-service
   presentation. Derive variants from authoritative quest/world facts.
@@ -117,7 +117,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: recovery changes the correct shop state after reconnection;
   leaving/reloading preserves the result; unrecovered saves show original state.
 
-## [x] P012 — Reusable Blender asset pipeline
+## [x] P012 â€” Reusable Blender asset pipeline
 
 - Read applicable Blender skills; inspect live connection/scene and preserve
   unrelated work. Create isolated prototype source files/collection.
@@ -129,7 +129,7 @@ P001–P014 verified complete. No further item defined in this checklist.
   sources and record import/render evidence. Missing live connection leaves
   this item incomplete, with exact blocker and runnable placeholders retained.
 
-## [x] P013 — Complete playable recovery slice
+## [x] P013 â€” Complete playable recovery slice
 
 - Connect normal start, lead, companion, expedition, guardian, recovery,
   reconnection, trust reaction, upgrade, and visible town result.
@@ -138,7 +138,7 @@ P001–P014 verified complete. No further item defined in this checklist.
 - Acceptance: complete full slice without inspector/debug setup; repeat after
   save/restart at supported boundaries. Record remaining deviations from canon.
 
-## [x] P014 — Extension check and Windows export
+## [x] P014 â€” Extension check and Windows export
 
 - Add a small test-only second quest/actor-definition variant to demonstrate
   content extension without changing first quest/session rules.
@@ -154,15 +154,22 @@ blocker: `evidence/P014/VALIDATION.md`; focused recheck: resume-2026-10-03-b/.
 User-authorized native SendInput helper resolves hold blocker. Full release slice,
 GUI save/restart/load, trust replay/spent upgrade/guardian revisit/restored town,
 durable save comparison and two normal quits0 now verified. Final evidence:
-`evidence/P014/native-holds/VALIDATION.md`. Separate migration work preserved;
-no next task started.
+`evidence/P014/native-holds/VALIDATION.md`. Separate migration work preserved.
+M019 completed2026-10-04: rebuilt larger-map Windows release now passes fresh native
+map/recovery walkthrough, independent GUI Load/revisit/replay and durable save
+comparison. Resulting-build evidence (optional local archive). Original compact
+P014 evidence retained; no next prototype or migration item.
+
+Repository cleanup (2026-10-04): generated evidence is ignored/local; current
+states/contracts/tests and compact references are durable context. Clean staged
+checkout verification passed; see CURRENT_STATE. No new gameplay task started.
 
 ## Completion record template
 
 For each completed item, append a brief entry below:
 
 ```text
-Pxxx — completed YYYY-MM-DD
+Pxxx â€” completed YYYY-MM-DD
 Changed:
 Checks and evidence:
 Known limitations:
@@ -170,7 +177,7 @@ Architecture/content decisions:
 Next eligible task:
 ```
 
-### P001 — completed 2026-10-01
+### P001 â€” completed 2026-10-01
 
 - Changed: local Git repository/ignores, README commands, typed GDScript root/
   session, WorldHost/Party entry points, supplied camera target, test room,
@@ -185,9 +192,9 @@ Next eligible task:
 - Decisions: root/UI process during pause; world/party/camera stop; session
   owns time, UI submits commands. Logical Esc/F10 repaired after real input
   check; physical WASD reserved for movement. No architecture/canon changes.
-- Next eligible task: P002 — Definition catalog and runtime-state ownership.
+- Next eligible task: P002 â€” Definition catalog and runtime-state ownership.
 
-### P002 — completed 2026-10-01
+### P002 â€” completed 2026-10-01
 
 - Changed: typed actor/location/dialogue definitions and five authored fixtures,
   explicit manifest/catalog validation, separate per-instance ActorState/session
@@ -206,9 +213,9 @@ Next eligible task:
   progress never stored in definitions. Negative fixtures explicitly copy each
   external definition after manifest-only deep copy proved insufficient.
   No architecture change; existing P001 commit and source preserved.
-- Next eligible task: P003 — Hero movement and overhead camera.
+- Next eligible task: P003 â€” Hero movement and overhead camera.
 
-### P003 — completed 2026-10-02
+### P003 â€” completed 2026-10-02
 
 - Changed: physical hero/independent VisualRoot, collidable walls/plinth,
   camera-relative WASD/mouse facing, overhead follow, projection comparison/zoom,
@@ -227,9 +234,9 @@ Next eligible task:
   Initial desktop lock/automation key-tap limits resolved for acceptance using
   user manual evidence plus explicitly authorized rendered playtest harness.
   Existing missing C# SDK warning remains; no Blender assets or Windows export.
-- Next eligible task: P004 — Connected locations and party lifecycle. Not started.
+- Next eligible task: P004 â€” Connected locations and party lifecycle. Not started.
 
-### P004 — completed 2026-10-02
+### P004 â€” completed 2026-10-02
 
 - Changed: compact Alderwake/Tollworks grayboxes, stable spawn anchors, nearby E
   travel, persistent Party wrappers, WorldHost validate/suspend/load/place/resume
@@ -250,9 +257,9 @@ Next eligible task:
   companions, saves, Blender assets or Windows export. Rendered input is injected
   into normal gameplay paths, not hardware. Existing unused C# SDK warning remains.
   P003 local commit `77aed4b` preserved; no source edits/push/publication.
-- Next eligible task: P005 — Versioned save/load foundation. Not started.
+- Next eligible task: P005 â€” Versioned save/load foundation. Not started.
 
-### P005 — completed 2026-10-02
+### P005 â€” completed 2026-10-02
 
 - Changed: schema/content-v1 plain-data codec, isolated candidate validation,
   checked user:// temporary writes/backup publication/recovery, explicit ordered
@@ -273,9 +280,9 @@ Next eligible task:
   combat/dialogue state, Blender work or Windows export. Disk-failure checks use
   staging obstructions, not physical power loss. User's normal save slot untouched;
   playtest slots isolated. Source/Git baseline preserved; no push/publication.
-- Next eligible task: P006 — Reusable interaction and dialogue. Not started.
+- Next eligible task: P006 â€” Reusable interaction and dialogue. Not started.
 
-### P006 — completed 2026-10-02
+### P006 â€” completed 2026-10-02
 
 - Changed: reusable NPC/prop/gate selection with range/LOS and stable instance
   IDs; authored dialogue choices, separate transient service and explicit action
@@ -297,10 +304,10 @@ Next eligible task:
   damage. Temporary stand-ins have no companion AI. Source canon read-only and
   now populated; no Blender work/export/push/publication. Viewport input is injected,
   not hardware/OS-focus proof. Existing Mono SDK warning remains nonblocking.
-- Next eligible task: P007 — Quest progression, journal, and durable effects.
+- Next eligible task: P007 â€” Quest progression, journal, and durable effects.
   Not started; deliberately bump/migrate schema v1 before quest data.
 
-### P007 — completed 2026-10-02
+### P007 â€” completed 2026-10-02
 
 - Changed: ordered authored recovery steps, independent quest state/service,
   prerequisite/location/source validation, atomic once-only effects and journal;
@@ -322,9 +329,9 @@ Next eligible task:
   guardian pending P008. No active companion/trust/upgrades/Blender/export claim.
   Viewport input is injected, not hardware/OS-focus proof; normal save/source untouched.
   Initial sandbox save IO denial resolved by normal-access rerun. No push/publication.
-- Next eligible task: P008 — Hero action combat and guardian. Not started.
+- Next eligible task: P008 â€” Hero action combat and guardian. Not started.
 
-### P008 — completed 2026-10-02
+### P008 â€” completed 2026-10-02
 
 - Changed: shared actor attack/dodge/damage APIs and transient CombatState windows,
   one-contact swing rules, range/facing/LOS, guardian pursuit/telegraph/strike,
@@ -353,9 +360,9 @@ Next eligible task:
   Mono SDK warning only; no companion AI/trust/upgrades/Blender/export claim.
   Normal save/source untouched; committed locally at user request. No push/publication
   or permanent canon added.
-- Next eligible task: P009 — One active companion. Not started.
+- Next eligible task: P009 â€” One active companion. Not started.
 
-### P009 — completed 2026-10-02
+### P009 â€” completed 2026-10-02
 
 - Changed: one session-owned temporary ally, persistent gameplay wrapper/shared
   actor APIs, follow/fight/return controller, collision-derived room navigation,
@@ -380,21 +387,21 @@ Next eligible task:
   not normal quest evidence. Initial input attempts failed timing/focus; real focus
   restored and normal gameplay repeated. Existing unused Mono SDK warning only.
   Normal save/source untouched; external P008 commit preserved; no commit/push/export.
-- Next eligible task: P010 — Relationship consequence and character upgrade.
+- Next eligible task: P010 â€” Relationship consequence and character upgrade.
   Not started.
 
-### P010 — completed 2026-10-02
+### P010 â€” completed 2026-10-02
 
 - Changed: authored noncanonical +1/-1 companion decision/reactions, separate
   relationship/progression definitions/state/services, lead-earned preparation
   point and selectable Deliberate Strike (+15 hero damage), journal scroll/UI/HUD,
   root source/modal validation and restore rebinding; schema4/content1 with strict
-  consequence validation and exact v1–v3 migration; script UIDs, docs and checks.
+  consequence validation and exact v1â€“v3 migration; script UIDs, docs and checks.
 - Checks/evidence: prerequisite companion PASS/exit0; import exit0 (existing unused
   Mono SDK warning only); eleven focused scripts PASS/exit0; six separate writer/
   reader processes PASS/exit0; final affected six PASS/exit0. Normal Windows WASD/E/
-  GUI +1 choice/replay, fresh -1 choice, lead-earned point, journal select25→40,
-  guardian40→0 hero strike after ally assist, GUI save/process restart, alternate
+  GUI +1 choice/replay, fresh -1 choice, lead-earned point, journal select25â†’40,
+  guardian40â†’0 hero strike after ally assist, GUI save/process restart, alternate
   rejection, disabled spent button and room round trip preserve consequences.
   Three windowed quits exit0; runtime scans clean. Commands, 128 input traces,
   logs and inspected PNG/JSON: evidence/P010/VALIDATION.md. Git diff check exit0.
@@ -406,9 +413,9 @@ Next eligible task:
   Input injected through normal rendered viewport, no new hardware/OS-focus claim.
   Timing/art/training reward provisional; P011 shop presentation still pending.
   Normal save/source untouched; no subagents, Blender, commit/push/export.
-- Next eligible task: P011 — Recovery and persistent world presentation. Not started.
+- Next eligible task: P011 â€” Recovery and persistent world presentation. Not started.
 
-### P011 — completed 2026-10-02
+### P011 â€” completed 2026-10-02
 
 - Changed: MarisCounter wrapper with fixed collision/replaceable visuals and basic,
   returned/fitting, restored specialist variants from existing quest effects;
@@ -430,9 +437,9 @@ Next eligible task:
   no new hardware evidence. Source/normal save preserved; no Blender/subagents/export,
   commit/push/publication. Failed first bridge launch corrected; successful runtime
   scans clean. Ship/fair recovery remain separate.
-- Next eligible task: P012 — Reusable Blender asset pipeline. Not started.
+- Next eligible task: P012 â€” Reusable Blender asset pipeline. Not started.
 
-### P012 — completed 2026-10-02
+### P012 â€” completed 2026-10-02
 
 - Changed: three isolated editable .blend sources/original low-poly meshes, mesh-only
   GLBs/import UIDs, meter/origin/forward/PBR export contract and scoped helpers;
@@ -458,9 +465,9 @@ Next eligible task:
   late handle acquisition, window b verified0. Input injected, no new hardware or
   Windows export claim. Source/normal save preserved; committed locally at user
   request. No subagents/push/publication.
-- Next eligible task: P013 — Complete playable recovery slice. Not started.
+- Next eligible task: P013 â€” Complete playable recovery slice. Not started.
 
-### P013 — completed 2026-10-02
+### P013 â€” completed 2026-10-02
 
 - Changed: player-facing slice/room labels, location-aware objectives, optional
   trust/earned-upgrade reminders, companion route guidance and explicit pause-save
@@ -486,9 +493,9 @@ Next eligible task:
   Viewport and native SendInput automation are not physical-hardware evidence.
   Restricted initial save checks required normal local app access. Normal save and
   source preserved; no Blender edits, subagents, commit/push/publication or export.
-- Next eligible task: P014 — Extension check and Windows export. Not started.
+- Next eligible task: P014 â€” Extension check and Windows export. Not started.
 
-### P014 — completed 2026-10-03
+### P014 â€” completed 2026-10-03
 
 - Changed: earlier isolated second quest/60-health actor/inherited location fixture,
   authored quest presentation and text-resource/export-path repairs; final native
@@ -505,7 +512,7 @@ Next eligible task:
   not deterministic physics stepping; native combined fight does not prove isolated
   hero damage. Early idle death used normal R. One restart mouse Load missed; observed
   Tab/Enter then verified actual restore. Local unsigned exe+pck, 960x640 client,
-  Windows11/Ultra9/RTX4070, sampled227–242FPS includes pauses/UI, not benchmark.
+  Windows11/Ultra9/RTX4070, sampled227â€“242FPS includes pauses/UI, not benchmark.
   Schema4/content1/IDs/wrappers/gameplay unchanged. Original engine export caveats
   retained; no new canon, source/normal-save edits, Blender work or publication.
 - Next eligible task: none defined here. Separate migration checklist preserved;

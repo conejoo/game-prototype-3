@@ -17,6 +17,10 @@ First read applicable AGENTS.md instructions and these documents:
 
 Inspect actual project files and Git changes. Handoff notes can be stale; verify
 before trusting their claims. If an unrelated user change exists, preserve it.
+Use current contracts/code/tests and small retained fixtures first. Raw logs and
+captures under ignored docs/evidence are optional local archives; read only for a
+specific issue. Missing archives do not block work. Keep handoffs concise; never
+force-add generated evidence. Promote only reusable inputs or durable decisions.
 
 Work on exactly one checklist item: resume the in-progress item, otherwise
 select the first pending item whose prerequisites are verified complete.

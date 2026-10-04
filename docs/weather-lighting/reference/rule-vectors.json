@@ -1,0 +1,828 @@
+{
+  "provenance": "Python literal transcription of pinned Dart, not a claim Flutter/Dart tests ran. Pinned source is authority.",
+  "forecast": [
+    {
+      "seed": 0,
+      "absolute_minutes": 0,
+      "day_index": 0,
+      "day_cycle_progress": 0.0,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 425,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 0,
+      "absolute_minutes": 424.9999,
+      "day_index": 0,
+      "day_cycle_progress": 0.2951388194444445,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 425,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 0,
+      "absolute_minutes": 425,
+      "day_index": 0,
+      "day_cycle_progress": 0.2951388888888889,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 425,
+        "period_end_minutes": 809,
+        "transition_progress": 0.0
+      }
+    },
+    {
+      "seed": 0,
+      "absolute_minutes": 432.5,
+      "day_index": 0,
+      "day_cycle_progress": 0.3003472222222222,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 425,
+        "period_end_minutes": 809,
+        "transition_progress": 0.5
+      }
+    },
+    {
+      "seed": 0,
+      "absolute_minutes": 440,
+      "day_index": 0,
+      "day_cycle_progress": 0.3055555555555556,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 425,
+        "period_end_minutes": 809,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 0,
+      "absolute_minutes": 54333.0,
+      "day_index": 37,
+      "day_cycle_progress": 0.73125,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "cloudy",
+        "period_index": 151,
+        "period_start_minutes": 53963,
+        "period_end_minutes": 54409,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 0,
+      "absolute_minutes": 5257438.56,
+      "day_index": 3650,
+      "day_cycle_progress": 0.9989999999997154,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 14643,
+        "period_start_minutes": 5257221,
+        "period_end_minutes": 5257516,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1,
+      "absolute_minutes": 0,
+      "day_index": 0,
+      "day_cycle_progress": 0.0,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 283,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1,
+      "absolute_minutes": 282.9999,
+      "day_index": 0,
+      "day_cycle_progress": 0.19652770833333336,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 283,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1,
+      "absolute_minutes": 283,
+      "day_index": 0,
+      "day_cycle_progress": 0.19652777777777777,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 283,
+        "period_end_minutes": 713,
+        "transition_progress": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "absolute_minutes": 290.5,
+      "day_index": 0,
+      "day_cycle_progress": 0.20173611111111112,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 283,
+        "period_end_minutes": 713,
+        "transition_progress": 0.5
+      }
+    },
+    {
+      "seed": 1,
+      "absolute_minutes": 298,
+      "day_index": 0,
+      "day_cycle_progress": 0.20694444444444443,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 283,
+        "period_end_minutes": 713,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1,
+      "absolute_minutes": 54333.0,
+      "day_index": 37,
+      "day_cycle_progress": 0.73125,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "cloudy",
+        "period_index": 153,
+        "period_start_minutes": 54231,
+        "period_end_minutes": 54679,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1,
+      "absolute_minutes": 5257438.56,
+      "day_index": 3650,
+      "day_cycle_progress": 0.9989999999997154,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "cloudy",
+        "period_index": 14610,
+        "period_start_minutes": 5257226,
+        "period_end_minutes": 5257495,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 77,
+      "absolute_minutes": 0,
+      "day_index": 0,
+      "day_cycle_progress": 0.0,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 405,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 77,
+      "absolute_minutes": 404.9999,
+      "day_index": 0,
+      "day_cycle_progress": 0.2812499305555556,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 405,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 77,
+      "absolute_minutes": 405,
+      "day_index": 0,
+      "day_cycle_progress": 0.28125,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 405,
+        "period_end_minutes": 829,
+        "transition_progress": 0.0
+      }
+    },
+    {
+      "seed": 77,
+      "absolute_minutes": 412.5,
+      "day_index": 0,
+      "day_cycle_progress": 0.2864583333333333,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 405,
+        "period_end_minutes": 829,
+        "transition_progress": 0.5
+      }
+    },
+    {
+      "seed": 77,
+      "absolute_minutes": 420,
+      "day_index": 0,
+      "day_cycle_progress": 0.2916666666666667,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 405,
+        "period_end_minutes": 829,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 77,
+      "absolute_minutes": 54333.0,
+      "day_index": 37,
+      "day_cycle_progress": 0.73125,
+      "expected": {
+        "condition": "rainy",
+        "previous_condition": "cloudy",
+        "period_index": 146,
+        "period_start_minutes": 54070,
+        "period_end_minutes": 54479,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 77,
+      "absolute_minutes": 5257438.56,
+      "day_index": 3650,
+      "day_cycle_progress": 0.9989999999997154,
+      "expected": {
+        "condition": "thunderstorm",
+        "previous_condition": "rainy",
+        "period_index": 14616,
+        "period_start_minutes": 5257410,
+        "period_end_minutes": 5257689,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 123456,
+      "absolute_minutes": 0,
+      "day_index": 0,
+      "day_cycle_progress": 0.0,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 369,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 123456,
+      "absolute_minutes": 368.9999,
+      "day_index": 0,
+      "day_cycle_progress": 0.25624993055555556,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 369,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 123456,
+      "absolute_minutes": 369,
+      "day_index": 0,
+      "day_cycle_progress": 0.25625,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 369,
+        "period_end_minutes": 644,
+        "transition_progress": 0.0
+      }
+    },
+    {
+      "seed": 123456,
+      "absolute_minutes": 376.5,
+      "day_index": 0,
+      "day_cycle_progress": 0.26145833333333335,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 369,
+        "period_end_minutes": 644,
+        "transition_progress": 0.5
+      }
+    },
+    {
+      "seed": 123456,
+      "absolute_minutes": 384,
+      "day_index": 0,
+      "day_cycle_progress": 0.26666666666666666,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 369,
+        "period_end_minutes": 644,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 123456,
+      "absolute_minutes": 54333.0,
+      "day_index": 37,
+      "day_cycle_progress": 0.73125,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 151,
+        "period_start_minutes": 54222,
+        "period_end_minutes": 54509,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 123456,
+      "absolute_minutes": 5257438.56,
+      "day_index": 3650,
+      "day_cycle_progress": 0.9989999999997154,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "cloudy",
+        "period_index": 14630,
+        "period_start_minutes": 5257249,
+        "period_end_minutes": 5257644,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1821285621,
+      "absolute_minutes": 0,
+      "day_index": 0,
+      "day_cycle_progress": 0.0,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 266,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1821285621,
+      "absolute_minutes": 265.9999,
+      "day_index": 0,
+      "day_cycle_progress": 0.1847221527777778,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 266,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1821285621,
+      "absolute_minutes": 266,
+      "day_index": 0,
+      "day_cycle_progress": 0.18472222222222223,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 266,
+        "period_end_minutes": 680,
+        "transition_progress": 0.0
+      }
+    },
+    {
+      "seed": 1821285621,
+      "absolute_minutes": 273.5,
+      "day_index": 0,
+      "day_cycle_progress": 0.18993055555555555,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 266,
+        "period_end_minutes": 680,
+        "transition_progress": 0.5
+      }
+    },
+    {
+      "seed": 1821285621,
+      "absolute_minutes": 281,
+      "day_index": 0,
+      "day_cycle_progress": 0.1951388888888889,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 266,
+        "period_end_minutes": 680,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1821285621,
+      "absolute_minutes": 54333.0,
+      "day_index": 37,
+      "day_cycle_progress": 0.73125,
+      "expected": {
+        "condition": "rainy",
+        "previous_condition": "cloudy",
+        "period_index": 150,
+        "period_start_minutes": 54085,
+        "period_end_minutes": 54415,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 1821285621,
+      "absolute_minutes": 5257438.56,
+      "day_index": 3650,
+      "day_cycle_progress": 0.9989999999997154,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 14604,
+        "period_start_minutes": 5257066,
+        "period_end_minutes": 5257530,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 3737844653,
+      "absolute_minutes": 0,
+      "day_index": 0,
+      "day_cycle_progress": 0.0,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 383,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 3737844653,
+      "absolute_minutes": 382.9999,
+      "day_index": 0,
+      "day_cycle_progress": 0.2659721527777778,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 383,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 3737844653,
+      "absolute_minutes": 383,
+      "day_index": 0,
+      "day_cycle_progress": 0.2659722222222222,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 383,
+        "period_end_minutes": 722,
+        "transition_progress": 0.0
+      }
+    },
+    {
+      "seed": 3737844653,
+      "absolute_minutes": 390.5,
+      "day_index": 0,
+      "day_cycle_progress": 0.27118055555555554,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 383,
+        "period_end_minutes": 722,
+        "transition_progress": 0.5
+      }
+    },
+    {
+      "seed": 3737844653,
+      "absolute_minutes": 398,
+      "day_index": 0,
+      "day_cycle_progress": 0.2763888888888889,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 383,
+        "period_end_minutes": 722,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 3737844653,
+      "absolute_minutes": 54333.0,
+      "day_index": 37,
+      "day_cycle_progress": 0.73125,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 154,
+        "period_start_minutes": 54316,
+        "period_end_minutes": 54701,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 3737844653,
+      "absolute_minutes": 5257438.56,
+      "day_index": 3650,
+      "day_cycle_progress": 0.9989999999997154,
+      "expected": {
+        "condition": "thunderstorm",
+        "previous_condition": "rainy",
+        "period_index": 14593,
+        "period_start_minutes": 5257330,
+        "period_end_minutes": 5257597,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 4294967295,
+      "absolute_minutes": 0,
+      "day_index": 0,
+      "day_cycle_progress": 0.0,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 363,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 4294967295,
+      "absolute_minutes": 362.9999,
+      "day_index": 0,
+      "day_cycle_progress": 0.2520832638888889,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "sunny",
+        "period_index": 0,
+        "period_start_minutes": 0,
+        "period_end_minutes": 363,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 4294967295,
+      "absolute_minutes": 363,
+      "day_index": 0,
+      "day_cycle_progress": 0.2520833333333333,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 363,
+        "period_end_minutes": 802,
+        "transition_progress": 0.0
+      }
+    },
+    {
+      "seed": 4294967295,
+      "absolute_minutes": 370.5,
+      "day_index": 0,
+      "day_cycle_progress": 0.25729166666666664,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 363,
+        "period_end_minutes": 802,
+        "transition_progress": 0.5
+      }
+    },
+    {
+      "seed": 4294967295,
+      "absolute_minutes": 378,
+      "day_index": 0,
+      "day_cycle_progress": 0.2625,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 1,
+        "period_start_minutes": 363,
+        "period_end_minutes": 802,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 4294967295,
+      "absolute_minutes": 54333.0,
+      "day_index": 37,
+      "day_cycle_progress": 0.73125,
+      "expected": {
+        "condition": "cloudy",
+        "previous_condition": "sunny",
+        "period_index": 151,
+        "period_start_minutes": 54015,
+        "period_end_minutes": 54468,
+        "transition_progress": 1.0
+      }
+    },
+    {
+      "seed": 4294967295,
+      "absolute_minutes": 5257438.56,
+      "day_index": 3650,
+      "day_cycle_progress": 0.9989999999997154,
+      "expected": {
+        "condition": "sunny",
+        "previous_condition": "cloudy",
+        "period_index": 14657,
+        "period_start_minutes": 5257320,
+        "period_end_minutes": 5257704,
+        "transition_progress": 1.0
+      }
+    }
+  ],
+  "low32_multiply": [
+    {
+      "a": 0,
+      "b": 2654435769,
+      "low32": 0
+    },
+    {
+      "a": 0,
+      "b": 2146121005,
+      "low32": 0
+    },
+    {
+      "a": 0,
+      "b": 2221713035,
+      "low32": 0
+    },
+    {
+      "a": 1,
+      "b": 2654435769,
+      "low32": 2654435769
+    },
+    {
+      "a": 1,
+      "b": 2146121005,
+      "low32": 2146121005
+    },
+    {
+      "a": 1,
+      "b": 2221713035,
+      "low32": 2221713035
+    },
+    {
+      "a": 2147483647,
+      "b": 2654435769,
+      "low32": 3788015175
+    },
+    {
+      "a": 2147483647,
+      "b": 2146121005,
+      "low32": 1362643
+    },
+    {
+      "a": 2147483647,
+      "b": 2221713035,
+      "low32": 4220737909
+    },
+    {
+      "a": 2147483648,
+      "b": 2654435769,
+      "low32": 2147483648
+    },
+    {
+      "a": 2147483648,
+      "b": 2146121005,
+      "low32": 2147483648
+    },
+    {
+      "a": 2147483648,
+      "b": 2221713035,
+      "low32": 2147483648
+    },
+    {
+      "a": 4294967295,
+      "b": 2654435769,
+      "low32": 1640531527
+    },
+    {
+      "a": 4294967295,
+      "b": 2146121005,
+      "low32": 2148846291
+    },
+    {
+      "a": 4294967295,
+      "b": 2221713035,
+      "low32": 2073254261
+    }
+  ],
+  "clock": [
+    {
+      "progress": 0,
+      "minute_of_day": 600
+    },
+    {
+      "progress": 0.0006944444444444445,
+      "minute_of_day": 601.0
+    },
+    {
+      "progress": 0.25,
+      "minute_of_day": 960.0
+    },
+    {
+      "progress": 0.5,
+      "minute_of_day": 1320.0
+    },
+    {
+      "progress": 0.5833333333333334,
+      "minute_of_day": 0.0
+    },
+    {
+      "progress": 0.75,
+      "minute_of_day": 240.0
+    },
+    {
+      "progress": 0.999,
+      "minute_of_day": 598.56
+    }
+  ],
+  "advance": [
+    {
+      "day_index": 0,
+      "progress": 0,
+      "delta_seconds": 600,
+      "expected_day_index": 1,
+      "expected_progress": 0.0
+    },
+    {
+      "day_index": 0,
+      "progress": 0.95,
+      "delta_seconds": 60,
+      "expected_day_index": 1,
+      "expected_progress": 0.050000000000000044
+    },
+    {
+      "day_index": 5,
+      "progress": 0.37,
+      "delta_seconds": 1800,
+      "expected_day_index": 8,
+      "expected_progress": 0.3700000000000001
+    },
+    {
+      "day_index": 2,
+      "progress": 0.999,
+      "delta_seconds": 601,
+      "expected_day_index": 4,
+      "expected_progress": 0.0006666666666665932
+    }
+  ]
+}

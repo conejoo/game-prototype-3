@@ -142,6 +142,7 @@ func _run() -> void:
 		guide.append({"goal":entry.goal, "path":values})
 		start = entry.point
 	var directory: String = ProjectSettings.globalize_path("res://../docs/evidence/M016")
+	DirAccess.make_dir_recursive_absolute(directory)
 	var guide_file: FileAccess = FileAccess.open(directory.path_join("camera-tour-guide.json"), FileAccess.WRITE)
 	guide_file.store_string(JSON.stringify(guide, "	") + "\n")
 	report = {"projection_samples": samples, "terrain_occluded_samples":hidden_samples,"observations":observations, "maximum_aim_error_m":maximum_error, "old_plane_maximum_error_m":old_plane_error, "slope_count":16, "projections":2, "zoom_factors":[0.8,1,1.15], "failures":Array(failures)}

@@ -1,0 +1,1077 @@
+{
+  "snapshot_id": "alderwake-f4630f9-m002",
+  "count": 23,
+  "entries": [
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "alder-rise-home-01-building",
+      "source_id": "windows",
+      "definition_id": "house-timber-terracotta",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[0].props[0]",
+      "foot_xyz_m": [
+        -4.0,
+        0.0,
+        -12.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/alder-rise-home-01-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.40625,
+            -2.34375
+          ],
+          [
+            1.9375,
+            -2.34375
+          ],
+          [
+            1.9375,
+            -0.1875
+          ],
+          [
+            -2.40625,
+            -0.1875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "alder-rise-home-03-building",
+      "source_id": "windows",
+      "definition_id": "house-plaster-terracotta",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[2].props[0]",
+      "foot_xyz_m": [
+        10.0,
+        0.0,
+        -7.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/alder-rise-home-03-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.3125,
+            -1.875
+          ],
+          [
+            1.9375,
+            -1.875
+          ],
+          [
+            1.9375,
+            -0.46875
+          ],
+          [
+            -2.3125,
+            -0.46875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-lamp-01",
+      "source_id": "lantern",
+      "definition_id": "dock-lamp",
+      "default_enabled": false,
+      "switchable": true,
+      "source_path": "objects[15]",
+      "foot_xyz_m": [
+        -2.5385093688964844,
+        0.0,
+        -0.4785003662109375
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-lamp-01",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "dock_lamp",
+      "intended_ground_radius_m": 1.0,
+      "initial_omni_range_m": 1.8946
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-lamp-02",
+      "source_id": "lantern",
+      "definition_id": "dock-lamp",
+      "default_enabled": false,
+      "switchable": true,
+      "source_path": "objects[16]",
+      "foot_xyz_m": [
+        2.757619857788086,
+        0.0,
+        3.602499008178711
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-lamp-02",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "dock_lamp",
+      "intended_ground_radius_m": 1.0,
+      "initial_omni_range_m": 1.8946
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-lamp-03",
+      "source_id": "lantern",
+      "definition_id": "dock-lamp",
+      "default_enabled": false,
+      "switchable": true,
+      "source_path": "objects[17]",
+      "foot_xyz_m": [
+        2.505422592163086,
+        0.0,
+        -7.746349334716797
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-lamp-03",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "dock_lamp",
+      "intended_ground_radius_m": 1.0,
+      "initial_omni_range_m": 1.8946
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-lamp-04",
+      "source_id": "lantern",
+      "definition_id": "dock-lamp",
+      "default_enabled": false,
+      "switchable": true,
+      "source_path": "objects[18]",
+      "foot_xyz_m": [
+        12.478652954101562,
+        0.0,
+        10.572296142578125
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-lamp-04",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "dock_lamp",
+      "intended_ground_radius_m": 1.0,
+      "initial_omni_range_m": 1.8946
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-lamp-05",
+      "source_id": "lantern",
+      "definition_id": "dock-lamp",
+      "default_enabled": false,
+      "switchable": true,
+      "source_path": "objects[19]",
+      "foot_xyz_m": [
+        -13.314183235168457,
+        0.0,
+        3.6483516693115234
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-lamp-05",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "dock_lamp",
+      "intended_ground_radius_m": 1.0,
+      "initial_omni_range_m": 1.8946
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-luminous-nets-01",
+      "source_id": "woven-lights",
+      "definition_id": "luminous-net-display",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[4].props[0]",
+      "foot_xyz_m": [
+        17.0,
+        0.0,
+        18.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-luminous-nets-01",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/woven-lights",
+      "anchor_local_xyz_m": [
+        0,
+        1.0,
+        -0.45
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "woven_net",
+      "intended_ground_radius_m": 0,
+      "initial_omni_range_m": 0
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-row-home-01-building",
+      "source_id": "windows",
+      "definition_id": "house-dockside",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[8].props[0]",
+      "foot_xyz_m": [
+        -1.0,
+        0.0,
+        10.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-row-home-01-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.21875,
+            -0.75
+          ],
+          [
+            -1.375,
+            -2.625
+          ],
+          [
+            1.75,
+            -1.65625
+          ],
+          [
+            0.0,
+            -0.125
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-row-home-02-building",
+      "source_id": "windows",
+      "definition_id": "house-dockside",
+      "default_enabled": false,
+      "switchable": false,
+      "source_path": "groups[9].props[0]",
+      "foot_xyz_m": [
+        5.0,
+        0.0,
+        10.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-row-home-02-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.21875,
+            -0.75
+          ],
+          [
+            -1.375,
+            -2.625
+          ],
+          [
+            1.75,
+            -1.65625
+          ],
+          [
+            0.0,
+            -0.125
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-row-home-03-building",
+      "source_id": "windows",
+      "definition_id": "house-timber-terracotta",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[10].props[0]",
+      "foot_xyz_m": [
+        11.0,
+        0.0,
+        10.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-row-home-03-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.40625,
+            -2.34375
+          ],
+          [
+            1.9375,
+            -2.34375
+          ],
+          [
+            1.9375,
+            -0.1875
+          ],
+          [
+            -2.40625,
+            -0.1875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-row-home-04-building",
+      "source_id": "windows",
+      "definition_id": "house-timber-slate",
+      "default_enabled": false,
+      "switchable": false,
+      "source_path": "groups[11].props[0]",
+      "foot_xyz_m": [
+        17.0,
+        0.0,
+        10.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-row-home-04-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.1875,
+            -1.75
+          ],
+          [
+            1.625,
+            -1.75
+          ],
+          [
+            1.625,
+            -0.21875
+          ],
+          [
+            -2.1875,
+            -0.21875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "dock-row-lamp-01",
+      "source_id": "lantern",
+      "definition_id": "dock-lamp",
+      "default_enabled": true,
+      "switchable": true,
+      "source_path": "objects[23]",
+      "foot_xyz_m": [
+        -5.0,
+        0.0,
+        16.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/dock-row-lamp-01",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "dock_lamp",
+      "intended_ground_radius_m": 1.0,
+      "initial_omni_range_m": 1.8946
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "lantern-rest-exterior-building",
+      "source_id": "windows",
+      "definition_id": "lantern-rest",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[14].props[0]",
+      "foot_xyz_m": [
+        -7.0,
+        0.0,
+        3.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/lantern-rest-exterior-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -3.375,
+            -0.53125
+          ],
+          [
+            -2.625,
+            -1.9375
+          ],
+          [
+            3.09375,
+            -1.28125
+          ],
+          [
+            2.28125,
+            -0.03125
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.75,
+          1.55
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "mayor-vale-home-building",
+      "source_id": "windows",
+      "definition_id": "mayor-vale-home",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[15].props[0]",
+      "foot_xyz_m": [
+        4.0,
+        0.0,
+        -8.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/mayor-vale-home-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.59375,
+            -2.46875
+          ],
+          [
+            2.46875,
+            -2.46875
+          ],
+          [
+            2.46875,
+            -0.25
+          ],
+          [
+            -2.59375,
+            -0.25
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.75,
+          1.55
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "mill-road-home-01-building",
+      "source_id": "windows",
+      "definition_id": "house-plaster-terracotta",
+      "default_enabled": false,
+      "switchable": false,
+      "source_path": "groups[16].props[0]",
+      "foot_xyz_m": [
+        -19.0,
+        0.0,
+        -4.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/mill-road-home-01-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.3125,
+            -1.875
+          ],
+          [
+            1.9375,
+            -1.875
+          ],
+          [
+            1.9375,
+            -0.46875
+          ],
+          [
+            -2.3125,
+            -0.46875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "mill-road-home-02-building",
+      "source_id": "windows",
+      "definition_id": "house-timber-slate",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[17].props[0]",
+      "foot_xyz_m": [
+        -19.0,
+        0.0,
+        9.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/mill-road-home-02-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.1875,
+            -1.75
+          ],
+          [
+            1.625,
+            -1.75
+          ],
+          [
+            1.625,
+            -0.21875
+          ],
+          [
+            -2.1875,
+            -0.21875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "moonwood-edge-home-01-building",
+      "source_id": "windows",
+      "definition_id": "house-woodland-cottage",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[20].props[0]",
+      "foot_xyz_m": [
+        19.0,
+        0.0,
+        -6.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/moonwood-edge-home-01-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -1.78125,
+            -1.96875
+          ],
+          [
+            1.5,
+            -1.96875
+          ],
+          [
+            1.5,
+            -0.21875
+          ],
+          [
+            -1.78125,
+            -0.21875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "moonwood-edge-home-02-building",
+      "source_id": "windows",
+      "definition_id": "house-woodland-cottage",
+      "default_enabled": false,
+      "switchable": false,
+      "source_path": "groups[21].props[0]",
+      "foot_xyz_m": [
+        23.0,
+        0.0,
+        8.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/moonwood-edge-home-02-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -1.78125,
+            -1.96875
+          ],
+          [
+            1.5,
+            -1.96875
+          ],
+          [
+            1.5,
+            -0.21875
+          ],
+          [
+            -1.78125,
+            -0.21875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "reed-chandlery-exterior-building",
+      "source_id": "windows",
+      "definition_id": "reed-chandlery",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[28].props[0]",
+      "foot_xyz_m": [
+        -7.0,
+        0.0,
+        10.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/reed-chandlery-exterior-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.8125,
+            -2.25
+          ],
+          [
+            2.46875,
+            -2.25
+          ],
+          [
+            2.46875,
+            -0.125
+          ],
+          [
+            -2.8125,
+            -0.125
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "safeguard-waylight-east-01",
+      "source_id": "answer-light",
+      "definition_id": "safeguard-waylight",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "objects[508]",
+      "foot_xyz_m": [
+        103.5,
+        0.0,
+        2.5
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/ForestPopulation/safeguard-waylight-east-01",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/answer-light",
+      "anchor_local_xyz_m": [
+        0,
+        0.65,
+        -0.125
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "waylight",
+      "intended_ground_radius_m": 0.625,
+      "initial_omni_range_m": 0.9517
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "safeguard-waylight-west-01",
+      "source_id": "answer-light",
+      "definition_id": "safeguard-waylight",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "objects[509]",
+      "foot_xyz_m": [
+        90.5,
+        0.0,
+        2.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/ForestPopulation/safeguard-waylight-west-01",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/answer-light",
+      "anchor_local_xyz_m": [
+        0,
+        0.65,
+        -0.125
+      ],
+      "emitter_kind": "emissive_mesh_and_pooled_unshadowed_omni",
+      "asset_gap_owner": "W005",
+      "kind": "waylight",
+      "intended_ground_radius_m": 0.625,
+      "initial_omni_range_m": 0.9517
+    },
+    {
+      "location_id": "prototype-alderwake",
+      "source_map_id": "alderwake",
+      "prop_id": "tess-general-goods-exterior-building",
+      "source_id": "windows",
+      "definition_id": "tess-general-goods",
+      "default_enabled": true,
+      "switchable": false,
+      "source_path": "groups[29].props[0]",
+      "foot_xyz_m": [
+        9.0,
+        0.0,
+        4.0
+      ],
+      "yaw_degrees": 0,
+      "wrapper": "Alderwake/TownFootprints/tess-general-goods-exterior-building",
+      "anchor_node": "VisualRoot/ExteriorLightAnchors/windows",
+      "anchor_local_xyz_m": null,
+      "emitter_kind": "emissive_window_panes",
+      "asset_gap_owner": "W005",
+      "kind": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.5625,
+            -2.15625
+          ],
+          [
+            2.34375,
+            -2.15625
+          ],
+          [
+            2.34375,
+            -0.09375
+          ],
+          [
+            -2.5625,
+            -0.09375
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      }
+    }
+  ],
+  "absent_light_definitions": [
+    "festival-beacon",
+    "house-of-echoes",
+    "miniature-woven-light",
+    "preservation-heart",
+    "refuge-memory-vessel"
+  ],
+  "dark_structure_instances": [
+    "alder-rise-home-02-building",
+    "alderwake-hall-exterior-building",
+    "dock-row-dock-junction-building",
+    "dock-row-dock-straight-east-building",
+    "dock-row-dock-straight-west-building",
+    "dock-row-net-shed-01-building",
+    "dock-row-net-shed-02-building",
+    "mill-road-home-03-building",
+    "mill-road-schoolhouse-exterior-building",
+    "passenger-control-shelter-01"
+  ]
+}

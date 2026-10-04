@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M018 verified complete; M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M019 verified complete; no pending item. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -190,7 +190,7 @@ acceptance again against the resulting map build.
   batching/culling does not lose visuals/collision; no growth across repeated
   scene swaps. If targets fail, task remains open with numbers and repair scope.
 
-## [ ] M019 Full walkthrough and Windows build
+## [x] M019 Full walkthrough and Windows build
 
 - Run affected focused checks and rendered fresh-run journey through both
   crossings, Moonwell, closed exit, recovery quest and save/restart/revisit.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M018 complete. Append one concise record per item:
+M001–M019 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -360,3 +360,10 @@ Checks and exact exits: full798.339s rendered acceptance0/176,653 focused frames
 Evidence: docs/evidence/M018/VALIDATION.md,audit.json,acceptance raw CSVs/working-set/report/settings/launch/process/log/four inspected PNGs,fresh machine info,focused logs/reports/results,retained failed/invalid smokes.
 Decisions/limits: unchanged CONTRACT targets/source snapshot/schema4/content1/IDs/physics/nav/normal save; static unpaused960x640 orthographic Compatibility laptop benchmark,not combat/minimum PC/native journey. Raw max41.995ms retained.64m tree experiment reverted; launcher memory/unindexed audit/focus failures retained and fixed. Historical P014 compact completion preserved. No source refresh/Blender/install/subagent/commit/push/publication/next item.
 Next eligible task: M019 full walkthrough and Windows build only.
+M019 — completed 2026-10-04
+Result: fresh native larger-map tour/recovery/fitting, both crossings/Moonwell/closed gate, Windows validation/release builds, GUI Save->normal quit->independent GUI Load/revisit/replay; resulting-build native P014 gate resolved.
+Files: migration CHECKLIST/CURRENT_STATE, parent CHECKLIST/CURRENT_STATE, README; docs/evidence/M019/ and docs/evidence/P014/m019-native-{a,b,c}/; ignored rebuilt Windows packages/old-build backup. Production game/art/contract/helper unchanged.
+Checks and exact exit results: final focused activation/camera/navigation/application/slice/recovery/combat/save/extension and M017 writer/reader/checks PASS0; exports/standalone package smokes/pack/native-save audits0; native a/b/c quit0; extractor/final Git review in final-review.json. Known.NET editor diagnostic/expected synthetic retry ERROR retained. Initial navigation timing1 (2.331/2.031s) retained; final max1.162s. Initial wrong-filename pack audit1 corrected0.
+Evidence: docs/evidence/M019/VALIDATION.md, native-audit.json, focused/pack reports, build hashes,97-frame index/contact sheets and raw native guarded commands/responses/PNGs.
+Decisions or retained limits: snapshot/schema4/content1/IDs/ownership/normal save fixed; no bridge/teleport/state setup. Native outbound53.113s<=90s including detours; durable saved facts identical after replay, elapsed only399.441->524.279s. Native b/c686/262 requests, zero input/runtime failures. Shortened prototype, six inactive portals, unsigned local build; no minimum-PC/publication claim. Source drift remains outside scope; P014 compact evidence preserved.
+Next eligible task: none; all19 migration items verified complete.

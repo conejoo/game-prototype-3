@@ -1,11 +1,17 @@
 # Returning Fair prototype
 
+Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
+W001 verified; W002 next. Durable agent context lives in current state, contracts,
+checklists, source/tests and pinned references. Generated captures/logs under
+`docs/evidence/` stay local and ignored; agents need them only for specific diagnosis.
+
 Town/river/forest migration: [source investigation](docs/map-migration/INVESTIGATION.md),
 [19 sequential tasks](docs/map-migration/CHECKLIST.md), and
 [fresh-session agent prompt](docs/map-migration/AGENT_PROMPT.md).
-M001-M015 complete; larger exterior now active. Next M016 follows its own
-[durable state](docs/map-migration/CURRENT_STATE.md). P014 compact release walkthrough
-is complete; M019 must verify the resulting larger-map native build.
+M001-M019 complete; larger exterior and resulting Windows native release verified.
+[Durable state](docs/map-migration/CURRENT_STATE.md) and
+[current acceptance summary](docs/map-migration/CURRENT_STATE.md).
+Original P014 compact release evidence remains historical; no next migration item.
 
 P001–P014 complete. Full shortened recovery slice is playable from a fresh run.
 One labeled temporary ally follows, routes around obstacles and assists combat.
@@ -205,19 +211,19 @@ fixtures; purple stand-ins host dialogue in both rooms, separate from active all
 AI. Location/spawn IDs map to validated physical anchors.
 Collision-derived navigation synchronizes on travel and supplies companion paths.
 
-Exact check results: [P001 validation](docs/evidence/P001/VALIDATION.md),
-[P002 validation](docs/evidence/P002/VALIDATION.md),
-[P003 validation](docs/evidence/P003/VALIDATION.md),
-[P004 validation](docs/evidence/P004/VALIDATION.md),
-[P005 validation](docs/evidence/P005/VALIDATION.md),
-[P006 validation](docs/evidence/P006/VALIDATION.md),
-[P007 validation](docs/evidence/P007/VALIDATION.md),
-[P008 validation](docs/evidence/P008/VALIDATION.md),
-[P009 validation](docs/evidence/P009/VALIDATION.md),
-[P010 validation](docs/evidence/P010/VALIDATION.md),
-[P011 validation](docs/evidence/P011/VALIDATION.md),
-[P012 validation](docs/evidence/P012/VALIDATION.md),
-[P013 validation](docs/evidence/P013/VALIDATION.md).
+Exact check results: P001 validation (optional local archive),
+P002 validation (optional local archive),
+P003 validation (optional local archive),
+P004 validation (optional local archive),
+P005 validation (optional local archive),
+P006 validation (optional local archive),
+P007 validation (optional local archive),
+P008 validation (optional local archive),
+P009 validation (optional local archive),
+P010 validation (optional local archive),
+P011 validation (optional local archive),
+P012 validation (optional local archive),
+P013 validation (optional local archive).
 Blender sources and reusable export workflow: [asset pipeline](art/exports/PIPELINE.md).
 Imported guardian, recovery vessel and Tollworks plinth live under gameplay
 VisualRoots; Godot retains collision/navigation/IDs. Focused checks:
@@ -231,7 +237,7 @@ No further item defined in the prototype checklist. Read
 `game/export_presets.cfg`: Windows Desktop (release, tests excluded) and Windows
 Validation (debug, input bridge only). Official standard 4.7.2 template executables
 are extracted under ignored `builds/p014/templates`; pure GDScript needs no C#
-runtime/SDK. Package/version/hash records: [P014 validation](docs/evidence/P014/VALIDATION.md).
+runtime/SDK. Package/version/hash records: P014 validation (optional local archive).
 No system template install. From project root, using console executable above:
 
 ```powershell
@@ -243,7 +249,7 @@ Keep each `.exe` beside matching `.pck`. Run directly without editor or `--path 
 Debug export completed normal slice and restored/revisited progress in new processes.
 Native release full slice, GUI save/process restart/load, replay and room revisit
 passed using project-local Windows SendInput holds; both normal quits exit0.
-[Final release evidence](docs/evidence/P014/native-holds/VALIDATION.md) records
+Final release evidence (optional local archive) records
 actual timing, pause checkpoints and limits. No build published.
 
 Current local release directory contains `override.cfg`, isolating validation saves

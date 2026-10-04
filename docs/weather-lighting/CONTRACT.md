@@ -16,7 +16,7 @@ Prepared 2026-10-04, America/Vancouver. Scope is the existing Godot Alderwake ex
 - Runtime layout: target `game/content/maps/alderwake_layout.json`.
 - Existing coordinates/ownership: [map contract](../map-migration/CONTRACT.md). Do not refresh its snapshot or rerun source generators for this milestone.
 
-P001-P014 and M001-M019 are recorded complete by [parent state](../CURRENT_STATE.md) and [map state](../map-migration/CURRENT_STATE.md). M019 is the larger-map release baseline, not acceptance of future weather. Existing uncommitted M019 documents and evidence must be preserved.
+P001-P014 and M001-M019 are recorded complete by [parent state](../CURRENT_STATE.md) and [map state](../map-migration/CURRENT_STATE.md). M019 is the larger-map release baseline, not acceptance of future weather. Preserve unrelated local changes and optional historical artifacts.
 
 ## Behavior references for W001
 
@@ -79,7 +79,7 @@ Initial pinned lamp inventory:
 
 Map source defaults override definition defaults. Saved validated overrides take precedence over both. The production saved location ID is `prototype-alderwake`; source `alderwake` needs an explicit registry mapping.
 
-All 23 pinned exterior sources are in [W001 inventory](../evidence/W001/LIGHT_INVENTORY.md) and its exact [JSON registry design](../evidence/W001/light-inventory.json): six lamps, fourteen window sources, two waylights and one luminous net. Windows remain non-switchable; four window defaults are false. Both waylights and `dock-luminous-nets-01/woven-lights` are enabled and non-switchable. Buildings without declared sources stay dark.
+All 23 pinned exterior sources are in [retained W001 reference](reference/README.md) and its exact [JSON registry design](reference/light-inventory.json): six lamps, fourteen window sources, two waylights and one luminous net. Windows remain non-switchable; four window defaults are false. Both waylights and `dock-luminous-nets-01/woven-lights` are enabled and non-switchable. Buildings without declared sources stay dark.
 
 Enabled exterior source brightness follows the day/dusk/night/dawn factor. A daytime on command records readiness for dusk; off remains dark. Clock brightness and rendering distance do not change the persistent enabled value. Existing Tollworks vessel/quest glow keeps its current ownership rather than inheriting automatic exterior fading.
 
@@ -105,7 +105,7 @@ Implementation references: [Godot renderers](https://docs.godotengine.org/en/sta
 
 Inspect all four day phases and four weather conditions, both projections and zoom limits. Check town, dense forest, bridge, ford, roofs, elevation, river and indoor boundaries. View saved captures; headless tests cannot prove the appearance.
 
-Use [M018 evidence](../evidence/M018/VALIDATION.md) as the measurement-method reference. Initial targets are frame p95 <=16.67 ms, p99 <=25 ms and draw p95 <=500 on the same declared machine/settings. These are percentile targets, not maximum-frame promises. Measure at least clear day and storm/night at all four views with three runs each, warm-up and raw samples. Track engine PID memory and scene/effect/resource counts through repeated travel.
+Use the retained M018 method at the end of this contract and `tools/map_migration/profile_map.py` as the measurement reference. Initial targets are frame p95 <=16.67 ms, p99 <=25 ms and draw p95 <=500 on the same declared machine/settings. These are percentile targets, not maximum-frame promises. Measure at least clear day and storm/night at all four views with three runs each, warm-up and raw samples. Track engine PID memory and scene/effect/resource counts through repeated travel.
 
 Release acceptance uses existing Windows Validation/Windows Desktop presets and ordinary native controls through the full recovery quest, E light actions, GUI Save, quit, separate process GUI Load and revisit. Forced developer states are labeled synthetic and remain isolated from normal saves/releases.
 
@@ -113,12 +113,11 @@ Do not add full NPC schedules, fair campaign, fishing, housing, shops or unrelat
 
 ## W001 verified decisions and handoff
 
-Verified 2026-10-04. [Acceptance report](../evidence/W001/VALIDATION.md),
-[reference manifest](../evidence/W001/source-manifest.json),
-[fixed vectors](../evidence/W001/rule-vectors.json) and
-[reproducible audit](../evidence/W001/audit.py) are target-local evidence.
-All 23 behavior/document/test files are copied byte-exactly under
-`docs/evidence/W001/reference/` with their full SHA256 and size in the manifest.
+Verified 2026-10-04. [Compact reference](reference/README.md),
+[manifest](reference/source-manifest.json), [fixed vectors](reference/rule-vectors.json)
+and [audit](reference/audit.py) retain the required baseline. Four exact rule
+sources remain versioned; the manifest records all 23 inspected file hashes.
+Other source/test copies and raw acceptance logs stay in the optional local archive.
 This is a scoped behavioral snapshot, separate from the existing map snapshot.
 Current source HEAD is `842704819cc681ccbabc629c6634c154a53b506b`;
 source map now hashes `deda25dc53a7543c3c0705e8029f6c6ded6a63cf49107a7c7f019ce34ed30af5`,

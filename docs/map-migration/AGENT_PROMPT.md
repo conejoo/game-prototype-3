@@ -29,9 +29,10 @@ Read-only source: D:/development/game-prototype-2
 Prepare before editing:
 1. Read applicable AGENTS.md instructions from workspace to edited files.
 2. Read target docs/ARCHITECTURE.md and docs/CURRENT_STATE.md for existing game
-   ownership, completed slice and unresolved P014 release gate.
-3. Read target docs/map-migration/INVESTIGATION.md, CHECKLIST.md and
-   CURRENT_STATE.md; read CONTRACT.md and retained layout/provenance once present.
+   ownership and completed native release baseline.
+3. Read target docs/map-migration/CHECKLIST.md, CURRENT_STATE.md, CONTRACT.md
+   and retained layout/provenance. Read INVESTIGATION.md only for a source question.
+   Historical raw evidence is optional local archive, not a fresh-clone prerequisite.
 4. Inspect actual project files and Git changes from target project root.
    Workspace parent is not the Git repository. Preserve unrelated changes,
    including existing docs/evidence/P014/resume-2026-10-03/ if still present.

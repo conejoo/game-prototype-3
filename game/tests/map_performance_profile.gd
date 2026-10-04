@@ -38,11 +38,10 @@ func _run() -> void:
 	report["initial_inventory"] = _inventory(location)
 	_check(float(location.navigation_report.generation_bake_ms) <= 5000, "Cold generation/bake exceeds 5s")
 	report["settings"] = {"engine": Engine.get_version_info(), "adapter": RenderingServer.get_video_adapter_name(), "vendor": RenderingServer.get_video_adapter_vendor(), "api": RenderingServer.get_video_adapter_api_version(), "renderer": RenderingServer.get_current_rendering_method(), "viewport": [root.size.x, root.size.y], "vsync_mode": DisplayServer.window_get_vsync_mode(), "max_fps": Engine.max_fps, "warmup_seconds": warmup, "run_seconds": duration, "runs_per_view": runs, "projection": "orthographic", "zoom": 1.0, "paused": paused, "setup": "synthetic placement at M016 ordinary-tour feet; full unpaused production processing"}
-	var index: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://../docs/evidence/M016/rendered-index.json"))
+	var index: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/map_camera_poses.json"))
 	for view: String in ["maris", "dense-forest", "bridge-west", "ford-west"]:
 		var point: Array = index.goals[view].position
-		var observation: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://../docs/evidence/M016/windowed-final/" + index.goals[view].response))
-		var ally: Array = observation.after.companion.position
+		var ally: Array = index.goals[view].companion_position
 		game.player_placeholder.global_position = Vector3(point[0], point[1], point[2])
 		game.companion.global_position = Vector3(ally[0], ally[1], ally[2])
 		game.player_placeholder.velocity = Vector3.ZERO

@@ -1,0 +1,128 @@
+{
+  "captured_date": "2026-10-04 America/Vancouver",
+  "source_root": "D:\\development\\game-prototype-2",
+  "source_head": "842704819cc681ccbabc629c6634c154a53b506b",
+  "target_head": "6a648a3cc1a216a063f83e844d181d0450e4e800",
+  "files": [
+    {
+      "path": "docs/weather.md",
+      "sha256": "8205d533f9203e2b2e45d94c0dd6a333bba70dfff41908c6cc3e0bcbb8856c8e",
+      "bytes": 2602
+    },
+    {
+      "path": "docs/game-mvp.md",
+      "sha256": "8ace6d0116063a3630d71d7b5cc32231dabfa0b1c790cf23475d925d88e77026",
+      "bytes": 21981
+    },
+    {
+      "path": "lib/game/weather/weather_schedule.dart",
+      "sha256": "c1b76195bb6660e336ee49f039b79f265a24fcf7cab928a0f727a41036e4f8c2",
+      "bytes": 4933,
+      "retained_path": "weather_schedule.dart"
+    },
+    {
+      "path": "lib/game/weather/weather_components.dart",
+      "sha256": "4bc9db50ef8fa82df4ae74d4391a68e787c84e444f819ea02efaa7311966e349",
+      "bytes": 8670,
+      "retained_path": "weather_components.dart"
+    },
+    {
+      "path": "lib/game/day_night/day_night_clock.dart",
+      "sha256": "971632cfa9f1d931ca3005f029d3d3f916af2293fdf7ad38ada42589b94f438a",
+      "bytes": 1321,
+      "retained_path": "day_night_clock.dart"
+    },
+    {
+      "path": "lib/game/day_night/day_night_cycle.dart",
+      "sha256": "a4da6bff09b5fe4e1f9f580a6b8af6fcb9554f97e73f62412e08875b554eff1e",
+      "bytes": 8172,
+      "retained_path": "day_night_cycle.dart"
+    },
+    {
+      "path": "lib/game/day_night/night_light_component.dart",
+      "sha256": "631f0b0696498b08727bffbe7f602122c710010b55802ea1f52c3b299fb0805c",
+      "bytes": 3695
+    },
+    {
+      "path": "lib/game/day_night/night_light_ground_pool.dart",
+      "sha256": "1714eb28ed20e2d4b8b79eba835d795cf0e690032d7eb0b2866ae73e9e543365",
+      "bytes": 3014
+    },
+    {
+      "path": "lib/game/day_night/light_switch_component.dart",
+      "sha256": "e2fc45d79e361c66d5398005b26e3dc855345427c9acf00a840078265153c499",
+      "bytes": 1848
+    },
+    {
+      "path": "lib/game/state/runtime_game_controller.dart",
+      "sha256": "29bef8302107fb116b9814840ae24386163f1442e50a9eb06c7803e0bd8c8c26",
+      "bytes": 37703
+    },
+    {
+      "path": "lib/game/state/runtime_game_state.dart",
+      "sha256": "5b965d130ef38a6ee2c8e6769eb51744fc01c17458deaf58d4a076e4c9db2cae",
+      "bytes": 21119
+    },
+    {
+      "path": "lib/game/persistence/save_game.dart",
+      "sha256": "8e622dc2924d5da6be2bf237fbceb5f4d0113e95e6b003e23d3f5ed20ce82674",
+      "bytes": 18079
+    },
+    {
+      "path": "test/game/weather/weather_schedule_test.dart",
+      "sha256": "3fc1412dea20b0779ee496174cedb91cf4c2323202c6732cb9123f5e0a29612d",
+      "bytes": 4789
+    },
+    {
+      "path": "test/game/weather/weather_components_test.dart",
+      "sha256": "ac81204db317c9ab6f0929373d2471f6426b4f1534272dce31c98a315cd508d3",
+      "bytes": 4075
+    },
+    {
+      "path": "test/game/day_night/day_night_clock_test.dart",
+      "sha256": "d0722ee17b72ee548ebcddff58dbbc4446dab4cf3d84f7651bf2496d7051c97c",
+      "bytes": 865
+    },
+    {
+      "path": "test/game/day_night/day_night_cycle_test.dart",
+      "sha256": "2523d0a5676bf2b8056d836a65d19181cc193d112a2345f72560eb5dd13ab8f5",
+      "bytes": 3733
+    },
+    {
+      "path": "test/game/day_night/night_light_component_test.dart",
+      "sha256": "146b959876973e595811791e48c237735d6c3e27195c1e7b1aa11965b8609009",
+      "bytes": 3356
+    },
+    {
+      "path": "test/game/day_night/night_light_ground_pool_test.dart",
+      "sha256": "bb8ec16c9ea6064d626fbe7ef65dc89baffafdc6fb1a571893285eea648c9a21",
+      "bytes": 1323
+    },
+    {
+      "path": "test/game/state/runtime_game_controller_test.dart",
+      "sha256": "52191ce10f80f3a4b5ec8ac7dd0617cfd8d2213365796919fe45b048f4c9b095",
+      "bytes": 28764
+    },
+    {
+      "path": "test/game/persistence/save_game_test.dart",
+      "sha256": "db20f6e2d07ede0fb0e13e692bc15ed57318c26d7d400c714aa64d41e057508b",
+      "bytes": 7703
+    },
+    {
+      "path": "test/game/presentation/world_presentation_save_test.dart",
+      "sha256": "36c9b96bca66a0845ddfa10cd999a60afa5f28f7f52b79786f3ab1939246645a",
+      "bytes": 9341
+    },
+    {
+      "path": "test/game/persistence/versioned_save_hydration_test.dart",
+      "sha256": "4d3c021a374ae2c52e81019a3f8cf3849edda000c5adf5740759d8583019796e",
+      "bytes": 3245
+    },
+    {
+      "path": "docs/returning-fair-save-schema.md",
+      "sha256": "90e8acf6c190f56b117dd5121b7d0cec47594d2e94658e37ebdfeed8a6e2d8bf",
+      "bytes": 7738
+    }
+  ],
+  "retention": "Four exact rule references retained. Other entries record W001 inspection provenance only; archived copies are optional."
+}

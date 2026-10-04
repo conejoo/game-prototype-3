@@ -84,6 +84,6 @@ Describe FPS samples by scenario, including pause/UI, rather than calling them a
 combat benchmark. Update the active checklist/handoff only for criteria with
 evidence; blocked checks stay incomplete with exact reason and next safe action.
 
-Prior worked example: docs/evidence/P014/native-holds/VALIDATION.md. It demonstrates
-native holds, real release journey/reload and a paused timer across a 32-second
-inspection gap; it does not establish a future build or permanent UI coordinates.
+Raw runs under ignored `docs/evidence/` are optional local archives. Start with
+current code/tests and concise handoffs; missing old reports do not block work.
+Version only reusable fixtures and durable decisions, never raw logs/captures.

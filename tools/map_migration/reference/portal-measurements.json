@@ -1,0 +1,112 @@
+{
+  "provenance": "Independent M001 source measurements, retained unchanged during archive cleanup.",
+  "source_map_sha256": "af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f",
+  "source_catalog_sha256": "59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2",
+  "portals": [
+    {
+      "id": "fair-north-entrance-01",
+      "source_rect": [
+        1408.0,
+        368.0,
+        64.0,
+        48.0
+      ],
+      "destination": "old-bridge-fairground",
+      "destination_source": [
+        128.0,
+        448.0
+      ],
+      "active_in_phase": false
+    },
+    {
+      "id": "fair-south-entrance-01",
+      "source_rect": [
+        1248.0,
+        680.0,
+        64.0,
+        48.0
+      ],
+      "destination": "old-bridge-fairground",
+      "destination_source": [
+        1120.0,
+        736.0
+      ],
+      "active_in_phase": false
+    },
+    {
+      "id": "tollworks-entrance-01",
+      "source_rect": [
+        4104.0,
+        512.0,
+        64.0,
+        48.0
+      ],
+      "destination": "buried-tollworks",
+      "destination_source": [
+        128.0,
+        480.0
+      ],
+      "active_in_phase": true
+    },
+    {
+      "id": "starter-home-entrance-01",
+      "source_rect": [
+        544.0,
+        208.0,
+        64.0,
+        48.0
+      ],
+      "destination": "alderwake-starter-home",
+      "destination_source": [
+        320.0,
+        416.0
+      ],
+      "active_in_phase": false
+    },
+    {
+      "id": "hall-entrance-01",
+      "source_rect": [
+        704.0,
+        528.0,
+        64.0,
+        48.0
+      ],
+      "destination": "alderwake-hall",
+      "destination_source": [
+        448.0,
+        608.0
+      ],
+      "active_in_phase": false
+    },
+    {
+      "id": "lantern-rest-entrance-01",
+      "source_rect": [
+        448.0,
+        688.0,
+        64.0,
+        48.0
+      ],
+      "destination": "lantern-rest",
+      "destination_source": [
+        448.0,
+        672.0
+      ],
+      "active_in_phase": false
+    },
+    {
+      "id": "mayor-vale-home-entrance",
+      "source_rect": [
+        832.0,
+        352.0,
+        64.0,
+        48.0
+      ],
+      "destination": "mayor-vale-home",
+      "destination_source": [
+        256.0,
+        384.0
+      ],
+      "active_in_phase": false
+    }
+  ]
+}

@@ -193,6 +193,7 @@ func _run() -> void:
 	report["motion_samples"] = samples
 	report["max_ground_error_m"] = max_ground_error
 	report["failures"] = failures
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M010"))
 	var file: FileAccess = FileAccess.open("res://../docs/evidence/M010/companion-report.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "\t") + "\n")
 	game.queue_free()

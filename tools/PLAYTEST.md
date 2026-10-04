@@ -18,10 +18,11 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 $sessionDir = 'D:/development/game-dev-blender/returning-fair-prototype/builds/playtest/manual'
 & $godotExe --path $gamePath -- --playtest-dir=$sessionDir
 # In a separate shell/tool call while the game runs:
-./tools/send_playtest.ps1 -SessionDir $sessionDir -CommandFile ./docs/evidence/P003/live-camera-command.json
+./tools/send_playtest.ps1 -SessionDir $sessionDir -CommandFile "$sessionDir/command.json"
 ```
 
-Write a command JSON file and supply its path. Example:
+Create the session directory and write `command.json` there before sending.
+Supply its path; no historical evidence file is required. Example:
 
 ```json
 {"steps":[
@@ -112,7 +113,8 @@ this project's existing `builds/windows/ReturningFair.exe` only. No game bridge,
 state mutation, installation or source-project change. It verifies the target
 process/window, unlocked input desktop and foreground focus; releases its keys
 and mouse button in `finally`; writes request timing/capture evidence under P014.
-See `docs/evidence/P014/native-holds/driver.ps1` for the local validation driver.
+See [native command examples](skills/returning-fair-gameplay-testing/references/native-commands.md)
+for reusable instructions. Historical session drivers are optional local archives.
 
 Game simulation continues between shell calls and during helper startup. Key-hold
 duration does not limit that interval. For combat, inspect a paused screen first,

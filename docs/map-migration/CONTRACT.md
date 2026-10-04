@@ -21,7 +21,7 @@ the extraction report carry input/manifest/extractor hashes. The target snapshot
 wins; source drift requires deliberate reconciliation, never automatic refresh.
 Older forest-document hashes and generators cannot replace shipping geography.
 See [extractor schema and commands](../../tools/map_migration/README.md) and
-[M002 acceptance](../evidence/M002/VALIDATION.md).
+M002 acceptance (optional local archive).
 
 Godot 4.7.2 typed GDScript remains the runtime. GameRoot composes existing
 GameSession/services, WorldHost, persistent Party, CameraRig and UI. Location
@@ -165,8 +165,8 @@ bake. Measured Recast voxel contours otherwise cut fractional town/shore corners
 This changes navigation clearance only; physical polygons stay exact. M006 samples
 all 74 town paths at ≤0.1m with actual 0.4m capsule clearance; final full-map nav
 and budget gates remain M009. Evidence and original overlaps:
-[M006 reconciliation](../evidence/M006/dock-reconciliation.json),
-[M006 validation](../evidence/M006/VALIDATION.md).
+M006 reconciliation (optional local archive),
+M006 validation (optional local archive).
 
 Party arrival retains hero at anchor and ally at `anchor + (1,0,0)`. Require
 0.4m horizontal clearance around both feet, 1.6m headroom plus 0.02m collision
@@ -180,7 +180,7 @@ validated placement and rollback; M010 additionally requires catch-up connectivi
 ## Converted landmark and route probes
 
 Values below are Godot **(X,Y,Z)** in metres after final physical heights.
-Data-only values are reproduced in [M001 measurements](../evidence/M001/source-measurements.json).
+Data-only values are reproduced in M001 measurements (optional local archive).
 They are test targets, not assertions of current scene contents. Moonwell's prop
 foot is a placement target; route to a clear nearby approach rather than through
 its blocking polygon.
@@ -315,12 +315,12 @@ Read source shipping map/catalog, group transforms, catalog collision, elevation
 and shipping probe tests; inspect actual target scene/actor/party/navigation/
 WorldHost/quest/save ownership. Focused application, travel, save and playable
 slice headless checks pass, with exact commands/results and initial sandbox
-failures in [M001 validation](../evidence/M001/VALIDATION.md). Measurements verify
+failures in M001 validation (optional local archive). Measurements verify
 19 converted probes, seven portals and nominal crossing/actor clearance.
 
 No candidate scene, runtime map port, native map journey, source tests or performance
 benchmark is claimed. Parent P014 subsequently completed with
-[native evidence](../evidence/P014/native-holds/VALIDATION.md); M019 must revalidate
+native evidence (optional local archive); M019 must revalidate
 the resulting map build. Import exit 0 still reports the pre-existing missing
 .NET SDK 10.0.9 and restricted certificate-store access; typed GDScript checks pass.
 M001-M014 preparation is verified; M015 activates the existing recovery slice. This includes
@@ -336,7 +336,7 @@ not final tree art. Moonwell retains its eight-corner polygon and fractional foo
 with preview Y0 and original Y0.5 retained for M008. Six source markers and the
 Tollworks entrance have inert labeled visuals. Other 85 routine/resource/NPC
 records, 25 zones and three activities remain data only, with explicit disposition
-in [M007 inventory](../evidence/M007/inventory.json).
+in M007 inventory (optional local archive).
 
 Gate art belongs to the disabled `future-exit-gate-prop` wrapper; unchanged M004
 `future-exit-gate` remains the sole authored body. Its X[123,125) reaches the east
@@ -353,7 +353,7 @@ keep its footprint rather than promising every old empty-stage lane remains empt
 pass. Navigation server iteration is asynchronous at this population size; focused
 checks wait for the expected region to become queryable before testing paths.
 Final physical-height navigation/loading and companion recovery remain M009/M010.
-See [M007 validation](../evidence/M007/VALIDATION.md); no new movement-mask exception.
+See M007 validation (optional local archive); no new movement-mask exception.
 
 ### M008 physical surfaces and grounding
 
@@ -393,8 +393,8 @@ candidate lifecycle, not M009 acceptance: the strict forest check remains exit1
 on12 radius0.4m probes near the narrow corridor/Moonwell ramp turn, even though
 all16 real hero routes finish. M009 must repair this contour/erosion defect and
 meet full path/loading targets without weakening clearance or changing physical
-outlines. [M008 validation](../evidence/M008/VALIDATION.md) and
-[exact failed probes](../evidence/M008/navigation-known-limit.json).
+outlines. M008 validation (optional local archive) and
+exact failed probes (optional local archive).
 
 ### M009 complete exterior navigation
 
@@ -426,7 +426,7 @@ this region's arrival query before committing; rollback restores queryable old
 navigation. Four synthetic candidate/Tollworks round trips release old regions,
 and three bake/placement rejections restore the original exterior.
 
-See [M009 validation](../evidence/M009/VALIDATION.md) for exact measurements,
+See M009 validation (optional local archive) for exact measurements,
 commands, full-mesh audit and fresh rendered Moonwell round trip. Earlier M008
 failed evidence remains historical; M010 still owns connected companion recovery.
 Schema4/content1, pinned snapshot and all production IDs remain unchanged.
@@ -460,7 +460,7 @@ placement; no new persistent flag or authority. The source's northern1.5/1.75m
 terrace is isolated by authored cliffs; M010 checks its internal ramp in a labeled
 fixture, without inventing a connection to the main exterior.
 
-[M010 validation](../evidence/M010/VALIDATION.md):14 physical AI routes,19,808
+M010 validation (optional local archive):14 physical AI routes,19,808
 motion samples, five placement rejections, suspension/recovery/compact regressions
 and fresh rendered Moonwell/ford/bridge ordinary-input journey. Candidate remains
 isolated; source snapshot/schema4/content1/production IDs/normal save unchanged.

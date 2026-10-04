@@ -117,6 +117,7 @@ for label,location,energy in [('key',(9,-4,12),2200),('fill',(22,8,10),1700)]:
     light=bpy.data.objects.new(light_data.name,light_data);scene.collection.objects.link(light);light.location=location
     light.rotation_euler=(Vector((13,3,1))-light.location).to_track_quat('-Z','Y').to_euler()
 scene.render.resolution_x=1400;scene.render.resolution_y=700;scene.render.resolution_percentage=100
+(ROOT/'docs/evidence/M012').mkdir(parents=True,exist_ok=True)
 scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/'docs/evidence/M012/blender-gallery.png')
 try:scene.render.engine='BLENDER_EEVEE'
 except TypeError:scene.render.engine='BLENDER_EEVEE_NEXT'

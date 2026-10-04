@@ -130,6 +130,7 @@ camera.location=(12,-15,26);camera.rotation_euler=(Vector((12,7,1))-camera.locat
 for name,loc,energy in [('key',(8,-3,15),2700),('fill',(22,11,15),2200)]:
     data=bpy.data.lights.new('LGT-M013-'+name,'AREA');data.energy=energy;data.size=12;obj=bpy.data.objects.new(data.name,data);scene.collection.objects.link(obj);obj.location=loc;obj.rotation_euler=(Vector((12,6,0))-obj.location).to_track_quat('-Z','Y').to_euler()
 scene.render.resolution_x=1400;scene.render.resolution_y=1000;scene.render.resolution_percentage=100
+(ROOT/'docs/evidence/M013').mkdir(parents=True,exist_ok=True)
 scene.render.image_settings.file_format='PNG';scene.render.filepath=str(ROOT/'docs/evidence/M013/blender-gallery.png')
 try:scene.render.engine='BLENDER_EEVEE'
 except TypeError:scene.render.engine='BLENDER_EEVEE_NEXT'

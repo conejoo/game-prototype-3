@@ -82,7 +82,7 @@ class ExtractionChecks(unittest.TestCase):
         self.assertEqual(next(c for c in self.layout["colliders"] if c["id"] == "future-exit-gate")["rect_xz_m"], [123, -11, 2, 8])
 
     def test_all_portals_against_independent_m001_measurements(self):
-        measured = extractor.read_json(extractor.ROOT / "docs/evidence/M001/source-measurements.json")
+        measured = extractor.read_json(extractor.REFERENCE / "portal-measurements.json")
         portals = {p["id"]: p for p in self.layout["portals"]}
         self.assertEqual(set(portals), {p["id"] for p in measured["portals"]})
         for p in measured["portals"]:

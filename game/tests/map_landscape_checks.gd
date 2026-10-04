@@ -83,6 +83,7 @@ func _run() -> void:
 			plain.append([point.x, point.y, point.z])
 		render_routes[pair[0]] = {"path": plain}
 	var report: Dictionary = {"terrain_quads": terrain_quads, "default_grass_samples": ground.size(), "semantic_samples": 47040, "water_samples": painted_water.size(), "terrain_batches": location.batch_count, "water_y_m": 0.015, "render_routes": render_routes, "failures": failures}
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M011"))
 	var file: FileAccess = FileAccess.open("res://../docs/evidence/M011/landscape-report.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "\t") + "\n")
 	print("M011 landscape report: ", JSON.stringify(report))

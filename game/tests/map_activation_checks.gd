@@ -88,6 +88,7 @@ func _run() -> void:
 	game.world_host.request_transition("prototype-alderwake","alderwake-from-tollworks")
 	await game.world_host.transition_finished
 	_check(game.party.members().size() == 2 and game.world_host.get_child_count() == 1 and game.session.completed_effect_ids.is_empty(), "Travel duplicates actors or grants progress")
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M015"))
 	var output: FileAccess = FileAccess.open("res://../docs/evidence/M015/tour-guide.json",FileAccess.WRITE)
 	output.store_string(JSON.stringify(guide,"\t")+"\n")
 	output.close()
