@@ -1,7 +1,10 @@
 # Returning Fair prototype
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
-W001 verified; W002 next. Durable agent context lives in current state, contracts,
+W001-W003 verified; W004 next. Clock/seed/cached forecast rules run through
+the existing session gate and schema v5 saves retain environment/light facts.
+Rendered lighting/weather remain later work. Durable agent context lives in current state,
+contracts,
 checklists, source/tests and pinned references. Generated captures/logs under
 `docs/evidence/` stay local and ignored; agents need them only for specific diagnosis.
 
@@ -45,6 +48,9 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --editor --path $gamePath
 & $godotExe --headless --editor --path $gamePath --import
 & $godotExe --path $gamePath
+& $godotExe --headless --path $gamePath --script res://tests/environment_rule_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/environment_session_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/environment_save_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/application_smoke.gd
 & $godotExe --headless --path $gamePath --script res://tests/playable_slice_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/extension_checks.gd
@@ -101,12 +107,15 @@ Normal slot is `user://saves/returning-fair.json` in Godot's application user-da
 directory, with `.bak` recovery. Missing/corrupt primary may recover validated
 backup visibly; incompatible versions are rejected and preserved. Both corrupt
 files require repair or archiving that slot before saving. Version rules and
-boundaries: [architecture](docs/ARCHITECTURE.md). Schema v4/content v1 requires hero
-and temporary companion records plus validated reaction/trust and upgrade IDs.
+boundaries: [architecture](docs/ARCHITECTURE.md). Schema v5/content v1 requires hero
+and temporary companion records, validated reaction/trust and upgrade IDs,
+environment day/progress/uint32 seed and map-qualified exterior light overrides.
 Exact v1/v2 saves add fixture ally at full health; v1 starts with no quest effects.
-Exact v3 preserves both members. All legacy saves start with neutral trust and
-no selected upgrades; a previously accepted lead provides one unspent preparation
-point. Load does not rewrite files; explicit Save writes v4. Malformed/newer data is rejected.
+Exact v3 preserves both members; v1-v3 start with neutral trust/no selected upgrades.
+V4 retains existing trust/reactions/upgrades. V1-v4 use day 0/progress 0/fixed
+migration seed and original light defaults while preserving elapsed play time.
+Load does not rewrite files; explicit Save writes v5. Six lantern keys accept
+boolean overrides; automatic sources and malformed/newer data are rejected.
 
 Guardian appears after accepting the lead and entering Tollworks. Its stable
 instance `tollworks-guardian-01` reports actual death to the quest owner. Clearance

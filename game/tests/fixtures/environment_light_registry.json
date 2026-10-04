@@ -1,0 +1,163 @@
+[
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "alder-rise-home-01-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "alder-rise-home-03-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-lamp-01",
+    "source_id": "lantern",
+    "default_enabled": false,
+    "switchable": true
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-lamp-02",
+    "source_id": "lantern",
+    "default_enabled": false,
+    "switchable": true
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-lamp-03",
+    "source_id": "lantern",
+    "default_enabled": false,
+    "switchable": true
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-lamp-04",
+    "source_id": "lantern",
+    "default_enabled": false,
+    "switchable": true
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-lamp-05",
+    "source_id": "lantern",
+    "default_enabled": false,
+    "switchable": true
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-luminous-nets-01",
+    "source_id": "woven-lights",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-row-home-01-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-row-home-02-building",
+    "source_id": "windows",
+    "default_enabled": false,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-row-home-03-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-row-home-04-building",
+    "source_id": "windows",
+    "default_enabled": false,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "dock-row-lamp-01",
+    "source_id": "lantern",
+    "default_enabled": true,
+    "switchable": true
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "lantern-rest-exterior-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "mayor-vale-home-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "mill-road-home-01-building",
+    "source_id": "windows",
+    "default_enabled": false,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "mill-road-home-02-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "moonwood-edge-home-01-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "moonwood-edge-home-02-building",
+    "source_id": "windows",
+    "default_enabled": false,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "reed-chandlery-exterior-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "safeguard-waylight-east-01",
+    "source_id": "answer-light",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "safeguard-waylight-west-01",
+    "source_id": "answer-light",
+    "default_enabled": true,
+    "switchable": false
+  },
+  {
+    "location_id": "prototype-alderwake",
+    "prop_id": "tess-general-goods-exterior-building",
+    "source_id": "windows",
+    "default_enabled": true,
+    "switchable": false
+  }
+]

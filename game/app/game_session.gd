@@ -12,12 +12,13 @@ var quests: Dictionary[String, QuestState] = {}
 var completed_effect_ids: PackedStringArray = []
 var relationship: RelationshipState = RelationshipState.new()
 var progression: ProgressionState = ProgressionState.new()
+var environment: EnvironmentState = EnvironmentState.new()
 
 const PLAYER_INSTANCE_ID: String = "party-player"
 const COMPANION_INSTANCE_ID: String = "party-companion"
 
 
-func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, player_id: String) -> PackedStringArray:
+func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, player_id: String, restored_environment: EnvironmentState = null) -> PackedStringArray:
 	if initialized:
 		return PackedStringArray(["session is already initialized"])
 	if catalog == null or not catalog.initialized:
@@ -34,6 +35,8 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 	var companion: ActorDefinition = catalog.get_actor("prototype-companion")
 	if companion == null:
 		errors.append("session companion definition 'prototype-companion' is missing")
+	if restored_environment != null:
+		errors.append_array(restored_environment.validation_errors())
 	if not errors.is_empty():
 		return errors
 	actors[PLAYER_INSTANCE_ID] = ActorState.new(PLAYER_INSTANCE_ID, player)
@@ -43,10 +46,19 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 	current_spawn_id = spawn_id
 	for definition: QuestDefinition in catalog.quest_definitions():
 		quests[definition.stable_id] = QuestState.new()
+	# Decoding supplies validated facts; it never generates a replacement seed.
+	environment = EnvironmentState.fresh() if restored_environment == null else restored_environment
 	initialized = true
 	return errors
 
 
-func advance(delta: float) -> void:
-	if initialized:
+func advance(delta: float) -> PackedStringArray:
+	if not initialized:
+		return PackedStringArray(["session is not initialized"])
+	# Validate before publishing either timer, including the supported clock cap.
+	if not is_finite(delta) or delta < 0.0 or not is_finite(elapsed_play_seconds + delta):
+		return PackedStringArray(["session delta must be finite and nonnegative"])
+	var errors: PackedStringArray = environment.advance(delta)
+	if errors.is_empty():
 		elapsed_play_seconds += delta
+	return errors

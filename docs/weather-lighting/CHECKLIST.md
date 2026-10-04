@@ -2,7 +2,7 @@
 
 This checklist brings the existing weather, day clock and interactive exterior lights into the Returning Fair Godot prototype. It is the task authority for this workflow. Each fresh agent completes or resumes exactly one task, then writes a handoff for the next session.
 
-Prepared 2026-10-04, America/Vancouver. W001 source inventory verified Done; W002-W010 remain Pending. No production weather implementation has started. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
+Prepared 2026-10-04, America/Vancouver. W001-W003 verified Done; W004-W010 remain Pending. Production clock/forecast rules and environment saves are implemented; rendered lighting/weather remain later tasks. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
 
 Read [the contract](CONTRACT.md), [current state](CURRENT_STATE.md) and [agent prompt](AGENT_PROMPT.md). The target is `D:/development/game-dev-blender/returning-fair-prototype`; the Godot project is its `game/` directory. The source `D:/development/game-prototype-2` is read-only.
 
@@ -25,8 +25,8 @@ Statuses: Pending, In progress, Blocked, Done. `[ ]` means not complete; `[x]` m
 | ID | Status | Dependencies | Outcome |
 | --- | --- | --- | --- |
 | W001 | Done | Existing M019 baseline | Source inventory and verified feature contract |
-| W002 | Pending | W001 | Pure clock and deterministic forecast |
-| W003 | Pending | W002 | Versioned environment save compatibility |
+| W002 | Done | W001 | Pure clock and deterministic forecast |
+| W003 | Done | W002 | Versioned environment save compatibility |
 | W004 | Pending | W003 | Moving sun and location lighting profiles |
 | W005 | Pending | W004 | Exterior light assets and source bindings |
 | W006 | Pending | W005 | Persistent E key light switching |
@@ -50,7 +50,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W002 Pure clock and deterministic forecast
 
-- [ ] Done. Status: Pending. Depends: W001.
+- [x] Done. Status: Done. Depends: W001. Evidence: [W002 acceptance](W002_ACCEPTANCE.md), typed rules/session checks and exact retained fixture.
 - Add typed environment runtime state and node-independent clock/forecast rules, suggested under `game/features/environment/`. Wire clock advancement through the existing session update; do not create a competing timer authority.
 - Preserve the source 600-second day, 10 AM initial display, day-index/progress convention, four weather values, seeded period duration and transition graph. Generate a new-run seed once.
 - Implement source-compatible unsigned 32-bit mixing in GDScript and a typed sample containing previous/current condition, period bounds and blend progress. Expose derived `heavy-rain` only for thunderstorms.
@@ -61,7 +61,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W003 Versioned environment save compatibility
 
-- [ ] Done. Status: Pending. Depends: W002.
+- [x] Done. Status: Done. Depends: W002. Evidence: [W003 acceptance](W003_ACCEPTANCE.md), environment codec/legacy/backup/physical rollback and separate-process checks.
 - Extend SaveCodec to schema v5 with validated environment clock, weather seed and a map-qualified light-override container. Keep content version 1 only after confirming additive compatibility.
 - Support exact v1-v4 envelopes through documented migrations. Retain all prior party, health, quests, once-only effects, companion trust/reactions, progression and elapsed-play fields.
 - Legacy environment defaults are day index 0, progress 0, a fixed migration seed and no overrides. Preserve old elapsed time separately. New v5 runs choose their seed once. Do not re-roll seeds on load.
@@ -182,3 +182,37 @@ Raw evidence untracked/ignored; all local files preserved. Retained four exact r
 sources, inspection hashes, vectors, compact light registry and independent map
 fixtures. Clean-checkout reference audit/extractor tests, affected map checks and
 script parsing pass. Current states shortened; task criteria/statuses unchanged.
+
+W002 - completed 2026-10-04 (America/Vancouver)
+
+Result: typed environment state, 600-second/10 AM clock, once-per-run uint32 seed,
+source-compatible forecast and cached detached samples. Atomic session advancement
+uses existing root gates; day 0..3650 cap rejects without partial mutation.
+All 49 fixed forecasts, uint32 products, display/day wraps, large deltas, all 100
+transition rolls, duration/blend edges, invalid inputs and thunderstorm-only
+heavy-rain pass; 12,792 rule assertions. Upper-bound reconstruction <=55.897ms
+in final run; 1,000 same-period queries computed no further periods.
+Root/session gates and affected application/dialogue/ten-round-trip checks pass,
+all exit 0 with clean runtime scans. Reference/fixture/hash/link/diff audits pass.
+[Acceptance/commands](W002_ACCEPTANCE.md). Initial boundary failure retained locally;
+forecast-only 1e-9-minute normalization documented in CONTRACT.
+Limits: fixed lighting, schema4/content1, no environment persistence/render/native
+claim. Import retains known missing .NET SDK 10.0.9 diagnostic. Next: W003 only.
+
+W003 - completed 2026-10-04 (America/Vancouver)
+
+Result: strict schema5/content1 environment clock/seed and map-qualified light
+overrides, node-independent 23-source registry/six switchable lanterns. Exact
+v1-v4 migrations preserve prior facts; v4 keeps trust/reactions/upgrades. Manual
+Save writes v5; read/recovery never rewrites files or rerolls environment seed.
+Primary/backup full-precision output and bounded exact timer decoder repair
+observed installed-engine rounding without changing field shape or clock bounds.
+517 codec assertions include 305 independent binary64 vectors, last-clock-double
+filesystem reload, strict malformed/newer rejection and deterministic migrations.
+Rule/session/save/quest/consequence/companion/application regressions pass;
+independent writer/reader restore clock/seed/six overrides/forecast/party/arrival.
+Historical map fixtures5/replacements24/rejections5/retries5 pass; only expected
+synthetic retry diagnostic. Reference/link/status/runtime/diff audits pass.
+[Commands/evidence/repairs](W003_ACCEPTANCE.md). W002 uncommitted baseline preserved.
+Limits: rendering fixed, E switching and packaged/native weather unrun as later
+scope; known missing .NET SDK import diagnostic. Next eligible: W004 only.

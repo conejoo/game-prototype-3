@@ -92,6 +92,8 @@ func _run() -> void:
 		var legacy: Dictionary = data.duplicate(true)
 		legacy.erase("relationship")
 		legacy.erase("progression")
+		legacy.erase("environment")
+		legacy.erase("light_source_overrides")
 		legacy.schema_version = version
 		legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
 		legacy.actors = [legacy.actors[0]]

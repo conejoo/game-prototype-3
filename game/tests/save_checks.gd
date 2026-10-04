@@ -135,6 +135,10 @@ func _root_checks() -> void:
 	await game.world_host.transition_finished
 	game.session.actors[GameSession.PLAYER_INSTANCE_ID].health = 37
 	game.session.elapsed_play_seconds = 42.5
+	game.session.environment.day_index = 4
+	game.session.environment.day_cycle_progress = 0.1234567890123456
+	game.session.environment.weather_seed = 2147483648
+	_check(game.session.environment.set_light_enabled("prototype-alderwake", "dock-lamp-01", "lantern", true).is_empty(), "Root light prerequisite")
 	_check(game.save_run().is_empty(), "Paused root save failed")
 	var saved: String = FileAccess.get_file_as_string(game.save_repository.path)
 	game._set_paused(false)
@@ -152,8 +156,18 @@ func _root_checks() -> void:
 	_check(game.player_placeholder.global_position.distance_to(Vector3(0, 0, -2.5)) < 0.01 and paused and not game.player_placeholder.controls_enabled, "Load did not respect arrival anchor/pause")
 	_check(game.ui.travel_label.text == "E near southeast vessel / north return gate", "Paused restore retained stale loading prompt")
 	_check(game.player_placeholder.get_instance_id() == actor_id and game.party.members().size() == 2, "Load duplicated actor wrapper")
+	_check(JSON.parse_string(JSON.stringify(SaveCodec.snapshot(game.session), "", true, true)).environment == JSON.parse_string(saved).environment and SaveCodec.snapshot(game.session).light_source_overrides == JSON.parse_string(saved).light_source_overrides, "Root restore lost environment/overrides")
 
 	var live: GameSession = game.session
+	var live_environment: EnvironmentState = live.environment
+	# Candidate environment differs from the live run during physical rejection.
+	live_environment.day_index = 19
+	live_environment.day_cycle_progress = 0.875
+	live_environment.weather_seed = 4294967295
+	live_environment.set_light_enabled("prototype-alderwake", "dock-lamp-01", "lantern", false)
+	var environment_before: Dictionary = SaveCodec.snapshot(live).environment
+	var overrides_before: Array = SaveCodec.snapshot(live).light_source_overrides
+	var forecast_before: WeatherSchedule.Sample = live_environment.weather_sample()
 	var room: PrototypeLocation = game.world_host.current_location
 	var position_before: Vector3 = game.player_placeholder.global_position
 	var future: Dictionary = JSON.parse_string(saved)
@@ -168,10 +182,13 @@ func _root_checks() -> void:
 		var invalid: Dictionary = JSON.parse_string(saved)
 		invalid.location_id = unsafe.stable_id
 		invalid.spawn_id = spawn
-		_write(game.save_repository.path, JSON.stringify(invalid))
+		_write(game.save_repository.path, JSON.stringify(invalid, "", true, true))
 		_check(not (await game.load_run()).is_empty(), "Physically unsafe saved spawn accepted")
 		_check(game.session == live and game.world_host.session == live and game.world_host.current_location == room, "Unsafe restore replaced live owners")
 		_check(game.player_placeholder.global_position == position_before and game.player_placeholder.state.health == 37 and paused and not game.loading_save and not game.party.suspended, "Unsafe restore did not rollback state/lifecycle")
+		_check(game.session.environment == live_environment and SaveCodec.snapshot(game.session).environment == environment_before and SaveCodec.snapshot(game.session).light_source_overrides == overrides_before, "Physical rejection changed clock/seed/light overrides")
+		var forecast_after: WeatherSchedule.Sample = game.session.environment.weather_sample()
+		_check(forecast_before.condition == forecast_after.condition and forecast_before.period_index == forecast_after.period_index and forecast_before.transition_progress == forecast_after.transition_progress, "Physical rejection changed forecast")
 	_write(game.save_repository.path, "broken")
 	_write(game.save_repository.path + ".bak", saved)
 	_check((await game.load_run()).is_empty() and "Recovered backup" in game.ui.save_status.text, "Root recovery failed or not visible")

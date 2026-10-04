@@ -45,14 +45,15 @@ func write(run: GameSession, catalog: ContentCatalog) -> PackedStringArray:
 		return PackedStringArray(["save refused: corrupt primary has no validated backup; preserve files and repair/archive slot first"])
 	if DirAccess.make_dir_recursive_absolute(path.get_base_dir()) != OK:
 		return PackedStringArray(["cannot create save directory: " + path.get_base_dir()])
-	var errors: PackedStringArray = _stage(path + ".tmp", JSON.stringify(snapshot, "\t"), catalog)
+	# Clock progress must round-trip exactly, especially immediately before wrap.
+	var errors: PackedStringArray = _stage(path + ".tmp", JSON.stringify(snapshot, "\t", true, true), catalog)
 	if not errors.is_empty():
 		return errors
 	# A validated primary becomes the backup; corrupt data never replaces it.
 	# On first save create a recovery copy before publishing primary.
 	if primary.session != null or backup.session == null:
 		var backup_data: Dictionary = SaveCodec.snapshot(primary.session) if primary.session != null else snapshot
-		errors = _stage(path + ".bak.tmp", JSON.stringify(backup_data, "\t"), catalog)
+		errors = _stage(path + ".bak.tmp", JSON.stringify(backup_data, "\t", true, true), catalog)
 		if not errors.is_empty():
 			return errors
 		var backup_error: Error = DirAccess.rename_absolute(path + ".bak.tmp", path + ".bak")

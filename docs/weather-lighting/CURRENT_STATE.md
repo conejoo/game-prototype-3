@@ -1,40 +1,70 @@
 # Current weather and lighting state
 
-Updated 2026-10-04. W001 Done; W002-W010 Pending. No active/blocked W task.
-Next: W002 pure clock/deterministic forecast. Cleanup starts no new W task.
+Updated 2026-10-04. W001-W003 Done; W004-W010 Pending. No active/blocked W task.
+Completed: W003 versioned environment save compatibility. Next eligible: W004.
+Read CHECKLIST, CONTRACT, AGENT_PROMPT and [W003 acceptance](W003_ACCEPTANCE.md).
 
-Read CHECKLIST, CONTRACT and AGENT_PROMPT. W001 inputs now live in
-[reference/](reference/README.md): four exact Dart rules, inspected-source hashes,
-49 forecasts plus uint32/clock/advance vectors, and all 23 light identities/anchors.
-Run `python docs/weather-lighting/reference/audit.py` from repository root.
-No local evidence, external source checkout or existing build is needed for audit.
+Production schema5/content1 retains exact day/progress/uint32 seed and validated
+map-qualified light overrides. Node-independent LightSourceRegistry owns all23
+pinned identities/effective defaults; only six switchable lanterns accept boolean
+overrides. Automatic windows/net/waylights remain defaults. Duplicate/unknown/
+non-switchable tuples, invalid fields/types/ranges and newer envelopes fail.
 
-W001 original acceptance passed: immutable rules/IDs/defaults/feet, actual
-headless production arrival with two actors/all 23 wrappers/pause timer/renderer
-settings, standalone release startup, final link/diff review. All final exits 0;
-no runtime errors. Dart tests were inspected, not executed. No new visual or
-performance claim. Raw W001 logs and full reference copies remain ignored locally.
+V1-v4 exact migration preserves all prior facts and elapsed time separately,
+adds day0/progress0/fixed seed1821285621/no overrides. V1-v3 receive neutral
+consequences; v4 keeps trust/reactions/upgrades. Only fresh initialization chooses
+seed; load supplies validated environment before candidate publication. Read and
+backup recovery never rewrite files. Physical restore rejection keeps previous
+environment/session/world/party/nav/input state. Manual Save/arrival-anchor Load
+remain product behavior; no new presenter, timer, automatic save or E action.
 
-Production still uses elapsed timer, fixed Sun/WorldEnvironment and manual
-schema4/content1 saves. W003 owns v5 environment and light overrides. Six lamps
-are switchable; fourteen windows, two waylights and luminous net automatic.
-W005 owns missing visual consumers; buildings without sources remain dark.
+SaveRepository uses full-precision primary/backup JSON. Actual installed reader
+rounded the double below1 to1; SaveNumber repairs only timer numeric lexemes with
+bounded decimal-to-binary64 ties-even conversion. CONTRACT documents token1100/
+exponent-spelling5 limits, version-protection ordering, independent vectors and
+observed failures. Supported save shape/day bounds unchanged; cursors unsaved.
 
-Contract fixes 600 active seconds/day, 10 AM origin, deterministic uint32 mixing,
-240-480 minute weather periods, 15 minute blend, thunderstorm-only heavy-rain,
-day0..3650 and pause/travel/load freeze. W002 must bound reconstruction and cache
-between period boundaries. Pinned map geography wins over source drift.
+W003 changed files:
 
-Keep Compatibility and at most eight pooled unshadowed local emitters including
-fades. M018 method/thresholds retained in CONTRACT; verify overlap/rendered output
-and actual performance in their future tasks. Headless checks cannot prove visuals.
+- game/core/save_codec.gd, save_repository.gd, save_number.gd/.gd.uid
+- game/app/game_session.gd, game_root.gd
+- game/features/environment/environment_state.gd, light_source_registry.gd/.gd.uid
+- game/tests/environment_save_checks.gd/.gd.uid
+- game/tests/save_checks.gd, save_process_checks.gd, map_save_checks.gd
+- game/tests/companion_checks.gd, consequence_checks.gd, quest_checks.gd
+- game/tests/fixtures/environment_light_registry.json, environment_save_v5.json,
+  environment_save_numbers.json
+- docs/weather-lighting/CHECKLIST.md, CURRENT_STATE.md, CONTRACT.md, W003_ACCEPTANCE.md
+- docs/ARCHITECTURE.md, docs/CURRENT_STATE.md, README.md
 
-P001-P014 and M001-M019 complete; compact parent/map handoffs describe baseline.
-Save writes must remain isolated (release ignores debug --save-slot); tools/PLAYTEST
-and project testing skill document input/pause rules. Cleanup verification ran only
-isolated test processes, now exited; no user scene touched. No unresolved W001 criterion.
+W002 edits/untracked artifacts were already present at selection, including rules,
+rule/session tests/vector fixture and W002_ACCEPTANCE. Preserved; no commits/reset/
+source generators/subagents/installation or next task. Existing historical fixture
+bytes/provenance and pinned map remain unchanged.
 
-Cleanup validation: retained reference audit and all 15 extractor tests pass from
-staged checkout without evidence. Application + ten affected map checks pass;
-render/profile/capture scripts parse. Raw results and initial headless tree rejection
-remain local under builds/repo-cleanup/verification. W002 still Pending.
+Verification: retained reference/hash audit, Godot import, environment codec517
+assertions (305 independent bit vectors), environment rules12,792 assertions,
+session gates, application/save/quest/consequence/companion regressions, separate
+writer PID28244/reader PID18380, map fixtures5/replacements24/rejections5/retries5.
+All final checks exit0; runtime scans clean except exactly one expected map retry
+diagnostic (`M009 expected navigation bake rejection`). Import retains only known
+missing .NET SDK10.0.9 diagnostic. Final codec PID38484. No new render/frame benchmark.
+Links/statuses/registry/fixtures/diff check pass. Commands and criteria in acceptance.
+
+Save isolation: process-local APPDATA=`builds/weather-lighting/W003/appdata` and
+LOCALAPPDATA=`builds/weather-lighting/W003/localappdata` beneath repository root.
+Confirmed Godot/app_userdata/Returning Fair — Prototype beneath APPDATA. Explicit
+w003 debug slots; code-created p005/m017/w003 test slots all stay there. Process
+test uses saves/playtest-w003-process.json. Normal saves untouched. Raw logs and
+map report stay ignored at docs/evidence/W003/run-20261004-01; initial precision,
+signed-zero/type comparisons and sandbox diagnostics retained. All test processes
+exited; no held input, GUI/editor change or live game remains from W003.
+
+Remaining: no unresolved W003 criterion. Sun/WorldEnvironment remain fixed.
+Rendering/light consumers/E key/rain/HUD/performance/native exports belong to
+W004-W010. Current schema4 Windows packages remain historical; rebuild later.
+Next safe action: select W004, inspect lighting composition/location definitions,
+verify W003 prerequisites and add moving sun/explicit outdoor-indoor profiles.
+Keep GL Compatibility, source snapshot alderwake-f4630f9-m002, authored geography,
+W001 registry/defaults, eight pooled unshadowed emitters as future W005 scope.
+Historical P001-P014/M001-M019 baselines and local archives preserved.

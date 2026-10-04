@@ -23,7 +23,7 @@ func _run() -> void:
 	for message: String in failures:
 		push_error(message)
 	if failures.is_empty():
-		print("P010 checks: PASS — once-only alternatives/trust, earned selection, physical 40 damage, strict v4 data and exact v1–v3 migrations; phase=", OS.get_cmdline_user_args())
+		print("P010 checks: PASS — once-only alternatives/trust, earned selection, physical 40 damage, strict current-schema data and exact v1–v3 migrations; phase=", OS.get_cmdline_user_args())
 	quit(0 if failures.is_empty() else 1)
 
 func _rules(game: Node3D) -> void:
@@ -88,6 +88,8 @@ func _rules(game: Node3D) -> void:
 		legacy.schema_version = version
 		legacy.erase("relationship")
 		legacy.erase("progression")
+		legacy.erase("environment")
+		legacy.erase("light_source_overrides")
 		if version < 3:
 			legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
 			legacy.actors = [legacy.actors[0]]

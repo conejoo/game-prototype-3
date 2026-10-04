@@ -73,6 +73,7 @@ returning-fair-prototype/
       quests/
       relationships/
       progression/
+      environment/          # Clock/weather rules, light registry and durable state
     content/             # Authored .tres definitions, organized by feature
     world/               # Locations, spawn anchors, persistent props
     ui/
@@ -360,7 +361,7 @@ upgrades before candidate replacement. Exact schema1–3 envelopes validate orig
 party/quest contract first, preserving old facts; v3 retains both actor health values.
 Legacy trust/reactions/upgrades start neutral/empty. Accepted lead in old saves makes
 one point available; no auto-selection. Read never rewrites disk. Explicit Save
-publishes v4; existing incompatible-version/backup policy remains. Restore rebinds
+published v4 at P010 (current W003 saves publish v5); existing incompatible-version/backup policy remains. Restore rebinds
 both services and recomputes damage, avoiding cumulative bonuses on load/travel.
 
 ### Delivered recovery presentation boundary (P011)
@@ -511,3 +512,46 @@ M015 verifies the debug rendered recovery route and focused rules/lifecycle.
 Camera/ground aim (M016), full save compatibility (M017), measured performance
 (M018), and the resulting packaged/native Windows gate (M019) remain separate.
 P014's completed compact release remains valid historical evidence.
+
+### Delivered environment rules (W002)
+
+GameSession owns typed EnvironmentState facts (day index, cycle progress and
+once-per-fresh-run uint32 seed) and advances them atomically with elapsed time
+through the existing GameRoot gate. EnvironmentClock and WeatherSchedule are
+node-independent RefCounted rules: 600 active seconds per day, 10 AM display
+origin, source uint32 forecast, four conditions and thunderstorm-only heavy-rain.
+Forecast samples are detached; a transient cached cursor reconstructs on seek or
+seed change, then computes only crossed periods. Supported day index 0..3650 and
+finite progress [0,1) bound reconstruction; invalid advances return errors without
+partial mutation. Pause/travel/load freeze and focus/modal/indoor policy stay as
+specified in the weather contract. The measured normalized-minute boundary repair
+is documented there. At W002 schema4/content1 retained only pre-W002 facts;
+W003 adds environment persistence below. Rendering remains fixed until W004+.
+
+### Delivered environment persistence (W003)
+
+SaveCodec schema5/content1 adds exact environment day/progress/uint32 seed and
+map-qualified light_source_overrides records. EnvironmentState owns those facts;
+LightSourceRegistry owns all 23 pinned exterior identities/defaults, independently
+of scene nodes. Only six switchable lantern tuples accept boolean overrides;
+duplicates/unknown/automatic sources and extra fields fail. Snapshots deep-copy
+and sort overrides by location/prop/source, never mutate the live run.
+
+Exact v1-v4 migrations keep their existing party/health/quest/effect/time facts.
+V1-v3 receive neutral consequences; v4 retains trust/reactions/upgrades. All four
+receive day0/progress0/fixed seed1821285621/no overrides. Validated candidates
+initialize with supplied environment, avoiding seed rerolls. Content version1
+remains additive: actor/quest/effect/location/spawn/upgrade IDs are unchanged.
+Manual Save writes v5; read/recovery never rewrites disk; failed physical restore
+keeps the old environment, bindings and clock gates. Arrival anchors remain safe.
+
+SaveRepository writes full-precision JSON for primary/backup. SaveNumber repairs
+the installed JSON reader's timer rounding using bounded decimal long division
+and one ties-even binary64 rounding, without changing the envelope fields.
+Only elapsed/time-progress numeric lexemes receive this treatment; exact schema
+and type validation still applies. The contract documents spelling bounds and
+305 independent Python binary64 vectors, including subnormals/ties. Newer version
+protection precedes numeric repair so malformed future data cannot trigger backup
+fallback. Forecast cursors, samples, Nodes and review presets are never saved.
+W003 acceptance covers rules/IO/physical transactions and independent processes;
+rendered lighting, interactive E switching and native packages remain W004-W010.

@@ -1,12 +1,16 @@
 # Current prototype state
 
 Updated 2026-10-04. P001-P014 and map M001-M019 complete. Current feature workflow:
-[weather-lighting](weather-lighting/CURRENT_STATE.md), W001 Done, W002 next.
-No production weather yet; fixed Sun/WorldEnvironment and elapsed session timer.
+[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W003 Done, W004 next.
+Typed clock/seed/cached forecast now advance through the existing session gate.
+Schema5/content1 retains exact environment time/seed and six validated lantern
+overrides; exact v1-v4 migrate without losing prior facts or rewriting files.
+Save/backup/physical rollback and isolated separate-process checks pass.
+Sun/WorldEnvironment remain fixed; moving lighting starts with W004.
 
 Playable baseline: larger Alderwake town/river/Moonwood, temporary ally/trust,
 preparation-point Strike upgrade, guardian/vessel recovery, Maris return/fitting
-and service preview, travel and manual saves. Schema4/content1; once-only effects
+and service preview, travel and manual saves. Schema5/content1; once-only effects
 and stable actor/quest/location IDs. Six other portals stay inactive. Full campaign,
 permanent companion decisions, NPC schedules, shops and inventory remain excluded.
 

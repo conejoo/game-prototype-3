@@ -394,7 +394,7 @@ func load_run() -> PackedStringArray:
 	ui.show_play_time(session.elapsed_play_seconds)
 	var message: String = "Recovered backup. Primary left unchanged." if saved.recovered else "Loaded saved run at arrival anchor."
 	if saved.migrated:
-		message += " Migrated legacy save: v1/v2 add temporary companion; trust/reactions/upgrades start empty. Save writes v4."
+		message += " Migrated legacy save: v1/v2 add temporary companion; v1–v3 start with neutral trust and no upgrades; v1–v4 start environment at 10 AM with fixed forecast and light defaults. Save writes v5."
 	ui.show_save_status(message if errors.is_empty() else "Load failed: " + "; ".join(errors))
 	print("P005 load: ", message if errors.is_empty() else errors)
 	return errors

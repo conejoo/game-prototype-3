@@ -7,6 +7,7 @@ var report: Dictionary = {"fixtures":[], "round_trips":[], "rejections":[], "ret
 var game: Node3D
 var identities: Array[int] = []
 var phase: String = "checks"
+var report_directory: String = "res://../docs/evidence/M017"
 
 func _initialize() -> void:
 	_run.call_deferred()
@@ -15,6 +16,8 @@ func _run() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--phase="):
 			phase = argument.trim_prefix("--phase=")
+		if argument.begins_with("--report-dir="):
+			report_directory = argument.trim_prefix("--report-dir=")
 	game = load("res://app/game_root.tscn").instantiate()
 	var detached: ContentManifest = ContentManifest.new()
 	detached.definitions.assign(game.content_manifest.definitions)
@@ -37,13 +40,13 @@ func _run() -> void:
 		var source: String = FileAccess.get_file_as_string("res://tests/fixtures/map_saves/%s.json" % name)
 		var data: Dictionary = JSON.parse_string(source)
 		var decoded: SaveCodec.DecodeResult = SaveCodec.decode(source,game.catalog)
-		_check(decoded.errors.is_empty() and not decoded.migrated, "Historical v4 requires migration: " + name)
+		_check(decoded.errors.is_empty() and decoded.migrated, "Historical v4 migration failed: " + name)
 		if phase != "read":
 			_write(_slot(name),source)
 		var before_bytes: String = FileAccess.get_file_as_string(_slot(name))
 		game.save_repository = SaveRepository.new(_slot(name))
 		_check((await game.load_run()).is_empty(), "Historical load rejected: " + name)
-		_assert_snapshot(data,name)
+		_assert_snapshot(_v5_expected(data),name)
 		await _lifecycle(name)
 		_assert_arrival(name)
 		_check(FileAccess.get_file_as_string(_slot(name)) == before_bytes, "Load changed saved bytes: " + name)
@@ -57,7 +60,7 @@ func _run() -> void:
 		if phase == "write":
 			_check(game.save_run().is_empty(), "Process writer failed: " + name)
 			# Same parsed envelope, but disk writer formatting need not be identical.
-			_check(JSON.parse_string(FileAccess.get_file_as_string(_slot(name))) == JSON.parse_string(JSON.stringify(data)), "Writer changed durable fields: " + name)
+			_check(JSON.parse_string(FileAccess.get_file_as_string(_slot(name))) == JSON.parse_string(JSON.stringify(_v5_expected(data))), "Writer changed durable fields: " + name)
 	if phase == "checks":
 		await _transactions()
 		await _round_trips()
@@ -69,7 +72,7 @@ func _run() -> void:
 	report["pid"] = OS.get_process_id()
 	report["failures"] = failures
 	report["save_path"] = ProjectSettings.globalize_path(game.save_repository.path)
-	_write("res://../docs/evidence/M017/%s-report.json" % phase,JSON.stringify(report,"\t")+"\n")
+	_write(report_directory.path_join("%s-report.json" % phase),JSON.stringify(report,"\t")+"\n")
 	game._set_paused(false)
 	game.queue_free()
 	await process_frame
@@ -80,6 +83,14 @@ func _run() -> void:
 
 func _slot(name: String) -> String:
 	return "user://saves/m017-process-%s.json" % name
+
+func _v5_expected(data: Dictionary) -> Dictionary:
+	# Independent expected additive migration; historical fixture bytes stay v4.
+	var result: Dictionary = data.duplicate(true)
+	result.schema_version = 5
+	result["environment"] = {"day_index":0,"day_cycle_progress":0.0,"weather_seed":1821285621}
+	result["light_source_overrides"] = []
+	return result
 
 func _assert_snapshot(expected: Dictionary,label: String) -> void:
 	_check(JSON.parse_string(JSON.stringify(SaveCodec.snapshot(game.session))) == JSON.parse_string(JSON.stringify(expected)),"Durable envelope changed: " + label)
@@ -122,7 +133,7 @@ func _load_complete() -> Dictionary:
 	game.save_repository = SaveRepository.new("user://saves/m017-transaction.json")
 	_write(game.save_repository.path,JSON.stringify(data))
 	_check((await game.load_run()).is_empty(),"Complete fixture rejected")
-	return data
+	return _v5_expected(data)
 
 func _transactions() -> void:
 	var data: Dictionary = await _load_complete()
@@ -204,6 +215,7 @@ func _retries() -> void:
 		data.actors[1].health = 100
 		# Retry intentionally resumes time, but no durable gameplay fact changes.
 		data.elapsed_play_seconds = game.session.elapsed_play_seconds
+		data.environment = SaveCodec.snapshot(game.session).environment
 		_assert_snapshot(data,"retry")
 		_assert_arrival("retry")
 		await _lifecycle("retry")

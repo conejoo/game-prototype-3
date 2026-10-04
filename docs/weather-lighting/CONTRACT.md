@@ -51,7 +51,7 @@ Only thunderstorm yields the derived `heavy-rain` condition. Ordinary rain does 
 
 ## Persistent state and ownership
 
-Verified W001 design for v5 plain-data additions (implementation remains W003):
+Verified W001 design for v5 plain-data additions (implemented and verified W003):
 
 - `environment`: `day_index`, `day_cycle_progress`, `weather_seed`.
 - `light_source_overrides`: validated records keyed by location ID, source prop instance ID and source ID, with an enabled boolean.
@@ -189,7 +189,7 @@ This makes switchability enforceable across the save boundary. The registry
 includes all 23 identities without requiring live visual nodes. No Nodes,
 Resources, cache cursor, weather sample or forced review state enters a save.
 Existing exact legacy validation, backups, candidate restore and manual saves
-remain required. Content version 1 is provisional until W003 confirms compatibility.
+remain required. W003 confirms content version 1 compatibility below.
 
 ### Physical light adaptation and W005 asset gaps
 
@@ -263,3 +263,70 @@ p95<=16.67ms/p99<=25ms, draw-call p95<=500 includes shadows/UI. Memory<=2GiB;
 after two warm-up round trips plus ten further round trips and 10s idle,
 growth<=64MiB with stable node/object/resource/effect counts. Record actual
 engine PID, raw samples/settings and hardware anew; do not overwrite M018.
+
+## W002 implementation decisions
+
+W002 implements typed EnvironmentState, EnvironmentClock and WeatherSchedule under
+`game/features/environment/`. GameSession generates a fresh uint32 seed once only
+after successful initialization and advances both timers atomically through the
+existing GameRoot gate. Rules return explicit errors (or null for an invalid
+forecast); no invalid input changes clock/elapsed state or forecast cursor.
+Forecast queries return detached typed samples; the cursor reconstructs for a new
+seed/backward seek and computes subsequent periods only at crossed boundaries.
+Diagnostics count reconstructions/computed periods; they are never save facts.
+
+The 49 W001 vectors use authored absolute minutes before normalizing progress.
+Observed IEEE double round trip `369 / 1440 * 1440` gives
+`368.99999999999994` in both Python and installed Godot, so strict comparison
+alone misses the vector's intended exact boundary for seed 123456. W002
+canonicalizes forecast minutes to the nearest integer only when the absolute
+error is <=1e-9 authored minutes (less than 0.42 nanoseconds active time; roughly
+one ULP at the supported upper bound). There is no relative tolerance, clock
+rounding or widened visible transition. Times 0.0001 minute before each tested
+boundary remain in the previous period. Hashes, seeds, duration/transition
+arithmetic and retained source/vector bytes are unchanged. Display flooring still
+uses the source clock formula without this forecast-only normalization.
+
+At W002, schema4 saves could not retain environment clock/seed. W003 adds the
+persistence below; W002's rendering/acceptance scope remains unchanged.
+
+## W003 implementation decisions
+
+Schema5/content1 adds only the two contracted envelope fields. Existing catalog,
+location/spawn, actor, quest/effect, trust/reaction and progression IDs remain
+unchanged. All five retained historical v4 fixtures migrate with prior facts
+preserved, while their checked-in bytes/provenance remain unchanged. Content1
+therefore remains compatible; schema version distinguishes the additive fields.
+
+LightSourceRegistry is node-independent runtime content under features/environment.
+Its 23 effective defaults/switchability match the retained W001 inventory, with
+a compact independent test fixture. EnvironmentState stores overrides and resolves
+validated values before defaults. Commands reject automatic/unknown sources;
+SaveCodec rejects duplicate tuples even with identical booleans, extra/missing
+fields, invalid types and unsupported values. Override snapshots deep-copy/sort.
+V1-v4 use EnvironmentState's fixed defaults; v4 keeps consequences. Only successful
+fresh initialization generates a seed; candidate initialization accepts already
+validated environment facts. Save/recovery and physical rejection keep existing
+transaction/publication boundaries, with no competing presenter or timer.
+
+Actual installed Godot 4.7.2 exposed two precision issues. Default JSON.stringify
+rounds clock values; using [full_precision](https://docs.godotengine.org/en/stable/classes/class_json.html#class-json-method-stringify)
+preserves written digits. Its JSON/String.to_float reader nevertheless converts
+`0.9999999999999999` to1, including GDScript decimal literals. Tests construct the
+preceding double as `1.0 - pow(2.0,-53.0)` and compare actual double bits.
+SaveNumber reads only elapsed_play_seconds/day_cycle_progress numeric lexemes
+after JSON structural parsing, supports escaped keys, and converts decimal by
+long division to significand bits followed by one ties-even rounding (including
+subnormals). It neither clamps clocks nor changes field types/save shape.
+All other schema/field/type/ID checks remain strict. Numeric timer tokens are
+bounded at1100 characters and exponent spellings at5 characters (including sign)
+to bound work; unsupported spellings reject without changing files. Supported
+full-precision engine output and all retained legacy saves fit these limits.
+Newer schema/content protection runs first, including duplicate timer lexemes,
+so numeric errors cannot permit older-backup fallback for future envelopes.
+305 independent Python repr/struct/Decimal vectors and the final supported
+clock double prove precise decoding/filesystem reload; cursor/cache is transient.
+
+Acceptance: [W003 record](W003_ACCEPTANCE.md). No rendered weather/light/E-key or
+packaged/native claim; those remain later tasks. Existing schema4 builds stay
+historical; rebuild and perform W010 before accepting future feature releases.
