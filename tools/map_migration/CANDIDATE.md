@@ -125,7 +125,7 @@ world merge cells are0.01m. Whole-mesh/route0.4m capsule checks, route budgets,
 cold/warm/query timings and region-release/rollback checks pass. Measured single
 synchronous region requires no cache/background task. WorldHost waits for this
 region's nonzero queryable iteration before committing or completing rollback.
-M010 still owns connected companion recovery. No new AI/service/save ownership.
+M010 verifies connected companion recovery. No new AI/service/save ownership.
 
 M007 adds all 395 trees (nine species; 65 small/266 standard/64 large) and 17 remaining
 props, bringing candidate to 468 unique prop wrappers / 455 enabled footprints.
@@ -146,7 +146,21 @@ Maris has a reserved pad only; no
 counter/service/actor exists in the candidate before M015. Normal game remains compact.
 
 For rendered evidence, use the existing opt-in bridge and `send_playtest.ps1` from
-[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m009-*` directory and
+[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m010-*` directory and
 named test slot. Its commands inject ordinary viewport input, with no teleport
 or session mutation. Use short resume/actions/pause batches and confirm pause.
 Headless checks label their synthetic actor placements/physics stepping explicitly.
+
+M010's shared controller stops near a leader only with similar height and clear
+sight, so it continues through necessary ramps/detours. Catch-up/recovery requires
+a complete navigation path and capsule-checked floor corridors along that path
+and directly to the landing; connected banks alone never permit a water/cliff
+shortcut. Stale blockers/disconnected islands/combat reject placement. A blocked
+ally may remain stalled/down until a safe connected corridor becomes available.
+Existing session/party ownership, timers, threat and modal/focus/travel gates stay.
+`map_companion_checks.gd` accelerates14 physical AI routes, true curb stall then
+safe catch-up after removal, shared-API incapacitation/recovery and rejections.
+Northern isolated terrace is a direct-placement fixture only. Rendered acceptance
+uses ordinary WASD from fresh town through Moonwell and both crossings both ways;
+zero catch-ups,132 repaths,64 retained captures and normal F10 exit0. Evidence:
+`docs/evidence/M010/VALIDATION.md`. M011 appearance is next; no art/activation/export.

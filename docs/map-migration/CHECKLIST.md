@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M009 verified complete; M010–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M010 verified complete; M011–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -105,7 +105,7 @@ acceptance again against the resulting map build.
   trunks. Adjacent water negative probes stay outside usable navmesh. Measure
   loading/bake cost; scene swaps release old regions. Retain Tollworks routing.
 
-## [ ] M010 Companion river and ramp recovery
+## [x] M010 Companion river and ramp recovery
 
 - Exercise existing follow/repath/recovery over new map. Require traversable
   connectivity from ally to catch-up point; local floor/LOS alone insufficient.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M009 complete. Append one concise record per item:
+M001–M010 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -287,3 +287,11 @@ Checks and exact exit results: final navigation/forest/town/water/candidate/appl
 Evidence: docs/evidence/M009/VALIDATION.md,navigation/forest reports,snapshot hashes,rendered index/contact sheet,raw commands/responses,accepted and failed logs.
 Decisions or retained limits: radius0.4m/height1.6m/climb0.1m/source geometry unchanged;0.44m nav-only exclusions and centimetre vertex/merge raster repair corner aliases;shared WorldHost waits for nonzero queryable region on commit/rollback.Single synchronous bake meets budgets;no cache/background task required.M010 connected recovery and M011–M019 remaining scope not certified.Schema4/content1,pinned snapshot,normal save and P014 compact completion preserved.No agent commit/export/source write.
 Next eligible task: M010 companion river and ramp recovery only.
+
+M010 — completed 2026-10-03
+Result: shared ally follow requires similar height/clear sight before stopping; catch-up/recovery requires complete nav endpoints and physical path/direct capsule-floor corridors, preventing river/cliff/disconnected/stale/combat shortcuts. Normal compact game retained.
+Files: companion_controller.gd; map_companion_checks.gd/UID; companion_checks.gd; candidate root labels; CONTRACT/CHECKLIST/CURRENT_STATE/CANDIDATE/ARCHITECTURE; docs/evidence/M010/.
+Checks and exact exit results: final map/compact companion/application/movement-camera/travel/dialogue checks PASS0; extractor/import/evidence audit/diff check exit0. Import retains known SDK/certificate diagnostics.14 physical AI routes/19,808 samples/max grounding error0.00000025332m;five placement rejections,five suspension gates,true curb stall then catch-up after removal,3s recovery. Fresh rendered Moonwell round trip,both crossings both ways and forest approach:64 retained PNGs/31 inspected moving views,132 repaths,zero teleports,normal F10 exit0.
+Evidence: docs/evidence/M010/VALIDATION.md,companion report/snapshot hashes,exact exits,accepted and failed logs,ordinary-input commands/raw responses/captures/rendered index/four contact sheets.
+Decisions or retained limits: direct corridor required even if distant crossing connects banks;unsafe ally stays stalled/down until safe placement. Nav-floor0.35m tolerance preserves compact0.25m/candidate0.05m offsets,changes no geometry. Northern terrace internal ramp synthetic only. Schema4/content1,pinned snapshot,normal save/production IDs/selection unchanged. No AI-all16-lanes/art/activation/native map release claim;P014 compact completion preserved,M019 owns native map gate. Early fixture/tolerance/sync failures retained/repaired.No next item started.
+Next eligible task: M011 landscape appearance only.

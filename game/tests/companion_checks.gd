@@ -31,7 +31,7 @@ func _run() -> void:
 		_check(ally.global_position.distance_to(game.player_placeholder.global_position) < 1.9 and ally.global_position.z < -3, "Companion failed obstacle route in " + room)
 		_check(ai.catchups == before and ai.repaths > 0, "Obstacle follow used teleport instead of route")
 		_check(ally.is_on_floor() and ally.get_instance_id() == identity and ally.state == state, "Follow lost floor/identity/state")
-	# A physical runtime barrier invalidates the baked route; recovery must be safe.
+	# A physical runtime barrier invalidates the baked route; no teleport through it.
 	game.player_placeholder.global_position = Vector3(-4, 0, 4)
 	ally.global_position = Vector3(-4, 0, 0)
 	var barrier: StaticBody3D = StaticBody3D.new()
@@ -52,13 +52,13 @@ func _run() -> void:
 	await _frames(65)
 	await _capture("fixture-blocked-route")
 	await _frames(200)
-	_check(ai.catchups > catches and ally.global_position.distance_to(game.player_placeholder.global_position) < 2.2, "Stuck route did not safely catch up")
+	_check(ai.catchups == catches and ally.global_position.z < 2, "Stale navigation teleported through runtime barrier")
 	_check(not _overlaps_world(ally), "Catch-up overlapped world")
-	await _capture("fixture-safe-catchup")
+	await _capture("fixture-rejected-catchup")
 	barrier.queue_free()
 	await _frames(2)
 	game.player_placeholder.global_position = Vector3(-5, 0, -4)
-	ally.global_position = Vector3(5, 0, 4)
+	ally.global_position = Vector3(5, 0, -4)
 	ai.reset_route()
 	catches = ai.catchups
 	await _frames(5)
@@ -142,7 +142,7 @@ func _run() -> void:
 	for failure: String in failures:
 		push_error(failure)
 	if failures.is_empty():
-		print("P009 checks: PASS — both obstacle routes, stuck/separated safe catch-up, incapacitation/recovery, assist, once-only guardian effect, v1/v2 migration/rejection, party restore and identity.")
+		print("P009 checks: PASS — both obstacle routes, stale-barrier catch-up rejection, separated safe catch-up, incapacitation/recovery, assist, once-only guardian effect, v1/v2 migration/rejection, party restore and identity.")
 	quit(0 if failures.is_empty() else 1)
 
 

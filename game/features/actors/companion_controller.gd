@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 		actor.request_attack()
 		_stuck_seconds = 0.0
 		return
-	if not fight and distance < 1.6:
+	if not fight and distance < 1.6 and absf(actor.global_position.y - destination.y) < 0.1 and _can_see_leader():
 		actor.move_direction(Vector3.ZERO)
 		_stuck_seconds = 0.0
 		return
@@ -87,7 +87,12 @@ func _physics_process(delta: float) -> void:
 
 
 func _safe_place() -> bool:
+	# Recovery is relocation, so enforce the same threat boundary here as callers.
+	if not enabled or hero.state.health <= 0 or in_combat():
+		return false
 	var map: RID = actor.get_world_3d().navigation_map
+	if NavigationServer3D.map_get_iteration_id(map) == 0:
+		return false
 	var space: PhysicsDirectSpaceState3D = actor.get_world_3d().direct_space_state
 	var collider: CollisionShape3D = actor.get_node("CollisionShape3D")
 	for index: int in range(8):
@@ -111,10 +116,66 @@ func _safe_place() -> bool:
 		var sight: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(point + Vector3.UP * 0.3, hero.global_position + Vector3.UP * 0.3, 1)
 		if not space.intersect_ray(sight).is_empty():
 			continue
+		if not _connected_placement(map, space, point, collider):
+			continue
 		actor.global_position = point
+		actor.clear_input()
 		actor.reset_physics_interpolation()
 		return true
 	return false
+
+
+func _connected_placement(map: RID, space: PhysicsDirectSpaceState3D, point: Vector3, collider: CollisionShape3D) -> bool:
+	var start: Vector3 = actor.global_position
+	# Connected banks can still have a long route via a distant crossing. Do not
+	# relocate through intervening river, cliffs or trunks; follow that route.
+	# Check the cheap local corridor first, before a potentially long path query.
+	if not _clear_corridor(space, start, point, collider):
+		return false
+	var path: PackedVector3Array = NavigationServer3D.map_get_path(map, start, point, true)
+	# A nonempty path can end on the nearest disconnected island. Check both ends,
+	# including height, before trusting any navigation result.
+	if path.size() < 2 or _flat(path[0] - start).length() > 0.4 or absf(path[0].y - start.y) > 0.35 or _flat(path[-1] - point).length() > 0.1 or absf(path[-1].y - point.y) > 0.35:
+		return false
+	for index: int in range(1, path.size()):
+		if not _clear_corridor(space, path[index - 1], path[index], collider):
+			return false
+	return true
+
+
+func _clear_corridor(space: PhysicsDirectSpaceState3D, start: Vector3, end: Vector3, collider: CollisionShape3D) -> bool:
+	var count: int = maxi(1, ceili(start.distance_to(end) / 0.1))
+	var previous: Vector3
+	var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
+	query.shape = collider.shape
+	query.collision_mask = 1
+	query.exclude = [actor.get_rid()]
+	for index: int in range(count + 1):
+		var wanted: Vector3 = start.lerp(end, float(index) / count)
+		# Compact Recast rooms offset their mesh 0.25m above physical floor;
+		# candidate uses 0.05m. Ground every sample against physics in both.
+		var ray: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(wanted + Vector3.UP * 0.4, wanted + Vector3.DOWN * 0.4, 1)
+		var hit: Dictionary = space.intersect_ray(ray)
+		if hit.is_empty() or (hit.normal as Vector3).y < 0.9 or absf(hit.position.y - wanted.y) > 0.35:
+			return false
+		var feet: Vector3 = hit.position
+		query.transform = Transform3D(Basis.IDENTITY, feet + collider.position + Vector3.UP * 0.02)
+		query.motion = Vector3.ZERO
+		if not space.intersect_shape(query).is_empty():
+			return false
+		if index > 0:
+			# Sweep between samples too: a thin cliff/barrier cannot hide in a gap.
+			query.transform.origin = previous + collider.position + Vector3.UP * 0.02
+			query.motion = feet - previous
+			if space.cast_motion(query)[0] < 1.0:
+				return false
+		previous = feet
+	return true
+
+
+func _can_see_leader() -> bool:
+	var ray: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(actor.global_position + Vector3.UP * 0.3, hero.global_position + Vector3.UP * 0.3, 1)
+	return actor.get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
 
 
 func _flat(direction: Vector3) -> Vector3:

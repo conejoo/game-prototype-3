@@ -1,6 +1,6 @@
 # Alderwake map migration contract
 
-M001–M009 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
+M001–M010 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
 and acceptance targets; it does not certify an implemented exterior. M002 pinned
 inputs; M003–M014 build an isolated candidate, M015 activates it, and M019 verifies
 the resulting Windows build against the native release gate. Parent P014 completed
@@ -323,7 +323,7 @@ benchmark is claimed. Parent P014 subsequently completed with
 [native evidence](../evidence/P014/native-holds/VALIDATION.md); M019 must revalidate
 the resulting map build. Import exit 0 still reports the pre-existing missing
 .NET SDK 10.0.9 and restricted certificate-store access; typed GDScript checks pass.
-M009 exterior navigation is now verified; M010 is next eligible. This includes
+M010 exterior companion recovery is now verified; M011 is next eligible. This includes
 the explicitly approved dock exception above, not an automatic snapshot refresh.
 
 ### M007 population and provisional navigation
@@ -430,3 +430,37 @@ See [M009 validation](../evidence/M009/VALIDATION.md) for exact measurements,
 commands, full-mesh audit and fresh rendered Moonwell round trip. Earlier M008
 failed evidence remains historical; M010 still owns connected companion recovery.
 Schema4/content1, pinned snapshot and all production IDs remain unchanged.
+
+### M010 connected companion recovery
+
+Companion follow stop distance remains1.6m, but stopping additionally requires
+height difference<0.1m and unobstructed low world sight to the hero. A nearby hero
+across a cliff/solid prop no longer stops repathing before the necessary ramp or
+detour. Existing speed,0.4s repath,2.5s stall,8m separation,3s incapacitation and
+combat/threat rules remain; root still owns modal/focus/travel suspension.
+
+Catch-up and incapacitation recovery now require a synchronized navigation map,
+connected path with both endpoints near the actual actor/landing, and physical
+capsule clearance along every path segment. Nonempty partial paths on disconnected
+islands are rejected. Ground samples<=0.1m apart raycast actual floor, require
+normalY>=0.9 and sweep between samples, so stale baked paths cannot cross thin or
+low physical barriers. Mesh-to-floor height tolerance0.35m retains existing
+compact Recast's0.25m offset and candidate's0.05m offset; it changes no physical
+height, climb, floor snap or collision. Full landing clearance still includes
+other actors and LOS to hero. Successful relocation clears old movement/velocity.
+
+Additionally require the direct actor-to-landing corridor to pass the same floor/
+capsule checks. A route via a distant bridge/ramp does not authorize teleporting
+through intervening water/cliffs/trunks. Conservative rejection leaves the ally
+following/repathing or incapacitated until a valid candidate becomes available.
+Synthetic low-curb evidence demonstrates a real physical stall, no unsafe jump,
+then one automatic catch-up after obstruction removal; recovery is never a way
+to bypass an impassable obstacle. Session health is restored only after valid
+placement; no new persistent flag or authority. The source's northern1.5/1.75m
+terrace is isolated by authored cliffs; M010 checks its internal ramp in a labeled
+fixture, without inventing a connection to the main exterior.
+
+[M010 validation](../evidence/M010/VALIDATION.md):14 physical AI routes,19,808
+motion samples, five placement rejections, suspension/recovery/compact regressions
+and fresh rendered Moonwell/ford/bridge ordinary-input journey. Candidate remains
+isolated; source snapshot/schema4/content1/production IDs/normal save unchanged.

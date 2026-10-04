@@ -324,6 +324,15 @@ the previous region before resuming party control. Definitions, session, party,
 save ownership and production route IDs remain unchanged. See the migration
 contract and M009 evidence for geometry and timing details.
 
+M010 strengthens the shared companion safety rule: follow stops only at similar
+height with clear world sight; catch-up/recovery requires synchronized navigation,
+complete endpoints, a capsule-checked physical path and clear direct relocation
+corridor. Disconnected islands, stale physical blockers and water/cliff shortcuts
+are rejected even when the landing near the hero is clear. Recovery keeps the
+existing stall/separation/delay/threat gates and authoritative ActorState. Normal
+compact rooms retain their navigation height offset; no map activation, new save
+field, service or persistent recovery authority is introduced.
+
 ### Delivered relationship and progression boundary (P010)
 
 Immutable ReactionDefinition Resources identify temporary companion, decision
