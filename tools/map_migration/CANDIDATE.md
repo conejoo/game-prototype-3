@@ -198,4 +198,21 @@ transforms. Candidate/crossing/nav/application/companion regressions pass.
 Fresh ordinary WASD forest tour and both crossings both ways inspected;23 clear
 frames,zero catch-ups,normal quit0. Evidence:docs/evidence/M012/VALIDATION.md.
 M016 broader camera/aim/canopy gates and M018 performance remain pending.
-Town/landmark kit not started.
+Town kit M013 follows below; landmark kit M014 remains pending.
+
+M013 replaces all24 source town structure visuals with14 footprint-sized Blender
+building variants and shared metre plank/stone deck modules. Every original foot,
+yaw, ID, collision flag/body and seven approved dock floors/cutouts remain fixed.
+Exact skew polygons stay polygons; roof/facade art adds no blocker. Imported
+COLOR_0 matte palette carries slate/terracotta roofs, plaster/timber/teal fronts,
+civic/inn height variants and shop fascia, with compressed1.76–3.41m heights.
+Source:art/source/alderwake_town_kit.blend; GLB/mapping:game/assets/environment/.
+town_art.gd replaces only VisualRoot children, with repeated definition meshes
+and50 plank/165 quay modules sharing resources. 16 kit meshes/6,110 triangles,
+490,396bytes,zero external textures. Other props, inactive door labels and Maris
+reservation remain existing grayboxes; no new interiors/behaviors or service.
+map_town_art_checks.gd audits geometry/materials/source registration/modules;
+town/water/candidate/application/companion regressions pass. Fresh ordinary WASD
+town circulation/all three docks out-and-back/passenger quay tour:17 inspected
+clear views,zero catch-ups,normal F10 exit0. See docs/evidence/M013/VALIDATION.md.
+Candidate isolated until M015; next eligible M014 landmark appearance only.

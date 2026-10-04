@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M012 verified complete; M013–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M013 verified complete; M014–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -130,7 +130,7 @@ acceptance again against the resulting map build.
   canopy suit overhead camera; source positions/collisions preserved; no missing
   textures/import errors. Inspect dense forest and both crossing approaches.
 
-## [ ] M013 Reusable town exterior art kit
+## [x] M013 Reusable town exterior art kit
 
 - Replace primitive exterior buildings/docks with bounded modular Blender kit;
   prioritize house, shop/Chandlery, civic/inn fronts and dock modules. Variants
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M012 complete. Append one concise record per item:
+M001–M013 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -311,3 +311,11 @@ Checks and exact exit results: pinned extractor/reference/audit PASS0; initial/f
 Evidence: docs/evidence/M012/VALIDATION.md,tree/navigation reports,source/gallery/two contact sheets,48 PNGs,exact bridge requests/raw responses,accepted/failed logs,hash/index/audit records.
 Decisions or retained limits: deliberately compressed species canopies,portable vertex colors/zero external textures; feet/yaws/IDs/collision/elevation/water/nav/schema4/content1 unchanged. Live Blender scenes preserved/vessel restored,snapshot unchanged,normal save absent. Camera/performance/activation/native gates remain later; P014 compact completion preserved. No subagent,source write/refresh,installation,commit,push,publication or next item started.
 Next eligible task: M013 reusable town exterior art kit only.
+
+M013 — completed 2026-10-03
+Result: reusable footprint-sized town exterior Blender kit,14 building variants/two shared deck modules,all24 original structures plus approved docks/165 quay cells; normal compact game retained.
+Files: art/source/alderwake_town_kit.blend; game/assets/environment/GLB/import/mapping; town_art.gd/UID,terrain_preview.gd,candidate root,map_town_art_checks.gd/UID; tools/map_migration/build_town_kit.py,CANDIDATE; migration CHECKLIST/CURRENT_STATE; docs/evidence/M013/.
+Checks and exact exit results: pinned extractor/Blender render/finalize/initial-final imports/art/town/water/candidate/application/companion/audit/collect-views/diff check PASS0; known SDK/certificate diagnostics retained.24 source placements,168 exact base corners,48m2 approved dock art,6,110 triangles;37,325 polygon queries/74 physical town routes/18,325 path samples;8,598 water cells/4,027 edge sweeps.17 clear inspected rendered views/36 PNGs,ordinary town/all three docks out-and-back/passenger quays,HP100/100,146 repaths,zero catch-ups,normal F10 exit0.
+Evidence: docs/evidence/M013/VALIDATION.md,town-art/tour/audit/hash/reference reports,gallery/two contact sheets,exact requests/raw responses/PNG captures,accepted logs.
+Decisions or retained limits: deliberate shallow catalog-footprint gabled fronts,compressed1.76–3.41m heights,vertex-color surface detail/no external textures; source feet/yaws/IDs/collisions/nav/elevation/water/dock masks/schema4/content1 unchanged. Live Blender user scenes preserved/vessel restored,normal save absent,snapshot unchanged. Candidate isolated; M014 landmarks/M015 activation/M016 camera/M017 saves/M018 performance/M019 native map gate pending; parent P014 compact completion preserved. No subagent/source write/refresh/installation/commit/push/publication/next item started.
+Next eligible task: M014 bridge Moonwell and gate appearance only.
