@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M008 verified complete; M009–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M009 verified complete; M010–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -95,7 +95,7 @@ acceptance again against the resulting map build.
   stays grounded; all arrival anchors support full party capsule/offsets.
   Crossings and Maris pad still work; document any justified height adaptation.
 
-## [ ] M009 Navigation for complete exterior
+## [x] M009 Navigation for complete exterior
 
 - Replace/adapt tiny-room synchronous bake for candidate scale: use explicit
   walkable surfaces, correct radius/slope settings, and measured bake strategy.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001 contract through M006 town/dock footprints complete. Append one concise record per item:
+M001–M009 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -279,3 +279,11 @@ Checks and exact exit results: final eight focused elevation/candidate/crossing/
 Evidence: docs/evidence/M008/VALIDATION.md,elevation/forest reports,known-nav-limit/hashes/rendered-index,accepted and failed logs,ordinary input commands/raw responses/PNG captures.
 Decisions or retained limits: solid default base plus raised/ramp collision; exact prop X/Z/flags/IDs preserved,vertical graybox bounds cover terrain. Candidate snap0.04m plus optional actual-floor callback prevents measured wall-snap/downhill artifacts; normal callback empty. Moonwell evidence approach moves toZ5.25 within0.629m of unchanged foot. Strict forest nav check remains FAILED/exit1 on12 radius0.4m ramp-corner probes while16 hero routes walk; M009 must repair without weakening gates. Schema4/content1,snapshot,normal save/production selection and parent P014 compact completion unchanged. No M009 implementation/performance/export/native map gate claimed.
 Next eligible task: M009 navigation for complete exterior only, beginning with retained Moonwell contour/erosion failure.
+
+M009 — completed 2026-10-03
+Result: complete physical exterior navigation with exact cliff/gate/perimeter centre clipping, strict whole-mesh clearance and query-ready transactional arrivals; normal compact game remains selected.
+Files: terrain_preview.gd/elevation_surfaces.gd; WorldHost; candidate root/forest check; map_navigation_checks.gd and failure fixtures/UIDs; CONTRACT/CHECKLIST/CURRENT_STATE/CANDIDATE/ARCHITECTURE; docs/evidence/M009/.
+Checks and exact exit results: final navigation/forest/town/water/candidate/application/travel/companion checks PASS0; pinned extractor/import/evidence audit/diff check exit0. Import retains known SDK/certificate diagnostics.336373 radius0.4m samples;6336 polygons;18 required paths+4 crossing paths;16 physical forest/74 town routes;three rollback rejections/four complete round trips.Cold generation797.363ms,warm exterior max1315.746ms,30-query p95718us;18 inspected retained rendered captures,fresh Moonwell round trip,normal F10 exit0.
+Evidence: docs/evidence/M009/VALIDATION.md,navigation/forest reports,snapshot hashes,rendered index/contact sheet,raw commands/responses,accepted and failed logs.
+Decisions or retained limits: radius0.4m/height1.6m/climb0.1m/source geometry unchanged;0.44m nav-only exclusions and centimetre vertex/merge raster repair corner aliases;shared WorldHost waits for nonzero queryable region on commit/rollback.Single synchronous bake meets budgets;no cache/background task required.M010 connected recovery and M011–M019 remaining scope not certified.Schema4/content1,pinned snapshot,normal save and P014 compact completion preserved.No agent commit/export/source write.
+Next eligible task: M010 companion river and ramp recovery only.

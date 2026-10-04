@@ -1,6 +1,6 @@
 # Alderwake map migration contract
 
-M001–M008 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
+M001–M009 verified 2026-10-03 (America/Vancouver). This contract fixes conversion
 and acceptance targets; it does not certify an implemented exterior. M002 pinned
 inputs; M003–M014 build an isolated candidate, M015 activates it, and M019 verifies
 the resulting Windows build against the native release gate. Parent P014 completed
@@ -323,7 +323,7 @@ benchmark is claimed. Parent P014 subsequently completed with
 [native evidence](../evidence/P014/native-holds/VALIDATION.md); M019 must revalidate
 the resulting map build. Import exit 0 still reports the pre-existing missing
 .NET SDK 10.0.9 and restricted certificate-store access; typed GDScript checks pass.
-M008 physical elevation/ramps are now verified; M009 is next eligible. This includes
+M009 exterior navigation is now verified; M010 is next eligible. This includes
 the explicitly approved dock exception above, not an automatic snapshot refresh.
 
 ### M007 population and provisional navigation
@@ -395,3 +395,38 @@ all16 real hero routes finish. M009 must repair this contour/erosion defect and
 meet full path/loading targets without weakening clearance or changing physical
 outlines. [M008 validation](../evidence/M008/VALIDATION.md) and
 [exact failed probes](../evidence/M008/navigation-known-limit.json).
+
+### M009 complete exterior navigation
+
+M009 resolves the retained M008 corner defect without changing physical source
+heights, footprints, cliffs, docks, crossings or movement masks. Explicit dry
+surfaces remain the only walkable input. Radius0.4m, height1.6m, climb0.1m,
+horizontal voxel0.2m/vertical0.05m and contour error0.1 remain; maximum slope is
+20 degrees for the authored14.04-degree ramps. Props/water/rails keep their
+existing conservative pre-erosion0.2m outline margin. Thin cliffs get a
+post-erosion centre carve to preserve their narrow turns.
+
+The baked polygons are then clipped against physical cliff box outlines and
+the closed gate grown by0.44m, and map bounds inset0.44m. This adds0.04m safety
+beyond the0.4m agent radius, on navigation only. Square corner bounds deliberately
+avoid measured underclearance from coarse rounded-offset approximation. Clipped
+vertices weld to a0.01m grid plus0.0001m raster-edge bias, at actual terrain
+height+0.05m; duplicate/collinear triangles are omitted. The isolated world's
+navigation merge cells are0.01m; project defaults and normal map selection stay
+unchanged. Unexpected interior clipping holes fail construction rather than
+becoming usable floor. No blocker tops or art are parsed.
+
+Whole-mesh edges/centres and required bidirectional paths clear actual0.4m
+capsules at<=0.1m intervals. Both crossings, Moonwell, Tollworks/return/closed-exit
+approaches and Maris pad connect inside route budgets. Water/gate negatives remain
+outside usable navigation. A single synchronous region stays inside measured
+cold5s/warm2s/query-p955ms budgets, so no background bake, disk cache or source
+navigation dependency is needed. WorldHost waits for nonzero server iteration and
+this region's arrival query before committing; rollback restores queryable old
+navigation. Four synthetic candidate/Tollworks round trips release old regions,
+and three bake/placement rejections restore the original exterior.
+
+See [M009 validation](../evidence/M009/VALIDATION.md) for exact measurements,
+commands, full-mesh audit and fresh rendered Moonwell round trip. Earlier M008
+failed evidence remains historical; M010 still owns connected companion recovery.
+Schema4/content1, pinned snapshot and all production IDs remain unchanged.

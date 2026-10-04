@@ -1,4 +1,4 @@
-# M003–M008 isolated terrain, water, crossings, props and physical heights
+# M003–M009 isolated physical exterior and navigation
 
 From the target repository root:
 
@@ -13,12 +13,12 @@ $godotExe = 'D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_m
 & $godotExe --headless --path game --script res://tests/map_town_checks.gd
 & $godotExe --headless --path game --script res://tests/map_forest_checks.gd
 & $godotExe --headless --path game --script res://tests/map_elevation_checks.gd
+& $godotExe --headless --path game --script res://tests/map_navigation_checks.gd
 ```
 
-M008 elevation/candidate/crossing/town/water checks pass. The strict forest check
-currently exits1 on12 radius0.4m Moonwell ramp-corner clearance probes;16 real
-hero routes finish. Keep that failure visible for M009. See
-[M008 acceptance and exact commands](../../docs/evidence/M008/VALIDATION.md).
+M009 navigation/forest/town/water/candidate checks pass. The historical M008
+Moonwell corner failure remains in its evidence; M009 repairs it with exact
+agent-centre clipping. See [M009 acceptance and commands](../../docs/evidence/M009/VALIDATION.md).
 
 Normal main scene and catalog remain unchanged. The alternate root extends the
 existing root and appends one location to a detached manifest. Session/services,
@@ -109,17 +109,22 @@ snap plus actual-nearby-floor ray/full-capsule correction, bounded0.11m; normal
 rooms inject no callback. Both candidate party pads,crossings and seven approved
 dock surfaces remain Y0. See contract/evidence for measured grounding repairs.
 
-Provisional navigation bakes
+Exterior navigation bakes
 only explicit dry row-run triangles, clipping rail footprints and omitting effective water/gate before baking; it never
 parses blocker tops, art or the full base floor. Radius0.4m, height1.6m, climb0.1m,
 cell0.2m/height0.05m, contour error0.1. Dry faces follow physical terrain,cliff
 barriers are projected obstructions,and Recast surfaces are slightly above actual
-floors. This is temporary lifecycle support;
+floors. M009 additionally limits maximum slope to20degrees;
 M006 projects town footprints and effective southern-water pieces as obstructions
 with an extra 0.2m nav-only margin to prevent measured fractional corner cuts.
 M008 extends water's same conservative margin to river/lake pieces. The strict
-Moonwell corner capsule-clearance check remains failed; hero walking/grounding
-passes. M009 owns complete physical-surface navigation, loading and route acceptance.
+Moonwell corner capsule-clearance defect is repaired with post-erosion cliff
+carving and exact clipping against cliff/gate0.44m exclusions and inset bounds.
+Vertices weld to0.01m plus0.0001m raster bias, at physical ground+0.05m; isolated
+world merge cells are0.01m. Whole-mesh/route0.4m capsule checks, route budgets,
+cold/warm/query timings and region-release/rollback checks pass. Measured single
+synchronous region requires no cache/background task. WorldHost waits for this
+region's nonzero queryable iteration before committing or completing rollback.
 M010 still owns connected companion recovery. No new AI/service/save ownership.
 
 M007 adds all 395 trees (nine species; 65 small/266 standard/64 large) and 17 remaining
@@ -141,7 +146,7 @@ Maris has a reserved pad only; no
 counter/service/actor exists in the candidate before M015. Normal game remains compact.
 
 For rendered evidence, use the existing opt-in bridge and `send_playtest.ps1` from
-[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m008-*` directory and
+[PLAYTEST.md](../PLAYTEST.md), with a fresh `builds/playtest/m009-*` directory and
 named test slot. Its commands inject ordinary viewport input, with no teleport
 or session mutation. Use short resume/actions/pause batches and confirm pause.
 Headless checks label their synthetic actor placements/physics stepping explicitly.

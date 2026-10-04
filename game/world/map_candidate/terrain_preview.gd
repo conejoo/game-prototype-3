@@ -22,9 +22,12 @@ var crossings: AlderwakeCrossings
 var town: AlderwakeTownFootprints
 var forest: AlderwakeForestPopulation
 var elevation: AlderwakeElevationSurfaces
+var construction_usec: int = 0
+var navigation_report: Dictionary = {}
 
 
 func _init() -> void:
+	var started: int = Time.get_ticks_usec()
 	location_id = "candidate-alderwake"
 	var parser: JSON = JSON.new()
 	if parser.parse(FileAccess.get_file_as_string(LAYOUT_PATH)) != OK or not parser.data is Dictionary:
@@ -87,7 +90,8 @@ func _init() -> void:
 	preview_report["town"] = {"props": town.prop_records.size(), "authored_colliders": town.collider_records.size(), "blocking_footprints": town.footprints.size(), "inert_portal_pads": town.portal_pads.size()}
 	preview_report["forest"] = {"props": forest.prop_records.size(), "species": forest.species_counts, "sizes": forest.size_counts, "blocking_footprints": forest.footprints.size(), "markers": forest.marker_records.size(), "inert_data_records": forest.inert_records.size()}
 	preview_report["elevation"] = {"cells": elevation.levels.size(), "ramps": elevation.slopes.size(), "cliffs": elevation.cliffs.size(), "height_per_level_m": 0.25}
-	preview_report["limits"] = "M008 physical height/ramp graybox; water/gate/cliffs blocked; provisional navigation M009; final art M011-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
+	preview_report["limits"] = "M009 physical exterior navigation; final art M011-M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
+	construction_usec = Time.get_ticks_usec() - started
 
 
 func resolve_layer(layer: Dictionary) -> Dictionary:
@@ -222,9 +226,11 @@ func _add_spawn(parent: Node3D, id: String, feet: Vector3) -> void:
 
 
 func prepare_navigation() -> PackedStringArray:
-	# M004 provisional dry-only bake; M009 owns complete exterior strategy.
+	# Explicit physical dry surfaces, never parsed art or blocker tops. Measured
+	# single-region synchronous baking stays inside the full-map loading budget.
 	if navigation_region != null:
 		return PackedStringArray()
+	var started: int = Time.get_ticks_usec()
 	var mesh: NavigationMesh = NavigationMesh.new()
 	mesh.cell_size = 0.2
 	mesh.cell_height = 0.05
@@ -234,6 +240,7 @@ func prepare_navigation() -> PackedStringArray:
 	mesh.agent_radius = 0.4
 	mesh.agent_height = 1.6
 	mesh.agent_max_climb = 0.1
+	mesh.agent_max_slope = 20.0 # Authored ramps are 14.04 degrees; cliffs are walls.
 	var geometry: NavigationMeshSourceGeometryData3D = NavigationMeshSourceGeometryData3D.new()
 	var faces: PackedVector3Array = []
 	var dry_faces: PackedVector3Array = crossings.navigation_faces(water_blockers.surface_faces(bounds, false))
@@ -253,13 +260,103 @@ func prepare_navigation() -> PackedStringArray:
 			points.append(Vector3(point.x, 0, point.y))
 		geometry.add_projected_obstruction(points, -0.2, 0.6, false)
 	water_blockers.add_shore_navigation_margin(geometry)
+	# Include the physical perimeter and closed gate in the same explicit
+	# blocker input. Radius-only bounds leave exact-contact unsafe vertices.
+	for edge: Rect2 in [Rect2(bounds.position.x - 1, bounds.position.y - 1, 1, bounds.size.y + 2),
+		Rect2(bounds.end.x, bounds.position.y - 1, 1, bounds.size.y + 2),
+		Rect2(bounds.position.x - 1, bounds.position.y - 1, bounds.size.x + 2, 1),
+		Rect2(bounds.position.x - 1, bounds.end.y, bounds.size.x + 2, 1), Rect2(123, -11, 2, 8)]:
+		var points: PackedVector3Array = []
+		for point: Vector2 in AlderwakePropGrayboxes._rectangle(edge.grow(0.05)):
+			points.append(Vector3(point.x, 0, point.y))
+		geometry.add_projected_obstruction(points, -0.2, 4.0, false)
+	var bake_started: int = Time.get_ticks_usec()
 	NavigationServer3D.bake_from_source_geometry_data(mesh, geometry)
+	var bake_usec: int = Time.get_ticks_usec() - bake_started
+	var clip_started: int = Time.get_ticks_usec()
+	_clip_navigation(mesh)
+	var clip_usec: int = Time.get_ticks_usec() - clip_started
 	if mesh.get_polygon_count() == 0:
 		return PackedStringArray(["candidate has no dry navigation"])
 	navigation_region = NavigationRegion3D.new()
 	navigation_region.navigation_mesh = mesh
+	# The candidate's exact clipped edges are finer than the default world's
+	# 0.25m merge raster. Configure this isolated world, not project defaults.
+	NavigationServer3D.map_set_cell_size(get_world_3d().navigation_map, 0.01)
+	NavigationServer3D.map_set_cell_height(get_world_3d().navigation_map, 0.01)
 	add_child(navigation_region)
+	navigation_report = {"construction_ms": construction_usec / 1000.0,
+		"source_ms": (bake_started - started) / 1000.0, "bake_ms": bake_usec / 1000.0,
+		"clip_ms": clip_usec / 1000.0,
+		"generation_bake_ms": (construction_usec + Time.get_ticks_usec() - started) / 1000.0,
+		"polygons": mesh.get_polygon_count(), "vertices": mesh.get_vertices().size(),
+		"radius_m": mesh.agent_radius, "height_m": mesh.agent_height,
+		"climb_m": mesh.agent_max_climb, "slope_degrees": mesh.agent_max_slope,
+		"strategy": "explicit dry height surfaces; post-erosion cliff carve; exact cliff/gate/perimeter centre clipping"}
 	return build_errors
+
+
+func _clip_navigation(mesh: NavigationMesh) -> void:
+	# Recast rasterizes exclusion outlines. Clip its resulting polygons against
+	# exact agent-centre exclusions so every edge, not only chosen paths, clears
+	# physical cliffs. No radius, terrain or movement-mask changes.
+	var exclusions: Array[Dictionary] = []
+	for cliff: Dictionary in elevation.cliffs:
+		var shape: BoxShape3D = cliff.body.get_child(0).shape
+		var center: Vector2 = Vector2(cliff.body.position.x, cliff.body.position.z)
+		var rect: Rect2 = Rect2(center - Vector2(shape.size.x, shape.size.z) / 2, Vector2(shape.size.x, shape.size.z))
+		# Square corner clearance is conservative; the built-in round offset
+		# approximates these small arcs too coarsely for a capsule safety gate.
+		exclusions.append({"outline": AlderwakePropGrayboxes._rectangle(rect.grow(0.44)), "bounds": rect.grow(0.44)})
+	exclusions.append({"outline": AlderwakePropGrayboxes._rectangle(Rect2(123, -11, 2, 8).grow(0.44)), "bounds": Rect2(123, -11, 2, 8).grow(0.44)})
+	var old_vertices: PackedVector3Array = mesh.get_vertices()
+	var vertices: PackedVector3Array = []
+	var polygons: Array[PackedInt32Array] = []
+	var vertex_ids: Dictionary[Vector2i, int] = {}
+	for index: int in range(mesh.get_polygon_count()):
+		var outline: PackedVector2Array = []
+		for vertex: int in mesh.get_polygon(index):
+			outline.append(Vector2(old_vertices[vertex].x, old_vertices[vertex].z))
+		var clipped: Array[PackedVector2Array] = Geometry2D.intersect_polygons(outline, AlderwakePropGrayboxes._rectangle(bounds.grow(-0.44)))
+		var polygon_bounds: Rect2 = Rect2(outline[0], Vector2.ZERO)
+		for point: Vector2 in outline:
+			polygon_bounds = polygon_bounds.expand(point)
+		for exclusion: Dictionary in exclusions:
+			if not polygon_bounds.intersects(exclusion.bounds):
+				continue
+			var next: Array[PackedVector2Array] = []
+			for part: PackedVector2Array in clipped:
+				next.append_array(Geometry2D.clip_polygons(part, exclusion.outline))
+			clipped = next
+		for part: PackedVector2Array in clipped:
+			# A baked obstacle already has a hole; clipping only trims its edge.
+			# An unexpected new interior hole must fail rather than become floor.
+			if Geometry2D.is_polygon_clockwise(part):
+				build_errors.append("unexpected interior hole during navigation clipping")
+				continue
+			var triangles: PackedInt32Array = Geometry2D.triangulate_polygon(part)
+			for triangle: int in range(0, triangles.size(), 3):
+				var ids: PackedInt32Array = []
+				for corner: int in range(3):
+					var point: Vector2 = part[triangles[triangle + corner]]
+					var key: Vector2i = Vector2i(roundi(point.x * 100), roundi(point.y * 100))
+					# Inset each unique centimetre vertex from its merge raster edge;
+					# float roundoff must not alias neighbouring edge endpoints.
+					point = Vector2(key) / 100.0 + Vector2.ONE * 0.0001
+					if not vertex_ids.has(key):
+						vertex_ids[key] = vertices.size()
+						vertices.append(Vector3(point.x, elevation.height_at(point) + 0.05, point.y))
+					ids.append(vertex_ids[key])
+				if ids[0] != ids[1] and ids[1] != ids[2] and ids[0] != ids[2]:
+					var a: Vector2 = Vector2(vertices[ids[0]].x, vertices[ids[0]].z)
+					var b: Vector2 = Vector2(vertices[ids[1]].x, vertices[ids[1]].z)
+					var c: Vector2 = Vector2(vertices[ids[2]].x, vertices[ids[2]].z)
+					if absf((b - a).cross(c - a)) > 0.000001:
+						polygons.append(ids)
+	mesh.clear_polygons()
+	mesh.set_vertices(vertices)
+	for polygon: PackedInt32Array in polygons:
+		mesh.add_polygon(polygon)
 
 
 func validation_errors(definition: LocationDefinition, catalog: ContentCatalog) -> PackedStringArray:

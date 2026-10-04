@@ -68,6 +68,8 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 	var navigation_errors: PackedStringArray = candidate.prepare_navigation()
 	NavigationServer3D.map_force_update(get_world_3d().navigation_map)
 	var anchor: SpawnAnchor = candidate.find_spawn(spawn_id)
+	if navigation_errors.is_empty():
+		navigation_errors.append_array(await _synchronize_navigation(candidate, anchor))
 	var errors: PackedStringArray = _placement_errors(anchor)
 	errors.append_array(navigation_errors)
 	if not errors.is_empty():
@@ -79,6 +81,8 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 		await get_tree().physics_frame
 		await get_tree().process_frame
 		NavigationServer3D.map_force_update(get_world_3d().navigation_map)
+		if previous != null:
+			await _synchronize_navigation(previous, previous.find_spawn(session.current_spawn_id))
 		party.resume_after_travel()
 		transitioning = false
 		transition_finished.emit(false, errors)
@@ -99,6 +103,21 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 	transitioning = false
 	print("P004: arrived %s/%s; party=%d; transition=%d" % [location_id, spawn_id, party.members().size(), transition_count])
 	transition_finished.emit(true, PackedStringArray())
+
+
+func _synchronize_navigation(location: PrototypeLocation, anchor: SpawnAnchor) -> PackedStringArray:
+	# A force-update request alone does not mean an asynchronous full-map region
+	# is queryable. Keep the party suspended until this exact region owns the
+	# anchor query. Apply the same barrier when restoring the previous scene.
+	var map: RID = get_world_3d().navigation_map
+	if location.navigation_region == null or anchor == null:
+		return PackedStringArray(["location navigation/anchor unavailable"])
+	for attempt: int in range(120):
+		NavigationServer3D.map_force_update(map)
+		if NavigationServer3D.map_get_iteration_id(map) > 0 and NavigationServer3D.map_get_closest_point_owner(map, anchor.global_position) == location.navigation_region.get_rid():
+			return PackedStringArray()
+		await get_tree().physics_frame
+	return PackedStringArray(["location '%s' navigation did not synchronize" % location.location_id])
 
 
 func _placement_errors(anchor: SpawnAnchor) -> PackedStringArray:

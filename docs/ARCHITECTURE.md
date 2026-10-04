@@ -314,6 +314,16 @@ Runtime baking is intentionally limited to these small rooms; richer levels may
 pre-bake regions. No recruitment, companion commands, permanent identity, trust,
 romance, upgrade, general AI framework or new persistent quest effects introduced.
 
+M009 adds an isolated source-derived exterior candidate with explicit dry physical
+surfaces, radius 0.4m, height 1.6m and climb 0.1m. A measured single-region bake
+plus exact cliff/gate/perimeter centre clipping meets its loading budget; normal
+production selection stays compact until M015. WorldHost now waits for a nonzero
+navigation iteration and the candidate region to own the arrival-anchor query
+before party placement/commit. Failed bake/placement restores and synchronizes
+the previous region before resuming party control. Definitions, session, party,
+save ownership and production route IDs remain unchanged. See the migration
+contract and M009 evidence for geometry and timing details.
+
 ### Delivered relationship and progression boundary (P010)
 
 Immutable ReactionDefinition Resources identify temporary companion, decision
@@ -454,7 +464,8 @@ Export text-resource binary conversion is disabled: the initial export lost pack
 spawn/dialogue arrays and failed validation; text resources restore standalone
 behavior. This observed workaround changes no authored IDs/values or schema4/content1.
 Recheck conversion when changing engine/template versions. P014's native release
-journey remains an open gate; debug-export evidence is recorded separately.
+journey is complete for the compact prototype; M019 must revalidate the resulting
+map build. Native and debug-export evidence remain recorded separately.
 
 ## Decisions still open
 

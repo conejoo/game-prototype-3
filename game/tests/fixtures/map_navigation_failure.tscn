@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://world/alderwake.tscn" id="1"]
+[ext_resource type="Script" path="res://tests/fixtures/map_navigation_failure.gd" id="2"]
+
+[node name="NavigationFailure" instance=ExtResource("1")]
+script = ExtResource("2")
+location_id = "candidate-nav-failure"
