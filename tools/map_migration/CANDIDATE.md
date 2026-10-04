@@ -215,4 +215,23 @@ map_town_art_checks.gd audits geometry/materials/source registration/modules;
 town/water/candidate/application/companion regressions pass. Fresh ordinary WASD
 town circulation/all three docks out-and-back/passenger quay tour:17 inspected
 clear views,zero catch-ups,normal F10 exit0. See docs/evidence/M013/VALIDATION.md.
-Candidate isolated until M015; next eligible M014 landmark appearance only.
+Candidate isolated until M015; M014 appearance completion follows below.
+
+M014 replaces three landmark VisualRoots with the isolated authored Blender kit:
+five modules/seven mesh instances,4,276 triangles,337,120bytes,portable vertex
+colors/no external textures. Bridge6x3m deck/two2x3m landings/6x0.1x0.6m rails
+align with existing floors/bodies;full2.8m usable corridor and floorY0 remain.
+Plank top0.022m/bolt tips0.027m. Moonwell's exact fractional foot/eight-corner
+catalog polygon and six physics prisms remain;low stone courses/inset blue static
+spiral basin replace graybox. East gate art follows sole authored2x8m blocker,
+1.48m boarded timber walls/closed-trail label;disabled source catalog body stays
+absent. Source18 bridge tiles/well/gate images were reference only.
+Source:art/source/alderwake_landmark_kit.blend;GLB/mapping:game/assets/environment/.
+landmark_art.gd owns appearance only. Replacing art retains all816 physical
+node/shape identities/transforms and same6,336-polygon navigation mesh. Seven
+focused checks pass;fresh ordinary Moonwell/bridge both ways/gate contact tour,
+eight clear inspected views,zero catch-ups,no saves,normal quit0. Historical
+M009 reports restored;failed initial assertions/focus request retained explicitly.
+See docs/evidence/M014/VALIDATION.md. Normal compact game remains selected.
+Next eligible M015 activation and existing quest route only;M016 camera,M017
+save compatibility,M018 performance,M019 packaged/native map gate remain pending.

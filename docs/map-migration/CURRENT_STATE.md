@@ -1,129 +1,118 @@
 # Current map migration state
 
-Updated 2026-10-03, America/Vancouver. M001–M013 verified complete.
+Updated 2026-10-03, America/Vancouver. M001–M014 verified complete.
 
 ## Selection and next action
 
-- Active item: none. M013 reusable town exterior art kit complete; no blocker.
-- Next eligible: M014 bridge Moonwell and gate appearance only. Inspect live
-  Blender/user scenes; preserve current art sources. Replace landmark graybox
-  art under independent VisualRoots, without changing rails/deck/collision/nav,
-  exact fractional Moonwell foot or closed-east-gate physics/IDs. Save sources
-  under art/source and GLB under game/assets. Compare reference/gameplay views.
-  Do not activate candidate or start M015.
-- Acceptance: [M013 validation](../evidence/M013/VALIDATION.md).
-- Candidate isolated until M015; normal compact Alderwake unchanged. Parent
-  P001–P014 compact build complete; M019 owns resulting native map gate.
+- Active item: none. M014 bridge Moonwell and gate appearance complete; no blocker.
+- Next eligible: M015 activate larger town and existing quest route only. Select
+  candidate as prototype-alderwake,retain production spawn IDs,move existing
+  Maris/service to mapped Chandlery pad,connect forest Tollworks gate/return pad.
+  Preserve interaction/quest/guardian/vessel/trust/upgrade IDs and once-only rules;
+  all six other source portals stay inactive. Replace stale compact-room hints.
+  Validate fresh ordinary lead->walk with ally->Tollworks fight/vessel->return
+  fitting route,correct prompts/service and no duplicate party/interactions.
+  Do not start M016 or claim M019 native map gate.
+- Acceptance: [M014 validation](../evidence/M014/VALIDATION.md).
+- Candidate isolated through this completion; normal compact Alderwake unchanged.
+  Parent P001–P014 compact build complete; M019 owns resulting native map gate.
 
 ## Preparation and authority
 
-Read workspace AGENTS (no nested), full migration prompt, parent architecture/state,
-migration investigation/checklist/state/contract, pinned layout/catalog/manifest/
-report and M012 evidence/artifacts; actual town/props/dock/terrain/tree/root/tests.
-Initial Git clean; M013 marked in progress before edits. Exactly one item. Caveman,
-Returning Fair gameplay-testing and Blender orchestration/harmonizer/modeling/
-materials/export/workflow skills used. No subagents, source writes/generators/
-refresh, installation, commit, push or publication. Historical M/P014 evidence
-preserved. Candidate presentation only; no ownership or contract change.
+Read workspace AGENTS(no nested),full migration prompt,parent architecture/state,
+migration investigation/checklist/state/contract,pinned layout/catalog/manifest/
+report,M013 evidence and actual artifacts/Git. Initial Git clean; M014 marked in
+progress before edits. Exactly one item. Caveman,Returning Fair gameplay-testing,
+Blender orchestration/harmonizer/modeling/materials/export/workflow skills used;
+Computer Use only selected/focused actual Godot window. No subagents/source writes/
+generators/refresh/install/commit/push/publication. All historical M/P014 evidence
+preserved; tests restored prior M009 reports byte-exactly. Appearance only;
+CONTRACT/parent ARCHITECTURE ownership unchanged.
 
-Snapshot alderwake-f4630f9-m002; source commit
+Snapshot alderwake-f4630f9-m002;source commit
 f4630f9966d6637ef6579cd87623ea354758191c. Five pinned inputs/layout/report unchanged.
-[Exact hashes](../evidence/M013/audit-report.json).
+[Exact baseline/current hashes](../evidence/M014/audit-report.json).
 Map af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f;
 catalog59e203c69560f9a3b630703862192b2df0fe7ef367311d7998d6186c88fb8dd2;
 layout7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be;
 report66b17789874f382f9e3c3ba6f95927dca8c90d24e2328bdabb6771480360b0e9.
-Schema4/content1 and all production location/spawn/actor/quest/effect IDs unchanged.
+Schema4/content1/all production location/spawn/actor/quest/effect IDs fixed.
 
 ## Implementation and changed files
 
-- tools/map_migration/build_town_kit.py: isolated live-Blender authoring with
-  reusable wall/beam/window/door/shingle constructors, exact catalog box/skew
-  polygon bases; portable vertex-color matte palette. Populated kit refuses rerun.
-- art/source/alderwake_town_kit.blend: standalone editable one-scene gallery,
-  14 building variants/two deck modules/camera/two lights. Source reference16
-  sprites/hashes inspected; zero source/runtime image reuse or external textures.
-- game/assets/environment/alderwake_town_kit.glb/.import and mapping JSON:
-  one scene/16 meshes,6,110 triangles,490,396bytes,self-contained.
-- town_art.gd/UID:24 original source structure wrappers use imported mesh resources.
-  Exact original feet/yaw/IDs/collision flags preserved. Only VisualRoot children
-  replaced; physical bodies/navigation remain existing owners.50 plank modules
-  cover seven approved48m2 floor rectangles;165 quay cells use stone modules.
-  Godot material transfer explicitly enables imported COLOR_0. Repeated resources
-  shared; no roof/sprite blocker, new floor, route, interior or interaction.
-- terrain_preview.gd: candidate art owner/errors/report; map_candidate_root.gd:
-  M013 labels; production compact catalog unchanged.
-- map_town_art_checks.gd/UID:imports/materials/base outlines/height/IDs/transforms/
-  module coverage/art-physics audit,read-only guide for rendered ordinary inputs.
-- CANDIDATE/CHECKLIST/this state; docs/evidence/M013/validation,reference/gallery,
-  independent GLB/catalog/hash/timer/health/save audit,art/guide reports,two contact
-  sheets,36 PNGs,486 requests/raw responses,driver/route/helpers,accepted logs.
+- tools/map_migration/build_landmark_kit.py/export_landmark_kit.py: isolated
+  live-Blender authoring/export,refuse populated rerun,preserve user scenes.
+- art/source/alderwake_landmark_kit.blend: standalone editable scene,five meshes,
+  camera/two lights. Independent pre-work builds/m014/preserved-live-work.blend.
+- game/assets/environment/alderwake_landmark_kit.glb/.import and mapping JSON:
+  five reusable meshes,4,276 triangles,337,120bytes,self-contained vertex colors.
+- landmark_art.gd/UID:seven imported instances beneath three existing VisualRoots,
+  exact bridge floors/rails,Moonwell local foot,gate collider-bound registration;
+  closed-trail label. No physics/navigation/interaction nodes or new authority.
+- terrain_preview.gd:appearance owner/errors/report;map_candidate_root.gd:M014
+  labels;production compact catalog untouched.
+- map_landmark_art_checks.gd/UID:independent axes/bounds/feet/outline/material audit,
+  live art replacement physical/node/shape/navigation invariants,read-only tour.
+- CANDIDATE/CHECKLIST/this state;docs/evidence/M014/:validation,source reference/
+  baseline+current hashes,Blender preservation/gallery,focused logs/reports,
+  exact commands/exits,input traces/19PNGs/eight-view sheet,audit/tour helpers.
 
 ## Exact checks and results
 
-Full commands/acceptance matrix in VALIDATION.md. Supplied Godot paths verified;
-4.7.2.stable.mono.official.ed1daf0bf. Blender5.2.2 LTS/addon1.7 verified. Process-local
-APPDATA/LOCALAPPDATA isolate builds/m013-check-user/local-data and m013-user/
-local-data. Candidate named playtest-m013-town-a.json absent; normal save untouched.
+Full commands/matrix in VALIDATION.md;seven focused scripts/args/exits recorded
+in check-results.json. Godot4.7.2.stable.mono.official.ed1daf0bf/Blender5.2.2 LTS;
+supplied engine paths verified. Process-local APPDATA/LOCALAPPDATA isolate
+builds/m014-check-user/local-data and m014-user/local-data. Named candidate save
+playtest-m014-landmarks-a.json absent;normal save untouched.
 
-- Pinned extractor --check PASS/exit0; audit verifies all five input hashes plus
-  current layout/report/source/GLB/mapping hashes.
-- Live Blender build/export success; background gallery render/finalize exit0.
-  Gallery/live viewport inspected. Original user scenes preserved and active
-  RF-RecoveryVessel21 restored,empty user file path/dirty work retained. Independent
-  pre-work backup builds/m013/preserved-live-work.blend. Source file is standalone.
-- Initial/final imports exit0; known missing .NET SDK10.0.9/certificate diagnostics
-  retained. No new script/shader/asset errors in accepted logs.
-- map_town_art_checks PASS0:24 original structures/16 meshes/6,110 triangles,
-  168 exact imported base-corner samples,correct up-axis/height/palette/transforms,
-  source feet/yaw within0.001m,art bounds within0.02m of footprint,zero art physics,
-  no duplicate grayboxes,48m2 exact dock coverage/165 quay cells.
-- map_town_checks,map_candidate_checks,map_water_checks,application_smoke,
-  companion_checks PASS0.37,325 physical polygon queries/74 bidirectional town
-  routes/18,325 <=0.1m path samples;rotated/grouped fixtures,doors,Maris/fitting,
-  docks/quays,full-party pads;8,598 effective water cells/4,027 edge sweeps/four
-  negatives and walking/dodge/seams/floor/bounds/gate. Physics scripts unchanged.
-- Fresh ordinary WASD tour:17 clear inspected views/36 PNGs/486 retained requests;
-  every pulse begins/ends paused/focused,timer equality across gaps;HP100/100,
-  zero catch-ups,two party wrappers,empty effects,no save written;normal F10 exit0.
-- audit_m013.py PASS0,collect_views.py exit0;final intended-file review/git diff
-  --check exit0. Game/helper processes stopped. No rejected acceptance hidden.
+- Pinned extractor --check PASS0;independent audit verifies all baseline hashes,
+  source GLB portability/materials/exact Moonwell polygon/current art hashes.
+- Live Blender build/refine/export success;initial/final background gallery render
+  and standalone finalize exit0. Original user scenes/counts/file path/dirty work
+  and active vessel restored;only M014 scene8 added. Gallery/live viewport inspected.
+- Initial/final Godot import exit0;known missing .NET SDK10.0.9 diagnostic retained.
+  No new script/shader/asset errors;runtime ERROR/SCRIPT ERROR scan0.
+- map_landmark_art_checks PASS0:three IDs/five meshes/seven instances,8,536 vertex
+  samples,exact rail/deck/landing/well/gate registration,portable palette;replacement
+  retains all816 physical node/shape identities/layers/transforms and same nav
+  resource/vertex hash3458812425/6,336 polygons. No art physics/interaction.
+- map_crossing_checks PASS0:94 bidirectional walk/dodge lanes,four rail slides,
+  4,032 clearance-floor probes/27,780 samples,both crossings/no new water route.
+- map_forest_checks PASS0:468 props/455 catalog footprints/102 authored collider
+  IDs,64,178 polygon probes/18,369 path samples/16 physical approach routes.
+- map_navigation_checks PASS0:336,373 radius0.4m samples,three rollback rejections/
+  four round trips,cold generation/bake918.022ms,warm max1898.076ms,query p951515us.
+- map_candidate_checks/application_smoke/companion_checks PASS0;normal compact
+  game and existing lifecycle/service/party ownership preserved.
+- Fresh ordinary WASD town->ramps->Moonwell->bridge both ways->gate approach;
+  walking450ms/dodge300ms hit sole future-exit-gate,hero remainsX122.64905548.
+  426 requests retained/425 accepted/one rejected focus loss;19 PNGs/eight clear
+  inspected views. Paused timer equality/HP100/100/zero catch-ups/two party wrappers/
+  empty effects/no saves verified. Normal F10 quit exit0;game/helper processes stopped.
+- audit_m014.py PASS0,collect_views.py exit0,final intended review/git diff --check0.
 
-## Appearance and rendered evidence
+## Appearance, repairs and remaining limits
 
-Deliberate adaptation:timber/plaster gabled fronts,slate/terracotta tile roofs,
-teal dockside/shed walls,green woodland cottage,civic/inn/mayor taller fronts and
-striped shops. Exact shallow catalog footprints determine 3D depth rather than
-large sprite rectangles. Heights1.76–3.41m compressed for overhead camera; facade
-wall overlays <=0.015m,roofs remain over original physical footprint. Colored
-inset tiles add portable surface detail,no procedural texture dependency.
-Approved M006 straight bars/T junction/landings get wood planks atY0.022;
-physical floors remainY0,48m2 movement mask unchanged. Quay1m cells remain exact.
-Other decorations/ship/service reservation/inactive destination pads stay honest
-existing grayboxes. No authored building/collision/interaction/source-ID adaptation.
+Source reference20 images:Moonwell,blocked gate,18 bridge tiles/hashes inspected,
+zero source image runtime reuse. Full3m usable deck adapts source's one deck-art
+row;exact thin edge rails0.1m up0.6 preserve2.8m clear width. Plank topY0.022,
+bolt tips0.027,physical floorY0. Stone well uses exact eight-corner base,local0.6m
+rim/static blue spiral,unchanged fractional footY0.5. Gate1.48m timber boards/braces
+follow authored2x8m blocker rather than disabled catalog sprite;sole physical
+body/height/IDs fixed. No extra shoreline dressing required. Full960x640 views
+show readable landmark/actor approaches,no wet deck/cracks/missing texture or
+visual collision disagreement. General canopy/roof/contact occlusion remains M016.
 
-Fresh960×640 Compatibility/OpenGL3.3,RTX4070 Laptop/NVIDIA581.29,orthographic
-zoom1.00. Ordinary WASD town start->Maris reservation->all three docks out-and-back
-->Mill Road schoolhouse->inn->hall->Alder Rise->mayor->General Goods->woodland
-cottage->control shelter->west/east passenger quays.17 clear views inspected in two
-sheets;full Maris/west-dock/quay frames separately. Buildings/district palettes,
-hero/ally and inactive labels readable;no missing textures,wet deck or visual
-collision disagreement seen. Actual Maris service remains M015. Guidance is
-read-only nav data,never teleport/actor/health/quest mutation. Nominal guide back
-approaches may snap to nearby valid nav; exact observed endpoints retained.
-Final hero(44.4059181213379,0,26.9354648590088),ally
-(44.0049438476563,0,25.4343166351318),time149.419661249106s,146 repaths,zero
-catch-ups,HP100/100. Normal quit0. [Views/hash/timer index](../evidence/M013/audit-report.json).
+Initial exact float-width test failed;is_equal_approx fixed assertion only.
+Forest audit caught visual source_collider_id metadata;renamed art reference,
+sole body unchanged. Failed logs/reports retained. First tour stopped on focus
+loss safely paused;actual returned window reactivated,fresh pause/focus captured,
+ordinary tour resumed. Rejected request excluded from acceptance. Computer Use
+state capture GetCursorPos denied0x80070005;existing bridge provided captures.
+Shell brace-expansion parser failure and parent-root/escalated Git failures excluded;
+corrected explicit filenames/target-root review0. No hidden acceptance failures.
 
-## Remaining limits
-
-M013 no blocker. M014 landmarks,M015 activation,M016 camera/ground aim/roof-canopy
-occlusion,M017 save compatibility,M018 performance,M019 native packaged release
-pending.215 deck mesh instances share resources;M018 still measures full frame/
-draw/memory/loading budgets. No performance certification or full native quest
-journey here. Known SDK/certificate diagnostics remain. Initial unsuffixed gallery
-image lookup failed;actual Blender frame-suffixed PNG inspected. Source/candidate
-physics/nav/save/production scope and parent P014 compact completion preserved.
-
-Final review repaired locale-decoded checklist punctuation from clean HEAD, keeping
-only intended M013 updates; new helper reads explicit UTF-8. Final audit/diff check0.
+M014 no blocker. M015 activation,M016 camera/aim/occlusion,M017 save compatibility,
+M018 frame/draw/memory budgets,M019 native packaged map walkthrough pending.
+Focused nav timing is regression evidence,not full performance certification.
+Parent P014 compact completion preserved;no exported map/native quest claim.

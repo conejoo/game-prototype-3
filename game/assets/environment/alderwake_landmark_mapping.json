@@ -1,0 +1,130 @@
+{
+  "snapshot_id": "alderwake-f4630f9-m002",
+  "asset": "res://assets/environment/alderwake_landmark_kit.glb",
+  "mappings": [
+    {
+      "module_id": "bridge-deck",
+      "mesh_name": "GEO-bridge-deck",
+      "triangles": 1740,
+      "bounds_xzy_m": [
+        [
+          0.0,
+          -0.0,
+          -0.11999999731779099
+        ],
+        [
+          6.0,
+          3.0,
+          0.027000000700354576
+        ]
+      ],
+      "adaptation": "source six by three footprint; all three rows usable, flush top 0.022m"
+    },
+    {
+      "module_id": "bridge-rail",
+      "mesh_name": "GEO-bridge-rail",
+      "triangles": 192,
+      "bounds_xzy_m": [
+        [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          6.0,
+          0.10000000149011612,
+          0.6000000238418579
+        ]
+      ],
+      "adaptation": "edge rail 6x0.1x0.6, no inward posts or end caps; 2.8m clearance"
+    },
+    {
+      "module_id": "bridge-landing",
+      "mesh_name": "GEO-bridge-landing",
+      "triangles": 108,
+      "bounds_xzy_m": [
+        [
+          0.0,
+          -0.0,
+          -0.11999999731779099
+        ],
+        [
+          2.0,
+          3.0,
+          0.02199999988079071
+        ]
+      ],
+      "adaptation": "existing two by three flat landings only, flush planks"
+    },
+    {
+      "module_id": "moonwell",
+      "mesh_name": "GEO-moonwell",
+      "triangles": 1080,
+      "bounds_xzy_m": [
+        [
+          -1.34375,
+          -2.53125,
+          0.0
+        ],
+        [
+          1.40625,
+          -0.15625,
+          0.6000000238418579
+        ]
+      ],
+      "adaptation": "exact foot-relative octagonal base, low stone courses, inset blue spiral basin; no interaction/light/physics",
+      "local_polygon_xz_m": [
+        [
+          -0.84375,
+          -2.53125
+        ],
+        [
+          0.90625,
+          -2.53125
+        ],
+        [
+          1.40625,
+          -2.03125
+        ],
+        [
+          1.40625,
+          -0.65625
+        ],
+        [
+          0.90625,
+          -0.15625
+        ],
+        [
+          -0.84375,
+          -0.15625
+        ],
+        [
+          -1.34375,
+          -0.65625
+        ],
+        [
+          -1.34375,
+          -2.03125
+        ]
+      ]
+    },
+    {
+      "module_id": "closed-east-gate",
+      "mesh_name": "GEO-closed-east-gate",
+      "triangles": 1156,
+      "bounds_xzy_m": [
+        [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          2.0,
+          8.0,
+          1.4800000190734863
+        ]
+      ],
+      "adaptation": "entire independent authored two by eight blocker, longitudinal timber barricade, no source catalog collision"
+    }
+  ]
+}

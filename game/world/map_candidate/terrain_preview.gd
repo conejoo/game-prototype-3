@@ -27,6 +27,7 @@ var navigation_report: Dictionary = {}
 var landscape: AlderwakeLandscapeMaterials
 var tree_art: AlderwakeTreeArt
 var town_art: AlderwakeTownArt
+var landmark_art: AlderwakeLandmarkArt
 
 
 func _init() -> void:
@@ -94,6 +95,10 @@ func _init() -> void:
 	tree_art.build(forest)
 	add_child(tree_art)
 	build_errors.append_array(tree_art.build_errors)
+	landmark_art = AlderwakeLandmarkArt.new()
+	landmark_art.build(crossings, forest, layout)
+	add_child(landmark_art)
+	build_errors.append_array(landmark_art.build_errors)
 	var spawns: Node3D = Node3D.new()
 	spawns.name = "Spawns"
 	add_child(spawns)
@@ -107,7 +112,8 @@ func _init() -> void:
 	preview_report["landscape"] = {"semantic_mask_size": [294, 160], "world_space_materials": true, "water_vertex_motion": false, "runtime_source_images_reused": 0}
 	preview_report["tree_art"] = {"tree_ids": tree_art.tree_ids.size(), "kit_variants": tree_art.mappings.size(), "spatial_batches": tree_art.batches.size(), "chunk_size_m": AlderwakeTreeArt.CHUNK_SIZE}
 	preview_report["town_art"] = {"structure_ids": town_art.structure_ids.size(), "kit_meshes": town_art.mappings.size(), "deck_modules": town_art.module_count, "quay_cells": town_art.quay_cells}
-	preview_report["limits"] = "M013 town/tree/landscape art; landmark art M014; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
+	preview_report["landmark_art"] = {"landmark_ids": landmark_art.landmark_ids, "kit_meshes": landmark_art.mappings.size(), "instances": landmark_art.instance_count}
+	preview_report["limits"] = "M014 landmark/town/tree/landscape art; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
 	construction_usec = Time.get_ticks_usec() - started
 
 

@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M013 verified complete; M014–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M014 verified complete; M015–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -139,7 +139,7 @@ acceptance again against the resulting map build.
   fixed; town districts visibly readable. Verify GLB imports, textures and Maris
   approach. Do not turn roof/sprite bounds into new blockers.
 
-## [ ] M014 Bridge Moonwell and gate appearance
+## [x] M014 Bridge Moonwell and gate appearance
 
 - Replace three landmark grayboxes with small authored kit: timber footbridge,
   Moonwell, blocked east gate/sign. Add only local shoreline dressing needed
@@ -319,3 +319,11 @@ Checks and exact exit results: pinned extractor/Blender render/finalize/initial-
 Evidence: docs/evidence/M013/VALIDATION.md,town-art/tour/audit/hash/reference reports,gallery/two contact sheets,exact requests/raw responses/PNG captures,accepted logs.
 Decisions or retained limits: deliberate shallow catalog-footprint gabled fronts,compressed1.76–3.41m heights,vertex-color surface detail/no external textures; source feet/yaws/IDs/collisions/nav/elevation/water/dock masks/schema4/content1 unchanged. Live Blender user scenes preserved/vessel restored,normal save absent,snapshot unchanged. Candidate isolated; M014 landmarks/M015 activation/M016 camera/M017 saves/M018 performance/M019 native map gate pending; parent P014 compact completion preserved. No subagent/source write/refresh/installation/commit/push/publication/next item started.
 Next eligible task: M014 bridge Moonwell and gate appearance only.
+
+M014 — completed 2026-10-03
+Result: reusable Blender bridge/deck/rail/landing,exact-foot Moonwell and closed east barricade art;five meshes/seven appearance instances,normal compact game retained.
+Files: art/source/alderwake_landmark_kit.blend;game/assets/environment/GLB/import/mapping;landmark_art.gd/UID,terrain_preview.gd,candidate labels,map_landmark_art_checks.gd/UID;tools/map_migration/build/export_landmark_kit.py,CANDIDATE;CHECKLIST/CURRENT_STATE;docs/evidence/M014/.
+Checks and exact exits: extractor/live Blender authoring-export/background render-finalize/initial-final imports/seven focused art-crossing-forest-nav-candidate-application-companion checks/audit/contact sheet/diff check PASS0.8,536 art vertex samples,816 physical nodes and6,336 nav polygons unchanged;94 crossing lanes/four rail slides;64,178 forest probes/16 physical routes;336,373 nav samples/three rollbacks/four round trips.426 retained requests/one rejected focus loss,19PNGs/eight inspected clear views;ordinary bridge both ways/gate walk-dodge contact,HP100/100,zero catch-ups,no saves,normal F10 exit0.
+Evidence: docs/evidence/M014/VALIDATION.md,art/nav/forest/audit/hash/source/preservation reports,gallery/contact sheet,exact input commands/raw responses/captures,accepted and retained failed logs.
+Decisions/limits: source one-row bridge art expands to existing3m corridor,thin0.1m rails preserve2.8m clearance;well exact octagon/static blue spiral,gate boards follow sole authored2x8m blocker. Vertex colors/no external textures;source feet/yaws/IDs/physics/nav/schema4/content1/snapshot/normal save fixed. User Blender scenes/vessel restored. Candidate isolated until M015;M016–M019 gates pending,parent P014 compact complete. No source write/refresh/install/subagent/commit/push/publication/next item.
+Next eligible task: M015 activate larger town and existing quest route only.
