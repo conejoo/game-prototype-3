@@ -1,9 +1,13 @@
 # Returning Fair prototype
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
-W001-W003 verified; W004 next. Clock/seed/cached forecast rules run through
+W001-W005 verified; W006 next. Clock/seed/cached forecast rules run through
 the existing session gate and schema v5 saves retain environment/light facts.
-Rendered lighting/weather remain later work. Durable agent context lives in current state,
+Moving sun and smooth day/dusk/navy-night/dawn lighting now apply outdoors;
+Tollworks keeps its stable indoor profile while the global clock advances.
+All23 exterior sources have independent lamp/window/waylight/net visuals and
+bounded local illumination. E switching and weather effects remain later work.
+Durable agent context lives in current state,
 contracts,
 checklists, source/tests and pinned references. Generated captures/logs under
 `docs/evidence/` stay local and ignored; agents need them only for specific diagnosis.
@@ -51,6 +55,8 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --path $gamePath --script res://tests/environment_rule_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/environment_session_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/environment_save_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/environment_lighting_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/exterior_light_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/application_smoke.gd
 & $godotExe --headless --path $gamePath --script res://tests/playable_slice_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/extension_checks.gd

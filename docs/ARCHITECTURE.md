@@ -73,7 +73,7 @@ returning-fair-prototype/
       quests/
       relationships/
       progression/
-      environment/          # Clock/weather rules, light registry and durable state
+      environment/          # Clock/weather rules, light registry, state and lighting presenter
     content/             # Authored .tres definitions, organized by feature
     world/               # Locations, spawn anchors, persistent props
     ui/
@@ -555,3 +555,40 @@ protection precedes numeric repair so malformed future data cannot trigger backu
 fallback. Forecast cursors, samples, Nodes and review presets are never saved.
 W003 acceptance covers rules/IO/physical transactions and independent processes;
 rendered lighting, interactive E switching and native packages remain W004-W010.
+
+### Delivered location lighting (W004)
+
+LocationDefinition authors OUTDOOR_CYCLE for Alderwake and STABLE_INDOOR for
+Tollworks/test rooms; new fixtures default intentionally to the stable profile.
+GameRoot composes one EnvironmentPresenter and injects its existing Sun and
+WorldEnvironment. The presenter duplicates the Environment resource per root,
+owns no timer/session/listener and writes only rendering properties. Pure
+EnvironmentLighting samples the retained source phase knots with smoothstep,
+adapting palette, shadow sense and brightness to physical 3D readability.
+
+Root presents after gated session advancement and synchronously after committed
+travel/restore rebinding, before the new room draws. Failed travel/load keeps the
+previous session/profile; pause freezes sampled sun movement. Indoor presentation
+restores exact prior lighting while global time advances. W004 verifies rule and
+lifecycle behavior plus synthetic phase/pose captures in both camera projections.
+Exterior light consumers, E commands, clouds/rain/lightning, HUD, measured feature
+performance and resulting native packages remain W005-W010.
+
+### Delivered exterior light consumers (W005)
+
+Production Alderwake explicitly builds ExteriorLights with23 consumers beneath
+existing wrapper VisualRoots. GameRoot supplies committed environment facts and
+hero position through its existing environment presentation gate. Registry/state
+keep default/override authority; consumers own meshes/materials/anchors only.
+Every lamp/window/waylight/net source owns its independent glow material.
+Dedicated four-pane windows preserve imported wall/roof/crossbar materials.
+
+A reusable authored Blender kit supplies lamp/waylight frames/cores and a
+nonblocking woven net. Exactly eight fixed unshadowed Omni emitters cover six
+lamps/two waylights; windows/net emit only. Source day-opacity knots and spatial
+distance fading affect rendering without changing logical enabled state. Old
+location disposal releases its consumers, and committed arrival hydrates new ones.
+Physical wrappers/IDs/feet/collision/navigation remain unchanged. W005 verifies
+consumer rules/imports/regressions and synthetic paused renderer captures. E
+actions and normal switching/restart acceptance remain W006; weather/HUD/final
+performance/native feature acceptance remain W007-W010.

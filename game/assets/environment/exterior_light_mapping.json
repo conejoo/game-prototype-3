@@ -1,0 +1,689 @@
+{
+  "entries": [
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.40625,
+            -2.34375
+          ],
+          [
+            1.9375,
+            -2.34375
+          ],
+          [
+            1.9375,
+            -0.1875
+          ],
+          [
+            -2.40625,
+            -0.1875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "alder-rise-home-01-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.3125,
+            -1.875
+          ],
+          [
+            1.9375,
+            -1.875
+          ],
+          [
+            1.9375,
+            -0.46875
+          ],
+          [
+            -2.3125,
+            -0.46875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "alder-rise-home-03-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "initial_omni_range_m": 1.8946,
+      "kind": "dock_lamp",
+      "source_id": "lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "intended_ground_radius_m": 1.0,
+      "prop_id": "dock-lamp-01"
+    },
+    {
+      "initial_omni_range_m": 1.8946,
+      "kind": "dock_lamp",
+      "source_id": "lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "intended_ground_radius_m": 1.0,
+      "prop_id": "dock-lamp-02"
+    },
+    {
+      "initial_omni_range_m": 1.8946,
+      "kind": "dock_lamp",
+      "source_id": "lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "intended_ground_radius_m": 1.0,
+      "prop_id": "dock-lamp-03"
+    },
+    {
+      "initial_omni_range_m": 1.8946,
+      "kind": "dock_lamp",
+      "source_id": "lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "intended_ground_radius_m": 1.0,
+      "prop_id": "dock-lamp-04"
+    },
+    {
+      "initial_omni_range_m": 1.8946,
+      "kind": "dock_lamp",
+      "source_id": "lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "intended_ground_radius_m": 1.0,
+      "prop_id": "dock-lamp-05"
+    },
+    {
+      "initial_omni_range_m": 0,
+      "kind": "woven_net",
+      "source_id": "woven-lights",
+      "anchor_local_xyz_m": [
+        0,
+        1.0,
+        -0.45
+      ],
+      "intended_ground_radius_m": 0,
+      "prop_id": "dock-luminous-nets-01"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.21875,
+            -0.75
+          ],
+          [
+            -1.375,
+            -2.625
+          ],
+          [
+            1.75,
+            -1.65625
+          ],
+          [
+            0.0,
+            -0.125
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "dock-row-home-01-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.21875,
+            -0.75
+          ],
+          [
+            -1.375,
+            -2.625
+          ],
+          [
+            1.75,
+            -1.65625
+          ],
+          [
+            0.0,
+            -0.125
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "dock-row-home-02-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.40625,
+            -2.34375
+          ],
+          [
+            1.9375,
+            -2.34375
+          ],
+          [
+            1.9375,
+            -0.1875
+          ],
+          [
+            -2.40625,
+            -0.1875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "dock-row-home-03-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.1875,
+            -1.75
+          ],
+          [
+            1.625,
+            -1.75
+          ],
+          [
+            1.625,
+            -0.21875
+          ],
+          [
+            -2.1875,
+            -0.21875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "dock-row-home-04-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "initial_omni_range_m": 1.8946,
+      "kind": "dock_lamp",
+      "source_id": "lantern",
+      "anchor_local_xyz_m": [
+        -0.1875,
+        1.55,
+        -0.265625
+      ],
+      "intended_ground_radius_m": 1.0,
+      "prop_id": "dock-row-lamp-01"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -3.375,
+            -0.53125
+          ],
+          [
+            -2.625,
+            -1.9375
+          ],
+          [
+            3.09375,
+            -1.28125
+          ],
+          [
+            2.28125,
+            -0.03125
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.75,
+          1.55
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "lantern-rest-exterior-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.59375,
+            -2.46875
+          ],
+          [
+            2.46875,
+            -2.46875
+          ],
+          [
+            2.46875,
+            -0.25
+          ],
+          [
+            -2.59375,
+            -0.25
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.75,
+          1.55
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "mayor-vale-home-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.3125,
+            -1.875
+          ],
+          [
+            1.9375,
+            -1.875
+          ],
+          [
+            1.9375,
+            -0.46875
+          ],
+          [
+            -2.3125,
+            -0.46875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "mill-road-home-01-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.1875,
+            -1.75
+          ],
+          [
+            1.625,
+            -1.75
+          ],
+          [
+            1.625,
+            -0.21875
+          ],
+          [
+            -2.1875,
+            -0.21875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "mill-road-home-02-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -1.78125,
+            -1.96875
+          ],
+          [
+            1.5,
+            -1.96875
+          ],
+          [
+            1.5,
+            -0.21875
+          ],
+          [
+            -1.78125,
+            -0.21875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "moonwood-edge-home-01-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -1.78125,
+            -1.96875
+          ],
+          [
+            1.5,
+            -1.96875
+          ],
+          [
+            1.5,
+            -0.21875
+          ],
+          [
+            -1.78125,
+            -0.21875
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "moonwood-edge-home-02-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.8125,
+            -2.25
+          ],
+          [
+            2.46875,
+            -2.25
+          ],
+          [
+            2.46875,
+            -0.125
+          ],
+          [
+            -2.8125,
+            -0.125
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "reed-chandlery-exterior-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    },
+    {
+      "initial_omni_range_m": 0.9517,
+      "kind": "waylight",
+      "source_id": "answer-light",
+      "anchor_local_xyz_m": [
+        0,
+        0.65,
+        -0.125
+      ],
+      "intended_ground_radius_m": 0.625,
+      "prop_id": "safeguard-waylight-east-01"
+    },
+    {
+      "initial_omni_range_m": 0.9517,
+      "kind": "waylight",
+      "source_id": "answer-light",
+      "anchor_local_xyz_m": [
+        0,
+        0.65,
+        -0.125
+      ],
+      "intended_ground_radius_m": 0.625,
+      "prop_id": "safeguard-waylight-west-01"
+    },
+    {
+      "source_id": "windows",
+      "window_surface_recipe": {
+        "local_polygon_xz_m": [
+          [
+            -2.5625,
+            -2.15625
+          ],
+          [
+            2.34375,
+            -2.15625
+          ],
+          [
+            2.34375,
+            -0.09375
+          ],
+          [
+            -2.5625,
+            -0.09375
+          ]
+        ],
+        "edge_fractions": [
+          0.23,
+          0.77
+        ],
+        "center_heights_m": [
+          0.77
+        ],
+        "half_width_fraction": "min(0.075, 0.28 / edge_length)",
+        "height_offsets_m": [
+          -0.22,
+          0.24
+        ],
+        "outward_offset_m": 0.0095,
+        "preserve_mullions_at_offset_m": 0.01,
+        "note": "Separate four panes around existing wood crossbars; no whole-wall emission. One logical source drives all panes."
+      },
+      "prop_id": "tess-general-goods-exterior-building",
+      "anchor_local_xyz_m": null,
+      "kind": "windows"
+    }
+  ],
+  "snapshot_id": "alderwake-f4630f9-m002"
+}

@@ -330,3 +330,88 @@ clock double prove precise decoding/filesystem reload; cursor/cache is transient
 Acceptance: [W003 record](W003_ACCEPTANCE.md). No rendered weather/light/E-key or
 packaged/native claim; those remain later tasks. Existing schema4 builds stay
 historical; rebuild and perform W010 before accepting future feature releases.
+
+## W004 implementation decisions
+
+LocationDefinition uses a validated LightingProfile enum: STABLE_INDOOR=0,
+OUTDOOR_CYCLE=1. Production Alderwake authors1; Tollworks and the existing test
+room author0; dynamically authored fixtures default0 deliberately. Profiles are
+immutable content choices, never saved run facts. Schema5/content1 is unchanged.
+
+One GameRoot-owned EnvironmentPresenter receives the existing DirectionalLight3D
+and WorldEnvironment and duplicates the Environment per root. It has no process
+timer, session copy, scene listener or weather authority. Root presents after its
+existing gated advance and synchronously after committed arrival/restore rebinding.
+During travel it retains the previous lighting; rollback reapplies that same
+committed profile/time. Paused arrivals still hydrate correctly before drawing.
+
+EnvironmentLighting keeps the source knots0/.25/.30/.375/.50/.75/.80/.875/.96/1
+and cubic smoothstep, with equal endpoint values/zero endpoint slopes. Direct
+energy runs1.1 in daylight to0.18 at night; ambient energy0.65 to0.48 with a navy
+palette. Night shadow opacity0 removes a false daytime cast while ambient/direct
+fill keeps actors/floor readable; dawn/evening regain physical shadows gradually.
+The source shadow X/Z displacement becomes incoming direction
+normalize(2*dx,-1,2*dy), with east+X/south+Z. Evening casts east, morning west,
+daylight south. Minimum downward component keeps light above the horizon and
+avoids grazing, excessive long shadows on the dense map. This is a deliberate
+source-inspired stylized physical adaptation, not astronomical positioning or
+another 2D shadow/tint renderer. Tollworks restores exactly its prior rotation,
+colors/energies/background and shadow opacity1 throughout global clock changes.
+
+[W004 acceptance](W004_ACCEPTANCE.md) records30,053 sampling/integration assertions,
+eight affected regressions and37 inspected synthetic rendered captures at960x640
+in Compatibility. No exterior light assets/consumers, E actions, weather effects,
+new HUD/review controls, frame-budget claim or native feature gate belongs to W004.
+
+## W005 implementation decisions
+
+Production Alderwake explicitly composes ExteriorLights after its imported art.
+Each existing source wrapper owns an ExteriorLightConsumer under
+VisualRoot/ExteriorLightAnchors/<source_id>, with an explicit EmitterAnchor.
+GameRoot passes committed EnvironmentState and hero position through its existing
+presentation gate; consumers own no persistent state or independent timer.
+The runtime mapping contains only target-local W001 physical recipes, with the
+pinned snapshot unchanged. The23 registry defaults remain authoritative.
+
+The reusable Blender kit exports six static meshes,2,344 triangles,186,252 bytes.
+Lamp/waylight frames use rough vertex palettes; their opaque dormant core materials
+receive per-consumer overrides. Woven display ropes/wood and16 luminous knots
+are nonblocking art. Editable source and reproducible script are in art/source;
+runtime exports are in game/assets/environment. Live authoring uses a separate
+scene and restores the user's active scene; export is explicitly active-scene-only.
+
+Four separate panes surround each existing wooden crossbar, with0.05m gaps;
+32 panes per ordinary building source/64 for two-level civic sources. Pane vertices
+retain W001 edges/fractions/heights/0.0095m offset. Rendered registration at both
+projections/zoom endpoints requires no offset change. Every source owns its
+glow material; original building walls/roof/wood never gain emission. Windows
+use warm color(1,.65,.24)/peak emission1.4; lamp cores use that color/peak2.2.
+Waylights use(.48,.95,.78), net knots(.72,.91,.47), peak2.2. These are stylized
+Compatibility emission values, not physical lumen/GI claims.
+
+Local emitter selection simplifies to eight fixed identities because exactly
+six lanterns/two waylights require floor coverage; automatic windows and net
+remain emission-only. This meets the existing total-eight budget, including
+disabled/fading nodes, without pool reassignment or additional window-light nodes.
+Lamp local anchor(-.1875,1.55,-.265625), range1.8946m, peak energy7; waylight
+(0,.65,-.125), range.9517m, peak2.6. Both use attenuation.55/specular.2/no shadows.
+Positive physical range is required; the net's retained zero-range recipe never
+allocates an emitter. Source collision_enabled metadata remains unchanged even
+where the pinned definition has no collision shape.
+
+Source light-opacity knots0/0/0/.42/1/1/1/.62/0/0 follow the same cubic smoothstep
+and phase knots as W004. Enabled daylight sources remain armed with zero emission/
+illumination. Horizontal hero-distance smoothstep fades local illumination from
+12m to18m; all enabled mesh emission remains visible beyond that selection.
+Neither phase nor distance mutates overrides or defaults. Exactly eight global
+local nodes bound overlap on every batched terrain/tree mesh to the installed
+Compatibility limit8, independently of the directional sun. Official
+[light limits](https://docs.godotengine.org/en/stable/tutorials/3d/lights_and_shadows.html)
+and [Omni range](https://docs.godotengine.org/en/stable/classes/class_omnilight3d.html)
+were rechecked; the real renderer/captures verified visible pools and all-source
+emission. The observed single-frame draws are not W009 performance acceptance.
+
+[W005 acceptance](W005_ACCEPTANCE.md):13,289 consumer assertions, eight focused
+headless checks and65 inspected actual Compatibility source/phase/override images.
+No E action, weather effect, normal-input/native/restart claim, benchmark or package
+export belongs to W005. W006 remains the next task and first switching checkpoint.

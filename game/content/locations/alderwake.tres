@@ -10,3 +10,4 @@ prototype_fixture = true
 scene_path = "res://world/alderwake.tscn"
 spawn_ids = PackedStringArray("alderwake-start", "alderwake-from-tollworks")
 actor_ids = PackedStringArray("prototype-hero")
+lighting_profile = 1

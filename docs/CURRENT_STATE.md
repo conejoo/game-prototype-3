@@ -1,12 +1,22 @@
 # Current prototype state
 
 Updated 2026-10-04. P001-P014 and map M001-M019 complete. Current feature workflow:
-[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W003 Done, W004 next.
+[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W005 Done, W006 next.
 Typed clock/seed/cached forecast now advance through the existing session gate.
 Schema5/content1 retains exact environment time/seed and six validated lantern
 overrides; exact v1-v4 migrate without losing prior facts or rewriting files.
 Save/backup/physical rollback and isolated separate-process checks pass.
-Sun/WorldEnvironment remain fixed; moving lighting starts with W004.
+One root-owned presenter drives the moving outdoor sun and smooth day/dusk/navy
+night/dawn direct/ambient/background/shadow values. Tollworks keeps its original
+lighting while global time advances. Profiles apply at committed arrival, including
+paused travel/load; rollback retains the previous presentation. W004 sampling,
+ownership/pause/rollback and eight affected regressions pass; 37 synthetic rendered
+captures inspected in both projections. All23 exterior sources now have independent
+visual consumers, imported lamp/waylight/net art and registered emissive window
+panes. Eight unshadowed local emitters and source-opacity/spatial fading preserve
+logical defaults/overrides and existing physics. W005 consumer13,289 assertions,
+eight affected checks and65 inspected synthetic renders pass. E switching,
+weather and native feature acceptance remain W006-W010; historical packages unchanged.
 
 Playable baseline: larger Alderwake town/river/Moonwood, temporary ally/trust,
 preparation-point Strike upgrade, guardian/vessel recovery, Maris return/fitting

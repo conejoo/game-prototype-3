@@ -1,12 +1,18 @@
+class_name AlderwakeExterior
 extends AlderwakeTerrainPreview
 ## Production composition of the pinned exterior and existing recovery slice.
 
 var service_outlines: Array[Rect2] = []
+var exterior_lights: ExteriorLights
 
 
 func _init() -> void:
 	super()
 	location_id = "prototype-alderwake"
+	exterior_lights = ExteriorLights.new()
+	add_child(exterior_lights)
+	exterior_lights.build(self)
+	build_errors.append_array(exterior_lights.build_errors)
 	destination_id = "prototype-tollworks"
 	destination_spawn_id = "tollworks-from-alderwake"
 	gate_label = "Enter Tollworks"

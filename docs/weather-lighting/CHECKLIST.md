@@ -2,7 +2,7 @@
 
 This checklist brings the existing weather, day clock and interactive exterior lights into the Returning Fair Godot prototype. It is the task authority for this workflow. Each fresh agent completes or resumes exactly one task, then writes a handoff for the next session.
 
-Prepared 2026-10-04, America/Vancouver. W001-W003 verified Done; W004-W010 remain Pending. Production clock/forecast rules and environment saves are implemented; rendered lighting/weather remain later tasks. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
+Prepared 2026-10-04, America/Vancouver. W001-W005 verified Done; W006-W010 remain Pending. Production clock/forecast rules and environment saves are implemented; moving outdoor lighting is verified; exterior consumers are verified; E switching/weather remain later tasks. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
 
 Read [the contract](CONTRACT.md), [current state](CURRENT_STATE.md) and [agent prompt](AGENT_PROMPT.md). The target is `D:/development/game-dev-blender/returning-fair-prototype`; the Godot project is its `game/` directory. The source `D:/development/game-prototype-2` is read-only.
 
@@ -27,8 +27,8 @@ Statuses: Pending, In progress, Blocked, Done. `[ ]` means not complete; `[x]` m
 | W001 | Done | Existing M019 baseline | Source inventory and verified feature contract |
 | W002 | Done | W001 | Pure clock and deterministic forecast |
 | W003 | Done | W002 | Versioned environment save compatibility |
-| W004 | Pending | W003 | Moving sun and location lighting profiles |
-| W005 | Pending | W004 | Exterior light assets and source bindings |
+| W004 | Done | W003 | Moving sun and location lighting profiles |
+| W005 | Done | W004 | Exterior light assets and source bindings |
 | W006 | Pending | W005 | Persistent E key light switching |
 | W007 | Pending | W006 | Clouds, world anchored rain and lightning |
 | W008 | Pending | W007 | Lifecycle integration, HUD and isolated review controls |
@@ -73,7 +73,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W004 Moving sun and location lighting profiles
 
-- [ ] Done. Status: Pending. Depends: W003.
+- [x] Done. Status: Done. Depends: W003. Evidence: [W004 acceptance](W004_ACCEPTANCE.md), sampling/profile/ownership checks and 37 inspected synthetic rendered captures.
 - Compose one environment presenter in GameRoot. Drive existing DirectionalLight3D and WorldEnvironment from sampled clock values; keep simulation facts in session/services.
 - Add authored outdoor/indoor lighting profiles to LocationDefinition and set production Alderwake/Tollworks explicitly. Give existing fixtures intentional defaults.
 - Implement smooth daylight, evening, navy night and dawn; move the sun using the map axes; vary direct/ambient light and shadow strength. Adapt source colors to 3D lighting rather than applying its 2D tint opacity literally.
@@ -84,7 +84,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W005 Exterior light assets and source bindings
 
-- [ ] Done. Status: Pending. Depends: W004.
+- [x] Done. Status: Done. Depends: W004. Evidence: [W005 acceptance](W005_ACCEPTANCE.md), all23 consumers,13,289 checks and65 inspected rendered captures.
 - Build a small reusable dock-lamp visual with explicit 3D light anchor. Add dedicated emissive window surfaces to source-defined buildings, appropriate visuals/anchors for both waylights and the pinned nonblocking luminous net. All 23 W001 registry entries require visual consumers.
 - Use applicable Blender skills if modeling/export is needed. Inspect the live scene first; save sources under `art/source/` and exports under `game/assets/`.
 - Bind each visual/emitter to the W001 registry and the pinned instance default. Five dock lamps start disabled; Dock Row lamp starts enabled. Building windows are automatic and non-switchable.
@@ -216,3 +216,39 @@ synthetic retry diagnostic. Reference/link/status/runtime/diff audits pass.
 [Commands/evidence/repairs](W003_ACCEPTANCE.md). W002 uncommitted baseline preserved.
 Limits: rendering fixed, E switching and packaged/native weather unrun as later
 scope; known missing .NET SDK import diagnostic. Next eligible: W004 only.
+
+W004 - completed 2026-10-04 (America/Vancouver)
+
+Result: one root-owned environment presenter, authored outdoor/stable indoor
+profiles, smooth source-knot day/dusk/navy night/dawn and physical moving sun.
+Tollworks retains original appearance while global clock advances. Root applies
+committed profile/time synchronously; pause freezes, failed placement retains old
+presentation and repeated room replacement retains one owner/independent resource.
+30,053 lighting assertions, retained reference audit and eight affected regressions
+pass (rules12,792; codec517; ten-round-trip, camera/combat/save/gate checks).
+37 actual960x640 Compatibility captures inspected: four phases/both projections
+at town, forest, Moonwell and Tollworks plus pause/travel/resume. Actors/labels,
+floor aim/canopy and gold windup remain readable. Final exits0/runtime scans clean;
+import retains known missing .NET SDK10.0.9. Failed fixture-ID/float32/aim-probe
+runs retained, repaired in tests. Links/statuses/UID/diff audit pass.
+[Commands/evidence/decisions/limits](W004_ACCEPTANCE.md). No normal/native journey,
+new performance benchmark or weather/local-light claim; historical baselines and
+normal saves preserved. Next eligible: W005 only; not started.
+
+W005 - completed 2026-10-04 (America/Vancouver)
+
+Result: all23 pinned exterior sources have independent visual consumers, six
+reusable dock lamps, fourteen dedicated window surfaces, two waylights and one
+nonblocking woven net. Editable Blender source/six-mesh GLB (2,344 triangles),
+physical anchors and eight fixed unshadowed local emitters; windows/net emit only.
+Source light-opacity knots drive dusk/night/dawn, spatial fading preserves enabled
+facts. Wrappers/IDs/feet/collision/navigation and W004 baseline remain intact.
+13,289 consumer assertions, W004 lighting30,053/codec517 and five affected
+application/interaction/travel/town-art/forest regressions pass. All65 final
+960x640 Compatibility source/phase/override captures inspected; on/off and floor
+illumination visible, panes aligned, wall materials non-emissive. Reference/asset,
+metadata/link/UID/status/runtime/diff audits pass; final runtime exits0/scans clean.
+[Commands/repairs/decisions/limits](W005_ACCEPTANCE.md). Initial multi-scene export,
+zero-range net allocation and metadata-only collider test repaired; failures kept.
+Known missing .NET SDK10.0.9 import diagnostic remains. No normal saves/native
+route/performance/package claim. Next eligible: W006 only; not started.

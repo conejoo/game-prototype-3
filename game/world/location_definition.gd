@@ -5,10 +5,15 @@ extends ContentDefinition
 @export_file("*.tscn") var scene_path: String = ""
 @export var spawn_ids: PackedStringArray = []
 @export var actor_ids: PackedStringArray = []
+enum LightingProfile { STABLE_INDOOR, OUTDOOR_CYCLE }
+## Fixtures default to the established stable room lighting.
+@export var lighting_profile: LightingProfile = LightingProfile.STABLE_INDOOR
 
 
 func validation_errors() -> PackedStringArray:
 	var errors: PackedStringArray = super.validation_errors()
+	if lighting_profile not in [LightingProfile.STABLE_INDOOR, LightingProfile.OUTDOOR_CYCLE]:
+		errors.append("lighting_profile must be stable indoor or outdoor cycle")
 	if not scene_path.begins_with("res://") or not scene_path.ends_with(".tscn"):
 		errors.append("scene_path must be a res:// .tscn path")
 	elif not ResourceLoader.exists(scene_path, "PackedScene"):

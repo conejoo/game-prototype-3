@@ -10,3 +10,4 @@ prototype_fixture = true
 scene_path = "res://world/test_room.tscn"
 spawn_ids = PackedStringArray("prototype-start")
 actor_ids = PackedStringArray("prototype-hero")
+lighting_profile = 0

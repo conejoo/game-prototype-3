@@ -24,6 +24,7 @@ var guardian_ai: GuardianController
 var retrying: bool = false
 var companion: ActorPlaceholder
 var companion_ai: CompanionController
+var environment_presenter: EnvironmentPresenter
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -55,6 +56,10 @@ func _ready() -> void:
 		get_tree().quit(1)
 		return
 	player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
+	environment_presenter = EnvironmentPresenter.new()
+	environment_presenter.name = "EnvironmentPresenter"
+	add_child(environment_presenter)
+	environment_presenter.initialize($Sun, $WorldEnvironment)
 	companion = preload("res://features/actors/companion.tscn").instantiate()
 	party.add_child(companion)
 	companion.initialize(session.actors[GameSession.COMPANION_INSTANCE_ID])
@@ -120,6 +125,7 @@ func _process(delta: float) -> void:
 		(world_host.current_location as AlderwakeTerrainPreview).tree_art.update_visibility(camera_rig.camera, player_placeholder, companion)
 	if not get_tree().paused and not world_host.transitioning:
 		session.advance(delta)
+		_present_environment()
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
 	ui.show_combat(player_placeholder.state, guardian, retrying, player_placeholder.combat.damage)
@@ -272,6 +278,9 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		progression.initialize(catalog, session)
 		_refresh_progression()
 	_pending_restore = null
+	# Apply the committed profile synchronously before the newly visible room draws.
+	# Failed transitions retain the previous session/profile, including failed loads.
+	_present_environment()
 	companion_ai.reset_route()
 	for actor: ActorPlaceholder in party.members():
 		actor.floor_snap_length = 0.04 if world_host.current_location is AlderwakeTerrainPreview else 0.1
@@ -297,6 +306,14 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 			player_placeholder.combat_targets = [guardian]
 			_update_controls()
 		ui.show_travel("Travel failed: " + "; ".join(errors))
+
+
+func _present_environment() -> void:
+	if environment_presenter != null and world_host.current_location != null and not world_host.transitioning:
+		var definition: LocationDefinition = catalog.get_location(session.current_location_id)
+		environment_presenter.present(definition.lighting_profile, session.environment.day_cycle_progress)
+		if world_host.current_location is AlderwakeExterior:
+			(world_host.current_location as AlderwakeExterior).exterior_lights.present(session.environment, player_placeholder.global_position)
 
 
 func _save_boundary_errors() -> PackedStringArray:

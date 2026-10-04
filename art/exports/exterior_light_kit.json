@@ -1,0 +1,54 @@
+{
+  "scene": "RF-W005-ExteriorLightKit",
+  "coordinate_contract": "Godot (x,y,z) -> Blender (x,-z,y); glTF Y-up",
+  "meshes": [
+    {
+      "mesh_name": "GEO-W005-dock-lamp-frame",
+      "vertices": 116,
+      "triangles": 188
+    },
+    {
+      "mesh_name": "GEO-W005-dock-lamp-core",
+      "vertices": 8,
+      "triangles": 12
+    },
+    {
+      "mesh_name": "GEO-W005-waylight-frame",
+      "vertices": 80,
+      "triangles": 128
+    },
+    {
+      "mesh_name": "GEO-W005-waylight-core",
+      "vertices": 8,
+      "triangles": 12
+    },
+    {
+      "mesh_name": "GEO-W005-woven-net-frame",
+      "vertices": 1200,
+      "triangles": 1812
+    },
+    {
+      "mesh_name": "GEO-W005-woven-net-knots",
+      "vertices": 128,
+      "triangles": 192
+    }
+  ],
+  "anchors": {
+    "dock_lamp": [
+      -0.1875,
+      1.55,
+      -0.265625
+    ],
+    "waylight": [
+      0,
+      0.65,
+      -0.125
+    ],
+    "woven_net": [
+      0,
+      1,
+      -0.45
+    ]
+  },
+  "materials": "opaque rough vertex palette frame; dormant glass overridden per source in Godot"
+}
