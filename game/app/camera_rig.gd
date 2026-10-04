@@ -34,10 +34,57 @@ func movement_direction(axes: Vector2) -> Vector3:
 	return right.normalized() * axes.x + back.normalized() * axes.y
 
 
-func ground_point(screen_point: Vector2, height: float) -> Variant:
-	return Plane(Vector3.UP, height).intersects_ray(
-		camera.project_ray_origin(screen_point), camera.project_ray_normal(screen_point)
-	)
+func ground_point(screen_point: Vector2, _height: float) -> Variant:
+	# Tiny neighboring rays cover floating-point concave-triangle seams. Select
+	# the nearest visible floor, never the underlying base through a ramp seam.
+	var origin: Vector3 = camera.project_ray_origin(screen_point)
+	var direction: Vector3 = camera.project_ray_normal(screen_point)
+	var nearest: Variant = null
+	var distance: float = INF
+	for offset: Vector2 in [Vector2.ZERO, Vector2(0.02, 0.01), Vector2(-0.02, -0.01)]:
+		var hit: Variant = _floor_ray(screen_point + offset)
+		if hit != null:
+			var along_ray: float = (hit as Vector3 - origin).dot(direction)
+			if along_ray < distance:
+				nearest = hit
+				distance = along_ray
+	return nearest
+
+
+func _floor_ray(screen_point: Vector2) -> Variant:
+	# Physics floors own aim height. Actor bodies and unmarked props/water/cliff
+	# blockers cannot supply aim height; imported art has no physics role.
+	var origin: Vector3 = camera.project_ray_origin(screen_point)
+	var end: Vector3 = origin + camera.project_ray_normal(screen_point) * camera.far
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(origin, end, 1)
+	var space: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
+	for attempt: int in range(64):
+		var hit: Dictionary = space.intersect_ray(query)
+		if hit.is_empty(): return null
+		var body: CollisionObject3D = hit.collider as CollisionObject3D
+		if body.get_meta("candidate_walkable_floor", false) or body.get_meta("aim_ground", false):
+			if hit.normal.y < 0.9: return null
+			# The solid base also exists beneath elevated cells. A ray entering
+			# under a cliff side must not present that hidden support as ground.
+			if body.get_meta("candidate_base_support", false) and not _base_is_exposed(hit.position): return null
+			return hit.position
+		var excluded: Array[RID] = query.exclude
+		excluded.append(body.get_rid())
+		query.exclude = excluded
+	return null
+
+
+func _base_is_exposed(point: Vector3) -> bool:
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(point + Vector3.UP * 8, point + Vector3.UP * 0.01, 1)
+	for attempt: int in range(64):
+		var hit: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
+		if hit.is_empty(): return true
+		var body: CollisionObject3D = hit.collider as CollisionObject3D
+		if body.get_meta("candidate_walkable_floor", false): return false
+		var excluded: Array[RID] = query.exclude
+		excluded.append(body.get_rid())
+		query.exclude = excluded
+	return false
 
 
 func set_orthographic(enabled: bool) -> void:

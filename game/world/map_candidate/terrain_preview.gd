@@ -200,6 +200,7 @@ func _add_box(id: String, center: Vector3, size: Vector3, visible_box: bool = tr
 	body.name = id
 	if id == "BaseFloor":
 		body.set_meta("candidate_walkable_floor", true)
+		body.set_meta("candidate_base_support", true)
 	body.position = center
 	body.collision_layer = 1
 	body.collision_mask = 0

@@ -10,6 +10,13 @@ const GATE_RADIUS: float = 1.6
 var navigation_region: NavigationRegion3D
 
 
+func _ready() -> void:
+	# Compact rooms explicitly identify their floor; props remain blockers only.
+	var floor_body: StaticBody3D = get_node_or_null("Floor") as StaticBody3D
+	if floor_body != null:
+		floor_body.set_meta("aim_ground", true)
+
+
 func prepare_navigation() -> PackedStringArray:
 	# Tiny grayboxes bake from gameplay collision, never from replaceable art.
 	if navigation_region != null:

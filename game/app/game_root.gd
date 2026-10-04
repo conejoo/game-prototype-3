@@ -116,6 +116,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if world_host.current_location is AlderwakeTerrainPreview and not world_host.transitioning:
+		(world_host.current_location as AlderwakeTerrainPreview).tree_art.update_visibility(camera_rig.camera, player_placeholder, companion)
 	if not get_tree().paused and not world_host.transitioning:
 		session.advance(delta)
 		ui.show_play_time(session.elapsed_play_seconds)

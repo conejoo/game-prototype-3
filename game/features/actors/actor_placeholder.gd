@@ -145,8 +145,8 @@ func _update_aim() -> void:
 		return
 	var point: Vector3 = target
 	aim_marker.global_position = point + Vector3.UP * 0.03
-	if not combat.busy() and state.health > 0 and global_position.distance_squared_to(point) > 0.01:
-		visual_root.look_at(point, Vector3.UP)
+	if not combat.busy() and state.health > 0 and Vector2(global_position.x - point.x, global_position.z - point.z).length_squared() > 0.01:
+		visual_root.look_at(Vector3(point.x, global_position.y, point.z), Vector3.UP)
 
 
 func move_direction(direction: Vector3) -> void:

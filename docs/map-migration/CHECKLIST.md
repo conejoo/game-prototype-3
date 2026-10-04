@@ -5,7 +5,7 @@ Moonwood and current Maris recovery slice. Read [investigation](INVESTIGATION.md
 [current state](CURRENT_STATE.md) and parent [architecture](../ARCHITECTURE.md).
 Use [agent prompt](AGENT_PROMPT.md) once per fresh session.
 
-Status: M001–M015 verified complete; M016–M019 pending. `[ ]` pending; `[-]` in progress;
+Status: M001–M016 verified complete; M017–M019 pending. `[ ]` pending; `[-]` in progress;
 `[x]` verified complete. Each task depends on preceding task. One task per
 session; unfinished task remains selected next time. Item may span sessions.
 Repair only regressions needed for selected item; do not expand into next item.
@@ -161,7 +161,7 @@ acceptance again against the resulting map build.
   enters Tollworks, defeats guardian, recovers vessel and returns for fitting;
   correct prompts, no duplicate interactions/party or missing service.
 
-## [ ] M016 Camera ground aiming and canopy visibility
+## [x] M016 Camera ground aiming and canopy visibility
 
 - Validate orthographic/perspective/zoom over full map; correct mouse-ground
   targeting on hills/ramps without allowing visual props to hijack ground aim.
@@ -204,7 +204,7 @@ acceptance again against the resulting map build.
 
 ## Completion records
 
-M001–M015 complete. Append one concise record per item:
+M001–M016 complete. Append one concise record per item:
 
 ```text
 Mxxx — completed YYYY-MM-DD
@@ -336,3 +336,11 @@ Checks and exact exits: extractor/initial-final imports/ten focused checks/post-
 Evidence: docs/evidence/M015/VALIDATION.md,activation/nav/audit/source-drift reports,views/index,exact request/response JSON and copied PNGs,runtime/accepted/failed logs.
 Decisions/limits: three service nav outlines,existing grounding generalized across arrivals;single destination API retained,six other portals inert. Source map added three NPCs externally; pinned snapshot unchanged,extras deliberately outside scope. Two detached-guardian observer errors retained/repaired with regression;no gameplay authority change. No Blender/source write/refresh/install/subagent/commit/push/publication. P014 compact completion preserved;M016-M019 pending;no next item started.
 Next eligible task: M016 camera ground aiming and canopy visibility only.
+
+M016 — completed 2026-10-03
+Result: physics-floor targeting with seam/hidden-base protection, level aim/attacks and minimal party canopy cutout at evidenced dense-forest occlusion; camera bounds/input gates retained.
+Files: camera_rig/game_root/actor, compact/candidate floor tags, tree_art/canopy_visibility shader, camera checks/render harness, tree audit/bridge observation, migration checklist/state, docs/evidence/M016.
+Checks and exact exit results: final six focused headless checks PASS0; actual tree audit PASS0(395 trees/21 variants/106 batches); extractor/import0(known SDK diagnostic);330 aim samples max0.000007691208m; ordinary10-site106-capture tour normal quit0; final60 static+6 recorded moving-pose renders0/no errors; git diff --check0.
+Evidence: docs/evidence/M016/VALIDATION.md, camera-report.json, final-check-results.json, survey-final/audit.json, inspected final sheets, exact input/response arrays and retained failures.
+Decisions or retained limits: tree-only cutout preserves shadows/geometry/physics/nav/IDs. Final visual survey replays recorded feet, not ordinary quest flow. No roof treatment where service approach clear. Snapshot/schema4/content1 unchanged; M018 ray/shader costs and M019 larger-map native gate still pending. P014 compact completion preserved.
+Next eligible task: M017 save load retry and scene replacement compatibility only.

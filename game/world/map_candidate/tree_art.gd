@@ -2,6 +2,9 @@ class_name AlderwakeTreeArt
 extends Node3D
 ## Appearance only. Source wrappers retain identity/feet/physics independently.
 
+const VISIBILITY_SHADER: Shader = preload("res://world/map_candidate/canopy_visibility.gdshader")
+var visibility_materials: Array[ShaderMaterial] = []
+
 const KIT: PackedScene = preload("res://assets/environment/moonwood_tree_kit.glb")
 const MAPPING_PATH: String = "res://assets/environment/moonwood_tree_mapping.json"
 const CHUNK_SIZE: float = 32.0
@@ -24,11 +27,14 @@ func build(population: AlderwakeForestPopulation) -> void:
 		# the mesh. MultiMesh has no per-surface instance overrides.
 		var mesh: ArrayMesh = visual.mesh.duplicate()
 		for surface: int in range(mesh.get_surface_count()):
-			var material: StandardMaterial3D = visual.get_active_material(surface).duplicate()
-			# This Godot import leaves COLOR_0 disabled on its shared material.
-			# Enable the exported palette explicitly on our local art resource.
-			material.vertex_color_use_as_albedo = true
-			mesh.surface_set_material(surface, material)
+			var material: StandardMaterial3D = visual.get_active_material(surface)
+			# Shader consumes exported COLOR_0 and the original matte palette.
+			var visibility: ShaderMaterial = ShaderMaterial.new()
+			visibility.shader = VISIBILITY_SHADER
+			visibility.set_shader_parameter("base_color", material.albedo_color)
+			visibility.set_shader_parameter("surface_roughness", material.roughness)
+			visibility_materials.append(visibility)
+			mesh.surface_set_material(surface, visibility)
 		meshes[str(visual.name)] = mesh
 	for record: Dictionary in parsed.mappings:
 		if mappings.has(record.definition_id) or not meshes.has(record.mesh_name):
@@ -78,3 +84,14 @@ func build(population: AlderwakeForestPopulation) -> void:
 			batch.multimesh.set_instance_transform(index, transform)
 		add_child(batch)
 		batches[key] = batch
+
+
+func update_visibility(camera: Camera3D, hero: Node3D, ally: Node3D) -> void:
+	var enabled: bool = is_instance_valid(hero) and is_instance_valid(ally)
+	for material: ShaderMaterial in visibility_materials:
+		material.set_shader_parameter("protect_party", enabled)
+		if enabled:
+			material.set_shader_parameter("camera_view", camera.get_camera_transform().affine_inverse())
+			material.set_shader_parameter("camera_projection", camera.get_camera_projection())
+			material.set_shader_parameter("hero_center", hero.global_position + Vector3.UP * 0.8)
+			material.set_shader_parameter("ally_center", ally.global_position + Vector3.UP * 0.8)

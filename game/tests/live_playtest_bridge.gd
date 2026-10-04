@@ -229,7 +229,7 @@ func _observe() -> Dictionary:
 	var rig: PrototypeCameraRig = game.camera_rig
 	var focus: Control = get_viewport().gui_get_focus_owner()
 	return {
-		"combat_attacking": actor.combat.attacking, "combat_elapsed": actor.combat.elapsed,
+		"combat_direction": _vector(actor.combat.direction), "combat_attacking": actor.combat.attacking, "combat_elapsed": actor.combat.elapsed,
 		"dodge_left": actor.combat.dodge_left,
 		"guardian": {"health": game.guardian.state.health, "position": _vector(game.guardian.global_position), "screen": _point(rig.camera.unproject_position(game.guardian.global_position)), "attacking": game.guardian.combat.attacking, "elapsed": game.guardian.combat.elapsed, "hit_ids": Array(game.guardian.combat.hit_ids)} if is_instance_valid(game.guardian) and game.guardian.is_inside_tree() else {},
 		"player_screen": _point(rig.camera.unproject_position(actor.global_position)),
