@@ -1,12 +1,15 @@
 # Returning Fair prototype
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
-W001-W005 verified; W006 next. Clock/seed/cached forecast rules run through
+W001-W007 verified; W008 next. Clock/seed/cached forecast rules run through
 the existing session gate and schema v5 saves retain environment/light facts.
 Moving sun and smooth day/dusk/navy-night/dawn lighting now apply outdoors;
 Tollworks keeps its stable indoor profile while the global clock advances.
 All23 exterior sources have independent lamp/window/waylight/net visuals and
-bounded local illumination. E switching and weather effects remain later work.
+bounded local illumination. Six lamps support persistent E switching.
+Smooth clouds, fixed-world rain with terrain/roof exclusion and bounded lightning
+now render from saved forecast/time and freeze on pause. Final lifecycle/HUD,
+measured weather performance and native feature acceptance remain W008-W010.
 Durable agent context lives in current state,
 contracts,
 checklists, source/tests and pinned references. Generated captures/logs under
@@ -56,6 +59,7 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 & $godotExe --headless --path $gamePath --script res://tests/environment_session_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/environment_save_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/environment_lighting_checks.gd
+& $godotExe --headless --path $gamePath --script res://tests/weather_presentation_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/exterior_light_checks.gd
 & $godotExe --headless --path $gamePath --script res://tests/application_smoke.gd
 & $godotExe --headless --path $gamePath --script res://tests/playable_slice_checks.gd
@@ -92,7 +96,7 @@ again after control returns. HUD pointer regions block aim/wheel zoom/attack.
 Click starts one swing with windup, active and recovery windows; each target is
 contacted once per swing, through range/facing and world-obstruction checks.
 Space dodges in held movement direction, or current facing when stationary;
-dodge lasts 0.30s and blocks damage. E selects nearest visible interaction;
+dodge lasts 0.30s and blocks damage. E selects nearest visible interaction; six dock lamps offer Turn on/Turn off with independent saved choices. Daytime on arms the lamp for dusk; manual off stays dark. Other exterior lights remain automatic;
 dialogue blocks gameplay input, clears held movement, and excludes save/load.
 The first two companion choices remain presentation-only guidance.
 Practice markers/test beacons appear only with explicit debug-only
@@ -286,3 +290,9 @@ restores specialist judgment. Service is a preview without purchases/inventory.
 Salvage gear, Ivo's work scene, hull lift and onward Night Orchard leads remain
 outside this slice; the ship and fair are not restored. No retired currency idea
 was adopted. Reference: read-only source `docs/market-of-borrowed-days.md`, MQ03.
+
+Shared agent testing: [bounded runner and evidence helpers](tools/skills/returning-fair-gameplay-testing/references/testing-tools.md).
+PowerShell7 `./tools/run_checks.ps1 -Task W006 -Names light_interaction_checks,application_smoke`
+preflights current scripts, isolates saves and retains diagnostics/timeouts.
+[Tooling verification](docs/TESTING_TOOLS_ACCEPTANCE.md) covers deliberate failures,
+exact restart, read-only environment observations and guarded native capture paths.

@@ -1,83 +1,109 @@
 # Current weather and lighting state
 
-Updated 2026-10-04. W001-W005 Done; W006-W010 Pending. No active/blocked W task.
-Completed: W005 exterior light assets and source bindings. Next eligible: W006.
-Read CHECKLIST, CONTRACT, AGENT_PROMPT and [W005 acceptance](W005_ACCEPTANCE.md).
-W004 moving sun/profile evidence remains in [W004 acceptance](W004_ACCEPTANCE.md).
+Updated 2026-10-04 (America/Vancouver). W001-W007 Done; W008-W010 Pending.
+No In progress or Blocked W task. Only W007 selected this session.
+Completed: clouds, world-space rain and deterministic atmospheric lightning.
+Next eligible: W008 lifecycle, HUD and isolated review controls; not started.
+Read CHECKLIST, CONTRACT, AGENT_PROMPT and [W007 acceptance](W007_ACCEPTANCE.md).
 
-Production Alderwake explicitly builds one ExteriorLights compositor with23
-wrapper-owned ExteriorLightConsumers. Existing registry/state own identities,
-instance defaults and saved override resolution. Six dock lamps, fourteen window
-sources, two waylights and one nonblocking woven net all have visual consumers.
-Five dock lamps default off; Dock Row on; four window sources off. Each consumer
-owns its glow material; original imported wall/roof material never emits.
+GameSession still owns the600-second10AM clock, seeded cached forecast and
+schema5/content1 environment/light facts. GameRoot passes committed forecast/time
+to WeatherVisuals and its existing EnvironmentPresenter. Cubic smooth overcast
+composition reduces direct illumination/shadow contrast and distinguishes clear,
+cloud, rain and storm without altering forecast arithmetic or saves. Rain density
+blends0/.48/1; storms add bounded seeded atmospheric pulses. Tollworks keeps its
+original stable lighting while global time advances.
 
-One reusable six-mesh Blender light kit (2,344 triangles/186,252-byte GLB) supplies
-lamp/waylight frame/core and net frame/knots. Editable source and rebuild script
-live under art/source; runtime kit/23 physical recipes under game/assets/environment.
-No source-checkout/runtime reference dependency. W001 mapping values retained.
-Windows follow actual wall polygons with four panes around each existing crossbar;
-0.0095m outward registration passes both projections and zoom endpoints.
+Alderwake owns one WorldRain. Fixed16m world tiles contain up to576 jittered
+columns; camera selection never translates drop origins. Every column starts
+above actual terrain;21 imported roof bounds exclude covered areas. One shared
+mesh/material and at most64 MultiMesh batches replace per-drop Nodes. Rain uses
+session phase modulo64 seconds;1.6-second/6.4m fall cycles freeze on pause.
+Lightning is a0.32s smooth pulse in seeded8-second windows, peak ambient+.18,
+without damage/audio/additional lights. Rain disposal follows the owning location.
+Camera arrives before environment/rain hydration, including paused commits.
 
-Exactly eight fixed-identity unshadowed Omni emitters: six lamps/two waylights.
-Windows/net emit only. Lamp height1.55m/range1.8946m; waylight.65m/.9517m.
-Source light-opacity smoothstep follows day0/dusk.42/night1/dawn.62/day0.
-Illumination fades with horizontal hero distance12..18m without changing enabled
-facts or mesh emission. No temporal timer or shader TIME added. GameRoot presents
-through its existing gate/committed rebinding; pause freezes and indoor replacement
-releases exterior resources. W006 E commands are not implemented.
+Retained baseline: moving outdoor sun/stable indoor profile, all23 independent
+lamp/window/waylight/net consumers, eight unshadowed local emitters, six typed
+persistent E switches, exact v1-v4 migrations and validated restore/backup rules.
+Pinned map, collision/navigation/aim/art/IDs and historical P001-P014/M001-M019
+packages remain intact. Existing W006/testing local edits were preserved.
 
-W003 schema5/content1 clock/uint32 seed/six validated overrides remain unchanged.
-W004 presenter/outdoor sun/stable Tollworks profiles retained. Physical wrappers,
-source IDs/defaults/fractional feet/yaw, collision, aim/navigation, geography and
-canopy policy untouched. P001-P014/M001-M019 summaries/packages preserved.
+## W007 changed files
 
-W005 changed files:
-
-- art/source/build_exterior_light_kit.py, exterior_light_kit.blend
-- art/exports/exterior_light_kit.json
-- game/assets/environment/exterior_light_kit.glb/.glb.import, exterior_light_mapping.json
-- game/features/environment/exterior_lights.gd/.gd.uid, exterior_light_consumer.gd/.gd.uid
-- game/world/alderwake_exterior.gd, game/app/game_root.gd
-- game/tests/exterior_light_checks.gd/.gd.uid, exterior_light_render.gd/.gd.uid
-- docs/weather-lighting/CHECKLIST.md, CURRENT_STATE.md, CONTRACT.md, W005_ACCEPTANCE.md
+- game/features/environment/weather_visuals.gd/.gd.uid (new)
+- game/features/environment/world_rain.gd/.gd.uid, world_rain.gdshader and world_rain.gdshader.uid (new)
+- game/features/environment/environment_presenter.gd
+- game/app/game_root.gd, game/world/alderwake_exterior.gd
+- game/tests/weather_presentation_checks.gd/.gd.uid, weather_presentation_render.gd/.gd.uid (new)
+- game/tests/environment_lighting_checks.gd (explicit real sunny seed for W004 phase checks)
+- docs/weather-lighting/CHECKLIST.md, CURRENT_STATE.md, CONTRACT.md, W007_ACCEPTANCE.md
 - docs/ARCHITECTURE.md, docs/CURRENT_STATE.md, README.md
 
-Verification: reference/hash/asset audit; Godot import; eight focused headless
-checks (consumer13,289; lighting30,053; codec517; application, interaction,
-ten-round-trip travel, town-art and forest). All final runtime exits0/error and
-warning scans clean. All65 actual960x640 Compatibility captures inspected through
-six sheets and full-size lamp comparisons: each23 default-night sources, four-phase
-town/facade/both-waylight matrices in both projections, on/off/emission-only,
-armed-town and facade zoom endpoints. Ground pools visibly supplement emission;
-windows stay registered and wall/roof/crossbars remain non-emissive. No W005
-failed/unrun criterion. Commands and exact results in acceptance.
+## Verification and evidence
 
-Cwd target root; process-local APPDATA=builds/weather-lighting/W005/appdata,
-LOCALAPPDATA=builds/weather-lighting/W005/localappdata. Observed user_data beneath
-APPDATA/Godot/app_userdata/Returning Fair — Prototype. Named debug slots begin
-w005; codec/P005 test directories stay isolated there. Normal saves untouched.
-Raw evidence ignored at docs/evidence/W005/run-20261004-01; final render-final
-index/65 originals/six sheets. Final consumer engine PID39828, codec6080, renderer
-21856. Ignored runner/asset/capture/handoff audits under builds/weather-lighting/W005.
-Final import retains known missing .NET SDK10.0.9 editor diagnostic.
+Final weather rules:193,417 assertions. W004 lighting30,053 and application startup
+pass. Eight focused regressions pass: environment_rule_checks12,792,
+environment_session_checks, environment_save_checks517, exterior_light_checks13,289,
+light_interaction_checks151, location_travel_checks(ten cycles/rejections),
+map_camera_checks and combat_checks. Runtime exits0 and ERROR/SCRIPT ERROR/WARNING
+scans clean. Import exits0 with only known missing .NET SDK10.0.9 editor diagnostic.
+Retained W001 reference/hash audit passes. Diff/link/UID/status audits pass.
 
-Retained repairs: initial exporter included other scenes; active-scene-only final
-GLB audited. Zero-range net recipe initially allocated a ninth emitter; now only
-positive ranges allocate. Net's retained collision_enabled flag does not imply a
-shape; test inspects real absence. Initial sandbox certificate-store failures,
-failed checks and initial/intermediate render runs preserved. Final camera labels
-synchronize after synthetic projection changes. Source snapshot prepared as normal
-editable mainfile; background userpref read warning changed no preferences.
+Final real-render writer PID56332/reader1028 exit0.66 actual960x640 Compatibility
+captures, six final contact sheets and important original views inspected.
+Five views (Maris/roofed town, raised Moonwell, dense forest, bridge and ford)
+show four distinct conditions in both projections; storm/night zoom0.8/1.15,
+camera pan,0.4s actual D movement, natural rain-to-storm blend and flash are covered.
+Actors/floor/labels/canopy/gold indoor telegraph remain readable; no visible batch
+seam, camera dragging, below-ground streak or indoor leakage observed.
+Rain-only paused captures0.5s apart are byte-identical; existing river TIME shader
+was hidden only for that isolated test and was not changed.
 
-Initial Git tree had W004 modifications/untracked files; preserved. No reset,
-commit/push/subagent, source generator/install/renderer change, native input or
-user editor mutation. All owned game/background processes exited; no held input.
-Existing live Blender PID2664 remains on RF-RecoveryVessel (original empty filepath,
-selection/viewport preserved); isolated saved RF-W005-ExteriorLightKit scene remains.
+Actual GUI Save -> new process GUI Load restores complete exact typed snapshot,
+forecast and cloud/rain/storm/flash/phase/sun render JSON. Saved seed20/day1/
+progress0.802317222222222 yields flash0.1799518128728563 and phase57.39033333333305.
+Storm remains reconstructed on return; indoor original lighting/rain disposal pass.
+Captured maximum36 rain batches/17,221 instances stays inside hard64 cap.
+These counts are not performance acceptance. No W007 criterion remains unrun/failed.
 
-Remaining limits: phase/pose/override review is synthetic. No normal E/restart,
-full quest/native route, weather, frame benchmark or package claim; W006-W010 own
-those. Historical schema4 packages remain unchanged. Next safe action: select W006
-only, extend typed interactable light action and existing command/input boundary,
-then prove independent switching, gates and isolated Save/restart/Load persistence.
+Cwd target root; engine installed4.7.2 ed1daf0bf console. Exact commands and criteria:
+[acceptance](W007_ACCEPTANCE.md). Ignored evidence runs:
+prerequisites20261005-005824437-4137873e;
+import/W004/startup20261005-010903287-6c38237b;
+eight regressions20261005-011023448-a16ef4f4;
+final weather+render20261005-011225850-d89ecce5.
+Final indexes/originals under that last run's render; six sheets/capture-report under
+render/derived/20261005-011333-7f1bf7d7. Earlier failed/successful runs retained.
+
+Shared runner uses process-local APPDATA/LOCALAPPDATA in
+builds/testing/W007/<unique-run>/appdata and localappdata; final run ID above.
+Actual user_data: APPDATA/Godot/app_userdata/Returning Fair — Prototype.
+Debug primary user://saves/playtest-check-20261005-011225850-d89ecce5.json;
+oracle user://saves/w007-oracle.json. Ordinary saves and old archives untouched.
+No manual staging/package output needed; no dependency installation.
+
+Repairs retained in acceptance: initial wrong clock constant, dummy headless
+MultiMesh inspection, native class-name collision, indoor float comparison,
+arrival camera ordering and fixture camera/motion clarity. All resolved.
+No gate weakened. No subagent/reset/commit/push/source/generator/renderer change.
+All owned Godot processes exited; no input held/editor started.
+User Blender PID2664 and unrelated MCP helpers remain untouched.
+
+Limits: forced seed/time/poses/guardian are synthetic debug review; real GUI/input
+inside those sessions does not certify a normal/native full quest or package.
+No new benchmark, full four-phase matrix, HUD, developer controls, audio, wetness
+mechanics or NPC routine claim. W008-W010 own those remaining in-scope gates.
+Next safe action: select W008 only, verify W007 from source/acceptance/current
+checks, then complete lifecycle/HUD/isolated review requirements.
+
+## Earlier completion and tooling context
+
+W001-W006 concise acceptance remains in CHECKLIST and linked W001 references/
+W002-W006 acceptance records. W006 established independent E choices and actual
+GUI Save/new-process Load; no need to read its entire optional raw archive.
+The authorized testing follow-up remains complete:
+[tooling acceptance](../TESTING_TOOLS_ACCEPTANCE.md). Shared bounded runner,
+exact typed restart/capture helpers, pause/provenance manifests, read-only bridge
+observations and native path/no-overwrite guards remain unchanged this session.
+Their project/installed skill copies remain as found; no additional W task selected.

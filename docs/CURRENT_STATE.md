@@ -1,7 +1,7 @@
 # Current prototype state
 
 Updated 2026-10-04. P001-P014 and map M001-M019 complete. Current feature workflow:
-[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W005 Done, W006 next.
+[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W007 Done, W008 next.
 Typed clock/seed/cached forecast now advance through the existing session gate.
 Schema5/content1 retains exact environment time/seed and six validated lantern
 overrides; exact v1-v4 migrate without losing prior facts or rewriting files.
@@ -15,8 +15,14 @@ captures inspected in both projections. All23 exterior sources now have independ
 visual consumers, imported lamp/waylight/net art and registered emissive window
 panes. Eight unshadowed local emitters and source-opacity/spatial fading preserve
 logical defaults/overrides and existing physics. W005 consumer13,289 assertions,
-eight affected checks and65 inspected synthetic renders pass. E switching,
-weather and native feature acceptance remain W006-W010; historical packages unchanged.
+eight affected checks and65 inspected synthetic renders pass. Six lamp switches now use typed identities, existing E/range/LOS and modal/combat locks, with independent saved choices. W006151 checks, seven focused regressions and17 inspected renders prove GUI Save/new-process Load and town/Tollworks persistence.
+Forecast-driven overcast, world-anchored terrain/roof-excluded rain and bounded
+lightning now pass W007193,417 checks and66 inspected rendered captures. Pause
+rain pixels freeze; actual GUI Save/new-process Load restores exact storm phase/
+flash. Tollworks retains stable appearance and excludes weather; rain owner frees
+on travel. W008 lifecycle/HUD, W009 performance and W010 native feature acceptance
+remain Pending; historical packages unchanged. See W007 acceptance for scope,
+commands, isolated appdata and retained failures.
 
 Playable baseline: larger Alderwake town/river/Moonwood, temporary ally/trust,
 preparation-point Strike upgrade, guardian/vessel recovery, Maris return/fitting
@@ -56,3 +62,16 @@ startup and ten affected map report checks; four render/profile scripts parse.
 Tree audit used actual Compatibility renderer after expected headless rejection.
 Import exit 0 retains known missing .NET SDK diagnostic. Saves/temp outputs isolated
 under builds/repo-cleanup. No native quest/visual/performance acceptance rerun.
+
+Testing follow-up (2026-10-04): shared bounded runner, exact typed restart/capture
+helpers, read-only environment/camera bridge observations, narrow W-task native
+path/no-overwrite guards and synced project/installed skill are complete.
+Runner/guard32 and support64 assertions, capture integrity/refusal tests, existing
+bridge/W006151/codec517 checks and17 new real restart renders pass. Native helper
+interop/focus guards remain unchanged; no new native package claim. See
+[tooling acceptance](TESTING_TOOLS_ACCEPTANCE.md) and tools/PLAYTEST.md. W007 remained next at that tooling follow-up.
+
+Weather W007 follow-up (2026-10-04): final rule/renderer checks and eight affected
+regressions pass; initial W006/testing dirty work preserved. Checklists/contract/
+handoff reconciled. All owned game processes exited, normal saves/user Blender
+untouched. Next eligible W008 only; no next task started.

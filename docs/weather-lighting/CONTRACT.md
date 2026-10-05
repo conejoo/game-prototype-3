@@ -1,6 +1,6 @@
 # Weather and interactive lighting migration contract
 
-This is the verified design for the W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Proposed runtime filenames are suggestions until implemented; this document does not claim runnable weather.
+This is the verified design for the W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Proposed runtime filenames are suggestions until implemented; runtime weather through W007 is now implemented and verified in its acceptance record.
 
 Prepared 2026-10-04, America/Vancouver. Scope is the existing Godot Alderwake exterior, stable Tollworks interior lighting, saved environment time/forecast and authored exterior light behavior.
 
@@ -415,3 +415,94 @@ emission. The observed single-frame draws are not W009 performance acceptance.
 headless checks and65 inspected actual Compatibility source/phase/override images.
 No E action, weather effect, normal-input/native/restart claim, benchmark or package
 export belongs to W005. W006 remains the next task and first switching checkpoint.
+
+## W006 implementation decisions
+
+LightSwitchAction is a typed immutable identity Resource, not dialogue content.
+Six LightSwitch nodes belong directly to their existing source wrappers, outside
+replaceable VisualRoot. Instance ID equals pinned prop ID; action carries the
+location/prop/source tuple. Position uses the existing lantern's X/Z anchor at
+wrapper ground height; reach1.7m retains normal range/LOS and authored blockers.
+The selector recognizes the target wrapper's own sibling collision only; other
+props still obstruct. No additional collider/navigation/source identity is added.
+
+GameRoot submits a transient WeakRef plus expected enabled value, reselects under
+existing modal/focus/travel/combat gates and rejects stale/unloaded/queued targets.
+WeakRef is necessary because installed Godot rejects previously freed typed Node
+arguments before function guards can run. GameSession then validates committed
+location, registry/switchability and expected current value before toggling
+EnvironmentState once. The expected-value check rejects an immediate repeated
+command rather than toggling twice. New genuine E presses obtain current state;
+echo key events remain ignored by the existing input boundary.
+
+Prompts derive Turn on/off from saved-enabled state, independent of brightness.
+Feedback explains daylight readiness, lasts2.5 active seconds, is scoped to that
+selected lamp and clears on travel/load. Root immediately presents committed
+facts; consumers never own toggles. Existing schema5/content1 codec and all
+clock/forecast/automatic-source/default/material/light-budget rules remain intact.
+
+[W006 acceptance](W006_ACCEPTANCE.md) verifies151 focused assertions, affected
+consumer/save/application/dialogue/quest/travel regressions and17 inspected renders.
+Actual normal startup movement/E and GUI Save -> separate-process GUI Load preserve
+clock/seed/exact forecast and independent lamp choices. Forced phase/remote gate
+reviews remain synthetic; weather/performance/packaged/native gates belong to
+W007-W010. W006 is the first playable light-switch checkpoint.
+
+## W007 implementation decisions
+
+WeatherVisuals is a node-independent render sampler, separate from forecast truth.
+It smoothsteps the existing linear15-authored-minute blend for overcast0/.55/.8/1,
+rain0/0/.48/1 and storm0/0/0/1. Clear retains W004 sampling; full overcast scales
+direct energy to.32 and shadow opacity to.16, shifts colors toward blue-gray,
+and retains ambient energy>=.44 before bounded flash. Clouds are overcast ambience,
+without a volumetric cloud/sky renderer or new source behavior. Save schema5/
+content1, period/seed arithmetic, clock gates and light defaults are unchanged.
+
+Alderwake explicitly composes one WorldRain after imported structures. Its16m
+world lattice has24x24 independently jittered cells per tile, at most576 columns.
+Camera frustum projects atY0/Y8.6 plus2m margin, clips to map bounds and selects
+fixed tiles without moving their origins. Hard maximum64 active/retained batches;
+retire-before-add prevents a transient excess. Dry conditions hide the bounded
+set instead of allocating invisible tiles. Current rendered matrix peaks36.
+One shared QuadMesh/ShaderMaterial per owner; no per-drop Nodes/physics/shadows,
+extra light or GPU particle subsystem. Native Godot MultiMesh custom data and
+explicit displacement AABB are verified on installed Compatibility renderer.
+Official [MultiMesh guidance](https://docs.godotengine.org/en/stable/tutorials/performance/using_multimesh.html)
+informs this design; actual installed-engine checks/captures establish support.
+
+Rain columns sample actual elevation and begin0.05m above floor. Vertical streaks
+are0.44m long/0.045m wide and remain above that floor throughout the fall. The21
+imported building AABBs, transformed into room coordinates and grown0.12m,
+conservatively exclude complete columns, including roof overhang and sheltered
+space. This avoids sampling source collision boxes as roof geometry. Rain over
+water uses the existing physical surface reference; bridges/ford and raised hills
+are covered in real captures. Decorative trees do not create indoor profiles.
+
+Animation uses authoritative (day_index+progress)*600 active seconds, modulo64
+for rain, exactly forty1.6-second/6.4m fall cycles. Shader never uses TIME; world
+X/Z stays fixed, camera right only orients the narrow vertical quads. Per-column
+phase/density hashes and smooth opacity thresholds avoid a visible tile/transition
+seam. Particle state is not saved: fixed coordinates plus reconstructed phase are
+sufficient. Shared pure batch data supports headless checks because the installed
+dummy renderer returns zero MultiMesh transforms; real GPU checks independently
+compare every uploaded transform with generated columns.
+
+Lightning admits a seeded1-in-3 pulse per8-second window, delay1..4.999 seconds,
+duration0.32s, sin-squared profile and peak ambient increment0.18. Storm blend
+attenuates it at weather boundaries. It writes existing ambient/background only;
+no directional/local extra light, damage, signal, audio or new event authority.
+Tollworks ignores weather rendering and retains its exact W004 indoor values.
+Global forecast still advances there under existing session gates.
+
+GameRoot positions its camera at committed arrival before sampling rain's view.
+Location disposal releases rain meshes/material/batches; no independent processing
+or listener remains. W007 checks this basic owner boundary and exact GUI restart;
+W008 retains the full lifecycle/rollback/HUD/review-control matrix. Existing river
+TIME styling was unchanged and excluded only from the weather-only pause pixel
+comparison; new weather motion is genuinely session-driven and frozen.
+
+[W007 acceptance](W007_ACCEPTANCE.md) records193,417 rule/world/lifecycle assertions,
+eight focused regressions and66 inspected real images in both projections. Exact
+Save/new-process GUI Load restores forecast and all weather render values. These
+synthetic review facts/poses do not claim normal/native quest, full W009 visual
+matrix/frame budgets or W010 packages. Next task is W008, not started.

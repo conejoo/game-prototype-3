@@ -8,6 +8,16 @@ The debug game can accept bounded input commands from a local directory. This
 lets an agent hold W for 100 ms, combine keys, click UI, observe state and capture
 the rendered viewport. Normal gameplay services and input gates remain active.
 
+## Shared checks and evidence
+
+Use [shared testing tools](skills/returning-fair-gameplay-testing/references/testing-tools.md)
+for the versioned bounded runner, isolated app-data, exact restart oracle,
+read-only environment/camera observations and pause/provenance capture manifests.
+Run `./tools/run_checks.ps1 -Task W006 -Names light_interaction_checks,application_smoke`
+from the prototype root in PowerShell7. Choose checks for the current task;
+this command does not select or advance checklist work. See
+[tooling acceptance](../docs/TESTING_TOOLS_ACCEPTANCE.md) for failure-path verification.
+
 ## Start and send
 
 PowerShell 7 from the prototype root:
@@ -106,13 +116,14 @@ Injected viewport input proves gameplay/GUI integration and rendered behavior;
 it does not verify OS/hardware keyboard or window focus. Test those separately.
 A rendered capture is not a Windows export test or a quest completion shortcut.
 
-## Native release input (P014)
+## Native release input
 
 `native_input.ps1` sends bounded Windows scan-code key holds and mouse clicks to
 this project's existing `builds/windows/ReturningFair.exe` only. No game bridge,
 state mutation, installation or source-project change. It verifies the target
 process/window, unlocked input desktop and foreground focus; releases its keys
-and mouse button in `finally`; writes request timing/capture evidence under P014.
+and mouse button in `finally`; writes timing/captures only under a run child of
+P014 or W001-W010. Junctions, unsafe paths and capture overwrites are rejected.
 See [native command examples](skills/returning-fair-gameplay-testing/references/native-commands.md)
 for reusable instructions. Historical session drivers are optional local archives.
 

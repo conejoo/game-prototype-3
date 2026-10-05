@@ -25,6 +25,9 @@ var retrying: bool = false
 var companion: ActorPlaceholder
 var companion_ai: CompanionController
 var environment_presenter: EnvironmentPresenter
+var light_feedback: String = ""
+var light_feedback_until: float = 0.0
+var light_feedback_instance_id: String = ""
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -246,6 +249,7 @@ func _update_controls() -> void:
 
 
 func _on_transition_started() -> void:
+	light_feedback = ""
 	companion_ai.reset_route()
 	companion.combat_targets.clear()
 	companion_ai.enemy = null
@@ -278,15 +282,15 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		progression.initialize(catalog, session)
 		_refresh_progression()
 	_pending_restore = null
-	# Apply the committed profile synchronously before the newly visible room draws.
+	camera_rig.set_target(player_placeholder)
+	camera_rig.reset_physics_interpolation()
+	# Apply committed lighting and rain frustum at the new camera before drawing.
 	# Failed transitions retain the previous session/profile, including failed loads.
 	_present_environment()
 	companion_ai.reset_route()
 	for actor: ActorPlaceholder in party.members():
 		actor.floor_snap_length = 0.04 if world_host.current_location is AlderwakeTerrainPreview else 0.1
 		actor.floor_contact_height = _exterior_floor_height.bind(actor) if world_host.current_location is AlderwakeTerrainPreview else Callable()
-	camera_rig.set_target(player_placeholder)
-	camera_rig.reset_physics_interpolation()
 	_update_controls()
 	if success:
 		guardian = null
@@ -311,8 +315,12 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 func _present_environment() -> void:
 	if environment_presenter != null and world_host.current_location != null and not world_host.transitioning:
 		var definition: LocationDefinition = catalog.get_location(session.current_location_id)
-		environment_presenter.present(definition.lighting_profile, session.environment.day_cycle_progress)
+		var environment: EnvironmentState = session.environment
+		var seconds: float = (environment.day_index + environment.day_cycle_progress) * EnvironmentClock.CYCLE_SECONDS
+		var weather: WeatherVisuals.Sample = WeatherVisuals.sample(environment.weather_sample(), environment.weather_seed, seconds)
+		environment_presenter.present(definition.lighting_profile, environment.day_cycle_progress, weather)
 		if world_host.current_location is AlderwakeExterior:
+			(world_host.current_location as AlderwakeExterior).world_rain.present(weather, camera_rig.camera)
 			(world_host.current_location as AlderwakeExterior).exterior_lights.present(session.environment, player_placeholder.global_position)
 
 
@@ -351,7 +359,30 @@ func _refresh_interaction() -> void:
 		ui.show_travel("Quest progress kept; retry restarts at last arrival anchor." if player_placeholder.state.health == 0 else "Click: attack · Space: dodge · Finish fight or retreat to interact / save")
 		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
-	ui.show_travel("E: " + selected_interaction.prompt if selected_interaction != null else "E near Chandlery Maris / purple station by town start / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
+	ui.show_travel("E: " + selected_interaction.display_prompt(session.environment) if selected_interaction != null else "E near lamps / Chandlery Maris / purple station / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
+	if selected_interaction != null and selected_interaction.instance_id == light_feedback_instance_id and not light_feedback.is_empty() and session.elapsed_play_seconds < light_feedback_until:
+		ui.show_travel(light_feedback + " · " + ui.travel_label.text)
+
+
+func switch_light(target_reference: WeakRef, expected_enabled: bool) -> DialogueService.ActionResult:
+	var target: PrototypeInteractable = target_reference.get_ref() as PrototypeInteractable if target_reference != null else null
+	if not _combat_stable() or dialogue.active() or journal_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
+		return DialogueService.ActionResult.new(false, "Light switching blocked by current input mode.", "light")
+	var location: PrototypeLocation = world_host.current_location
+	if not is_instance_valid(target) or target.is_queued_for_deletion() or location == null or not target.is_inside_tree() or not location.is_ancestor_of(target) or InteractionSelector.select(player_placeholder, location) != target:
+		return DialogueService.ActionResult.new(false, "Light target unloaded, stale or out of reach.", "light")
+	if target.kind != "light" or target.light_action == null or not target.validation_errors(catalog).is_empty():
+		return DialogueService.ActionResult.new(false, "Invalid light source interaction.", "light")
+	var errors: PackedStringArray = session.toggle_light(target.light_action, expected_enabled)
+	var message: String = "; ".join(errors)
+	if errors.is_empty():
+		message = "Lamp off." if expected_enabled else "Lamp on — ready for dusk." if ExteriorLights.night_factor(session.environment.day_cycle_progress) == 0.0 else "Lamp on."
+		_present_environment()
+	light_feedback = message
+	light_feedback_instance_id = target.instance_id
+	light_feedback_until = session.elapsed_play_seconds + 2.5
+	_refresh_interaction()
+	return DialogueService.ActionResult.new(errors.is_empty(), message, "light")
 
 
 func interact() -> DialogueService.ActionResult:
@@ -370,6 +401,11 @@ func interact() -> DialogueService.ActionResult:
 		if not result.ok:
 			ui.show_travel(result.message)
 		return result
+	if target.kind == "light":
+		if target.light_action == null:
+			return DialogueService.ActionResult.new(false, "Invalid light source interaction.", "light")
+		var action: LightSwitchAction = target.light_action
+		return switch_light(weakref(target), session.environment.light_enabled(action.location_id, action.prop_id, action.source_id))
 	var result: DialogueService.ActionResult = dialogue.begin(catalog.get_dialogue(target.dialogue_id), target.instance_id)
 	_present_dialogue(result)
 	return result

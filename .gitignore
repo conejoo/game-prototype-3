@@ -11,3 +11,6 @@ Thumbs.db
 
 # Generated validation evidence stays local; reusable fixtures live elsewhere.
 /docs/evidence/
+
+# Local Python validation caches.
+__pycache__/

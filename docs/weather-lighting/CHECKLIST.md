@@ -2,7 +2,7 @@
 
 This checklist brings the existing weather, day clock and interactive exterior lights into the Returning Fair Godot prototype. It is the task authority for this workflow. Each fresh agent completes or resumes exactly one task, then writes a handoff for the next session.
 
-Prepared 2026-10-04, America/Vancouver. W001-W005 verified Done; W006-W010 remain Pending. Production clock/forecast rules and environment saves are implemented; moving outdoor lighting is verified; exterior consumers are verified; E switching/weather remain later tasks. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
+Prepared 2026-10-04, America/Vancouver. W001-W007 verified Done; W008-W010 remain Pending. Production clock/forecast rules and environment saves are implemented; moving outdoor lighting is verified; exterior consumers, persistent E switching and clouds/rain/lightning are verified; final lifecycle/HUD, performance and native acceptance remain later work. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
 
 Read [the contract](CONTRACT.md), [current state](CURRENT_STATE.md) and [agent prompt](AGENT_PROMPT.md). The target is `D:/development/game-dev-blender/returning-fair-prototype`; the Godot project is its `game/` directory. The source `D:/development/game-prototype-2` is read-only.
 
@@ -29,8 +29,8 @@ Statuses: Pending, In progress, Blocked, Done. `[ ]` means not complete; `[x]` m
 | W003 | Done | W002 | Versioned environment save compatibility |
 | W004 | Done | W003 | Moving sun and location lighting profiles |
 | W005 | Done | W004 | Exterior light assets and source bindings |
-| W006 | Pending | W005 | Persistent E key light switching |
-| W007 | Pending | W006 | Clouds, world anchored rain and lightning |
+| W006 | Done | W005 | Persistent E key light switching |
+| W007 | Done | W006 | Clouds, world anchored rain and lightning |
 | W008 | Pending | W007 | Lifecycle integration, HUD and isolated review controls |
 | W009 | Pending | W008 | Visual matrix, regressions and measured performance |
 | W010 | Pending | W009 | Packaged Windows and native acceptance |
@@ -96,7 +96,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W006 Persistent light switch interactions
 
-- [ ] Done. Status: Pending. Depends: W005.
+- [x] Done. Status: Done. Depends: W005. Evidence: [W006 acceptance](W006_ACCEPTANCE.md),151 command/input assertions and17 inspected rendered E/GUI/restart captures.
 - Extend PrototypeInteractable and validation with a typed light action instead of inventing a dialogue for switches. Reuse InteractionSelector and GameRoot's existing range, visibility, input and combat boundaries.
 - Submit a command using location/prop/source identity; revalidate the selected target before mutation. Scene nodes read the resulting session override.
 - Show Turn on/Turn off prompts and clear feedback. A daytime on choice is armed for dusk; manually disabled lamps remain dark.
@@ -107,7 +107,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W007 Clouds rain and lightning
 
-- [ ] Done. Status: Pending. Depends: W006.
+- [x] Done. Status: Done. Depends: W006. Evidence: [W007 acceptance](W007_ACCEPTANCE.md),193,417 assertions and66 inspected Compatibility captures with exact GUI restart reconstruction.
 - Add smooth overcast ambience, reduced direct illumination/shadow contrast, rain and deterministic bounded lightning driven by the forecast.
 - Use a bounded number of world-space instanced rain batches near the visible region. Stable world coordinates/session time prevent rain following camera movement; roof/terrain exclusion keeps it outside sheltered areas.
 - Use session-driven animation uniforms rather than shader TIME for new weather effects so pause actually freezes them. Account for river, elevation, both projections and zoom.
@@ -252,3 +252,50 @@ metadata/link/UID/status/runtime/diff audits pass; final runtime exits0/scans cl
 zero-range net allocation and metadata-only collider test repaired; failures kept.
 Known missing .NET SDK10.0.9 import diagnostic remains. No normal saves/native
 route/performance/package claim. Next eligible: W006 only; not started.
+
+W006 - completed 2026-10-04 (America/Vancouver)
+
+Result: six wrapper-owned typed light actions; existing E selector/range/LOS and
+input/combat boundaries; session-owned expected-state commands reject stale retries.
+WeakRef safely rejects unloaded/freed targets. Dynamic Turn on/off prompts and
+lamp-scoped feedback explain daylight readiness. Schema5/content1 and pinned
+art/physics/navigation/IDs remain unchanged. All23 consumers still read defaults
+and independent saved facts; seventeen automatic sources cannot toggle.
+151 focused assertions, consumer13,289/codec517 and application/dialogue/quest/
+ten-round-trip regressions pass. Writer/reader PIDs50060/33532 use actual GUI Save/
+Load across separate processes; exact clock/seed/forecast and lamp02-on/Dock-Row-off
+restore. E town/Tollworks round trip retains choices;17 actual960x640 images inspected
+through three sheets plus originals. Final runtime exits0/scans clean; import
+retains known missing .NET SDK10.0.9. Reference/link/status/UID/diff audits pass.
+[Commands, criteria, repairs and limits](W006_ACCEPTANCE.md). Failed fixtures/runner/
+movement/oracle runs retained locally. Forced phases/remote approaches are synthetic;
+no weather/performance/packaged/native claim. Normal saves and prior P/M records
+preserved. Owned game processes exited; user Blender untouched. Next: W007 only.
+
+Testing infrastructure follow-up - completed 2026-10-04, explicitly requested after W006.
+Shared bounded runner, API/camera preflight skill, exact restart helper, read-only
+observations, pause/provenance capture tools and narrow native W evidence guards
+verified. [Results and limits](../TESTING_TOOLS_ACCEPTANCE.md). W006 remains Done;
+At that follow-up W007 remained Pending. W007 completion below occurred later; the tooling follow-up itself did not complete or start another W task.
+
+W007 - completed 2026-10-04 (America/Vancouver)
+
+Result: smooth forecast-driven cloud/direct/ambient/shadow composition, fixed-world
+rain tiles with actual terrain/21-roof exclusion, and bounded seeded atmospheric
+lightning. Rain shader/session phase and flash freeze on pause; no per-drop Nodes,
+shader TIME, additional lights, gameplay damage/audio or persistent particle state.
+One location-owned rain resource set, hard64-batch bound (captured max36), stable
+camera coordinates and arrival-frustum hydration preserve existing ownership.
+193,417 weather assertions, W00430,053/startup and eight affected environment/save/
+switch/travel/camera/combat checks pass.66 actual960x640 Compatibility images,
+six final sheets and important originals inspected: four conditions/five views/
+both projections, storm night/zoom endpoints, hills/roofs/river, camera/input
+motion, rain-to-storm transition, deterministic flash and stable indoor telegraph.
+Paused rain-only images0.5s apart are byte-identical. Actual GUI Save -> writer
+PID56332 exit -> reader1028 GUI Load exactly restores snapshot/forecast/render
+phase/flash; indoor disposal and outdoor rehydration pass. Final runtime scans
+clean; import retains known missing .NET SDK10.0.9. Reference/link/UID/status/diff
+audits pass. [Commands, decisions, repairs and limits](W007_ACCEPTANCE.md).
+Initial dirty W006/testing work and normal saves preserved; failures retained.
+Synthetic review/viewport input does not prove native release or performance.
+All owned Godot processes exited; Blender untouched. Next: W008 only; not started.

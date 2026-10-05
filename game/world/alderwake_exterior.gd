@@ -4,6 +4,7 @@ extends AlderwakeTerrainPreview
 
 var service_outlines: Array[Rect2] = []
 var exterior_lights: ExteriorLights
+var world_rain: WorldRain
 
 
 func _init() -> void:
@@ -13,6 +14,10 @@ func _init() -> void:
 	add_child(exterior_lights)
 	exterior_lights.build(self)
 	build_errors.append_array(exterior_lights.build_errors)
+	world_rain = WorldRain.new()
+	add_child(world_rain)
+	world_rain.build(self)
+	_build_light_switches()
 	destination_id = "prototype-tollworks"
 	destination_spawn_id = "tollworks-from-alderwake"
 	gate_label = "Enter Tollworks"
@@ -74,3 +79,23 @@ func add_service_navigation_obstructions(geometry: NavigationMeshSourceGeometryD
 		for point: Vector2 in AlderwakePropGrayboxes._rectangle(rect.grow(0.2)):
 			points.append(Vector3(point.x, 0, point.y))
 		geometry.add_projected_obstruction(points, -0.2, 2.0, false)
+
+
+func _build_light_switches() -> void:
+	for source: Dictionary in LightSourceRegistry.entries():
+		if not source.switchable:
+			continue
+		var wrapper: Node3D = town.get_node(NodePath(source.prop_id))
+		var consumer: ExteriorLightConsumer = exterior_lights.consumers[source.prop_id]
+		var target: PrototypeInteractable = PrototypeInteractable.new()
+		target.name = "LightSwitch"
+		target.instance_id = source.prop_id
+		target.kind = "light"
+		target.prompt = "Turn on lamp"
+		target.reach = 1.7
+		target.position = Vector3(consumer.anchor.position.x, 0, consumer.anchor.position.z)
+		target.light_action = LightSwitchAction.new()
+		target.light_action.location_id = source.location_id
+		target.light_action.prop_id = source.prop_id
+		target.light_action.source_id = source.source_id
+		wrapper.add_child(target)

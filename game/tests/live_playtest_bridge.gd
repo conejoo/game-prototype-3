@@ -238,8 +238,8 @@ func _observe() -> Dictionary:
 		"position": _vector(actor.global_position), "velocity": _vector(actor.velocity),
 		"heading": _vector(-actor.visual_root.global_basis.z),
 		"aim": _vector(actor.aim_marker.global_position), "aim_visible": actor.aim_marker.visible,
-		"camera": rig.description(), "camera_position": _vector(rig.global_position),
-		"paused": get_tree().paused, "controls_enabled": actor.controls_enabled,
+		"camera": rig.description(), "camera_position": _vector(rig.global_position), "camera_controls": TestRunObservation.camera(game),
+		"paused": get_tree().paused, "pause_overlay_visible": game.ui.pause_overlay.visible, "controls_enabled": actor.controls_enabled,
 		"window_focused": game.window_focused, "retrying": game.retrying,
 		"accepted_keys": actor.movement_buttons.keys(), "ui_focus": str(focus.name) if focus != null else "",
 		"play_seconds": game.session.elapsed_play_seconds,
@@ -273,6 +273,7 @@ func _observe() -> Dictionary:
 		"completed_effect_ids": Array(game.session.completed_effect_ids),
 		"journal_open": game.journal_open, "journal_text": game.ui.journal_text.text,
 		"quest_objective": game.ui.objective_label.text,
+		"environment": TestRunObservation.environment(game),
 	}
 
 

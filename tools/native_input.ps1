@@ -1,3 +1,4 @@
+#Requires -Version 7.0
 param(
     [Parameter(Mandatory)][int]$TargetProcessId,
     [Parameter(Mandatory)][string]$CommandFile,
@@ -11,9 +12,8 @@ $projectRoot = Split-Path $PSScriptRoot -Parent
 $expectedExecutable = [IO.Path]::GetFullPath((Join-Path $projectRoot 'builds/windows/ReturningFair.exe'))
 $target = Get-Process -Id $TargetProcessId
 if ($target.Path -ne $expectedExecutable) { throw 'Target is not this project release executable.' }
-$outputPath = [IO.Path]::GetFullPath($OutputDirectory)
-$evidenceRoot = [IO.Path]::GetFullPath((Join-Path $projectRoot 'docs/evidence/P014')) + [IO.Path]::DirectorySeparatorChar
-if (-not $outputPath.StartsWith($evidenceRoot, [StringComparison]::OrdinalIgnoreCase)) { throw 'Output must be a P014 evidence subdirectory.' }
+. (Join-Path $PSScriptRoot 'testing_paths.ps1')
+$outputPath = Resolve-NativeEvidenceDirectory $projectRoot $OutputDirectory
 $request = Get-Content -LiteralPath $CommandFile -Raw | ConvertFrom-Json
 $steps = @($request.steps)
 if ($steps.Count -lt 1 -or $steps.Count -gt 32) { throw 'Expected 1-32 steps.' }
@@ -34,6 +34,7 @@ foreach ($step in $steps) {
     if ($step.op -eq 'quit' -and $step -ne $steps[-1]) { throw 'Quit must be final step.' }
 }
 if ($totalMs -gt 30000) { throw 'Request exceeds 30 seconds.' }
+Assert-NewEvidenceCaptures $outputPath @($steps | Where-Object op -eq 'capture' | ForEach-Object label)
 New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
 
 if (-not ('ReturningFairNative' -as [type])) {
@@ -175,7 +176,10 @@ try {
                 try {
                     $graphics.CopyFromScreen($point.X, $point.Y, 0, 0, $bitmap.Size)
                     [ReturningFairNative]::Guard()
-                    $bitmap.Save((Join-Path $outputPath ($step.label + '.png')), [Drawing.Imaging.ImageFormat]::Png)
+                    $capturePath = Join-Path $outputPath ($step.label + '.png')
+                    $captureStream = [IO.File]::Open($capturePath, [IO.FileMode]::CreateNew, [IO.FileAccess]::Write, [IO.FileShare]::None)
+                    try { $bitmap.Save($captureStream, [Drawing.Imaging.ImageFormat]::Png) }
+                    finally { $captureStream.Dispose() }
                 } finally { $graphics.Dispose(); $bitmap.Dispose() }
             }
             'quit' {

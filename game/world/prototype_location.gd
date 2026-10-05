@@ -73,6 +73,8 @@ func validation_errors(definition: LocationDefinition, catalog: ContentCatalog) 
 			errors.append("travel gate marker missing")
 	var interactions_seen: PackedStringArray = []
 	for target: PrototypeInteractable in interactables():
+		if target.light_action != null and target.light_action.location_id != location_id:
+			errors.append("light action location differs from owning location")
 		for error: String in target.validation_errors(catalog):
 			errors.append("interaction '%s': %s" % [target.instance_id, error])
 		if target.instance_id in interactions_seen:

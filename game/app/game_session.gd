@@ -62,3 +62,16 @@ func advance(delta: float) -> PackedStringArray:
 	if errors.is_empty():
 		elapsed_play_seconds += delta
 	return errors
+
+
+func toggle_light(action: LightSwitchAction, expected_enabled: bool) -> PackedStringArray:
+	if not initialized or action == null:
+		return PackedStringArray(["light command requires a ready session and typed action"])
+	var errors: PackedStringArray = action.validation_errors()
+	if action.location_id != current_location_id:
+		errors.append("light source is not in the committed location")
+	if not errors.is_empty():
+		return errors
+	if environment.light_enabled(action.location_id, action.prop_id, action.source_id) != expected_enabled:
+		return PackedStringArray(["light command is stale; source already changed"])
+	return environment.set_light_enabled(action.location_id, action.prop_id, action.source_id, not expected_enabled)

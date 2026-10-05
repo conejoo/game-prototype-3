@@ -19,10 +19,12 @@ exist. Unlock/Default desktop and foreground checks precede input; loss of focus
 stops waits. Key/mouse releases run in finally on normal errors; forced process
 termination can bypass cleanup. Do not mix human input with a timed batch.
 
-Current output guard accepts a subdirectory of `docs/evidence/P014` only. For a
-later task, use a unique run folder there and link it from that task's validation
-record; this does not label that later work as P014. If the user needs a different
-build/output target, make only a justified narrow guard change and verify it.
+Current output guard accepts only run subdirectories of `docs/evidence/P014` or
+`docs/evidence/W001` through `W010`. Task roots, sibling prefixes, path traversal
+outside those roots and existing junction/symlink ancestors are rejected. Use a
+fresh task/run directory; do not overwrite historical captures. Pure guard tests
+live in `tools/tests/testing_tools_checks.ps1`. Executable/PID/window/desktop/focus
+and finally input-release checks remain mandatory.
 Do not remove target/focus/path checks or silently substitute an old release for
 current project source. Verify or rebuild the intended executable before testing it.
 
@@ -37,6 +39,9 @@ Individual durations are16-5000ms; captures/startup/input overhead add real time
 | click | x, y; normal left-button press/release |
 | capture | label using1-64 letters/digits/underscore/hyphen; saves PNG |
 | quit | final operation only; normal F10 |
+
+Capture labels must be unique within a request and cannot overwrite an existing PNG.
+Exclusive file creation also prevents overwrites during execution.
 
 Every request creates GUID.json with success/error, exact steps, completed UTC
 timestamps and actual elapsed milliseconds. Inspect emitted PNG files with

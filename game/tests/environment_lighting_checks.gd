@@ -49,6 +49,12 @@ func _run() -> void:
 	_check("lighting_profile" in "; ".join(invalid_profile.validation_errors()), "invalid authored profile accepted")
 	game._set_paused(true)
 	game.session.environment.day_cycle_progress = .625
+	# W004 tests clear-sky phase values; W007 separately covers weather composition.
+	for seed: int in range(10000):
+		var forecast: WeatherSchedule.Sample = WeatherSchedule.new().sample(seed, 0, .625)
+		if forecast.condition == WeatherSchedule.Condition.SUNNY and forecast.transition_progress == 1:
+			game.session.environment.weather_seed = seed
+			break
 	game._present_environment()
 	_check(is_equal_approx(sun.light_energy, .18) and sun.shadow_opacity == 0.0 and (-sun.basis.z).distance_to(EnvironmentLighting.sample(.625).sun_direction) < .00001, "sample not applied")
 	var night_basis: Basis = sun.basis

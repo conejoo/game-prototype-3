@@ -23,6 +23,21 @@ Godot project is `<project>/game`. Check supplied console/editor paths under
 Use console for captured checks. Keep definitions/state, once-only effects,
 versioned plain saves and replaceable visual wrappers intact.
 
+## Preflight current APIs and movement
+
+Before writing fixtures, use `rg` to inspect the current actor/combat, camera,
+interaction and save APIs. Verify method signatures and property names from code;
+past fixtures/chat are not an API contract. Movement is camera-relative through
+`PrototypeCameraRig.movement_direction`, not world X/Z. Observe
+`camera_controls.move_right/move_back`, projection and zoom before planning holds;
+verify a short normal input batch before a longer route. Synthetic placement cannot
+prove normal movement.
+
+Use `tools/run_checks.ps1` for import/headless/render runs: names preflight before
+launch, unique evidence/app-data, isolated save slot, bounded timeouts, owned-PID
+cleanup and error scanning even on exit 0. Read
+[shared testing tools](references/testing-tools.md) for commands and helper contracts.
+Do not bypass a failed runner scan; diagnose its retained stdout/stderr/results.
 ## Choose evidence path
 
 - Exact damage, swing contacts, rules, migrations and illegal transitions: focused
@@ -79,7 +94,13 @@ process handle so normal quit has an exact exit result.
 
 Record commands, build/version/hash/context, input traces, inspected PNGs, save
 snapshots, runtime errors and failures. Separate synthetic/debug/native evidence.
-Compare durable fields after GUI save/reload/replay; elapsed time may differ.
+At a verified paused Save/GUI Load boundary, use TestRunSnapshot for exact typed
+durable facts and full-precision forecast; raw JSON numeric dictionaries are unsafe.
+After resumed travel/replay, assert intended persistent fields and monotonic time
+separately; do not weaken the stable restart oracle to tolerate unexpected drift.
+Use TestRunCapture plus capture_evidence.py for pause/provenance manifests and unique
+contact sheets; inspect actual PNGs before accepting visuals. The bridge environment
+observation reports clock/seed/forecast/overrides and live intensities without commands.
 Describe FPS samples by scenario, including pause/UI, rather than calling them a
 combat benchmark. Update the active checklist/handoff only for criteria with
 evidence; blocked checks stay incomplete with exact reason and next safe action.

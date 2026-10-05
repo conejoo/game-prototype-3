@@ -592,3 +592,35 @@ Physical wrappers/IDs/feet/collision/navigation remain unchanged. W005 verifies
 consumer rules/imports/regressions and synthetic paused renderer captures. E
 actions and normal switching/restart acceptance remain W006; weather/HUD/final
 performance/native feature acceptance remain W007-W010.
+
+### Delivered light switch interactions (W006)
+
+Six location-wrapper LightSwitch nodes carry validated typed LightSwitchAction
+location/prop/source identities. They stay outside replaceable visuals and share
+existing range/LOS selection and input/combat gates. Root commands use WeakRef,
+reselect before mutation and delegate expected-enabled validation to GameSession;
+stale/queued/freed/foreign targets reject without changing facts. EnvironmentState
+keeps independent overrides; automatic sources cannot toggle.
+
+Prompts/feedback derive enabled state, explain daylight readiness and remain scoped
+to the switched lamp. Root presents changed facts immediately and consumers hydrate
+on committed travel/load. Schema5/content1 and timer/save ownership remain intact.
+W006 verifies E/GUI switching and isolated Save/restart/Load, exact environment facts,
+travel persistence and inspected synthetic phase renders. W007-W010 retain weather,
+final lifecycle/HUD, performance and resulting native release acceptance.
+
+### Delivered weather presentation (W007)
+
+GameRoot samples committed EnvironmentState clock/forecast through WeatherVisuals
+and extends its existing presenter with smooth overcast/direct/ambient/shadow
+composition and bounded deterministic atmospheric flash. Session/save ownership
+remains unchanged; no new clock, event, damage, local light or persisted particle
+state. Camera arrival precedes weather-frustum hydration.
+
+Alderwake owns one WorldRain using fixed world-space16m MultiMesh tiles, per-column
+physical terrain heights and imported roof exclusion. Camera selection keeps
+origins fixed; session shader phase freezes under pause. At most64 batches share
+one mesh/material per location and are released with that location. Tollworks
+retains stable lighting without outdoor rain/flash. W007 verifies current rules,
+rendering, pause and exact GUI process-restart reconstruction. W008 lifecycle/HUD,
+W009 measured feature performance and W010 native packages remain future work.
