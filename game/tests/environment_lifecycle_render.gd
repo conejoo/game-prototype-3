@@ -15,9 +15,8 @@ func _initialize() -> void:
 
 func _run() -> void:
 	root.size = Vector2i(960, 640)
+	directory = TestRunEvidence.directory()
 	for argument: String in OS.get_cmdline_user_args():
-		if argument.begins_with("--report-dir=res://../docs/evidence/W008/"):
-			directory = ProjectSettings.globalize_path(argument.trim_prefix("--report-dir="))
 		if argument.begins_with("--phase="): phase = argument.trim_prefix("--phase=")
 	_check(DisplayServer.get_name() != "headless" and not directory.is_empty(), "renderer/evidence missing")
 	if not failures.is_empty():
@@ -90,7 +89,7 @@ func _run() -> void:
 			await _travel_with_e(true)
 			_check(game.environment_presenter.profile == 1 and game.world_host.find_children("WorldRain", "", true, false).size() == 1, "return rain owner")
 			await _capture("return-hud", false)
-	var output: FileAccess = FileAccess.open(directory.path_join(phase + "-index.json"), FileAccess.WRITE)
+	var output: FileAccess = FileAccess.open(TestRunEvidence.path(phase + "-index.json"), FileAccess.WRITE)
 	output.store_string(JSON.stringify({"views":views, "failures":failures, "engine_pid":OS.get_process_id()}, "\t", true, true))
 	output.close()
 	game.queue_free()
@@ -130,14 +129,15 @@ func _capture(label: String, overlay: bool) -> void:
 
 
 func _activate_gui(button: Button) -> void:
-	# Pause/capture establishes Resume focus. Navigate actual GUI focus cycle.
-	for step: int in range(8):
-		if root.gui_get_focus_owner() == button: break
-		_key(KEY_TAB)
-		await process_frame
-	_check(root.gui_get_focus_owner() == button and not button.disabled, "GUI focus target unavailable")
-	_key(KEY_ENTER)
-	for frame: int in range(3): await process_frame
+	var expected: Callable
+	if button == game.ui.resume_button:
+		expected = func() -> bool: return not paused and game.player_placeholder.controls_enabled
+	elif button == game.ui.save_button:
+		expected = func() -> bool: return game.ui.save_status.text.begins_with("Saved.")
+	else:
+		expected = func() -> bool: return not game.loading_save and game.ui.save_status.text.begins_with("Loaded")
+	var result: Dictionary = await TestRunGui.activate(game, button, expected)
+	_check(result.ok, result.get("error", "GUI outcome failed"))
 
 
 func _place_target(target: PrototypeInteractable) -> void:

@@ -2,6 +2,9 @@
 
 Updated 2026-10-04. P001-P014 and map M001-M019 complete. Current feature workflow:
 [weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W008 Done, W009 next.
+User-requested [testing tools follow-up](TESTING_TOOLS_IMPROVEMENTS.md) adds guarded
+evidence, live diagnostics, dependency parsing, verified GUI outcomes and RenderOnly;
+regressions pass and project/installed skill guidance is synchronized.
 Typed clock/seed/cached forecast now advance through the existing session gate.
 Schema5/content1 retains exact environment time/seed and six validated lantern
 overrides; exact v1-v4 migrate without losing prior facts or rewriting files.

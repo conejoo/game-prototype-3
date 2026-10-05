@@ -33,11 +33,18 @@ past fixtures/chat are not an API contract. Movement is camera-relative through
 verify a short normal input batch before a longer route. Synthetic placement cannot
 prove normal movement.
 
-Use `tools/run_checks.ps1` for import/headless/render runs: names preflight before
-launch, unique evidence/app-data, isolated save slot, bounded timeouts, owned-PID
-cleanup and error scanning even on exit 0. Read
+Use `tools/run_checks.ps1` for import/headless/render runs: names and evidence routes
+preflight before launch, followed by a parse gate covering literal script/scene
+dependencies. Add computed/dynamic paths with `-ParseScripts`; import alone does
+not prove those scripts compile. Use `-RenderOnly` for rendered-only verification.
+The runner isolates evidence/app-data/save slots, flushes live logs, stops on
+diagnostics and cleans only owned PIDs. Read
 [shared testing tools](references/testing-tools.md) for commands and helper contracts.
 Do not bypass a failed runner scan; diagnose its retained stdout/stderr/results.
+Read `RUN_REPORT` and the running case's logs to diagnose a stalled run without
+waiting for timeout. Historical P/M/W task-root destinations are rejected. Use
+TestRunEvidence for report files and consume failures; never route a current check
+to an archived report or loosen output guards to make a legacy fixture pass.
 ## Choose evidence path
 
 - Exact damage, swing contacts, rules, migrations and illegal transitions: focused
@@ -89,7 +96,11 @@ validation runs; create unique capture/command directories.
 Observe fresh startup, invoke actual GUI Load, verify restored facts/world, and
 exercise required replay/revisit paths. A click or a successful input request is
 not a successful load: inspect status/HUD/world and actual plain save. Prefer
-observed Tab/Enter focus when mouse activation is unreliable. Retain a launch
+observed Tab/Enter focus when mouse activation is unreliable. For rendered fixtures,
+use `await TestRunGui.activate(game, button, outcome)` and require `ok`: it verifies
+pause/focus and a new observable outcome, not merely input delivery. Give Save/Load
+predicates actual status/file/world completion; keep the exact restart oracle.
+Retain a launch
 process handle so normal quit has an exact exit result.
 
 Record commands, build/version/hash/context, input traces, inspected PNGs, save
@@ -99,7 +110,8 @@ durable facts and full-precision forecast; raw JSON numeric dictionaries are uns
 After resumed travel/replay, assert intended persistent fields and monotonic time
 separately; do not weaken the stable restart oracle to tolerate unexpected drift.
 Use TestRunCapture plus capture_evidence.py for pause/provenance manifests and unique
-contact sheets; inspect actual PNGs before accepting visuals. The bridge environment
+contact sheets; capture preserves the current settings modal and focused control.
+Inspect actual PNGs before accepting visuals. The bridge environment
 observation reports clock/seed/forecast/overrides and live intensities without commands.
 Describe FPS samples by scenario, including pause/UI, rather than calling them a
 combat benchmark. Update the active checklist/handoff only for criteria with

@@ -17,6 +17,8 @@ Run `./tools/run_checks.ps1 -Task W006 -Names light_interaction_checks,applicati
 from the prototype root in PowerShell7. Choose checks for the current task;
 this command does not select or advance checklist work. See
 [tooling acceptance](../docs/TESTING_TOOLS_ACCEPTANCE.md) for failure-path verification.
+See [testing follow-up](../docs/TESTING_TOOLS_IMPROVEMENTS.md) for guarded legacy
+reports, live diagnostics, dependency parsing, GUI focus/outcomes and RenderOnly.
 
 ## Start and send
 

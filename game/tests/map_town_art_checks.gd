@@ -104,10 +104,9 @@ func _run() -> void:
 			points.append([point.x, point.y, point.z])
 		guide.append({"goal": goal, "path": points})
 		previous = goals[goal]
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M013"))
-	var guide_file: FileAccess = FileAccess.open("res://../docs/evidence/M013/tour-guide.json", FileAccess.WRITE)
+	var guide_file: FileAccess = FileAccess.open(TestRunEvidence.path("tour-guide.json"), FileAccess.WRITE)
 	guide_file.store_string(JSON.stringify(guide, "\t") + "\n")
-	var file: FileAccess = FileAccess.open("res://../docs/evidence/M013/town-art-report.json", FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path("town-art-report.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "\t") + "\n")
 	for failure: String in failures:
 		push_error(failure)

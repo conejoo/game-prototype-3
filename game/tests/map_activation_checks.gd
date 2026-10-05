@@ -11,7 +11,7 @@ func _initialize() -> void:
 func _run() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--report-dir="):
-			report_directory = argument.trim_prefix("--report-dir=")
+			report_directory = TestRunEvidence.directory()
 	game = load("res://app/game_root.tscn").instantiate()
 	root.add_child(game)
 	var arrival: Array = await game.world_host.transition_finished
@@ -97,10 +97,10 @@ func _run() -> void:
 	_check(game.party.members().size() == 2 and game.world_host.get_child_count() == 1 and game.session.completed_effect_ids.is_empty(), "Travel duplicates actors or grants progress")
 	if not report_directory.is_empty():
 		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(report_directory))
-		var output: FileAccess = FileAccess.open(report_directory.path_join("tour-guide.json"),FileAccess.WRITE)
+		var output: FileAccess = FileAccess.open(TestRunEvidence.path("tour-guide.json"),FileAccess.WRITE)
 		output.store_string(JSON.stringify(guide,"\t")+"\n")
 		output.close()
-		output = FileAccess.open(report_directory.path_join("activation-report.json"),FileAccess.WRITE)
+		output = FileAccess.open(TestRunEvidence.path("activation-report.json"),FileAccess.WRITE)
 		output.store_string(JSON.stringify({"failures":failures,"capsule_samples":samples,"interactions":ids,"navigation":nav_report},"\t")+"\n")
 		output.close()
 	game.queue_free()

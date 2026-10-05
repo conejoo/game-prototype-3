@@ -168,7 +168,7 @@ func _capture(label: String) -> void:
 	if DisplayServer.get_name() == "headless":
 		return
 	await RenderingServer.frame_post_draw
-	var path: String = "res://../docs/evidence/P009/%s.png" % label
+	var path: String = TestRunEvidence.path("%s.png" % label)
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(path.get_base_dir()))
 	_check(root.get_texture().get_image().save_png(path) == OK, "Capture failed: " + label)
 

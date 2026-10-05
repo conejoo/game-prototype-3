@@ -7,7 +7,7 @@ var report: Dictionary = {"fixtures":[], "round_trips":[], "rejections":[], "ret
 var game: Node3D
 var identities: Array[int] = []
 var phase: String = "checks"
-var report_directory: String = "res://../docs/evidence/M017"
+var report_directory: String
 
 func _initialize() -> void:
 	_run.call_deferred()
@@ -17,7 +17,7 @@ func _run() -> void:
 		if argument.begins_with("--phase="):
 			phase = argument.trim_prefix("--phase=")
 		if argument.begins_with("--report-dir="):
-			report_directory = argument.trim_prefix("--report-dir=")
+			report_directory = TestRunEvidence.directory()
 	game = load("res://app/game_root.tscn").instantiate()
 	var detached: ContentManifest = ContentManifest.new()
 	detached.definitions.assign(game.content_manifest.definitions)
@@ -72,7 +72,7 @@ func _run() -> void:
 	report["pid"] = OS.get_process_id()
 	report["failures"] = failures
 	report["save_path"] = ProjectSettings.globalize_path(game.save_repository.path)
-	_write(report_directory.path_join("%s-report.json" % phase),JSON.stringify(report,"\t")+"\n")
+	_write(TestRunEvidence.path("%s-report.json" % phase),JSON.stringify(report,"\t")+"\n")
 	game._set_paused(false)
 	game.queue_free()
 	await process_frame

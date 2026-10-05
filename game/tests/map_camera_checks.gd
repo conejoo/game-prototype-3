@@ -17,7 +17,7 @@ func _initialize() -> void:
 func _run() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--report-dir="):
-			report_directory = argument.trim_prefix("--report-dir=")
+			report_directory = TestRunEvidence.directory()
 	root.size = Vector2i(960, 640)
 	game = load("res://app/game_root.tscn").instantiate()
 	root.add_child(game)
@@ -148,10 +148,10 @@ func _run() -> void:
 	report = {"projection_samples": samples, "terrain_occluded_samples":hidden_samples,"observations":observations, "maximum_aim_error_m":maximum_error, "old_plane_maximum_error_m":old_plane_error, "slope_count":16, "projections":2, "zoom_factors":[0.8,1,1.15], "failures":Array(failures)}
 	if not report_directory.is_empty():
 		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(report_directory))
-		var guide_file: FileAccess = FileAccess.open(report_directory.path_join("camera-tour-guide.json"), FileAccess.WRITE)
+		var guide_file: FileAccess = FileAccess.open(TestRunEvidence.path("camera-tour-guide.json"), FileAccess.WRITE)
 		guide_file.store_string(JSON.stringify(guide, "	") + "\n")
 		guide_file.close()
-		var file: FileAccess = FileAccess.open(report_directory.path_join("camera-report.json"), FileAccess.WRITE)
+		var file: FileAccess = FileAccess.open(TestRunEvidence.path("camera-report.json"), FileAccess.WRITE)
 		file.store_string(JSON.stringify(report, "	") + "\n")
 		file.close()
 	game.queue_free()

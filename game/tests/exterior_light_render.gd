@@ -18,10 +18,7 @@ func _run() -> void:
 		quit(1)
 		return
 	root.size = Vector2i(960, 640)
-	directory = ProjectSettings.globalize_path("res://../docs/evidence/W005/run-%d-%d/render" % [OS.get_process_id(), Time.get_ticks_usec()])
-	for argument: String in OS.get_cmdline_user_args():
-		if argument.begins_with("--report-dir=res://../docs/evidence/W005/"):
-			directory = ProjectSettings.globalize_path(argument.trim_prefix("--report-dir="))
+	directory = TestRunEvidence.directory()
 	DirAccess.make_dir_recursive_absolute(directory)
 	print("W005 render pid=%d user_data=%s output=%s" % [OS.get_process_id(), OS.get_user_data_dir(), directory])
 	game = (load("res://app/game_root.tscn") as PackedScene).instantiate()
@@ -90,7 +87,7 @@ func _run() -> void:
 		game.camera_rig._apply_zoom()
 		game._present_environment()
 		await _capture("lantern-rest-night-zoom-%.2f" % zoom)
-	var file: FileAccess = FileAccess.open(directory.path_join("index.json"), FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path("index.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify({"kind":"W005 synthetic paused source/phase/override visual review", "engine_pid":OS.get_process_id(), "engine":Engine.get_version_info()["string"], "user_data":OS.get_user_data_dir(), "local_light_limit":ProjectSettings.get_setting("rendering/limits/opengl/max_lights_per_object"), "views":views, "failures":failures}, "\t") + "\n")
 	game.queue_free()
 	await process_frame
@@ -114,7 +111,7 @@ func _capture(label: String) -> void:
 	game.ui.show_camera(game.camera_rig.description())
 	for frame: int in range(4): await process_frame
 	await RenderingServer.frame_post_draw
-	var path: String = directory.path_join(label + ".png")
+	var path: String = TestRunEvidence.path(label + ".png")
 	var error: Error = root.get_texture().get_image().save_png(path)
 	if error != OK: failures.append("PNG write failed " + label)
 	var sources: Array[Dictionary] = []

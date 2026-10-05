@@ -170,8 +170,7 @@ func _run() -> void:
 		_check(gate_contact, "Gate negative never contacted authored body")
 		_check(hero.global_position.x < 123, "Gate opened")
 	var report: Dictionary = {"props": ids.size(), "catalog_collisions": collision_ids.size(), "authored_colliders": authored_ids.size(), "forest_props": forest.prop_records.size(), "species": forest.species_counts, "sizes": forest.size_counts, "physics_probes": physics_probes, "path_samples": path_samples, "walked_routes": walked_routes, "routes": route_report, "failures": failures}
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M009"))
-	var output: FileAccess = FileAccess.open("res://../docs/evidence/M009/forest-report.json", FileAccess.WRITE)
+	var output: FileAccess = FileAccess.open(TestRunEvidence.path("forest-report.json"), FileAccess.WRITE)
 	if output != null:
 		output.store_string(JSON.stringify(report, "\t") + "\n")
 	print("M007 counts: ", JSON.stringify(report.duplicate().merged({"routes": "see physics-report.json"}, true)))

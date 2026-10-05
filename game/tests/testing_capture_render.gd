@@ -6,10 +6,7 @@ func _initialize() -> void:
 	_run.call_deferred()
 func _run() -> void:
 	root.size = Vector2i(960, 640)
-	var directory: String = ""
-	for argument: String in OS.get_cmdline_user_args():
-		if argument.begins_with("--report-dir="):
-			directory = ProjectSettings.globalize_path(argument.trim_prefix("--report-dir="))
+	var directory: String = TestRunEvidence.directory()
 	if directory.is_empty() or DisplayServer.get_name() == "headless":
 		push_error("capture check requires real renderer and report-dir")
 		quit(1)
@@ -40,7 +37,31 @@ func _run() -> void:
 	_check(captured.ok and captured.overlay and paused and game.ui.pause_overlay.visible, "overlay capture failed")
 	if captured.ok:
 		views.append(captured)
-	var file: FileAccess = FileAccess.open(directory.path_join("check-index.json"), FileAccess.WRITE)
+	# GUI guard failures must send no activation; real focus input verifies outcomes.
+	var gui: Dictionary = await TestRunGui.activate(game, game.ui.save_button, func() -> bool: return true)
+	_check(not gui.ok and not FileAccess.file_exists(game.save_repository.path), "stale GUI outcome accepted")
+	game.ui.save_button.disabled = true # Explicit refusal fixture; no gameplay claim.
+	gui = await TestRunGui.activate(game, game.ui.save_button, func() -> bool: return false)
+	_check(not gui.ok and not FileAccess.file_exists(game.save_repository.path), "disabled GUI target activated")
+	game.ui.save_button.disabled = false
+	gui = await TestRunGui.activate(game, game.ui.settings_button, func() -> bool: return false, 16, 2)
+	_check(not gui.ok and game.ui.settings_open(), "unmet GUI outcome silently accepted")
+	var focus: Control = root.gui_get_focus_owner()
+	gui = await TestRunGui.activate(game, game.ui.resume_button, func() -> bool: return not paused)
+	_check(not gui.ok and paused, "hidden target bypassed settings modal")
+	captured = await TestRunCapture.capture(game, "capture-settings-world", directory, "synthetic", false, "Settings opened with actual focus input; capture must preserve modal and focus")
+	_check(captured.ok and game.ui.settings_open() and root.gui_get_focus_owner() == focus, "capture reset settings or focus")
+	if captured.ok: views.append(captured)
+	gui = await TestRunGui.activate(game, game.ui.settings_back, func() -> bool: return not game.ui.settings_open())
+	_check(gui.ok and paused, "actual settings Back outcome failed")
+	gui = await TestRunGui.activate(game, game.ui.save_button, func() -> bool: return game.ui.save_status.text.begins_with("Saved."))
+	_check(gui.ok and FileAccess.file_exists(game.save_repository.path), "GUI Save outcome or isolated file missing")
+	gui = await TestRunGui.activate(game, game.ui.resume_button, func() -> bool: return not paused and game.player_placeholder.controls_enabled)
+	_check(gui.ok, "GUI Resume outcome failed")
+	gui = await TestRunGui.activate(game, game.ui.save_button, func() -> bool: return false)
+	_check(not gui.ok, "unpaused GUI activation accepted")
+	game._set_paused(true)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path("check-index.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify({"views":views, "failures":failures}, "\t", true, true))
 	file.close()
 	for failure: String in failures:

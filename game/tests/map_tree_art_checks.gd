@@ -71,8 +71,7 @@ func _run() -> void:
 		_check(art_rect.position.distance_to(physical_rect.position) < 0.10 and art_rect.end.distance_to(physical_rect.end) < 0.10, "Trunk visual/collision disagreement: " + record.id)
 		_check(mapping.species == record.tree.species and mapping.size == record.tree.size, "Tree identity lost")
 	var report: Dictionary = {"trees": ids.size(), "variants": art.mappings.size(), "batches": art.batches.size(), "kit_triangles": triangles, "failures": failures}
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M012"))
-	var file: FileAccess = FileAccess.open("res://../docs/evidence/M012/tree-report.json", FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path("tree-report.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "\t") + "\n")
 	print("M012 tree report: ", JSON.stringify(report))
 	game.queue_free()

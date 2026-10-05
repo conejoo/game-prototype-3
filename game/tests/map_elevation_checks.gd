@@ -130,8 +130,7 @@ func _run() -> void:
 					_check(delta.dot(normal) * sign_value > 0.3, "Walking/dodge cliff cut " + str(cliff.id))
 					cliff_runs += 1
 	report = {"floor_probes": floor_probes, "height_cells": 472, "slopes": 16, "cliffs": terrain.cliffs.size(), "slope_runs": slope_runs, "cliff_casts": cast_count, "cliff_runs": cliff_runs, "motion_samples": motion_samples, "max_grounding_error_m": grounding_error, "routes": routes, "failures": failures}
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M008"))
-	var output: FileAccess = FileAccess.open("res://../docs/evidence/M008/elevation-report.json", FileAccess.WRITE)
+	var output: FileAccess = FileAccess.open(TestRunEvidence.path("elevation-report.json"), FileAccess.WRITE)
 	output.store_string(JSON.stringify(report, "\t") + "\n")
 	print("M008 elevation counts ", JSON.stringify(report.duplicate().merged({"routes": "see report"}, true)))
 	game.queue_free()

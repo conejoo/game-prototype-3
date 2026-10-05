@@ -9,7 +9,7 @@ func _run() -> void:
 	var game: Node3D = load("res://app/game_root.tscn").instantiate()
 	root.add_child(game)
 	await game.world_host.transition_finished
-	var directory: String = ProjectSettings.globalize_path("res://../docs/evidence/M016/survey-final")
+	var directory: String = TestRunEvidence.directory()
 	DirAccess.make_dir_recursive_absolute(directory)
 	var index: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/map_camera_poses.json"))
 	var views: Array[Dictionary] = []
@@ -33,7 +33,7 @@ func _run() -> void:
 				game.ui.show_camera(game.camera_rig.description())
 				for frame: int in range(3): await process_frame
 				await RenderingServer.frame_post_draw
-				var path: String = directory.path_join("%s-%s-%.2f.png" % [goal, "orthographic" if orthographic else "perspective", zoom_value])
+				var path: String = TestRunEvidence.path("%s-%s-%.2f.png" % [goal, "orthographic" if orthographic else "perspective", zoom_value])
 				var result: Error = root.get_texture().get_image().save_png(path)
 				var hero_screen: Vector2 = game.camera_rig.camera.unproject_position(game.player_placeholder.global_position)
 				var ally_screen: Vector2 = game.camera_rig.camera.unproject_position(game.companion.global_position)
@@ -53,11 +53,11 @@ func _run() -> void:
 		game.ui.show_camera(game.camera_rig.description())
 		for frame: int in range(3): await process_frame
 		await RenderingServer.frame_post_draw
-		var path: String = directory.path_join("moving-pose-%02d.png" % replay_count)
+		var path: String = TestRunEvidence.path("moving-pose-%02d.png" % replay_count)
 		var result: Error = root.get_texture().get_image().save_png(path)
 		views.append({"goal":"recorded-moving-pose","path":path,"save_png_exit":result,"source_response":pose.source_response})
 		replay_count += 1
-	var file: FileAccess = FileAccess.open(directory.path_join("index.json"), FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path("index.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify({"kind":"synthetic visual regression at ordinary-tour feet", "views":views}, "\t") + "\n")
 	game.queue_free()
 	await process_frame

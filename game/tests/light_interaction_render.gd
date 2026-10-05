@@ -20,12 +20,9 @@ func _run() -> void:
 		quit(1)
 		return
 	root.size = Vector2i(960, 640)
+	directory = TestRunEvidence.directory()
 	writer = "--phase=write" in OS.get_cmdline_user_args()
 	phase_name = "write" if writer else "read"
-	directory = ProjectSettings.globalize_path("res://../docs/evidence/W006/run-%d" % OS.get_process_id())
-	for argument: String in OS.get_cmdline_user_args():
-		if argument.begins_with("--report-dir=res://../docs/evidence/W006/"):
-			directory = ProjectSettings.globalize_path(argument.trim_prefix("--report-dir="))
 	DirAccess.make_dir_recursive_absolute(directory)
 	print("W006 render phase=%s pid=%d user_data=%s output=%s" % [phase_name, OS.get_process_id(), OS.get_user_data_dir(), directory])
 	game = (load("res://app/game_root.tscn") as PackedScene).instantiate()
@@ -135,7 +132,7 @@ func _run() -> void:
 		_key(KEY_E, false)
 		_check(game.session.environment.light_source_overrides == choices, "pause E changed lamp")
 		await _capture("pause-E-blocked", true)
-	var file: FileAccess = FileAccess.open(directory.path_join(phase_name + "-index.json"), FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path(phase_name + "-index.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify({"phase":phase_name, "engine_pid":OS.get_process_id(), "user_data":OS.get_user_data_dir(), "engine":Engine.get_version_info()["string"], "views":views, "failures":failures}, "\t", true, true))
 	file.close()
 	# No input remains held; dispose the isolated test root before exiting.

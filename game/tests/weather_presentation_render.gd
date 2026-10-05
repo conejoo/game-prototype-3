@@ -19,10 +19,8 @@ func _run() -> void:
 		quit(1)
 		return
 	root.size = Vector2i(960,640)
+	directory = TestRunEvidence.directory()
 	phase_name = "write" if "--phase=write" in OS.get_cmdline_user_args() else "read"
-	for argument: String in OS.get_cmdline_user_args():
-		if argument.begins_with("--report-dir=res://../docs/evidence/W007/"):
-			directory = ProjectSettings.globalize_path(argument.trim_prefix("--report-dir="))
 	_check(not directory.is_empty(), "evidence directory missing")
 	DirAccess.make_dir_recursive_absolute(directory)
 	print("W007 render pid=%d phase=%s user_data=%s" % [OS.get_process_id(), phase_name, OS.get_user_data_dir()])
@@ -84,8 +82,8 @@ func _run() -> void:
 		await _capture("pause-rain-only-first")
 		await create_timer(.5, true).timeout
 		await _capture("pause-rain-only-later")
-		var first: Image = Image.load_from_file(directory.path_join("write-pause-rain-only-first.png"))
-		var second: Image = Image.load_from_file(directory.path_join("write-pause-rain-only-later.png"))
+		var first: Image = Image.load_from_file(TestRunEvidence.path("write-pause-rain-only-first.png"))
+		var second: Image = Image.load_from_file(TestRunEvidence.path("write-pause-rain-only-later.png"))
 		_check(first.get_data() == second.get_data(), "paused rain pixels moved")
 		for child: Node3D in hidden: child.visible = true
 		# Actual natural rain->storm schedule transition, sampled at begin/mid/end.
@@ -150,7 +148,7 @@ func _run() -> void:
 		arrival = await game.world_host.transition_finished
 		_check(arrival[0] and _render_values() == oracle.render, "return changed renderer")
 		await _capture("return-restored-storm")
-	var file: FileAccess = FileAccess.open(directory.path_join(phase_name + "-index.json"), FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path(phase_name + "-index.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify({"views":views, "failures":failures, "engine_pid":OS.get_process_id(), "phase":phase_name}, "\t", true, true))
 	file.close()
 	game.queue_free()

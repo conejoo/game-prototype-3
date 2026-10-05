@@ -13,9 +13,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	root.size = Vector2i(960, 640)
-	for argument: String in OS.get_cmdline_user_args():
-		if argument.begins_with("--report-dir="):
-			directory = ProjectSettings.globalize_path(argument.trim_prefix("--report-dir="))
+	directory = TestRunEvidence.directory()
 	game = (load("res://app/game_root.tscn") as PackedScene).instantiate()
 	game.initial_location_id = "prototype-test-room"
 	game.initial_spawn_id = "prototype-start"
@@ -199,7 +197,7 @@ func _finish() -> void:
 	await process_frame
 	paused = false
 	if not directory.is_empty():
-		var file: FileAccess = FileAccess.open(directory.path_join("settings-index.json"), FileAccess.WRITE)
+		var file: FileAccess = FileAccess.open(TestRunEvidence.path("settings-index.json"), FileAccess.WRITE)
 		file.store_string(JSON.stringify({"views":views, "failures":failures}, "\t", true, true))
 	for failure: String in failures:
 		push_error(failure)

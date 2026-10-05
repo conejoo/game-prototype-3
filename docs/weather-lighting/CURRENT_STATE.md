@@ -5,6 +5,14 @@ Only W008 selected and completed this session. No In progress or Blocked W task.
 Next eligible: W009 visual matrix/regressions/measured performance; not started.
 Read CHECKLIST, CONTRACT, AGENT_PROMPT and [W008 acceptance](W008_ACCEPTANCE.md).
 
+Subsequent user-requested [testing improvements](../TESTING_TOOLS_IMPROVEMENTS.md)
+are complete: guarded legacy report outputs, live diagnostics/early stop, script
+dependency parse preflight, verified GUI focus/outcomes and RenderOnly. Capture
+preserves modal/focus. Infrastructure50, support64/evidence15, 11 writer regressions
+with17 preserved historical paths and separate GUI Save/Load pass. Project and
+installed testing skills are updated. This follow-up starts no W task; W009 remains
+the next eligible task. See that record for commands, failures and limits.
+
 GameSession remains the durable clock/seed/forecast/light authority. One root
 presenter and compact time/condition HUD hydrate only a matching committed
 WorldHost session/location. Startup, paused restore, unsafe travel/load rollback,

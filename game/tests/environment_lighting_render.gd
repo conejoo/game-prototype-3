@@ -18,10 +18,7 @@ func _run() -> void:
 		quit(1)
 		return
 	root.size = Vector2i(960, 640)
-	directory = ProjectSettings.globalize_path("res://../docs/evidence/W004/run-%d-%d/render" % [OS.get_process_id(), Time.get_ticks_usec()])
-	for argument: String in OS.get_cmdline_user_args():
-		if argument.begins_with("--report-dir=res://../docs/evidence/W004/"):
-			directory = ProjectSettings.globalize_path(argument.trim_prefix("--report-dir="))
+	directory = TestRunEvidence.directory()
 	DirAccess.make_dir_recursive_absolute(directory)
 	print("W004 render engine=%s pid=%d user_data=%s output=%s" % [Engine.get_version_info()["string"], OS.get_process_id(), OS.get_user_data_dir(), directory])
 	game = (load("res://app/game_root.tscn") as PackedScene).instantiate()
@@ -107,7 +104,7 @@ func _run() -> void:
 		for frame: int in range(8): await process_frame
 		game._set_paused(true)
 		await _capture("night-resume-paused")
-	var file: FileAccess = FileAccess.open(directory.path_join("index.json"), FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path("index.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify({"kind":"synthetic W004 phase/pose/windup review; simulation paused during captures", "engine_pid":OS.get_process_id(), "user_data":OS.get_user_data_dir(), "views":views, "failures":failures}, "\t") + "\n")
 	game.queue_free()
 	await process_frame
@@ -121,7 +118,7 @@ func _capture(label: String, settle_frames: int = 4) -> void:
 	# Canopy presenter normally follows root's process even while tree is paused.
 	for frame: int in range(settle_frames): await process_frame
 	await RenderingServer.frame_post_draw
-	var path: String = directory.path_join(label + ".png")
+	var path: String = TestRunEvidence.path(label + ".png")
 	var error: Error = root.get_texture().get_image().save_png(path)
 	if error != OK: failures.append("capture failed: " + label)
 	var sun: DirectionalLight3D = game.get_node("Sun")

@@ -19,8 +19,10 @@ func _initialize() -> void:
 	_run.call_deferred()
 
 func _run() -> void:
-	if output.is_empty():
-		push_error("--profile-output required")
+	if output.is_empty(): output = TestRunEvidence.directory()
+	var checked: Dictionary = TestRunEvidence.validate(output, "report.json")
+	if not checked.ok or DirAccess.dir_exists_absolute(output):
+		push_error("performance output requires a fresh runner-owned evidence directory")
 		quit(2)
 		return
 	DirAccess.make_dir_recursive_absolute(output)
@@ -55,7 +57,7 @@ func _run() -> void:
 		await create_timer(warmup).timeout
 		await _attribution(location, view)
 		await RenderingServer.frame_post_draw
-		_check(root.get_texture().get_image().save_png(output.path_join(view + ".png")) == OK, "Capture failed " + view)
+		_check(root.get_texture().get_image().save_png(TestRunEvidence.path(view + ".png")) == OK, "Capture failed " + view)
 		for run: int in range(runs):
 			await _sample(view, run)
 		await _queries(location)
@@ -100,7 +102,7 @@ func _sample(view: String, run: int) -> void:
 	_check(focused == frames.size(), "Focus lost during sample " + view + "/" + str(run))
 	var lines: PackedStringArray = ["frame,interval_ms,total_draw_calls,process_ms"]
 	for i: int in range(frames.size()): lines.append("%d,%.6f,%d,%.6f" % [i, frames[i], draws[i], process_times[i]])
-	var file: FileAccess = FileAccess.open(output.path_join("%s-%d.csv" % [view,run]), FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(TestRunEvidence.path("%s-%d.csv" % [view,run]), FileAccess.WRITE)
 	file.store_string("\n".join(lines) + "\n")
 	_write("report.json", report)
 	print("M018 SAMPLE ", row)

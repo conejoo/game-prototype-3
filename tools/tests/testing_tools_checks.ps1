@@ -54,21 +54,84 @@ Check ($badPhase.exit -eq 1 -and $badPhase.report.cases.Count -eq 0) 'unsafe pha
 $missingEngine = Run-Fixture @('-Names','fixtures/testing_tools/pass','-EnginePath',(Join-Path $projectRoot 'builds/testing/absent.exe'))
 Check ($missingEngine.exit -eq 1 -and $missingEngine.report.cases.Count -eq 0) 'missing engine not preflighted'
 $errorRun = Run-Fixture @('-Names','fixtures/testing_tools/pass,fixtures/testing_tools/runtime_error')
-Check ($errorRun.exit -eq 1 -and $errorRun.report.cases.Count -eq 3) 'comma arguments not expanded'
-Check ($errorRun.report.cases[1].status -eq 'passed') 'pass fixture failed'
-Check ($errorRun.report.cases[2].exit_code -eq 0 -and $errorRun.report.cases[2].status -eq 'failed' -and $errorRun.report.cases[2].diagnostics.Count -gt 0) 'exit-zero runtime error escaped scan'
-$fixtureLine = (Get-Content -LiteralPath $errorRun.report.cases[1].stdout | Where-Object { $_ -like 'TESTING_FIXTURE=*' })
+Check ($errorRun.exit -eq 1 -and $errorRun.report.cases.Count -eq 4) 'comma arguments not expanded'
+$passedCase = @($errorRun.report.cases | Where-Object label -eq 'fixtures/testing_tools/pass')[0]
+$errorCase = @($errorRun.report.cases | Where-Object label -eq 'fixtures/testing_tools/runtime_error')[0]
+Check ($passedCase.status -eq 'passed') 'pass fixture failed'
+Check ($errorCase.exit_code -eq 0 -and $errorCase.status -eq 'failed' -and $errorCase.diagnostics.Count -gt 0) 'exit-zero runtime error escaped scan'
+$fixtureLine = (Get-Content -LiteralPath $passedCase.stdout | Where-Object { $_ -like 'TESTING_FIXTURE=*' })
 $fixture = $fixtureLine.Substring(16) | ConvertFrom-Json
 Check ([IO.Path]::GetFullPath($fixture.user_data).StartsWith($errorRun.report.appdata + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) 'save isolation failed'
 Check ($env:APPDATA -eq $initialAppData -and $env:LOCALAPPDATA -eq $initialLocalData) 'caller environment changed'
 $hang = Run-Fixture @('-Names','fixtures/testing_tools/hang','-TimeoutSeconds','2')
-$case = $hang.report.cases[1]
+$case = @($hang.report.cases | Where-Object label -eq 'fixtures/testing_tools/hang')[0]
 Check ($hang.exit -eq 1 -and $case.timed_out -and $case.status -eq 'timeout') 'timeout not recorded'
 Check ($null -eq (Get-Process -Id $case.launcher_pid -ErrorAction SilentlyContinue)) 'owned launcher still alive'
 foreach ($engineId in $case.engine_pids) { Check ($null -eq (Get-Process -Id $engineId -ErrorAction SilentlyContinue)) 'owned engine still alive' }
 Check ((Test-Path -LiteralPath $case.stdout) -and (Test-Path -LiteralPath $case.stderr)) 'timeout logs missing'
 Check ($hang.report.appdata -ne $errorRun.report.appdata -and $hang.path -ne $errorRun.path) 'run folders reused'
 $failedWriter = Run-Fixture @('-Names','fixtures/testing_tools/pass','-RenderScript','fixtures/testing_tools/runtime_error','-RenderPhases','write,read')
-Check ($failedWriter.exit -eq 1 -and $failedWriter.report.cases.Count -eq 3 -and $failedWriter.report.cases[-1].label -eq 'render-write') 'dependent reader ran after failed writer'
+Check ($failedWriter.exit -eq 1 -and $failedWriter.report.cases.Count -eq 4 -and $failedWriter.report.cases[-1].label -eq 'render-write') 'dependent reader ran after failed writer'
+$renderOnly = Run-Fixture @('-RenderOnly','-RenderScript','fixtures/testing_tools/pass','-RenderPhases','check')
+Check ($renderOnly.exit -eq 0 -and $renderOnly.report.cases[-1].label -eq 'render-check' -and @($renderOnly.report.cases | Where-Object label -eq 'application_smoke').Count -eq 0) 'render-only ran default smoke'
+foreach ($arguments in @(@('-RenderOnly'), @('-RenderOnly','-Names','fixtures/testing_tools/pass','-RenderScript','fixtures/testing_tools/pass'))) {
+    $invalid = Run-Fixture $arguments
+    Check ($invalid.exit -eq 1 -and $invalid.report.cases.Count -eq 0) 'invalid render-only combination launched engine'
+}
+$legacy = Run-Fixture @('-Names','fixtures/testing_tools/legacy_output')
+Check ($legacy.exit -eq 1 -and $legacy.report.cases.Count -eq 0 -and $legacy.report.error -like '*historical*') 'legacy evidence route not rejected before launch'
+$originalJunction = $env:RETURNING_FAIR_TEST_JUNCTION
+try {
+    $env:RETURNING_FAIR_TEST_JUNCTION = $junction
+    $evidence = Run-Fixture @('-Import','-Names','testing_evidence_checks')
+    Check ($evidence.exit -eq 0 -and -not (Test-Path -LiteralPath (Join-Path $junctionTarget 'denied.json'))) 'Godot evidence junction guard failed'
+} finally { $env:RETURNING_FAIR_TEST_JUNCTION = $originalJunction }
+foreach ($arguments in @(@('-Names','fixtures/testing_tools/pass,fixtures/testing_tools/parse_error'),
+    @('-Names','fixtures/testing_tools/dynamic_parse'),
+    @('-Names','fixtures/testing_tools/pass','-ParseScripts','tests/fixtures/testing_tools/parse_error'))) {
+    $badParse = Run-Fixture $arguments
+    Check ($badParse.exit -eq 1 -and $badParse.report.cases[-1].label -eq 'parse-preflight' -and $badParse.report.cases[-1].diagnostics.Count -gt 0) 'parser failure escaped execution gate'
+    Check (@($badParse.report.cases | Where-Object label -eq 'fixtures/testing_tools/pass').Count -eq 0) 'check executed before full parse gate'
+}
+$fatal = Run-Fixture @('-Names','fixtures/testing_tools/error_hang','-TimeoutSeconds','20')
+$fatalCase = @($fatal.report.cases | Where-Object label -eq 'fixtures/testing_tools/error_hang')[0]
+Check ($fatal.exit -eq 1 -and $fatalCase.stopped_on_diagnostic -and -not $fatalCase.timed_out) 'diagnostic did not stop hanging engine early'
+Check (([DateTime]$fatalCase.finished_utc - [DateTime]$fatalCase.started_utc).TotalSeconds -lt 10) 'diagnostic waited for full timeout'
+Check ($null -eq (Get-Process -Id $fatalCase.launcher_pid -ErrorAction SilentlyContinue)) 'fatal engine launcher survived cleanup'
+# Observe a real flushed log while its owning check is still running.
+$info = [Diagnostics.ProcessStartInfo]::new()
+$info.FileName = Join-Path $PSHOME 'pwsh.exe'
+$info.UseShellExecute = $false
+$info.CreateNoWindow = $true
+$info.RedirectStandardOutput = $true
+foreach ($argument in @('-NoProfile','-File',(Join-Path $projectRoot 'tools/run_checks.ps1'),'-Task','TESTING','-Names','fixtures/testing_tools/stream','-TimeoutSeconds','15')) { $info.ArgumentList.Add($argument) }
+$streamProcess = [Diagnostics.Process]::new()
+$streamProcess.StartInfo = $info
+try {
+    $null = $streamProcess.Start()
+    $reportRead = $streamProcess.StandardOutput.ReadLineAsync()
+    Check ($reportRead.Wait(10000)) 'runner did not expose live report path'
+    $livePath = $reportRead.Result.Substring(11)
+    $rest = $streamProcess.StandardOutput.ReadToEndAsync()
+    $observed = $false
+    $deadline = [Diagnostics.Stopwatch]::StartNew()
+    while (-not $streamProcess.HasExited -and $deadline.Elapsed.TotalSeconds -lt 20) {
+        $live = Get-Content -LiteralPath $livePath -Raw | ConvertFrom-Json
+        $streamCase = @($live.cases | Where-Object label -eq 'fixtures/testing_tools/stream')
+        if ($streamCase.Count -gt 0 -and (Test-Path -LiteralPath $streamCase[0].stdout)) {
+            $log = Get-Content -LiteralPath $streamCase[0].stdout -Raw
+            if ($log -like '*LIVE_LOG_READY*' -and $streamCase[0].status -eq 'running') { $observed = $true; break }
+        }
+        Start-Sleep -Milliseconds 100
+    }
+    Check $observed 'stdout unavailable until exit'
+    Check ($streamProcess.WaitForExit(20000) -and $streamProcess.ExitCode -eq 0) 'stream fixture failed'
+    $null = $rest.GetAwaiter().GetResult()
+    $done = Get-Content -LiteralPath $livePath -Raw | ConvertFrom-Json
+    Check ((Get-Content -LiteralPath $done.cases[-1].stdout -Raw) -like '*LIVE_LOG_FINISHED*') 'final streamed output lost'
+} finally {
+    if (-not $streamProcess.HasExited) { $streamProcess.Kill($true); $streamProcess.WaitForExit() }
+    $streamProcess.Dispose()
+}
 Write-Output "Testing tools: PASS assertions=$assertions"
 Write-Output "Failure evidence: $($errorRun.path); $($hang.path)"

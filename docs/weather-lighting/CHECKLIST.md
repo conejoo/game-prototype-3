@@ -317,3 +317,13 @@ retains known missing .NET SDK10.0.9. Stale map interaction assertion/report pat
 repaired; historical report recovery and all failed runs documented in
 [acceptance](W008_ACCEPTANCE.md). No benchmark/native/package claim or next task
 started. Normal saves untouched; owned processes exited. Next: W009 only.
+
+Testing follow-up - completed 2026-10-04 after W008 commit, at user request.
+
+Runner now enforces fresh evidence routing, streams diagnostics, compiles runtime
+script dependencies before execution and supports RenderOnly. Shared GUI helper
+requires actual focus/outcomes; capture preserves settings/focus. Infrastructure50,
+support64/evidence15, 11 migrated report writers/17 protected archive paths and
+separate GUI Save/Load with nine inspected images pass. Project/installed skill
+guidance updated. [Results and limits](../TESTING_TOOLS_IMPROVEMENTS.md).
+W001-W008 remain Done; W009/W010 Pending. No next W task started.
