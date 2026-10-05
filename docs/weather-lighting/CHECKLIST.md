@@ -2,7 +2,7 @@
 
 This checklist brings the existing weather, day clock and interactive exterior lights into the Returning Fair Godot prototype. It is the task authority for this workflow. Each fresh agent completes or resumes exactly one task, then writes a handoff for the next session.
 
-Prepared 2026-10-04, America/Vancouver. W001-W008 verified Done; W009-W010 remain Pending. Production clock/forecast, environment saves, moving outdoor lighting, exterior consumers, persistent E switching, clouds/rain/lightning, lifecycle/HUD and isolated review controls are verified; measured performance and native acceptance remain later work. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
+Prepared 2026-10-04, America/Vancouver. W001-W009 verified Done; W010 Pending. Production clock/forecast, environment saves, moving outdoor lighting, exterior consumers, persistent E switching, clouds/rain/lightning, lifecycle/HUD, isolated review controls, visual regressions and measured performance are verified; packaged/native acceptance remains W010. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
 
 Read [the contract](CONTRACT.md), [current state](CURRENT_STATE.md) and [agent prompt](AGENT_PROMPT.md). The target is `D:/development/game-dev-blender/returning-fair-prototype`; the Godot project is its `game/` directory. The source `D:/development/game-prototype-2` is read-only.
 
@@ -32,7 +32,7 @@ Statuses: Pending, In progress, Blocked, Done. `[ ]` means not complete; `[x]` m
 | W006 | Done | W005 | Persistent E key light switching |
 | W007 | Done | W006 | Clouds, world anchored rain and lightning |
 | W008 | Done | W007 | Lifecycle integration, HUD and isolated review controls |
-| W009 | Pending | W008 | Visual matrix, regressions and measured performance |
+| W009 | Done | W008 | Visual matrix, regressions and measured performance |
 | W010 | Pending | W009 | Packaged Windows and native acceptance |
 
 Dependencies are deliberately sequential. The first playable lighting checkpoint is W006; the full feature requires W010.
@@ -129,7 +129,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W009 Visual regressions and measured performance
 
-- [ ] Done. Status: Pending. Depends: W008.
+- [x] Done. Status: Done. Depends: W008. Evidence: [W009 acceptance](W009_ACCEPTANCE.md), inspected matrix/GUI/benchmark pixels and independently audited full-duration focused windows.
 - Inspect a labeled 4 day-phase x 4 weather matrix at representative town, dense-forest, bridge and ford views. Exercise both projections and supported zoom endpoints; verify indoor exclusion separately.
 - Include all six lamp defaults, independent toggles, window/waylight alignment, night combat/aim readability, canopy visibility, pause, travel, failure rollback and new-process persistence.
 - Run focused environment/save/interaction checks and affected existing combat, companion, quest, camera, map and playable-slice regressions.
@@ -327,3 +327,29 @@ support64/evidence15, 11 migrated report writers/17 protected archive paths and
 separate GUI Save/Load with nine inspected images pass. Project/installed skill
 guidance updated. [Results and limits](../TESTING_TOOLS_IMPROVEMENTS.md).
 W001-W008 remain Done; W009/W010 Pending. No next W task started.
+
+W009 - completed 2026-10-04 (America/Vancouver)
+
+Result: reusable detached visual matrix and M018 weather profiler/isolated launcher/
+independent raw auditor.256 exterior combinations, eight night combat, eight
+lamp/waylight defaults, four pause/rollback and four indoor telegraph captures;
+all64 indoor presets assert exclusion.289 matrix/GUI images/25 sheets,24 accepted
+benchmark images/two sheets and four repaired smoke images/one sheet inspected.
+Lifecycle157/weather193,417 and nineteen focused regressions pass; GUI writer/
+fresh reader exact environment/independent lamps/HUD and E travel/return pass.
+24 full60s windows (three/view/condition,10s warm-up),341,144 focused frames;
+worst p95=6.805ms,p99=9.188ms,draw p95=280, all16.67/25/500 gates pass.
+Same M018 machine/settings; clear-day defaults/storm-night all six lamps enabled.
+Final clean engine31936:12 round trips/24 commits, stable3836 nodes/7573 objects/
+305 resources, zero orphans, one world/nav/presenter/rain owner,23 consumers/
+eight emitters/12 rain batches; unchanged map inventory. Peak442.33MiB,
+growth4.08MiB, within2GiB/64MiB. Independent raw hashes/coverage/settings/focus/
+weather/memory/lifecycle audit passes. All contributing peaks<=444.44MiB.
+Float32/caption/focus/audit-metadata/capture-index failures retained and repaired;
+only valid focused windows accepted across preserved original/targeted retests.
+No production/art/save/renderer/source changes or weakened gates. Reference/link/
+UID/status/intended CRLF-aware diff audits pass; known missing .NET SDK10.0.9
+import diagnostic remains. [Commands, selections, repairs and limits](W009_ACCEPTANCE.md).
+Normal saves/P/M archives/Blender preserved; all owned Godot processes exited.
+Native Windows/package acceptance remains unrun W010 scope. Next: W010 only;
+not started.

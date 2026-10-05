@@ -1,6 +1,6 @@
 # Weather and interactive lighting migration contract
 
-This is the verified design for the W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Proposed runtime filenames are suggestions until implemented; runtime weather and lifecycle/HUD through W008 are implemented and verified in their acceptance records.
+This is the verified design for the W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Proposed runtime filenames are suggestions until implemented; runtime weather/lifecycle/HUD through W008 and W009 visual/performance gates are verified in their acceptance records. W010 package/native acceptance remains Pending.
 
 Prepared 2026-10-04, America/Vancouver. Scope is the existing Godot Alderwake exterior, stable Tollworks interior lighting, saved environment time/forecast and authored exterior light behavior.
 
@@ -542,3 +542,45 @@ the stale map interaction expectation now verifies exactly the three existing
 wrappers plus six W006 lamps. Historical reports/recovery are recorded in
 [W008 acceptance](W008_ACCEPTANCE.md). Schema5/content1, source hashes, renderer,
 map geometry/IDs, save shape and prior P/M gates stay unchanged. Next: W009.
+
+## W009 review and measurement decisions
+
+The reusable visual matrix uses detached debug review sessions, retained camera
+poses, real fully blended seeded forecasts and supported projection/zoom endpoints.
+Its setup, quest facts and aim marker are explicitly synthetic. Indoor profiles
+are asserted at every combination separately. Pause compares new rain-only pixels;
+the pre-existing river shader TIME is excluded from that narrow comparison.
+No production scene, art, gameplay or save shape changes are required by W009.
+
+The weather profiler inherits M018 raw cadence/draw/navigation/inventory/travel
+checks and runs the entire production root unpaused during each60s sample. Seeds
+are selected with a fully blended real period long enough for the whole window.
+Between samples only, day2/progress/seed and lamp setup reset so three repeated
+runs retain the same named condition despite the600s day. Production advancement
+and presentation remain active within measurement. Clear-day uses default lamps;
+storm/night enables all six lamps for the lighting stress case. All23 consumers,
+eight emitters, shadows/UI/AI and visible rain remain present.
+
+Both travel checkpoints reset identical view/phase/seed before10s idle. This
+prevents phase drift from masquerading as a resource difference. Two warm-up
+round trips precede ten measured further trips. Win32 working/peak set comes from
+the engine PID reported by the running script, sampled every0.25s. Fresh W009
+directories and process-local application data preserve all existing saves and
+archives. Smoke is1s/2s/one run and cannot satisfy the full10s/60s/three-run gate.
+
+Independent Python audit recomputes nearest-rank percentiles from every raw CSV,
+verifies24-case coverage/window/focus/weather/settings and memory/lifecycle
+records, and retains hashes. The launcher bounds runtime and cleans only its own
+process tree. Actual benchmark results/status belong to
+[W009 acceptance](W009_ACCEPTANCE.md); W010 package/native acceptance stays separate.
+
+W009 meets the unchanged gates with24 focused full-duration windows:12 original
+clear-day, nine subsequent town/forest/bridge storm and three fresh ford storm
+windows. Failed focus rows/attempts remain retained; complete affected case sets
+rerun at original warm-up/duration/settings. Auditor accepts only exact focused
+coverage on identical machine/settings and a fresh clean lifecycle/memory run.
+Worst p95/p99/draw are6.805ms/9.188ms/280. Final12 trips preserve resource/effect
+counts; peak442.33MiB/growth4.08MiB meet2GiB/64MiB. Foreground requests/checks and
+fail-fast belong only to the test harness; production focus gates unchanged.
+Selected capture indexes stay inside their original run to preserve path guards.
+Next eligible task: W010 only, not started.
