@@ -29,6 +29,8 @@ var light_feedback: String = ""
 var light_feedback_until: float = 0.0
 var light_feedback_instance_id: String = ""
 var debug_shortcuts_enabled: bool = false
+var environment_review: Node
+var environment_review_namespace: String = ""
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -61,6 +63,24 @@ func _ready() -> void:
 			push_error("Application initialization failed: %s" % error)
 		get_tree().quit(1)
 		return
+	# Review code lives outside release exports and is loaded only by opt-in.
+	if OS.is_debug_build():
+		for argument: String in OS.get_cmdline_user_args():
+			if argument.begins_with("--environment-review="):
+				environment_review_namespace = argument.trim_prefix("--environment-review=")
+				if environment_review_namespace.is_empty():
+					push_error("Review requires a nonempty isolated namespace")
+					get_tree().quit(1)
+					return
+		if not environment_review_namespace.is_empty():
+			environment_review = load("res://tests/environment_review.gd").new()
+			environment_review.name = "EnvironmentReview"
+			add_child(environment_review)
+			errors = environment_review.initialize(self, environment_review_namespace)
+			if not errors.is_empty():
+				push_error("Review initialization failed: " + "; ".join(errors))
+				get_tree().quit(1)
+				return
 	player_placeholder.initialize(session.actors[GameSession.PLAYER_INSTANCE_ID])
 	environment_presenter = EnvironmentPresenter.new()
 	environment_presenter.name = "EnvironmentPresenter"
@@ -117,6 +137,9 @@ func _ready() -> void:
 		return
 	print("P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.")
 	print("P002: %d definitions validated; player instance '%s' initialized." % [catalog.definition_count(), player_placeholder.state.instance_id])
+	if environment_review != null:
+		_set_paused(true)
+		environment_review.apply_preset(0, WeatherSchedule.Condition.SUNNY)
 	if OS.is_debug_build():
 		for argument: String in OS.get_cmdline_user_args():
 			if argument.begins_with("--playtest-dir="):
@@ -127,9 +150,11 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if not session.initialized or player_placeholder.state == null:
+		return
 	if world_host.current_location is AlderwakeTerrainPreview and not world_host.transitioning:
 		(world_host.current_location as AlderwakeTerrainPreview).tree_art.update_visibility(camera_rig.camera, player_placeholder, companion)
-	if not get_tree().paused and not world_host.transitioning:
+	if not get_tree().paused and not world_host.transitioning and not loading_save and not retrying:
 		session.advance(delta)
 		_present_environment()
 		ui.show_play_time(session.elapsed_play_seconds)
@@ -138,10 +163,13 @@ func _process(delta: float) -> void:
 	ui.show_debug_time(session.environment.day_cycle_progress)
 	if is_instance_valid(companion):
 		ui.show_companion(companion.state, companion_ai.mode, session.relationship.trust)
-	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
+	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
 func _input(event: InputEvent) -> void:
+	if environment_review != null and environment_review.handle_input(event):
+		get_viewport().set_input_as_handled()
+		return
 	if ui.settings_open() and event.is_action_pressed("pause") and not event.is_echo():
 		ui.show_settings(false)
 		get_viewport().set_input_as_handled()
@@ -278,11 +306,12 @@ func _update_controls() -> void:
 		guardian_ai.enabled = guardian.combat_enabled
 		if not guardian.combat_enabled:
 			guardian.clear_input()
-	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
+	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
 func _on_transition_started() -> void:
 	light_feedback = ""
+	light_feedback_instance_id = ""
 	companion_ai.reset_route()
 	companion.combat_targets.clear()
 	companion_ai.enemy = null
@@ -346,18 +375,22 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 
 
 func _present_environment() -> void:
-	if environment_presenter != null and world_host.current_location != null and not world_host.transitioning:
+	if environment_presenter != null and world_host.current_location != null and not world_host.transitioning and world_host.session == session and world_host.current_location.location_id == session.current_location_id:
 		var definition: LocationDefinition = catalog.get_location(session.current_location_id)
 		var environment: EnvironmentState = session.environment
 		var seconds: float = (environment.day_index + environment.day_cycle_progress) * EnvironmentClock.CYCLE_SECONDS
-		var weather: WeatherVisuals.Sample = WeatherVisuals.sample(environment.weather_sample(), environment.weather_seed, seconds)
+		var forecast: WeatherSchedule.Sample = session.weather_conditions.sample()
+		var weather: WeatherVisuals.Sample = WeatherVisuals.sample(forecast, environment.weather_seed, seconds)
 		environment_presenter.present(definition.lighting_profile, environment.day_cycle_progress, weather)
+		ui.show_environment(environment.day_cycle_progress, forecast.condition)
 		if world_host.current_location is AlderwakeExterior:
 			(world_host.current_location as AlderwakeExterior).world_rain.present(weather, camera_rig.camera)
 			(world_host.current_location as AlderwakeExterior).exterior_lights.present(session.environment, player_placeholder.global_position)
 
 
 func _save_boundary_errors() -> PackedStringArray:
+	if session.review_only:
+		return PackedStringArray(["developer environment review cannot Save/Load; restart without review flag for normal play"])
 	if not _combat_stable():
 		return PackedStringArray(["save/load requires living hero outside combat/action windows; retreat or retry first"])
 	if journal_open:

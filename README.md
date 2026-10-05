@@ -1,15 +1,16 @@
 # Returning Fair prototype
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
-W001-W007 verified; W008 next. Clock/seed/cached forecast rules run through
+W001-W008 verified; W009 next. Clock/seed/cached forecast rules run through
 the existing session gate and schema v5 saves retain environment/light facts.
 Moving sun and smooth day/dusk/navy-night/dawn lighting now apply outdoors;
 Tollworks keeps its stable indoor profile while the global clock advances.
 All23 exterior sources have independent lamp/window/waylight/net visuals and
 bounded local illumination. Six lamps support persistent E switching.
 Smooth clouds, fixed-world rain with terrain/roof exclusion and bounded lightning
-now render from saved forecast/time and freeze on pause. Final lifecycle/HUD,
-measured weather performance and native feature acceptance remain W008-W010.
+now render from saved forecast/time and freeze on pause. Committed time/weather
+HUD, lifecycle/rollback/teardown and isolated developer review controls are verified.
+Measured weather performance and native feature acceptance remain W009-W010.
 Durable agent context lives in current state,
 contracts,
 checklists, source/tests and pinned references. Generated captures/logs under
@@ -99,6 +100,12 @@ does not simulate an hour of combat or add to elapsed play time. The shortcut
 ignores key repeats and is blocked during pause, dialogue, journal, travel,
 loading, defeat/retry or window/GUI focus loss. Normal startup defaults both
 settings off. Time skips change the clock facts included in ordinary run saves.
+Header shows global time/weather, including indoors; hover for active play seconds.
+For explicitly synthetic debug reviews, launch with
+`--environment-review=<safe-name>`: an independent session starts paused, F7 cycles
+day/dusk/night/dawn and F8 cycles weather. Review Save/Load is disabled, including
+repository writes; restart without the flag for normal play. This controller is
+excluded from release exports and does not complete native acceptance.
 WASD moves relative to camera; mouse faces cyan ground marker. P switches between
 orthographic (provisional default) and 45° perspective. Wheel or +/- zooms between
 0.8 and 1.15 framing factors. Walls/plinth block movement; diagonals retain normal

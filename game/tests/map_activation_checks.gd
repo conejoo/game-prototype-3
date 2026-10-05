@@ -3,11 +3,15 @@ extends SceneTree
 var failures: PackedStringArray = []
 var guide: Array[Dictionary] = []
 var game: Node3D
+var report_directory: String = ""
 
 func _initialize() -> void:
 	_run.call_deferred()
 
 func _run() -> void:
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--report-dir="):
+			report_directory = argument.trim_prefix("--report-dir=")
 	game = load("res://app/game_root.tscn").instantiate()
 	root.add_child(game)
 	var arrival: Array = await game.world_host.transition_finished
@@ -19,7 +23,10 @@ func _run() -> void:
 	var ids: PackedStringArray = []
 	for target: PrototypeInteractable in room.interactables():
 		ids.append(target.instance_id)
-	_check(ids.size() == 3 and "npc-03-counter" in ids and "alderwake-temporary-companion" in ids and "alderwake-travel-gate" in ids, "Duplicated/missing/inactive interactions")
+	var expected: PackedStringArray = ["npc-03-counter", "alderwake-temporary-companion", "alderwake-travel-gate", "dock-lamp-01", "dock-lamp-02", "dock-lamp-03", "dock-lamp-04", "dock-lamp-05", "dock-row-lamp-01"]
+	ids.sort()
+	expected.sort()
+	_check(ids == expected, "Duplicated/missing/inactive interactions")
 	_check(room.get_node("MarisCounter").position == Vector3(-7.5, 0, 11), "Maris source foot changed")
 	_check(room.get_node("TravelGate").position == Vector3(107.25, 0, -1.25) and room.destination_id == "prototype-tollworks" and room.destination_spawn_id == "tollworks-from-alderwake", "Single mapped gate wrong")
 	for pad: Vector3 in room.town.portal_pads.values():
@@ -88,12 +95,14 @@ func _run() -> void:
 	game.world_host.request_transition("prototype-alderwake","alderwake-from-tollworks")
 	await game.world_host.transition_finished
 	_check(game.party.members().size() == 2 and game.world_host.get_child_count() == 1 and game.session.completed_effect_ids.is_empty(), "Travel duplicates actors or grants progress")
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://../docs/evidence/M015"))
-	var output: FileAccess = FileAccess.open("res://../docs/evidence/M015/tour-guide.json",FileAccess.WRITE)
-	output.store_string(JSON.stringify(guide,"\t")+"\n")
-	output.close()
-	output = FileAccess.open("res://../docs/evidence/M015/activation-report.json",FileAccess.WRITE)
-	output.store_string(JSON.stringify({"failures":failures,"capsule_samples":samples,"interactions":ids,"navigation":nav_report},"\t")+"\n")
+	if not report_directory.is_empty():
+		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(report_directory))
+		var output: FileAccess = FileAccess.open(report_directory.path_join("tour-guide.json"),FileAccess.WRITE)
+		output.store_string(JSON.stringify(guide,"\t")+"\n")
+		output.close()
+		output = FileAccess.open(report_directory.path_join("activation-report.json"),FileAccess.WRITE)
+		output.store_string(JSON.stringify({"failures":failures,"capsule_samples":samples,"interactions":ids,"navigation":nav_report},"\t")+"\n")
+		output.close()
 	game.queue_free()
 	await process_frame
 	for failure: String in failures:

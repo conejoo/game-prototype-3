@@ -147,7 +147,11 @@ func _refresh_pause_focus() -> void:
 
 
 func show_play_time(seconds: float) -> void:
-	time_label.text = "Play time %03ds" % int(seconds)
+	time_label.tooltip_text = "Active play: %ds" % int(seconds)
+
+
+func show_environment(progress: float, condition: WeatherSchedule.Condition) -> void:
+	time_label.text = EnvironmentClock.format_time(progress) + "\n" + WeatherConditionService.display_name(condition)
 
 
 func accepts_world_pointer(point: Vector2) -> bool:

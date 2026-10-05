@@ -31,6 +31,8 @@ func read(catalog: ContentCatalog) -> ReadResult:
 
 
 func write(run: GameSession, catalog: ContentCatalog) -> PackedStringArray:
+	if run != null and run.review_only:
+		return PackedStringArray(["developer environment review cannot be saved"])
 	var snapshot: Dictionary = SaveCodec.snapshot(run)
 	var candidate: SaveCodec.DecodeResult = SaveCodec.validate(snapshot, catalog)
 	if not candidate.errors.is_empty():

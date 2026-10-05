@@ -107,7 +107,8 @@ try {
     if (-not (Invoke-OwnedGodot 'engine-version' @('--headless','--version'))) { throw 'Engine preflight failed.' }
     if ($Import -and -not (Invoke-OwnedGodot 'import' @('--headless','--editor','--path',(Join-Path $projectRoot 'game'),'--import','--quit') $true)) { throw 'Import failed.' }
     foreach ($script in $scripts) {
-        $null = Invoke-OwnedGodot ($script.Substring(12).Replace('.gd','')) @('--headless','--path',(Join-Path $projectRoot 'game'),'--script',$script,'--',('--save-slot=' + $report.save_slot))
+        $checkLabel = $script.Substring(12).Replace('.gd','')
+        $null = Invoke-OwnedGodot $checkLabel @('--headless','--path',(Join-Path $projectRoot 'game'),'--script',$script,'--',('--save-slot=' + $report.save_slot),("--report-dir=res://../docs/evidence/$Task/$runId/checks/$checkLabel"))
     }
     if ($render) {
         foreach ($phase in $phases) {

@@ -2,7 +2,7 @@
 
 This checklist brings the existing weather, day clock and interactive exterior lights into the Returning Fair Godot prototype. It is the task authority for this workflow. Each fresh agent completes or resumes exactly one task, then writes a handoff for the next session.
 
-Prepared 2026-10-04, America/Vancouver. W001-W007 verified Done; W008-W010 remain Pending. Production clock/forecast rules and environment saves are implemented; moving outdoor lighting is verified; exterior consumers, persistent E switching and clouds/rain/lightning are verified; final lifecycle/HUD, performance and native acceptance remain later work. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
+Prepared 2026-10-04, America/Vancouver. W001-W008 verified Done; W009-W010 remain Pending. Production clock/forecast, environment saves, moving outdoor lighting, exterior consumers, persistent E switching, clouds/rain/lightning, lifecycle/HUD and isolated review controls are verified; measured performance and native acceptance remain later work. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
 
 Read [the contract](CONTRACT.md), [current state](CURRENT_STATE.md) and [agent prompt](AGENT_PROMPT.md). The target is `D:/development/game-dev-blender/returning-fair-prototype`; the Godot project is its `game/` directory. The source `D:/development/game-prototype-2` is read-only.
 
@@ -31,7 +31,7 @@ Statuses: Pending, In progress, Blocked, Done. `[ ]` means not complete; `[x]` m
 | W005 | Done | W004 | Exterior light assets and source bindings |
 | W006 | Done | W005 | Persistent E key light switching |
 | W007 | Done | W006 | Clouds, world anchored rain and lightning |
-| W008 | Pending | W007 | Lifecycle integration, HUD and isolated review controls |
+| W008 | Done | W007 | Lifecycle integration, HUD and isolated review controls |
 | W009 | Pending | W008 | Visual matrix, regressions and measured performance |
 | W010 | Pending | W009 | Packaged Windows and native acceptance |
 
@@ -118,7 +118,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W008 Lifecycle HUD and isolated review controls
 
-- [ ] Done. Status: Pending. Depends: W007.
+- [x] Done. Status: Done. Depends: W007. Evidence: [W008 acceptance](W008_ACCEPTANCE.md), 157 lifecycle assertions, affected regressions, exact GUI restart and 14 accepted rendered views.
 - Finish hydration, save restore, safe travel commit/rollback, retry, repeated room replacement and teardown integration for clock/lights/weather.
 - Bind the presented environment only to a committed session/location. Retire stale listeners, resources and interaction targets.
 - Add compact time/condition HUD and light-action feedback. Avoid turning production UI into an implementation dashboard.
@@ -299,3 +299,21 @@ audits pass. [Commands, decisions, repairs and limits](W007_ACCEPTANCE.md).
 Initial dirty W006/testing work and normal saves preserved; failures retained.
 Synthetic review/viewport input does not prove native release or performance.
 All owned Godot processes exited; Blender untouched. Next: W008 only; not started.
+
+W008 - completed 2026-10-04 (America/Vancouver)
+
+Result: committed clock/condition HUD, existing E light feedback, read-only
+condition service and debug-only detached review sessions with isolated namespaces
+and repository/root save refusal. Pause F7/F8 cycles real seeded phase/condition
+presets; normal startup/release paths compose no review controller. Startup/load,
+unsafe travel/load rollback, retry, focus, repeated room/resource cleanup and root
+teardown pass 157 assertions plus actual CLI child. W007 193,417, lighting30,053,
+codec517, switches151, save/dialogue/camera/map/startup and ten-travel regressions
+pass; five historical v4 fixtures pass in separate writer/reader processes.
+Actual GUI Tab/Enter Save -> new process Load restores exact snapshot/forecast;
+E travel/return and 14 accepted960x640 images inspected. Runner32 checks and
+reference/link/UID/status/diff audits pass; runtime exits0/scans clean. Import
+retains known missing .NET SDK10.0.9. Stale map interaction assertion/report paths
+repaired; historical report recovery and all failed runs documented in
+[acceptance](W008_ACCEPTANCE.md). No benchmark/native/package claim or next task
+started. Normal saves untouched; owned processes exited. Next: W009 only.

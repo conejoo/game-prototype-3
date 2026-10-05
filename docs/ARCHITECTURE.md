@@ -635,3 +635,22 @@ one mesh/material per location and are released with that location. Tollworks
 retains stable lighting without outdoor rain/flash. W007 verifies current rules,
 rendering, pause and exact GUI process-restart reconstruction. W008 lifecycle/HUD,
 W009 measured feature performance and W010 native packages remain future work.
+
+### Delivered environment lifecycle and HUD (W008)
+
+GameRoot presents time/condition and lighting/weather only for matching committed
+session/location ownership, including paused arrival/restore. Failed candidates
+retain previous facts and presentation; load/retry gaps freeze the existing clock.
+Repeated room replacement releases rain meshes/materials/targets and retains one
+root presenter. GameSession exposes a read-only WeatherConditionService with
+detached forecast queries and derived thunderstorm-only heavy-rain; no routine
+or authored event is implemented. Header time/weather replaces elapsed seconds,
+which remain a tooltip; existing E feedback remains the light command display.
+
+Explicit debug --environment-review=<namespace> loads a test-only controller
+before actor/service binding, validates a detached clone, starts paused and uses
+an isolated namespace. Save/Load and repository writes reject transient review
+provenance; release exports exclude the controller. Paused F7/F8 selects real
+seeded phase/condition presets with a synthetic marker. Normal settings/F6/save
+behavior remains separate. W008 verifies lifecycle and GPU/GUI integration;
+W009 performance/full visual matrix and W010 native release remain pending.

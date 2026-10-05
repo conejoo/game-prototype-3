@@ -1,6 +1,6 @@
 # Weather and interactive lighting migration contract
 
-This is the verified design for the W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Proposed runtime filenames are suggestions until implemented; runtime weather through W007 is now implemented and verified in its acceptance record.
+This is the verified design for the W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Proposed runtime filenames are suggestions until implemented; runtime weather and lifecycle/HUD through W008 are implemented and verified in their acceptance records.
 
 Prepared 2026-10-04, America/Vancouver. Scope is the existing Godot Alderwake exterior, stable Tollworks interior lighting, saved environment time/forecast and authored exterior light behavior.
 
@@ -506,3 +506,39 @@ eight focused regressions and66 inspected real images in both projections. Exact
 Save/new-process GUI Load restores forecast and all weather render values. These
 synthetic review facts/poses do not claim normal/native quest, full W009 visual
 matrix/frame budgets or W010 packages. Next task is W008, not started.
+
+## W008 implementation decisions
+
+GameSession owns WeatherConditionService bound to its EnvironmentState; UI and
+future routine consumers can query detached samples/condition IDs/heavy-rain
+without owning facts, timers, scene nodes or events. Each validated restored
+session initializes its own binding. Heavy-rain remains thunderstorm-only.
+
+GameRoot hydrates the existing presenter, compact time/weather HUD and exterior
+consumers only when WorldHost session/location match the committed run. Load/retry
+gaps explicitly gate advancement; existing focus/modal/indoor behavior is retained.
+Transition start clears light feedback identity along with transient targets.
+Header replaces elapsed seconds with source-format time and readable condition;
+elapsed play remains a tooltip. Indoor HUD describes global weather, not indoor rain.
+
+Explicit debug --environment-review=<1..48 ASCII letters/digits/underscore/hyphen>
+loads tests/environment_review.gd, outside release exports. Before root binding,
+the controller validates a detached snapshot clone, marks transient review_only,
+uses user://environment-review/<namespace>/disabled.json and starts paused. Root
+Save/Load and SaveRepository.write reject review provenance; it is never serialized.
+Save/Load buttons disable while Resume stays available. Restart without the flag
+returns to ordinary fresh play; no review-to-normal save conversion exists.
+
+Paused, focused F7/F8 cycle Day/Dusk/Night/Dawn at progress .05/.375/.625/.875
+and the four conditions. Presets use day2 and the first seed below10000 whose real
+forecast is fully blended at that phase; no alternate forced forecast enters
+production sampling. Resumed/modal/travel/load/retry review requests reject.
+The synthetic marker sits above the footer, beneath modal menus. These controls
+prepare W009 reviews but do not themselves certify its full matrix/performance.
+
+Map regression checks accept fresh --report-dir paths; runner now supplies a
+per-check W evidence directory. Fixed historical report writes were removed and
+the stale map interaction expectation now verifies exactly the three existing
+wrappers plus six W006 lamps. Historical reports/recovery are recorded in
+[W008 acceptance](W008_ACCEPTANCE.md). Schema5/content1, source hashes, renderer,
+map geometry/IDs, save shape and prior P/M gates stay unchanged. Next: W009.

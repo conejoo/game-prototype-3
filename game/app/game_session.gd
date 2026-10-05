@@ -13,6 +13,9 @@ var completed_effect_ids: PackedStringArray = []
 var relationship: RelationshipState = RelationshipState.new()
 var progression: ProgressionState = ProgressionState.new()
 var environment: EnvironmentState = EnvironmentState.new()
+var weather_conditions: WeatherConditionService = WeatherConditionService.new()
+# Transient developer provenance, never a save field.
+var review_only: bool = false
 
 const PLAYER_INSTANCE_ID: String = "party-player"
 const COMPANION_INSTANCE_ID: String = "party-companion"
@@ -48,6 +51,7 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 		quests[definition.stable_id] = QuestState.new()
 	# Decoding supplies validated facts; it never generates a replacement seed.
 	environment = EnvironmentState.fresh() if restored_environment == null else restored_environment
+	weather_conditions.bind_environment(environment)
 	initialized = true
 	return errors
 

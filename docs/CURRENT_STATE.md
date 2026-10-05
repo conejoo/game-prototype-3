@@ -1,7 +1,7 @@
 # Current prototype state
 
 Updated 2026-10-04. P001-P014 and map M001-M019 complete. Current feature workflow:
-[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W007 Done, W008 next.
+[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W008 Done, W009 next.
 Typed clock/seed/cached forecast now advance through the existing session gate.
 Schema5/content1 retains exact environment time/seed and six validated lantern
 overrides; exact v1-v4 migrate without losing prior facts or rewriting files.
@@ -20,7 +20,7 @@ Forecast-driven overcast, world-anchored terrain/roof-excluded rain and bounded
 lightning now pass W007193,417 checks and66 inspected rendered captures. Pause
 rain pixels freeze; actual GUI Save/new-process Load restores exact storm phase/
 flash. Tollworks retains stable appearance and excludes weather; rain owner frees
-on travel. W008 lifecycle/HUD, W009 performance and W010 native feature acceptance
+on travel. W008 lifecycle/HUD/review isolation is verified; W009 performance and W010 native feature acceptance
 remain Pending; historical packages unchanged. See W007 acceptance for scope,
 commands, isolated appdata and retained failures.
 
@@ -89,3 +89,11 @@ Weather W007 follow-up (2026-10-04): final rule/renderer checks and eight affect
 regressions pass; initial W006/testing dirty work preserved. Checklists/contract/
 handoff reconciled. All owned game processes exited, normal saves/user Blender
 untouched. Next eligible W008 only; no next task started.
+
+Weather W008 completed (2026-10-04): committed time/weather HUD, read-only condition
+service and isolated debug review controls. Lifecycle157 and actual CLI checks,
+affected save/map/input/travel regressions and exact GUI process restart pass.
+Fourteen accepted rendered views inspected; review saves refuse at root/repository.
+Legacy map report-path/interaction fixtures repaired; historical report recovery
+recorded in W008 acceptance. No W009 benchmark or W010 package started.
+Next eligible W009 only; normal saves untouched and owned processes exited.
