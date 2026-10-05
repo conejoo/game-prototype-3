@@ -2,7 +2,7 @@
 
 This checklist brings the existing weather, day clock and interactive exterior lights into the Returning Fair Godot prototype. It is the task authority for this workflow. Each fresh agent completes or resumes exactly one task, then writes a handoff for the next session.
 
-Prepared 2026-10-04, America/Vancouver. W001-W009 verified Done; W010 Pending. Production clock/forecast, environment saves, moving outdoor lighting, exterior consumers, persistent E switching, clouds/rain/lightning, lifecycle/HUD, isolated review controls, visual regressions and measured performance are verified; packaged/native acceptance remains W010. P001-P014 and map M001-M019 are recorded complete in their own handoffs; that historical release does not certify this future feature.
+Prepared 2026-10-04, America/Vancouver. W001-W010 verified Done; no next item. Production clock/forecast, environment saves, moving outdoor lighting, exterior consumers, persistent E switching, clouds/rain/lightning, lifecycle/HUD, isolated review controls, visual regressions, measured performance and fresh packaged/native acceptance are verified. P001-P014 and map M001-M019 completion/evidence remain preserved as historical baselines.
 
 Read [the contract](CONTRACT.md), [current state](CURRENT_STATE.md) and [agent prompt](AGENT_PROMPT.md). The target is `D:/development/game-dev-blender/returning-fair-prototype`; the Godot project is its `game/` directory. The source `D:/development/game-prototype-2` is read-only.
 
@@ -33,7 +33,7 @@ Statuses: Pending, In progress, Blocked, Done. `[ ]` means not complete; `[x]` m
 | W007 | Done | W006 | Clouds, world anchored rain and lightning |
 | W008 | Done | W007 | Lifecycle integration, HUD and isolated review controls |
 | W009 | Done | W008 | Visual matrix, regressions and measured performance |
-| W010 | Pending | W009 | Packaged Windows and native acceptance |
+| W010 | Done | W009 | Packaged Windows and native acceptance |
 
 Dependencies are deliberately sequential. The first playable lighting checkpoint is W006; the full feature requires W010.
 
@@ -141,7 +141,7 @@ Dependencies are deliberately sequential. The first playable lighting checkpoint
 
 ## W010 Packaged Windows and native acceptance
 
-- [ ] Done. Status: Pending. Depends: W009.
+- [x] Done. Status: Done. Depends: W009. Evidence: [W010 acceptance](W010_ACCEPTANCE.md), fresh exports/pack audits/outside startup and ordinary native recovery with exact GUI process restart.
 - Rebuild Windows Validation and Windows Desktop using existing presets/templates. Preserve historical M019 packages/evidence needed for comparison; identify the new package hashes.
 - Audit packaged assets/scripts and startup from outside the source checkout. Runtime must not depend on the read-only Flutter folder or local authoring files.
 - Use ordinary native input for a fresh recovery journey, lamp switching, GUI Save, quit, separate process GUI Load and revisit. Demonstrate restored clock, seed/forecast, independent lamp choices and existing quest/party facts.
@@ -353,3 +353,26 @@ import diagnostic remains. [Commands, selections, repairs and limits](W009_ACCEP
 Normal saves/P/M archives/Blender preserved; all owned Godot processes exited.
 Native Windows/package acceptance remains unrun W010 scope. Next: W010 only;
 not started.
+
+W010 - completed 2026-10-04 (America/Vancouver)
+
+Result: both existing Windows presets rebuilt with retained standard4.7.2 templates;
+old packages/override archived, new hashes recorded. Catalog/pinned layout/23-source
+registry/schema5/four imported kits/Compatibility audits pass; release tests absent.
+Both standalone executables start outside checkout, exit0 and runtime scans clean.
+Native release writer24704/reader27408 use only ordinary input/read-only trace:
+fresh trust/lead/Strike, independent lamps, Moonwell/ford/bridge, guardian/vessel/
+return/fitting/service, GUI Save/quit/separate GUI Load and native cleared revisit.
+Exact whole-file and typed snapshot/forecast restart; seed627001559 retained,
+Clear/Cloudy/Rain/Cloudy and daylight/night progression genuine. Lamp04-on/Row-off,
+hero75/ally25, trust1/upgrade/all six effects/steps retained.352 guarded requests,
+80 actual960x640 images/seven sheets inspected; both normal exits0/log scans clean.
+Import and focused environment/save/switch/recovery/combat/extension/settings/map/
+camera/travel checks pass after narrow settings child evidence-path repair.
+Failed child/relative-planner attempts and original captions kept; fresh captions
+correct three paused labels. Reference/script/link/status/package/intended CRLF-aware
+diff audits pass. Known editor missing .NET SDK10.0.9 diagnostic remains; standard
+GDScript packages run clean. [Commands, hashes, provenance and limits](W010_ACCEPTANCE.md).
+Normal saves/P/M archives/user Blender preserved; all owned Godot processes exited.
+No production/source/art/renderer change, commit, publication or installation.
+W001-W010 Done. Next eligible task: none; workflow complete.

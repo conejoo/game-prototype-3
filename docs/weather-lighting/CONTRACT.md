@@ -1,6 +1,6 @@
 # Weather and interactive lighting migration contract
 
-This is the verified design for the W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Proposed runtime filenames are suggestions until implemented; runtime weather/lifecycle/HUD through W008 and W009 visual/performance gates are verified in their acceptance records. W010 package/native acceptance remains Pending.
+This is the verified design for the completed W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Runtime weather/lifecycle/HUD, W009 visual/performance gates and W010 package/native acceptance are verified in their acceptance records. All tasks Done; no next item. Earlier task-specific scope/next statements below describe their historical completion boundaries.
 
 Prepared 2026-10-04, America/Vancouver. Scope is the existing Godot Alderwake exterior, stable Tollworks interior lighting, saved environment time/forecast and authored exterior light behavior.
 
@@ -584,3 +584,31 @@ counts; peak442.33MiB/growth4.08MiB meet2GiB/64MiB. Foreground requests/checks a
 fail-fast belong only to the test harness; production focus gates unchanged.
 Selected capture indexes stay inside their original run to preserve path guards.
 Next eligible task: W010 only, not started.
+
+## W010 release acceptance decisions
+
+Both existing presets use retained official standard4.7.2 templates, target-local
+assets and Compatibility. No production runtime/art/preset/source contract changed.
+New exports replace only local package files after audit; original M019 packages
+and override remain archived. Release excludes tests/review controller; packaged
+startup works outside checkout without authoring files or Flutter dependencies.
+Hashes and exact commands are in [W010 acceptance](W010_ACCEPTANCE.md).
+
+Native release isolation requires separate APPDATA/LOCALAPPDATA and verified
+adjacent override.cfg; --save-slot is debug-only. Actual writer/reader release
+processes use ordinary native input and read-only movement traces, with no bridge,
+review controller, forced clock/weather or injected quest/party facts. External
+navigation guidance is synthetic planning, not proof; all journey positions are
+reached physically. Existing arrival-anchor/manual Save/Load behavior preserved.
+
+Whole-file byte comparison and typed release-pack decode verify exact schema5/
+content1 snapshot plus seed/time-derived forecast across GUI restart. Native
+revisit comparison excludes only naturally advanced clock/elapsed, retaining
+every other durable fact; strict restart excludes nothing. Independent lamp
+choices and all existing quest/party facts survive native room/restart boundaries.
+W009 rare-weather matrix/performance evidence remains separate. W010 normal
+Clear/Cloudy/Rain/Cloudy progression completes packaged/native scope.
+
+All W001-W010 Done; no next task. Historical P/M/W evidence and normal saves kept;
+all owned game processes exited. Known editor missing .NET SDK diagnostic remains,
+but standard GDScript exports/startups/native logs pass cleanly.

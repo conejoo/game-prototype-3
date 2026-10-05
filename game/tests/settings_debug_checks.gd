@@ -134,7 +134,7 @@ func _run() -> void:
 	game._set_debug_shortcuts_enabled(false)
 	# Separate process verifies actual startup flag, then disabling it via GUI.
 	var output: Array = []
-	var code: int = OS.execute(OS.get_executable_path(), PackedStringArray(["--headless", "--path", ProjectSettings.globalize_path("res://"), "--script", "res://tests/settings_debug_checks.gd", "--", "--debug-shortcuts", "--flag-only", "--save-slot=settings-debug-flag"]), output, true)
+	var code: int = OS.execute(OS.get_executable_path(), PackedStringArray(["--headless", "--path", ProjectSettings.globalize_path("res://"), "--script", "res://tests/settings_debug_checks.gd", "--", "--debug-shortcuts", "--flag-only", "--save-slot=settings-debug-flag", "--report-dir=" + directory]), output, true)
 	_check(code == 0 and not str(output).contains("SCRIPT ERROR") and not str(output).contains("ERROR:"), "Flag subprocess failed: " + str(output))
 	await _finish()
 
@@ -197,7 +197,8 @@ func _finish() -> void:
 	await process_frame
 	paused = false
 	if not directory.is_empty():
-		var file: FileAccess = FileAccess.open(TestRunEvidence.path("settings-index.json"), FileAccess.WRITE)
+		var filename: String = "settings-flag-index.json" if "--flag-only" in OS.get_cmdline_user_args() else "settings-index.json"
+		var file: FileAccess = FileAccess.open(TestRunEvidence.path(filename), FileAccess.WRITE)
 		file.store_string(JSON.stringify({"views":views, "failures":failures}, "\t", true, true))
 	for failure: String in failures:
 		push_error(failure)

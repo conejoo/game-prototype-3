@@ -1,7 +1,7 @@
 # Returning Fair prototype
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
-W001-W008 verified; W009 next. Clock/seed/cached forecast rules run through
+W001-W010 verified Done; no next item. Clock/seed/cached forecast rules run through
 the existing session gate and schema v5 saves retain environment/light facts.
 Moving sun and smooth day/dusk/navy-night/dawn lighting now apply outdoors;
 Tollworks keeps its stable indoor profile while the global clock advances.
@@ -10,7 +10,9 @@ bounded local illumination. Six lamps support persistent E switching.
 Smooth clouds, fixed-world rain with terrain/roof exclusion and bounded lightning
 now render from saved forecast/time and freeze on pause. Committed time/weather
 HUD, lifecycle/rollback/teardown and isolated developer review controls are verified.
-Measured weather performance and native feature acceptance remain W009-W010.
+Measured weather performance and fresh Windows/native feature acceptance pass.
+[W010 acceptance](docs/weather-lighting/W010_ACCEPTANCE.md) records package hashes,
+ordinary recovery/lamp controls and exact GUI Save/restart/Load persistence.
 Durable agent context lives in current state,
 contracts,
 checklists, source/tests and pinned references. Generated captures/logs under
@@ -269,12 +271,12 @@ VisualRoots; Godot retains collision/navigation/IDs. Focused checks:
 No further item defined in the prototype checklist. Read
 [current state](docs/CURRENT_STATE.md) before work.
 
-## Local Windows exports (P014 complete)
+## Local Windows exports (W010 verified)
 
 `game/export_presets.cfg`: Windows Desktop (release, tests excluded) and Windows
-Validation (debug, input bridge only). Official standard 4.7.2 template executables
+Validation (debug, existing review/input test tools). Official standard 4.7.2 template executables
 are extracted under ignored `builds/p014/templates`; pure GDScript needs no C#
-runtime/SDK. Package/version/hash records: P014 validation (optional local archive).
+runtime/SDK. Current package/version/hash records: [W010 acceptance](docs/weather-lighting/W010_ACCEPTANCE.md).
 No system template install. From project root, using console executable above:
 
 ```powershell
@@ -286,12 +288,15 @@ Keep each `.exe` beside matching `.pck`. Run directly without editor or `--path 
 Debug export completed normal slice and restored/revisited progress in new processes.
 Native release full slice, GUI save/process restart/load, replay and room revisit
 passed using project-local Windows SendInput holds; both normal quits exit0.
-Final release evidence (optional local archive) records
-actual timing, pause checkpoints and limits. No build published.
+Fresh W010 release also passes independent lamps, genuine clock/weather progression,
+exact environment/forecast/party/quest restoration and restored service revisit.
+Raw W010 evidence remains optional local archive; P014/M019 packages and evidence
+preserved. No build published.
 
 Current local release directory contains `override.cfg`, isolating validation saves
-under `%APPDATA%/ReturningFair-P014-ReleaseValidation/saves`. Keep it for isolated
-playtests; normal slot stays untouched. File lives outside source/export tree.
+under `%APPDATA%/ReturningFair-P014-ReleaseValidation/saves`. Keep it and set separate
+APPDATA/LOCALAPPDATA for each validation session; W010 native tooling records and
+verifies these paths. Normal slot stays untouched. File lives outside source/export tree.
 Without override, release uses normal application directory; it ignores debug
 `--save-slot`. Text-resource conversion is disabled after binary exports lost
 packed spawn/dialogue arrays. Isolated extension fixture remains only under tests.

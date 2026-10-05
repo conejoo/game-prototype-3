@@ -653,4 +653,23 @@ an isolated namespace. Save/Load and repository writes reject transient review
 provenance; release exports exclude the controller. Paused F7/F8 selects real
 seeded phase/condition presets with a synthetic marker. Normal settings/F6/save
 behavior remains separate. W008 verifies lifecycle and GPU/GUI integration;
-W009 performance/full visual matrix and W010 native release remain pending.
+W009 performance/full visual matrix and W010 native release are verified below.
+
+### Delivered environment release acceptance (W009-W010)
+
+W009 verifies the full phase/weather/projection/zoom matrix, pause/rollback and
+indoor exclusion, plus M018-equivalent three-run measurements at four views in
+clear day and worst storm/night. All frame/draw gates pass with stable resources
+after repeated travel. [W009 acceptance](weather-lighting/W009_ACCEPTANCE.md)
+records methods and limits; synthetic presets remain separate from native proof.
+
+Both existing Windows presets now package schema5/environment/lights/weather/HUD
+with target-local assets and Compatibility. Release excludes test controllers;
+direct startup outside checkout passes. Ordinary native release recovery,
+independent E lamps, natural clock/weather, GUI Save/quit/separate GUI Load and
+actual room/service revisits pass with exact whole-save and typed forecast restore.
+No runtime ownership or save contract changed for this acceptance task. Standard
+GDScript templates need no .NET SDK; verified separate APPDATA/LOCALAPPDATA and
+adjacent release override preserve normal saves. [W010 acceptance](weather-lighting/W010_ACCEPTANCE.md)
+records new package identities, isolated evidence, clean runtime exits and retained
+historical packages. W001-W010 complete; no next workflow item.

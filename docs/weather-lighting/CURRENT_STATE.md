@@ -1,103 +1,84 @@
 # Current weather and lighting state
 
-Updated 2026-10-04 (America/Vancouver). W001-W009 Done; W010 Pending.
-Exactly W009 selected/completed this session. Next eligible W010 only; not started.
-Read CHECKLIST, CONTRACT and AGENT_PROMPT. Initial Git tree clean; no nested AGENTS.
-Installed Godot paths verified; user Blender2664 and existing MCP helpers preserved.
-All owned Godot processes exited; no held native input or live test editor.
+Updated 2026-10-04 (America/Vancouver). W001-W010 verified Done. Exactly W010
+completed this session; no next task. Feature workflow complete: stop when reusing
+the agent prompt unless the user authorizes new work. Initial Git tree clean;
+historical P/M/W records and local archives preserved.
 
-## W009 result and changed files
+## Completed W010
 
-[W009 acceptance](W009_ACCEPTANCE.md) contains every criterion, command, failed
-attempt, focused retest, isolation path and raw selection. No failed/unrun W009
-criterion remains. Production behavior, assets, renderer, schema5/content1,
-geography/IDs/physics/navigation and normal saves unchanged. Parent architecture/
-README/state need no production-behavior edits. P001-P014/M001-M019 and prior
-[user-requested testing improvements](../TESTING_TOOLS_IMPROVEMENTS.md) preserved.
+Both Windows presets rebuilt with existing official standard4.7.2 templates.
+Old packages and unchanged release override archived under
+`builds/weather-lighting/W010/20261005-043344-61e32d70/previous-packages`.
+New packages promoted to existing `builds/windows` and `builds/windows-validation`.
+Pack catalogs/layout/schema5/23 lights/four environment imports/Compatibility
+verified; tests excluded from release, no authoring/Flutter files. Both executables
+start directly outside checkout, normal party2 arrival, exit0/clean runtime scans.
+All hashes/commands/PIDs/criteria: [W010 acceptance](W010_ACCEPTANCE.md).
 
-- game/tests/weather_visual_matrix.gd/.gd.uid: detached review;256 exterior
-  phase/weather/view/projection/zoom combinations; eight night combat, eight
-  default lamp/waylight, four pause/rollback and four indoor telegraph captures.
-  Physical aim tolerance0.15m; all64 indoor presets exclude rain. Synthetic setup.
-- game/tests/weather_performance_profile.gd/.gd.uid: inherits M018 full unpaused
-  root/cadence/draw/navigation/inventory/travel;10s/three60s per case. Clear-day
-  defaults, storm-night all six lamps. Real seed/phase resets between samples
-  only. Actual foreground checks and fail-fast; full/storm/ford subset selection.
-- tools/weather_lighting/profile_weather.py: isolated appdata/fresh W evidence,
-  actual engine PID/hardware/Win32 memory/raw logs, deadline/owned-tree cleanup.
-- tools/weather_lighting/audit_profile.py: independent24-case raw percentile/
-  settings/focus/weather/memory/lifecycle audit; supports retained focused clear/
-  storm subsets, strictly replaces failed cases; fresh exclusive audit output.
-- docs/weather-lighting/CHECKLIST.md, CONTRACT.md, CURRENT_STATE.md,
-  W009_ACCEPTANCE.md.
+Native release writer24704 and reader27408 completed fresh normal recovery, two
+independent E lamp choices, GUI Save/quit/separate GUI Load and actual revisit.
+Trust1, Deliberate Strike, guardian defeat, vessel/return/fitting/service completed
+using ordinary input. Genuine Clear → Cloudy → Rain → Cloudy and day/night clock
+progression; no bridge/fixtures/state injection/time skips. Moonwell/ford/bridge
+traversed physically; indoor rendering stays dry/stable.80 actual960x640 captures
+and seven sheets inspected,352 guarded input requests pass, both normal exits0.
 
-## Verification and reproducible evidence
+Still-paused reader GUI re-save is byte-identical to writer completion save,
+SHA256 `5652df3785fea5bd25816d7bc935a849429c3636659d5cce1ad2f28c42663c00`.
+Release-pack typed audit confirms exact snapshot/forecast: seed627001559,
+day0 progress0.5699809053838213, Rain/previousCloudy period2/start587/end898/blend1,
+heavy-rain false/display11:40PM. Lamp04-on/Dock-Row-off, ordered hero75/ally25,
+trust/reaction/upgrade/six once-only effects and quest steps retained.
+Revisit keeps all other durable facts while time advances naturally.
 
-Cwd D:/development/game-dev-blender/returning-fair-prototype; Godot project game/.
-Console D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe.
-Bundled Python C:/Users/aldoc/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe.
-Godot4.7.2 ed1daf0bf, NVIDIA Compatibility OpenGL3.3/581.29,960x640,
-orthographic zoom1,VSync0/max_fps0. Same M018 baseline: Windows11/Core Ultra9
-185H/33,736,015,872 RAM bytes/RTX4070 Laptop driver32.0.15.8129.
+## Changed files and checks
 
-Commands run via tools/run_checks.ps1 -Task W009:
-- -Names environment_lifecycle_checks,weather_presentation_checks:157/193,417 pass.
-- Nineteen focused environment/rule/session/save/lighting/consumer/input/dialogue/
-  combat/companion/quest/consequence/camera/map/slice/travel checks and rendered
-  matrix: all pass; exact -Names/flags in acceptance.
-- -Import -RenderOnly -RenderScript weather_visual_matrix -RenderPhases matrix
-  -ParseScripts tests/weather_performance_profile: import/parse pass; initial
-  float32 comparison failed, repaired; final280 capture run72304 exit0/clean scan.
-- -RenderOnly -RenderScript environment_lifecycle_render -RenderPhases write,read
-  -ParseScripts tests/weather_performance_profile: GUI writer45068/fresh reader
-  49544 exact Save/Load snapshot/forecast/HUD and E room/return pass.
+New reusable tools under `tools/weather_lighting/`: `build_packages.py`,
+`package_audit.gd`, `launch_native.ps1`, `native_route.gd`, `walk_native.ps1`,
+`save_audit.gd`, `audit_native.py`. Planner supplies synthetic guidance only;
+walker sends bounded physical native input through existing guarded helper.
+`game/tests/settings_debug_checks.gd` repairs child --report-dir and separates
+child index filename. Weather CHECKLIST/CURRENT_STATE/CONTRACT/W010_ACCEPTANCE
+and parent README/ARCHITECTURE/CURRENT_STATE updated for delivered release.
+No production runtime, art, export preset or source checkout changes.
 
-Python tools/weather_lighting/profile_weather.py full then --storm-only then
---storm-only --ford-only produces24 accepted60s windows across three retained
-attempts:12 focused clear-day from13472, nine focused town/forest/bridge storm from
-23152, three focused ford storm from31936. All341,144 accepted frames focused;
-worst p95=6.805ms,p99=9.188ms,draw p95=280. Every run passes16.67/25/500 gates.
-Two smoke runs verify harness/caption/focus only, never replace duration criteria.
+From target root, `./tools/run_checks.ps1 -Task W010 -Import -Names
+application_smoke,environment_lifecycle_checks,environment_save_checks,
+light_interaction_checks,playable_slice_checks,recovery_presentation_checks,
+combat_checks,extension_checks,settings_debug_checks -TimeoutSeconds 180`:
+import/parse/eight runtime suites pass; settings child initially failed missing
+evidence path. Focused rerun `-Names settings_debug_checks,save_checks
+-TimeoutSeconds 150` passes after repair. Map/camera/travel run `-Names
+map_activation_checks,map_camera_checks,location_travel_checks -TimeoutSeconds 150`
+passes. Final runtime exits0/clean scans; known editor-only .NET SDK10.0.9 diagnostic.
+Reference source/vector audit, both pack audits, outside startups, typed native
+restart and Python native auditor pass. Script/link/status/hash/intended diff
+checks pass, retaining repository CRLF where applicable.
 
-Final engine31936 exit0/runtime scan empty;12 trips/24 commits stable
-nodes3836/objects7573/resources305/orphans0/nav1/world1/party2. Presenter/rain
-owner1, consumers23/emitters8/batches12 stable; map inventory unchanged.
-Final peak442.33MiB (all contributing peaks<=444.44MiB), growth4.08MiB,
-within2GiB/64MiB. Navigation p95=986us, max warm commit910.9ms.
+Raw W010 run roots: `20261005-042909294-c1ba9525` (retained settings failure),
+`20261005-043216461-87baf7d7` (settings/save pass),
+`20261005-043426322-729a039e` (map/camera/travel pass),
+`packages-20261005-043344-61e32d70`, `outside-58057331`,
+`native-20261004-journey` (writer/reader; caption-revision audit).
+Raw outputs stay ignored; durable acceptance is sufficient without local archive.
+First planner relative-path failure preserved, corrected absolute planner passes.
+Caption revision corrects three paused labels; originals preserved.
 
-Ignored docs/evidence/W009/:
-- 20261005-031009181-10dec3f8 prerequisites;031640259-eea41aea nineteen regressions.
-- 20261005-031947535-5c1cc700 GUI;032242594-6360b369 final matrix.
-- profile-20261005-032449-6a0141ed original full: exit1/ten storm focus faults;
-  clear-day twelve rows only accepted; all invalid storm rows/raw failed audit kept.
-- profile-20261005-035447-6983ec4f storm: fail-fast exit1/ford0 focus fault;
-  nine valid storm rows only accepted. No lifecycle claim from interrupted attempt.
-- profile-20261005-040811-81ffc9f7 final ford: clean/full travel/memory.
-  tools/weather_lighting/audit_profile.py <final> --baseline <original-full>
-  --storm-baseline <storm> --name raw-audit-corrected.json: exit0/status passed,
-  exact24 cases/CSV hashes/settings/hardware/focus/conditions/lifecycle/memory.
-- Matrix/GUI derived20261005-032503-86d500c6:289 images/25 inspected sheets.
-  Three accepted-local benchmark manifests -> original full
-  render/derived/20261005-041528-fae64c74:24 images/two inspected sheets.
-  Repaired smoke035243-0a1da62e:four images/one inspected sheet. Important originals
-  inspected too; all317 selected captures960x640, paused/provenance labeled.
+## Isolation, decisions and next safe action
 
-## Isolation, retained repairs and next action
+Native APPDATA/LOCALAPPDATA under
+`builds/weather-lighting/W010/native-20261004-journey/appdata` and `localappdata`.
+Verified release override still selects `ReturningFair-P014-ReleaseValidation`;
+actual save under isolated appdata `ReturningFair-P014-ReleaseValidation/saves`.
+Debug --save-slot ignored by release; normal saves never used. Outside-startup
+appdata and runner slots likewise separate. Standard templates need no C# SDK.
 
-Runner appdata/localappdata under builds/testing/W009/<run>/; profile equivalents
-under builds/weather-lighting/W009/<stamp>/. Godot suffix
-Godot/app_userdata/Returning Fair — Prototype. GUI isolated playtest-check slot/
-w008-oracle; review namespace w009-matrix/w009-profile prohibits Save.
-Normal saves, historical evidence/source snapshot and live Blender untouched.
-
-Retained failures: exact indoor float32 test; stale camera/banner captions;
-two focus-loss attempts; audit source-path variable alias; rejected mixed-run
-capture index. All focused repairs/accepted replacements documented in acceptance;
-no threshold/renderer/production-focus/desktop-lock change. Old evidence intact.
-Import retains known missing .NET SDK10.0.9; final runtime scans clean.
-Reference four sources/23 lights/49 vectors, links/UID/status/intended CRLF-aware
-diff checks pass. No commit/push/install/export/native release work.
-
-Next safe action in a fresh chat: verify W009 concise acceptance/current artifacts,
-select W010 and mark it In progress before implementing packaged Windows/native
-acceptance. Synthetic W009 facts/poses do not certify ordinary native release.
+Contract remains schema5/content1, Compatibility, target-local assets and pinned
+geography; no map/source refresh. W009 measured performance/rare-weather matrices
+remain accepted distinct evidence. W010 did not repeat thunderstorm/closed-exit
+matrix coverage and does not claim it as native progression.
+No failed/unrun W010 criterion or human gate remains. Only known editor diagnostic;
+all packaged/native runtime scans clean. All owned Godot/native processes exited;
+user Blender2664 and its work untouched. No successor, commit, push, publication
+or installation. Next safe action: report workflow complete and stop.

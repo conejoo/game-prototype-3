@@ -1,7 +1,7 @@
 # Current prototype state
 
 Updated 2026-10-04. P001-P014 and map M001-M019 complete. Current feature workflow:
-[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W008 Done, W009 next.
+[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W010 Done, no next item.
 User-requested [testing tools follow-up](TESTING_TOOLS_IMPROVEMENTS.md) adds guarded
 evidence, live diagnostics, dependency parsing, verified GUI outcomes and RenderOnly;
 regressions pass and project/installed skill guidance is synchronized.
@@ -23,9 +23,10 @@ Forecast-driven overcast, world-anchored terrain/roof-excluded rain and bounded
 lightning now pass W007193,417 checks and66 inspected rendered captures. Pause
 rain pixels freeze; actual GUI Save/new-process Load restores exact storm phase/
 flash. Tollworks retains stable appearance and excludes weather; rain owner frees
-on travel. W008 lifecycle/HUD/review isolation is verified; W009 performance and W010 native feature acceptance
-remain Pending; historical packages unchanged. See W007 acceptance for scope,
-commands, isolated appdata and retained failures.
+on travel. W008 lifecycle/HUD/review isolation, W009 visual/performance gates and
+W010 fresh package/native feature acceptance are verified. Current Windows builds
+include weather; historical packages preserved. See [W010 acceptance](weather-lighting/W010_ACCEPTANCE.md)
+for commands/hashes, isolated appdata, exact native restart and retained failures.
 
 User-requested settings/debug addition (2026-10-04): Esc → Settings exposes
 independent Show FPS and Enable debug shortcuts switches, both run-local and off
@@ -39,7 +40,7 @@ movement/camera, environment saves and existing playtest bridge regressions pass
 Final isolated evidence: docs/evidence/SETTINGS/20261005-013452115-2f9402fc;
 regressions: 20261005-013304874-856232de (initial settings fixture failures
 retained and corrected). Runtime diagnostics clean. Existing Windows packages
-were not rebuilt; this addition does not complete W008-W010 acceptance.
+were not rebuilt at that settings follow-up; W010 later rebuilt/accepted them.
 
 Playable baseline: larger Alderwake town/river/Moonwood, temporary ally/trust,
 preparation-point Strike upgrade, guardian/vessel recovery, Maris return/fitting
@@ -67,9 +68,9 @@ is ignored there. Pause must be observed before inspection between input batches
 Never overwrite normal saves. Keep installed/project testing skill copies aligned.
 
 Local Windows packages live under builds/windows and builds/windows-validation;
-rebuild before treating them as proof of later changes. Outputs remain ignored;
+W010 accepts their current weather feature; rebuild before accepting later changes. Outputs remain ignored;
 unsigned local builds only. Original compact packages/validation saves and raw
-reports stay local. No publication or weather acceptance implied by these results.
+reports stay local. No publication; current weather acceptance belongs to W010.
 
 Repository cleanup (2026-10-04): 8,505 generated evidence files untracked and
 ignored; local archive and pre-cleanup document copies preserved. Compact weather
@@ -100,3 +101,13 @@ Fourteen accepted rendered views inspected; review saves refuse at root/reposito
 Legacy map report-path/interaction fixtures repaired; historical report recovery
 recorded in W008 acceptance. No W009 benchmark or W010 package started.
 Next eligible W009 only; normal saves untouched and owned processes exited.
+
+Weather W009-W010 complete (2026-10-04): W009 full visual matrix and24 focused
+three-run benchmark windows pass unchanged gates (worst6.805ms p95/9.188ms p99/
+280 draw p95), with stable repeated-travel resources. W010 rebuilt/audited both
+Windows presets and outside-checkout startups, then genuine native recovery,
+independent lamps, natural weather/time, exact GUI process restart and service/
+cleared-room revisit.80 native images inspected; all final runtime scans clean.
+Historical packages archived, normal saves/user Blender untouched; owned processes
+exited. [W010 acceptance](weather-lighting/W010_ACCEPTANCE.md) holds commands/hashes/
+failures/isolation. All W001-W010 Done. No next item.
