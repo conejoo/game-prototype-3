@@ -24,6 +24,20 @@ on travel. W008 lifecycle/HUD, W009 performance and W010 native feature acceptan
 remain Pending; historical packages unchanged. See W007 acceptance for scope,
 commands, isolated appdata and retained failures.
 
+User-requested settings/debug addition (2026-10-04): Esc → Settings exposes
+independent Show FPS and Enable debug shortcuts switches, both run-local and off
+by default. `--debug-shortcuts` initializes the same mode; Settings can disable
+it. F6 skips exactly one environment hour, refreshes weather/lighting, preserves
+play/actor/quest timers and respects pause/modal/travel/load/death/retry/focus
+gates. Esc from Settings returns to the paused menu before resuming.
+Focused settings_debug_checks, actual flag subprocess and rendered GUI/key
+review pass; four 960x640 screenshots inspected. Startup, environment session,
+movement/camera, environment saves and existing playtest bridge regressions pass.
+Final isolated evidence: docs/evidence/SETTINGS/20261005-013452115-2f9402fc;
+regressions: 20261005-013304874-856232de (initial settings fixture failures
+retained and corrected). Runtime diagnostics clean. Existing Windows packages
+were not rebuilt; this addition does not complete W008-W010 acceptance.
+
 Playable baseline: larger Alderwake town/river/Moonwood, temporary ally/trust,
 preparation-point Strike upgrade, guardian/vessel recovery, Maris return/fitting
 and service preview, travel and manual saves. Schema5/content1; once-only effects

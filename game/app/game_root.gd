@@ -28,6 +28,7 @@ var environment_presenter: EnvironmentPresenter
 var light_feedback: String = ""
 var light_feedback_until: float = 0.0
 var light_feedback_instance_id: String = ""
+var debug_shortcuts_enabled: bool = false
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -37,6 +38,8 @@ var light_feedback_instance_id: String = ""
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
+	ui.debug_mode_requested.connect(_set_debug_shortcuts_enabled)
+	_set_debug_shortcuts_enabled("--debug-shortcuts" in OS.get_cmdline_user_args())
 	world_host.developer_fixtures = OS.is_debug_build() and (developer_fixtures or "--developer-fixtures" in OS.get_cmdline_user_args())
 	# Debug-only named slot isolates playtest files; normal runs use the main slot.
 	if OS.is_debug_build():
@@ -132,12 +135,17 @@ func _process(delta: float) -> void:
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
 	ui.show_combat(player_placeholder.state, guardian, retrying, player_placeholder.combat.damage)
+	ui.show_debug_time(session.environment.day_cycle_progress)
 	if is_instance_valid(companion):
 		ui.show_companion(companion.state, companion_ai.mode, session.relationship.trust)
 	ui.set_save_busy(world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
 func _input(event: InputEvent) -> void:
+	if ui.settings_open() and event.is_action_pressed("pause") and not event.is_echo():
+		ui.show_settings(false)
+		get_viewport().set_input_as_handled()
+		return
 	if journal_open:
 		if (event.is_action_pressed("pause") or event.is_action_pressed("journal")) and not event.is_echo():
 			_toggle_journal()
@@ -176,6 +184,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("quit") and not event.is_echo():
 		get_viewport().set_input_as_handled()
 		_quit()
+	elif event.is_action_pressed("debug_advance_hour") and not event.is_echo():
+		if _advance_debug_hour():
+			get_viewport().set_input_as_handled()
 	elif not get_tree().paused and not world_host.transitioning and window_focused and get_viewport().gui_get_focus_owner() == null:
 		if event.is_action_pressed("interact") and not event.is_echo():
 			interact()
@@ -199,6 +210,28 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		if "--p003-evidence" in OS.get_cmdline_user_args():
 			print("P003 camera: %s; player=%s" % [camera_rig.description(), player_placeholder.global_position])
+
+
+func _set_debug_shortcuts_enabled(enabled: bool) -> void:
+	debug_shortcuts_enabled = enabled
+	ui.show_debug_mode(enabled)
+	ui.show_debug_time(session.environment.day_cycle_progress)
+
+
+func _advance_debug_hour() -> bool:
+	if not debug_shortcuts_enabled or not session.initialized or not player_placeholder.controls_enabled:
+		return false
+	if get_tree().paused or world_host.transitioning or loading_save or retrying or dialogue.active() or journal_open or not window_focused or get_viewport().gui_get_focus_owner() != null:
+		return false
+	# One game hour is 1/24 of the authored 600-second day. Skip only the
+	# environment clock: play time, actor timers and quest facts remain intact.
+	var errors: PackedStringArray = session.environment.advance(EnvironmentClock.CYCLE_SECONDS / 24.0)
+	if errors.is_empty():
+		_present_environment()
+		ui.show_debug_time(session.environment.day_cycle_progress)
+	else:
+		ui.debug_label.text = "Debug · Time skip unavailable: " + "; ".join(errors)
+	return true
 
 
 func _notification(what: int) -> void:

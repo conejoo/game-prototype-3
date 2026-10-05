@@ -15,6 +15,10 @@ window/stretch/mode="canvas_items"
 export/convert_text_resources_to_binary=false
 
 [input]
+debug_advance_hour={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"keycode":4194337)]
+}
 retry={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"keycode":82)]

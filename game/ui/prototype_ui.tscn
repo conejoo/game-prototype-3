@@ -204,6 +204,11 @@ custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Load saved run"
 
+[node name="Settings" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Settings"
+
 [node name="SaveStatus" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
@@ -215,6 +220,41 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 text = "Quit prototype"
+
+[node name="SettingsOptions" type="VBoxContainer" parent="Screen/PauseOverlay/Center/Panel/Margin"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="ShowFPS" type="CheckButton" parent="Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Show FPS"
+
+[node name="DebugMode" type="CheckButton" parent="Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Enable debug shortcuts"
+
+[node name="Hint" type="Label" parent="Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Debug shortcut: F6 advances game time by one hour.
+Resume gameplay before using shortcuts.
+Changes apply immediately for this run."
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+text = "Back [Esc]"
 
 [node name="TravelPrompt" type="Label" parent="Screen"]
 layout_mode = 0
@@ -387,3 +427,39 @@ theme_override_colors/font_color = Color(1, 0.8, 0.4, 1)
 layout_mode = 2
 mouse_filter = 2
 theme_override_font_sizes/font_size = 16
+
+[node name="Diagnostics" type="VBoxContainer" parent="Screen"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -440.0
+offset_top = 200.0
+offset_right = -24.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="FPS" type="Label" parent="Screen/Diagnostics"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.86, 0.95, 0.93, 1)
+theme_override_colors/font_shadow_color = Color(0.01, 0.02, 0.03, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 16
+text = "FPS: 0"
+horizontal_alignment = 2
+
+[node name="Debug" type="Label" parent="Screen/Diagnostics"]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.8, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0.01, 0.02, 0.03, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 16
+text = "Debug · F6: +1 hour"
+horizontal_alignment = 2

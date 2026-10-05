@@ -88,6 +88,17 @@ $gamePath = 'D:/development/game-dev-blender/returning-fair-prototype/game'
 Verified engine: `4.7.2.stable.mono.official.ed1daf0bf`. Esc pauses/resumes; F10
 quits, including while paused. Pause, Resume, and Quit prototype buttons accept
 mouse/keyboard focus. Pausing freezes world simulation and elapsed play time.
+Esc → Settings opens the paused settings menu. Show FPS toggles a live counter
+independently of Enable debug shortcuts. Both settings apply immediately for this
+run, including while paused; Esc inside Settings returns to the pause menu first.
+Launch with `& $godotExe --path $gamePath -- --debug-shortcuts` to start with debug
+shortcuts enabled (also available in release builds). The Settings switch controls
+that same mode and can turn it off again. With debug shortcuts on, F6 advances the
+environment clock by exactly one game hour and refreshes lighting/weather. It
+does not simulate an hour of combat or add to elapsed play time. The shortcut
+ignores key repeats and is blocked during pause, dialogue, journal, travel,
+loading, defeat/retry or window/GUI focus loss. Normal startup defaults both
+settings off. Time skips change the clock facts included in ordinary run saves.
 WASD moves relative to camera; mouse faces cyan ground marker. P switches between
 orthographic (provisional default) and 45° perspective. Wheel or +/- zooms between
 0.8 and 1.15 framing factors. Walls/plinth block movement; diagonals retain normal

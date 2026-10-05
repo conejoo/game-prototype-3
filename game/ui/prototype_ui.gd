@@ -12,6 +12,7 @@ signal dialogue_choice_requested(choice_id: String)
 signal dialogue_cancel_requested
 signal journal_requested
 signal upgrade_requested
+signal debug_mode_requested(enabled: bool)
 
 @onready var pause_overlay: Control = $Screen/PauseOverlay
 @onready var resume_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Resume
@@ -40,9 +41,24 @@ signal upgrade_requested
 
 @onready var upgrade_button: Button = $Screen/JournalOverlay/Center/Panel/Margin/Options/Upgrade
 @onready var upgrade_status: Label = $Screen/JournalOverlay/Center/Panel/Margin/Options/UpgradeStatus
+@onready var pause_options: VBoxContainer = $Screen/PauseOverlay/Center/Panel/Margin/Options
+@onready var settings_options: VBoxContainer = $Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions
+@onready var settings_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Settings
+@onready var fps_toggle: CheckButton = $Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions/ShowFPS
+@onready var debug_toggle: CheckButton = $Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions/DebugMode
+@onready var settings_back: Button = $Screen/PauseOverlay/Center/Panel/Margin/SettingsOptions/Back
+@onready var fps_label: Label = $Screen/Diagnostics/FPS
+@onready var debug_label: Label = $Screen/Diagnostics/Debug
+
+var _fps_sample_seconds: float = 0.0
 
 
 func _ready() -> void:
+	settings_button.pressed.connect(func() -> void: show_settings(true))
+	settings_back.pressed.connect(func() -> void: show_settings(false))
+	fps_toggle.toggled.connect(_show_fps)
+	debug_toggle.toggled.connect(func(enabled: bool) -> void: debug_mode_requested.emit(enabled))
+	_set_focus_cycle([fps_toggle, debug_toggle, settings_back])
 	upgrade_button.pressed.connect(func() -> void: upgrade_requested.emit())
 	journal_button.pressed.connect(func() -> void: journal_requested.emit())
 	journal_close.pressed.connect(func() -> void: journal_requested.emit())
@@ -58,16 +74,76 @@ func _ready() -> void:
 
 
 func show_paused(paused: bool) -> void:
+	settings_options.hide()
+	pause_options.show()
 	pause_overlay.visible = paused
 	travel_label.visible = not paused and not dialogue_overlay.visible
 	pause_button.disabled = paused
 	journal_button.disabled = paused or dialogue_overlay.visible
 	if paused:
+		_refresh_pause_focus()
 		resume_button.grab_focus()
 	else:
 		var focused: Control = get_viewport().gui_get_focus_owner()
 		if focused != null:
 			focused.release_focus()
+
+
+func _process(delta: float) -> void:
+	if not fps_label.visible:
+		return
+	_fps_sample_seconds += delta
+	if _fps_sample_seconds >= 0.25:
+		_fps_sample_seconds = 0.0
+		fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
+
+
+func _show_fps(enabled: bool) -> void:
+	fps_label.visible = enabled
+	fps_toggle.set_pressed_no_signal(enabled)
+	_fps_sample_seconds = 0.0
+	if enabled:
+		fps_label.text = "FPS: %d" % Engine.get_frames_per_second()
+
+
+func show_debug_mode(enabled: bool) -> void:
+	debug_toggle.set_pressed_no_signal(enabled)
+	debug_label.visible = enabled
+
+
+func show_debug_time(progress: float) -> void:
+	if debug_label.visible:
+		debug_label.text = "Debug · F6: +1 hour · " + EnvironmentClock.format_time(progress)
+
+
+func settings_open() -> bool:
+	return pause_overlay.visible and settings_options.visible
+
+
+func show_settings(open: bool) -> void:
+	if not pause_overlay.visible:
+		return
+	pause_options.visible = not open
+	settings_options.visible = open
+	if open:
+		fps_toggle.grab_focus()
+	else:
+		_refresh_pause_focus()
+		settings_button.grab_focus()
+
+
+func _set_focus_cycle(buttons: Array[Button]) -> void:
+	for index: int in range(buttons.size()):
+		buttons[index].focus_next = buttons[index].get_path_to(buttons[(index + 1) % buttons.size()])
+		buttons[index].focus_previous = buttons[index].get_path_to(buttons[(index + buttons.size() - 1) % buttons.size()])
+
+
+func _refresh_pause_focus() -> void:
+	var buttons: Array[Button] = []
+	for child: Node in pause_options.get_children():
+		if child is Button and not child.disabled and child.visible:
+			buttons.append(child)
+	_set_focus_cycle(buttons)
 
 
 func show_play_time(seconds: float) -> void:
@@ -120,9 +196,12 @@ func show_travel(message: String) -> void:
 
 
 func set_save_busy(busy: bool, block_resume: bool = false) -> void:
+	var changed: bool = save_button.disabled != busy or load_button.disabled != busy or resume_button.disabled != block_resume
 	save_button.disabled = busy
 	load_button.disabled = busy
 	resume_button.disabled = block_resume
+	if changed:
+		_refresh_pause_focus()
 
 
 func show_save_status(message: String) -> void:

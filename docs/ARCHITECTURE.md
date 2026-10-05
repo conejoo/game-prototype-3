@@ -421,6 +421,17 @@ the production scope. A runnable Windows export is the final prototype gate.
 
 ### Local live playtest tooling (P003)
 
+The pause menu also exposes Settings with independent, run-local FPS and debug
+shortcut toggles. `--debug-shortcuts` initializes the same root-owned mode in
+editor or release runs; Settings can disable it. UI samples FPS while paused.
+F6 advances only EnvironmentState by one authored game hour (25 clock seconds
+at the 600-second cycle), immediately re-presents outdoor sun/weather/lights,
+and keeps elapsed play time and actor/quest timers intact. Existing environment
+validation handles cycle rollover and rejects the supported day cap atomically.
+Key repeats and pause/modal/travel/load/retry/death/focus gates block the shortcut.
+Esc inside Settings returns to the paused menu; the next Esc resumes. These
+controls are independent of the opt-in automation bridge described below.
+
 An explicitly enabled debug-only bridge under `game/tests/` accepts bounded
 JSON commands from a local `builds/playtest/<session>` directory. GameRoot
 composes it only with `--playtest-dir=...`; normal runs and release builds do
