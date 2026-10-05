@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "alderwake-f4630f9-m002",
+  "slot_capacity": 20,
+  "definitions": [
+    {
+      "source_item_id": "moonflower",
+      "source_resource_id": "moonflower",
+      "item_id": "item-moonflower",
+      "resource_id": "resource-moonflower",
+      "hold_ms": 600,
+      "source_item": {
+        "category": "forage",
+        "stackLimit": 99,
+        "useBehavior": "none",
+        "giftBehavior": "giftable",
+        "worldBehavior": "none"
+      },
+      "target_use": "inspect; no direct use, drop, or gifting in slice"
+    },
+    {
+      "source_item_id": "fishing_rod",
+      "source_resource_id": "fishing_rod",
+      "item_id": "item-fishing-rod",
+      "resource_id": "resource-fishing-rod",
+      "hold_ms": 500,
+      "source_item": {
+        "category": "tool",
+        "stackLimit": 1,
+        "useBehavior": "activeTool",
+        "giftBehavior": "notGiftable",
+        "worldBehavior": "movablePickup"
+      },
+      "target_use": "selection only; fishing unavailable"
+    }
+  ],
+  "nodes": [
+    {
+      "instance_id": "fishing-rod-dock-01",
+      "source_resource_id": "fishing_rod",
+      "item_id": "item-fishing-rod",
+      "resource_id": "resource-fishing-rod",
+      "source_location_id": "alderwake",
+      "location_id": "prototype-alderwake",
+      "authored_foot_xyz_m": [
+        -8.0,
+        0.0,
+        15.75
+      ],
+      "pinned_source_foot_xy_units": [
+        448.0,
+        1080.0
+      ],
+      "source_path": "objects[46]",
+      "expected_geometry": {
+        "blockers": [
+          "south-water-06"
+        ],
+        "authored_anchor_usable": false
+      }
+    },
+    {
+      "instance_id": "moonflower-01",
+      "source_resource_id": "moonflower",
+      "item_id": "item-moonflower",
+      "resource_id": "resource-moonflower",
+      "source_location_id": "alderwake",
+      "location_id": "prototype-alderwake",
+      "authored_foot_xyz_m": [
+        26.0,
+        0.25,
+        -2.0
+      ],
+      "pinned_source_foot_xy_units": [
+        1536.0,
+        512.0
+      ],
+      "source_path": "objects[85]",
+      "expected_geometry": {
+        "blockers": [
+          "cliff-47-15-east",
+          "cliff-47-16-east"
+        ],
+        "authored_anchor_usable": false
+      }
+    },
+    {
+      "instance_id": "moonflower-02",
+      "source_resource_id": "moonflower",
+      "item_id": "item-moonflower",
+      "resource_id": "resource-moonflower",
+      "source_location_id": "alderwake",
+      "location_id": "prototype-alderwake",
+      "authored_foot_xyz_m": [
+        34.0,
+        0.25,
+        7.0
+      ],
+      "pinned_source_foot_xy_units": [
+        1792.0,
+        800.0
+      ],
+      "source_path": "objects[86]",
+      "expected_geometry": {
+        "blockers": [],
+        "authored_anchor_usable": true
+      }
+    },
+    {
+      "instance_id": "moonflower-03",
+      "source_resource_id": "moonflower",
+      "item_id": "item-moonflower",
+      "resource_id": "resource-moonflower",
+      "source_location_id": "alderwake",
+      "location_id": "prototype-alderwake",
+      "authored_foot_xyz_m": [
+        30.0,
+        0.5,
+        -9.0
+      ],
+      "pinned_source_foot_xy_units": [
+        1664.0,
+        288.0
+      ],
+      "source_path": "objects[87]",
+      "expected_geometry": {
+        "blockers": [],
+        "authored_anchor_usable": true
+      }
+    }
+  ],
+  "expected_operations": [
+    {
+      "name": "20_types_then_21st",
+      "given": "20 distinct test-only item IDs; empty active",
+      "command": "add new 21st type",
+      "result": "backpack_full; snapshot unchanged"
+    },
+    {
+      "name": "existing_stack_in_full_bag",
+      "given": "20 types including flower98",
+      "command": "add flower1",
+      "result": "flower99; still20 slots"
+    },
+    {
+      "name": "flower100",
+      "given": "flower99",
+      "command": "add flower1",
+      "result": "stack_full; snapshot unchanged"
+    },
+    {
+      "name": "second_rod",
+      "given": "rod1",
+      "command": "add rod1",
+      "result": "stack_full; snapshot unchanged"
+    },
+    {
+      "name": "final_active_unit",
+      "given": "rod1 active",
+      "command": "consume rod1",
+      "result": "rod absent; active null"
+    },
+    {
+      "name": "missing_selection",
+      "given": "empty",
+      "command": "activate rod",
+      "result": "missing_owned_item; snapshot unchanged"
+    },
+    {
+      "name": "authored_collection",
+      "given": "origin available; capacity valid",
+      "command": "complete held interaction",
+      "result": "+1 item and origin collected in one commit; notify afterward"
+    },
+    {
+      "name": "full_node",
+      "given": "stack/bag full",
+      "command": "complete held interaction",
+      "result": "counts/facts unchanged; wrapper stays; failure feedback"
+    },
+    {
+      "name": "generated_pickup",
+      "given": "origin collected; dropped-fishing_rod placement; empty bag",
+      "command": "pickup dropped rod",
+      "result": "rod1; placement removed; only authored origin stays collected"
+    },
+    {
+      "name": "authored_move",
+      "given": "origin uncollected",
+      "command": "move original rod",
+      "result": "same instance overrides position; no extra rod"
+    },
+    {
+      "name": "drop_rejection",
+      "given": "rod1 active",
+      "command": "drop at invalid place",
+      "result": "bag/active/placements unchanged"
+    },
+    {
+      "name": "drop_success",
+      "given": "origin collected; rod1 active; valid place",
+      "command": "drop",
+      "result": "bag empty; active null; dropped-fishing_rod generated placement"
+    }
+  ],
+  "target_stricter_than_source": [
+    "unknown instance, wrong location, stale revision reject before any mutation",
+    "invalid/fractional quantities return structured rejection; Dart positive integer type/exception is not API contract",
+    "authored and generated provenance explicit; no generated IDs enter collected-origin set"
+  ],
+  "hold_vectors": [
+    {
+      "events": [
+        "fresh press",
+        "advance599ms"
+      ],
+      "flower_result": "in progress; no reward"
+    },
+    {
+      "events": [
+        "fresh press",
+        "advance600ms"
+      ],
+      "flower_result": "one revalidated commit"
+    },
+    {
+      "events": [
+        "fresh press",
+        "advance499ms"
+      ],
+      "rod_result": "in progress; no reward"
+    },
+    {
+      "events": [
+        "fresh press",
+        "advance500ms",
+        "keep held; target changes"
+      ],
+      "rod_result": "one commit; no second attempt/immediate interaction"
+    },
+    {
+      "events": [
+        "fresh press",
+        "advance300ms",
+        "release or target/LOS/range/removal/modal/focus/travel/load/retry loss"
+      ],
+      "result": "cancel; no reward; fresh press required"
+    }
+  ],
+  "fishing_inspiration": {
+    "source_phases": [
+      "inactive",
+      "waiting",
+      "bite",
+      "fighting"
+    ],
+    "award_boundary": "landed -> addActivityReward -> feedback",
+    "retained": [
+      "progress readable",
+      "cancel loses no item",
+      "award after successful outcome"
+    ],
+    "excluded": [
+      "cast/ranged water targeting",
+      "fish tables/rewards",
+      "bite/hook/tension",
+      "source autosave"
+    ]
+  },
+  "ui_inspiration": {
+    "slots": 20,
+    "wide_columns": 5,
+    "narrow_columns": 4,
+    "source_grid_threshold_px": 420,
+    "selection": "owned stack activates; nullable active details; Drop only movable pickup",
+    "target_binding": "B/Esc/Close; mouse/Tab/Enter; modal focus/control clearing; Drop disabled until F007"
+  },
+  "proposed_schema6": {
+    "inventory": {
+      "item_counts": {},
+      "active_item_id": null
+    },
+    "collected_resource_ids": [],
+    "world_item_placements": [],
+    "placement_fields": [
+      "instance_id",
+      "item_id",
+      "location_id",
+      "foot_xyz_m",
+      "provenance",
+      "origin_instance_id"
+    ],
+    "provenance_values": [
+      "authored_override",
+      "generated_drop"
+    ],
+    "generated_instance_id": "dropped-fishing_rod",
+    "generated_origin_id": "fishing-rod-dock-01"
+  }
+}

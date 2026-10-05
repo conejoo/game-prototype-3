@@ -1,0 +1,105 @@
+{
+  "proof": "F001 synthetic production physics/navigation; NOT ordinary walking or enabled item interaction",
+  "run_id": "20261005-073211388-5575def8",
+  "route_capsule_samples": 1648,
+  "nodes": [
+    {
+      "instance_id": "fishing-rod-dock-01",
+      "authored_foot_xyz_m": [
+        -8.0,
+        0.0,
+        15.75
+      ],
+      "supported_foot_xyz_m": [
+        -8.0,
+        4.470348358154297e-08,
+        15.75
+      ],
+      "height_discrepancy_m": 4.470348358154297e-08,
+      "nearby_dry_approach_xyz_m": [
+        -7.0,
+        4.470348358154297e-08,
+        15.75
+      ],
+      "approach_distance_m": 1.0,
+      "authored_anchor_usable": false,
+      "vertical_ray_blocker_names": [
+        "south-water-06"
+      ],
+      "los_blocker_name": "south-water-06"
+    },
+    {
+      "instance_id": "moonflower-01",
+      "authored_foot_xyz_m": [
+        26.0,
+        0.25,
+        -2.0
+      ],
+      "supported_foot_xyz_m": [
+        26.0,
+        0.25,
+        -2.0
+      ],
+      "height_discrepancy_m": 0.0,
+      "nearby_dry_approach_xyz_m": [
+        26.75,
+        0.25,
+        -2.0
+      ],
+      "approach_distance_m": 0.75,
+      "authored_anchor_usable": false,
+      "vertical_ray_blocker_names": [
+        "cliff-47-15-east",
+        "cliff-47-16-east"
+      ],
+      "los_blocker_name": "cliff-47-15-east"
+    },
+    {
+      "instance_id": "moonflower-02",
+      "authored_foot_xyz_m": [
+        34.0,
+        0.25,
+        7.0
+      ],
+      "supported_foot_xyz_m": [
+        34.0,
+        0.25,
+        7.0
+      ],
+      "height_discrepancy_m": 0.0,
+      "nearby_dry_approach_xyz_m": [
+        34.75,
+        0.25,
+        7.0
+      ],
+      "approach_distance_m": 0.75,
+      "authored_anchor_usable": true,
+      "vertical_ray_blocker_names": [],
+      "los_blocker_name": ""
+    },
+    {
+      "instance_id": "moonflower-03",
+      "authored_foot_xyz_m": [
+        30.0,
+        0.5,
+        -9.0
+      ],
+      "supported_foot_xyz_m": [
+        30.0,
+        0.5,
+        -9.0
+      ],
+      "height_discrepancy_m": 0.0,
+      "nearby_dry_approach_xyz_m": [
+        30.75,
+        0.5,
+        -9.0
+      ],
+      "approach_distance_m": 0.75,
+      "authored_anchor_usable": true,
+      "vertical_ray_blocker_names": [],
+      "los_blocker_name": ""
+    }
+  ],
+  "repair_boundary": "F005 must resolve water/cliff anchor obstruction before accepting four enabled interactions; keep pinned layout and authored identities/XZ unchanged; no LOS/collider bypass or map rebake. If safe adapter cannot meet this, record F005 Blocked with explicit design conflict; F002-F004 and F006 independent."
+}

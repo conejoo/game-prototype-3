@@ -673,3 +673,14 @@ GDScript templates need no .NET SDK; verified separate APPDATA/LOCALAPPDATA and
 adjacent release override preserve normal saves. [W010 acceptance](weather-lighting/W010_ACCEPTANCE.md)
 records new package identities, isolated evidence, clean runtime exits and retained
 historical packages. W001-W010 complete; no next workflow item.
+
+### Pinned foraging/item migration reference (F001)
+
+[Foraging workflow](foraging-items-backpack/CHECKLIST.md) now pins source behavior,
+separate item/resource stable-ID mappings and a proposed schema6 fact shape in
+[CONTRACT](foraging-items-backpack/CONTRACT.md). Current runtime remains schema5/content1;
+four source resource records stay inert. [F001 acceptance](foraging-items-backpack/F001_ACCEPTANCE.md)
+records fresh P/M/W checks and synthetic floor/navigation measurements. Rod origin is
+inside water collision and moonflower-01 overlaps cliff colliders; F005 must repair or
+block before claiming four enabled interactions. No pinned map refresh or LOS bypass.
+F002 content/inventory rules are next; P/M/W release history remains unchanged.

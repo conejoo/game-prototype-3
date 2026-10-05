@@ -1,0 +1,256 @@
+{
+  "source_head": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+  "catalog": {
+    "schemaVersion": 1,
+    "items": [
+      {
+        "id": "fishing_rod",
+        "label": "Fishing Rod",
+        "iconAsset": "assets/images/items/fishing_rod.png",
+        "category": "tool",
+        "stackLimit": 1,
+        "useBehavior": "activeTool",
+        "giftBehavior": "notGiftable",
+        "worldBehavior": "movablePickup",
+        "contentRoles": [],
+        "features": [
+          {
+            "type": "rangedTileActivation",
+            "activityId": "fishing",
+            "targetCellSize": 16,
+            "maximumRange": 384,
+            "requiredSurface": "water",
+            "action": "castFishingLine"
+          }
+        ]
+      },
+      {
+        "id": "moonflower",
+        "label": "Moonflower",
+        "iconAsset": "assets/images/items/moonflower.png",
+        "category": "forage",
+        "stackLimit": 99,
+        "useBehavior": "none",
+        "giftBehavior": "giftable",
+        "worldBehavior": "none",
+        "contentRoles": [
+          "tutorialMoonflower"
+        ],
+        "features": []
+      },
+      {
+        "id": "river_trout",
+        "label": "River Trout",
+        "iconAsset": "assets/images/items/river_trout.png",
+        "category": "fish",
+        "stackLimit": 99,
+        "useBehavior": "none",
+        "giftBehavior": "giftable",
+        "worldBehavior": "none",
+        "contentRoles": [],
+        "features": [
+          {
+            "type": "fishingChallenge",
+            "minimumFightSeconds": 6,
+            "maximumFightSeconds": 12,
+            "hookWindowSeconds": 0.9,
+            "difficulty": "medium"
+          }
+        ]
+      },
+      {
+        "id": "bluegill",
+        "label": "Bluegill",
+        "iconAsset": "assets/images/items/bluegill.png",
+        "category": "fish",
+        "stackLimit": 99,
+        "useBehavior": "none",
+        "giftBehavior": "giftable",
+        "worldBehavior": "none",
+        "contentRoles": [],
+        "features": [
+          {
+            "type": "fishingChallenge",
+            "minimumFightSeconds": 2,
+            "maximumFightSeconds": 5,
+            "hookWindowSeconds": 1.2,
+            "difficulty": "easy"
+          }
+        ]
+      },
+      {
+        "id": "golden_carp",
+        "label": "Golden Carp",
+        "iconAsset": "assets/images/items/golden_carp.png",
+        "category": "fish",
+        "stackLimit": 99,
+        "useBehavior": "none",
+        "giftBehavior": "giftable",
+        "worldBehavior": "none",
+        "contentRoles": [],
+        "features": [
+          {
+            "type": "fishingChallenge",
+            "minimumFightSeconds": 15,
+            "maximumFightSeconds": 30,
+            "hookWindowSeconds": 0.7,
+            "difficulty": "hard"
+          }
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "moonflower",
+        "itemId": "moonflower",
+        "idStem": "moonflower",
+        "asset": "images/resources/moonflower.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "displayWidth": 32,
+        "displayHeight": 32,
+        "hitWidth": 32,
+        "hitHeight": 32,
+        "gatherMilliseconds": 600,
+        "interaction": "gather",
+        "minimumAuthoredNodes": 2
+      },
+      {
+        "id": "fishing_rod",
+        "itemId": "fishing_rod",
+        "idStem": "fishing-rod",
+        "asset": "images/resources/fishing_rod.png",
+        "textureWidth": 256,
+        "textureHeight": 128,
+        "displayWidth": 64,
+        "displayHeight": 32,
+        "hitWidth": 64,
+        "hitHeight": 32,
+        "gatherMilliseconds": 500,
+        "interaction": "pickup",
+        "minimumAuthoredNodes": 0
+      }
+    ],
+    "activities": [
+      {
+        "id": "fishing",
+        "label": "Fishing",
+        "eligibleItemIds": [
+          "river_trout",
+          "bluegill",
+          "golden_carp"
+        ]
+      }
+    ]
+  },
+  "snippets": [
+    {
+      "name": "inventory",
+      "path": "lib/game/state/runtime_game_state.dart",
+      "lines": [
+        63,
+        188
+      ],
+      "text": "class InventoryAddResult {\n  const InventoryAddResult({required this.inventory, required this.status});\n\n  final InventoryState inventory;\n  final InventoryAddStatus status;\n\n  bool get added => status == InventoryAddStatus.added;\n}\n\nclass InventoryState {\n  factory InventoryState({\n    Map<String, int> itemCounts = const {},\n    String? activeItemId,\n  }) {\n    for (final entry in itemCounts.entries) {\n      _validateStableId(entry.key, 'itemCounts key');\n      if (entry.value <= 0) {\n        throw ArgumentError.value(\n          entry.value,\n          'itemCounts',\n          'Stored item counts must be positive.',\n        );\n      }\n    }\n    if (itemCounts.length > backpackSlotCapacity) {\n      throw ArgumentError.value(\n        itemCounts.length,\n        'itemCounts',\n        'Inventory cannot exceed $backpackSlotCapacity occupied slots.',\n      );\n    }\n    if (activeItemId != null) {\n      _validateStableId(activeItemId, 'activeItemId');\n      if (!itemCounts.containsKey(activeItemId)) {\n        throw ArgumentError.value(\n          activeItemId,\n          'activeItemId',\n          'Active item must be present in inventory.',\n        );\n      }\n    }\n\n    return InventoryState._(Map.unmodifiable(Map.of(itemCounts)), activeItemId);\n  }\n\n  InventoryState._(this.itemCounts, this.activeItemId);\n\n  static const backpackSlotCapacity = 20;\n\n  final Map<String, int> itemCounts;\n  final String? activeItemId;\n\n  /// Attempts to add [quantity] to one cataloged item stack.\n  InventoryAddResult tryAddItem(\n    String itemId,\n    ItemDefinitionCatalog catalog, {\n    int quantity = 1,\n  }) {\n    if (quantity <= 0) {\n      throw ArgumentError.value(quantity, 'quantity', 'Must be positive.');\n    }\n    final definition = catalog.findById(itemId);\n    if (definition == null) {\n      return InventoryAddResult(\n        inventory: this,\n        status: InventoryAddStatus.unknownItem,\n      );\n    }\n    final currentCount = itemCounts[itemId] ?? 0;\n    if (currentCount + quantity > definition.stackLimit) {\n      return InventoryAddResult(\n        inventory: this,\n        status: InventoryAddStatus.stackFull,\n      );\n    }\n    if (currentCount == 0 && itemCounts.length >= backpackSlotCapacity) {\n      return InventoryAddResult(\n        inventory: this,\n        status: InventoryAddStatus.backpackFull,\n      );\n    }\n    final nextItemCounts = Map<String, int>.of(itemCounts);\n    nextItemCounts[itemId] = currentCount + quantity;\n    return InventoryAddResult(\n      inventory: InventoryState(\n        itemCounts: nextItemCounts,\n        activeItemId: activeItemId,\n      ),\n      status: InventoryAddStatus.added,\n    );\n  }\n\n  /// Returns a new inventory with [itemId] active, or null when not owned.\n  InventoryState? activateItem(String itemId) {\n    if (!itemCounts.containsKey(itemId)) {\n      return null;\n    }\n    if (activeItemId == itemId) {\n      return this;\n    }\n    return InventoryState(itemCounts: itemCounts, activeItemId: itemId);\n  }\n\n  /// Consumes one [itemId], or returns null when none is available.\n  ///\n  /// An exhausted item is removed instead of stored with a zero count.\n  InventoryState? consumeItem(String itemId) {\n    final currentCount = itemCounts[itemId];\n    if (currentCount == null || currentCount <= 0) {\n      return null;\n    }\n\n    final nextItemCounts = Map<String, int>.of(itemCounts);\n    if (currentCount == 1) {\n      nextItemCounts.remove(itemId);\n    } else {\n      nextItemCounts[itemId] = currentCount - 1;\n    }\n    return InventoryState(\n      itemCounts: nextItemCounts,\n      activeItemId:\n          activeItemId == itemId && !nextItemCounts.containsKey(itemId)\n          ? null\n          : activeItemId,\n    );\n  }\n"
+    },
+    {
+      "name": "placement_fact",
+      "path": "lib/game/state/runtime_game_state.dart",
+      "lines": [
+        31,
+        60
+      ],
+      "text": "class WorldItemPlacement {\n  WorldItemPlacement({\n    required this.instanceId,\n    required this.itemId,\n    required this.mapId,\n    required this.x,\n    required this.y,\n  }) {\n    _validateStableId(instanceId, 'instanceId');\n    _validateStableId(itemId, 'itemId');\n    _validateStableId(mapId, 'mapId');\n    _validateFiniteCoordinate(x, 'x');\n    _validateFiniteCoordinate(y, 'y');\n  }\n\n  final String instanceId;\n  final String itemId;\n  final String mapId;\n  final double x;\n  final double y;\n\n  WorldItemPlacement copyWith({double? x, double? y}) => WorldItemPlacement(\n    instanceId: instanceId,\n    itemId: itemId,\n    mapId: mapId,\n    x: x ?? this.x,\n    y: y ?? this.y,\n  );\n}\n\n"
+    },
+    {
+      "name": "collect",
+      "path": "lib/game/state/runtime_game_controller.dart",
+      "lines": [
+        359,
+        422
+      ],
+      "text": "  ResourceCollectionResult? collectResourceNode({\n    required String nodeId,\n    required String resourceId,\n  }) {\n    final resource = resourceCatalog.findById(resourceId);\n    if (resource == null) {\n      return ResourceCollectionResult(\n        itemId: resourceId,\n        inventoryStatus: InventoryAddStatus.unknownItem,\n      );\n    }\n    final itemId = resource.item.id;\n    final isDroppedItem = _state.worldItemPlacements.containsKey(nodeId);\n    final isAuthoredNode = _locationMaps.values.any(\n      (map) => map.objects.whereType<ResourceNodeMapObject>().any(\n        (object) => object.id == nodeId && object.definitionId == resourceId,\n      ),\n    );\n    if (_state.collectedResourceNodeIds.contains(nodeId) && !isDroppedItem) {\n      return null;\n    }\n    final inventoryResult = _state.inventory.tryAddItem(itemId, itemCatalog);\n    if (!inventoryResult.added) {\n      return ResourceCollectionResult(\n        itemId: itemId,\n        inventoryStatus: inventoryResult.status,\n      );\n    }\n    final tutorialFlags =\n        _itemHasRole(itemId, ItemContentRole.tutorialMoonflower)\n        ? TutorialProgress.recordMoonflowerCollection(_state.tutorialFlags)\n        : _state.tutorialFlags;\n    _setState(\n      _state.copyWith(\n        inventory: inventoryResult.inventory,\n        collectedResourceNodeIds: isDroppedItem && !isAuthoredNode\n            ? _state.collectedResourceNodeIds\n            : {..._state.collectedResourceNodeIds, nodeId},\n        worldItemPlacements: isDroppedItem\n            ? (Map<String, WorldItemPlacement>.of(_state.worldItemPlacements)\n                ..remove(nodeId))\n            : _state.worldItemPlacements,\n        tutorialFlags: tutorialFlags,\n        eventJournal: _state.eventJournal.record(\n          kind: PlayerEventKind.resourceGathered,\n          subjectId: resourceId,\n          activeSeconds: _state.activePlaySeconds,\n        ),\n      ),\n    );\n    onQuestActions?.call([\n      QuestAction(\n        kind: QuestActionKind.resourceGathered,\n        mapId: _state.mapId,\n        subjectId: resourceId,\n        detailId: null,\n      ),\n    ]);\n    return ResourceCollectionResult(\n      itemId: itemId,\n      inventoryStatus: InventoryAddStatus.added,\n    );\n  }\n\n"
+    },
+    {
+      "name": "move",
+      "path": "lib/game/state/runtime_game_controller.dart",
+      "lines": [
+        455,
+        499
+      ],
+      "text": "  WorldItemPlacement? moveWorldItem({\n    required String instanceId,\n    required String itemId,\n    required String mapId,\n    required double x,\n    required double y,\n  }) {\n    final definition = itemCatalog.findById(itemId);\n    final resource = resourceCatalog.findByItemId(itemId);\n    final map = _locationMaps[mapId];\n    if (definition?.worldBehavior != ItemWorldBehavior.movablePickup ||\n        resource == null ||\n        map == null ||\n        !canPlaceWorldItem(itemId: itemId, mapId: mapId, x: x, y: y)) {\n      return null;\n    }\n    final existing = _state.worldItemPlacements[instanceId];\n    final isAuthoredPickup = map.objects.whereType<ResourceNodeMapObject>().any(\n      (object) => object.id == instanceId && object.definitionId == resource.id,\n    );\n    if (existing == null && !isAuthoredPickup) {\n      return null;\n    }\n    if (existing != null &&\n        (existing.itemId != itemId || existing.mapId != mapId)) {\n      return null;\n    }\n    final placement = WorldItemPlacement(\n      instanceId: instanceId,\n      itemId: itemId,\n      mapId: mapId,\n      x: x,\n      y: y,\n    );\n    _setState(\n      _state.copyWith(\n        worldItemPlacements: {\n          ..._state.worldItemPlacements,\n          instanceId: placement,\n        },\n      ),\n    );\n    return placement;\n  }\n\n"
+    },
+    {
+      "name": "drop",
+      "path": "lib/game/state/runtime_game_controller.dart",
+      "lines": [
+        501,
+        536
+      ],
+      "text": "  WorldItemPlacement? dropInventoryItem({\n    required String itemId,\n    required String mapId,\n    required double x,\n    required double y,\n  }) {\n    final definition = itemCatalog.findById(itemId);\n    final map = _locationMaps[mapId];\n    if (definition?.worldBehavior != ItemWorldBehavior.movablePickup ||\n        map == null ||\n        !canPlaceWorldItem(itemId: itemId, mapId: mapId, x: x, y: y) ||\n        _state.worldItemPlacements.values.any(\n          (placement) => placement.itemId == itemId,\n        )) {\n      return null;\n    }\n    final inventory = _state.inventory.consumeItem(itemId);\n    if (inventory == null) {\n      return null;\n    }\n    final placement = WorldItemPlacement(\n      instanceId: 'dropped-$itemId',\n      itemId: itemId,\n      mapId: mapId,\n      x: x,\n      y: y,\n    );\n    _setState(\n      _state.copyWith(\n        inventory: inventory,\n        worldItemPlacements: {\n          ..._state.worldItemPlacements,\n          placement.instanceId: placement,\n        },\n      ),\n    );\n"
+    },
+    {
+      "name": "hold",
+      "path": "lib/game/interaction/interaction_hold_system.dart",
+      "lines": [
+        52,
+        166
+      ],
+      "text": "  void update(double dt) {\n    super.update(dt);\n\n    final input = world.game.input;\n    if (world.game.isGameplayInputLocked) {\n      _cancelActiveInteraction();\n      _handledStartGeneration = input.interactionStartGeneration;\n      _handledPauseRequestGeneration = input.pauseRequestGeneration;\n      return;\n    }\n\n    final pauseRequestedThisFrame =\n        input.pauseRequestGeneration != _handledPauseRequestGeneration;\n    if (pauseRequestedThisFrame) {\n      _handledPauseRequestGeneration = input.pauseRequestGeneration;\n      _cancelActiveInteraction();\n    }\n\n    if (_activeTarget != null) {\n      if (!input.isInteractionHeld ||\n          !identical(_targeting.selectedTarget, _activeTarget)) {\n        _cancelActiveInteraction();\n      } else {\n        _advanceActiveInteraction(dt);\n      }\n    }\n\n    final startGeneration = input.interactionStartGeneration;\n    if (startGeneration == _handledStartGeneration) {\n      return;\n    }\n\n    _handledStartGeneration = startGeneration;\n    if (!input.isInteractionHeld || pauseRequestedThisFrame) {\n      return;\n    }\n\n    final target = _targeting.selectedTarget;\n    if (target != null) {\n      _startInteraction(target);\n    }\n  }\n\n  void _startInteraction(WorldInteractableComponent target) {\n    _activeTarget = target;\n    _elapsedSeconds = 0;\n    target.onInteractionStart();\n\n    if (target.holdDuration <= Duration.zero) {\n      _completeActiveInteraction();\n      return;\n    }\n\n    _progressIndicator.bind(target, 0);\n  }\n\n  void _advanceActiveInteraction(double dt) {\n    final target = _activeTarget;\n    if (target == null) {\n      return;\n    }\n\n    _elapsedSeconds += dt;\n    _progressIndicator.bind(target, progress);\n    if (progress >= 1) {\n      _completeActiveInteraction();\n    }\n  }\n\n  void _cancelActiveInteraction() {\n    final target = _activeTarget;\n    if (target == null) {\n      return;\n    }\n\n    target.onInteractionCancel();\n    _clearActiveInteraction();\n  }\n\n  /// Cancels hold immediately instead of waiting for next game update.\n  void cancelActiveInteraction() {\n    _cancelActiveInteraction();\n  }\n\n  void _completeActiveInteraction() {\n    final target = _activeTarget;\n    if (target == null) {\n      return;\n    }\n\n    target.onInteractionComplete();\n    _clearActiveInteraction();\n  }\n\n  void _clearActiveInteraction() {\n    _activeTarget = null;\n    _elapsedSeconds = 0;\n    _progressIndicator.bind(null, 0);\n  }\n}\n"
+    },
+    {
+      "name": "backpack_grid",
+      "path": "lib/ui/inventory_panel_overlay.dart",
+      "lines": [
+        53,
+        106
+      ],
+      "text": "                              children: [\n                                _BackpackHeader(\n                                  occupiedSlots: snapshot.occupiedSlots,\n                                  onClose: game.closeInventory,\n                                ),\n                                const Divider(),\n                                Expanded(\n                                  child: LayoutBuilder(\n                                    builder: (context, gridConstraints) {\n                                      final columns =\n                                          gridConstraints.maxWidth >= 420\n                                          ? 5\n                                          : 4;\n                                      return GridView.builder(\n                                        key: gridKey,\n                                        padding: const EdgeInsets.symmetric(\n                                          vertical: 12,\n                                        ),\n                                        gridDelegate:\n                                            SliverGridDelegateWithFixedCrossAxisCount(\n                                              crossAxisCount: columns,\n                                              mainAxisSpacing: 10,\n                                              crossAxisSpacing: 10,\n                                            ),\n                                        itemCount:\n                                            InventoryState.backpackSlotCapacity,\n                                        itemBuilder: (context, index) {\n                                          if (index >= snapshot.stacks.length) {\n                                            return _EmptyBackpackSlot(\n                                              index: index,\n                                            );\n                                          }\n                                          final stack = snapshot.stacks[index];\n                                          return _BackpackItemSlot(\n                                            stack: stack,\n                                            onActivate: () =>\n                                                game.activateInventoryItem(\n                                                  stack.definition.id,\n                                                ),\n                                          );\n                                        },\n                                      );\n                                    },\n                                  ),\n                                ),\n                                const Divider(),\n                                _ActiveItemDetails(\n                                  key: detailsKey,\n                                  stack: _activeStack(snapshot),\n                                  onDrop: game.dropActiveItem,\n                                ),\n                              ],\n                            );\n                          },\n"
+    },
+    {
+      "name": "backpack_details",
+      "path": "lib/ui/inventory_panel_overlay.dart",
+      "lines": [
+        285,
+        345
+      ],
+      "text": "    if (active == null) {\n      return const SizedBox(\n        height: 72,\n        child: Align(\n          alignment: Alignment.centerLeft,\n          child: Text('Active item: None · Select an occupied slot.'),\n        ),\n      );\n    }\n    final definition = active.definition;\n    final ranged = definition.featureOfType<RangedTileActivationFeature>();\n    return SizedBox(\n      height: ranged == null ? 72 : 92,\n      child: Row(\n        children: [\n          Image.asset(\n            definition.iconAssetPath,\n            width: 48,\n            height: 48,\n            filterQuality: FilterQuality.medium,\n          ),\n          const SizedBox(width: 12),\n          Expanded(\n            child: Column(\n              mainAxisAlignment: MainAxisAlignment.center,\n              crossAxisAlignment: CrossAxisAlignment.start,\n              children: [\n                Text(\n                  'Active item: ${definition.displayName}',\n                  style: Theme.of(context).textTheme.titleMedium,\n                ),\n                Text(\n                  '${definition.category.label} · '\n                  '${definition.useBehavior.label} · '\n                  '${definition.giftBehavior.label}',\n                  maxLines: 1,\n                  overflow: TextOverflow.ellipsis,\n                  style: Theme.of(context).textTheme.bodyMedium,\n                ),\n                if (ranged != null)\n                  Text(\n                    'Ranged use · ${ranged.requiredSurface.label} · '\n                    'Range ${ranged.maximumRange.toStringAsFixed(0)}',\n                    maxLines: 1,\n                    overflow: TextOverflow.ellipsis,\n                    style: Theme.of(context).textTheme.bodyMedium,\n                  ),\n              ],\n            ),\n          ),\n          if (definition.worldBehavior == ItemWorldBehavior.movablePickup) ...[\n            const SizedBox(width: 8),\n            OutlinedButton.icon(\n              key: InventoryPanelOverlay.dropButtonKey,\n              onPressed: onDrop,\n              icon: const Icon(Icons.place_outlined, size: 18),\n              label: const Text('Drop'),\n            ),\n          ],\n        ],\n      ),\n"
+    },
+    {
+      "name": "fishing_reward",
+      "path": "lib/game/cozy_adventure_game.dart",
+      "lines": [
+        734,
+        768
+      ],
+      "text": "          const HudFeedback('Nothing bit this time.'),\n        );\n      case FishingResolutionKind.reeledTooSoon:\n        _hudFeedbackController.enqueue(\n          const HudFeedback('Too soon — the fish was scared away.'),\n        );\n      case FishingResolutionKind.missedHook:\n        _hudFeedbackController.enqueue(\n          const HudFeedback('Too late — the fish got away.'),\n        );\n      case FishingResolutionKind.lineSlack:\n        _hudFeedbackController.enqueue(\n          const HudFeedback('The line went slack. The fish escaped.'),\n        );\n      case FishingResolutionKind.lineSnapped:\n        _hudFeedbackController.enqueue(\n          const HudFeedback('The line snapped. The fish escaped.'),\n        );\n      case FishingResolutionKind.exhausted:\n        _hudFeedbackController.enqueue(\n          const HudFeedback('The fish fought free.'),\n        );\n      case FishingResolutionKind.landed:\n        final itemId = resolution.fishItemId!;\n        final displayLabel =\n            itemCatalog.findById(itemId)?.displayName ?? itemId;\n        final reward = _runtimeController.addActivityReward(itemId);\n        if (!reward.added) {\n          _enqueueInventoryFailure(reward.inventoryStatus, displayLabel);\n          return;\n        }\n        _hudFeedbackController.enqueue(HudFeedback('Caught 1 $displayLabel.'));\n        requestSave();\n    }\n  }\n"
+    },
+    {
+      "name": "fishing_states",
+      "path": "lib/game/fishing/fishing_challenge.dart",
+      "lines": [
+        7,
+        25
+      ],
+      "text": "enum FishingPhase { inactive, waiting, bite, fighting }\n\nenum FishingResolutionKind {\n  noBite,\n  reeledTooSoon,\n  missedHook,\n  landed,\n  lineSlack,\n  lineSnapped,\n  exhausted,\n}\n\nclass FishingResolution {\n  const FishingResolution(this.kind, {this.fishItemId});\n\n  final FishingResolutionKind kind;\n  final String? fishItemId;\n}\n\n"
+    },
+    {
+      "name": "placement_validation",
+      "path": "lib/game/items/world_item_placement_validator.dart",
+      "lines": [
+        12,
+        110
+      ],
+      "text": "  static const interactionRadius = 48.0;\n  static const _navigationGridSize = GridWorldNavigationService.gridCellSize;\n\n  bool canPlace({\n    required String itemId,\n    required ResourceDefinitionRepository resourceCatalog,\n    required String mapId,\n    required double x,\n    required double y,\n    required double playerX,\n    required double playerY,\n    required double playerRadius,\n    required WorldMap map,\n    required WorldCollisionMap collisionMap,\n    required WorldNavigationService navigationService,\n  }) {\n    final resource = resourceCatalog.findByItemId(itemId);\n    if (resource == null ||\n        !x.isFinite ||\n        !y.isFinite ||\n        !playerX.isFinite ||\n        !playerY.isFinite ||\n        !playerRadius.isFinite ||\n        playerRadius <= 0) {\n      return false;\n    }\n\n    final left = x - resource.hitWidth / 2;\n    final top = y - resource.hitHeight;\n    final right = x + resource.hitWidth / 2;\n    final bottom = y;\n    if (left < 0 || top < 0 || right > map.width || bottom > map.height) {\n      return false;\n    }\n    if (collisionMap.overlapsAnyBox(\n      left: left,\n      top: top,\n      width: resource.hitWidth,\n      height: resource.hitHeight,\n    )) {\n      return false;\n    }\n    if (!_hasSingleFlatElevation(\n      map: map,\n      left: left,\n      top: top,\n      right: right,\n      bottom: bottom,\n    )) {\n      return false;\n    }\n\n    final profile =\n        playerRadius == defaultPlayerNavigationProfile.requiredRadius\n        ? defaultPlayerNavigationProfile\n        : NavigationAgentProfile(\n            id: 'player-placement-$playerRadius',\n            footprintRadius: playerRadius,\n          );\n    final candidates =\n        _interactionCandidates(\n              collisionMap: collisionMap,\n              targetX: x,\n              targetY: y,\n              playerX: playerX,\n              playerY: playerY,\n              playerRadius: playerRadius,\n            )\n            .where(\n              (candidate) =>\n                  collisionMap.elevationNavigation.canTraverseSegment(\n                    fromX: candidate.x,\n                    fromY: candidate.y,\n                    toX: x,\n                    toY: y,\n                  ),\n            )\n            .toList();\n    if (candidates.isEmpty) {\n      return false;\n    }\n    final request = NavigationPathRequest(\n      mapId: mapId,\n      start: NavigationPoint(x: playerX, y: playerY),\n      goal: candidates.first,\n      agentProfile: profile,\n      traversalPolicy: const WorldGroundNavigationPolicy(),\n    );\n    if (navigationService case MultiGoalNavigationReachability multiGoal) {\n      return multiGoal.isAnyReachable(request, candidates.skip(1));\n    }\n    return candidates.any(\n      (candidate) => navigationService.isReachable(\n        NavigationPathRequest(\n          mapId: request.mapId,\n          start: request.start,\n          goal: candidate,\n          agentProfile: request.agentProfile,\n          traversalPolicy: request.traversalPolicy,\n"
+    },
+    {
+      "name": "resource_completion",
+      "path": "lib/game/resources/resource_node_component.dart",
+      "lines": [
+        115,
+        134
+      ],
+      "text": "\n"
+    }
+  ]
+}

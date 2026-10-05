@@ -1,5 +1,10 @@
 # Returning Fair prototype
 
+Planned next feature: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
+with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
+F001 reference audit Done; F002-F010 Pending. [Pinned behavior and geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md)
+record two blocked authored anchors for F005 repair; gameplay remains unchanged.
+
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
 W001-W010 verified Done; no next item. Clock/seed/cached forecast rules run through
 the existing session gate and schema v5 saves retain environment/light facts.

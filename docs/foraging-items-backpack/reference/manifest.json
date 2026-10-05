@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "prepared_local_date": "2026-10-05",
+  "timezone": "America/Vancouver",
+  "source_head": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+  "target_head": "8274a251cfa27d4ac66cf1fea99e06c9630aaf8d",
+  "source_inputs": [
+    {
+      "path": "assets/data/gameplay/catalog.json",
+      "sha256": "c3677ed12a62a51e49e67479b383d6acf6a2b8aa9e468027a2ad9b83e64fbc2a"
+    },
+    {
+      "path": "lib/game/state/runtime_game_state.dart",
+      "sha256": "5b965d130ef38a6ee2c8e6769eb51744fc01c17458deaf58d4a076e4c9db2cae"
+    },
+    {
+      "path": "lib/game/state/runtime_game_controller.dart",
+      "sha256": "29bef8302107fb116b9814840ae24386163f1442e50a9eb06c7803e0bd8c8c26"
+    },
+    {
+      "path": "lib/game/interaction/interaction_hold_system.dart",
+      "sha256": "0924bff59797984df54354e1a12229629ea5df742240400ed43472b4c98ce0bf"
+    },
+    {
+      "path": "lib/ui/inventory_panel_overlay.dart",
+      "sha256": "d297b915a7a4ea0b8647d715b0c6355ba522a512d6066314ba1ec853d5f4b4be"
+    },
+    {
+      "path": "lib/game/cozy_adventure_game.dart",
+      "sha256": "acf5043f59b58bd7439efb9683863844338ef6b0c97966b95f743aae7534c295"
+    },
+    {
+      "path": "lib/game/fishing/fishing_challenge.dart",
+      "sha256": "738d365f3609ae311580bc9ff884cf81ba16adb70e83a2f69d0339f9a40112ce"
+    },
+    {
+      "path": "lib/game/items/world_item_placement_validator.dart",
+      "sha256": "6884a8b5452d478e22f579ef849be594b767a980727e0c5d5b1ace7ecd40a486"
+    },
+    {
+      "path": "lib/game/resources/resource_node_component.dart",
+      "sha256": "8dfd8d3788e59f66ee64cf636d0817123359e0a2cc84570eaed4c5ee2d9bbed0"
+    },
+    {
+      "path": "lib/game/resources/resource_definition.dart",
+      "sha256": "8a2975b9fcf26c9c16bbbcdc7d3132a1e05cb9d09e9f8c15eecbd58d563a39f6"
+    },
+    {
+      "path": "lib/game/state/inventory_snapshot.dart",
+      "sha256": "40476696910392a9c79629e4d086700c6be8d244ad9cae42052e6b9a1d7f73b4"
+    },
+    {
+      "path": "lib/game/input/desktop_input_adapter.dart",
+      "sha256": "380b026b6865ce937aed83b3836cc254ad20c6592ad5c3d1cf723deee5c9f4b2"
+    },
+    {
+      "path": "lib/game/persistence/save_game.dart",
+      "sha256": "8e622dc2924d5da6be2bf237fbceb5f4d0113e95e6b003e23d3f5ed20ce82674"
+    },
+    {
+      "path": "lib/ui/fishing_hud_overlay.dart",
+      "sha256": "17892eb602ae190bc9c4066751e9cc4c97e33115c4ddc647981bf9e106620880"
+    },
+    {
+      "path": "test/game/state/runtime_game_state_test.dart",
+      "sha256": "b88d0aca89860a9fff525d7c27ceb8d49543b29b76ab299a1c6b498c5dd3abd2"
+    },
+    {
+      "path": "test/game/state/runtime_game_controller_test.dart",
+      "sha256": "52191ce10f80f3a4b5ec8ac7dd0617cfd8d2213365796919fe45b048f4c9b095"
+    },
+    {
+      "path": "test/game/items/item_definition_test.dart",
+      "sha256": "ae44f529ef63735e4491c7fa7f05a3ff34e7062352229d897e064fad25743ef0"
+    },
+    {
+      "path": "test/game/items/world_item_placement_validator_test.dart",
+      "sha256": "e3337116684aee21fb57a16f697d4e8bdbd7d2cc7a6741bf4d95ee3034bf20c6"
+    },
+    {
+      "path": "test/game/fishing/fishing_challenge_test.dart",
+      "sha256": "83bb97aacc28ae0920001cb313369596764e7f157a0df8848846158f231b4a2e"
+    },
+    {
+      "path": "test/ui/inventory_overlays_test.dart",
+      "sha256": "97a2583368e8cb8932beaddaae67017cc576d53eedbec22411a79cd5cb078791"
+    }
+  ],
+  "target_geography": [
+    {
+      "path": "game/content/maps/alderwake_layout.json",
+      "sha256": "7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be"
+    },
+    {
+      "path": "tools/map_migration/reference/manifest.json",
+      "sha256": "6cd3585253fda15170f9df3ae0ed6ef59b3f8ce6dd4c1610d242845e0c25f74d"
+    },
+    {
+      "path": "tools/map_migration/reference/mvp_world.json",
+      "sha256": "af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f"
+    }
+  ],
+  "local_references": [
+    {
+      "path": "source_excerpts.json",
+      "sha256": "88ab15d0f070b870af6d34e898943427b92f0fd134f34abecf9aff753c837377"
+    },
+    {
+      "path": "behavior_vectors.json",
+      "sha256": "b389bf6c06d1205ad8764d206050823eb0a0faa22a43ecf444c4680bea5ab100"
+    },
+    {
+      "path": "geometry_baseline.json",
+      "sha256": "81157bf7abf526f19b770432f94c2c540c30d9d433707a5a8b1a91ffe098d295"
+    }
+  ],
+  "historical_target_baseline": [
+    {
+      "path": "game/project.godot",
+      "sha256": "bd143094b37a8255bd0fa11ad5f0fed69c8e3c194be548da57b0d0a1e51fb2d2"
+    },
+    {
+      "path": "game/app/game_root.tscn",
+      "sha256": "53fcfd8b417a33a6b93c6be1bcaab32b646faf54f99b84bc4b8baa10e5573e6d"
+    },
+    {
+      "path": "game/app/game_root.gd",
+      "sha256": "a0e546ee5f025c869acd8c8e6e626d9a7de78871e0820ce01b0e4e3e1fd1c130"
+    },
+    {
+      "path": "game/app/game_session.gd",
+      "sha256": "572983c220c3e940a3f140d5107d4cd8671ddcba16304bfbe8955023f16ef2b7"
+    },
+    {
+      "path": "game/core/content_catalog.gd",
+      "sha256": "ec5726418ef6f064ccbe1af11caacd74563d1b286f4a72eaac69509406646510"
+    },
+    {
+      "path": "game/core/content_manifest.gd",
+      "sha256": "676ac2c27a6efad659f3348de60b0fe1a10cbeb420f0e059d63c529030f50ac3"
+    },
+    {
+      "path": "game/core/save_codec.gd",
+      "sha256": "b02770ba79940d7075bf9fc6d9f2c04efe1832e898826bf2e80c1c6b1a962b5b"
+    },
+    {
+      "path": "game/world/alderwake.tscn",
+      "sha256": "d72cf07eaa7eed52f1fbc94d4887536b8ca785917ed292ba33e7d7290d0138a4"
+    },
+    {
+      "path": "game/world/alderwake_exterior.gd",
+      "sha256": "d2f0fdd605b92026344721cf54a7aa9d70e17230c0aa09db7f3f7e41d3e6f391"
+    },
+    {
+      "path": "game/world/map_candidate/forest_population.gd",
+      "sha256": "96d1a8bc6cee5aef03009d467d1f16f02f218f4edd9639521988b126494d794d"
+    },
+    {
+      "path": "game/world/map_candidate/elevation_surfaces.gd",
+      "sha256": "625d4b7c3f132e63fb26cd22329d77c21307ea54b2fa5a792d2d752d45fdea98"
+    },
+    {
+      "path": "game/features/interaction/interactable.gd",
+      "sha256": "d45b5f4caa4a8ac0dbdf5ca6ba5cc74c6352e355831614503811858a5e7b05e7"
+    },
+    {
+      "path": "game/features/interaction/interaction_selector.gd",
+      "sha256": "93cfb05d3247c25040bf340eaa85d0b1feba0f81f75f8e0f314e59f93461ddd0"
+    }
+  ]
+}
