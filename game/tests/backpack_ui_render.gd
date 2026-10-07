@@ -46,7 +46,7 @@ func _run() -> void:
 			_check(game.session.inventory.count(ForagingRegistry.ROD_ITEM) == 1,"fresh E gathers rod")
 		_tap(KEY_B)
 		_tap(KEY_ENTER)
-		_check(game.session.inventory.snapshot().active_item_id == ForagingRegistry.ROD_ITEM and game.ui.backpack.drop_button.disabled,"keyboard selects rod; Drop unavailable")
+		_check(game.session.inventory.snapshot().active_item_id == ForagingRegistry.ROD_ITEM and not game.ui.backpack.drop_button.disabled,"keyboard selects rod; safe Drop available")
 		await _bag_capture("rod-selected-960","debug-input","Rod acquired by ordinary walk/E; Enter selects owned rod")
 		root.size = Vector2i(800,600)
 		await _bag_capture("rod-selected-800","debug-input","Selected rod, counts/cap/details at 800x600")

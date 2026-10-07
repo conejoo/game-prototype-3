@@ -5,11 +5,10 @@ Updated2026-10-07, America/Vancouver. [CHECKLIST](CHECKLIST.md) owns status;
 
 ## Selection and continuation
 
-F001-F006 Done; F007-F010 Pending. No active task. Next eligible: **F007 — safe rod
-drop and reposition**. F005 world wrappers/holds and F006 backpack/modal/active HUD
-prerequisites actually pass. Read F005/F006 acceptance and CONTRACT; then implement
-exactly F007. Rod Drop is intentionally disabled until its safe command path exists.
-No automatic agents. Completed exactly F006; stop before successor.
+F001-F007 Done; F008-F010 Pending. No active task. Next eligible: **F008 — art and
+peaceful feedback**. F007 ordinary drop/drag/recollect, safe geometry, travel and exact
+GUI restart prerequisites actually pass; read [F007 acceptance](F007_ACCEPTANCE.md).
+Completed exactly F007; stop before successor. No automatic agents.
 
 Rod(-6.5,0,15.75) and flower01(26.75,0.25,-2) use approved safe runtime defaults;
 ForagingRegistry authored_foot retains pinned source provenance. Saved explicit
@@ -29,7 +28,7 @@ Historical P/M/W package/release completion and F001 records preserved.
 Current runtime: game/app/game_root.tscn, pinned Alderwake exterior, schema6/content1.
 Catalog now21 definitions (prior17 plus4 item/resource definitions). Fresh sessions start with
 empty inventories; restored sessions hydrate item/ForagingState facts. F005 activates
-world wrappers/held E; backpack/active HUD delivered F006; ordinary drop/drag remains F007 Pending.
+world wrappers/held E; backpack/active HUD delivered F006; safe ordinary drop/drag delivered F007.
 SaveCodec now serializes item/collected/placement facts; F004 details and acceptance below.
 Pinned geography/source/export and normal saves untouched. F005 adds held input/UI
 progress and temporary visuals; historical earlier-task boundaries below retained.
@@ -402,3 +401,61 @@ Final backpack146 + consequence checks PASS20261007-220250776-080c65b1, diagnost
 Prior rendered selection/restart evidence remains applicable; guard repair concerns journal
 upgrade command only. No F007 work begun. Two additional necessary guard/fixture repairs
 included with F006 commit; normal saves/source/geography unchanged.
+
+## F007 delivered state and continuation details
+
+[F007 acceptance](F007_ACCEPTANCE.md) owns complete criteria, command table, retained
+failures, measured tolerances and inspected evidence. Initial HEAD
+ae3eba7de2ba352f571c59f41fa2b292c5b54c62, clean worktree; no user changes overwritten.
+F007 Done; F008 next eligible. Previous F006/P/M/W boundaries above are historical.
+Every F007 criterion evidenced; F008-F010 art/integrated/native checks unrun.
+
+Changed GameRoot, ForagingPlacementGeometry, BackpackView, read-only live bridge,
+inherited backpack checks/renderer and independent-process fixture. Added WorldItemDrag,
+world_item_placement_checks/world_item_placement_render and three generated UIDs.
+README/architecture/PLAYTEST and CONTRACT/CHECKLIST/this state/acceptance updated.
+Schema6/content1, pinned geography/source/registry default feet and normal save unchanged.
+
+Drop is enabled for selected owned rod. Facing-first24-candidate search validates
+full 1.0m rod clearance/dry footprint, existing restore safety and ≤1.5m local dry
+hero approach before consume. Success clears active/closes bag; failure keeps facts/
+modal with feedback. Pointer press within14px of projected rod segment starts nearby
+reachable drag, clears controls/combat/AI/hold; preview is transient green/red ghost.
+Valid release moves same authored/generated ID atomically; invalid release preserves
+original. Esc cancels before pause; focus/modal/travel/load/retry/stale ownership/
+target/revision cancels and consumes old pointer release. Fresh world input required.
+
+Each successful arrival/load binds root validator qualified by weak current session.
+Codec candidates still revision0; physical live token1 reflects one capability bind,
+not restored command history. Independent-process fixture now asserts inventory0,
+live token1, rod1 and empty drag/ghost/latch. No state/signal/save ownership moved.
+Backpack open forces refresh so loaded active rod enables Drop without reselection.
+
+Final commands from repository root via isolated run_checks (full syntax in acceptance):
+-222143996-d4aa795e: all ten headless placement/backpack/transactions/save/nav/map-save/
+ movement/hold/travel/bridge suites PASS; separate old process token0 fixture FAIL.
+-222352948-2d6c59fa: final placement128, dialogue, lights151/settings PASS.
+-222435865-2b1a1307: save111, exact independent writer71/read74 PASS.
+-222237176-015ce980: ordinary rendered loop/travel/GUI Save/new-process GUI Load/exact
+ every prior/item durable fact + forecast/physical recollect PASS. Writer25976,
+ reader71292. Three writer/two reader paused views, two backpack/four live drag views.
+All run IDs have20261007 prefix. Full final reports/logs reviewed, runtime diagnostics
+empty. Earlier import/parse PASS; only existing editor-only missing .NET SDK allowed.
+Runner isolates APPDATA/LOCALAPPDATA and save slots; normal slot untouched.
+
+Full-size final green/red preview, placed-after-travel and restored-recollected images
+inspected; Drop modal inspected in prior passing run. Small red ghost contrasts weakly
+with brown dock, but invalid prompt is clear and final pixel evidence verifies marker;
+F008 owns final feedback/art readability. Native/OS input unrun, belongs to F010.
+Offline/live source audits saved in audit-20261007-222532-37ffd81f/results.json PASS:
+20 source/3 reference/3 geography hashes;5/6 negative controls; source status clean.
+
+Retained failed F007 runs listed in acceptance: asynchronous disabled-nav probe,
+incorrect water-facing pose/disconnected probe sync, long-route frame limit and gate
+waypoint beyond nav edge, inherited fresh-token0 assumption. Repaired fixtures/search
+evidence without weakening collision/navigation/input/save gates. No runtime/source
+dependency, install/export/publication/commit. Original tracked newlines preserved;
+command-local cr-at-eol whitespace/intended diff/new-file/UID/link/status review complete.
+All owned runner processes exited; no editor/game or cleanup owed. Exactly F007 complete;
+stop. Next invocation: read F008 requirements, keep IDs/physics/wrappers separate while
+improving temporary flower/rod art, icons/progress and placement feedback.

@@ -175,3 +175,16 @@ use explicit disabled-controls/contained-focus/modal provenance, separate from e
 pause-gated world/Save/Load captures. Capacity fixture changes detached display only.
 See [F006 acceptance](../docs/foraging-items-backpack/F006_ACCEPTANCE.md) for exact restart
 and retained failures; this is viewport/debug integration, not native Windows input.
+
+F007 enables selected rod Drop in backpack. Nearby left press over rod starts drag;
+pointer motion previews ground, release commits only valid nearby dry placement,
+Esc cancels. Mouse down/pointer/mouse up operations already exist; no invented drag
+operation or state shortcut added. Bridge observes detached item_drag active/ID/foot/
+errors only. Drag blocks world controls/combat/AI/aim/zoom; canceled press must release
+before fresh pointer input. Drop failure keeps bag/selection/modal with feedback.
+world_item_placement_render proves ordinary WASD/E/B/Enter/Drop/pointer loop, gate
+round-trip and exact separate GUI restart/recollect. Live drag screenshots explicitly
+report unpaused active preview/disabled controls, separate from pause-gated world
+captures. [F007 acceptance](../docs/foraging-items-backpack/F007_ACCEPTANCE.md) owns
+provenance, boundaries and retained failures. This adds no native helper support or
+Windows export claim; F010 must explicitly verify native B/bounded drag support.

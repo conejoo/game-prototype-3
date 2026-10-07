@@ -72,7 +72,7 @@ func _run() -> void:
 	_check(not game._select_inventory_item("missing-owned-item").is_empty() and game.session.inventory.snapshot().active_item_id == null, "missing selection rejected")
 	_key(KEY_ENTER)
 	_check(game.session.inventory.active_tool() == game.catalog.get_item(ForagingRegistry.ROD_ITEM) and game.ui.backpack.slots[0].button_pressed, "Enter selects rod")
-	_check(game.ui.active_item_label.text.begins_with("Active tool: Fishing rod") and game.ui.backpack.drop_button.visible and game.ui.backpack.drop_button.disabled, "active HUD/drop gated")
+	_check(game.ui.active_item_label.text.begins_with("Active tool: Fishing rod") and game.ui.backpack.drop_button.visible and not game.ui.backpack.drop_button.disabled, "active HUD/safe Drop available")
 	_key(KEY_ENTER)
 	_check(game.ui.backpack.slots[0].button_pressed, "reselect retains highlight")
 	_key(KEY_TAB)

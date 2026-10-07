@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007-F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007 completed2026-10-07; F008-F010 Pending.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -27,7 +27,7 @@ first be created; refine names deliberately and update references together.
 | F004 | Done | F003 | versioned saves and session rebinding |
 | F005 | Done | F004 | four pickups and cancellable hold E |
 | F006 | Done | F004 | backpack modal and active item HUD |
-| F007 | Pending | F005, F006 | safe rod drop/reposition |
+| F007 | Done | F005, F006 | safe rod drop/reposition |
 | F008 | Pending | F007 | readable item art/progress/feedback |
 | F009 | Pending | F008 | integrated play/restart acceptance |
 | F010 | Pending | F009 | fresh Windows/native acceptance |
@@ -377,3 +377,28 @@ completed; stop before successor.
 F006 pre-commit review: restored journal-only upgrade guard; earned-point modal regression
 PASS146 + consequence checks in20261007-220250776-080c65b1. Legacy consequence fixture
 now omits v6-only item facts for v1-v3 tests. Acceptance/state retain failed fixture run.
+
+### F007 — completed2026-10-07, America/Vancouver
+
+Enabled nearby facing/alternative rod Drop and pointer ground-ray preview/move;
+full rod footprint/capsule/dry approach/nav/reservations validate before atomic commit.
+No-space/invalid/cancel keeps exact item facts. Authored/generated IDs stay unique;
+transient drag, weak ownership, old-pointer release latch and lifecycle guards own no
+saved facts. [Acceptance](F007_ACCEPTANCE.md) records every criterion and limits.
+
+Repository-root run_checks F007: prerequisite hold/backpack PASS220518849-11e36ba1;
+Import/startup/anchors PASS220843828-6ce5b7f4. Broad ten headless suites PASS in
+20261007-222143996-d4aa795e (separate inherited process token assertion failure retained).
+Final placement128/dialogue/light151/settings PASS222352948-2d6c59fa; strict save111/
+exact independent-process writer71/read74 PASS222435865-2b1a1307. Ordinary rendered
+pickup/activate/drop/drag/pickup, Tollworks round trip, normal revisit, GUI Save/new
+process GUI Load/exact whole-save oracle and physical recollect PASS
+20261007-222237176-015ce980. Final full-size preview/placed/recollected PNGs inspected.
+All times above have20261007 prefix; raw evidence/appdata/slots isolated under F007.
+Final runtime diagnostics empty; prior import-only missing .NET SDK allowed.
+
+Offline/live-source audit PASS audit-20261007-222532-37ffd81f; source/geography hashes
+and clean source unchanged. Failed fixture/nav-sync/walk runs retained in acceptance.
+No normal-save/source/map change, native/export/install/publication or owned process
+cleanup owed. Final diff/new files/UIDs/status/links reviewed. Next eligible F008,
+with F007 physical prerequisite verified. Exactly F007 completed; stop before successor.

@@ -379,7 +379,8 @@ InventoryState.select. BackpackView receives detached snapshots; no private item
 world commands or save ownership.20 sorted slots/counts/caps and teal active highlight;
 white focus remains separate. Empty/unowned IDs reject, nullable Clear allowed. Header B/
 Bag and B/Esc/Close are ordinary routes. Non-tool HUD says selected item/no direct use;
-rod says active tool/fishing unavailable. Rod-only Drop disabled until F007 safe path.
+rod says active tool/fishing unavailable. Rod-only Drop was disabled at F006;
+F007 now enables it through the validated nearby placement path below.
 
 Modal cancels hold/clears actor input and stale pointer, disables combat/AI, blocks world
 movement/interact/attack/dodge/aim/zoom/projection and contains focus. E must release/repress
@@ -388,3 +389,38 @@ combat/focus/travel/load/retry conflicts cannot select/open concurrently. Save/L
 requires close then stable pause; selected ID persists through existing schema6 fields.
 Bridge B/read-only observations only. [Acceptance](F006_ACCEPTANCE.md) records exact restart
 and actual viewport input; ordinary drop/drag remains F007, native/export remains F010.
+
+## Delivered safe rod placement — F007
+
+F007 enables rod-only Drop and ordinary nearby pointer drag. Search uses facing,
+then +45/-45/+90/-90/+135/-135/180° at0.85/1.1/1.35m, at most24 candidates. Actual
+ground ray supplies metres; no acceptable candidate keeps inventory/active/modal
+unchanged with feedback. Only accepted transaction closes backpack. Never grant a
+rod or select an item automatically. Successful final drop clears selected rod.
+
+Shared restore/live safety now uses nine dry support samples (centre, X±0.5/Z±0.22m
+and four corners), normalY≥0.9 and height delta≤0.06m. Full rod clearance box is
+1.0×0.14×0.44m, centred0.1m above foot; existing radius0.4/height1.6m retrievable
+capsule, nav-owner/0.4m distance, arrival path/0.1m endpoint/0.2m capsule samples,
+1.5m arrival and2m portal reservations remain. Disabled/missing nav fails closed.
+Live placement additionally requires hero≤1.5m, dry supported capsule approach
+sampled every0.1m, adjacent height changes≤0.1m and clear0.8m-height LOS. A route
+around a river cannot authorize a local cross-bank drop. No geography/nav rebake.
+
+Left press within14px of projected0.9m rod segment requires current nearby reachable
+wrapper and ordinary input mode. Root owns transient weak-session/target drag and
+green/red no-depth ghost, original foot/revision copied at start. Preview mutates no
+facts/wrapper; release rechecks mode/ownership/target/revision/ground/geometry then
+moves same ID once. Invalid release/cancel leaves original. Attack/aim/gather/movement/
+zoom/projection/combat/AI blocked; Esc cancels before pause. Focus/modal/travel/load/
+retry and stale target/session/revision dispose preview; consumed mouse press must
+release before world pointer can act again. E retains its existing fresh-press latch.
+
+Root binds a weak-session-qualified placement capability after successful arrival/
+load; rejected old owner cannot place in new room. Codec hydration still resets
+transient revision0; one live capability binding advances opaque token1. No new save
+field, persisted input/preview, parallel listener or world-state authority. Bridge
+adds detached read-only active drag/ID/preview/errors only; existing bounded mouse
+down/motion/up commands already support viewport drag. Native helper still belongs
+to F010 acceptance. [F007 acceptance](F007_ACCEPTANCE.md) proves ordinary loop,
+travel and exact GUI restart; final art/readability remains F008.

@@ -277,6 +277,7 @@ func _observe() -> Dictionary:
 		"world_pickups":_pickup_observation(),
 		"inventory":game.session.inventory.snapshot().to_dictionary(),
 		"foraging":game.session.foraging.snapshot(),
+		"item_drag":{"active":game.item_drag.active(),"instance_id":game.item_drag.instance_id,"preview_foot":TestRunObservation.vector(game.item_drag.preview_foot) if game.item_drag.preview_foot != null else null,"errors":game.item_drag.errors.duplicate()},
 		"hold":{ "active":game.foraging_hold.active(), "progress":game.foraging_hold.progress(), "elapsed":game.foraging_hold.elapsed, "duration":game.foraging_hold.duration, "cancel":game.foraging_hold.last_cancel },
 	}
 

@@ -47,7 +47,7 @@ func _run() -> void:
 			_check(old.foraging.get_signal_connection_list("committed").is_empty(), "old session has no scene listener " + kind)
 		_check(game.world_host.session == game.session and game.quests.session == game.session and game.relationships.session == game.session and game.progression.session == game.session, "service rebinding " + kind)
 		_check(game.player_placeholder.state == game.session.actors[GameSession.PLAYER_INSTANCE_ID] and game.companion.state == game.session.actors[GameSession.COMPANION_INSTANCE_ID], "actor rebinding " + kind)
-		_check(game.session.foraging.revision() == 0 and game.session.foraging.rod_count() == 1, "fresh transient revision/conservation " + kind)
+		_check(game.session.inventory.revision() == 0 and game.session.foraging.revision() == 1 and game.session.foraging.rod_count() == 1, "fresh inventory revision plus one live placement capability/conservation " + kind)
 		_check(game.player_placeholder.velocity.is_zero_approx() and not game.player_placeholder.controls_enabled and game.selected_interaction == null and not game.loading_save, "no carried world input " + kind)
 		_check(game.session.foraging.get_signal_connection_list("committed").size() == 1, "one current scene listener " + kind)
 		_check_physical_wrappers(game)
@@ -102,3 +102,4 @@ func _check_physical_wrappers(game: Node3D) -> void:
 		var target: PrototypeInteractable = location.foraging_pickups.targets.get(id)
 		_check(target != null and target.global_position == expected[id] and target.validation_errors(game.catalog).is_empty(), "F005 process exact physical wrapper " + id)
 	_check(not game.foraging_hold.active(), "F005 process hold remains transient")
+	_check(not game.item_drag.active() and game.drag_preview == null and not game._drag_mouse_owned, "F007 process drag/input latch remains transient")

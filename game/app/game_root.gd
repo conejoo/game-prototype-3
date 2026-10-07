@@ -37,6 +37,10 @@ var _e_down: bool = false
 var _e_consumed: bool = false
 var foraging_feedback: String = ""
 var foraging_feedback_until: float = 0.0
+var item_drag: WorldItemDrag = WorldItemDrag.new()
+var drag_preview: Node3D
+var _drag_pointer: Vector2 = Vector2(-1,-1)
+var _drag_mouse_owned: bool = false
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -129,6 +133,7 @@ func _ready() -> void:
 	ui.journal_requested.connect(_toggle_journal)
 	ui.backpack_requested.connect(_toggle_backpack)
 	ui.inventory_selection_requested.connect(_select_inventory_item)
+	ui.backpack.drop_requested.connect(_drop_active_rod)
 	ui.show_paused(false)
 	world_host.initialize(catalog, session, party)
 	world_host.transition_started.connect(_on_transition_started)
@@ -167,6 +172,7 @@ func _process(delta: float) -> void:
 		_present_environment()
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
+	_tick_item_drag()
 	_tick_foraging_hold(delta)
 	ui.show_inventory(session.inventory.snapshot(),catalog)
 	ui.show_combat(player_placeholder.state, guardian, retrying, player_placeholder.combat.damage)
@@ -190,6 +196,34 @@ func _input(event: InputEvent) -> void:
 		if not _foraging_input_allowed(): _e_consumed = true
 	if foraging_hold.active() and not _foraging_input_allowed():
 		_cancel_foraging_hold("input mode")
+	if _drag_mouse_owned and not item_drag.active() and (event is InputEventMouseMotion or event is InputEventMouseButton):
+		player_placeholder.pointer_position = Vector2(-1,-1)
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+			_drag_mouse_owned = false
+		get_viewport().set_input_as_handled()
+		return
+	if item_drag.active():
+		if event.is_action_pressed("pause"):
+			_cancel_item_drag()
+			get_viewport().set_input_as_handled()
+			return
+		if event.is_action_pressed("backpack") or event.is_action_pressed("journal"):
+			_cancel_item_drag()
+		elif not event.is_action("quit"):
+			if event is InputEventMouseMotion:
+				_drag_pointer = event.position
+				_tick_item_drag()
+			elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+				_drag_pointer = event.position
+				_finish_item_drag()
+			get_viewport().set_input_as_handled()
+			return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and _foraging_input_allowed() and ui.accepts_world_pointer(event.position):
+		var pickup: PrototypeInteractable = _rod_under_pointer(event.position)
+		if pickup != null:
+			_start_item_drag(pickup,event.position)
+			get_viewport().set_input_as_handled()
+			return
 	if environment_review != null and environment_review.handle_input(event):
 		get_viewport().set_input_as_handled()
 		return
@@ -321,6 +355,7 @@ func _resume() -> void:
 func _set_paused(paused: bool) -> void:
 	if loading_save or dialogue.active() or journal_open or backpack_open:
 		return
+	_cancel_item_drag()
 	get_tree().paused = paused
 	_update_controls()
 	ui.show_paused(paused)
@@ -331,6 +366,9 @@ func _set_paused(paused: bool) -> void:
 
 func _update_controls() -> void:
 	var enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open and not backpack_open
+	if item_drag.active() and (not enabled or retrying or player_placeholder.state.health <= 0):
+		_dispose_item_drag()
+	enabled = enabled and not item_drag.active()
 	if not enabled or player_placeholder.state.health <= 0:
 		_cancel_foraging_hold("input mode")
 	player_placeholder.set_controls_enabled(enabled and player_placeholder.state.health > 0)
@@ -349,6 +387,7 @@ func _update_controls() -> void:
 
 
 func _on_transition_started() -> void:
+	_cancel_item_drag()
 	_close_backpack()
 	_cancel_foraging_hold("travel")
 	foraging_feedback = ""
@@ -406,6 +445,7 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		_update_controls()
 		_refresh_journal()
 		world_host.current_location.bind_foraging(session)
+		session.foraging.bind_placement_validator(_validate_live_placement.bind(weakref(session)))
 		_refresh_world_presentation()
 		ui.show_location(catalog.get_location(session.current_location_id).display_name)
 		_refresh_interaction()
@@ -461,6 +501,10 @@ func save_run() -> PackedStringArray:
 
 
 func _refresh_interaction() -> void:
+	if item_drag.active():
+		selected_interaction = null
+		ui.show_travel("Drag rod: release to place · Esc: cancel" if item_drag.errors.is_empty() else "Cannot place here · Release keeps original · Esc: cancel")
+		return
 	if dialogue.active() or journal_open or backpack_open:
 		selected_interaction = null
 		ui.show_travel("Backpack open · B / Esc: close" if backpack_open else "Journal open · J / Esc: close" if journal_open else "Dialogue open · Esc: close")
@@ -479,7 +523,7 @@ func _refresh_interaction() -> void:
 
 func switch_light(target_reference: WeakRef, expected_enabled: bool) -> DialogueService.ActionResult:
 	var target: PrototypeInteractable = target_reference.get_ref() as PrototypeInteractable if target_reference != null else null
-	if not _combat_stable() or dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
+	if item_drag.active() or not _combat_stable() or dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
 		return DialogueService.ActionResult.new(false, "Light switching blocked by current input mode.", "light")
 	var location: PrototypeLocation = world_host.current_location
 	if not is_instance_valid(target) or target.is_queued_for_deletion() or location == null or not target.is_inside_tree() or not location.is_ancestor_of(target) or InteractionSelector.select(player_placeholder, location) != target:
@@ -504,7 +548,7 @@ func interact() -> DialogueService.ActionResult:
 	if _e_down: _e_consumed = true
 	if not _combat_stable():
 		return DialogueService.ActionResult.new(false, "Finish combat or retreat before interaction.")
-	if dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
+	if item_drag.active() or dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
 		return DialogueService.ActionResult.new(false, "Interaction blocked by current input mode.")
 	# Never trust last frame's prompt or hold an old room's node after travel.
 	var target: PrototypeInteractable = InteractionSelector.select(player_placeholder, world_host.current_location)
@@ -546,6 +590,7 @@ func _cancel_dialogue() -> void:
 
 
 func load_run() -> PackedStringArray:
+	_cancel_item_drag()
 	_cancel_foraging_hold("load")
 	var errors: PackedStringArray = _save_boundary_errors()
 	if not errors.is_empty():
@@ -623,6 +668,7 @@ func _refresh_world_presentation() -> void:
 
 
 func _toggle_backpack() -> void:
+	_cancel_item_drag()
 	if backpack_open:
 		_close_backpack()
 		return
@@ -633,6 +679,7 @@ func _toggle_backpack() -> void:
 	selected_interaction = null
 	_update_controls()
 	ui.show_inventory(session.inventory.snapshot(),catalog)
+	ui.backpack.drop_available = true
 	ui.backpack.open(session.inventory.snapshot(),catalog)
 	ui.pause_button.disabled = true
 	ui.journal_button.disabled = true
@@ -664,6 +711,7 @@ func _select_inventory_item(item_id: Variant) -> PackedStringArray:
 
 
 func _toggle_journal() -> void:
+	_cancel_item_drag()
 	if not journal_open and not _combat_stable():
 		return
 	if backpack_open or dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
@@ -730,6 +778,7 @@ func _on_player_defeated(_actor: ActorPlaceholder) -> void:
 
 
 func retry_encounter() -> void:
+	_cancel_item_drag()
 	_close_backpack()
 	_cancel_foraging_hold("retry")
 	if player_placeholder.state.health > 0 or retrying or world_host.transitioning or loading_save:
@@ -795,7 +844,132 @@ func _exterior_floor_height(feet: Vector3, actor: ActorPlaceholder) -> float:
 
 
 func _foraging_input_allowed() -> bool:
+	return not item_drag.active() and _drag_input_allowed()
+
+
+func _drag_input_allowed() -> bool:
 	return _combat_stable() and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying and not dialogue.active() and not journal_open and not backpack_open and not ui.settings_open() and get_viewport().gui_get_focus_owner() == null
+
+
+func _validate_live_placement(candidate: WorldItemPlacement, _facts: Dictionary, owner: WeakRef) -> PackedStringArray:
+	if owner.get_ref() != session or world_host.session != session or world_host.transitioning or loading_save or retrying or not window_focused or get_tree().paused or dialogue.active() or journal_open or not _combat_stable():
+		return PackedStringArray(["placement input mode changed"])
+	return ForagingPlacementGeometry.validate_nearby(world_host.current_location,candidate,player_placeholder)
+
+
+func _drop_active_rod() -> void:
+	if not backpack_open or not window_focused or get_tree().paused or world_host.transitioning or loading_save or retrying or dialogue.active() or journal_open or not _combat_stable() or session.inventory.snapshot().active_item_id != ForagingRegistry.ROD_ITEM:
+		return
+	var foot: Variant = ForagingPlacementGeometry.nearby_drop(world_host.current_location,player_placeholder)
+	if foot == null:
+		ui.backpack.feedback.text = "No clear nearby ground. Rod stays in backpack."
+		return
+	var result: ForagingCommandResult = session.foraging.drop(session.current_location_id,ForagingRegistry.ROD_ITEM,foot,session.foraging.revision())
+	if not result.accepted:
+		ui.backpack.feedback.text = "Cannot place rod here. Rod stays in backpack."
+		return
+	_close_backpack()
+	foraging_feedback = "Dropped fishing rod · Drag nearby rod to reposition."
+	foraging_feedback_until = session.elapsed_play_seconds + 2.5
+	_refresh_interaction()
+
+
+func _rod_under_pointer(point: Vector2) -> PrototypeInteractable:
+	var location: PrototypeLocation = world_host.current_location
+	if location == null or location.foraging_pickups == null: return null
+	for pickup: PrototypeInteractable in location.foraging_pickups.targets.values():
+		if pickup.foraging_action.resource_id != ForagingRegistry.ROD_RESOURCE or not _reachable_rod(pickup): continue
+		var centre: Vector3 = pickup.global_position + Vector3.UP * 0.08
+		if camera_rig.camera.is_position_behind(centre): continue
+		var a: Vector2 = camera_rig.camera.unproject_position(centre + Vector3.LEFT * 0.45)
+		var b: Vector2 = camera_rig.camera.unproject_position(centre + Vector3.RIGHT * 0.45)
+		if point.distance_to(Geometry2D.get_closest_point_to_segment(point,a,b)) <= 14.0: return pickup
+	return null
+
+
+func _reachable_rod(pickup: PrototypeInteractable) -> bool:
+	var location: PrototypeLocation = world_host.current_location
+	if not is_instance_valid(pickup) or pickup.is_queued_for_deletion() or not pickup.is_inside_tree() or location == null or not location.is_ancestor_of(pickup) or pickup.foraging_action == null or pickup.foraging_action.resource_id != ForagingRegistry.ROD_RESOURCE or pickup.foraging_action.location_id != session.current_location_id or not pickup.validation_errors(catalog).is_empty() or player_placeholder.global_position.distance_to(pickup.global_position) > pickup.reach:
+		return false
+	var ray: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(player_placeholder.global_position + Vector3.UP * 0.8,pickup.global_position + Vector3.UP * 0.8,1)
+	return get_world_3d().direct_space_state.intersect_ray(ray).is_empty()
+
+
+func _start_item_drag(pickup: PrototypeInteractable, point: Vector2) -> void:
+	if not _foraging_input_allowed() or not _reachable_rod(pickup): return
+	_cancel_foraging_hold("drag")
+	item_drag.start(session,pickup)
+	_drag_mouse_owned = true
+	_drag_pointer = point
+	drag_preview = Node3D.new()
+	drag_preview.name = "RodPlacementPreview"
+	add_child(drag_preview)
+	var mesh: MeshInstance3D = MeshInstance3D.new()
+	var rod: CylinderMesh = CylinderMesh.new()
+	rod.height = 0.9
+	rod.top_radius = 0.06
+	rod.bottom_radius = 0.06
+	mesh.mesh = rod
+	mesh.rotation.z = PI / 2
+	mesh.position.y = 0.1
+	var material: StandardMaterial3D = StandardMaterial3D.new()
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	material.no_depth_test = true
+	mesh.material_override = material
+	drag_preview.add_child(mesh)
+	_update_controls()
+	_tick_item_drag()
+
+
+func _tick_item_drag() -> void:
+	if not item_drag.active(): return
+	var target: PrototypeInteractable = item_drag.target()
+	if not _drag_input_allowed() or item_drag.owner() != session or item_drag.expected_revision != session.foraging.revision() or not _reachable_rod(target) or target.instance_id != item_drag.instance_id or not target.global_position.is_equal_approx(item_drag.original_foot):
+		_cancel_item_drag()
+		return
+	item_drag.preview_foot = camera_rig.ground_point(_drag_pointer,player_placeholder.global_position.y) if ui.accepts_world_pointer(_drag_pointer) else null
+	item_drag.errors = PackedStringArray(["no dry ground under pointer"])
+	if item_drag.preview_foot != null:
+		var provenance: String = WorldItemPlacement.AUTHORED if item_drag.instance_id == ForagingRegistry.ROD_ORIGIN else WorldItemPlacement.GENERATED
+		var candidate: WorldItemPlacement = WorldItemPlacement.new(item_drag.instance_id,item_drag.location_id,item_drag.preview_foot,provenance)
+		item_drag.errors = ForagingPlacementGeometry.validate_nearby(world_host.current_location,candidate,player_placeholder)
+	drag_preview.global_position = item_drag.preview_foot if item_drag.preview_foot != null else item_drag.original_foot
+	var material: StandardMaterial3D = drag_preview.get_child(0).material_override
+	material.albedo_color = Color(.2,1,.6,.8) if item_drag.errors.is_empty() else Color(1,.2,.15,.8)
+	_refresh_interaction()
+
+
+func _finish_item_drag() -> void:
+	_drag_mouse_owned = false
+	_tick_item_drag()
+	if not item_drag.active(): return
+	var accepted: bool = false
+	if item_drag.errors.is_empty() and item_drag.preview_foot != null:
+		var result: ForagingCommandResult = session.foraging.move(item_drag.location_id,item_drag.instance_id,ForagingRegistry.ROD_ITEM,item_drag.preview_foot,item_drag.expected_revision)
+		accepted = result.accepted
+	_dispose_item_drag()
+	_update_controls()
+	foraging_feedback = "Repositioned fishing rod." if accepted else "Cannot place here — rod kept at original position."
+	foraging_feedback_until = session.elapsed_play_seconds + 2.5
+	_refresh_interaction()
+
+
+func _dispose_item_drag() -> void:
+	item_drag.cancel()
+	if is_instance_valid(drag_preview):
+		remove_child(drag_preview)
+		drag_preview.queue_free()
+	drag_preview = null
+	_drag_pointer = Vector2(-1,-1)
+	player_placeholder.pointer_position = Vector2(-1,-1)
+
+
+func _cancel_item_drag() -> void:
+	if not item_drag.active(): return
+	_dispose_item_drag()
+	_update_controls()
+	_refresh_interaction()
 
 
 func _cancel_foraging_hold(reason: String) -> void:

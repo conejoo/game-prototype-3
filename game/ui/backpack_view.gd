@@ -3,6 +3,7 @@ extends Control
 ## Snapshot-only presentation; root validates every selection command.
 signal selection_requested(item_id: Variant)
 signal close_requested
+signal drop_requested
 
 var panel: PanelContainer
 var slots: Array[Button] = []
@@ -13,6 +14,8 @@ var close_button: Button
 var clear_button: Button
 var drop_button: Button
 var _last: Dictionary = {}
+var drop_available: bool = false
+var feedback: Label
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -84,9 +87,10 @@ func _ready() -> void:
 	clear_button.pressed.connect(func() -> void: selection_requested.emit(null))
 	actions.add_child(clear_button)
 	drop_button = Button.new()
-	drop_button.text = "Drop rod (unavailable)"
+	drop_button.text = "Drop rod"
 	drop_button.disabled = true
-	drop_button.tooltip_text = "Safe rod placement is not available yet."
+	drop_button.tooltip_text = "Place rod on nearby clear dry ground."
+	drop_button.pressed.connect(func() -> void: drop_requested.emit())
 	actions.add_child(drop_button)
 	close_button = Button.new()
 	close_button.text = "Close [B / Esc]"
@@ -94,6 +98,11 @@ func _ready() -> void:
 	close_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	close_button.pressed.connect(func() -> void: close_requested.emit())
 	actions.add_child(close_button)
+	feedback = Label.new()
+	feedback.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	feedback.add_theme_font_size_override("font_size",14)
+	feedback.add_theme_color_override("font_color",Color(1,.8,.4))
+	column.add_child(feedback)
 	resized.connect(_fit)
 	_fit()
 	hide()
@@ -120,6 +129,7 @@ func present(snapshot: InventorySnapshot, catalog: ContentCatalog, force: bool =
 			button.tooltip_text = item.display_name + " · " + item.description
 	clear_button.disabled = snapshot.active_item_id == null
 	drop_button.visible = snapshot.active_item_id == ForagingRegistry.ROD_ITEM
+	drop_button.disabled = not drop_available or not drop_button.visible
 	if snapshot.active_item_id == null:
 		details.text = "No active item. Select an owned item to inspect it.\nGathering does not select items automatically."
 	else:
@@ -128,7 +138,8 @@ func present(snapshot: InventorySnapshot, catalog: ContentCatalog, force: bool =
 	_focus_cycle()
 
 func open(snapshot: InventorySnapshot, catalog: ContentCatalog) -> void:
-	present(snapshot,catalog)
+	feedback.text = ""
+	present(snapshot,catalog,true)
 	show()
 	_focus_cycle()
 	var focus: Button = close_button
@@ -148,6 +159,7 @@ func _focus_cycle() -> void:
 	for button: Button in slots:
 		if not button.disabled: buttons.append(button)
 	if not clear_button.disabled: buttons.append(clear_button)
+	if drop_button.visible and not drop_button.disabled: buttons.append(drop_button)
 	buttons.append(close_button)
 	for index: int in range(buttons.size()):
 		var button: Button = buttons[index]

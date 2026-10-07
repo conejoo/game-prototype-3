@@ -778,3 +778,23 @@ Bridge supports B and read-only modal/slot/HUD observations. [F006 acceptance](f
 verifies rules/modal conflicts, two window sizes, ordinary keyboard/pointer acquisition/
 selection and exact whole-save independent-process GUI restart. Capacity presentation is
 explicitly detached synthetic. F007 safe drop/drag and later art/native gates remain Pending.
+
+### Delivered safe rod placement (F007)
+
+GameRoot enables selected rod Drop using facing/alternative nearby search and binds
+weak-session-qualified physical validation after each committed arrival/load. Shared
+ForagingPlacementGeometry validates full rod support/clearance plus inherited restore
+capsule/navigation/reservations; live commands require a dry local hero approach.
+Existing ForagingState jointly consumes/places/moves before the same single location
+listener applies wrappers. Invalid/no-space requests leave bag/active/world unchanged.
+
+WorldItemDrag owns only transient copied identity/revision/foot and weak session/target.
+Root consumes nearby projected rod press, disables controls/combat/AI, ground-rays a
+green/red ghost and revalidates before one move on release. Original wrapper/facts
+remain unchanged during preview. Esc/modal/focus/travel/load/retry/stale ownership
+cancels; old pointer release is consumed before fresh world input. Save schema6 and
+content1 unchanged; capability binding explains live token1 after candidate revision0.
+[F007 acceptance](foraging-items-backpack/F007_ACCEPTANCE.md) verifies both projections/
+zoom bounds, boundaries, indoor/foreign placement, ordinary loop/travel and exact GUI
+independent-process restart/recollect. F008 art and F009/F010 integrated/native gates
+remain Pending; historical release claims are unchanged.
