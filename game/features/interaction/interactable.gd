@@ -3,10 +3,11 @@ extends Node3D
 ## Gameplay identity and interaction live on wrapper, never imported visual nodes.
 
 @export var instance_id: String = ""
-@export_enum("talk", "inspect", "travel", "light") var kind: String = "talk"
+@export_enum("talk", "inspect", "travel", "light", "gather", "pickup") var kind: String = "talk"
 @export var prompt: String = ""
 @export var dialogue_id: String = ""
 @export var light_action: LightSwitchAction
+@export var foraging_action: ForagingAction
 @export_range(0.5, 3.0) var reach: float = 1.7
 
 
@@ -16,11 +17,23 @@ func validation_errors(catalog: ContentCatalog) -> PackedStringArray:
 		errors.append("interaction instance ID must be nonempty and unpadded")
 	if prompt.strip_edges().is_empty():
 		errors.append("interaction prompt must be nonempty")
-	if kind not in ["talk", "inspect", "travel", "light"]:
+	if kind not in ["talk", "inspect", "travel", "light", "gather", "pickup"]:
 		errors.append("unknown interaction kind '%s'" % kind)
 	if not is_finite(reach) or reach < 0.5 or reach > 3.0:
 		errors.append("interaction reach must be 0.5..3m")
-	if kind == "light":
+	if kind in ["gather", "pickup"]:
+		if foraging_action == null:
+			errors.append("foraging interaction requires typed action")
+		else:
+			errors.append_array(foraging_action.validation_errors(catalog))
+			var definition: ForagingResourceDefinition = catalog.get_resource(foraging_action.resource_id)
+			if instance_id != foraging_action.instance_id or (definition != null and (kind == "pickup") != catalog.get_item(definition.item_id).movable_pickup):
+				errors.append("foraging wrapper operation/identity mismatch")
+		if light_action != null or not dialogue_id.is_empty():
+			errors.append("foraging action cannot toggle lights or start dialogue")
+	elif foraging_action != null:
+		errors.append("foraging action requires gather/pickup kind")
+	elif kind == "light":
 		if light_action == null:
 			errors.append("light interaction requires a typed light action")
 		else:

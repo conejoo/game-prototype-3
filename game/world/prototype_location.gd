@@ -9,6 +9,7 @@ extends Node3D
 const GATE_RADIUS: float = 1.6
 var navigation_region: NavigationRegion3D
 var _foraging_owner: WeakRef
+var foraging_pickups: ForagingWorldAdapter
 
 
 func bind_foraging(run: GameSession) -> void:
@@ -34,9 +35,16 @@ func _on_foraging_committed(_revision: int) -> void:
 	_apply_foraging_facts(foraging_facts())
 
 
-func _apply_foraging_facts(_facts: Dictionary) -> void:
-	# F005 adapter overrides this hook to hydrate its nonblocking world wrappers.
-	pass
+func _apply_foraging_facts(facts: Dictionary) -> void:
+	if facts.is_empty(): return
+	if foraging_pickups == null:
+		foraging_pickups = ForagingWorldAdapter.new()
+		foraging_pickups.name = "ForagingPickups"
+		add_child(foraging_pickups)
+	var source_records: Array[Dictionary] = []
+	if has_node("ForestPopulation"):
+		source_records.assign(get_node("ForestPopulation").get("inert_records"))
+	foraging_pickups.apply(location_id, facts, source_records)
 
 
 func _ready() -> void:

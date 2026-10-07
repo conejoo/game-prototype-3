@@ -742,3 +742,25 @@ independent-process binary oracles for bag/authored/generated/foreign-room state
 hostile saves/geometry, rollback/retry/travel and inherited P/M/W regressions. Current
 runtime schema6/content1; world pickups/backpack/holds/drag remain F005+. Historical
 P/M/W packages remain schema5 evidence; no renewed export/native claim implied.
+
+### Delivered physical resources and held interaction (F005)
+
+ForagingWorldAdapter derives nonblocking wrappers from actual inert resourceNode IDs,
+approved registry feet and committed location-filtered facts. Saved authored/generated
+placements override defaults, collected IDs suppress origins. PrototypeLocation's
+existing single weak session/listener owns reconstruction. Wrapper identity/typed
+ForagingAction and replaceable temporary visuals remain separate from durable state.
+
+Root owns transient weak-session/target ForagingHoldController, copied command
+identity/revision/target position and E press latch. Tick revalidates mode/target/LOS/
+range/ownership before one atomic600ms flower/500ms rod commit. Release is observed
+before GUI consumption; cancel/complete requires release/fresh E, preserving immediate
+lamp/gate/dialogue/inspect dispatch. Root entry hooks synchronously cancel for travel/
+load/retry. Noninteractive UI progress/feedback and hold/latch never enter saves.
+Bridge exposes only read-only hold/inventory/foraging/world wrapper observations.
+
+[F005 acceptance](foraging-items-backpack/F005_ACCEPTANCE.md) proves every cancellation/
+capacity/lifecycle criterion, exact independent-process physical placement reconstruction
+and ordinary rendered WASD all-four/hold/release/GUI Save/new-process Load/revisit.
+Pinned geography/source unchanged; schema6/content1 retained. F006 backpack, F007
+ordinary drop/drag, F008 final art and F009/F010 integration/native remain Pending.

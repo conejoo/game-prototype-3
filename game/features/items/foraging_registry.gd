@@ -1,6 +1,6 @@
 class_name ForagingRegistry
 extends RefCounted
-## F001 pinned identities. No source checkout, map refresh or scene ownership.
+## F001 pinned identities/source feet, with user-approved safe runtime relocations.
 
 const LOCATION: String = "prototype-alderwake"
 const ROD_ORIGIN: String = "fishing-rod-dock-01"
@@ -8,6 +8,12 @@ const ROD_ITEM: String = "item-fishing-rod"
 const ROD_RESOURCE: String = "resource-fishing-rod"
 const DROP_ID: String = "dropped-fishing_rod"
 const PLACEMENT_LOCATIONS: PackedStringArray = ["prototype-alderwake", "prototype-tollworks"]
+# Approved 2026-10-07: rod centred on east dock, flower east of cliff.
+# Preserve pinned source geography; saved placements override these defaults.
+const RUNTIME_FEET: Dictionary = {
+	ROD_ORIGIN: Vector3(-6.5, 0, 15.75),
+	"moonflower-01": Vector3(26.75, 0.25, -2),
+}
 const ROWS: Array = [
 	[ROD_ORIGIN, ROD_RESOURCE, ROD_ITEM, Vector3(-8, 0, 15.75)],
 	["moonflower-01", "resource-moonflower", "item-moonflower", Vector3(26, 0.25, -2)],
@@ -19,7 +25,7 @@ const ROWS: Array = [
 static func entries() -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
 	for row: Array in ROWS:
-		result.append({"instance_id": row[0], "resource_id": row[1], "item_id": row[2], "location_id": LOCATION, "foot": row[3]})
+		result.append({"instance_id": row[0], "resource_id": row[1], "item_id": row[2], "location_id": LOCATION, "authored_foot": row[3], "foot": RUNTIME_FEET.get(row[0], row[3])})
 	return result
 
 

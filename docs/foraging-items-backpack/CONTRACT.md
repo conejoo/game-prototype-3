@@ -53,7 +53,7 @@ Four resourceNode records currently runtime_enabled=false/runtime_mapping=null:
 Source alderwake maps explicitly to prototype-alderwake. Definition and instance IDs
 are distinct. One Godot metre per32 source units, existing point transform. Never
 convert saved Godot feet again. Use current terrain-height contract; measure support
-and reachable approach. Keep authored X/Z/identity fixed; record discrepancies.
+and reachable approach. Keep pinned source coordinates and persistent identity; use approved runtime feet below.
 
 Source files read; SHA-256 relative to source root:
 
@@ -192,6 +192,7 @@ capsule approaches: rod(-7,0,15.75), flower01(26.75,0.25,-2),
 flower02(34.75,0.25,7), flower03(30.75,0.5,-9). These are synthetic observations, not
 alternate persistent origins or permission to move authored X/Z. Rod origin lies in
 south-water-06; flower01 overlaps cliff-47-15-east/cliff-47-16-east. No height repair needed.
+Historical F001 boundary (superseded for these two runtime feet by user approval below):
 F005 must resolve physical/visual/LOS adapter geometry before accepting these nodes;
 if impossible under fixed origins, record exact conflict and block F005. Keep map
 snapshot/colliders/nav unchanged; never bypass blocker LOS. F002 prerequisites resolved.
@@ -326,3 +327,47 @@ must hydrate absence/placement wrappers through that hook. No physical item/hold
 activated by F004. Headless independent OS phases and exact binary whole-snapshot oracle
 prove persistence/last-arrival/transient reset; they do not prove ordinary/native input.
 Normal explicit pause Save/Load, backup policy/128KiB and P/M/W facts retained.
+
+## Approved runtime anchor relocations — 2026-10-07
+
+User explicitly requested: "Relocate the Rod and flower01 where it makes sense so it
+doesn't sit inside coliders". This supersedes fixed runtime X/Z for these two origins,
+including earlier fixed-origin blocker language. Keep geography/source snapshots,
+colliders/navigation, original source feet and all IDs unchanged.
+
+| Instance | Pinned source foot | Approved default runtime foot, Godot metres | Placement intent |
+| --- | --- | --- | --- |
+| fishing-rod-dock-01 | (-8,0,15.75) | (-6.5,0,15.75) | Centre of existing east dock spur, 1m from side edges |
+| moonflower-01 | (26,0.25,-2) | (26.75,0.25,-2) | Same terrain terrace, 0.75m east of blocking cliff |
+
+ForagingRegistry entries expose immutable-by-convention authored_foot provenance and
+foot runtime default. F005 adapters must consume registry foot, never reactivate raw
+inert-record feet directly. Flower02/03 unchanged. Existing saved authored overrides
+or generated placements retain their exact recorded feet and take precedence; collected
+IDs remain absent under the same identity. No schema/content bump or save rewrite:
+previous saves store collected IDs and explicit placements, not unmodified default feet.
+
+Fresh foraging_anchor_checks verifies all four runtime anchors against production dry
+five-point support/footprint, retrievable capsule/navigation/path/reservations and clear
+in-range approach LOS. [Relocation record](F005_RELOCATION.md) owns evidence. Original
+F001 vectors/geometry and F005_BLOCKER remain historical source/blocker proof.
+Relocation-only record resolved geometry first. F005 activation subsequently completed;
+[F005 acceptance](F005_ACCEPTANCE.md) supersedes that historical Pending boundary.
+
+
+## Delivered held interaction and physical reconstruction - F005
+
+Location adapter consumes pinned resourceNode identities through approved registry
+runtime feet, never raw blocked source feet. Saved authored/generated placements take
+precedence; committed collected IDs suppress origins. Typed nonblocking wrappers and
+replaceable visuals carry identity/operation separately from state. One existing weak
+location session/listener applies committed facts; no additional world-state authority.
+
+Root transient hold owns copied action/revision/position and weak session/target.
+Revalidate mode/owner/target/range/LOS each tick;0.6s flower/0.5s rod commits exactly
+once through ForagingState. Release/mode/target/removal/travel/load/retry cancellation
+has no reward. E consumed through release even after completion/cancellation prevents
+adjacent immediate lamp/travel continuation. Progress/feedback/hold/latch are not saved.
+Full capacity leaves facts/node. Bridge observes only; no grant/teleport/hold shortcut.
+Existing four immediate interaction kinds retain dispatch. Backpack/drop/drag and
+final art/native/export delivery remain their designated later tasks.

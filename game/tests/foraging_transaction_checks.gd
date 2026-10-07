@@ -46,7 +46,8 @@ func _registry() -> void:
 		var mapped: Dictionary = ForagingRegistry.find(entry.instance_id)
 		_check(mapped.location_id == entry.location_id and mapped.resource_id == entry.resource_id and mapped.item_id == entry.item_id, "pinned identity " + entry.instance_id)
 		var raw: Array = entry.authored_foot_xyz_m
-		_check(mapped.foot == Vector3(raw[0], raw[1], raw[2]), "exact Godot metres " + entry.instance_id)
+		_check(mapped.authored_foot == Vector3(raw[0], raw[1], raw[2]), "pinned source metres " + entry.instance_id)
+		_check(mapped.foot == ForagingRegistry.RUNTIME_FEET.get(entry.instance_id, mapped.authored_foot), "approved runtime metres " + entry.instance_id)
 		mapped.clear()
 		_check(not ForagingRegistry.find(entry.instance_id).is_empty(), "registry copies detached")
 	_check(ForagingRegistry.find(DROP).is_empty(), "generated identity never authored")

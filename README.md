@@ -2,14 +2,17 @@
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
-F001-F004 Done; F005-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
+F001-F005 Done; F006-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
 verifies immutable item/resource content and session-owned20-slot/caps99/1 rules.
 [Atomic command acceptance](docs/foraging-items-backpack/F003_ACCEPTANCE.md) verifies
-joint collection/placement commits and rod conservation. World pickups/backpack UI
-remain pending. [Save/lifecycle acceptance](docs/foraging-items-backpack/F004_ACCEPTANCE.md)
+joint collection/placement commits and rod conservation.
+[World/hold acceptance](docs/foraging-items-backpack/F005_ACCEPTANCE.md) activates four
+nonblocking pickups, cancellable held E and exact persisted physical reconstruction.
+Backpack UI remains F006. [Save/lifecycle acceptance](docs/foraging-items-backpack/F004_ACCEPTANCE.md)
 verifies schema6 item facts, legacy migration, geometry rollback and exact isolated restart.
 [Pinned geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md) record
-two blocked authored anchors for F005 repair.
+original blocked source anchors; approved runtime rod/flower01 relocation now clears
+colliders without pinned geography changes.
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
 W001-W010 verified Done; no next item. Clock/seed/cached forecast rules run through
@@ -128,7 +131,9 @@ again after control returns. HUD pointer regions block aim/wheel zoom/attack.
 Click starts one swing with windup, active and recovery windows; each target is
 contacted once per swing, through range/facing and world-obstruction checks.
 Space dodges in held movement direction, or current facing when stationary;
-dodge lasts 0.30s and blocks damage. E selects nearest visible interaction; six dock lamps offer Turn on/Turn off with independent saved choices. Daytime on arms the lamp for dusk; manual off stays dark. Other exterior lights remain automatic;
+dodge lasts 0.30s and blocks damage. E selects nearest visible interaction. Hold E0.6s
+for moonflowers,0.5s for rod; release/mode/target loss cancels. Release E before another
+interaction. Six dock lamps offer Turn on/Turn off with independent saved choices. Daytime on arms the lamp for dusk; manual off stays dark. Other exterior lights remain automatic;
 dialogue blocks gameplay input, clears held movement, and excludes save/load.
 The first two companion choices remain presentation-only guidance.
 Practice markers/test beacons appear only with explicit debug-only
@@ -201,9 +206,13 @@ Godot cache/certificate access; final checks used normal local application acces
   strict consequence data/legacy migrations, physical strike and separate-process save.
 - `game/features/items/`: immutable item/resource definitions, session-owned20-type
   inventory rules, atomic collection/drop/move services and detached sorted snapshots;
-  no world/UI activation yet.
+  transient hold control; physical pickups apply committed facts through location adapter.
 - `game/tests/inventory_checks.gd`: synthetic capacity/caps/rejection/selection and
   catalog/session/resource isolation acceptance; test-only extra types.
+- `game/world/foraging_world_adapter.gd`: four nonblocking typed wrappers, temporary
+  visuals, collected absence and exact saved authored/generated placement reconstruction.
+- `game/tests/foraging_interaction_checks.gd`, `foraging_interaction_render.gd`:
+  synthetic hold/cancel/capacity/lifecycle and ordinary rendered walk/hold/GUI restart.
 - `game/tests/foraging_transaction_checks.gd`: synthetic identity/revision/capacity,
   joint commit/observer, placement rejection and rod conservation acceptance.
 - `game/features/quests/`: ordered immutable steps, separate runtime progress,

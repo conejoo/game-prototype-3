@@ -50,6 +50,7 @@ func _run() -> void:
 		_check(game.session.foraging.revision() == 0 and game.session.foraging.rod_count() == 1, "fresh transient revision/conservation " + kind)
 		_check(game.player_placeholder.velocity.is_zero_approx() and not game.player_placeholder.controls_enabled and game.selected_interaction == null and not game.loading_save, "no carried world input " + kind)
 		_check(game.session.foraging.get_signal_connection_list("committed").size() == 1, "one current scene listener " + kind)
+		_check_physical_wrappers(game)
 		var facts: Dictionary = game.world_host.current_location.foraging_facts()
 		_check(facts.collected_resource_ids == game.session.foraging.snapshot().collected_resource_ids, "scene fact binding " + kind)
 		_check(game.player_placeholder.global_position.distance_to(game.world_host.current_location.find_spawn(game.session.current_spawn_id).global_position) < 0.01, "last arrival anchor " + kind)
@@ -72,6 +73,7 @@ func _run() -> void:
 	game.world_host.request_transition("prototype-alderwake","alderwake-start")
 	var arrival: Array = await game.world_host.transition_finished
 	_check(arrival[0] and game.world_host.current_location.foraging_facts().world_item_placements.size() == 1 and game.session.foraging.rod_count() == 1,"foreign rod on revisit")
+	_check_physical_wrappers(game)
 	_check(TestRunEvidence.write_json("%s-report.json" % ("write" if writer else "read"),{"pid":OS.get_process_id(),"assertions":assertions + 1,"cases":cases,"failures":failures,"proof":"synthetic service fixture; headless independent OS processes; exact binary oracle"}),"report")
 	game.queue_free()
 	await process_frame
@@ -83,3 +85,20 @@ func _run() -> void:
 func _check(ok: bool,label: String) -> void:
 	assertions += 1
 	if not ok: failures.append(label)
+
+
+func _check_physical_wrappers(game: Node3D) -> void:
+	var location: PrototypeLocation = game.world_host.current_location
+	var expected: Dictionary = {}
+	if location.location_id == ForagingRegistry.LOCATION:
+		for entry: Dictionary in ForagingRegistry.entries():
+			if not game.session.foraging.is_collected(entry.instance_id): expected[entry.instance_id] = entry.foot
+	for placed: Dictionary in game.session.foraging.snapshot().world_item_placements:
+		if placed.location_id == location.location_id:
+			var xyz: Array = placed.foot_xyz_m
+			expected[placed.instance_id] = Vector3(xyz[0],xyz[1],xyz[2])
+	_check(location.foraging_pickups != null and location.foraging_pickups.targets.size() == expected.size(), "F005 process physical node count")
+	for id: String in expected:
+		var target: PrototypeInteractable = location.foraging_pickups.targets.get(id)
+		_check(target != null and target.global_position == expected[id] and target.validation_errors(game.catalog).is_empty(), "F005 process exact physical wrapper " + id)
+	_check(not game.foraging_hold.active(), "F005 process hold remains transient")

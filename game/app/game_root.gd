@@ -31,6 +31,11 @@ var light_feedback_instance_id: String = ""
 var debug_shortcuts_enabled: bool = false
 var environment_review: Node
 var environment_review_namespace: String = ""
+var foraging_hold: ForagingHoldController = ForagingHoldController.new()
+var _e_down: bool = false
+var _e_consumed: bool = false
+var foraging_feedback: String = ""
+var foraging_feedback_until: float = 0.0
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -159,6 +164,7 @@ func _process(delta: float) -> void:
 		_present_environment()
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
+	_tick_foraging_hold(delta)
 	ui.show_combat(player_placeholder.state, guardian, retrying, player_placeholder.combat.damage)
 	ui.show_debug_time(session.environment.day_cycle_progress)
 	if is_instance_valid(companion):
@@ -167,6 +173,19 @@ func _process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	# Observe releases even when GUI consumes input. A hold never rearms itself.
+	if event.is_action_released("interact"):
+		_e_down = false
+		_e_consumed = false
+		_cancel_foraging_hold("released")
+	elif event.is_action_pressed("interact"):
+		if _e_down or event.is_echo():
+			get_viewport().set_input_as_handled()
+			return
+		_e_down = true
+		if not _foraging_input_allowed(): _e_consumed = true
+	if foraging_hold.active() and not _foraging_input_allowed():
+		_cancel_foraging_hold("input mode")
 	if environment_review != null and environment_review.handle_input(event):
 		get_viewport().set_input_as_handled()
 		return
@@ -294,6 +313,8 @@ func _set_paused(paused: bool) -> void:
 
 func _update_controls() -> void:
 	var enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open
+	if not enabled or player_placeholder.state.health <= 0:
+		_cancel_foraging_hold("input mode")
 	player_placeholder.set_controls_enabled(enabled and player_placeholder.state.health > 0)
 	player_placeholder.combat_enabled = enabled
 	if is_instance_valid(companion):
@@ -310,6 +331,8 @@ func _update_controls() -> void:
 
 
 func _on_transition_started() -> void:
+	_cancel_foraging_hold("travel")
+	foraging_feedback = ""
 	light_feedback = ""
 	light_feedback_instance_id = ""
 	companion_ai.reset_route()
@@ -426,7 +449,9 @@ func _refresh_interaction() -> void:
 		ui.show_travel("Quest progress kept; retry restarts at last arrival anchor." if player_placeholder.state.health == 0 else "Click: attack · Space: dodge · Finish fight or retreat to interact / save")
 		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
-	ui.show_travel("E: " + selected_interaction.display_prompt(session.environment) if selected_interaction != null else "E near lamps / Chandlery Maris / purple station / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
+	ui.show_travel(("Hold E %.1fs: " % (catalog.get_resource(selected_interaction.foraging_action.resource_id).hold_milliseconds / 1000.0) if selected_interaction.foraging_action != null else "E: ") + selected_interaction.display_prompt(session.environment) if selected_interaction != null else "E near lamps / Chandlery Maris / purple station / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
+	if not foraging_feedback.is_empty() and session.elapsed_play_seconds < foraging_feedback_until:
+		ui.show_travel(foraging_feedback + " · " + ui.travel_label.text)
 	if selected_interaction != null and selected_interaction.instance_id == light_feedback_instance_id and not light_feedback.is_empty() and session.elapsed_play_seconds < light_feedback_until:
 		ui.show_travel(light_feedback + " · " + ui.travel_label.text)
 
@@ -453,6 +478,9 @@ func switch_light(target_reference: WeakRef, expected_enabled: bool) -> Dialogue
 
 
 func interact() -> DialogueService.ActionResult:
+	if _e_down and _e_consumed:
+		return DialogueService.ActionResult.new(false, "Release E before another interaction.")
+	if _e_down: _e_consumed = true
 	if not _combat_stable():
 		return DialogueService.ActionResult.new(false, "Finish combat or retreat before interaction.")
 	if dialogue.active() or journal_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
@@ -461,6 +489,13 @@ func interact() -> DialogueService.ActionResult:
 	var target: PrototypeInteractable = InteractionSelector.select(player_placeholder, world_host.current_location)
 	if target == null:
 		return DialogueService.ActionResult.new(false, "No nearby visible interaction.")
+	if target.foraging_action != null:
+		if not _e_down or not _foraging_input_allowed() or not target.validation_errors(catalog).is_empty():
+			return DialogueService.ActionResult.new(false, "Press and hold E near the pickup.")
+		var definition: ForagingResourceDefinition = catalog.get_resource(target.foraging_action.resource_id)
+		foraging_hold.start(target, session, definition.hold_milliseconds / 1000.0)
+		ui.show_foraging_progress(0, true)
+		return DialogueService.ActionResult.new(true, "Hold started.", target.kind)
 	if target.kind == "travel":
 		var location: PrototypeLocation = world_host.current_location
 		var errors: PackedStringArray = world_host.request_transition(location.destination_id, location.destination_spawn_id)
@@ -490,6 +525,7 @@ func _cancel_dialogue() -> void:
 
 
 func load_run() -> PackedStringArray:
+	_cancel_foraging_hold("load")
 	var errors: PackedStringArray = _save_boundary_errors()
 	if not errors.is_empty():
 		ui.show_save_status("Load failed: " + "; ".join(errors))
@@ -632,6 +668,7 @@ func _on_player_defeated(_actor: ActorPlaceholder) -> void:
 
 
 func retry_encounter() -> void:
+	_cancel_foraging_hold("retry")
 	if player_placeholder.state.health > 0 or retrying or world_host.transitioning or loading_save:
 		return
 	retrying = true
@@ -692,3 +729,45 @@ func _exterior_floor_height(feet: Vector3, actor: ActorPlaceholder) -> float:
 	query.transform.origin = Vector3(feet.x, hit.position.y + 0.82, feet.z)
 	query.collision_mask = 1
 	return float(hit.position.y) if space.intersect_shape(query).is_empty() else NAN
+
+
+func _foraging_input_allowed() -> bool:
+	return _combat_stable() and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying and not dialogue.active() and not journal_open and not ui.settings_open() and get_viewport().gui_get_focus_owner() == null
+
+
+func _cancel_foraging_hold(reason: String) -> void:
+	foraging_hold.cancel(reason)
+	if is_instance_valid(ui) and ui.gather_progress != null:
+		ui.show_foraging_progress(0, false)
+
+
+func _tick_foraging_hold(delta: float) -> void:
+	if not foraging_hold.active(): return
+	var target: PrototypeInteractable = foraging_hold.target()
+	var location: PrototypeLocation = world_host.current_location
+	var action: ForagingAction = foraging_hold.action
+	if not _e_down or not _foraging_input_allowed():
+		_cancel_foraging_hold("input mode")
+		return
+	if foraging_hold.owner() != session or session.foraging.revision() != foraging_hold.expected_revision or not is_instance_valid(target) or target.is_queued_for_deletion() or not target.is_inside_tree() or location == null or not location.is_ancestor_of(target):
+		_cancel_foraging_hold("stale target/session")
+		return
+	if InteractionSelector.select(player_placeholder, location) != target or not target.global_position.is_equal_approx(foraging_hold.target_position) or target.foraging_action == null or target.foraging_action.location_id != action.location_id or target.foraging_action.instance_id != action.instance_id or target.foraging_action.resource_id != action.resource_id or not target.validation_errors(catalog).is_empty():
+		_cancel_foraging_hold("target/range/LOS changed")
+		return
+	foraging_hold.elapsed += maxf(delta, 0)
+	ui.show_foraging_progress(foraging_hold.progress(), true)
+	if foraging_hold.elapsed + 0.0000001 < foraging_hold.duration: return
+	# End attempt before synchronous committed callbacks remove its physical node.
+	var revision: int = foraging_hold.expected_revision
+	var kind: String = target.kind
+	_cancel_foraging_hold("completed")
+	var result: ForagingCommandResult = session.foraging.pickup(action.location_id, action.instance_id, action.resource_id, revision) if kind == "pickup" else session.foraging.gather(action.location_id, action.instance_id, action.resource_id, revision)
+	if result.accepted:
+		foraging_feedback = "Picked up fishing rod." if kind == "pickup" else "Gathered moonflower."
+	elif "stack_full" in result.errors or "backpack_full" in result.errors:
+		foraging_feedback = "Backpack full — pickup kept in place."
+	else:
+		foraging_feedback = "Gather cancelled — pickup unchanged."
+	foraging_feedback_until = session.elapsed_play_seconds + 2.5
+	_refresh_interaction()

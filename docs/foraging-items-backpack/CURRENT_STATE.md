@@ -5,14 +5,18 @@ Updated2026-10-07, America/Vancouver. [CHECKLIST](CHECKLIST.md) owns status;
 
 ## Selection and continuation
 
-F001-F004 Done; F005-F010 Pending. Active task: none.
-This session completed exactly F004. Stop before successor.
-Next eligible: **F005 — world resources and held interaction**.
-Next action: inspect user changes and F004 acceptance/APIs, revalidate saved facts,
-mark F005 In progress; read tools/PLAYTEST.md and project-local gameplay-testing skill
-before any physical/rendered work. Implement four adapters/held E with lifecycle gates;
-resolve rod/flower01 blocked anchors under fixed XZ/map authority or record exact blocker.
-No automatic next chat/agent/schedule.
+F001-F005 Done; F006-F010 Pending. No active task. Next eligible: **F006 - backpack
+modal and active item HUD**. Read [F005_ACCEPTANCE](F005_ACCEPTANCE.md), current CONTRACT
+and actual root input/foraging ownership, then mark F006 In progress before editing.
+F004 inventory/nullable selection/schema6 exact restart prerequisites verified.
+F005 pickups/hold/progress are delivered; F007 drop/drag remains gated on F006.
+Complete exactly one selected task and stop. No automatic agents.
+
+Rod(-6.5,0,15.75) and flower01(26.75,0.25,-2) use approved safe runtime defaults;
+ForagingRegistry authored_foot retains pinned source provenance. Saved explicit
+placements override defaults; collected IDs stay absent. Original geometry blocker
+and relocation-only records below are historical; F005 acceptance supersedes their
+Pending/In progress boundary. All owned processes exited; no cleanup owed.
 
 ## Baseline and preserved work
 
@@ -25,9 +29,11 @@ Historical P/M/W package/release completion and F001 records preserved.
 
 Current runtime: game/app/game_root.tscn, pinned Alderwake exterior, schema6/content1.
 Catalog now21 definitions (prior17 plus4 item/resource definitions). Fresh sessions start with
-empty inventories; restored sessions hydrate item/ForagingState facts; world nodes remain inert and no backpack/holds/drop route activated.
+empty inventories; restored sessions hydrate item/ForagingState facts. F005 activates
+world wrappers/held E; backpack and ordinary drop/drag remain F006/F007 Pending.
 SaveCodec now serializes item/collected/placement facts; F004 details and acceptance below.
-No geography/source/art/input/UI/export changes or normal-save access.
+Pinned geography/source/export and normal saves untouched. F005 adds held input/UI
+progress and temporary visuals; historical earlier-task boundaries below retained.
 
 ## F002 delivered files and decisions
 
@@ -239,3 +245,93 @@ require F005 repair or explicit blocked decision; no map/LOS bypass. Historical 
 packages remain schema5 history; F010 must produce new schema6 delivery evidence.
 Next eligible F005; F006 independently eligible after F004 if F005 becomes Blocked.
 Completed exactly F004; stop before successor.
+
+## F005 blocked session and durable handoff
+
+Initial HEAD be2b3b85e2da3794802ff004ed169973dd1bb33e; clean worktree, no user changes
+superseded. Marked F005 In progress before investigation, now Blocked under CONTRACT.
+Added game/tests/foraging_anchor_checks.gd and generated UID; updated CHECKLIST/this
+state and added F005_BLOCKER.md. No production, geography, source, content, save schema,
+input/UI/art/export changes. Runtime remains schema6/content1; pickups inert.
+
+F005_BLOCKER owns criterion-by-criterion status and rounded/exact geometric evidence.
+All implementation/rendered acceptance remains unmet/unrun. Reusable test diagnoses
+production blockers synthetically; PASS does not mean held gathering implemented.
+F004 save/lifecycle APIs revalidated with exact all-field independent-process oracle.
+Commands from repository root via isolated run_checks:
+
+- -Task F005 -Names foraging_save_checks,reference_mapping_checks -ProcessScripts
+  foraging_process_checks -TimeoutSeconds150 PASS: 20261007-191556187-ad924655;
+  save111, mapping4/1,648 capsule samples, writer52/read55.
+- -Task F005 -Import -Names foraging_anchor_checks -TimeoutSeconds150 PASS:
+  20261007-191707777-2d925cd8; import/parse and all four anchor probes.
+- Final -Task F005 -Names foraging_anchor_checks -TimeoutSeconds150 PASS:
+  20261007-191757099-44340ed6; explicit foot/sight containment, measured box bounds,
+  clear nearby capsule approaches/in-range and actual LOS blocker names.
+
+All results.json/stdout/stderr inspected. No runtime diagnostics/timeouts/failed runs;
+existing allowed editor-import missing .NET SDK10.0.9 only. Installed console/editor
+paths verified; no SDK installed. Runner appdata/localappdata/check slots under
+builds/testing/F005/<run>, ignored raw evidence under docs/evidence/F005/<run>. Normal
+save untouched. No rendered/native game/editor started; all owned runner processes
+exited and no cleanup owed. Reviewed intended diff/UID/status/reference consistency.
+
+Next eligible F006 independently; future session preserves these current changes.
+F005 remains Blocked until geometry-policy decision; don't restart diagnosis unchanged
+or silently bypass blockers. F005 wasn't completed; exactly one task attempted; stop.
+
+## F005 relocation follow-up and next action
+
+User explicitly approved moving rod/flower01; fulfilled that narrow request. Registry
+RUNTIME_FEET overrides rod onto existing east dock centre(-6.5,0,15.75), flower01 onto
+same terrace0.75m east of cliff(26.75,0.25,-2); original authored_foot and identity retained.
+Changed registry, transaction assertions, prior anchor probe; CONTRACT/AGENT_PROMPT/
+CHECKLIST/this state/F005_BLOCKER and new F005_RELOCATION updated. No map/collider/nav,
+source, save schema/content or UI/input activation changes. Prior uncommitted work kept.
+
+Repository-root run_checks -Task F005 -Names foraging_anchor_checks,
+foraging_transaction_checks,foraging_save_checks,reference_mapping_checks -ProcessScripts
+foraging_process_checks -TimeoutSeconds150 PASS: 20261007-202154715-207af0c2. Four safe
+runtime feet/support/footprint/capsule/navigation/route/reservation/LOS probes; transaction587,
+save111, historical mapping4/1,648, exact independent-process writer52/read55. Reports
+and full stdout/stderr inspected; diagnostics empty/no timeouts/failed cases. Parse
+preflight PASS; no new class/import required. SHA256 source20/geography3/reference3 pins
+unchanged. Runner appdata/localappdata/slots isolated; normal save untouched. All owned
+processes exited; no editor/live game/cleanup. Synthetic proof only, no world pickups yet.
+
+F005_BLOCKER retained historical; approved relocation supersedes fixed-runtime-XZ
+restriction and resolves it. F005 Pending/next eligible; remaining hold/wrapper/rendered
+criteria unimplemented/unrun. Follow F005_RELOCATION/CONTRACT current authority.
+Stopped after requested relocation; no F006 or hold implementation started.
+
+## F005 completed handoff
+
+Baseline HEAD be2b3b85e2da3794802ff004ed169973dd1bb33e. Preserved preceding F005
+blocker/approved relocation work; no user changes overwritten. [F005_ACCEPTANCE](F005_ACCEPTANCE.md)
+owns all criteria/evidence/commands, retained failures and inspection details.
+
+Added ForagingAction, ForagingHoldController, ForagingWorldAdapter and UIDs; updated
+root/interactable/location/UI and read-only bridge observations. New reusable anchor,
+interaction and rendered journey checks; mapping/activation/transaction/process
+checks now distinguish pinned provenance from runtime default and assert exact
+physical wrappers. Updated parent README/architecture/PLAYTEST and workflow docs.
+
+99 synthetic interaction assertions cover exact hold/cancel/latch/capacity/lifecycle,
+physical saved authored/generated pickup and signal ownership. Final code interaction/
+light151/dialogue PASS20261007-205238453-486e18c7. Independent process writer66/read69
+PASS20261007-204632170-6b9a55f0 covers exact whole durable oracle, physical saved-placement
+reconstruction/foreign revisit and transient reset. Anchor, travel10 round trips,
+bridge, mapping1648, activation3226, movement/settings/save111 checks PASS in recorded
+runs. Final rendered PASS20261007-205250215-6f77c16d: ordinary fresh WASD all four,
+actual hold/progress/release, GUI Save, separate PID GUI Load, exact all-fact oracle
+and ordinary rod revisit. Inspected full-size frames;10 writer paused/2 live hold
+captures and3 reader paused captures. No teleport/state/reward setup in rendered run.
+
+Isolated APPDATA/LOCALAPPDATA/save slots/evidence; normal saves untouched. Diagnostics
+empty in passing runtimes; allowed editor-import missing SDK diagnostic retained,
+no installation. Offline/live-source audit PASS audit-20261007-205145-fc1c2562, all20
+source/3 local reference/3 geography hashes intact. Failed fixtures/preflight/parse
+runs and HUD encoding repair documented in acceptance; final tests supersede them.
+Owned processes exited. No remaining F005 criterion, no native/export/new art claim.
+
+F006 next, verified F004 inventory/selection/save prerequisite. Stop here.

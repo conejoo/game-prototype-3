@@ -23,7 +23,7 @@ func _run() -> void:
 	var ids: PackedStringArray = []
 	for target: PrototypeInteractable in room.interactables():
 		ids.append(target.instance_id)
-	var expected: PackedStringArray = ["npc-03-counter", "alderwake-temporary-companion", "alderwake-travel-gate", "dock-lamp-01", "dock-lamp-02", "dock-lamp-03", "dock-lamp-04", "dock-lamp-05", "dock-row-lamp-01"]
+	var expected: PackedStringArray = ["npc-03-counter", "alderwake-temporary-companion", "alderwake-travel-gate", "dock-lamp-01", "dock-lamp-02", "dock-lamp-03", "dock-lamp-04", "dock-lamp-05", "dock-row-lamp-01", "fishing-rod-dock-01", "moonflower-01", "moonflower-02", "moonflower-03"]
 	ids.sort()
 	expected.sort()
 	_check(ids == expected, "Duplicated/missing/inactive interactions")

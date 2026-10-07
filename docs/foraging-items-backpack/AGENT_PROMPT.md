@@ -32,7 +32,9 @@ Only sibling CHECKLIST selects tasks. Parent/map/weather workflows are baseline 
 
 ### Execute exactly one task
 
-Follow CONTRACT source/mapping/ownership/transactions/save/scope. Source read-only;
+Follow CONTRACT source/mapping/ownership/transactions/save/scope, including approved
+runtime relocation feet from ForagingRegistry; pinned source feet remain provenance.
+Source read-only;
 no auto-refresh pinned geography, Flutter dependency or full fishing port. Preserve
 P/M/W behavior and user work. Proposed files/checks must first be created; existing
 checks are reusable inputs, not claims they pass current code.

@@ -1,6 +1,6 @@
 extends SceneTree
 ## F001 synthetic support/nav/capsule/LOS probes against production composition.
-## No resource wrappers, rewards, player walking, or normal save writes.
+## Historical source geometry retained; runtime activation checked separately in F005.
 var failures: PackedStringArray = []
 var rows: Array[Dictionary] = []
 var route_samples: int = 0
@@ -65,9 +65,8 @@ func _run() -> void:
 			"reach_m": 1.5, "path_from_spawn": paths,
 			"proof": "synthetic floor ray + dry nav + radius0.4 height1.6 capsule route; LOS measured, known anchor blockers retained; no ordinary input"
 		})
-		# Runtime resources remain inert; measurements cannot silently add interactions.
-		for target: PrototypeInteractable in room.interactables():
-			_check(target.instance_id != node.instance_id, "F001 activated resource interaction")
+		var runtime_target: PrototypeInteractable = room.foraging_pickups.targets.get(node.instance_id)
+		_check(runtime_target != null and runtime_target.position == ForagingRegistry.find(node.instance_id).foot, "F005 runtime mapping missing")
 	_check(TestRunEvidence.write_json("resource-mapping-report.json", {
 		"task": "F001", "proof": "synthetic", "nodes": rows,
 		"route_capsule_samples": route_samples, "failures": failures

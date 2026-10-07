@@ -51,9 +51,22 @@ signal debug_mode_requested(enabled: bool)
 @onready var debug_label: Label = $Screen/Diagnostics/Debug
 
 var _fps_sample_seconds: float = 0.0
+var gather_progress: ProgressBar
 
 
 func _ready() -> void:
+	gather_progress = ProgressBar.new()
+	gather_progress.name = "GatherProgress"
+	gather_progress.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	gather_progress.show_percentage = false
+	gather_progress.max_value = 1.0
+	$Screen.add_child(gather_progress)
+	gather_progress.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
+	gather_progress.offset_left = -150
+	gather_progress.offset_right = 150
+	gather_progress.offset_top = -162
+	gather_progress.offset_bottom = -146
+	gather_progress.hide()
 	settings_button.pressed.connect(func() -> void: show_settings(true))
 	settings_back.pressed.connect(func() -> void: show_settings(false))
 	fps_toggle.toggled.connect(_show_fps)
@@ -71,6 +84,11 @@ func _ready() -> void:
 	$Screen/PauseOverlay/Center/Panel/Margin/Options/Quit.pressed.connect(
 		func() -> void: quit_requested.emit()
 	)
+
+
+func show_foraging_progress(progress: float, active: bool) -> void:
+	gather_progress.visible = active
+	gather_progress.value = progress
 
 
 func show_paused(paused: bool) -> void:

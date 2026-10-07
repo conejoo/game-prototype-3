@@ -274,6 +274,10 @@ func _observe() -> Dictionary:
 		"journal_open": game.journal_open, "journal_text": game.ui.journal_text.text,
 		"quest_objective": game.ui.objective_label.text,
 		"environment": TestRunObservation.environment(game),
+		"world_pickups":_pickup_observation(),
+		"inventory":game.session.inventory.snapshot().to_dictionary(),
+		"foraging":game.session.foraging.snapshot(),
+		"hold":{ "active":game.foraging_hold.active(), "progress":game.foraging_hold.progress(), "elapsed":game.foraging_hold.elapsed, "duration":game.foraging_hold.duration, "cancel":game.foraging_hold.last_cancel },
 	}
 
 
@@ -318,3 +322,19 @@ func _exit_tree() -> void:
 		var ready: Variant = JSON.parse_string(FileAccess.get_file_as_string(directory.path_join("ready.json")))
 		if ready is Dictionary and ready.get("boot_id") == boot_id:
 			DirAccess.remove_absolute(directory.path_join("ready.json"))
+
+
+func _pickup_observation() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	var location: PrototypeLocation = game.world_host.current_location
+	if location == null or location.foraging_pickups == null: return result
+	var ids: Array[String] = []
+	ids.assign(location.foraging_pickups.targets.keys())
+	ids.sort()
+	for id: String in ids:
+		var target: PrototypeInteractable = location.foraging_pickups.targets[id]
+		if not is_instance_valid(target) or not target.is_inside_tree() or target.is_queued_for_deletion(): continue
+		result.append({"instance_id":id,"resource_id":target.foraging_action.resource_id,
+			"kind":target.kind,"foot_xyz_m":_vector(target.global_position),
+			"screen":_point(game.camera_rig.camera.unproject_position(target.global_position))})
+	return result

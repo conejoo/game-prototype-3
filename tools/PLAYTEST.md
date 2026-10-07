@@ -154,3 +154,14 @@ P013 normal rooms hide practice markers/test beacons. Explicit debug-only
 The purple station remains labeled prototype dialogue for the active ally.
 Full slice evidence uses only `--playtest-dir` and isolated `--save-slot`, without
 developer fixtures or any state setup. Normal no-flag startup has no bridge.
+
+
+F005 bridge observations add read-only inventory/foraging facts, hold active/progress
+and sorted physical pickup identities/runtime feet/screens. No command allowlist or
+mutation shortcut added; B remains F006. foraging_interaction_render uses normal
+camera-relative viewport WASD/E and GUI Save/Load with isolated independent processes.
+Its ordinary journey has no position/fact/reward setup. Actual hold/release screenshots
+are explicitly live_frames (paused=false, because pause cancels hold); normal capture
+guards remain paused. Exact typed whole durable oracle covers old and new facts.
+See [F005 acceptance](../docs/foraging-items-backpack/F005_ACCEPTANCE.md) for provenance,
+retained failures and limits. Synthetic capacity/placement fixtures stay labeled.

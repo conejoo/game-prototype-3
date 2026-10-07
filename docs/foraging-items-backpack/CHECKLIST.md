@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005-F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006-F010 Pending.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -25,7 +25,7 @@ first be created; refine names deliberately and update references together.
 | F002 | Done | F001 | content and20-slot inventory rules |
 | F003 | Done | F002 | atomic gather/pickup/drop/move |
 | F004 | Done | F003 | versioned saves and session rebinding |
-| F005 | Pending | F004 | four pickups and cancellable hold E |
+| F005 | Done | F004 | four pickups and cancellable hold E |
 | F006 | Pending | F004 | backpack modal and active item HUD |
 | F007 | Pending | F005, F006 | safe rod drop/reposition |
 | F008 | Pending | F007 | readable item art/progress/feedback |
@@ -100,7 +100,7 @@ evidence paths; inspect existing multi-process phase routing before reuse.
 
 Inputs: F004 rebinding, four mapped records, InteractionSelector/PrototypeInteractable/
 PrototypeLocation, GameRoot dispatch/gates. Prerequisite: saved facts apply correctly.
-Work: production adapter consumes selected inert records without pinned-layout
+Work: production adapter consumes selected inert identities using approved ForagingRegistry runtime feet, without pinned-layout
 changes; four stable nonblocking wrappers/simple initial visuals; typed gather/
 pickup actions, hold controller/progress. Immediate lamps/dialogue/travel preserved.
 Read-only bridge fields only as needed; no mutation shortcuts.
@@ -291,3 +291,61 @@ Physical nodes/UI remain inert; F005/F007 gameplay geometry and F009/F010 ordina
 acceptance remain Pending. Original F001 anchor blockers preserved. Historical P/M/W
 packages remain schema5 evidence; no new export claim. No editor/live process or cleanup
 owed. Next eligible F005 with F004 actual prerequisites verified. Exactly F004 done; stop.
+
+### F005 — blocked2026-10-07, America/Vancouver
+
+Selected F005 with clean HEAD be2b3b85e2da3794802ff004ed169973dd1bb33e;
+marked In progress before investigation. Fresh production diagnosis confirms rod
+foot/sight inside south-water-06 and flower01 inside two cliff bodies. Fixed authored
+XZ, supported feet, unchanged map and no LOS bypass cannot all be satisfied. Followed
+CONTRACT explicit blocked boundary; no world/hold activation or Done claim.
+[Blocker decision](F005_BLOCKER.md) records every acceptance criterion, exact bounds,
+retry decision and reusable foraging_anchor_checks.gd/UID.
+
+Repository-root run_checks F005 prerequisite save111/mapping4 nodes/1,648 capsule
+samples/independent-process writer52-reader55 PASS (20261007-191556187-ad924655).
+Import/parse/anchor diagnosis PASS (20261007-191707777-2d925cd8); strengthened final
+foot/sight containment diagnostic PASS (20261007-191757099-44340ed6). Reports/logs
+inspected; runtime diagnostics empty; only existing allowed import .NET SDK diagnostic.
+Isolated appdata/check slots; normal save/source/geography/runtime unchanged. No
+rendered/native proof or remaining F005 criteria claimed. All owned processes exited.
+
+F005 needs explicit anchor-policy/map-repair authorization before retry. F006 next
+eligible independently after freshly verified F004; F007 remains blocked by F005.
+Exactly F005 attempted; stop before successor.
+
+### F005 relocation follow-up — 2026-10-07, America/Vancouver
+
+User explicitly authorized rod/flower01 relocation. Geometry blocker resolved; F005
+returned to Pending for remaining world/hold implementation, not Done. Registry keeps
+pinned source feet and stable IDs; rod default now (-6.5,0,15.75), flower01 default
+(26.75,0.25,-2). Source/map/colliders/navigation unchanged; saved placements and
+collected facts retain exact semantics. [Relocation record](F005_RELOCATION.md) records
+all decisions/evidence; CONTRACT now owns approved exception to prior fixed XZ.
+
+Fresh F005 run20261007-202154715-207af0c2 PASS: parse, four safe supported/nav/LOS anchors,
+transaction587, save111, historical mapping4/1,648 samples, exact independent writer52/
+reader55. Diagnostics empty; source20/geography3/reference3 hashes unchanged. Normal
+save untouched; no live process/cleanup. Preserved prior blocker work/history.
+Requested relocation finished; no held-interaction/successor activation. Next F005.
+
+### F005 - completed2026-10-07, America/Vancouver
+
+Four typed nonblocking runtime wrappers activate approved registry feet; root-owned
+weak hold controller commits flowers600ms/rod500ms once, cancels every mode/target/
+LOS/range/removal gate, and consumes E until release. Full capacity keeps nodes.
+Saved authored/generated/foreign-room placements, load/travel/retry absence/count and
+one-listener ownership verified. [Acceptance](F005_ACCEPTANCE.md) owns every criterion,
+commands, inspected images, isolated evidence and retained failures.
+
+Final interaction99/light151/dialogue PASS (20261007-205238453-486e18c7); enhanced
+independent process writer66/read69 PASS (20261007-204632170-6b9a55f0). Anchor/map/
+travel/bridge/movement/settings/save affected regressions PASS as recorded. Final
+ordinary rendered four-node walking/hold/release/GUI Save/new-process GUI Load/exact
+oracle/rod revisit PASS (20261007-205250215-6f77c16d);10 paused writer/2 live hold frames,
+3 paused reader frames. Offline/live-source audit PASS (audit-20261007-205145-fc1c2562).
+Runtime diagnostics empty; existing import-only SDK diagnostic allowed. Pinned source/
+map/colliders/nav and normal saves preserved; all owned processes exited.
+
+Exactly F005 completed. Next eligible F006; F004 inventory/save prerequisite verified.
+Backpack/drop/drag/art/native/export successors unstarted. Stop before successor.
