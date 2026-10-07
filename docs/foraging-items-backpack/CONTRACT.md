@@ -371,3 +371,20 @@ adjacent immediate lamp/travel continuation. Progress/feedback/hold/latch are no
 Full capacity leaves facts/node. Bridge observes only; no grant/teleport/hold shortcut.
 Existing four immediate interaction kinds retain dispatch. Backpack/drop/drag and
 final art/native/export delivery remain their designated later tasks.
+
+## Delivered backpack and selection boundary — F006
+
+GameRoot owns unpaused backpack mode and delegates current focused selection requests to
+InventoryState.select. BackpackView receives detached snapshots; no private item facts,
+world commands or save ownership.20 sorted slots/counts/caps and teal active highlight;
+white focus remains separate. Empty/unowned IDs reject, nullable Clear allowed. Header B/
+Bag and B/Esc/Close are ordinary routes. Non-tool HUD says selected item/no direct use;
+rod says active tool/fishing unavailable. Rod-only Drop disabled until F007 safe path.
+
+Modal cancels hold/clears actor input and stale pointer, disables combat/AI, blocks world
+movement/interact/attack/dodge/aim/zoom/projection and contains focus. E must release/repress
+before another hold. Existing session-time modal policy retained. Pause/dialogue/journal/
+combat/focus/travel/load/retry conflicts cannot select/open concurrently. Save/Load still
+requires close then stable pause; selected ID persists through existing schema6 fields.
+Bridge B/read-only observations only. [Acceptance](F006_ACCEPTANCE.md) records exact restart
+and actual viewport input; ordinary drop/drag remains F007, native/export remains F010.

@@ -90,6 +90,9 @@ func _rules(game: Node3D) -> void:
 		legacy.erase("progression")
 		legacy.erase("environment")
 		legacy.erase("light_source_overrides")
+		legacy.erase("inventory")
+		legacy.erase("collected_resource_ids")
+		legacy.erase("world_item_placements")
 		if version < 3:
 			legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
 			legacy.actors = [legacy.actors[0]]

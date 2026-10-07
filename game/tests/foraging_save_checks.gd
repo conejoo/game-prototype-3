@@ -92,9 +92,10 @@ func _run() -> void:
 
 func _lifecycle(good: Dictionary, world: Dictionary) -> void:
 	game = load("res://app/game_root.tscn").instantiate()
-	game.save_repository = SaveRepository.new("user://saves/f004-lifecycle.json")
 	root.add_child(game)
 	await game.world_host.transition_finished
+	# Root debug slot setup runs in _ready; isolate after it completes.
+	game.save_repository = SaveRepository.new("user://saves/f004-lifecycle-" + str(OS.get_process_id()) + ".json")
 	game._set_paused(true)
 	_write(JSON.stringify(good,"",true,true))
 	_check((await game.load_run()).is_empty(), "initial item load")

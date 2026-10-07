@@ -17,6 +17,7 @@ var dialogue: DialogueService = DialogueService.new()
 var selected_interaction: PrototypeInteractable
 var quests: QuestService = QuestService.new()
 var journal_open: bool = false
+var backpack_open: bool = false
 var relationships: RelationshipService = RelationshipService.new()
 var progression: ProgressionService = ProgressionService.new()
 var guardian: ActorPlaceholder
@@ -126,6 +127,8 @@ func _ready() -> void:
 	ui.dialogue_choice_requested.connect(func(id: String) -> void: _present_dialogue(dialogue.choose(id)))
 	ui.dialogue_cancel_requested.connect(_cancel_dialogue)
 	ui.journal_requested.connect(_toggle_journal)
+	ui.backpack_requested.connect(_toggle_backpack)
+	ui.inventory_selection_requested.connect(_select_inventory_item)
 	ui.show_paused(false)
 	world_host.initialize(catalog, session, party)
 	world_host.transition_started.connect(_on_transition_started)
@@ -165,11 +168,12 @@ func _process(delta: float) -> void:
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
 	_tick_foraging_hold(delta)
+	ui.show_inventory(session.inventory.snapshot(),catalog)
 	ui.show_combat(player_placeholder.state, guardian, retrying, player_placeholder.combat.damage)
 	ui.show_debug_time(session.environment.day_cycle_progress)
 	if is_instance_valid(companion):
 		ui.show_companion(companion.state, companion_ai.mode, session.relationship.trust)
-	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
+	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
 func _input(event: InputEvent) -> void:
@@ -188,6 +192,20 @@ func _input(event: InputEvent) -> void:
 		_cancel_foraging_hold("input mode")
 	if environment_review != null and environment_review.handle_input(event):
 		get_viewport().set_input_as_handled()
+		return
+	if event.is_action_pressed("backpack") and not event.is_echo():
+		_toggle_backpack()
+		get_viewport().set_input_as_handled()
+		return
+	if backpack_open:
+		if event.is_action_pressed("pause") and not event.is_echo():
+			_close_backpack()
+			get_viewport().set_input_as_handled()
+		elif event is InputEventKey and not event.is_action("quit"):
+			if event.keycode not in [KEY_TAB,KEY_ENTER,KEY_KP_ENTER,KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN]:
+				get_viewport().set_input_as_handled()
+		elif event is InputEventMouseButton and (event.button_index != MOUSE_BUTTON_LEFT or not ui.backpack.panel.get_global_rect().has_point(event.position)):
+			get_viewport().set_input_as_handled()
 		return
 	if ui.settings_open() and event.is_action_pressed("pause") and not event.is_echo():
 		ui.show_settings(false)
@@ -222,7 +240,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		retry_encounter()
 		return
-	if (dialogue.active() or journal_open) and not event.is_action("quit"):
+	if (dialogue.active() or journal_open or backpack_open) and not event.is_action("quit"):
 		get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("pause") and not event.is_echo():
@@ -268,7 +286,7 @@ func _set_debug_shortcuts_enabled(enabled: bool) -> void:
 func _advance_debug_hour() -> bool:
 	if not debug_shortcuts_enabled or not session.initialized or not player_placeholder.controls_enabled:
 		return false
-	if get_tree().paused or world_host.transitioning or loading_save or retrying or dialogue.active() or journal_open or not window_focused or get_viewport().gui_get_focus_owner() != null:
+	if get_tree().paused or world_host.transitioning or loading_save or retrying or dialogue.active() or journal_open or backpack_open or not window_focused or get_viewport().gui_get_focus_owner() != null:
 		return false
 	# One game hour is 1/24 of the authored 600-second day. Skip only the
 	# environment clock: play time, actor timers and quest facts remain intact.
@@ -301,7 +319,7 @@ func _resume() -> void:
 
 
 func _set_paused(paused: bool) -> void:
-	if loading_save or dialogue.active() or journal_open:
+	if loading_save or dialogue.active() or journal_open or backpack_open:
 		return
 	get_tree().paused = paused
 	_update_controls()
@@ -312,7 +330,7 @@ func _set_paused(paused: bool) -> void:
 
 
 func _update_controls() -> void:
-	var enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open
+	var enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open and not backpack_open
 	if not enabled or player_placeholder.state.health <= 0:
 		_cancel_foraging_hold("input mode")
 	player_placeholder.set_controls_enabled(enabled and player_placeholder.state.health > 0)
@@ -327,10 +345,11 @@ func _update_controls() -> void:
 		guardian_ai.enabled = guardian.combat_enabled
 		if not guardian.combat_enabled:
 			guardian.clear_input()
-	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or not _combat_stable(), world_host.transitioning or loading_save)
+	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
 func _on_transition_started() -> void:
+	_close_backpack()
 	_cancel_foraging_hold("travel")
 	foraging_feedback = ""
 	light_feedback = ""
@@ -417,6 +436,8 @@ func _save_boundary_errors() -> PackedStringArray:
 		return PackedStringArray(["developer environment review cannot Save/Load; restart without review flag for normal play"])
 	if not _combat_stable():
 		return PackedStringArray(["save/load requires living hero outside combat/action windows; retreat or retry first"])
+	if backpack_open:
+		return PackedStringArray(["close backpack before save/load"])
 	if journal_open:
 		return PackedStringArray(["close journal before save/load"])
 	if dialogue.active():
@@ -440,9 +461,9 @@ func save_run() -> PackedStringArray:
 
 
 func _refresh_interaction() -> void:
-	if dialogue.active() or journal_open:
+	if dialogue.active() or journal_open or backpack_open:
 		selected_interaction = null
-		ui.show_travel("Journal open · J / Esc: close" if journal_open else "Dialogue open · Esc: close")
+		ui.show_travel("Backpack open · B / Esc: close" if backpack_open else "Journal open · J / Esc: close" if journal_open else "Dialogue open · Esc: close")
 		return
 	if not _combat_stable():
 		selected_interaction = null
@@ -458,7 +479,7 @@ func _refresh_interaction() -> void:
 
 func switch_light(target_reference: WeakRef, expected_enabled: bool) -> DialogueService.ActionResult:
 	var target: PrototypeInteractable = target_reference.get_ref() as PrototypeInteractable if target_reference != null else null
-	if not _combat_stable() or dialogue.active() or journal_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
+	if not _combat_stable() or dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
 		return DialogueService.ActionResult.new(false, "Light switching blocked by current input mode.", "light")
 	var location: PrototypeLocation = world_host.current_location
 	if not is_instance_valid(target) or target.is_queued_for_deletion() or location == null or not target.is_inside_tree() or not location.is_ancestor_of(target) or InteractionSelector.select(player_placeholder, location) != target:
@@ -483,7 +504,7 @@ func interact() -> DialogueService.ActionResult:
 	if _e_down: _e_consumed = true
 	if not _combat_stable():
 		return DialogueService.ActionResult.new(false, "Finish combat or retreat before interaction.")
-	if dialogue.active() or journal_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
+	if dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
 		return DialogueService.ActionResult.new(false, "Interaction blocked by current input mode.")
 	# Never trust last frame's prompt or hold an old room's node after travel.
 	var target: PrototypeInteractable = InteractionSelector.select(player_placeholder, world_host.current_location)
@@ -601,10 +622,51 @@ func _refresh_world_presentation() -> void:
 			(target as MarisCounter).apply_facts(session.completed_effect_ids)
 
 
+func _toggle_backpack() -> void:
+	if backpack_open:
+		_close_backpack()
+		return
+	if not session.initialized or not window_focused or get_tree().paused or world_host.transitioning or loading_save or retrying or dialogue.active() or journal_open or not _combat_stable():
+		return
+	backpack_open = true
+	_cancel_foraging_hold("backpack")
+	selected_interaction = null
+	_update_controls()
+	ui.show_inventory(session.inventory.snapshot(),catalog)
+	ui.backpack.open(session.inventory.snapshot(),catalog)
+	ui.pause_button.disabled = true
+	ui.journal_button.disabled = true
+	ui.backpack_button.disabled = true
+	ui.travel_label.hide()
+	player_placeholder.pointer_position = Vector2(-1,-1)
+
+
+func _close_backpack() -> void:
+	if not backpack_open: return
+	backpack_open = false
+	ui.backpack.close()
+	player_placeholder.pointer_position = Vector2(-1,-1)
+	_update_controls()
+	ui.pause_button.disabled = get_tree().paused or dialogue.active() or journal_open
+	ui.journal_button.disabled = get_tree().paused or dialogue.active()
+	ui.travel_label.visible = not get_tree().paused and not dialogue.active() and not journal_open
+	ui.show_inventory(session.inventory.snapshot(),catalog)
+	_refresh_interaction()
+
+
+func _select_inventory_item(item_id: Variant) -> PackedStringArray:
+	if not backpack_open or not window_focused or get_tree().paused or world_host.transitioning or loading_save or retrying or dialogue.active() or journal_open:
+		return PackedStringArray(["inventory selection blocked by current input mode"])
+	var errors: PackedStringArray = session.inventory.select(item_id)
+	ui.backpack.present(session.inventory.snapshot(),catalog,true)
+	ui.show_inventory(session.inventory.snapshot(),catalog)
+	return errors
+
+
 func _toggle_journal() -> void:
 	if not journal_open and not _combat_stable():
 		return
-	if dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
+	if backpack_open or dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
 		return
 	journal_open = not journal_open
 	ui.show_journal(journal_open, _journal_text())
@@ -668,6 +730,7 @@ func _on_player_defeated(_actor: ActorPlaceholder) -> void:
 
 
 func retry_encounter() -> void:
+	_close_backpack()
 	_cancel_foraging_hold("retry")
 	if player_placeholder.state.health > 0 or retrying or world_host.transitioning or loading_save:
 		return
@@ -703,7 +766,7 @@ func _reaction_command(id: String, source_id: String) -> DialogueService.ActionR
 	return DialogueService.ActionResult.new(false, "Reaction source/action unavailable.")
 
 func _select_upgrade() -> void:
-	if not journal_open or not window_focused or get_tree().paused or dialogue.active() or world_host.transitioning or loading_save or not _combat_stable():
+	if not journal_open or backpack_open or not window_focused or get_tree().paused or dialogue.active() or world_host.transitioning or loading_save or not _combat_stable():
 		return
 	var result: DialogueService.ActionResult = progression.select_upgrade(ProgressionService.UPGRADE_ID)
 	_refresh_progression()
@@ -732,7 +795,7 @@ func _exterior_floor_height(feet: Vector3, actor: ActorPlaceholder) -> float:
 
 
 func _foraging_input_allowed() -> bool:
-	return _combat_stable() and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying and not dialogue.active() and not journal_open and not ui.settings_open() and get_viewport().gui_get_focus_owner() == null
+	return _combat_stable() and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying and not dialogue.active() and not journal_open and not backpack_open and not ui.settings_open() and get_viewport().gui_get_focus_owner() == null
 
 
 func _cancel_foraging_hold(reason: String) -> void:

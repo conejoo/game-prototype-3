@@ -2,6 +2,8 @@ class_name PrototypeUI
 extends CanvasLayer
 ## Displays state and submits commands; GameRoot owns pause/session changes.
 
+signal backpack_requested
+signal inventory_selection_requested(item_id: Variant)
 signal pause_requested
 signal resume_requested
 signal quit_requested
@@ -52,9 +54,30 @@ signal debug_mode_requested(enabled: bool)
 
 var _fps_sample_seconds: float = 0.0
 var gather_progress: ProgressBar
+var backpack: BackpackView
+var backpack_button: Button
+var active_item_label: Label
 
 
 func _ready() -> void:
+	backpack_button = Button.new()
+	backpack_button.name = "Backpack"
+	backpack_button.text = "Bag [B]"
+	backpack_button.custom_minimum_size = Vector2(86,40)
+	backpack_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	$Screen/Header/Margin/Row.add_child(backpack_button)
+	backpack_button.pressed.connect(func() -> void: backpack_requested.emit())
+	active_item_label = Label.new()
+	active_item_label.name = "ActiveItem"
+	active_item_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	active_item_label.add_theme_font_size_override("font_size",14)
+	$Screen/Footer/Margin/TextBox.add_child(active_item_label)
+	$Screen/Footer.offset_top = -130
+	backpack = preload("res://ui/backpack_view.gd").new()
+	backpack.name = "BackpackOverlay"
+	$Screen.add_child(backpack)
+	backpack.selection_requested.connect(func(id: Variant) -> void: inventory_selection_requested.emit(id))
+	backpack.close_requested.connect(func() -> void: backpack_requested.emit())
 	gather_progress = ProgressBar.new()
 	gather_progress.name = "GatherProgress"
 	gather_progress.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -84,6 +107,16 @@ func _ready() -> void:
 	$Screen/PauseOverlay/Center/Panel/Margin/Options/Quit.pressed.connect(
 		func() -> void: quit_requested.emit()
 	)
+
+
+func show_inventory(snapshot: InventorySnapshot, catalog: ContentCatalog) -> void:
+	backpack.present(snapshot,catalog)
+	if snapshot.active_item_id == null:
+		active_item_label.text = "Active item: none · B: backpack"
+	else:
+		var item: ItemDefinition = catalog.get_item(snapshot.active_item_id)
+		active_item_label.text = ("Active tool: " if item.is_tool() else "Selected item: ") + item.display_name + (" · Fishing unavailable" if item.is_tool() else " · No direct use")
+	backpack_button.disabled = pause_overlay.visible or dialogue_overlay.visible or journal_overlay.visible or backpack.visible
 
 
 func show_foraging_progress(progress: float, active: bool) -> void:
@@ -174,7 +207,7 @@ func show_environment(progress: float, condition: WeatherSchedule.Condition) -> 
 
 func accepts_world_pointer(point: Vector2) -> bool:
 	return (
-		not pause_overlay.visible
+		not backpack.visible and not pause_overlay.visible
 		and not journal_overlay.visible
 		and not dialogue_overlay.visible
 		and not $Screen/Header.get_global_rect().has_point(point)
@@ -184,7 +217,7 @@ func accepts_world_pointer(point: Vector2) -> bool:
 
 
 func show_camera(description: String) -> void:
-	camera_label.text = "WASD: move · Mouse: face / click attack · Space: dodge · E: interact · J: journal\n%s · Wheel / +/-: zoom · P: projection · Esc: pause · F10: quit" % description
+	camera_label.text = "WASD: move · Mouse: face / click attack · Space: dodge · E: interact · B: backpack · J: journal\n%s · Wheel / +/-: zoom · P: projection · Esc: pause · F10: quit" % description
 
 
 func show_location(description: String) -> void:
@@ -196,7 +229,7 @@ func show_companion(actor: ActorState, mode: String, trust: int = 0) -> void:
 
 
 func show_combat(actor: ActorState, guardian: ActorPlaceholder, retrying: bool, damage: int = 25) -> void:
-	$Screen/CombatStatus.visible = not pause_overlay.visible and not dialogue_overlay.visible and not journal_overlay.visible
+	$Screen/CombatStatus.visible = not backpack.visible and not pause_overlay.visible and not dialogue_overlay.visible and not journal_overlay.visible
 	var message: String = "Hero %d / %d · Strike %d" % [actor.health, actor.max_health, damage]
 	if actor.health == 0:
 		message = "DEFEATED · R: retry at arrival anchor (quest progress kept)"
@@ -240,7 +273,7 @@ func show_dialogue(service: DialogueService, result: DialogueService.ActionResul
 		dialogue_choices.remove_child(child)
 		child.queue_free()
 	dialogue_overlay.visible = service.active()
-	travel_label.visible = not service.active() and not pause_overlay.visible
+	travel_label.visible = not service.active() and not backpack.visible and not pause_overlay.visible
 	pause_button.disabled = pause_overlay.visible or service.active()
 	journal_button.disabled = pause_overlay.visible or service.active()
 	if not service.active():
@@ -282,7 +315,7 @@ func show_objective(text: String) -> void:
 func show_journal(open: bool, text: String) -> void:
 	journal_overlay.visible = open
 	journal_text.text = text
-	travel_label.visible = not open and not dialogue_overlay.visible and not pause_overlay.visible
+	travel_label.visible = not open and not dialogue_overlay.visible and not backpack.visible and not pause_overlay.visible
 	pause_button.disabled = open or pause_overlay.visible or dialogue_overlay.visible
 	if open:
 		journal_close.grab_focus()

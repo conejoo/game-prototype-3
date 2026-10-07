@@ -3,7 +3,7 @@ extends Node
 
 const KEYS: Dictionary[String, int] = {
 	"W": KEY_W, "A": KEY_A, "S": KEY_S, "D": KEY_D,
-	"P": KEY_P, "E": KEY_E, "J": KEY_J, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
+	"P": KEY_P, "E": KEY_E, "J": KEY_J, "B": KEY_B, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
 	"+": KEY_EQUAL, "-": KEY_MINUS,
 	"SPACE": KEY_SPACE, "R": KEY_R,
 }
@@ -271,7 +271,7 @@ func _observe() -> Dictionary:
 		"upgrade_screen": _point(game.ui.upgrade_button.get_global_rect().get_center()),
 		"quest_snapshot": SaveCodec.snapshot(game.session).quests,
 		"completed_effect_ids": Array(game.session.completed_effect_ids),
-		"journal_open": game.journal_open, "journal_text": game.ui.journal_text.text,
+		"backpack_open":game.backpack_open, "backpack_details":game.ui.backpack.details.text, "active_item_label":game.ui.active_item_label.text, "backpack_slots":game.ui.backpack.slot_ids.duplicate(), "journal_open": game.journal_open, "journal_text": game.ui.journal_text.text,
 		"quest_objective": game.ui.objective_label.text,
 		"environment": TestRunObservation.environment(game),
 		"world_pickups":_pickup_observation(),

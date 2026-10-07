@@ -2,13 +2,13 @@
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
-F001-F005 Done; F006-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
+F001-F006 Done; F007-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
 verifies immutable item/resource content and session-owned20-slot/caps99/1 rules.
 [Atomic command acceptance](docs/foraging-items-backpack/F003_ACCEPTANCE.md) verifies
 joint collection/placement commits and rod conservation.
 [World/hold acceptance](docs/foraging-items-backpack/F005_ACCEPTANCE.md) activates four
 nonblocking pickups, cancellable held E and exact persisted physical reconstruction.
-Backpack UI remains F006. [Save/lifecycle acceptance](docs/foraging-items-backpack/F004_ACCEPTANCE.md)
+[Backpack acceptance](docs/foraging-items-backpack/F006_ACCEPTANCE.md) delivers B/HUD20 slots, active selection/tool HUD and blocked world input; rod Drop remains disabled until F007. [Save/lifecycle acceptance](docs/foraging-items-backpack/F004_ACCEPTANCE.md)
 verifies schema6 item facts, legacy migration, geometry rollback and exact isolated restart.
 [Pinned geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md) record
 original blocked source anchors; approved runtime rod/flower01 relocation now clears
@@ -133,7 +133,7 @@ contacted once per swing, through range/facing and world-obstruction checks.
 Space dodges in held movement direction, or current facing when stationary;
 dodge lasts 0.30s and blocks damage. E selects nearest visible interaction. Hold E0.6s
 for moonflowers,0.5s for rod; release/mode/target loss cancels. Release E before another
-interaction. Six dock lamps offer Turn on/Turn off with independent saved choices. Daytime on arms the lamp for dusk; manual off stays dark. Other exterior lights remain automatic;
+interaction. B or Bag opens20-slot backpack; mouse/Tab/Enter selects owned items, B/Esc/Close returns control. Active tool label does not enable fishing; rod Drop unavailable until F007. Six dock lamps offer Turn on/Turn off with independent saved choices. Daytime on arms the lamp for dusk; manual off stays dark. Other exterior lights remain automatic;
 dialogue blocks gameplay input, clears held movement, and excludes save/load.
 The first two companion choices remain presentation-only guidance.
 Practice markers/test beacons appear only with explicit debug-only

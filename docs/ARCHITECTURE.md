@@ -764,3 +764,17 @@ capacity/lifecycle criterion, exact independent-process physical placement recon
 and ordinary rendered WASD all-four/hold/release/GUI Save/new-process Load/revisit.
 Pinned geography/source unchanged; schema6/content1 retained. F006 backpack, F007
 ordinary drop/drag, F008 final art and F009/F010 integration/native remain Pending.
+
+### Delivered backpack modal and active HUD (F006)
+
+B/HUD opens snapshot-only BackpackView with twenty slots, count/cap/details, distinct
+active selection styling, Clear/Close and disabled rod-only Drop. Root owns modal state,
+rejects stale/unowned/focus/lifecycle selection and delegates to existing InventoryState.
+World controls/combat/AI/aim/projection/zoom and held gather input are cleared/blocked;
+focus cycles inside modal. B/Esc/Close returns control requiring fresh world input.
+Non-tools claim no direct use; active rod states fishing unavailable. Schema6/content1
+and save ownership unchanged; explicit pause Save/Load after close persists selection.
+Bridge supports B and read-only modal/slot/HUD observations. [F006 acceptance](foraging-items-backpack/F006_ACCEPTANCE.md)
+verifies rules/modal conflicts, two window sizes, ordinary keyboard/pointer acquisition/
+selection and exact whole-save independent-process GUI restart. Capacity presentation is
+explicitly detached synthetic. F007 safe drop/drag and later art/native gates remain Pending.

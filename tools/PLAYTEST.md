@@ -64,7 +64,7 @@ remain in the ignored session directory. Use a fresh directory for each run.
 | capture | none | Save actual viewport PNG; requires windowed renderer |
 | quit | none | Last step only; publish response, then normal F10 quit |
 
-Keys: W, A, S, D, E, J, P, SPACE, R, ESC, TAB, ENTER, +, -. Coordinates use viewport pixels
+Keys: W, A, S, D, E, J, B, P, SPACE, R, ESC, TAB, ENTER, +, -. Coordinates use viewport pixels
 (current prototype captures are 960x640), not desktop coordinates. Holds/waits
 are 16–5000 ms, up to 32 steps/30 seconds per request. Monotonic deadlines never
 release early; scheduling and physics quantization can extend observed duration.
@@ -165,3 +165,13 @@ are explicitly live_frames (paused=false, because pause cancels hold); normal ca
 guards remain paused. Exact typed whole durable oracle covers old and new facts.
 See [F005 acceptance](../docs/foraging-items-backpack/F005_ACCEPTANCE.md) for provenance,
 retained failures and limits. Synthetic capacity/placement fixtures stay labeled.
+
+F006 adds B through ordinary InputMap backpack action and read-only backpack_open,
+backpack_details, detached backpack_slots and active_item_label observations. Mouse/
+Tab/Enter uses normal GUI selection; no grant/equip/selection command exists. Backpack
+is unpaused modal, blocking world input while session clock follows existing modal policy.
+B/Esc/Close restores controls; Drop stays disabled until F007. backpack_ui_render captures
+use explicit disabled-controls/contained-focus/modal provenance, separate from existing
+pause-gated world/Save/Load captures. Capacity fixture changes detached display only.
+See [F006 acceptance](../docs/foraging-items-backpack/F006_ACCEPTANCE.md) for exact restart
+and retained failures; this is viewport/debug integration, not native Windows input.

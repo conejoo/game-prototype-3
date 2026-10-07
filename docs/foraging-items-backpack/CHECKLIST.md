@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006-F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007-F010 Pending.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -26,7 +26,7 @@ first be created; refine names deliberately and update references together.
 | F003 | Done | F002 | atomic gather/pickup/drop/move |
 | F004 | Done | F003 | versioned saves and session rebinding |
 | F005 | Done | F004 | four pickups and cancellable hold E |
-| F006 | Pending | F004 | backpack modal and active item HUD |
+| F006 | Done | F004 | backpack modal and active item HUD |
 | F007 | Pending | F005, F006 | safe rod drop/reposition |
 | F008 | Pending | F007 | readable item art/progress/feedback |
 | F009 | Pending | F008 | integrated play/restart acceptance |
@@ -349,3 +349,31 @@ map/colliders/nav and normal saves preserved; all owned processes exited.
 
 Exactly F005 completed. Next eligible F006; F004 inventory/save prerequisite verified.
 Backpack/drop/drag/art/native/export successors unstarted. Stop before successor.
+
+### F006 — completed2026-10-07, America/Vancouver
+
+B/HUD twenty-slot backpack, truthful count/cap/details/active tool HUD, nullable selection,
+teal active highlight, contained keyboard/pointer focus and B/Esc/Close. Root modal gates
+cancel holds/clear input/block world actions; Drop remains disabled until F007.
+[Acceptance](F006_ACCEPTANCE.md) records every criterion and provenance.
+
+Prerequisite save/inventory/exact process oracle PASS20261007-213213568-cd9e372d;
+import/smoke PASS213515217-d12b8527. Final production-code save111/backpack142/dialogue/
+settings/smoke plus ordinary rendered GUI Save/new-process exact GUI Load PASS
+20261007-214630223-026c35f0; final expanded145 backpack assertions PASS214749916-fd20c1ad.
+Movement/camera, foraging interaction and bridge regressions PASS213714822-a63ef3ab and
+214410243-746669a9 (those full runs retain separate fixture failures described in acceptance).
+Offline/live-source audit PASS audit-20261007-214511-1b518619. Normal save untouched;
+runner appdata/localappdata/slots isolated. Runtime diagnostics empty in final passing runs;
+existing import-only missing .NET SDK allowed. No install/native/export claim.
+
+Retained initial wrong active_tool fixture, unexplained first rendered timeout, and
+inherited shared-save backup fixture failure. Save fixture now sets isolated repository
+after root startup; strict rollback tests pass. Final images inspected at normal/smaller
+window; capacity uses detached synthetic display fixture. All owned processes exited,
+no cleanup owed. Next eligible F007 with verified F005/F006 prerequisites. Exactly F006
+completed; stop before successor.
+
+F006 pre-commit review: restored journal-only upgrade guard; earned-point modal regression
+PASS146 + consequence checks in20261007-220250776-080c65b1. Legacy consequence fixture
+now omits v6-only item facts for v1-v3 tests. Acceptance/state retain failed fixture run.

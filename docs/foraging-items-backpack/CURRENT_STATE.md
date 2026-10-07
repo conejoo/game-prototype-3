@@ -5,12 +5,11 @@ Updated2026-10-07, America/Vancouver. [CHECKLIST](CHECKLIST.md) owns status;
 
 ## Selection and continuation
 
-F001-F005 Done; F006-F010 Pending. No active task. Next eligible: **F006 - backpack
-modal and active item HUD**. Read [F005_ACCEPTANCE](F005_ACCEPTANCE.md), current CONTRACT
-and actual root input/foraging ownership, then mark F006 In progress before editing.
-F004 inventory/nullable selection/schema6 exact restart prerequisites verified.
-F005 pickups/hold/progress are delivered; F007 drop/drag remains gated on F006.
-Complete exactly one selected task and stop. No automatic agents.
+F001-F006 Done; F007-F010 Pending. No active task. Next eligible: **F007 — safe rod
+drop and reposition**. F005 world wrappers/holds and F006 backpack/modal/active HUD
+prerequisites actually pass. Read F005/F006 acceptance and CONTRACT; then implement
+exactly F007. Rod Drop is intentionally disabled until its safe command path exists.
+No automatic agents. Completed exactly F006; stop before successor.
 
 Rod(-6.5,0,15.75) and flower01(26.75,0.25,-2) use approved safe runtime defaults;
 ForagingRegistry authored_foot retains pinned source provenance. Saved explicit
@@ -30,7 +29,7 @@ Historical P/M/W package/release completion and F001 records preserved.
 Current runtime: game/app/game_root.tscn, pinned Alderwake exterior, schema6/content1.
 Catalog now21 definitions (prior17 plus4 item/resource definitions). Fresh sessions start with
 empty inventories; restored sessions hydrate item/ForagingState facts. F005 activates
-world wrappers/held E; backpack and ordinary drop/drag remain F006/F007 Pending.
+world wrappers/held E; backpack/active HUD delivered F006; ordinary drop/drag remains F007 Pending.
 SaveCodec now serializes item/collected/placement facts; F004 details and acceptance below.
 Pinned geography/source/export and normal saves untouched. F005 adds held input/UI
 progress and temporary visuals; historical earlier-task boundaries below retained.
@@ -335,3 +334,71 @@ runs and HUD encoding repair documented in acceptance; final tests supersede the
 Owned processes exited. No remaining F005 criterion, no native/export/new art claim.
 
 F006 next, verified F004 inventory/selection/save prerequisite. Stop here.
+
+## F006 initial session record (historical)
+
+Initial HEAD d8956b3387f9ed280207c6d25e301731d38b92f6; clean worktree.
+Prerequisite inventory/save/exact independent-process checks PASS:
+20261007-213213568-cd9e372d. F006 selected; implement backpack/modal/HUD only.
+
+## F006 delivered state and continuation
+
+[Acceptance](F006_ACCEPTANCE.md) owns full criteria, commands, outcomes and retained failures.
+Initial HEAD d8956b3387f9ed280207c6d25e301731d38b92f6; clean worktree, no user work overwritten.
+Added game/ui/backpack_view.gd, tests/backpack_ui_checks.gd/backpack_ui_render.gd and three
+UIDs. Updated GameRoot modal/selection/lifecycle gates; InputMap B; UI header/footer layout,
+active item label and snapshot rendering; bridge B/read-only observations; inherited
+foraging_save_checks repository isolation after startup. Updated README/architecture/
+PLAYTEST/CONTRACT/CHECKLIST/this state and F006_ACCEPTANCE.
+
+Backpack is unpaused modal with twenty sorted slots, caps/counts, teal owned active highlight,
+truthful non-tool/tool details and disabled rod-only Drop. UI renders detached snapshots;
+root calls inventory.select only while current focused modal permits it. No schema/content
+change, source/geography change or ordinary drop/drag implementation. Existing environment
+clock keeps modal-time policy. Closing releases focus, clears stale pointer and requires
+fresh world presses; held E uses existing release latch. Save/Load remain pause-only after close.
+
+Commands from repository root through isolated run_checks F006:
+- Prerequisite save111/inventory199 + independent foraging_process PASS:
+  20261007-213213568-cd9e372d; import/startup PASS213515217-d12b8527.
+- Final production-code backpack142/save111/dialogue/settings/smoke + rendered write/read
+  PASS20261007-214630223-026c35f0. WriterPID26152/readerPID68684; normal WASD/E/B/Tab/Enter/
+  pointer acquires rod/flower, selects rod and GUI Saves. Fresh process GUI Loads and compares
+  every prior/item/forecast fact exactly; active highlight/HUD agree.
+- Final enhanced backpack145 PASS20261007-214749916-fd20c1ad (known-unowned rejection,
+  final-unit clearing, fresh movement/attack/dodge; modes/aim/zoom/focus/capacity).
+- Movement/camera, foraging interaction99 and bridge regressions PASS within earlier runs
+  213714822-a63ef3ab/214410243-746669a9; whole reports retain distinct fixture failures.
+- Offline/live-source Python audit PASS audit-20261007-214511-1b518619,20 source/3 reference/
+  3 geography hashes unchanged and5/6 negative controls. Source tests not run.
+
+Full final results/logs and full-size empty/rod/capacity/restored images inspected. Eight
+final backpack PNGs use explicit unpaused modal verification; Save/Load views use unchanged
+pause capture guard. Smaller800x600 window renders800x533 aspect-preserved content. Capacity
+fixture is detached display-only snapshot/catalog, never ordinary collection or saved state.
+Final diagnostics empty; only initial import existing missing .NET SDK10.0.9 allowed.
+Raw evidence docs/evidence/F006/<run>; isolated appdata/localappdata/check namespaces under
+builds/testing/F006/<run>. Normal save untouched. All owned processes exited; no cleanup owed.
+
+Retained failures:213714822-a63ef3ab wrong test Object/String active_tool comparison;
+213942370-c3764ab1 rendered writer timeout after resize, cause unestablished; two later
+full rendered writer/reader runs pass without gate bypass.214410243-746669a9 inherited save
+fixture pre-ready path overwritten by runner slot, recovered earlier backup; after-startup
+PID-qualified test path repair passes strict rollback111. Failed text-edit anchor wrote nothing.
+No release/native/export/publication/install. Intended diff/new files/links/status and
+command-local cr-at-eol whitespace review complete. Next eligible F007; F005+F006 verified.
+Every F006 criterion evidenced. Stop before successor.
+
+## F006 commit review follow-up — 2026-10-07
+
+Pre-commit diff review found `_select_upgrade` used `not journal_open and not backpack_open`,
+allowing a direct journal upgrade command while backpack was open. Restored fail-closed
+`not journal_open or backpack_open` guard; synthetic earned-point regression proves modal
+cannot spend a point. Backpack146 and dialogue checks PASS in20261007-220147051-41603a7b.
+That run retains an independent consequence fixture failure: v1-v3 synthetic payload still
+contained schema6 item fields. Fixture now removes inventory/collected/placement fields
+when constructing legacy payloads; migration assertions unchanged.
+Final backpack146 + consequence checks PASS20261007-220250776-080c65b1, diagnostics empty.
+Prior rendered selection/restart evidence remains applicable; guard repair concerns journal
+upgrade command only. No F007 work begun. Two additional necessary guard/fixture repairs
+included with F006 commit; normal saves/source/geography unchanged.

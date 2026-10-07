@@ -56,7 +56,7 @@ theme_override_constants/margin_bottom = 12
 [node name="Row" type="HBoxContainer" parent="Screen/Header/Margin"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 24
+theme_override_constants/separation = 12
 
 [node name="Titles" type="VBoxContainer" parent="Screen/Header/Margin/Row"]
 layout_mode = 2
@@ -66,29 +66,31 @@ mouse_filter = 2
 [node name="Title" type="Label" parent="Screen/Header/Margin/Row/Titles"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.86, 0.95, 0.93, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "RETURNING FAIR"
+clip_text = true
 
 [node name="Subtitle" type="Label" parent="Screen/Header/Margin/Row/Titles"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.71, 0.73, 1)
 theme_override_font_sizes/font_size = 14
 text = "Recovery slice · Prototype adaptation"
+clip_text = true
 
 [node name="PlayTime" type="Label" parent="Screen/Header/Margin/Row"]
 layout_mode = 2
 text = ""
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 
 [node name="Pause" type="Button" parent="Screen/Header/Margin/Row"]
-custom_minimum_size = Vector2(140, 40)
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Pause  [Esc]"
 
 [node name="Journal" type="Button" parent="Screen/Header/Margin/Row"]
-custom_minimum_size = Vector2(110, 40)
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
 size_flags_vertical = 4
 text = "Journal [J]"
@@ -100,7 +102,7 @@ offset_top = 84.0
 offset_right = 936.0
 offset_bottom = 130.0
 mouse_filter = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 14
 autowrap_mode = 2
 
 [node name="Footer" type="PanelContainer" parent="Screen"]
@@ -129,7 +131,8 @@ mouse_filter = 2
 
 [node name="Text" type="Label" parent="Screen/Footer/Margin/TextBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 2
 text = "WASD: move · Mouse: face cyan marker · Wheel / +/-: zoom · P: projection
 Orthographic · Esc: pause/resume · F10: quit · Prototype movement room"
 
@@ -428,7 +431,7 @@ theme_override_colors/font_color = Color(1, 0.8, 0.4, 1)
 [node name="CompanionStatus" type="Label" parent="Screen/Footer/Margin/TextBox"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 14
 
 [node name="Diagnostics" type="VBoxContainer" parent="Screen"]
 z_index = -1
