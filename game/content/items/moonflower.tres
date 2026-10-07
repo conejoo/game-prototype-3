@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/items/item_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+stable_id = "item-moonflower"
+display_name = "Moonflower"
+source_item_id = "moonflower"
+category = "forage"
+stack_limit = 99
+description = "A pale Moonwood flower. Gathered for keeping; no direct use in this slice."

@@ -683,4 +683,20 @@ four source resource records stay inert. [F001 acceptance](foraging-items-backpa
 records fresh P/M/W checks and synthetic floor/navigation measurements. Rod origin is
 inside water collision and moonflower-01 overlaps cliff colliders; F005 must repair or
 block before claiming four enabled interactions. No pinned map refresh or LOS bypass.
-F002 content/inventory rules are next; P/M/W release history remains unchanged.
+F002 content/inventory rules are delivered below; P/M/W release history remains unchanged.
+
+### Delivered content and inventory rules (F002)
+
+ContentCatalog validates21 immutable authored definitions, including typed ItemDefinition
+and ForagingResourceDefinition. Distinct item/resource stable IDs and explicit references
+retain source provenance. GameSession owns independent InventoryState; pure commands
+validate20 distinct types, one stack/type, flower99/rod1, strict positive integer
+quantities and nullable owned selection before mutation. Tool capability derives from
+selected definition. Final-unit consumption removes stack and clears active selection.
+
+Detached sorted InventorySnapshot observations cannot change session or Resources.
+Catalog replacement publishes only after all item/resource references validate.
+[Acceptance](foraging-items-backpack/F002_ACCEPTANCE.md) verifies rules and affected
+root/map/save regressions. World records still inert, UI unchanged, schema5/content1
+retained. F003 owns atomic collected/placement transactions; F004 owns persistence.
+No gathering/backpack/drop activation or renewed P/M/W export claim implied.

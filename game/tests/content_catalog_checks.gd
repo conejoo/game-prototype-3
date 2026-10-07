@@ -24,7 +24,7 @@ func _run() -> void:
 		return
 	var catalog: ContentCatalog = ContentCatalog.new()
 	_check(catalog.initialize(load(MANIFEST_PATH) as ContentManifest).is_empty(), "Authored catalog must validate")
-	_check(catalog.initialized and catalog.definition_count() == 17, "Catalog must publish seventeen definitions")
+	_check(catalog.initialized and catalog.definition_count() == 21, "Catalog must publish twenty-one definitions")
 	_check(catalog.get_actor("npc-03").display_name == "Maris", "Maris supplied stable identity lost")
 	_check(catalog.get_actor("prototype-companion").prototype_fixture, "Temporary companion must be labeled")
 	_check(catalog.get_dialogue("prototype-companion-greeting").prototype_fixture, "Temporary dialogue must be labeled")
@@ -82,7 +82,7 @@ func _run() -> void:
 	(fixture.definitions[4] as DialogueDefinition).lines = [" "]
 	_reject(fixture, "blank line")
 	_check(not catalog.initialize(fixture).is_empty(), "Bad replacement catalog must fail")
-	_check(catalog.definition_count() == 17 and catalog.get_actor(HERO_ID) != null, "Rejected catalog must preserve published definitions")
+	_check(catalog.definition_count() == 21 and catalog.get_actor(HERO_ID) != null, "Rejected catalog must preserve published definitions")
 	_check(catalog.get_dialogue("prototype-companion-greeting").lines[0].begins_with("[Prototype fixture"), "Rejected catalog replaced valid dialogue with malformed content")
 
 	var actor_definition: ActorDefinition = catalog.get_actor(HERO_ID)

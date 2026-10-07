@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/items/item_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+stable_id = "item-fishing-rod"
+display_name = "Fishing rod"
+source_item_id = "fishing_rod"
+category = "tool"
+stack_limit = 1
+movable_pickup = true
+description = "A movable rod. Can be selected as a tool; fishing is unavailable in this slice."

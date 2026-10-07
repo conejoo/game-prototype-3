@@ -19,7 +19,7 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 			errors.append("definition[%d] is null" % index)
 			continue
 		var label: String = "definition[%d] '%s'" % [index, definition.stable_id]
-		if not (definition is ActorDefinition or definition is LocationDefinition or definition is DialogueDefinition or definition is QuestDefinition or definition is ReactionDefinition or definition is UpgradeDefinition):
+		if not (definition is ActorDefinition or definition is LocationDefinition or definition is DialogueDefinition or definition is QuestDefinition or definition is ReactionDefinition or definition is UpgradeDefinition or definition is ItemDefinition or definition is ForagingResourceDefinition):
 			errors.append("%s has unsupported definition type" % label)
 		for error: String in definition.validation_errors():
 			errors.append("%s: %s" % [label, error])
@@ -27,8 +27,25 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 			errors.append("%s: duplicate stable ID" % label)
 		else:
 			candidate[definition.stable_id] = definition
+	var item_sources: PackedStringArray = []
+	var resource_sources: PackedStringArray = []
 	for definition: ContentDefinition in manifest.definitions:
-		if definition is LocationDefinition:
+		if definition is ItemDefinition:
+			var item: ItemDefinition = definition as ItemDefinition
+			if item.source_item_id in item_sources:
+				errors.append("duplicate source item ID")
+			item_sources.append(item.source_item_id)
+		elif definition is ForagingResourceDefinition:
+			var resource: ForagingResourceDefinition = definition as ForagingResourceDefinition
+			if resource.source_resource_id in resource_sources:
+				errors.append("duplicate source resource ID")
+			resource_sources.append(resource.source_resource_id)
+			var item: ItemDefinition = candidate.get(resource.item_id) as ItemDefinition
+			if item == null:
+				errors.append("resource references absent/wrong item '%s'" % resource.item_id)
+			elif item.source_item_id != resource.source_resource_id:
+				errors.append("resource and item source IDs must match")
+		elif definition is LocationDefinition:
 			for actor_id: String in (definition as LocationDefinition).actor_ids:
 				_validate_actor_reference(candidate, definition.stable_id, actor_id, errors)
 		elif definition is DialogueDefinition:
@@ -116,3 +133,11 @@ func get_reaction(id: String) -> ReactionDefinition:
 
 func get_upgrade(id: String) -> UpgradeDefinition:
 	return _definitions.get(id) as UpgradeDefinition
+
+
+func get_item(id: String) -> ItemDefinition:
+	return _definitions.get(id) as ItemDefinition
+
+
+func get_resource(id: String) -> ForagingResourceDefinition:
+	return _definitions.get(id) as ForagingResourceDefinition

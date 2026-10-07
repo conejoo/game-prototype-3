@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ForagingResourceDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/items/foraging_resource_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+stable_id = "resource-moonflower"
+display_name = "Moonflower"
+source_resource_id = "moonflower"
+item_id = "item-moonflower"
+hold_milliseconds = 600

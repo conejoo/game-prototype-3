@@ -1,9 +1,12 @@
 # Returning Fair prototype
 
-Planned next feature: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
+Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
-F001 reference audit Done; F002-F010 Pending. [Pinned behavior and geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md)
-record two blocked authored anchors for F005 repair; gameplay remains unchanged.
+F001/F002 Done; F003-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
+verifies immutable item/resource content and session-owned20-slot/caps99/1 rules.
+World pickups/backpack UI remain pending; schema5 saves retained.
+[Pinned geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md) record
+two blocked authored anchors for F005 repair.
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
 W001-W010 verified Done; no next item. Clock/seed/cached forecast rules run through
@@ -47,7 +50,7 @@ through Moonwood to Reed Chandlery and reconnect at Maris's counter.
 Read the returned experience, compare familiar gear and finish the practical fitting.
 Cancellation keeps specialist service unavailable. Completion restores displayed
 river gear and specialist service preview; basic supplies stay available. Both
-variants survive travel and save/restart. Purchases/inventory are outside this slice.
+variants survive travel and save/restart. Purchases remain outside recovery slice; foraging inventory workflow above adds separate rules.
 Companion dialogue offers one mutually exclusive Trust +1 / -1 prototype decision.
 Accepting Maris's lead earns one preparation point; J journal lets you select
 Deliberate Strike, raising hero damage from 25 to 40. Choices/upgrades persist.
@@ -190,6 +193,10 @@ Godot cache/certificate access; final checks used normal local application acces
   derived strike damage; journal/HUD display reactions and submit upgrade command.
 - `game/tests/consequence_checks.gd`: alternative/replay protection, earned point,
   strict consequence data/legacy migrations, physical strike and separate-process save.
+- `game/features/items/`: immutable item/resource definitions, session-owned20-type
+  inventory rules and detached sorted snapshots; no world/UI activation yet.
+- `game/tests/inventory_checks.gd`: synthetic capacity/caps/rejection/selection and
+  catalog/session/resource isolation acceptance; test-only extra types.
 - `game/features/quests/`: ordered immutable steps, separate runtime progress,
   legal command/effect transactions and journal queries.
 - `game/tests/quest_checks.gd`, `quest_process_checks.gd`: legality/idempotency,

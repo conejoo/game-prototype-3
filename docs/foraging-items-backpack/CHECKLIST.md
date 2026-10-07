@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002-F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003-F010 Pending.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -22,7 +22,7 @@ first be created; refine names deliberately and update references together.
 | ID | Status | Dependencies | Outcome |
 | --- | --- | --- | --- |
 | F001 | Done | inspected P/M/W baseline | pinned behavior and node mapping |
-| F002 | Pending | F001 | content and20-slot inventory rules |
+| F002 | Done | F001 | content and20-slot inventory rules |
 | F003 | Pending | F002 | atomic gather/pickup/drop/move |
 | F004 | Pending | F003 | versioned saves and session rebinding |
 | F005 | Pending | F004 | four pickups and cancellable hold E |
@@ -222,3 +222,25 @@ Final check pins these deficiencies; F005 must repair or block before activation
 Synthetic dry routes do not prove ordinary walking or usable blocked origins.
 No editor/live process owned. Next eligible F002: mapping/rules prerequisite verified.
 Stop before successor.
+
+### F002 — completed2026-10-07, America/Vancouver
+
+Added two immutable item/two resource definitions, validated distinct catalog keys and
+source references, session-owned20-type inventory and detached sorted snapshots.
+Caps99/1, atomic add/consume/select rejection, nullable owned selection/tool derivation,
+final-unit clearing and cross-session/resource isolation verified.
+[Acceptance](F002_ACCEPTANCE.md) records every criterion and API decisions.
+
+Repository-root run_checks F002: prerequisite reference_mapping PASS
+(20261007-173618317-6c5fef72); Import + inventory/content_catalog/application_smoke/
+environment_save PASS (20261007-174145567-2ef98c9b); final inventory/reference_mapping/
+map_activation/save PASS (20261007-174326531-6f771cc0). Inventory199 assertions;
+environment codec517; mapping four nodes/1,648 capsule samples. Offline/live-source
+Python audits PASS (audit-20261007-175049-e9aad353). Isolated APPDATA/LOCALAPPDATA/slots;
+normal save/source untouched; runtime diagnostics empty. Existing import-only missing
+.NET SDK diagnostic allowed. No failed F002 engine runs or owned live process.
+
+Schema5/content1 retained; four world records remain inert. F005 blocked-anchor repair
+boundary and all historical P/M/W/F001 evidence preserved. No UI/input/save/placement/
+art/export activation. Next eligible F003; prerequisite F002 actual rules pass.
+Completed exactly F002; stop before successor.

@@ -1,7 +1,8 @@
 # Foraging, items and backpack migration contract
 
 Prepared 2026-10-04; F001 reference audit completed2026-10-05, America/Vancouver.
-Gameplay implementation remains F002+; current runtime unchanged.
+F002 content/inventory rules completed2026-10-07; world/UI activation remains F005+.
+Current saves remain schema5/content1; F004 owns schema6.
 [CHECKLIST.md](CHECKLIST.md) owns task status. [CURRENT_STATE.md](CURRENT_STATE.md)
 owns continuation. Target repository: `D:/development/game-dev-blender/returning-fair-prototype`.
 Application: target `game/`, Godot4.7.2 typed GDScript/Compatibility renderer.
@@ -238,3 +239,25 @@ Successful generated pickup removes placement while keeping original collected.
 F004 uses strict candidate validation and geometry capability; F007 supplies fully
 measured placement semantics without weakening the save boundary. No general multi-rod
 equipment, fishing, tutorial journal, gifting, economy or autosave port.
+
+## F002 implemented content/inventory boundary
+
+Completed2026-10-07; [acceptance](F002_ACCEPTANCE.md). Catalog now21 definitions with
+ItemDefinition and ForagingResourceDefinition under game/features/items. Four local
+Resources implement the resolved F001 table and strict typed resource->item/source
+references. Cached Resources follow existing immutable authored-data convention.
+
+GameSession owns InventoryState. Positive integer Variant quantities required;
+float1.0 is deliberately rejected alongside fractions/bools/nonfinite values, avoiding
+GDScript int coercion. initialize/can_add/add/consume/select return PackedStringArray
+errors; no scene/signal ownership. Snapshot detached and sorted by item stable ID;
+active ID null or owned String. select(null) explicitly clears. active_tool derives
+owned selection/category; neither pickup nor forage selection activates tool use.
+Cap/quantity/ownership failure preserves counts and selection; final consume removes
+stack and clears matching active ID. Generic consume fixtures do not establish a
+valid production rod save; F003/F004 enforce cross-world conservation.
+
+Schema5/content1 and four inert physical records retained. Inventory serialization,
+collected/placement facts and publication are still F003/F004 work. JSON decoding in
+F004 must first strictly validate whole numeric quantities then convert to int.
+No source/geography refresh, world/UI/drop/fishing activation implied by F002.
