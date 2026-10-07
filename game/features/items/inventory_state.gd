@@ -9,6 +9,7 @@ var initialized: bool = false
 var _catalog: ContentCatalog
 var _item_counts: Dictionary[String, int] = {}
 var _active_item_id: String = ""
+var _revision: int = 0
 
 
 func initialize(catalog: ContentCatalog) -> PackedStringArray:
@@ -19,6 +20,10 @@ func initialize(catalog: ContentCatalog) -> PackedStringArray:
 	_catalog = catalog
 	initialized = true
 	return []
+
+
+func revision() -> int:
+	return _revision
 
 
 func snapshot() -> InventorySnapshot:
@@ -53,6 +58,7 @@ func add(item_id: String, quantity: Variant = 1) -> PackedStringArray:
 	var errors: PackedStringArray = can_add(item_id, quantity)
 	if errors.is_empty():
 		_item_counts[item_id] = count(item_id) + int(quantity)
+		_revision += 1
 	return errors
 
 
@@ -62,6 +68,7 @@ func consume(item_id: String, quantity: Variant = 1) -> PackedStringArray:
 		return errors
 	if quantity > count(item_id):
 		return PackedStringArray(["insufficient_items"])
+	_revision += 1
 	var remaining: int = count(item_id) - int(quantity)
 	if remaining == 0:
 		_item_counts.erase(item_id)
@@ -76,12 +83,16 @@ func select(item_id: Variant) -> PackedStringArray:
 	if not initialized:
 		return PackedStringArray(["inventory is not initialized"])
 	if item_id == null:
+		if not _active_item_id.is_empty():
+			_revision += 1
 		_active_item_id = ""
 		return []
 	if not item_id is String or _catalog.get_item(item_id) == null:
 		return PackedStringArray(["unknown_item"])
 	if count(item_id) == 0:
 		return PackedStringArray(["missing_owned_item"])
+	if _active_item_id != item_id:
+		_revision += 1
 	_active_item_id = item_id
 	return []
 

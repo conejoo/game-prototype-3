@@ -5,16 +5,18 @@ Updated2026-10-07, America/Vancouver. [CHECKLIST](CHECKLIST.md) owns status;
 
 ## Selection and continuation
 
-F001/F002 Done; F003-F010 Pending. Active task: none.
-This session completed exactly F002. Stop before successor.
-Next eligible: **F003 — atomic item/resource commands**.
-Next action: inspect user changes and F002 APIs/tests/acceptance, revalidate prerequisites,
-mark F003 In progress before editing; implement session-owned collected facts/typed
-placements and joint commit/publication. No automatic next chat/agent/schedule.
+F001-F003 Done; F004-F010 Pending. Active task: none.
+This session completed exactly F003. Stop before successor.
+Next eligible: **F004 — save compatibility and lifecycle**.
+Next action: inspect user changes and F003 APIs/acceptance, revalidate prerequisites,
+mark F004 In progress before editing; implement strict schema6 candidate validation,
+legacy defaults, root session rebinding and isolated exact process-restart oracle.
+No automatic next chat/agent/schedule.
 
 ## Baseline and preserved work
 
-Initial target HEAD `5f42802a2c8bf4b276b1009666c5ad9564c094a0`; worktree clean.
+Historical F002 initial target HEAD `5f42802a2c8bf4b276b1009666c5ad9564c094a0`; worktree clean.
+F003 initial target HEAD `20dfbecdbddcc21c6ea58a36bb1f5f2d99cca73a`; worktree clean.
 No existing user changes overwritten. Read-only source HEAD recorded by F001:
 `60c20eb2816e7271fb84afaba286af006ebe3ccf`; current20 pinned source hashes/audit PASS,
 source status clean. Per-command safe.directory override only; no Git config changes.
@@ -22,7 +24,7 @@ Historical P/M/W package/release completion and F001 records preserved.
 
 Current runtime: game/app/game_root.tscn, pinned Alderwake exterior, schema5/content1.
 Catalog now21 definitions (prior17 plus4 item/resource definitions). Sessions own fresh
-empty inventories; world nodes remain inert and no backpack/holds/drop route activated.
+empty inventories and ForagingState facts; world nodes remain inert and no backpack/holds/drop route activated.
 SaveCodec unchanged and does not serialize F002 inventory; F004 owns schema6.
 No geography/source/art/input/UI/export changes or normal-save access.
 
@@ -45,8 +47,8 @@ immutable metadata. Final consume erases stack/clears matching selection.
 
 snapshot() yields detached, item-ID-sorted Dictionary[String,int] with nullable active
 ID; to_dictionary copies counts again. Internal empty-string selection sentinel never
-appears in snapshot. No signal/scene/save ownership in inventory. F003 owns related
-facts/revisions/publication; generic consume tests do not prove production rod
+appears in snapshot. No signal/scene/save ownership in inventory. F003 delivered related
+facts/revisions/publication below; generic consume tests do not prove production rod
 conservation. F004 must validate numeric JSON integers before converting to command ints.
 All authored Resources remain immutable by existing convention; no per-session counts
 or active IDs stored in content. Invalid catalog replacement leaves old full index intact.
@@ -88,7 +90,7 @@ Parent-doc newline repair first failed before writing because elevated Git user 
 from checkout owner; command-local target safe.directory override resolved it. No
 global config change; no effect on engine checks.
 All runner processes exited; no editor/live game/render/native input or cleanup owed.
-All F002 criteria evidenced; F003-F010 criteria unrun.
+All F002 criteria evidenced. F003 delivered below; F004-F010 criteria unrun.
 
 ## F001 historical evidence and activation constraints
 
@@ -112,3 +114,63 @@ LOS placement under fixed authored XZ/map authority or record exact design confl
 and Block F005. No LOS bypass, collider removal, map refresh or rebake authorized.
 This does not block F003/F004/F006. No source save import, fishing, tutorial side
 effects, autosave, economy/gifting, new NPC/campaign or combat redesign in scope.
+
+## F003 delivered state and continuation details
+
+[Acceptance](F003_ACCEPTANCE.md) owns criterion table, commands, outcomes and limits.
+Changed game/app/game_session.gd, game/features/items/inventory_state.gd; added
+ForagingRegistry, ForagingState, WorldItemPlacement, ForagingCommandResult and
+foraging_transaction_checks.gd with five engine-generated UIDs. Updated README,
+architecture and this workflow CONTRACT/CHECKLIST/current state/acceptance.
+
+ForagingState owns private sorted collected origins and placement index, WeakRef
+session binding and injected placement Callable. Commands return structured outcomes;
+integer committed signal follows joint bag/active/facts/placement mutation. Observers
+query detached snapshots; nested world commands/rebinding reject command_busy.
+Revision includes world/capability revisions plus successful inventory mutations and
+changed selection. Treat opaque token; one transaction may advance twice. Transient,
+fresh0, never serialize. Root must still revalidate physical selected target in F005+.
+
+Registry pins four exact F001 identities/feet; resource/item namespace validated.
+Authored move overrides same original ID; pickup suppresses original/removes override.
+Generated drop uses dropped-fishing_rod, supported Alderwake/Tollworks, original
+fishing-rod-dock-01 already collected. Drop consumes final bag rod/clears active;
+generated pickup removes placement/keeps origin suppressed. Rod count1 enforced before
+commands; F002 generic synthetic add/consume are not production rod transactions.
+No physical resource wrapper, UI/drop route, hold/drag or geometry activation.
+
+Placement validator receives detached typed candidate/full snapshot and returns
+PackedStringArray: empty validates, errors reject. Missing/freed/malformed capability
+fails closed. Service validates finite Godot metres/identity/provenance/location and
+rechecks revision/current room after callback before consume/commit. It does not undo
+unrelated callback changes; validator must not mutate session. F004 requires strict
+restored-fact validation and geometry before swap; F007 supplies measured physical
+placement. Do not mistake synthetic validators for dry/support/retrieval evidence.
+No restore API or schema6 added here; SaveCodec remains schema5/content1 and ignores
+inventory/new world facts. Exact process restart remains F004 work.
+
+F003 commands from repository root, installed console verified4.7.2:
+
+- run_checks -Task F003 -Names inventory_checks -TimeoutSeconds150 PASS,
+  20261007-182122692-f0e545dc; prerequisite inventory199 assertions.
+- run_checks -Task F003 -Import -Names foraging_transaction_checks,inventory_checks,
+  content_catalog_checks,application_smoke,save_checks -TimeoutSeconds150:
+  20261007-182622044-53f5ad0e import PASS, parse FAIL. Extra parenthesis in test callback;
+  direct-parse.log retained. No engine acceptance claimed from this failure.
+- Same command without Import after syntax fix PASS,
+  20261007-182714901-8301608f; transaction573 assertions, F002199 and affected regressions.
+- Final run_checks -Task F003 -Names foraging_transaction_checks,map_activation_checks,
+  environment_save_checks,location_travel_checks -TimeoutSeconds150 PASS,
+  20261007-182823373-7e09f842; tightened transaction583 assertions, codec517, ten round trips.
+
+Inspected reports/logs; no runtime diagnostics/timeouts. Only allowed initial editor
+missing .NET SDK10.0.9 diagnostic; no install. Runner evidence docs/evidence/F003/<run-id>,
+isolated builds/testing/F003/<run-id>/appdata/localappdata and check namespaces;
+normal save untouched. Bundled Python offline/live-source audits PASS,
+audit-20261007-182858-342d8acb;20 source/3 reference/3 geography hashes unchanged,
+5 offline/6 live negative controls. Source status clean; Flutter tests not run.
+
+Reviewed intended diff/new files/UIDs, whitespace/status/link consistency. Preserved
+failed runs and historical records. All owned runner processes exited; no editor,
+live/render/native game started or cleanup owed. All F003 criteria evidenced;
+F004-F010 criteria unrun. Next eligible F004; stop before successor.

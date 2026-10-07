@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003-F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004-F010 Pending.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -23,7 +23,7 @@ first be created; refine names deliberately and update references together.
 | --- | --- | --- | --- |
 | F001 | Done | inspected P/M/W baseline | pinned behavior and node mapping |
 | F002 | Done | F001 | content and20-slot inventory rules |
-| F003 | Pending | F002 | atomic gather/pickup/drop/move |
+| F003 | Done | F002 | atomic gather/pickup/drop/move |
 | F004 | Pending | F003 | versioned saves and session rebinding |
 | F005 | Pending | F004 | four pickups and cancellable hold E |
 | F006 | Pending | F004 | backpack modal and active item HUD |
@@ -244,3 +244,26 @@ Schema5/content1 retained; four world records remain inert. F005 blocked-anchor 
 boundary and all historical P/M/W/F001 evidence preserved. No UI/input/save/placement/
 art/export activation. Next eligible F003; prerequisite F002 actual rules pass.
 Completed exactly F002; stop before successor.
+
+### F003 — completed2026-10-07, America/Vancouver
+
+Added pinned four-node registry, session-owned collected facts/typed placements,
+structured gather/pickup/drop/move results and post-commit signal. Revision and
+committed-location guards, fail-closed injected placement capability, detached
+observations and reentry rejection preserve atomic outcomes and rod1 conservation.
+[Acceptance](F003_ACCEPTANCE.md) records every criterion and API boundary.
+
+Repository-root run_checks F003: inventory prerequisite PASS
+(20261007-182122692-f0e545dc); Import PASS but test parse typo FAIL retained
+(20261007-182622044-53f5ad0e); corrected transaction/inventory/catalog/application/save
+PASS (20261007-182714901-8301608f); final transaction/map/environment/travel PASS
+(20261007-182823373-7e09f842). Final transaction583 assertions, inventory199,
+environment codec517; ten travel round trips. Runtime diagnostics empty; existing
+import-only missing .NET SDK diagnostic allowed. Isolated APPDATA/LOCALAPPDATA/slots;
+normal save untouched. Offline/live-source audits PASS
+(audit-20261007-182858-342d8acb); source/geography hashes and clean source preserved.
+
+Placement fixtures prove service boundary only; F007 physical geometry remains
+pending. Schema5/content1, inert physical nodes/UI and P/M/W release history retained.
+No live process/editor or cleanup owed. Next eligible F004; F003 command invariants
+actually pass. Completed exactly F003; stop before successor.

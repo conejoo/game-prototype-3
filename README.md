@@ -2,9 +2,11 @@
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
-F001/F002 Done; F003-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
+F001-F003 Done; F004-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
 verifies immutable item/resource content and session-owned20-slot/caps99/1 rules.
-World pickups/backpack UI remain pending; schema5 saves retained.
+[Atomic command acceptance](docs/foraging-items-backpack/F003_ACCEPTANCE.md) verifies
+joint collection/placement commits and rod conservation. World pickups/backpack UI
+remain pending; schema5 saves retained.
 [Pinned geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md) record
 two blocked authored anchors for F005 repair.
 
@@ -194,9 +196,12 @@ Godot cache/certificate access; final checks used normal local application acces
 - `game/tests/consequence_checks.gd`: alternative/replay protection, earned point,
   strict consequence data/legacy migrations, physical strike and separate-process save.
 - `game/features/items/`: immutable item/resource definitions, session-owned20-type
-  inventory rules and detached sorted snapshots; no world/UI activation yet.
+  inventory rules, atomic collection/drop/move services and detached sorted snapshots;
+  no world/UI activation yet.
 - `game/tests/inventory_checks.gd`: synthetic capacity/caps/rejection/selection and
   catalog/session/resource isolation acceptance; test-only extra types.
+- `game/tests/foraging_transaction_checks.gd`: synthetic identity/revision/capacity,
+  joint commit/observer, placement rejection and rod conservation acceptance.
 - `game/features/quests/`: ordered immutable steps, separate runtime progress,
   legal command/effect transactions and journal queries.
 - `game/tests/quest_checks.gd`, `quest_process_checks.gd`: legality/idempotency,

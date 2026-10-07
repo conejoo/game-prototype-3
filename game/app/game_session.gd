@@ -14,6 +14,7 @@ var relationship: RelationshipState = RelationshipState.new()
 var progression: ProgressionState = ProgressionState.new()
 var environment: EnvironmentState = EnvironmentState.new()
 var inventory: InventoryState = InventoryState.new()
+var foraging: ForagingState = ForagingState.new()
 var weather_conditions: WeatherConditionService = WeatherConditionService.new()
 # Transient developer provenance, never a save field.
 var review_only: bool = false
@@ -47,7 +48,12 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 	errors = candidate_inventory.initialize(catalog)
 	if not errors.is_empty():
 		return errors
+	# Validate registry before publishing either item service.
+	errors = ForagingRegistry.validation_errors(catalog)
+	if not errors.is_empty():
+		return errors
 	inventory = candidate_inventory
+	foraging.initialize(catalog, self)
 	actors[PLAYER_INSTANCE_ID] = ActorState.new(PLAYER_INSTANCE_ID, player)
 	actors[COMPANION_INSTANCE_ID] = ActorState.new(COMPANION_INSTANCE_ID, companion)
 	party_member_ids = PackedStringArray([PLAYER_INSTANCE_ID, COMPANION_INSTANCE_ID])

@@ -1,7 +1,8 @@
 # Foraging, items and backpack migration contract
 
 Prepared 2026-10-04; F001 reference audit completed2026-10-05, America/Vancouver.
-F002 content/inventory rules completed2026-10-07; world/UI activation remains F005+.
+F002 content/inventory and F003 atomic commands completed2026-10-07;
+world/UI activation remains F005+.
 Current saves remain schema5/content1; F004 owns schema6.
 [CHECKLIST.md](CHECKLIST.md) owns task status. [CURRENT_STATE.md](CURRENT_STATE.md)
 owns continuation. Target repository: `D:/development/game-dev-blender/returning-fair-prototype`.
@@ -258,6 +259,41 @@ stack and clears matching active ID. Generic consume fixtures do not establish a
 valid production rod save; F003/F004 enforce cross-world conservation.
 
 Schema5/content1 and four inert physical records retained. Inventory serialization,
-collected/placement facts and publication are still F003/F004 work. JSON decoding in
+collected/placement facts and publication were subsequent F003 work (delivered below);
+serialization remains F004. JSON decoding in
 F004 must first strictly validate whole numeric quantities then convert to int.
 No source/geography refresh, world/UI/drop/fishing activation implied by F002.
+
+## F003 implemented transaction boundary
+
+Completed2026-10-07; [acceptance](F003_ACCEPTANCE.md). GameSession owns ForagingState
+alongside InventoryState. ForagingRegistry pins the four resolved F001 authored
+identities/feet and validates catalog item/resource/location references before session
+publication. WorldItemPlacement stores typed Godot-metre facts and explicit provenance;
+private service copies and sorted detached observations own no scene nodes.
+
+ForagingState gather/pickup(location,instance,resource,expected_revision),
+drop(location,item,foot,expected_revision) and move(location,instance,item,foot,
+expected_revision) return ForagingCommandResult with accepted/errors, operation,
+instance/item identity, revision and optional detached placement. Revision is transient
+opaque equality token combining world/capability revisions and successful inventory
+mutations/changed selection; no serialization or command-count assumption. Integer
+committed(revision) signal follows joint mutation; observers obtain detached snapshots.
+Rejections publish nothing; nested world commands/rebinding reject command_busy.
+
+Placement capability binding accepts Callable(candidate: WorldItemPlacement,
+snapshot: Dictionary) -> PackedStringArray; empty validates, errors reject. Inputs are
+detached. Missing/freed/malformed capability fails closed. Service validates supported
+location, finite feet and provenance first, then rechecks committed room and expected
+revision after validation before consumption/placement commit. Root still owns physical
+target revalidation. Synthetic F003 validators prove only service transaction boundary;
+F004 save candidates need strict geometry validation and F007 owns measured placement.
+
+Authored move replaces origin under original ID; authored pickup collects original and
+removes override. Generated pickup removes drop while original stays collected. Exactly
+one rod across unsuppressed origin/default-or-override, bag and generated placement is
+required before commands. Generic F002 fixture add/consume can deliberately violate
+this production invariant; such command requests reject rod_ownership_conflict.
+Successful final drop clears active; failures preserve command-owned facts. No source
+reward/tutorial/autosave or full fishing port. Schema5/content1, inert physical records
+and UI/input retained; F004 owns schema6/restore, F005+ owns activation.

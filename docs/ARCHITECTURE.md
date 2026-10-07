@@ -700,3 +700,22 @@ Catalog replacement publishes only after all item/resource references validate.
 root/map/save regressions. World records still inert, UI unchanged, schema5/content1
 retained. F003 owns atomic collected/placement transactions; F004 owns persistence.
 No gathering/backpack/drop activation or renewed P/M/W export claim implied.
+
+### Delivered atomic item/resource commands (F003)
+
+GameSession owns ForagingState with four pinned ForagingRegistry identities and
+private collected-origin/typed-placement facts. gather/pickup/drop/move return typed
+results, reject wrong identity/location/revision/capacity and conserve one rod across
+origin/default-or-override, bag and generated placement. Inventory/world/capability
+revisions form a transient opaque equality token. Collection/drop jointly commit bag,
+active selection, origin suppression and placement before committed(revision) signal;
+observers query detached snapshots and nested commands reject during publication.
+
+Injected placement capability receives detached candidate/snapshot and returns strict
+PackedStringArray validation. Missing/malformed/rejecting capability fails closed;
+finite feet/provenance/location and post-callback room/revision checks precede consume.
+Service owns no scene; GameRoot will revalidate physical target, F004 will validate
+restored schema6 candidates, and F007 will supply measured geometry. [F003 acceptance](foraging-items-backpack/F003_ACCEPTANCE.md)
+verifies synthetic transactions, observer timing/isolation, eight rod cycles and affected
+inventory/session/save/map/environment/travel regressions. Physical records/UI remain
+inert and schema5/content1 retained; no renewed native/export acceptance implied.
