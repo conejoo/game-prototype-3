@@ -88,7 +88,7 @@ func _collection() -> void:
 	_check(state.gather(ALDER, "moonflower-03", "resource-moonflower", state.revision()).accepted, "collect second flower")
 	_check(state.gather(ALDER, "moonflower-02", "resource-moonflower", state.revision()).accepted, "collect final flower")
 	_check(session.inventory.count(FLOWER) == 3 and state.snapshot().collected_resource_ids == PackedStringArray(["moonflower-01", "moonflower-02", "moonflower-03"]), "sorted unique authored collected set")
-	_check(SaveCodec.SCHEMA_VERSION == 5 and not SaveCodec.snapshot(session).has("inventory"), "persistence remains F004")
+	_check(SaveCodec.SCHEMA_VERSION == 6 and SaveCodec.snapshot(session).has("inventory"), "F004 persistence available")
 
 
 func _capacity() -> void:

@@ -13,6 +13,7 @@ var _placements: Dictionary[String, WorldItemPlacement] = {}
 var _world_revision: int = 0
 var _command_active: bool = false
 var _placement_validator: Callable
+var _restored: bool = false
 
 
 func initialize(catalog: ContentCatalog, session: GameSession) -> PackedStringArray:
@@ -24,6 +25,32 @@ func initialize(catalog: ContentCatalog, session: GameSession) -> PackedStringAr
 	_catalog = catalog
 	_owner = weakref(session)
 	initialized = true
+	return []
+
+
+func restore_facts(inventory: Dictionary, collected: PackedStringArray, placements: Array) -> PackedStringArray:
+	# Candidate-only hydration. Cannot replace a live, commanded or capability-bound state.
+	var owner: GameSession = _session()
+	if not initialized or owner == null or _command_active or _restored or revision() != 0:
+		return PackedStringArray(["restore requires fresh foraging state"])
+	if not _collected.is_empty() or not _placements.is_empty() or not owner.inventory.snapshot().item_counts.is_empty() or not get_signal_connection_list("committed").is_empty():
+		return PackedStringArray(["restore requires fresh foraging state"])
+	var errors: PackedStringArray = ForagingSaveData.validate(inventory, collected, placements, _catalog)
+	if not errors.is_empty(): return errors
+	var bag: InventoryState = InventoryState.new()
+	bag.initialize(_catalog)
+	for id: String in inventory.item_counts:
+		bag.add(id, int(inventory.item_counts[id]))
+	bag.select(inventory.active_item_id)
+	# Hydration publishes no command/revision or signal.
+	bag._revision = 0
+	_restored = true
+	owner.inventory = bag
+	_collected = collected.duplicate()
+	_collected.sort()
+	for record: Dictionary in placements:
+		var placed: WorldItemPlacement = ForagingSaveData.from_record(record)
+		_placements[placed.instance_id] = placed
 	return []
 
 

@@ -363,6 +363,7 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		_refresh_combat_targets()
 		_update_controls()
 		_refresh_journal()
+		world_host.current_location.bind_foraging(session)
 		_refresh_world_presentation()
 		ui.show_location(catalog.get_location(session.current_location_id).display_name)
 		_refresh_interaction()
@@ -502,7 +503,7 @@ func load_run() -> PackedStringArray:
 	_pending_restore = saved.session
 	_update_controls()
 	ui.show_save_status("Loading saved run…")
-	errors = world_host.request_transition(saved.session.current_location_id, saved.session.current_spawn_id)
+	errors = world_host.request_transition(saved.session.current_location_id, saved.session.current_spawn_id, saved.session)
 	if errors.is_empty():
 		var arrival: Array = await world_host.transition_finished
 		if not arrival[0]:
@@ -513,7 +514,7 @@ func load_run() -> PackedStringArray:
 	ui.show_play_time(session.elapsed_play_seconds)
 	var message: String = "Recovered backup. Primary left unchanged." if saved.recovered else "Loaded saved run at arrival anchor."
 	if saved.migrated:
-		message += " Migrated legacy save: v1/v2 add temporary companion; v1–v3 start with neutral trust and no upgrades; v1–v4 start environment at 10 AM with fixed forecast and light defaults. Save writes v5."
+		message += " Migrated legacy save: v1/v2 add temporary companion; v1–v3 start with neutral trust and no upgrades; v1–v4 start environment at 10 AM with fixed forecast and light defaults. v1–v5 start with empty inventory/collected/placement facts. Save writes v6."
 	ui.show_save_status(message if errors.is_empty() else "Load failed: " + "; ".join(errors))
 	print("P005 load: ", message if errors.is_empty() else errors)
 	return errors
@@ -645,9 +646,11 @@ func retry_encounter() -> void:
 			companion.state.health = companion.state.max_health
 			companion.initialize(companion.state)
 		else:
-			push_error("Retry placement failed: " + "; ".join(arrival[1]))
+			ui.show_travel("Retry failed: " + "; ".join(arrival[1]))
+			print("Retry placement rejected: " + "; ".join(arrival[1]))
 	else:
-		push_error("Retry failed: " + "; ".join(errors))
+		ui.show_travel("Retry failed: " + "; ".join(errors))
+		print("Retry rejected: " + "; ".join(errors))
 	retrying = false
 	_update_controls()
 

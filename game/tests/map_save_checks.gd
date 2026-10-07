@@ -87,7 +87,10 @@ func _slot(name: String) -> String:
 func _v5_expected(data: Dictionary) -> Dictionary:
 	# Independent expected additive migration; historical fixture bytes stay v4.
 	var result: Dictionary = data.duplicate(true)
-	result.schema_version = 5
+	result.schema_version = 6
+	result["inventory"] = {"item_counts":{}, "active_item_id":null}
+	result["collected_resource_ids"] = []
+	result["world_item_placements"] = []
 	result["environment"] = {"day_index":0,"day_cycle_progress":0.0,"weather_seed":1821285621}
 	result["light_source_overrides"] = []
 	return result

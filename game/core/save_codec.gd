@@ -2,7 +2,7 @@ class_name SaveCodec
 extends RefCounted
 ## Versioned plain-data boundary. Validation creates a detached candidate only.
 
-const SCHEMA_VERSION: int = 5
+const SCHEMA_VERSION: int = 6
 const CONTENT_VERSION: int = 1
 const MAX_BYTES: int = 131072
 
@@ -23,7 +23,10 @@ static func snapshot(run: GameSession) -> Dictionary:
 		var actor: ActorState = run.actors.get(id)
 		if actor != null:
 			actor_data.append({"instance_id": id, "definition_id": actor.definition_id, "health": actor.health})
+	var facts: Dictionary = run.foraging.snapshot()
 	return {
+		"inventory": facts.inventory, "collected_resource_ids": Array(facts.collected_resource_ids),
+		"world_item_placements": facts.world_item_placements,
 		"schema_version": SCHEMA_VERSION, "content_version": CONTENT_VERSION,
 		"location_id": run.current_location_id, "spawn_id": run.current_spawn_id,
 		"player_instance_id": GameSession.PLAYER_INSTANCE_ID,
@@ -51,8 +54,11 @@ static func decode(raw: String, catalog: ContentCatalog) -> DecodeResult:
 		# become "malformed" and silently fall back to an older backup.
 		for key: String in ["schema_version", "content_version"]:
 			var value: Variant = parser.data.get(key)
-			if _integer(value, 1, 2147483647) and ((key == "schema_version" and not int(value) in [1, 2, 3, 4, 5]) or (key == "content_version" and int(value) != CONTENT_VERSION)):
+			if _integer(value, 1, 2147483647) and ((key == "schema_version" and not int(value) in [1, 2, 3, 4, 5, 6]) or (key == "content_version" and int(value) != CONTENT_VERSION)):
 				return validate(parser.data, catalog)
+		result.errors = SaveJsonFields.validate(raw)
+		if not result.errors.is_empty():
+			return result
 		result.errors = SaveNumber.restore_timers(raw, parser.data)
 		if not result.errors.is_empty():
 			return result
@@ -73,7 +79,7 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 			result.errors.append("%s must be a positive integer" % key)
 			return result
 		var supported: int = SCHEMA_VERSION if key == "schema_version" else CONTENT_VERSION
-		if int(data[key]) != supported and not (key == "schema_version" and int(data[key]) in [1, 2, 3, 4]):
+		if int(data[key]) != supported and not (key == "schema_version" and int(data[key]) in [1, 2, 3, 4, 5]):
 			result.incompatible = true
 			result.errors.append("unsupported %s %s; supported %d; files left unchanged" % [key, data[key], supported])
 			return result
@@ -87,6 +93,8 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 		fields.append_array(["relationship", "progression"])
 	if version >= 5:
 		fields.append_array(["environment", "light_source_overrides"])
+	if version >= 6:
+		fields.append_array(["inventory", "collected_resource_ids", "world_item_placements"])
 	if not _exact_fields(data, fields):
 		result.errors.append("schema v%d requires exactly: " % int(data.schema_version) + ", ".join(fields))
 		return result
@@ -161,6 +169,9 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 		environment.day_cycle_progress = float(progress)
 		environment.weather_seed = int(data.environment.weather_seed)
 		environment.light_source_overrides.assign(data.light_source_overrides.duplicate(true))
+	if version >= 6:
+		result.errors = ForagingSaveData.validate(data.inventory, data.collected_resource_ids, data.world_item_placements, catalog)
+		if not result.errors.is_empty(): return result
 	var candidate: GameSession = GameSession.new()
 	result.errors = candidate.initialize(catalog, data.location_id, data.spawn_id, "prototype-hero", environment)
 	if result.errors.is_empty():
@@ -174,6 +185,9 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 			candidate.relationship.trust = int(data.relationship.trust)
 			candidate.relationship.reaction_ids = PackedStringArray(data.relationship.reaction_ids)
 			candidate.progression.upgrade_ids = PackedStringArray(data.progression.upgrade_ids)
+		if version >= 6:
+			result.errors = ForagingSaveData.restore(candidate, data.inventory, data.collected_resource_ids, data.world_item_placements, catalog)
+			if not result.errors.is_empty(): return result
 		result.session = candidate
 	return result
 

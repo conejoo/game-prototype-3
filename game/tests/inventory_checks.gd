@@ -26,7 +26,7 @@ func _run() -> void:
 		"task": "F002", "proof": "synthetic detached rule fixtures",
 		"assertions": assertions + 1, "failures": failures,
 		"production_definitions": catalog.definition_count(), "maximum_types": InventoryState.MAX_TYPES,
-		"world_ui_save_activation": false
+		"world_ui_activation": false, "save_schema_version": SaveCodec.SCHEMA_VERSION
 	}), "write acceptance evidence")
 	for failure: String in failures:
 		push_error(failure)
@@ -222,7 +222,7 @@ func _detachment(catalog: ContentCatalog) -> void:
 	var invalid: GameSession = GameSession.new()
 	_check(not invalid.initialize(catalog, "absent-location", "prototype-start", "prototype-hero").is_empty(), "bad session rejects before inventory publication")
 	_check(not invalid.initialized and not invalid.inventory.initialized and invalid.inventory.snapshot().item_counts.is_empty(), "bad session has no partial inventory")
-	_check(SaveCodec.SCHEMA_VERSION == 5 and not SaveCodec.snapshot(first).has("inventory"), "F002 does not activate persistence; F004 owns schema6")
+	_check(SaveCodec.SCHEMA_VERSION == 6 and SaveCodec.snapshot(first).inventory == first.inventory.snapshot().to_dictionary(), "F004 serializes detached inventory")
 
 
 func _authored_facts(catalog: ContentCatalog) -> Array[Dictionary]:

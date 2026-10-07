@@ -27,16 +27,16 @@ func _run() -> void:
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v5.json"))
 	var duplicate_time: String = JSON.stringify(data).replace('"day_index":146', '"day_cycle_progress":0.5,"day_index":146')
 	_check(SaveCodec.decode(duplicate_time, catalog).session == null, "Duplicate clock lexeme rejected")
-	var newer_time: String = duplicate_time.replace('"schema_version":5', '"schema_version":6')
+	var newer_time: String = duplicate_time.replace('"schema_version":5', '"schema_version":7')
 	_check(SaveCodec.decode(newer_time, catalog).incompatible, "Newer envelope protects files even with duplicate numeric fields")
 	var escaped_time: String = JSON.stringify(data, "", true, true).replace('"day_cycle_progress"', '"day_cycle_\\u0070rogress"')
 	_check(SaveCodec.decode(escaped_time, catalog).session != null, "Escaped JSON key decoded normally")
 	var decoded: SaveCodec.DecodeResult = SaveCodec.validate(data, catalog)
-	_check(decoded.session != null and decoded.errors.is_empty() and not decoded.migrated, "Authored v5 fixture validates")
+	_check(decoded.session != null and decoded.errors.is_empty() and decoded.migrated, "Authored v5 fixture validates")
 	if decoded.session == null:
 		_finish()
 		return
-	_check(_plain(SaveCodec.snapshot(decoded.session)) == _plain(data), "Exact v5 clock/seed/six overrides and every old fact")
+	_check(_plain(SaveCodec.snapshot(decoded.session)) == _current_expected(data), "Exact v5 clock/seed/six overrides and every old fact")
 	var original: String = JSON.stringify(data)
 	var state: EnvironmentState = decoded.session.environment
 	for row: Dictionary in expected_registry:
@@ -54,7 +54,7 @@ func _run() -> void:
 	unordered.light_source_overrides.reverse()
 	var unsorted_bytes: String = JSON.stringify(unordered)
 	var sorted_run: GameSession = SaveCodec.validate(unordered, catalog).session
-	_check(sorted_run != null and _plain(SaveCodec.snapshot(sorted_run)) == _plain(data) and JSON.stringify(unordered) == unsorted_bytes, "Tuple sort on snapshot only, without caller mutation")
+	_check(sorted_run != null and _plain(SaveCodec.snapshot(sorted_run)) == _current_expected(data) and JSON.stringify(unordered) == unsorted_bytes, "Tuple sort on snapshot only, without caller mutation")
 	for field: String in ["environment", "light_source_overrides"]:
 		var bad: Dictionary = data.duplicate(true)
 		bad.erase(field)
@@ -209,3 +209,12 @@ func _finish() -> void:
 		push_error(failure)
 	print("W003 environment codec: %s; assertions=%d" % ["PASS" if failures.is_empty() else "FAILED", assertions])
 	quit(0 if failures.is_empty() else 1)
+
+
+func _current_expected(legacy: Dictionary) -> Variant:
+	var result: Dictionary = legacy.duplicate(true)
+	result.schema_version = 6
+	result["inventory"] = {"item_counts":{}, "active_item_id":null}
+	result["collected_resource_ids"] = []
+	result["world_item_placements"] = []
+	return _plain(result)

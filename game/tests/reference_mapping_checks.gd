@@ -20,8 +20,8 @@ func _run() -> void:
 	game._set_paused(true)
 	await physics_frame
 	_check(room.location_id == "prototype-alderwake", "Wrong production location")
-	_check(SaveCodec.SCHEMA_VERSION == 5 and SaveCodec.CONTENT_VERSION == 1, "F001 baseline codec changed")
-	_check(not SaveCodec.snapshot(game.session).has("inventory"), "F001 must not activate inventory")
+	_check(SaveCodec.SCHEMA_VERSION == 6 and SaveCodec.CONTENT_VERSION == 1, "F004 current schema/content")
+	_check(SaveCodec.snapshot(game.session).inventory == {"item_counts":{}, "active_item_id":null}, "Fresh inventory empty; physical nodes inert")
 	capsule.radius = 0.4
 	capsule.height = 1.6
 	var inert: Dictionary = {}

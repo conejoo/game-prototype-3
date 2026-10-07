@@ -20,7 +20,7 @@ func initialize(content: ContentCatalog, run: GameSession, persistent_party: Pro
 	party = persistent_party
 
 
-func request_transition(location_id: String, spawn_id: String) -> PackedStringArray:
+func request_transition(location_id: String, spawn_id: String, restored_run: GameSession = null) -> PackedStringArray:
 	if transitioning:
 		return PackedStringArray(["transition already in progress"])
 	var definition: LocationDefinition = catalog.get_location(location_id)
@@ -47,14 +47,20 @@ func request_transition(location_id: String, spawn_id: String) -> PackedStringAr
 	transitioning = true
 	party.suspend_for_travel()
 	transition_started.emit()
-	_replace_location.call_deferred(candidate, location_id, spawn_id)
+	_replace_location.call_deferred(candidate, location_id, spawn_id, restored_run if restored_run != null else session)
 	return PackedStringArray()
 
 
-func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_id: String) -> void:
+func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_id: String, facts_run: GameSession) -> void:
 	var previous: PrototypeLocation = current_location
 	if previous != null:
 		remove_child(previous)
+	# At most one rod placement. Validate foreign-room geometry while old room is
+	# detached; synchronize/dispose the probe before candidate arrival geometry.
+	var fact_errors: PackedStringArray = []
+	for record: Dictionary in facts_run.foraging.snapshot().world_item_placements:
+		if record.location_id != location_id:
+			fact_errors.append_array(await _foreign_placement_errors(ForagingSaveData.from_record(record)))
 	candidate.visible = false
 	# Keep collision bodies active for safety queries; disable only room logic.
 	candidate.process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -72,6 +78,11 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 		navigation_errors.append_array(await _synchronize_navigation(candidate, anchor))
 	var errors: PackedStringArray = _placement_errors(anchor)
 	errors.append_array(navigation_errors)
+	errors.append_array(fact_errors)
+	if errors.is_empty():
+		for record: Dictionary in facts_run.foraging.snapshot().world_item_placements:
+			if record.location_id == location_id:
+				errors.append_array(ForagingPlacementGeometry.validate(candidate, ForagingSaveData.from_record(record)))
 	if not errors.is_empty():
 		remove_child(candidate)
 		candidate.free()
@@ -93,8 +104,8 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 	if previous != null:
 		previous.free()
 	current_location = candidate
-	session.current_location_id = location_id
-	session.current_spawn_id = spawn_id
+	facts_run.current_location_id = location_id
+	facts_run.current_spawn_id = spawn_id
 	candidate.visible = true
 	candidate.process_mode = Node.PROCESS_MODE_INHERIT
 	candidate.set_process(true)
@@ -144,4 +155,30 @@ func _placement_errors(anchor: SpawnAnchor) -> PackedStringArray:
 		if not space.intersect_shape(query).is_empty():
 			errors.append("spawn '%s' is obstructed for '%s'" % [anchor.stable_id, actor.state.instance_id])
 		index += 1
+	return errors
+
+
+func _foreign_placement_errors(placed: WorldItemPlacement) -> PackedStringArray:
+	var definition: LocationDefinition = catalog.get_location(placed.location_id)
+	var packed: PackedScene = load(definition.scene_path) as PackedScene
+	var probe: PrototypeLocation = packed.instantiate() as PrototypeLocation if packed != null else null
+	if probe == null: return PackedStringArray(["placement room unavailable"])
+	if not developer_fixtures:
+		for child: Node in probe.get_children():
+			if child.is_in_group("developer_fixture"): child.free()
+	probe.visible = false
+	probe.process_mode = Node.PROCESS_MODE_PAUSABLE
+	add_child(probe)
+	probe.set_process(false)
+	probe.set_physics_process(false)
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	var errors: PackedStringArray = probe.validation_errors(definition, catalog)
+	if errors.is_empty(): errors.append_array(probe.prepare_navigation())
+	if errors.is_empty(): errors.append_array(await _synchronize_navigation(probe, probe.find_spawn(definition.spawn_ids[0])))
+	if errors.is_empty(): errors.append_array(ForagingPlacementGeometry.validate(probe, placed))
+	remove_child(probe)
+	probe.free()
+	await get_tree().physics_frame
+	await get_tree().physics_frame
 	return errors

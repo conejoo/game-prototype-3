@@ -2,17 +2,19 @@
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
-F001-F003 Done; F004-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
+F001-F004 Done; F005-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
 verifies immutable item/resource content and session-owned20-slot/caps99/1 rules.
 [Atomic command acceptance](docs/foraging-items-backpack/F003_ACCEPTANCE.md) verifies
 joint collection/placement commits and rod conservation. World pickups/backpack UI
-remain pending; schema5 saves retained.
+remain pending. [Save/lifecycle acceptance](docs/foraging-items-backpack/F004_ACCEPTANCE.md)
+verifies schema6 item facts, legacy migration, geometry rollback and exact isolated restart.
 [Pinned geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md) record
 two blocked authored anchors for F005 repair.
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
 W001-W010 verified Done; no next item. Clock/seed/cached forecast rules run through
-the existing session gate and schema v5 saves retain environment/light facts.
+the existing session gate and current schema v6 saves retain environment/light facts.
+W010 package evidence remains historical schema5; F010 will verify this newer item build.
 Moving sun and smooth day/dusk/navy-night/dawn lighting now apply outdoors;
 Tollworks keeps its stable indoor profile while the global clock advances.
 All23 exterior sources have independent lamp/window/waylight/net visuals and
@@ -147,14 +149,16 @@ Normal slot is `user://saves/returning-fair.json` in Godot's application user-da
 directory, with `.bak` recovery. Missing/corrupt primary may recover validated
 backup visibly; incompatible versions are rejected and preserved. Both corrupt
 files require repair or archiving that slot before saving. Version rules and
-boundaries: [architecture](docs/ARCHITECTURE.md). Schema v5/content v1 requires hero
+boundaries: [architecture](docs/ARCHITECTURE.md). Schema v6/content v1 requires hero
 and temporary companion records, validated reaction/trust and upgrade IDs,
-environment day/progress/uint32 seed and map-qualified exterior light overrides.
+environment day/progress/uint32 seed and map-qualified exterior light overrides,
+plus validated inventory/active selection, collected origins and rod placements.
 Exact v1/v2 saves add fixture ally at full health; v1 starts with no quest effects.
 Exact v3 preserves both members; v1-v3 start with neutral trust/no selected upgrades.
 V4 retains existing trust/reactions/upgrades. V1-v4 use day 0/progress 0/fixed
 migration seed and original light defaults while preserving elapsed play time.
-Load does not rewrite files; explicit Save writes v5. Six lantern keys accept
+V1-v5 receive empty inventory/collected/placement facts.
+Load does not rewrite files; explicit Save writes v6. Six lantern keys accept
 boolean overrides; automatic sources and malformed/newer data are rejected.
 
 Guardian appears after accepting the lead and entering Tollworks. Its stable

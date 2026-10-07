@@ -4,6 +4,7 @@ param(
     [Parameter(Mandatory)][ValidatePattern('^[A-Z][A-Z0-9_-]{0,31}$')][string]$Task,
     [string[]]$Names = @('application_smoke'),
     [switch]$Import,
+    [string[]]$ProcessScripts = @(),
     [switch]$RenderOnly,
     [string]$RenderScript,
     [string[]]$RenderPhases = @('write','read'),
@@ -155,16 +156,20 @@ Write-Output ("RUN_REPORT=" + $reportPath)
 try {
     if (-not (Test-Path -LiteralPath $EnginePath -PathType Leaf)) { throw "Godot executable absent: $EnginePath" }
     if ($RenderOnly -and -not $RenderScript) { throw 'RenderOnly requires RenderScript.' }
+    if ($RenderOnly -and $ProcessScripts.Count -gt 0) { throw 'RenderOnly cannot be combined with ProcessScripts.' }
     if ($RenderOnly -and $PSBoundParameters.ContainsKey('Names')) { throw 'RenderOnly cannot be combined with Names.' }
     # pwsh -File can bind comma names as one string: normalize before launching.
     $expanded = @()
     if (-not $RenderOnly) { $expanded = @($Names | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() } | Where-Object { $_ }) }
-    if ($expanded.Count -eq 0 -and -not $RenderScript -and -not $Import) { throw 'No checks requested.' }
+    if ($expanded.Count -eq 0 -and $ProcessScripts.Count -eq 0 -and -not $RenderScript -and -not $Import) { throw 'No checks requested.' }
     if (@($expanded | Select-Object -Unique).Count -ne $expanded.Count) { throw 'Duplicate check names.' }
     $scripts = @($expanded | ForEach-Object { Resolve-CheckScript $_ })
     if (@($scripts | Select-Object -Unique).Count -ne $scripts.Count) { throw 'Duplicate resolved check scripts.' }
+    $processScriptsResolved = @($ProcessScripts | ForEach-Object { $_ -split ',' } | ForEach-Object { Resolve-CheckScript $_ })
+    if (@($processScriptsResolved | Select-Object -Unique).Count -ne $processScriptsResolved.Count) { throw 'Duplicate process scripts.' }
+    if (@($processScriptsResolved | Where-Object { $_ -in $scripts }).Count -gt 0) { throw 'Process scripts must not also run as single-phase checks.' }
     $render = if ($RenderScript) { Resolve-CheckScript $RenderScript } else { $null }
-    $parse = @(Get-ParseClosure (@($scripts) + @($render | Where-Object { $_ }) + @($ParseScripts | ForEach-Object { $_ -split ',' } | ForEach-Object { Resolve-ParseScript $_ })))
+    $parse = @(Get-ParseClosure (@($scripts) + @($processScriptsResolved) + @($render | Where-Object { $_ }) + @($ParseScripts | ForEach-Object { $_ -split ',' } | ForEach-Object { Resolve-ParseScript $_ })))
     $report['parse_scripts'] = $parse
     $harness = @('extends SceneTree')
     for ($index = 0; $index -lt $parse.Count; $index++) { $harness += ('const SCRIPT_{0} = preload("{1}")' -f $index,$parse[$index]) }
@@ -179,6 +184,15 @@ try {
         $checkLabel = $script.Substring(12).Replace('.gd','')
         $destination = "res://../docs/evidence/$Task/$runId/checks/$checkLabel"
         $null = Invoke-OwnedGodot $checkLabel @('--headless','--path',(Join-Path $projectRoot 'game'),'--script',$script,'--',('--save-slot=' + $report.save_slot),("--report-dir=$destination")) $false (Join-Path $projectRoot "docs/evidence/$Task/$runId/checks/$checkLabel")
+    }
+    foreach ($processScript in $processScriptsResolved) {
+        if (@($report.cases | Where-Object status -ne 'passed').Count -gt 0) { break }
+        $processLabel = $processScript.Substring(12).Replace('.gd','')
+        foreach ($phase in @('write','read')) {
+            $destination = "res://../docs/evidence/$Task/$runId/process/$processLabel"
+            $processArguments = @('--headless','--path',(Join-Path $projectRoot 'game'),'--script',$processScript,'--',('--save-slot=' + $report.save_slot),('--phase=' + $phase),("--report-dir=$destination"))
+            if (-not (Invoke-OwnedGodot ("$processLabel-$phase") $processArguments $false (Join-Path $projectRoot "docs/evidence/$Task/$runId/process/$processLabel"))) { break }
+        }
     }
     if ($render -and @($report.cases | Where-Object status -ne 'passed').Count -eq 0) {
         foreach ($phase in $phases) {

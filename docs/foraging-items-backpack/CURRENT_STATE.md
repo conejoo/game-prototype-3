@@ -5,12 +5,13 @@ Updated2026-10-07, America/Vancouver. [CHECKLIST](CHECKLIST.md) owns status;
 
 ## Selection and continuation
 
-F001-F003 Done; F004-F010 Pending. Active task: none.
-This session completed exactly F003. Stop before successor.
-Next eligible: **F004 — save compatibility and lifecycle**.
-Next action: inspect user changes and F003 APIs/acceptance, revalidate prerequisites,
-mark F004 In progress before editing; implement strict schema6 candidate validation,
-legacy defaults, root session rebinding and isolated exact process-restart oracle.
+F001-F004 Done; F005-F010 Pending. Active task: none.
+This session completed exactly F004. Stop before successor.
+Next eligible: **F005 — world resources and held interaction**.
+Next action: inspect user changes and F004 acceptance/APIs, revalidate saved facts,
+mark F005 In progress; read tools/PLAYTEST.md and project-local gameplay-testing skill
+before any physical/rendered work. Implement four adapters/held E with lifecycle gates;
+resolve rod/flower01 blocked anchors under fixed XZ/map authority or record exact blocker.
 No automatic next chat/agent/schedule.
 
 ## Baseline and preserved work
@@ -22,10 +23,10 @@ No existing user changes overwritten. Read-only source HEAD recorded by F001:
 source status clean. Per-command safe.directory override only; no Git config changes.
 Historical P/M/W package/release completion and F001 records preserved.
 
-Current runtime: game/app/game_root.tscn, pinned Alderwake exterior, schema5/content1.
-Catalog now21 definitions (prior17 plus4 item/resource definitions). Sessions own fresh
-empty inventories and ForagingState facts; world nodes remain inert and no backpack/holds/drop route activated.
-SaveCodec unchanged and does not serialize F002 inventory; F004 owns schema6.
+Current runtime: game/app/game_root.tscn, pinned Alderwake exterior, schema6/content1.
+Catalog now21 definitions (prior17 plus4 item/resource definitions). Fresh sessions start with
+empty inventories; restored sessions hydrate item/ForagingState facts; world nodes remain inert and no backpack/holds/drop route activated.
+SaveCodec now serializes item/collected/placement facts; F004 details and acceptance below.
 No geography/source/art/input/UI/export changes or normal-save access.
 
 ## F002 delivered files and decisions
@@ -174,3 +175,67 @@ Reviewed intended diff/new files/UIDs, whitespace/status/link consistency. Prese
 failed runs and historical records. All owned runner processes exited; no editor,
 live/render/native game started or cleanup owed. All F003 criteria evidenced;
 F004-F010 criteria unrun. Next eligible F004; stop before successor.
+
+## F004 delivered state and continuation details
+
+[Acceptance](F004_ACCEPTANCE.md) owns full criterion table, commands/evidence and limits.
+Initial target HEAD d649ca4431640adc6454fa467a4d0cbaba8c2625, clean worktree. No user
+changes overwritten. Current schema6/content1; source/geography unchanged. F002/F003
+schema5 descriptions above are historical delivery boundaries, superseded by F004.
+
+Changed SaveCodec, ForagingState, GameRoot, WorldHost, PrototypeLocation and run_checks.
+Added ForagingSaveData, SaveJsonFields, ForagingPlacementGeometry, test-only
+ForagingSaveFixture, foraging_save_checks and foraging_process_checks with six UIDs.
+Updated inherited inventory/transaction/mapping/environment/map-save assertions for
+schema6 while preserving historical JSON fixtures. Parent README/architecture and
+workflow CONTRACT/CHECKLIST/this state/acceptance updated. No input/art/UI/export change.
+
+Final fields exactly inventory {item_counts,active_item_id}, collected_resource_ids,
+world_item_placements plus v5 fields. Strict plain validation and fresh revision0-only
+restore publish no signal. Legacy1-5 keeps original shape/default chains and empty
+new facts. Duplicate escaped JSON keys and mathematically fractional quantities reject
+before conversion. Existing precise environment numbers/newer protection/128KiB/
+primary-backup semantics retained. Root binds restored session only after staged room
+geometry accepts every current/foreign placement. Conservative footprint/support/dry/
+capsule/navigation/path/arrival-portal reservations documented in acceptance; F007
+owns measured search/drag semantics. Location binds one weak session/listener and
+exposes detached facts/application hook; F005 must consume hook with physical wrappers.
+
+Verification from repository root, PowerShell7, installed console4.7.2:
+- Prerequisite transaction583 PASS: 20261007-183832347-675eff88.
+- Broad acceptance PASS: 20261007-185011795-a73efb5b. foraging_save/transactions/
+  inventory/save/environment_save/map_save/location_travel/application; independent
+  foraging_process and existing save_process write/read phases via -ProcessScripts.
+- Focused PASS: 20261007-185334208-1e788c99. foraging_save110, inventory199,
+  reference_mapping4 nodes/1,648 capsule samples, environment_lifecycle157;
+  independent-process foraging writer51/read54. Exact binary whole-save oracle compares
+  four item states plus fifth foreign-room state/revisit, safe arrivals, fresh transient
+  state and listener cleanup. Headless synthetic fixtures, no normal-input proof.
+- Final review tightened one-time hydration: empty restored candidates/nonempty or
+  observed inventories cannot hydrate again; disposed weak owners fail closed.
+  Final save111/transaction583/process PASS: 20261007-185936104-3f946051.
+  Final disposed-owner guard + exact process writer52/read55 PASS:
+  20261007-190122906-919e912b (Names @(), ProcessScripts foraging_process_checks).
+- Offline/live-source Python audits PASS: audit-20261007-185433-c302ac16;20 source/
+  three reference/three geography hashes unchanged, five/six negative controls;
+  source status clean. Source/Flutter tests not run.
+
+All final reports/logs inspected; diagnostics empty, no timeouts. Import/parse PASS;
+only existing editor-import missing .NET SDK10.0.9 diagnostic allowed. Isolated
+builds/testing/F004/<run>/appdata/localappdata/check namespaces and recorded child slots;
+normal save untouched. Raw evidence docs/evidence/F004/<run> ignored.
+
+Retained failed F004 runs: 184233860-d1081ee6 (20261007 prefix) stale F003 schema assertion
+and handled retry error log;184513386-568e4b8f typed hostile fixture;184602816-5124ecc2
+variable typo;184626312-f74db9f3/184723720-04f2c01f/184926558-2f6bfb63 v5 oracle JSON
+integer-type mismatch. Acceptance records repairs and final passes. Retry now shows
+handled rejection feedback/ordinary logs, avoiding unexpected-engine-error diagnostics.
+Tracked matching line endings preserved; intended diff, new files/UIDs, links/status
+reviewed. Command-local target safe.directory/cr-at-eol check used; no Git config change.
+
+All owned processes exited; no editor/live/render/native process or cleanup owed.
+Every F004 criterion evidenced. F005-F010 checks unrun. Two F001 blocked anchors still
+require F005 repair or explicit blocked decision; no map/LOS bypass. Historical P/M/W
+packages remain schema5 history; F010 must produce new schema6 delivery evidence.
+Next eligible F005; F006 independently eligible after F004 if F005 becomes Blocked.
+Completed exactly F004; stop before successor.

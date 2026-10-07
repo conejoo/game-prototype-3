@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004-F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005-F010 Pending.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -24,7 +24,7 @@ first be created; refine names deliberately and update references together.
 | F001 | Done | inspected P/M/W baseline | pinned behavior and node mapping |
 | F002 | Done | F001 | content and20-slot inventory rules |
 | F003 | Done | F002 | atomic gather/pickup/drop/move |
-| F004 | Pending | F003 | versioned saves and session rebinding |
+| F004 | Done | F003 | versioned saves and session rebinding |
 | F005 | Pending | F004 | four pickups and cancellable hold E |
 | F006 | Pending | F004 | backpack modal and active item HUD |
 | F007 | Pending | F005, F006 | safe rod drop/reposition |
@@ -267,3 +267,27 @@ Placement fixtures prove service boundary only; F007 physical geometry remains
 pending. Schema5/content1, inert physical nodes/UI and P/M/W release history retained.
 No live process/editor or cleanup owed. Next eligible F004; F003 command invariants
 actually pass. Completed exactly F003; stop before successor.
+
+### F004 — completed2026-10-07, America/Vancouver
+
+Added schema6 strict detached fact hydration/legacy defaults, duplicate-key/exact
+quantity guards, conservative staged current/foreign-room geometry rollback, root
+session rebinding and one-listener world-fact hooks. Exact binary whole-save oracle
+verifies four item states plus foreign-room saved rod/revisit in independent processes.
+[Acceptance](F004_ACCEPTANCE.md) records every criterion, final fields and limits.
+
+Prerequisite transactions PASS (20261007-183832347-675eff88). Broad save/item/map/travel/
+application and both independent process suites PASS (20261007-185011795-a73efb5b).
+Focused save110/inventory199/mapping4 nodes1,648 samples/environment lifecycle157/
+process writer51-reader54 PASS (20261007-185334208-1e788c99). Final hydration guard
+save111/transactions583/process PASS (20261007-185936104-3f946051); final disposed-owner
+guard/exact restart writer52-reader55 PASS (20261007-190122906-919e912b). Final runtime diagnostics
+empty; existing import-only missing .NET SDK diagnostic allowed. Retained failed runs
+and their repairs recorded in acceptance. Isolated APPDATA/LOCALAPPDATA/slots/evidence;
+normal save untouched. Offline/live-source audits PASS (audit-20261007-185433-c302ac16),
+pinned source/geography bytes unchanged and source clean.
+
+Physical nodes/UI remain inert; F005/F007 gameplay geometry and F009/F010 ordinary/native
+acceptance remain Pending. Original F001 anchor blockers preserved. Historical P/M/W
+packages remain schema5 evidence; no new export claim. No editor/live process or cleanup
+owed. Next eligible F005 with F004 actual prerequisites verified. Exactly F004 done; stop.

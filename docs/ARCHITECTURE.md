@@ -678,7 +678,7 @@ historical packages. W001-W010 complete; no next workflow item.
 
 [Foraging workflow](foraging-items-backpack/CHECKLIST.md) now pins source behavior,
 separate item/resource stable-ID mappings and a proposed schema6 fact shape in
-[CONTRACT](foraging-items-backpack/CONTRACT.md). Current runtime remains schema5/content1;
+[CONTRACT](foraging-items-backpack/CONTRACT.md). At F001 runtime remained schema5/content1;
 four source resource records stay inert. [F001 acceptance](foraging-items-backpack/F001_ACCEPTANCE.md)
 records fresh P/M/W checks and synthetic floor/navigation measurements. Rod origin is
 inside water collision and moonflower-01 overlaps cliff colliders; F005 must repair or
@@ -719,3 +719,26 @@ restored schema6 candidates, and F007 will supply measured geometry. [F003 accep
 verifies synthetic transactions, observer timing/isolation, eight rod cycles and affected
 inventory/session/save/map/environment/travel regressions. Physical records/UI remain
 inert and schema5/content1 retained; no renewed native/export acceptance implied.
+
+### Delivered item save compatibility and lifecycle (F004)
+
+SaveCodec schema6/content1 preserves the exact v1-v5 chains and adds inventory with
+nullable owned selection, collected authored origins and typed Godot-metre placements.
+ForagingSaveData hydrates only fresh detached candidates, validates caps/IDs/provenance/
+rod1 conservation and publishes no command signal. SaveJsonFields guards duplicate
+JSON keys/escaped aliases and fractions rounded by the JSON parser. Existing precise
+timer repair, newer-version/128KiB and primary/backup protection remain intact.
+
+WorldHost receives restored facts separately from live ownership and proves every
+saved placement against staged production floor/collision/navigation/reservations,
+including hidden foreign-room probes. Only successful physical arrival swaps root
+session/services/actors. PrototypeLocation binds one weak session/listener and exposes
+detached location-filtered observations plus F005 application hook; scenes dispose
+without old listeners. Retry retains collection/bag/selection; handled failed retry
+uses UI feedback and ordinary logs while preserving prior state.
+
+[Acceptance](foraging-items-backpack/F004_ACCEPTANCE.md) verifies exact all-field
+independent-process binary oracles for bag/authored/generated/foreign-room states,
+hostile saves/geometry, rollback/retry/travel and inherited P/M/W regressions. Current
+runtime schema6/content1; world pickups/backpack/holds/drag remain F005+. Historical
+P/M/W packages remain schema5 evidence; no renewed export/native claim implied.

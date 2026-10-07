@@ -8,6 +8,35 @@ extends Node3D
 @export var gate_label: String = ""
 const GATE_RADIUS: float = 1.6
 var navigation_region: NavigationRegion3D
+var _foraging_owner: WeakRef
+
+
+func bind_foraging(run: GameSession) -> void:
+	var previous: GameSession = _foraging_owner.get_ref() as GameSession if _foraging_owner != null else null
+	if previous != null and previous.foraging.committed.is_connected(_on_foraging_committed):
+		previous.foraging.committed.disconnect(_on_foraging_committed)
+	_foraging_owner = weakref(run)
+	run.foraging.committed.connect(_on_foraging_committed)
+	_on_foraging_committed(run.foraging.revision())
+
+
+func foraging_facts() -> Dictionary:
+	var run: GameSession = _foraging_owner.get_ref() as GameSession if _foraging_owner != null else null
+	if run == null: return {}
+	var facts: Dictionary = run.foraging.snapshot()
+	var placements: Array[Dictionary] = []
+	for placed: Dictionary in facts.world_item_placements:
+		if placed.location_id == location_id: placements.append(placed)
+	return {"collected_resource_ids": facts.collected_resource_ids, "world_item_placements": placements}
+
+
+func _on_foraging_committed(_revision: int) -> void:
+	_apply_foraging_facts(foraging_facts())
+
+
+func _apply_foraging_facts(_facts: Dictionary) -> void:
+	# F005 adapter overrides this hook to hydrate its nonblocking world wrappers.
+	pass
 
 
 func _ready() -> void:

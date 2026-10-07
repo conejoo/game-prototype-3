@@ -3,7 +3,7 @@
 Prepared 2026-10-04; F001 reference audit completed2026-10-05, America/Vancouver.
 F002 content/inventory and F003 atomic commands completed2026-10-07;
 world/UI activation remains F005+.
-Current saves remain schema5/content1; F004 owns schema6.
+Current saves use schema6/content1; F004 acceptance records strict restoration/lifecycle.
 [CHECKLIST.md](CHECKLIST.md) owns task status. [CURRENT_STATE.md](CURRENT_STATE.md)
 owns continuation. Target repository: `D:/development/game-dev-blender/returning-fair-prototype`.
 Application: target `game/`, Godot4.7.2 typed GDScript/Compatibility renderer.
@@ -144,8 +144,8 @@ control. Modal clears held controls, blocks world input and contains focus. Drop
 closes only after successful command or reports failure in place. Gather progress,
 success/full/invalid placement readable day/night/rain. No developer IDs in UI.
 
-SaveCodec currently schema5/content1. Proposed schema6/content1 adds inventory,
-collected IDs and placements; F004 records final field names here. Preserve exact
+SaveCodec now uses schema6/content1 (F004), adding inventory,
+collected IDs and placements with the exact three fields below. Preserve exact
 v1-v5 validation/default chains, environment numbers/lights/party/health/quest/
 trust/upgrades. Legacy new fields empty. No Flutter save import. Validate exact
 fields, ID ownership, quantities/caps, duplicates, provenance/location/geometry
@@ -202,7 +202,7 @@ Pure services use validated injected placement capability; no scene ownership. O
 publication follows joint inventory/facts/placement commit. Revision is transient, reset
 on new/restored sessions, never serialized.
 
-Schema6/content1 plan (F004 implements and records actual final compatibility):
+Schema6/content1 final fields (F004; see F004_ACCEPTANCE.md for verified compatibility):
 retain all exact schema5 fields, add exactly these three top-level fields:
 
 ```json
@@ -297,3 +297,32 @@ this production invariant; such command requests reject rod_ownership_conflict.
 Successful final drop clears active; failures preserve command-owned facts. No source
 reward/tutorial/autosave or full fishing port. Schema5/content1, inert physical records
 and UI/input retained; F004 owns schema6/restore, F005+ owns activation.
+
+## F004 implemented save/lifecycle boundary
+
+Completed2026-10-07; [acceptance](F004_ACCEPTANCE.md). Final v6 fields match the three
+planned top-level additions and exact six-field placement records above. Sorted detached
+snapshots omit revisions/capabilities/controllers; fresh candidate restoration has
+revision0 and publishes no success signal. A transient one-time hydration guard rejects
+repeated empty restores, nonempty/observed live inventories and disposed weak owners. Versions1-5 retain exact original shape/
+existing migration chains before empty new facts. SaveNumber repairs still apply only
+to prior timers. Duplicate decoded JSON keys/escaped aliases reject; quantity lexemes
+must mathematically be whole numbers before catalog cap conversion, including JSON
+spellings 3.0/3e0/30e-1. Future protection precedes numeric/duplicate guards.
+
+Codec validates plain identity/ownership/numbers before creating candidate; root/WorldHost
+add actual geometry proof before live swap. Current/foreign saved overrides/drops use
+synchronized hidden production rooms, never prior room collision. Restore gate requires
+five level dry support probes (centre and +/-0.22m X/Z), normalY>=0.9, height delta<=0.06m,
+clear radius0.4m/height1.6m retrievable capsule at foot+0.82m, navigation owner/point within
+0.4m, arrival path endpoint within0.1m and clear0.2m route samples. Reserve1.5m around
+all arrivals and2m around travel marker. Unsafe/missing geometry rejects, restores old
+room/navigation/party/facts and releases probe. F007 owns refined measured drop search,
+preview/drag/retrieval gameplay; do not weaken restore safety to pass synthetic fixtures.
+
+Successful root arrival binds exactly one location listener with weak session reference,
+location-filtered detached observations and virtual _apply_foraging_facts hook. F005
+must hydrate absence/placement wrappers through that hook. No physical item/hold/UI
+activated by F004. Headless independent OS phases and exact binary whole-snapshot oracle
+prove persistence/last-arrival/transient reset; they do not prove ordinary/native input.
+Normal explicit pause Save/Load, backup policy/128KiB and P/M/W facts retained.
