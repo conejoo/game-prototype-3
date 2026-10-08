@@ -158,7 +158,7 @@ func show_inventory(snapshot: InventorySnapshot, catalog: ContentCatalog) -> voi
 		active_item_label.text = "Active item: none · B: backpack"
 	else:
 		var item: ItemDefinition = catalog.get_item(snapshot.active_item_id)
-		active_item_label.text = ("Active tool: " if item.is_tool() else "Selected item: ") + item.display_name + (" · Fishing unavailable" if item.is_tool() else " · No direct use")
+		active_item_label.text = ("Active tool: " if item.is_tool() else "Selected item: ") + item.display_name + (" · Fishing unavailable" if item.is_tool() else " · Gift through conversation" if item.giftable else " · No direct use")
 	backpack_button.disabled = pause_overlay.visible or dialogue_overlay.visible or journal_overlay.visible or backpack.visible
 
 

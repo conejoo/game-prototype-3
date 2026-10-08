@@ -8,7 +8,7 @@ Godot application: game/, entry res://app/game_root.tscn.
 
 ## Selection and completion
 
-G001-G004 Done; G005-G009 Pending. No active task.
+G001-G005 Done; G006-G009 Pending. No active task.
 Resume the single In progress task first. Reassess Blocked work when its blocker changes; unresolved blockers exclude that task and its dependents, not independent branches.
 Otherwise select the lowest-numbered Pending task with verified Done prerequisites. Check actual prerequisite capability/evidence, not only checkboxes. Reconcile ambiguous status with artifacts before selecting.
 Complete exactly one task per invocation. Mark In progress before implementation, verify its criteria, update state even when interrupted, and stop before its successor. Done requires every criterion to have evidence; do not replace ordinary play with synthetic fixtures.
@@ -22,7 +22,7 @@ P/M/W/F/N workflows are baseline references, not selectors for this workflow. Do
 | G002 | Done | G001 | Pure gift eligibility and atomic item/social candidate rules |
 | G003 | Done | G002 | Strict save/event derivation for accepted gifts and milestones |
 | G004 | Done | G003 | Source gift branches and milestone transitions operate in one conversation service |
-| G005 | Pending | G004 | Ordinary conversation gifting, progress and rejection feedback |
+| G005 | Done | G004 | Ordinary conversation gifting, progress and rejection feedback |
 | G006 | Pending | G001 | Detached met-only People projection with no disclosure side effects |
 | G007 | Pending | G006 | People journal integrated with existing J journal/HUD and modal lifecycle |
 | G008 | Pending | G005, G007 | Integrated ordinary social loop, cross-system regression and restart proof |
@@ -222,3 +222,32 @@ No blockers, live processes, commit or push. Stop after exactly G004.
 G004 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
 G004 runtime, fixtures, tooling, acceptance and workflow/discovery state. Keep
 ignored raw evidence local; no push or G005 implementation.
+
+### G005 / 2026-10-08 UTC / Done
+
+Every G005 criterion passed; [G005 acceptance](G005_ACCEPTANCE.md) maps detached
+friendship/bag snapshots, retained recipient feedback, honest preference/item/cap
+reasons, stable commands/echo safety, Moonflower help, modal/lifecycle boundaries
+and ordinary physical acquisition/gifting to inspected evidence. No new reward,
+fact authority, save field, source text, art, geography or resource supply.
+
+Bulk runner230634 passes all11 cases: eight suites, engine/parse and rendered
+UI397 assertions/42 captures (headless355). Transaction238, milestone657, modal384,
+foraging130, bag148 and Maris729 pass; quest suite passes. Ordinary230853 passes
+all4 cases, consequence suite and78 assertions/15 captures: two different real
+flowers, helpful Edric/two gifts/one milestone, bag/recipient equality, third
+flower preserved, ordinary existing companion choice through its independent
+owner. Final231032 UI355/bag148 pass after preserving old item-help fallbacks.
+All accepted runs have zero diagnostics/timeouts/source changes/errors. Source/
+reference/converter and intended diff/link/source audit pass. Failed attempts
+retained. Six final sheets/all57 images plus full-size details inspected at actual
+960x640/1350x900. Viewport proof only; fresh social restart/native remains G008/G009.
+
+Next eligible G006: detached met-only People projection. Remaining
+G006,G007,G008,G009. Every item through G009: not complete.
+No blockers, owned live processes, held controls, commit or push.
+Stop after exactly G005; do not begin G006.
+
+G005 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
+G005 runtime, UI, fixtures, acceptance and workflow/discovery state. Keep ignored
+raw evidence local; no push or G006 implementation.

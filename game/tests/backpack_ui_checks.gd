@@ -81,7 +81,7 @@ func _run() -> void:
 	_key(KEY_TAB)
 	_key(KEY_ENTER)
 	_check(game.session.inventory.snapshot().active_item_id == "item-moonflower" and game.session.inventory.active_tool() == null, "Tab/Enter selects non-tool")
-	_check(game.ui.active_item_label.text.begins_with("Selected item: Moonflower") and game.ui.backpack.details.text.contains("No direct use") and not game.ui.backpack.drop_button.visible, "non-tool truthful")
+	_check(game.ui.active_item_label.text.begins_with("Selected item: Moonflower") and game.ui.backpack.details.text.contains("Gift through conversation") and not game.ui.backpack.drop_button.visible, "non-tool authored gift help truthful")
 	await _click(game.ui.backpack.slots[0])
 	_check(game.session.inventory.active_tool() == game.catalog.get_item(ForagingRegistry.ROD_ITEM), "pointer selects rod")
 	for step: int in range(12):

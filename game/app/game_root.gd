@@ -268,7 +268,9 @@ func _input(event: InputEvent) -> void:
 	# Escape cancels dialogue even while a choice has GUI focus. World keys do
 	# not reach actors; mouse clicks remain available to the modal's buttons.
 	if dialogue.active():
-		if event.is_action_pressed("pause") and not event.is_echo():
+		if event is InputEventKey and event.is_echo():
+			get_viewport().set_input_as_handled()
+		elif event.is_action_pressed("pause"):
 			_cancel_dialogue()
 			get_viewport().set_input_as_handled()
 		elif event is InputEventKey and not event.is_action("quit"):
@@ -614,6 +616,7 @@ func interact() -> NpcDialogueService.Result:
 func _present_dialogue(result: NpcDialogueService.Result) -> void:
 	conversation_result = result
 	ui.show_dialogue(dialogue.snapshot(), result)
+	ui.show_inventory(session.inventory.snapshot(), catalog)
 	_update_controls()
 	if not world_host.transitioning:
 		_refresh_interaction()

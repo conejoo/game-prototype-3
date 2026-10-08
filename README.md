@@ -1,10 +1,10 @@
 # Returning Fair prototype
 
-Current development source: [G004 acceptance](docs/gifts-friendship-people-journal/G004_ACCEPTANCE.md)
-verifies authored Moonflower gift activation and Edric's once-only Acquaintance
-milestone through production service/content/save checks. G001-G004 Done;
-G005-G009 remain for gift feedback/ordinary UI, People and fresh native social
-delivery. Existing Windows packages and NPC acceptance below are historical
+Current development source: [G005 acceptance](docs/gifts-friendship-people-journal/G005_ACCEPTANCE.md)
+verifies ordinary gathered Moonflower gifts, friendship/bag feedback and Edric's
+once-only Acquaintance milestone through source service/rules and inspected
+viewport input. G001-G005 Done; G006-G009 remain for People and fresh integrated
+social restart/native delivery. Existing Windows packages and NPC acceptance below are historical
 pre-social releases; their gift deferrals describe that delivered boundary.
 
 NPC migration: [eight villagers and richer dialogue](docs/villagers-dialogue/CHECKLIST.md),
@@ -173,6 +173,12 @@ B or Bag opens the twenty-slot backpack. Mouse or Tab/Enter selects an owned ite
 B, Esc or Close returns control. One stack occupies one slot: moonflowers cap at99,
 the rod at1. Gathering does not automatically select an item. Selecting a flower
 shows its details; selecting the rod shows an active tool with fishing unavailable.
+
+Learn a person's preference through their conversation, then offer an owned
+Moonflower using their authored response. No bag selection is required. Each
+person accepts two flowers per run; conversations show friendship toward
+Acquaintance and the current bag count. Helpful Edric introduction plus two gifts
+reaches his once-only milestone. Gift supply remains three finite flowers.
 
 Select the rod, then Drop rod to place it on nearby clear dry ground. Hold the left
 mouse button over a nearby rod, drag and release. A green preview commits the move;

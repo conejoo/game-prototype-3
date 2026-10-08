@@ -6,18 +6,84 @@ Updated: 2026-10-08 UTC.
 
 ## Current selection and exact continuation
 
-G001-G004 Done. Active task: none. G005-G009 Pending. Whole checklist incomplete.
-Final task G009. No blocker. Exactly G004 completed the implementation invocation.
-G004 successful-task commit authorized in the separate follow-up; this state is
-included with that commit. No push or G005 work.
+G001-G005 Done. Active task: none. G006-G009 Pending. Whole checklist incomplete;
+final task G009. Exactly G005 completed the implementation invocation. No blocker.
+G005 successful-task commit authorized in the separate follow-up; this state is
+included with that commit. Raw ignored evidence stays local. No push or G006 work.
+Next eligible G006. Exact next action: read [G005 acceptance](G005_ACCEPTANCE.md),
+source People snapshots and current catalog/ConversationMemory/fact ownership;
+mark G006 In progress, implement a detached met-only projection and its suite.
+Keep UI integration for G007; do not add a met/fact/affinity store or disclose
+private/deferred facts. No G006 implementation occurred here.
 
-Next eligible G005; G006 independently ready but higher ID. Exact next action:
-read [G004 acceptance](G004_ACCEPTANCE.md) and current ConversationView/GameRoot
-publication/input owners, mark G005 In progress, then implement authored gifting
-feedback and friendship threshold display plus ordinary gathered-item UI proof.
-Update Moonflower help/description in G005, preserve the non-giftable rod, finite
-three-flower supply, existing root modal policy and Maris routing. G004 has not
-performed ordinary gathering/UI or People/native acceptance.
+## G005 outcome, interfaces and verification
+
+Entry HEAD673accf2889e1ff357f63b648beb1d7a4a68d689, clean worktree. No nested
+AGENTS.md or unrelated user changes. Source read-only clean at60c20eb2; current
+catalog SHA256efb76e8a42796a92fab80fa5815885adc7abdfd565ee7cfe036a7d165409e1d3.
+Schema7/content1, NPC source text/art/contact/resource supply and historical pins
+unchanged. Only authorized UI/service feedback/help, fixtures and these docs changed.
+
+NpcDialogueService.snapshot adds detached social {affinity,threshold,level,
+level_label,moonflowers} and transient gift_feedback. Existing gift command
+composes authored recipient/count/delta feedback before changed notification;
+the cursor retains it through response/milestone and rejected stale input, and
+clears it on close/cancel. No persisted field or new relationship authority.
+ConversationView renders threshold/Reached and bag count above the scrollable
+body/choices/facts; status retains gift feedback with any current error/service
+notice. Prototype recovery/companion graphs keep their prior presentation.
+GameRoot _present_dialogue refreshes bag/HUD after service publication, and its
+dialogue input gate consumes keyboard echoes before GUI focus can activate a new
+node. Stable service IDs/tokens/revision/owner guards remain unchanged.
+Moonflower description/backpack/HUD explain authored gifts after preference
+disclosure and optional selection; non-giftable/rod help fallbacks preserved.
+
+New tests social_gift_ui_checks(.gd/.uid) and social_gift_ui_render(.gd/.uid).
+All-eight checks label supplied items/events/contact bindings and long display
+fixtures synthetic; actual wheel/Tab/Enter exercise root GUI. Ordinary renderer
+reuses TestRunJourney/GUI/capture helpers and physical production WASD/E/mouse/
+Tab/Enter only: two distinct flowers, helpful Edric/two gifts/one milestone,
+last-item clear, missing-item reopen, independent recipients and uncollected
+flower03. A normal source woods-priority detour is entered/closed before the
+second gift; no entry is forced. Existing noncanonical companion station is
+physically reached and its ordinary positive choice changes only companion trust.
+Existing backpack_ui_checks updates its formerly obsolete no-use expectation.
+
+Accepted runs under docs/evidence/G005/:
+- 20261008-230634406-ca06e70a/results.json: all11 cases pass. UI355 headless,
+  rendered397/42 captures, transaction238, milestone657, modal384, foraging130,
+  backpack148, Maris729 and quest suite. Stable934-file digestd7535c689ae421fa320fc6a6cd6cb34788afefb13f1076fbd1dd14f95074a367.
+- 20261008-230853742-eed20e8f/results.json: all4 cases pass. Consequence suite
+  plus ordinary78 assertions/15 captures. Only ordinary test fixture changed
+  since bulk; digest ed714ac07c4cf9f620961e3ade512a0a19d02d442cd0c9bbdda66dd62307ebf9.
+- 20261008-231032368-d8bac947/results.json: all4 cases pass, UI355/bag148,
+  after preserving original non-giftable help fallbacks. Gift/rod rendered
+  branches unchanged; digest33f56cbda36ec1aab50c545594e165e40fed6d8b31e56cfaa9253003a8d0c87d.
+
+All accepted runs have zero diagnostics/timeouts/source changes/errors. Installed
+Godot4.7.2 console verified first. Exact commands/cwd/executables in acceptance;
+runner owns separate APPDATA/LOCALAPPDATA/slots under builds/testing/G005/<run>/.
+Normal saves untouched. Reference/source/converter exit0/empty stderr under
+reference-20261008-225708. Final diff/link/manifests/source review under final-review.
+
+All57 final acceptance captures inspected through six contact sheets plus full-size
+details: authored hint/response/milestone, missing/preference/cap reasons including
+scrolling long menus, Della notice, long choices/exits, ordinary bag help/empty,
+larger milestone and companion response. Actual images960x640 and1350x900; root
+requested1440x900, project stretch yields1350x900. Provenance/dimensions/hashes
+validated by shared capture_evidence.py. No G005 GUI restart/native/package claim.
+
+Retained failed attempts:225602 engine Access denied then approved escalation;
+225636 import generated two UIDs/source guard failed correctly with existing
+editor-only SDK allowance;225700 wrong Continue fixture assumption on six return
+menus;225906 overlooked Helena's actual entered gather disclosure;230103 wrong
+authored hint-target/name assertions. Corrected fixtures; no failed run relabeled.
+Initial passing230417/230447 renders retained before wheel/companion extensions.
+New mixed-ending spans alone repaired during diff review; no unrelated normalization.
+
+No required G005 criterion failed/unrun. All owned runners/engines exited; no held
+input or cleanup owed. No source-checkout mutation, external message, export,
+publication, commit/push or successor. Remaining G006-G009; stop here.
 
 ## G004 outcome, interfaces and verification
 

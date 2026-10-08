@@ -6,6 +6,7 @@ signal advance_requested(command: Dictionary)
 signal counter_route_requested(command: Dictionary)
 var title: Label
 var expression: Label
+var friendship: Label
 var portrait: TextureRect
 var body: RichTextLabel
 var choices: VBoxContainer
@@ -29,6 +30,10 @@ func _ready() -> void:
 	title.add_theme_font_size_override("font_size", 22)
 	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	column.add_child(title)
+	friendship = Label.new()
+	friendship.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	friendship.add_theme_font_size_override("font_size", 14)
+	column.add_child(friendship)
 	var row: HBoxContainer = HBoxContainer.new()
 	row.add_theme_constant_override("separation", 18)
 	row.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -116,6 +121,11 @@ func present(view: Dictionary, message: String) -> void:
 	expression.text = view.portrait_id.replace("-", " ").capitalize() if not view.portrait_path.is_empty() else "Prototype presentation"
 	portrait.texture = load(view.portrait_path) as Texture2D if not view.portrait_path.is_empty() else null
 	portrait.visible = portrait.texture != null
+	friendship.visible = view.has("social")
+	if friendship.visible:
+		var social: Dictionary = view.social
+		friendship.text = (social.level_label + " · " if social.level > 0 else "Friendship · ") + "%d / %d" % [social.affinity, social.threshold]
+		friendship.text += (" · Reached" if social.level > 0 else " toward " + social.level_label) + "\nBackpack: %d Moonflower%s" % [social.moonflowers, "" if social.moonflowers == 1 else "s"]
 	body.clear()
 	var text: String = view.text
 	var terms: PackedStringArray = []
@@ -161,6 +171,11 @@ func present(view: Dictionary, message: String) -> void:
 	if counter_route.visible: focus.append(counter_route)
 	focus.append(close)
 	status.text = message
+	var feedback: String = view.get("gift_feedback", "")
+	if not feedback.is_empty():
+		status.text = feedback
+		if message != feedback and message not in ["Conversation continued.", "Response accepted."]:
+			status.text += "\n" + message
 	if view.npc_id == "npc-06":
 		status.text += ("\n" if not message.is_empty() else "") + "Conversation only. Purchases and delivery jobs unavailable."
 	if view.npc_id == "npc-07":

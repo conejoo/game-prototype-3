@@ -10,9 +10,10 @@ restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
 W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration, N015 ordinary contacts/art for all eight requested villagers and N016 separate review-only semantic action variants, N017 integrated all-eight/recovery/restart acceptance and N018 fresh Windows/native delivery.
-Current development source also includes G001-G004 social rules/save/activation;
-gift feedback/ordinary social UI, People and fresh native social delivery remain
-G005-G009. Historical N018 packages retain their pre-social boundary.
+Current development source also includes G001-G005 social rules/save/activation,
+friendship/bag feedback and ordinary viewport gifting. People and fresh integrated
+social restart/native delivery remain G006-G009. Historical N018 packages retain
+their pre-social boundary.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -1138,3 +1139,21 @@ passing engine/parse/rule/modal/Maris/save/restart cases and exact approved
 conversion/source protection. Supplied items/events/authoring fixtures remain
 synthetic; G005 owns feedback/ordinary gifting UI, G006-G007 People and G008-G009
 integrated/native social acceptance. No new package or ordinary-play claim here.
+
+## G005 ordinary gifting and conversation feedback (2026-10-08 UTC)
+
+NpcDialogueService snapshots expose detached authored friendship threshold/label,
+derived level, affinity and actual Moonflower bag count. Accepted gift feedback is
+transient cursor state, retained through response/milestone and stale rejection;
+no new save field or relationship store. ConversationView displays progress or
+Reached, bag count and retained feedback with fixed exits and scrolling choices.
+GameRoot refreshes bag/HUD only after complete publication and blocks keyboard
+echoes before new-node GUI activation. Item help describes authored conversation
+gifts after preference disclosure; rod/non-giftable behavior remains intact.
+
+[G005 acceptance](gifts-friendship-people-journal/G005_ACCEPTANCE.md) records
+all-eight synthetic rule/UI/rejection/scroll fixtures, ordinary two-flower Edric
+gifting/milestone and independent existing companion choice, inspected57 captures
+at960x640/1350x900 and affected modal/foraging/bag/Maris/quest/consequence checks.
+Source content/pins/geography/art/supply and schema7/content1 are unchanged.
+People and fresh integrated social restart/native packages remain G006-G009.

@@ -23,6 +23,7 @@ var _node_id: String = ""
 var _generation: int = 0
 var _cursor_state: NpcConversationState
 var _cursor_inventory: InventoryState
+var _gift_feedback: String = ""
 
 func initialize(catalog: NpcContentCatalog, session: GameSession) -> PackedStringArray:
 	if _executing: return PackedStringArray(["Conversation command busy"])
@@ -89,7 +90,11 @@ func snapshot() -> Dictionary:
 	for id: String in memory.learned_fact_ids:
 		var fact: NpcDefinition.Fact = npc.facts[id]
 		facts.append({"id":id, "label":fact.label, "description":fact.description, "highlight_term":fact.highlight_term})
-	return {"graph_id":_npc_id, "npc_id": _npc_id, "instance_id": _instance_id, "node_id": _node_id, "token": _token(), "speaker": node.speaker, "text": node.text, "portrait_id": node.portrait_id, "portrait_path": npc.portraits[node.portrait_id], "choices": rows, "can_continue": not node.continue_target_id.is_empty() or available == 0, "can_close": true, "memory": memory.snapshot(npc.level_one_affinity), "facts":facts, "revealed_fact_ids":node.revealed_fact_ids.duplicate(), "selected_choice_id":_selected_choice, "presentation_index":0}
+	return {"graph_id":_npc_id, "npc_id": _npc_id, "instance_id": _instance_id, "node_id": _node_id, "token": _token(), "speaker": node.speaker, "text": node.text, "portrait_id": node.portrait_id, "portrait_path": npc.portraits[node.portrait_id], "choices": rows, "can_continue": not node.continue_target_id.is_empty() or available == 0, "can_close": true, "memory": memory.snapshot(npc.level_one_affinity), "social":_social_snapshot(npc), "gift_feedback":_gift_feedback, "facts":facts, "revealed_fact_ids":node.revealed_fact_ids.duplicate(), "selected_choice_id":_selected_choice, "presentation_index":0}
+
+func _social_snapshot(npc: NpcDefinition) -> Dictionary:
+	var memory: ConversationMemory = _session.conversations.memory(npc.id)
+	return {"affinity":memory.affinity, "threshold":npc.level_one_affinity, "level":memory.level(npc.level_one_affinity), "level_label":npc.level_one_label, "moonflowers":_session.inventory.count("item-moonflower")}
 
 func _prototype_snapshot() -> Dictionary:
 	var node: NpcDialogueGraph.NodeDefinition = _prototype.graph().nodes[_node_id]
@@ -153,9 +158,10 @@ func _choose_gift(npc: NpcDefinition, choice: NpcDialogueGraph.Choice) -> Result
 		_node_id = candidate.next_node_id
 		_selected_choice = choice.id
 		_generation += 1
+	_gift_feedback = "Gifted Moonflower to %s. Backpack: %d remaining. Friendship +%d (%d / %d toward %s)." % [npc.display_name, _session.inventory.count("item-moonflower"), npc.gifts[choice.gift_rule_id].affinity_delta, _session.conversations.memory(npc.id).affinity, npc.level_one_affinity, npc.level_one_label]
 	changed.emit()
 	_executing = false
-	return Result.new(true, "Moonflower gifted.")
+	return Result.new(true, _gift_feedback)
 
 func _choose_prototype(choice_id: String) -> Result:
 	var graph: NpcDialogueGraph = _prototype.graph()
@@ -237,6 +243,7 @@ func _token() -> String:
 	return "%d:%d:%d" % [get_instance_id(), _generation, _session.inventory.revision() if _session != null else -1]
 
 func _clear() -> void:
+	_gift_feedback = ""
 	_prototype = null
 	_selected_choice = ""
 	_cursor_state = null

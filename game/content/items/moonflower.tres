@@ -10,4 +10,4 @@ source_item_id = "moonflower"
 category = "forage"
 stack_limit = 99
 giftable = true
-description = "A pale Moonwood flower. Gathered for keeping; no direct use in this slice."
+description = "A pale Moonwood flower. Learn a person's preference, then offer an owned flower through their conversation. Gifts do not require selecting the flower."

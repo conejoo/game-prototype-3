@@ -247,3 +247,26 @@ SocialSaveFixture now uses production content and actual service routing instead
 of injected milestone history. Its supplied items/events and boundary authoring
 variants remain synthetic. G004 rule/save/restart evidence does not claim ordinary
 gathering/UI, People or native delivery; G005/G006-G009 retain those gates.
+
+## G005 conversation presentation interface (2026-10-08 UTC)
+
+Ordinary service snapshots add detached social {affinity,threshold,level,
+level_label,moonflowers}, derived from the authored NPC and current session, and
+transient gift_feedback. No save/envelope/version or relationship authority changes.
+The accepted gift feedback uses authored display name and committed bag/delta;
+it stays through its response/milestone and later stale rejection, clearing with
+the cursor. ConversationView renders threshold progress/Reached and remaining
+flowers, retaining accepted feedback alongside any rejection/service notice.
+
+GameRoot refreshes backpack/HUD after whole command publication and consumes
+dialogue keyboard echoes before the GUI can activate a newly focused control.
+Availability and commands retain existing rule/token/revision/owner validation.
+Long choices and disabled reasons scroll with normal wheel input; exits stay fixed.
+Moonflower help explains conversation gifts after preference disclosure and that
+selection is optional; rod and other non-giftable help retain their old behavior.
+
+[G005 acceptance](G005_ACCEPTANCE.md) distinguishes all-eight synthetic UI/item/
+event fixtures from ordinary viewport gathering/gifting and the existing separate
+companion choice. Actual small/larger images are960x640/1350x900 (root requested
+1440x900). No People, fresh integrated social restart or native package acceptance
+is claimed; G006-G009 remain pending.
