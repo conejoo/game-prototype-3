@@ -1,0 +1,21 @@
+{
+  "npc_id": "npc-08",
+  "triangles": 10014,
+  "vertices": 5240,
+  "bones": 16,
+  "materials": 1,
+  "texture": [
+    32,
+    32
+  ],
+  "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\npc-08.blend",
+  "glb": "D:\\development\\game-dev-blender\\returning-fair-prototype\\game\\assets\\models\\npcs\\npc-08.glb",
+  "idle": "runtime fixed contact",
+  "walk": "review only",
+  "preserved_scene": "RF-RecoveryVessel",
+  "references": [
+    "portraits/npc-08/official-neutral.png",
+    "actors/npcs/npc_08_idle_sheet.png"
+  ],
+  "identity": "37-year-old boatwright, angular warm face, dark swept hair and back braid, rust collared rolled-sleeve shirt, ochre fitted apron/pocket/tool loops/back ties, sage knotted scarf, brown trousers/boots"
+}

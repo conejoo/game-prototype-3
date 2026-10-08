@@ -507,3 +507,24 @@ and [Ivo package](../../art/exports/NPC_07_PACKAGE.md) verify ordinary access,
 exact independent GUI restart, dry-footprint/quay return/water negatives,
 lifecycle/facing and inspected source-informed art/weather. N014 next eligible;
 N016-N018 retain semantic actions/integrated all-eight/native acceptance.
+
+## N014 delivered Celia public repair boundary (2026-10-08 UTC)
+
+Current activation exactly npc-01/npc-02/npc-03/npc-04/npc-06/npc-07/npc-08.
+Source celia-basic-repairs-actor-01/celia-basic-repairs-01 foot(592,960) maps
+to approved dry target(-3.5,0,12), approach(-3.5,0,13), stable instance
+alderwake-npc-08-contact. No map refresh, dock/ship alteration or service.
+Distinct10,014-triangle/16-bone/packed-palette skin mounts under existing
+VisualRoot/Presenter. Fixed noncombatant idle/facing runtime; walk review-only.
+No Party member or saved pose.
+
+Exact source graph/six portraits and public-role/basic-repairs/woodcarving
+disclosures retained. Careful+1/passing0 exclusive receipts and four public
+branches work at level0; gifts deferred. Fixed modal supplements source words:
+repair services and fair boat rides unavailable. No boat ride/transaction,
+memory recovery, morning scene, reward, stage/quest/trust or private disclosure.
+Strict manual schema7/content1 unchanged. [N014 acceptance](N014_ACCEPTANCE.md)
+and [Celia package](../../art/exports/NPC_08_PACKAGE.md) verify ordinary access,
+exact independent GUI restart, repair-lane round trip/full footprint, lifecycle
+and inspected source-informed art/weather. N015 next eligible; N016-N018 retain
+semantic actions/integrated all-eight/native acceptance.

@@ -6,19 +6,72 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N013 Done; N014-N018 Pending. No active task. Exactly N013 completed.
-Target began clean at `0217d186fb79ec45b2c8133466617663ed9ec21e`.
+N001-N014 Done; N015-N018 Pending. No active task. Exactly N014 completed.
+Target began clean at `a3fb984875e4229504f5080bff5f4d6239e396b8`.
 Source remains clean/pinned at `60c20eb2816e7271fb84afaba286af006ebe3ccf`.
-No unrelated user work. Successful N013 task commit authorized by follow-up;
-verified identity is available in Git history and the follow-up report. No push.
-Next eligible N014: Celia ordinary repair-neighborhood contact/art. Inspect
-npc-08 source public package/portrait/sheets/canon and approved dry repair
-foot(-3.5,0,12)/approach(-3.5,0,13) before implementation. N015/N016 independently
-eligible; lowest N014 selects next. N017/N018 wait for their declared prerequisites.
-Remaining N014,N015,N016,N017,N018; all through N018 incomplete.
-No current blocker/unrun N013 criterion, normal-save access or owned cleanup.
-All owned check/helpers exited; original Blender RF-RecoveryVessel scene/file
-preserved. Owned RF-Npc07-Ivo and pre-refinement scene available. Stop now.
+No unrelated user work. Successful N014 commit authorized by follow-up; verified
+identity is available in Git history and follow-up report. No push.
+Next eligible N015: inspect npc-14 public
+package and N001 documented public Lantern Rest entry adaptation before implementation.
+N016 independently ready; N017/N018 wait for declared prerequisites. Remaining
+N015,N016,N017,N018; all through N018 incomplete. No current blocker/unrun N014
+criterion, normal-save access or owned cleanup. All owned engines/helpers exited.
+Original Blender RF-RecoveryVessel scene/file preserved; owned RF-Npc08-Celia
+and before-refine scene available. Stop now.
+
+## N014 result and durable evidence
+
+
+Result: Celia Oran/npc-08 at approved public repair foot(-3.5,0,12),
+approach(-3.5,0,13), source graph/six exact portraits/three public facts.
+Distinct editable angular warm face/dark back braid/rust collared rolled shirt/
+ochre fitted apron/pocket/tool loops/back ties/sage scarf/brown trousers/boots;
+10,014 triangles/16 bones/packed32x32 palette. Idle/facing runtime; walk review-only.
+Fixed modal repair/fair-ride notice preserves source words. No boat ride, service
+transaction, recovery/morning scene, item/quest/trust or stage change.
+
+Target began clean at a3fb984875e4229504f5080bff5f4d6239e396b8; source clean/pinned
+at60c20eb2816e7271fb84afaba286af006ebe3ccf.132 authority hashes/67 outputs exact;
+other people/art, geography and schema7/content1 retained. Every criterion,
+command/isolation/failure in [N014 acceptance](N014_ACCEPTANCE.md) and
+[Celia package](../../art/exports/NPC_08_PACKAGE.md).
+
+Expanded143735435-520fe68522/23 cases PASS; sole owning test endpoint exceeded
+navigation edge. Corrected measured lane/full-footprint sampling; focused
+144212636-b1c5f77a all13 cases PASS including synthetic process pair and renders.
+Visual review then repaired apron walk clipping/shoulder seams; prior art retained.
+External source audit then caught retained object suffixes; own normalization
+explicitly canonicalizes three object names, prior art retained. Final
+150028700-95ea9bb3 all12 cases PASS/import/skin/pipeline/save/interaction/
+startup plus review/write/read/neutral.851 stable files SHA256
+0ac5130a3c37b3ae335c323799635ade4c6fe6fbb6e2c039d4632a3ca6d9b8de.
+Zero forbidden Godot diagnostics/timeouts/source changes. Fresh per-case/group
+APPDATA/LOCALAPPDATA/named slots; normal saves untouched.742 owning/384 affected
+UI/194 final rendered assertions; all71 captures viewed in six sheets and selected
+full-size views;46 strict pause/dialogue provenance records pass.
+
+Ordinary writerPID71632/new readerPID4056 GUI Save/Load exact complete typed
+durable state/forecast, physical fact revisit and repair-lane round trip to14.5.
+NeutralPID17020 passing0 versus careful1; one exclusive receipt, public branches
+at level0, stale alternate/gift rejection and no prior-state/other-person changes.
+All seven full-support/LOS/navigation contacts and facing/holds/travel/retry pass.
+Synthetic art/rule/physical proofs distinguished from ordinary input.
+Soles0/seams0,196 stance samples drift9.5367431640625e-07m,
+120 blend maxstep0.01220329012721777m.
+GLBc1d509dc1b3a2577bfed9b9a04d4922d47c34269925ed2bdcae76181535a6f16;
+.blend62e67e1c6a8f4343db67cc5e2cfdcbe8a130869331117850ec4949341b109979.
+
+All owned engines/helpers exited; original Blender scene/file and other assets
+preserved, owned Celia scenes available. No cleanup/blocker/unrun N014 criterion,
+commit/push or successor implementation. Exactly N014 complete; stop. Remaining
+N015,N016,N017,N018. Next eligible N015; all through N018 incomplete.
+
+Files changed: owning build/normalize/raw/source audits/.blend/GLB/import/palette/
+export JSON/package; narrow registry activation/adapter prompt/Celia-only modal
+notice; npc_08_checks/render and UIDs; acceptance/checklist/current-state/contract/
+README/architecture. No other-person asset, catalog/portrait, save format, existing
+recovery/ship/gate or geography file changed. Final tested851-file manifest and
+one-GLB refinement delta verified. Raw evidence remains ignored.
 
 ## N013 result and durable evidence
 
@@ -884,3 +937,16 @@ and all task status rows remain unchanged. Raw runs/captures/appdata stay ignore
 Commit scope/tree/identity/status audits are retained in the latest N013 evidence
 run; verified commit identity is available in Git history and follow-up report.
 No push or N014 implementation.
+
+
+## Authorized N014 commit follow-up - 2026-10-08 UTC
+
+User authorized committing successful N014 implementation/art, reusable checks,
+acceptance report, checklist and durable state. Preflight matches exactly the
+24 audited N014 paths; no unrelated changes or staged files. Final 851 runtime/
+tool hashes and exact GLB/.blend hashes remain unchanged. Existing acceptance
+remains valid; no production code changes during commit follow-up. Raw runs,
+captures, failed-attempt assets and isolated appdata remain ignored. Commit
+scope/tree/identity/status audits are retained in the final local N014 run;
+verified commit identity is available in Git history and follow-up report.
+No push or N015 implementation; N015-N018 remain Pending.
