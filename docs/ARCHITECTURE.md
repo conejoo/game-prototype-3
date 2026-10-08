@@ -815,3 +815,20 @@ commands, input latches and geometry remain authoritative. [F008 acceptance](for
 verifies all four items across day/night/rain, both projections and zoom bounds,
 ordinary gather/backpack/placement/travel and exact GUI independent restarts.
 F009 integrated and F010 fresh native/export remain Pending; historical releases retained.
+
+### Delivered integrated foraging acceptance (F009)
+
+The ordinary integrated renderer now walks the fresh all-four gather/backpack/rod
+placement journey, switches a lamp, travels to Tollworks and returns, then performs
+GUI Save and production F10 quit. A different process uses GUI Load and compares
+all schema6 durable facts plus reconstructed forecast exactly before ordinary
+all-origin revisits and physical saved-rod recollection. Shared journey/input/GUI/
+capture helpers preserve normal physics, arrival anchors and ownership gates.
+
+[Acceptance](foraging-items-backpack/F009_ACCEPTANCE.md) separates ordinary viewport
+proof from synthetic capacity/geometry/focus/combat/retry/save fixtures and fresh
+art/presentation samples. All affected regressions pass. Inherited companion/quest
+legacy fixtures now omit schema6 fields; production validation remains strict.
+Current runtime/assets/schema6/content1 are unchanged by this acceptance task.
+Fresh standalone Windows/native package delivery remains F010; older package
+history and debug viewport results do not establish that gate.

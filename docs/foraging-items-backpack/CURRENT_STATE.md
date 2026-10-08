@@ -5,10 +5,12 @@ Updated2026-10-07, America/Vancouver. [CHECKLIST](CHECKLIST.md) owns status;
 
 ## Selection and continuation
 
-F001-F008 Done; F009-F010 Pending. No active task. Next eligible: **F009 — integrated
-gameplay and restart acceptance**. F008 local art, feedback, both-projection/day/night/
-rain visuals and ordinary physical loops actually pass; read [F008 acceptance](F008_ACCEPTANCE.md).
-Completed exactly F008; stop before successor. No automatic agents.
+F001-F009 Done; F010 Pending. No active task. Next eligible: **F010 — fresh Windows/
+native delivery**. [F009 acceptance](F009_ACCEPTANCE.md) records the ordinary integrated
+all-four/rod/lamp/travel journey, exact separate-process GUI restart, fresh visuals and
+all affected regressions. F010 must export fresh packages and prove ordinary native
+input/restart; debug viewport proof and native-helper tests do not satisfy that gate.
+Completed exactly F009; stop before successor. No automatic agents.
 
 Separate tooling follow-up2026-10-07: [shared journey helper](../TESTING_JOURNEY_ACCEPTANCE.md)
 complete after `eff156a`. F005/F006/F007 now use reusable TestRunJourney movement/
@@ -523,3 +525,60 @@ modal layer order, stale feedback and synthetic camera HUD were repaired/reverif
 No failed/unrun F008 criterion remains. All owned processes exited, no editor/cleanup owed.
 F009 integrated checks and F010 fresh export/native remain Pending. Resume F009 next;
 do not treat viewport proof or tool support as native delivery. Completed exactly F008.
+
+## F009 completed — 2026-10-07, America/Vancouver
+
+Initial HEAD `f352d7b70d5ddba53e60ef9df7f8f1b272b2bb8c`; worktree clean, no user work
+overwritten. F008 prerequisite artifacts/current capabilities verified. Added
+foraging_integrated_render.gd and UID; repaired companion_checks/quest_checks legacy
+shapes, item-default assertions and quest isolated-directory preflight. Updated README
+controls, architecture, checklist/this state and [F009 acceptance](F009_ACCEPTANCE.md).
+Production runtime/content/schema6/physics/save/input/art bytes unchanged.
+
+Ordinary viewport walk spawn→rod→all three flowers, B hold cancellation/fresh E,
+keyboard/pointer selection, Drop/invalid water drag/valid both-projection placement/
+recollect, immediate E lamp and Tollworks round-trip pass. GUI Save matches typed disk;
+F10 writer exit, different-PID GUI Load exact entire durable snapshot/forecast and
+all-three flower revisits/physical restored rod recollect pass. Origins absent,
+flowers3/rod1, no restored hold/drag/preview/modal. Both final processes use F10 while
+paused. No ordinary route fixture setup, teleport, grant or save shortcut.
+
+Repository-root PowerShell7 final commands/results, all via run_checks -Task F009:
+- `20261008-031053900-b9da6852`: Names inventory_checks,foraging_transaction_checks,
+  foraging_save_checks,foraging_interaction_checks,backpack_ui_checks,
+  world_item_placement_checks; ProcessScripts foraging_process_checks; RenderScript
+  foraging_integrated_render, phases write,read, timeout180. PASS199/587/112/103/148/128
+  feature assertions, process76/79 and integrated writer/reader22 captures.
+- `20261008-031422144-0870da15`: Names quest_checks; ProcessScripts save_process_checks,
+  timeout150. PASS repaired quest and prior-fact independent save processes.
+- `20261008-031504017-7fdd1f1c`:17 affected suites listed in acceptance, timeout150.
+  All PASS including recovery/combat/companion/lamps/environment/map/travel/settings/
+  dialogue/camera/quest/consequence/reference mapping. Engine/parse gates PASS.
+- `20261008-031503607-55eccf9a`: RenderOnly foraging_art_render, phase check, timeout150.
+  PASS880 assertions/96 captures:72 synthetic art/presentation and24 actual live
+  inputs after labeled setup, day/night/rain/both projections/zoom bounds.
+
+All accepted cases exit0; logs/results inspected, no runtime diagnostics/timeouts or
+observed source drift. Ordinary source digest73d912a1...661797 and final digest
+a250a481...439706 each cover492 files. Compared manifests: only quest_checks isolated
+directory creation differs; production/feature/process/integrated/helper bytes match.
+Exact full hashes and commands live in acceptance. Import previously PASS, existing
+editor-only missing SDK10.0.9 allowance only; no install.
+
+Isolated docs/evidence/F009/<fresh-run> and builds/testing/F009/<run> APPDATA/
+LOCALAPPDATA/distinct check groups, explicit process/render shared pairs. Normal save
+untouched. Capture tool validates22/96 PNGs; two integrated/eight art sheets and key
+full-size hold/bag/load/night/rain images inspected. Auditor PASS20 source/three
+reference/three geography hashes/six negative controls, source status clean;
+raw audit docs/evidence/F009/audit-20261008-0317/results.json. No map/source refresh.
+
+Retained failures:030629 sandbox launch denied;030647 generated UID/source-drift;
+030731 stale companion legacy shape;031114 missing quest fixture directory (20261008
+prefix/full IDs in acceptance). Earlier030701 feature/integrated run PASS before F10
+enhancement. All required failures repaired/rechecked; no remaining F009 criterion,
+failed/unrun gate or owned process/editor/cleanup. No unresolved frame-cost concern;
+no new performance/native/export claim. Historical P/M/W packages retained.
+
+Next safe action: select F010 only, inspect package audit/build/native helper assumptions,
+make fresh release/validation packages and prove native journey/restart outside checkout.
+F010 remains Pending and was not started. Completed exactly F009; stop.

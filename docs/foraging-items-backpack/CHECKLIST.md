@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007 completed2026-10-07; F008 completed2026-10-07; F009-F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007 completed2026-10-07; F008 completed2026-10-07; F009 completed2026-10-07; F010 Pending.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -29,7 +29,7 @@ first be created; refine names deliberately and update references together.
 | F006 | Done | F004 | backpack modal and active item HUD |
 | F007 | Done | F005, F006 | safe rod drop/reposition |
 | F008 | Done | F007 | readable item art/progress/feedback |
-| F009 | Pending | F008 | integrated play/restart acceptance |
+| F009 | Done | F008 | integrated play/restart acceptance |
 | F010 | Pending | F009 | fresh Windows/native acceptance |
 
 ## F001 — Pin source behavior and runtime mapping
@@ -422,3 +422,29 @@ normal saves/source/geography unchanged. Capture provenance checked and full-siz
 inspected; synthetic matrix/capacity remains distinct from ordinary viewport journeys.
 All owned processes exited. Next eligible F009; F008 actual criteria verified.
 Completed exactly F008; stop before successor.
+
+### F009 — completed2026-10-07, America/Vancouver
+
+Added ordinary integrated viewport journey and UID: spawn→rod→three flowers,
+held-E/B cancellation and fresh input, backpack selection/drop/invalid and valid
+pointer placement/recollect, both projections, lamp switching, Tollworks return,
+GUI Save/F10/separate-process GUI Load/exact snapshot/forecast/all-origin revisit.
+Rod stays1 and restored placement is physically recollected. Repaired inherited
+companion/quest legacy fixture shapes and quest isolated-directory setup.
+Production runtime/content/save/input unchanged; README controls/architecture updated.
+[Acceptance](F009_ACCEPTANCE.md) records every criterion, commands and limits.
+
+Final repository-root run_checks F009:031053900-b9da6852 six feature suites,
+foraging process pair and integrated render pair PASS,22 captures;031422144-0870da15
+quest/prior-save process pair PASS;031504017-7fdd1f1c17 affected regressions PASS;
+031503607-55eccf9a art matrix PASS880 assertions/96 captures (all IDs20261008 prefix).
+Isolated APPDATA/LOCALAPPDATA/check slots/pair groups; normal save untouched.
+All accepted runtime scans empty, exit0/no timeout/source drift. Exact oracle uses
+separate engine PIDs16572/20052. Capture provenance and all contact sheets/key full
+images reviewed; source/reference/geography audit and six negative controls PASS.
+Retained sandbox/UID-source-drift/stale legacy/missing fixture-directory failures
+repaired and rechecked; full IDs in acceptance. Source status clean, no refresh.
+
+Every F009 criterion evidenced. All owned processes exited; no editor/cleanup owed.
+Next eligible F010, prerequisites verified; no package/native work started.
+Completed exactly F009; stop before successor.

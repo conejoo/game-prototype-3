@@ -64,6 +64,9 @@ func _run() -> void:
 	legacy.erase("progression")
 	legacy.erase("environment")
 	legacy.erase("light_source_overrides")
+	legacy.erase("inventory")
+	legacy.erase("collected_resource_ids")
+	legacy.erase("world_item_placements")
 	legacy.schema_version = 1
 	legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
 	legacy.actors = [legacy.actors[0]]
@@ -74,10 +77,12 @@ func _run() -> void:
 	var legacy_bytes: String = JSON.stringify(legacy)
 	var migrated: SaveCodec.DecodeResult = SaveCodec.decode(legacy_bytes, catalog)
 	_check(migrated.migrated and migrated.errors.is_empty(), "Exact v1 failed migration")
+	_check(migrated.session != null and migrated.session.inventory.snapshot().item_counts.is_empty() and migrated.session.inventory.snapshot().active_item_id == null and migrated.session.foraging.rod_count() == 1, "Legacy quest migration invented item ownership")
 	_check(migrated.session.quests[QUEST].completed_step_ids.is_empty() and migrated.session.completed_effect_ids.is_empty(), "Migration invented progress")
 	_check(migrated.session.actors[GameSession.PLAYER_INSTANCE_ID].health == 37 and migrated.session.elapsed_play_seconds == 42.5, "Migration lost v1 facts")
 	_check(JSON.stringify(legacy) == legacy_bytes, "Migration mutated caller")
 	var path: String = "user://saves/p007-migration-%d.json" % OS.get_process_id()
+	_check(DirAccess.make_dir_recursive_absolute(path.get_base_dir()) == OK, "Isolated migration fixture directory unavailable")
 	var file: FileAccess = FileAccess.open(path, FileAccess.WRITE)
 	_check(file != null, "Migration fixture IO blocked")
 	if file == null:

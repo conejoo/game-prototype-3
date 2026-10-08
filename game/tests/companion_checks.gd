@@ -94,6 +94,9 @@ func _run() -> void:
 		legacy.erase("progression")
 		legacy.erase("environment")
 		legacy.erase("light_source_overrides")
+		legacy.erase("inventory")
+		legacy.erase("collected_resource_ids")
+		legacy.erase("world_item_placements")
 		legacy.schema_version = version
 		legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
 		legacy.actors = [legacy.actors[0]]
@@ -103,6 +106,8 @@ func _run() -> void:
 		var bytes: String = JSON.stringify(legacy)
 		decoded = SaveCodec.validate(legacy, game.catalog)
 		_check(decoded.migrated and decoded.session != null and decoded.session.actors[GameSession.COMPANION_INSTANCE_ID].health == 100 and JSON.stringify(legacy) == bytes, "Legacy migration failed/mutated caller")
+		if decoded.session != null:
+			_check(decoded.session.inventory.snapshot().item_counts.is_empty() and decoded.session.inventory.snapshot().active_item_id == null and decoded.session.foraging.rod_count() == 1, "Legacy companion migration invented item ownership")
 	for mutation: String in ["duplicate", "missing", "wrong-definition", "bad-health", "extra", "order"]:
 		var broken: Dictionary = data.duplicate(true)
 		match mutation:

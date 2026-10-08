@@ -2,7 +2,10 @@
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
-F001-F008 Done; F009-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
+F001-F009 Done; F010 Pending. [Integrated acceptance](docs/foraging-items-backpack/F009_ACCEPTANCE.md)
+verifies ordinary all-four gathering, backpack/rod/lamp/travel, exact independent GUI
+restart and fresh visual/regression checks. Fresh exported/native delivery remains F010.
+[Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
 verifies immutable item/resource content and session-owned20-slot/caps99/1 rules.
 [Atomic command acceptance](docs/foraging-items-backpack/F003_ACCEPTANCE.md) verifies
 joint collection/placement commits and rod conservation.
@@ -135,7 +138,22 @@ contacted once per swing, through range/facing and world-obstruction checks.
 Space dodges in held movement direction, or current facing when stationary;
 dodge lasts 0.30s and blocks damage. E selects nearest visible interaction. Hold E0.6s
 for moonflowers,0.5s for rod; release/mode/target loss cancels. Release E before another
-interaction. B or Bag opens20-slot backpack; mouse/Tab/Enter selects owned items, B/Esc/Close returns control. Select rod then Drop rod to place on nearby clear dry ground. Hold left mouse over nearby rod, drag and release; green preview commits, invalid release keeps original, Esc cancels. Active tool label does not enable fishing. Six dock lamps offer Turn on/Turn off with independent saved choices. Daytime on arms the lamp for dusk; manual off stays dark. Other exterior lights remain automatic;
+interaction. Three moonflowers grow on the Moonwood terraces; the fishing rod sits
+on the dry eastern dock spur near Maris. Each flower can be gathered once per run.
+
+B or Bag opens the twenty-slot backpack. Mouse or Tab/Enter selects an owned item;
+B, Esc or Close returns control. One stack occupies one slot: moonflowers cap at99,
+the rod at1. Gathering does not automatically select an item. Selecting a flower
+shows its details; selecting the rod shows an active tool with fishing unavailable.
+
+Select the rod, then Drop rod to place it on nearby clear dry ground. Hold the left
+mouse button over a nearby rod, drag and release. A green preview commits the move;
+an invalid release keeps its original position. Esc cancels the preview. Drop without
+safe space keeps the rod and selection in the backpack. Release old inputs and press
+again after a modal or cancelled gather/drag.
+
+Six dock lamps offer Turn on/Turn off with independent saved choices. Daytime on
+arms the lamp for dusk; manual off stays dark. Other exterior lights remain automatic;
 dialogue blocks gameplay input, clears held movement, and excludes save/load.
 The first two companion choices remain presentation-only guidance.
 Practice markers/test beacons appear only with explicit debug-only
