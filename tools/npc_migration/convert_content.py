@@ -3,6 +3,7 @@ import argparse
 import copy
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -19,7 +20,7 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def expected_outputs(source=None):
+def expected_outputs(source=None, social=False):
     manifest = read(REF / "manifest.json")
     for row in manifest["inputs"]:
         if "snapshot_path" in row:
@@ -62,6 +63,10 @@ def expected_outputs(source=None):
         for sheet in [world["idle"], world["walk"], *world.get("actions", {}).values()]:
             sheet["asset"] = asset(sheet["asset"])
         packages.append(package)
+    if social:
+        sys.path.insert(0, str(ROOT / "tools/social_migration"))
+        from activation_overlay import apply
+        packages = apply(packages)
     document = {"format_version": 1, "source_revision": manifest["source_revision"], "packages": packages}
     outputs[OUTPUT] = (json.dumps(document, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
     return outputs
@@ -71,8 +76,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="Read-only exact conversion/hash/roster audit")
     parser.add_argument("--source", type=Path, help="Optional read-only authority drift check")
+    parser.add_argument("--social", action="store_true", help="Opt-in approved G004 social coverage overlay; do not activate production before G004")
     args = parser.parse_args()
-    outputs = expected_outputs(args.source)
+    outputs = expected_outputs(args.source, args.social)
     for path, data in outputs.items():
         if args.check:
             assert path.is_file() and path.read_bytes() == data, "Converted output drift: " + str(path)

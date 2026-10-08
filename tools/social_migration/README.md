@@ -51,5 +51,23 @@ Additional bounded `npc_content.dart` and `dialogue_repository.dart` excerpts pi
 authored threshold/label/milestone parsing and priority/tie resolution. The
 historical NPC pin stays unchanged.
 
+G002 adds [activation_overlay.py](activation_overlay.py), consumed by the existing
+converter's `expected_outputs(source=None, social=False)` / opt-in `--social`.
+It runs the immutable hash/semantic audit, matches the exact approved policy and
+copies only its27 availability records. Default converter output stays unchanged.
+G004 must activate production output and strict loader/check gates deliberately.
+
+[overlay_checks.py](overlay_checks.py) proves a deterministic preview, approved
+27 changes, unchanged66 assets/text/adaptations, preserved deferred records and
+rejected malformed policies. From repository root:
+
+```powershell
+& 'C:/Users/aldoc/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' tools/social_migration/overlay_checks.py --source D:/development/game-prototype-2 --evidence docs/evidence/G002/<fresh-run>
+```
+
+Preview/report/negative fixtures remain ignored evidence; game catalog is never
+written by this check. [G002 acceptance](../../docs/gifts-friendship-people-journal/G002_ACCEPTANCE.md)
+records runtime candidate/publication suites and exact boundaries.
+
 Nothing under this folder is a runtime/export dependency. G004 is the activation
 task; G006 may build the independent read-only People projection after G001.

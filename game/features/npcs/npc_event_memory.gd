@@ -6,6 +6,7 @@ const MAX_ACTIVE_SECONDS: float = 2190600.0 # 3651 days * existing 600-second da
 const AREA: String = "areaEntered"
 const GATHER: String = "resourceGathered"
 const CHOICE: String = "dialogueChoiceSelected"
+const GIFT: String = "itemGifted"
 var _allowed: Dictionary[String, bool] = {}
 var _facts: Dictionary[String, Dictionary] = {}
 var _last_sequence: int = 0
@@ -19,6 +20,8 @@ func initialize(catalog: NpcContentCatalog) -> void:
 	_allowed[key(AREA, "woods", null)] = true
 	_allowed[key(GATHER, "moonflower", null)] = true
 	for id: String in catalog.npc_ids():
+		for gift: NpcDefinition.GiftRule in catalog.get_npc(id).gifts.values():
+			if gift.availability.is_enabled(): _allowed[key(GIFT, gift.item_id, id)] = true
 		for choice: NpcDialogueGraph.Choice in catalog.get_npc(id).graph.choices.values():
 			if choice.availability.is_enabled(): _allowed[key(CHOICE, id, choice.id)] = true
 

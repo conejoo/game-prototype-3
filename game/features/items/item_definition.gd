@@ -6,6 +6,7 @@ extends ContentDefinition
 @export_enum("forage", "tool") var category: String = "forage"
 @export var stack_limit: int = 99
 @export var movable_pickup: bool = false
+@export var giftable: bool = false
 @export_multiline var description: String = ""
 
 

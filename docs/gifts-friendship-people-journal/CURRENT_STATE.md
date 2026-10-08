@@ -6,20 +6,77 @@ Updated: 2026-10-08 UTC.
 
 ## Current selection and exact continuation
 
-G001 Done. Active task: none. G002-G009 Pending. Whole checklist incomplete.
-Final G task: G009. No known blocker. Exactly G001 completed, then stopped.
-Successful-task commit authorized in the separate user follow-up; this state is
-included with the G001 commit. No push or successor work.
+G001-G002 Done. Active task: none. G003-G009 Pending. Whole checklist incomplete.
+Final G task: G009. No known blocker. Exactly G002 completed this invocation.
+G002 successful-task commit authorized in the separate follow-up; this state is
+included with that commit. G001 was committed earlier. No push or G003 work.
 
-Next eligible task: G002. G006 is also dependency-ready, but G002 has lower ID.
-Exact next action: read the G001 activation policy/vectors/acceptance and current
-InventoryState/ItemDefinition/NpcDialogueRules/ConversationMemory/event owners;
-mark G002 In progress, build pure gift eligibility and detached atomic candidates,
-add explicit item giftability and deterministic overlay support, verify G002
-criteria/affected suites, update this workflow and stop. Ordinary production gift
-activation remains G004; do not start G003/G006 in the same invocation.
+Next eligible task: G003. G006 is also dependency-ready, but G003 has lower ID.
+Exact next action: read [G002 acceptance](G002_ACCEPTANCE.md), the implemented
+NpcGiftRules/service/event/InventoryState interfaces and current strict
+NpcSaveData/SaveCodec/ForagingSaveData rules; mark G003 In progress, implement
+gift/choice count and memory/milestone derivation with current-format round trips
+and separate isolated write/read processes, then update this workflow and stop.
+Production social activation/milestone routing remain G004. Do not activate the
+converter's --social output or weaken catalog gates during G003.
 
-## G001 outcome and interfaces
+## G002 outcome, interfaces and validation
+
+Entry HEAD a167eda47162aa3358f654a55e29095ed97e8a56, clean worktree; no unrelated
+user changes or nested instructions. Source clean at60c20eb2816e7271fb84afaba286af006ebe3ccf.
+N018/F010/W010 acceptance and current G001 pins/owners checked. Immutable NPC and
+social reference files, production NPC catalog, actors/art/placements unchanged.
+
+Changed runtime: ItemDefinition.giftable (Moonflower true, rod false),
+InventoryState.detached_copy()/item_definition() (detached metadata query),
+NpcGiftRules.eligibility()/stage() and detached Candidate, conditional
+NpcEventMemory.GIFT allowlist, existing NpcDialogueRules/Service gift staging and
+atomic publication. Service commands retain their five-argument API; transient
+token now includes inventory revision. Same-revision bag replacement and changed
+conversation ownership reject; notification guard covers choose/begin/rebind/events.
+Foraging's weak session owner follows swapped inventory and revision directly.
+
+Candidate validates availability, conditions, rule/item mapping and giftability,
+quantity, learned fact, shared item/NPC cap, target/prospective milestone and both
+event slots before returning any publishable data. Choice effects then signed
+gift delta; gift event then choice event at identical time. Milestone target is
+preflighted on crossing, but G004 must still select/enter it and add its flag.
+Schema7/content1 remains; G002 does not claim accepted gift save/load support.
+
+Tooling: converter expected_outputs(source=None, social=False), --social opt-in;
+activation_overlay.apply() validates complete immutable social audit and exact
+policy, deep-copies only approved availability; overlay_checks.py writes read-only
+preview/reports under fresh G002 evidence. Default converter still checks baseline.
+Strict production NPC loader still requires all gift/milestone content deferred.
+Synthetic social_fixture validates baseline then deliberately bypasses only
+coverage gate for G002 rule tests; it is not ordinary play or production loading.
+
+New tests social_gift_checks/social_transaction_checks plus social_fixture and
+four generated script UIDs. Final run docs/evidence/G002/20261008-220842855-d4b8a199/:
+seven selected suites/engine/parse pass; new335/238 assertions, inventory199,
+NPC rules977, content423/75 malformed, foraging587, consequences pass. No
+diagnostics/timeouts/source changes; accepted game/tools source SHA256
+944407d8b520c3bc9619d6a6ff12cccbf870dbd021d1cbbf0590539e7a891a0b.
+Later tooling README edits only explain interfaces; final audit compares every
+accepted game/code byte and records final documentation/pin/link checks.
+
+Commands from repository root via bundled pwsh: tools/run_checks.ps1 -Task G002
+-Names social_gift_checks,social_transaction_checks,inventory_checks,npc_dialogue_rule_checks,consequence_checks,npc_content_checks,foraging_transaction_checks
+-TimeoutSeconds150. Runner isolates per-check APPDATA/LOCALAPPDATA and slots
+under builds/testing/G002/<run>/, records exact installed Godot and cleanup.
+Bundled Python overlay/reference/source/converter audits use isolated appdata
+under docs/evidence/G002/20261008-220646-overlay/ and final-audit/. See acceptance
+for exact executable paths, commands, reports and source hashes.
+
+Retained attempts: initial sandbox engine launch Access denied, then approved
+same runner; first import generated four UIDs and source guard failed correctly;
+rerun five suites passed, final target guard repair caused final seven-suite rerun.
+Known editor-only missing .NET SDK warning used existing import allowance; no
+C# build/install. No required G002 criterion remains failed/unrun. No captures
+or ordinary/UI/native/save acceptance claimed. All owned processes exited;
+no held controls, user-save access, cleanup, commit/push or successor started.
+
+## Historical G001 outcome and interfaces
 
 [G001 acceptance](G001_ACCEPTANCE.md) maps every criterion to reviewed public
 source and baseline evidence and passing read-only checks. New
@@ -51,7 +108,7 @@ excluded source tutorial/quest callbacks and existing journal simulation policy.
 Source journal uses exact item/NPC keys; no separate gift counter is authorized.
 Converter overlay consumption is still G002/G004 work. No runtime file changed.
 
-## Baseline, user changes and prerequisites
+## Historical G001 baseline, user changes and prerequisites
 
 Target repository D:/development/game-dev-blender/returning-fair-prototype;
 workspace parent is not itself a Git repository. Target HEAD remains
@@ -76,7 +133,7 @@ All 720 working game files are byte-identical before/after G001 and tracked cont
 has no HEAD diff. Raw Git blob comparison found 17 pre-existing checkout CRLF/LF
 changes, each proven line-ending-only; no file was normalized or rewritten.
 
-## Commands, isolation and results
+## Historical G001 commands, isolation and results
 
 All commands ran from repository root with installed bundled Python:
 C:/Users/aldoc/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe.
@@ -106,7 +163,7 @@ activation: 05347622812a8795cd984e6594e2dc8ca425fa79622e5565b8a4679613e1276f;
 vectors: d7c310f250a5428373b3a38a88a1630778ed9508be44eab8cb03c3b121a2f0b2;
 baseline: dabe281c42823d63c5d4a1a38014ffa59ad1c2448ae70d2d0bd9776d2101cc23.
 
-## Retained attempts, limits and cleanup
+## Historical G001 retained attempts, limits and cleanup
 
 Initial excerpt capture requested line 244 of a 241-line presentation snapshot test;
 corrected to 241 and verified existing partial excerpts unchanged before finishing

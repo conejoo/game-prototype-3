@@ -10,4 +10,5 @@ source_item_id = "fishing_rod"
 category = "tool"
 stack_limit = 1
 movable_pickup = true
+giftable = false
 description = "A movable rod. Can be selected as a tool; fishing is unavailable in this slice."

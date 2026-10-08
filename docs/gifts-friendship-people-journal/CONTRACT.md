@@ -150,3 +150,38 @@ changes with that option. Source excerpts are LF UTF-8 with original inclusive
 line numbers, full original-file byte lengths/hashes and revision. Seventeen public
 inputs include the additional bounded resolver and relationship-metadata excerpts.
 No private profiles, additional NPCs or runtime reference dependencies exist.
+
+## G002 delivered rules and activation interface (2026-10-08 UTC)
+
+NpcGiftRules is a pure collaborator under game/features/npcs/. `stage(npc,
+node_id, choice_id, state, inventory, expected_revision, seconds)` returns a
+detached Candidate with reason/inventory/conversations/next_node_id; a rejected
+candidate has no publishable inventory or conversations. `eligibility` is the
+shared availability query. Source item mapping remains exactly moonflower to
+item-moonflower. ItemDefinition.giftable is explicit (flower true, rod false).
+InventoryState.detached_copy retains monotonic revision and detached counts/
+selection; item_definition returns detached metadata. No runtime reference/tool
+dependency or extra persistent authority was added.
+
+Existing NpcDialogueService keeps command API and owns sole publication. Its
+token contains inventory revision; bag identity and conversation identity guards
+also reject stale owners. Gift acceptance swaps signal-free inventory and
+conversations, updates cursor, then emits one guarded changed notification.
+Reentrant commands/owner replacement/events during that notification reject.
+Foraging reads the session's current bag through its existing weak owner.
+
+NpcEventMemory admits gift keys only for enabled authored rules and choice keys
+only for enabled choices: current production retains40 keys; synthetic full social
+coverage has58. Shared caps use itemGifted(source item,NPC), never receipt counts.
+Staging checks prospective unseen milestone availability on a level crossing;
+selection, source entry flag and legal save transition remain G004/G003 work.
+Current schema7/content1, strict content gates and generated catalog unchanged.
+
+Converter `expected_outputs(source=None, social=False)` and CLI `--social` consume
+the exact immutable G001 policy through tools/social_migration/activation_overlay.py.
+Only approved availability status/reason fields change; reference coverage/text/
+adaptations/assets stay exact. Default conversion remains pre-activation through
+G003. `overlay_checks.py --source <source> --evidence <fresh G002 child>` verifies
+determinism/exact27 changes/67 nodes48 choices21 facts8 rules without writing game
+content. G004 must deliberately activate output and update catalog/check gates;
+do not activate it merely because the converter interface exists.

@@ -25,6 +25,19 @@ func initialize(catalog: ContentCatalog) -> PackedStringArray:
 func revision() -> int:
 	return _revision
 
+func detached_copy() -> InventoryState:
+	var result: InventoryState = InventoryState.new()
+	result.initialized = initialized
+	result._catalog = _catalog
+	result._item_counts = _item_counts.duplicate()
+	result._active_item_id = _active_item_id
+	result._revision = _revision
+	return result
+
+func item_definition(item_id: String) -> ItemDefinition:
+	var definition: ItemDefinition = _catalog.get_item(item_id) if initialized else null
+	return definition.duplicate(true) as ItemDefinition if definition != null else null
+
 
 func snapshot() -> InventorySnapshot:
 	return InventorySnapshot.new(_item_counts, null if _active_item_id.is_empty() else _active_item_id)

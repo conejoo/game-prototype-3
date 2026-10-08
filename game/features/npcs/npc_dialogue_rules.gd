@@ -31,9 +31,9 @@ static func resolve(npc: NpcDefinition, memory: ConversationMemory, events: NpcE
 		if selected == null or node.priority > selected.priority or (node.priority == selected.priority and node.id < selected.id): selected = node
 	return selected
 
-static func choice_reason(npc: NpcDefinition, choice: NpcDialogueGraph.Choice, memory: ConversationMemory, events: NpcEventMemory, seconds: float) -> String:
+static func choice_reason(npc: NpcDefinition, choice: NpcDialogueGraph.Choice, memory: ConversationMemory, events: NpcEventMemory, seconds: float, inventory: InventoryState = null) -> String:
 	if not choice.availability.is_enabled(): return choice.availability.reason
-	if not choice.gift_rule_id.is_empty(): return "Gifting capability is unavailable."
+	if not choice.gift_rule_id.is_empty(): return NpcGiftRules.eligibility(npc, choice, memory, events, inventory, seconds)
 	if not choice.outcome_tag.is_empty(): return "Routine capability is unavailable."
 	if memory.consumed(choice): return "Response already applied."
 	if not matches(choice.conditions, memory, events, seconds, npc.level_one_affinity): return "Response conditions are not met."

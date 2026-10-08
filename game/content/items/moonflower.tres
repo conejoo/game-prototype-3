@@ -9,4 +9,5 @@ display_name = "Moonflower"
 source_item_id = "moonflower"
 category = "forage"
 stack_limit = 99
+giftable = true
 description = "A pale Moonwood flower. Gathered for keeping; no direct use in this slice."
