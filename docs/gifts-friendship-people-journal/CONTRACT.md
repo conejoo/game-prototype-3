@@ -185,3 +185,36 @@ G003. `overlay_checks.py --source <source> --evidence <fresh G002 child>` verifi
 determinism/exact27 changes/67 nodes48 choices21 facts8 rules without writing game
 content. G004 must deliberately activate output and update catalog/check gates;
 do not activate it merely because the converter interface exists.
+
+## G003 save interfaces and unchanged format (2026-10-08 UTC)
+
+The plain-data envelope remains schema7/content1. No new fields, duplicated gift
+counters, migration, possession-derived history, autosave or cursor persistence.
+Existing zero-gift saves retain their exact validation and supported version.
+Gift totals are itemGifted(source item,NPC) counts and must equal the sum of that
+rule's enabled authored gift-choice counts across both Edric/Helena entry choices.
+Current cap2 makes every gift occurrence recoverable from first/last endpoints;
+each must have the corresponding choice at sequence+1 and identical binary64 time.
+Signed gift/choice derivation and larger gift caps require a new ordered policy.
+
+NpcSaveData.restore(data,catalog,seconds,items=null) requires validated item metadata
+when restoring gifts. SaveCodec.decode/validate accept an optional initialized NPC
+catalog; default still loads strict bundled content. SaveRepository optionally binds
+that catalog in its constructor (path,social_catalog=null), using it for every staged,
+primary and backup validation. This reuses the existing authority, not another save
+format or activation switch. G003 tests explicitly inject a synthetic approved social
+catalog; production catalog, loader gates and converter default remain deferred.
+
+For social histories, bounded endpoint replay checks prerequisites, learned
+preferences, available node entry/continue disclosure, intro receipts/effects,
+level crossing, source endsConversation precedence and milestone entry flags.
+Milestone replacement validates the actual legal target without requiring a skipped
+response node. Entry flags derive only from saved reachable node entry. Ordinary
+repeatable zero-effect aggregates remain bounded; repeated effects that would require
+unobserved ordering reject. Existing event span/count feasibility, integer/container,
+timer, envelope, disk backup and root rollback validation remain in place.
+
+G004 still owns actual source milestone selection/entry and production activation;
+G003's social_save_fixture labels its source-routing injection synthetic. The new
+social_save_checks and social_process_checks use the existing shared runner and real
+repository/root operations with isolated user:// slots; no ordinary gifting claim.

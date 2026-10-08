@@ -40,7 +40,7 @@ static func snapshot(run: GameSession) -> Dictionary:
 	}
 
 
-static func decode(raw: String, catalog: ContentCatalog) -> DecodeResult:
+static func decode(raw: String, catalog: ContentCatalog, npc_catalog: NpcContentCatalog = null) -> DecodeResult:
 	var result: DecodeResult = DecodeResult.new()
 	if raw.to_utf8_buffer().size() > MAX_BYTES:
 		result.errors.append("save exceeds 128KiB limit")
@@ -55,17 +55,17 @@ static func decode(raw: String, catalog: ContentCatalog) -> DecodeResult:
 		for key: String in ["schema_version", "content_version"]:
 			var value: Variant = parser.data.get(key)
 			if _integer(value, 1, 2147483647) and ((key == "schema_version" and int(value) != SCHEMA_VERSION) or (key == "content_version" and int(value) != CONTENT_VERSION)):
-				return validate(parser.data, catalog)
+				return validate(parser.data, catalog, npc_catalog)
 		result.errors = SaveJsonFields.validate(raw)
 		if not result.errors.is_empty():
 			return result
 		result.errors = SaveNumber.restore_timers(raw, parser.data)
 		if not result.errors.is_empty():
 			return result
-	return validate(parser.data, catalog)
+	return validate(parser.data, catalog, npc_catalog)
 
 
-static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult:
+static func validate(raw_data: Variant, catalog: ContentCatalog, npc_catalog: NpcContentCatalog = null) -> DecodeResult:
 	var result: DecodeResult = DecodeResult.new()
 	var data: Variant = raw_data
 	if catalog == null or not catalog.initialized:
@@ -151,10 +151,15 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 	environment.light_source_overrides.assign(data.light_source_overrides.duplicate(true))
 	result.errors = ForagingSaveData.validate(data.inventory, data.collected_resource_ids, data.world_item_placements, catalog)
 	if not result.errors.is_empty(): return result
-	var npc_catalog: NpcContentCatalog = NpcContentCatalog.new()
-	result.errors = npc_catalog.initialize_path(catalog)
-	if not result.errors.is_empty(): return result
-	var restored: NpcSaveData.Result = NpcSaveData.restore(data.conversations, npc_catalog, float(seconds))
+	# Reuse an explicitly bound validated catalog; default remains strict bundled content.
+	if npc_catalog == null:
+		npc_catalog = NpcContentCatalog.new()
+		result.errors = npc_catalog.initialize_path(catalog)
+		if not result.errors.is_empty(): return result
+	if not npc_catalog.initialized:
+		result.errors.append("save requires validated NPC catalog")
+		return result
+	var restored: NpcSaveData.Result = NpcSaveData.restore(data.conversations, npc_catalog, float(seconds), catalog)
 	result.errors = restored.errors
 	if not result.errors.is_empty(): return result
 	var candidate: GameSession = GameSession.new()

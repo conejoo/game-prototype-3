@@ -8,7 +8,7 @@ Godot application: game/, entry res://app/game_root.tscn.
 
 ## Selection and completion
 
-G001-G002 Done; G003-G009 Pending. No active task.
+G001-G003 Done; G004-G009 Pending. No active task.
 Resume the single In progress task first. Reassess Blocked work when its blocker changes; unresolved blockers exclude that task and its dependents, not independent branches.
 Otherwise select the lowest-numbered Pending task with verified Done prerequisites. Check actual prerequisite capability/evidence, not only checkboxes. Reconcile ambiguous status with artifacts before selecting.
 Complete exactly one task per invocation. Mark In progress before implementation, verify its criteria, update state even when interrupted, and stop before its successor. Done requires every criterion to have evidence; do not replace ordinary play with synthetic fixtures.
@@ -20,7 +20,7 @@ P/M/W/F/N workflows are baseline references, not selectors for this workflow. Do
 | --- | --- | --- | --- |
 | G001 | Done | Current N018/F010/W010 capabilities and source inputs | Pinned social semantics, activation allowlist and behavioral vectors |
 | G002 | Done | G001 | Pure gift eligibility and atomic item/social candidate rules |
-| G003 | Pending | G002 | Strict save/event derivation for accepted gifts and milestones |
+| G003 | Done | G002 | Strict save/event derivation for accepted gifts and milestones |
 | G004 | Pending | G003 | Source gift branches and milestone transitions operate in one conversation service |
 | G005 | Pending | G004 | Ordinary conversation gifting, progress and rejection feedback |
 | G006 | Pending | G001 | Detached met-only People projection with no disclosure side effects |
@@ -172,3 +172,26 @@ Stop after exactly this task.
 G002 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
 G002 runtime, fixtures, tooling, acceptance and workflow state. Keep ignored raw
 evidence local; no push or G003 implementation.
+
+### G003 / 2026-10-08 UTC / Done
+
+Every G003 criterion passed; [G003 acceptance](G003_ACCEPTANCE.md) maps strict
+shared gift/choice counts, paired chronology, legal disclosure/milestone derivation,
+item metadata, unchanged schema7/content1 and actual disk/root restart evidence.
+Production social catalog/gates remain deferred; G004 owns activation/routing.
+No duplicated counter, new envelope, migration, autosave or ordinary-play claim.
+
+Full runner docs/evidence/G003/20261008-222737370-3b4c2f29/results.json passes
+six suites plus social/NPC/general write/read pairs (14 cases including engine/parse).
+Final test-only boundary follow-up docs/evidence/G003/20261008-223022667-288e284a/
+results.json passes social842 assertions/560 malformed cases and separate-process
+write2/read28 assertions. No diagnostics/timeouts/source changes; source/pin/converter,
+intended diff/links/state audit pass. Failed/import/fixture attempts retained.
+
+Next eligible G004; G006 independently ready but higher ID. Remaining
+G004,G005,G006,G007,G008,G009. Every item through G009: not complete.
+No blockers, live processes, commit or push. Stop after exactly G003.
+
+G003 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
+G003 runtime, fixtures, acceptance and workflow state. Keep ignored raw evidence
+local; no push or G004 implementation.

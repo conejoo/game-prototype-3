@@ -3,6 +3,7 @@ extends RefCounted
 ## Single-writer local slot. Read/recovery never changes disk or live state.
 
 var path: String
+var npc_catalog: NpcContentCatalog
 
 class ReadResult:
 	extends RefCounted
@@ -13,8 +14,9 @@ class ReadResult:
 	var status: String = ""
 
 
-func _init(save_path: String = "user://saves/returning-fair.json") -> void:
+func _init(save_path: String = "user://saves/returning-fair.json", social_catalog: NpcContentCatalog = null) -> void:
 	path = save_path
+	npc_catalog = social_catalog
 
 
 func read(catalog: ContentCatalog) -> ReadResult:
@@ -33,7 +35,7 @@ func write(run: GameSession, catalog: ContentCatalog) -> PackedStringArray:
 	if run != null and run.review_only:
 		return PackedStringArray(["developer environment review cannot be saved"])
 	var snapshot: Dictionary = SaveCodec.snapshot(run)
-	var candidate: SaveCodec.DecodeResult = SaveCodec.validate(snapshot, catalog)
+	var candidate: SaveCodec.DecodeResult = SaveCodec.validate(snapshot, catalog, npc_catalog)
 	if not candidate.errors.is_empty():
 		return candidate.errors
 	# Never silently replace an unsupported slot or backup.
@@ -110,7 +112,7 @@ func _read_file(filename: String, catalog: ContentCatalog) -> ReadResult:
 		result.status = "io"
 		result.errors.append("save read failed: " + filename)
 		return result
-	var decoded: SaveCodec.DecodeResult = SaveCodec.decode(bytes.get_string_from_utf8(), catalog)
+	var decoded: SaveCodec.DecodeResult = SaveCodec.decode(bytes.get_string_from_utf8(), catalog, npc_catalog)
 	result.session = decoded.session
 	result.errors = decoded.errors
 	result.status = "valid" if decoded.session != null else ("incompatible" if decoded.incompatible else "malformed")

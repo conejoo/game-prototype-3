@@ -6,19 +6,72 @@ Updated: 2026-10-08 UTC.
 
 ## Current selection and exact continuation
 
-G001-G002 Done. Active task: none. G003-G009 Pending. Whole checklist incomplete.
-Final G task: G009. No known blocker. Exactly G002 completed this invocation.
-G002 successful-task commit authorized in the separate follow-up; this state is
-included with that commit. G001 was committed earlier. No push or G003 work.
+G001-G003 Done. Active task: none. G004-G009 Pending. Whole checklist incomplete.
+Final G task: G009. No blocker. Exactly G003 completed this invocation.
+G003 successful-task commit authorized in the separate follow-up; this state is
+included with that commit. No push or G004 work.
 
-Next eligible task: G003. G006 is also dependency-ready, but G003 has lower ID.
-Exact next action: read [G002 acceptance](G002_ACCEPTANCE.md), the implemented
-NpcGiftRules/service/event/InventoryState interfaces and current strict
-NpcSaveData/SaveCodec/ForagingSaveData rules; mark G003 In progress, implement
-gift/choice count and memory/milestone derivation with current-format round trips
-and separate isolated write/read processes, then update this workflow and stop.
-Production social activation/milestone routing remain G004. Do not activate the
-converter's --social output or weaken catalog gates during G003.
+Next eligible G004; G006 independently ready but higher ID. Exact next action:
+read [G003 acceptance](G003_ACCEPTANCE.md) and strict NpcSaveData history rules,
+then mark G004 In progress; integrate approved converter activation/production
+catalog gates and source milestone routing/entry flag in the single service.
+Keep every other deferred node/choice/fact, source pin and existing owner intact.
+G003 social_save_fixture injects milestone routing synthetically; replace that
+injection with real G004 service behavior when testing activation.
+
+## G003 outcome, interfaces and verification
+
+Entry HEAD ce5af94a9716bb774f9e02e2ffd2cbafb8678bbc (G002 committed), clean
+worktree; no unrelated user changes or nested instructions. Source read-only clean
+at60c20eb2816e7271fb84afaba286af006ebe3ccf. Immutable pins, production catalog,
+actors/geography/assets, finite resources and converter default remain unchanged.
+
+Changed runtime: NpcSaveData cross-checks gift/authored-choice totals/shared caps,
+paired consecutive endpoints/identical binary64 times, validated mapped giftable
+item metadata, affinity/level/effects/once-only receipts, reachable disclosure,
+source transition/milestone entry flags and legal skipped response targets.
+Schema7/content1/envelope unchanged. No counters/migration/autosave/transient data.
+SaveCodec.decode/validate optional initialized NPC catalog; SaveRepository(path,
+social_catalog=null) uses one catalog for candidate/stage/primary/backup. Default
+still strict bundled content. NpcSaveData.restore(data,catalog,seconds,items=null)
+requires item metadata for gift histories; SaveCodec supplies core catalog.
+
+New files: tests/social_save_checks.gd, tests/social_process_checks.gd and
+support/social_save_fixture.gd plus three generated UIDs. Synthetic approved
+availability and source milestone routing are test-only; no production activation,
+ordinary/UI/People/native/save-import acceptance claimed. Existing fixtures did
+not need changed assumptions; all original acceptance assertions retained.
+
+Full passing runner docs/evidence/G003/20261008-222737370-3b4c2f29/results.json:
+six suites plus social/NPC/general restart pairs, engine/parse (14 cases). G002
+335/238 assertions, NPC567, foraging111, general save pass. Two test files then
+added endsConversation/later-entry cases; runtime/tools stayed identical. Final
+focused docs/evidence/G003/20261008-223022667-288e284a/results.json: all5 cases
+pass; social842 assertions/560 malformed cases; separate writer2/reader28. Exact
+whole durable oracle/paused re-save, corrupt/incompatible/failed-write files/live
+state, unsafe load/travel rollback and inert social reopens verified.
+
+Commands from repository root through bundled pwsh:
+tools/run_checks.ps1 -Task G003 -Names social_save_checks,social_gift_checks,social_transaction_checks,npc_save_checks,foraging_save_checks,save_checks
+-ProcessScripts social_process_checks,npc_process_checks,save_process_checks -TimeoutSeconds150;
+final focused -Names social_save_checks -ProcessScripts social_process_checks.
+Installed Godot4.7.2 console path checked; each case/group isolated APPDATA,
+LOCALAPPDATA and user:// slot under builds/testing/G003/<run>/. Normal saves untouched.
+Both accepted runs have zero diagnostics/timeouts/source changes/errors. Final928-file
+game/tools digest6ef45a8e01edf5e8b0bbb4b9849b91815bcafb958a3165873aef87f22b89839e.
+
+Bundled Python source/reference and baseline converter audits exit0/empty stderr
+under docs/evidence/G003/20261008-222418-reference/; final pin/link/diff/status/source
+review under docs/evidence/G003/final-review/. SaveCodec unchanged mixed-line-ending
+portions preserved as original Git bytes. See acceptance for exact paths/hashes.
+
+Retained attempts: sandbox engine Access denied then approved same runner; import
+created UIDs/source guard correctly failed; priority woods terminal fixture repaired;
+skipped-target variant repaired to preserve hint then follow-up cursor. Existing
+editor-only missing .NET SDK warning was allowed only during import; no install.
+No required G003 criterion failed/unrun. No images/captures needed or inspected.
+All owned processes exited; no held input, cleanup, source mutations, export,
+external messages, commit/push or successor. Remaining G004-G009; stop here.
 
 ## G002 outcome, interfaces and validation
 
