@@ -23,8 +23,8 @@ function Resolve-NativeEvidenceDirectory {
     param([Parameter(Mandatory)][string]$ProjectRoot, [Parameter(Mandatory)][string]$OutputDirectory)
     $absolute = Resolve-ProjectChildPath $ProjectRoot $OutputDirectory 'docs/evidence'
     $relative = [IO.Path]::GetRelativePath((Join-Path $ProjectRoot 'docs/evidence'), $absolute).Replace('\','/')
-    if ($relative -notmatch '^(P014|W00[1-9]|W010|F00[1-9]|F010)/[^/]+(?:/.*)?$') {
-        throw 'Native output must be a run subdirectory of docs/evidence/P014, W001-W010 or F001-F010.'
+    if ($relative -notmatch '^(P014|W00[1-9]|W010|F00[1-9]|F010|N018)/[^/]+(?:/.*)?$') {
+        throw 'Native output must be a run subdirectory of docs/evidence/P014, W001-W010, F001-F010 or N018.'
     }
     return $absolute
 }

@@ -132,6 +132,22 @@ measured interval; never infer it from the requested key duration. To view world
 without an overlay, capture just before pausing in the same short batch and label
 its timing; companion/enemy actions can still occur before pause takes effect.
 
+## N018 standalone package guard
+
+N018 may pass `-StandaloneDirectory` to the shared native helper and foraging
+walk helper. Only a direct temporary-directory child named
+`ReturningFair-N018-<bounded session name>` is accepted, with N018 run-child
+evidence, no directory/file reparse points, and exact EXE/PCK/override SHA256
+matches to the current canonical `builds/windows` release. The owned PID must
+execute that exact copy. Arbitrary copies and other task evidence are rejected;
+default canonical-path guarding remains unchanged.
+
+Use the N018 helpers described in `tools/npc_migration/DELIVERY.md` for fresh
+isolated launch, observed source-chat selection, GUI Save/Load and normal exit.
+Detached navigation and save decoding are guidance/oracle evidence only. Never
+count them as live movement or dialogue. Inspect actual captured pause after
+each bounded batch, including a foreground refusal and cleanup, before retrying.
+
 ## Backpack and rod drag recipe
 
 Use a fresh `docs/evidence/F010/<run-id>` child for F010. Verify the intended fresh

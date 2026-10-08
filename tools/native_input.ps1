@@ -2,7 +2,8 @@
 param(
     [Parameter(Mandatory)][int]$TargetProcessId,
     [Parameter(Mandatory)][string]$CommandFile,
-    [Parameter(Mandatory)][string]$OutputDirectory
+    [Parameter(Mandatory)][string]$OutputDirectory,
+    [string]$StandaloneDirectory
 )
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
@@ -17,6 +18,28 @@ $requestedMs = Assert-NativeInputRequest $request
 $steps = $request.steps
 Assert-NewEvidenceCaptures $outputPath @($steps | Where-Object op -eq 'capture' | ForEach-Object label)
 $expectedExecutable = [IO.Path]::GetFullPath((Join-Path $projectRoot 'builds/windows/ReturningFair.exe'))
+if ($StandaloneDirectory) {
+    $standalone = [IO.Path]::GetFullPath($StandaloneDirectory).TrimEnd([char[]]'\/')
+    $temporaryRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd([char[]]'\/')
+    $relativeStandalone = [IO.Path]::GetRelativePath($temporaryRoot,$standalone)
+    if ($relativeStandalone -notmatch '^ReturningFair-N018-[A-Za-z0-9_-]{1,64}$' -or
+        -not $standalone.StartsWith($temporaryRoot + [IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)) {
+        throw 'Standalone input requires an owned N018 directory directly below TEMP.'
+    }
+    $evidenceRelative = [IO.Path]::GetRelativePath((Join-Path $projectRoot 'docs/evidence'),$outputPath).Replace('\','/')
+    if ($evidenceRelative -notmatch '^N018/[^/]+(?:/.*)?$') { throw 'Standalone input requires N018 evidence.' }
+    foreach ($leaf in @('ReturningFair.exe','ReturningFair.pck','override.cfg')) {
+        $copy = Join-Path $standalone $leaf
+        $canonical = Join-Path $projectRoot ('builds/windows/' + $leaf)
+        if (-not (Test-Path -LiteralPath $copy -PathType Leaf) -or
+            ((Get-Item -LiteralPath $standalone -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) -or
+            ((Get-Item -LiteralPath $copy -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) -or
+            (Get-FileHash -LiteralPath $copy -Algorithm SHA256).Hash -ne (Get-FileHash -LiteralPath $canonical -Algorithm SHA256).Hash) {
+            throw 'Standalone copy differs from this project release package.'
+        }
+    }
+    $expectedExecutable = Join-Path $standalone 'ReturningFair.exe'
+}
 $target = Get-Process -Id $TargetProcessId
 if ($target.Path -ne $expectedExecutable) { throw 'Target is not this project release executable.' }
 New-Item -ItemType Directory -Path $outputPath -Force | Out-Null

@@ -8,7 +8,7 @@ function Check([bool]$Condition, [string]$Message) {
     $script:assertions++
     if (-not $Condition) { throw $Message }
 }
-foreach ($task in @('P014','W001','W006','W010','F001','F007','F010')) {
+foreach ($task in @('P014','W001','W006','W010','F001','F007','F010','N018')) {
     $path = Join-Path $projectRoot "docs/evidence/$task/native-future"
     Check ((Resolve-NativeEvidenceDirectory $projectRoot $path) -eq [IO.Path]::GetFullPath($path)) "accepted native $task"
 }

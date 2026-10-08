@@ -6,15 +6,99 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N017 Done; N018 Pending. Exactly N017 completed on 2026-10-08 UTC.
-Next eligible task is N018: inspect actual export presets/templates/native
-input tooling, create fresh separate Windows packages, then native all-eight
-writer/restart acceptance. Do not claim that gate from N017 development runs.
-No N018 implementation started. Successful N017 commit authorized by follow-up;
-verified identity is available in Git history and the follow-up report. No push.
-Target began clean at `dd82a3aa90317db41ec2191cf6a1af5e9b51eada`; read-only source
-remains clean/pinned at `60c20eb2816e7271fb84afaba286af006ebe3ccf`.
-No unrelated existing work. Task scope verified before the authorized commit.
+N001-N018 Done. Every checklist item through N018 is complete. Remaining
+unfinished task IDs: none. No next eligible task and no successor beyond N018.
+N018 implementation complete; successful-task commit authorized in follow-up.
+No push or successor work. Commit record below.
+
+Target began clean at492775ec69d3ada55c9819b582e9ef1624984491 (N017 commit).
+Read-only source remains clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf.
+All720 production game files are exact to the accepted pre-export manifest.
+No source/geography/story/art/save-format edits or unrelated existing work.
+
+## N018 result and durable evidence - 2026-10-08 UTC
+
+Every criterion passed; [N018 acceptance](N018_ACCEPTANCE.md) records commands,
+hashes, isolation, actual route/restart, retained failures and visual review.
+Fresh packages are in builds/villagers-dialogue/N018/20261008-175909-515b5c4a/.
+Exact previous canonical packages archived before local promotion to
+builds/windows and builds/windows-validation; release override preserved.
+Validation originally has no override. Six export/pack-audit/outside-checkout
+startup cases pass. Release pack427 resources,8 rigs/idle/walk,48 portraits,
+current public graphs/schema7/content1/pinned geometry,2 review action variants.
+No tests/bridge/private profiles/Flutter/editable Blender files in release.
+EXE d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562;
+PCK 7e14987929b144a008f679d452aef9e1910cf77934629dc404351d5aa8026d75.
+
+Focused pre-export run docs/evidence/N018/20261008-175735567-59fdee17/
+passes7 cases (engine/parse and five focused NPC/application checks),882 files
+stable. Native guard723 assertions and runner/path135 assertions pass exit0.
+Final converter checks132 pins/67 outputs/48 portraits exact; source clean.
+PowerShell helpers parse; both Python tools compile. Accepted production bytes
+remain exact; later changes are external tools/docs only.
+
+Fresh standalone native copy/cwd outside checkout:
+C:/Users/aldoc/AppData/Local/Temp/ReturningFair-N018-20261008-1801/.
+Exact canonical EXE/PCK/release override hashes guarded before every input.
+Evidence docs/evidence/N018/native-20261008-1801/ retains launch/request/capture/
+exit/save records. Writer39704 and reader53716 share isolated restart appdata;
+neutral18244 has separate fresh appdata. No normal-user save access, bridge,
+state seed, forced movement/time/health/facts/items/quest or developer root.
+
+Ordinary physical all-eight positive and separate alternative introductions,
+all58 enabled nodes/38 choices/21 public facts, real first/repeat woods and
+Moonflower hints are complete. Writer real Journal upgrade, main bridge,
+Tollworks guardian/vessel, public gate/ford and Maris fitting/reconnect produce
+exactly six recovery effects; hero50 and companion25 alive. Native source chat
+uses observed Maris Chat footer; specialist inspection grants no duplicate
+reward. Neutral all-eight affinity0/exclusive receipt1, zero recovery effects,
+fresh civic state unchanged except conversations and actual clock/environment.
+
+Actual GUI writer40-recovered Save/normal F10 quit/new reader02-restored
+Load/Save match full bytes and production typed state/forecast, SHA256
+8a4c4751ad95e97a5359f60eed09896da912091854b698742c1f47f5bdc15b29.
+Reader physically revisits all eight and restored specialist, then GUI Save;
+all prior facts/affinity/receipts/flags/level and old game state remain exact.
+Only legitimate Edric woods-repeat/Helena follow-up seen nodes accrue;
+prior seen nodes persist, actual clock/weather/woods events advance normally.
+Neutral GUI20-neutral Save SHA256
+780f555adde97aebbaa7b84ab3cdea81cb291c88d751c548b6e9dabec1e14fc1.
+
+Final native-audit passes4228 assertions,1642 guarded requests,385 captures
+(writer207/reader52/neutral126),34 contact sheets. All sheets and full-size
+public/recovery/restart/pause frames inspected; paths/hashes/exclusions in
+visual-review.json. Every held key/button released, every accepted pause
+inspected; all3 F10 exits0 and clean native logs. One foreground refusal retained
+as failed, safely cleaned/retried. Incorrect earlier labels/focus assumptions
+and final validation-override audit assumption are disclosed in acceptance;
+corrected proofs pass. final-reuse.json verifies exact720 game/archive/package
+bytes. Raw evidence/appdata/packages stay local ignored; no public publication.
+
+Owned engines/helpers all exited; original Blender/unrelated processes/source
+untouched. No blocker, unrun criterion, cleanup, commit/push or successor work.
+Runtime idle/facing; walk and fishing/archive-work remain bundled review-only.
+Gifts/routines/inn interior/rooms/sleep/commerce/jobs/departures/private campaign
+remain explicitly deferred; Della exterior and shortened Maris adaptations honest.
+
+Task changes: new external package audit/archive/export driver, guarded isolated
+native launch/invoke/person/GUI Save tools, read-only native audit/sheet builder
+and delivery guide. Shared native/path/walk tools narrowly support N018 exact
+temporary release ownership; guard/path tests cover refusals. Concise acceptance,
+checklist, durable state, parent README/architecture and tooling discovery updated.
+No game/art edits. Historical N001-N017 records below retain their dated next-task
+statements; this top selection and CHECKLIST are current authority.
+
+## N018 authorized commit follow-up - 2026-10-08 UTC
+
+User authorized the successful-task commit after every N018 criterion passed.
+Preflight verifies exactly20 owned paths and all720 accepted production files;
+no unrelated or staged work. Commit scope includes external delivery/native
+tooling, narrow shared guards/tests, acceptance report, checklist, durable state
+and discovery docs. Runtime/art/package bytes and all18 Done rows remain exact.
+Raw captures/logs/isolated appdata and build artifacts stay ignored; none force-added.
+Verified commit identity is available in Git history and final local follow-up
+evidence at docs/evidence/N018/commit-20261008-200912-05be92d1/.
+No push, source changes, unfinished task, blocker or successor beyond N018.
 
 ## N017 result and durable evidence
 

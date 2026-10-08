@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001-N016 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline, all eight ordinary named character slices and two review-only semantic action variants. N017 Done; N018 Pending.
+N001-N018 Done: all eight ordinary named villagers, public dialogue/memory, source-informed art, integrated recovery/restart and fresh Windows/native delivery. Every checklist item through N018 is complete. No successor task.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -38,7 +38,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N015 | Done | N008 | Della complete at documented public inn-entry adaptation. |
 | N016 | Done | N008, N009, N007 | Edric/Helena semantic action art exported and inspected. |
 | N017 | Done | N010, N011, N012, N013, N014, N015, N016 | Fresh integrated eight-person route, persistence and existing-game regression proof. |
-| N018 | Pending | N017 | Fresh Windows packages and native all-eight restart acceptance. |
+| N018 | Done | N017 | Fresh Windows packages and native all-eight restart acceptance. |
 
 NPC tasks N009-N015 are independent after the first integration slice; no artificial chain between characters. They share catalogs/scenes, so this workflow still executes one at a time. N016 can proceed after Edric/Helena without waiting for the other people. Do not launch agents as a side effect of task selection.
 
@@ -953,3 +953,46 @@ status rows remain exact. Raw runs/captures/isolated appdata stay ignored; final
 commit scope/tree/identity/status audits retained in final local N017 evidence.
 Verified identity is available in Git history and follow-up report. No push or
 N018 implementation. N018 remains Pending; all through N018 incomplete.
+
+
+### N018 - 2026-10-08 UTC
+
+Exactly N018 completed. Fresh separate Windows validation/release pairs exported,
+audited, started outside checkout and locally promoted only after six passing
+cases; previous packages archived exactly, release override preserved.
+Release427 resources include8 rigs/idle/walk,48 portraits/public graphs and2
+review action variants; no private/Flutter/tests/bridge/editable source files.
+
+Native standalone writer39704/reader53716/neutral18244 actual public input reaches
+all8, all58 enabled nodes/38 choices/21 facts, first/repeat woods/real gather,
+Journal upgrade/main bridge/guardian/vessel/gate/ford/Maris fitting/reconnect.
+Exactly6 recovery effects, hero alive. GUI Save/F10/new-process Load/Save matches
+all bytes/full typed state/forecast; actual all8 revisits preserve prior/new NPC
+and existing durable fields without duplicate rewards. Neutral exclusive zero-
+affinity introductions preserve fresh old civic state and zero recovery effects.
+
+Focused7 cases, native guard723/runner135 assertions and source132 pins/67
+outputs pass; final native audit4228 assertions,1642 requests/385 captures.
+All34 sheets plus full-size UI/combat/restart frames inspected. Every key/button
+released; all3 normal exits0, clean logs; final720 game/archive/package hashes
+exact. Failed attempts/mislabeled frames/focus refusal and corrected final audit
+assumption retained/disclosed, never accepted as passing proof.
+
+[N018 acceptance](N018_ACCEPTANCE.md) records deliverables/commands/hashes,
+provenance/isolation/inspection/limits. Reusable delivery tooling, guard changes/
+tests and durable/discovery docs complete. Idle/facing runtime; walk and semantic
+actions review-only; gifts/routines/interiors/private campaign deferred.
+All owned engines/helpers exited; source/original Blender/unrelated work intact.
+No blocker or unrun criterion. No commit/push. Remaining unfinished IDs: none.
+Every checklist item N001-N018 complete. No successor beyond N018. Stop.
+
+### N018 authorized commit follow-up - 2026-10-08 UTC
+
+Successful-task commit authorized after all N018 acceptance passed. Preflight
+verifies exactly20 task paths,720 accepted production files and no unrelated or
+staged work. Commit scope includes delivery/native tools, narrow shared guards/
+tests, concise acceptance evidence, checklist and durable/discovery docs. Runtime/
+art/package bytes and all18 Done rows remain exact. Raw runs/captures/appdata and
+build artifacts remain ignored; no force-add. Verified identity is available in
+Git history and final local follow-up evidence. No push or successor work.
+Remaining unfinished IDs: none. Every item N001-N018 complete; workflow ends here.

@@ -71,3 +71,18 @@ it reuses npc-03 identity and activates no actors. Typed views/snapshots detach 
 canonical publication. Deferred coverage stays explicit. N002 does not produce 3D
 characters or ordinary conversation access. [Acceptance](../../docs/villagers-dialogue/N002_ACCEPTANCE.md)
 records the complete criterion table, passing stable-source run and retained failures.
+
+
+## N018 Windows delivery and native acceptance
+
+[Delivery guide](DELIVERY.md) documents fresh archive/export/pack audit,
+standalone isolated native launch, guarded ordinary person/GUI Save routes and
+read-only provenance/save/contact-sheet audit. Shared native guard supports only
+N018 evidence and an exact temporary release copy under owned executable PID.
+No game-state setup or release input bridge is added.
+
+[N018 acceptance](../../docs/villagers-dialogue/N018_ACCEPTANCE.md) verifies all8,
+all58 enabled public nodes/38 choices/21 facts, full prototype recovery, exact
+GUI restart/forecast and remembered revisits in newly exported Windows release.
+All N001-N018 complete; no next task. Runtime idle/facing and review-only
+walk/semantic action limits remain explicit.

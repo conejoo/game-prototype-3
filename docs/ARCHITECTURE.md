@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration, N015 ordinary contacts/art for all eight requested villagers and N016 separate review-only semantic action variants and N017 integrated all-eight/recovery/restart acceptance.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration, N015 ordinary contacts/art for all eight requested villagers and N016 separate review-only semantic action variants, N017 integrated all-eight/recovery/restart acceptance and N018 fresh Windows/native delivery.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -1084,3 +1084,31 @@ capabilities/placement adaptations remain explicit; schema7/content1/manual
 Save/Load, fixed geography and temporary companion unchanged. Idle/facing
 ordinary; walk and semantic action variants review-only. N018 remains the fresh
 Windows/native delivery gate; previous release history stays intact.
+
+
+## N018 fresh Windows/native delivery (2026-10-08 UTC)
+
+Fresh Windows validation/release export pairs resolve current public NPC graphs,
+48 portraits,8 rigs/idle/walk and2 separate semantic review assets. External
+pack audit rejects release tests/bridge/private profiles/Flutter/editable art;
+strict schema7/content1, Compatibility and pinned geography remain unchanged.
+Previous local packages are archived/hash-verified before reversible local
+promotion; original release override is preserved, validation has none.
+
+Native inputs run against an exact hashed release copy/cwd outside checkout,
+owned PID/foreground/client and unique N018 evidence, with isolated restart and
+alternative-introduction slots. Shared guard adds only N018 evidence and bounded
+temporary-copy ownership; no runtime bridge/setup feature is introduced.
+Ordinary physical controls reach all8, all58 public nodes/38 choices/21 facts and
+full shortened Maris recovery. Actual GUI Save/normal quit/new-process Load
+matches entire typed snapshot/forecast; all8 remembered revisits preserve old
+and new durable fields. Three normal exits and clean runtime logs confirmed.
+All720 production files remain identical to accepted pre-export bytes.
+
+[N018 acceptance](villagers-dialogue/N018_ACCEPTANCE.md) records six package
+cases, focused/guard tests,4228 native audit assertions,385 captures/34 inspected
+sheets, exact hashes, retained failed attempts and cleanup.
+[Delivery tooling](../tools/npc_migration/DELIVERY.md) documents reusable external
+archive/audit/native/GUI Save/visual review helpers. Idle/facing remains runtime;
+walk/fishing/archive-work review-only, gifts/routines/interiors/services/private
+campaign deferred. All N001-N018 Done; no successor task.

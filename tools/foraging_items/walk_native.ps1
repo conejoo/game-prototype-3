@@ -1,5 +1,5 @@
 #Requires -Version 7.0
-param([Parameter(Mandatory)][int]$GameProcessId,[Parameter(Mandatory)][string]$EvidenceDirectory,[Parameter(Mandatory)][string]$RouteFile,[Parameter(Mandatory)][string]$Goal,[ValidateRange(1,25)][int]$Seconds=20)
+param([Parameter(Mandatory)][int]$GameProcessId,[Parameter(Mandatory)][string]$EvidenceDirectory,[Parameter(Mandatory)][string]$RouteFile,[Parameter(Mandatory)][string]$Goal,[ValidateRange(1,25)][int]$Seconds=20,[string]$StandaloneDirectory)
 $ErrorActionPreference='Stop'
 $weatherRoot=Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $weatherLog=Join-Path $EvidenceDirectory 'stdout.log'
@@ -15,7 +15,7 @@ if ($weatherModes.Count -eq 0 -or $weatherModes[-1].Groups[1].Value -ne 'Paused'
 function Invoke-WeatherInput($Steps) {
     $weatherRequest=Join-Path $EvidenceDirectory ('walk-request-'+[Guid]::NewGuid().ToString('N')+'.json')
     @{steps=@($Steps)} | ConvertTo-Json -Depth 7 | Set-Content $weatherRequest -Encoding utf8NoBOM
-    $weatherResponse=& (Join-Path $weatherRoot 'tools/native_input.ps1') -TargetProcessId $GameProcessId -CommandFile $weatherRequest -OutputDirectory $EvidenceDirectory | Out-String | ConvertFrom-Json
+    $weatherResponse=& (Join-Path $weatherRoot 'tools/native_input.ps1') -TargetProcessId $GameProcessId -CommandFile $weatherRequest -OutputDirectory $EvidenceDirectory -StandaloneDirectory $StandaloneDirectory | Out-String | ConvertFrom-Json
     if (-not $weatherResponse.ok) {throw $weatherResponse.error}
 }
 function Get-WeatherPosition {

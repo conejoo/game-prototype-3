@@ -142,11 +142,11 @@ foreach ($operation in @('click','quit')) {
     $state = New-State; $result = Run-Steps @($step) $state
     Check ($result.ok -and $result.requested_duration_ms -eq 50 -and -not $state.mouse -and $state.keys.Count -eq 0) "$operation lifecycle regression"
 }
-foreach ($task in @('F001','F007','F009','F010','P014','W010')) {
+foreach ($task in @('F001','F007','F009','F010','P014','W010','N018')) {
     $path = Join-Path $projectRoot "docs/evidence/$task/native-future"
     Check ((Resolve-NativeEvidenceDirectory $projectRoot $path) -eq [IO.Path]::GetFullPath($path)) "native route rejected $task"
 }
-foreach ($relative in @('F000/run','F011/run','F010','F010-sibling/run','F010/../../outside/run','../evidence-sibling/F010/run')) {
+foreach ($relative in @('F000/run','F011/run','F010','F010-sibling/run','F010/../../outside/run','../evidence-sibling/F010/run','N017/run','N019/run','N018','N018-sibling/run','N018/../../outside/run')) {
     $rejected = $false
     try { $null = Resolve-NativeEvidenceDirectory $projectRoot (Join-Path $projectRoot "docs/evidence/$relative") } catch { $rejected=$true }
     Check $rejected "unsafe F route accepted: $relative"
@@ -168,7 +168,13 @@ $output = Join-Path $guardRun 'refused-output'
 $lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory $output 2>&1)
 Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Target is not this project release executable*') 'entrypoint accepted non-release PID'
 Check (-not (Test-Path -LiteralPath $output)) 'refused executable created output directory'
+$lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory (Join-Path $projectRoot 'docs/evidence/N018/native-guard-refusal') -StandaloneDirectory $projectRoot 2>&1)
+Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Standalone input requires an owned N018 directory*') 'entrypoint accepted foreign standalone directory'
+$lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory $output -StandaloneDirectory (Join-Path ([IO.Path]::GetTempPath()) 'ReturningFair-N018-guard-refusal') 2>&1)
+Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Standalone input requires N018 evidence*') 'entrypoint accepted standalone outside N018 evidence'
 $lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory (Join-Path $projectRoot 'docs/evidence/F010') 2>&1)
 Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Native output must be a run subdirectory*') 'entrypoint accepted task-root output'
 Write-Output "Native input: PASS assertions=$assertions (fault-injected dispatch; Win32 interop compiled, no OS input)"
 Write-Output "Entrypoint refusal fixtures: $guardRun"
+# Expected child refusal exits must not leak a failure into successful callers.
+$global:LASTEXITCODE = 0
