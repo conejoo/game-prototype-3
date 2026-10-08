@@ -548,3 +548,27 @@ Manual schema7/content1 unchanged. [N015 acceptance](N015_ACCEPTANCE.md) and
 [Della package](../../art/exports/NPC_14_PACKAGE.md) record every criterion,
 ordinary input/exact GUI restart, measured door clearance and inspected art.
 N016 next eligible; actions/integrated all-eight/native gates remain N016-N018.
+
+## N016 delivered semantic action boundary (2026-10-08 UTC)
+
+[N016 acceptance](N016_ACCEPTANCE.md) and [action packages](../../art/exports/NPC_ACTIONS.md)
+extend the N007 pipeline with separate npc-01-actions/npc-02-actions .blend/GLB
+variants. Original named bodies/UV/weights/idle/walk keys are exact; supporting-hand
+rod/open-book accessories and four-second baked source-mapped loops add no gameplay.
+Ordinary NpcRegistry.VISUAL_ASSETS, feet/physics/navigation and schema7/content1
+remain unchanged. Idle ordinary; walk and both semantic actions review-only.
+Civic placement lacks approved river/archive-work context/routine consumer;
+measured prop envelopes exceed unchanged .4m reservation. No source fact/outcome
+becomes enabled or disclosed through visual presentation.
+
+NpcVisualPresenter.set_action accepts only an available source-mapped clip and
+matching PROP accessory, with no holds or achieved motion. cancel_action and
+active_action are transient presentation interfaces. Movement cancels; props
+hide in idle/walk/interrupt. Independent pause/focus holds preserve pose and
+pending blend using AnimationPlayer.pause; last release resumes same action.
+Dialogue/travel/modal/death cancel and resume locomotion afterward. Wrapper
+identity/feet remain fixed; scene disposal frees props, return reconstructs
+ordinary original assets. No pose/action/hold enters saves or conversation memory.
+Both actual variants are displayed in labeled interactive standalone review;
+synthetic source/skin/owner/render proof is separate from N017 ordinary integrated
+journey and N018 native packaging. All eight affected lifecycle regressions pass.

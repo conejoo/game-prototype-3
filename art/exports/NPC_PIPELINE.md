@@ -29,11 +29,14 @@ N001/N002 pins still own reference content. No source checkout is needed at runt
   synchronization and durations fail. Export no cameras, lights, collisions,
   gameplay scripts, drivers, constraints or external URIs. Authoring constraints
   must be baked to joint transforms. No root motion: wrapper owns achieved motion.
-- Required exported clips are exactly `idle` and `walk`, with matching endpoint
+- Required baseline exported clips are `idle` and `walk`, with matching endpoint
   transforms. Extra authored actions must use an explicit source mapping. Reserve
   `action_river_fishing` for npc-01's source `river-fishing`, `action_archive_work`
   for npc-02's source `archive-work`; N016 owns their export/exposure. Calibration
   has no semantic action, gift, profession reward, routine or story attachment.
+  N016 supplies separate [action variants](NPC_ACTIONS.md), with explicit
+  supporting-hand accessories and review-only exposure. Ordinary named assets
+  retain their original two clips and fixed civic placement.
 - Idle/walk import as `Animation.LOOP_LINEAR`. Retain `.glb.import` UID and these
   subresource settings: `animations/idle/settings/loop_mode=1` and equivalent walk
   entry (nested animations dictionary). Do not mutate shared Animation resources
@@ -73,6 +76,10 @@ focus loss and travel owners must use separate reason strings; clearing one cann
 clear another. Holds freeze exported pose/speed; latest achieved speed resumes only
 after the last hold clears. A scene-owner removal frees the presenter/model. No
 memory, cursor, clip, bone, transform or hold state goes into schema7 saves.
+N016 extends this API with explicit `set_action`, `cancel_action` and
+`active_action`; its allowlisted variants/prop and freeze/cancel policy are in
+[NPC_ACTIONS](NPC_ACTIONS.md). Pause/focus now call `AnimationPlayer.pause()`
+as well as zero speed, preserving pending mixer state until the last hold clears.
 Engine process inheritance also respects ordinary tree pause. N007 verifies these
 interfaces as fixtures; N008-N015 must connect their actual root/modal/lifecycle
 owners and prove ordinary behavior. Production NpcRegistry.ENABLED remains empty.

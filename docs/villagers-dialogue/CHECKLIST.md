@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001-N015 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and all eight ordinary named character slices. N016-N018 remain Pending.
+N001-N016 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline, all eight ordinary named character slices and two review-only semantic action variants. N017-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -36,7 +36,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N013 | Done | N008 | Ivo complete and reachable. |
 | N014 | Done | N008 | Celia complete and reachable. |
 | N015 | Done | N008 | Della complete at documented public inn-entry adaptation. |
-| N016 | Pending | N008, N009, N007 | Edric/Helena semantic action art exported and inspected. |
+| N016 | Done | N008, N009, N007 | Edric/Helena semantic action art exported and inspected. |
 | N017 | Pending | N010, N011, N012, N013, N014, N015, N016 | Fresh integrated eight-person route, persistence and existing-game regression proof. |
 | N018 | Pending | N017 | Fresh Windows packages and native all-eight restart acceptance. |
 
@@ -187,6 +187,7 @@ Verification: actor-specific RULE/UI/WORLD/ART/PLAY evidence, npc_content_checks
 - Scope: only these two source actions. No fishing minigame, archive scene director, daily routine outcomes, profession rewards or invented actions for six other villagers.
 - Acceptance: identity/feet/accessory alignment preserved through idle/walk/action/interrupt; dialogue/pause/focus/travel cancels or freezes safely and resumes appropriately. Review scene shows both real assets; ordinary ambient use occurs only where approved placement supports it. Clip-only review is reported honestly. No leaked Blender drivers or gameplay attached to art.
 - Verification: ART/UI/lifecycle; new action checks, npc_asset_pipeline_checks, interaction_dialogue_checks and viewed Godot transitions in day/night. Exported clip names/materials available without source checkout.
+- Completion: [N016 acceptance](N016_ACCEPTANCE.md), [action packages](../../art/exports/NPC_ACTIONS.md); separate source-mapped variants preserve ordinary original assets. Both actions review-only; no routine/reward/disclosure or placement change.
 
 ## N017 - Integrated town, dialogue persistence and regression
 
@@ -853,3 +854,49 @@ rows remain unchanged. Raw runs/captures/isolated appdata stay ignored under
 existing policy. Fresh commit scope/tree/identity/status audit is retained in
 final local N015 evidence; verified commit identity is available in Git history
 and follow-up report. No push or N016 implementation.
+
+### N016 - 2026-10-08 UTC
+
+Exactly N016 completed. Separate Edric action_river_fishing and Helena
+action_archive_work variants extend accepted named bodies with supporting-hand
+rod/open-book accessories and baked four-second source-mapped loops. Both actions
+are review-only; original ordinary assets/registry/feet and gameplay remain exact.
+Identity geometry/UV/weights and idle/walk keys unchanged;7686/8497 triangles,
+16 bones/two surfaces/packed32x32 palette each. Explicit presenter action API,
+prop visibility, movement cancellation and independent pause/focus freeze with
+pending-blend resume; dialogue/travel/modal/death cancel to idle.
+
+Final160510124-2f0aad9c all20 cases PASS,16 headless suites including all eight
+named assets/lifecycle plus required pipeline/dialogue and affected UI/rules/save/
+world/startup, rendered review45 captures. Owning1814 assertions; zero seams/
+planted-foot/hold drift, all45 captures viewed in five sheets plus full frames.
+874 runtime/tool files stable SHA256cf2300d9d660a52830bb1a92246e18011fa663b1d9ab20e8ad4d587e57db3e01.
+Zero forbidden runtime diagnostics/timeouts/source changes; isolated per-case/
+group APPDATA/LOCALAPPDATA/slots. Source132 inputs/67 outputs exact; source remains
+clean/pinned60c20eb2816e7271fb84afaba286af006ebe3ccf. Target began clean at
+dae77459e99e90e149689e24a1452e7cfe42cd8e. Normal saves untouched.
+
+Editable/raw reports155940832-d2add5eb PASS with final identical bytes. Retained
+sandbox observation denial, generated-import invalidations, rod ground failure,
+copy-name suffix rejection and manual-evaluator freeze fixture failures. Grip/
+owned names repaired; real automatic frame/pending-blend proof passes. Strict
+runner/import/presenter guards retained. Prior art/scenes retained.
+Full criteria/files/commands/isolation/hashes/inspection in [N016 acceptance](N016_ACCEPTANCE.md)
+and [action package](../../art/exports/NPC_ACTIONS.md).
+
+All owned engines/helpers exited; original live Blender scene/file and ordinary
+sources preserved. No blocker/unrun criterion/cleanup, commit/push or successor
+implementation. Remaining N017,N018; next eligible N017. All through N018 incomplete.
+Stop after exactly N016.
+
+### N016 authorized commit follow-up - 2026-10-08 UTC
+
+Successful task commit authorized after all N016 acceptance passed. Preflight
+verified exactly35 owned paths, all874 accepted runtime/tool files and four final
+GLB/.blend hashes; no unrelated or staged work. Commit scope contains action art,
+presenter API/holds, reusable checks/review, concise acceptance evidence and
+checklist/durable-state/discovery documentation. Raw runs/captures/appdata remain
+ignored under existing policy. Runtime/art bytes and task status rows unchanged.
+Commit scope/tree/identity/status audits retained in the final local N016 run;
+verified commit identity is available in Git history and follow-up report.
+No push or N017 implementation; N017/N018 remain Pending.

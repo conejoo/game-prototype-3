@@ -6,19 +6,72 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N015 Done; N016-N018 Pending. No active task. Exactly N015 completed.
-Target began clean at `c18ef206c999fa632e29540a56e6cc60988f42ef`; source remains
+N001-N016 Done; N017-N018 Pending. No active task. Exactly N016 completed.
+Target began clean at `dae77459e99e90e149689e24a1452e7cfe42cd8e`; source remains
 clean/pinned at `60c20eb2816e7271fb84afaba286af006ebe3ccf`. No unrelated work.
-Successful N015 commit authorized by follow-up; verified identity is available
-in Git history and the follow-up report. No push. Next eligible N016: inspect
-actual Edric river-fishing and
-Helena archive-work references, then implement only their semantic action art
-under existing N007 pipeline and N016 exposure/lifecycle acceptance. N017/N018
-wait for declared prerequisites. Do not add tasks beyond N018.
-Remaining N016,N017,N018; all through N018 incomplete. No N015 blocker,
-unrun criterion or cleanup. All owned engines/helpers exited. Original Blender
-RF-RecoveryVessel scene/file preserved; owned RF-Npc14-Della and before-refine
-scene available. Stop now; do not begin N016 during this invocation.
+Successful N016 commit authorized by follow-up; verified identity is available
+in Git history and the follow-up report. No push.
+Next eligible N017: inspect actual N010-N016 acceptance and current artifacts,
+then execute its fresh integrated ordinary all-eight route, persistence/recovery
+and existing-game regressions. N018 awaits N017. Do not invent tasks beyond N018.
+Remaining N017,N018; all through N018 incomplete. No N016 blocker, unrun
+criterion or cleanup. All owned engines/helpers exited. Original live Blender
+RF-RecoveryVessel scene/file and ordinary sources preserved; owned action and
+before-grip-refine scenes retained. Accepted normal action mainfiles are on disk.
+Stop now; do not start N017 during this invocation.
+
+## N016 result and durable evidence
+
+[N016 acceptance](N016_ACCEPTANCE.md) maps every criterion, command/isolation,
+retained failure, repair, hash, measurement and actual inspection.
+[Action packages](../../art/exports/NPC_ACTIONS.md) records source/export and API.
+Pinned sheets inspected: two-handed fishing rod lift/lower, handheld open book
+checking/page stroke. Separate npc-01-actions/npc-02-actions .blend/GLBs contain
+original named bodies, exact UV/weights/idle/walk keys, 16 bones, packed32x32
+palette and supporting-hand accessories. Costs7686/8497 triangles, two surfaces
+each. Four-second source-mapped action_river_fishing/action_archive_work loops;
+zero raw/imported seams, planted-foot and real pause/focus vertex drift.
+
+Both actions are review-only: civic contacts lack approved river/archive-work
+context/routine consumers, and action props exceed .4m reservation. Registry,
+ordinary original assets, pinned feet/geography, all portraits/graphs/source
+facts and schema7/content1 remain unchanged. No fishing minigame/archive scene
+director/routine outcome/profession reward, saved pose or new lore disclosure.
+Explicit NpcVisualPresenter.set_action/cancel_action/active_action allows only
+mounted source-mapped clips/props. Idle/walk hide props; movement cancels action.
+Pause/focus independently freeze displayed pose and pending blend using pause();
+last release resumes same action. Dialogue/travel/modal/death cancel then resume
+idle. Actual GameRoot hooks and disposal/ordinary reconstruction pass in labeled
+synthetic replacement fixtures. Real ordinary route proof remains N017.
+
+Final `docs/evidence/N016/20261008-160510124-2f0aad9c/`: all20 cases PASS,16
+headless suites including owning1814 assertions/all eight skins/lifecycle,
+pipeline/dialogueUI/rules/save/world/interaction/startup plus rendered review.
+874 stable runtime/tool files SHA256
+cf2300d9d660a52830bb1a92246e18011fa663b1d9ab20e8ad4d587e57db3e01.
+No forbidden runtime diagnostics/timeouts/source changes; known import-only
+.NET SDK diagnostic retained as allowed. Fresh per-case/group isolated APPDATA/
+LOCALAPPDATA/slots; normal saves untouched. Source converter132 inputs/67 outputs
+exact. All45 final960x640 captures viewed in five sheets and six selected full
+frames; source sheets and earlier passing full frames also viewed.
+
+Editable source/raw audits in155940832-d2add5eb PASS and same bytes verified
+after final run. GLBs SHA256eda2b6639a8229baf90d9220367156a63cc46ab00f9cae414bb76d125ef09544 /
+61d668f5976ea5f3d93b2e770bfd0357d4585daf0d3b87245b6f94787268a330;
+.blends73b97d3973ccc8f04e64d7736eca82170c936c9f5fbdc6609c8619f8f27bfc25 /
+342828b29a47c6ed4e553dcdd601082e8eb453d3e0259ef422cd2cdfb4023220.
+Retained sandbox observation denial/generated-import invalidations/rod ground
+failure/object suffix rejection/manual-evaluator freeze fixture failures. Rod
+grip and owned naming repaired; freeze proof uses real automatic frames and
+pending-blend interruption. Strict runner/import/presenter guards retained.
+
+Owned files: action build/normalization/audit/sheet helpers, editable/runtime
+variants/imports/palettes, presenter API/holds, owning checks/render/review scene
+and scoped package/acceptance/checklist/state/contract/README/architecture docs.
+No original named source/GLB, catalog/portrait, registry/placement, save format,
+geography, recovery/ship/gate/companion or source-project change. Raw evidence
+ignored. No new package/native claim, successor work, agent/chat/schedule,
+publication/install/normal-save access/commit/push. Exactly N016 complete; stop.
 
 ## N015 result and durable evidence
 
