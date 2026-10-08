@@ -1,5 +1,12 @@
 # Returning Fair prototype
 
+Current development source: [G004 acceptance](docs/gifts-friendship-people-journal/G004_ACCEPTANCE.md)
+verifies authored Moonflower gift activation and Edric's once-only Acquaintance
+milestone through production service/content/save checks. G001-G004 Done;
+G005-G009 remain for gift feedback/ordinary UI, People and fresh native social
+delivery. Existing Windows packages and NPC acceptance below are historical
+pre-social releases; their gift deferrals describe that delivered boundary.
+
 NPC migration: [eight villagers and richer dialogue](docs/villagers-dialogue/CHECKLIST.md),
 [reusable fresh-agent prompt](docs/villagers-dialogue/AGENT_PROMPT.md), and
 [durable state](docs/villagers-dialogue/CURRENT_STATE.md).

@@ -1,6 +1,6 @@
 class_name SocialSaveFixture
 extends RefCounted
-## Synthetic approved social catalog and source milestone routing, pending G004.
+## Production social service/content; synthetic owned items and public event setup.
 const GiftFixture = preload("res://tests/social_fixture.gd")
 
 static func setup() -> Dictionary:
@@ -43,7 +43,6 @@ static func preference(pair: Dictionary, id: String) -> void:
 static func gift(pair: Dictionary, id: String) -> void:
 	var npc: NpcDefinition = pair.catalog.get_npc(id)
 	var service: NpcDialogueService = pair.service
-	var before: ConversationMemory = pair.session.conversations.memory(id)
 	if service.active() and service.snapshot().npc_id != id: service.cancel()
 	pair.session.elapsed_play_seconds += 0.1234567890123456
 	var selected: NpcDialogueGraph.Choice
@@ -58,13 +57,6 @@ static func gift(pair: Dictionary, id: String) -> void:
 		service.cancel()
 	assert(selected != null)
 	assert(GiftFixture.choose(service, view, selected.id).ok)
-	# G003 proves the legal source replacement without implementing G004 routing.
-	var after: ConversationMemory = pair.session.conversations.memory(id)
-	if not selected.ends_conversation and after.level(npc.level_one_affinity) > before.level(npc.level_one_affinity) and not npc.milestone_node_id.is_empty():
-		if selected.target_node_id not in before.seen_node_ids: after.seen_node_ids.erase(selected.target_node_id)
-		after = after.entered(npc.graph.nodes[npc.milestone_node_id])
-		ConversationMemory._add_unique(after.flags, npc.milestone_seen_flag_id)
-		pair.session.conversations = pair.session.conversations.with_person(after)
 	service.cancel()
 
 static func complete() -> Dictionary:

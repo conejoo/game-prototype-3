@@ -20,7 +20,7 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def expected_outputs(source=None, social=False):
+def expected_outputs(source=None, social=True):
     manifest = read(REF / "manifest.json")
     for row in manifest["inputs"]:
         if "snapshot_path" in row:
@@ -76,9 +76,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="Read-only exact conversion/hash/roster audit")
     parser.add_argument("--source", type=Path, help="Optional read-only authority drift check")
-    parser.add_argument("--social", action="store_true", help="Opt-in approved G004 social coverage overlay; do not activate production before G004")
+    parser.add_argument("--social", action="store_true", help="Approved G004 overlay (current default)")
+    parser.add_argument("--baseline", action="store_true", help="Historical pre-G004 output; check only, never overwrite current content")
     args = parser.parse_args()
-    outputs = expected_outputs(args.source, args.social)
+    assert not args.baseline or args.check, "Historical baseline is read-only"
+    assert not (args.baseline and args.social), "Choose one activation policy"
+    outputs = expected_outputs(args.source, not args.baseline)
     for path, data in outputs.items():
         if args.check:
             assert path.is_file() and path.read_bytes() == data, "Converted output drift: " + str(path)

@@ -205,16 +205,20 @@ func _validate_package(package: Dictionary, id: String, errors: PackedStringArra
 	if errors.size() != start:
 		return
 	for gift_id: String in gifts:
-		_require_deferred(coverage["gift_rule"][gift_id], gift_id, errors)
+		_require_enabled(coverage["gift_rule"][gift_id], gift_id, errors)
 	for choice_id: String in choices:
 		var choice: Dictionary = choices[choice_id]
-		if choice.has("giftRuleId") or choice.has("outcomeTag") or choice_id == "npc-14-ask-room":
+		if choice.has("outcomeTag") or choice_id == "npc-14-ask-room":
 			_require_deferred(coverage["choice"][choice_id], choice_id, errors)
+		if choice.has("giftRuleId"):
+			_require_enabled(coverage["choice"][choice_id], choice_id, errors)
 		if choice.has("giftRuleId") and choice.has("targetNodeId"):
-			_require_deferred(coverage["node"][choice["targetNodeId"]], choice["targetNodeId"], errors)
+			_require_enabled(coverage["node"][choice["targetNodeId"]], choice["targetNodeId"], errors)
 	for node_id: String in nodes:
 		var node: Dictionary = nodes[node_id]
-		if node_id.begins_with("npc-02-routine-") or node_id in ["npc-01-level-1-milestone", "npc-14-room"]:
+		if node_id == "npc-01-level-1-milestone":
+			_require_enabled(coverage["node"][node_id], node_id, errors)
+		if node_id.begins_with("npc-02-routine-") or node_id == "npc-14-room":
 			_require_deferred(coverage["node"][node_id], node_id, errors)
 		if coverage["node"][node_id]["status"] == "deferred":
 			for choice: Dictionary in node.get("choices", []):
@@ -285,6 +289,10 @@ func _coverage(value: Variant, expected: Dictionary, label: String, errors: Pack
 func _require_deferred(row: Dictionary, label: String, errors: PackedStringArray) -> void:
 	if row["status"] != "deferred":
 		errors.append(label + ": unavailable capability must stay deferred")
+
+func _require_enabled(row: Dictionary, label: String, errors: PackedStringArray) -> void:
+	if row["status"] != "enabled":
+		errors.append(label + ": approved social capability must be enabled")
 
 func _visit(id: String, edges: Dictionary, colors: Dictionary, errors: PackedStringArray) -> void:
 	if colors.get(id, 0) == 1:

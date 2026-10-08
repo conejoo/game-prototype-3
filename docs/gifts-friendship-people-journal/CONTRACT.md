@@ -26,7 +26,7 @@ These are inspected identities, not instructions to reset either checkout.
 
 N001-N018, F001-F010 and W001-W010 are recorded Done in their latest handoffs; N018 reports fresh native Windows all-eight/recovery/restart acceptance. Older paragraphs in parent/workflow documents can describe older stages. Current code plus current top handoff governs; source presence is not new playtest evidence.
 
-Current target facts:
+G001 inspected baseline facts (historical; delivered decisions below supersede):
 - SaveCodec schema7/content1; strict current-format-only policy in [architecture](../ARCHITECTURE.md).
 - GameSession.conversations owns eight independent ConversationMemory records and bounded event aggregates; companion RelationshipState/trust is separate.
 - Eight ordinary public contacts; 58 enabled nodes, 38 enabled choices, 21 disclosable facts; full imported pin retains 70 nodes/54 choices/24 facts and deferred gifts/routines.
@@ -218,3 +218,32 @@ G004 still owns actual source milestone selection/entry and production activatio
 G003's social_save_fixture labels its source-routing injection synthetic. The new
 social_save_checks and social_process_checks use the existing shared runner and real
 repository/root operations with isolated user:// slots; no ordinary gifting claim.
+
+## G004 activation and transition interface (2026-10-08 UTC)
+
+Current bundled catalog activates exactly the approved eight gift rules, ten
+choices, eight response nodes and Edric milestone: 67 nodes/48 choices/21 facts,
+with three nodes/six choices/three facts still deferred. Source text, IDs, portraits,
+placements and immutable reference coverage are unchanged. Schema7/content1 stays.
+
+Converter `expected_outputs(source=None, social=True)` and default CLI now produce
+current approved social content. `--social` remains an explicit alias; `--baseline`
+requires `--check`, so historical pre-G004 output cannot overwrite production.
+Overlay checker accepts fresh G004 evidence and compares production with the
+overlay while separately proving exact 27 differences from historical baseline.
+Pin/hash/semantic checks remain mandatory; no runtime tool/reference dependency.
+
+NpcDialogueRules.transition(npc,choice,before,after) returns detached target/reason:
+endsConversation, then unseen level crossing milestone, then authored target.
+Only the selected target must be valid/available. Gift staging applies choice
+effects and gift delta before that query; ordinary responses use the same query.
+NpcDialogueRules.enter(npc,memory,node) records source facts/seen node and milestone
+flag on actual entry. Begin, Continue and accepted responses share that entry owner.
+Selection alone grants no flag; cancel/close apply no unselected choice or gift.
+Gift event precedes choice event at identical time; both publish with bag/person
+before observers. Existing stable command API and root/Maris ownership stay intact.
+
+SocialSaveFixture now uses production content and actual service routing instead
+of injected milestone history. Its supplied items/events and boundary authoring
+variants remain synthetic. G004 rule/save/restart evidence does not claim ordinary
+gathering/UI, People or native delivery; G005/G006-G009 retain those gates.

@@ -153,17 +153,17 @@ func _scroll_and_exit() -> void:
 	game._cancel_dialogue()
 	root.size = Vector2i(960,640)
 	for frame: int in range(3): await process_frame
-	# Real Edric follow-up contains only a deferred gift; Continue and Close work.
+	# Real Edric follow-up has no owned gift item; Continue and Close work.
 	var opened_npc: NpcDialogueService.Result = game.dialogue.begin("npc-01", "n005-fixture-npc-01")
 	game._present_dialogue(opened_npc)
 	_check(opened_npc.ok and game.dialogue.snapshot().can_continue and game.ui.dialogue_next.visible, "No enabled choices has valid Continue exit")
 	var disabled: int = 0
 	for button: Button in game.ui.dialogue_choices.get_children():
 		if button.disabled: disabled += 1
-	_check(disabled > 0, "Deferred gift visible honestly unavailable")
+	_check(disabled > 0, "Missing owned gift item visible honestly unavailable")
 	for choice: Dictionary in game.dialogue.snapshot().choices:
-		_check(choice.available or choice.reason == "Gifts are unavailable in this prototype.", "Gift UI explains limitation without internal transaction details")
-	await _capture("deferred-gift-close", "Actual Edric deferred gift with Continue/Close and no fabricated inventory transaction.")
+		_check(choice.available or choice.reason == "No owned Moonflower.", "Gift UI explains missing owned item")
+	await _capture("missing-item-gift-close", "Actual Edric missing-item gift with Continue/Close and no fabricated inventory transaction.")
 	var state: Dictionary = game.session.conversations.snapshot()
 	# Both keyboard directions and pointer exits work with every choice disabled.
 	_key(KEY_TAB)

@@ -10,6 +10,9 @@ restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
 W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration, N015 ordinary contacts/art for all eight requested villagers and N016 separate review-only semantic action variants, N017 integrated all-eight/recovery/restart acceptance and N018 fresh Windows/native delivery.
+Current development source also includes G001-G004 social rules/save/activation;
+gift feedback/ordinary social UI, People and fresh native social delivery remain
+G005-G009. Historical N018 packages retain their pre-social boundary.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -1112,3 +1115,26 @@ sheets, exact hashes, retained failed attempts and cleanup.
 archive/audit/native/GUI Save/visual review helpers. Idle/facing remains runtime;
 walk/fishing/archive-work review-only, gifts/routines/interiors/services/private
 campaign deferred. All N001-N018 Done; no successor task.
+
+## G004 authored gifts and once-only milestone (2026-10-08 UTC)
+
+Current production catalog uses the approved social overlay: eight gift rules,
+ten choices, eight response nodes and one Edric milestone enabled. Source IDs/text,
+portraits/art/contact placements and historical pins stay exact. Three room/routine
+nodes, six choices and three undisclosed facts remain deferred. Availability is
+67 nodes/48 choices/21 facts; schema7/content1 stays current.
+
+One NpcDialogueService stages accepted gifts through NpcGiftRules and publishes
+detached inventory/person/events before observers. NpcDialogueRules.transition
+shares endsConversation/milestone/authored-target ordering across gifts and
+ordinary responses. Its enter helper records learned facts/seen node and the
+Edric milestone flag on actual Begin/Continue/response entry. Helpful introduction
+and two gifts reaches affinity3/Acquaintance once; neutral stays affinity2/level0.
+Caps use existing itemGifted aggregates, with gift then choice at identical time.
+Companion trust, quests, Maris routing and finite supplies keep their own owners.
+
+[G004 acceptance](gifts-friendship-people-journal/G004_ACCEPTANCE.md) records all16
+passing engine/parse/rule/modal/Maris/save/restart cases and exact approved
+conversion/source protection. Supplied items/events/authoring fixtures remain
+synthetic; G005 owns feedback/ordinary gifting UI, G006-G007 People and G008-G009
+integrated/native social acceptance. No new package or ordinary-play claim here.

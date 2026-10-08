@@ -1,6 +1,5 @@
 extends RefCounted
-## Synthetic G002 activation only: strict production loader still forbids gifts.
-## Validate baseline source content first, then bypass only its capability gate.
+## Production catalog with synthetic inventory/memory and optional disabled gates.
 static func pair(npc_id: String = "npc-01", quantity: int = 3, enabled: bool = true, giftable: bool = true) -> Dictionary:
 	var actors: ContentCatalog = ContentCatalog.new()
 	var manifest: ContentManifest = (load("res://content/prototype_catalog.tres") as ContentManifest).duplicate(true)
@@ -10,10 +9,10 @@ static func pair(npc_id: String = "npc-01", quantity: int = 3, enabled: bool = t
 	var catalog: NpcContentCatalog = NpcContentCatalog.new()
 	assert(catalog.initialize_path(actors).is_empty())
 	var policy: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://../tools/social_migration/reference/social_activation.json"))
-	if enabled:
+	if not enabled:
 		for kind: String in policy.enable:
 			for row: Dictionary in policy.enable[kind]:
-				catalog._packages[row.npc_id].coverage[kind][row.id] = {"status":"enabled", "reason":"Synthetic G002 activation fixture"}
+				catalog._packages[row.npc_id].coverage[kind][row.id] = {"status":"deferred", "reason":"Synthetic disabled capability fixture"}
 	var session: GameSession = GameSession.new()
 	assert(session.initialize(actors, "prototype-alderwake", "alderwake-start", "prototype-hero", null, catalog).is_empty())
 	if quantity > 0: assert(session.inventory.add("item-moonflower", quantity).is_empty())

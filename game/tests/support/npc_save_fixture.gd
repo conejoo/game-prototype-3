@@ -19,7 +19,8 @@ static func populate(run: GameSession, catalog: NpcContentCatalog) -> PackedStri
 		view = service.snapshot()
 		# Follow first available authored public-fact branch when one exists.
 		for choice: Dictionary in view.get("choices", []):
-			if choice.available:
+			# Original zero-gift save regression deliberately follows public-fact choices.
+			if choice.available and catalog.get_npc(id).graph.choices[choice.id].gift_rule_id.is_empty():
 				if not service.choose(id, view.instance_id, view.node_id, view.token, choice.id).ok: errors.append("fixture fact branch " + id)
 				break
 		service.cancel()

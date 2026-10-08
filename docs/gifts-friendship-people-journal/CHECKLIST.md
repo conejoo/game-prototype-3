@@ -8,7 +8,7 @@ Godot application: game/, entry res://app/game_root.tscn.
 
 ## Selection and completion
 
-G001-G003 Done; G004-G009 Pending. No active task.
+G001-G004 Done; G005-G009 Pending. No active task.
 Resume the single In progress task first. Reassess Blocked work when its blocker changes; unresolved blockers exclude that task and its dependents, not independent branches.
 Otherwise select the lowest-numbered Pending task with verified Done prerequisites. Check actual prerequisite capability/evidence, not only checkboxes. Reconcile ambiguous status with artifacts before selecting.
 Complete exactly one task per invocation. Mark In progress before implementation, verify its criteria, update state even when interrupted, and stop before its successor. Done requires every criterion to have evidence; do not replace ordinary play with synthetic fixtures.
@@ -21,7 +21,7 @@ P/M/W/F/N workflows are baseline references, not selectors for this workflow. Do
 | G001 | Done | Current N018/F010/W010 capabilities and source inputs | Pinned social semantics, activation allowlist and behavioral vectors |
 | G002 | Done | G001 | Pure gift eligibility and atomic item/social candidate rules |
 | G003 | Done | G002 | Strict save/event derivation for accepted gifts and milestones |
-| G004 | Pending | G003 | Source gift branches and milestone transitions operate in one conversation service |
+| G004 | Done | G003 | Source gift branches and milestone transitions operate in one conversation service |
 | G005 | Pending | G004 | Ordinary conversation gifting, progress and rejection feedback |
 | G006 | Pending | G001 | Detached met-only People projection with no disclosure side effects |
 | G007 | Pending | G006 | People journal integrated with existing J journal/HUD and modal lifecycle |
@@ -195,3 +195,30 @@ No blockers, live processes, commit or push. Stop after exactly G003.
 G003 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
 G003 runtime, fixtures, acceptance and workflow state. Keep ignored raw evidence
 local; no push or G004 implementation.
+
+### G004 / 2026-10-08 UTC / Done
+
+Every G004 criterion passed; [G004 acceptance](G004_ACCEPTANCE.md) maps approved
+production activation, source transition/entry rules, all-eight positive/neutral
+progression, once-only Edric milestone, shared caps, cancellation, ordinary response
+crossing, Maris routing and exact production save/restart evidence.
+Only27 approved availability records change;66 assets/source text/IDs/placements
+and immutable pins remain unchanged. Current67 nodes/48 choices/21 facts and
+schema7/content1. UI feedback/ordinary acquisition/People/native gates remain later.
+
+Final runner docs/evidence/G004/20261008-224309617-f3c86bbd/results.json passes
+all16 cases, including ten suites/social and NPC restart pairs. Zero diagnostics,
+timeouts or source changes. Milestone657 assertions; gift335/transaction238,
+social-save844, content432/78 malformed, original NPC rules929 covering58/38,
+NPC-save568, modal384 and Maris729; quest checks pass.
+Reference/source/converter/overlay and intended diff/link/state audits pass;
+failed engine/import/obsolete-fixture attempts retained. Synthetic items/events/
+authoring fixtures are rule proof only; no rendered/native/ordinary-play claim.
+
+Next eligible G005; G006 independently ready but higher ID. Remaining
+G005,G006,G007,G008,G009. Every item through G009: not complete.
+No blockers, live processes, commit or push. Stop after exactly G004.
+
+G004 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
+G004 runtime, fixtures, tooling, acceptance and workflow/discovery state. Keep
+ignored raw evidence local; no push or G005 implementation.

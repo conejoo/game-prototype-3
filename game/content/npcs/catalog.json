@@ -325,12 +325,12 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-01-gift-response": {
-            "status": "deferred",
-            "reason": "Only incoming transitions are deferred gift transactions."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           },
           "npc-01-level-1-milestone": {
-            "status": "deferred",
-            "reason": "Retain level>=1 and unseen milestone gate. Ordinary introduction gives at most1; gifts/progression unavailable."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "choice": {
@@ -343,12 +343,12 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-01-gift-moonflower-from-hint": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           },
           "npc-01-gift-moonflower-follow-up": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "fact": {
@@ -367,8 +367,8 @@
         },
         "gift_rule": {
           "npc-01-moonflower-gift": {
-            "status": "deferred",
-            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "portrait": {
@@ -724,8 +724,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-02-gift-response": {
-            "status": "deferred",
-            "reason": "Only incoming transitions are deferred gift transactions."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           },
           "npc-02-routine-archive-default": {
             "status": "deferred",
@@ -746,12 +746,12 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-02-gift-moonflower-from-hint": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           },
           "npc-02-gift-moonflower-follow-up": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           },
           "npc-02-resume-archive-default-choice": {
             "status": "deferred",
@@ -790,8 +790,8 @@
         },
         "gift_rule": {
           "npc-02-moonflower-gift": {
-            "status": "deferred",
-            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "portrait": {
@@ -1095,8 +1095,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-03-gift-end": {
-            "status": "deferred",
-            "reason": "Only incoming transitions are deferred gift transactions."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "choice": {
@@ -1121,8 +1121,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-03-gift-moonflower": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "fact": {
@@ -1141,8 +1141,8 @@
         },
         "gift_rule": {
           "npc-03-moonflower-gift": {
-            "status": "deferred",
-            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "portrait": {
@@ -1442,8 +1442,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-04-gift-end": {
-            "status": "deferred",
-            "reason": "Only incoming transitions are deferred gift transactions."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "choice": {
@@ -1468,8 +1468,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-04-gift-moonflower": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "fact": {
@@ -1488,8 +1488,8 @@
         },
         "gift_rule": {
           "npc-04-moonflower-gift": {
-            "status": "deferred",
-            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "portrait": {
@@ -1804,8 +1804,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-06-gift-end": {
-            "status": "deferred",
-            "reason": "Only incoming transitions are deferred gift transactions."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "choice": {
@@ -1834,8 +1834,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-06-gift-moonflower": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "fact": {
@@ -1854,8 +1854,8 @@
         },
         "gift_rule": {
           "npc-06-moonflower-gift": {
-            "status": "deferred",
-            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "portrait": {
@@ -2170,8 +2170,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-07-gift-end": {
-            "status": "deferred",
-            "reason": "Only incoming transitions are deferred gift transactions."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "choice": {
@@ -2200,8 +2200,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-07-gift-moonflower": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "fact": {
@@ -2220,8 +2220,8 @@
         },
         "gift_rule": {
           "npc-07-moonflower-gift": {
-            "status": "deferred",
-            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "portrait": {
@@ -2536,8 +2536,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-08-gift-end": {
-            "status": "deferred",
-            "reason": "Only incoming transitions are deferred gift transactions."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "choice": {
@@ -2566,8 +2566,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-08-gift-moonflower": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "fact": {
@@ -2586,8 +2586,8 @@
         },
         "gift_rule": {
           "npc-08-moonflower-gift": {
-            "status": "deferred",
-            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "portrait": {
@@ -2917,8 +2917,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-14-gift-end": {
-            "status": "deferred",
-            "reason": "Only incoming transitions are deferred gift transactions."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "choice": {
@@ -2951,8 +2951,8 @@
             "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
           },
           "npc-14-gift-moonflower": {
-            "status": "deferred",
-            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "fact": {
@@ -2971,8 +2971,8 @@
         },
         "gift_rule": {
           "npc-14-moonflower-gift": {
-            "status": "deferred",
-            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+            "status": "enabled",
+            "reason": "Approved social activation social-60c20eb2-g001"
           }
         },
         "portrait": {

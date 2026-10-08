@@ -6,18 +6,88 @@ Updated: 2026-10-08 UTC.
 
 ## Current selection and exact continuation
 
-G001-G003 Done. Active task: none. G004-G009 Pending. Whole checklist incomplete.
-Final G task: G009. No blocker. Exactly G003 completed this invocation.
-G003 successful-task commit authorized in the separate follow-up; this state is
-included with that commit. No push or G004 work.
+G001-G004 Done. Active task: none. G005-G009 Pending. Whole checklist incomplete.
+Final task G009. No blocker. Exactly G004 completed the implementation invocation.
+G004 successful-task commit authorized in the separate follow-up; this state is
+included with that commit. No push or G005 work.
 
-Next eligible G004; G006 independently ready but higher ID. Exact next action:
-read [G003 acceptance](G003_ACCEPTANCE.md) and strict NpcSaveData history rules,
-then mark G004 In progress; integrate approved converter activation/production
-catalog gates and source milestone routing/entry flag in the single service.
-Keep every other deferred node/choice/fact, source pin and existing owner intact.
-G003 social_save_fixture injects milestone routing synthetically; replace that
-injection with real G004 service behavior when testing activation.
+Next eligible G005; G006 independently ready but higher ID. Exact next action:
+read [G004 acceptance](G004_ACCEPTANCE.md) and current ConversationView/GameRoot
+publication/input owners, mark G005 In progress, then implement authored gifting
+feedback and friendship threshold display plus ordinary gathered-item UI proof.
+Update Moonflower help/description in G005, preserve the non-giftable rod, finite
+three-flower supply, existing root modal policy and Maris routing. G004 has not
+performed ordinary gathering/UI or People/native acceptance.
+
+## G004 outcome, interfaces and verification
+
+Entry HEAD84a4dfb7ca01b1d009099c98a27e95682ff6ed40, clean worktree;
+no nested AGENTS.md or unrelated user changes. Read-only source remains clean
+at60c20eb2816e7271fb84afaba286af006ebe3ccf. G003 acceptance/artifacts verified.
+No actor/art/geography/resource/item metadata or historical reference bytes changed.
+
+Changed runtime: production NPC catalog activates exactly27 approved availability
+records; NpcContentCatalog requires approved gifts/responses/milestone enabled
+and retains all room/routine/undisclosed-fact gates. NpcDialogueRules.transition
+selects endsConversation, unseen crossing milestone, then authored target;
+enter records the source milestone flag on actual node entry. NpcGiftRules stages
+choice effects/gift delta before transition and uses enter. NpcDialogueService
+ordinary choice/begin/Continue reuse those helpers; stable command/publication
+API stays intact. Current67 nodes/48 choices/21 facts/58 event keys; schema7/content1.
+No new affinity/cap authority, event bus, autoload, reward or generic gift action.
+
+Tooling: converter expected_outputs(source=None,social=True)/default CLI now emits
+approved social content; --social alias retained. --baseline requires --check and
+cannot overwrite current production. Overlay checker supports G004 evidence,
+checks current content while comparing exactly27 changes to immutable baseline,
+and retains strict pin/hash protection. Tool README/contract/discovery updated.
+
+Tests: new social_milestone_checks and generated UID; social_fixture uses validated
+production content with optional explicit disabled-gate fixtures. SocialSaveFixture
+removes injected milestone history and uses real service; original NpcSaveFixture
+skips gift choices to retain its zero-gift scope. Existing content/rule/UI/save
+assumptions updated deliberately. Both introduction paths/all8/10 choices/9 nodes,
+observer atomics, cap/stale/cancel/entry/ends/ordinary crossing and load/reopen pass.
+Supplied items/events and authoring boundaries remain synthetic rule evidence.
+
+Final runner docs/evidence/G004/20261008-224309617-f3c86bbd/results.json:
+all16 cases pass: engine/parse, ten suites and social/NPC write/read pairs.
+Milestone657, gifts335, transaction238, social-save844/560 malformed,
+content432/78 malformed, original NPC rules929 with58 nodes38 choices,
+NPC-save568/510 malformed, modal384 and Maris729 assertions; quest checks pass.
+Social process writer3/reader29 and NPC writer2/reader9 prove actual isolated
+disk/root restoration, exact whole durable oracle/paused re-save, rollback,
+failed-write/corrupt/incompatible/backup handling and inert restored reopens.
+Zero diagnostics (including allowed), timeouts, source changes or source/run errors.
+Stable930-file digestbc39309a5f9a1dd3020f9b56219e997e5c81dc3612812c4befa6c371114bbb4b.
+
+Command from repository root through bundled pwsh:
+tools/run_checks.ps1 -Task G004 -Names social_milestone_checks,social_gift_checks,social_transaction_checks,social_save_checks,npc_content_checks,npc_dialogue_rule_checks,npc_save_checks,quest_checks,npc_dialogue_ui_checks,npc_03_checks
+-ProcessScripts social_process_checks,npc_process_checks -TimeoutSeconds150.
+Installed Godot4.7.2 console checked first. Per-case/group APPDATA/LOCALAPPDATA
+and user:// slots isolated under builds/testing/G004/<run>/; normal saves untouched.
+
+Final source/reference/converter/overlay audit:
+docs/evidence/G004/20261008-224415-reference-final/; three exit0 and expected
+baseline-write exit1 refusal before mutation. Current catalog SHA256
+efb76e8a42796a92fab80fa5815885adc7abdfd565ee7cfe036a7d165409e1d3;
+all66 asset/source text/adaptation bytes unchanged; four bad policies reject.
+Earlier audit under224050 retained. Final diff/link/UTF-8/status/dependency/source
+review recorded under docs/evidence/G004/final-review/.
+
+Retained attempts:223850 engine Access denied then approved escalation;223902
+import created script UID and source guard failed correctly. Editor-only missing
+.NET SDK warning used existing import allowance; no install.223930 run exposed
+four old fixture assumptions (authored gift-end suffix, original coverage,
+zero-gift save scope and missing-item UI notice); repaired before final runner.
+Final diff audit found CRLF whitespace on inserted README/architecture spans;
+corrected only those new spans, preserving original mixed-ending bytes.
+Retained diagnostic: docs/evidence/G004/final-review/whitespace-before.log.
+No required G004 criterion failed/unrun. Headless modal checks report captures0,
+renderedfalse; no images inspected or ordinary/UI visual/native claim.
+All owned runners/engine processes exited; no held controls or cleanup owed.
+No read-only source-checkout mutation, export/publication, external message,
+commit/push or successor. Remaining G005,G006,G007,G008,G009; stop here.
 
 ## G003 outcome, interfaces and verification
 

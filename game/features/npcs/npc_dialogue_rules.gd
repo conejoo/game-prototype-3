@@ -38,3 +38,22 @@ static func choice_reason(npc: NpcDefinition, choice: NpcDialogueGraph.Choice, m
 	if memory.consumed(choice): return "Response already applied."
 	if not matches(choice.conditions, memory, events, seconds, npc.level_one_affinity): return "Response conditions are not met."
 	return ""
+
+static func transition(npc: NpcDefinition, choice: NpcDialogueGraph.Choice, before: ConversationMemory, after: ConversationMemory) -> Dictionary:
+	# Source endsConversation wins, then unseen crossing milestone, then authored target.
+	if choice.ends_conversation: return {"node":null, "reason":""}
+	var target: String = choice.target_node_id
+	var crossing: bool = after.level(npc.level_one_affinity) > before.level(npc.level_one_affinity)
+	var milestone: bool = crossing and not npc.milestone_node_id.is_empty() and npc.milestone_seen_flag_id not in after.flags
+	if milestone: target = npc.milestone_node_id
+	if target.is_empty(): return {"node":null, "reason":""}
+	var node: NpcDialogueGraph.NodeDefinition = npc.graph.nodes.get(target)
+	if node == null or node.npc_id != npc.id or not node.availability.is_enabled():
+		return {"node":null, "reason":"Relationship milestone target unavailable." if milestone else "Response target unavailable."}
+	return {"node":node, "reason":""}
+
+static func enter(npc: NpcDefinition, memory: ConversationMemory, node: NpcDialogueGraph.NodeDefinition) -> ConversationMemory:
+	var result: ConversationMemory = memory.entered(node)
+	if node.id == npc.milestone_node_id and not npc.milestone_seen_flag_id.is_empty():
+		ConversationMemory._add_unique(result.flags, npc.milestone_seen_flag_id)
+	return result

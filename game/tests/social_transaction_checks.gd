@@ -74,7 +74,7 @@ func _rejections() -> void:
 	pair.session.conversations = pair.session.conversations.with_person(person); pair.service._cursor_state = pair.session.conversations
 	_reject(pair, view, row.id, "missing fact")
 	pair = Fixture.pair("npc-01", 3, false); view = Fixture.view(pair, row)
-	_reject(pair, view, row.id, "ordinary production capability deferred")
+	_reject(pair, view, row.id, "synthetic disabled capability")
 	_check(not pair.service.record_event(NpcEventMemory.GIFT, "moonflower", "npc-01").ok, "external caller cannot fabricate gifts")
 	pair = Fixture.pair(); view = Fixture.view(pair, row)
 	var second: NpcDialogueService = NpcDialogueService.new(); second.initialize(pair.catalog, pair.session)

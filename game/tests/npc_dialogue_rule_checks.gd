@@ -27,11 +27,12 @@ func _run() -> void:
 	for id: String in catalog.npc_ids():
 		var npc: NpcDefinition = catalog.get_npc(id)
 		for node: NpcDialogueGraph.NodeDefinition in npc.graph.nodes.values():
-			if node.availability.is_enabled():
+			# Original public branch coverage; G004 social_milestone_checks covers new nodes.
+			if node.availability.is_enabled() and node.id != npc.milestone_node_id and not node.id.ends_with("gift-response") and not node.id.ends_with("gift-end"):
 				enabled_nodes += 1
 				_check(visited.has(node.id), "Enabled node exercised " + node.id)
 		for choice: NpcDialogueGraph.Choice in npc.graph.choices.values():
-			if choice.availability.is_enabled():
+			if choice.availability.is_enabled() and choice.gift_rule_id.is_empty():
 				enabled_choices += 1
 				_check(accepted.has(choice.id), "Enabled choice exercised " + choice.id)
 	_check(enabled_nodes == 58 and enabled_choices == 38, "Exact enabled coverage")
@@ -116,7 +117,7 @@ func _all_people() -> void:
 					_check(found, "Deferred honest capability reason " + optional.id)
 			if alternative == 0:
 				for branch: NpcDialogueGraph.Choice in npc.graph.nodes[RETURN[index]].choices:
-					if not branch.availability.is_enabled(): continue
+					if not branch.availability.is_enabled() or not branch.gift_rule_id.is_empty(): continue
 					var response: Dictionary = _choose(service, returning, branch.id, branch.target_node_id)
 					for fact: String in npc.graph.nodes[branch.target_node_id].revealed_fact_ids:
 						_check(fact in session.conversations.memory(id).learned_fact_ids, "Authored branch fact " + fact)
@@ -161,7 +162,7 @@ func _event_gates() -> void:
 	var before: Dictionary = session.conversations.snapshot()
 	for event: Array in [[NpcEventMemory.AREA, "woods", "npc-01"], [NpcEventMemory.GATHER, "unknown", null], ["itemGifted", "moonflower", "npc-01"], [NpcEventMemory.CHOICE, "npc-01", "npc-01-helpful-response"]]:
 		_check(not service.record_event(event[0], event[1], event[2]).ok and session.conversations.snapshot() == before, "Unsupported/null mismatch event unchanged")
-	_check(session.conversations.events().supported_key_count() == 40, "Fixed allowlist two world keys plus 38 responses")
+	_check(session.conversations.events().supported_key_count() == 58, "Fixed allowlist two world keys plus 48 responses plus eight gifts")
 	_check(session.conversations.events().count(NpcEventMemory.AREA, "woods", null) == 2 and session.conversations.events().count(NpcEventMemory.AREA, "woods", "npc-01") == 0, "Null exact key")
 	var rows: Dictionary = session.conversations.events().snapshot()
 	_check(rows.last_sequence == 5, "Exactly two introductions, two woods and one gather")
@@ -186,7 +187,7 @@ func _pure_conditions() -> void:
 	var level_one: ConversationMemory = ConversationMemory.new("npc-01")
 	level_one.affinity = 3
 	level_one.flags = ["npc-01-first-conversation-complete"]
-	_check(NpcDialogueRules.resolve(edric, level_one, events, 0.0).id == "npc-01-follow-up-conversation", "Deferred Edric milestone never injected at level one")
+	_check(NpcDialogueRules.resolve(edric, level_one, events, 0.0).id == "npc-01-level-1-milestone", "Unseen Edric milestone selected at level one")
 	var helena: ConversationMemory = ConversationMemory.new("npc-02")
 	helena.flags = ["npc-02-first-conversation-complete"]
 	_check(NpcDialogueRules.resolve(catalog.get_npc("npc-02"), helena, events, 0.0).id == "npc-02-follow-up-conversation", "Deferred Helena routine entries never ordinary fallback")

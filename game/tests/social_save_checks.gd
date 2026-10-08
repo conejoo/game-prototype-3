@@ -26,7 +26,7 @@ func _run() -> void:
 	var pair: Dictionary = SocialSaveFixture.complete()
 	var data: Dictionary = SaveCodec.snapshot(pair.session)
 	_check(SaveCodec.validate(data,pair.actors,pair.catalog).session != null,"nontrivial old/new durable state")
-	_check(SaveCodec.validate(data,pair.actors).session == null,"baseline catalog still rejects deferred social state")
+	_check(SaveCodec.validate(data,pair.actors).session != null,"production catalog restores enabled social state")
 	_boundaries(pair,data)
 	await _disk_checks(pair)
 	_check(TestRunEvidence.write_json("social-save.json",{"assertions":assertions,"rejections":rejected,"failures":failures,"proof":"synthetic strict save/routing plus actual repository IO"}),"report")
@@ -142,10 +142,8 @@ func _boundaries(pair: Dictionary, data: Dictionary) -> void:
 	SocialSaveFixture.gift(ended,"npc-01")
 	var ended_data: Dictionary = SaveCodec.snapshot(ended.session)
 	_check(ended_data.conversations.people["npc-01"].level == 1 and "relationshipLevel1Seen" not in ended_data.conversations.people["npc-01"].flags and SaveCodec.validate(ended_data,ended.actors,ended.catalog).session != null,"endsConversation precedes milestone routing")
-	var npc: NpcDefinition = ended.catalog.get_npc("npc-01")
-	var memory: ConversationMemory = ended.session.conversations.memory(npc.id).entered(npc.graph.nodes[npc.milestone_node_id])
-	ConversationMemory._add_unique(memory.flags,npc.milestone_seen_flag_id)
-	ended.session.conversations = ended.session.conversations.with_person(memory)
+	_check(ended.service.begin("npc-01","fixture-npc-01").ok and ended.service.snapshot().node_id == "npc-01-level-1-milestone","real later milestone entry")
+	ended.service.cancel()
 	_check(SaveCodec.validate(SaveCodec.snapshot(ended.session),ended.actors,ended.catalog).session != null,"later authored milestone entry derives seen flag")
 
 func _disk_checks(pair: Dictionary) -> void:

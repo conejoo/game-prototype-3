@@ -48,23 +48,15 @@ static func stage(npc: NpcDefinition, node_id: String, choice_id: String, state:
 	var events: NpcEventMemory = state.events()
 	result.reason = eligibility(npc, choice, memory, events, inventory, seconds)
 	if not result.reason.is_empty(): return result
-	var next: NpcDialogueGraph.NodeDefinition
-	if not choice.ends_conversation and not choice.target_node_id.is_empty():
-		next = npc.graph.nodes.get(choice.target_node_id)
-		if next == null or next.npc_id != npc.id or not next.availability.is_enabled():
-			result.reason = "Response target unavailable."
-			return result
 	var rule: NpcDefinition.GiftRule = npc.gifts[choice.gift_rule_id]
-	# Source order: choice effects, signed gift delta, authored target entry.
-	# G004 adds milestone routing between delta and entry.
+	# Source order: choice effects, signed gift delta, milestone/target entry.
 	var person: ConversationMemory = memory.responded(choice)
 	person.affinity = clampi(person.affinity + rule.affinity_delta, 0, ConversationMemory.MAX_AFFINITY)
-	if not choice.ends_conversation and person.level(npc.level_one_affinity) > memory.level(npc.level_one_affinity) and not npc.milestone_node_id.is_empty() and npc.milestone_seen_flag_id not in person.flags:
-		var milestone: NpcDialogueGraph.NodeDefinition = npc.graph.nodes.get(npc.milestone_node_id)
-		if milestone == null or milestone.npc_id != npc.id or not milestone.availability.is_enabled():
-			result.reason = "Relationship milestone target unavailable."
-			return result
-	if next != null: person = person.entered(next)
+	var transition: Dictionary = NpcDialogueRules.transition(npc, choice, memory, person)
+	result.reason = transition.reason
+	if not result.reason.is_empty(): return result
+	var next: NpcDialogueGraph.NodeDefinition = transition.node
+	if next != null: person = NpcDialogueRules.enter(npc, person, next)
 	var gifted: NpcEventMemory = events.record(NpcEventMemory.GIFT, rule.item_id, npc.id, seconds)
 	var selected: NpcEventMemory = gifted.record(NpcEventMemory.CHOICE, npc.id, choice.id, seconds) if gifted != null else null
 	if selected == null:

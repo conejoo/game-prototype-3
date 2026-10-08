@@ -45,7 +45,7 @@ func begin(npc_id: String, instance_id: String) -> Result:
 	var memory: ConversationMemory = _session.conversations.memory(npc_id)
 	var node: NpcDialogueGraph.NodeDefinition = NpcDialogueRules.resolve(npc, memory, _session.conversations.events(), _session.elapsed_play_seconds)
 	if node == null: return Result.new(false, "No available ordinary entry.")
-	_session.conversations = _session.conversations.with_person(memory.entered(node))
+	_session.conversations = _session.conversations.with_person(NpcDialogueRules.enter(npc, memory, node))
 	_cursor_state = _session.conversations
 	_cursor_inventory = _session.inventory
 	_npc_id = npc_id
@@ -119,15 +119,13 @@ func choose(npc_id: String, instance_id: String, node_id: String, token: String,
 	var reason: String = NpcDialogueRules.choice_reason(npc, choice, memory, _session.conversations.events(), _session.elapsed_play_seconds, _session.inventory)
 	if not reason.is_empty(): return Result.new(false, reason)
 	if not choice.gift_rule_id.is_empty(): return _choose_gift(npc, choice)
-	var next: NpcDialogueGraph.NodeDefinition
-	if not choice.ends_conversation and not choice.target_node_id.is_empty():
-		next = npc.graph.nodes.get(choice.target_node_id)
-		if next == null or not next.availability.is_enabled(): return Result.new(false, "Response target unavailable.")
-	# Edric milestone is deferred; never inject it merely for crossing level one.
+	var candidate: ConversationMemory = memory.responded(choice)
+	var transition: Dictionary = NpcDialogueRules.transition(npc, choice, memory, candidate)
+	if not transition.reason.is_empty(): return Result.new(false, transition.reason)
+	var next: NpcDialogueGraph.NodeDefinition = transition.node
 	var event_value: NpcEventMemory = _session.conversations.events().record(NpcEventMemory.CHOICE, _npc_id, choice.id, _session.elapsed_play_seconds)
 	if event_value == null: return Result.new(false, "Event memory range exhausted or invalid active time.")
-	var candidate: ConversationMemory = memory.responded(choice)
-	if next != null: candidate = candidate.entered(next)
+	if next != null: candidate = NpcDialogueRules.enter(npc, candidate, next)
 	_session.conversations = _session.conversations.with_person(candidate, event_value)
 	_cursor_state = _session.conversations
 	if next == null: _clear()
@@ -202,7 +200,7 @@ func advance(npc_id: String, instance_id: String, node_id: String, token: String
 		return close(npc_id, instance_id, node_id, token)
 	var next: NpcDialogueGraph.NodeDefinition = npc.graph.nodes.get(node.continue_target_id)
 	if next == null or not next.availability.is_enabled(): return Result.new(false, "Continuation unavailable; Close remains available.")
-	_session.conversations = _session.conversations.with_person(_session.conversations.memory(_npc_id).entered(next))
+	_session.conversations = _session.conversations.with_person(NpcDialogueRules.enter(npc, _session.conversations.memory(_npc_id), next))
 	_cursor_state = _session.conversations
 	_node_id = next.id
 	_generation += 1

@@ -33,7 +33,7 @@ func _run() -> void:
 		totals.sheets += npc.sheets.size()
 		totals.gifts += npc.gifts.size()
 		for gift: NpcDefinition.GiftRule in npc.gifts.values():
-			_check(not gift.availability.is_enabled() and gift.acceptance_cap == 2 and gift.item_id == "moonflower", "Typed deferred gift " + gift.id)
+			_check(gift.availability.is_enabled() and gift.acceptance_cap == 2 and gift.item_id == "moonflower", "Typed approved gift " + gift.id)
 		for node: NpcDialogueGraph.NodeDefinition in npc.graph.nodes.values():
 			totals.nodes += 1
 			_check(node.speaker == npc.display_name and node.npc_id == npc.id, "Source speaker " + node.id)
@@ -42,7 +42,7 @@ func _run() -> void:
 			for choice: NpcDialogueGraph.Choice in node.choices:
 				totals.choices += 1
 				if not choice.availability.is_enabled(): totals.deferred_choices += 1
-	_check(totals == {"nodes": 70, "choices": 54, "facts": 24, "portraits": 48, "sheets": 18, "deferred_nodes": 12, "deferred_choices": 16, "gifts": 8}, "Full enabled/deferred coverage counts")
+	_check(totals == {"nodes": 70, "choices": 54, "facts": 24, "portraits": 48, "sheets": 18, "deferred_nodes": 3, "deferred_choices": 6, "gifts": 8}, "Full enabled/deferred coverage counts")
 	var edric: NpcDefinition = catalog.get_npc("npc-01")
 	_check(edric.graph.entry_node_ids[0] == "npc-01-level-1-milestone" and edric.graph.entry_node_ids[4] == "npc-01-initial-conversation", "Authored entry order")
 	_check(edric.graph.nodes["npc-01-initial-conversation"].choices[0].has_one_time_effect(), "Once-only metadata")
@@ -149,11 +149,14 @@ func _run() -> void:
 	_reject("missing coverage ID", func(d: Dictionary) -> void: d.packages[0].coverage.node.erase("npc-01-initial-conversation"))
 	_reject("unsupported availability", func(d: Dictionary) -> void: d.packages[0].coverage.node["npc-01-initial-conversation"]["status"] = "hidden")
 	_reject("nonempty string", func(d: Dictionary) -> void: d.packages[0].coverage.node["npc-01-initial-conversation"]["reason"] = "")
-	_reject("must stay deferred", func(d: Dictionary) -> void: d.packages[0].coverage.choice["npc-01-gift-moonflower-from-hint"]["status"] = "enabled")
+	_reject("must be enabled", func(d: Dictionary) -> void: d.packages[0].coverage.choice["npc-01-gift-moonflower-from-hint"]["status"] = "deferred")
+	_reject("must be enabled", func(d: Dictionary) -> void: d.packages[0].coverage.gift_rule["npc-01-moonflower-gift"]["status"] = "deferred")
+	_reject("must be enabled", func(d: Dictionary) -> void: d.packages[0].coverage.node["npc-01-gift-response"]["status"] = "deferred")
+	_reject("must be enabled", func(d: Dictionary) -> void: d.packages[0].coverage.node["npc-01-level-1-milestone"]["status"] = "deferred")
 	_reject("must stay deferred", func(d: Dictionary) -> void: d.packages[1].coverage.node["npc-02-routine-archive-indexing"]["status"] = "enabled")
 	_reject("fact disclosure classification", func(d: Dictionary) -> void: d.packages[1].coverage.fact["npc-02-archive-practice"]["status"] = "enabled")
 	_reject("must stay deferred", func(d: Dictionary) -> void: d.packages[7].coverage.choice["npc-14-ask-room"]["status"] = "enabled")
-	_reject("enabled continue targets deferred", func(d: Dictionary) -> void: d.packages[0].dialogue.nodes[1]["continueTargetId"] = "npc-01-gift-response")
+	_reject("enabled continue targets deferred", func(d: Dictionary) -> void: d.packages[7].dialogue.nodes[1]["continueTargetId"] = "npc-14-room")
 	_reject("owned target-local", func(d: Dictionary) -> void: d.packages[0].visuals.portraits["skeptical"] = "res://assets/npcs/portraits/npc-01/../npc-02/skeptical.png")
 	var empty: NpcContentCatalog = NpcContentCatalog.new()
 	_check(not empty.initialize_document(canonical, ContentCatalog.new()).is_empty() and empty.definition_count() == 0, "Unvalidated legacy catalog rejected")

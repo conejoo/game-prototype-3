@@ -1,4 +1,4 @@
-"""Read-only G002 deterministic overlay proof; never writes runtime outputs."""
+"""Read-only deterministic overlay proof; G004 also checks active production."""
 import argparse
 import copy
 import hashlib
@@ -18,12 +18,14 @@ def main():
     parser.add_argument("--evidence", type=Path, required=True)
     args = parser.parse_args()
     destination = args.evidence.resolve()
-    assert destination.is_relative_to((ROOT / "docs/evidence/G002").resolve())
+    assert any(destination.is_relative_to((ROOT / ("docs/evidence/" + task)).resolve()) for task in ("G002", "G004"))
     destination.mkdir(parents=True, exist_ok=True)
-    baseline = expected_outputs(args.source)
+    baseline = expected_outputs(args.source, social=False)
     overlay = expected_outputs(args.source, social=True)
     assert overlay == expected_outputs(args.source, social=True), "Nondeterministic conversion"
-    assert all(path.read_bytes() == data for path, data in baseline.items()), "Production drift"
+    active = destination.is_relative_to((ROOT / "docs/evidence/G004").resolve())
+    current = overlay if active else baseline
+    assert all(path.read_bytes() == data for path, data in current.items()), "Production drift"
     assert all(data == overlay[path] for path, data in baseline.items() if path != OUTPUT), "Art changed"
     base_doc = json.loads(baseline[OUTPUT])
     active_doc = json.loads(overlay[OUTPUT])
@@ -65,13 +67,13 @@ def main():
         finally:
             activation_overlay.POLICY_PATH = original
     (destination / "social-catalog-preview.json").write_bytes(overlay[OUTPUT])
-    report = {"status":"passed", "proof":"target-local read-only overlay preview, not runtime activation",
+    report = {"status":"passed", "proof":"current G004 production equals approved overlay" if active else "target-local read-only overlay preview, not runtime activation",
               "production_sha256":hashlib.sha256(baseline[OUTPUT]).hexdigest(),
               "preview_sha256":hashlib.sha256(overlay[OUTPUT]).hexdigest(),
               "changed_availability":changes, "enabled_totals":totals,
               "assets_unchanged":len(overlay) - 1, "rejected_policies":rejected}
     (destination / "overlay-report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    print("G002_OVERLAY PASS " + json.dumps(report, sort_keys=True))
+    print(("G004" if active else "G002") + "_OVERLAY PASS " + json.dumps(report, sort_keys=True))
 
 
 if __name__ == "__main__":
