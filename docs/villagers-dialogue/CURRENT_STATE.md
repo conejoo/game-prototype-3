@@ -1,20 +1,68 @@
 # Villagers and dialogue current state
 
-Updated: 2026-10-07, America/Vancouver.
+Updated: 2026-10-08, America/Vancouver.
 [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns stable rules;
 [AGENT_PROMPT](AGENT_PROMPT.md) supplies the reusable invocation.
 
 ## Selection and exact continuation
 
-N001 and N002 Done; N003-N018 Pending. Active task: none. Exactly N002 completed
-this invocation. Next eligible: N003 — deterministic dialogue rules/per-person memory.
-N007 is also dependency-ready but N003 is the lowest eligible ID; neither started.
+N001/N002/N003 Done; N004-N018 Pending. Active task: none. Exactly N003 completed
+this invocation. Next eligible N004 â€” strict current-schema NPC/event persistence.
+N007 remains independently ready; lowest eligible is N004. Neither started.
 
-Exact action: inspect current user changes/source pin, verify N002 actual content
-and acceptance, mark N003 In progress, implement only its memory/query/choice services
-and owning rule checks. Consume root npc_catalog and detached NpcDefinition/graph
-interfaces documented in [N002 acceptance](N002_ACCEPTANCE.md). Preserve legacy
-DialogueService/QuestService/companion trust, schema6 and manual saves. Stop after N003.
+Exact action: recheck current Git/source pins and schema6 policy; read N003_ACCEPTANCE
+and implemented memory/service interfaces. Mark N004 In progress, implement only its
+strict additive current-format codec/restart checks. Provisionally schema7/content1;
+reject schema6 and every other noncurrent format, no migrations/defaults. Remove N003's
+transitional root schema6-fresh-memory comment when durable restore replaces it.
+Keep manual saves and reject active conversation; preserve full existing durable oracle.
+Rebuild supported event keys from catalog, derive latest time from last-sequence
+aggregate, validate all IDs/bounds/relationships before live swap. Stop after N004.
+
+## N003 result and durable evidence
+
+Target began clean at 0f590e79d51ff5f042c998c9b696a743902332ef, including user's strict
+current-schema policy. Source clean at 60c20eb2816e7271fb84afaba286af006ebe3ccf;
+all 132 authority hashes/67 runtime outputs match. No user changes at selection.
+Schema6/content1, Compatibility, geometry and previous P/M/W/F history retained.
+
+Implemented five typed services/value modules plus npc_dialogue_rule_checks under
+game/features/npcs and game/tests; UIDs tracked. GameSession.conversations owns eight
+memories/events. Root npc_dialogue initializes/binds new session and successful manual
+restores; existing dialogue/quest/trust remain untouched. State swaps accepted flags,
+receipts, affinity, target disclosure and choice event before one notification.
+Snapshot queries detach; source entry priorities/ties/defaults and condition gates
+match pin. Forty supported exact event keys, counts/sequences cap2147483647,
+affinity0..2147483647/level threshold3, finite timestamps0..2190600 documented in
+[N003 acceptance](N003_ACCEPTANCE.md). No gifts/routine/milestone/quest reward injection.
+
+Final command from repository root:
+./tools/run_checks.ps1 -Task N003 -Import -Names npc_dialogue_rule_checks,consequence_checks,quest_checks,interaction_dialogue_checks,application_smoke -TimeoutSeconds 150.
+All eight cases PASS/exit0, 977 rule assertions including evidence write (976 in JSON),
+58 enabled nodes/38 choices/135 rejected commands, zero failure/timeouts/runtime/parse
+diagnostics/source changes. Actual root schema6 Save/Load rebind passes; NPC history
+is currently unsaved/fresh on load, explicitly owned by N004. Existing allowed import
+SDK diagnostic retained; no installation. No ordinary route/UI/art/package claim.
+
+Evidence docs/evidence/N003/20261008-074106073-ccf87fae/{results.json,source-before.json,
+source-after.json,checks/npc_dialogue_rule_checks/npc-dialogue-rules.json,logs} inspected.
+Source fingerprint f73dd08ac081b40b1ffbfcbe897260e78fe2e162a4d9f89a734d0e8d17346e51,
+762 runner-scoped files stable. Matching fresh builds/testing/N003 run appdata/
+localappdata, separate named slots; normal saves untouched. Retained failed imports
+073435360-7dc01d0e and073829848-ef67672b generated UIDs; guard stayed strict. Smaller
+073848939-5b9d1a87 passed before final root/deferred/unavailable-entry scope expansion.
+
+Changed existing production files only game/app/game_root.gd and game_session.gd;
+12 added script/UID files, plus workflow acceptance/checklist/contract/current state
+and parent README/architecture discovery. Source/catalog/assets and save/legacy/
+quest/trust/foraging/environment implementations unchanged. Final diff/link/status/
+dependency/byte audit and source pin check recorded in final-audit.json. Initial
+supplemental audit's four preexisting Git-blob LF/checkout CRLF differences retained
+in final-audit-attempt-1.json; final comparison verifies exact passing bytes and
+normalizes only those baseline newline differences. No production repair needed.
+All owned
+headless processes exited; no live process/editor/cleanup owed. No agents/chats/
+schedules/commits/external messages/publication. No remaining N003 criterion or blocker.
 
 ## N002 result and durable evidence
 
@@ -192,3 +240,7 @@ No game process/editor was launched or owned by planning; no cleanup owed. Sourc
 Every N acceptance criterion remains unimplemented. No current planning blocker.
 Future N001 must recheck source drift and target schema/active workflows before choosing mappings. Future ART tasks must verify Blender/rig/export capability; native final gate must verify actual focus/input support. Do not classify unavailable future tooling as already verified.
 If interrupted during an implementation invocation, update CHECKLIST/CURRENT_STATE with selected task, preserved changes, failed/unrun checks, evidence and exact next action; resume that task before its successor.
+
+Supplemental audit retry 2 completed production byte/source/link checks, then hit
+Windows cp1252 default decoding the UTF-8 checklist. final-audit-attempt-2.json
+retains the tooling failure. Final retry uses explicit UTF-8; no production change.

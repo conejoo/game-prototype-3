@@ -211,3 +211,34 @@ contradictory bounds and non-finite graph transitions before publishing any cand
 All existing schema6/content1, geography, legacy dialogue, quest and companion-trust
 contracts remain intact. N003 owns selection/memory rules; N004 owns persistence;
 N005 owns actual portrait UI. N007 and character tasks own real exported 3D assets.
+
+## N003 implemented rule/session boundary (2026-10-08)
+
+[N003 acceptance](N003_ACCEPTANCE.md) records actual interfaces and source semantics.
+GameSession.conversations owns NpcConversationState, eight detached ConversationMemory
+values and bounded NpcEventMemory. GameRoot.npc_dialogue owns NpcDialogueService;
+NpcDialogueRules is pure. Existing legacy dialogue remains the ordinary gameplay
+owner until N005 converts all callers. N006 owns actual woods/gather event adapters.
+
+Ordinary entries rank priority descending, stable node ID ascending; enabled coverage
+and authored conditions both apply. Entry records only seen node/authored fact IDs.
+Accepted response stages flags/once-only receipts, signed bounded affinity, exact
+choice event and linked target disclosure, then swaps the entire state before changed.
+Close/owner cancel applies no unselected effects. Commands include NPC/instance/node
+and service-generation token; stale/foreign publication and unavailable/hidden/consumed
+responses reject with no changes. Linked target conditions retain source entry-gate
+meaning. No routine preference, milestone injection, gifts or quest/trust authority.
+
+Event allowlist has 40 keys: (areaEntered,woods,null),
+(resourceGathered,moonflower,null), and dialogueChoiceSelected for 38 enabled exact
+NPC/choice pairs. Null stays exact. Count/global/first/last sequence cap2147483647;
+finite active timestamps0..2190600 seconds, globally nondecreasing. Exhaustion rejects
+whole transaction with no eviction/saturation. Latest-event window boundary inclusive.
+Source-like once-only receipts apply only to has_one_time_effect choices; repeatable
+responses can record repeated events without gaining an invented one-time receipt.
+
+N004 must strictly validate restored IDs, complete structure, bounds and derived
+relations, reconstruct allowlist/latest timestamp and detach candidates before swap.
+Current schema6 intentionally serializes no conversation/event state; actual root
+load rebinds fresh independent memory. N004 owns replacement with only its resulting
+current schema, rejecting all others. Cursor/token/scene/animation state stays transient.

@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001 reference audit and N002 typed content Done. N003-N018 remain Pending.
+N001 reference audit, N002 typed content and N003 dialogue rules Done. N004-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -23,7 +23,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | --- | --- | --- | --- |
 | N001 | Done | None; inspect actual delivered baseline | Pinned eight-person references, exact scope/placement/coverage contract. |
 | N002 | Done | N001 | Validated typed NPC/graph catalogs; all selected source content classified. |
-| N003 | Pending | N002 | Pure dialogue selection, memory and atomic choice rules. |
+| N003 | Done | N002 | Pure dialogue selection, memory and atomic choice rules. |
 | N004 | Pending | N003 | Strict current-schema saves and persistent conversation/event memory. |
 | N005 | Pending | N004 | Multi-node portrait dialogue and known-facts UI integrated with existing gameplay. |
 | N006 | Pending | N005 | Safe scene-owned town contacts and real event adapters. |
@@ -218,7 +218,7 @@ Decisions/version/placement changes and retained limitations:
 Next eligible task:
 ```
 
-### N001 — 2026-10-07, America/Vancouver
+### N001 â€” 2026-10-07, America/Vancouver
 
 Result: pinned exactly eight selected public packages,90 byte-exact copies/132 source
 hashes;70 nodes/54 choices/24 facts/48 portraits/18 sheets classified. Measured eight
@@ -248,7 +248,7 @@ directions remain deferred; N007 animation pipeline and character art unverified
 Exact criteria/commands/failed attempts and inspected image in N001 acceptance.
 Next eligible: N002 typed NPC/graph definitions and validation. Stop after N001.
 
-### N002 — 2026-10-07, America/Vancouver
+### N002 â€” 2026-10-07, America/Vancouver
 
 Result: strict typed selected catalog, deterministic conversion, atomic publication
 and detached definitions for eight people/70 nodes/54 choices/24 facts/48 portraits/
@@ -277,3 +277,28 @@ changes, 144 owned additions/no removals. Schema6/content1 and pinned geography 
 Final diff/links/status/dependencies/source audit PASS. No new UI/ordinary route/art/
 release claim or save access; all owned processes exited, no cleanup owed.
 Next eligible N003. Independently ready N007 not started. Exactly N002 completed.
+
+### N003 — 2026-10-08, America/Vancouver
+
+Result: session-owned independent per-person/event memory, pure deterministic entry/
+condition queries and atomic choice/cursor publication. All 58 enabled nodes/38 choices
+of the real eight graphs exercised, both introduction alternatives in fresh sessions.
+No actor/UI activation, implicit quest/trust rewards or save schema change.
+
+Actual modules: ConversationMemory, NpcEventMemory, NpcConversationState,
+NpcDialogueRules, NpcDialogueService and owning npc_dialogue_rule_checks with UIDs;
+narrow GameSession/GameRoot startup/restoration binding. Forty exact supported event
+keys, signed affinity clamp, source threshold/ties/disclosure/once-only rules and
+owner tokens documented in [N003 acceptance](N003_ACCEPTANCE.md).
+
+Final shared runner import/parse/new rules/consequence/quest/legacy interaction/smoke
+PASS all eight cases, exit0, 977 assertions/135 rejection commands, zero runtime
+failures/source drift/timeouts. Evidence docs/evidence/N003/20261008-074106073-ccf87fae/;
+fresh isolated matching builds/testing appdata/localappdata and separate slots.
+Actual root manual schema6 Save/Load rebinding passes; no normal saves accessed.
+Two failed import attempts retained for generated UIDs; smaller earlier passing run
+superseded by final expanded acceptance. Read-only source clean/pinned hashes exact.
+
+Checklist/contract/current state/README/architecture updated; final byte/link/diff/
+status audit recorded. All owned processes exited, no cleanup owed. N004 next eligible;
+independent N007 unstarted. Exactly N003 complete; stop before successor.

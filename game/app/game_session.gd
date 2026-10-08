@@ -15,6 +15,8 @@ var progression: ProgressionState = ProgressionState.new()
 var environment: EnvironmentState = EnvironmentState.new()
 var inventory: InventoryState = InventoryState.new()
 var foraging: ForagingState = ForagingState.new()
+# N003 session memory; N004 owns serialization.
+var conversations: NpcConversationState = NpcConversationState.new()
 var weather_conditions: WeatherConditionService = WeatherConditionService.new()
 # Transient developer provenance, never a save field.
 var review_only: bool = false

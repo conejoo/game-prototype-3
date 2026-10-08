@@ -885,3 +885,22 @@ with reasons. Both export presets explicitly include content/npcs/*.json.
 atomic/detached data, 75 malformed candidates and existing catalog/root regressions.
 Schema6/content1 and manual saves remain unchanged. Selection/memory, UI, scene-owned
 contacts, rig/export and character production belong to later N tasks.
+
+### Delivered NPC memory and rule boundary (N003)
+
+GameSession.conversations owns eight separate ConversationMemory values and bounded
+NpcEventMemory through NpcConversationState. GameRoot.npc_dialogue composes the pure
+NpcDialogueRules and transient NpcDialogueService; existing legacy dialogue remains
+ordinary gameplay until N005 converts its callers. Entry disclosure, priority/ties,
+condition reevaluation, atomic choice effects, cursor command tokens and detached
+snapshots follow the pinned source and target capability policy.
+
+One accepted response publishes per-person flags/receipts/affinity/target facts plus
+its exact event aggregate before notifying observers. Unsupported, stale, foreign,
+hidden, deferred and consumed commands change nothing. Forty fixed event keys and
+numeric bounds prevent unbounded memory; gifts/routines/milestones remain deferred.
+Close/cancel never applies unselected effects. Root startup and restored-session
+rebinding are verified; schema6 still contains no NPC history, and N004 owns strict
+current-format persistence. No scene-owned contact or ordinary NPC UI is activated.
+[N003 acceptance](villagers-dialogue/N003_ACCEPTANCE.md) covers all 58 enabled nodes/
+38 choices, 977 assertions, actual manual load rebinding and affected legacy checks.

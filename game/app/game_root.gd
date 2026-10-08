@@ -10,6 +10,7 @@ extends Node3D
 var session: GameSession = GameSession.new()
 var catalog: ContentCatalog = ContentCatalog.new()
 var npc_catalog: NpcContentCatalog = NpcContentCatalog.new()
+var npc_dialogue: NpcDialogueService = NpcDialogueService.new()
 var window_focused: bool = true
 var save_repository: SaveRepository = SaveRepository.new()
 var loading_save: bool = false
@@ -69,6 +70,8 @@ func _ready() -> void:
 		errors = npc_catalog.initialize_path(catalog)
 	if errors.is_empty():
 		errors = session.initialize(catalog, initial_location_id, initial_spawn_id, "prototype-hero")
+	if errors.is_empty():
+		errors = npc_dialogue.initialize(npc_catalog, session)
 	if not errors.is_empty():
 		set_process(false)
 		set_process_unhandled_input(false)
@@ -426,6 +429,8 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		quests.initialize(catalog, session)
 		relationships.initialize(catalog, session)
 		progression.initialize(catalog, session)
+		# Schema6 restores fresh NPC memory until N004 owns the additive format.
+		npc_dialogue.initialize(npc_catalog, session)
 		_refresh_progression()
 	_pending_restore = null
 	camera_rig.set_target(player_placeholder)
