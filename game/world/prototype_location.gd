@@ -10,6 +10,24 @@ const GATE_RADIUS: float = 1.6
 var navigation_region: NavigationRegion3D
 var _foraging_owner: WeakRef
 var foraging_pickups: ForagingWorldAdapter
+var npc_contacts: NpcWorldAdapter
+var npc_events: NpcWorldEvents = NpcWorldEvents.new()
+
+
+func prepare_npcs(enabled: PackedStringArray) -> PackedStringArray:
+	if npc_contacts != null: return PackedStringArray(["NPC scene owner already prepared"])
+	npc_contacts = NpcWorldAdapter.new()
+	npc_contacts.name = "NpcContacts"
+	add_child(npc_contacts)
+	return npc_contacts.build(self, enabled)
+
+
+func _exit_tree() -> void:
+	npc_events.clear()
+	var run: GameSession = _foraging_owner.get_ref() as GameSession if _foraging_owner != null else null
+	if run != null and run.foraging.committed.is_connected(_on_foraging_committed):
+		run.foraging.committed.disconnect(_on_foraging_committed)
+	_foraging_owner = null
 
 
 func bind_foraging(run: GameSession) -> void:

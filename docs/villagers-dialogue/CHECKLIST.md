@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001 reference audit, N002 typed content, N003 dialogue rules, N004 persistence and N005 portrait conversation UI Done. N006-N018 remain Pending.
+N001 reference audit, N002 typed content, N003 dialogue rules, N004 persistence, N005 portrait conversation UI and N006 scene-owned contacts/events Done. N007-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -26,7 +26,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N003 | Done | N002 | Pure dialogue selection, memory and atomic choice rules. |
 | N004 | Done | N003 | Strict current-schema saves and persistent conversation/event memory. |
 | N005 | Done | N004 | Multi-node portrait dialogue and known-facts UI integrated with existing gameplay. |
-| N006 | Pending | N005 | Safe scene-owned town contacts and real event adapters. |
+| N006 | Done | N005 | Safe scene-owned town contacts and real event adapters. |
 | N007 | Pending | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
 | N008 | Pending | N006, N007 | Edric complete and reachable; first real villager vertical slice. |
 | N009 | Pending | N008 | Helena complete and reachable. |
@@ -357,3 +357,35 @@ exited; no editor/cleanup, remaining N005 acceptance, blocker or commit/push.
 
 Exactly N005 completed; stop. Remaining N006-N018; N006 next eligible, N007
 independently ready. All checklist items through N018 are not complete.
+
+### N006 - 2026-10-08, UTC
+
+Result: scene-owned registry/wrappers, exact source dialogue identity binding,
+physical placement/navigation/LOS gates and real woods/committed-gather event hooks.
+Production activation remains empty; N008-N015 own characters. Existing Maris counter
+reused, NPCs outside Party, fixed contacts without schedules. Old listeners disconnect;
+load/travel/retry rebuild once; unsafe NPC placement rolls back with exact live facts.
+Schema7/content1 and pinned geometry/source/catalog/art remain unchanged.
+
+Files: NpcRegistry/NpcWorldAdapter/NpcWorldEvents with UIDs; narrow PrototypeLocation,
+WorldHost, GameRoot, PrototypeInteractable and ForagingState hooks; npc_world_checks
+with UID and foraging_interaction_checks event assertions; workflow/discovery docs.
+Prerequisites N001 measured eight contacts/N002 content/N005 integration verified.
+Target began clean at8b9da9cdcbbbf3a00f88934a042139409a9ffbc4; source remains clean/pinned
+at60c20eb2816e7271fb84afaba286af006ebe3ccf. Read-only converter132 hashes/67 outputs PASS.
+
+Expanded shared runner all18 cases PASS, including required map/navigation/activation/
+travel/companion/foraging/light, affected NPC rules/save/transactions/dialogue/startup,
+independent NPC writer/reader. Final test-only extension all4 cases PASS; production
+bytes unchanged. World10,253 assertions/10,131 physical route samples, foraging130
+viewport assertions. Zero forbidden diagnostics/timeouts/source changes; isolated
+fresh appdata/localappdata/slots. All-eight physical fixtures include ten existing
+light/resource contacts, source choices, exact manual load and unsafe-contact rollback.
+
+Evidence docs/evidence/N006/20261008-100827014-f14056aa/ and final
+20261008-101212326-dd2a2f3c/; results/logs/JSON and final source/byte/link/process audit
+inspected. Full criterion/commands/interfaces/failure history in
+[N006 acceptance](N006_ACCEPTANCE.md). No ordinary character/art/native claim; no
+remaining N006 criterion or blocker. All owned checks exited; no editor/cleanup,
+commit/push, agents/chats/schedules or normal save access. Exactly N006 completed.
+Remaining N007-N018; next eligible N007. All through N018 are not complete. Stop.

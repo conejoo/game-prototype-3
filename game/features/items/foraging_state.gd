@@ -130,6 +130,13 @@ func _collect(kind: String, location_id: String, instance_id: String, resource_i
 				errors.append_array(_session().inventory.can_add(item_id))
 	if not errors.is_empty():
 		return _result(kind, instance_id, item_id, errors)
+	# Stage event before mutation; only an accepted authored flower gather publishes.
+	var conversation_candidate: NpcConversationState
+	if kind == "gather" and item_id == "item-moonflower":
+		var run: GameSession = _session()
+		var event: NpcEventMemory = run.conversations.events().record(NpcEventMemory.GATHER, "moonflower", null, run.elapsed_play_seconds)
+		if event == null: return _result(kind, instance_id, item_id, PackedStringArray(["event_memory_unavailable"]))
+		conversation_candidate = run.conversations.with_events(event)
 	_command_active = true
 	# No callbacks/signals between inventory mutation and world-fact commit.
 	_session().inventory.add(item_id)
@@ -137,6 +144,7 @@ func _collect(kind: String, location_id: String, instance_id: String, resource_i
 		_collected.append(instance_id)
 		_collected.sort()
 	_placements.erase(instance_id)
+	if conversation_candidate != null: _session().conversations = conversation_candidate
 	return _publish(kind, instance_id, item_id)
 
 

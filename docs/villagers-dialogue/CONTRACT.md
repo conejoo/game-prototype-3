@@ -314,3 +314,41 @@ mouse/keyboard exits and required/affected regressions. UI bindings/expression a
 length fixtures are synthetic. Ordinary eight-person routes/3D art/native packages
 remain N006-N018 work; existing source portraits are reused byte-exactly. Pinned
 geography, source hashes, deferred capabilities and normal user saves unchanged.
+
+## N006 delivered contact and event boundary (2026-10-08)
+
+NpcRegistry.entries/find supplies the eight N001 measured fixed public contact feet,
+approaches, wrapper identities and reach. ENABLED remains empty; N008-N015 must
+activate only their completed characters. WorldHost.enabled_npcs prepares each
+scene's NpcWorldAdapter before validation/navigation and checks complete actor/player
+support, capsule clearance, reachable approach and LOS before publishing arrival.
+Foreign-room item placement probes include enabled NPC collisions/reservations.
+
+Seven possible wrappers have radius0.4m/height1.6m collision outside an empty
+replaceable VisualRoot, plus conservative navigation reservations. Maris reuses the
+existing npc-03-counter/body/bench. No new ActorDefinition, party member or combat
+owner is created. PrototypeInteractable.npc_id must match its exact registry instance;
+root revalidates the selected live wrapper and uses the existing single dialogue
+owner. Production Maris recovery is unchanged while activation is empty; N010 owns
+ordinary/recovery route composition. Fixed contacts imply no walking schedule.
+
+PrototypeLocation.npc_events owns weak-session NpcWorldEvents membership. The union
+of pinned woods-role zones determines physical outside-to-inside edges. Root samples
+actual feet during stable focused living world updates. Arrival/load/retry/rollback
+seed membership without recording; exit clears the weak owner. Overlapping zones,
+stationary frames, placement reconstruction and load do not invent entry history.
+
+ForagingState stages only a successful authored flower gather's exact
+(resourceGathered,moonflower,null) before mutation, then publishes inventory/origin/
+memory together before committed observers. Unsupported/capped event state rejects
+before any item mutation. Rod operations, partial/canceled/full/replayed commands
+and restoration record no gather. Existing dialogue-choice publication retains exact
+(dialogueChoiceSelected,npcId,choiceId). No scene listener fabricates these events,
+general bus, routine simulator, save field or format change is introduced.
+
+Location exit disconnects old foraging ownership; successful arrival and failed-scene
+rollback reconnect exactly one listener. All wrappers/membership stay transient.
+[N006 acceptance](N006_ACCEPTANCE.md) records all18 expanded and4 final passing cases,
+all-eight physical synthetic activation, 10,131 route samples, source choices, actual
+viewport gather assertions and exact lifecycle/restart proof. Ordinary character art/
+routes and native packaging retain later gates. N007 is next eligible.

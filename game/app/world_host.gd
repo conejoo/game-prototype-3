@@ -12,6 +12,7 @@ var current_location: PrototypeLocation
 var transitioning: bool = false
 var transition_count: int = 0
 var developer_fixtures: bool = false
+var enabled_npcs: PackedStringArray = NpcRegistry.ENABLED
 
 
 func initialize(content: ContentCatalog, run: GameSession, persistent_party: PrototypeParty) -> void:
@@ -39,7 +40,8 @@ func request_transition(location_id: String, spawn_id: String, restored_run: Gam
 		for child: Node in candidate.get_children():
 			if child.is_in_group("developer_fixture"):
 				child.free()
-	var errors: PackedStringArray = candidate.validation_errors(definition, catalog)
+	var errors: PackedStringArray = candidate.prepare_npcs(enabled_npcs)
+	errors.append_array(candidate.validation_errors(definition, catalog))
 	if not errors.is_empty():
 		candidate.free()
 		return errors
@@ -79,6 +81,10 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 	var errors: PackedStringArray = _placement_errors(anchor)
 	errors.append_array(navigation_errors)
 	errors.append_array(fact_errors)
+	if errors.is_empty():
+		var excluded: Array[RID] = []
+		for actor: ActorPlaceholder in party.members(): excluded.append(actor.get_rid())
+		errors.append_array(candidate.npc_contacts.placement_errors(candidate, excluded))
 	if errors.is_empty():
 		for record: Dictionary in facts_run.foraging.snapshot().world_item_placements:
 			if record.location_id == location_id:
@@ -167,13 +173,15 @@ func _foreign_placement_errors(placed: WorldItemPlacement) -> PackedStringArray:
 		for child: Node in probe.get_children():
 			if child.is_in_group("developer_fixture"): child.free()
 	probe.visible = false
+	var npc_errors: PackedStringArray = probe.prepare_npcs(enabled_npcs)
 	probe.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(probe)
 	probe.set_process(false)
 	probe.set_physics_process(false)
 	await get_tree().physics_frame
 	await get_tree().physics_frame
-	var errors: PackedStringArray = probe.validation_errors(definition, catalog)
+	var errors: PackedStringArray = npc_errors
+	errors.append_array(probe.validation_errors(definition, catalog))
 	if errors.is_empty(): errors.append_array(probe.prepare_navigation())
 	if errors.is_empty(): errors.append_array(await _synchronize_navigation(probe, probe.find_spawn(definition.spawn_ids[0])))
 	if errors.is_empty(): errors.append_array(ForagingPlacementGeometry.validate(probe, placed))

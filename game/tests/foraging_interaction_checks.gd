@@ -66,6 +66,7 @@ func _run() -> void:
 				game.ui.show_settings(true)
 		game._tick_foraging_hold(1)
 		_check(not game.foraging_hold.active() and game.session.inventory.count("item-moonflower") == 0, "cancel " + mode)
+		_check(_gather_events() == 0, "N006 canceled mode has no gather event " + mode)
 		match mode:
 			"pause": game._set_paused(false)
 			"dialogue": game._cancel_dialogue()
@@ -122,6 +123,7 @@ func _run() -> void:
 				game.session.inventory.consume("f005-capacity-00")
 		game._tick_foraging_hold(1)
 		_check(not game.foraging_hold.active() and game.session.inventory.count("item-moonflower") == 0, "loss rejects reward " + loss)
+		_check(_gather_events() == 0, "N006 lost target has no gather event " + loss)
 		_key(KEY_E,false)
 		if fixture != null: fixture.free()
 		if loss == "removed":
@@ -176,10 +178,12 @@ func _run() -> void:
 	_check(not game.session.foraging.is_collected("moonflower-01") and game.session.inventory.count("item-moonflower") == 0 and room.foraging_pickups.targets.size() == 4, "full bag keeps counts and node")
 	_check(game.ui.foraging_notice.text.begins_with("Backpack full") and game.ui.foraging_notice.visible,"full bag feedback")
 	for index: int in range(20): game.session.inventory.consume("f005-capacity-%02d" % index)
+	_check(_gather_events() == 0, "N006 partial/released/travel/retry/full-stack/full-bag attempts have no gather history")
 	# Observable publication follows joint inventory/origin and physical removal.
 	game.session.foraging.committed.connect(func(_revision: int) -> void:
 		observed[0] += 1
 		_check(game.session.inventory.count("item-moonflower") >= 1 and game.session.foraging.is_collected("moonflower-01"), "observer sees joint facts")
+		_check(_gather_events() == 1, "N006 observer sees gather event with inventory/origin commit")
 	, CONNECT_ONE_SHOT)
 	_key(KEY_E,true)
 	game._tick_foraging_hold(.599)
@@ -191,6 +195,7 @@ func _run() -> void:
 	_key(KEY_E,true)
 	game._tick_foraging_hold(1)
 	_check(observed[0] == 1 and game.session.inventory.count("item-moonflower") == 1, "holding cannot grant twice")
+	_check(_gather_events() == 1, "N006 held/replayed completion has one gather event")
 	# Held E crossing to immediate lamp/gate cannot trigger them.
 	var lamp: PrototypeInteractable = game.world_host.current_location.town.get_node("dock-lamp-02/LightSwitch")
 	await _place(lamp)
@@ -219,21 +224,25 @@ func _run() -> void:
 		game._tick_foraging_hold(.6)
 		_key(KEY_E,false)
 	_check(game.session.inventory.count("item-moonflower") == 3 and room.foraging_pickups.targets.is_empty(), "all four physically removed")
+	_check(_gather_events() == 3, "N006 three real flower holds; lamp and rod add no gather event")
 	game._set_paused(true)
 	var old_session: GameSession = game.session
 	_check(game.save_run().is_empty(), "isolated save")
 	_check((await game.load_run()).is_empty(), "load hydrated absent wrappers")
 	_check(game.world_host.current_location.foraging_pickups.targets.is_empty() and game.session.inventory.count("item-moonflower") == 3 and game.session.inventory.count(ForagingRegistry.ROD_ITEM) == 1 and not game.foraging_hold.active(), "load exact absence/count, no hold")
 	_check(old_session.foraging.get_signal_connection_list("committed").is_empty(), "old session no leaked listener")
+	_check(_gather_events() == 3 and game.session.conversations.events().snapshot() == old_session.conversations.events().snapshot(), "N006 manual load exact event aggregates")
 	for destination: Array in [["prototype-tollworks","tollworks-from-alderwake"],["prototype-alderwake","alderwake-from-tollworks"]]:
 		game.world_host.request_transition(destination[0],destination[1])
 		await game.world_host.transition_finished
 		_check(game.world_host.current_location.foraging_pickups.targets.is_empty(), "travel retains absences")
 		_check(game.session.foraging.get_signal_connection_list("committed").size() == 1, "one location listener after travel")
+		_check(_gather_events() == 3, "N006 reconstructed placements/travel add no gather event")
 	game.player_placeholder.state.health = 0
 	game.retry_encounter()
 	await game.world_host.transition_finished
 	_check(game.world_host.current_location.foraging_pickups.targets.is_empty() and game.session.inventory.count("item-moonflower") == 3 and not game.foraging_hold.active(), "retry retains items without hold")
+	_check(_gather_events() == 3, "N006 retry adds no gather event")
 	# Synthetic saved placements hydrate one physical rod with exact saved feet.
 	for fixture_kind: String in ["authored","alderwake","tollworks"]:
 		game._set_paused(true)
@@ -261,6 +270,9 @@ func _run() -> void:
 
 func _target(id: String) -> PrototypeInteractable:
 	return game.world_host.current_location.foraging_pickups.targets[id]
+
+func _gather_events() -> int:
+	return game.session.conversations.events().count(NpcEventMemory.GATHER,"moonflower",null)
 
 func _place(target: PrototypeInteractable) -> void:
 	for direction: Vector3 in [Vector3.RIGHT,Vector3.LEFT,Vector3.FORWARD,Vector3.BACK]:

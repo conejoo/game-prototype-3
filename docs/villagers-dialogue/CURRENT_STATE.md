@@ -6,23 +6,81 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N005 Done; N006-N018 Pending. No active task. N005 accepted and stopped.
-Target began clean at 2efc420902f2e6a68825dfbfb6827a25f762d89f (N004 commit);
-source remains clean/pinned at 60c20eb2816e7271fb84afaba286af006ebe3ccf. No user edits
-at selection. N005 implementation was accepted without committing, as originally
-requested. The later authorized N005 commit follow-up is recorded below; no push.
+N001-N006 Done; N007-N018 Pending. No active task. Exactly N006 accepted and stopped.
+Target selection was clean at8b9da9cdcbbbf3a00f88934a042139409a9ffbc4 (N005 commit);
+source remains clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf. No user edits
+at selection. N006 implementation was accepted without committing, as requested.
+The later authorized N006 commit follow-up is recorded below; no push.
 
-Next eligible N006. Next action: recheck target/source Git state and N005 acceptance,
-read N001 placement inventory/current WorldHost/navigation/interaction/foraging
-owners, mark N006 In progress, then implement only scene-owned contact registry,
-safe identity/lifecycle binding and actual crossing/committed-gather event adapters.
-Villager activation remains controlled by N008-N015. Retain the one current cursor,
-deferred gifts/routines, strict schema7/manual save boundaries and pinned geometry.
-N007 independently ready; no ART/native package claim yet. Do not continue without
-a fresh one-task invocation. Do not invent tasks beyond N018.
+Next eligible N007. Next action: inspect target/source state and actual N001/N002
+references, read the existing static asset pipeline and current Blender/animation
+instructions, mark N007 In progress, then implement only its exported rig/animation/
+presenter pipeline and required Godot visual acceptance. N008 still requires N007.
+NpcRegistry.ENABLED remains empty; N008-N015 own ordinary character activation.
+Do not begin N007 without a fresh one-task invocation or invent tasks beyond N018.
 
-Remaining unfinished IDs: N006, N007, N008, N009, N010, N011, N012, N013, N014,
+Remaining unfinished IDs: N007, N008, N009, N010, N011, N012, N013, N014,
 N015, N016, N017, N018. All checklist items through N018 are not complete.
+
+## N006 result and durable evidence
+
+[N006 acceptance](N006_ACCEPTANCE.md) records every criterion, commands, isolation,
+actual interfaces, failed attempts and limits. NpcRegistry pins all eight measured
+N001 contacts. NpcWorldAdapter supplies scene-owned noncombatant wrappers/capsules/
+navigation reservations with replaceable empty VisualRoots; Maris reuses her counter.
+WorldHost prepares/validates contacts before publishing arrival, including foreign
+item-placement probes. Exact npc_id/instance identity routes through the one dialogue
+owner. Production activation is empty; synthetic acceptance enables all eight only.
+
+NpcWorldEvents owns weak-session woods-union membership. Root observes actual feet;
+arrival/load/retry/rollback seed membership without counting. Committed authored flower
+gather stages and atomically publishes its exact event with inventory/origin facts
+before observers; failed/canceled/full/replayed actions and rod operations do not.
+Dialogue choices retain exact atomic person/choice events. Location exit disconnects
+old foraging owner; rollback reconnects one listener. Fixed contacts have no schedule.
+
+Expanded shared runner import/parse/new world plus required map navigation/activation/
+travel/companion/foraging/light and affected NPC rule/save/item/dialogue/startup suites,
+independent NPC writer/reader: all18 cases PASS/exit0, zero forbidden diagnostics,
+timeouts or source changes. Evidence docs/evidence/N006/20261008-100827014-f14056aa/;
+780 game/tools files stable at3697f69612c157dcb95ad24aaab46f27a1614024f0601b0af54e76cd7b7679a3.
+Writer PID29796/reader PID53696 retain complete old/new-state restart proof.
+
+Final test-only extension adds all-eight existing light/resource arbitration and
+explicit viewport gather event assertions. All4 cases PASS/exit0:
+docs/evidence/N006/20261008-101212326-dd2a2f3c/. World10,253 assertions/10,131 route
+samples; foraging130 assertions. Production bytes identical to expanded run;
+780-file fingerprint b212ef8d97d2d0078bff35723489a0654154d7aaa06b5e79d82b9e1f98a52676.
+Fresh matching builds/testing/N006 run directories isolate appdata/localappdata/slots.
+Normal saves untouched. Source converter PASS all132 authority hashes/67 outputs;
+catalog9490a7a2ca4e4cb926c9919c52be1a53f47cc0699a44059723b17d814068f9d9 unchanged.
+Schema7/content1, pinned geometry, source/art/deferred capabilities remain intact.
+
+Results/logs/JSON inspected; full capsules, flat contact footprints, actual ramp route
+support, physical short crossing, choices, gather publication, exact manual load,
+travel/retry/disposal/unsafe NPC rollback all pass. These are synthetic activation/
+placement/headless viewport fixtures, not ordinary character/art/native proof.
+Retained failed preflight/import/freed-reference/ramp/stack fixtures are documented.
+Auto-review approved isolated engine execution after sandbox observation denial;
+no approval blocker. Final scope/link/source/byte/process audit retained in latest run.
+All owned checks exited; no editor/cleanup, unrun N006 criterion, blocker or commit.
+
+## N006 commit follow-up
+
+The user authorized committing the successfully completed N006 task under the
+approved successful-task commit policy. Scope is the previously audited 20 paths:
+NPC registry/wrappers/events, narrow runtime hooks, checks and UIDs, tracked acceptance
+summary, checklist/contract/current state and README/architecture discovery.
+The 780 runtime/tool files still match the final passing manifest; all 18 expanded
+and 4 final cases retain their results. Only this documentation follow-up changes
+accepted task bytes, so no gameplay test rerun is needed.
+
+Raw evidence, captures/logs and builds remain ignored under repository policy.
+N006_ACCEPTANCE.md supplies committed criteria, commands and local evidence paths.
+Pre-commit byte/scope/staging and post-commit identity/tree verification are recorded
+in the latest local N006 evidence directory. The resulting commit identity is
+available in Git history and the follow-up report. No unrelated work, push or N007
+implementation is included.
 
 ## N005 result and durable evidence
 

@@ -175,6 +175,8 @@ func _process(delta: float) -> void:
 		(world_host.current_location as AlderwakeTerrainPreview).tree_art.update_visibility(camera_rig.camera, player_placeholder, companion)
 	if not get_tree().paused and not world_host.transitioning and not loading_save and not retrying:
 		session.advance(delta)
+		if window_focused and player_placeholder.state.health > 0 and world_host.current_location != null:
+			world_host.current_location.npc_events.observe(session, world_host.current_location, player_placeholder.global_position, dialogue)
 		_present_environment()
 		ui.show_play_time(session.elapsed_play_seconds)
 		_refresh_interaction()
@@ -464,6 +466,10 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 			player_placeholder.combat_targets = [guardian]
 			_update_controls()
 		ui.show_travel("Travel failed: " + "; ".join(errors))
+	# A failed transition detached the old scene too; reconnect exactly one owner.
+	if world_host.current_location != null:
+		if not success: world_host.current_location.bind_foraging(session)
+		world_host.current_location.npc_events.bind(session, world_host.current_location, player_placeholder.global_position)
 
 
 func _present_environment() -> void:
@@ -588,7 +594,8 @@ func interact() -> NpcDialogueService.Result:
 			return NpcDialogueService.Result.new(false, "Invalid light source interaction.", "light")
 		var action: LightSwitchAction = target.light_action
 		return switch_light(weakref(target), session.environment.light_enabled(action.location_id, action.prop_id, action.source_id))
-	var result: NpcDialogueService.Result = dialogue.begin_graph(catalog.get_dialogue(target.dialogue_id), target.instance_id)
+	if not target.validation_errors(catalog).is_empty(): return NpcDialogueService.Result.new(false, "Invalid conversation contact.")
+	var result: NpcDialogueService.Result = dialogue.begin(target.npc_id, target.instance_id) if not target.npc_id.is_empty() else dialogue.begin_graph(catalog.get_dialogue(target.dialogue_id), target.instance_id)
 	_present_dialogue(result)
 	return result
 

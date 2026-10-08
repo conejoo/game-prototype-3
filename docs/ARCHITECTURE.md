@@ -951,3 +951,29 @@ runner cases,48 expressions/68 captures and source/diagnostic/isolation guards.
 Actual960x640/1350x900 modal renders inspected. Eight-person contact/expression/length
 fixtures are explicitly synthetic; ordinary villager scene activation/routes, 3D
 character assets and a new native release remain later N tasks. N006 next eligible.
+
+### Delivered scene-owned NPC contact and event infrastructure (N006)
+
+NpcRegistry pins all eight measured public contacts; its activation gate remains empty
+until N008-N015 deliver their characters. WorldHost prepares scene-owned NpcWorldAdapter
+wrappers/collision/navigation reservations before validation and proves physical actor/
+player support, approach reachability and LOS before arrival publication. Maris reuses
+her existing counter; villagers never join Party or combat. Gameplay identity lives
+outside replaceable empty VisualRoots. PrototypeInteractable.npc_id validates the exact
+wrapper instance, and root routes its live selected contact through the one dialogue
+owner. Unsafe staged contact placement preserves the prior scene/session/facts.
+
+Scene-owned weak-session NpcWorldEvents tracks the union of pinned woods-role zones.
+Stable world updates sample actual player feet; arrival/load/retry/rollback seed
+membership without recording. ForagingState stages only successful authored flower
+gather events and atomically publishes memory with inventory/origin state before
+observers. Choice events retain their existing atomic person/choice keys. Failed holds,
+capacity failures, replay, rod operations and reconstruction create no gather history.
+Exit disconnects old foraging ownership; rollback reconnects one listener. Contacts
+stay fixed, with no routines or save fields added; schema7/content1 is unchanged.
+
+[N006 acceptance](villagers-dialogue/N006_ACCEPTANCE.md) records all18 expanded and4
+final passing cases, all-eight synthetic physical contacts/10,131 path samples,
+existing lamp/resource arbitration, actual viewport gather event assertions, exact
+manual restore and separate-process restart. Character activation/art/ordinary routes
+and new native packaging retain their later gates. N007 is next eligible.

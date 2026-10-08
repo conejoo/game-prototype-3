@@ -6,6 +6,7 @@ extends Node3D
 @export_enum("talk", "inspect", "travel", "light", "gather", "pickup") var kind: String = "talk"
 @export var prompt: String = ""
 @export var dialogue_id: String = ""
+@export var npc_id: String = ""
 @export var light_action: LightSwitchAction
 @export var foraging_action: ForagingAction
 @export_range(0.5, 3.0) var reach: float = 1.7
@@ -21,6 +22,8 @@ func validation_errors(catalog: ContentCatalog) -> PackedStringArray:
 		errors.append("unknown interaction kind '%s'" % kind)
 	if not is_finite(reach) or reach < 0.5 or reach > 3.0:
 		errors.append("interaction reach must be 0.5..3m")
+	if not npc_id.is_empty() and (kind != "talk" or light_action != null or foraging_action != null):
+		errors.append("NPC dialogue cannot share another action")
 	if kind in ["gather", "pickup"]:
 		if foraging_action == null:
 			errors.append("foraging interaction requires typed action")
@@ -44,6 +47,10 @@ func validation_errors(catalog: ContentCatalog) -> PackedStringArray:
 			errors.append("light interaction cannot start dialogue")
 	elif light_action != null:
 		errors.append("light action requires light interaction kind")
+	elif not npc_id.is_empty():
+		var entry: Dictionary = NpcRegistry.find(npc_id)
+		if kind != "talk" or entry.is_empty() or instance_id != entry.instance_id:
+			errors.append("NPC contact identity mismatch")
 	elif kind != "travel" and catalog.get_dialogue(dialogue_id) == null:
 		errors.append("missing interaction dialogue '%s'" % dialogue_id)
 	return errors
