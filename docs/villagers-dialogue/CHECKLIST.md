@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001 reference audit, N002 typed content, N003 dialogue rules, N004 persistence, N005 portrait conversation UI and N006 scene-owned contacts/events Done. N007-N018 remain Pending.
+N001 reference audit, N002 typed content, N003 dialogue rules, N004 persistence, N005 portrait conversation UI and N006 scene-owned contacts/events and N007 animated rig pipeline Done. N008-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -27,7 +27,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N004 | Done | N003 | Strict current-schema saves and persistent conversation/event memory. |
 | N005 | Done | N004 | Multi-node portrait dialogue and known-facts UI integrated with existing gameplay. |
 | N006 | Done | N005 | Safe scene-owned town contacts and real event adapters. |
-| N007 | Pending | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
+| N007 | Done | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
 | N008 | Pending | N006, N007 | Edric complete and reachable; first real villager vertical slice. |
 | N009 | Pending | N008 | Helena complete and reachable. |
 | N010 | Pending | N008 | Maris ordinary dialogue/character integrated with existing recovery counter. |
@@ -389,3 +389,32 @@ inspected. Full criterion/commands/interfaces/failure history in
 remaining N006 criterion or blocker. All owned checks exited; no editor/cleanup,
 commit/push, agents/chats/schedules or normal save access. Exactly N006 completed.
 Remaining N007-N018; next eligible N007. All through N018 are not complete. Stop.
+### N007 - 2026-10-08, UTC
+
+Result: editable generic16-bone/204-triangle calibration .blend/GLB, actual baked
+idle4s/walk.8s loops with packed texture, transactional VisualRoot presenter,
+labeled eight-rig review and explicit animated extension of static P012 pipeline.
+No named villager activation/art/action claim; NpcRegistry.ENABLED remains empty.
+
+Prerequisites N001/N002 pins and actual N006 wrappers inspected; target began clean
+at737c0cb45ff5abda47f9d0b6b0dd8f61950a6e33. Source remains clean/pinned at
+60c20eb2816e7271fb84afaba286af006ebe3ccf; converter132 hashes/67 outputs PASS.
+Source, schema7/content1, catalog/portraits, pinned geometry and existing runtime
+unchanged. Files/interfaces/commands/failures in [N007 acceptance](N007_ACCEPTANCE.md).
+
+Final shared runner version/parse/new pipeline/static asset/startup/render all6
+cases PASS/exit0,832 assertions including evidence write,25 actual960x640
+Compatibility captures inspected. Raw GLB/normalized editable-source audits PASS.
+Stable795 runtime/tool files, zero forbidden diagnostics/timeouts/source changes.
+Evidence docs/evidence/N007/20261008-103647902-04ca9996/; fresh matching isolated
+appdata/localappdata/named slots. Steady stance drift1.1920929e-7m; clip bounds,
+raw/imported loop endpoints, blends/holds, wrapper IDs/capsule and travel disposal
+verified. Exact eight-actor budgets/review timing documented; full-map proof N017.
+
+GLB SHA256bf0cd0135c4f9401b62496699690377981cb82e5ab5f74ea2c0ba49249b89eee;
+.blend SHA256b2d97e827bdd39ba676a9f332b7164aca6f3b69f63d4b3e941d5430843061d39.
+Failed metadata/offset/fixture/cropping attempts retained and repaired. No remaining
+N007 criterion/blocker or owned process. Preexisting Blender/source scene preserved;
+calibration scene remains available in memory. No normal saves, commit/push,
+agents/chats/schedules/installation/publication. Exactly N007 completed; stop.
+Remaining N008-N018; next eligible N008. All through N018 are not complete.

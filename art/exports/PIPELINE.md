@@ -69,3 +69,11 @@ re-export preserved wrapper/script/quest hashes, collision and quest effects;
 normal GUI save before export loaded in a fresh process after export. See
 `docs/evidence/P012/VALIDATION.md`. Gallery is visual inspection only; synthetic
 pipeline fixtures are not normal quest-completion evidence.
+
+## N007 animated NPC extension
+
+The static P012 settings above remain valid for those three assets. Animated NPCs
+use [NPC_PIPELINE.md](NPC_PIPELINE.md): baked skeleton keys, named imported loops,
+embedded textures, measured skin bounds, a replaceable VisualRoot presenter and
+a labeled eight-rig Godot review. Do not export NPCs with P012's animation-disabled
+settings. Generic calibration is pipeline evidence only; N008-N015 own named art.

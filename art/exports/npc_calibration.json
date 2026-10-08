@@ -1,0 +1,22 @@
+{
+  "blender": "5.2.2 LTS",
+  "bone_count": 16,
+  "triangles": 204,
+  "vertices": 136,
+  "materials": 3,
+  "texture_pixels": [
+    32,
+    32
+  ],
+  "walk_speed_mps": 0.8,
+  "walk_period_seconds": 0.8,
+  "idle_period_seconds": 4.0,
+  "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\npc_calibration.blend",
+  "glb": "D:\\development\\game-dev-blender\\returning-fair-prototype\\game\\assets\\models\\npcs\\npc_calibration.glb",
+  "glb_bytes": 84476,
+  "preserved_scene": "RF-RecoveryVessel",
+  "generic_calibration_only": true,
+  "glb_sha256": "bf0cd0135c4f9401b62496699690377981cb82e5ab5f74ea2c0ba49249b89eee",
+  "blend_sha256": "b2d97e827bdd39ba676a9f332b7164aca6f3b69f63d4b3e941d5430843061d39",
+  "export_anim_slide_to_zero": true
+}

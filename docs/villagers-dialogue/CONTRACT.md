@@ -352,3 +352,26 @@ rollback reconnect exactly one listener. All wrappers/membership stay transient.
 all-eight physical synthetic activation, 10,131 route samples, source choices, actual
 viewport gather assertions and exact lifecycle/restart proof. Ordinary character art/
 routes and native packaging retain later gates. N007 is next eligible.
+
+## N007 delivered animated visual boundary (2026-10-08)
+
+[NPC_PIPELINE](../../art/exports/NPC_PIPELINE.md) extends historical static exports;
+[N007 acceptance](N007_ACCEPTANCE.md) owns complete measurements/commands/evidence.
+Generic16-bone checker calibration has an editable .blend, embedded-texture GLB,
+baked idle/walk clips, identity meter/ground transforms and inspected Compatibility
+captures. It is not a completed named character. NpcRegistry.ENABLED stays empty.
+
+NpcVisualPresenter.mount validates before replacing an accepted model. Actual
+achieved speed selects/rates exported loops; facing rotates only visuals. Separate
+reason holds suspend/resume animation without moving wrappers or serializing pose.
+Wrapper owns stable IDs/collision/navigation and scene disposal. Named tasks must
+connect actual lifecycle owners, enforce person-specific clip/texture bounds and
+prove ordinary access. Calibration walk stays review-only. No semantic action,
+routine, gift, reward or current-save-format change is introduced.
+
+Shared caps: <=12,000 exported triangles,32 bones,3 material surfaces per person;
+eight-person estimate96,000 triangles/256 bones/24 main surface draws. One1024²
+RGBA atlas/person estimates32MiB before mips; count extra maps/shadow passes as
+documented. N007 measures an actual eight-calibration scene, not maximum-cost map
+performance. N017 owns integrated final crowd regression. N016 owns source-mapped
+action_river_fishing/action_archive_work; neither clip exists in calibration.

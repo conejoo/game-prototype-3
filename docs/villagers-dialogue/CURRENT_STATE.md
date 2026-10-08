@@ -6,21 +6,84 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N006 Done; N007-N018 Pending. No active task. Exactly N006 accepted and stopped.
-Target selection was clean at8b9da9cdcbbbf3a00f88934a042139409a9ffbc4 (N005 commit);
+N001-N007 Done; N008-N018 Pending. No active task. Exactly N007 accepted and stopped.
+Target began clean at737c0cb45ff5abda47f9d0b6b0dd8f61950a6e33 (N006 commit);
 source remains clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf. No user edits
-at selection. N006 implementation was accepted without committing, as requested.
-The later authorized N006 commit follow-up is recorded below; no push.
+at selection. N007 was accepted without a commit during implementation. The later
+authorized successful-task commit follow-up is recorded below; no push.
 
-Next eligible N007. Next action: inspect target/source state and actual N001/N002
-references, read the existing static asset pipeline and current Blender/animation
-instructions, mark N007 In progress, then implement only its exported rig/animation/
-presenter pipeline and required Godot visual acceptance. N008 still requires N007.
-NpcRegistry.ENABLED remains empty; N008-N015 own ordinary character activation.
-Do not begin N007 without a fresh one-task invocation or invent tasks beyond N018.
+Next eligible N008. Next action: inspect current target/source state and verified
+N006/N007 evidence, then implement only Edric's first complete named character/
+ordinary dialogue vertical slice using the pinned source and shared animated pipeline.
+River-fishing action stays N016. N008 still requires its own full common acceptance.
+NpcRegistry.ENABLED remains empty; generic calibration does not activate a villager.
+Do not start N008 without a fresh one-task invocation or invent tasks beyond N018.
 
-Remaining unfinished IDs: N007, N008, N009, N010, N011, N012, N013, N014,
+Remaining unfinished IDs: N008, N009, N010, N011, N012, N013, N014,
 N015, N016, N017, N018. All checklist items through N018 are not complete.
+
+## N007 result and durable evidence
+
+[N007 acceptance](N007_ACCEPTANCE.md) records every criterion, commands, isolation,
+source/asset hashes, failed attempts, actual inspection and limits. New
+[NPC_PIPELINE](../../art/exports/NPC_PIPELINE.md) extends historical static art rules.
+Editable generic checker mannequin/GLB has16 deform bones/204 triangles/3 surfaces,
+packed32x32 texture and baked exported idle4s/walk.8s clips. Root meter/foot/axis
+transforms are identity. Named character art/actions remain later tasks.
+
+NpcVisualPresenter mounts transactionally under VisualRoot, selects exported clips
+from actual achieved speed, rotates visuals only and uses independent suspension
+holds. Existing wrapper owns identity/physics/navigation. Shared checks sample the
+actual imported skin at120Hz, endpoints, stance motion and transitions; no runtime
+scripts/drivers/collision/studio nodes or external texture URIs in GLB. No existing
+game/tools implementation, schema7/content1, content or geometry changed.
+
+Final shared runner six cases PASS/exit0,832 pipeline assertions including evidence
+write,25 actual960x640 Compatibility captures (day/night loops, close/profile,
+default overhead scale, blends and pause). All logs/results/manifests inspected,
+zero forbidden diagnostics/timeouts/source changes. Evidence:
+docs/evidence/N007/20261008-103647902-04ca9996/. Stable795 game/tools files at
+b757aae1e0c578535697173b82f4719dad25b6f7c5ca5d36630d3a52a03a3f21.
+Fresh matching builds/testing isolation/per-case slots; normal saves untouched.
+
+Raw GLB and normalized mainfile audits PASS. GLB84,476 bytes/SHA256
+bf0cd0135c4f9401b62496699690377981cb82e5ab5f74ea2c0ba49249b89eee;
+.blend SHA256b2d97e827bdd39ba676a9f332b7164aca6f3b69f63d4b3e941d5430843061d39.
+Read-only converter132 authority hashes/67 outputs and clean source confirmed.
+Steady .8m/s stance drift1.1920929e-7m, no ground penetration; transition120Hz
+max vertex step.012539962m. Eight-rig median4.157ms/p954.338ms is a review timing
+estimate, not full-map performance certification. Budget caps/limits in pipeline.
+
+Viewed full-size renders and all loop/transition sheets; profile cropping repaired.
+Retained import metadata/source-guard failures and initial time-origin/fixture errors
+are documented. Auto-review approved isolated engine execution after sandbox
+observation denial; no current permission blocker or required unrun N007 check.
+No ordinary named art/route/weather/native package claim. Calibration walk review-only.
+
+All owned engine/helper/background processes exited. Existing Blender remains open
+on RF-RecoveryVessel with an owned RF-NpcCalibration scene available in memory;
+original source file untouched, no user-editor cleanup owed. No commit/push,
+agents/chats/schedules/installation/publication or blocker. Exactly N007 completed.
+
+## N007 commit follow-up
+
+The user authorized committing the successfully completed N007 task under the
+successful-task commit policy. Scope is the audited27 N007 paths: editable source
+and authoring/audit helpers, animated pipeline/material metadata, GLB/texture/import
+records, presenter, checks/review/probe and UIDs, acceptance/checklist/contract/
+current state. No other changes were present at the commit follow-up preflight.
+
+All795 runtime/tool files still match the final passing manifest; all six cases,
+832 assertions and25 viewed captures retain their results. Raw GLB and source hashes
+were independently rechecked. Only this documentation follow-up changes accepted
+bytes; no gameplay change or redundant runtime test rerun is needed.
+
+Raw runs, captures/logs and builds remain ignored under repository evidence policy.
+N007_ACCEPTANCE.md is the tracked acceptance evidence with exact local run paths.
+Pre-commit scope/staging and post-commit identity/tree/status verification are
+recorded in the latest local N007 evidence directory. The resulting commit identity
+is available in Git history and the follow-up report. No push, unrelated work or
+N008 implementation is included.
 
 ## N006 result and durable evidence
 
