@@ -7,6 +7,8 @@ var presenters: Dictionary[String, NpcVisualPresenter] = {}
 func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStringArray:
 	if not targets.is_empty(): return PackedStringArray(["NPC contacts already built"])
 	if location.location_id != NpcRegistry.LOCATION: return []
+	if not enabled.is_empty() and not location is AlderwakeExterior:
+		return PackedStringArray(["NPC contacts require the pinned Alderwake exterior"])
 	var seen: PackedStringArray = []
 	for id: String in enabled:
 		if NpcRegistry.find(id).is_empty() or id in seen: return PackedStringArray(["Unknown or duplicate NPC contact"])

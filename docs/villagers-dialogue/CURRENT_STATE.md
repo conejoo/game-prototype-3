@@ -6,19 +6,108 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N016 Done; N017-N018 Pending. No active task. Exactly N016 completed.
-Target began clean at `dae77459e99e90e149689e24a1452e7cfe42cd8e`; source remains
-clean/pinned at `60c20eb2816e7271fb84afaba286af006ebe3ccf`. No unrelated work.
-Successful N016 commit authorized by follow-up; verified identity is available
-in Git history and the follow-up report. No push.
-Next eligible N017: inspect actual N010-N016 acceptance and current artifacts,
-then execute its fresh integrated ordinary all-eight route, persistence/recovery
-and existing-game regressions. N018 awaits N017. Do not invent tasks beyond N018.
-Remaining N017,N018; all through N018 incomplete. No N016 blocker, unrun
-criterion or cleanup. All owned engines/helpers exited. Original live Blender
-RF-RecoveryVessel scene/file and ordinary sources preserved; owned action and
-before-grip-refine scenes retained. Accepted normal action mainfiles are on disk.
-Stop now; do not start N017 during this invocation.
+N001-N017 Done; N018 Pending. Exactly N017 completed on 2026-10-08 UTC.
+Next eligible task is N018: inspect actual export presets/templates/native
+input tooling, create fresh separate Windows packages, then native all-eight
+writer/restart acceptance. Do not claim that gate from N017 development runs.
+No N018 implementation started. Successful N017 commit authorized by follow-up;
+verified identity is available in Git history and the follow-up report. No push.
+Target began clean at `dd82a3aa90317db41ec2191cf6a1af5e9b51eada`; read-only source
+remains clean/pinned at `60c20eb2816e7271fb84afaba286af006ebe3ccf`.
+No unrelated existing work. Task scope verified before the authorized commit.
+
+## N017 result and durable evidence
+
+[N017 acceptance](N017_ACCEPTANCE.md) maps every selected criterion, command,
+source manifest, retained failure/repair, placement/deferred policy and inspected
+capture. Exactly the existing eight public contacts;58 enabled source nodes/
+38 choices fully exercised through actual production WASD/E/GUI in independent
+fresh friendly/careful and neutral/passing runs,21 ordinary facts, once-only
+independent memories. All old durable fields and other people's state stay
+unchanged by introductions. Woods first/repeat, committed Moonflower hints,
+main bridge/Tollworks guardian/vessel/return ford/full Maris fitting/reconnect
+and specialist presentation pass. Honest prototype/temporary companion labels.
+
+Ordinary writerPID26980 GUI Save, normal exit, new empty readerPID22624 GUI Load
+and whole full-precision typed old/new-state/forecast oracle pass. All eight
+physical reopens preserve their memories and per-conversation event state;
+actual walks can create new woods entries. Exactly six recovery effects/eight
+contacts/two party wrappers after travel/reload, with no replayed reward. Separate
+fresh neutralPID60076 covers all alternative introductions/public paths.
+
+Accepted ordinary write/read/neutral/survey `docs/evidence/N017/20261008-171412290-7c5b095c/`
+6/6 cases,651/70/603/27 assertions and112/10/101/24 captures; rendered UI
+`172032949-abbe5440`3/3 cases,452 assertions/48 expressions/68 captures; isolated
+idle ABBA profile `172105064-77204813`3/3 cases,34 assertions/12 rows/1 capture.
+All316 final captures viewed in27 strict contact sheets plus full-size long-text,
+ordinary facts, recovery/load and weather samples. Actual UI sizes960x640 and
+1350x900 (requested1440 constrained by desktop). Night lighting remains darker
+at existing default scale; source portraits readable and unaffected.
+
+Final focused `20261008-172332070-b7c9be6e`14/14 cases Pass: owning116 assertions,
+companion/map-save/foraging-save repaired fixtures and NPC/quest/foraging/save
+writer/read OS process pairs. Foraging-save111 assertions, process80/83.
+All879 final game/tool files stable SHA256
+c7383c75da0c85011c62af68d751f853c44826f56416099857bacc5cf9764b8a.
+Ordinary/UI/profile observed4f7e8e46aa165315014d166e3bc497e0f018bf3303083a2851880cea4c76ada9;
+only later changes are unconsumed foraging-process fixture and analysis-only
+capture helper. Exact final-source-reuse-audit proves all selected ordinary
+parse dependencies/432 production assets/shared runner unchanged. No unaffected
+ordinary replay required. Broad164847232-305538a5 remains failed overall for
+foraging timeout,47 individual cases passed; unchanged suites reused individually,
+changed fixtures rerun. All46 required existing headless suites now have passing
+evidence; no failed result relabeled. No forbidden diagnostic/source change/
+timeout in accepted groups. Per-case/group isolated APPDATA/LOCALAPPDATA/slots;
+normal user saves never opened. Required process-observation escalation approved.
+
+Controlled current-map navigation baseline/crowd13 endpoints,100 post-warmup
+queries each. Baseline maximump95=1.193ms/crowd1.190ms,5ms bound; maximum detour
+3.376324m within2m-or10% bound. Idle frame paired baseline/crowd worstp95:
+civic6.943/7.539ms, dock11.933/11.590ms, bridge12.984/11.170ms; worst crowdp99
+14.327ms/draw444, established25ms/500 budgets. Civic+0.596ms cost disclosed;
+no threshold performance regression. Synthetic profiling/physical/death fixtures
+remain separate from ordinary-input proof; no native release claim.
+
+Owned implementation: new npc_integration_checks/render plus UIDs and strict
+check_integration_evidence Python helper. Only production change is preflight
+rejection of enabled contacts on non-AlderwakeExterior geometry before mutation.
+Compact companion/map/foraging negative fixtures explicitly disable contacts
+only for synthetic navigation/rollback room; foraging-save conditionally awaits
+accepted requests, avoiding a missing-signal hang. Foraging-process fixture
+allows inert current-room NPC selection at arrival while strengthening zero
+movement/control/dialogue checks. No catalog/art/portrait/schema7/content1/
+placement/quest/companion/geography change. Discovery/contract/checklist/acceptance
+and durable-state docs updated; original source/Blender files and scenes intact.
+
+Explicit remaining boundaries:12 source nodes/16 choices/3 facts and8 gift rules
+deferred; no gifts/milestones/archive routines/ledger/interiors/services/rooms/
+booking/departure/fishing minigame/private campaign or autosave. Idle/facing
+ordinary; walk and N016 semantic action variants remain review-only. Della's
+public inn-entry adaptation is explicit, never an indoor coordinate transform.
+All placement/source IDs and exact coverage remain pinned in reference registry.
+
+Source converter132 authority inputs/67 outputs/48 portraits/18 sheets exact,
+catalog9490a7a2ca4e4cb926c9919c52be1a53f47cc0699a44059723b17d814068f9d9.
+Retained failures: sandbox observation denial/generatedUID invalidations;
+woods-order/duplicate frame names; initial2ms query gate; wrong compact geometry;
+source normalization midrun; combat elevated aim/too-close approach;150/180s
+foraging fixture timeouts; overbroad reader event equality; stale arrival-contact
+assumption; split-run capture-bound rejection. All repaired and evidence retained.
+No blocker/unrun N017 criterion/live owned engine/helper/cleanup remains.
+No package/native promotion, source/normal-save writes, Blender edits, agent/chat/
+schedule/external message, commit/push or successor implementation. Stop.
+
+## N017 authorized commit follow-up - 2026-10-08 UTC
+
+Successful N017 implementation, reusable checks, concise acceptance evidence,
+checklist and durable/discovery state committed under the user's follow-up
+instruction. Preflight verifies exactly16 owned paths, all879 accepted runtime/
+tool files and no unrelated/staged changes. Accepted production/test bytes and
+N task status rows remain unchanged. Raw logs/captures/isolated appdata remain
+ignored under existing policy; concise N017_ACCEPTANCE records their provenance.
+Final commit scope/tree/identity/status audit retained in final N017 evidence;
+verified commit identity is available in Git history and follow-up report.
+No push or N018 implementation. N018 remains Pending.
 
 ## N016 result and durable evidence
 

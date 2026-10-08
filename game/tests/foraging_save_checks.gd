@@ -115,9 +115,15 @@ func _lifecycle(good: Dictionary, world: Dictionary) -> void:
 	var definition: LocationDefinition = game.catalog.get_location("prototype-alderwake")
 	var old_path: String = definition.scene_path
 	definition.scene_path = "res://tests/fixtures/map_save_retry_failure.tscn"
-	_check(game.world_host.request_transition("prototype-alderwake","alderwake-start").is_empty(), "failed travel start")
-	var arrival: Array = await game.world_host.transition_finished
-	_check(not arrival[0] and game.session == live and game.world_host.current_location == room and SaveCodec.snapshot(live) == before, "failed travel preserves items")
+	# Compact negative fixture owns navigation failure, not production NPC binding.
+	var enabled_contacts: PackedStringArray = game.world_host.enabled_npcs.duplicate()
+	game.world_host.enabled_npcs = PackedStringArray()
+	var request_errors: PackedStringArray = game.world_host.request_transition("prototype-alderwake","alderwake-start")
+	_check(request_errors.is_empty(), "failed travel start")
+	if request_errors.is_empty():
+		var arrival: Array = await game.world_host.transition_finished
+		_check(not arrival[0] and game.session == live and game.world_host.current_location == room and SaveCodec.snapshot(live) == before, "failed travel preserves items")
+	game.world_host.enabled_npcs = enabled_contacts
 	definition.scene_path = old_path
 	game.player_placeholder.state.health = 0
 	await game.retry_encounter()

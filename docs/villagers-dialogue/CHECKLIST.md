@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001-N016 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline, all eight ordinary named character slices and two review-only semantic action variants. N017-N018 remain Pending.
+N001-N016 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline, all eight ordinary named character slices and two review-only semantic action variants. N017 Done; N018 Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -37,7 +37,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N014 | Done | N008 | Celia complete and reachable. |
 | N015 | Done | N008 | Della complete at documented public inn-entry adaptation. |
 | N016 | Done | N008, N009, N007 | Edric/Helena semantic action art exported and inspected. |
-| N017 | Pending | N010, N011, N012, N013, N014, N015, N016 | Fresh integrated eight-person route, persistence and existing-game regression proof. |
+| N017 | Done | N010, N011, N012, N013, N014, N015, N016 | Fresh integrated eight-person route, persistence and existing-game regression proof. |
 | N018 | Pending | N017 | Fresh Windows packages and native all-eight restart acceptance. |
 
 NPC tasks N009-N015 are independent after the first integration slice; no artificial chain between characters. They share catalogs/scenes, so this workflow still executes one at a time. N016 can proceed after Edric/Helena without waiting for the other people. Do not launch agents as a side effect of task selection.
@@ -900,3 +900,56 @@ ignored under existing policy. Runtime/art bytes and task status rows unchanged.
 Commit scope/tree/identity/status audits retained in the final local N016 run;
 verified commit identity is available in Git history and follow-up report.
 No push or N017 implementation; N017/N018 remain Pending.
+
+
+### N017 - 2026-10-08 UTC
+
+Exactly N017 completed. Fresh production all-eight friendly/careful and separate
+neutral/passing WASD/E/GUI routes cover all58 enabled nodes/38 choices/21 public
+facts, first/repeat woods and real Moonflower hints. Ordinary main bridge,
+Tollworks guardian/vessel, ford return and Maris fitting/reconnect complete;
+exactly six recovery effects/eight contacts/two party wrappers. WriterPID26980
+GUI Save/normal quit/new readerPID22624 GUI Load preserves entire full-precision
+typed durable state/forecast, with all-eight remembered reopens/reward isolation.
+NeutralPID60076 independent fresh alternatives. No synthetic route substitution.
+
+Owning integration116 assertions; final172332070-b7c9be6e14/14 focused cases
+including compact fixture repairs and NPC/quest/foraging/save process pairs;
+ordinary171412290-7c5b095c6/6 cases651/70/603/27 assertions, UI172032949-abbe5440
+3/3 with452 assertions/48 portraits, profile172105064-77204813 3/3 with34.
+All316 captures viewed in27 sheets and representative full frames. Controlled
+current-map ABBA crowdp95<=11.590ms,p99<=14.327ms,draw444; civic delta+0.596ms
+within disclosed paired gate. Navigation baseline/crowd maxp95=1.193/1.190ms,
+all13 endpoints reachable. No threshold performance regression.
+
+All46 selected existing headless suites have passing evidence; broad47 individual
+cases passed but overall retained failed for foraging timeout. Changed fixtures
+rerun; exact source audit proves all432 production/asset/shared-runner bytes
+unchanged. Final879-file hashc7383c75da0c85011c62af68d751f853c44826f56416099857bacc5cf9764b8a;
+ordinary/UI/profile dependencies unchanged after final unconsumed test/analysis
+repairs. Accepted groups no forbidden diagnostics/timeouts/source changes.
+Fresh isolated APPDATA/LOCALAPPDATA/slots; source132 inputs/67 outputs exact and
+clean/pinned60c20eb2816e7271fb84afaba286af006ebe3ccf. Target began clean at
+dd82a3aa90317db41ec2191cf6a1af5e9b51eada. Normal saves untouched.
+
+Production geometry guard, four existing compact/process fixture repairs,
+reusable integration scripts/UIDs/capture audit and scoped durable/discovery docs.
+No art/content/placement/save-format/story expansion. Deferred12 nodes/16 choices/
+3 facts/8 gift rules explicit; Della exterior adaptation, idle runtime and
+review-only walk/semantic actions retained. Full criteria/commands/inspection/
+source-reuse/retained failures in [N017 acceptance](N017_ACCEPTANCE.md).
+All owned engines/helpers exited; original Blender/source unchanged. No blocker,
+unrun criterion, cleanup, commit/push or successor work. Remaining N018 only;
+N018 next eligible. All checklist items through N018 are not complete. Stop.
+
+
+### N017 authorized commit follow-up - 2026-10-08 UTC
+
+Successful-task commit authorized after N017 acceptance passed. Preflight verifies
+exactly16 task paths,879 accepted runtime/tool files and no unrelated/staged work.
+Commit scope includes integration guard/fixtures/checks, concise acceptance evidence,
+checklist and durable/discovery documentation. Accepted runtime/test bytes and task
+status rows remain exact. Raw runs/captures/isolated appdata stay ignored; final
+commit scope/tree/identity/status audits retained in final local N017 evidence.
+Verified identity is available in Git history and follow-up report. No push or
+N018 implementation. N018 remains Pending; all through N018 incomplete.

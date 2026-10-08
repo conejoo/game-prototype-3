@@ -572,3 +572,19 @@ ordinary original assets. No pose/action/hold enters saves or conversation memor
 Both actual variants are displayed in labeled interactive standalone review;
 synthetic source/skin/owner/render proof is separate from N017 ordinary integrated
 journey and N018 native packaging. All eight affected lifecycle regressions pass.
+
+
+## N017 integrated geometry and validation boundary (2026-10-08 UTC)
+
+Enabled production contact construction requires the pinned AlderwakeExterior
+geometry, not merely a scene claiming prototype-alderwake. NpcWorldAdapter
+rejects wrong geometry before any mutation; synthetic compact negative fixtures
+explicitly disable production contacts. At arrival an inert current-room NPC
+may be selected while paused; zero carried movement/control/modal/hold/drag input
+and current-room wrapper ownership remain the restore invariants.
+
+[N017 acceptance](N017_ACCEPTANCE.md) closes development all-eight/recovery/restart,
+public-path, lifecycle, visual and measured crowd/map gates. Authored new woods
+entries during post-load walking are separate from exact state preservation at
+Load and inert per-conversation reopens. No schema/content/placement or deferred
+capability expansion. N018 still owns fresh packages and native-input proof.

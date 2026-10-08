@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration, N015 ordinary contacts/art for all eight requested villagers and N016 separate review-only semantic action variants.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration, N015 ordinary contacts/art for all eight requested villagers and N016 separate review-only semantic action variants and N017 integrated all-eight/recovery/restart acceptance.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -1057,3 +1057,30 @@ records ordinary town-to-inn input, exact separate-process GUI restart, physical
 portal-pad checks and inspected day/night/rain/loop art. N016 next eligible;
 semantic actions, integrated all-eight route and fresh native delivery remain
 N016-N018. Prior release history remains intact.
+
+
+## N017 integrated all-eight acceptance (2026-10-08 UTC)
+
+Production contacts share the existing root/session/dialogue/save owners. Fresh
+ordinary independent introduction branches exercise58 source nodes/38 choices,
+21 public facts and remembered reopens; physical woods/gather/main bridge/ford,
+Tollworks guardian/vessel and full Maris reconnect remain legal. GUI Save and a
+new process GUI Load compare the exact complete typed durable snapshot and
+forecast before actual revisits. Per-conversation event snapshots remain inert;
+real walking can create new woods events. No duplicate wrapper/quest reward.
+
+NpcWorldAdapter rejects enabled contact construction unless the claimed
+Alderwake location has pinned AlderwakeExterior geometry, before mutation.
+Compact negative navigation/companion fixtures explicitly opt out of production
+contacts; process restore fixtures allow an inert current-room NPC selection at
+arrival while retaining zero world input. Those are fixture policies, not new
+runtime travel/save behavior. New integration checks/render and strict capture
+coverage audit are reusable; selected old production assets/runner unchanged.
+
+[N017 acceptance](villagers-dialogue/N017_ACCEPTANCE.md) records exact source
+reuse, required NPC/existing regressions/process pairs,316 inspected captures,
+disclosed ABBA idle crowd cost and navigation baseline comparisons. Deferred
+capabilities/placement adaptations remain explicit; schema7/content1/manual
+Save/Load, fixed geography and temporary companion unchanged. Idle/facing
+ordinary; walk and semantic action variants review-only. N018 remains the fresh
+Windows/native delivery gate; previous release history stays intact.

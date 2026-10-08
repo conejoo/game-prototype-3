@@ -22,6 +22,8 @@ func _run() -> void:
 		else:
 			manifest.definitions.append(definition)
 	game.content_manifest = manifest
+	# This isolated P009 compact obstacle fixture has no production town contacts.
+	game.get_node("WorldHost").enabled_npcs = PackedStringArray()
 	root.add_child(game)
 	await game.world_host.transition_finished
 	var ally: ActorPlaceholder = game.companion

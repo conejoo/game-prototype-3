@@ -218,10 +218,14 @@ func _retries() -> void:
 	var definition: LocationDefinition = game.catalog.get_location("prototype-alderwake")
 	var original_path: String = definition.scene_path
 	definition.scene_path = "res://tests/fixtures/map_save_retry_failure.tscn"
+	# Isolate the original compact navigation failure from production NPC binding.
+	var enabled_contacts: PackedStringArray = game.world_host.enabled_npcs.duplicate()
+	game.world_host.enabled_npcs = PackedStringArray()
 	game.player_placeholder.state.health = 0
 	game.companion.state.health = 13
 	var points: Array = _positions()
 	await game.retry_encounter() # Expected logged rejection; no healing on failure.
+	game.world_host.enabled_npcs = enabled_contacts
 	definition.scene_path = original_path
 	game._set_paused(true)
 	_check(game.world_host.current_location == original and game.player_placeholder.state.health == 0 and game.companion.state.health == 13 and _positions() == points,"Rejected retry healed/replaced party")

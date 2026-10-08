@@ -48,7 +48,10 @@ func _run() -> void:
 		_check(game.world_host.session == game.session and game.quests.session == game.session and game.relationships.session == game.session and game.progression.session == game.session, "service rebinding " + kind)
 		_check(game.player_placeholder.state == game.session.actors[GameSession.PLAYER_INSTANCE_ID] and game.companion.state == game.session.actors[GameSession.COMPANION_INSTANCE_ID], "actor rebinding " + kind)
 		_check(game.session.inventory.revision() == 0 and game.session.foraging.revision() == 1 and game.session.foraging.rod_count() == 1, "fresh inventory revision plus one live placement capability/conservation " + kind)
-		_check(game.player_placeholder.velocity.is_zero_approx() and not game.player_placeholder.controls_enabled and game.selected_interaction == null and not game.loading_save, "no carried world input " + kind)
+		_check(game.player_placeholder.velocity.is_zero_approx() and game.player_placeholder.movement_buttons.is_empty() and not game.player_placeholder.controls_enabled and not game.loading_save and not game.dialogue.active(), "no carried world input " + kind)
+		# Production civic contacts can be selected at the arrival anchor while
+		# paused. Selection is transient and inert, and must belong to this room.
+		_check(game.selected_interaction == null or game.selected_interaction in game.world_host.current_location.npc_contacts.targets.values(), "arrival selection belongs to current NPC room " + kind)
 		_check(game.session.foraging.get_signal_connection_list("committed").size() == 1, "one current scene listener " + kind)
 		_check_physical_wrappers(game)
 		var facts: Dictionary = game.world_host.current_location.foraging_facts()
