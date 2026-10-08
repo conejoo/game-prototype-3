@@ -60,6 +60,71 @@ python tools/tests/capture_evidence_checks.py
 ./tools/run_checks.ps1 -Task TESTING -RenderOnly -RenderScript testing_capture_render -RenderPhases check
 ```
 
+## Ordinary movement and navigation readiness
+
+```gdscript
+var journey: Dictionary = await TestRunJourney.walk(game, Vector3(107.25,0,0), "gate-approach")
+traces.append(journey) # Keep failed journeys too.
+if not journey.ok:
+	_check(false, journey.error)
+	return
+```
+
+`game` is the current GameRoot. The helper sends viewport WASD press/release events,
+selecting chords from the current camera's `movement_direction` every physics frame.
+It never places the actor, changes navigation, clears focus, resumes play, or bypasses
+input gates. It requires resumed/focused ordinary movement, no modal/hold/drag and
+released movement keys; failures return `ok=false,reason,error`. It owns only keys
+it pressed and releases them on every post-input success/failure path.
+If pause/removal prevents key-up delivery, teardown also removes only its owned
+transient accepted movement actions; it never clears unrelated input.
+
+Before walking, it waits for an active world map, the current enabled region owning
+the start query, and usable short local route queries across a stable server
+iteration. Ownership alone can precede usable path queries; zero-length self-routes
+can legitimately be empty. It verifies both the route start
+and requested endpoint before sending input; an unreachable requested destination
+is reported with its actual path endpoint, never silently snapped. Default arrival
+tolerances are 0.16m horizontally and 0.3m vertically for navigation floor rounding.
+Use an authored reachable approach, not a point beyond a gate's navigation boundary.
+
+The physics budget derives from path length/current actor speed, allowing steering
+overhead. A separate wall budget bounds slow runs. Defaults cap at 12,000 physics
+frames/180,000ms; a two-second physics-time watchdog detects absence of route progress.
+The optional fourth argument can tighten `max_frames`, `max_ms`, `stall_seconds`,
+`goal_tolerance`, `height_tolerance`, `navigation_frames` or `navigation_ms`; unknown,
+nonfinite, fractional integer limits and values above defaults fail. Set runner
+`-TimeoutSeconds` for the whole scenario, including all journeys and captures.
+
+Successful and failed movement traces retain path length/endpoint, budgets, frames,
+elapsed wall time, actual position/next waypoint, accepted movement keys, collision
+contacts, controls/focus and camera axes. Pre-input rejections retain the applicable
+route/readiness diagnostics. Consume failure immediately; do not continue acceptance
+actions at an unverified destination.
+
+For synthetic navigation fixtures, use the same readiness barrier independently:
+
+```gdscript
+var ready: Dictionary = await TestRunJourney.wait_navigation(location, anchor.global_position)
+_check(ready.ok, ready.error)
+```
+
+The region/mesh must already exist. The helper force-updates and checks exact region
+ownership plus local path publication rather than sleeping a fixed frame count. Missing/disabled/empty/replaced
+regions fail immediately; asynchronous registration has bounded 120-frame/3,000ms
+defaults (optional limits up to 600 frames/10,000ms). It does not bake geometry or
+prove destination reachability; `walk` separately checks the actual route endpoint.
+Production WorldHost arrival synchronization remains authoritative for travel.
+Keep synthetic map lifecycle fixtures in their own World3D. Disabling/re-enabling
+the full exterior region is not a production restoration contract; an owner query
+can succeed while its path queries remain unavailable. Dispose synthetic fixtures
+or use actual WorldHost arrival, and consume readiness failures instead of guessing
+another fixed sleep.
+
+Verify with `./tools/run_checks.ps1 -Task TESTING -Names testing_journey_checks`.
+That check labels synthetic negative fixtures separately from actual viewport
+movement; headless success does not establish native input or visual acceptance.
+
 ## Evidence output guard
 
 `TestRunEvidence.directory()` resolves `--report-dir`; `path(filename)` reserves a
@@ -138,6 +203,55 @@ Concurrent captures are refused. Evidence routing uses TestRunEvidence's guard.
 Metadata includes actual PNG dimensions, engine identity, camera/projection/zoom, location,
 position, saved snapshot and environment. Consume `ok/error`; never discard failure.
 
+For interactions that pause would cancel, use the separate live helper:
+
+```gdscript
+# Input and setup belong to the caller; these helpers only observe and capture.
+var held: Dictionary = await TestRunInteractionCapture.hold(game, "rod-hold", directory,
+	"debug-input", "Actual E held after ordinary WASD approach")
+_check(held.ok, held.get("error", "hold capture"))
+if held.ok: views.append(held)
+# After caller sends E release: final argument false verifies no hold/E/progress.
+var released: Dictionary = await TestRunInteractionCapture.hold(game, "rod-released", directory,
+	"debug-input", "Actual E release canceled hold", false)
+var bag: Dictionary = await TestRunInteractionCapture.backpack(game, "rod-selected", directory,
+	"debug-input", "Ordinary B/Enter selects owned rod")
+var drag: Dictionary = await TestRunInteractionCapture.drag(game, "rod-preview", directory,
+	"debug-input", "Ordinary pointer press/motion; mouse remains held")
+# Consume ok/error and append successful results for every call.
+```
+
+Helpers require a real renderer, resumed/focused game, hidden pause overlay and
+stable session/location/item facts. They check on entry, after each of four process
+frames and after `frame_post_draw`. Hold requires actual E ownership, current target,
+range/LOS/revision and visible progress; released hold requires no E/hold/progress.
+Backpack requires visible modal, focus inside it, disabled world controls and a panel
+fitting the settled viewport. Drag requires live pointer ownership, current target/
+revision, disabled world controls and a visible ghost mesh. Invalid red previews
+are valid capture subjects: their actual errors and nullable foot are recorded.
+
+Captures never send input, pause, stop processing, grant items, or change modal/focus.
+Time continues during settling. Start an active hold capture promptly; completion,
+cancellation, target disposal or input-mode change returns `ok=false,error` without
+writing a PNG. Correct the scenario and start a fresh attempt; do not lengthen the
+game's hold or weaken guards to obtain a picture. Use `synthetic` with an accurate
+note for fixture placement/presentation; viewport helpers cannot claim `native-input`.
+They share the pause helper's overlap lock and evidence path/no-overwrite guard.
+
+Results carry `mode` (`hold`, `hold-released`, `backpack`, `drag`), verified state,
+settled frame count, post-draw marker, start/end monotonic ticks, controls/focus,
+engine, camera, location, position, snapshot/environment and mode-specific observations.
+Put all results in `views`, or retain named `live_frames` (hold/released), `modal_views`
+(backpack), and `drag_views` (drag). The contact-sheet tool validates and includes
+every present array. Old paused `views` without `mode` remain supported; historical
+live captures without these verified metadata must be regenerated, not relabeled.
+
+Verify helper guards using:
+
+```powershell
+./tools/run_checks.ps1 -Task TESTING -RenderOnly -RenderScript testing_interaction_capture_render -RenderPhases check -ParseScripts tests/support/test_run_interaction_capture
+```
+
 ```powershell
 python tools/capture_evidence.py <run>/render/write-index.json <run>/render/read-index.json
 ```
@@ -145,8 +259,9 @@ python tools/capture_evidence.py <run>/render/write-index.json <run>/render/read
 Python validates all manifests/PNGs before creating uniquely named `derived/<UTC>-<GUID>`
 contact sheets and a capture-report with source hashes. Images must stay under their
 manifest run. Missing pause/provenance/projection/engine identity or mismatched pixel
-sizes fail. Source failures remain labeled and return failure after deriving review
+sizes or failed live-state/settling guards fail. Source failures remain labeled and return failure after deriving review
 sheets. Captions identify synthetic/debug/native provenance; native manifests need
-actual observed pause/projection metadata. This tool cannot infer normal gameplay
+actual observed pause/projection metadata. Live captions state their mode and actual
+pause flag; a live capture never certifies frozen time. This tool cannot infer normal gameplay
 or native hardware input from a PNG. Contact sheets aid review; inspect important
 full-resolution images with `view_image` and record findings in the task handoff.

@@ -32,6 +32,9 @@ past fixtures/chat are not an API contract. Movement is camera-relative through
 `camera_controls.move_right/move_back`, projection and zoom before planning holds;
 verify a short normal input batch before a longer route. Synthetic placement cannot
 prove normal movement.
+For scripted viewport journeys, use `TestRunJourney.walk` and consume its returned
+`ok/error`; the shared reference covers exact-region readiness and failure traces.
+Do not copy movement loops from historical scenario tests.
 
 Use `tools/run_checks.ps1` for import/headless/render runs: names and evidence routes
 preflight before launch, followed by a parse gate covering literal script/scene
@@ -111,6 +114,10 @@ After resumed travel/replay, assert intended persistent fields and monotonic tim
 separately; do not weaken the stable restart oracle to tolerate unexpected drift.
 Use TestRunCapture plus capture_evidence.py for pause/provenance manifests and unique
 contact sheets; capture preserves the current settings modal and focused control.
+Hold, backpack and drag evidence uses `TestRunInteractionCapture` instead: it verifies
+the live state while frames settle, without pausing or freezing time. Read the live
+capture recipes in [shared testing tools](references/testing-tools.md); consume refusals
+and never label an expired/canceled interaction as a successful active-state capture.
 Inspect actual PNGs before accepting visuals. The bridge environment
 observation reports clock/seed/forecast/overrides and live intensities without commands.
 Describe FPS samples by scenario, including pause/UI, rather than calling them a

@@ -143,18 +143,9 @@ func _click_point(point: Vector2) -> void:
 	for frame: int in range(4): await process_frame
 
 func _bag_capture(label: String,kind: String,note: String) -> void:
-	for frame: int in range(5): await process_frame
-	await RenderingServer.frame_post_draw
-	print("F006 modal capture ",label," paused=",paused," backpack=",game.backpack_open," viewport=",root.size)
-	var focus: Control = root.gui_get_focus_owner()
-	var verified: bool = game.backpack_open and game.ui.backpack.visible and not game.player_placeholder.controls_enabled and focus != null and game.ui.backpack.is_ancestor_of(focus)
-	_check(verified,"backpack checkpoint " + label)
-	_check(root.get_visible_rect().encloses(game.ui.backpack.panel.get_global_rect()),"rendered panel fits " + label)
-	if not verified: return
-	var path: String = TestRunEvidence.path(phase + "-" + label + ".png")
-	var picture: Image = root.get_texture().get_image()
-	_check(picture.save_png(path) == OK,"backpack PNG " + label)
-	modal_views.append({"label":label,"path":path,"kind":kind,"note":note,"paused":paused,"backpack_modal_verified":verified,"controls_enabled":game.player_placeholder.controls_enabled,"focus":str(focus.get_path()),"engine_pid":OS.get_process_id(),"engine":Engine.get_version_info()["string"],"window_size":[root.size.x,root.size.y],"viewport_size":[picture.get_width(),picture.get_height()],"camera":TestRunObservation.camera(game),"inventory":game.session.inventory.snapshot().to_dictionary(),"display_slot_ids":game.ui.backpack.slot_ids.duplicate(),"details":game.ui.backpack.details.text,"position":TestRunObservation.vector(game.player_placeholder.global_position)})
+	var result: Dictionary = await TestRunInteractionCapture.backpack(game,phase + "-" + label,directory,kind,note)
+	_check(result.ok,result.get("error","backpack capture " + label))
+	if result.ok: modal_views.append(result)
 
 func _capacity_views() -> void:
 	var before: String = TestRunSnapshot.exact_json(game.session.inventory.snapshot().to_dictionary())

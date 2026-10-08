@@ -1,5 +1,15 @@
 # Testing tools follow-up
 
+Separate2026-10-07 follow-up: [live interaction captures](TESTING_INTERACTION_CAPTURE_ACCEPTANCE.md)
+adds guarded hold/release, backpack and drag helpers, migrates the existing viewport
+scenarios, and includes their verified images in contact sheets. Pause guards remain
+unchanged. This testing work does not select F008.
+
+Separate2026-10-07 follow-up: [shared journey helper](TESTING_JOURNEY_ACCEPTANCE.md)
+extracts camera-relative viewport walking, bounded navigation/path readiness,
+endpoint validation and stall diagnostics from the F005 scenario. It is tooling
+work after F007; it does not select F008 or alter historical W task statuses.
+
 Completed 2026-10-04 (America/Vancouver), after W008 commit `b28dcea`, at the
 user's request. This improves testing infrastructure and guidance; no W009 work
 was selected. W001-W008 remain Done and W009 remains next.

@@ -34,12 +34,12 @@ func _run() -> void:
 			await _capture("placed-rod-before-travel")
 			await _resume()
 			var placed: Vector3 = game.session.foraging.placement(ForagingRegistry.DROP_ID).foot
-			if await _walk(Vector3(70,0,0),"rod-travel-midpoint") and await _walk(Vector3(107.25,0,0),"rod-travel-to-gate"):
+			if await _walk(Vector3(107.25,0,0),"rod-travel-to-gate"):
 				await _normal_gate("prototype-tollworks")
 				_check(game.world_host.current_location.foraging_pickups.targets.is_empty() and game.session.foraging.rod_count() == 1,"foreign placed rod persists once")
 				if await _walk(Vector3(0,0,-4),"rod-return-to-gate"):
 					await _normal_gate(ForagingRegistry.LOCATION)
-					if await _walk(Vector3(70,0,0),"rod-return-midpoint") and await _walk(Vector3(-6.5,0,15),"rod-after-travel-revisit"):
+					if await _walk(Vector3(-6.5,0,15),"rod-after-travel-revisit"):
 						var pickup: PrototypeInteractable = game.world_host.current_location.foraging_pickups.targets.get(ForagingRegistry.DROP_ID)
 						_check(pickup != null and pickup.global_position.is_equal_approx(placed) and game._reachable_rod(pickup),"normal travel/revisit rod remains reachable at exact foot")
 						await _pause()
@@ -71,7 +71,7 @@ func _run() -> void:
 			_check(game.session.foraging.is_collected(ForagingRegistry.ROD_ORIGIN) and game.session.inventory.count(ForagingRegistry.ROD_ITEM) == 0,"restored origin suppressed/world ownership")
 			await _capture("placed-rod-gui-load",true)
 			await _resume()
-			if await _walk(Vector3(70,0,0),"restored-rod-midpoint") and await _walk(Vector3(-6.5,0,15),"restored-placed-rod-revisit"):
+			if await _walk(Vector3(-6.5,0,15),"restored-placed-rod-revisit"):
 				await _normal_pickup()
 				_check(game.session.foraging.rod_count() == 1 and game.session.inventory.count(ForagingRegistry.ROD_ITEM) == 1 and not game.world_host.current_location.foraging_pickups.targets.has(ForagingRegistry.DROP_ID) and not game.world_host.current_location.foraging_pickups.targets.has(ForagingRegistry.ROD_ORIGIN),"physical pickup at restored committed position")
 				await _pause()
@@ -113,13 +113,9 @@ func _normal_drag(id: String,foot: Vector3,label: String,valid: bool) -> void:
 	var end_point: Vector2 = game.camera_rig.camera.unproject_position(foot)
 	_drag_motion(end_point)
 	_check(game.item_drag.errors.is_empty() == valid and _item_facts() == before,"detached preview validation " + label + str(game.item_drag.errors))
-	for frame: int in range(3): await process_frame
-	await RenderingServer.frame_post_draw
-	var path: String = TestRunEvidence.path(phase + "-" + label + ".png")
-	var picture: Image = root.get_texture().get_image()
-	_check(game.item_drag.active() and not paused and not game.player_placeholder.controls_enabled,"live drag capture checkpoint")
-	_check(picture.save_png(path) == OK,"drag PNG")
-	drag_views.append({"label":label,"path":path,"kind":"debug-input","note":"Ordinary pointer drag after normal WASD approach; actual unpaused preview; no durable setup","paused":paused,"drag_verified":game.item_drag.active(),"controls_enabled":game.player_placeholder.controls_enabled,"preview_errors":game.item_drag.errors.duplicate(),"preview_foot":TestRunObservation.vector(game.item_drag.preview_foot) if game.item_drag.preview_foot != null else null,"engine_pid":OS.get_process_id(),"engine":Engine.get_version_info()["string"],"viewport_size":[picture.get_width(),picture.get_height()],"camera":TestRunObservation.camera(game),"position":TestRunObservation.vector(game.player_placeholder.global_position)})
+	var captured: Dictionary = await TestRunInteractionCapture.drag(game,phase + "-" + label,directory,"debug-input","Ordinary pointer drag after normal WASD approach; actual unpaused preview; no durable setup")
+	_check(captured.ok,captured.get("error","drag capture"))
+	if captured.ok: drag_views.append(captured)
 	_drag_mouse(end_point,false)
 	_check(not game.item_drag.active() and game.session.foraging.rod_count() == 1,"release ends preview/conserves rod " + label)
 	if valid:

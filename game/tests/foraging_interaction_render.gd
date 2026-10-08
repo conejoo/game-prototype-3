@@ -102,43 +102,12 @@ func _run() -> void:
 	quit(0 if failures.is_empty() else 1)
 
 func _walk(goal: Vector3,label: String) -> bool:
-	_check(not paused and game.player_placeholder.controls_enabled,"walk mode " + label)
-	var start: Vector3 = game.player_placeholder.global_position
-	var path: PackedVector3Array = NavigationServer3D.map_get_path(game.world_host.get_world_3d().navigation_map,start,goal,true)
-	if path.size() < 2:
-		_check(false,"walk path missing " + label)
-		return false
-	var next: int = 1
-	var begun: int = Time.get_ticks_msec()
-	for frame: int in range(1800):
-		var position: Vector3 = game.player_placeholder.global_position
-		if Vector2(position.x-goal.x,position.z-goal.z).length() < .16:
-			_set_keys([])
-			for settle: int in range(3): await physics_frame
-			traces.append({"label":label,"start":TestRunObservation.vector(start),"goal":TestRunObservation.vector(goal),"actual":TestRunObservation.vector(game.player_placeholder.global_position),"elapsed_ms":Time.get_ticks_msec()-begun,"frames":frame})
-			print("F005 ordinary walk ",label," arrived ",game.player_placeholder.global_position)
-			return true
-		while next < path.size()-1 and Vector2(position.x-path[next].x,position.z-path[next].z).length() < .2: next += 1
-		var direction: Vector3 = (path[next]-position)
-		direction.y = 0
-		direction = direction.normalized()
-		var best_dot: float = -INF
-		var choice: Array[int] = []
-		for option: Dictionary in [
-			{"axes":Vector2(1,0),"keys":[KEY_D]}, {"axes":Vector2(-1,0),"keys":[KEY_A]},
-			{"axes":Vector2(0,-1),"keys":[KEY_W]}, {"axes":Vector2(0,1),"keys":[KEY_S]},
-			{"axes":Vector2(1,-1),"keys":[KEY_D,KEY_W]}, {"axes":Vector2(1,1),"keys":[KEY_D,KEY_S]},
-			{"axes":Vector2(-1,-1),"keys":[KEY_A,KEY_W]}, {"axes":Vector2(-1,1),"keys":[KEY_A,KEY_S]}]:
-			var dot: float = direction.dot(game.camera_rig.movement_direction(option.axes).normalized())
-			if dot > best_dot:
-				best_dot = dot
-				choice.assign(option.keys)
-		_set_keys(choice)
-		await physics_frame
-		if Time.get_ticks_msec()-begun > 40000: break
-	_set_keys([])
-	_check(false,"ordinary walk failed " + label + " actual=" + str(game.player_placeholder.global_position) + " next=" + str(path[next]))
-	return false
+	# Thin adapter keeps legacy scenario traces; movement belongs to shared support.
+	var result: Dictionary = await TestRunJourney.walk(game,goal,label)
+	traces.append(result)
+	_check(result.ok,result.error)
+	print("Ordinary walk ",label," ","arrived " + str(result.get("actual",[])) if result.ok else result.error)
+	return result.ok
 
 func _set_keys(next: Array[int]) -> void:
 	for code: int in keys:
@@ -165,14 +134,9 @@ func _capture(label: String,overlay: bool = false) -> void:
 	if result.ok: views.append(result)
 
 func _capture_live(label: String,expect_hold: bool) -> void:
-	# A paused capture would itself cancel hold. Record actual short live frame,
-	# separately from pause-provenance views; no pause guard is weakened.
-	await RenderingServer.frame_post_draw
-	_check(not paused and game.foraging_hold.active() == expect_hold,"live hold capture mode")
-	var path: String = TestRunEvidence.path(phase + "-" + label + ".png")
-	var image: Image = root.get_texture().get_image()
-	_check(image.save_png(path) == OK,"live capture PNG")
-	live_frames.append({"path":path,"label":label,"kind":"debug-input","paused":paused,"note":"Actual live E hold/release after ordinary walk; capture inherently cannot be paused", "engine":Engine.get_version_info()["string"],"engine_pid":OS.get_process_id(),"viewport_size":[image.get_width(),image.get_height()],"camera":TestRunObservation.camera(game),"position":TestRunObservation.vector(game.player_placeholder.global_position),"hold_active":game.foraging_hold.active(),"hold_progress":game.foraging_hold.progress(),"progress_visible":game.ui.gather_progress.visible,"inventory":game.session.inventory.snapshot().to_dictionary(),"ticks_msec":Time.get_ticks_msec()})
+	var result: Dictionary = await TestRunInteractionCapture.hold(game,phase + "-" + label,directory,"debug-input","Actual live E hold/release after ordinary walk; time continues during capture",expect_hold)
+	_check(result.ok,result.get("error","hold capture"))
+	if result.ok: live_frames.append(result)
 
 func _key(code: int,down: bool) -> void:
 	var event: InputEventKey = InputEventKey.new()

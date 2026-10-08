@@ -10,6 +10,14 @@ peaceful feedback**. F007 ordinary drop/drag/recollect, safe geometry, travel an
 GUI restart prerequisites actually pass; read [F007 acceptance](F007_ACCEPTANCE.md).
 Completed exactly F007; stop before successor. No automatic agents.
 
+Separate tooling follow-up2026-10-07: [shared journey helper](../TESTING_JOURNEY_ACCEPTANCE.md)
+complete after `eff156a`. F005/F006/F007 now use reusable TestRunJourney movement/
+navigation readiness, endpoint validation and progress diagnostics. Helper35 and
+support64 assertions, movement/camera regression and final F005/F007 ordinary
+writer/reader journeys pass, including F007 paths beyond the old1800-frame limit.
+Skill recipe copies are synchronized/validated; all owned processes exited.
+This tooling request did not select F008 or change feature checklist status.
+
 Rod(-6.5,0,15.75) and flower01(26.75,0.25,-2) use approved safe runtime defaults;
 ForagingRegistry authored_foot retains pinned source provenance. Saved explicit
 placements override defaults; collected IDs stay absent. Original geometry blocker
