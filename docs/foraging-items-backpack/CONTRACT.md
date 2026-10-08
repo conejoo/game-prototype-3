@@ -424,3 +424,17 @@ adds detached read-only active drag/ID/preview/errors only; existing bounded mou
 down/motion/up commands already support viewport drag. Native helper still belongs
 to F010 acceptance. [F007 acceptance](F007_ACCEPTANCE.md) proves ordinary loop,
 travel and exact GUI restart; final art/readability remains F008.
+
+## Delivered local art and transient feedback — F008
+
+[Acceptance](F008_ACCEPTANCE.md) verifies editable Godot mesh kit and local SVG icons.
+VisualRoot alone owns geometry/materials/outlined item labels; it owns no IDs, physics,
+commands, timer or saved facts. Mild emission creates no additional lights. Rod stays
+inside existing clearance; flower stems remain grounded. Name labels draw over foliage
+for readability, without changing actual interaction LOS or placement gates.
+
+Progress and received/full/cancel/invalid-placement feedback remain root/UI transient
+state. Separate stacked prompt/health/feedback rows sit below modal overlays; modal
+entry hides feedback, and fresh E clears stale messages. Existing hold durations,
+release latches, successful-only visual removal, green/red preview and atomic commands
+are preserved. Current schema6/content1 unchanged. F009/F010 retain their own gates.

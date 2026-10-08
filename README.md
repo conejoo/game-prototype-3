@@ -2,7 +2,7 @@
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
-F001-F007 Done; F008-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
+F001-F008 Done; F009-F010 Pending. [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
 verifies immutable item/resource content and session-owned20-slot/caps99/1 rules.
 [Atomic command acceptance](docs/foraging-items-backpack/F003_ACCEPTANCE.md) verifies
 joint collection/placement commits and rod conservation.
@@ -11,6 +11,7 @@ nonblocking pickups, cancellable held E and exact persisted physical reconstruct
 [Backpack acceptance](docs/foraging-items-backpack/F006_ACCEPTANCE.md) delivers B/HUD20 slots, active selection/tool HUD and blocked world input.
 [Rod placement acceptance](docs/foraging-items-backpack/F007_ACCEPTANCE.md) enables safe nearby Drop and pointer drag, rollback/cancel and exact travel/restart recollection. [Save/lifecycle acceptance](docs/foraging-items-backpack/F004_ACCEPTANCE.md)
 verifies schema6 item facts, legacy migration, geometry rollback and exact isolated restart.
+[Art/feedback acceptance](docs/foraging-items-backpack/F008_ACCEPTANCE.md) delivers local moonflower/rod mesh art, backpack icons and day/night/rain-readable progress/feedback.
 [Pinned geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md) record
 original blocked source anchors; approved runtime rod/flower01 relocation now clears
 colliders without pinned geography changes.
@@ -210,8 +211,12 @@ Godot cache/certificate access; final checks used normal local application acces
   transient hold control; physical pickups apply committed facts through location adapter.
 - `game/tests/inventory_checks.gd`: synthetic capacity/caps/rejection/selection and
   catalog/session/resource isolation acceptance; test-only extra types.
-- `game/world/foraging_world_adapter.gd`: four nonblocking typed wrappers, temporary
-  visuals, collected absence and exact saved authored/generated placement reconstruction.
+- `game/world/foraging_world_adapter.gd`: four nonblocking typed wrappers, collected
+  absence and exact saved authored/generated placement reconstruction.
+- `game/world/foraging_item_visual.gd`, `game/assets/items/`: editable local 3D flower/rod
+  mesh kit and matching SVG backpack icons, separate from identity/physics/state.
+- `game/tests/foraging_art_render.gd`: labeled synthetic art/light/weather/projection
+  matrix and actual live hold/cancel/preview captures; ordinary routes remain separate.
 - `game/tests/foraging_interaction_checks.gd`, `foraging_interaction_render.gd`:
   synthetic hold/cancel/capacity/lifecycle and ordinary rendered walk/hold/GUI restart.
 - `game/tests/foraging_transaction_checks.gd`: synthetic identity/revision/capacity,

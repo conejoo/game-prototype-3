@@ -40,6 +40,8 @@ func _run() -> void:
 	_check(game.foraging_hold.active() and game.session.inventory.count("item-moonflower") == 0 and game.ui.gather_progress.visible, "flower not before600ms")
 	_key(KEY_E,false)
 	_check(not game.foraging_hold.active() and not game.ui.gather_progress.visible and not game.session.foraging.is_collected("moonflower-01"), "release cancels no reward")
+	game._refresh_interaction()
+	_check(game.foraging_feedback.begins_with("Gather cancelled") and game.ui.foraging_notice.visible and room.foraging_pickups.targets.has("moonflower-01"),"cancel feedback and visual retained")
 	game._tick_foraging_hold(1)
 	_check(game.session.inventory.count("item-moonflower") == 0, "released timer cannot complete")
 	for mode: String in ["pause","dialogue","journal","focus","travel","loading","retry","gui","attack","dodge","dead","settings"]:
@@ -165,12 +167,14 @@ func _run() -> void:
 	game._tick_foraging_hold(.6)
 	_key(KEY_E,false)
 	_check(game.session.inventory.count("item-moonflower") == 99 and not game.session.foraging.is_collected("moonflower-01") and is_instance_valid(flower) and not flower.is_queued_for_deletion(), "full stack keeps node")
+	_check(game.ui.foraging_notice.text.begins_with("Backpack full") and game.ui.foraging_notice.visible,"full stack feedback")
 	game.session.inventory.consume("item-moonflower",99)
 	for index: int in range(20): game.session.inventory.add("f005-capacity-%02d" % index)
 	_key(KEY_E,true)
 	game._tick_foraging_hold(.6)
 	_key(KEY_E,false)
 	_check(not game.session.foraging.is_collected("moonflower-01") and game.session.inventory.count("item-moonflower") == 0 and room.foraging_pickups.targets.size() == 4, "full bag keeps counts and node")
+	_check(game.ui.foraging_notice.text.begins_with("Backpack full") and game.ui.foraging_notice.visible,"full bag feedback")
 	for index: int in range(20): game.session.inventory.consume("f005-capacity-%02d" % index)
 	# Observable publication follows joint inventory/origin and physical removal.
 	game.session.foraging.committed.connect(func(_revision: int) -> void:
@@ -182,6 +186,7 @@ func _run() -> void:
 	_check(observed[0] == 0, "no early publication")
 	game._tick_foraging_hold(.001)
 	_check(observed[0] == 1 and game.session.inventory.count("item-moonflower") == 1 and not room.foraging_pickups.targets.has("moonflower-01"), "flower completion once/removes node")
+	_check(game.ui.foraging_notice.text == "Gathered moonflower." and game.ui.foraging_notice.visible,"received feedback after success")
 	game._tick_foraging_hold(1)
 	_key(KEY_E,true)
 	game._tick_foraging_hold(1)

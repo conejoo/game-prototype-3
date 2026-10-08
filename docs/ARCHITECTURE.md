@@ -798,3 +798,20 @@ content1 unchanged; capability binding explains live token1 after candidate revi
 zoom bounds, boundaries, indoor/foreign placement, ordinary loop/travel and exact GUI
 independent-process restart/recollect. F008 art and F009/F010 integrated/native gates
 remain Pending; historical release claims are unchanged.
+
+### Delivered local item art and feedback (F008)
+
+ForagingItemVisual supplies editable local low-poly moonflower/rod meshes with mild
+emission, plus matching SVG backpack icons. ForagingWorldAdapter replaces only
+VisualRoot, preserving typed wrapper IDs/actions/feet, collision-free behavior,
+session facts, the existing listener and successful-only reconstruction. Rod meshes
+fit unchanged validated clearance; outlined labels draw above foliage without bypassing
+actual interaction LOS. No new light, timer, animation framework or save field.
+
+PrototypeUI stacks prompt/health/transient feedback below modal layers and styles the
+existing gather progress track. Root reports received/full/cancel/invalid outcomes,
+clears stale feedback on fresh E and hides it on modal entry. Existing durations,
+commands, input latches and geometry remain authoritative. [F008 acceptance](foraging-items-backpack/F008_ACCEPTANCE.md)
+verifies all four items across day/night/rain, both projections and zoom bounds,
+ordinary gather/backpack/placement/travel and exact GUI independent restarts.
+F009 integrated and F010 fresh native/export remain Pending; historical releases retained.

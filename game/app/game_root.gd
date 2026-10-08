@@ -501,9 +501,11 @@ func save_run() -> PackedStringArray:
 
 
 func _refresh_interaction() -> void:
+	ui.show_foraging_feedback("")
 	if item_drag.active():
 		selected_interaction = null
-		ui.show_travel("Drag rod: release to place · Esc: cancel" if item_drag.errors.is_empty() else "Cannot place here · Release keeps original · Esc: cancel")
+		ui.show_travel("Place rod: release mouse · Esc: cancel" if item_drag.errors.is_empty() else "Cannot place here · Release keeps original · Esc: cancel")
+		ui.show_foraging_feedback("")
 		return
 	if dialogue.active() or journal_open or backpack_open:
 		selected_interaction = null
@@ -516,7 +518,9 @@ func _refresh_interaction() -> void:
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
 	ui.show_travel(("Hold E %.1fs: " % (catalog.get_resource(selected_interaction.foraging_action.resource_id).hold_milliseconds / 1000.0) if selected_interaction.foraging_action != null else "E: ") + selected_interaction.display_prompt(session.environment) if selected_interaction != null else "E near lamps / Chandlery Maris / purple station / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
 	if not foraging_feedback.is_empty() and session.elapsed_play_seconds < foraging_feedback_until:
-		ui.show_travel(foraging_feedback + " · " + ui.travel_label.text)
+		ui.show_foraging_feedback(foraging_feedback)
+	else:
+		ui.show_foraging_feedback("")
 	if selected_interaction != null and selected_interaction.instance_id == light_feedback_instance_id and not light_feedback.is_empty() and session.elapsed_play_seconds < light_feedback_until:
 		ui.show_travel(light_feedback + " · " + ui.travel_label.text)
 
@@ -558,6 +562,8 @@ func interact() -> DialogueService.ActionResult:
 		if not _e_down or not _foraging_input_allowed() or not target.validation_errors(catalog).is_empty():
 			return DialogueService.ActionResult.new(false, "Press and hold E near the pickup.")
 		var definition: ForagingResourceDefinition = catalog.get_resource(target.foraging_action.resource_id)
+		foraging_feedback = ""
+		ui.show_foraging_feedback("")
 		foraging_hold.start(target, session, definition.hold_milliseconds / 1000.0)
 		ui.show_foraging_progress(0, true)
 		return DialogueService.ActionResult.new(true, "Hold started.", target.kind)
@@ -681,6 +687,7 @@ func _toggle_backpack() -> void:
 	ui.show_inventory(session.inventory.snapshot(),catalog)
 	ui.backpack.drop_available = true
 	ui.backpack.open(session.inventory.snapshot(),catalog)
+	ui.show_foraging_feedback("")
 	ui.pause_button.disabled = true
 	ui.journal_button.disabled = true
 	ui.backpack_button.disabled = true
@@ -969,11 +976,17 @@ func _cancel_item_drag() -> void:
 	if not item_drag.active(): return
 	_dispose_item_drag()
 	_update_controls()
+	foraging_feedback = "Placement cancelled · Rod stays at original position."
+	foraging_feedback_until = session.elapsed_play_seconds + 2.5
 	_refresh_interaction()
 
 
 func _cancel_foraging_hold(reason: String) -> void:
+	var was_active: bool = foraging_hold.active()
 	foraging_hold.cancel(reason)
+	if was_active and reason != "completed":
+		foraging_feedback = "Gather cancelled · Pickup stays in place. Press E again to retry."
+		foraging_feedback_until = session.elapsed_play_seconds + 2.5
 	if is_instance_valid(ui) and ui.gather_progress != null:
 		ui.show_foraging_progress(0, false)
 

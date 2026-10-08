@@ -120,6 +120,9 @@ func present(snapshot: InventorySnapshot, catalog: ContentCatalog, force: bool =
 		var button: Button = slots[index]
 		button.disabled = index >= slot_ids.size()
 		button.set_pressed_no_signal(not button.disabled and slot_ids[index] == snapshot.active_item_id)
+		button.icon = ForagingItemVisual.icon(slot_ids[index]) if not button.disabled else null
+		button.add_theme_constant_override("icon_max_width",28)
+		button.expand_icon = true
 		if button.disabled:
 			button.text = "Empty"
 			button.tooltip_text = "Empty slot"

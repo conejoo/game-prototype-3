@@ -25,7 +25,10 @@ func _run() -> void:
 	await game.world_host.transition_finished
 	for frame: int in range(4): await process_frame
 	_check(InputMap.has_action("backpack") and InputMap.action_has_event("backpack",_event(KEY_B,true)), "B InputMap action")
+	game.ui.show_foraging_feedback("Gathered moonflower.")
 	_key(KEY_B)
+	_check(not game.ui.foraging_notice.visible,"feedback hidden immediately by backpack")
+	_check(game.ui.travel_label.get_parent().get_index() < game.ui.pause_overlay.get_index() and game.ui.travel_label.get_parent().get_index() < game.ui.backpack.get_index(),"field status below modal layers")
 	_check(game.backpack_open and game.ui.backpack.visible and not paused, "B opens unpaused modal")
 	_check(game.ui.backpack.slots.size() == 20 and game.ui.backpack.slot_ids.is_empty(), "twenty empty slots")
 	for button: Button in game.ui.backpack.slots:

@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007 completed2026-10-07; F008-F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007 completed2026-10-07; F008 completed2026-10-07; F009-F010 Pending.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -28,7 +28,7 @@ first be created; refine names deliberately and update references together.
 | F005 | Done | F004 | four pickups and cancellable hold E |
 | F006 | Done | F004 | backpack modal and active item HUD |
 | F007 | Done | F005, F006 | safe rod drop/reposition |
-| F008 | Pending | F007 | readable item art/progress/feedback |
+| F008 | Done | F007 | readable item art/progress/feedback |
 | F009 | Pending | F008 | integrated play/restart acceptance |
 | F010 | Pending | F009 | fresh Windows/native acceptance |
 
@@ -404,3 +404,21 @@ and clean source unchanged. Failed fixture/nav-sync/walk runs retained in accept
 No normal-save/source/map change, native/export/install/publication or owned process
 cleanup owed. Final diff/new files/UIDs/status/links reviewed. Next eligible F008,
 with F007 physical prerequisite verified. Exactly F007 completed; stop before successor.
+
+### F008 — completed2026-10-07, America/Vancouver
+
+Delivered editable local Godot moonflower/rod mesh kit, matching SVG backpack icons,
+night-readable outlined names, restrained progress, separate received/full/cancel/error
+feedback rows and safe modal layering. Wrapper IDs/physics/transactions/schema unchanged.
+[Acceptance](F008_ACCEPTANCE.md) records every criterion, retained failures and review.
+
+Final F008 runs:023604025-07197561 (20261008 UTC prefix) seven headless suites plus
+ordinary rod loop/travel/exact GUI restart PASS;023932515-6c0a4fcc art880 assertions/
+96 captures PASS;023952938-ee775a1c ordinary backpack/icon/small-window/exact restart
+PASS;024024303-277571c5 ordinary four-node gather/cancel/exact restart/absence PASS.
+All share490-file source SHA25687580ae010b1da7fc06c0928afeddbdad257fe0aef2cbec1c821641cdd72112b;
+no runtime diagnostics/timeouts/source drift. APPDATA/LOCALAPPDATA/slots isolated;
+normal saves/source/geography unchanged. Capture provenance checked and full-size images
+inspected; synthetic matrix/capacity remains distinct from ordinary viewport journeys.
+All owned processes exited. Next eligible F009; F008 actual criteria verified.
+Completed exactly F008; stop before successor.

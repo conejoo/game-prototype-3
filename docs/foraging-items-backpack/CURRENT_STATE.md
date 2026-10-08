@@ -5,10 +5,10 @@ Updated2026-10-07, America/Vancouver. [CHECKLIST](CHECKLIST.md) owns status;
 
 ## Selection and continuation
 
-F001-F007 Done; F008-F010 Pending. No active task. Next eligible: **F008 — art and
-peaceful feedback**. F007 ordinary drop/drag/recollect, safe geometry, travel and exact
-GUI restart prerequisites actually pass; read [F007 acceptance](F007_ACCEPTANCE.md).
-Completed exactly F007; stop before successor. No automatic agents.
+F001-F008 Done; F009-F010 Pending. No active task. Next eligible: **F009 — integrated
+gameplay and restart acceptance**. F008 local art, feedback, both-projection/day/night/
+rain visuals and ordinary physical loops actually pass; read [F008 acceptance](F008_ACCEPTANCE.md).
+Completed exactly F008; stop before successor. No automatic agents.
 
 Separate tooling follow-up2026-10-07: [shared journey helper](../TESTING_JOURNEY_ACCEPTANCE.md)
 complete after `eff156a`. F005/F006/F007 now use reusable TestRunJourney movement/
@@ -478,3 +478,48 @@ command-local cr-at-eol whitespace/intended diff/new-file/UID/link/status review
 All owned runner processes exited; no editor/game or cleanup owed. Exactly F007 complete;
 stop. Next invocation: read F008 requirements, keep IDs/physics/wrappers separate while
 improving temporary flower/rod art, icons/progress and placement feedback.
+
+## F008 delivered state and continuation details
+
+[Acceptance](F008_ACCEPTANCE.md) owns every criterion, commands/isolation, retained
+failures and inspected image/provenance details. Initial HEADdf6a907318f0cc9a02b9df741889de9301dd3ccc;
+clean worktree, no user changes overwritten. Schema6/content1, approved feet and pinned
+source/geography preserved. Art source is typed Godot mesh kit, not a Blender edit.
+
+Changed GameRoot/PrototypeUI/BackpackView/ForagingWorldAdapter; new ForagingItemVisual
+and UID, moonflower/fishing_rod SVGs/imports/asset README; updated foraging_interaction
+and backpack_ui checks; new foraging_art_render and UID. Parent README/architecture
+and workflow checklist/contract/this state/acceptance updated. No gameplay state,
+identity, physics, nav, save or input binding changed. Labels draw above foliage only;
+interaction still uses actual LOS. Feedback is transient and hidden on modal entry.
+
+Final repository-root PowerShell7 run_checks -Task F008 -TimeoutSeconds150:
+- 20261008-023604025-07197561: Names foraging_interaction_checks,backpack_ui_checks,
+  world_item_placement_checks,map_camera_checks,environment_lighting_checks,
+  weather_presentation_checks,movement_camera_checks; RenderScript
+  world_item_placement_render, RenderPhases write,read. PASS103/148/128 item/UI/placement,
+  lighting30053/weather193417 assertions, ordinary rod loop/travel/exact GUI restart.
+- 20261008-023932515-6c0a4fcc: RenderOnly foraging_art_render, phase check. PASS880
+  assertions/96 captures (72 paused synthetic art/presentation,24 actual live viewport
+  hold/release/preview after labeled pose/clock setup). No item mutation on cancel/error.
+- 20261008-023952938-ee775a1c: RenderOnly backpack_ui_render, phases write,read. PASS
+  owned-item icons/keyboard/pointer/960x640/smaller window/capacity/exact GUI restart.
+- 20261008-024024303-277571c5: RenderOnly foraging_interaction_render, phases write,read.
+  PASS ordinary all-four walking/gather/removal, held/released E, exact GUI restart/absence.
+
+All four final before/after source hashes match
+87580ae010b1da7fc06c0928afeddbdad257fe0aef2cbec1c821641cdd72112b (490 files), no diagnostics,
+timeouts/source changes. Isolated docs/evidence/F008/<run> and builds/testing/F008/<run>
+APPDATA/LOCALAPPDATA/check/render slots; normal save untouched. Raw runs retained ignored.
+Capture tool validates96 art/10 backpack/15 gather/11 rod PNGs; contact sheets and key
+full-size images inspected. Source/hash/geography audit and negative controls PASS;
+source status clean. Supplementary dialogue/lights/settings/application regressions PASS.
+Import/parse verified; existing import-only missing .NET SDK diagnostic allowed.
+
+Failed022520/022649 metadata-generation source-drift runs,022711 icon property failure,
+022753 float-boundary fixture failure (20261008 full IDs in acceptance) retained.
+Windows fixture encoding, icon constant, rod reel clearance, fixed-row HUD overlap,
+modal layer order, stale feedback and synthetic camera HUD were repaired/reverified.
+No failed/unrun F008 criterion remains. All owned processes exited, no editor/cleanup owed.
+F009 integrated checks and F010 fresh export/native remain Pending. Resume F009 next;
+do not treat viewport proof or tool support as native delivery. Completed exactly F008.

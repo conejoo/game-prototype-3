@@ -23,6 +23,7 @@ signal debug_mode_requested(enabled: bool)
 @onready var camera_label: Label = $Screen/Footer/Margin/TextBox/Text
 @onready var location_label: Label = $Screen/Header/Margin/Row/Titles/Subtitle
 @onready var travel_label: Label = $Screen/TravelPrompt
+@onready var combat_label: Label = $Screen/CombatStatus
 @onready var save_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Save
 @onready var load_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Load
 @onready var save_status: Label = $Screen/PauseOverlay/Center/Panel/Margin/Options/SaveStatus
@@ -53,6 +54,7 @@ signal debug_mode_requested(enabled: bool)
 @onready var debug_label: Label = $Screen/Diagnostics/Debug
 
 var _fps_sample_seconds: float = 0.0
+var foraging_notice: Label
 var gather_progress: ProgressBar
 var backpack: BackpackView
 var backpack_button: Button
@@ -90,6 +92,45 @@ func _ready() -> void:
 	gather_progress.offset_top = -162
 	gather_progress.offset_bottom = -146
 	gather_progress.hide()
+	var track: StyleBoxFlat = StyleBoxFlat.new()
+	track.bg_color = Color(.025,.055,.07,.96)
+	track.set_border_width_all(2)
+	track.border_color = Color(.55,.68,.73)
+	track.set_corner_radius_all(6)
+	var fill: StyleBoxFlat = StyleBoxFlat.new()
+	fill.bg_color = Color(.5,.85,.75)
+	fill.set_corner_radius_all(6)
+	gather_progress.add_theme_stylebox_override("background",track)
+	gather_progress.add_theme_stylebox_override("fill",fill)
+	var status_column: VBoxContainer = VBoxContainer.new()
+	status_column.name = "FieldStatus"
+	status_column.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	$Screen.add_child(status_column)
+	$Screen.move_child(status_column,objective_label.get_index() + 1)
+	status_column.anchor_right = 1
+	status_column.offset_left = 24
+	status_column.offset_right = -24
+	status_column.offset_top = 133
+	status_column.add_theme_constant_override("separation",6)
+	travel_label.reparent(status_column)
+	combat_label.reparent(status_column)
+	travel_label.layout_mode = 2
+	combat_label.layout_mode = 2
+	travel_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	var prompt_style: StyleBoxFlat = StyleBoxFlat.new()
+	prompt_style.bg_color = Color(.025,.045,.06,.94)
+	prompt_style.set_content_margin_all(6)
+	prompt_style.set_corner_radius_all(6)
+	travel_label.add_theme_stylebox_override("normal",prompt_style)
+	foraging_notice = Label.new()
+	foraging_notice.name = "ForagingNotice"
+	foraging_notice.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	foraging_notice.add_theme_font_size_override("font_size",16)
+	foraging_notice.add_theme_color_override("font_color",Color(.98,.86,.6))
+	foraging_notice.add_theme_stylebox_override("normal",prompt_style)
+	foraging_notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	status_column.add_child(foraging_notice)
+	foraging_notice.hide()
 	settings_button.pressed.connect(func() -> void: show_settings(true))
 	settings_back.pressed.connect(func() -> void: show_settings(false))
 	fps_toggle.toggled.connect(_show_fps)
@@ -119,6 +160,11 @@ func show_inventory(snapshot: InventorySnapshot, catalog: ContentCatalog) -> voi
 	backpack_button.disabled = pause_overlay.visible or dialogue_overlay.visible or journal_overlay.visible or backpack.visible
 
 
+func show_foraging_feedback(message: String) -> void:
+	foraging_notice.text = message
+	foraging_notice.visible = not message.is_empty() and not pause_overlay.visible and not dialogue_overlay.visible and not journal_overlay.visible and not backpack.visible
+
+
 func show_foraging_progress(progress: float, active: bool) -> void:
 	gather_progress.visible = active
 	gather_progress.value = progress
@@ -128,6 +174,7 @@ func show_paused(paused: bool) -> void:
 	settings_options.hide()
 	pause_options.show()
 	pause_overlay.visible = paused
+	if paused: foraging_notice.hide()
 	travel_label.visible = not paused and not dialogue_overlay.visible
 	pause_button.disabled = paused
 	journal_button.disabled = paused or dialogue_overlay.visible
@@ -229,7 +276,7 @@ func show_companion(actor: ActorState, mode: String, trust: int = 0) -> void:
 
 
 func show_combat(actor: ActorState, guardian: ActorPlaceholder, retrying: bool, damage: int = 25) -> void:
-	$Screen/CombatStatus.visible = not backpack.visible and not pause_overlay.visible and not dialogue_overlay.visible and not journal_overlay.visible
+	combat_label.visible = not backpack.visible and not pause_overlay.visible and not dialogue_overlay.visible and not journal_overlay.visible
 	var message: String = "Hero %d / %d · Strike %d" % [actor.health, actor.max_health, damage]
 	if actor.health == 0:
 		message = "DEFEATED · R: retry at arrival anchor (quest progress kept)"
@@ -243,7 +290,7 @@ func show_combat(actor: ActorState, guardian: ActorPlaceholder, retrying: bool, 
 			message += " · Approaching"
 	if retrying:
 		message = "Retrying…"
-	$Screen/CombatStatus.text = message
+	combat_label.text = message
 
 
 func show_travel(message: String) -> void:
@@ -273,6 +320,7 @@ func show_dialogue(service: DialogueService, result: DialogueService.ActionResul
 		dialogue_choices.remove_child(child)
 		child.queue_free()
 	dialogue_overlay.visible = service.active()
+	if service.active(): foraging_notice.hide()
 	travel_label.visible = not service.active() and not backpack.visible and not pause_overlay.visible
 	pause_button.disabled = pause_overlay.visible or service.active()
 	journal_button.disabled = pause_overlay.visible or service.active()
@@ -314,6 +362,7 @@ func show_objective(text: String) -> void:
 
 func show_journal(open: bool, text: String) -> void:
 	journal_overlay.visible = open
+	if open: foraging_notice.hide()
 	journal_text.text = text
 	travel_label.visible = not open and not dialogue_overlay.visible and not backpack.visible and not pause_overlay.visible
 	pause_button.disabled = open or pause_overlay.visible or dialogue_overlay.visible

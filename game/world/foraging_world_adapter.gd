@@ -42,45 +42,19 @@ func apply(location_id: String, facts: Dictionary, source_records: Array[Diction
 		targets[id].position = entry.foot
 
 func _build_visual(target: PrototypeInteractable) -> void:
-	var visual: Node3D = Node3D.new()
+	var visual: ForagingItemVisual = ForagingItemVisual.new()
 	visual.name = "VisualRoot"
 	target.add_child(visual)
-	var material: StandardMaterial3D = StandardMaterial3D.new()
-	material.albedo_color = Color(0.94,0.74,0.3) if target.kind == "pickup" else Color(0.76,0.83,1)
-	material.roughness = 0.8
-	var mesh: MeshInstance3D = MeshInstance3D.new()
-	mesh.name = "PickupMesh"
-	if target.kind == "pickup":
-		var rod: CylinderMesh = CylinderMesh.new()
-		rod.top_radius = 0.025
-		rod.bottom_radius = 0.045
-		rod.height = 0.9
-		mesh.mesh = rod
-		mesh.rotation.z = PI / 2
-		mesh.position.y = 0.08
-	else:
-		var bloom: SphereMesh = SphereMesh.new()
-		bloom.radius = 0.17
-		bloom.height = 0.25
-		mesh.mesh = bloom
-		mesh.position.y = 0.3
-		var stem: MeshInstance3D = MeshInstance3D.new()
-		var cylinder: CylinderMesh = CylinderMesh.new()
-		cylinder.top_radius = 0.02
-		cylinder.bottom_radius = 0.025
-		cylinder.height = 0.25
-		stem.mesh = cylinder
-		stem.position.y = 0.125
-		var green: StandardMaterial3D = StandardMaterial3D.new()
-		green.albedo_color = Color(0.3,0.55,0.32)
-		stem.material_override = green
-		visual.add_child(stem)
-	mesh.material_override = material
-	visual.add_child(mesh)
+	visual.build(target.kind == "pickup")
 	var label: Label3D = Label3D.new()
+	label.name = "ItemName"
 	label.text = "Fishing rod" if target.kind == "pickup" else "Moonflower"
 	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-	label.position.y = 0.75
-	label.font_size = 22
-	label.pixel_size = 0.01
+	label.position.y = .75
+	label.font_size = 24
+	label.outline_size = 8
+	label.modulate = Color(.9,.95,1)
+	label.outline_modulate = Color(.025,.045,.06)
+	label.pixel_size = .014
+	label.no_depth_test = true
 	visual.add_child(label)
