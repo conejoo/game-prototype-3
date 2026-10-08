@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "coordinate_contract": "Exterior X=(sx-704)/32, Z=(sy-576)/32; Y from actual support. Never apply to interior feet.",
+  "actor_envelope": {
+    "radius_m": 0.4,
+    "height_m": 1.6,
+    "actual_hero_radius_m": 0.35,
+    "visual_policy": "Art must fit reserved envelope or revalidate in owning character task."
+  },
+  "navigation_policy": "N006 adds scene-owned nonoverlapping reservations equivalent to seven 0.8m squares plus existing Maris body/bench, retaining conservative margin. N001 probes rebake only in isolated memory.",
+  "inn_portal_reservation_xz_m": [
+    -8,
+    3.5,
+    2,
+    1.5
+  ],
+  "contacts": [
+    {
+      "npc_id": "npc-01",
+      "source_map_id": "alderwake",
+      "source_placement_id": "npc-01",
+      "source_anchor_id": "edric-town-square",
+      "source_foot_units": [
+        688.0,
+        528.0
+      ],
+      "source_json_index": 42,
+      "source_reference_path": "assets/maps/mvp_world.json",
+      "runtime_location_id": "prototype-alderwake",
+      "target_wrapper_id": "alderwake-npc-01-contact",
+      "target_foot_m": [
+        -0.5,
+        0,
+        -1.5
+      ],
+      "player_approach_m": [
+        -0.5,
+        0,
+        -0.5
+      ],
+      "reach_m": 1.7,
+      "policy": "retain pinned civic anchor; ordinary placement npc-01 is 0.5m east",
+      "status": "measured specification; not activated",
+      "route_length_m": 0.707106903195381,
+      "path_samples": 10,
+      "nav_snap_distance_m": 0.0500000007450581
+    },
+    {
+      "npc_id": "npc-02",
+      "source_map_id": "alderwake",
+      "source_placement_id": null,
+      "source_anchor_id": "helena-town-square",
+      "source_foot_units": [
+        752.0,
+        528.0
+      ],
+      "source_json_index": 64,
+      "source_reference_path": "assets/maps/mvp_world.json",
+      "runtime_location_id": "prototype-alderwake",
+      "target_wrapper_id": "alderwake-npc-02-contact",
+      "target_foot_m": [
+        1.5,
+        0,
+        -1.5
+      ],
+      "player_approach_m": [
+        2.5,
+        0,
+        -1.5
+      ],
+      "reach_m": 1.7,
+      "policy": "retain pinned public civic anchor; archive/home remain deferred",
+      "status": "measured specification; not activated",
+      "route_length_m": 3.27045565098524,
+      "path_samples": 43,
+      "nav_snap_distance_m": 0.0500000007450581
+    },
+    {
+      "npc_id": "npc-03",
+      "source_map_id": "alderwake",
+      "source_placement_id": "maris-chandlery-01",
+      "source_anchor_id": "maris-fitting-01",
+      "source_foot_units": [
+        464.0,
+        928.0
+      ],
+      "source_json_index": 68,
+      "source_reference_path": "assets/maps/mvp_world.json",
+      "runtime_location_id": "prototype-alderwake",
+      "target_wrapper_id": "npc-03-counter",
+      "target_foot_m": [
+        -7.5,
+        0,
+        11
+      ],
+      "player_approach_m": [
+        -6,
+        0,
+        11
+      ],
+      "reach_m": 1.7,
+      "policy": "reuse existing npc-03-counter and its unchanged body/bench",
+      "status": "measured specification; not activated",
+      "route_length_m": 13.3192314524204,
+      "path_samples": 175,
+      "nav_snap_distance_m": 0.0500001013278961
+    },
+    {
+      "npc_id": "npc-04",
+      "source_map_id": "alderwake",
+      "source_placement_id": "harlan-dockmaster-01",
+      "source_anchor_id": "harlan-sluice-practice-01",
+      "source_foot_units": [
+        2016.0,
+        1120.0
+      ],
+      "source_json_index": 60,
+      "source_reference_path": "assets/maps/mvp_world.json",
+      "runtime_location_id": "prototype-alderwake",
+      "target_wrapper_id": "alderwake-npc-04-contact",
+      "target_foot_m": [
+        41,
+        0,
+        17
+      ],
+      "player_approach_m": [
+        42.5,
+        0,
+        17
+      ],
+      "reach_m": 1.7,
+      "policy": "retain pinned dry control-hut foot; no sluice controls",
+      "status": "measured specification; not activated",
+      "route_length_m": 56.9088757731952,
+      "path_samples": 710,
+      "nav_snap_distance_m": 0.0500000007450581
+    },
+    {
+      "npc_id": "npc-06",
+      "source_map_id": "alderwake",
+      "source_placement_id": "tess-store-01",
+      "source_anchor_id": "store-service-tess-01",
+      "source_foot_units": [
+        944.0,
+        736.0
+      ],
+      "source_json_index": 529,
+      "source_reference_path": "assets/maps/mvp_world.json",
+      "runtime_location_id": "prototype-alderwake",
+      "target_wrapper_id": "alderwake-npc-06-contact",
+      "target_foot_m": [
+        7.5,
+        0,
+        5
+      ],
+      "player_approach_m": [
+        9,
+        0,
+        5
+      ],
+      "reach_m": 1.7,
+      "policy": "source newer actor absent from pinned map; additive local wrapper at existing anchor",
+      "status": "measured specification; not activated",
+      "route_length_m": 12.4785837754607,
+      "path_samples": 158,
+      "nav_snap_distance_m": 0.0500000007450581
+    },
+    {
+      "npc_id": "npc-07",
+      "source_map_id": "alderwake",
+      "source_placement_id": "ivo-passenger-dock-01",
+      "source_anchor_id": "passenger-booking-ivo-01",
+      "source_foot_units": [
+        1856.0,
+        1216.0
+      ],
+      "source_json_index": 492,
+      "source_reference_path": "assets/maps/mvp_world.json",
+      "runtime_location_id": "prototype-alderwake",
+      "target_wrapper_id": "alderwake-npc-07-contact",
+      "target_foot_m": [
+        36,
+        0,
+        20
+      ],
+      "player_approach_m": [
+        34.5,
+        0,
+        20
+      ],
+      "reach_m": 1.7,
+      "policy": "source newer actor absent from pinned map; additive local wrapper on dry booking shore",
+      "status": "measured specification; not activated",
+      "route_length_m": 46.7691131276079,
+      "path_samples": 587,
+      "nav_snap_distance_m": 0.0500000007450581
+    },
+    {
+      "npc_id": "npc-08",
+      "source_map_id": "alderwake",
+      "source_placement_id": "celia-basic-repairs-actor-01",
+      "source_anchor_id": "celia-basic-repairs-01",
+      "source_foot_units": [
+        592.0,
+        960.0
+      ],
+      "source_json_index": 9,
+      "source_reference_path": "assets/maps/mvp_world.json",
+      "runtime_location_id": "prototype-alderwake",
+      "target_wrapper_id": "alderwake-npc-08-contact",
+      "target_foot_m": [
+        -3.5,
+        0,
+        12
+      ],
+      "player_approach_m": [
+        -3.5,
+        0,
+        13
+      ],
+      "reach_m": 1.7,
+      "policy": "source newer actor absent from pinned map; additive local wrapper at repair anchor",
+      "status": "measured specification; not activated",
+      "route_length_m": 14.7988296765834,
+      "path_samples": 197,
+      "nav_snap_distance_m": 0.0500001013278961
+    },
+    {
+      "npc_id": "npc-14",
+      "source_map_id": "lantern-rest",
+      "source_placement_id": "della-inn-host-01",
+      "source_anchor_id": "inn-host-01",
+      "source_foot_units": [
+        256.0,
+        288.0
+      ],
+      "source_json_index": 17,
+      "source_reference_path": "assets/maps/lantern_rest.json",
+      "runtime_location_id": "prototype-alderwake",
+      "target_wrapper_id": "alderwake-npc-14-contact",
+      "target_foot_m": [
+        -9,
+        0,
+        3.5
+      ],
+      "player_approach_m": [
+        -9,
+        0,
+        4.5
+      ],
+      "reach_m": 1.7,
+      "policy": "explicit public exterior adaptation beside pinned inn entry; never transform interior coordinates",
+      "status": "measured specification; not activated",
+      "route_length_m": 10.3747527501546,
+      "path_samples": 128,
+      "nav_snap_distance_m": 0.0500000007450581
+    }
+  ]
+}

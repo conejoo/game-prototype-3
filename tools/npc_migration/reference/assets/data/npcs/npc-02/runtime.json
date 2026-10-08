@@ -1,0 +1,65 @@
+{
+  "id": "npc-02",
+  "displayName": "Helena Vale",
+  "shortName": "Helena",
+  "title": "Town Archivist",
+  "pronouns": "she/her",
+  "interactionPrompt": "Talk to Archivist Vale",
+  "relationship": {
+    "levelOneAffinity": 3,
+    "levelOneLabel": "Acquaintance"
+  },
+  "dimensions": {
+    "hitWidth": 32,
+    "hitHeight": 32,
+    "interactionRadius": 48
+  },
+  "routine": {
+    "agentProfile": {
+      "id": "town-adult",
+      "footprintRadius": 10,
+      "clearance": 0
+    },
+    "actionIds": ["archive-work"],
+    "relationshipFlagIds": [
+      "npc-02-first-conversation-complete",
+      "npc-02-careful-research-response",
+      "npc-02-neighborly-response",
+      "npc-02-careful-reward-applied",
+      "npc-02-neighborly-reward-applied",
+      "npc-02-archive-lead-shared"
+    ]
+  },
+  "facts": [
+    {
+      "id": "npc-02-public-role",
+      "category": "Public life",
+      "label": "Town archivist",
+      "description": "Helena Vale keeps Alderwake's town archives and helps residents trace public records.",
+      "highlightTerm": "town archives"
+    },
+    {
+      "id": "npc-02-archive-practice",
+      "category": "Work",
+      "label": "Careful records",
+      "description": "Helena cross-checks every archive entry before treating it as settled history.",
+      "highlightTerm": "cross-check every entry"
+    },
+    {
+      "id": "npc-02-moonflower-pressing",
+      "category": "Interests",
+      "label": "Pressed Moonflowers",
+      "description": "Helena presses Moonflowers to preserve seasonal color beside dated archive notes.",
+      "highlightTerm": "pressed Moonflowers"
+    }
+  ],
+  "acceptedGiftRules": [
+    {
+      "id": "npc-02-moonflower-gift",
+      "itemId": "moonflower",
+      "requiredFactId": "npc-02-moonflower-pressing",
+      "affinityDelta": 1,
+      "acceptanceCap": 2
+    }
+  ]
+}

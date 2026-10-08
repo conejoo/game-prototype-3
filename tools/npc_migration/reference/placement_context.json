@@ -1,0 +1,293 @@
+[
+  {
+    "source_path": "assets/maps/mvp_world.json",
+    "map_id": "alderwake",
+    "objects": [
+      {
+        "source_index": 9,
+        "type": "routineAnchor",
+        "id": "celia-basic-repairs-01",
+        "facing": "west",
+        "x": 592.0,
+        "y": 960.0
+      },
+      {
+        "source_index": 10,
+        "type": "npc",
+        "id": "celia-basic-repairs-actor-01",
+        "definitionId": "npc-08",
+        "x": 592.0,
+        "y": 960.0
+      },
+      {
+        "source_index": 39,
+        "type": "routineAnchor",
+        "id": "edric-market-rounds",
+        "facing": "south",
+        "tags": [
+          "market"
+        ],
+        "x": 640.0,
+        "y": 640.0
+      },
+      {
+        "source_index": 40,
+        "type": "routineAnchor",
+        "id": "edric-rain-shelter",
+        "facing": "south",
+        "tags": [
+          "shelter"
+        ],
+        "x": 832.0,
+        "y": 400.0
+      },
+      {
+        "source_index": 41,
+        "type": "routineAnchor",
+        "id": "edric-river-bank",
+        "facing": "east",
+        "tags": [
+          "fishing",
+          "river"
+        ],
+        "x": 1184.0,
+        "y": 624.0
+      },
+      {
+        "source_index": 42,
+        "type": "routineAnchor",
+        "id": "edric-town-square",
+        "facing": "south",
+        "tags": [
+          "civic"
+        ],
+        "x": 688.0,
+        "y": 528.0
+      },
+      {
+        "source_index": 59,
+        "type": "routineAnchor",
+        "id": "harlan-check-partner-01",
+        "facing": "west",
+        "x": 2080.0,
+        "y": 1120.0
+      },
+      {
+        "source_index": 60,
+        "type": "npc",
+        "id": "harlan-dockmaster-01",
+        "definitionId": "npc-04",
+        "x": 2016.0,
+        "y": 1120.0
+      },
+      {
+        "source_index": 61,
+        "type": "routineAnchor",
+        "id": "harlan-river-rest-01",
+        "x": 656.0,
+        "y": 960.0
+      },
+      {
+        "source_index": 62,
+        "type": "routineAnchor",
+        "id": "harlan-sluice-practice-01",
+        "facing": "south",
+        "x": 2016.0,
+        "y": 1120.0
+      },
+      {
+        "source_index": 64,
+        "type": "routineAnchor",
+        "id": "helena-town-square",
+        "facing": "west",
+        "tags": [
+          "civic"
+        ],
+        "x": 752.0,
+        "y": 528.0
+      },
+      {
+        "source_index": 66,
+        "type": "routineAnchor",
+        "id": "inn-exit-player-01",
+        "facing": "west",
+        "x": 480.0,
+        "y": 704.0
+      },
+      {
+        "source_index": 67,
+        "type": "npc",
+        "id": "ivo-passenger-dock-01",
+        "definitionId": "npc-07",
+        "x": 1856.0,
+        "y": 1216.0
+      },
+      {
+        "source_index": 68,
+        "type": "npc",
+        "id": "maris-chandlery-01",
+        "definitionId": "npc-03",
+        "x": 464.0,
+        "y": 928.0
+      },
+      {
+        "source_index": 69,
+        "type": "routineAnchor",
+        "id": "maris-customer-01",
+        "facing": "west",
+        "x": 560.0,
+        "y": 944.0
+      },
+      {
+        "source_index": 70,
+        "type": "routineAnchor",
+        "id": "maris-fitting-01",
+        "facing": "east",
+        "x": 464.0,
+        "y": 928.0
+      },
+      {
+        "source_index": 71,
+        "type": "routineAnchor",
+        "id": "maris-fitting-player-01",
+        "facing": "west",
+        "x": 512.0,
+        "y": 944.0
+      },
+      {
+        "source_index": 488,
+        "type": "npc",
+        "id": "npc-01",
+        "definitionId": "npc-01",
+        "x": 704.0,
+        "y": 528.0
+      },
+      {
+        "source_index": 492,
+        "type": "routineAnchor",
+        "id": "passenger-booking-ivo-01",
+        "facing": "west",
+        "x": 1856.0,
+        "y": 1216.0
+      },
+      {
+        "source_index": 493,
+        "type": "routineAnchor",
+        "id": "passenger-booking-player-01",
+        "facing": "north",
+        "x": 1792.0,
+        "y": 1216.0
+      },
+      {
+        "source_index": 528,
+        "type": "routineAnchor",
+        "id": "store-service-player-01",
+        "facing": "north",
+        "x": 992.0,
+        "y": 736.0
+      },
+      {
+        "source_index": 529,
+        "type": "routineAnchor",
+        "id": "store-service-tess-01",
+        "facing": "east",
+        "x": 944.0,
+        "y": 736.0
+      },
+      {
+        "source_index": 538,
+        "type": "npc",
+        "id": "tess-store-01",
+        "definitionId": "npc-06",
+        "x": 944.0,
+        "y": 736.0
+      }
+    ],
+    "woods_zones": [
+      {
+        "id": "moonwood",
+        "role": "woods",
+        "label": "Moonwood",
+        "left": 1504.0,
+        "top": 0.0,
+        "width": 3200.0,
+        "height": 2560.0
+      },
+      {
+        "id": "ranger-danger-pocket-01",
+        "role": "woods",
+        "label": "Ranger danger pocket",
+        "left": 4224.0,
+        "top": 1184.0,
+        "width": 144.0,
+        "height": 224.0
+      }
+    ],
+    "exterior_inn_group": [
+      {
+        "id": "lantern-rest-exterior",
+        "pivotX": 15,
+        "pivotY": 21,
+        "quarterTurns": 0,
+        "portals": [
+          {
+            "id": "lantern-rest-entrance-01",
+            "label": "Lantern Rest entrance",
+            "prompt": "Enter Lantern Rest",
+            "left": -32.0,
+            "top": 16.0,
+            "width": 64.0,
+            "height": 48.0,
+            "destinationMapId": "lantern-rest",
+            "destinationX": 448.0,
+            "destinationY": 672.0
+          }
+        ],
+        "props": [
+          {
+            "type": "prop",
+            "id": "lantern-rest-exterior-building",
+            "definitionId": "lantern-rest",
+            "x": 0.0,
+            "y": 0.0,
+            "lightSourceStates": {
+              "windows": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/maps/lantern_rest.json",
+    "map_id": "lantern-rest",
+    "objects": [
+      {
+        "source_index": 0,
+        "type": "npc",
+        "id": "della-inn-host-01",
+        "definitionId": "npc-14",
+        "x": 256.0,
+        "y": 288.0
+      },
+      {
+        "source_index": 17,
+        "type": "routineAnchor",
+        "id": "inn-host-01",
+        "facing": "south",
+        "x": 256.0,
+        "y": 288.0
+      },
+      {
+        "source_index": 23,
+        "type": "routineAnchor",
+        "id": "inn-meal-player-01",
+        "facing": "east",
+        "x": 192.0,
+        "y": 288.0
+      }
+    ],
+    "woods_zones": [],
+    "exterior_inn_group": []
+  }
+]

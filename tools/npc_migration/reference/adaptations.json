@@ -1,0 +1,9 @@
+[
+  {
+    "npc_id": "npc-14",
+    "node_id": "npc-14-introduction",
+    "field": "text",
+    "reason": "Public exterior contact; no accessible interior/sleep/room promise.",
+    "target_text": "Della Pike, **innkeeper** at Lantern Rest. I am meeting visitors here at the public entrance. Questions and quiet company are welcome; the inn interior is not open in this prototype."
+  }
+]

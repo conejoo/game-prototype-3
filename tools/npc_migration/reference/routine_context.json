@@ -1,0 +1,1526 @@
+[
+  {
+    "source_path": "assets/data/routines/celia-repairs-day.json",
+    "id": "celia-repairs-day",
+    "participants": [
+      "npc-08"
+    ],
+    "timeWindow": {
+      "start": "06:00",
+      "end": "22:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-08",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-basic-repair-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "celia-basic-repairs-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "remain-available-for-repairs",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/celia-repairs-evening.json",
+    "id": "celia-repairs-evening",
+    "participants": [
+      "npc-08"
+    ],
+    "timeWindow": {
+      "start": "22:00",
+      "end": "06:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-08",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-basic-repair-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "celia-basic-repairs-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "remain-available-for-repairs",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/della-inn-day.json",
+    "id": "della-inn-day",
+    "participants": [
+      "npc-14"
+    ],
+    "timeWindow": {
+      "start": "06:00",
+      "end": "22:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-14",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-inn-host-station",
+            "target": {
+              "mapId": "lantern-rest",
+              "anchorId": "inn-host-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "remain-available-for-guests",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/della-inn-evening.json",
+    "id": "della-inn-evening",
+    "participants": [
+      "npc-14"
+    ],
+    "timeWindow": {
+      "start": "22:00",
+      "end": "06:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-14",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-inn-host-station",
+            "target": {
+              "mapId": "lantern-rest",
+              "anchorId": "inn-host-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "remain-available-for-guests",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/edric-afternoon-river-notes.json",
+    "id": "edric-afternoon-river-notes",
+    "participants": [
+      "npc-01"
+    ],
+    "timeWindow": {
+      "start": "13:00",
+      "end": "17:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-town-square"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "inspect-river-bank",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-river-bank"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "share-river-observation",
+            "text": "The river is quieter beyond the Old Ford.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "action",
+            "id": "note-river-conditions",
+            "actionId": "river-fishing",
+            "durationSeconds": 86
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/edric-afternoon-rounds.json",
+    "id": "edric-afternoon-rounds",
+    "participants": [
+      "npc-01"
+    ],
+    "timeWindow": {
+      "start": "13:00",
+      "end": "17:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-town-square"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "walk-market-rounds",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-market-rounds"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "check-market-lane",
+            "text": "Market Lane appears orderly this afternoon.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "wait",
+            "id": "receive-town-reports",
+            "durationSeconds": 90
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/edric-evening-fishing.json",
+    "id": "edric-evening-fishing",
+    "participants": [
+      "npc-01"
+    ],
+    "timeWindow": {
+      "start": "17:00",
+      "end": "20:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "finish-afternoon-rounds",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-market-rounds"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "walk-to-river-bank",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-river-bank"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "greet-river",
+            "text": "A quiet river rewards patience more than ceremony.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "action",
+            "id": "fish-river",
+            "actionId": "river-fishing",
+            "durationSeconds": 66
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/edric-evening-rain-shelter.json",
+    "id": "edric-evening-rain-shelter",
+    "participants": [
+      "npc-01"
+    ],
+    "timeWindow": {
+      "start": "17:00",
+      "end": "20:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-home-shelter",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-rain-shelter"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "review-notices-indoors",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-home-study"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "postpone-fishing",
+            "text": "The river can wait until the heavy rain passes.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "wait",
+            "id": "review-civic-notices",
+            "durationSeconds": 70
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/harlan-docks-day.json",
+    "id": "harlan-docks-day",
+    "participants": [
+      "npc-04"
+    ],
+    "timeWindow": {
+      "start": "06:00",
+      "end": "22:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-04",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-dock-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "harlan-sluice-practice-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "coordinate-dock-work",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/harlan-docks-evening.json",
+    "id": "harlan-docks-evening",
+    "participants": [
+      "npc-04"
+    ],
+    "timeWindow": {
+      "start": "22:00",
+      "end": "06:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-04",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-dock-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "harlan-sluice-practice-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "review-dock-notes",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/helena-afternoon-archive.json",
+    "id": "helena-afternoon-archive",
+    "participants": [
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "13:00",
+      "end": "17:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+      "stepDialogueEntries": [
+        {
+          "participantId": "npc-02",
+          "stepId": "afternoon-index",
+          "dialogueEntryNodeId": "npc-02-routine-archive-indexing"
+        }
+      ],
+      "outcomeDirectives": [
+        {
+          "outcomeTag": "npc-02-resume-archive-default",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-resume-archive-indexing",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-review-archive-ledger",
+          "directive": {
+            "kind": "jumpToStep",
+            "participantId": "npc-02",
+            "stepId": "afternoon-review-ledger"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-default",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-indexing",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        }
+      ]
+    },
+    "steps": [
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "helena-town-square"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "return-to-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "afternoon-index",
+            "actionId": "archive-work",
+            "durationSeconds": 70
+          },
+          {
+            "kind": "speech",
+            "id": "confirm-index-progress",
+            "text": "These entries now agree with their shelf marks.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "move",
+            "id": "check-archive-shelves",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-shelves"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "afternoon-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 24
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/helena-afternoon-ledger-review.json",
+    "id": "helena-afternoon-ledger-review",
+    "participants": [
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "13:00",
+      "end": "17:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+      "stepDialogueEntries": [
+        {
+          "participantId": "npc-02",
+          "stepId": "afternoon-index",
+          "dialogueEntryNodeId": "npc-02-routine-archive-indexing"
+        }
+      ],
+      "outcomeDirectives": [
+        {
+          "outcomeTag": "npc-02-resume-archive-default",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-resume-archive-indexing",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-review-archive-ledger",
+          "directive": {
+            "kind": "jumpToStep",
+            "participantId": "npc-02",
+            "stepId": "afternoon-review-ledger"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-default",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-indexing",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        }
+      ]
+    },
+    "steps": [
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "helena-town-square"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "return-to-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "afternoon-index",
+            "actionId": "archive-work",
+            "durationSeconds": 58
+          },
+          {
+            "kind": "speech",
+            "id": "confirm-ledger-lead",
+            "text": "That ledger reference deserves a careful review.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "move",
+            "id": "check-archive-shelves",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-shelves"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "afternoon-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 36
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/helena-afternoon-moonflower-records.json",
+    "id": "helena-afternoon-moonflower-records",
+    "participants": [
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "13:00",
+      "end": "17:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+      "stepDialogueEntries": [
+        {
+          "participantId": "npc-02",
+          "stepId": "afternoon-index",
+          "dialogueEntryNodeId": "npc-02-routine-archive-indexing"
+        }
+      ],
+      "outcomeDirectives": [
+        {
+          "outcomeTag": "npc-02-resume-archive-default",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-resume-archive-indexing",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-review-archive-ledger",
+          "directive": {
+            "kind": "jumpToStep",
+            "participantId": "npc-02",
+            "stepId": "afternoon-review-ledger"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-default",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-indexing",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        }
+      ]
+    },
+    "steps": [
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "helena-town-square"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "return-to-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "afternoon-index",
+            "actionId": "archive-work",
+            "durationSeconds": 70
+          },
+          {
+            "kind": "speech",
+            "id": "record-moonflower-season",
+            "text": "A Moonflower sighting belongs in the seasonal index.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "move",
+            "id": "check-archive-shelves",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-shelves"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "afternoon-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 24
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/helena-evening-archive.json",
+    "id": "helena-evening-archive",
+    "participants": [
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "17:00",
+      "end": "20:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+      "stepDialogueEntries": [
+        {
+          "participantId": "npc-02",
+          "stepId": "evening-index",
+          "dialogueEntryNodeId": "npc-02-routine-archive-indexing"
+        }
+      ],
+      "outcomeDirectives": [
+        {
+          "outcomeTag": "npc-02-resume-archive-default",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-resume-archive-indexing",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-review-archive-ledger",
+          "directive": {
+            "kind": "jumpToStep",
+            "participantId": "npc-02",
+            "stepId": "evening-review-ledger"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-default",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-indexing",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        }
+      ]
+    },
+    "steps": [
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "return-to-archive-desk",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "evening-index",
+            "actionId": "archive-work",
+            "durationSeconds": 48
+          },
+          {
+            "kind": "speech",
+            "id": "prepare-shelf-check",
+            "text": "One final shelf check, then the folios can rest.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "move",
+            "id": "check-evening-shelves",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-shelves"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "evening-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 24
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/ivo-docks-day.json",
+    "id": "ivo-docks-day",
+    "participants": [
+      "npc-07"
+    ],
+    "timeWindow": {
+      "start": "06:00",
+      "end": "22:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-07",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-booking-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-booking-ivo-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "listen-to-dock-questions",
+            "durationSeconds": 45
+          },
+          {
+            "kind": "move",
+            "id": "check-shore-handoff",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-salvage-handoff-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "review-shore-lines",
+            "durationSeconds": 20
+          },
+          {
+            "kind": "move",
+            "id": "return-to-booking-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-booking-ivo-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "remain-available-at-berth",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/ivo-docks-evening.json",
+    "id": "ivo-docks-evening",
+    "participants": [
+      "npc-07"
+    ],
+    "timeWindow": {
+      "start": "22:00",
+      "end": "06:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-07",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-booking-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-booking-ivo-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "listen-to-dock-questions",
+            "durationSeconds": 45
+          },
+          {
+            "kind": "move",
+            "id": "check-shore-handoff",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-salvage-handoff-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "review-shore-lines",
+            "durationSeconds": 20
+          },
+          {
+            "kind": "move",
+            "id": "return-to-booking-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-booking-ivo-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "remain-available-at-berth",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/maris-chandlery-day.json",
+    "id": "maris-chandlery-day",
+    "participants": [
+      "npc-03"
+    ],
+    "timeWindow": {
+      "start": "06:00",
+      "end": "22:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-03",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-chandlery",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "maris-fitting-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "tend-ordinary-stock",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/maris-chandlery-evening.json",
+    "id": "maris-chandlery-evening",
+    "participants": [
+      "npc-03"
+    ],
+    "timeWindow": {
+      "start": "22:00",
+      "end": "06:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-03",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-chandlery",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "maris-fitting-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "sort-evening-stock",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/tess-store-day.json",
+    "id": "tess-store-day",
+    "participants": [
+      "npc-06"
+    ],
+    "timeWindow": {
+      "start": "06:00",
+      "end": "22:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-06",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-store-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "store-service-tess-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "listen-to-supply-needs",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/tess-store-evening.json",
+    "id": "tess-store-evening",
+    "participants": [
+      "npc-06"
+    ],
+    "timeWindow": {
+      "start": "22:00",
+      "end": "06:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-06",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "reach-store-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "store-service-tess-01"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "review-store-list",
+            "durationSeconds": 400
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/vale-breakfast.json",
+    "id": "vale-breakfast",
+    "participants": [
+      "npc-01",
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "06:00",
+      "end": "08:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "take-breakfast-seat",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-breakfast"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "review-town-notices",
+            "text": "The morning notices are ready for Market Lane.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "wait",
+            "id": "finish-breakfast",
+            "durationSeconds": 45
+          }
+        ]
+      },
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "take-breakfast-seat",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-breakfast"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "check-archive-list",
+            "text": "I have three archive references to cross-check today.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "wait",
+            "id": "finish-breakfast",
+            "durationSeconds": 45
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/vale-evening-home.json",
+    "id": "vale-evening-home",
+    "participants": [
+      "npc-01",
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "20:00",
+      "end": "22:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-evening-post",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-rain-shelter"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "take-evening-seat",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-evening-seat"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "evening-at-home",
+            "durationSeconds": 50
+          }
+        ]
+      },
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "close-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "take-evening-seat",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-evening-seat"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "evening-at-home",
+            "durationSeconds": 50
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/vale-midday-briefing.json",
+    "id": "vale-midday-briefing",
+    "participants": [
+      "npc-01",
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "12:00",
+      "end": "13:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-morning-post",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-market-rounds"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "join-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-town-square"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "open-civic-briefing",
+            "text": "Let us compare the council notes with the public record.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "wait",
+            "id": "hold-civic-briefing",
+            "durationSeconds": 20
+          }
+        ]
+      },
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "join-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "helena-town-square"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "answer-civic-briefing",
+            "text": "The archive copy and the council note now agree.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "wait",
+            "id": "hold-civic-briefing",
+            "durationSeconds": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/vale-morning-work.json",
+    "id": "vale-morning-work",
+    "participants": [
+      "npc-01",
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "08:00",
+      "end": "12:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [
+        {
+          "participantId": "npc-02",
+          "stepId": "morning-index",
+          "dialogueEntryNodeId": "npc-02-routine-archive-indexing"
+        }
+      ],
+      "outcomeDirectives": [
+        {
+          "outcomeTag": "npc-02-resume-archive-default",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-resume-archive-indexing",
+          "directive": {
+            "kind": "resume"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-review-archive-ledger",
+          "directive": {
+            "kind": "jumpToStep",
+            "participantId": "npc-02",
+            "stepId": "morning-review-ledger"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-default",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        },
+        {
+          "outcomeTag": "npc-02-end-archive-indexing",
+          "directive": {
+            "kind": "endRoutineForDay"
+          }
+        }
+      ]
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-breakfast",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-breakfast"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "open-town-office",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-town-square"
+            }
+          },
+          {
+            "kind": "speech",
+            "id": "announce-office-hours",
+            "text": "Town questions can be brought here before noon.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "wait",
+            "id": "hold-office-hours",
+            "durationSeconds": 90
+          }
+        ]
+      },
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "leave-breakfast",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-breakfast"
+            }
+          },
+          {
+            "kind": "move",
+            "id": "open-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          {
+            "kind": "action",
+            "id": "morning-index",
+            "actionId": "archive-work",
+            "durationSeconds": 70
+          },
+          {
+            "kind": "speech",
+            "id": "mark-index-mismatch",
+            "text": "This shelf index needs one more check.",
+            "durationSeconds": 4
+          },
+          {
+            "kind": "action",
+            "id": "morning-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 24
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source_path": "assets/data/routines/vale-overnight-home.json",
+    "id": "vale-overnight-home",
+    "participants": [
+      "npc-01",
+      "npc-02"
+    ],
+    "timeWindow": {
+      "start": "22:00",
+      "end": "06:00"
+    },
+    "interactionPolicy": {
+      "allowDialogue": true,
+      "defaultDialogueEntryNodeId": null,
+      "stepDialogueEntries": [],
+      "outcomeDirectives": []
+    },
+    "steps": [
+      {
+        "participantId": "npc-01",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "settle-for-night",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-rest"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "rest-until-morning",
+            "durationSeconds": 240
+          }
+        ]
+      },
+      {
+        "participantId": "npc-02",
+        "steps": [
+          {
+            "kind": "move",
+            "id": "settle-for-night",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-rest"
+            }
+          },
+          {
+            "kind": "wait",
+            "id": "rest-until-morning",
+            "durationSeconds": 240
+          }
+        ]
+      }
+    ]
+  }
+]

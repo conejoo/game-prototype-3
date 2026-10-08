@@ -1,0 +1,64 @@
+{
+  "id": "npc-07",
+  "displayName": "Ivo Oran",
+  "shortName": "Ivo",
+  "title": "River-run captain and fishmonger",
+  "pronouns": "he/him",
+  "interactionPrompt": "Talk to Ivo Oran",
+  "relationship": {
+    "levelOneAffinity": 3,
+    "levelOneLabel": "Acquaintance"
+  },
+  "dimensions": {
+    "hitWidth": 32,
+    "hitHeight": 32,
+    "interactionRadius": 64
+  },
+  "routine": {
+    "agentProfile": {
+      "id": "town-adult",
+      "footprintRadius": 10,
+      "clearance": 0
+    },
+    "actionIds": [],
+    "relationshipFlagIds": [
+      "npc-07-introduced",
+      "npc-07-careful-response",
+      "npc-07-careful-reward",
+      "npc-07-passing-response",
+      "npc-07-passing-reward"
+    ]
+  },
+  "facts": [
+    {
+      "id": "npc-07-public-role",
+      "category": "Public life",
+      "label": "River-run captain",
+      "description": "Ivo Oran is Alderwake's river-run captain and fishmonger. He handles passenger-berth business and local fish supplies.",
+      "highlightTerm": "river-run captain"
+    },
+    {
+      "id": "npc-07-local-seamanship",
+      "category": "Work",
+      "label": "Local seamanship",
+      "description": "Ivo knows ordinary fishing and local seamanship, checking weather, lines and a clear shore before work.",
+      "highlightTerm": "local seamanship"
+    },
+    {
+      "id": "npc-07-knotwork",
+      "category": "Interests",
+      "label": "Knotwork",
+      "description": "Ivo practices knotwork and keeps river notes in a small book; he likes a pressed Moonflower between its pages.",
+      "highlightTerm": "knotwork"
+    }
+  ],
+  "acceptedGiftRules": [
+    {
+      "id": "npc-07-moonflower-gift",
+      "itemId": "moonflower",
+      "requiredFactId": "npc-07-knotwork",
+      "affinityDelta": 1,
+      "acceptanceCap": 2
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "godot_version": "4.7.2.stable.mono.official.ed1daf0bf",
+  "renderer": "gl_compatibility",
+  "console": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe",
+  "editor": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64.exe",
+  "python": "C:/Users/aldoc/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "blender_executable_exists": true,
+  "blender_mcp": "get_scene_info read-only PASS; RF-RecoveryVessel,21 objects,14 materials",
+  "rig_animation_export": "not yet verified; N007 owns extension of static P012 pipeline",
+  "first_blender_call": "failed schema validation: missing user_prompt; corrected read-only call passed"
+}

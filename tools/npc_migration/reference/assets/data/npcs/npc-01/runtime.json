@@ -1,0 +1,69 @@
+{
+  "id": "npc-01",
+  "displayName": "Mayor Edric Vale",
+  "shortName": "Edric",
+  "title": "Mayor",
+  "pronouns": "he/him",
+  "interactionPrompt": "Talk to Mayor Vale",
+  "relationship": {
+    "levelOneAffinity": 3,
+    "levelOneLabel": "Acquaintance",
+    "levelOneMilestone": {
+      "dialogueNodeId": "npc-01-level-1-milestone",
+      "seenFlagId": "relationshipLevel1Seen"
+    }
+  },
+  "dimensions": {
+    "hitWidth": 32,
+    "hitHeight": 32,
+    "interactionRadius": 48
+  },
+  "routine": {
+    "agentProfile": {
+      "id": "town-adult",
+      "footprintRadius": 10,
+      "clearance": 0
+    },
+    "actionIds": ["river-fishing"],
+    "relationshipFlagIds": [
+      "npc-01-first-conversation-complete",
+      "npc-01-helpful-response",
+      "npc-01-neutral-response",
+      "npc-01-helpful-reward-applied",
+      "npc-01-neutral-reward-applied",
+      "relationshipLevel1Seen"
+    ]
+  },
+  "facts": [
+    {
+      "id": "npc-01-public-role",
+      "category": "Public life",
+      "label": "Town mayor",
+      "description": "Edric Vale serves as the town's mayor.",
+      "highlightTerm": "Mayor"
+    },
+    {
+      "id": "npc-01-moonflower-preference",
+      "category": "Preferences",
+      "label": "Moonflowers",
+      "description": "Edric has a particular fondness for Moonflowers.",
+      "highlightTerm": "Moonflowers"
+    },
+    {
+      "id": "npc-01-river-fishing",
+      "category": "Interests",
+      "label": "River fishing",
+      "description": "Edric values quiet mornings spent fishing by the river.",
+      "highlightTerm": "river fishing"
+    }
+  ],
+  "acceptedGiftRules": [
+    {
+      "id": "npc-01-moonflower-gift",
+      "itemId": "moonflower",
+      "requiredFactId": "npc-01-moonflower-preference",
+      "affinityDelta": 1,
+      "acceptanceCap": 2
+    }
+  ]
+}

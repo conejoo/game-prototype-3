@@ -1,0 +1,136 @@
+{
+  "npcId": "npc-08",
+  "entryNodeIds": [
+    "npc-08-introduction",
+    "npc-08-return"
+  ],
+  "nodes": [
+    {
+      "id": "npc-08-introduction",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "Celia Oran, **boatwright**. I would rather mend a sound old hull than throw it away. Mind the fitting tray, and ask what you need.",
+      "conditions": {
+        "excludedFlags": [
+          "npc-08-introduced"
+        ]
+      },
+      "revealedFactIds": [
+        "npc-08-public-role"
+      ],
+      "choices": [
+        {
+          "id": "npc-08-careful-response",
+          "text": "I will leave room for your work.",
+          "targetNodeId": "npc-08-careful-end",
+          "affinityDelta": 1,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-08-careful-reward",
+          "addedFlags": [
+            "npc-08-introduced",
+            "npc-08-careful-response"
+          ]
+        },
+        {
+          "id": "npc-08-passing-response",
+          "text": "I am looking around town.",
+          "targetNodeId": "npc-08-passing-end",
+          "affinityDelta": 0,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-08-passing-reward",
+          "addedFlags": [
+            "npc-08-introduced",
+            "npc-08-passing-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc-08-careful-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Thank you. A clear work space makes careful hands more useful."
+    },
+    {
+      "id": "npc-08-passing-end",
+      "priority": 0,
+      "portraitId": "practiced-smile",
+      "text": "Then ask away. Looking costs nothing."
+    },
+    {
+      "id": "npc-08-return",
+      "priority": 100,
+      "portraitId": "practiced-smile",
+      "text": "What would you like to know?",
+      "conditions": {
+        "requiredFlags": [
+          "npc-08-introduced"
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-08-ask-supplies",
+          "text": "What ordinary repairs can you help with?",
+          "targetNodeId": "npc-08-supplies"
+        },
+        {
+          "id": "npc-08-ask-demo",
+          "text": "Tell me about your fair boat.",
+          "targetNodeId": "npc-08-demo"
+        },
+        {
+          "id": "npc-08-ask-busy",
+          "text": "Do you ever put the tools down?",
+          "targetNodeId": "npc-08-busy"
+        },
+        {
+          "id": "npc-08-ask-hobby",
+          "text": "What do you make for yourself?",
+          "targetNodeId": "npc-08-hobby"
+        },
+        {
+          "id": "npc-08-gift-moonflower",
+          "text": "I brought a Moonflower for your carvings.",
+          "targetNodeId": "npc-08-gift-end",
+          "giftRuleId": "npc-08-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-08-supplies",
+      "priority": 0,
+      "portraitId": "official-neutral",
+      "text": "I can help with **basic repairs**: inspect a seam, mend a fitting, replace a worn line. Those are useful skills of their own. Advanced hull shaping is a different kind of judgment.",
+      "revealedFactIds": [
+        "npc-08-basic-repairs"
+      ]
+    },
+    {
+      "id": "npc-08-demo",
+      "priority": 0,
+      "portraitId": "skeptical",
+      "text": "My small shallow-water demonstration boat is for a short fair ride back to the same bank. It is separate from the passenger ship, and from an heirloom skiff. A demonstration is no replacement for an onward passage."
+    },
+    {
+      "id": "npc-08-busy",
+      "priority": 0,
+      "portraitId": "tired-rumpled",
+      "text": "Eventually. Tea first, then I can decide whether that seam truly needs another look."
+    },
+    {
+      "id": "npc-08-hobby",
+      "priority": 0,
+      "portraitId": "woodcarving",
+      "text": "I enjoy **woodcarving**: little river birds from spare wood. A Moonflower beside them makes the work bench feel less like a list of jobs.",
+      "revealedFactIds": [
+        "npc-08-woodcarving"
+      ]
+    },
+    {
+      "id": "npc-08-gift-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Thank you. I will give it a place beside the birds."
+    }
+  ]
+}

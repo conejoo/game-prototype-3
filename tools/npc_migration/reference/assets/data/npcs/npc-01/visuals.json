@@ -1,0 +1,39 @@
+{
+  "npcId": "npc-01",
+  "portraits": {
+    "official-neutral": "assets/images/portraits/npc-01/official-neutral.png",
+    "practiced-smile": "assets/images/portraits/npc-01/practiced-smile.png",
+    "skeptical": "assets/images/portraits/npc-01/skeptical.png",
+    "pleased": "assets/images/portraits/npc-01/pleased.png",
+    "tired-rumpled": "assets/images/portraits/npc-01/tired-rumpled.png",
+    "fishing-gear": "assets/images/portraits/npc-01/fishing-gear.png"
+  },
+  "world": {
+    "worldCellWidth": 48,
+    "worldCellHeight": 48,
+    "rowOrder": ["south", "north", "west", "east"],
+    "idle": {
+      "asset": "assets/images/actors/npcs/npc_01_idle_sheet.png",
+      "textureCellWidth": 192,
+      "textureCellHeight": 192,
+      "framesPerFacing": 4,
+      "stepSeconds": 0.24
+    },
+    "walk": {
+      "asset": "assets/images/actors/npcs/npc_01_walk_sheet.png",
+      "textureCellWidth": 192,
+      "textureCellHeight": 192,
+      "framesPerFacing": 3,
+      "stepSeconds": 0.16
+    },
+    "actions": {
+      "river-fishing": {
+        "asset": "assets/images/actors/npcs/npc_01_river_fishing_sheet.png",
+        "textureCellWidth": 192,
+        "textureCellHeight": 192,
+        "framesPerFacing": 4,
+        "stepSeconds": 0.2
+      }
+    }
+  }
+}

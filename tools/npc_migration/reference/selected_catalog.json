@@ -1,0 +1,52 @@
+{
+  "npcs": [
+    {
+      "id": "npc-01",
+      "runtime": "assets/data/npcs/npc-01/runtime.json",
+      "dialogue": "assets/data/npcs/npc-01/dialogue.json",
+      "visuals": "assets/data/npcs/npc-01/visuals.json"
+    },
+    {
+      "id": "npc-02",
+      "runtime": "assets/data/npcs/npc-02/runtime.json",
+      "dialogue": "assets/data/npcs/npc-02/dialogue.json",
+      "visuals": "assets/data/npcs/npc-02/visuals.json"
+    },
+    {
+      "id": "npc-03",
+      "runtime": "assets/data/npcs/npc-03/runtime.json",
+      "dialogue": "assets/data/npcs/npc-03/dialogue.json",
+      "visuals": "assets/data/npcs/npc-03/visuals.json"
+    },
+    {
+      "id": "npc-04",
+      "runtime": "assets/data/npcs/npc-04/runtime.json",
+      "dialogue": "assets/data/npcs/npc-04/dialogue.json",
+      "visuals": "assets/data/npcs/npc-04/visuals.json"
+    },
+    {
+      "id": "npc-06",
+      "runtime": "assets/data/npcs/npc-06/runtime.json",
+      "dialogue": "assets/data/npcs/npc-06/dialogue.json",
+      "visuals": "assets/data/npcs/npc-06/visuals.json"
+    },
+    {
+      "id": "npc-07",
+      "runtime": "assets/data/npcs/npc-07/runtime.json",
+      "dialogue": "assets/data/npcs/npc-07/dialogue.json",
+      "visuals": "assets/data/npcs/npc-07/visuals.json"
+    },
+    {
+      "id": "npc-08",
+      "runtime": "assets/data/npcs/npc-08/runtime.json",
+      "dialogue": "assets/data/npcs/npc-08/dialogue.json",
+      "visuals": "assets/data/npcs/npc-08/visuals.json"
+    },
+    {
+      "id": "npc-14",
+      "runtime": "assets/data/npcs/npc-14/runtime.json",
+      "dialogue": "assets/data/npcs/npc-14/dialogue.json",
+      "visuals": "assets/data/npcs/npc-14/visuals.json"
+    }
+  ]
+}

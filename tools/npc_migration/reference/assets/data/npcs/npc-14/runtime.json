@@ -1,0 +1,64 @@
+{
+  "id": "npc-14",
+  "displayName": "Della Pike",
+  "shortName": "Della",
+  "title": "Lantern Rest innkeeper",
+  "pronouns": "she/her",
+  "interactionPrompt": "Talk to Della Pike",
+  "relationship": {
+    "levelOneAffinity": 3,
+    "levelOneLabel": "Acquaintance"
+  },
+  "dimensions": {
+    "hitWidth": 32,
+    "hitHeight": 32,
+    "interactionRadius": 64
+  },
+  "routine": {
+    "agentProfile": {
+      "id": "town-adult",
+      "footprintRadius": 10,
+      "clearance": 0
+    },
+    "actionIds": [],
+    "relationshipFlagIds": [
+      "npc-14-introduced",
+      "npc-14-careful-response",
+      "npc-14-careful-reward",
+      "npc-14-passing-response",
+      "npc-14-passing-reward"
+    ]
+  },
+  "facts": [
+    {
+      "id": "npc-14-public-role",
+      "category": "Public life",
+      "label": "Innkeeper",
+      "description": "Della Pike is the innkeeper at Lantern Rest, welcoming visitors and neighbors to its meal room.",
+      "highlightTerm": "innkeeper"
+    },
+    {
+      "id": "npc-14-quiet-company",
+      "category": "Care",
+      "label": "Quiet company",
+      "description": "Della offers quiet company without asking people to explain private matters. Guests may ask for space or conversation.",
+      "highlightTerm": "quiet company"
+    },
+    {
+      "id": "npc-14-quilting",
+      "category": "Interests",
+      "label": "Quilting",
+      "description": "Della enjoys quilting with useful scraps of cloth. She likes a Moonflower beside her sewing basket.",
+      "highlightTerm": "quilting"
+    }
+  ],
+  "acceptedGiftRules": [
+    {
+      "id": "npc-14-moonflower-gift",
+      "itemId": "moonflower",
+      "requiredFactId": "npc-14-quilting",
+      "affinityDelta": 1,
+      "acceptanceCap": 2
+    }
+  ]
+}

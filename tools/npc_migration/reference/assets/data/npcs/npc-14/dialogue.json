@@ -1,0 +1,147 @@
+{
+  "npcId": "npc-14",
+  "entryNodeIds": [
+    "npc-14-introduction",
+    "npc-14-return"
+  ],
+  "nodes": [
+    {
+      "id": "npc-14-introduction",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "Della Pike, **innkeeper** here at Lantern Rest. Come in from the road. There is room to ask a question or sit quietly.",
+      "conditions": {
+        "excludedFlags": [
+          "npc-14-introduced"
+        ]
+      },
+      "revealedFactIds": [
+        "npc-14-public-role"
+      ],
+      "choices": [
+        {
+          "id": "npc-14-careful-response",
+          "text": "Thank you. I will leave space for the other guests.",
+          "targetNodeId": "npc-14-careful-end",
+          "affinityDelta": 1,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-14-careful-reward",
+          "addedFlags": [
+            "npc-14-introduced",
+            "npc-14-careful-response"
+          ]
+        },
+        {
+          "id": "npc-14-passing-response",
+          "text": "I am getting to know the town.",
+          "targetNodeId": "npc-14-passing-end",
+          "affinityDelta": 0,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-14-passing-reward",
+          "addedFlags": [
+            "npc-14-introduced",
+            "npc-14-passing-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc-14-careful-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "That is thoughtful. You need not earn a welcome, though."
+    },
+    {
+      "id": "npc-14-passing-end",
+      "priority": 0,
+      "portraitId": "practiced-smile",
+      "text": "Then take your time. Questions are welcome here."
+    },
+    {
+      "id": "npc-14-return",
+      "priority": 100,
+      "portraitId": "practiced-smile",
+      "text": "What would you like to know?",
+      "conditions": {
+        "requiredFlags": [
+          "npc-14-introduced"
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-14-ask-hosting",
+          "text": "How do you look after your guests?",
+          "targetNodeId": "npc-14-hosting"
+        },
+        {
+          "id": "npc-14-ask-quiet",
+          "text": "May people keep their troubles private?",
+          "targetNodeId": "npc-14-quiet"
+        },
+        {
+          "id": "npc-14-ask-room",
+          "text": "Which part of the inn is the guest room?",
+          "targetNodeId": "npc-14-room"
+        },
+        {
+          "id": "npc-14-ask-busy",
+          "text": "Do you ever sit down yourself?",
+          "targetNodeId": "npc-14-busy"
+        },
+        {
+          "id": "npc-14-ask-hobby",
+          "text": "What do you enjoy when the work is done?",
+          "targetNodeId": "npc-14-hobby"
+        },
+        {
+          "id": "npc-14-gift-moonflower",
+          "text": "I brought a Moonflower for your sewing basket.",
+          "targetNodeId": "npc-14-gift-end",
+          "giftRuleId": "npc-14-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-14-hosting",
+      "priority": 0,
+      "portraitId": "official-neutral",
+      "text": "A warm meal room, a clear way through the door, and someone who listens. Guests and neighbors can both ask me a question."
+    },
+    {
+      "id": "npc-14-quiet",
+      "priority": 0,
+      "portraitId": "skeptical",
+      "text": "I offer **quiet company**, too. No one owes a story in return for care. If you want space, say so; if you want to talk, I can listen.",
+      "revealedFactIds": [
+        "npc-14-quiet-company"
+      ]
+    },
+    {
+      "id": "npc-14-room",
+      "priority": 0,
+      "portraitId": "official-neutral",
+      "text": "The guest room is on the right, off the main passage. The meal room is here on the left. Keep the passage clear so everyone can come and go."
+    },
+    {
+      "id": "npc-14-busy",
+      "priority": 0,
+      "portraitId": "tired-rumpled",
+      "text": "I do, once the room settles. A cup of tea stays warmer when I remember to drink it."
+    },
+    {
+      "id": "npc-14-hobby",
+      "priority": 0,
+      "portraitId": "quilting",
+      "text": "I enjoy **quilting**, giving scraps of cloth a useful second life. A Moonflower beside my sewing basket makes a quiet hour feel special.",
+      "revealedFactIds": [
+        "npc-14-quilting"
+      ]
+    },
+    {
+      "id": "npc-14-gift-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Thank you. I will put it beside the basket."
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "npcId": "npc-07",
+  "entryNodeIds": [
+    "npc-07-introduction",
+    "npc-07-return"
+  ],
+  "nodes": [
+    {
+      "id": "npc-07-introduction",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "Ivo Oran, **river-run captain** and fishmonger. Keep the shore lane clear and tell me what you need.",
+      "conditions": {
+        "excludedFlags": [
+          "npc-07-introduced"
+        ]
+      },
+      "revealedFactIds": [
+        "npc-07-public-role"
+      ],
+      "choices": [
+        {
+          "id": "npc-07-careful-response",
+          "text": "I will keep clear of the working lines.",
+          "targetNodeId": "npc-07-careful-end",
+          "affinityDelta": 1,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-07-careful-reward",
+          "addedFlags": [
+            "npc-07-introduced",
+            "npc-07-careful-response"
+          ]
+        },
+        {
+          "id": "npc-07-passing-response",
+          "text": "I am getting to know the docks.",
+          "targetNodeId": "npc-07-passing-end",
+          "affinityDelta": 0,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-07-passing-reward",
+          "addedFlags": [
+            "npc-07-introduced",
+            "npc-07-passing-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc-07-careful-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Good. Room to work is useful help."
+    },
+    {
+      "id": "npc-07-passing-end",
+      "priority": 0,
+      "portraitId": "practiced-smile",
+      "text": "Ask away. You need not bring a favor to ask a question."
+    },
+    {
+      "id": "npc-07-return",
+      "priority": 100,
+      "portraitId": "practiced-smile",
+      "text": "Back at the river. What is on your mind?",
+      "conditions": {
+        "requiredFlags": [
+          "npc-07-introduced"
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-07-ask-supplies",
+          "text": "What keeps local fishing work going?",
+          "targetNodeId": "npc-07-supplies"
+        },
+        {
+          "id": "npc-07-ask-work",
+          "text": "How do you plan a job by the water?",
+          "targetNodeId": "npc-07-work"
+        },
+        {
+          "id": "npc-07-ask-busy",
+          "text": "Do you ever put the work aside?",
+          "targetNodeId": "npc-07-busy"
+        },
+        {
+          "id": "npc-07-ask-hobby",
+          "text": "What do you do between trips?",
+          "targetNodeId": "npc-07-hobby"
+        },
+        {
+          "id": "npc-07-gift-moonflower",
+          "text": "I brought a Moonflower for your river book.",
+          "targetNodeId": "npc-07-gift-end",
+          "giftRuleId": "npc-07-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-07-supplies",
+      "priority": 0,
+      "portraitId": "official-neutral",
+      "text": "Ordinary fishing and **local seamanship**: watch the weather, check the lines, keep a clear shore. A small useful catch still feeds someone.",
+      "revealedFactIds": [
+        "npc-07-local-seamanship"
+      ]
+    },
+    {
+      "id": "npc-07-work",
+      "priority": 0,
+      "portraitId": "skeptical",
+      "text": "First agree what needs doing and who is helping. Then check the lines, gear and footing together. A confident promise is no substitute for a sound plan."
+    },
+    {
+      "id": "npc-07-busy",
+      "priority": 0,
+      "portraitId": "tired-rumpled",
+      "text": "Eventually. Tea on dry ground is a fine invention. Tomorrow is easier to think about after a sit-down."
+    },
+    {
+      "id": "npc-07-hobby",
+      "priority": 0,
+      "portraitId": "knotwork",
+      "text": "I practice **knotwork** and keep river notes in a little book. A pressed Moonflower makes a good bookmark; it reminds me to slow down.",
+      "revealedFactIds": [
+        "npc-07-knotwork"
+      ]
+    },
+    {
+      "id": "npc-07-gift-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Thank you. There is a clean page waiting for it."
+    }
+  ]
+}

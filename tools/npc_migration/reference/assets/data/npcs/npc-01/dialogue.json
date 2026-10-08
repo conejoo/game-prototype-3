@@ -1,0 +1,141 @@
+{
+  "npcId": "npc-01",
+  "entryNodeIds": [
+    "npc-01-level-1-milestone",
+    "npc-01-moonflower-hint",
+    "npc-01-woods-repeat",
+    "npc-01-woods-first",
+    "npc-01-initial-conversation",
+    "npc-01-follow-up-conversation"
+  ],
+  "nodes": [
+    {
+      "id": "npc-01-initial-conversation",
+      "priority": 100,
+      "portraitId": "skeptical",
+      "text": "A new face warrants a proper welcome—and a little context. What brings you to our town?",
+      "conditions": {
+        "excludedFlags": ["npc-01-first-conversation-complete"]
+      },
+      "choices": [
+        {
+          "id": "npc-01-helpful-response",
+          "text": "I hope to help wherever the town needs me.",
+          "targetNodeId": "npc-01-initial-helpful-end",
+          "affinityDelta": 1,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-01-helpful-reward-applied",
+          "addedFlags": [
+            "npc-01-first-conversation-complete",
+            "npc-01-helpful-response"
+          ]
+        },
+        {
+          "id": "npc-01-neutral-response",
+          "text": "I'm still finding my way around.",
+          "targetNodeId": "npc-01-initial-guarded-end",
+          "affinityDelta": 0,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-01-neutral-reward-applied",
+          "addedFlags": [
+            "npc-01-first-conversation-complete",
+            "npc-01-neutral-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc-01-initial-helpful-end",
+      "priority": 0,
+      "portraitId": "practiced-smile",
+      "text": "Civic spirit is always welcome. I shall remember that offer."
+    },
+    {
+      "id": "npc-01-initial-guarded-end",
+      "priority": 0,
+      "portraitId": "official-neutral",
+      "text": "Sensibly cautious. Take time to learn which paths—and people—deserve your trust."
+    },
+    {
+      "id": "npc-01-woods-first",
+      "priority": 130,
+      "portraitId": "official-neutral",
+      "text": "I hear you have begun exploring Moonwood. Stay to the marked paths; appearances there can mislead.",
+      "conditions": {
+        "requiredFlags": ["npc-01-first-conversation-complete"],
+        "unseenNodeIds": ["npc-01-woods-first"],
+        "events": [
+          {"kind": "areaEntered", "subjectId": "woods", "minimumCount": 1, "maximumCount": 1}
+        ]
+      }
+    },
+    {
+      "id": "npc-01-woods-repeat",
+      "priority": 140,
+      "portraitId": "skeptical",
+      "text": "Moonwood has drawn you back more than once. Curiosity is useful when tempered by judgment.",
+      "conditions": {
+        "requiredFlags": ["npc-01-first-conversation-complete"],
+        "unseenNodeIds": ["npc-01-woods-repeat"],
+        "events": [
+          {"kind": "areaEntered", "subjectId": "woods", "minimumCount": 2}
+        ]
+      }
+    },
+    {
+      "id": "npc-01-moonflower-hint",
+      "priority": 180,
+      "portraitId": "practiced-smile",
+      "text": "You found **Moonflowers**. Their color survives even the gloomiest council chamber; I have always admired that.",
+      "revealedFactIds": ["npc-01-moonflower-preference"],
+      "conditions": {
+        "requiredFlags": ["npc-01-first-conversation-complete"],
+        "unknownFactIds": ["npc-01-moonflower-preference"],
+        "events": [
+          {"kind": "resourceGathered", "subjectId": "moonflower", "minimumCount": 1}
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-01-gift-moonflower-from-hint",
+          "text": "Then please accept one.",
+          "targetNodeId": "npc-01-gift-response",
+          "giftRuleId": "npc-01-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-01-follow-up-conversation",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "Good to see you again. How is village life treating you?",
+      "conditions": {
+        "requiredFlags": ["npc-01-first-conversation-complete"]
+      },
+      "choices": [
+        {
+          "id": "npc-01-gift-moonflower-follow-up",
+          "text": "I brought you a Moonflower.",
+          "targetNodeId": "npc-01-gift-response",
+          "giftRuleId": "npc-01-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-01-gift-response",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "A thoughtful choice. Thank you—I shall see it placed where the morning light catches it."
+    },
+    {
+      "id": "npc-01-level-1-milestone",
+      "priority": 300,
+      "portraitId": "practiced-smile",
+      "text": "You have earned the standing of Acquaintance. In public life, dependable gestures carry considerable weight.",
+      "conditions": {
+        "minimumRelationshipLevel": 1,
+        "excludedFlags": ["relationshipLevel1Seen"]
+      }
+    }
+  ]
+}

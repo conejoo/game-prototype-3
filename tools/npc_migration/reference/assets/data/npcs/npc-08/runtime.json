@@ -1,0 +1,64 @@
+{
+  "id": "npc-08",
+  "displayName": "Celia Oran",
+  "shortName": "Celia",
+  "title": "Boatwright",
+  "pronouns": "she/her",
+  "interactionPrompt": "Talk to Celia Oran",
+  "relationship": {
+    "levelOneAffinity": 3,
+    "levelOneLabel": "Acquaintance"
+  },
+  "dimensions": {
+    "hitWidth": 32,
+    "hitHeight": 32,
+    "interactionRadius": 64
+  },
+  "routine": {
+    "agentProfile": {
+      "id": "town-adult",
+      "footprintRadius": 10,
+      "clearance": 0
+    },
+    "actionIds": [],
+    "relationshipFlagIds": [
+      "npc-08-introduced",
+      "npc-08-careful-response",
+      "npc-08-careful-reward",
+      "npc-08-passing-response",
+      "npc-08-passing-reward"
+    ]
+  },
+  "facts": [
+    {
+      "id": "npc-08-public-role",
+      "category": "Public life",
+      "label": "Boatwright",
+      "description": "Celia Oran is Alderwake's boatwright. She checks old hulls carefully and repairs what can safely be kept.",
+      "highlightTerm": "boatwright"
+    },
+    {
+      "id": "npc-08-basic-repairs",
+      "category": "Work",
+      "label": "Basic repairs",
+      "description": "Celia can inspect seams, mend fittings and make basic repairs. These ordinary skills are distinct from her advanced hull-shaping technique.",
+      "highlightTerm": "basic repairs"
+    },
+    {
+      "id": "npc-08-woodcarving",
+      "category": "Interests",
+      "label": "Woodcarving",
+      "description": "Celia enjoys woodcarving, making small river birds from spare wood. She likes keeping a Moonflower beside the finished carvings.",
+      "highlightTerm": "woodcarving"
+    }
+  ],
+  "acceptedGiftRules": [
+    {
+      "id": "npc-08-moonflower-gift",
+      "itemId": "moonflower",
+      "requiredFactId": "npc-08-woodcarving",
+      "affinityDelta": 1,
+      "acceptanceCap": 2
+    }
+  ]
+}

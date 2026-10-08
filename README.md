@@ -1,5 +1,10 @@
 # Returning Fair prototype
 
+NPC migration: [eight villagers and richer dialogue](docs/villagers-dialogue/CHECKLIST.md),
+[reusable fresh-agent prompt](docs/villagers-dialogue/AGENT_PROMPT.md), and
+[durable state](docs/villagers-dialogue/CURRENT_STATE.md).
+N001 reference audit Done; N002-N018 Pending. Next eligible: N002; runtime implementation starts there.
+
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
 F001-F010 Done; no next task. [Integrated acceptance](docs/foraging-items-backpack/F009_ACCEPTANCE.md)

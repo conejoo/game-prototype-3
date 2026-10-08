@@ -1,0 +1,125 @@
+{
+  "npcId": "npc-03",
+  "entryNodeIds": [
+    "npc-03-introduction",
+    "npc-03-return"
+  ],
+  "nodes": [
+    {
+      "id": "npc-03-introduction",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "Maris Reed. This is **Reed Chandlery**. Tell me where you're headed and what needs to hold together.",
+      "revealedFactIds": [
+        "npc-03-public-role"
+      ],
+      "conditions": {
+        "excludedFlags": [
+          "npc-03-introduced"
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-03-careful-response",
+          "text": "I would rather choose sound gear than replace it halfway.",
+          "targetNodeId": "npc-03-careful-end",
+          "affinityDelta": 1,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-03-careful-reward",
+          "addedFlags": [
+            "npc-03-introduced",
+            "npc-03-careful-response"
+          ]
+        },
+        {
+          "id": "npc-03-passing-response",
+          "text": "I am passing through and learning my way around.",
+          "targetNodeId": "npc-03-passing-end",
+          "affinityDelta": 0,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-03-passing-reward",
+          "addedFlags": [
+            "npc-03-introduced",
+            "npc-03-passing-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc-03-careful-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "A sensible start. A little attention now saves a wet walk later."
+    },
+    {
+      "id": "npc-03-passing-end",
+      "priority": 0,
+      "portraitId": "practiced-smile",
+      "text": "Then take your time. River work makes more sense when you have seen the river."
+    },
+    {
+      "id": "npc-03-return",
+      "priority": 100,
+      "portraitId": "practiced-smile",
+      "text": "Welcome back. What can I help you understand?",
+      "conditions": {
+        "requiredFlags": [
+          "npc-03-introduced"
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-03-ask-supplies",
+          "text": "What ordinary supplies do you keep?",
+          "targetNodeId": "npc-03-supplies"
+        },
+        {
+          "id": "npc-03-ask-practice",
+          "text": "How do you choose a fitting?",
+          "targetNodeId": "npc-03-practice"
+        },
+        {
+          "id": "npc-03-ask-hobby",
+          "text": "What do you make when work is done?",
+          "targetNodeId": "npc-03-hobby"
+        },
+        {
+          "id": "npc-03-gift-moonflower",
+          "text": "I brought a Moonflower for your work table.",
+          "targetNodeId": "npc-03-gift-end",
+          "giftRuleId": "npc-03-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-03-supplies",
+      "priority": 0,
+      "portraitId": "official-neutral",
+      "text": "We keep **line, hooks, rope and lamp oil** for everyday jobs. Tell me what you need before choosing a fitting.",
+      "revealedFactIds": [
+        "npc-03-supplier-practice"
+      ]
+    },
+    {
+      "id": "npc-03-practice",
+      "priority": 0,
+      "portraitId": "skeptical",
+      "text": "A fitting has to suit the load and the hands using it. Guesswork can look very neat until it gets wet."
+    },
+    {
+      "id": "npc-03-hobby",
+      "priority": 0,
+      "portraitId": "ropework",
+      "text": "Small **decorative knots**, with no boat depending on them. A Moonflower beside the tea makes the table a pleasant place to sit.",
+      "revealedFactIds": [
+        "npc-03-decorative-knots"
+      ]
+    },
+    {
+      "id": "npc-03-gift-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Thank you. That will brighten the table while I finish this knot."
+    }
+  ]
+}

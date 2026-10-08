@@ -1,0 +1,2 @@
+# Reference hashes cover exact bytes, including original CRLF endings.
+reference/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
