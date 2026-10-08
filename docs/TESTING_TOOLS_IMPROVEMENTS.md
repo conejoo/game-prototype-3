@@ -1,5 +1,8 @@
 # Testing tools follow-up
 
+2026-10-07 follow-up: [save isolation and startup-safe repositories](TESTING_SAVE_ISOLATION_ACCEPTANCE.md)
+gives independent checks their own save groups and keeps restart phases explicitly shared.
+
 Separate2026-10-07 follow-up: [live interaction captures](TESTING_INTERACTION_CAPTURE_ACCEPTANCE.md)
 adds guarded hold/release, backpack and drag helpers, migrates the existing viewport
 scenarios, and includes their verified images in contact sheets. Pause guards remain

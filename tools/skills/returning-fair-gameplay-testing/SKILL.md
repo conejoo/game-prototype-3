@@ -91,6 +91,16 @@ an idle-time failure or manufacturing a victory.
 
 ## Save isolation and completion
 
+Independent runner checks receive distinct named slots and APPDATA/LOCALAPPDATA
+directories. Each process script's write/read pair explicitly shares one save group;
+render phases share their own group. Inspect per-case `save_group/save_slot/appdata`
+in schema-2 results; the top-level app-data paths are group containers.
+For synthetic fixture repositories, await startup `transition_finished`, then
+consume `TestRunSave.configure(game, "user://saves/fixture.json")` errors. Never
+assign a fixture repository before adding GameRoot: `_ready()` replaces it with
+the runner slot. The helper refuses incomplete startup, load/retry/travel and the
+normal slot; it does not clear files or change production startup behavior.
+
 Verify the save directory before Save/Load. Debug uses a named test slot; native
 release currently uses adjacent override.cfg for its separate validation user://.
 Never assume release honors debug --save-slot. Preserve the normal slot and existing

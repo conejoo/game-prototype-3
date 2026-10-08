@@ -111,7 +111,6 @@ func _run() -> void:
 
 func _root_checks() -> void:
 	game = (load("res://app/game_root.tscn") as PackedScene).instantiate()
-	game.save_repository = SaveRepository.new(directory.path_join("root.json"))
 	var manifest: ContentManifest = ContentManifest.new()
 	manifest.definitions.assign(game.content_manifest.definitions)
 	var unsafe: LocationDefinition = LocationDefinition.new()
@@ -125,6 +124,7 @@ func _root_checks() -> void:
 	root.add_child(game)
 	await game.world_host.transition_finished
 	await process_frame
+	_check(TestRunSave.configure(game, directory.path_join("root.json")).is_empty(), "Fixture repository after startup")
 	var actor_id: int = game.player_placeholder.get_instance_id()
 	_check(not game.save_run().is_empty(), "Unpaused save accepted")
 	_check(not (await game.load_run()).is_empty(), "Unpaused load accepted")

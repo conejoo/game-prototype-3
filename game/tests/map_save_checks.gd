@@ -30,10 +30,10 @@ func _run() -> void:
 		definition.spawn_ids = PackedStringArray(fixture[2])
 		detached.definitions.append(definition)
 	game.content_manifest = detached
-	game.save_repository = SaveRepository.new("user://saves/m017-transaction.json")
 	root.add_child(game)
 	var startup: Array = await game.world_host.transition_finished
 	_check(startup[0], "Startup rejected")
+	_check(TestRunSave.configure(game, "user://saves/m017-transaction.json").is_empty(), "Fixture repository after startup")
 	identities = [game.player_placeholder.get_instance_id(),game.companion.get_instance_id()]
 	game._set_paused(true)
 	for name: String in FIXTURES:
@@ -44,7 +44,7 @@ func _run() -> void:
 		if phase != "read":
 			_write(_slot(name),source)
 		var before_bytes: String = FileAccess.get_file_as_string(_slot(name))
-		game.save_repository = SaveRepository.new(_slot(name))
+		_check(TestRunSave.configure(game, _slot(name)).is_empty(), "Historical fixture repository")
 		_check((await game.load_run()).is_empty(), "Historical load rejected: " + name)
 		_assert_snapshot(_v5_expected(data),name)
 		await _lifecycle(name)
@@ -133,7 +133,7 @@ func _lifecycle(label: String) -> void:
 
 func _load_complete() -> Dictionary:
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/map_saves/town-complete.json"))
-	game.save_repository = SaveRepository.new("user://saves/m017-transaction.json")
+	_check(TestRunSave.configure(game, "user://saves/m017-transaction.json").is_empty(), "Transaction fixture repository")
 	_write(game.save_repository.path,JSON.stringify(data))
 	_check((await game.load_run()).is_empty(),"Complete fixture rejected")
 	return _v5_expected(data)

@@ -22,7 +22,7 @@ func _run() -> void:
 	game._set_paused(true)
 	_check(game.session.inventory.snapshot().to_dictionary() == {"item_counts":{},"active_item_id":null} and game.session.foraging.snapshot().collected_resource_ids.is_empty(), "fresh process empty")
 	for kind: String in ["bag", "alderwake", "tollworks", "authored"]:
-		game.save_repository = SaveRepository.new("user://saves/f004-process-%s.json" % kind)
+		_check(TestRunSave.configure(game, "user://saves/f004-process-%s.json" % kind).is_empty(), "Fixture repository " + kind)
 		var oracle_path: String = game.save_repository.path + ".oracle"
 		if writer:
 			var candidate: GameSession = ForagingSaveFixture.make(game.catalog,kind)
@@ -56,7 +56,7 @@ func _run() -> void:
 		_check(game.player_placeholder.global_position.distance_to(game.world_host.current_location.find_spawn(game.session.current_spawn_id).global_position) < 0.01, "last arrival anchor " + kind)
 		cases.append({"kind":kind,"snapshot":SaveCodec.snapshot(game.session),"save_path":ProjectSettings.globalize_path(game.save_repository.path)})
 	# Generated rod in foreign Alderwake persists while hero saves inside Tollworks.
-	game.save_repository = SaveRepository.new("user://saves/f004-process-foreign.json")
+	_check(TestRunSave.configure(game, "user://saves/f004-process-foreign.json").is_empty(), "Foreign fixture repository")
 	if writer:
 		var foreign: GameSession = ForagingSaveFixture.make(game.catalog,"alderwake")
 		foreign.current_location_id = "prototype-tollworks"

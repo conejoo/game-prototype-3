@@ -25,7 +25,7 @@ $appData = Join-Path $staging 'appdata'
 $localData = Join-Path $staging 'localappdata'
 New-Item -ItemType Directory -Path $appData,$localData | Out-Null
 $reportPath = Join-Path $runDirectory 'results.json'
-$report = [ordered]@{schema_version=1; task=$Task; run_id=$runId; cwd=$projectRoot; engine_path=$EnginePath; engine_version=$null; appdata=$appData; localappdata=$localData; save_slot=('check-' + $runId); started_utc=[DateTime]::UtcNow.ToString('o'); finished_utc=$null; status='running'; error=$null; cases=@()}
+$report = [ordered]@{schema_version=2; task=$Task; run_id=$runId; cwd=$projectRoot; engine_path=$EnginePath; engine_version=$null; appdata=$appData; localappdata=$localData; save_groups=@(); started_utc=[DateTime]::UtcNow.ToString('o'); finished_utc=$null; status='running'; error=$null; cases=@()}
 function Write-RunReport {
     $temporary = $reportPath + '.tmp'
     [IO.File]::WriteAllText($temporary, ($report | ConvertTo-Json -Depth 30), [Text.UTF8Encoding]::new($false))
@@ -78,9 +78,18 @@ function Get-ParseClosure([string[]]$Seeds) {
     }
     return $found.ToArray()
 }
-function Invoke-OwnedGodot([string]$Label, [string[]]$EngineArguments, [bool]$IsImport = $false, [string]$EvidenceDirectory = '') {
+function New-SaveGroup([string]$Kind, [string]$Script) {
+    $id = $Kind + '-' + $report.save_groups.Count.ToString('D3')
+    $group = [ordered]@{id=$id; kind=$Kind; script=$Script; save_slot=('check-' + $runId + '-' + $report.save_groups.Count.ToString('D3')); appdata=(Join-Path $appData $id); localappdata=(Join-Path $localData $id)}
+    New-Item -ItemType Directory -Path $group.appdata,$group.localappdata | Out-Null
+    $report.save_groups += $group
+    return $group
+}
+function Invoke-OwnedGodot([string]$Label, [string[]]$EngineArguments, [bool]$IsImport = $false, [string]$EvidenceDirectory = '', $SaveGroup = $null) {
     $safeLabel = $report.cases.Count.ToString('D2') + '-' + $Label.Replace('/','-')
-    $row = [ordered]@{label=$Label; arguments=$EngineArguments; launcher_pid=$null; engine_pids=@(); exit_code=$null; timed_out=$false; stopped_on_diagnostic=$false; evidence_directory=$EvidenceDirectory; mode=$(if ($EngineArguments -contains '--headless') {'headless'} else {'rendered-debug'}); status='running'; stdout=(Join-Path $runDirectory "$safeLabel.stdout.log"); stderr=(Join-Path $runDirectory "$safeLabel.stderr.log"); diagnostics=@(); allowed_diagnostics=@(); error=$null; started_utc=[DateTime]::UtcNow.ToString('o'); finished_utc=$null}
+    $caseAppData = if ($SaveGroup) { $SaveGroup.appdata } else { $appData }
+    $caseLocalData = if ($SaveGroup) { $SaveGroup.localappdata } else { $localData }
+    $row = [ordered]@{label=$Label; arguments=$EngineArguments; save_group=$(if ($SaveGroup) {$SaveGroup.id} else {$null}); save_slot=$(if ($SaveGroup) {$SaveGroup.save_slot} else {$null}); appdata=$caseAppData; localappdata=$caseLocalData; launcher_pid=$null; engine_pids=@(); exit_code=$null; timed_out=$false; stopped_on_diagnostic=$false; evidence_directory=$EvidenceDirectory; mode=$(if ($EngineArguments -contains '--headless') {'headless'} else {'rendered-debug'}); status='running'; stdout=(Join-Path $runDirectory "$safeLabel.stdout.log"); stderr=(Join-Path $runDirectory "$safeLabel.stderr.log"); diagnostics=@(); allowed_diagnostics=@(); error=$null; started_utc=[DateTime]::UtcNow.ToString('o'); finished_utc=$null}
     $report.cases += $row
     Write-RunReport
     $process = [Diagnostics.Process]::new()
@@ -105,8 +114,8 @@ function Invoke-OwnedGodot([string]$Label, [string[]]$EngineArguments, [bool]$Is
         $info.RedirectStandardOutput = $true
         $info.RedirectStandardError = $true
         foreach ($argument in $EngineArguments) { $info.ArgumentList.Add($argument) }
-        $info.Environment['APPDATA'] = $appData
-        $info.Environment['LOCALAPPDATA'] = $localData
+        $info.Environment['APPDATA'] = $caseAppData
+        $info.Environment['LOCALAPPDATA'] = $caseLocalData
         $info.Environment['RETURNING_FAIR_EVIDENCE_DIR'] = $EvidenceDirectory
         $process.StartInfo = $info
         $started = $process.Start()
@@ -181,23 +190,26 @@ try {
     if ($Import -and -not (Invoke-OwnedGodot 'import' @('--headless','--editor','--path',(Join-Path $projectRoot 'game'),'--import','--quit') $true)) { throw 'Import failed.' }
     if ($parse.Count -gt 0 -and -not (Invoke-OwnedGodot 'parse-preflight' @('--headless','--path',(Join-Path $projectRoot 'game'),'--check-only','--script',("res://../builds/testing/$Task/$runId/parse_preflight.gd")))) { throw 'Parse preflight failed; see parse_scripts and diagnostic logs.' }
     foreach ($script in $scripts) {
+        $group = New-SaveGroup 'check' $script
         $checkLabel = $script.Substring(12).Replace('.gd','')
         $destination = "res://../docs/evidence/$Task/$runId/checks/$checkLabel"
-        $null = Invoke-OwnedGodot $checkLabel @('--headless','--path',(Join-Path $projectRoot 'game'),'--script',$script,'--',('--save-slot=' + $report.save_slot),("--report-dir=$destination")) $false (Join-Path $projectRoot "docs/evidence/$Task/$runId/checks/$checkLabel")
+        $null = Invoke-OwnedGodot $checkLabel @('--headless','--path',(Join-Path $projectRoot 'game'),'--script',$script,'--',('--save-slot=' + $group.save_slot),("--report-dir=$destination")) $false (Join-Path $projectRoot "docs/evidence/$Task/$runId/checks/$checkLabel") $group
     }
     foreach ($processScript in $processScriptsResolved) {
         if (@($report.cases | Where-Object status -ne 'passed').Count -gt 0) { break }
+        $group = New-SaveGroup 'process' $processScript
         $processLabel = $processScript.Substring(12).Replace('.gd','')
         foreach ($phase in @('write','read')) {
             $destination = "res://../docs/evidence/$Task/$runId/process/$processLabel"
-            $processArguments = @('--headless','--path',(Join-Path $projectRoot 'game'),'--script',$processScript,'--',('--save-slot=' + $report.save_slot),('--phase=' + $phase),("--report-dir=$destination"))
-            if (-not (Invoke-OwnedGodot ("$processLabel-$phase") $processArguments $false (Join-Path $projectRoot "docs/evidence/$Task/$runId/process/$processLabel"))) { break }
+            $processArguments = @('--headless','--path',(Join-Path $projectRoot 'game'),'--script',$processScript,'--',('--save-slot=' + $group.save_slot),('--phase=' + $phase),("--report-dir=$destination"))
+            if (-not (Invoke-OwnedGodot ("$processLabel-$phase") $processArguments $false (Join-Path $projectRoot "docs/evidence/$Task/$runId/process/$processLabel") $group)) { break }
         }
     }
     if ($render -and @($report.cases | Where-Object status -ne 'passed').Count -eq 0) {
+        $group = New-SaveGroup 'render' $render
         foreach ($phase in $phases) {
-            $renderArguments = @('--path',(Join-Path $projectRoot 'game'),'--script',$render,'--',('--save-slot=' + $report.save_slot),('--phase=' + $phase),("--report-dir=res://../docs/evidence/$Task/$runId/render"))
-            if (-not (Invoke-OwnedGodot ("render-$phase") $renderArguments $false (Join-Path $runDirectory 'render'))) { break } # dependent phases never follow a failed writer
+            $renderArguments = @('--path',(Join-Path $projectRoot 'game'),'--script',$render,'--',('--save-slot=' + $group.save_slot),('--phase=' + $phase),("--report-dir=res://../docs/evidence/$Task/$runId/render"))
+            if (-not (Invoke-OwnedGodot ("render-$phase") $renderArguments $false (Join-Path $runDirectory 'render') $group)) { break } # dependent phases never follow a failed writer
         }
     }
     $report.status = if (@($report.cases | Where-Object status -ne 'passed').Count -eq 0) {'passed'} else {'failed'}

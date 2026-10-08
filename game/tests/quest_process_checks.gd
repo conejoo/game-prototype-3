@@ -12,9 +12,9 @@ func _initialize() -> void:
 func _run() -> void:
 	var writer: bool = "--phase=write" in OS.get_cmdline_user_args()
 	var game: Node3D = load("res://app/game_root.tscn").instantiate()
-	game.save_repository = SaveRepository.new("user://saves/p007-process.json")
 	root.add_child(game)
 	await game.world_host.transition_finished
+	failures.append_array(TestRunSave.configure(game, "user://saves/p007-process.json"))
 	var definition: QuestDefinition = game.catalog.get_quest(QUEST)
 	if writer:
 		var lead: QuestStep = definition.steps[0]

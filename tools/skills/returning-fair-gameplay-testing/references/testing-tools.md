@@ -14,7 +14,7 @@ Godot `--path` is `game/`. These tools do not select or start a checklist task.
 `Names` accepts arrays or comma-separated names without `.gd`, including test
 subfolders. Every name/phase and the installed console executable must preflight
 before any engine starts. Default headless check: `application_smoke`. Render phases
-run sequentially in the same isolated app-data/save slot; a failed phase stops the
+run sequentially in their own shared app-data/save group; a failed phase stops the
 remaining phases, and a failed headless check prevents rendered phases. Check fixture semantics before choosing phases. No exports or
 installs occur. `EnginePath` permits an explicitly chosen installed executable.
 
@@ -29,8 +29,17 @@ relative to `game/`, optionally `res://` and `.gd`). The report records `parse_s
 Use `-Import` after adding scripts/classes. Import success does not replace parsing.
 
 Each run creates `docs/evidence/<Task>/<UTC>-<GUID>/results.json` and logs, plus
-`builds/testing/<Task>/<run>/appdata` and `localappdata`. APPDATA/LOCALAPPDATA apply
+`builds/testing/<Task>/<run>/appdata` and `localappdata` group containers. Each
+independent `Names` check gets a distinct slot and child app-data directories.
+Each `ProcessScripts` script gets its own group shared only by its write/read
+processes; `RenderScript` phases share a separate render group. Sharing is explicit,
+never inferred from script names (the same script used in a check and render gets
+different groups). Fixed `user://` fixture paths, backups and oracle sidecars are
+therefore isolated too. APPDATA/LOCALAPPDATA apply
 only to launched processes; caller environment and ordinary saves stay intact.
+Schema-2 results record `save_groups` (id, kind, script, slot and directories) and
+each case's `save_group`, `save_slot`, `appdata`, `localappdata`. Preflight cases
+have null group/slot; top-level app-data paths are containers, not runtime save roots.
 Results record arguments, cwd, engine version, owned launcher/observed engine PIDs,
 exit code, timeout, diagnostics and failure. Unmeasured engine PIDs stay absent;
 console launcher PIDs are not presented as engine PIDs. Cleanup kills only the
@@ -59,6 +68,29 @@ python tools/tests/capture_evidence_checks.py
 ./tools/run_checks.ps1 -Task TESTING -Names testing_support_checks,testing_evidence_checks,live_playtest_checks
 ./tools/run_checks.ps1 -Task TESTING -RenderOnly -RenderScript testing_capture_render -RenderPhases check
 ```
+
+## Fixture save repositories after startup
+
+```gdscript
+root.add_child(game)
+var startup: Array = await game.world_host.transition_finished
+if not startup[0]:
+	# Record startup errors and stop the fixture.
+	return
+var errors: PackedStringArray = TestRunSave.configure(game, "user://saves/my-fixture.json")
+if not errors.is_empty():
+	# Record errors and stop; do not keep running against the previous repository.
+	return
+```
+
+Do not assign `save_repository` before startup: GameRoot `_ready()` applies the
+runner's debug slot afterward. `TestRunSave.configure` requires a ready root and
+completed world startup, refuses transition/load/retry, and accepts only canonical
+`user://saves/*.json` paths excluding the normal `returning-fair.json` slot. It
+changes the repository reference only, creates no files and never removes backups.
+Use the same fixture path in paired restart processes; their shared group supplies
+the same user-data root. Standalone SaveRepository codec checks can still construct
+detached repositories directly. Verify this helper with `testing_save_repository_checks`.
 
 ## Ordinary movement and navigation readiness
 

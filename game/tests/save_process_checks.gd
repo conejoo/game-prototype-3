@@ -11,9 +11,9 @@ func _initialize() -> void:
 func _run() -> void:
 	var write_phase: bool = "--phase=write" in OS.get_cmdline_user_args()
 	var game: Node3D = (load("res://app/game_root.tscn") as PackedScene).instantiate()
-	game.save_repository = SaveRepository.new("user://saves/p005-process-check.json")
 	root.add_child(game)
 	await game.world_host.transition_finished
+	failures.append_array(TestRunSave.configure(game, "user://saves/p005-process-check.json"))
 	if write_phase:
 		game.world_host.request_transition("prototype-tollworks", "tollworks-from-alderwake")
 		await game.world_host.transition_finished

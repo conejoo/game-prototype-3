@@ -63,6 +63,46 @@ $fixtureLine = (Get-Content -LiteralPath $passedCase.stdout | Where-Object { $_ 
 $fixture = $fixtureLine.Substring(16) | ConvertFrom-Json
 Check ([IO.Path]::GetFullPath($fixture.user_data).StartsWith($errorRun.report.appdata + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) 'save isolation failed'
 Check ($env:APPDATA -eq $initialAppData -and $env:LOCALAPPDATA -eq $initialLocalData) 'caller environment changed'
+# All runtime groups use separate slots AND user-data roots. Fixed fixture paths,
+# backup files and sidecars must not leak even when they ignore --save-slot.
+$isolation = Run-Fixture @('-Names','fixtures/testing_tools/save_restart,fixtures/testing_tools/save_isolation_fresh',
+    '-ProcessScripts','fixtures/testing_tools/save_restart,fixtures/testing_tools/save_restart_other',
+    '-RenderScript','fixtures/testing_tools/save_restart','-RenderPhases','write,read')
+# Process scripts cannot also run as independent checks; exercise that preflight,
+# then use the other restart script independently for the actual isolation run.
+Check ($isolation.exit -eq 1 -and $isolation.report.cases.Count -eq 0) 'single-phase/process overlap accepted'
+$isolation = Run-Fixture @('-Names','fixtures/testing_tools/save_restart,fixtures/testing_tools/save_isolation_fresh',
+    '-ProcessScripts','fixtures/testing_tools/save_restart_other,fixtures/testing_tools/save_restart_third',
+    '-RenderScript','fixtures/testing_tools/save_restart','-RenderPhases','write,read')
+Check ($isolation.exit -eq 0 -and $isolation.report.schema_version -eq 2 -and $isolation.report.save_groups.Count -eq 5) 'save-group isolation run failed'
+$groups = @($isolation.report.save_groups)
+foreach ($property in @('id','save_slot','appdata','localappdata')) {
+    Check (@($groups | ForEach-Object { $_.$property } | Select-Object -Unique).Count -eq 5) "groups reused $property"
+}
+$runtimeCases = @($isolation.report.cases | Where-Object { $null -ne $_.save_group })
+Check ($runtimeCases.Count -eq 8) 'missing save-group runtime cases'
+foreach ($row in $runtimeCases) {
+    $group = @($groups | Where-Object id -eq $row.save_group)[0]
+    Check ($row.save_slot -eq $group.save_slot -and $row.arguments -contains ('--save-slot=' + $group.save_slot)) 'case slot disagrees with arguments/group'
+    Check ($row.appdata -eq $group.appdata -and $row.localappdata -eq $group.localappdata) 'case directories disagree with group'
+    $observation = @((Get-Content -LiteralPath $row.stdout) | Where-Object { $_ -like 'SAVE_FIXTURE=*' })[-1].Substring(13) | ConvertFrom-Json
+    Check ($observation.slot -eq $row.save_slot -and $observation.failures.Count -eq 0) 'fixture slot/disk validation failed'
+    Check ([IO.Path]::GetFullPath($observation.user_data).StartsWith($row.appdata + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) 'actual user data outside case group'
+}
+foreach ($group in $groups) {
+    $members = @($runtimeCases | Where-Object save_group -eq $group.id)
+    $expectedCount = if ($group.kind -eq 'check') { 1 } else { 2 }
+    Check ($members.Count -eq $expectedCount) 'save group shared beyond its intended phases'
+    if ($group.kind -ne 'check') {
+        Check ($members[0].label -like '*-write' -and $members[1].label -like '*-read') 'restart phases not ordered write/read'
+        Check ($members[0].launcher_pid -ne $members[1].launcher_pid) 'restart reused process'
+    }
+}
+Check (@($isolation.report.cases | Where-Object { $null -eq $_.save_group -and $null -ne $_.save_slot }).Count -eq 0) 'preflight assigned runtime slot'
+$reverseIsolation = Run-Fixture @('-Names','fixtures/testing_tools/save_isolation_fresh,fixtures/testing_tools/save_restart')
+Check ($reverseIsolation.exit -eq 0) 'reversed independent checks failed'
+Check ($reverseIsolation.report.save_groups[0].save_slot -ne $groups[0].save_slot) 'separate runs reused slot'
+Check ($env:APPDATA -eq $initialAppData -and $env:LOCALAPPDATA -eq $initialLocalData) 'group isolation changed caller environment'
 $hang = Run-Fixture @('-Names','fixtures/testing_tools/hang','-TimeoutSeconds','2')
 $case = @($hang.report.cases | Where-Object label -eq 'fixtures/testing_tools/hang')[0]
 Check ($hang.exit -eq 1 -and $case.timed_out -and $case.status -eq 'timeout') 'timeout not recorded'
