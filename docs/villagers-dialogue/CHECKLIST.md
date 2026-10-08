@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001 reference audit, N002 typed content, N003 dialogue rules, N004 persistence, N005 portrait conversation UI and N006 scene-owned contacts/events and N007 animated rig pipeline Done. N008-N018 remain Pending.
+N001-N008 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and Edric's ordinary named character slice. N009-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -28,7 +28,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N005 | Done | N004 | Multi-node portrait dialogue and known-facts UI integrated with existing gameplay. |
 | N006 | Done | N005 | Safe scene-owned town contacts and real event adapters. |
 | N007 | Done | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
-| N008 | Pending | N006, N007 | Edric complete and reachable; first real villager vertical slice. |
+| N008 | Done | N006, N007 | Edric complete and reachable; first real villager vertical slice. |
 | N009 | Pending | N008 | Helena complete and reachable. |
 | N010 | Pending | N008 | Maris ordinary dialogue/character integrated with existing recovery counter. |
 | N011 | Pending | N008 | Harlan complete and reachable. |
@@ -418,3 +418,53 @@ N007 criterion/blocker or owned process. Preexisting Blender/source scene preser
 calibration scene remains available in memory. No normal saves, commit/push,
 agents/chats/schedules/installation/publication. Exactly N007 completed; stop.
 Remaining N008-N018; next eligible N008. All through N018 are not complete.
+
+### N008 - 2026-10-08, UTC
+
+Result: Mayor Edric Vale/npc-01 at pinned public civic foot(-.5,0,-1.5), real source
+graph/six portraits, custom editable 3D .blend/GLB, actual idle/facing lifecycle.
+Ordinary helpful/neutral introductions, first/repeat physical woods returns, real
+Moonflower gather/preference once-only, disabled gifts and exact independent GUI
+Save/Load/revisit verified. Walk review-only; river-fishing stays N016.
+
+Prerequisites N006/N007 actual placement/rig evidence and N001/N002 pins inspected.
+Target began clean at6c8c15031a5b37a32b5fb6cbf9a0f70fd9b40d85; source remains clean
+at60c20eb2816e7271fb84afaba286af006ebe3ccf, all132 hashes/67 outputs exact. Catalog,
+portraits, schema7/content1, pinned geometry, other people and prior features retained.
+
+Files: named asset/authoring/audit/import package, narrow registry/adapter/root holds,
+actor checks/render/UIDs, historical activation/travel fixture updates, package notes,
+workflow/README/architecture. Every criterion/command/failure/limit in
+[N008 acceptance](N008_ACCEPTANCE.md). No commit/push or successor implementation.
+
+Required content/world/pipeline/interaction/quest/foraging/light/startup PASS in
+111157041-06433481; expanded run FAILED stale travel assumption. After real Esc
+fixture repair, focused111537969-95b2a472 all12 cases PASS, including10 travel
+round trips, named skin/rules/save, synthetic process pair and ordinary writer/read.
+WriterPID8056/readerPID8560 exact whole-state/forecast GUI restart; zero forbidden
+diagnostics/timeouts/source changes. Fresh isolated per-suite appdata/slots only.
+Separate neutral111802387-2f19dc1a all3 cases PASS; final contact/art/weather/default
+distance112104670-8bbb2263 all4 cases PASS. No production change between these runs.
+
+722 skin assertions/120Hz loops,196 stance/120 blend samples: soles0/seams0,
+stance drift2.3841858e-7m, blend max vertex step.0127691m. 7,614 triangles/16 bones/
+one packed32x32 palette material.53 selected captures inspected; final rain is real,
+synthetic studio/seeded weather separated from ordinary gameplay input.
+GLB4aeb9d211342f15bef34b3466035a90172a4146d94a82e12f550ce7b1c5bb41a;
+.blend8175368c4291b449b3fec38f7f2c152a09fbd5b4da55370d2c18cd31a952d647.
+
+Final source/diff/link/status/process audits retained. All owned checks/helpers exited;
+live Blender original scene/file preserved, owned Edric scene available. No cleanup,
+blocker or remaining N008 criterion; normal saves untouched. Exactly N008 completed.
+Remaining N009,N010,N011,N012,N013,N014,N015,N016,N017,N018. Next eligible N009;
+all through N018 are not complete. Stop.
+
+### N008 authorized commit follow-up - 2026-10-08 UTC
+
+User authorized committing the successful N008 task. Named implementation/art,
+reusable checks, N008_ACCEPTANCE.md, package documentation and durable workflow/
+discovery updates are the commit scope. Accepted runtime/art bytes and all status
+rows stay unchanged. Raw evidence remains ignored under existing policy. Commit
+identity/tree/status audits stay in the latest local N008 run; resulting identity
+is available in Git history and follow-up report. No unrelated work, push or N009
+implementation.

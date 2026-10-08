@@ -44,6 +44,13 @@ func _run() -> void:
 	_key(KEY_E, true)
 	_key(KEY_E, false)
 	_check(not host.transitioning and host.transition_count == 1, "E outside gate triggered travel")
+	# Named civic contacts may legitimately answer E at the fresh spawn. Restore
+	# ordinary input before the rejected-travel transaction oracle below.
+	if game.dialogue.active():
+		_check(game.dialogue.snapshot().npc_id in NpcRegistry.ENABLED, "Outside-gate E opened an enabled ordinary contact")
+		_key(KEY_ESCAPE, true)
+		_key(KEY_ESCAPE, false)
+		_check(not game.dialogue.active() and actor.controls_enabled, "Esc restores input after civic conversation")
 
 	# Fail before changing any live ownership/state.
 	var previous: WeakRef = weakref(host.current_location)

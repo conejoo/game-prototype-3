@@ -2,6 +2,7 @@ class_name NpcWorldAdapter
 extends Node3D
 ## Scene-owned noncombatant wrappers. VisualRoot is replaced by character tasks.
 var targets: Dictionary[String, PrototypeInteractable] = {}
+var presenters: Dictionary[String, NpcVisualPresenter] = {}
 
 func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStringArray:
 	if not targets.is_empty(): return PackedStringArray(["NPC contacts already built"])
@@ -42,7 +43,26 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			(location as AlderwakeExterior).service_outlines.append(Rect2(entry.foot.x-0.4,entry.foot.z-0.4,0.8,0.8))
 		target.npc_id = id
 		targets[id] = target
+		if NpcRegistry.VISUAL_ASSETS.has(id):
+			var presenter: NpcVisualPresenter = NpcVisualPresenter.new()
+			presenter.name = "Presenter"
+			target.get_node("VisualRoot").add_child(presenter)
+			var errors: PackedStringArray = presenter.mount(load(NpcRegistry.VISUAL_ASSETS[id]) as PackedScene)
+			if not errors.is_empty(): return errors
+			presenter.face_direction(entry.approach-entry.foot)
+			presenters[id] = presenter
+			if id == "npc-01": target.prompt = "Talk to Mayor Vale"
 	return []
+
+func sync_visuals(holds: Dictionary, speaker: String, player_foot: Vector3) -> void:
+	for id: String in presenters:
+		var presenter: NpcVisualPresenter = presenters[id]
+		for reason: String in holds:
+			if holds[reason]: presenter.suspend(reason)
+			else: presenter.resume(reason)
+		# Fixed public contacts do not acquire routes or fabricated achieved motion.
+		presenter.set_locomotion(0)
+		if speaker == id: presenter.face_direction(player_foot-targets[id].global_position)
 
 func placement_errors(location: PrototypeLocation, excluded: Array[RID]) -> PackedStringArray:
 	var errors: PackedStringArray = []

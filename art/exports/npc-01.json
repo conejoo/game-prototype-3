@@ -1,0 +1,21 @@
+{
+  "npc_id": "npc-01",
+  "triangles": 7614,
+  "vertices": 4009,
+  "bones": 16,
+  "materials": 1,
+  "texture": [
+    32,
+    32
+  ],
+  "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\npc-01.blend",
+  "glb": "D:\\development\\game-dev-blender\\returning-fair-prototype\\game\\assets\\models\\npcs\\npc-01.glb",
+  "idle": "runtime fixed contact",
+  "walk": "review only",
+  "preserved_scene": "RF-RecoveryVessel",
+  "references": [
+    "portraits/npc-01/official-neutral.png",
+    "reference/npc-01/npc_01_idle_sheet.png"
+  ],
+  "identity": "middle-aged swept brown/grey hair, trimmed beard, blue civic coat/gold trim, cream collar, chain/leaf medallion, green trousers/brown boots"
+}

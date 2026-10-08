@@ -19,7 +19,7 @@ func _run() -> void:
 	game.player_placeholder.set_physics_process(false)
 	game.companion.set_physics_process(false)
 	game.companion_ai.set_physics_process(false)
-	_check(game.world_host.current_location.npc_contacts.targets.is_empty(), "N006 activates no villagers")
+	_check(game.world_host.current_location.npc_contacts.targets.keys() == Array(NpcRegistry.ENABLED), "production activation matches completed registry")
 	var ids: PackedStringArray = []
 	for entry: Dictionary in NpcRegistry.entries(): ids.append(entry.npc_id)
 	game.world_host.enabled_npcs = ids

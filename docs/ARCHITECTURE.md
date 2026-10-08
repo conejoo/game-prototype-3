@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence and N005 portrait conversation integration.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N008 ordinary Edric contact/art.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 

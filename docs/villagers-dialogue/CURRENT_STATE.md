@@ -6,21 +6,83 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N007 Done; N008-N018 Pending. No active task. Exactly N007 accepted and stopped.
-Target began clean at737c0cb45ff5abda47f9d0b6b0dd8f61950a6e33 (N006 commit);
-source remains clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf. No user edits
-at selection. N007 was accepted without a commit during implementation. The later
-authorized successful-task commit follow-up is recorded below; no push.
+N001-N008 Done; N009-N018 Pending. No active task. Exactly N008 completed and stopped.
+Target began clean at6c8c15031a5b37a32b5fb6cbf9a0f70fd9b40d85; source remains
+clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf. No user edits at selection.
+N008 successful-task commit is authorized by the follow-up. Commit identity is
+available in Git history and the follow-up report. No push or successor work.
 
-Next eligible N008. Next action: inspect current target/source state and verified
-N006/N007 evidence, then implement only Edric's first complete named character/
-ordinary dialogue vertical slice using the pinned source and shared animated pipeline.
-River-fishing action stays N016. N008 still requires its own full common acceptance.
-NpcRegistry.ENABLED remains empty; generic calibration does not activate a villager.
-Do not start N008 without a fresh one-task invocation or invent tasks beyond N018.
+Next eligible N009. Next action on a fresh invocation: inspect N008 actual named
+package/ordinary evidence and implement only Helena at her pinned public civic
+contact. N010-N015 are also independently eligible after N008; select lowest N009.
+River-fishing/archive-work stay N016. Do not invent tasks beyond N018.
 
-Remaining unfinished IDs: N008, N009, N010, N011, N012, N013, N014,
-N015, N016, N017, N018. All checklist items through N018 are not complete.
+Remaining unfinished IDs: N009, N010, N011, N012, N013, N014, N015, N016,
+N017, N018. All checklist items through N018 are not complete.
+
+## N008 result and durable evidence
+
+[N008 acceptance](N008_ACCEPTANCE.md) verifies every common/Edric criterion and
+records exact commands, retained failures, isolation, interfaces/hashes and viewed
+captures. [Working package template](../../art/exports/NPC_01_PACKAGE.md) supplies
+the concrete named-asset/registration/presenter/test pattern. Only npc-01 is enabled:
+custom editable .blend/GLB,7614 triangles/16 bones/one embedded palette material,
+actual source portraits/graph and existing approved civic foot(-.5,0,-1.5).
+
+NpcWorldAdapter owns VisualRoot/Presenter; root forwards independent dialogue/pause/
+focus/travel/modal/death holds and speaking facing. Fixed contacts remain idle;
+walk is review-only. No fishing/gift/routine reward or new public fact is invented.
+Schema7/content1, pinned geometry, source/catalog/portraits and other features retained.
+
+Required content/world/pipeline/interaction/quest/foraging/light suites PASS in
+111157041-06433481; expanded run overall FAILED stale travel-test assumption.
+Actual E now opens Edric at civic spawn, so fixture closes via real Esc before its
+rejected-travel oracle. Final focused111537969-95b2a472 all12 cases PASS: corrected
+travel, named skin/rules/save/startup, separate synthetic process pair and ordinary
+writer/reader plus review. No production change after that run.
+
+Ordinary helpful writerPID8056 physically makes seven civic/woods/gather journeys,
+sees first/repeat remembered lines, gathers actual moonflower-01, learns preference
+exactly once, rejects gifts, GUI Saves and exits0. New readerPID8560 GUI Loads exact
+whole old/new durable state/forecast, then physically revisits remembered fact.
+Separate isolated neutral111802387-2f19dc1a all3 cases PASS,18 assertions/four captures.
+Final contact/default-camera/weather survey112104670-8bbb2263 all4 cases PASS,5+31
+captures. Only renderer contact/survey framing changed; ordinary writer/read/neutral
+logic stays unchanged. Final803 game/tools files stable at
+275581a3b069fa3af4260db7f2066b39fae811564b24d5111f092c835a2fa734.
+
+Named skin722 assertions including write,481 idle/98 walk120Hz poses,196 stance/
+120 blend samples; soles0, loop seams0, stance drift2.3841858e-7m, blend max step
+.0127691m. All selected53 captures inspected with sheets and full-size source/face/
+profile/portrait/fact/neutral/ordinary/default-distance/day/night/rain views. Review
+weather/camera/visibility is explicitly synthetic; ordinary input remains distinct.
+Normal saves untouched; fresh per-suite/group APPDATA/LOCALAPPDATA/slots recorded.
+
+Raw GLB/editable audits and source132-hash/67-output converter PASS. GLB SHA256
+4aeb9d211342f15bef34b3466035a90172a4146d94a82e12f550ce7b1c5bb41a;
+.blend8175368c4291b449b3fec38f7f2c152a09fbd5b4da55370d2c18cd31a952d647.
+Failed sandbox/metadata/initial rain/framing and travel-fixture attempts retained;
+no guard weakened. No remaining N008 acceptance/blocker/unrun criterion.
+
+All owned engine/helper/background processes exited. Existing Blender RF-RecoveryVessel
+scene/file preserved; owned Edric scene available in memory. No user-editor cleanup,
+normal save access, agents/chats/schedules/install/external message/publication,
+commit or push. Historical N007/N006/etc evidence below retains its original scope.
+
+## N008 commit follow-up
+
+The user authorized committing the successfully completed N008 task. Scope is
+the named Edric implementation/art/imports, reusable checks, acceptance report,
+package documentation, checklist/contract/state and README/architecture discovery.
+No unrelated changes were present at follow-up preflight. Runtime/art bytes remain
+identical to final accepted evidence; all criteria and task statuses are unchanged.
+
+Raw runs, captures, manifests, local appdata and commit audits remain ignored under
+the existing evidence policy. N008_ACCEPTANCE.md is the committed acceptance
+summary with exact local evidence paths and retained failed/superseded attempts.
+Pre-commit scope/byte/staging and post-commit identity/tree/status verification are
+recorded in the latest local N008 evidence directory. No unrelated work, push or
+N009 implementation is included.
 
 ## N007 result and durable evidence
 

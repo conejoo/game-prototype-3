@@ -375,3 +375,27 @@ RGBA atlas/person estimates32MiB before mips; count extra maps/shadow passes as
 documented. N007 measures an actual eight-calibration scene, not maximum-cost map
 performance. N017 owns integrated final crowd regression. N016 owns source-mapped
 action_river_fishing/action_archive_work; neither clip exists in calibration.
+
+## N008 delivered named-character boundary (2026-10-08)
+
+This supersedes the historical empty-activation state above. NpcRegistry.ENABLED
+contains only npc-01; VISUAL_ASSETS maps its custom named GLB. NpcWorldAdapter
+mounts an accepted NpcVisualPresenter under VisualRoot/Presenter and rejects the
+candidate location on asset failure. Other definitions do not become live actors.
+The original civic foot/approach/instance, capsule/navigation and source graph/
+six portraits remain unchanged. No new Party/ActorDefinition or saved pose.
+
+GameRoot forwards independent dialogue/pause/focus/travel/modal/death holds on
+control changes and process ticks; speaking faces actual player feet by rotating
+visuals only. Fixed contacts report zero achieved motion. WorldHost owns disposal,
+rollback and one-per-person reconstruction. Idle ordinary; walk review-only.
+River-fishing stays N016; no invented routine/fishing/gift outcome or disclosure.
+
+[N008 acceptance](N008_ACCEPTANCE.md) records ordinary helpful/neutral branches,
+real first/repeat woods edges and committed Moonflower gathering/once-only preference,
+disabled gifts, exact independent GUI restart, physical/lifecycle regressions and
+viewed named-art/day/night/rain/default-camera evidence. The actual package and
+reusable interfaces are in [NPC_01_PACKAGE](../../art/exports/NPC_01_PACKAGE.md).
+Only the source-authored preference becomes known; public-role/river-fishing facts
+remain undisclosed. Schema7/content1 and all prior manual-save/geometry boundaries
+are retained. N009-N018 remain unfinished; N009 is next eligible.

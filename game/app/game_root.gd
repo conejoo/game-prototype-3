@@ -171,6 +171,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not session.initialized or player_placeholder.state == null:
 		return
+	_sync_npc_visuals()
 	if world_host.current_location is AlderwakeTerrainPreview and not world_host.transitioning:
 		(world_host.current_location as AlderwakeTerrainPreview).tree_art.update_visibility(camera_rig.camera, player_placeholder, companion)
 	if not get_tree().paused and not world_host.transitioning and not loading_save and not retrying:
@@ -374,6 +375,7 @@ func _set_paused(paused: bool) -> void:
 
 
 func _update_controls() -> void:
+	_sync_npc_visuals()
 	var enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open and not backpack_open
 	if item_drag.active() and (not enabled or retrying or player_placeholder.state.health <= 0):
 		_dispose_item_drag()
@@ -393,6 +395,14 @@ func _update_controls() -> void:
 		if not guardian.combat_enabled:
 			guardian.clear_input()
 	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)
+
+func _sync_npc_visuals() -> void:
+	if world_host.current_location == null or not is_instance_valid(player_placeholder): return
+	world_host.current_location.npc_contacts.sync_visuals({
+		"dialogue":dialogue.active(), "pause":get_tree().paused, "focus":not window_focused,
+		"travel":world_host.transitioning or loading_save or retrying,
+		"modal":journal_open or backpack_open, "death":player_placeholder.state != null and player_placeholder.state.health <= 0
+	}, dialogue.snapshot().get("npc_id", ""), player_placeholder.global_position)
 
 
 func _on_transition_started() -> void:

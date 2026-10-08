@@ -149,7 +149,9 @@ func _wrappers() -> void:
 	var game: Node3D = load("res://app/game_root.tscn").instantiate()
 	root.add_child(game)
 	await game.world_host.transition_finished
-	_check(game.world_host.current_location.npc_contacts.targets.is_empty() and NpcRegistry.ENABLED.is_empty(),"production activates no generic villager")
+	_check(game.world_host.current_location.npc_contacts.targets.keys() == Array(NpcRegistry.ENABLED),"production activates only completed named villagers")
+	for presenter: NpcVisualPresenter in game.world_host.current_location.npc_contacts.presenters.values():
+		_check(presenter.model.scene_file_path != ASSET,"production never mounts generic calibration")
 	game.world_host.enabled_npcs = PackedStringArray(["npc-01"])
 	game.world_host.request_transition(NpcRegistry.LOCATION,"alderwake-start")
 	var arrival: Array = await game.world_host.transition_finished

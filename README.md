@@ -3,10 +3,11 @@
 NPC migration: [eight villagers and richer dialogue](docs/villagers-dialogue/CHECKLIST.md),
 [reusable fresh-agent prompt](docs/villagers-dialogue/AGENT_PROMPT.md), and
 [durable state](docs/villagers-dialogue/CURRENT_STATE.md).
-N001-N006 Done: pinned content, dialogue rules, strict persistence, portrait UI and scene-owned contacts/events. N007-N018 Pending. Next eligible: N007.
-[N002 acceptance](docs/villagers-dialogue/N002_ACCEPTANCE.md) verifies eight bundled graphs, strict validation and atomic publication; villagers are not activated yet.
+N001-N008 Done: pinned content, dialogue rules, strict persistence, portrait UI, contacts/events, animated pipeline and Edric's ordinary character slice. N009-N018 Pending. Next eligible: N009.
+[N008 acceptance](docs/villagers-dialogue/N008_ACCEPTANCE.md) verifies reachable Edric, source portraits/branches, real woods/gather memories, custom editable 3D art and exact GUI restart. Idle is runtime; walk review-only; fishing stays N016. Only Edric is activated.
+[N002 acceptance](docs/villagers-dialogue/N002_ACCEPTANCE.md) verifies eight bundled graphs, strict validation and atomic publication; remaining character activations belong to their own tasks.
 [N003 acceptance](docs/villagers-dialogue/N003_ACCEPTANCE.md) verifies per-person memory, graph selection and atomic choices; [N004 acceptance](docs/villagers-dialogue/N004_ACCEPTANCE.md) records strict schema7 persistence and restart validation.
-[N005 acceptance](docs/villagers-dialogue/N005_ACCEPTANCE.md) verifies one finite conversation flow, source portraits/branches/learned facts, converted existing recovery/companion content and modal safety. Eight-person UI fixtures are verified; ordinary villager activation remains pending.
+[N005 acceptance](docs/villagers-dialogue/N005_ACCEPTANCE.md) verifies one finite conversation flow, source portraits/branches/learned facts, converted existing recovery/companion content and modal safety. Eight-person UI fixtures are verified; N008 supplies the first ordinary character.
 [N006 acceptance](docs/villagers-dialogue/N006_ACCEPTANCE.md) verifies all-eight physical contact infrastructure and actual woods/gather/choice event hooks; character activation remains with N008-N015.
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
