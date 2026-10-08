@@ -136,6 +136,7 @@ func _ready() -> void:
 	ui.dialogue_advance_requested.connect(_advance_dialogue)
 	ui.dialogue_choice_requested.connect(_choose_dialogue)
 	ui.dialogue_cancel_requested.connect(_cancel_dialogue)
+	ui.dialogue_view.counter_route_requested.connect(_switch_maris_route)
 	ui.journal_requested.connect(_toggle_journal)
 	ui.backpack_requested.connect(_toggle_backpack)
 	ui.inventory_selection_requested.connect(_select_inventory_item)
@@ -605,7 +606,7 @@ func interact() -> NpcDialogueService.Result:
 		var action: LightSwitchAction = target.light_action
 		return switch_light(weakref(target), session.environment.light_enabled(action.location_id, action.prop_id, action.source_id))
 	if not target.validation_errors(catalog).is_empty(): return NpcDialogueService.Result.new(false, "Invalid conversation contact.")
-	var result: NpcDialogueService.Result = dialogue.begin(target.npc_id, target.instance_id) if not target.npc_id.is_empty() else dialogue.begin_graph(catalog.get_dialogue(target.dialogue_id), target.instance_id)
+	var result: NpcDialogueService.Result = dialogue.begin(target.npc_id, target.instance_id) if not target.npc_id.is_empty() and not target is MarisCounter else dialogue.begin_graph(catalog.get_dialogue(target.dialogue_id), target.instance_id)
 	_present_dialogue(result)
 	return result
 
@@ -636,6 +637,21 @@ func _choose_dialogue(id: String, command: Dictionary = {}) -> NpcDialogueServic
 
 func _dialogue_command_allowed(view: Dictionary) -> bool:
 	return not view.is_empty() and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying
+
+
+func _switch_maris_route(command: Dictionary) -> NpcDialogueService.Result:
+	var current: Dictionary = dialogue.snapshot()
+	if not _dialogue_command_allowed(command) or current.is_empty() or command != current or current.npc_id != "npc-03" or current.instance_id != "npc-03-counter":
+		return NpcDialogueService.Result.new(false, "Stale or unavailable counter route.")
+	var counter: MarisCounter = world_host.current_location.get_node_or_null("MarisCounter") as MarisCounter
+	if counter == null or world_host.current_location.npc_contacts.targets.get("npc-03") != counter or InteractionSelector.select(player_placeholder, world_host.current_location) != counter:
+		return NpcDialogueService.Result.new(false, "Counter contact unavailable.")
+	# Same live person/cursor; routing grants no quest, inventory or trust effect.
+	var ordinary: bool = current.graph_id != "npc-03"
+	dialogue.cancel()
+	var result: NpcDialogueService.Result = dialogue.begin("npc-03", counter.instance_id) if ordinary else dialogue.begin_graph(catalog.get_dialogue(counter.dialogue_id), counter.instance_id)
+	_present_dialogue(result)
+	return result
 
 
 func _cancel_dialogue() -> void:

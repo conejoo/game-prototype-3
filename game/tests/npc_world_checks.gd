@@ -45,6 +45,7 @@ func _run() -> void:
 		await physics_frame
 		_check(InteractionSelector.select(game.player_placeholder,room) == target, "nearest approach " + entry.npc_id)
 		_check(game.interact().ok and game.dialogue.snapshot().npc_id == entry.npc_id and game.dialogue.snapshot().instance_id == entry.instance_id, "root source graph binding " + entry.npc_id)
+		if entry.npc_id == "npc-03": _check(game._switch_maris_route(game.dialogue.snapshot()).ok, "existing counter ordinary route")
 		var view: Dictionary = game.dialogue.snapshot()
 		var choice_id: String = view.choices[0].id
 		var choice_before: int = game.session.conversations.events().count(NpcEventMemory.CHOICE,entry.npc_id,choice_id)

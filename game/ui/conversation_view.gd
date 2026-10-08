@@ -3,6 +3,7 @@ extends PanelContainer
 ## Snapshot-only portrait modal. Scrolling text/choices/facts; fixed visible exits.
 signal choice_requested(id: String, command: Dictionary)
 signal advance_requested(command: Dictionary)
+signal counter_route_requested(command: Dictionary)
 var title: Label
 var expression: Label
 var portrait: TextureRect
@@ -12,6 +13,7 @@ var choice_scroll: ScrollContainer
 var facts: RichTextLabel
 var next: Button
 var close: Button
+var counter_route: Button
 var status: Label
 var _snapshot: Dictionary = {}
 var highlighted_terms: PackedStringArray = []
@@ -83,6 +85,11 @@ func _ready() -> void:
 	next.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	next.custom_minimum_size.y = 44
 	actions.add_child(next)
+	counter_route = Button.new()
+	counter_route.custom_minimum_size.y = 44
+	counter_route.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	actions.add_child(counter_route)
+	counter_route.pressed.connect(func() -> void: counter_route_requested.emit(_snapshot.duplicate(true)))
 	close = Button.new()
 	close.text = "Close [Esc]"
 	close.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -149,6 +156,9 @@ func present(view: Dictionary, message: String) -> void:
 	choice_scroll.scroll_vertical = 0
 	next.visible = view.can_continue
 	if next.visible: focus.append(next)
+	counter_route.visible = view.npc_id == "npc-03" and view.instance_id == "npc-03-counter"
+	counter_route.text = "Recovery / counter" if view.graph_id == "npc-03" else "Chat with Maris"
+	if counter_route.visible: focus.append(counter_route)
 	focus.append(close)
 	status.text = message
 	for index: int in range(focus.size()):

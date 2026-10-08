@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N009 ordinary Edric/Helena contacts/art.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N010 ordinary Edric/Helena/Maris contacts/art.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -990,3 +990,22 @@ routine controller, private home/interior or work action is simulated. Manual
 schema7/content1 persistence preserves independent memory with existing durable
 facts. [N009 acceptance](villagers-dialogue/N009_ACCEPTANCE.md) records ordinary
 branches/gather/revisit/new-process GUI restart and physical/art/regression proof.
+
+
+## N010 named Maris and counter routing (2026-10-08 UTC)
+
+Production activates npc-01/npc-02/npc-03. Maris mounts custom editable3D art under
+existing npc-03-counter VisualRoot/Presenter, hiding former capsule only. Original
+body/bench/props/effect-derived variants/fixed foot/approach remain. E keeps current
+recovery graph; ConversationView Chat/Recovery button routes through contained
+focus and current snapshot/live-contact/mode gates to source graph or current
+counter graph. One cursor/person, original IDs. Source portraits/content/schema7
+remain exact; ordinary memory cannot change quests/trust/items/service. Practical
+fitting order/cancellation and temporary helper labels remain honest.
+
+[N010 acceptance](villagers-dialogue/N010_ACCEPTANCE.md) records ordinary public
+branches/three facts/alternate keyboard route/exact GUI restart, real skin/feet/
+holds/travel/retry and regressions. Returned-fitting segment uses explicit legal
+prerequisite5; guardian/vessel integration is synthetic. Fresh full all-eight/
+recovery/native acceptance stays N017/N018. Idle runtime; walk review-only;
+gifts/commerce/routines unavailable.

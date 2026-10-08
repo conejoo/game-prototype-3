@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001-N009 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and Edric/Helena ordinary named character slices. N010-N018 remain Pending.
+N001-N010 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and Edric/Helena/Maris ordinary named character slices. N011-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -30,7 +30,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N007 | Done | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
 | N008 | Done | N006, N007 | Edric complete and reachable; first real villager vertical slice. |
 | N009 | Done | N008 | Helena complete and reachable. |
-| N010 | Pending | N008 | Maris ordinary dialogue/character integrated with existing recovery counter. |
+| N010 | Done | N008 | Maris ordinary dialogue/character integrated with existing recovery counter. |
 | N011 | Pending | N008 | Harlan complete and reachable. |
 | N012 | Pending | N008 | Tess complete and reachable. |
 | N013 | Pending | N008 | Ivo complete and reachable. |
@@ -520,3 +520,50 @@ status rows remain unchanged. Preflight verified all27 task paths, no unrelated
 work, exact final811-file manifest and GLB/.blend hashes. Raw evidence remains
 ignored; commit scope/identity/tree/status audits are in the latest local N009
 run. No push or N010 implementation. Commit identity is in Git history/report.
+
+
+### N010 - 2026-10-08 UTC
+
+Result: custom editable Maris3D7907-triangle/16-bone/packed-palette asset at existing
+npc-03-counter, source graph/six exact portraits and three public facts. Original
+body/bench/props/identity retained; same modal Chat/Recovery route preserves
+stage-derived lead/fitting/specialist order and manual schema7/content1 saves.
+Ordinary branches restore no service and change no quest/companion trust.
+
+N008/N009 actual packages/pipeline and source pins verified; target began clean
+at6432a815858e931ee1e2dd9040215cabc56d28be. Source remains clean/pinned at
+60c20eb2816e7271fb84afaba286af006ebe3ccf;132 authority hashes/67 outputs exact.
+Every criterion/command/isolation/failure in [N010 acceptance](N010_ACCEPTANCE.md)
+and [Maris package](../../art/exports/NPC_03_PACKAGE.md).
+
+Expanded121837960-c83f2372 first22 cases PASS; overall failed test-only wrong lead
+expectation. Source behavior retained, fixture repaired. Art review repaired knee/
+shin and wrist seams. Refined122623770-945afe91 all16 cases PASS, including current
+combat/vessel/recovery integration and all ordinary/render restart phases. Final
+122953614-20d0bf57 all11 cases PASS after test-only route guards/keyboard and survey
+framing:729 skin/384 UI/183 rendered assertions,62 viewed captures in six sheets,
+37 strict pause/dialogue provenance validations. Stable819 runtime/tool files;
+zero forbidden diagnostics/timeouts/source changes. Exact separate-process GUI
+Save/Load writerPID41376/readerPID71008; three facts/public branches/revisit and
+alternate keyboard Chat verified. Explicit prerequisite5 then normal returned
+fitting/cancel/complete/specialist segmentPID22108 passes. Guardian/vessel integration
+is synthetic; fresh full route N017/N018. Idle runtime; walk review-only.
+
+GLB6c19ef1fa64bfe98f2250609b621c213f00493832f5120b8aa69829024e34e0e;
+.blend09039718bc32e997b4c4e96644e6d63689e150290eb6854403848e65e0ee1e46.
+Final source/art/diff/link/status/process audits retained. All owned engines/helpers
+exited, original Blender scene/file preserved, owned Maris available. No blocker/
+unrun N010 criterion, normal save access, commit/push or successor implementation.
+Exactly N010 complete; stop. Remaining N011,N012,N013,N014,N015,N016,N017,N018;
+next eligible N011. All checklist items through N018 are not complete.
+
+
+### N010 authorized commit follow-up - 2026-10-08 UTC
+
+User authorized committing successful N010 implementation/art, reusable checks,
+acceptance report and checklist/durable-state/discovery documents. All26 task paths
+and accepted819 runtime/tool files/GLB/.blend hashes were verified; no unrelated
+changes or staged files. Task statuses and accepted runtime/art bytes remain exact.
+Raw evidence remains ignored. Commit scope/tree/identity/status audits are in the
+latest local N010 run; identity is available in Git history and follow-up report.
+No push or N011 implementation.

@@ -1,0 +1,21 @@
+{
+  "npc_id": "npc-03",
+  "triangles": 7907,
+  "vertices": 4132,
+  "bones": 16,
+  "materials": 1,
+  "texture": [
+    32,
+    32
+  ],
+  "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\npc-03.blend",
+  "glb": "D:\\development\\game-dev-blender\\returning-fair-prototype\\game\\assets\\models\\npcs\\npc-03.glb",
+  "idle": "runtime fixed contact",
+  "walk": "review only",
+  "preserved_scene": "RF-RecoveryVessel",
+  "references": [
+    "portraits/npc-03/official-neutral.png",
+    "reference/npc-03/npc_03_idle_sheet.png"
+  ],
+  "identity": "Mature chandlery supplier, full warm face, brown low braid/gray streak, blue vest, cream rolled sleeves, ochre apron/rope loop, brown trousers/boots"
+}

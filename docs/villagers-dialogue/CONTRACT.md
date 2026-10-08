@@ -420,3 +420,26 @@ source archive-work belongs to N016. Exact manual new-process GUI restart and
 all common acceptance are in [N009 acceptance](N009_ACCEPTANCE.md) and
 [NPC_02_PACKAGE](../../art/exports/NPC_02_PACKAGE.md). Schema7/content1, source
 pins, portrait pixels, geography and prior features remain unchanged.
+
+
+## N010 delivered Maris counter composition (2026-10-08 UTC)
+
+Current activation is exactly npc-01/npc-02/npc-03. Existing npc-03-counter, foot
+(-7.5,0,11), approach(-6,0,11), body/bench/service props remain authoritative.
+Accepted art mounts under VisualRoot/Presenter and hides former capsule mesh only.
+No duplicate person/counter/Party member or collision change.
+
+E opens current effect-selected prototype recovery graph. Same ConversationView
+has contained-focus Chat/Recovery button. GameRoot._switch_maris_route validates
+current snapshot, mode and actual selected scene-owned counter before replacing
+one transient cursor. Source graph/choices/portraits/facts remain unchanged.
+Ordinary facts/affinity/receipts belong to Maris memory; Chat grants no quest/trust/
+item/service effect. Recovery retains original source/location/order authority.
+Switch/cancel/leave cannot complete practical fitting. Customer/helper remain
+honest temporary fixtures. Schema7/content1/manual Save/Load remain unchanged.
+
+[N010 acceptance](N010_ACCEPTANCE.md) and [Maris package](../../art/exports/NPC_03_PACKAGE.md)
+record source-informed3D art/ordinary branches/exact new-process restart,
+physical/lifecycle/regression proof and explicit returned-fitting prerequisite5
+segment. Idle runtime, walk review-only; gifts/commerce/routines unavailable.
+N011 next eligible; full fresh all-eight/recovery/native proof stays N017/N018.

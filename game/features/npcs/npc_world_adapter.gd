@@ -51,6 +51,7 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			if not errors.is_empty(): return errors
 			presenter.face_direction(entry.approach-entry.foot)
 			presenters[id] = presenter
+			if id == "npc-03": target.get_node("VisualRoot/Maris").visible = false
 			if id == "npc-01": target.prompt = "Talk to Mayor Vale"
 			if id == "npc-02": target.prompt = "Talk to Archivist Vale"
 	return []

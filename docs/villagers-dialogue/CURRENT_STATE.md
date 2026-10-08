@@ -6,20 +6,69 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N009 Done; N010-N018 Pending. No active task. Exactly N009 completed and stopped.
-N009 began clean atd3c827be8e2c62f22f9658178e65b27132f7304e. Source remains
-clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf; no user edits at selection.
-N009 successful-task commit is authorized by the follow-up. Commit identity is
-available in Git history and the follow-up report after verification. No push or N010 work.
+N001-N010 Done; N011-N018 Pending. No active task. Exactly N010 completed and stopped.
+N010 began clean at6432a815858e931ee1e2dd9040215cabc56d28be. Source remains
+clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf; no unrelated user changes.
+N010 successful-task commit authorized by follow-up. Commit identity is available
+in Git history and follow-up report after verification. No push or N011 work.
 
-Next eligible N010. On a fresh invocation, inspect N008/N009 actual packages and
-implement only Maris ordinary dialogue/art at her existing npc-03 counter, preserving
-recovery/guardian/vessel/fitting/specialist ordering and identities. N011-N015 are
-independently eligible; N016 also eligible after Edric/Helena, but select lowest N010.
-River-fishing/archive-work stay N016. Do not invent tasks beyond N018.
-
-Remaining unfinished IDs: N010,N011,N012,N013,N014,N015,N016,N017,N018.
+Next eligible N011: Harlan public dock contact/art only. Inspect its source package,
+approved dry foot/approach and current three-person activation before implementation.
+N012-N015 and N016 independently eligible; select lowest N011. Do not invent tasks
+beyond N018. Remaining unfinished: N011,N012,N013,N014,N015,N016,N017,N018.
 All checklist items through N018 are not complete.
+
+## N010 result and durable evidence
+
+[N010 acceptance](N010_ACCEPTANCE.md) verifies every common/Maris criterion,
+commands/isolation/source/art hashes, retained failures and actual inspection.
+[Maris package](../../art/exports/NPC_03_PACKAGE.md) records actual interfaces.
+NpcRegistry now activates exactly npc-01/npc-02/npc-03. Maris reuses original counter
+at(-7.5,0,11), approach(-6,0,11), body/bench/props/identity unchanged. Custom editable
+7907-triangle/16-bone/one packed32x32 palette asset replaces visible capsule only:
+brown low braid/gray streak/full mature face/blue vest/cream rolled sleeves/
+ochre apron/rope loop/trousers/boots. Source portraits and graphs byte-exact.
+
+E retains current recovery graph; fixed contained-focus Chat button opens source
+graph and Recovery/counter returns to current effect-selected graph. Current
+snapshot/live-contact/mode gates reject stale/foreign/unfocused/distant routes.
+No graph/resource rewrite, new Party actor, save field, geometry or quest/trust change.
+Three authored public facts/one introduction receipt/affinity persist independently.
+Ordinary supplies/practice/hobby never restore service; gifts remain disabled.
+Idle runtime; walk review-only. Customer/helper stay honest temporary fixtures.
+
+Expanded121837960-c83f2372 passed all16 required headless suites, synthetic process
+pair and art review, but overall failed test-only wrong lead effect expectation.
+Refined122623770-945afe91 all16 cases PASS after correct expectation and visual
+knee/shin/wrist repair; current combat/vessel/recovery integration included.
+Final122953614-20d0bf57 all11 cases PASS after owning test-only route rejections/
+keyboard and clear survey framing. Production/art exact between passing runs.
+Final819 files SHA25615cf08e00f13e5a293feb0a0ed6bee7a3da5d5e3d1c0e898b7f54d6f5369e57c.
+Zero forbidden diagnostics/timeouts/source changes; fresh per-case/group isolated
+APPDATA/LOCALAPPDATA/slots. Normal saves untouched. Source132 hashes/67 outputs PASS.
+
+WriterPID41376/new readerPID71008 exact old/new durable state/forecast GUI restart,
+ordinary physical branches/facts/revisit; alternatePID46100 real Tab/Enter Chat.
+RecoveryPID22108 explicitly seeds5 legal prerequisite effects, then ordinary
+returned-counter walk/E/GUI cancellation/pause/practical completion/specialist
+preview; guardian/vessel fixtures synthetic. Full fresh all-eight/native package
+remains N017/N018. No synthetic setup claimed as an ordinary full journey.
+
+729 skin assertions including evidence write/481 idle/98 walk120Hz poses,196 stance/
+120 blend samples: soles0/seams0/stance drift9.536743e-7m/blend maxstep.012193013m.
+384 affected UI assertions/48 portraits/eight people,183 rendered assertions,
+all62 final captures inspected in six sheets/full-size selected views;37 strict
+pause/dialogue provenance validations. Source portrait/idle sheet viewed first.
+GLB6c19ef1fa64bfe98f2250609b621c213f00493832f5120b8aa69829024e34e0e;
+.blend09039718bc32e997b4c4e96644e6d63689e150290eb6854403848e65e0ee1e46.
+
+Files: source/build/normalize/audits/GLB/palette/imports/package; narrow registry/
+adapter/root/ConversationView; owning skin/render checks/UIDs and existing world
+fixture's explicit Maris route; acceptance/checklist/state/contract/README/architecture.
+Final source/hash/diff/link/status/process audit in latest run. Owned engines/helpers
+exited, original Blender scene/file preserved, RF-Npc03-Maris available. No cleanup,
+remaining criterion/blocker, commit/push, agent/chat/schedule, installation/publication
+or successor implementation. Exactly N010 complete; stop.
 
 ## N009 result and durable evidence
 
@@ -651,3 +700,18 @@ If interrupted during an implementation invocation, update CHECKLIST/CURRENT_STA
 Supplemental audit retry 2 completed production byte/source/link checks, then hit
 Windows cp1252 default decoding the UTF-8 checklist. final-audit-attempt-2.json
 retains the tooling failure. Final retry uses explicit UTF-8; no production change.
+
+
+## N010 authorized commit follow-up
+
+The user authorized committing successful N010 implementation, acceptance evidence,
+checklist and durable state. Preflight verified exactly26 owned paths, no unrelated
+or staged work, accepted819-file runtime/tool manifest and exact GLB/.blend hashes.
+Both refined16-case and final11-case runs retain passing results; no runtime change
+or redundant rerun is needed for this documentation/Git follow-up.
+
+Scope covers Maris source/art/imports/package, narrow counter/portrait routing,
+reusable skin/render/world checks and N010 workflow/discovery documentation. Raw
+runs/captures/appdata remain ignored. Commit scope/tree/identity/status verification
+is retained in the latest local N010 run; resulting identity appears in Git history
+and follow-up report. No push, unrelated change or N011 implementation.
