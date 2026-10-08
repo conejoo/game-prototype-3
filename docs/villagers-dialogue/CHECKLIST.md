@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001-N014 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and Edric/Helena/Maris/Harlan/Tess/Ivo/Celia ordinary named character slices. N015-N018 remain Pending.
+N001-N015 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and all eight ordinary named character slices. N016-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -35,7 +35,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N012 | Done | N008 | Tess complete and reachable. |
 | N013 | Done | N008 | Ivo complete and reachable. |
 | N014 | Done | N008 | Celia complete and reachable. |
-| N015 | Pending | N008 | Della complete at documented public inn-entry adaptation. |
+| N015 | Done | N008 | Della complete at documented public inn-entry adaptation. |
 | N016 | Pending | N008, N009, N007 | Edric/Helena semantic action art exported and inspected. |
 | N017 | Pending | N010, N011, N012, N013, N014, N015, N016 | Fresh integrated eight-person route, persistence and existing-game regression proof. |
 | N018 | Pending | N017 | Fresh Windows packages and native all-eight restart acceptance. |
@@ -794,3 +794,62 @@ captures, failed-attempt assets and isolated appdata remain ignored. Commit
 scope/tree/identity/status audits are retained in the final local N014 run;
 verified commit identity is available in Git history and follow-up report.
 No push or N015 implementation; N015-N018 remain Pending.
+
+
+### N015 - 2026-10-08 UTC
+
+Result: Della Pike/npc-14 public Lantern Rest entry at approved foot(-9,0,3.5),
+approach(-9,0,4.5), stable alderwake-npc-14-contact. Indoor provenance remains
+lantern-rest:della-inn-host-01/inn-host-01(256,288); explicit exterior adaptation,
+never town-transforming indoor coordinates. Full capsule excludes future inert
+portal Rect2(-8,3.5,2,1.5); nine full player footprints, sampled navigation and
+ordinary lane round trip pass. All eight requested villagers now activated.
+
+Distinct editable age58/silver waves-bun/plum gown/cream apron/olive fringed
+shawl/brass brooch/brown boots art:8720 triangles/4599 vertices/16 bones/packed
+32x32 palette. Idle/facing runtime; walk review-only. Exact graph/six portraits/
+three public facts, exclusive careful+1/passing0. Fixed notice labels adaptation
+and unavailable interior/rooms/sleep; room/gift inputs reject. No records/history,
+home ownership, morning event, service, item/quest/trust or save-format change.
+
+Target began clean at c18ef206c999fa632e29540a56e6cc60988f42ef; source clean/pinned
+at60c20eb2816e7271fb84afaba286af006ebe3ccf.132 authority hashes/67 outputs exact.
+Every criterion/command/isolation/failure in [N015 acceptance](N015_ACCEPTANCE.md)
+and [Della package](../../art/exports/NPC_14_PACKAGE.md). Files: owning source/
+export/audits/assets/checks plus narrow registry/prompt/modal and workflow docs.
+
+Final152625206-824099f7 all31 cases PASS, zero forbidden runtime diagnostics/
+timeouts/source changes;22 headless suites, independent synthetic process pair,
+review/write/read/neutral renders. Fresh isolated APPDATA/LOCALAPPDATA/named
+slots; normal saves untouched.859 stable runtime/tool files SHA256
+d0e8792fefb07abb3d22007433637207de72bc1663c97f45d8aa9a59f062844c.
+760 owning/977 rules/384 UI/212 rendered assertions; all75 captures inspected
+in seven sheets/full-size selected views,50 strict provenance validations pass.
+Ordinary writerPID26040/new readerPID11492 exact whole typed durable-state/
+forecast GUI Save/Load and physical public fact revisit; neutralPID56120 tests
+alternative introduction, every enabled branch and inert room/gift choices.
+
+Retain152208287 sandbox Access denied,152252760 generated-import invalidation,
+152329623 offscreen choice-click/first cloth-gap attempt. Required authorized
+runner escalation used; fixture scroll and continuous weighted cloth repaired.
+First art/owned scene retained. Final source/mainfile/GLB audits pass; soles0/
+seams0,196 stance drift2.384185791015625e-7m,120 blend maxstep.019758066162467003m.
+GLB4e653fe86145af59c560435ca56b4d9e749f972308d3de674ec761eb2b6a8967;
+.blend990651b751310c35f25a697a108401e0fc5542b454dc8f8fd4b4b45695e55bec.
+
+Final diff/link/source/hash/process audit retained; all owned engines/helpers
+exited, original Blender scene/file and other assets preserved, owned Della
+available. No blocker/unrun N015 criterion, cleanup, commit/push or successor
+implementation. Exactly N015 completed; stop. Remaining N016,N017,N018;
+N016 next eligible. All through N018 incomplete.
+
+### N015 authorized commit follow-up - 2026-10-08 UTC
+
+User authorized committing successful N015 implementation/art, reusable checks,
+acceptance report, checklist and durable state. Preflight verifies exactly24
+N015 paths, all859 accepted runtime/tool bytes and final GLB/.blend hashes;
+no unrelated changes or staged files. Accepted runtime/art bytes and task status
+rows remain unchanged. Raw runs/captures/isolated appdata stay ignored under
+existing policy. Fresh commit scope/tree/identity/status audit is retained in
+final local N015 evidence; verified commit identity is available in Git history
+and follow-up report. No push or N016 implementation.

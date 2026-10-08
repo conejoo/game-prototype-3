@@ -58,6 +58,7 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			if id == "npc-06": target.prompt = "Talk to Tess Reed"
 			if id == "npc-07": target.prompt = "Talk to Ivo Oran"
 			if id == "npc-08": target.prompt = "Talk to Celia Oran"
+			if id == "npc-14": target.prompt = "Talk to Della Pike"
 	return []
 
 func sync_visuals(holds: Dictionary, speaker: String, player_foot: Vector3) -> void:

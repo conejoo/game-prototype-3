@@ -167,6 +167,8 @@ func present(view: Dictionary, message: String) -> void:
 		status.text += ("\n" if not message.is_empty() else "") + "Conversation only. Booking, salvage jobs and departures unavailable."
 	if view.npc_id == "npc-08":
 		status.text += ("\n" if not message.is_empty() else "") + "Conversation only. Repair services and fair boat rides unavailable."
+	if view.npc_id == "npc-14":
+		status.text += ("\n" if not message.is_empty() else "") + "Public entrance adaptation. Inn interior, rooms and sleep unavailable."
 	for index: int in range(focus.size()):
 		focus[index].focus_next = focus[index].get_path_to(focus[(index + 1) % focus.size()])
 		focus[index].focus_previous = focus[index].get_path_to(focus[(index + focus.size() - 1) % focus.size()])

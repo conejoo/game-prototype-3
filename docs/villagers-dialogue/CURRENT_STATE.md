@@ -6,18 +6,76 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N014 Done; N015-N018 Pending. No active task. Exactly N014 completed.
-Target began clean at `a3fb984875e4229504f5080bff5f4d6239e396b8`.
-Source remains clean/pinned at `60c20eb2816e7271fb84afaba286af006ebe3ccf`.
-No unrelated user work. Successful N014 commit authorized by follow-up; verified
-identity is available in Git history and follow-up report. No push.
-Next eligible N015: inspect npc-14 public
-package and N001 documented public Lantern Rest entry adaptation before implementation.
-N016 independently ready; N017/N018 wait for declared prerequisites. Remaining
-N015,N016,N017,N018; all through N018 incomplete. No current blocker/unrun N014
-criterion, normal-save access or owned cleanup. All owned engines/helpers exited.
-Original Blender RF-RecoveryVessel scene/file preserved; owned RF-Npc08-Celia
-and before-refine scene available. Stop now.
+N001-N015 Done; N016-N018 Pending. No active task. Exactly N015 completed.
+Target began clean at `c18ef206c999fa632e29540a56e6cc60988f42ef`; source remains
+clean/pinned at `60c20eb2816e7271fb84afaba286af006ebe3ccf`. No unrelated work.
+Successful N015 commit authorized by follow-up; verified identity is available
+in Git history and the follow-up report. No push. Next eligible N016: inspect
+actual Edric river-fishing and
+Helena archive-work references, then implement only their semantic action art
+under existing N007 pipeline and N016 exposure/lifecycle acceptance. N017/N018
+wait for declared prerequisites. Do not add tasks beyond N018.
+Remaining N016,N017,N018; all through N018 incomplete. No N015 blocker,
+unrun criterion or cleanup. All owned engines/helpers exited. Original Blender
+RF-RecoveryVessel scene/file preserved; owned RF-Npc14-Della and before-refine
+scene available. Stop now; do not begin N016 during this invocation.
+
+## N015 result and durable evidence
+
+[N015 acceptance](N015_ACCEPTANCE.md) maps every common/Della criterion, commands,
+isolation, failures, hashes and actual inspection. [Della package](../../art/exports/NPC_14_PACKAGE.md)
+records actual scripts/interfaces. Source lantern-rest:della-inn-host-01/
+inn-host-01 indoor(256,288) remains separate from approved public exterior
+foot(-9,0,3.5)/approach(-9,0,4.5), stable alderwake-npc-14-contact. Future inert
+portal Rect2(-8,3.5,2,1.5), geography and inn door remain unchanged; full capsule
+excludes portal and nine full player footprints/sampled lane/ordinary round
+trip across it pass. Registry activates exactly the requested eight.
+
+Custom editable 8720-triangle/4599-vertex/16-bone/packed32x32 palette Della:
+age58, full mature face, silver swept waves/bun/wisps, plum gathered gown/sleeves,
+cream bib/apron/ties, olive fringed shawl/brass brooch, brown boots. Continuous
+weighted cloth closes first waist/center seams. Idle/facing runtime; walk
+review-only. Exact source graph/six portraits/three public facts; careful+1
+versus passing0 exclusive. Fixed modal labels public placement adaptation and
+interior/room/sleep unavailability. Room/gift clicks and commands inert; no
+records/private history, home ownership, morning event, service or reward.
+Manual schema7/content1, existing companion/quest/recovery authorities intact.
+
+Final expanded `docs/evidence/N015/20261008-152625206-824099f7/`: all31 cases PASS,
+22 headless suites including all eight named skins, content/rules/save/world/
+pipeline/UI/interaction/quest/foraging/light/travel/map/navigation/startup,
+independent synthetic process pair and rendered review/write/read/neutral.
+Zero forbidden runtime diagnostics/timeouts/source changes; allowed preexisting
+import-only .NET SDK diagnostic retained. Fresh per-case/group isolated APPDATA/
+LOCALAPPDATA/named slots; normal saves untouched. All859 runtime/tool files
+stable SHA256 d0e8792fefb07abb3d22007433637207de72bc1663c97f45d8aa9a59f062844c.
+Owning760 skin/world, shared977 rule/384 UI and212 rendered assertions pass.
+
+Ordinary writerPID26040/new readerPID11492 exact whole typed durable-state/
+full-precision forecast GUI Save/Load, physical fact revisit and portal-lane
+round trip. NeutralPID56120 separate fresh alternative/public branches. Other
+seven memories and complete inventory/resources/placements/quests/effects/
+trust/progression/actors/party/lights unchanged by ordinary dialogue. Synthetic
+art/rule/physical/process evidence remains distinct from ordinary controls.
+All75 final captures viewed in seven sheets and selected full-size views;
+50 strict pause/dialogue provenance validations pass. Soles0/seams0,
+196 stance samples drift2.384185791015625e-7m,120 blend maxstep0.019758066162467003m.
+GLB4e653fe86145af59c560435ca56b4d9e749f972308d3de674ec761eb2b6a8967;
+.blend990651b751310c35f25a697a108401e0fc5542b454dc8f8fd4b4b45695e55bec.
+
+Retained failures:152208287-8ecd0f61 sandbox child-process inspection Access denied;
+152252760-0178af53 generated import metadata correctly invalidated run;
+152329623-f711df3d writer later buttons needed actual wheel scrolling, plus
+visually found cloth seams. Owning fixture/art repaired; first asset/scene
+retained. Final runner used authorized escalation for shared process inspection;
+no guard weakening. Source converter132 authority hashes/67 outputs exact.
+
+Files changed: Della build/normalize/raw/source audits/.blend/GLB/import/palette/
+export JSON/package; narrow registry activation/prompt/Della-only modal notice;
+npc_14_checks/render and UIDs; acceptance/checklist/state/contract/README/
+architecture. No other person's asset, graph/portrait, save format, geography,
+recovery/ship/gate file changed. Final intended diff/link/source/hash/process
+audits retained. No commit/push or successor work. Exactly N015 complete; stop.
 
 ## N014 result and durable evidence
 

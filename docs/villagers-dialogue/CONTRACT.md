@@ -528,3 +528,23 @@ and [Celia package](../../art/exports/NPC_08_PACKAGE.md) verify ordinary access,
 exact independent GUI restart, repair-lane round trip/full footprint, lifecycle
 and inspected source-informed art/weather. N015 next eligible; N016-N018 retain
 semantic actions/integrated all-eight/native acceptance.
+
+## N015 delivered Della public inn-entry boundary (2026-10-08 UTC)
+
+Current activation is exactly npc-01/npc-02/npc-03/npc-04/npc-06/npc-07/npc-08/
+npc-14. Della uses approved exterior foot(-9,0,3.5), approach(-9,0,4.5), stable
+alderwake-npc-14-contact and source prompt. Source lantern-rest:della-inn-host-01/
+inn-host-01 indoor(256,288) remains separate provenance: explicit public exterior
+adaptation, never town-transforming interior coordinates. Exact inert future
+portal Rect2(-8,3.5,2,1.5), geography and original inn door remain unchanged.
+
+Custom editable 3D Della follows portrait/sheet/canon age58; idle/facing runtime,
+walk review-only. Source graph/six portraits remain exact, including N001 welcome
+adaptation. Public-role/quiet-company/quilting memories are independently owned.
+Fixed notice labels public adaptation/interior/room/sleep unavailability; room
+and gift commands remain deferred and inert. No records/private history, home
+ownership, morning event, quest/trust/item or service entitlement is introduced.
+Manual schema7/content1 unchanged. [N015 acceptance](N015_ACCEPTANCE.md) and
+[Della package](../../art/exports/NPC_14_PACKAGE.md) record every criterion,
+ordinary input/exact GUI restart, measured door clearance and inspected art.
+N016 next eligible; actions/integrated all-eight/native gates remain N016-N018.

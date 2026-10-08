@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N014 ordinary Edric/Helena/Maris/Harlan/Tess/Ivo/Celia contacts/art.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N015 ordinary contacts/art for all eight requested villagers.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -1038,3 +1038,22 @@ Existing recovery helper stays explicitly temporary. Manual schema7/content1
 unchanged; ordinary input/exact separate-process GUI restart and inspected
 day/night/rain/exported clips in [N013 acceptance](villagers-dialogue/N013_ACCEPTANCE.md).
 Idle/facing runtime; walk review-only. N014 next; all-eight/native gates N017/N018.
+
+## N015 Della public Lantern Rest entry (2026-10-08 UTC)
+
+All eight requested villagers now have fixed public contacts and distinct editable
+3D skins. Della/npc-14 uses approved foot(-9,0,3.5)/approach(-9,0,4.5), preserving
+indoor source identity lantern-rest:della-inn-host-01/inn-host-01(256,288) as
+separate provenance. Exterior location is an explicit prototype adaptation;
+future inn portal/door and pinned geometry remain exact and unobstructed.
+
+Source public branches/six portraits/three facts and one introduction receipt
+remain independently owned. Fixed notice and disabled room choice explain that
+interior, rooms and sleep are unavailable; no records/history, entitlement,
+morning event or service/reward is added. Existing presenter/lifecycle owners
+retain collision and identity outside VisualRoot. Idle/facing runtime, walk
+review-only; manual schema7/content1 unchanged. [N015 acceptance](villagers-dialogue/N015_ACCEPTANCE.md)
+records ordinary town-to-inn input, exact separate-process GUI restart, physical
+portal-pad checks and inspected day/night/rain/loop art. N016 next eligible;
+semantic actions, integrated all-eight route and fresh native delivery remain
+N016-N018. Prior release history remains intact.
