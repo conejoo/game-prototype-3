@@ -69,7 +69,7 @@ func _ready() -> void:
 	if errors.is_empty():
 		errors = npc_catalog.initialize_path(catalog)
 	if errors.is_empty():
-		errors = session.initialize(catalog, initial_location_id, initial_spawn_id, "prototype-hero")
+		errors = session.initialize(catalog, initial_location_id, initial_spawn_id, "prototype-hero", null, npc_catalog)
 	if errors.is_empty():
 		errors = npc_dialogue.initialize(npc_catalog, session)
 	if not errors.is_empty():
@@ -429,7 +429,7 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		quests.initialize(catalog, session)
 		relationships.initialize(catalog, session)
 		progression.initialize(catalog, session)
-		# Schema6 restores fresh NPC memory until N004 owns the additive format.
+		# Bind restored durable memory; dialogue cursor is always fresh.
 		npc_dialogue.initialize(npc_catalog, session)
 		_refresh_progression()
 	_pending_restore = null
@@ -488,7 +488,7 @@ func _save_boundary_errors() -> PackedStringArray:
 		return PackedStringArray(["close backpack before save/load"])
 	if journal_open:
 		return PackedStringArray(["close journal before save/load"])
-	if dialogue.active():
+	if dialogue.active() or npc_dialogue.active():
 		return PackedStringArray(["close dialogue before save/load"])
 	if not session.initialized or world_host.current_location == null:
 		return PackedStringArray(["run is not ready"])

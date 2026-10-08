@@ -42,7 +42,7 @@ func _run() -> void:
 
 func _new_service(content: NpcContentCatalog = null) -> Dictionary:
 	var session: GameSession = GameSession.new()
-	_check(session.initialize(actors, "prototype-alderwake", "alderwake-start", "prototype-hero").is_empty(), "Fresh session")
+	_check(session.initialize(actors, "prototype-alderwake", "alderwake-start", "prototype-hero", null, catalog if content == null else content).is_empty(), "Fresh session")
 	var service: NpcDialogueService = NpcDialogueService.new()
 	_check(service.initialize(catalog if content == null else content, session).is_empty(), "Fresh dialogue owner")
 	return {"session": session, "service": service}
@@ -329,16 +329,16 @@ func _root_binding() -> void:
 	await game.world_host.transition_finished
 	_check(game.session.conversations.initialized and game.npc_dialogue._session == game.session, "Actual root owns ready NPC rules")
 	game._set_paused(true)
-	_check(game.save_run().is_empty(), "Existing manual stable-boundary schema6 save")
+	_check(game.save_run().is_empty(), "Existing manual stable-boundary current-schema save")
 	var saved: Dictionary = SaveCodec.snapshot(game.session)
-	_check(SaveCodec.SCHEMA_VERSION == 6 and not saved.has("conversations"), "N003 leaves save schema6; N004 owns durability")
+	_check(SaveCodec.SCHEMA_VERSION == 7 and saved.has("conversations"), "N004 current-schema memory durability")
 	var view: Dictionary = _begin(game.npc_dialogue, "npc-14", "npc-14-introduction")
 	_choose(game.npc_dialogue, view, "npc-14-careful-response", "npc-14-careful-end")
 	game.npc_dialogue.cancel()
 	var previous: GameSession = game.session
 	_check((await game.load_run()).is_empty(), "Actual root successful manual load")
 	_check(game.session != previous and game.npc_dialogue._session == game.session and game.session.conversations.initialized and not game.npc_dialogue.active(), "Restored session rebinds cursor owner")
-	_check(game.session.conversations.memory("npc-14").affinity == 0 and previous.conversations.memory("npc-14").affinity == 1, "Schema6 restores fresh independent NPC memory without inference")
+	_check(game.session.conversations.memory("npc-14").affinity == 0 and previous.conversations.memory("npc-14").affinity == 1, "Loading earlier fresh save restores independent memory without inference")
 	game.npc_dialogue.record_event(NpcEventMemory.GATHER, "moonflower", null)
 	_check(game.session.conversations.events().count(NpcEventMemory.GATHER, "moonflower", null) == 1 and previous.conversations.events().count(NpcEventMemory.GATHER, "moonflower", null) == 0, "New event commands target restored session")
 	game._set_paused(false)

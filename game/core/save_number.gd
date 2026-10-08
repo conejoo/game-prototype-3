@@ -103,6 +103,7 @@ static func restore_timers(raw: String, data: Dictionary) -> PackedStringArray:
 	# JSON already validated structure. Read key/value lexemes while skipping
 	# strings, including escaped keys; no regex can mistake an ID for a number.
 	var tokens: Dictionary[String, String] = {}
+	var event_tokens: Dictionary = {"first_active_seconds": [], "last_active_seconds": []}
 	var index: int = 0
 	while index < raw.length():
 		if raw[index] != '"':
@@ -122,7 +123,7 @@ static func restore_timers(raw: String, data: Dictionary) -> PackedStringArray:
 		var following: int = index
 		while following < raw.length() and raw.unicode_at(following) <= 32:
 			following += 1
-		if following >= raw.length() or raw[following] != ":" or not key in ["elapsed_play_seconds", "day_cycle_progress"]:
+		if following >= raw.length() or raw[following] != ":" or not key in ["elapsed_play_seconds", "day_cycle_progress", "first_active_seconds", "last_active_seconds"]:
 			continue
 		following += 1
 		while following < raw.length() and raw.unicode_at(following) <= 32:
@@ -131,6 +132,9 @@ static func restore_timers(raw: String, data: Dictionary) -> PackedStringArray:
 		while end < raw.length() and raw[end] in "0123456789.eE+-":
 			end += 1
 		if end > following:
+			if event_tokens.has(key):
+				event_tokens[key].append(raw.substr(following, end - following))
+				continue
 			if tokens.has(key):
 				return PackedStringArray(["duplicate saved timer field: " + key])
 			tokens[key] = raw.substr(following, end - following)
@@ -140,4 +144,11 @@ static func restore_timers(raw: String, data: Dictionary) -> PackedStringArray:
 		var environment: Dictionary = data.environment
 		if (environment.get("day_cycle_progress") is int or environment.get("day_cycle_progress") is float) and tokens.has("day_cycle_progress"):
 			environment.day_cycle_progress = parse(tokens.day_cycle_progress)
+	if data.get("conversations") is Dictionary and data.conversations.get("events") is Dictionary and data.conversations.events.get("facts") is Array:
+		var facts: Array = data.conversations.events.facts
+		for key: String in event_tokens:
+			if event_tokens[key].size() != facts.size(): continue # Strict structure check rejects missing/malformed fields.
+			for row_index: int in range(facts.size()):
+				if facts[row_index] is Dictionary and (facts[row_index].get(key) is int or facts[row_index].get(key) is float):
+					facts[row_index][key] = parse(event_tokens[key][row_index])
 	return PackedStringArray()

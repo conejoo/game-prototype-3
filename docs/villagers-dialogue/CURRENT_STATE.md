@@ -1,23 +1,96 @@
 # Villagers and dialogue current state
 
-Updated: 2026-10-08, America/Vancouver.
+Updated: 2026-10-08, UTC.
 [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns stable rules;
 [AGENT_PROMPT](AGENT_PROMPT.md) supplies the reusable invocation.
 
 ## Selection and exact continuation
 
-N001/N002/N003 Done; N004-N018 Pending. Active task: none. Exactly N003 completed
-this invocation. Next eligible N004 â€” strict current-schema NPC/event persistence.
-N007 remains independently ready; lowest eligible is N004. Neither started.
+N001/N002/N003/N004 Done; N005-N018 Pending. Active task: none. Exactly N004
+completed this invocation. Next eligible N005 — portrait branches/facts UI and
+conversion of all legacy dialogue callers. N007 independently ready. Neither started.
+Remaining unfinished IDs: N005, N006, N007, N008, N009, N010, N011, N012, N013,
+N014, N015, N016, N017, N018. All checklist items through N018 are not complete.
 
-Exact action: recheck current Git/source pins and schema6 policy; read N003_ACCEPTANCE
-and implemented memory/service interfaces. Mark N004 In progress, implement only its
-strict additive current-format codec/restart checks. Provisionally schema7/content1;
-reject schema6 and every other noncurrent format, no migrations/defaults. Remove N003's
-transitional root schema6-fresh-memory comment when durable restore replaces it.
-Keep manual saves and reject active conversation; preserve full existing durable oracle.
-Rebuild supported event keys from catalog, derive latest time from last-sequence
-aggregate, validate all IDs/bounds/relationships before live swap. Stop after N004.
+Exact next action: recheck Git/source pin and actual schema7/content1, read N004
+acceptance and current dialogue/root/UI owners. Mark N005 In progress, implement
+only its portrait conversation/fact UI and required legacy caller/content conversion.
+Retain N004 strict persistence/manual boundaries, no old-format migration or cursor
+save. Convert Maris/companion/vessel/practice into the current flow, preserve legal
+quest/trust/service commands, remove superseded engine only after callers convert.
+No normal eight-person route/scene activation/art/package claim until owning tasks.
+Stop after N005; do not extend beyond N018 or repeat completed tasks.
+
+## N004 result and durable evidence
+
+Target began clean at e6e907922e46cf63c4adb2902afb7bc3a0da2030; no user edits.
+Source clean at 60c20eb2816e7271fb84afaba286af006ebe3ccf. Read-only conversion check
+passes all132 source hashes/67 runtime outputs; catalog SHA256
+9490a7a2ca4e4cb926c9919c52be1a53f47cc0699a44059723b17d814068f9d9. Portraits/reference
+art/content, pinned geometry and prior P/M/W/F history unchanged. No commit made
+during the implementation invocation; the later authorized follow-up is below.
+
+Current runtime accepts only schema7/content1. NpcSaveData requires exactly eight
+complete memories and <=40 exact event aggregates; strict IDs/sets, numeric/lexeme
+bounds, disclosures/rewards/receipts/affinity/derived level and count/span/time
+relations validate before detached session construction. Shared containers reject;
+timestamps round-trip binary64 exactly. Allowlist/latest time rebuild on restore.
+No gifts/routines, inventory-derived history, migrations/defaults or cursor save.
+See [N004 acceptance](N004_ACCEPTANCE.md) and CONTRACT for actual interfaces/policy.
+
+GameSession.initialize now accepts optional validated npc_content after
+restored_environment; root injects its catalog and restores durable state to a fresh
+inactive NpcDialogueService. Save/Load blocks either active dialogue owner until
+closed. Manual pause/arrival/backup/recovery/physical rollback rules remain intact.
+Existing SaveRepository unchanged. Added NpcSaveData, npc_save_checks,
+npc_process_checks, NpcSaveFixture plus four UIDs. Narrow root/session/codec/
+SaveJsonFields/SaveNumber edits; six authored save fixtures explicitly schema7,
+environment fixture renamed v7. All prior fixture facts are exact; affected hard-coded
+schema/path assertions updated. README/architecture/workflow docs reflect current
+version, retaining historical delivery/package versions.
+
+Final command from repository root, PowerShell7:
+./tools/run_checks.ps1 -Task N004 -Import -Names npc_save_checks,save_checks,foraging_save_checks,environment_save_checks,map_save_checks,consequence_checks,npc_dialogue_rule_checks,application_smoke,inventory_checks,foraging_transaction_checks,reference_mapping_checks,testing_support_checks -ProcessScripts npc_process_checks,save_process_checks -TimeoutSeconds 150.
+
+All19 cases PASS/exit0; zero forbidden runtime/parse diagnostics, timeouts or source
+changes. 567 NPC-save assertions including evidence write (566 JSON), 509 malformed
+inputs; NPC rules retain 977 assertions/58 enabled nodes/38 choices. Exact complete
+old/new-state restart in separate processes, writer PID828/reader PID54596. Existing
+save process suite also passes. Nonempty memory staging failure/malformed candidate/
+both unsafe placements preserve live owners/facts; backup recovers exact memory
+visibly without rewriting primary. Existing import-only SDK10.0.9 message allowed by
+unchanged runner; no install needed. No remaining N004 criterion, failure or blocker.
+
+Final evidence docs/evidence/N004/20261008-083758961-2874c9d4/{results.json,
+source-before.json,source-after.json,checks/npc_save_checks/npc-save.json,
+process/npc_process_checks/npc-process-write.json,npc-process-read.json,numbered logs,
+final-audit.json}. Fingerprint
+2a200140321af5a13056d70f92956a01c4bdd0f68bbc9fe792061c3ca64c2404;770 game/tools
+files stable. Matching builds/testing/N004 run has isolated appdata/localappdata,
+separate named check groups and per-suite shared writer/reader groups. Normal user
+saves untouched. Headless synthetic rule/root/process proof only; no ordinary input,
+portrait/route/art/native-package acceptance attributed to N004.
+
+Failed attempts retained in acceptance: sandbox engine access, initial generated
+UIDs/source guard, fixture added during startup, typed-array constructor, malformed
+boolean identity, repeated-catalog timeout. Fixes preserved strict validation and
+guard. Smaller083240856-c30233e7 passed; full083413707-67472aad passed19 before final
+format-preserving byte cleanup. Final run certifies final production/fixture bytes.
+Supplemental prep failures (list fixture/quoting/elevated Git/CRLF injection) recorded;
+prior fixture facts verified independently. Final diff/links/status/dependency/source/
+byte audit passes. All owned launcher/engine PIDs exited; no editor/cleanup owed.
+Runtime approval mode auto_review approved required isolated Godot execution after
+sandbox preflight access denial; no current permission blocker or security changes.
+No agents/chats/schedules/external messages/publication. Stop after N004.
+
+## N004 commit follow-up
+
+User authorized committing successfully completed N004. Scope includes the task's
+production/fixture/check/UID changes, acceptance/checklist/contract/current state and
+README/architecture discovery. Raw generated evidence and builds remain ignored;
+N004_ACCEPTANCE is the committed evidence summary. Final runtime bytes and all19
+passing cases remain unchanged. No unrelated work, push or successor task included.
+The resulting commit identity is available in Git history and the follow-up report.
 
 ## N003 result and durable evidence
 

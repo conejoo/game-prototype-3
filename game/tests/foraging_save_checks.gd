@@ -67,7 +67,7 @@ func _run() -> void:
 		_check(SaveCodec.decode(raw.replace('"item-moonflower":3', '"item-moonflower":' + quantity_token), catalog).session != null, "whole JSON number accepted " + quantity_token)
 	_check(SaveCodec.decode(" ".repeat(SaveCodec.MAX_BYTES + 1), catalog).session == null, "128KiB")
 	var future: Dictionary = _mutable(good)
-	future.schema_version = 7
+	future.schema_version = SaveCodec.SCHEMA_VERSION + 1
 	_check(SaveCodec.validate(future,catalog).incompatible, "newer protected")
 	_capacity_save(good)
 	var empty: GameSession = GameSession.new()

@@ -24,10 +24,10 @@ func _run() -> void:
 	var registry: Array[Dictionary] = LightSourceRegistry.entries()
 	registry[0].default_enabled = false
 	_check(LightSourceRegistry.entries() == expected_registry, "Registry query must be detached")
-	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v6.json"))
+	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v7.json"))
 	var duplicate_time: String = JSON.stringify(data).replace('"day_index":146', '"day_cycle_progress":0.5,"day_index":146')
 	_check(SaveCodec.decode(duplicate_time, catalog).session == null, "Duplicate clock lexeme rejected")
-	var newer_time: String = duplicate_time.replace('"schema_version":6', '"schema_version":7')
+	var newer_time: String = duplicate_time.replace('"schema_version":7', '"schema_version":8')
 	_check(SaveCodec.decode(newer_time, catalog).incompatible, "Newer envelope protects files even with duplicate numeric fields")
 	var escaped_time: String = JSON.stringify(data, "", true, true).replace('"day_cycle_progress"', '"day_cycle_\\u0070rogress"')
 	_check(SaveCodec.decode(escaped_time, catalog).session != null, "Escaped JSON key decoded normally")

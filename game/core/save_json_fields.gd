@@ -26,7 +26,7 @@ static func validate(raw: String) -> PackedStringArray:
 				if containers[-1].keys.has(key): return PackedStringArray(["duplicate JSON field: " + key])
 				containers[-1].keys[key] = true
 				containers[-1]["last"] = key
-				if containers[-1].name == "item_counts":
+				if containers[-1].name == "item_counts" or key in ["affinity", "level", "last_sequence", "count", "first_sequence", "last_sequence"]:
 					var start_value: int = following + 1
 					while start_value < raw.length() and raw.unicode_at(start_value) <= 32: start_value += 1
 					var end_value: int = start_value

@@ -15,7 +15,7 @@ var progression: ProgressionState = ProgressionState.new()
 var environment: EnvironmentState = EnvironmentState.new()
 var inventory: InventoryState = InventoryState.new()
 var foraging: ForagingState = ForagingState.new()
-# N003 session memory; N004 owns serialization.
+# Schema7 durable per-person and bounded event state; cursor stays transient.
 var conversations: NpcConversationState = NpcConversationState.new()
 var weather_conditions: WeatherConditionService = WeatherConditionService.new()
 # Transient developer provenance, never a save field.
@@ -25,7 +25,7 @@ const PLAYER_INSTANCE_ID: String = "party-player"
 const COMPANION_INSTANCE_ID: String = "party-companion"
 
 
-func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, player_id: String, restored_environment: EnvironmentState = null) -> PackedStringArray:
+func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, player_id: String, restored_environment: EnvironmentState = null, npc_content: NpcContentCatalog = null) -> PackedStringArray:
 	if initialized:
 		return PackedStringArray(["session is already initialized"])
 	if catalog == null or not catalog.initialized:
@@ -54,6 +54,15 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 	errors = ForagingRegistry.validation_errors(catalog)
 	if not errors.is_empty():
 		return errors
+	var npc_catalog: NpcContentCatalog = npc_content
+	if npc_catalog == null:
+		npc_catalog = NpcContentCatalog.new()
+		errors = npc_catalog.initialize_path(catalog)
+		if not errors.is_empty(): return errors
+	var candidate_conversations: NpcConversationState = NpcConversationState.new()
+	errors = candidate_conversations.initialize(npc_catalog)
+	if not errors.is_empty(): return errors
+	conversations = candidate_conversations
 	inventory = candidate_inventory
 	foraging.initialize(catalog, self)
 	actors[PLAYER_INSTANCE_ID] = ActorState.new(PLAYER_INSTANCE_ID, player)

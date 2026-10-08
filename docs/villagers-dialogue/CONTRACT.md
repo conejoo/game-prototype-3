@@ -239,6 +239,44 @@ responses can record repeated events without gaining an invented one-time receip
 
 N004 must strictly validate restored IDs, complete structure, bounds and derived
 relations, reconstruct allowlist/latest timestamp and detach candidates before swap.
-Current schema6 intentionally serializes no conversation/event state; actual root
-load rebinds fresh independent memory. N004 owns replacement with only its resulting
-current schema, rejecting all others. Cursor/token/scene/animation state stays transient.
+At the historical N003 boundary, schema6 intentionally serialized no conversation/event
+state. N004 replaces it with schema7/content1 below. Cursor/token/scene/animation
+state stays transient.
+
+## N004 implemented strict persistence boundary (2026-10-08)
+
+Current runtime supports only schema7/content1. No schema6 or other old/new format,
+migration, ID remapping, inferred inventory history or missing-field default is
+accepted. Historical deliveries and packages retain their own documented versions.
+See [N004 acceptance](N004_ACCEPTANCE.md) for interfaces, bounds and evidence.
+
+SaveCodec requires conversations with exactly eight people and bounded events.
+GameSession.initialize accepts optional validated npc_content after restored_environment;
+fresh sessions initialize all eight memories, while validated restored candidates
+publish NpcSaveData.Result.state only after every existing/new fact passes validation.
+Root rebinds the durable state to a fresh inactive cursor after physical acceptance.
+Root Save/Load rejects either active dialogue service until closed.
+
+Each person stores npc_id, affinity, derived level, flags, learned_fact_ids,
+seen_node_ids and applied_choice_ids. Seen nodes must be enabled and person-owned;
+facts equal their authored disclosures. Choice events, once-only receipts, added
+flags/reward flags, affinity and level must agree; introduction alternatives remain
+exclusive. Current enabled pin has nonnegative reward deltas and one one-time
+introduction per person. Future negative deltas require ordered persistence and
+reject here rather than inventing chronology; general source rule clamping remains.
+Detached candidates canonicalize sets without mutating inputs. Duplicate/foreign/
+deferred IDs, unknown fields and shared/cyclic mutable containers reject.
+
+Event envelope stores last_sequence and <=40 exact allowlisted facts with kind,
+subject_id, target_id, count, first_sequence, last_sequence, first_active_seconds,
+last_active_seconds. Existing 2147483647 count/sequence and 2190600-second time caps
+remain. Totals, unique endpoints, count/span feasibility, global time order and
+timestamps <=saved elapsed active time must agree. Restore rebuilds the allowlist
+and latest time from the validated catalog/latest sequence. Null is exact. Integer
+lexemes cannot hide rounded fractions; every timestamp round-trips binary64 exactly.
+No cursor/token/NodePath/imported visual/animation/placement cache is serialized.
+
+SaveRepository backup, failed staging, incompatible-file preservation and read-only
+visible recovery remain unchanged. Physical placement rejection keeps every prior
+and new live fact/owner. Tests use fresh isolated slots; source, user saves, geometry,
+content/portraits, companion/quest/trust authority and manual boundaries are retained.

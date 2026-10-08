@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001 reference audit, N002 typed content and N003 dialogue rules Done. N004-N018 remain Pending.
+N001 reference audit, N002 typed content, N003 dialogue rules and N004 persistence Done. N005-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -24,7 +24,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N001 | Done | None; inspect actual delivered baseline | Pinned eight-person references, exact scope/placement/coverage contract. |
 | N002 | Done | N001 | Validated typed NPC/graph catalogs; all selected source content classified. |
 | N003 | Done | N002 | Pure dialogue selection, memory and atomic choice rules. |
-| N004 | Pending | N003 | Strict current-schema saves and persistent conversation/event memory. |
+| N004 | Done | N003 | Strict current-schema saves and persistent conversation/event memory. |
 | N005 | Pending | N004 | Multi-node portrait dialogue and known-facts UI integrated with existing gameplay. |
 | N006 | Pending | N005 | Safe scene-owned town contacts and real event adapters. |
 | N007 | Pending | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
@@ -302,3 +302,30 @@ superseded by final expanded acceptance. Read-only source clean/pinned hashes ex
 Checklist/contract/current state/README/architecture updated; final byte/link/diff/
 status audit recorded. All owned processes exited, no cleanup owed. N004 next eligible;
 independent N007 unstarted. Exactly N003 complete; stop before successor.
+
+### N004 - 2026-10-08, UTC
+
+Result: schema7/content1 strictly persists eight independent memories and <=40
+exact bounded event aggregates. All existing durable fields remain exact. No
+old-format migration, missing-field default, inventory inference or cursor save.
+Active dialogue blocks manual Save/Load; successful physical restore binds durable
+memory to a fresh inactive cursor. Malformed state/unsafe placement rolls back.
+
+Actual additions: NpcSaveData, npc_save_checks, npc_process_checks and NpcSaveFixture
+with UIDs. Narrow GameSession/GameRoot/SaveCodec/SaveJsonFields/SaveNumber changes;
+six authored fixtures explicitly updated to schema7, environment fixture renamed v7.
+Prior fixture facts unchanged; affected hard-coded version/path assertions updated.
+Full interface/acceptance/failure history in [N004 acceptance](N004_ACCEPTANCE.md).
+
+Final shared runner import/parse/new saves plus required save/foraging/environment/
+map/consequence/rule/startup and affected inventory/reference/testing-support suites,
+both independent-process save suites PASS: all19 cases exit0, zero forbidden
+diagnostics/timeouts/source changes. 567 NPC-save assertions including evidence write,
+509 malformed inputs, exact complete restart oracle. Evidence:
+docs/evidence/N004/20261008-083758961-2874c9d4/; fresh matching builds/testing isolation.
+Earlier failures retained; no guard/criterion bypass. Source pins/catalog/art bytes
+and normal user saves unchanged. Final source/byte/link/diff/status audit recorded.
+
+Exactly N004 completed. No owned live process/editor/cleanup, blocker or unrun
+N004 criterion. No agents/chats/schedules/commit/publication. Remaining N005-N018;
+N005 next eligible, N007 independently ready. All through N018 are not complete.

@@ -1,6 +1,6 @@
 # Returning Fair prototype architecture
 
-Current save policy (2026-10-08): accept only schema6/content1. The project has no
+Current save policy (2026-10-08): accept only schema7/content1. The project has no
 released data or customers requiring backward compatibility. No old-schema
 migrations, ID remapping or missing-field defaults. Future schema changes replace
 the supported format and update fixtures; reject other versions before live swap.
@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema6/content1.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -904,3 +904,25 @@ rebinding are verified; schema6 still contains no NPC history, and N004 owns str
 current-format persistence. No scene-owned contact or ordinary NPC UI is activated.
 [N003 acceptance](villagers-dialogue/N003_ACCEPTANCE.md) covers all 58 enabled nodes/
 38 choices, 977 assertions, actual manual load rebinding and affected legacy checks.
+
+### Delivered strict NPC persistence boundary (N004)
+
+Current SaveCodec supports only schema7/content1 and adds conversations to every
+prior durable field. NpcSaveData validates exactly eight per-person memories and
+<=40 event aggregates before constructing a detached session. Person-owned enabled
+disclosures, choices/receipts/flags/affinity, derived level and aggregate sequence/
+time relations must agree. Duplicate/foreign/deferred IDs, unknown fields, numeric
+fractions/bounds and shared containers reject. Exact decimal timestamp restoration
+preserves binary64 values. No old-format migration or possession-derived history.
+
+Fresh GameSession startup initializes independent memory through validated bundled
+NPC content; root injects its catalog. Successful manual load rebinds restored
+memory to a fresh inactive cursor after existing physical validation. Active legacy
+or NPC dialogue blocks Save/Load until closed; pause/arrival/backup/rollback rules
+remain intact. Current-schema fixtures explicitly carry empty NPC state when they
+represent pre-conversation gameplay, preserving all authored prior facts.
+
+[N004 acceptance](villagers-dialogue/N004_ACCEPTANCE.md) records strict malformed
+rule checks, complete old/new-state round trips, root staging/placement/recovery
+and separate-process restart with an exact whole-state oracle. Synthetic service/
+root checks make no ordinary NPC route/UI/art or new native-package claim.

@@ -1,4 +1,84 @@
 {
+  "conversations": {
+    "events": {
+      "facts": [],
+      "last_sequence": 0
+    },
+    "people": {
+      "npc-01": {
+        "affinity": 0,
+        "applied_choice_ids": [],
+        "flags": [],
+        "learned_fact_ids": [],
+        "level": 0,
+        "npc_id": "npc-01",
+        "seen_node_ids": []
+      },
+      "npc-02": {
+        "affinity": 0,
+        "applied_choice_ids": [],
+        "flags": [],
+        "learned_fact_ids": [],
+        "level": 0,
+        "npc_id": "npc-02",
+        "seen_node_ids": []
+      },
+      "npc-03": {
+        "affinity": 0,
+        "applied_choice_ids": [],
+        "flags": [],
+        "learned_fact_ids": [],
+        "level": 0,
+        "npc_id": "npc-03",
+        "seen_node_ids": []
+      },
+      "npc-04": {
+        "affinity": 0,
+        "applied_choice_ids": [],
+        "flags": [],
+        "learned_fact_ids": [],
+        "level": 0,
+        "npc_id": "npc-04",
+        "seen_node_ids": []
+      },
+      "npc-06": {
+        "affinity": 0,
+        "applied_choice_ids": [],
+        "flags": [],
+        "learned_fact_ids": [],
+        "level": 0,
+        "npc_id": "npc-06",
+        "seen_node_ids": []
+      },
+      "npc-07": {
+        "affinity": 0,
+        "applied_choice_ids": [],
+        "flags": [],
+        "learned_fact_ids": [],
+        "level": 0,
+        "npc_id": "npc-07",
+        "seen_node_ids": []
+      },
+      "npc-08": {
+        "affinity": 0,
+        "applied_choice_ids": [],
+        "flags": [],
+        "learned_fact_ids": [],
+        "level": 0,
+        "npc_id": "npc-08",
+        "seen_node_ids": []
+      },
+      "npc-14": {
+        "affinity": 0,
+        "applied_choice_ids": [],
+        "flags": [],
+        "learned_fact_ids": [],
+        "level": 0,
+        "npc_id": "npc-14",
+        "seen_node_ids": []
+      }
+    }
+  },
 	"actors": [
 		{
 			"definition_id": "prototype-hero",
@@ -49,7 +129,7 @@
 		],
 		"trust": 1
 	},
-	"schema_version": 6,
+	"schema_version": 7,
 	"spawn_id": "alderwake-from-tollworks",
 	"inventory": {
 		"item_counts": {},

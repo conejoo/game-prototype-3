@@ -2,7 +2,7 @@ class_name SaveCodec
 extends RefCounted
 ## Current-schema plain-data boundary. Validation creates a detached candidate only.
 
-const SCHEMA_VERSION: int = 6
+const SCHEMA_VERSION: int = 7
 const CONTENT_VERSION: int = 1
 const MAX_BYTES: int = 131072
 
@@ -24,6 +24,7 @@ static func snapshot(run: GameSession) -> Dictionary:
 			actor_data.append({"instance_id": id, "definition_id": actor.definition_id, "health": actor.health})
 	var facts: Dictionary = run.foraging.snapshot()
 	return {
+		"conversations": run.conversations.snapshot(),
 		"inventory": facts.inventory, "collected_resource_ids": Array(facts.collected_resource_ids),
 		"world_item_placements": facts.world_item_placements,
 		"schema_version": SCHEMA_VERSION, "content_version": CONTENT_VERSION,
@@ -87,7 +88,7 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 		"player_instance_id", "party_member_ids", "actors", "elapsed_play_seconds",
 		"quests", "completed_effect_ids", "relationship", "progression",
 		"environment", "light_source_overrides", "inventory",
-		"collected_resource_ids", "world_item_placements",
+		"collected_resource_ids", "world_item_placements", "conversations",
 	]
 	if not _exact_fields(data, fields):
 		result.errors.append("schema v%d requires exactly: " % int(data.schema_version) + ", ".join(fields))
@@ -150,8 +151,14 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 	environment.light_source_overrides.assign(data.light_source_overrides.duplicate(true))
 	result.errors = ForagingSaveData.validate(data.inventory, data.collected_resource_ids, data.world_item_placements, catalog)
 	if not result.errors.is_empty(): return result
+	var npc_catalog: NpcContentCatalog = NpcContentCatalog.new()
+	result.errors = npc_catalog.initialize_path(catalog)
+	if not result.errors.is_empty(): return result
+	var restored: NpcSaveData.Result = NpcSaveData.restore(data.conversations, npc_catalog, float(seconds))
+	result.errors = restored.errors
+	if not result.errors.is_empty(): return result
 	var candidate: GameSession = GameSession.new()
-	result.errors = candidate.initialize(catalog, data.location_id, data.spawn_id, "prototype-hero", environment)
+	result.errors = candidate.initialize(catalog, data.location_id, data.spawn_id, "prototype-hero", environment, npc_catalog)
 	if result.errors.is_empty():
 		for actor: Dictionary in data.actors:
 			candidate.actors[actor.instance_id].health = int(actor.health)
@@ -164,6 +171,7 @@ static func validate(raw_data: Variant, catalog: ContentCatalog) -> DecodeResult
 		candidate.progression.upgrade_ids = PackedStringArray(data.progression.upgrade_ids)
 		result.errors = ForagingSaveData.restore(candidate, data.inventory, data.collected_resource_ids, data.world_item_placements, catalog)
 		if not result.errors.is_empty(): return result
+		candidate.conversations = restored.state
 		result.session = candidate
 	return result
 
