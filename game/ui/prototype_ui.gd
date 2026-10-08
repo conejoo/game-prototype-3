@@ -13,6 +13,7 @@ signal dialogue_advance_requested(command: Dictionary)
 signal dialogue_choice_requested(choice_id: String, command: Dictionary)
 signal dialogue_cancel_requested
 signal journal_requested
+signal people_requested
 signal upgrade_requested
 signal debug_mode_requested(enabled: bool)
 
@@ -60,9 +61,47 @@ var gather_progress: ProgressBar
 var backpack: BackpackView
 var backpack_button: Button
 var active_item_label: Label
+var people_button: Button
+var people_view: PeopleJournalView
+var journal_tabs: HBoxContainer
+var quest_tab: Button
+var people_tab: Button
+var journal_tab: String = "quests"
 
 
 func _ready() -> void:
+	people_button = Button.new()
+	people_button.name = "People"
+	people_button.text = "People"
+	people_button.custom_minimum_size = Vector2(80, 40)
+	people_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	$Screen/Header/Margin/Row.add_child(people_button)
+	people_button.pressed.connect(func() -> void: people_requested.emit())
+	journal_tabs = HBoxContainer.new()
+	var options: VBoxContainer = journal_close.get_parent()
+	options.add_child(journal_tabs)
+	options.move_child(journal_tabs, 1)
+	quest_tab = Button.new()
+	quest_tab.text = "Quest & companion"
+	quest_tab.toggle_mode = true
+	quest_tab.custom_minimum_size.y = 40
+	journal_tabs.add_child(quest_tab)
+	people_tab = Button.new()
+	people_tab.text = "People"
+	people_tab.toggle_mode = true
+	people_tab.custom_minimum_size.y = 40
+	journal_tabs.add_child(people_tab)
+	quest_tab.pressed.connect(set_journal_tab.bind("quests"))
+	people_tab.pressed.connect(set_journal_tab.bind("people"))
+	people_view = preload("res://ui/people_journal_view.gd").new()
+	people_view.name = "PeopleView"
+	options.add_child(people_view)
+	options.move_child(people_view, 2)
+	people_view.focus_controls_changed.connect(_refresh_journal_focus)
+	people_view.hide()
+	journal_panel.resized.connect(_size_journal)
+	get_viewport().size_changed.connect(_size_journal)
+	_size_journal()
 	backpack_button = Button.new()
 	backpack_button.name = "Backpack"
 	backpack_button.text = "Bag [B]"
@@ -190,6 +229,7 @@ func show_paused(paused: bool) -> void:
 
 
 func _process(delta: float) -> void:
+	people_button.disabled = pause_overlay.visible or dialogue_overlay.visible or backpack.visible or journal_overlay.visible
 	if not fps_label.visible:
 		return
 	_fps_sample_seconds += delta
@@ -336,15 +376,20 @@ func show_objective(text: String) -> void:
 	objective_label.text = "Quest · " + text
 
 
-func show_journal(open: bool, text: String) -> void:
+func show_journal(open: bool, text: String, people: Dictionary = {}, tab: String = "") -> void:
+	var opening: bool = open and not journal_overlay.visible
 	journal_overlay.visible = open
 	if open: foraging_notice.hide()
 	journal_text.text = text
+	if open:
+		people_view.present(people, opening)
+		set_journal_tab(tab if not tab.is_empty() else "quests" if opening else journal_tab)
 	travel_label.visible = not open and not dialogue_overlay.visible and not backpack.visible and not pause_overlay.visible
 	pause_button.disabled = open or pause_overlay.visible or dialogue_overlay.visible
-	if open:
+	if opening:
 		journal_close.grab_focus()
-	else:
+	elif not open:
+		people_view.selected_id = ""
 		var focused: Control = get_viewport().gui_get_focus_owner()
 		if focused != null and journal_panel.is_ancestor_of(focused):
 			focused.release_focus()
@@ -355,10 +400,27 @@ func show_upgrade(service: ProgressionService) -> void:
 	upgrade_button.disabled = selected or service.available_points() < 1
 	upgrade_button.text = "Deliberate Strike selected · damage 40" if selected else "Spend 1 preparation point: Deliberate Strike (+15 damage)"
 	upgrade_status.text = "Preparation complete · Deliberate Strike: 25 → 40 damage (prototype training)." if selected else "Preparation points: %d · %s" % [service.available_points(), "Select below before entering Tollworks." if service.available_points() > 0 else "Accept Maris's lead to earn 1. Prototype training."]
-	var buttons: Array[Button] = []
-	if not upgrade_button.disabled:
-		buttons.append(upgrade_button)
-	buttons.append(journal_close)
-	for index: int in range(buttons.size()):
-		buttons[index].focus_next = buttons[index].get_path_to(buttons[(index + 1) % buttons.size()])
-		buttons[index].focus_previous = buttons[index].get_path_to(buttons[(index + buttons.size() - 1) % buttons.size()])
+	_refresh_journal_focus()
+
+func set_journal_tab(tab: String) -> void:
+	journal_tab = "people" if tab == "people" else "quests"
+	var people: bool = journal_tab == "people"
+	people_view.visible = people
+	journal_text.get_parent().visible = not people
+	upgrade_button.visible = not people
+	upgrade_status.visible = not people
+	quest_tab.set_pressed_no_signal(not people)
+	people_tab.set_pressed_no_signal(people)
+	_refresh_journal_focus()
+
+func _refresh_journal_focus() -> void:
+	var controls: Array[Control] = [quest_tab, people_tab]
+	if journal_tab == "people": controls.append_array(people_view.focus_controls())
+	elif not upgrade_button.disabled: controls.append(upgrade_button)
+	controls.append(journal_close)
+	for index: int in range(controls.size()):
+		controls[index].focus_next = controls[index].get_path_to(controls[(index + 1) % controls.size()])
+		controls[index].focus_previous = controls[index].get_path_to(controls[(index + controls.size() - 1) % controls.size()])
+
+func _size_journal() -> void:
+	journal_panel.custom_minimum_size = Vector2(minf(820, get_viewport().get_visible_rect().size.x - 48), minf(600, get_viewport().get_visible_rect().size.y - 48))

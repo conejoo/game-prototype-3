@@ -20,7 +20,7 @@ def validate_state(view, path):
         if view.get("paused") is not True or view.get("pause_overlay_verified") is not True:
             raise ValueError(f"Unverified pause: {path}")
         return mode
-    if mode not in {"hold", "hold-released", "backpack", "drag", "dialogue"}:
+    if mode not in {"hold", "hold-released", "backpack", "drag", "dialogue", "journal"}:
         raise ValueError(f"Unknown capture mode: {path}")
     if (view.get("paused") is not False or view.get("pause_overlay_verified") is not False
             or view.get("state_verified") is not True or view.get("window_focused") is not True
@@ -32,7 +32,7 @@ def validate_state(view, path):
         raise ValueError(f"Invalid capture timing: {path}")
     if view.get("kind") not in {"synthetic", "debug-input"}:
         raise ValueError(f"Live viewport helper cannot claim native input: {path}")
-    if view.get("overlay") is not (mode in {"backpack", "dialogue"}):
+    if view.get("overlay") is not (mode in {"backpack", "dialogue", "journal"}):
         raise ValueError(f"Incorrect live overlay mode: {path}")
     if view.get("controls_enabled") is not (mode in {"hold", "hold-released"}):
         raise ValueError(f"Incorrect live controls: {path}")
@@ -44,6 +44,12 @@ def validate_state(view, path):
                 or not isinstance(conversation.get("token"), str) or not conversation["token"]
                 or conversation["token"] != display.get("token")):
             raise ValueError(f"Unverified dialogue modal/focus/cursor: {path}")
+    elif mode == "journal":
+        if (view.get("journal_modal_verified") is not True or view.get("panel_fits") is not True
+                or not isinstance(view.get("focus"), str) or not view["focus"]
+                or view.get("tab") not in {"quests", "people"}
+                or not isinstance(view.get("selected_id"), str)):
+            raise ValueError(f"Unverified journal modal/focus: {path}")
     elif mode == "backpack":
         if (view.get("backpack_modal_verified") is not True or view.get("panel_fits") is not True
                 or not isinstance(view.get("focus"), str) or not view["focus"]):

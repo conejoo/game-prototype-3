@@ -138,6 +138,7 @@ func _ready() -> void:
 	ui.dialogue_cancel_requested.connect(_cancel_dialogue)
 	ui.dialogue_view.counter_route_requested.connect(_switch_maris_route)
 	ui.journal_requested.connect(_toggle_journal)
+	ui.people_requested.connect(_open_people)
 	ui.backpack_requested.connect(_toggle_backpack)
 	ui.inventory_selection_requested.connect(_select_inventory_item)
 	ui.backpack.drop_requested.connect(_drop_active_rod)
@@ -260,7 +261,7 @@ func _input(event: InputEvent) -> void:
 			_toggle_journal()
 			get_viewport().set_input_as_handled()
 		elif event is InputEventKey and not event.is_action("quit"):
-			if event.keycode not in [KEY_TAB, KEY_ENTER]:
+			if event.is_echo() or event.keycode not in [KEY_TAB, KEY_ENTER, KEY_KP_ENTER, KEY_UP, KEY_DOWN, KEY_PAGEUP, KEY_PAGEDOWN]:
 				get_viewport().set_input_as_handled()
 		elif event is InputEventMouseButton and not ui.journal_panel.get_global_rect().has_point(event.position):
 			get_viewport().set_input_as_handled()
@@ -350,6 +351,7 @@ func _notification(what: int) -> void:
 		_quit()
 	elif what == NOTIFICATION_APPLICATION_FOCUS_OUT and is_instance_valid(player_placeholder):
 		window_focused = false
+		_close_journal()
 		_cancel_dialogue()
 		_update_controls()
 	elif what == NOTIFICATION_APPLICATION_FOCUS_IN and is_instance_valid(player_placeholder):
@@ -728,7 +730,7 @@ func _refresh_journal() -> void:
 	var hint: String = "Optional · " + " · ".join(optional) if not optional.is_empty() else "Esc: save outside combat · No autosave; reopen then Load"
 	ui.show_objective(objective + "\n" + hint)
 	if journal_open:
-		ui.show_journal(true, _journal_text())
+		ui.show_journal(true, _journal_text(), PeopleSnapshot.from_state(session.conversations, npc_catalog))
 		ui.show_upgrade(progression)
 
 
@@ -785,14 +787,32 @@ func _select_inventory_item(item_id: Variant) -> PackedStringArray:
 
 
 func _toggle_journal() -> void:
+	if journal_open:
+		_close_journal()
+		return
+	_open_journal("quests")
+
+func _open_people() -> void:
+	_open_journal("people")
+
+func _open_journal(tab: String) -> void:
 	_cancel_item_drag()
-	if not journal_open and not _combat_stable():
+	if journal_open or not session.initialized or not window_focused or retrying or not _combat_stable() or backpack_open or dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
 		return
-	if backpack_open or dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
-		return
-	journal_open = not journal_open
-	ui.show_journal(journal_open, _journal_text())
+	journal_open = true
+	_cancel_foraging_hold("journal")
+	selected_interaction = null
+	ui.show_journal(true, _journal_text(), PeopleSnapshot.from_state(session.conversations, npc_catalog), tab)
 	ui.show_upgrade(progression)
+	_update_controls()
+	_refresh_interaction()
+	player_placeholder.pointer_position = Vector2(-1,-1)
+
+func _close_journal() -> void:
+	if not journal_open: return
+	journal_open = false
+	ui.show_journal(false, "")
+	player_placeholder.pointer_position = Vector2(-1,-1)
 	_update_controls()
 	_refresh_interaction()
 
@@ -847,12 +867,14 @@ func _on_guardian_defeated(actor: ActorPlaceholder) -> void:
 
 
 func _on_player_defeated(_actor: ActorPlaceholder) -> void:
+	_close_journal()
 	_update_controls()
 	print("P008 hero defeated; R retries at arrival anchor, quest facts retained.")
 
 
 func retry_encounter() -> void:
 	_cancel_item_drag()
+	_close_journal()
 	_close_backpack()
 	_cancel_foraging_hold("retry")
 	if player_placeholder.state.health > 0 or retrying or world_host.transitioning or loading_save:

@@ -6,16 +6,83 @@ Updated: 2026-10-08 UTC.
 
 ## Current selection and exact continuation
 
-G001-G006 Done. Active task: none. G007-G009 Pending. Whole checklist incomplete;
-final task G009. Exactly G006 completed the implementation invocation. No blocker.
-G006 successful-task commit authorized in the separate follow-up; this state is
-included with that commit. Raw ignored evidence stays local. No push or G007 work.
-Next eligible G007. Exact next action: read [G006 acceptance](G006_ACCEPTANCE.md)
-and delivered PeopleSnapshot API, existing PrototypeUI/GameRoot J journal/HUD and
-root modal/input owners; mark G007 In progress and implement only its People tab,
-HUD entry and tested lifecycle integration. Preserve quest/upgrade/companion
-content, current journal simulation policy and unchanged social/save authority.
-No G007 implementation occurred here. Stop after exactly G006.
+G001-G007 Done. Active task: none. G008-G009 Pending. Whole checklist incomplete;
+final task G009. Exactly G007 completed the implementation invocation. No blocker.
+G007 successful-task commit authorized in the separate follow-up; this state is
+included with that commit. Raw ignored evidence stays local. No push or G008 work.
+Next eligible G008. Exact next action: read [G007 acceptance](G007_ACCEPTANCE.md),
+delivered journal/root/projection APIs and G005 ordinary gift fixtures, then mark
+G008 In progress and prove only its integrated ordinary social/restart criteria.
+Use shared journey/GUI/capture/save oracles, separate synthetic full-roster proof
+from finite-three-flower ordinary routes, and fresh isolated run/save groups.
+Preserve geography, scarcity, recovery, companion/trust/upgrades/environment and
+strict schema7/content1. No G008/G009 implementation occurred here. Stop after G007.
+
+## G007 outcome, interfaces and verification
+
+Entry HEAD62dd03bf6be043939fbb35cd7d0bed22c83b314f, clean worktree; no nested
+instructions or unrelated user changes. Source read-only clean at60c20eb2.
+Current catalog SHA256efb76e8a42796a92fab80fa5815885adc7abdfd565ee7cfe036a7d165409e1d3,
+source/pins/content/art/geography/supply and schema7/content1 unchanged.
+
+New `game/ui/people_journal_view.gd`/UID deep-copies G006 rows into sorted met list,
+portrait/name/pronouns, fractional progress and learned category/fact details.
+PrototypeUI keeps its JournalOverlay and existing quest/upgrade references, adds
+tabs/HUD People and `show_journal(open,text,people={},tab="")`. Root queries current
+conversations on opening/refresh; J defaults to quests, HUD opens People directly.
+Selection is transient, reset on close/reopen, and never a relationship command.
+
+GameRoot adds `_open_people`, `_open_journal(tab)` and `_close_journal`; gates focus,
+combat/death/retry/load/travel/pause/dialogue/backpack; cancels holds/drag, clears
+held actor/aim input and blocks gameplay/save/load. J/Esc/Close exit; focus loss,
+death/retry and unload close safely. Existing unpaused elapsed/environment policy
+continues. Old drag trailing-release suppression remains intact until release.
+Quest/trust/preparation content and upgrade button/damage40 still work.
+
+New `people_journal_checks.gd` and rendered wrapper/UIDs. Explicit synthetic
+social/item/event/lifecycle/long-text/night-rain setup, actual root/view/GUI input.
+Shared TestRunInteractionCapture.journal verifies live modal/focus/blocked actors,
+no overlap, panel fit, stable owners/items, four frames/post-draw. Python capture
+validator/tests admit strict journal mode and malformed provenance; old modes
+retain guards. CONTRACT/acceptance record final interfaces and proof limits.
+
+Accepted runs under docs/evidence/G007/:
+- 20261008-234112883-18de76ca/results.json: all10 cases pass; projection960,
+  UI130, dialogue384, bag148, foraging130, movement/camera/quest and engine/parse,
+  rendered143/13 captures. Digestea6d16c1b6581b0f496c24cabf3edba1e3a29f7c5ac9c7cab4e8f3a3d33eb3af.
+- 20261008-234357228-2e720fcd/results.json: all5 cases pass; UI134, actual placement
+  regression128, rendered148/14 captures, engine/parse. Only changes since bulk:
+  undo unnecessary drag-disposal flag edit, add no-facts/keyboard/trailing-release
+  UI fixture. Final944-file digest4efa2a264ad4d6f19879bbaab837e2f81bcdd8fde114289a0b12df3e355b1881.
+
+Both accepted runs have zero diagnostics/timeouts/source changes/errors. Installed
+Godot4.7.2 console checked first; bundled PowerShell7 runner cwd/executable/arguments
+and isolated per-case/group APPDATA/LOCALAPPDATA/slots under builds/testing/G007
+recorded in acceptance/results. Commands: bulk `-Task G007 -Names
+people_snapshot_checks,people_journal_checks,movement_camera_checks,npc_dialogue_ui_checks,backpack_ui_checks,quest_checks,foraging_interaction_checks
+-RenderScript people_journal_render -RenderPhases check -TimeoutSeconds150`;
+final `-Names people_journal_checks,world_item_placement_checks` with same render.
+
+Final14 PNGs/two sheets inspected with full-size no-facts/larger scrolling details;
+earlier all13 sheets and full-size Edric, Tess, larger detail and night/rain also
+inspected. Actual960x640/1350x900, fixed exits, readable portraits/text, scroll/focus
+proven. Hash/provenance/dimension report under final render/derived/234432-c329f952.
+Reference/source/converter/capture-evidence checks exit0/empty stderr under
+reference-20261008-2342. Intended diff/link/status/dependency/source review under
+final-review. Normal saves untouched; no ordinary route/restart/native claim.
+
+Retained failures:233746 sandbox engine Access denied then approved escalation;
+233811 fixture edit invalidated preflight;233830 import-generated three UIDs/source
+guard and existing editor-only missing SDK allowance;233850 short-name/rounded
+progress/unscrolled-last-row/arrow-focus fixtures;233938 arrow focus/drag flag;
+234257 unnecessary drag ownership edit broke existing trailing-release guard,
+reverted and final128 assertions pass. Wrong initial capture manifest subdirectory
+failed before writes, corrected. No failed attempt relabeled; no installs.
+Newly inserted CRLF spans alone repaired, old endings preserved.
+
+Every G007 criterion passed; none failed/unrun. No owned runner/engine process,
+held input or cleanup owed. No commit/push/export/publication/external message or
+successor. Remaining G008,G009; every item through G009 incomplete. Stop here.
 
 ## G006 outcome, interfaces and verification
 

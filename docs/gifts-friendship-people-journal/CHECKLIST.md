@@ -8,7 +8,7 @@ Godot application: game/, entry res://app/game_root.tscn.
 
 ## Selection and completion
 
-G001-G006 Done; G007-G009 Pending. No active task.
+G001-G007 Done; G008-G009 Pending. No active task.
 Resume the single In progress task first. Reassess Blocked work when its blocker changes; unresolved blockers exclude that task and its dependents, not independent branches.
 Otherwise select the lowest-numbered Pending task with verified Done prerequisites. Check actual prerequisite capability/evidence, not only checkboxes. Reconcile ambiguous status with artifacts before selecting.
 Complete exactly one task per invocation. Mark In progress before implementation, verify its criteria, update state even when interrupted, and stop before its successor. Done requires every criterion to have evidence; do not replace ordinary play with synthetic fixtures.
@@ -24,7 +24,7 @@ P/M/W/F/N workflows are baseline references, not selectors for this workflow. Do
 | G004 | Done | G003 | Source gift branches and milestone transitions operate in one conversation service |
 | G005 | Done | G004 | Ordinary conversation gifting, progress and rejection feedback |
 | G006 | Done | G001 | Detached met-only People projection with no disclosure side effects |
-| G007 | Pending | G006 | People journal integrated with existing J journal/HUD and modal lifecycle |
+| G007 | Done | G006 | People journal integrated with existing J journal/HUD and modal lifecycle |
 | G008 | Pending | G005, G007 | Integrated ordinary social loop, cross-system regression and restart proof |
 | G009 | Pending | G008 | Fresh local Windows packages and native social/restart acceptance |
 
@@ -276,3 +276,29 @@ Stop after exactly G006; do not begin G007.
 G006 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
 G006 projection, fixtures, acceptance and workflow/discovery state. Keep ignored
 raw evidence local; no push or G007 implementation.
+
+### G007 / 2026-10-08 UTC / Done
+
+Every G007 criterion passed; [G007 acceptance](G007_ACCEPTANCE.md) maps met-only
+People tab/HUD, learned details/portraits/progress, empty/partial states,
+mouse/keyboard/scroll/exits and root modal/lifecycle/simulation behavior.
+Existing quest/trust/upgrade content and canceled-drag trailing-release guard
+remain intact; no social/save/content authority, new art or resource changes.
+
+Bulk234112 passes all10 cases: projection960, UI130, dialogue384, bag148,
+foraging130, movement/camera and quest suites, engine/parse/render143/13 captures.
+Final234357 passes all5 cases: UI134, placement128, render148/14 captures and
+engine/parse. Accepted runs have zero diagnostics/timeouts/source changes/errors.
+Final14 images/two sheets and earlier full-size details inspected at actual
+960x640/1350x900, including long scroll, no-facts, Edric and night/rain.
+Source/reference/current converter and strict capture-evidence checks pass.
+Failed attempts retained; setup explicitly synthetic, actual viewport UI proof.
+Ordinary social/restart integration and native delivery stay G008/G009.
+
+Next eligible G008. Remaining G008,G009. Every item through G009: not complete.
+No blockers, owned live processes, held controls, commit or push.
+Stop after exactly G007; do not begin G008.
+
+G007 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
+G007 journal/root/UI, fixtures, capture tooling, acceptance and workflow/discovery
+state. Keep ignored raw evidence local; no push or G008 implementation.

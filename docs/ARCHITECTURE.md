@@ -10,9 +10,9 @@ restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
 W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration, N015 ordinary contacts/art for all eight requested villagers and N016 separate review-only semantic action variants, N017 integrated all-eight/recovery/restart acceptance and N018 fresh Windows/native delivery.
-Current development source also includes G001-G005 social rules/save/activation,
-friendship/bag feedback and ordinary viewport gifting. People and fresh integrated
-social restart/native delivery remain G006-G009. Historical N018 packages retain
+Current development source also includes G001-G007 social rules/save/activation,
+friendship/bag feedback, ordinary viewport gifting and met-only People journal.
+Fresh integrated social restart/native delivery remain G008-G009. Historical N018 packages retain
 their pre-social boundary.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
@@ -1173,3 +1173,20 @@ independence, mutation isolation, source disclosure boundaries and current/earli
 restore freshness to headless production-service fixtures. Items/events and
 boundary authoring remain explicitly synthetic. G007 owns J journal/HUD/modal
 integration; G008/G009 retain ordinary integrated restart/native acceptance.
+
+## G007 People journal and root modal (2026-10-08 UTC)
+
+Existing J journal now has Quest & companion / People tabs; HUD People opens that
+tab directly. GameRoot supplies fresh detached PeopleSnapshot data. The view owns
+only transient selected person, portraits and learned text/progress, with contained
+keyboard focus and scrolling list/details. No save field or social command.
+Quest/trust/preparation content remains in its original tab.
+
+Opening cancels holds/drag and clears actor/aim controls; root blocks gameplay and
+manual Save/Load while unpaused elapsed/environment simulation continues. Modal
+gates cover dialogue/backpack/pause/travel/load/retry/focus/death. J/Esc/Close exit;
+focus loss/death/retry/unload close safely. Canceled drag's existing trailing-release
+suppression remains intact. [G007 acceptance](gifts-friendship-people-journal/G007_ACCEPTANCE.md)
+records actual viewport UI/captures960x640/1350x900, synthetic social/long-text/night
+fixtures and affected projection/movement/dialogue/bag/foraging/quest/drag checks.
+G008/G009 still own ordinary integrated restart and fresh native delivery.

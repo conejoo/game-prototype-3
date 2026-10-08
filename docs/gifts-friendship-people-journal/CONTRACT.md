@@ -300,3 +300,36 @@ This is a read-only query over the existing ConversationMemory/catalog owners.
 No UI integration, journal-selection authority, new met/fact/affinity store,
 receipt, save field, version change, activation overlay or source mutation.
 G007 owns the J journal/HUD/modal integration.
+
+## G007 delivered journal UI and modal interface (2026-10-08 UTC)
+
+PrototypeUI retains the existing JournalOverlay/quest/upgrade references and adds
+Quest & companion / People tabs plus HUD People. `show_journal(open,text,people={},
+tab="")` takes a detached PeopleSnapshot dictionary; first opening defaults to
+quests unless root supplies people. Refresh preserves the current tab/selection,
+closing clears selected person, and every opening queries the current session.
+`PeopleJournalView.present(snapshot,reset=false)` deep-copies display rows;
+`select(npc_id)` only changes portrait, public identity, progress and learned text.
+Unknown selection does nothing. No relationship command/session/save access.
+
+Root `_open_people` delegates to `_open_journal("people")`; `_toggle_journal`
+opens quests or closes, and `_close_journal` releases modal focus/input. Existing
+focus/combat/death/retry/load/travel/pause/dialogue/backpack gates apply before
+opening. Holds/drag cancel, held actor/aim input clears, save/load stays locked.
+Focus loss and death/retry close the journal; world unload retains its existing
+close policy. The tree remains unpaused and elapsed/environment advance continues.
+The old canceled-drag trailing-release suppression is preserved until release.
+
+Rows scroll with focus; learned details scroll with wheel/arrows/PageUp/PageDown.
+Tab/Shift-Tab cycle visible tabs/list/detail/Close; J/Esc/Close return control.
+Portraits remain ordinary UI textures, readable over synthetic night/rain.
+Fractional progress uses Range step0 and authored label/threshold, no level2.
+Current quest/trust/preparation button content and commands remain intact.
+No new shortcut, source data, art, persistent field, met/fact authority or version.
+
+Shared live capture helper admits explicit journal mode only with visible root
+modal, contained focus, blocked actors and no overlapping mode, after four stable
+frames/post-draw. Strict Python evidence validation/tests retain current mode
+guards and record tab/selection. [G007 acceptance](G007_ACCEPTANCE.md) identifies
+synthetic setup/actual viewport proof. G008/G009 ordinary restart/native gates
+remain pending.

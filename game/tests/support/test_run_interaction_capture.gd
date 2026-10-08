@@ -15,6 +15,9 @@ static func drag(game: Node3D, label: String, directory: String, kind: String, n
 static func dialogue(game: Node3D, label: String, directory: String, kind: String, note: String) -> Dictionary:
 	return await _capture(game, label, directory, kind, note, "dialogue")
 
+static func journal(game: Node3D, label: String, directory: String, kind: String, note: String) -> Dictionary:
+	return await _capture(game, label, directory, kind, note, "journal")
+
 static func _capture(game: Node3D, label: String, directory: String, kind: String, note: String, mode: String) -> Dictionary:
 	if DisplayServer.get_name() == "headless": return _failure("capture requires real renderer")
 	# Share pause capture's lock: a hidden pause overlay cannot masquerade as live play.
@@ -65,7 +68,7 @@ static func _capture(game: Node3D, label: String, directory: String, kind: Strin
 	var focus: Control = tree.root.gui_get_focus_owner()
 	var result: Dictionary = {"ok":true, "mode":mode, "state_verified":true,
 		"label":label, "path":checked.path, "kind":kind, "note":note,
-		"paused":false, "pause_overlay_verified":false, "overlay":mode in ["backpack", "dialogue"],
+		"paused":false, "pause_overlay_verified":false, "overlay":mode in ["backpack", "dialogue", "journal"],
 		"settled_frames":SETTLE_FRAMES, "frame_post_draw_verified":true,
 		"started_ticks_msec":started, "ticks_msec":Time.get_ticks_msec(),
 		"controls_enabled":game.player_placeholder.controls_enabled, "window_focused":game.window_focused,
@@ -86,6 +89,9 @@ static func _capture(game: Node3D, label: String, directory: String, kind: Strin
 	elif mode == "dialogue":
 		result.merge({"dialogue_modal_verified":true, "panel_fits":true,
 			"conversation":game.dialogue.snapshot(), "display":game.ui.dialogue_view._snapshot.duplicate(true)})
+	elif mode == "journal":
+		result.merge({"journal_modal_verified":true, "panel_fits":true,
+			"tab":game.ui.journal_tab, "selected_id":game.ui.people_view.selected_id})
 	else:
 		result.merge({"drag_verified":true, "instance_id":target.instance_id, "preview_visible":true,
 			"preview_errors":game.item_drag.errors.duplicate(),
@@ -104,6 +110,13 @@ static func _stable_guard(game: Variant, mode: String, owner: GameSession, locat
 static func _guard(game: Variant, mode: String) -> String:
 	if not is_instance_valid(game) or game.is_queued_for_deletion() or not game.is_inside_tree(): return "capture game unavailable"
 	if game.get_tree().paused or game.ui.pause_overlay.visible: return "live capture requires resumed tree and hidden pause overlay"
+	if mode == "journal":
+		if not game.window_focused or game.world_host.transitioning or game.loading_save or game.retrying or game.dialogue.active() or game.backpack_open or game.foraging_hold.active() or game.item_drag.active() or game.player_placeholder.state.health <= 0: return "journal capture input mode unavailable"
+		if not game.journal_open or not game.ui.journal_overlay.is_visible_in_tree() or game.player_placeholder.controls_enabled or game.companion_ai.enabled: return "journal capture requires visible modal and blocked actors"
+		var journal_focus: Control = game.get_viewport().gui_get_focus_owner()
+		if journal_focus == null or not journal_focus.is_visible_in_tree() or not game.ui.journal_panel.is_ancestor_of(journal_focus): return "journal focus outside modal"
+		if not game.get_viewport().get_visible_rect().encloses(game.ui.journal_panel.get_global_rect()): return "journal panel exceeds viewport"
+		return ""
 	if mode == "dialogue":
 		if not game.window_focused or game.world_host.transitioning or game.loading_save or game.retrying or game.journal_open or game.backpack_open or game.foraging_hold.active() or game.item_drag.active(): return "dialogue capture input mode unavailable"
 		if not game.dialogue.active() or not game.ui.dialogue_overlay.is_visible_in_tree() or game.player_placeholder.controls_enabled or game.companion_ai.enabled: return "dialogue capture requires visible modal and blocked actors"

@@ -353,12 +353,13 @@ theme_override_constants/separation = 14
 [node name="Title" type="Label" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Recovery journal"
+text = "Journal"
 autowrap_mode = 2
 
 [node name="Scroll" type="ScrollContainer" parent="Screen/JournalOverlay/Center/Panel/Margin/Options"]
 layout_mode = 2
-custom_minimum_size = Vector2(0, 250)
+custom_minimum_size = Vector2(0, 160)
+size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
 [node name="Text" type="Label" parent="Screen/JournalOverlay/Center/Panel/Margin/Options/Scroll"]
