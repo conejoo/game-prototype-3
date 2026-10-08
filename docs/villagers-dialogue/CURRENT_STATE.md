@@ -6,14 +6,75 @@ Updated: 2026-10-07, America/Vancouver.
 
 ## Selection and exact continuation
 
-N001 Done; N002-N018 Pending. Active task: none. Exactly N001 completed this invocation.
-Next eligible: N002 — typed NPC/graph definitions with strict validation.
-Exact action: inspect applicable instructions/current changes, verify pinned source
-integrity and N001 decisions, mark N002 In progress, implement its typed selected
-catalog/conversion and owning content checks. Reuse npc-03 actor definition; no
-activation or save bump in N002. Stop after its acceptance/state update.
+N001 and N002 Done; N003-N018 Pending. Active task: none. Exactly N002 completed
+this invocation. Next eligible: N003 — deterministic dialogue rules/per-person memory.
+N007 is also dependency-ready but N003 is the lowest eligible ID; neither started.
 
-## N001 result and evidence
+Exact action: inspect current user changes/source pin, verify N002 actual content
+and acceptance, mark N003 In progress, implement only its memory/query/choice services
+and owning rule checks. Consume root npc_catalog and detached NpcDefinition/graph
+interfaces documented in [N002 acceptance](N002_ACCEPTANCE.md). Preserve legacy
+DialogueService/QuestService/companion trust, schema6 and manual saves. Stop after N003.
+
+## N002 result and durable evidence
+
+Target began clean at 71b087ab6aa098b2e5afc7c8e8e4227bfe592b11. Source remains clean
+at60c20eb2816e7271fb84afaba286af006ebe3ccf; all 132 pinned source hashes match. No user
+edits existed at selection. N001 pin/coverage/contact audit passed before runtime edits.
+Historical N001 unchanged-production assertion is now intentionally superseded;
+convert_content --check independently protects all pin/generated/runtime bytes.
+
+Implemented typed strict loader and deterministic local conversion: eight people,
+70 nodes/54 choices/24 facts/48 portraits/18 reference sheets/eight gift rules.
+Deferred 12 nodes/16 choices/three facts remain classified with reasons. Complete
+source runtime/dialogue fields preserved except audited Della welcome. PNGs byte-exact.
+NpcContentCatalog stores a detached canonical document and returns fresh typed views;
+input/snapshot/nested view mutation cannot alter publication. Entire invalid candidates
+reject without a partial initial catalog or loss of prior definitions.
+
+Actual modules: game/features/npcs/npc_content_catalog.gd, npc_definition.gd,
+npc_dialogue_graph.gd, npc_content_availability.gd; typed nested node/choice/condition/
+event/fact/gift/sheet types. Runtime game/content/npcs/catalog.json, owned portraits
+and reference sheets under game/assets/npcs/. Tool convert_content.py consumes only
+N001 target-local public inputs; optional --source is read-only drift verification.
+GameRoot validates separate npc_catalog before session initialization. Core catalog
+stays 21 definitions and existing npc-03; seven new IDs are future wrapper identities,
+not live actors or duplicate ActorDefinitions. Export presets explicitly include JSON.
+
+Checks from target root: ./tools/run_checks.ps1 -Task N002 -Import -Names
+npc_content_checks,content_catalog_checks,application_smoke -TimeoutSeconds 150.
+All six cases PASS/exit 0, no timeout/runtime/parse diagnostic/source change. 423 assertions
+(including evidence write), 75 malformed candidates. Import-only missing .NET SDK 10.0.9
+message remains the existing allowed runner diagnostic. No install needed.
+Commands, criteria, source/output hashes and complete interfaces in N002_ACCEPTANCE.
+
+Successful run: docs/evidence/N002/20261008-063748469-bd2b5f8b/, inspected results/logs
+and checks/npc_content_checks/npc-content.json. Matching fresh isolated
+builds/testing/N002/20261008-063748469-bd2b5f8b/{appdata,localappdata}, separate named
+check slots. Normal saves never accessed. No ordinary input or N002 capture required.
+Failed runs retained:063420225-db3dc25a generated 66 import files/five UIDs and triggered
+source guard;063540688-5cf0b0a5 caught seven fixture assertions because new dot keys were
+StringName. Bracket String inserts corrected fixtures; no validation weakened.
+
+Final conversion --check --source PASS; two predicted conversions identical/67 exact
+outputs. Catalog SHA256 9490a7a2ca4e4cb926c9919c52be1a53f47cc0699a44059723b17d814068f9d9.
+All 66 PNGs match pin. 459 of 462 prior production files exact; only root/export/smoke
+changed, 144 owned game additions, none removed. Geometry, legacy definitions/save/
+quest/trust/combat/environment/items/art sources and P/M/W/F docs unchanged. Original
+modified script CRLF retained; diff check recognizes cr-at-eol. Schema6/content1 and
+Compatibility retained. Final diff/links/status/dependency/source audit PASS.
+Supplemental final-audit.json verifies independent full document parity, exact passing
+game bytes and 82 local links. Retained final-audit-attempt-1.json records initial
+elevated Git diff exit 129; explicit -C/command-local safe.directory rerun passed.
+
+Changed files: N002 acceptance, checklist/current state/contract, discovery README/
+architecture, npc_migration tool/README/.gitattributes, four new typed scripts/UIDs, owning test/UID,
+67 generated public inputs plus 66 import records/catalog .gitattributes, narrow
+GameRoot/export/smoke edits. No agents/chats/schedules/commits/publication. All owned
+headless processes exited; no editor or cleanup owed. No remaining N002 criterion,
+failed acceptance or blocker; no UI/ordinary NPC access/3D/native claim.
+
+## N001 result and evidence (historical)
 
 [N001 acceptance](N001_ACCEPTANCE.md) owns complete criterion evidence, semantics,
 source IDs/adapters, measurements, tooling and commands. Target HEAD remains

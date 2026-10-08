@@ -79,7 +79,7 @@ Maris ordinary graph and existing recovery dialogue share one real person. Use a
 
 ## Ownership and dialogue semantics
 
-Proposed modules are suggestions, not existing files:
+The following ownership describes the intended integration. N002 definition/catalog interfaces are implemented below; remaining NPC services and wrappers are proposed:
 - game/features/npcs/: immutable NpcDefinition, graph/node/condition definitions, per-NPC ConversationMemory, pure eligibility/choice services, scene-owned wrapper/registry and replaceable actor presenter.
 - game/content/npcs/: converted Resources or validated target-local public catalog/graphs.
 - game/assets/npcs/: portraits and 3D GLBs. Editable Blender files stay under art/source/npcs/.
@@ -179,3 +179,35 @@ read-only MCP responds; N007 still must prove rig/animation/export/import extens
 of historical static P012 pipeline. All462 current game/art files unchanged by
 N001. Future task implementation invalidates N001's unchanged-production assertion;
 use its pin integrity independently and create owning task acceptance checks.
+
+## N002 implemented content boundary (2026-10-07)
+
+GameRoot now owns a separate NpcContentCatalog validated before GameSession startup.
+Its bundled input is res://content/npcs/catalog.json (format_version 1, the N001
+source revision). Existing ContentManifest remains 21 definitions and npc-03 remains
+its existing ActorDefinition; NpcDefinition.actor_id aliases the same stable source
+identity. A definition/catalog does not activate a character or create an actor state.
+
+Implemented files under game/features/npcs/: npc_content_catalog.gd,
+npc_definition.gd, npc_dialogue_graph.gd and npc_content_availability.gd.
+See [N002 acceptance](N002_ACCEPTANCE.md) for actual methods, nested typed classes,
+complete acceptance and failed-attempt records. Canonical publication deep-copies
+validated input; get_npc and document_snapshot return detached views. Caller changes
+cannot alter an accepted catalog. Future rule/session owners consume typed data and
+must not store current memory or reward state in it.
+
+Deterministic convert_content.py reads only the N001 local pin, preserves full authored
+runtime/dialogue fields and applies only its audited Della text adaptation. Portraits
+and world-reference sheets are byte-exact local PNGs. Visual paths become owned res://
+paths; no runtime dependency on source checkout or tools/reference. Both current
+export presets explicitly include the JSON. Coverage reasons and typed ENABLED/
+DEFERRED status accompany nodes, choices, facts, gifts, portraits and sheets. A sheet's
+reference status never certifies a 3D clip or routine. Conditions remain on deferred
+nodes as well as ordinary nodes. Source dimensions are metadata, not physical scale.
+
+Strict loader rejects unknown/missing keys, malformed types/numeric ranges, duplicate
+IDs, cross-person/dangling references, missing/wrong assets, unsupported conditions,
+contradictory bounds and non-finite graph transitions before publishing any candidate.
+All existing schema6/content1, geography, legacy dialogue, quest and companion-trust
+contracts remain intact. N003 owns selection/memory rules; N004 owns persistence;
+N005 owns actual portrait UI. N007 and character tasks own real exported 3D assets.

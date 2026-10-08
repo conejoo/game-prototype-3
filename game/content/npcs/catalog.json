@@ -1,0 +1,3017 @@
+{
+  "format_version": 1,
+  "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+  "packages": [
+    {
+      "id": "npc-01",
+      "actor_id": "npc-01",
+      "runtime": {
+        "id": "npc-01",
+        "displayName": "Mayor Edric Vale",
+        "shortName": "Edric",
+        "title": "Mayor",
+        "pronouns": "he/him",
+        "interactionPrompt": "Talk to Mayor Vale",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance",
+          "levelOneMilestone": {
+            "dialogueNodeId": "npc-01-level-1-milestone",
+            "seenFlagId": "relationshipLevel1Seen"
+          }
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 48
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [
+            "river-fishing"
+          ],
+          "relationshipFlagIds": [
+            "npc-01-first-conversation-complete",
+            "npc-01-helpful-response",
+            "npc-01-neutral-response",
+            "npc-01-helpful-reward-applied",
+            "npc-01-neutral-reward-applied",
+            "relationshipLevel1Seen"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-01-public-role",
+            "category": "Public life",
+            "label": "Town mayor",
+            "description": "Edric Vale serves as the town's mayor.",
+            "highlightTerm": "Mayor"
+          },
+          {
+            "id": "npc-01-moonflower-preference",
+            "category": "Preferences",
+            "label": "Moonflowers",
+            "description": "Edric has a particular fondness for Moonflowers.",
+            "highlightTerm": "Moonflowers"
+          },
+          {
+            "id": "npc-01-river-fishing",
+            "category": "Interests",
+            "label": "River fishing",
+            "description": "Edric values quiet mornings spent fishing by the river.",
+            "highlightTerm": "river fishing"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-01-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-01-moonflower-preference",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue": {
+        "npcId": "npc-01",
+        "entryNodeIds": [
+          "npc-01-level-1-milestone",
+          "npc-01-moonflower-hint",
+          "npc-01-woods-repeat",
+          "npc-01-woods-first",
+          "npc-01-initial-conversation",
+          "npc-01-follow-up-conversation"
+        ],
+        "nodes": [
+          {
+            "id": "npc-01-initial-conversation",
+            "priority": 100,
+            "portraitId": "skeptical",
+            "text": "A new face warrants a proper welcome—and a little context. What brings you to our town?",
+            "conditions": {
+              "excludedFlags": [
+                "npc-01-first-conversation-complete"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-01-helpful-response",
+                "text": "I hope to help wherever the town needs me.",
+                "targetNodeId": "npc-01-initial-helpful-end",
+                "affinityDelta": 1,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-01-helpful-reward-applied",
+                "addedFlags": [
+                  "npc-01-first-conversation-complete",
+                  "npc-01-helpful-response"
+                ]
+              },
+              {
+                "id": "npc-01-neutral-response",
+                "text": "I'm still finding my way around.",
+                "targetNodeId": "npc-01-initial-guarded-end",
+                "affinityDelta": 0,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-01-neutral-reward-applied",
+                "addedFlags": [
+                  "npc-01-first-conversation-complete",
+                  "npc-01-neutral-response"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "npc-01-initial-helpful-end",
+            "priority": 0,
+            "portraitId": "practiced-smile",
+            "text": "Civic spirit is always welcome. I shall remember that offer."
+          },
+          {
+            "id": "npc-01-initial-guarded-end",
+            "priority": 0,
+            "portraitId": "official-neutral",
+            "text": "Sensibly cautious. Take time to learn which paths—and people—deserve your trust."
+          },
+          {
+            "id": "npc-01-woods-first",
+            "priority": 130,
+            "portraitId": "official-neutral",
+            "text": "I hear you have begun exploring Moonwood. Stay to the marked paths; appearances there can mislead.",
+            "conditions": {
+              "requiredFlags": [
+                "npc-01-first-conversation-complete"
+              ],
+              "unseenNodeIds": [
+                "npc-01-woods-first"
+              ],
+              "events": [
+                {
+                  "kind": "areaEntered",
+                  "subjectId": "woods",
+                  "minimumCount": 1,
+                  "maximumCount": 1
+                }
+              ]
+            }
+          },
+          {
+            "id": "npc-01-woods-repeat",
+            "priority": 140,
+            "portraitId": "skeptical",
+            "text": "Moonwood has drawn you back more than once. Curiosity is useful when tempered by judgment.",
+            "conditions": {
+              "requiredFlags": [
+                "npc-01-first-conversation-complete"
+              ],
+              "unseenNodeIds": [
+                "npc-01-woods-repeat"
+              ],
+              "events": [
+                {
+                  "kind": "areaEntered",
+                  "subjectId": "woods",
+                  "minimumCount": 2
+                }
+              ]
+            }
+          },
+          {
+            "id": "npc-01-moonflower-hint",
+            "priority": 180,
+            "portraitId": "practiced-smile",
+            "text": "You found **Moonflowers**. Their color survives even the gloomiest council chamber; I have always admired that.",
+            "revealedFactIds": [
+              "npc-01-moonflower-preference"
+            ],
+            "conditions": {
+              "requiredFlags": [
+                "npc-01-first-conversation-complete"
+              ],
+              "unknownFactIds": [
+                "npc-01-moonflower-preference"
+              ],
+              "events": [
+                {
+                  "kind": "resourceGathered",
+                  "subjectId": "moonflower",
+                  "minimumCount": 1
+                }
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-01-gift-moonflower-from-hint",
+                "text": "Then please accept one.",
+                "targetNodeId": "npc-01-gift-response",
+                "giftRuleId": "npc-01-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-01-follow-up-conversation",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "Good to see you again. How is village life treating you?",
+            "conditions": {
+              "requiredFlags": [
+                "npc-01-first-conversation-complete"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-01-gift-moonflower-follow-up",
+                "text": "I brought you a Moonflower.",
+                "targetNodeId": "npc-01-gift-response",
+                "giftRuleId": "npc-01-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-01-gift-response",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "A thoughtful choice. Thank you—I shall see it placed where the morning light catches it."
+          },
+          {
+            "id": "npc-01-level-1-milestone",
+            "priority": 300,
+            "portraitId": "practiced-smile",
+            "text": "You have earned the standing of Acquaintance. In public life, dependable gestures carry considerable weight.",
+            "conditions": {
+              "minimumRelationshipLevel": 1,
+              "excludedFlags": [
+                "relationshipLevel1Seen"
+              ]
+            }
+          }
+        ]
+      },
+      "visuals": {
+        "npcId": "npc-01",
+        "portraits": {
+          "official-neutral": "res://assets/npcs/portraits/npc-01/official-neutral.png",
+          "practiced-smile": "res://assets/npcs/portraits/npc-01/practiced-smile.png",
+          "skeptical": "res://assets/npcs/portraits/npc-01/skeptical.png",
+          "pleased": "res://assets/npcs/portraits/npc-01/pleased.png",
+          "tired-rumpled": "res://assets/npcs/portraits/npc-01/tired-rumpled.png",
+          "fishing-gear": "res://assets/npcs/portraits/npc-01/fishing-gear.png"
+        },
+        "world": {
+          "worldCellWidth": 48,
+          "worldCellHeight": 48,
+          "rowOrder": [
+            "south",
+            "north",
+            "west",
+            "east"
+          ],
+          "idle": {
+            "asset": "res://assets/npcs/reference/npc-01/npc_01_idle_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 4,
+            "stepSeconds": 0.24
+          },
+          "walk": {
+            "asset": "res://assets/npcs/reference/npc-01/npc_01_walk_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 3,
+            "stepSeconds": 0.16
+          },
+          "actions": {
+            "river-fishing": {
+              "asset": "res://assets/npcs/reference/npc-01/npc_01_river_fishing_sheet.png",
+              "textureCellWidth": 192,
+              "textureCellHeight": 192,
+              "framesPerFacing": 4,
+              "stepSeconds": 0.2
+            }
+          }
+        }
+      },
+      "coverage": {
+        "node": {
+          "npc-01-initial-conversation": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-initial-helpful-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-initial-guarded-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-woods-first": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-woods-repeat": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-moonflower-hint": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-follow-up-conversation": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-gift-response": {
+            "status": "deferred",
+            "reason": "Only incoming transitions are deferred gift transactions."
+          },
+          "npc-01-level-1-milestone": {
+            "status": "deferred",
+            "reason": "Retain level>=1 and unseen milestone gate. Ordinary introduction gives at most1; gifts/progression unavailable."
+          }
+        },
+        "choice": {
+          "npc-01-helpful-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-neutral-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-01-gift-moonflower-from-hint": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          },
+          "npc-01-gift-moonflower-follow-up": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          }
+        },
+        "fact": {
+          "npc-01-public-role": {
+            "status": "deferred",
+            "reason": "Declared but no source node discloses this fact; no automatic role/action disclosure."
+          },
+          "npc-01-moonflower-preference": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-01-river-fishing": {
+            "status": "deferred",
+            "reason": "Declared but no source node discloses this fact; no automatic role/action disclosure."
+          }
+        },
+        "gift_rule": {
+          "npc-01-moonflower-gift": {
+            "status": "deferred",
+            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+          }
+        },
+        "portrait": {
+          "official-neutral": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "practiced-smile": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "skeptical": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "pleased": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "tired-rumpled": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "fishing-gear": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          }
+        },
+        "sheet": {
+          "idle": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "walk": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "river-fishing": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-02",
+      "actor_id": "npc-02",
+      "runtime": {
+        "id": "npc-02",
+        "displayName": "Helena Vale",
+        "shortName": "Helena",
+        "title": "Town Archivist",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Archivist Vale",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 48
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [
+            "archive-work"
+          ],
+          "relationshipFlagIds": [
+            "npc-02-first-conversation-complete",
+            "npc-02-careful-research-response",
+            "npc-02-neighborly-response",
+            "npc-02-careful-reward-applied",
+            "npc-02-neighborly-reward-applied",
+            "npc-02-archive-lead-shared"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-02-public-role",
+            "category": "Public life",
+            "label": "Town archivist",
+            "description": "Helena Vale keeps Alderwake's town archives and helps residents trace public records.",
+            "highlightTerm": "town archives"
+          },
+          {
+            "id": "npc-02-archive-practice",
+            "category": "Work",
+            "label": "Careful records",
+            "description": "Helena cross-checks every archive entry before treating it as settled history.",
+            "highlightTerm": "cross-check every entry"
+          },
+          {
+            "id": "npc-02-moonflower-pressing",
+            "category": "Interests",
+            "label": "Pressed Moonflowers",
+            "description": "Helena presses Moonflowers to preserve seasonal color beside dated archive notes.",
+            "highlightTerm": "pressed Moonflowers"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-02-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-02-moonflower-pressing",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue": {
+        "npcId": "npc-02",
+        "entryNodeIds": [
+          "npc-02-moonflower-hint",
+          "npc-02-initial-conversation",
+          "npc-02-follow-up-conversation",
+          "npc-02-routine-archive-indexing",
+          "npc-02-routine-archive-default"
+        ],
+        "nodes": [
+          {
+            "id": "npc-02-initial-conversation",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "I'm Helena Vale. You will usually find me among the **town archives**, making certain yesterday remains useful tomorrow.",
+            "revealedFactIds": [
+              "npc-02-public-role"
+            ],
+            "conditions": {
+              "excludedFlags": [
+                "npc-02-first-conversation-complete"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-02-careful-research-response",
+                "text": "I would rather check a story than repeat it carelessly.",
+                "targetNodeId": "npc-02-initial-careful-end",
+                "affinityDelta": 1,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-02-careful-reward-applied",
+                "addedFlags": [
+                  "npc-02-first-conversation-complete",
+                  "npc-02-careful-research-response"
+                ]
+              },
+              {
+                "id": "npc-02-neighborly-response",
+                "text": "I mostly hope to learn my neighbors' names.",
+                "targetNodeId": "npc-02-initial-neighborly-end",
+                "affinityDelta": 0,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-02-neighborly-reward-applied",
+                "addedFlags": [
+                  "npc-02-first-conversation-complete",
+                  "npc-02-neighborly-response"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "npc-02-initial-careful-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Good. A careful question leaves less damage than a confident mistake."
+          },
+          {
+            "id": "npc-02-initial-neighborly-end",
+            "priority": 0,
+            "portraitId": "practiced-smile",
+            "text": "A sound beginning. Names are the first index any town keeps."
+          },
+          {
+            "id": "npc-02-moonflower-hint",
+            "priority": 180,
+            "portraitId": "pleased",
+            "text": "Those would make lovely **pressed Moonflowers**. Their color marks a season more honestly than ink alone.",
+            "revealedFactIds": [
+              "npc-02-moonflower-pressing"
+            ],
+            "conditions": {
+              "requiredFlags": [
+                "npc-02-first-conversation-complete"
+              ],
+              "unknownFactIds": [
+                "npc-02-moonflower-pressing"
+              ],
+              "events": [
+                {
+                  "kind": "resourceGathered",
+                  "subjectId": "moonflower",
+                  "minimumCount": 1
+                }
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-02-gift-moonflower-from-hint",
+                "text": "Then please keep one for the archive.",
+                "targetNodeId": "npc-02-gift-response",
+                "giftRuleId": "npc-02-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-02-follow-up-conversation",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "Welcome back. Have you found anything in Alderwake that deserves a closer look?",
+            "conditions": {
+              "requiredFlags": [
+                "npc-02-first-conversation-complete"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-02-gift-moonflower-follow-up",
+                "text": "I brought a Moonflower for your seasonal notes.",
+                "targetNodeId": "npc-02-gift-response",
+                "giftRuleId": "npc-02-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-02-gift-response",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Thank you. I will press it beside today's date and credit the collector."
+          },
+          {
+            "id": "npc-02-routine-archive-default",
+            "priority": 10,
+            "portraitId": "tired-rumpled",
+            "text": "Mind the open folios, please. I **cross-check every entry** before returning a page to its box.",
+            "revealedFactIds": [
+              "npc-02-archive-practice"
+            ],
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-default-choice",
+                "text": "I will let you continue.",
+                "outcomeTag": "npc-02-resume-archive-default",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-default-choice",
+                "text": "The light is fading; perhaps stop here for today.",
+                "outcomeTag": "npc-02-end-archive-default",
+                "endsConversation": true
+              }
+            ]
+          },
+          {
+            "id": "npc-02-routine-archive-indexing",
+            "priority": 11,
+            "portraitId": "archive-work",
+            "text": "One moment. This index says the volume is here, while the shelf insists otherwise.",
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-indexing-choice",
+                "text": "Keep tracing it; I can wait.",
+                "outcomeTag": "npc-02-resume-archive-indexing",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-review-archive-ledger-choice",
+                "text": "I noticed a ledger reference that does not match the index.",
+                "oneTime": true,
+                "addedFlags": [
+                  "npc-02-archive-lead-shared"
+                ],
+                "outcomeTag": "npc-02-review-archive-ledger",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-indexing-choice",
+                "text": "Leave the mismatch marked and rest for today.",
+                "outcomeTag": "npc-02-end-archive-indexing",
+                "endsConversation": true
+              }
+            ]
+          }
+        ]
+      },
+      "visuals": {
+        "npcId": "npc-02",
+        "portraits": {
+          "official-neutral": "res://assets/npcs/portraits/npc-02/official-neutral.png",
+          "practiced-smile": "res://assets/npcs/portraits/npc-02/practiced-smile.png",
+          "skeptical": "res://assets/npcs/portraits/npc-02/skeptical.png",
+          "pleased": "res://assets/npcs/portraits/npc-02/pleased.png",
+          "tired-rumpled": "res://assets/npcs/portraits/npc-02/tired-rumpled.png",
+          "archive-work": "res://assets/npcs/portraits/npc-02/archive-work.png"
+        },
+        "world": {
+          "worldCellWidth": 48,
+          "worldCellHeight": 48,
+          "rowOrder": [
+            "south",
+            "north",
+            "west",
+            "east"
+          ],
+          "idle": {
+            "asset": "res://assets/npcs/reference/npc-02/npc_02_idle_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 4,
+            "stepSeconds": 0.24
+          },
+          "walk": {
+            "asset": "res://assets/npcs/reference/npc-02/npc_02_walk_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 3,
+            "stepSeconds": 0.16
+          },
+          "actions": {
+            "archive-work": {
+              "asset": "res://assets/npcs/reference/npc-02/npc_02_archive_work_sheet.png",
+              "textureCellWidth": 192,
+              "textureCellHeight": 192,
+              "framesPerFacing": 4,
+              "stepSeconds": 0.2
+            }
+          }
+        }
+      },
+      "coverage": {
+        "node": {
+          "npc-02-initial-conversation": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-02-initial-careful-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-02-initial-neighborly-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-02-moonflower-hint": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-02-follow-up-conversation": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-02-gift-response": {
+            "status": "deferred",
+            "reason": "Only incoming transitions are deferred gift transactions."
+          },
+          "npc-02-routine-archive-default": {
+            "status": "deferred",
+            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+          },
+          "npc-02-routine-archive-indexing": {
+            "status": "deferred",
+            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+          }
+        },
+        "choice": {
+          "npc-02-careful-research-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-02-neighborly-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-02-gift-moonflower-from-hint": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          },
+          "npc-02-gift-moonflower-follow-up": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          },
+          "npc-02-resume-archive-default-choice": {
+            "status": "deferred",
+            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+          },
+          "npc-02-end-archive-default-choice": {
+            "status": "deferred",
+            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+          },
+          "npc-02-resume-archive-indexing-choice": {
+            "status": "deferred",
+            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+          },
+          "npc-02-review-archive-ledger-choice": {
+            "status": "deferred",
+            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+          },
+          "npc-02-end-archive-indexing-choice": {
+            "status": "deferred",
+            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+          }
+        },
+        "fact": {
+          "npc-02-public-role": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-02-archive-practice": {
+            "status": "deferred",
+            "reason": "Only archive routine discloses this fact."
+          },
+          "npc-02-moonflower-pressing": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          }
+        },
+        "gift_rule": {
+          "npc-02-moonflower-gift": {
+            "status": "deferred",
+            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+          }
+        },
+        "portrait": {
+          "official-neutral": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "practiced-smile": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "skeptical": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "pleased": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "tired-rumpled": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "archive-work": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          }
+        },
+        "sheet": {
+          "idle": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "walk": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "archive-work": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-03",
+      "actor_id": "npc-03",
+      "runtime": {
+        "id": "npc-03",
+        "displayName": "Maris Reed",
+        "shortName": "Maris",
+        "title": "Chandlery owner",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Maris Reed",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-03-introduced",
+            "npc-03-careful-response",
+            "npc-03-careful-reward",
+            "npc-03-passing-response",
+            "npc-03-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-03-public-role",
+            "category": "Public life",
+            "label": "Reed Chandlery",
+            "description": "Maris Reed supplies ordinary river gear at Reed Chandlery.",
+            "highlightTerm": "Reed Chandlery"
+          },
+          {
+            "id": "npc-03-supplier-practice",
+            "category": "Work",
+            "label": "Practical supplies",
+            "description": "Maris keeps line, hooks, rope and lamp oil available and asks what a fitting must do before recommending it.",
+            "highlightTerm": "line, hooks, rope and lamp oil"
+          },
+          {
+            "id": "npc-03-decorative-knots",
+            "category": "Interests",
+            "label": "Decorative knots",
+            "description": "Maris enjoys tying small decorative knots beside a cup of tea; a Moonflower brightens her work table.",
+            "highlightTerm": "decorative knots"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-03-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-03-decorative-knots",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue": {
+        "npcId": "npc-03",
+        "entryNodeIds": [
+          "npc-03-introduction",
+          "npc-03-return"
+        ],
+        "nodes": [
+          {
+            "id": "npc-03-introduction",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "Maris Reed. This is **Reed Chandlery**. Tell me where you're headed and what needs to hold together.",
+            "revealedFactIds": [
+              "npc-03-public-role"
+            ],
+            "conditions": {
+              "excludedFlags": [
+                "npc-03-introduced"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-03-careful-response",
+                "text": "I would rather choose sound gear than replace it halfway.",
+                "targetNodeId": "npc-03-careful-end",
+                "affinityDelta": 1,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-03-careful-reward",
+                "addedFlags": [
+                  "npc-03-introduced",
+                  "npc-03-careful-response"
+                ]
+              },
+              {
+                "id": "npc-03-passing-response",
+                "text": "I am passing through and learning my way around.",
+                "targetNodeId": "npc-03-passing-end",
+                "affinityDelta": 0,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-03-passing-reward",
+                "addedFlags": [
+                  "npc-03-introduced",
+                  "npc-03-passing-response"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "npc-03-careful-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "A sensible start. A little attention now saves a wet walk later."
+          },
+          {
+            "id": "npc-03-passing-end",
+            "priority": 0,
+            "portraitId": "practiced-smile",
+            "text": "Then take your time. River work makes more sense when you have seen the river."
+          },
+          {
+            "id": "npc-03-return",
+            "priority": 100,
+            "portraitId": "practiced-smile",
+            "text": "Welcome back. What can I help you understand?",
+            "conditions": {
+              "requiredFlags": [
+                "npc-03-introduced"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-03-ask-supplies",
+                "text": "What ordinary supplies do you keep?",
+                "targetNodeId": "npc-03-supplies"
+              },
+              {
+                "id": "npc-03-ask-practice",
+                "text": "How do you choose a fitting?",
+                "targetNodeId": "npc-03-practice"
+              },
+              {
+                "id": "npc-03-ask-hobby",
+                "text": "What do you make when work is done?",
+                "targetNodeId": "npc-03-hobby"
+              },
+              {
+                "id": "npc-03-gift-moonflower",
+                "text": "I brought a Moonflower for your work table.",
+                "targetNodeId": "npc-03-gift-end",
+                "giftRuleId": "npc-03-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-03-supplies",
+            "priority": 0,
+            "portraitId": "official-neutral",
+            "text": "We keep **line, hooks, rope and lamp oil** for everyday jobs. Tell me what you need before choosing a fitting.",
+            "revealedFactIds": [
+              "npc-03-supplier-practice"
+            ]
+          },
+          {
+            "id": "npc-03-practice",
+            "priority": 0,
+            "portraitId": "skeptical",
+            "text": "A fitting has to suit the load and the hands using it. Guesswork can look very neat until it gets wet."
+          },
+          {
+            "id": "npc-03-hobby",
+            "priority": 0,
+            "portraitId": "ropework",
+            "text": "Small **decorative knots**, with no boat depending on them. A Moonflower beside the tea makes the table a pleasant place to sit.",
+            "revealedFactIds": [
+              "npc-03-decorative-knots"
+            ]
+          },
+          {
+            "id": "npc-03-gift-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Thank you. That will brighten the table while I finish this knot."
+          }
+        ]
+      },
+      "visuals": {
+        "npcId": "npc-03",
+        "portraits": {
+          "official-neutral": "res://assets/npcs/portraits/npc-03/official-neutral.png",
+          "practiced-smile": "res://assets/npcs/portraits/npc-03/practiced-smile.png",
+          "skeptical": "res://assets/npcs/portraits/npc-03/skeptical.png",
+          "pleased": "res://assets/npcs/portraits/npc-03/pleased.png",
+          "tired-rumpled": "res://assets/npcs/portraits/npc-03/tired-rumpled.png",
+          "ropework": "res://assets/npcs/portraits/npc-03/ropework.png"
+        },
+        "world": {
+          "worldCellWidth": 48,
+          "worldCellHeight": 48,
+          "rowOrder": [
+            "south",
+            "north",
+            "west",
+            "east"
+          ],
+          "idle": {
+            "asset": "res://assets/npcs/reference/npc-03/npc_03_idle_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 4,
+            "stepSeconds": 0.24
+          },
+          "walk": {
+            "asset": "res://assets/npcs/reference/npc-03/npc_03_walk_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 3,
+            "stepSeconds": 0.16
+          },
+          "actions": {}
+        }
+      },
+      "coverage": {
+        "node": {
+          "npc-03-introduction": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-careful-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-passing-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-return": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-supplies": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-practice": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-gift-end": {
+            "status": "deferred",
+            "reason": "Only incoming transitions are deferred gift transactions."
+          }
+        },
+        "choice": {
+          "npc-03-careful-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-passing-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-ask-supplies": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-ask-practice": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-ask-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-03-gift-moonflower": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          }
+        },
+        "fact": {
+          "npc-03-public-role": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-03-supplier-practice": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-03-decorative-knots": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          }
+        },
+        "gift_rule": {
+          "npc-03-moonflower-gift": {
+            "status": "deferred",
+            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+          }
+        },
+        "portrait": {
+          "official-neutral": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "practiced-smile": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "skeptical": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "pleased": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "tired-rumpled": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "ropework": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          }
+        },
+        "sheet": {
+          "idle": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "walk": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-04",
+      "actor_id": "npc-04",
+      "runtime": {
+        "id": "npc-04",
+        "displayName": "Harlan Reed",
+        "shortName": "Harlan",
+        "title": "Dockmaster",
+        "pronouns": "he/him",
+        "interactionPrompt": "Talk to Harlan Reed",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-04-introduced",
+            "npc-04-careful-response",
+            "npc-04-careful-reward",
+            "npc-04-passing-response",
+            "npc-04-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-04-public-role",
+            "category": "Public life",
+            "label": "Dockmaster",
+            "description": "Harlan Reed coordinates boats, weather calls and ordinary dock repairs in Alderwake.",
+            "highlightTerm": "dockmaster"
+          },
+          {
+            "id": "npc-04-shared-checks",
+            "category": "Work",
+            "label": "Shared dock checks",
+            "description": "Harlan asks workers to keep the public quay clear and check lines and weather together.",
+            "highlightTerm": "shared checks"
+          },
+          {
+            "id": "npc-04-shore-birds",
+            "category": "Interests",
+            "label": "Shore birds",
+            "description": "Harlan enjoys watching shore birds on quiet breaks; a Moonflower suits the little pot beside his notes.",
+            "highlightTerm": "shore birds"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-04-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-04-shore-birds",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue": {
+        "npcId": "npc-04",
+        "entryNodeIds": [
+          "npc-04-introduction",
+          "npc-04-return"
+        ],
+        "nodes": [
+          {
+            "id": "npc-04-introduction",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "Harlan Reed, **dockmaster**. I help keep boats, weather calls and repairs in order. Mind the working lanes and there is room for everyone.",
+            "conditions": {
+              "excludedFlags": [
+                "npc-04-introduced"
+              ]
+            },
+            "revealedFactIds": [
+              "npc-04-public-role"
+            ],
+            "choices": [
+              {
+                "id": "npc-04-careful-response",
+                "text": "I will keep the working lanes clear.",
+                "targetNodeId": "npc-04-careful-end",
+                "affinityDelta": 1,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-04-careful-reward",
+                "addedFlags": [
+                  "npc-04-introduced",
+                  "npc-04-careful-response"
+                ]
+              },
+              {
+                "id": "npc-04-passing-response",
+                "text": "I am learning my way around town.",
+                "targetNodeId": "npc-04-passing-end",
+                "affinityDelta": 0,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-04-passing-reward",
+                "addedFlags": [
+                  "npc-04-introduced",
+                  "npc-04-passing-response"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "npc-04-careful-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Much appreciated. A clear lane saves everyone a little trouble."
+          },
+          {
+            "id": "npc-04-passing-end",
+            "priority": 0,
+            "portraitId": "practiced-smile",
+            "text": "Take your time on the public quay. A busy dock rewards a patient pair of eyes."
+          },
+          {
+            "id": "npc-04-return",
+            "priority": 100,
+            "portraitId": "practiced-smile",
+            "text": "Good to see you. What would you like to know?",
+            "conditions": {
+              "requiredFlags": [
+                "npc-04-introduced"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-04-ask-work",
+                "text": "What keeps the docks running?",
+                "targetNodeId": "npc-04-work"
+              },
+              {
+                "id": "npc-04-ask-weather",
+                "text": "How do you make a weather call?",
+                "targetNodeId": "npc-04-weather"
+              },
+              {
+                "id": "npc-04-ask-hobby",
+                "text": "What do you watch on a quiet break?",
+                "targetNodeId": "npc-04-hobby"
+              },
+              {
+                "id": "npc-04-gift-moonflower",
+                "text": "I brought a Moonflower for your notes pot.",
+                "targetNodeId": "npc-04-gift-end",
+                "giftRuleId": "npc-04-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-04-work",
+            "priority": 0,
+            "portraitId": "official-neutral",
+            "text": "Clear lanes, sound lines and **shared checks**. I would rather ask another pair of eyes than hurry someone into a repair.",
+            "revealedFactIds": [
+              "npc-04-shared-checks"
+            ]
+          },
+          {
+            "id": "npc-04-weather",
+            "priority": 0,
+            "portraitId": "skeptical",
+            "text": "Watch the wind and listen to the crew. A fine-looking sky is no reason to ignore what the river is doing."
+          },
+          {
+            "id": "npc-04-hobby",
+            "priority": 0,
+            "portraitId": "birdwatching",
+            "text": "The **shore birds**. They can turn a quiet break into quite a performance. A Moonflower in the little pot beside my notes makes a pleasant spot to sit.",
+            "revealedFactIds": [
+              "npc-04-shore-birds"
+            ]
+          },
+          {
+            "id": "npc-04-gift-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Thank you. That will sit nicely beside the notes."
+          }
+        ]
+      },
+      "visuals": {
+        "npcId": "npc-04",
+        "portraits": {
+          "official-neutral": "res://assets/npcs/portraits/npc-04/official-neutral.png",
+          "practiced-smile": "res://assets/npcs/portraits/npc-04/practiced-smile.png",
+          "skeptical": "res://assets/npcs/portraits/npc-04/skeptical.png",
+          "pleased": "res://assets/npcs/portraits/npc-04/pleased.png",
+          "tired-rumpled": "res://assets/npcs/portraits/npc-04/tired-rumpled.png",
+          "birdwatching": "res://assets/npcs/portraits/npc-04/birdwatching.png"
+        },
+        "world": {
+          "worldCellWidth": 48,
+          "worldCellHeight": 48,
+          "rowOrder": [
+            "south",
+            "north",
+            "west",
+            "east"
+          ],
+          "idle": {
+            "asset": "res://assets/npcs/reference/npc-04/npc_04_idle_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 4,
+            "stepSeconds": 0.24
+          },
+          "walk": {
+            "asset": "res://assets/npcs/reference/npc-04/npc_04_walk_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 3,
+            "stepSeconds": 0.16
+          },
+          "actions": {}
+        }
+      },
+      "coverage": {
+        "node": {
+          "npc-04-introduction": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-careful-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-passing-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-return": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-work": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-weather": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-gift-end": {
+            "status": "deferred",
+            "reason": "Only incoming transitions are deferred gift transactions."
+          }
+        },
+        "choice": {
+          "npc-04-careful-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-passing-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-ask-work": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-ask-weather": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-ask-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-04-gift-moonflower": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          }
+        },
+        "fact": {
+          "npc-04-public-role": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-04-shared-checks": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-04-shore-birds": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          }
+        },
+        "gift_rule": {
+          "npc-04-moonflower-gift": {
+            "status": "deferred",
+            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+          }
+        },
+        "portrait": {
+          "official-neutral": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "practiced-smile": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "skeptical": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "pleased": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "tired-rumpled": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "birdwatching": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          }
+        },
+        "sheet": {
+          "idle": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "walk": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-06",
+      "actor_id": "npc-06",
+      "runtime": {
+        "id": "npc-06",
+        "displayName": "Tess Reed",
+        "shortName": "Tess",
+        "title": "General-store owner",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Tess Reed",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-06-introduced",
+            "npc-06-careful-response",
+            "npc-06-careful-reward",
+            "npc-06-passing-response",
+            "npc-06-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-06-public-role",
+            "category": "Public life",
+            "label": "General goods",
+            "description": "Tess Reed runs Alderwake's general store, carrying staples, cloth, household goods and packed trail food.",
+            "highlightTerm": "general goods"
+          },
+          {
+            "id": "npc-06-everyday-supplies",
+            "category": "Work",
+            "label": "Everyday supplies",
+            "description": "Tess starts with practical everyday needs and welcomes supply questions without requiring favors.",
+            "highlightTerm": "everyday supplies"
+          },
+          {
+            "id": "npc-06-pressed-flowers",
+            "category": "Interests",
+            "label": "Pressed flowers",
+            "description": "Tess keeps pressed flowers in a small book; she welcomes a Moonflower for its next page.",
+            "highlightTerm": "pressed flowers"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-06-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-06-pressed-flowers",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue": {
+        "npcId": "npc-06",
+        "entryNodeIds": [
+          "npc-06-introduction",
+          "npc-06-return"
+        ],
+        "nodes": [
+          {
+            "id": "npc-06-introduction",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "Tess Reed. I keep the **general goods** here. Tell me what you need, and leave room for the next person at the door.",
+            "conditions": {
+              "excludedFlags": [
+                "npc-06-introduced"
+              ]
+            },
+            "revealedFactIds": [
+              "npc-06-public-role"
+            ],
+            "choices": [
+              {
+                "id": "npc-06-careful-response",
+                "text": "I will start with what people need.",
+                "targetNodeId": "npc-06-careful-end",
+                "affinityDelta": 1,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-06-careful-reward",
+                "addedFlags": [
+                  "npc-06-introduced",
+                  "npc-06-careful-response"
+                ]
+              },
+              {
+                "id": "npc-06-passing-response",
+                "text": "I am looking around town.",
+                "targetNodeId": "npc-06-passing-end",
+                "affinityDelta": 0,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-06-passing-reward",
+                "addedFlags": [
+                  "npc-06-introduced",
+                  "npc-06-passing-response"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "npc-06-careful-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "A good place to start. A useful parcel matters more than a grand gesture."
+          },
+          {
+            "id": "npc-06-passing-end",
+            "priority": 0,
+            "portraitId": "practiced-smile",
+            "text": "Take your time. You can ask a practical question before we have become old friends."
+          },
+          {
+            "id": "npc-06-return",
+            "priority": 100,
+            "portraitId": "practiced-smile",
+            "text": "Hello again. What is on your mind?",
+            "conditions": {
+              "requiredFlags": [
+                "npc-06-introduced"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-06-ask-supplies",
+                "text": "What supplies do people ask for?",
+                "targetNodeId": "npc-06-supplies"
+              },
+              {
+                "id": "npc-06-ask-work",
+                "text": "How would I arrange useful delivery work?",
+                "targetNodeId": "npc-06-work"
+              },
+              {
+                "id": "npc-06-ask-busy",
+                "text": "Is keeping the store tiring?",
+                "targetNodeId": "npc-06-busy"
+              },
+              {
+                "id": "npc-06-ask-hobby",
+                "text": "What do you do away from the shelves?",
+                "targetNodeId": "npc-06-hobby"
+              },
+              {
+                "id": "npc-06-gift-moonflower",
+                "text": "I brought a Moonflower for your book.",
+                "targetNodeId": "npc-06-gift-end",
+                "giftRuleId": "npc-06-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-06-supplies",
+            "priority": 0,
+            "portraitId": "official-neutral",
+            "text": "We start with **everyday supplies**: staples, cloth and packed trail food. Ask for what you need; favors are never an entry fee.",
+            "revealedFactIds": [
+              "npc-06-everyday-supplies"
+            ]
+          },
+          {
+            "id": "npc-06-work",
+            "priority": 0,
+            "portraitId": "skeptical",
+            "text": "Useful help starts with a clear list: what needs carrying, where, and for whom. I check those details before making an arrangement."
+          },
+          {
+            "id": "npc-06-busy",
+            "priority": 0,
+            "portraitId": "tired-rumpled",
+            "text": "Some days. A cup of tea between columns helps. Listening is easier when I remember to sit down."
+          },
+          {
+            "id": "npc-06-hobby",
+            "priority": 0,
+            "portraitId": "flower-pressing",
+            "text": "I keep **pressed flowers** in a little book. Each page asks me to slow down. A Moonflower would make a lovely next page.",
+            "revealedFactIds": [
+              "npc-06-pressed-flowers"
+            ]
+          },
+          {
+            "id": "npc-06-gift-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Thank you. I will make room for it in the book."
+          }
+        ]
+      },
+      "visuals": {
+        "npcId": "npc-06",
+        "portraits": {
+          "official-neutral": "res://assets/npcs/portraits/npc-06/official-neutral.png",
+          "practiced-smile": "res://assets/npcs/portraits/npc-06/practiced-smile.png",
+          "skeptical": "res://assets/npcs/portraits/npc-06/skeptical.png",
+          "pleased": "res://assets/npcs/portraits/npc-06/pleased.png",
+          "tired-rumpled": "res://assets/npcs/portraits/npc-06/tired-rumpled.png",
+          "flower-pressing": "res://assets/npcs/portraits/npc-06/flower-pressing.png"
+        },
+        "world": {
+          "worldCellWidth": 48,
+          "worldCellHeight": 48,
+          "rowOrder": [
+            "south",
+            "north",
+            "west",
+            "east"
+          ],
+          "idle": {
+            "asset": "res://assets/npcs/reference/npc-06/npc_06_idle_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 4,
+            "stepSeconds": 0.24
+          },
+          "walk": {
+            "asset": "res://assets/npcs/reference/npc-06/npc_06_walk_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 3,
+            "stepSeconds": 0.16
+          },
+          "actions": {}
+        }
+      },
+      "coverage": {
+        "node": {
+          "npc-06-introduction": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-careful-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-passing-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-return": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-supplies": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-work": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-busy": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-gift-end": {
+            "status": "deferred",
+            "reason": "Only incoming transitions are deferred gift transactions."
+          }
+        },
+        "choice": {
+          "npc-06-careful-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-passing-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-ask-supplies": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-ask-work": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-ask-busy": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-ask-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-06-gift-moonflower": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          }
+        },
+        "fact": {
+          "npc-06-public-role": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-06-everyday-supplies": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-06-pressed-flowers": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          }
+        },
+        "gift_rule": {
+          "npc-06-moonflower-gift": {
+            "status": "deferred",
+            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+          }
+        },
+        "portrait": {
+          "official-neutral": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "practiced-smile": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "skeptical": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "pleased": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "tired-rumpled": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "flower-pressing": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          }
+        },
+        "sheet": {
+          "idle": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "walk": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-07",
+      "actor_id": "npc-07",
+      "runtime": {
+        "id": "npc-07",
+        "displayName": "Ivo Oran",
+        "shortName": "Ivo",
+        "title": "River-run captain and fishmonger",
+        "pronouns": "he/him",
+        "interactionPrompt": "Talk to Ivo Oran",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-07-introduced",
+            "npc-07-careful-response",
+            "npc-07-careful-reward",
+            "npc-07-passing-response",
+            "npc-07-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-07-public-role",
+            "category": "Public life",
+            "label": "River-run captain",
+            "description": "Ivo Oran is Alderwake's river-run captain and fishmonger. He handles passenger-berth business and local fish supplies.",
+            "highlightTerm": "river-run captain"
+          },
+          {
+            "id": "npc-07-local-seamanship",
+            "category": "Work",
+            "label": "Local seamanship",
+            "description": "Ivo knows ordinary fishing and local seamanship, checking weather, lines and a clear shore before work.",
+            "highlightTerm": "local seamanship"
+          },
+          {
+            "id": "npc-07-knotwork",
+            "category": "Interests",
+            "label": "Knotwork",
+            "description": "Ivo practices knotwork and keeps river notes in a small book; he likes a pressed Moonflower between its pages.",
+            "highlightTerm": "knotwork"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-07-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-07-knotwork",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue": {
+        "npcId": "npc-07",
+        "entryNodeIds": [
+          "npc-07-introduction",
+          "npc-07-return"
+        ],
+        "nodes": [
+          {
+            "id": "npc-07-introduction",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "Ivo Oran, **river-run captain** and fishmonger. Keep the shore lane clear and tell me what you need.",
+            "conditions": {
+              "excludedFlags": [
+                "npc-07-introduced"
+              ]
+            },
+            "revealedFactIds": [
+              "npc-07-public-role"
+            ],
+            "choices": [
+              {
+                "id": "npc-07-careful-response",
+                "text": "I will keep clear of the working lines.",
+                "targetNodeId": "npc-07-careful-end",
+                "affinityDelta": 1,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-07-careful-reward",
+                "addedFlags": [
+                  "npc-07-introduced",
+                  "npc-07-careful-response"
+                ]
+              },
+              {
+                "id": "npc-07-passing-response",
+                "text": "I am getting to know the docks.",
+                "targetNodeId": "npc-07-passing-end",
+                "affinityDelta": 0,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-07-passing-reward",
+                "addedFlags": [
+                  "npc-07-introduced",
+                  "npc-07-passing-response"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "npc-07-careful-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Good. Room to work is useful help."
+          },
+          {
+            "id": "npc-07-passing-end",
+            "priority": 0,
+            "portraitId": "practiced-smile",
+            "text": "Ask away. You need not bring a favor to ask a question."
+          },
+          {
+            "id": "npc-07-return",
+            "priority": 100,
+            "portraitId": "practiced-smile",
+            "text": "Back at the river. What is on your mind?",
+            "conditions": {
+              "requiredFlags": [
+                "npc-07-introduced"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-07-ask-supplies",
+                "text": "What keeps local fishing work going?",
+                "targetNodeId": "npc-07-supplies"
+              },
+              {
+                "id": "npc-07-ask-work",
+                "text": "How do you plan a job by the water?",
+                "targetNodeId": "npc-07-work"
+              },
+              {
+                "id": "npc-07-ask-busy",
+                "text": "Do you ever put the work aside?",
+                "targetNodeId": "npc-07-busy"
+              },
+              {
+                "id": "npc-07-ask-hobby",
+                "text": "What do you do between trips?",
+                "targetNodeId": "npc-07-hobby"
+              },
+              {
+                "id": "npc-07-gift-moonflower",
+                "text": "I brought a Moonflower for your river book.",
+                "targetNodeId": "npc-07-gift-end",
+                "giftRuleId": "npc-07-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-07-supplies",
+            "priority": 0,
+            "portraitId": "official-neutral",
+            "text": "Ordinary fishing and **local seamanship**: watch the weather, check the lines, keep a clear shore. A small useful catch still feeds someone.",
+            "revealedFactIds": [
+              "npc-07-local-seamanship"
+            ]
+          },
+          {
+            "id": "npc-07-work",
+            "priority": 0,
+            "portraitId": "skeptical",
+            "text": "First agree what needs doing and who is helping. Then check the lines, gear and footing together. A confident promise is no substitute for a sound plan."
+          },
+          {
+            "id": "npc-07-busy",
+            "priority": 0,
+            "portraitId": "tired-rumpled",
+            "text": "Eventually. Tea on dry ground is a fine invention. Tomorrow is easier to think about after a sit-down."
+          },
+          {
+            "id": "npc-07-hobby",
+            "priority": 0,
+            "portraitId": "knotwork",
+            "text": "I practice **knotwork** and keep river notes in a little book. A pressed Moonflower makes a good bookmark; it reminds me to slow down.",
+            "revealedFactIds": [
+              "npc-07-knotwork"
+            ]
+          },
+          {
+            "id": "npc-07-gift-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Thank you. There is a clean page waiting for it."
+          }
+        ]
+      },
+      "visuals": {
+        "npcId": "npc-07",
+        "portraits": {
+          "official-neutral": "res://assets/npcs/portraits/npc-07/official-neutral.png",
+          "practiced-smile": "res://assets/npcs/portraits/npc-07/practiced-smile.png",
+          "skeptical": "res://assets/npcs/portraits/npc-07/skeptical.png",
+          "pleased": "res://assets/npcs/portraits/npc-07/pleased.png",
+          "tired-rumpled": "res://assets/npcs/portraits/npc-07/tired-rumpled.png",
+          "knotwork": "res://assets/npcs/portraits/npc-07/knotwork.png"
+        },
+        "world": {
+          "worldCellWidth": 48,
+          "worldCellHeight": 48,
+          "rowOrder": [
+            "south",
+            "north",
+            "west",
+            "east"
+          ],
+          "idle": {
+            "asset": "res://assets/npcs/reference/npc-07/npc_07_idle_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 4,
+            "stepSeconds": 0.24
+          },
+          "walk": {
+            "asset": "res://assets/npcs/reference/npc-07/npc_07_walk_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 3,
+            "stepSeconds": 0.16
+          },
+          "actions": {}
+        }
+      },
+      "coverage": {
+        "node": {
+          "npc-07-introduction": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-careful-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-passing-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-return": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-supplies": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-work": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-busy": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-gift-end": {
+            "status": "deferred",
+            "reason": "Only incoming transitions are deferred gift transactions."
+          }
+        },
+        "choice": {
+          "npc-07-careful-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-passing-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-ask-supplies": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-ask-work": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-ask-busy": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-ask-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-07-gift-moonflower": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          }
+        },
+        "fact": {
+          "npc-07-public-role": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-07-local-seamanship": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-07-knotwork": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          }
+        },
+        "gift_rule": {
+          "npc-07-moonflower-gift": {
+            "status": "deferred",
+            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+          }
+        },
+        "portrait": {
+          "official-neutral": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "practiced-smile": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "skeptical": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "pleased": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "tired-rumpled": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "knotwork": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          }
+        },
+        "sheet": {
+          "idle": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "walk": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-08",
+      "actor_id": "npc-08",
+      "runtime": {
+        "id": "npc-08",
+        "displayName": "Celia Oran",
+        "shortName": "Celia",
+        "title": "Boatwright",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Celia Oran",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-08-introduced",
+            "npc-08-careful-response",
+            "npc-08-careful-reward",
+            "npc-08-passing-response",
+            "npc-08-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-08-public-role",
+            "category": "Public life",
+            "label": "Boatwright",
+            "description": "Celia Oran is Alderwake's boatwright. She checks old hulls carefully and repairs what can safely be kept.",
+            "highlightTerm": "boatwright"
+          },
+          {
+            "id": "npc-08-basic-repairs",
+            "category": "Work",
+            "label": "Basic repairs",
+            "description": "Celia can inspect seams, mend fittings and make basic repairs. These ordinary skills are distinct from her advanced hull-shaping technique.",
+            "highlightTerm": "basic repairs"
+          },
+          {
+            "id": "npc-08-woodcarving",
+            "category": "Interests",
+            "label": "Woodcarving",
+            "description": "Celia enjoys woodcarving, making small river birds from spare wood. She likes keeping a Moonflower beside the finished carvings.",
+            "highlightTerm": "woodcarving"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-08-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-08-woodcarving",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue": {
+        "npcId": "npc-08",
+        "entryNodeIds": [
+          "npc-08-introduction",
+          "npc-08-return"
+        ],
+        "nodes": [
+          {
+            "id": "npc-08-introduction",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "Celia Oran, **boatwright**. I would rather mend a sound old hull than throw it away. Mind the fitting tray, and ask what you need.",
+            "conditions": {
+              "excludedFlags": [
+                "npc-08-introduced"
+              ]
+            },
+            "revealedFactIds": [
+              "npc-08-public-role"
+            ],
+            "choices": [
+              {
+                "id": "npc-08-careful-response",
+                "text": "I will leave room for your work.",
+                "targetNodeId": "npc-08-careful-end",
+                "affinityDelta": 1,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-08-careful-reward",
+                "addedFlags": [
+                  "npc-08-introduced",
+                  "npc-08-careful-response"
+                ]
+              },
+              {
+                "id": "npc-08-passing-response",
+                "text": "I am looking around town.",
+                "targetNodeId": "npc-08-passing-end",
+                "affinityDelta": 0,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-08-passing-reward",
+                "addedFlags": [
+                  "npc-08-introduced",
+                  "npc-08-passing-response"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "npc-08-careful-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Thank you. A clear work space makes careful hands more useful."
+          },
+          {
+            "id": "npc-08-passing-end",
+            "priority": 0,
+            "portraitId": "practiced-smile",
+            "text": "Then ask away. Looking costs nothing."
+          },
+          {
+            "id": "npc-08-return",
+            "priority": 100,
+            "portraitId": "practiced-smile",
+            "text": "What would you like to know?",
+            "conditions": {
+              "requiredFlags": [
+                "npc-08-introduced"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-08-ask-supplies",
+                "text": "What ordinary repairs can you help with?",
+                "targetNodeId": "npc-08-supplies"
+              },
+              {
+                "id": "npc-08-ask-demo",
+                "text": "Tell me about your fair boat.",
+                "targetNodeId": "npc-08-demo"
+              },
+              {
+                "id": "npc-08-ask-busy",
+                "text": "Do you ever put the tools down?",
+                "targetNodeId": "npc-08-busy"
+              },
+              {
+                "id": "npc-08-ask-hobby",
+                "text": "What do you make for yourself?",
+                "targetNodeId": "npc-08-hobby"
+              },
+              {
+                "id": "npc-08-gift-moonflower",
+                "text": "I brought a Moonflower for your carvings.",
+                "targetNodeId": "npc-08-gift-end",
+                "giftRuleId": "npc-08-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-08-supplies",
+            "priority": 0,
+            "portraitId": "official-neutral",
+            "text": "I can help with **basic repairs**: inspect a seam, mend a fitting, replace a worn line. Those are useful skills of their own. Advanced hull shaping is a different kind of judgment.",
+            "revealedFactIds": [
+              "npc-08-basic-repairs"
+            ]
+          },
+          {
+            "id": "npc-08-demo",
+            "priority": 0,
+            "portraitId": "skeptical",
+            "text": "My small shallow-water demonstration boat is for a short fair ride back to the same bank. It is separate from the passenger ship, and from an heirloom skiff. A demonstration is no replacement for an onward passage."
+          },
+          {
+            "id": "npc-08-busy",
+            "priority": 0,
+            "portraitId": "tired-rumpled",
+            "text": "Eventually. Tea first, then I can decide whether that seam truly needs another look."
+          },
+          {
+            "id": "npc-08-hobby",
+            "priority": 0,
+            "portraitId": "woodcarving",
+            "text": "I enjoy **woodcarving**: little river birds from spare wood. A Moonflower beside them makes the work bench feel less like a list of jobs.",
+            "revealedFactIds": [
+              "npc-08-woodcarving"
+            ]
+          },
+          {
+            "id": "npc-08-gift-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Thank you. I will give it a place beside the birds."
+          }
+        ]
+      },
+      "visuals": {
+        "npcId": "npc-08",
+        "portraits": {
+          "official-neutral": "res://assets/npcs/portraits/npc-08/official-neutral.png",
+          "practiced-smile": "res://assets/npcs/portraits/npc-08/practiced-smile.png",
+          "skeptical": "res://assets/npcs/portraits/npc-08/skeptical.png",
+          "pleased": "res://assets/npcs/portraits/npc-08/pleased.png",
+          "tired-rumpled": "res://assets/npcs/portraits/npc-08/tired-rumpled.png",
+          "woodcarving": "res://assets/npcs/portraits/npc-08/woodcarving.png"
+        },
+        "world": {
+          "worldCellWidth": 48,
+          "worldCellHeight": 48,
+          "rowOrder": [
+            "south",
+            "north",
+            "west",
+            "east"
+          ],
+          "idle": {
+            "asset": "res://assets/npcs/reference/npc-08/npc_08_idle_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 4,
+            "stepSeconds": 0.24
+          },
+          "walk": {
+            "asset": "res://assets/npcs/reference/npc-08/npc_08_walk_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 3,
+            "stepSeconds": 0.16
+          },
+          "actions": {}
+        }
+      },
+      "coverage": {
+        "node": {
+          "npc-08-introduction": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-careful-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-passing-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-return": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-supplies": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-demo": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-busy": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-gift-end": {
+            "status": "deferred",
+            "reason": "Only incoming transitions are deferred gift transactions."
+          }
+        },
+        "choice": {
+          "npc-08-careful-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-passing-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-ask-supplies": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-ask-demo": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-ask-busy": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-ask-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-08-gift-moonflower": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          }
+        },
+        "fact": {
+          "npc-08-public-role": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-08-basic-repairs": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-08-woodcarving": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          }
+        },
+        "gift_rule": {
+          "npc-08-moonflower-gift": {
+            "status": "deferred",
+            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+          }
+        },
+        "portrait": {
+          "official-neutral": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "practiced-smile": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "skeptical": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "pleased": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "tired-rumpled": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "woodcarving": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          }
+        },
+        "sheet": {
+          "idle": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "walk": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-14",
+      "actor_id": "npc-14",
+      "runtime": {
+        "id": "npc-14",
+        "displayName": "Della Pike",
+        "shortName": "Della",
+        "title": "Lantern Rest innkeeper",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Della Pike",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-14-introduced",
+            "npc-14-careful-response",
+            "npc-14-careful-reward",
+            "npc-14-passing-response",
+            "npc-14-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-14-public-role",
+            "category": "Public life",
+            "label": "Innkeeper",
+            "description": "Della Pike is the innkeeper at Lantern Rest, welcoming visitors and neighbors to its meal room.",
+            "highlightTerm": "innkeeper"
+          },
+          {
+            "id": "npc-14-quiet-company",
+            "category": "Care",
+            "label": "Quiet company",
+            "description": "Della offers quiet company without asking people to explain private matters. Guests may ask for space or conversation.",
+            "highlightTerm": "quiet company"
+          },
+          {
+            "id": "npc-14-quilting",
+            "category": "Interests",
+            "label": "Quilting",
+            "description": "Della enjoys quilting with useful scraps of cloth. She likes a Moonflower beside her sewing basket.",
+            "highlightTerm": "quilting"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-14-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-14-quilting",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue": {
+        "npcId": "npc-14",
+        "entryNodeIds": [
+          "npc-14-introduction",
+          "npc-14-return"
+        ],
+        "nodes": [
+          {
+            "id": "npc-14-introduction",
+            "priority": 100,
+            "portraitId": "official-neutral",
+            "text": "Della Pike, **innkeeper** at Lantern Rest. I am meeting visitors here at the public entrance. Questions and quiet company are welcome; the inn interior is not open in this prototype.",
+            "conditions": {
+              "excludedFlags": [
+                "npc-14-introduced"
+              ]
+            },
+            "revealedFactIds": [
+              "npc-14-public-role"
+            ],
+            "choices": [
+              {
+                "id": "npc-14-careful-response",
+                "text": "Thank you. I will leave space for the other guests.",
+                "targetNodeId": "npc-14-careful-end",
+                "affinityDelta": 1,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-14-careful-reward",
+                "addedFlags": [
+                  "npc-14-introduced",
+                  "npc-14-careful-response"
+                ]
+              },
+              {
+                "id": "npc-14-passing-response",
+                "text": "I am getting to know the town.",
+                "targetNodeId": "npc-14-passing-end",
+                "affinityDelta": 0,
+                "oneTime": true,
+                "oneTimeRewardFlag": "npc-14-passing-reward",
+                "addedFlags": [
+                  "npc-14-introduced",
+                  "npc-14-passing-response"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "npc-14-careful-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "That is thoughtful. You need not earn a welcome, though."
+          },
+          {
+            "id": "npc-14-passing-end",
+            "priority": 0,
+            "portraitId": "practiced-smile",
+            "text": "Then take your time. Questions are welcome here."
+          },
+          {
+            "id": "npc-14-return",
+            "priority": 100,
+            "portraitId": "practiced-smile",
+            "text": "What would you like to know?",
+            "conditions": {
+              "requiredFlags": [
+                "npc-14-introduced"
+              ]
+            },
+            "choices": [
+              {
+                "id": "npc-14-ask-hosting",
+                "text": "How do you look after your guests?",
+                "targetNodeId": "npc-14-hosting"
+              },
+              {
+                "id": "npc-14-ask-quiet",
+                "text": "May people keep their troubles private?",
+                "targetNodeId": "npc-14-quiet"
+              },
+              {
+                "id": "npc-14-ask-room",
+                "text": "Which part of the inn is the guest room?",
+                "targetNodeId": "npc-14-room"
+              },
+              {
+                "id": "npc-14-ask-busy",
+                "text": "Do you ever sit down yourself?",
+                "targetNodeId": "npc-14-busy"
+              },
+              {
+                "id": "npc-14-ask-hobby",
+                "text": "What do you enjoy when the work is done?",
+                "targetNodeId": "npc-14-hobby"
+              },
+              {
+                "id": "npc-14-gift-moonflower",
+                "text": "I brought a Moonflower for your sewing basket.",
+                "targetNodeId": "npc-14-gift-end",
+                "giftRuleId": "npc-14-moonflower-gift"
+              }
+            ]
+          },
+          {
+            "id": "npc-14-hosting",
+            "priority": 0,
+            "portraitId": "official-neutral",
+            "text": "A warm meal room, a clear way through the door, and someone who listens. Guests and neighbors can both ask me a question."
+          },
+          {
+            "id": "npc-14-quiet",
+            "priority": 0,
+            "portraitId": "skeptical",
+            "text": "I offer **quiet company**, too. No one owes a story in return for care. If you want space, say so; if you want to talk, I can listen.",
+            "revealedFactIds": [
+              "npc-14-quiet-company"
+            ]
+          },
+          {
+            "id": "npc-14-room",
+            "priority": 0,
+            "portraitId": "official-neutral",
+            "text": "The guest room is on the right, off the main passage. The meal room is here on the left. Keep the passage clear so everyone can come and go."
+          },
+          {
+            "id": "npc-14-busy",
+            "priority": 0,
+            "portraitId": "tired-rumpled",
+            "text": "I do, once the room settles. A cup of tea stays warmer when I remember to drink it."
+          },
+          {
+            "id": "npc-14-hobby",
+            "priority": 0,
+            "portraitId": "quilting",
+            "text": "I enjoy **quilting**, giving scraps of cloth a useful second life. A Moonflower beside my sewing basket makes a quiet hour feel special.",
+            "revealedFactIds": [
+              "npc-14-quilting"
+            ]
+          },
+          {
+            "id": "npc-14-gift-end",
+            "priority": 0,
+            "portraitId": "pleased",
+            "text": "Thank you. I will put it beside the basket."
+          }
+        ]
+      },
+      "visuals": {
+        "npcId": "npc-14",
+        "portraits": {
+          "official-neutral": "res://assets/npcs/portraits/npc-14/official-neutral.png",
+          "practiced-smile": "res://assets/npcs/portraits/npc-14/practiced-smile.png",
+          "skeptical": "res://assets/npcs/portraits/npc-14/skeptical.png",
+          "pleased": "res://assets/npcs/portraits/npc-14/pleased.png",
+          "tired-rumpled": "res://assets/npcs/portraits/npc-14/tired-rumpled.png",
+          "quilting": "res://assets/npcs/portraits/npc-14/quilting.png"
+        },
+        "world": {
+          "worldCellWidth": 48,
+          "worldCellHeight": 48,
+          "rowOrder": [
+            "south",
+            "north",
+            "west",
+            "east"
+          ],
+          "idle": {
+            "asset": "res://assets/npcs/reference/npc-14/npc_14_idle_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 4,
+            "stepSeconds": 0.24
+          },
+          "walk": {
+            "asset": "res://assets/npcs/reference/npc-14/npc_14_walk_sheet.png",
+            "textureCellWidth": 192,
+            "textureCellHeight": 192,
+            "framesPerFacing": 3,
+            "stepSeconds": 0.16
+          },
+          "actions": {}
+        }
+      },
+      "coverage": {
+        "node": {
+          "npc-14-introduction": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-careful-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-passing-end": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-return": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-hosting": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-quiet": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-room": {
+            "status": "deferred",
+            "reason": "Interior directional branch unavailable at exterior contact; no room entitlement or guessed indoor transform."
+          },
+          "npc-14-busy": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-gift-end": {
+            "status": "deferred",
+            "reason": "Only incoming transitions are deferred gift transactions."
+          }
+        },
+        "choice": {
+          "npc-14-careful-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-passing-response": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-ask-hosting": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-ask-quiet": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-ask-room": {
+            "status": "deferred",
+            "reason": "Interior directional branch unavailable at exterior contact; no room entitlement or guessed indoor transform."
+          },
+          "npc-14-ask-busy": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-ask-hobby": {
+            "status": "enabled",
+            "reason": "Ordinary public graph; preserve all authored gates and text except explicit audited adaptation."
+          },
+          "npc-14-gift-moonflower": {
+            "status": "deferred",
+            "reason": "Gift capability unavailable regardless of item ownership; no consume/affinity/cap event."
+          }
+        },
+        "fact": {
+          "npc-14-public-role": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-14-quiet-company": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          },
+          "npc-14-quilting": {
+            "status": "enabled",
+            "reason": "Disclosure only on authored node entry."
+          }
+        },
+        "gift_rule": {
+          "npc-14-moonflower-gift": {
+            "status": "deferred",
+            "reason": "Typed future gift capability; retain acceptance cap and fact gate without executing."
+          }
+        },
+        "portrait": {
+          "official-neutral": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "practiced-smile": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "skeptical": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "pleased": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "tired-rumpled": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          },
+          "quilting": {
+            "status": "enabled",
+            "reason": "Exact reference pixels; expressions stay available, disclosure remains graph-gated."
+          }
+        },
+        "sheet": {
+          "idle": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          },
+          "walk": {
+            "status": "enabled",
+            "reason": "ART reference, no 3D asset or runtime animation claim."
+          }
+        }
+      }
+    }
+  ]
+}

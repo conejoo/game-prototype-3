@@ -852,3 +852,27 @@ handles record exit0; final audit105 native captures and manual visual review pa
 [F010 acceptance](foraging-items-backpack/F010_ACCEPTANCE.md) owns hashes, controls,
 criterion table and retained failed attempts, including the fully repeated native
 loop after correcting actual cwd. F001-F010 complete; no successor or cleanup owed.
+
+### Delivered selected NPC content boundary (N002)
+
+GameRoot validates a separate NpcContentCatalog before session initialization. Its
+strict bundled JSON input contains exactly eight selected public packages; the core
+ContentManifest stays at 21 definitions and keeps the existing npc-03 identity.
+No live NPC, memory, graph selection or save field is introduced at this boundary.
+
+NpcDefinition and NpcDialogueGraph provide detached typed definitions, including
+finite node/choice/condition/event data, facts, flags, expressions, gift bindings and
+source visual/action references. Catalog publication deep-copies a completely
+validated candidate. Lookups/snapshots detach nested collections, and invalid input
+preserves the accepted catalog. Unknown keys/types, duplicate IDs, foreign/dangling
+references, missing assets, unsupported conditions and cycles reject visibly.
+
+The deterministic target-local converter preserves source fields/order/text except
+N001's explicit Della welcome adaptation. All 48 portraits and 18 world sheets retain
+source bytes; the sheets are reference art, not completed 3D actors or animations.
+Coverage retains deferred gifts, archive routines, milestone and indoor directions
+with reasons. Both export presets explicitly include content/npcs/*.json.
+[N002 acceptance](villagers-dialogue/N002_ACCEPTANCE.md) verifies the eight graphs,
+atomic/detached data, 75 malformed candidates and existing catalog/root regressions.
+Schema6/content1 and manual saves remain unchanged. Selection/memory, UI, scene-owned
+contacts, rig/export and character production belong to later N tasks.

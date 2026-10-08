@@ -9,6 +9,7 @@ extends Node3D
 
 var session: GameSession = GameSession.new()
 var catalog: ContentCatalog = ContentCatalog.new()
+var npc_catalog: NpcContentCatalog = NpcContentCatalog.new()
 var window_focused: bool = true
 var save_repository: SaveRepository = SaveRepository.new()
 var loading_save: bool = false
@@ -64,6 +65,8 @@ func _ready() -> void:
 					return
 				save_repository = SaveRepository.new("user://saves/playtest-" + slot + ".json")
 	var errors: PackedStringArray = catalog.initialize(content_manifest)
+	if errors.is_empty():
+		errors = npc_catalog.initialize_path(catalog)
 	if errors.is_empty():
 		errors = session.initialize(catalog, initial_location_id, initial_spawn_id, "prototype-hero")
 	if not errors.is_empty():

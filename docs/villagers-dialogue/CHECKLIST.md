@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001 reference audit Done. N002-N018 remain Pending. Runtime implementation starts at N002.
+N001 reference audit and N002 typed content Done. N003-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -22,7 +22,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | ID | Status | Dependencies | Observable outcome |
 | --- | --- | --- | --- |
 | N001 | Done | None; inspect actual delivered baseline | Pinned eight-person references, exact scope/placement/coverage contract. |
-| N002 | Pending | N001 | Validated typed NPC/graph catalogs; all selected source content classified. |
+| N002 | Done | N001 | Validated typed NPC/graph catalogs; all selected source content classified. |
 | N003 | Pending | N002 | Pure dialogue selection, memory and atomic choice rules. |
 | N004 | Pending | N003 | Strict save migration and persistent conversation/event memory. |
 | N005 | Pending | N004 | Multi-node portrait dialogue and known-facts UI integrated with legacy flows. |
@@ -247,3 +247,33 @@ access. Gifts/archive routines/three undisclosed facts/Edric milestone/Della ind
 directions remain deferred; N007 animation pipeline and character art unverified.
 Exact criteria/commands/failed attempts and inspected image in N001 acceptance.
 Next eligible: N002 typed NPC/graph definitions and validation. Stop after N001.
+
+### N002 — 2026-10-07, America/Vancouver
+
+Result: strict typed selected catalog, deterministic conversion, atomic publication
+and detached definitions for eight people/70 nodes/54 choices/24 facts/48 portraits/
+18 reference sheets. Deferred 12 nodes/16 choices/three facts/eight gifts retain authored
+fields and reasons. Existing npc-03 and 21-definition core catalog remain unchanged;
+root validates separate NPC definitions before startup. No actors activated.
+
+Files: game/features/npcs/*.gd with UIDs; game/content/npcs/catalog.json/.gitattributes;
+game/assets/npcs PNGs/import records; npc_content_checks.gd/UID; narrow root/export/
+application_smoke additions; tools/npc_migration/convert_content.py and scoped .gitattributes; workflow handoff,
+contract/README/architecture discovery and [N002 acceptance](N002_ACCEPTANCE.md).
+
+Prerequisite: N001 source/pin/coverage/contact audit PASS before edits. Source remains
+60c20eb2816e7271fb84afaba286af006ebe3ccf, clean; target began clean at 71b087ab.
+Conversion check protects all 132 source hashes/67 outputs and repeat determinism.
+Godot shared runner import/parse/npc_content_checks/content_catalog_checks/
+application_smoke PASS, exit 0; 423 assertions/75 malformed candidates, no runtime
+errors or source changes. Final evidence docs/evidence/N002/20261008-063748469-bd2b5f8b/;
+fresh builds/testing/N002 matching appdata/localappdata and named slots. Two failed
+attempts retained: generated import metadata changed initial source; StringName fixture
+keys prevented seven intended tests until corrected to actual JSON String keys.
+
+Catalog hash 9490a7a2ca4e4cb926c9919c52be1a53f47cc0699a44059723b17d814068f9d9.
+All 66 PNGs byte-exact; 459 of 462 original production files unchanged, three narrow
+changes, 144 owned additions/no removals. Schema6/content1 and pinned geography retained.
+Final diff/links/status/dependencies/source audit PASS. No new UI/ordinary route/art/
+release claim or save access; all owned processes exited, no cleanup owed.
+Next eligible N003. Independently ready N007 not started. Exactly N002 completed.

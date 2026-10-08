@@ -1,0 +1,2 @@
+# Deterministic converter output retains its byte hash across checkouts.
+catalog.json text eol=lf
