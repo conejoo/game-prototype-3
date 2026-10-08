@@ -6,19 +6,94 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N008 Done; N009-N018 Pending. No active task. Exactly N008 completed and stopped.
-Target began clean at6c8c15031a5b37a32b5fb6cbf9a0f70fd9b40d85; source remains
-clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf. No user edits at selection.
-N008 successful-task commit is authorized by the follow-up. Commit identity is
-available in Git history and the follow-up report. No push or successor work.
+N001-N009 Done; N010-N018 Pending. No active task. Exactly N009 completed and stopped.
+N009 began clean atd3c827be8e2c62f22f9658178e65b27132f7304e. Source remains
+clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf; no user edits at selection.
+N009 successful-task commit is authorized by the follow-up. Commit identity is
+available in Git history and the follow-up report after verification. No push or N010 work.
 
-Next eligible N009. Next action on a fresh invocation: inspect N008 actual named
-package/ordinary evidence and implement only Helena at her pinned public civic
-contact. N010-N015 are also independently eligible after N008; select lowest N009.
+Next eligible N010. On a fresh invocation, inspect N008/N009 actual packages and
+implement only Maris ordinary dialogue/art at her existing npc-03 counter, preserving
+recovery/guardian/vessel/fitting/specialist ordering and identities. N011-N015 are
+independently eligible; N016 also eligible after Edric/Helena, but select lowest N010.
 River-fishing/archive-work stay N016. Do not invent tasks beyond N018.
 
-Remaining unfinished IDs: N009, N010, N011, N012, N013, N014, N015, N016,
-N017, N018. All checklist items through N018 are not complete.
+Remaining unfinished IDs: N010,N011,N012,N013,N014,N015,N016,N017,N018.
+All checklist items through N018 are not complete.
+
+## N009 result and durable evidence
+
+[N009 acceptance](N009_ACCEPTANCE.md) verifies every common/Helena criterion,
+commands/isolation/versions/source and asset hashes, failed attempts and inspection.
+[Helena package](../../art/exports/NPC_02_PACKAGE.md) records actual interfaces.
+Registry enables exactly npc-01/npc-02; custom8317-triangle/16-bone/one packed32x32
+palette3D Helena stands at approved civic foot(1.5,0,-1.5), approach(2.5,0,-1.5).
+Actual source prompt/graph/six portraits remain exact. Custom face/bun/green vest/
+long split skirt/cream sleeves/bracers/key distinguish her from Edric. Both use
+existing transactional VisualRoot presenter/independent holds/facing/lifecycle.
+No new Party actor, save field, source text, geometry or other asset change.
+
+Ordinary careful response grants1 affinity; fresh separate neighborly response0;
+one exclusive receipt each. Introduction teaches public-role. Actual committed
+Moonflower gather enables pressed-flower fact exactly once; gifts remain disabled.
+Archive-practice remains unknown, both archive preferred entries/all five outcome
+choices explicitly deferred. No daily suppression, ledger jump, private disclosure,
+fake work or interior. Idle ordinary; walk review-only; archive-work N016.
+
+Expanded docs/evidence/N009/20261008-114556123-0422e90c/ all21 cases PASS:
+new/Edric skins, source/content/rules/save/world/shared pipeline and required
+interaction/quest/foraging/light/travel/map/startup, synthetic process pair,
+ordinary writer/reader/review. Initial numeric pass preceded visual hair/shoulder
+refinement; original art/source retained under that run's art-before-refine/.
+
+Final docs/evidence/N009/20261008-115317925-63fa57cb/ all13 cases PASS: stable
+import/parse/new/Edric skin/pipeline/save/startup and review/write/read/neutral/
+contact. Only Helena GLB differs between the two811-file game/tools manifests;
+all affected tests and ordinary/restart phases rerun. Final source SHA256
+4b91b725b090c2f5239685e2db8e9b4c87050c8f9ba3ba0bd87a5c6be82de313.
+No forbidden diagnostics/timeouts/source drift. Import retains preexisting allowed
+.NET SDK10.0.9 editor warning; no installation/guard change or runtime error.
+
+WriterPID49780/new readerPID22492 exact whole durable-state/forecast GUI restart,
+actual bounded walks/E/pointer branch/gather/revisit. Separate neutralPID12164,
+contactPID13632 and synthetic artPID24324. Fresh per-case/group APPDATA/LOCALAPPDATA/
+named slots; no normal-save access. All50 final captures viewed in six sheets and
+selected full-size images;25 pause/dialogue provenance validations pass. Day/night/
+rain/default-camera reviews are explicitly seeded synthetic survey fixtures.
+
+Helena731 assertions;481 idle/98 walk120Hz poses,196 planted stance samples,
+120 blend samples: soles0, seams0, stance drift2.3841858e-7m, blend max step
+.020625716m. Cost8317 triangles/4366 authored vertices/16 bones/one material/
+32x32 packed palette. GLB SHA256
+535064fca54d1fe6714c72f826cd7f56208f0f06de34fe469e4eb9fe0b9dd284;
+.blend47445d2a0bb907ed8a5694b9b1962669d403dad9ec04d442616d9d227e521a99.
+Raw GLB/editable audit, source132 hashes/67 outputs and source clean checks pass.
+
+Failed sandbox observation/import metadata/scaffold/prompt/orphan-refinement and
+superseded sheet attempts remain retained; repaired with no guard relaxation.
+All N009 criteria complete, no current blocker. Schema7/content1, source/catalog/
+portraits, pinned geometry, original Blender scene/file and Edric preserved.
+All owned engine/helpers exited; owned Helena scene available, no cleanup owed.
+Files changed: named art/build/normalize/audit/source audit/import/palette/package;
+registry/adapter prompt; npc_02 checks/render/UIDs; current-count Edric and exact map
+fixtures; acceptance/checklist/state/contract/README/architecture/pipeline notes.
+No commit/push/agents/chats/schedules/publication or successor implementation.
+
+## N009 authorized commit follow-up
+
+The user authorized committing the successful N009 implementation, acceptance,
+checklist and durable state under the successful-task commit policy. Preflight
+found exactly27 N009 paths and no unrelated or already-staged work. Accepted811
+runtime/tool files, GLB and editable-source hashes still match final evidence;
+all21 expanded and13 focused cases retain their verified results. No runtime
+change or redundant test rerun is needed for this documentation/Git follow-up.
+
+Scope includes named Helena art/build/audits/imports/package, narrow activation/
+prompt and reusable checks, current-count Edric/map assertions, N009 acceptance,
+workflow/discovery/pipeline documentation. Raw runs/captures/helper logs and local
+appdata remain ignored. Commit scope/identity/tree/status audits are recorded in
+the latest local N009 evidence directory; resulting identity is available in Git
+history and the follow-up report. No unrelated work, push or N010 implementation.
 
 ## N008 result and durable evidence
 

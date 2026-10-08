@@ -3,8 +3,9 @@
 NPC migration: [eight villagers and richer dialogue](docs/villagers-dialogue/CHECKLIST.md),
 [reusable fresh-agent prompt](docs/villagers-dialogue/AGENT_PROMPT.md), and
 [durable state](docs/villagers-dialogue/CURRENT_STATE.md).
-N001-N008 Done: pinned content, dialogue rules, strict persistence, portrait UI, contacts/events, animated pipeline and Edric's ordinary character slice. N009-N018 Pending. Next eligible: N009.
-[N008 acceptance](docs/villagers-dialogue/N008_ACCEPTANCE.md) verifies reachable Edric, source portraits/branches, real woods/gather memories, custom editable 3D art and exact GUI restart. Idle is runtime; walk review-only; fishing stays N016. Only Edric is activated.
+N001-N009 Done: pinned content, dialogue rules, strict persistence, portrait UI, contacts/events, animated pipeline and Edric/Helena ordinary character slices. N010-N018 Pending. Next eligible: N010.
+[N008 acceptance](docs/villagers-dialogue/N008_ACCEPTANCE.md) verifies reachable Edric, source portraits/branches, real woods/gather memories, custom editable 3D art and exact GUI restart. Idle is runtime; walk review-only; fishing stays N016. Edric and Helena are activated.
+[N009 acceptance](docs/villagers-dialogue/N009_ACCEPTANCE.md) verifies Helena's source portraits/branches, real pressed-Moonflower fact, distinct editable3D art, deferred archive-only disclosure and exact GUI restart. Idle runtime; walk review-only; archive-work stays N016.
 [N002 acceptance](docs/villagers-dialogue/N002_ACCEPTANCE.md) verifies eight bundled graphs, strict validation and atomic publication; remaining character activations belong to their own tasks.
 [N003 acceptance](docs/villagers-dialogue/N003_ACCEPTANCE.md) verifies per-person memory, graph selection and atomic choices; [N004 acceptance](docs/villagers-dialogue/N004_ACCEPTANCE.md) records strict schema7 persistence and restart validation.
 [N005 acceptance](docs/villagers-dialogue/N005_ACCEPTANCE.md) verifies one finite conversation flow, source portraits/branches/learned facts, converted existing recovery/companion content and modal safety. Eight-person UI fixtures are verified; N008 supplies the first ordinary character.

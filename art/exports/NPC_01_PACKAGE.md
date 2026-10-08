@@ -1,6 +1,7 @@
 # Edric (`npc-01`) character package
 
-N008 activates exactly one named villager. The graph/portraits remain the byte-exact
+N008 originally activated exactly one named villager. N009 adds Helena via
+[NPC_02_PACKAGE](NPC_02_PACKAGE.md), preserving Edric's accepted asset and identity. The graph/portraits remain the byte-exact
 N002 package; no new text, facts, event types, source roster entries or save fields.
 The shared [animated pipeline](NPC_PIPELINE.md) remains authoritative.
 
@@ -27,7 +28,7 @@ Prompt is `Talk to Mayor Vale`; noncombatant remains outside the two-person Part
   normalization and read-only source/raw audit scripts in the same directory.
 - Runtime `game/assets/models/npcs/npc-01.glb`, retained import UID and explicit
   idle/walk linear-loop settings, extracted embedded palette PNG/import record.
-- `NpcRegistry.ENABLED` enables only npc-01; `VISUAL_ASSETS` maps its named GLB.
+- `NpcRegistry.ENABLED` originally enabled only npc-01; N009 also enables npc-02; `VISUAL_ASSETS` maps its named GLB.
   Existing approved `ROWS` retain placement and wrapper identity.
 - `NpcWorldAdapter.build` mounts one transactional `NpcVisualPresenter` under
   `VisualRoot/Presenter`. Failure rejects the candidate location. It never mounts

@@ -1,0 +1,21 @@
+{
+  "npc_id": "npc-02",
+  "triangles": 8317,
+  "vertices": 4366,
+  "bones": 16,
+  "materials": 1,
+  "texture": [
+    32,
+    32
+  ],
+  "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\npc-02.blend",
+  "glb": "D:\\development\\game-dev-blender\\returning-fair-prototype\\game\\assets\\models\\npcs\\npc-02.glb",
+  "idle": "runtime fixed contact",
+  "walk": "review only",
+  "preserved_scene": "RF-RecoveryVessel",
+  "references": [
+    "portraits/npc-02/official-neutral.png",
+    "reference/npc-02/npc_02_idle_sheet.png"
+  ],
+  "identity": "50-year-old archivist, angular mature face, auburn pinned hair/bun, fitted green vest/split skirt, cream puff sleeves, dark stitched bracers, key pendant/brown boots"
+}

@@ -14,7 +14,7 @@ func _run() -> void:
 	_check(startup[0], "production arrival")
 	if not startup[0]: await _finish(); return
 	var room: PrototypeLocation = game.world_host.current_location
-	_check(room.npc_contacts.targets.keys() == ["npc-01"] and room.npc_contacts.presenters.keys() == ["npc-01"], "only Edric activated once")
+	_check(room.npc_contacts.targets.keys() == Array(NpcRegistry.ENABLED) and room.npc_contacts.presenters.keys() == Array(NpcRegistry.ENABLED), "each enabled named person activated once")
 	var target: PrototypeInteractable = room.npc_contacts.targets["npc-01"]
 	var p: NpcVisualPresenter = room.npc_contacts.presenters["npc-01"]
 	_check(target.instance_id == "alderwake-npc-01-contact" and target.prompt == "Talk to Mayor Vale" and target.global_position == Vector3(-.5,0,-1.5), "source identity/approved foot/prompt")
@@ -94,11 +94,11 @@ func _run() -> void:
 	_check((await game.world_host.transition_finished)[0] and original.get_ref() == null, "travel disposes old named presenter")
 	_check(game.world_host.request_transition(NpcRegistry.LOCATION,"alderwake-start").is_empty(), "fixture return request")
 	_check((await game.world_host.transition_finished)[0], "return arrival")
-	_check(game.world_host.current_location.npc_contacts.targets.size() == 1 and game.world_host.current_location.npc_contacts.presenters.size() == 1, "return exactly one")
+	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "return exactly one")
 	game.player_placeholder.state.health=0
 	game.retry_encounter()
 	_check((await game.world_host.transition_finished)[0], "retry arrival")
-	_check(game.world_host.current_location.npc_contacts.targets.size() == 1 and game.world_host.current_location.npc_contacts.presenters.size() == 1, "retry exactly one")
+	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "retry exactly one")
 	await _finish()
 
 func _check(ok: bool, message: String) -> void:

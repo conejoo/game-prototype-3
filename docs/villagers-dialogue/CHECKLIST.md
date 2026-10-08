@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001-N008 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and Edric's ordinary named character slice. N009-N018 remain Pending.
+N001-N009 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and Edric/Helena ordinary named character slices. N010-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -29,7 +29,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N006 | Done | N005 | Safe scene-owned town contacts and real event adapters. |
 | N007 | Done | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
 | N008 | Done | N006, N007 | Edric complete and reachable; first real villager vertical slice. |
-| N009 | Pending | N008 | Helena complete and reachable. |
+| N009 | Done | N008 | Helena complete and reachable. |
 | N010 | Pending | N008 | Maris ordinary dialogue/character integrated with existing recovery counter. |
 | N011 | Pending | N008 | Harlan complete and reachable. |
 | N012 | Pending | N008 | Tess complete and reachable. |
@@ -468,3 +468,55 @@ rows stay unchanged. Raw evidence remains ignored under existing policy. Commit
 identity/tree/status audits stay in the latest local N008 run; resulting identity
 is available in Git history and follow-up report. No unrelated work, push or N009
 implementation.
+
+
+### N009 - 2026-10-08 UTC
+
+Result: Helena Vale/npc-02 at pinned public civic foot(1.5,0,-1.5), source graph/
+six portraits, distinct editable green-costume/auburn-bun/key3D .blend/GLB and
+actual idle/facing lifecycle. Ordinary careful/neighborly introductions, actual
+Moonflower gather/pressed-flower fact/revisit, disabled gifts and exact new-process
+GUI Save/Load verified. Archive-practice/routine preferred entries/outcome tags
+remain deferred/unknown; archive-work stays N016. Walk review-only.
+
+N008/N007 actual delivery and N001/N002 pins inspected. Target began clean at
+d3c827be8e2c62f22f9658178e65b27132f7304e; source remains clean/pinned at
+60c20eb2816e7271fb84afaba286af006ebe3ccf.132 authority hashes/67 outputs exact;
+source/catalog/portraits/pinned geography/schema7/content1 and other assets retained.
+
+Files: named art/authoring/audits/import package; narrow registry/prompt additions;
+npc_02_checks/render/UIDs, Edric current-count and map exact-interaction fixtures;
+package/workflow/README/architecture. All criteria/commands/failed attempts in
+[N009 acceptance](N009_ACCEPTANCE.md). Expanded114556123-0422e90c all21 cases PASS,
+including required rules/content/save/world/interaction/quest/foraging/light/travel/
+map/pipeline/startup and separate synthetic process pair. Visual review then repaired
+hair/shoulder gaps; only Helena GLB changed in811 game/tools files. Final focused
+115317925-63fa57cb all13 cases PASS/import/skin/pipeline/save/startup plus actual
+review/write/read/neighborly/contact. Zero forbidden diagnostics/timeouts/source
+changes. Isolated appdata/localappdata/slots; normal saves untouched.
+
+Final writerPID49780/readerPID22492 compare every old/new durable field/forecast
+exactly through GUI Save/Load and physically revisit two learned public facts.
+Helena731 assertions/120Hz skin poses,196 planted stance/120 blend samples,
+soles0/seams0/stance drift2.3841858e-7m/blend maxstep.020625716m.8317 triangles/
+16 bones/one32x32 packed palette. All50 final captures inspected with six sheets
+and full-size source/face/profile/portrait/fact/ordinary/weather/default-distance
+views. Synthetic review explicitly distinct from ordinary bounded controls.
+GLB535064fca54d1fe6714c72f826cd7f56208f0f06de34fe469e4eb9fe0b9dd284;
+.blend47445d2a0bb907ed8a5694b9b1962669d403dad9ec04d442616d9d227e521a99.
+
+Final source/diff/link/status/process audits retained. All owned engines/helpers
+exited; original Blender scene/file and Edric preserved, owned Helena available.
+No blocker/remaining N009 criterion, commit/push or successor work. Exactly N009
+completed; stop. Remaining N010,N011,N012,N013,N014,N015,N016,N017,N018;
+next eligible N010. All checklist items through N018 are not complete.
+
+
+### N009 authorized commit follow-up - 2026-10-08 UTC
+
+User authorized committing successful N009 changes, acceptance/checklist/durable
+state and task package/discovery documentation. Accepted runtime/art bytes and
+status rows remain unchanged. Preflight verified all27 task paths, no unrelated
+work, exact final811-file manifest and GLB/.blend hashes. Raw evidence remains
+ignored; commit scope/identity/tree/status audits are in the latest local N009
+run. No push or N010 implementation. Commit identity is in Git history/report.

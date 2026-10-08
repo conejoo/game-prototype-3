@@ -52,6 +52,7 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			presenter.face_direction(entry.approach-entry.foot)
 			presenters[id] = presenter
 			if id == "npc-01": target.prompt = "Talk to Mayor Vale"
+			if id == "npc-02": target.prompt = "Talk to Archivist Vale"
 	return []
 
 func sync_visuals(holds: Dictionary, speaker: String, player_foot: Vector3) -> void:

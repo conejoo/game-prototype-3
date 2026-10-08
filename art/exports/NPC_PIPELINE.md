@@ -137,3 +137,9 @@ IDs/body transforms/capsule, invalid replacement rollback and travel disposal.
 Existing static asset checks and startup remain required regressions. No ordinary
 eight-person route, final named art, native package or semantic-action claim belongs
 to this review. See [N007 acceptance](../../docs/villagers-dialogue/N007_ACCEPTANCE.md).
+
+
+Current named deliveries: [Edric](NPC_01_PACKAGE.md) and [Helena](NPC_02_PACKAGE.md)
+are enabled after N008/N009; historical empty-activation/calibration evidence above
+retains its original N007 scope. Fixed runtime idle and review-only walk retain the
+same export/presenter contract; semantic actions remain N016.

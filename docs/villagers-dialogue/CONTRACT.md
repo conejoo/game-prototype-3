@@ -399,3 +399,24 @@ reusable interfaces are in [NPC_01_PACKAGE](../../art/exports/NPC_01_PACKAGE.md)
 Only the source-authored preference becomes known; public-role/river-fishing facts
 remain undisclosed. Schema7/content1 and all prior manual-save/geometry boundaries
 are retained. N009-N018 remain unfinished; N009 is next eligible.
+
+
+## N009 delivered Helena boundary (2026-10-08 UTC)
+
+Current NpcRegistry.ENABLED is exactly npc-01/npc-02, superseding historical
+single-person activation above. Helena's named GLB mounts under the same
+transactional VisualRoot presenter at public civic foot(1.5,0,-1.5), approach
+(2.5,0,-1.5), exact source prompt Talk to Archivist Vale. Her source graph and
+six portraits stay unchanged; independent noncombatant physics/navigation/lifecycle
+stay outside visuals. No new party/actor state or save field.
+
+Ordinary introduction discloses npc-02-public-role; actual committed Moonflower
+gathering gates npc-02-moonflower-pressing once. Both introduction alternatives
+retain their mutually exclusive source flags/receipts/affinity. Archive-practice
+remains unknown; two routine preferred entries/all five routine outcomes remain
+explicitly deferred. No archive-work, daily suppression, ledger jump, private
+household disclosure or interior is invented. Idle ordinary, walk review-only;
+source archive-work belongs to N016. Exact manual new-process GUI restart and
+all common acceptance are in [N009 acceptance](N009_ACCEPTANCE.md) and
+[NPC_02_PACKAGE](../../art/exports/NPC_02_PACKAGE.md). Schema7/content1, source
+pins, portrait pixels, geography and prior features remain unchanged.

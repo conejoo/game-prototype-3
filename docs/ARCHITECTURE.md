@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N008 ordinary Edric contact/art.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N009 ordinary Edric/Helena contacts/art.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -977,3 +977,16 @@ final passing cases, all-eight synthetic physical contacts/10,131 path samples,
 existing lamp/resource arbitration, actual viewport gather event assertions, exact
 manual restore and separate-process restart. Character activation/art/ordinary routes
 and new native packaging retain their later gates. N007 is next eligible.
+
+
+## N009 named Helena delivery (2026-10-08 UTC)
+
+Current production activation is npc-01/npc-02. Helena's source graph/portraits and
+approved public civic foot are bound to one scene-owned noncombatant wrapper,
+custom editable3D skin and existing presenter/facing/hold owners. Introduction and
+actual Moonflower gathering disclose only her two enabled public facts. Archive
+preferred entries/outcomes and archive-practice disclosure remain deferred; no
+routine controller, private home/interior or work action is simulated. Manual
+schema7/content1 persistence preserves independent memory with existing durable
+facts. [N009 acceptance](villagers-dialogue/N009_ACCEPTANCE.md) records ordinary
+branches/gather/revisit/new-process GUI restart and physical/art/regression proof.
