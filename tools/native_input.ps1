@@ -9,32 +9,16 @@ Set-StrictMode -Version Latest
 
 # Native input only. No Godot bridge, game-state commands or UI Automation.
 $projectRoot = Split-Path $PSScriptRoot -Parent
-$expectedExecutable = [IO.Path]::GetFullPath((Join-Path $projectRoot 'builds/windows/ReturningFair.exe'))
-$target = Get-Process -Id $TargetProcessId
-if ($target.Path -ne $expectedExecutable) { throw 'Target is not this project release executable.' }
+. (Join-Path $PSScriptRoot 'native_input_commands.ps1')
 . (Join-Path $PSScriptRoot 'testing_paths.ps1')
 $outputPath = Resolve-NativeEvidenceDirectory $projectRoot $OutputDirectory
 $request = Get-Content -LiteralPath $CommandFile -Raw | ConvertFrom-Json
-$steps = @($request.steps)
-if ($steps.Count -lt 1 -or $steps.Count -gt 32) { throw 'Expected 1-32 steps.' }
-$allowedKeys = @{ W=0x57; A=0x41; S=0x53; D=0x44; E=0x45; J=0x4A; SPACE=0x20; ESC=0x1B; R=0x52; F10=0x79; TAB=0x09; ENTER=0x0D }
-$totalMs = 0
-foreach ($step in $steps) {
-    if ($step.op -notin @('hold','wait','pointer','click','capture','quit')) { throw "Unknown operation: $($step.op)" }
-    if ($step.op -in @('hold','wait')) {
-        if ($step.duration_ms -lt 16 -or $step.duration_ms -gt 5000) { throw 'Duration must be 16-5000ms.' }
-        $totalMs += $step.duration_ms
-    }
-    if ($step.op -eq 'hold') {
-        if (@($step.keys).Count -lt 1 -or @($step.keys).Count -gt 4) { throw 'Hold requires 1-4 keys.' }
-        foreach ($key in $step.keys) { if (-not $allowedKeys.ContainsKey($key)) { throw "Key not allowed: $key" } }
-        if (@($step.keys | Select-Object -Unique).Count -ne @($step.keys).Count) { throw 'Duplicate key.' }
-    }
-    if ($step.op -eq 'capture' -and $step.label -notmatch '^[A-Za-z0-9_-]{1,64}$') { throw 'Invalid capture label.' }
-    if ($step.op -eq 'quit' -and $step -ne $steps[-1]) { throw 'Quit must be final step.' }
-}
-if ($totalMs -gt 30000) { throw 'Request exceeds 30 seconds.' }
+$requestedMs = Assert-NativeInputRequest $request
+$steps = $request.steps
 Assert-NewEvidenceCaptures $outputPath @($steps | Where-Object op -eq 'capture' | ForEach-Object label)
+$expectedExecutable = [IO.Path]::GetFullPath((Join-Path $projectRoot 'builds/windows/ReturningFair.exe'))
+$target = Get-Process -Id $TargetProcessId
+if ($target.Path -ne $expectedExecutable) { throw 'Target is not this project release executable.' }
 New-Item -ItemType Directory -Path $outputPath -Force | Out-Null
 
 if (-not ('ReturningFairNative' -as [type])) {
@@ -124,48 +108,40 @@ public static class ReturningFairNative {
         while (timer.ElapsedMilliseconds < ms) { Guard(); Thread.Sleep((int)Math.Max(1, Math.Min(10, ms - timer.ElapsedMilliseconds))); }
         Guard();
     }
-    public static void Pointer(int x, int y) {
+    public static void ValidatePoint(int x, int y) {
         Guard(); Rect rect; if (!GetClientRect(Window, out rect)) throw new InvalidOperationException("Client rectangle unavailable.");
         if (x < 0 || y < 0 || x >= rect.Right || y >= rect.Bottom) throw new ArgumentOutOfRangeException("Pointer outside client.");
-        var point = new Point { X=x, Y=y }; ClientToScreen(Window, ref point);
+    }
+    public static void Pointer(int x, int y) {
+        ValidatePoint(x, y);
+        var point = new Point { X=x, Y=y };
+        if (!ClientToScreen(Window, ref point)) throw new InvalidOperationException("Client position unavailable.");
         if (!SetCursorPos(point.X, point.Y)) throw new InvalidOperationException("Pointer failed.");
     }
     public static void Mouse(bool up) {
-        if (!up) Guard();
+        if (!up) { Guard(); if ((GetAsyncKeyState(0x01) & 0x8000) != 0) throw new InvalidOperationException("Left mouse button already held."); }
         var input = new Input { Type=0 }; input.Value.Mouse = new MouseData { Flags=up ? 4u : 2u }; Send(input);
     }
 }
 '@
 }
 Add-Type -AssemblyName System.Drawing
-$trace = [Collections.Generic.List[object]]::new()
-$held = [Collections.Generic.List[int]]::new()
-$mouseHeld = $false
 $requestId = [Guid]::NewGuid().ToString('N')
 $timer = [Diagnostics.Stopwatch]::StartNew()
-$failure = $null
+$result = $null
 try {
     [ReturningFairNative]::Attach($TargetProcessId)
-    foreach ($step in $steps) {
-        $started = $timer.Elapsed.TotalMilliseconds
-        switch ($step.op) {
-            'hold' {
-                try {
-                    foreach ($key in $step.keys) { $vk = $allowedKeys[$key]; [ReturningFairNative]::Key($vk, $false); $held.Add($vk) }
-                    [ReturningFairNative]::Wait($step.duration_ms)
-                } finally {
-                    foreach ($vk in $held) { [ReturningFairNative]::Key($vk, $true) }
-                    $held.Clear()
-                }
-            }
-            'wait' { [ReturningFairNative]::Wait($step.duration_ms) }
-            'pointer' { [ReturningFairNative]::Pointer($step.x, $step.y) }
-            'click' {
-                [ReturningFairNative]::Pointer($step.x, $step.y)
-                try { [ReturningFairNative]::Mouse($false); $mouseHeld = $true; [ReturningFairNative]::Wait(50) }
-                finally { if ($mouseHeld) { [ReturningFairNative]::Mouse($true); $mouseHeld = $false } }
-            }
-            'capture' {
+    $result = Invoke-NativeInputSteps $steps {
+        param($operation, $arguments)
+        switch ($operation) {
+            'Guard' { [ReturningFairNative]::Guard() }
+            'ValidatePoint' { [ReturningFairNative]::ValidatePoint($arguments[0], $arguments[1]) }
+            'Key' { [ReturningFairNative]::Key($arguments[0], $arguments[1]) }
+            'Mouse' { [ReturningFairNative]::Mouse($arguments[0]) }
+            'Wait' { [ReturningFairNative]::Wait($arguments[0]) }
+            'WaitForQuit' { Start-Sleep -Milliseconds $arguments[0] }
+            'Pointer' { [ReturningFairNative]::Pointer($arguments[0], $arguments[1]) }
+            'Capture' {
                 [ReturningFairNative]::Guard()
                 $rect = [ReturningFairNative+Rect]::new()
                 if (-not [ReturningFairNative]::GetClientRect([ReturningFairNative]::Window, [ref]$rect)) { throw 'Client capture unavailable.' }
@@ -176,25 +152,28 @@ try {
                 try {
                     $graphics.CopyFromScreen($point.X, $point.Y, 0, 0, $bitmap.Size)
                     [ReturningFairNative]::Guard()
-                    $capturePath = Join-Path $outputPath ($step.label + '.png')
+                    $capturePath = Join-Path $outputPath ($arguments[0] + '.png')
                     $captureStream = [IO.File]::Open($capturePath, [IO.FileMode]::CreateNew, [IO.FileAccess]::Write, [IO.FileShare]::None)
                     try { $bitmap.Save($captureStream, [Drawing.Imaging.ImageFormat]::Png) }
                     finally { $captureStream.Dispose() }
                 } finally { $graphics.Dispose(); $bitmap.Dispose() }
             }
-            'quit' {
-                try { [ReturningFairNative]::Key(0x79, $false); Start-Sleep -Milliseconds 50 }
-                finally { [ReturningFairNative]::Key(0x79, $true) }
-            }
+            default { throw "Unsupported native dispatch: $operation" }
         }
-        $trace.Add(@{ step=$step; elapsed_ms=$timer.Elapsed.TotalMilliseconds-$started; completed_utc=[DateTime]::UtcNow.ToString('o') })
     }
-} catch { $failure = $_.Exception.Message }
+} catch {
+    $result = @{ ok=$false; error=$_.Exception.Message; failed_step=$null; steps=@(); cleanup_errors=@(); unreleased_keys=@(); mouse_unreleased=$false; requested_duration_ms=$requestedMs }
+}
 finally {
-    foreach ($vk in $held) { try { [ReturningFairNative]::Key($vk, $true) } catch {} }
-    if ($mouseHeld) { try { [ReturningFairNative]::Mouse($true) } catch {} }
-    $result = @{ id=$requestId; target_pid=$TargetProcessId; executable=$expectedExecutable; ok=($null -eq $failure); error=$failure; steps=@($trace.ToArray()); elapsed_ms=$timer.Elapsed.TotalMilliseconds }
-    $result | ConvertTo-Json -Depth 12 | Set-Content -LiteralPath (Join-Path $outputPath ($requestId + '.json')) -Encoding utf8NoBOM
+    $result.id = $requestId
+    $result.schema_version = 2
+    $result.target_pid = $TargetProcessId
+    $result.executable = $expectedExecutable
+    $result.elapsed_ms = $timer.Elapsed.TotalMilliseconds
+    $reportStream = [IO.File]::Open((Join-Path $outputPath ($requestId + '.json')), [IO.FileMode]::CreateNew, [IO.FileAccess]::Write, [IO.FileShare]::None)
+    $reportWriter = [IO.StreamWriter]::new($reportStream, [Text.UTF8Encoding]::new($false))
+    try { $reportWriter.Write(($result | ConvertTo-Json -Depth 12)) }
+    finally { $reportWriter.Dispose() }
     $result | ConvertTo-Json -Depth 12
 }
-if ($failure) { exit 1 }
+if (-not $result.ok) { exit 1 }

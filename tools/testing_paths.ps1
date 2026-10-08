@@ -23,14 +23,14 @@ function Resolve-NativeEvidenceDirectory {
     param([Parameter(Mandatory)][string]$ProjectRoot, [Parameter(Mandatory)][string]$OutputDirectory)
     $absolute = Resolve-ProjectChildPath $ProjectRoot $OutputDirectory 'docs/evidence'
     $relative = [IO.Path]::GetRelativePath((Join-Path $ProjectRoot 'docs/evidence'), $absolute).Replace('\','/')
-    if ($relative -notmatch '^(P014|W00[1-9]|W010)/[^/]+(?:/.*)?$') {
-        throw 'Native output must be a run subdirectory of docs/evidence/P014 or W001-W010.'
+    if ($relative -notmatch '^(P014|W00[1-9]|W010|F00[1-9]|F010)/[^/]+(?:/.*)?$') {
+        throw 'Native output must be a run subdirectory of docs/evidence/P014, W001-W010 or F001-F010.'
     }
     return $absolute
 }
 function Assert-NewEvidenceCaptures {
     param([Parameter(Mandatory)][string]$Directory, [AllowEmptyCollection()][string[]]$Labels)
-    if (@($Labels | Select-Object -Unique).Count -ne $Labels.Count) { throw 'Duplicate capture labels.' }
+    if (@($Labels | ForEach-Object { $_.ToUpperInvariant() } | Select-Object -Unique).Count -ne $Labels.Count) { throw 'Duplicate capture labels.' }
     foreach ($label in $Labels) {
         if ($label -notmatch '^[A-Za-z0-9_-]{1,64}$') { throw 'Invalid capture label.' }
         if (Test-Path -LiteralPath (Join-Path $Directory ($label + '.png'))) { throw "Capture would overwrite evidence: $label" }

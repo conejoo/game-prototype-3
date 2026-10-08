@@ -18,6 +18,17 @@ writer/reader journeys pass, including F007 paths beyond the old1800-frame limit
 Skill recipe copies are synchronized/validated; all owned processes exited.
 This tooling request did not select F008 or change feature checklist status.
 
+Separate native-tooling follow-up2026-10-07: [native B/bounded drag helper](../TESTING_NATIVE_INPUT_ACCEPTANCE.md)
+complete. Native input accepts B and atomic client-space drag with per-step/batch
+bounds, full coordinate preflight, guarded motion and explicit release failures.
+F001-F010 run-child evidence routes are supported. Native dispatcher712 assertions
+and exact Win32 interop compilation pass; installed skill/recipe copies match and
+validate. No exported game launch or OS input claim: F010 still requires a fresh
+release and ordinary native gameplay/restart acceptance. Feature status unchanged.
+Combined recheck: native715/infrastructure134 assertions pass after fixing Windows
+case-only capture-label collisions; concurrent runner implementation and all three
+installed skill files remain intact. See the same acceptance record for evidence.
+
 Rod(-6.5,0,15.75) and flower01(26.75,0.25,-2) use approved safe runtime defaults;
 ForagingRegistry authored_foot retains pinned source provenance. Saved explicit
 placements override defaults; collected IDs stay absent. Original geometry blocker

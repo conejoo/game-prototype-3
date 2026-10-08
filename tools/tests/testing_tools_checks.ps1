@@ -8,11 +8,11 @@ function Check([bool]$Condition, [string]$Message) {
     $script:assertions++
     if (-not $Condition) { throw $Message }
 }
-foreach ($task in @('P014','W001','W006','W010')) {
+foreach ($task in @('P014','W001','W006','W010','F001','F007','F010')) {
     $path = Join-Path $projectRoot "docs/evidence/$task/native-future"
     Check ((Resolve-NativeEvidenceDirectory $projectRoot $path) -eq [IO.Path]::GetFullPath($path)) "accepted native $task"
 }
-foreach ($relative in @('W000/run','W011/run','W006','W006-sibling/run','P014-sibling/run','W006/../../outside/run','../../outside/run')) {
+foreach ($relative in @('W000/run','W011/run','W006','W006-sibling/run','P014-sibling/run','W006/../../outside/run','../../outside/run','F000/run','F011/run','F010','F010-sibling/run')) {
     $rejected = $false
     try { $null = Resolve-NativeEvidenceDirectory $projectRoot (Join-Path $projectRoot "docs/evidence/$relative") } catch { $rejected = $true }
     Check $rejected "unsafe native path accepted: $relative"
@@ -41,10 +41,11 @@ function Run-Fixture([string[]]$Arguments) {
     $exitCode = $LASTEXITCODE
     $reportLine = @($lines | Where-Object { $_ -like 'REPORT=*' })[-1]
     $report = Get-Content -LiteralPath $reportLine.Substring(7) -Raw | ConvertFrom-Json
-    return @{report=$report; exit=$exitCode; path=$reportLine.Substring(7)}
+    return @{report=$report; exit=$exitCode; path=$reportLine.Substring(7); output=$lines}
 }
 $absent = Run-Fixture @('-Names','fixtures/testing_tools/pass,absent_check')
 Check ($absent.exit -eq 1 -and $absent.report.cases.Count -eq 0 -and $absent.report.error -like '*absent*') 'all names must preflight before any launch'
+Check (@($absent.output | Where-Object { $_ -like 'RUN_FAILURE=*absent*' }).Count -eq 1) 'preflight error absent from console'
 $unsafe = Run-Fixture @('-Names','../app/game_root')
 Check ($unsafe.exit -eq 1 -and $unsafe.report.cases.Count -eq 0) 'traversal name accepted'
 $duplicate = Run-Fixture @('-Names','fixtures/testing_tools/pass,fixtures/testing_tools/pass.gd')
@@ -59,6 +60,23 @@ $passedCase = @($errorRun.report.cases | Where-Object label -eq 'fixtures/testin
 $errorCase = @($errorRun.report.cases | Where-Object label -eq 'fixtures/testing_tools/runtime_error')[0]
 Check ($passedCase.status -eq 'passed') 'pass fixture failed'
 Check ($errorCase.exit_code -eq 0 -and $errorCase.status -eq 'failed' -and $errorCase.diagnostics.Count -gt 0) 'exit-zero runtime error escaped scan'
+Check ($errorCase.failure_summary.message -like '*Intentional runner diagnostic fixture*' -and $errorCase.failure_summary.reason -eq 'diagnostic') 'first diagnostic missing from summary'
+Check ($errorCase.failure_summary.stack.Count -gt 0 -and $errorCase.failure_summary.stack[-1].text -like '*runtime_error.gd*') 'Godot stack missing from summary'
+Check (@($errorRun.output | Where-Object { $_ -like 'CASE_START*label=fixtures/testing_tools/runtime_error *' }).Count -eq 1) 'case start not printed'
+Check (@($errorRun.output | Where-Object { $_ -like 'CASE_END*label=fixtures/testing_tools/runtime_error status=failed*' }).Count -eq 1) 'case result not printed'
+Check (@($errorRun.output | Where-Object { $_ -like 'STACK *runtime_error.gd*' }).Count -gt 0) 'failure stack not printed'
+Check (@($errorRun.output | Where-Object { $_ -like 'FAILURE_LOGS *' -and $_.Contains($errorCase.stderr) }).Count -eq 1) 'failure log paths not printed'
+Check (-not $errorRun.report.source.changed -and $null -eq $errorRun.report.source.error) 'stable source flagged changed'
+Check ($errorRun.report.source.before.sha256 -eq $errorRun.report.source.after.sha256) 'stable run hashes differ'
+$sourceManifest = Get-Content -LiteralPath $errorRun.report.source.before.manifest -Raw | ConvertFrom-Json
+Check ($sourceManifest.files.Count -eq $sourceManifest.file_count -and $sourceManifest.file_count -gt 100) 'source manifest incomplete'
+Check (@($sourceManifest.files | Where-Object path -eq 'game/tests/fixtures/testing_tools/runtime_error.gd').Count -eq 1) 'fixture missing from fingerprint'
+Check (@($sourceManifest.files | Where-Object path -eq 'tools/run_checks.ps1').Count -eq 1) 'runner missing from fingerprint'
+Check (@($sourceManifest.files | Where-Object path -like 'game/.godot/*').Count -eq 0) 'generated import cache fingerprinted'
+foreach ($row in $errorRun.report.cases) {
+    Check ($row.source_before.sha256 -eq $sourceManifest.sha256 -and $row.source_after.sha256 -eq $sourceManifest.sha256) 'case source disagrees with baseline'
+    Check ((Test-Path -LiteralPath $row.source_before.manifest) -and (Test-Path -LiteralPath $row.source_after.manifest)) 'case source manifests missing'
+}
 $fixtureLine = (Get-Content -LiteralPath $passedCase.stdout | Where-Object { $_ -like 'TESTING_FIXTURE=*' })
 $fixture = $fixtureLine.Substring(16) | ConvertFrom-Json
 Check ([IO.Path]::GetFullPath($fixture.user_data).StartsWith($errorRun.report.appdata + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) 'save isolation failed'
@@ -106,6 +124,7 @@ Check ($env:APPDATA -eq $initialAppData -and $env:LOCALAPPDATA -eq $initialLocal
 $hang = Run-Fixture @('-Names','fixtures/testing_tools/hang','-TimeoutSeconds','2')
 $case = @($hang.report.cases | Where-Object label -eq 'fixtures/testing_tools/hang')[0]
 Check ($hang.exit -eq 1 -and $case.timed_out -and $case.status -eq 'timeout') 'timeout not recorded'
+Check ($case.failure_summary.reason -eq 'timeout' -and $case.failure_summary.message -like '*2s timeout*') 'timeout explanation missing'
 Check ($null -eq (Get-Process -Id $case.launcher_pid -ErrorAction SilentlyContinue)) 'owned launcher still alive'
 foreach ($engineId in $case.engine_pids) { Check ($null -eq (Get-Process -Id $engineId -ErrorAction SilentlyContinue)) 'owned engine still alive' }
 Check ((Test-Path -LiteralPath $case.stdout) -and (Test-Path -LiteralPath $case.stderr)) 'timeout logs missing'
@@ -166,7 +185,8 @@ try {
     }
     Check $observed 'stdout unavailable until exit'
     Check ($streamProcess.WaitForExit(20000) -and $streamProcess.ExitCode -eq 0) 'stream fixture failed'
-    $null = $rest.GetAwaiter().GetResult()
+    $remainingOutput = $rest.GetAwaiter().GetResult()
+    Check ($remainingOutput.Contains('CASE_RUNNING label=fixtures/testing_tools/stream')) 'running heartbeat missing'
     $done = Get-Content -LiteralPath $livePath -Raw | ConvertFrom-Json
     Check ((Get-Content -LiteralPath $done.cases[-1].stdout -Raw) -like '*LIVE_LOG_FINISHED*') 'final streamed output lost'
 } finally {

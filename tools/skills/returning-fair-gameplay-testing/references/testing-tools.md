@@ -51,6 +51,70 @@ flush line by line while the case runs. Inspect those files during a stall. A fo
 diagnostic starts a short 250ms trace-drain window, then kills the owned process tree
 if still running. `stopped_on_diagnostic` distinguishes early failure from timeout.
 Final pipe drains retain stack traces/output even on failed checks.
+Atomic report replacement retries transient Windows reader locks for at most one
+second; persistent publication errors still fail rather than dropping observations.
+
+Console progress uses `CASE_START` (index, label, timeout and live log paths),
+`CASE_RUNNING` every five seconds during engine execution, and `CASE_END` (status,
+elapsed time and exit code). These messages do not enter the runner's boolean
+case return value. `CASE_DIAGNOSTIC` exposes the first forbidden diagnostic during
+execution. On failure, `CASE_FAILURE`, available `ASSERTION` and `STACK` lines,
+or a bounded `LOG_TAIL`, plus `FAILURE_LOGS`, make the cause reviewable without
+opening every log. `RUN_FAILURE` covers preflight/run errors too. Existing
+`RUN_REPORT`, `REPORT` and `RESULT` markers remain unchanged.
+
+Each failed case's additive schema-2 `failure_summary` includes reason/message,
+available failed_assertion, the first diagnostic's context (up to 24 lines per
+stream), available stack entries and the last eight lines per stream, with
+one-based line numbers and stdout/stderr paths. Assertion text is extracted when
+the engine/fixture labels it as an assertion; ordinary push_error failures remain
+the first diagnostic rather than an invented assertion. Full logs remain authoritative
+when several failures or longer stacks exceed the bounded summary. Timeout and
+nonzero exits also get summaries; no error-scan allowance or exit rule changes.
+
+## Tested source identity
+
+The runner hashes every file under `game/` and `tools/`, including untracked source,
+assets, fixture scripts, support tools and skill recipes. Directory exclusions:
+`.godot`, `__pycache__`, `.git`; extension exclusions: `.pyc`, `.pyo`. Links in
+the remaining source scope are refused rather than hashed through another checkout.
+Evidence, staging, docs and other paths outside these two scopes are not included.
+If a scenario depends on additional external inputs, retain their hashes separately.
+
+Before dependency discovery/engine launch, `source-before.json` records sorted
+project-relative paths and their SHA256 byte hashes, scope/exclusions and capture
+time. Aggregate SHA256 hashes ordinal `path<TAB>hash<LF>` entries, independent of
+mtime, machine path and Git state. `source-after.json` repeats this at run completion.
+Results `source.before/after` point to these manifests and expose digest/file count.
+`source.git` records optional HEAD/dirty/status context using command-local safe.directory;
+Git absence does not prevent content hashing or alter Git configuration.
+
+Every case records `source_before/after` and its own manifest paths. Compare each
+checkpoint with the baseline: additions, removals and changed bytes produce
+`SOURCE_CHANGED` messages and `source_changes` containing relative paths and old/new
+hashes. The run latches `source.changed=true`, retains checkpointed changes, fails
+even if the engine exited zero, and stops all subsequent checks and dependent
+process/render phases. Hashing failures set `source.error` and fail closed.
+Finish source edits, then rerun; never relabel changed-source evidence as a pass.
+Import can generate new `.uid`/import-settings files in scope, so its first run may
+invalidate itself; inspect those additions and rerun after generation settles.
+
+These are before/after observations, not an immutable checkout or a continuous
+filesystem monitor. An edit reverted entirely between checkpoints can escape
+detection. Keep source stable during verification; the recorded hashes identify
+observed bytes, not proof of every resource loaded at every instant.
+
+Tool verification:
+
+```powershell
+./tools/tests/testing_runner_observation_checks.ps1
+./tools/tests/testing_tools_checks.ps1
+```
+
+The observation suite temporarily creates only unique fixture sentinels, edits them
+while an owned engine runs, checks invalidation/phase gating, then removes its own
+files. Run it without concurrent acceptance runs; its deliberate edits must invalidate
+other runs sharing this checkout too.
 
 Runtime `SCRIPT ERROR`, `ERROR:` and `WARNING:` fail even with exit 0. Only the exact
 installed editor-import diagnostic `.NET Sdk not found...10.0.9` is recorded as an

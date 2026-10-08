@@ -15,6 +15,7 @@ param(
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 . (Join-Path $PSScriptRoot 'testing_paths.ps1')
+. (Join-Path $PSScriptRoot 'testing_runner_observation.ps1')
 if (-not ('GodotLogPump' -as [type])) { Add-Type -Path (Join-Path $PSScriptRoot 'godot_log_pump.cs') }
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $runId = [DateTime]::UtcNow.ToString('yyyyMMdd-HHmmssfff') + '-' + [Guid]::NewGuid().ToString('N').Substring(0,8)
@@ -25,11 +26,32 @@ $appData = Join-Path $staging 'appdata'
 $localData = Join-Path $staging 'localappdata'
 New-Item -ItemType Directory -Path $appData,$localData | Out-Null
 $reportPath = Join-Path $runDirectory 'results.json'
-$report = [ordered]@{schema_version=2; task=$Task; run_id=$runId; cwd=$projectRoot; engine_path=$EnginePath; engine_version=$null; appdata=$appData; localappdata=$localData; save_groups=@(); started_utc=[DateTime]::UtcNow.ToString('o'); finished_utc=$null; status='running'; error=$null; cases=@()}
+$report = [ordered]@{schema_version=2; task=$Task; run_id=$runId; cwd=$projectRoot; engine_path=$EnginePath; engine_version=$null; appdata=$appData; localappdata=$localData; save_groups=@(); source=[ordered]@{before=$null; after=$null; git=$null; changed=$false; changes=@(); error=$null}; started_utc=[DateTime]::UtcNow.ToString('o'); finished_utc=$null; status='running'; error=$null; cases=@()}
+$sourceBaseline = $null
 function Write-RunReport {
     $temporary = $reportPath + '.tmp'
     [IO.File]::WriteAllText($temporary, ($report | ConvertTo-Json -Depth 30), [Text.UTF8Encoding]::new($false))
-    [IO.File]::Move($temporary, $reportPath, $true)
+    # Windows readers may briefly hold the destination without delete sharing.
+    # Keep publication atomic; retry the same staged bytes for at most one second.
+    $publishWait = [Diagnostics.Stopwatch]::StartNew()
+    while ($true) {
+        try { [IO.File]::Move($temporary, $reportPath, $true); break }
+        catch [IO.IOException] {
+            if ($publishWait.Elapsed.TotalSeconds -ge 1) { throw }
+            Start-Sleep -Milliseconds 25
+        } catch [UnauthorizedAccessException] {
+            if ($publishWait.Elapsed.TotalSeconds -ge 1) { throw }
+            Start-Sleep -Milliseconds 25
+        }
+    }
+}
+function Record-SourceChanges($Changes, [string]$Checkpoint) {
+    if ($Changes.Count -eq 0) { return }
+    $report.source.changed = $true
+    foreach ($change in $Changes) {
+        $report.source.changes += [ordered]@{checkpoint=$Checkpoint; path=$change.path; change=$change.change; before_sha256=$change.before_sha256; after_sha256=$change.after_sha256}
+        [Console]::WriteLine("SOURCE_CHANGED checkpoint=$Checkpoint change=$($change.change) path=$($change.path)")
+    }
 }
 function Resolve-CheckScript([string]$Name) {
     $clean = $Name.Trim() -replace '\.gd$',''
@@ -89,9 +111,10 @@ function Invoke-OwnedGodot([string]$Label, [string[]]$EngineArguments, [bool]$Is
     $safeLabel = $report.cases.Count.ToString('D2') + '-' + $Label.Replace('/','-')
     $caseAppData = if ($SaveGroup) { $SaveGroup.appdata } else { $appData }
     $caseLocalData = if ($SaveGroup) { $SaveGroup.localappdata } else { $localData }
-    $row = [ordered]@{label=$Label; arguments=$EngineArguments; save_group=$(if ($SaveGroup) {$SaveGroup.id} else {$null}); save_slot=$(if ($SaveGroup) {$SaveGroup.save_slot} else {$null}); appdata=$caseAppData; localappdata=$caseLocalData; launcher_pid=$null; engine_pids=@(); exit_code=$null; timed_out=$false; stopped_on_diagnostic=$false; evidence_directory=$EvidenceDirectory; mode=$(if ($EngineArguments -contains '--headless') {'headless'} else {'rendered-debug'}); status='running'; stdout=(Join-Path $runDirectory "$safeLabel.stdout.log"); stderr=(Join-Path $runDirectory "$safeLabel.stderr.log"); diagnostics=@(); allowed_diagnostics=@(); error=$null; started_utc=[DateTime]::UtcNow.ToString('o'); finished_utc=$null}
+    $row = [ordered]@{label=$Label; arguments=$EngineArguments; save_group=$(if ($SaveGroup) {$SaveGroup.id} else {$null}); save_slot=$(if ($SaveGroup) {$SaveGroup.save_slot} else {$null}); appdata=$caseAppData; localappdata=$caseLocalData; launcher_pid=$null; engine_pids=@(); exit_code=$null; timed_out=$false; stopped_on_diagnostic=$false; evidence_directory=$EvidenceDirectory; mode=$(if ($EngineArguments -contains '--headless') {'headless'} else {'rendered-debug'}); status='running'; stdout=(Join-Path $runDirectory "$safeLabel.stdout.log"); stderr=(Join-Path $runDirectory "$safeLabel.stderr.log"); diagnostics=@(); allowed_diagnostics=@(); source_before=$null; source_after=$null; source_changes=@(); failure_summary=$null; error=$null; started_utc=[DateTime]::UtcNow.ToString('o'); finished_utc=$null}
     $report.cases += $row
     Write-RunReport
+    [Console]::WriteLine("CASE_START index=$($report.cases.Count) label=$Label timeout=${TimeoutSeconds}s stdout=$($row.stdout) stderr=$($row.stderr)")
     $process = [Diagnostics.Process]::new()
     $started = $false
     $stdoutTask = $null
@@ -102,10 +125,20 @@ function Invoke-OwnedGodot([string]$Label, [string[]]$EngineArguments, [bool]$Is
         $line = ''
         while ($diagnostics.TryDequeue([ref]$line)) {
             if ($IsImport -and $line.Trim() -eq "ERROR: .NET Sdk not found. The required version is '10.0.9'.") { $row.allowed_diagnostics += $line }
-            else { $row.diagnostics += $line }
+            else {
+                if ($row.diagnostics.Count -eq 0) { [Console]::WriteLine("CASE_DIAGNOSTIC label=$Label message=$line") }
+                $row.diagnostics += $line
+            }
         }
     }
     try {
+        try {
+            $before = Get-RunnerSourceSnapshot $projectRoot
+            $row.source_before = Save-RunnerSourceSnapshot $before (Join-Path $runDirectory "$safeLabel.source-before.json")
+        } catch { $report.source.error = $_.Exception.Message; throw }
+        $row.source_changes = @(Compare-RunnerSourceSnapshots $sourceBaseline $before)
+        Record-SourceChanges $row.source_changes "$Label-before"
+        if ($row.source_changes.Count -gt 0) { throw 'Source changed before launch; rerun against stable source.' }
         $info = [Diagnostics.ProcessStartInfo]::new()
         $info.FileName = $EnginePath
         $info.WorkingDirectory = $projectRoot
@@ -126,9 +159,14 @@ function Invoke-OwnedGodot([string]$Label, [string[]]$EngineArguments, [bool]$Is
         $stderrTask = [GodotLogPump]::CopyAsync($process.StandardError, $row.stderr, $diagnostics)
         # Record only descendants of the exact process we just created.
         $lifetime = [Diagnostics.Stopwatch]::StartNew()
+        $nextProgress = 5.0
         if ([IO.Path]::GetFileName($EnginePath) -notlike '*_console.exe') { $row.engine_pids = @($process.Id) }
         while (-not $process.WaitForExit(250)) {
             Read-Diagnostics
+            if ($lifetime.Elapsed.TotalSeconds -ge $nextProgress) {
+                [Console]::WriteLine("CASE_RUNNING label=$Label elapsed=$([Math]::Round($lifetime.Elapsed.TotalSeconds,1))s timeout=${TimeoutSeconds}s")
+                $nextProgress = $lifetime.Elapsed.TotalSeconds + 5.0
+            }
             if ($row.diagnostics.Count -gt 0) {
                 if ($null -eq $fatalAt) { $fatalAt = $lifetime.Elapsed.TotalSeconds; Write-RunReport }
                 # Leave a short drain window for the diagnostic's stack trace.
@@ -155,9 +193,23 @@ function Invoke-OwnedGodot([string]$Label, [string[]]$EngineArguments, [bool]$Is
         if ($stderrTask) { $null = $stderrTask.GetAwaiter().GetResult() }
         Read-Diagnostics
         $process.Dispose()
+        try {
+            $after = Get-RunnerSourceSnapshot $projectRoot
+            $row.source_after = Save-RunnerSourceSnapshot $after (Join-Path $runDirectory "$safeLabel.source-after.json")
+            $changes = @(Compare-RunnerSourceSnapshots $sourceBaseline $after)
+            $row.source_changes += $changes
+            Record-SourceChanges $changes "$Label-after"
+            if ($row.source_changes.Count -gt 0) { $row.status = 'failed'; $row.error = 'Source changed during run; evidence is not valid for stable source. Rerun after edits stop.' }
+        } catch {
+            $report.source.error = $_.Exception.Message
+            $row.error = "Source verification failed: $($_.Exception.Message)"
+            $row.status = 'failed'
+        }
         $row.finished_utc = [DateTime]::UtcNow.ToString('o')
+        Write-RunnerCaseResult $row $TimeoutSeconds
         Write-RunReport
     }
+    if ($report.source.changed -or $report.source.error) { throw $row.error }
     return $row.status -eq 'passed'
 }
 Write-RunReport
@@ -178,6 +230,14 @@ try {
     if (@($processScriptsResolved | Select-Object -Unique).Count -ne $processScriptsResolved.Count) { throw 'Duplicate process scripts.' }
     if (@($processScriptsResolved | Where-Object { $_ -in $scripts }).Count -gt 0) { throw 'Process scripts must not also run as single-phase checks.' }
     $render = if ($RenderScript) { Resolve-CheckScript $RenderScript } else { $null }
+    try {
+        $sourceBaseline = Get-RunnerSourceSnapshot $projectRoot
+        $report.source.before = Save-RunnerSourceSnapshot $sourceBaseline (Join-Path $runDirectory 'source-before.json')
+    }
+    catch { $report.source.error = $_.Exception.Message; throw }
+    $report.source.git = Get-RunnerGitContext $projectRoot
+    [Console]::WriteLine("SOURCE_BASELINE sha256=$($sourceBaseline.sha256) files=$($sourceBaseline.file_count) manifest=$($report.source.before.manifest)")
+    Write-RunReport
     $parse = @(Get-ParseClosure (@($scripts) + @($processScriptsResolved) + @($render | Where-Object { $_ }) + @($ParseScripts | ForEach-Object { $_ -split ',' } | ForEach-Object { Resolve-ParseScript $_ })))
     $report['parse_scripts'] = $parse
     $harness = @('extends SceneTree')
@@ -217,8 +277,20 @@ try {
     $report.error = $_.Exception.Message
     $report.status = 'failed'
 } finally {
+    if ($null -ne $sourceBaseline) {
+        try {
+            $finalSource = Get-RunnerSourceSnapshot $projectRoot
+            $report.source.after = Save-RunnerSourceSnapshot $finalSource (Join-Path $runDirectory 'source-after.json')
+            Record-SourceChanges @(Compare-RunnerSourceSnapshots $sourceBaseline $finalSource) 'run-final'
+        } catch { $report.source.error = $_.Exception.Message }
+        if ($report.source.changed -or $report.source.error) {
+            $report.status = 'failed'
+            if (-not $report.error) { $report.error = if ($report.source.error) {"Source verification failed: $($report.source.error)"} else {'Source changed during run; rerun against stable source.'} }
+        }
+    }
     $report.finished_utc = [DateTime]::UtcNow.ToString('o')
     Write-RunReport
+    if ($report.error) { [Console]::WriteLine("RUN_FAILURE=$($report.error)") }
     Write-Output ("REPORT=" + $reportPath)
     Write-Output ("RESULT=" + $report.status)
 }

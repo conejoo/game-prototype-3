@@ -1,5 +1,14 @@
 # Testing tools follow-up
 
+2026-10-07 follow-up: [native backpack and bounded rod drag](TESTING_NATIVE_INPUT_ACCEPTANCE.md)
+adds B, atomic client-space drag, full coordinate preflight, explicit release-failure
+reports and F001-F010 run evidence routes. Dispatcher715 and infrastructure134
+assertions pass; fresh exported gameplay remains F010 work.
+
+2026-10-07 follow-up: [runner diagnostics and source fingerprints](TESTING_RUNNER_OBSERVATION_ACCEPTANCE.md)
+adds case progress, bounded failure/stack summaries and per-case source manifests.
+Observed source changes invalidate evidence and stop subsequent checks/phases.
+
 2026-10-07 follow-up: [save isolation and startup-safe repositories](TESTING_SAVE_ISOLATION_ACCEPTANCE.md)
 gives independent checks their own save groups and keeps restart phases explicitly shared.
 

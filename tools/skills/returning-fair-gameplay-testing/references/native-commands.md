@@ -16,35 +16,59 @@ coordinates: never reuse its old PID or overwrite its captures.
 Only `<project>/builds/windows/ReturningFair.exe` is currently allowed. It must
 match the PID's actual executable, and exactly one release-owned game window must
 exist. Unlock/Default desktop and foreground checks precede input; loss of focus
-stops waits. Key/mouse releases run in finally on normal errors; forced process
-termination can bypass cleanup. Do not mix human input with a timed batch.
+stops waits and drag motion. Only successfully acquired keys/buttons are released
+in finally, even after focus loss. Cleanup attempts every owned input and retries
+failed releases once at the request boundary. Failed releases fail the request and
+remain visible in its report; OS rejection or forced termination can prevent release.
+Already-held keys/left button are refused without releasing human-owned input.
+Do not mix human input with a timed batch.
 
 Current output guard accepts only run subdirectories of `docs/evidence/P014` or
-`docs/evidence/W001` through `W010`. Task roots, sibling prefixes, path traversal
+`docs/evidence/W001` through `W010`, or `F001` through `F010`. Task roots, sibling prefixes, path traversal
 outside those roots and existing junction/symlink ancestors are rejected. Use a
 fresh task/run directory; do not overwrite historical captures. Pure guard tests
-live in `tools/tests/testing_tools_checks.ps1`. Executable/PID/window/desktop/focus
+live in `tools/tests/testing_tools_checks.ps1` and `tools/tests/native_input_checks.ps1`.
+The latter also checks bounded dispatch and injected cleanup failures without OS input.
+Executable/PID/window/desktop/focus
 and finally input-release checks remain mandatory.
 Do not remove target/focus/path checks or silently substitute an old release for
 current project source. Verify or rebuild the intended executable before testing it.
 
-Request JSON has `steps`: 1-32 operations, summed requested holds/waits <=30000ms.
-Individual durations are16-5000ms; captures/startup/input overhead add real time.
+Request JSON has only `steps`: an array of 1-32 operations. Summed requested
+hold/wait/drag durations plus fixed50ms click/quit waits must be <=30000ms.
+Individual hold/wait/drag durations are integer16-5000ms; captures/startup/input
+overhead add real time. Reject unknown/missing fields, numeric strings, fractional
+numbers, booleans, duplicate keys/labels and out-of-range coordinates before input.
+All request coordinates are checked against the actual client before acquiring any
+input, then checked again during motion. Coordinates are integer0-32767 and must
+lie within the current client; they are not desktop coordinates.
 
 | Operation | Fields |
 | --- | --- |
-| hold | keys array, duration_ms; keys W/A/S/D/E/J/SPACE/ESC/R/F10/TAB/ENTER, up to4 |
+| hold | keys array, duration_ms; keys W/A/S/D/E/J/B/SPACE/ESC/R/F10/TAB/ENTER, up to4 |
 | wait | duration_ms; native foreground guard remains active |
 | pointer | x, y in actual client pixels |
 | click | x, y; normal left-button press/release |
+| drag | from_x, from_y, to_x, to_y, duration_ms; atomic left press, straight interpolated client motion, release |
 | capture | label using1-64 letters/digits/underscore/hyphen; saves PNG |
 | quit | final operation only; normal F10 |
 
 Capture labels must be unique within a request and cannot overwrite an existing PNG.
 Exclusive file creation also prevents overwrites during execution.
 
-Every request creates GUID.json with success/error, exact steps, completed UTC
-timestamps and actual elapsed milliseconds. Inspect emitted PNG files with
+Drag settles the initial press and final preview while holding the button. Integer
+motion waits sum exactly to duration_ms; actual wall time can be longer. There is
+no mouse_down/mouse_up command or held state between requests. A drag releases
+before the next step, including a capture. To inspect an in-progress preview use
+the rendered interaction helper; a native post-drag capture proves only the observed
+post-release state. Input delivery does not prove a valid placement transaction.
+
+Every launched request creates exclusive GUID.json (schema2) with success/error,
+exact steps including the failed step, zero-based failed_step, completed UTC
+timestamps, requested_duration_ms and actual elapsed milliseconds. cleanup_errors,
+unreleased_keys and mouse_unreleased report cleanup failures explicitly. A preflight
+failure before launch throws without sending input; a client-bound failure after
+Attach produces a report with no executed steps. Inspect emitted PNG files with
 view_image. Output success means input/capture execution, not gameplay acceptance.
 
 ## Start isolated release and keep exit evidence
@@ -107,3 +131,34 @@ completion. To prove freezing, compare timer/state in two paused captures with a
 measured interval; never infer it from the requested key duration. To view world
 without an overlay, capture just before pausing in the same short batch and label
 its timing; companion/enemy actions can still occur before pause takes effect.
+
+## Backpack and rod drag recipe
+
+Use a fresh `docs/evidence/F010/<run-id>` child for F010. Verify the intended fresh
+release first: older P014/W builds do not establish current backpack/rod behavior.
+From inspected resumed gameplay, send B, settle, capture; inspect the actual modal
+before selecting inventory/Drop with observed coordinates or Tab/Enter. Close it
+with B/Esc and inspect resumed gameplay before dragging. Do not reuse viewport or
+historical coordinates. The rod must be visible, nearby and reachable.
+
+Once `$rodClientX/$rodClientY` and `$groundClientX/$groundClientY` come from a fresh
+native client capture, a bounded reposition request is:
+
+```powershell
+$steps = @(
+  @{op='drag';from_x=$rodClientX;from_y=$rodClientY;
+    to_x=$groundClientX;to_y=$groundClientY;duration_ms=500},
+  @{op='wait';duration_ms=150},
+  @{op='capture';label='rod-after-release'},
+  @{op='hold';keys=@('ESC');duration_ms=70},
+  @{op='wait';duration_ms=150},
+  @{op='capture';label='rod-paused'}
+)
+# Serialize/invoke using the same command above, with a new request/capture name.
+```
+
+Inspect rod-after-release for actual placement, then verify rod-paused shows the
+pause overlay. Invalid ground should leave the original rod intact. Esc may cancel
+another mode instead of pausing; a successful request is not a pause assertion.
+This recipe and dispatcher checks prepare F010; only a fresh exported release
+journey can complete its native gameplay acceptance.

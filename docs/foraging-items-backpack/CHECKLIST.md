@@ -192,6 +192,8 @@ mutation substituted for native proof. Fresh controls documented; no publication
 Checks: review tools/weather_lighting/build_packages.py/package_audit.gd for W-specific
 assumptions before reuse; extend local audit for items. Native helper explicitly
 supports B/bounded drag before use; never weaken focus/pause/provenance guards.
+Tooling support is implemented and checked in [native helper acceptance](../TESTING_NATIVE_INPUT_ACCEPTANCE.md);
+F010 must still verify it in the fresh release and complete all native gameplay criteria.
 Tracked F010 acceptance; parent README/state completion links updated.
 
 ## Completion records

@@ -120,12 +120,17 @@ A rendered capture is not a Windows export test or a quest completion shortcut.
 
 ## Native release input
 
-`native_input.ps1` sends bounded Windows scan-code key holds and mouse clicks to
+`native_input.ps1` sends bounded Windows scan-code key holds (including B), mouse clicks and atomic drags to
 this project's existing `builds/windows/ReturningFair.exe` only. No game bridge,
 state mutation, installation or source-project change. It verifies the target
 process/window, unlocked input desktop and foreground focus; releases its keys
 and mouse button in `finally`; writes timing/captures only under a run child of
-P014 or W001-W010. Junctions, unsafe paths and capture overwrites are rejected.
+P014, W001-W010 or F001-F010. Junctions, unsafe paths and capture overwrites are rejected.
+`drag` takes integer from_x/from_y/to_x/to_y/duration_ms: left press, interpolated
+client motion, release. Durations16-5000ms and fixed click/quit waits count toward
+the30-second batch budget. Every coordinate is preflighted against the real client
+before input, then rechecked during motion. Cleanup attempts all acquired inputs,
+retries failed releases at request end and records errors/unreleased state.
 See [native command examples](skills/returning-fair-gameplay-testing/references/native-commands.md)
 for reusable instructions. Historical session drivers are optional local archives.
 
@@ -187,4 +192,6 @@ round-trip and exact separate GUI restart/recollect. Live drag screenshots expli
 report unpaused active preview/disabled controls, separate from pause-gated world
 captures. [F007 acceptance](../docs/foraging-items-backpack/F007_ACCEPTANCE.md) owns
 provenance, boundaries and retained failures. This adds no native helper support or
-Windows export claim; F010 must explicitly verify native B/bounded drag support.
+Windows export claim. Native B/bounded drag tooling is now covered by
+`tools/tests/native_input_checks.ps1`; F010 must still verify it in a fresh exported
+release and complete its ordinary gameplay journey.

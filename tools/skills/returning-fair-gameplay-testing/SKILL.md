@@ -45,7 +45,13 @@ diagnostics and cleans only owned PIDs. Read
 [shared testing tools](references/testing-tools.md) for commands and helper contracts.
 Do not bypass a failed runner scan; diagnose its retained stdout/stderr/results.
 Read `RUN_REPORT` and the running case's logs to diagnose a stalled run without
-waiting for timeout. Historical P/M/W task-root destinations are rejected. Use
+waiting for timeout. `CASE_START/RUNNING/END` show progress; failed cases print the
+first diagnostic, available assertion/stack and log paths, with structured details
+in `failure_summary`. Source manifests fingerprint game/tools before and after each
+case. Any observed add/remove/edit invalidates the run and stops later cases/phases;
+finish edits and rerun. Read `source.changed/error` as well as process exits. Hashes
+exclude generated caches and are checkpoint observations, not an atomic snapshot.
+Historical P/M/W task-root destinations are rejected. Use
 TestRunEvidence for report files and consume failures; never route a current check
 to an archived report or loosen output guards to make a legacy fixture pass.
 ## Choose evidence path
@@ -59,6 +65,10 @@ to an archived report or loosen output guards to make a legacy fixture pass.
 - Windows release: actual exported exe+pck from build directory, native
   `tools/native_input.ps1`. The debug bridge is excluded/guarded in release.
   Read [native commands](references/native-commands.md) when using this route.
+  Native B and atomic bounded drag are supported. Use client coordinates from a
+  fresh native capture and a unique F-task/run evidence child; never carry a held
+  button across requests. Check cleanup_errors/unreleased_keys/mouse_unreleased
+  on failures before sending another batch. Helper checks do not complete F010.
 
 Use available purpose-built tools when suitable. Native helper supplies holds when
 the Computer Use API only supplies taps; inspect applicable installed Computer Use
