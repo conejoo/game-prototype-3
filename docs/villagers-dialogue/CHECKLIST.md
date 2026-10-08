@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001-N011 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and Edric/Helena/Maris/Harlan ordinary named character slices. N012-N018 remain Pending.
+N001-N012 Done: reference/content/rules/persistence/portrait UI, contact/events, animated pipeline and Edric/Helena/Maris/Harlan/Tess ordinary named character slices. N013-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -32,7 +32,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N009 | Done | N008 | Helena complete and reachable. |
 | N010 | Done | N008 | Maris ordinary dialogue/character integrated with existing recovery counter. |
 | N011 | Done | N008 | Harlan complete and reachable. |
-| N012 | Pending | N008 | Tess complete and reachable. |
+| N012 | Done | N008 | Tess complete and reachable. |
 | N013 | Pending | N008 | Ivo complete and reachable. |
 | N014 | Pending | N008 | Celia complete and reachable. |
 | N015 | Pending | N008 | Della complete at documented public inn-entry adaptation. |
@@ -625,3 +625,57 @@ statuses remain unchanged. Raw evidence stays ignored under existing policy.
 Fresh commit scope/tree/identity/status audits are retained in the final local
 N011 run. Commit identity is available in Git history and follow-up report.
 No push or N012 implementation.
+
+### N012 - 2026-10-08 UTC
+
+Result: Tess Reed/npc-06 at approved store foot(7.5,0,5), approach(9,0,5),
+source graph/six exact portraits and three public facts. Custom mature oval face,
+wavy chestnut bob/green vest/cream puff sleeves/rust pocket apron/back ties/
+trousers/boots;8496 triangles/16 bones/packed32x32 palette. Idle/facing runtime,
+walk review-only. Fixed modal says purchases/delivery jobs unavailable; no shop,
+wallet, delivery grant, item/quest/trust reward or private disclosure.
+
+Target began clean atb649bff4b2696b3448225ff071c52c91a8fe0bcc; source remains
+clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf.132 authority hashes/67
+runtime outputs exact; other people/art, geometry and schema7/content1 retained.
+Files/interfaces/criterion mapping/commands/isolation/failures in
+[N012 acceptance](N012_ACCEPTANCE.md) and
+[Tess package](../../art/exports/NPC_06_PACKAGE.md).
+
+Expanded133327079-fa6c6628 all28 cases PASS: five named skins, content/rules/save/
+world/pipeline/portraitUI/interaction/quest/foraging/light/travel/map/navigation/
+startup, synthetic independent process pair and rendered phases. Art inspection
+repaired collar/hair then tessellated convex shirt fit; previous assets retained.
+Final asset-focused134014294-9db6bc3e and camera134255839-a0188f39 all10 cases PASS
+each; final test-only middle-fact scroll134537684-0f871f9a all6 rendered cases PASS.
+Production/art unchanged between final three runs; only owning renderer changed.
+835 stable files SHA256a7d73a0e14488e2a3644202f40f6702e60068ce68e124cc3e2ec7a5358f68f04.
+Zero forbidden diagnostics/timeouts/source changes. Fresh per-case/group isolated
+APPDATA/LOCALAPPDATA/named slots; normal saves untouched. All71 final captures
+viewed in six sheets and selected full-size source/skin/portrait/facts/weather/
+gift views;46 strict pause/dialogue provenance records pass.728 owning skin/world,
+384 affected UI and190 final render assertions.
+
+Ordinary writerPID4512/new readerPID42872 GUI Save/Load exact whole typed state/
+forecast; actual source branches/three facts/revisit/store lane round trip.
+NeutralPID57112 passing0 versus careful1, exclusive receipts, public branches at
+zero affinity/level and stale alternate rejection. Complete inventory/collected/
+placed items/quests/effects/trust/progression/actors/party/lights unchanged across
+dialogue; other memories stay empty. Synthetic rule/physical/art proofs distinct
+from ordinary input. No source text drift or geometry refresh.
+Soles0/seams0,196 stance samples drift4.7683716e-7m,120 blend maxstep.012203757m.
+GLB6e27d7fae65165b54530131b4496bab97d06303aae322fc43962e4c696764258;
+.blend8ee329bbac34996895a3aacb56d2e508d5ba962b232478fd09e59fe545699cc6.
+
+All owned engine/helper processes exited; original Blender scene/file preserved,
+owned Tess available. No cleanup/blocker/unrun N012 criterion, commit/push or
+successor implementation. Exactly N012 completed; stop. Remaining N013,N014,
+N015,N016,N017,N018. N013 next eligible; all through N018 not complete.
+
+### N012 commit follow-up - 2026-10-08 UTC
+
+Successful task commit authorized after all N012 acceptance passed. Commit scope
+contains Tess implementation/art, owning checks, concise acceptance summary,
+checklist and durable state. Raw evidence remains local under the existing ignore
+policy. No unrelated changes, push or N013 implementation. Verified commit
+identity is available in Git history and follow-up report.

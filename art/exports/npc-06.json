@@ -1,0 +1,21 @@
+{
+  "npc_id": "npc-06",
+  "triangles": 8496,
+  "vertices": 4429,
+  "bones": 16,
+  "materials": 1,
+  "texture": [
+    32,
+    32
+  ],
+  "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\npc-06.blend",
+  "glb": "D:\\development\\game-dev-blender\\returning-fair-prototype\\game\\assets\\models\\npcs\\npc-06.glb",
+  "idle": "runtime fixed contact",
+  "walk": "review only",
+  "preserved_scene": "RF-RecoveryVessel",
+  "references": [
+    "portraits/npc-06/official-neutral.png",
+    "reference/npc-06/npc_06_idle_sheet.png"
+  ],
+  "identity": "41-year-old store owner, oval mature face, wavy chestnut bob, green waistcoat, rust apron with pocket/pencils/back ties, cream puff sleeves, brown trousers/boots"
+}

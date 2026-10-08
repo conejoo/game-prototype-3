@@ -161,6 +161,8 @@ func present(view: Dictionary, message: String) -> void:
 	if counter_route.visible: focus.append(counter_route)
 	focus.append(close)
 	status.text = message
+	if view.npc_id == "npc-06":
+		status.text += ("\n" if not message.is_empty() else "") + "Conversation only. Purchases and delivery jobs unavailable."
 	for index: int in range(focus.size()):
 		focus[index].focus_next = focus[index].get_path_to(focus[(index + 1) % focus.size()])
 		focus[index].focus_previous = focus[index].get_path_to(focus[(index + focus.size() - 1) % focus.size()])

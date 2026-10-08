@@ -465,3 +465,22 @@ restart, actual dry contact, lamp/rod arbitration and viewed art evidence are in
 [N011 acceptance](N011_ACCEPTANCE.md) and
 [Harlan package](../../art/exports/NPC_04_PACKAGE.md). N012 next eligible;
 N017/N018 retain fresh integrated all-eight/native package acceptance.
+
+## N012 delivered Tess public store boundary (2026-10-08 UTC)
+
+Current activation is exactly npc-01/npc-02/npc-03/npc-04/npc-06. Tess uses
+source alderwake:tess-store-01/store-service-tess-01 foot(944,736), approved
+target(7.5,0,5), approach(9,0,5), instance alderwake-npc-06-contact. Existing
+pinned store anchor/geographic snapshot and neighboring lane remain unchanged.
+Named8496-triangle/16-bone/packed-palette skin mounts under VisualRoot/Presenter;
+one fixed noncombatant, no Party actor/save field. Idle/facing runtime; walk review-only.
+
+Source graph/six portraits and three public facts remain exact. Careful+1/passing0
+introductions exclusive, supplies/help/busy/hobby public branches at zero affinity.
+Fixed modal commerce notice supplements source role text without changing it.
+No functioning purchases, wallet, deliveries, supply grant, quest/trust effect,
+gift transaction, schedule or interior. Strict manual schema7/content1 unchanged.
+[N012 acceptance](N012_ACCEPTANCE.md) and [Tess package](../../art/exports/NPC_06_PACKAGE.md)
+record all criteria, actual ordinary input/exact GUI restart, lane/support/lifecycle
+and inspected art/weather evidence. N013 next eligible; N017/N018 keep final
+integrated all-eight/native gates.

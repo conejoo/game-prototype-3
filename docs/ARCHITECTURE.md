@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N011 ordinary Edric/Helena/Maris/Harlan contacts/art.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N012 ordinary Edric/Helena/Maris/Harlan/Tess contacts/art.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -1009,3 +1009,17 @@ holds/travel/retry and regressions. Returned-fitting segment uses explicit legal
 prerequisite5; guardian/vessel integration is synthetic. Fresh full all-eight/
 recovery/native acceptance stays N017/N018. Idle runtime; walk review-only;
 gifts/commerce/routines unavailable.
+
+## N012 named Tess public store contact (2026-10-08 UTC)
+
+Production activates npc-01/npc-02/npc-03/npc-04/npc-06. Tess uses approved store
+foot(7.5,0,5)/approach(9,0,5), distinct editable3D skin, current presenter/holds,
+exact source graph/six portraits and ordinary independent public memory. Source
+role lines stay exact; Tess-only fixed modal says purchases/delivery jobs unavailable.
+No commerce/wallet/jobs/items/quest/trust effects, geographic refresh or save field.
+
+[N012 acceptance](villagers-dialogue/N012_ACCEPTANCE.md) records zero-affinity
+branches/three facts/revisit/store lane, exact manual new-process GUI restart,
+physical/lifecycle regressions and inspected exported identity/loops/weather.
+Runtime idle/facing; walk review-only. N013 next eligible, full integrated eight-
+person and standalone native acceptance remain N017/N018.
