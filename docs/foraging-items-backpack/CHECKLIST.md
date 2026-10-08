@@ -2,7 +2,7 @@
 
 Goal: peaceful gather/backpack/rod loop in existing 3D Returning Fair prototype.
 Target: `D:/development/game-dev-blender/returning-fair-prototype`.
-Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007 completed2026-10-07; F008 completed2026-10-07; F009 completed2026-10-07; F010 Pending.
+Prepared 2026-10-04, America/Vancouver. F001 completed2026-10-05; F002 completed2026-10-07; F003 completed2026-10-07; F004 completed2026-10-07; F005 completed2026-10-07 after approved relocation; F006 completed2026-10-07; F007 completed2026-10-07; F008 completed2026-10-07; F009 completed2026-10-07; F010 completed2026-10-07.
 Authority: workspace AGENTS.md, [architecture](../ARCHITECTURE.md),
 [CONTRACT.md](CONTRACT.md), actual source/current user work.
 This file owns status; [CURRENT_STATE.md](CURRENT_STATE.md) owns continuation.
@@ -30,7 +30,7 @@ first be created; refine names deliberately and update references together.
 | F007 | Done | F005, F006 | safe rod drop/reposition |
 | F008 | Done | F007 | readable item art/progress/feedback |
 | F009 | Done | F008 | integrated play/restart acceptance |
-| F010 | Pending | F009 | fresh Windows/native acceptance |
+| F010 | Done | F009 | fresh Windows/native acceptance |
 
 ## F001 — Pin source behavior and runtime mapping
 
@@ -448,3 +448,32 @@ repaired and rechecked; full IDs in acceptance. Source status clean, no refresh.
 Every F009 criterion evidenced. All owned processes exited; no editor/cleanup owed.
 Next eligible F010, prerequisites verified; no package/native work started.
 Completed exactly F009; stop before successor.
+
+### F010 — completed2026-10-07, America/Vancouver
+
+[Acceptance](F010_ACCEPTANCE.md) verifies every fresh package/native criterion.
+Added eight reusable external acceptance tools under tools/foraging_items; production
+game/runtime/content/save/input/geography unchanged. Updated workflow checklist/state,
+acceptance and parent discovery/history. Clean initial HEADf643057f1f905e75fe947c4346fb54894ae5bfe0.
+
+Repository-root build_packages.py accepted packages-20261008-032953-90f9b5ad:
+both release/validation export, packed item/assets/schema6/exclusion audit and isolated
+outside-checkout startup/quit PASS. Promoted hashes and archived prior builds recorded.
+Fresh run_checks F01020261008-033128476-26d025f5: six feature suites + application smoke
+PASS; native helper715 assertions/Win32 compile PASS. F009 accepted regressions remain
+applicable: all448 game files exact. Source/reference/geography audit/negative controls
+PASS; read-only source clean, normal saves untouched, installed templates reused.
+
+Corrected native-20261008-verified-cwd writer14748/reader59448 use actual TEMP cwd,
+same fresh isolated APPDATA/LOCALAPPDATA/override. Ordinary all-four gather/backpack/
+Drop/valid-drag/invalid-rollback/recollect/lamp/Maris/guardian/party/travel, GUI Save,
+normal F10 quit, new-PID GUI Load/Save exact whole facts/typed forecast, physical
+flower-origin revisits and unique saved rod recollection PASS. Both original handles
+exit0, diagnostics empty. Final audit PASS105 hashed native captures; nine contact
+sheets/key full-size images inspected. No owned process/editor/held input/cleanup owed.
+First native pair's actual checkout cwd error and corrected failing audit retained;
+full required native procedure repeated outside checkout. Retained pointer miss and
+ESC focus guard stop are explicitly separated from accepted gameplay; guards unchanged.
+
+F001-F010 Done. No remaining criterion or eligible successor. Exactly F010 completed;
+stop. Packages/evidence local ignored; no install, publication, agent or schedule.

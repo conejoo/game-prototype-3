@@ -1,12 +1,18 @@
 # Current prototype state
 
-Updated 2026-10-04. P001-P014 and map M001-M019 complete. Current feature workflow:
-[weather-lighting](weather-lighting/CURRENT_STATE.md), W001-W010 Done, no next item.
+Updated 2026-10-07, America/Vancouver. P001-P014, map M001-M019, weather W001-W010
+and [foraging F001-F010](foraging-items-backpack/CURRENT_STATE.md) Done; no next item.
+[F010 acceptance](foraging-items-backpack/F010_ACCEPTANCE.md) verifies fresh current
+schema6/content1 Windows release/validation packages, actual outside-checkout native
+all-four gathering/backpack/rod/lamp/quest/party/travel and exact GUI Save/new-process
+Load, physical origin revisits and saved rod recollection. Both native quits exit0;
+all criteria verified, no owned process/editor/cleanup owed. Runtime unchanged by F010.
+Historical [weather-lighting](weather-lighting/CURRENT_STATE.md) baseline follows.
 User-requested [testing tools follow-up](TESTING_TOOLS_IMPROVEMENTS.md) adds guarded
 evidence, live diagnostics, dependency parsing, verified GUI outcomes and RenderOnly;
 regressions pass and project/installed skill guidance is synchronized.
 Typed clock/seed/cached forecast now advance through the existing session gate.
-Schema5/content1 retains exact environment time/seed and six validated lantern
+Weather's historical schema5/content1 retained exact environment time/seed and six validated lantern
 overrides; exact v1-v4 migrate without losing prior facts or rewriting files.
 Save/backup/physical rollback and isolated separate-process checks pass.
 One root-owned presenter drives the moving outdoor sun and smooth day/dusk/navy
@@ -44,9 +50,11 @@ were not rebuilt at that settings follow-up; W010 later rebuilt/accepted them.
 
 Playable baseline: larger Alderwake town/river/Moonwood, temporary ally/trust,
 preparation-point Strike upgrade, guardian/vessel recovery, Maris return/fitting
-and service preview, travel and manual saves. Schema5/content1; once-only effects
+and service preview, travel and manual saves. Current schema6/content1; once-only effects
 and stable actor/quest/location IDs. Six other portals stay inactive. Full campaign,
-permanent companion decisions, NPC schedules, shops and inventory remain excluded.
+permanent companion decisions, NPC schedules and shops remain excluded. Current
+foraging adds peaceful flowers,20-slot backpack and movable selectable rod; full
+fishing minigame remains excluded.
 
 M019 verified larger-map Windows exports/startup and genuine fresh native journey,
 GUI Save, quit, independent GUI Load and replay. Durable quest/party/trust/upgrade
@@ -68,9 +76,10 @@ is ignored there. Pause must be observed before inspection between input batches
 Never overwrite normal saves. Keep installed/project testing skill copies aligned.
 
 Local Windows packages live under builds/windows and builds/windows-validation;
-W010 accepts their current weather feature; rebuild before accepting later changes. Outputs remain ignored;
+F010 accepts their current schema6 foraging build; W010 remains historical weather
+schema5 evidence. Rebuild before accepting later changes. Outputs remain ignored;
 unsigned local builds only. Original compact packages/validation saves and raw
-reports stay local. No publication; current weather acceptance belongs to W010.
+reports stay local. No publication; current package/native acceptance belongs to F010.
 
 Repository cleanup (2026-10-04): 8,505 generated evidence files untracked and
 ignored; local archive and pre-cleanup document copies preserved. Compact weather

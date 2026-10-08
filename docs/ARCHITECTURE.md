@@ -1,6 +1,7 @@
 # Returning Fair prototype architecture
 
-Status: implementation contract; runnable Godot prototype through P014 with M015 exterior activation.
+Status: implementation contract; runnable Godot prototype through P014, M019 map,
+W010 weather and F010 foraging/native delivery, current schema6/content1.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -762,8 +763,8 @@ Bridge exposes only read-only hold/inventory/foraging/world wrapper observations
 [F005 acceptance](foraging-items-backpack/F005_ACCEPTANCE.md) proves every cancellation/
 capacity/lifecycle criterion, exact independent-process physical placement reconstruction
 and ordinary rendered WASD all-four/hold/release/GUI Save/new-process Load/revisit.
-Pinned geography/source unchanged; schema6/content1 retained. F006 backpack, F007
-ordinary drop/drag, F008 final art and F009/F010 integration/native remain Pending.
+Pinned geography/source unchanged; schema6/content1 retained. Later F006-F010
+backpack/drop/drag/art/integrated/native gates are now Done; delivery evidence below.
 
 ### Delivered backpack modal and active HUD (F006)
 
@@ -777,7 +778,7 @@ and save ownership unchanged; explicit pause Save/Load after close persists sele
 Bridge supports B and read-only modal/slot/HUD observations. [F006 acceptance](foraging-items-backpack/F006_ACCEPTANCE.md)
 verifies rules/modal conflicts, two window sizes, ordinary keyboard/pointer acquisition/
 selection and exact whole-save independent-process GUI restart. Capacity presentation is
-explicitly detached synthetic. F007 safe drop/drag and later art/native gates remain Pending.
+explicitly detached synthetic. Later F007-F010 placement/art/native gates are now Done.
 
 ### Delivered safe rod placement (F007)
 
@@ -796,8 +797,8 @@ cancels; old pointer release is consumed before fresh world input. Save schema6 
 content1 unchanged; capability binding explains live token1 after candidate revision0.
 [F007 acceptance](foraging-items-backpack/F007_ACCEPTANCE.md) verifies both projections/
 zoom bounds, boundaries, indoor/foreign placement, ordinary loop/travel and exact GUI
-independent-process restart/recollect. F008 art and F009/F010 integrated/native gates
-remain Pending; historical release claims are unchanged.
+independent-process restart/recollect. Later F008-F010 art/integrated/native gates
+are now Done; historical release records remain preserved.
 
 ### Delivered local item art and feedback (F008)
 
@@ -814,7 +815,7 @@ clears stale feedback on fresh E and hides it on modal entry. Existing durations
 commands, input latches and geometry remain authoritative. [F008 acceptance](foraging-items-backpack/F008_ACCEPTANCE.md)
 verifies all four items across day/night/rain, both projections and zoom bounds,
 ordinary gather/backpack/placement/travel and exact GUI independent restarts.
-F009 integrated and F010 fresh native/export remain Pending; historical releases retained.
+F009 integrated and F010 fresh native/export are now Done; historical releases retained.
 
 ### Delivered integrated foraging acceptance (F009)
 
@@ -830,5 +831,24 @@ proof from synthetic capacity/geometry/focus/combat/retry/save fixtures and fres
 art/presentation samples. All affected regressions pass. Inherited companion/quest
 legacy fixtures now omit schema6 fields; production validation remains strict.
 Current runtime/assets/schema6/content1 are unchanged by this acceptance task.
-Fresh standalone Windows/native package delivery remains F010; older package
-history and debug viewport results do not establish that gate.
+Fresh standalone Windows/native package delivery is separately verified by F010
+below; older package history and debug viewport results retain their own scope.
+
+### Delivered fresh Windows/native foraging acceptance (F010)
+
+External tools/foraging_items reuse installed standard templates and existing export
+presets, audit packed schema6/items/icons/meshes/environment/layout/test exclusions,
+and verify standalone startup/quit before promoting local packages. Production
+runtime/content/save/input/geography bytes remain unchanged from accepted F009.
+Historical P014/M019/W010 packages and records are preserved separately.
+
+Corrected native writer/reader use the same verified TEMP cwd outside checkout and
+fresh isolated appdata/override, exported release exe/pck and ordinary guarded Windows
+input. All-four gather/backpack/rod Drop/drag/rollback/recollect, lamp/Maris/party/
+guardian/travel, GUI Save/normal quit/new-PID GUI Load and physical origin revisits
+pass. Whole durable save bytes and packed typed forecast match exactly. No native
+fixture/bridge/mutation/time skip or new gameplay authority. Both original process
+handles record exit0; final audit105 native captures and manual visual review pass.
+[F010 acceptance](foraging-items-backpack/F010_ACCEPTANCE.md) owns hashes, controls,
+criterion table and retained failed attempts, including the fully repeated native
+loop after correcting actual cwd. F001-F010 complete; no successor or cleanup owed.

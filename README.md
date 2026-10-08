@@ -2,9 +2,10 @@
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).
-F001-F009 Done; F010 Pending. [Integrated acceptance](docs/foraging-items-backpack/F009_ACCEPTANCE.md)
+F001-F010 Done; no next task. [Integrated acceptance](docs/foraging-items-backpack/F009_ACCEPTANCE.md)
 verifies ordinary all-four gathering, backpack/rod/lamp/travel, exact independent GUI
-restart and fresh visual/regression checks. Fresh exported/native delivery remains F010.
+restart and fresh visual/regression checks. [Windows/native acceptance](docs/foraging-items-backpack/F010_ACCEPTANCE.md)
+verifies fresh standalone packages, ordinary native controls and exact restart/revisits.
 [Inventory rules acceptance](docs/foraging-items-backpack/F002_ACCEPTANCE.md)
 verifies immutable item/resource content and session-owned20-slot/caps99/1 rules.
 [Atomic command acceptance](docs/foraging-items-backpack/F003_ACCEPTANCE.md) verifies
@@ -22,7 +23,7 @@ colliders without pinned geography changes.
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
 W001-W010 verified Done; no next item. Clock/seed/cached forecast rules run through
 the existing session gate and current schema v6 saves retain environment/light facts.
-W010 package evidence remains historical schema5; F010 will verify this newer item build.
+W010 package evidence remains historical schema5; F010 verifies the current schema6 item build.
 Moving sun and smooth day/dusk/navy-night/dawn lighting now apply outdoors;
 Tollworks keeps its stable indoor profile while the global clock advances.
 All23 exterior sources have independent lamp/window/waylight/net visuals and
@@ -325,12 +326,12 @@ VisualRoots; Godot retains collision/navigation/IDs. Focused checks:
 No further item defined in the prototype checklist. Read
 [current state](docs/CURRENT_STATE.md) before work.
 
-## Local Windows exports (W010 verified)
+## Local Windows exports (F010 verified)
 
 `game/export_presets.cfg`: Windows Desktop (release, tests excluded) and Windows
 Validation (debug, existing review/input test tools). Official standard 4.7.2 template executables
 are extracted under ignored `builds/p014/templates`; pure GDScript needs no C#
-runtime/SDK. Current package/version/hash records: [W010 acceptance](docs/weather-lighting/W010_ACCEPTANCE.md).
+runtime/SDK. Current package/version/hash records: [F010 acceptance](docs/foraging-items-backpack/F010_ACCEPTANCE.md).
 No system template install. From project root, using console executable above:
 
 ```powershell
@@ -339,17 +340,17 @@ No system template install. From project root, using console executable above:
 ```
 
 Keep each `.exe` beside matching `.pck`. Run directly without editor or `--path game`.
-Debug export completed normal slice and restored/revisited progress in new processes.
-Native release full slice, GUI save/process restart/load, replay and room revisit
-passed using project-local Windows SendInput holds; both normal quits exit0.
-Fresh W010 release also passes independent lamps, genuine clock/weather progression,
-exact environment/forecast/party/quest restoration and restored service revisit.
-Raw W010 evidence remains optional local archive; P014/M019 packages and evidence
-preserved. No build published.
+Both fresh packages pass isolated standalone startup/quit and packed schema6/content/
+asset/exclusion audits. Native release verifies all four pickups, B/selection,
+Drop/valid and invalid drag/recollection, lamp/Maris/party/guardian/travel, GUI Save,
+normal quit and a different process GUI Load. Whole-save facts and reconstructed
+forecast match exactly; ordinary origin revisits and restored rod recollection pass.
+Both native normal quits exit0. Historical P014/M019/W010 slice/service/weather
+acceptance and previous packages remain preserved local evidence. No build published.
 
 Current local release directory contains `override.cfg`, isolating validation saves
 under `%APPDATA%/ReturningFair-P014-ReleaseValidation/saves`. Keep it and set separate
-APPDATA/LOCALAPPDATA for each validation session; W010 native tooling records and
+APPDATA/LOCALAPPDATA for each validation session; F010 native tooling records and
 verifies these paths. Normal slot stays untouched. File lives outside source/export tree.
 Without override, release uses normal application directory; it ignores debug
 `--save-slot`. Text-resource conversion is disabled after binary exports lost

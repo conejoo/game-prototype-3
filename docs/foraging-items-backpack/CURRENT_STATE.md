@@ -5,12 +5,13 @@ Updated2026-10-07, America/Vancouver. [CHECKLIST](CHECKLIST.md) owns status;
 
 ## Selection and continuation
 
-F001-F009 Done; F010 Pending. No active task. Next eligible: **F010 — fresh Windows/
-native delivery**. [F009 acceptance](F009_ACCEPTANCE.md) records the ordinary integrated
-all-four/rod/lamp/travel journey, exact separate-process GUI restart, fresh visuals and
-all affected regressions. F010 must export fresh packages and prove ordinary native
-input/restart; debug viewport proof and native-helper tests do not satisfy that gate.
-Completed exactly F009; stop before successor. No automatic agents.
+F001-F010 Done. Active task: none. Next eligible task: none; workflow complete.
+[F010 acceptance](F010_ACCEPTANCE.md) verifies fresh Windows release/validation
+packages and outside-checkout native all-four/backpack/rod/lamp/quest/party/travel,
+exact GUI Save/new-process Load and physical origin revisits/recollection.
+[F009 acceptance](F009_ACCEPTANCE.md) retains integrated viewport, visual and
+affected regression proof. Current invocation completed exactly F010, then stopped.
+No automatic agents or successor.
 
 Separate tooling follow-up2026-10-07: [shared journey helper](../TESTING_JOURNEY_ACCEPTANCE.md)
 complete after `eff156a`. F005/F006/F007 now use reusable TestRunJourney movement/
@@ -582,3 +583,81 @@ no new performance/native/export claim. Historical P/M/W packages retained.
 Next safe action: select F010 only, inspect package audit/build/native helper assumptions,
 make fresh release/validation packages and prove native journey/restart outside checkout.
 F010 remains Pending and was not started. Completed exactly F009; stop.
+
+## Historical F010 progress — completed below
+Initial HEAD f643057f1f905e75fe947c4346fb54894ae5bfe0; worktree clean before status edits. F009 prerequisite evidence/code reviewed. Scope: fresh Windows release/validation packages, packed-item/schema/exclusion audit, bounded native ordinary journey and exact restart outside checkout. No successor task.
+
+F010 live progress: packages-20261008-032953-90f9b5ad passes both exports,
+packed schema6/item/art/test-exclusion audit and standalone startup/quit outside checkout.
+Prior packages archived under builds/foraging-items-backpack/F010/20261008-032953-90f9b5ad/previous-packages.
+Feature runner20261008-033128476-26d025f5 all seven suites/parse/engine PASS; native helper715 PASS.
+Fresh native writer docs/evidence/F010/native-20261008-0330/writer, PID11436,
+launch shell session67607, separate APPDATA/LOCALAPPDATA and verified adjacent override.
+Native walk to rod, E release cancel/fresh pickup, B/Enter tool selection, blocked W/E
+inside bag, GUI Drop, valid native drag, invalid-water rollback and recollect verified.
+10-dropped/12-dragged/14-invalid isolated GUI saves retain exact before/after placement facts.
+Current route: flower01 using existing bounded native walker. Remaining: all three flowers,
+prior lamp/quest/travel/party usability, final world rod Save/quit/new-PID GUI Load/exact
+whole-save restore/revisit, clean logs/capture audit/docs. No criterion falsely marked Done.
+Native helper failure864c0538... saw no desktop window inside sandbox and sent no input;
+escalated retry PASS with cleanup empty. Earlier package audit signature parse and two
+guidance failures retained; no weakening of gameplay/pack/native guards.
+
+F010 writer completed: all four native pickups/selection/Drop/valid drag/invalid-water/
+recollect plus lamp on, Maris lead/journal, guardian defeat (hero100/companion50),
+Tollworks ordinary travel and Alderwake return. Final GUI Save40-final-save.json
+SHA2563b29a4d48bd66711a8c49bdd87f511ad8e48414ea35ea63273536db1560499eb;
+flowers3/active flower/all four suppressed origins/one world rod, lamp override true,
+three quest steps, prior health and timers. Normal paused F10 writer exit0 recorded.
+Reader PID16364, launch shell5328, same isolated save group, new process outside checkout.
+Remaining: native GUI Load/Save exact bytes, all-origin revisits/physical rod pickup,
+reader clean quit/audit/doc completion. Driver river/rail stalls retained; explicit
+pinned bridge centre recovery and short-lookahead native driver succeeded. No map change.
+
+F010 audit correction: initial native launcher used builds/windows cwd despite recording TEMP. Original raw records retained with launch-correction.json; supplemental pair both quit normally exit0. Fixed launcher to use and record one verified outside-checkout cwd. Fresh replacement native-20261008-verified-cwd writer PID14748, retained launch session14807, new isolated app-data; repeat required native acceptance before Done. No game/map/package changes.
+
+Corrected F010 pair: writer14748/session14807 finished all-four native loop/lamp/Maris/guardian/Tollworks return, GUI Save and paused F10 exit0. Reader59448/session78411 outside TEMP cwd, GUI Load/Save exact native bytes SHA256f23b621e976c21b4c30648d0d9e77eff44b53ad7d121b6c877dc71b24a8c9464; packed typed/forecast oracle PASS PID56124. Current reader paused west bridge, beginning flower03 revisit via reader-routes-restored-rod.json. Remaining all three origin revisits, physical saved rod recollect/select, native final Save/F10 clean quit/audit and Done docs. F010_ACCEPTANCE draft tracks current evidence/retained failed cwd pair.448 game files match F009/F010/current hashes; source audit clean. No successor selected.
+
+## F010 completed — final continuation2026-10-07, America/Vancouver
+
+F010 Done; F001-F010 all Done. Active/next task: none. Exactly F010 completed this
+invocation; stop. [F010 acceptance](F010_ACCEPTANCE.md) owns complete criterion table,
+commands, package hashes, native identity/capture/save provenance and retained failures.
+Initial target HEADf643057f1f905e75fe947c4346fb54894ae5bfe0/worktree clean. No user work
+overwritten. Added tools/foraging_items build_packages.py, package_audit.gd,
+launch_native.ps1, invoke_native.ps1, walk_native.ps1, save_oracle.gd, audit_native.py
+and README; changed workflow CHECKLIST/CURRENT_STATE/acceptance and parent
+README/docs CURRENT_STATE/ARCHITECTURE discovery. No production game edits.
+
+Repository-root build_packages.py packages-20261008-032953-90f9b5ad: both exports,
+packed schema6/items/art/exclusions and standalone outside-checkout startup/quit PASS.
+Prior packages/override archived with hashes before promotion; installed templates
+reused. run_checks.ps1 -Task F010 with inventory,foraging transaction/save/interaction,
+backpack,world placement and application smoke passes20261008-033128476-26d025f5;
+native helper715/Win32 compile and local PS/Python syntax pass. All448 current game
+files exact F009/F010 accepted manifests, so F009 affected regressions remain applicable.
+Read-only source/reference/geography audit/six negative controls pass; source clean.
+
+Accepted native pair docs/evidence/F010/native-20261008-verified-cwd uses actual TEMP
+cwd and fresh isolated APPDATA/LOCALAPPDATA with verified adjacent override. Writer
+PID14748/original session14807, reader PID59448/original session78411 both normal
+paused F10 exit0; original handles retained until exit. Ordinary native all-four,
+backpack/selection/Drop/drag/rollback/recollect, lamp/Maris/guardian/party/travel pass.
+Writer40 and reader03 GUI Load/Save whole bytes SHA256f23b621e976c21b4c30648d0d9e77eff44b53ad7d121b6c877dc71b24a8c9464;
+external packed typed/forecast oracle PASS supplements actual GUI restart. Reader
+physically revisits all three absent flowers and saved rod, recollects/selects rod,
+GUI saves reader20: flowers3/rod1/active rod/all origins collected/no world placements.
+All prior durable facts exact except ordinary item and elapsed/environment time changes.
+No fixture/bridge/mutation/time skip substituted for native gameplay.
+
+Final audit_native.py with fresh derived-final output PASS105 native960x640 hashed
+captures/530 successful writer +322 reader requests; nine contact sheets and key
+full-size images inspected, timing verified. Empty accepted runtime diagnostics,
+no owned keys/mouse/cleanup errors. All owned processes exited; no editor/cleanup owed.
+Remaining criteria/failures requiring work/unrun required checks: none.
+Historical progress above is superseded by this final record. First native pair's
+false cwd metadata retained with correction and failing derived audit; required
+native loop repeated entirely with fixed launcher. Pointer miss/focus stop retained
+and recovered using observed state/fresh pause, without weakening input guards.
+Normal saves/read-only source/pinned geography untouched; no source refresh/install/
+publication/commit/agent/schedule/successor. Local build/evidence archives ignored.
