@@ -8,7 +8,7 @@ Godot application: game/, entry res://app/game_root.tscn.
 
 ## Selection and completion
 
-G001-G005 Done; G006-G009 Pending. No active task.
+G001-G006 Done; G007-G009 Pending. No active task.
 Resume the single In progress task first. Reassess Blocked work when its blocker changes; unresolved blockers exclude that task and its dependents, not independent branches.
 Otherwise select the lowest-numbered Pending task with verified Done prerequisites. Check actual prerequisite capability/evidence, not only checkboxes. Reconcile ambiguous status with artifacts before selecting.
 Complete exactly one task per invocation. Mark In progress before implementation, verify its criteria, update state even when interrupted, and stop before its successor. Done requires every criterion to have evidence; do not replace ordinary play with synthetic fixtures.
@@ -23,7 +23,7 @@ P/M/W/F/N workflows are baseline references, not selectors for this workflow. Do
 | G003 | Done | G002 | Strict save/event derivation for accepted gifts and milestones |
 | G004 | Done | G003 | Source gift branches and milestone transitions operate in one conversation service |
 | G005 | Done | G004 | Ordinary conversation gifting, progress and rejection feedback |
-| G006 | Pending | G001 | Detached met-only People projection with no disclosure side effects |
+| G006 | Done | G001 | Detached met-only People projection with no disclosure side effects |
 | G007 | Pending | G006 | People journal integrated with existing J journal/HUD and modal lifecycle |
 | G008 | Pending | G005, G007 | Integrated ordinary social loop, cross-system regression and restart proof |
 | G009 | Pending | G008 | Fresh local Windows packages and native social/restart acceptance |
@@ -251,3 +251,28 @@ Stop after exactly G005; do not begin G006.
 G005 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
 G005 runtime, UI, fixtures, acceptance and workflow/discovery state. Keep ignored
 raw evidence local; no push or G006 implementation.
+
+### G006 / 2026-10-08 UTC / Done
+
+Every G006 criterion passed; [G006 acceptance](G006_ACCEPTANCE.md) maps met-only
+detached rows, exact public identity/fact sorting, portrait fallback, authored
+progress/label, all-eight independence and current/earlier restore freshness.
+No new social/met/fact authority, mutation, UI, save field or content activation.
+All 934 pre-existing game/tools files, source/pins and schema7/content1 unchanged.
+
+Final runner docs/evidence/G006/20261008-232638827-ccda0a36/results.json passes
+all seven cases: engine/parse, projection960, content432/78 malformed,
+social-save844/560 malformed and social write3/read29 separate-process assertions.
+Zero diagnostics/timeouts/source changes/errors. Reference/current converter,
+preservation and intended diff/link/state audits pass. Failed attempts retained.
+All items/events/boundary fixtures explicitly synthetic; no ordinary/UI/native
+claim or captures. Existing disk/root restart regressions pass with isolated saves.
+
+Next eligible G007: current J journal/HUD People UI and root modal lifecycle.
+Remaining G007,G008,G009. Every item through G009: not complete.
+No blockers, owned live processes, held controls, commit or push.
+Stop after exactly G006; do not begin G007.
+
+G006 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
+G006 projection, fixtures, acceptance and workflow/discovery state. Keep ignored
+raw evidence local; no push or G007 implementation.

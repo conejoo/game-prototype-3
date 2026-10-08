@@ -270,3 +270,33 @@ event fixtures from ordinary viewport gathering/gifting and the existing separat
 companion choice. Actual small/larger images are960x640/1350x900 (root requested
 1440x900). No People, fresh integrated social restart or native package acceptance
 is claimed; G006-G009 remain pending.
+
+## G006 detached People projection interface (2026-10-08 UTC)
+
+`PeopleSnapshot.from_state(state,catalog)` returns a fresh plain dictionary with
+`people`, sorted by authored display name (NPC ID breaks ties).
+`PeopleSnapshot.person(state,catalog,npc_id)` returns one fresh row or `{}` for
+an unknown/unmet ID or missing/uninitialized owner. Neither retains an owner,
+cache or mutable source reference. Callers query the current session's
+`conversations` after publication or restore; an earlier row remains a value.
+
+Each row contains `npc_id`, `display_name`, `pronouns`, `portrait_path`,
+`affinity`, authored `threshold`, derived `level`, nullable `level_label`,
+bounded `progress` (0..1) and `facts`. Below threshold the label is null;
+at/above threshold it is the authored level-one label, never an invented level2.
+The raw affinity remains visible even above threshold. Facts contain only
+`id`, `category`, `label`, `description`, sorted category/label with ID tie-break.
+
+A met row requires a persisted seen ID resolving to an enabled node of that
+person. Learned IDs must resolve to that person's enabled authored facts;
+foreign, unknown and deferred IDs are excluded defensively. These guards do
+not make invalid memory saveable: the existing strict save owner still validates
+all histories. Proximity, title, gifts, flags and affinity alone grant nothing.
+Portrait selection prefers enabled `official-neutral`, then the first enabled
+authored resource that exists; `ResourceLoader.exists` supports imported/exported
+resources. If none exists, the path is empty. No additional data/art is imported.
+
+This is a read-only query over the existing ConversationMemory/catalog owners.
+No UI integration, journal-selection authority, new met/fact/affinity store,
+receipt, save field, version change, activation overlay or source mutation.
+G007 owns the J journal/HUD/modal integration.

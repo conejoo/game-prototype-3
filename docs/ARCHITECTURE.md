@@ -1157,3 +1157,19 @@ gifting/milestone and independent existing companion choice, inspected57 capture
 at960x640/1350x900 and affected modal/foraging/bag/Maris/quest/consequence checks.
 Source content/pins/geography/art/supply and schema7/content1 are unchanged.
 People and fresh integrated social restart/native packages remain G006-G009.
+
+## G006 detached People query (2026-10-08 UTC)
+
+PeopleSnapshot projects the current session's ConversationMemory and validated
+NPC catalog into detached public rows. Only persisted enabled node entry makes
+a person met; only learned enabled authored fact IDs appear. Rows sort by display
+name, facts by category/label, and retain authored pronouns/neutral portrait or
+valid fallback, affinity, threshold and derived level-one progress/label.
+Unknown/unmet queries fail empty. No cached relationship owner, met/fact store,
+save field, entry effect or journal/root UI authority is introduced.
+
+[G006 acceptance](gifts-friendship-people-journal/G006_ACCEPTANCE.md) maps query
+independence, mutation isolation, source disclosure boundaries and current/earlier
+restore freshness to headless production-service fixtures. Items/events and
+boundary authoring remain explicitly synthetic. G007 owns J journal/HUD/modal
+integration; G008/G009 retain ordinary integrated restart/native acceptance.

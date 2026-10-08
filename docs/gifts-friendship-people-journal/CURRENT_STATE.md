@@ -6,15 +6,80 @@ Updated: 2026-10-08 UTC.
 
 ## Current selection and exact continuation
 
-G001-G005 Done. Active task: none. G006-G009 Pending. Whole checklist incomplete;
-final task G009. Exactly G005 completed the implementation invocation. No blocker.
-G005 successful-task commit authorized in the separate follow-up; this state is
-included with that commit. Raw ignored evidence stays local. No push or G006 work.
-Next eligible G006. Exact next action: read [G005 acceptance](G005_ACCEPTANCE.md),
-source People snapshots and current catalog/ConversationMemory/fact ownership;
-mark G006 In progress, implement a detached met-only projection and its suite.
-Keep UI integration for G007; do not add a met/fact/affinity store or disclose
-private/deferred facts. No G006 implementation occurred here.
+G001-G006 Done. Active task: none. G007-G009 Pending. Whole checklist incomplete;
+final task G009. Exactly G006 completed the implementation invocation. No blocker.
+G006 successful-task commit authorized in the separate follow-up; this state is
+included with that commit. Raw ignored evidence stays local. No push or G007 work.
+Next eligible G007. Exact next action: read [G006 acceptance](G006_ACCEPTANCE.md)
+and delivered PeopleSnapshot API, existing PrototypeUI/GameRoot J journal/HUD and
+root modal/input owners; mark G007 In progress and implement only its People tab,
+HUD entry and tested lifecycle integration. Preserve quest/upgrade/companion
+content, current journal simulation policy and unchanged social/save authority.
+No G007 implementation occurred here. Stop after exactly G006.
+
+## G006 outcome, interfaces and verification
+
+Entry HEAD8384b52661c0bd7995f032a35d339d3a720bba01, clean worktree. No nested
+AGENTS.md or unrelated user changes. Source read-only clean at60c20eb2. G001
+source PeopleSnapshot/overlay/tests/vectors and G005 artifacts inspected. All
+934 pre-existing game/tools files retain initial actual byte hashes; current
+catalog SHA256efb76e8a42796a92fab80fa5815885adc7abdfd565ee7cfe036a7d165409e1d3.
+Schema7/content1, source content/pins/art/contacts/geography and supply unchanged.
+
+New runtime `game/features/npcs/people_snapshot.gd` / generated UID. Static
+`PeopleSnapshot.from_state(state,catalog)` returns `{people:[rows]}` sorted by
+authored display name; `person(state,catalog,npc_id)` returns one row or empty.
+Rows contain npc_id/display_name/pronouns/portrait_path/affinity/threshold/level/
+nullable level_label/bounded0..1 progress and detached fact dictionaries
+(id/category/label/description, category then label sort). See CONTRACT for
+tie-breaks/guards. Current session conversations are supplied on every query;
+no retained owner/cache/mutable references or new met/fact/affinity store.
+
+Persisted enabled node entry is required for met rows; only learned enabled
+authored fact IDs appear. Unknown/foreign/deferred IDs fail safely. Portrait
+prefers enabled existing official-neutral, then first valid authored fallback,
+with ResourceLoader.exists for imported/exported resources. Level0 label null;
+level1 authored Acquaintance, raw affinity retained, no invented level2.
+Queries grant no facts/affinity/gifts/receipts/milestone. No UI/root/save field,
+activation, reward or private data added. G007 owns UI and modal integration.
+
+New `game/tests/people_snapshot_checks.gd` / generated UID. All-eight positive/
+neutral production service entries/choices/gifts, empty/unmet/partial facts,
+exact G001 name order, category priority/label ties, portrait fallback, mixed
+met-roster recipient isolation, nested caller edits, threshold0..MAX boundaries,
+strict current and earlier restore equality/fresh-owner queries pass. Supplied
+items/events, invalid states and label/portrait variants explicitly synthetic.
+No ordinary input/UI/native/package acceptance claimed; no captures required.
+
+Final runner docs/evidence/G006/20261008-232638827-ccda0a36/results.json passes
+all seven cases: engine/parse, projection960, content432/78 malformed,
+social-save844/560 malformed and social writer3/reader29 separate-process
+assertions. Existing root/repository fixture proves isolated disk restore,
+exact paused re-save/reopen, corrupt/backup/failed-write and travel rollback.
+Zero diagnostics (including allowed), timeouts, source changes or runtime errors.
+Stable938-file game/tools digest132877a23459a4423ab352f38baec687f7efb22ae9091c532827a5e246011143.
+
+Command from repository root via bundled PowerShell7:
+`tools/run_checks.ps1 -Task G006 -Names people_snapshot_checks,npc_content_checks,social_save_checks -ProcessScripts social_process_checks -TimeoutSeconds150`.
+Installed Godot4.7.2 console checked first; exact executable/arguments/cwd in
+acceptance/results. Runner owns fresh APPDATA/LOCALAPPDATA/per-case and process
+group slots under builds/testing/G006/<run>/. Normal saves untouched.
+Bundled Python reference/source/current converter audits both exit0/empty stderr
+under docs/evidence/G006/20261008-232202-reference/. No repin/source mutation.
+Final preservation/diff/link/UTF-8/status/dependency review under
+docs/evidence/G006/final-review/; architecture append records query ownership.
+
+Retained failures:232133 sandbox engine Access denied then approved escalation;
+232151 import-generated two UIDs correctly rejected by source guard, existing
+editor-only missing .NET SDK allowance;232214 builtin Projection preload-name
+collision;232241 guessed Maris seen ID;232450 duplicate known-role fact in sort
+fixture. Fixed test alias/actual service entry/unique fixture set. Later edits
+fixture-only; no failure relabeled. No installs. Only new architecture append
+mixed endings repaired after whitespace review; all old spans preserved.
+
+Every required G006 criterion passed; none failed/unrun. All owned runners/engine
+processes exited, no held controls/cleanup owed. No export/publication, external
+message, commit/push or successor. Remaining G007,G008,G009; stop here.
 
 ## G005 outcome, interfaces and verification
 
