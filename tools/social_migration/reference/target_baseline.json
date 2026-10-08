@@ -1,0 +1,313 @@
+{
+  "recorded_at_utc": "2026-10-08T21:47:56.636310+00:00",
+  "target_head": "a0f5d7bba6be42885d7e528146d9742436ebf6c5",
+  "scope": "Historical G001 selected owner excerpts/hashes only; future authorized runtime changes are not reference drift. --check-g001-baseline is G001-only.",
+  "schema_version": 7,
+  "content_version": 1,
+  "enabled_counts": {
+    "node": 58,
+    "choice": 38,
+    "fact": 21,
+    "gift_rule": 0
+  },
+  "item_type_ids": [
+    "item-fishing-rod",
+    "item-moonflower"
+  ],
+  "inventory_slot_capacity": 20,
+  "flower_node_ids": [
+    "moonflower-01",
+    "moonflower-02",
+    "moonflower-03"
+  ],
+  "event_key_count": 40,
+  "owners": [
+    {
+      "path": "game/core/save_codec.gd",
+      "sha256": "e9f6529f4829ba096fad699ff1378c36a256b2fe8667868980cc7d3982cb282d",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 35,
+          "text": "class_name SaveCodec\nextends RefCounted\n## Current-schema plain-data boundary. Validation creates a detached candidate only.\n\nconst SCHEMA_VERSION: int = 7\nconst CONTENT_VERSION: int = 1\nconst MAX_BYTES: int = 131072\n\nclass DecodeResult:\n\textends RefCounted\n\tvar session: GameSession\n\tvar errors: PackedStringArray = []\n\tvar incompatible: bool = false\n\n\nstatic func snapshot(run: GameSession) -> Dictionary:\n\tvar actor_data: Array[Dictionary] = []\n\tvar quest_data: Dictionary = {}\n\tfor id: String in run.quests:\n\t\tquest_data[id] = Array(run.quests[id].completed_step_ids)\n\tfor id: String in run.party_member_ids:\n\t\tvar actor: ActorState = run.actors.get(id)\n\t\tif actor != null:\n\t\t\tactor_data.append({\"instance_id\": id, \"definition_id\": actor.definition_id, \"health\": actor.health})\n\tvar facts: Dictionary = run.foraging.snapshot()\n\treturn {\n\t\t\"conversations\": run.conversations.snapshot(),\n\t\t\"inventory\": facts.inventory, \"collected_resource_ids\": Array(facts.collected_resource_ids),\n\t\t\"world_item_placements\": facts.world_item_placements,\n\t\t\"schema_version\": SCHEMA_VERSION, \"content_version\": CONTENT_VERSION,\n\t\t\"location_id\": run.current_location_id, \"spawn_id\": run.current_spawn_id,\n\t\t\"player_instance_id\": GameSession.PLAYER_INSTANCE_ID,\n\t\t\"party_member_ids\": Array(run.party_member_ids), \"actors\": actor_data,\n\t\t\"elapsed_play_seconds\": run.elapsed_play_seconds,\n\t\t\"quests\": quest_data, \"completed_effect_ids\": Array(run.completed_effect_ids),\n",
+          "sha256": "813a9cad76967732b5a19dd97215c662c431c9bd27719da90ef3b4bbc61be4a9"
+        },
+        {
+          "start_line": 77,
+          "end_line": 96,
+          "text": "\tfor key: String in [\"schema_version\", \"content_version\"]:\n\t\tif not _integer(data.get(key), 1, 2147483647):\n\t\t\tresult.errors.append(\"%s must be a positive integer\" % key)\n\t\t\treturn result\n\t\tvar supported: int = SCHEMA_VERSION if key == \"schema_version\" else CONTENT_VERSION\n\t\tif int(data[key]) != supported:\n\t\t\tresult.incompatible = true\n\t\t\tresult.errors.append(\"unsupported %s %s; supported %d; files left unchanged\" % [key, data[key], supported])\n\t\t\treturn result\n\tvar fields: Array[String] = [\n\t\t\"schema_version\", \"content_version\", \"location_id\", \"spawn_id\",\n\t\t\"player_instance_id\", \"party_member_ids\", \"actors\", \"elapsed_play_seconds\",\n\t\t\"quests\", \"completed_effect_ids\", \"relationship\", \"progression\",\n\t\t\"environment\", \"light_source_overrides\", \"inventory\",\n\t\t\"collected_resource_ids\", \"world_item_placements\", \"conversations\",\n\t]\n\tif not _exact_fields(data, fields):\n\t\tresult.errors.append(\"schema v%d requires exactly: \" % int(data.schema_version) + \", \".join(fields))\n\t\treturn result\n\tresult.errors = QuestService.validate_progress(data.quests, data.completed_effect_ids, catalog)\n",
+          "sha256": "385d632011f955202ba7ef065bf8945577f0e528567172af7477f4e1ce8b850a"
+        },
+        {
+          "start_line": 157,
+          "end_line": 179,
+          "text": "\tvar restored: NpcSaveData.Result = NpcSaveData.restore(data.conversations, npc_catalog, float(seconds))\n\tresult.errors = restored.errors\n\tif not result.errors.is_empty(): return result\n\tvar candidate: GameSession = GameSession.new()\n\tresult.errors = candidate.initialize(catalog, data.location_id, data.spawn_id, \"prototype-hero\", environment, npc_catalog)\n\tif result.errors.is_empty():\n\t\tfor actor: Dictionary in data.actors:\n\t\t\tcandidate.actors[actor.instance_id].health = int(actor.health)\n\t\tcandidate.elapsed_play_seconds = float(seconds)\n\t\tfor id: String in candidate.quests:\n\t\t\tcandidate.quests[id].completed_step_ids = PackedStringArray(data.quests[id])\n\t\tcandidate.completed_effect_ids = PackedStringArray(data.completed_effect_ids)\n\t\tcandidate.relationship.trust = int(data.relationship.trust)\n\t\tcandidate.relationship.reaction_ids = PackedStringArray(data.relationship.reaction_ids)\n\t\tcandidate.progression.upgrade_ids = PackedStringArray(data.progression.upgrade_ids)\n\t\tresult.errors = ForagingSaveData.restore(candidate, data.inventory, data.collected_resource_ids, data.world_item_placements, catalog)\n\t\tif not result.errors.is_empty(): return result\n\t\tcandidate.conversations = restored.state\n\t\tresult.session = candidate\n\treturn result\n\n\nstatic func _integer(value: Variant, minimum: int, maximum: int) -> bool:\n",
+          "sha256": "7fd2c09ff5398b568ce5abfb78b780b8ba9b2b6ca2ffa5deb32e2fc009da234e"
+        }
+      ]
+    },
+    {
+      "path": "game/app/game_session.gd",
+      "sha256": "31681f3486ed6b4a44b79719c98467091de9c180eb2866d3c73052fa778cc84b",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 24,
+          "text": "class_name GameSession\nextends RefCounted\n## Mutable run state; no scene, content-resource, or rendering ownership.\n\nvar elapsed_play_seconds: float = 0.0\nvar initialized: bool = false\nvar current_location_id: String = \"\"\nvar current_spawn_id: String = \"\"\nvar actors: Dictionary[String, ActorState] = {}\nvar party_member_ids: PackedStringArray = []\nvar quests: Dictionary[String, QuestState] = {}\nvar completed_effect_ids: PackedStringArray = []\nvar relationship: RelationshipState = RelationshipState.new()\nvar progression: ProgressionState = ProgressionState.new()\nvar environment: EnvironmentState = EnvironmentState.new()\nvar inventory: InventoryState = InventoryState.new()\nvar foraging: ForagingState = ForagingState.new()\n# Schema7 durable per-person and bounded event state; cursor stays transient.\nvar conversations: NpcConversationState = NpcConversationState.new()\nvar weather_conditions: WeatherConditionService = WeatherConditionService.new()\n# Transient developer provenance, never a save field.\nvar review_only: bool = false\n\nconst PLAYER_INSTANCE_ID: String = \"party-player\"\n",
+          "sha256": "6ce563b9a6c4215a1ab4d9c53f6d8238f4f4124c9bb3a9eca8aae9f6bb655307"
+        },
+        {
+          "start_line": 54,
+          "end_line": 68,
+          "text": "\terrors = ForagingRegistry.validation_errors(catalog)\n\tif not errors.is_empty():\n\t\treturn errors\n\tvar npc_catalog: NpcContentCatalog = npc_content\n\tif npc_catalog == null:\n\t\tnpc_catalog = NpcContentCatalog.new()\n\t\terrors = npc_catalog.initialize_path(catalog)\n\t\tif not errors.is_empty(): return errors\n\tvar candidate_conversations: NpcConversationState = NpcConversationState.new()\n\terrors = candidate_conversations.initialize(npc_catalog)\n\tif not errors.is_empty(): return errors\n\tconversations = candidate_conversations\n\tinventory = candidate_inventory\n\tforaging.initialize(catalog, self)\n\tactors[PLAYER_INSTANCE_ID] = ActorState.new(PLAYER_INSTANCE_ID, player)\n",
+          "sha256": "6b5b29189d68444ca6ed54f8dbdfba32a9132966762d41a5139333e75ea26fd5"
+        }
+      ]
+    },
+    {
+      "path": "game/features/npcs/conversation_memory.gd",
+      "sha256": "eecba0a35a7579c3fc934d9aa82c83ffd421cd071e520e04e08b8c7c302a56cd",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 53,
+          "text": "class_name ConversationMemory\nextends RefCounted\n## Detached per-person value. Only NpcDialogueService publishes accepted changes.\nconst MAX_AFFINITY: int = 2147483647\nvar npc_id: String\nvar affinity: int = 0\nvar flags: PackedStringArray = []\nvar learned_fact_ids: PackedStringArray = []\nvar seen_node_ids: PackedStringArray = []\nvar applied_choice_ids: PackedStringArray = []\n\nfunc _init(id: String = \"\") -> void:\n\tnpc_id = id\n\nfunc level(threshold: int) -> int:\n\treturn 1 if affinity >= threshold else 0\n\nfunc detached_copy() -> ConversationMemory:\n\tvar result: ConversationMemory = ConversationMemory.new(npc_id)\n\tresult.affinity = affinity\n\tresult.flags = flags.duplicate()\n\tresult.learned_fact_ids = learned_fact_ids.duplicate()\n\tresult.seen_node_ids = seen_node_ids.duplicate()\n\tresult.applied_choice_ids = applied_choice_ids.duplicate()\n\treturn result\n\nfunc entered(node: NpcDialogueGraph.NodeDefinition) -> ConversationMemory:\n\tvar result: ConversationMemory = detached_copy()\n\t_add_unique(result.seen_node_ids, node.id)\n\tfor id: String in node.revealed_fact_ids:\n\t\t_add_unique(result.learned_fact_ids, id)\n\treturn result\n\nfunc consumed(choice: NpcDialogueGraph.Choice) -> bool:\n\treturn choice.has_one_time_effect() and (choice.id in applied_choice_ids or (not choice.one_time_reward_flag.is_empty() and choice.one_time_reward_flag in flags))\n\nfunc responded(choice: NpcDialogueGraph.Choice) -> ConversationMemory:\n\tvar result: ConversationMemory = detached_copy()\n\tif consumed(choice): return result\n\tresult.affinity = clampi(affinity + choice.affinity_delta, 0, MAX_AFFINITY)\n\tfor id: String in choice.added_flags:\n\t\t_add_unique(result.flags, id)\n\tif not choice.one_time_reward_flag.is_empty(): _add_unique(result.flags, choice.one_time_reward_flag)\n\tif choice.has_one_time_effect(): _add_unique(result.applied_choice_ids, choice.id)\n\treturn result\n\nfunc snapshot(threshold: int) -> Dictionary:\n\treturn {\"npc_id\": npc_id, \"affinity\": affinity, \"level\": level(threshold), \"flags\": Array(flags), \"learned_fact_ids\": Array(learned_fact_ids), \"seen_node_ids\": Array(seen_node_ids), \"applied_choice_ids\": Array(applied_choice_ids)}\n\nstatic func _add_unique(values: PackedStringArray, id: String) -> void:\n\tif id not in values:\n\t\tvalues.append(id)\n\t\tvalues.sort()\n",
+          "sha256": "eecba0a35a7579c3fc934d9aa82c83ffd421cd071e520e04e08b8c7c302a56cd"
+        }
+      ]
+    },
+    {
+      "path": "game/features/npcs/npc_conversation_state.gd",
+      "sha256": "3401989d5ab60090bb878f0a769531b2d0ba002b61552fa6d5079423767a3286",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 47,
+          "text": "class_name NpcConversationState\nextends RefCounted\n## Session-owned publication: every person and event aggregate swaps together.\nvar initialized: bool = false\nvar _memories: Dictionary[String, ConversationMemory] = {}\nvar _thresholds: Dictionary[String, int] = {}\nvar _events: NpcEventMemory = NpcEventMemory.new()\n\nfunc initialize(catalog: NpcContentCatalog) -> PackedStringArray:\n\tif initialized: return PackedStringArray([\"Conversation state already initialized\"])\n\tif catalog == null or not catalog.initialized: return PackedStringArray([\"Conversation state requires validated NPC content\"])\n\tfor id: String in catalog.npc_ids():\n\t\t_memories[id] = ConversationMemory.new(id)\n\t\t_thresholds[id] = catalog.get_npc(id).level_one_affinity\n\t_events.initialize(catalog)\n\tinitialized = true\n\treturn []\n\nfunc memory(id: String) -> ConversationMemory:\n\treturn _memories[id].detached_copy() if _memories.has(id) else null\n\nfunc events() -> NpcEventMemory:\n\treturn _events.detached_copy()\n\nfunc with_person(value: ConversationMemory, event_value: NpcEventMemory = null) -> NpcConversationState:\n\tvar result: NpcConversationState = detached_copy()\n\tresult._memories[value.npc_id] = value.detached_copy()\n\tif event_value != null: result._events = event_value.detached_copy()\n\treturn result\n\nfunc with_events(value: NpcEventMemory) -> NpcConversationState:\n\tvar result: NpcConversationState = detached_copy()\n\tresult._events = value.detached_copy()\n\treturn result\n\nfunc detached_copy() -> NpcConversationState:\n\tvar result: NpcConversationState = NpcConversationState.new()\n\tresult.initialized = initialized\n\tresult._thresholds = _thresholds.duplicate()\n\tresult._events = _events.detached_copy()\n\tfor id: String in _memories: result._memories[id] = _memories[id].detached_copy()\n\treturn result\n\nfunc snapshot() -> Dictionary:\n\tvar people: Dictionary = {}\n\tfor id: String in _memories: people[id] = _memories[id].snapshot(_thresholds[id])\n\treturn {\"people\": people, \"events\": _events.snapshot()}\n",
+          "sha256": "3401989d5ab60090bb878f0a769531b2d0ba002b61552fa6d5079423767a3286"
+        }
+      ]
+    },
+    {
+      "path": "game/features/npcs/npc_event_memory.gd",
+      "sha256": "af8d4886b277ca27cc926bc4e2317c20490aa7f29755d6b85697a4dafbbfa0fc",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 72,
+          "text": "class_name NpcEventMemory\nextends RefCounted\n## Exact keys, fixed allowlist and bounded aggregates; no inventory-derived history.\nconst MAX_SEQUENCE: int = 2147483647\nconst MAX_ACTIVE_SECONDS: float = 2190600.0 # 3651 days * existing 600-second day\nconst AREA: String = \"areaEntered\"\nconst GATHER: String = \"resourceGathered\"\nconst CHOICE: String = \"dialogueChoiceSelected\"\nvar _allowed: Dictionary[String, bool] = {}\nvar _facts: Dictionary[String, Dictionary] = {}\nvar _last_sequence: int = 0\nvar _last_active_seconds: float = 0.0\n\nfunc initialize(catalog: NpcContentCatalog) -> void:\n\t_allowed.clear()\n\t_facts.clear()\n\t_last_sequence = 0\n\t_last_active_seconds = 0.0\n\t_allowed[key(AREA, \"woods\", null)] = true\n\t_allowed[key(GATHER, \"moonflower\", null)] = true\n\tfor id: String in catalog.npc_ids():\n\t\tfor choice: NpcDialogueGraph.Choice in catalog.get_npc(id).graph.choices.values():\n\t\t\tif choice.availability.is_enabled(): _allowed[key(CHOICE, id, choice.id)] = true\n\nstatic func key(kind: String, subject: Variant, target: Variant) -> String:\n\treturn JSON.stringify([kind, subject, target])\n\nfunc record(kind: String, subject: Variant, target: Variant, seconds: float) -> NpcEventMemory:\n\tvar encoded: String = key(kind, subject, target)\n\tif not _allowed.has(encoded) or not valid_time(seconds) or seconds < _last_active_seconds or _last_sequence >= MAX_SEQUENCE:\n\t\treturn null\n\tvar result: NpcEventMemory = detached_copy()\n\tresult._last_sequence += 1\n\tresult._last_active_seconds = seconds\n\tvar previous: Dictionary = _facts.get(encoded, {})\n\tresult._facts[encoded] = {\"kind\": kind, \"subject_id\": subject, \"target_id\": target, \"count\": int(previous.get(\"count\", 0)) + 1, \"first_sequence\": int(previous.get(\"first_sequence\", result._last_sequence)), \"last_sequence\": result._last_sequence, \"first_active_seconds\": float(previous.get(\"first_active_seconds\", seconds)), \"last_active_seconds\": seconds}\n\treturn result\n\nstatic func valid_time(seconds: float) -> bool:\n\treturn is_finite(seconds) and seconds >= 0.0 and seconds <= MAX_ACTIVE_SECONDS\n\nfunc count(kind: String, subject: Variant, target: Variant) -> int:\n\treturn int(_facts.get(key(kind, subject, target), {}).get(\"count\", 0))\n\nfunc matches(condition: NpcDialogueGraph.EventCondition, seconds: float) -> bool:\n\tif not valid_time(seconds): return false\n\tvar kind: String = NpcContentCatalog.EVENT_KINDS[condition.kind]\n\tvar fact: Dictionary = _facts.get(key(kind, condition.subject_id, condition.target_id), {})\n\tvar observed: int = int(fact.get(\"count\", 0))\n\tif observed < condition.minimum_count or (condition.maximum_count >= 0 and observed > condition.maximum_count): return false\n\tif condition.occurred_within_active_seconds < 0.0: return true\n\t# Source latest-event window is inclusive; null never means wildcard.\n\treturn not fact.is_empty() and seconds - float(fact[\"last_active_seconds\"]) <= condition.occurred_within_active_seconds\n\nfunc detached_copy() -> NpcEventMemory:\n\tvar result: NpcEventMemory = NpcEventMemory.new()\n\tresult._allowed = _allowed.duplicate()\n\tresult._facts = _facts.duplicate(true)\n\tresult._last_sequence = _last_sequence\n\tresult._last_active_seconds = _last_active_seconds\n\treturn result\n\nfunc snapshot() -> Dictionary:\n\tvar rows: Array[Dictionary] = []\n\tvar keys: Array[String] = []\n\tkeys.assign(_facts.keys())\n\tkeys.sort()\n\tfor encoded: String in keys: rows.append(_facts[encoded].duplicate(true))\n\treturn {\"last_sequence\": _last_sequence, \"facts\": rows}\n\nfunc supported_key_count() -> int:\n\treturn _allowed.size()\n",
+          "sha256": "af8d4886b277ca27cc926bc4e2317c20490aa7f29755d6b85697a4dafbbfa0fc"
+        }
+      ]
+    },
+    {
+      "path": "game/features/npcs/npc_definition.gd",
+      "sha256": "f38b16a12a5a81a9bd9c2a8fa0c85da1856a6cef80d9aff2d1ddd71864af1c6d",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 100,
+          "text": "class_name NpcDefinition\nextends RefCounted\n## Detached catalog view. No scene, actor state, event memory or save authority.\n\nclass Fact extends RefCounted:\n\tvar id: String\n\tvar category: String\n\tvar label: String\n\tvar description: String\n\tvar highlight_term: String\n\tvar availability: NpcContentAvailability\n\tfunc _init(data: Dictionary, coverage: Dictionary) -> void:\n\t\tid = data[\"id\"]\n\t\tcategory = data[\"category\"]\n\t\tlabel = data[\"label\"]\n\t\tdescription = data[\"description\"]\n\t\thighlight_term = data[\"highlightTerm\"]\n\t\tavailability = NpcContentAvailability.new(coverage)\n\nclass GiftRule extends RefCounted:\n\tvar id: String\n\tvar item_id: String\n\tvar required_fact_id: String\n\tvar affinity_delta: int\n\tvar acceptance_cap: int\n\tvar availability: NpcContentAvailability\n\tfunc _init(data: Dictionary, coverage: Dictionary) -> void:\n\t\tid = data[\"id\"]\n\t\titem_id = data[\"itemId\"]\n\t\trequired_fact_id = data.get(\"requiredFactId\", \"\")\n\t\taffinity_delta = int(data[\"affinityDelta\"])\n\t\tacceptance_cap = int(data[\"acceptanceCap\"])\n\t\tavailability = NpcContentAvailability.new(coverage)\n\nclass Sheet extends RefCounted:\n\tvar id: String\n\tvar asset_path: String\n\tvar texture_cell: Vector2i\n\tvar frames_per_facing: int\n\tvar step_seconds: float\n\tvar availability: NpcContentAvailability\n\tfunc _init(sheet_id: String, data: Dictionary, coverage: Dictionary) -> void:\n\t\tid = sheet_id\n\t\tasset_path = data[\"asset\"]\n\t\ttexture_cell = Vector2i(int(data[\"textureCellWidth\"]), int(data[\"textureCellHeight\"]))\n\t\tframes_per_facing = int(data[\"framesPerFacing\"])\n\t\tstep_seconds = float(data[\"stepSeconds\"])\n\t\tavailability = NpcContentAvailability.new(coverage)\n\nvar id: String\nvar actor_id: String\nvar display_name: String\nvar short_name: String\nvar title: String\nvar pronouns: String\nvar interaction_prompt: String\nvar level_one_affinity: int\nvar level_one_label: String\nvar milestone_node_id: String\nvar milestone_seen_flag_id: String\nvar source_hit_size: Vector2\nvar source_interaction_radius: float\nvar source_agent_profile_id: String\nvar source_footprint_radius: float\nvar source_clearance: float\nvar action_ids: PackedStringArray\nvar flag_ids: PackedStringArray\nvar facts: Dictionary[String, Fact] = {}\nvar gifts: Dictionary[String, GiftRule] = {}\nvar portraits: Dictionary[String, String] = {}\nvar portrait_availability: Dictionary[String, NpcContentAvailability] = {}\nvar sheets: Dictionary[String, Sheet] = {}\nvar source_world_cell: Vector2i\nvar row_order: PackedStringArray\nvar graph: NpcDialogueGraph\n\nfunc _init(package: Dictionary) -> void:\n\tid = package[\"id\"]\n\tactor_id = package[\"actor_id\"]\n\tvar runtime: Dictionary = package[\"runtime\"]\n\tvar coverage: Dictionary = package[\"coverage\"]\n\tdisplay_name = runtime[\"displayName\"]\n\tshort_name = runtime[\"shortName\"]\n\ttitle = runtime[\"title\"]\n\tpronouns = runtime[\"pronouns\"]\n\tinteraction_prompt = runtime[\"interactionPrompt\"]\n\tvar relationship: Dictionary = runtime[\"relationship\"]\n\tlevel_one_affinity = int(relationship[\"levelOneAffinity\"])\n\tlevel_one_label = relationship[\"levelOneLabel\"]\n\tvar milestone: Dictionary = relationship.get(\"levelOneMilestone\", {})\n\tmilestone_node_id = milestone.get(\"dialogueNodeId\", \"\")\n\tmilestone_seen_flag_id = milestone.get(\"seenFlagId\", \"\")\n\tvar dimensions: Dictionary = runtime[\"dimensions\"]\n\tsource_hit_size = Vector2(float(dimensions[\"hitWidth\"]), float(dimensions[\"hitHeight\"]))\n\tsource_interaction_radius = float(dimensions[\"interactionRadius\"])\n\tvar routine: Dictionary = runtime[\"routine\"]\n\tvar profile: Dictionary = routine[\"agentProfile\"]\n\tsource_agent_profile_id = profile[\"id\"]\n\tsource_footprint_radius = float(profile[\"footprintRadius\"])\n\tsource_clearance = float(profile[\"clearance\"])\n",
+          "sha256": "05e11a9b861e4866d1d6c926657d741f026f7f5f3ad1df8a00f16e4257cef170"
+        }
+      ]
+    },
+    {
+      "path": "game/features/npcs/npc_dialogue_rules.gd",
+      "sha256": "7104a3f1513ee4169de2eadf3d052f6e1d7958b8856c3c35a643ead3c9fe4c44",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 40,
+          "text": "class_name NpcDialogueRules\nextends RefCounted\n## Pure authored queries; linked target conditions are entry gates, as in source.\nstatic func matches(conditions: NpcDialogueGraph.Conditions, memory: ConversationMemory, events: NpcEventMemory, seconds: float, threshold: int) -> bool:\n\tif conditions == null or memory == null or events == null or not NpcEventMemory.valid_time(seconds): return false\n\tif conditions.minimum_affinity >= 0 and memory.affinity < conditions.minimum_affinity: return false\n\tif conditions.maximum_affinity >= 0 and memory.affinity > conditions.maximum_affinity: return false\n\tif memory.level(threshold) < conditions.minimum_relationship_level: return false\n\tfor id: String in conditions.required_flags:\n\t\tif id not in memory.flags: return false\n\tfor id: String in conditions.excluded_flags:\n\t\tif id in memory.flags: return false\n\tfor id: String in conditions.required_fact_ids:\n\t\tif id not in memory.learned_fact_ids: return false\n\tfor id: String in conditions.unknown_fact_ids:\n\t\tif id in memory.learned_fact_ids: return false\n\tfor id: String in conditions.required_seen_node_ids:\n\t\tif id not in memory.seen_node_ids: return false\n\tfor id: String in conditions.unseen_node_ids:\n\t\tif id in memory.seen_node_ids: return false\n\tfor condition: NpcDialogueGraph.EventCondition in conditions.events:\n\t\tif not events.matches(condition, seconds): return false\n\treturn true\n\nstatic func resolve(npc: NpcDefinition, memory: ConversationMemory, events: NpcEventMemory, seconds: float) -> NpcDialogueGraph.NodeDefinition:\n\tif npc == null or memory == null or memory.npc_id != npc.id: return null\n\tvar selected: NpcDialogueGraph.NodeDefinition\n\tfor id: String in npc.graph.entry_node_ids:\n\t\tvar node: NpcDialogueGraph.NodeDefinition = npc.graph.nodes.get(id)\n\t\tif node == null or not node.availability.is_enabled() or not matches(node.conditions, memory, events, seconds, npc.level_one_affinity): continue\n\t\tif selected == null or node.priority > selected.priority or (node.priority == selected.priority and node.id < selected.id): selected = node\n\treturn selected\n\nstatic func choice_reason(npc: NpcDefinition, choice: NpcDialogueGraph.Choice, memory: ConversationMemory, events: NpcEventMemory, seconds: float) -> String:\n\tif not choice.availability.is_enabled(): return choice.availability.reason\n\tif not choice.gift_rule_id.is_empty(): return \"Gifting capability is unavailable.\"\n\tif not choice.outcome_tag.is_empty(): return \"Routine capability is unavailable.\"\n\tif memory.consumed(choice): return \"Response already applied.\"\n\tif not matches(choice.conditions, memory, events, seconds, npc.level_one_affinity): return \"Response conditions are not met.\"\n\treturn \"\"\n",
+          "sha256": "7104a3f1513ee4169de2eadf3d052f6e1d7958b8856c3c35a643ead3c9fe4c44"
+        }
+      ]
+    },
+    {
+      "path": "game/features/npcs/npc_dialogue_service.gd",
+      "sha256": "9adaa3ca5b1e03804c5317cb32c82b9e3b6df1997731ed9e39f3aa02a0c4ea06",
+      "excerpts": [
+        {
+          "start_line": 25,
+          "end_line": 49,
+          "text": "\nfunc initialize(catalog: NpcContentCatalog, session: GameSession) -> PackedStringArray:\n\tif catalog == null or not catalog.initialized or session == null or not session.initialized:\n\t\treturn PackedStringArray([\"Dialogue requires validated content and initialized session\"])\n\tif not session.conversations.initialized:\n\t\tvar errors: PackedStringArray = session.conversations.initialize(catalog)\n\t\tif not errors.is_empty(): return errors\n\t_catalog = catalog\n\t_session = session\n\t_clear()\n\treturn []\n\nfunc active() -> bool:\n\treturn not _node_id.is_empty()\n\nfunc begin(npc_id: String, instance_id: String) -> Result:\n\tif _session == null or active() or instance_id.strip_edges().is_empty(): return Result.new(false, \"Conversation owner unavailable, active or invalid instance.\")\n\tvar npc: NpcDefinition = _catalog.get_npc(npc_id)\n\tvar memory: ConversationMemory = _session.conversations.memory(npc_id)\n\tvar node: NpcDialogueGraph.NodeDefinition = NpcDialogueRules.resolve(npc, memory, _session.conversations.events(), _session.elapsed_play_seconds)\n\tif node == null: return Result.new(false, \"No available ordinary entry.\")\n\t_session.conversations = _session.conversations.with_person(memory.entered(node))\n\t_cursor_state = _session.conversations\n\t_npc_id = npc_id\n\t_instance_id = instance_id\n",
+          "sha256": "1bfcdcda038534bc4e0c2a27be34e5088195668bbbd49d6526492337e1d23a82"
+        },
+        {
+          "start_line": 105,
+          "end_line": 135,
+          "text": "func choose(npc_id: String, instance_id: String, node_id: String, token: String, choice_id: String) -> Result:\n\tif not _command_matches(npc_id, instance_id, node_id, token): return Result.new(false, \"Stale or foreign conversation command.\")\n\tif _prototype != null: return _choose_prototype(choice_id)\n\tvar npc: NpcDefinition = _catalog.get_npc(_npc_id)\n\tvar node: NpcDialogueGraph.NodeDefinition = npc.graph.nodes[_node_id]\n\tvar choice: NpcDialogueGraph.Choice\n\tfor row: NpcDialogueGraph.Choice in node.choices:\n\t\tif row.id == choice_id: choice = row\n\tif choice == null: return Result.new(false, \"Unknown response on current node.\")\n\tvar memory: ConversationMemory = _session.conversations.memory(_npc_id)\n\tvar reason: String = NpcDialogueRules.choice_reason(npc, choice, memory, _session.conversations.events(), _session.elapsed_play_seconds)\n\tif not reason.is_empty(): return Result.new(false, reason)\n\tvar next: NpcDialogueGraph.NodeDefinition\n\tif not choice.ends_conversation and not choice.target_node_id.is_empty():\n\t\tnext = npc.graph.nodes.get(choice.target_node_id)\n\t\tif next == null or not next.availability.is_enabled(): return Result.new(false, \"Response target unavailable.\")\n\t# Edric milestone is deferred; never inject it merely for crossing level one.\n\tvar event_value: NpcEventMemory = _session.conversations.events().record(NpcEventMemory.CHOICE, _npc_id, choice.id, _session.elapsed_play_seconds)\n\tif event_value == null: return Result.new(false, \"Event memory range exhausted or invalid active time.\")\n\tvar candidate: ConversationMemory = memory.responded(choice)\n\tif next != null: candidate = candidate.entered(next)\n\t_session.conversations = _session.conversations.with_person(candidate, event_value)\n\t_cursor_state = _session.conversations\n\tif next == null: _clear()\n\telse:\n\t\t_node_id = next.id\n\t\t_selected_choice = choice_id\n\t\t_generation += 1\n\tchanged.emit()\n\treturn Result.new(true, \"Response accepted.\")\n\n",
+          "sha256": "bd66bacbf8ee060657c51d7954858a04399d6fa3b75329e726a77cd859639379"
+        },
+        {
+          "start_line": 206,
+          "end_line": 222,
+          "text": "\tchanged.emit()\n\treturn Result.new(true, \"Event recorded.\")\n\nfunc _command_matches(npc_id: String, instance_id: String, node_id: String, token: String) -> bool:\n\treturn not _executing and active() and _cursor_state == _session.conversations and _npc_id == npc_id and _instance_id == instance_id and _node_id == node_id and _token() == token\n\nfunc _token() -> String:\n\treturn \"%d:%d\" % [get_instance_id(), _generation]\n\nfunc _clear() -> void:\n\t_prototype = null\n\t_selected_choice = \"\"\n\t_cursor_state = null\n\t_npc_id = \"\"\n\t_instance_id = \"\"\n\t_node_id = \"\"\n\t_generation += 1\n",
+          "sha256": "86e40b9d292a45e5944352a541ee25de1a77f1794482404e8cfacd52bf931fc7"
+        }
+      ]
+    },
+    {
+      "path": "game/features/npcs/npc_save_data.gd",
+      "sha256": "3e8d9ceb137ff3b488f4efbd2f4504d36c546b202450b21c21e861969dad1d08",
+      "excerpts": [
+        {
+          "start_line": 8,
+          "end_line": 24,
+          "text": "static func restore(data: Variant, catalog: NpcContentCatalog, seconds: float) -> Result:\n\tvar result: Result = Result.new()\n\tif catalog == null or not catalog.initialized or not data is Dictionary or not SaveCodec._exact_fields(data, [\"people\", \"events\"]):\n\t\treturn _fail(result, \"conversations requires exactly people/events and validated catalog\")\n\tif not _independent_containers(data): return _fail(result, \"shared/cyclic mutable save containers\")\n\tvar people_ids: Array[String] = []; people_ids.assign(catalog.npc_ids())\n\tif not data.people is Dictionary or not SaveCodec._exact_fields(data.people, people_ids):\n\t\treturn _fail(result, \"conversations requires exactly the eight pinned people\")\n\tvar state: NpcConversationState = NpcConversationState.new()\n\tstate.initialize(catalog)\n\tvar events: NpcEventMemory = state.events()\n\tvar raw: Variant = data.events\n\tif not raw is Dictionary or not SaveCodec._exact_fields(raw, [\"last_sequence\", \"facts\"]) or not SaveCodec._integer(raw.last_sequence, 0, NpcEventMemory.MAX_SEQUENCE) or not raw.facts is Array or raw.facts.size() > events.supported_key_count():\n\t\treturn _fail(result, \"invalid bounded event envelope\")\n\tvar total: int = 0\n\tvar endpoints: Dictionary[int, float] = {}\n\tfor value: Variant in raw.facts:\n",
+          "sha256": "4bfd9547ae3593303963acfd4e53bb18885dd5dd9e628dbd25a38776f3e26b27"
+        },
+        {
+          "start_line": 65,
+          "end_line": 110,
+          "text": "\t\tvar person: Variant = data.people[id]\n\t\tif not person is Dictionary or not SaveCodec._exact_fields(person, [\"npc_id\", \"affinity\", \"level\", \"flags\", \"learned_fact_ids\", \"seen_node_ids\", \"applied_choice_ids\"]) or not person.npc_id is String or person.npc_id != id:\n\t\t\treturn _fail(result, \"invalid memory identity/fields for \" + id)\n\t\tif not SaveCodec._integer(person.affinity, 0, ConversationMemory.MAX_AFFINITY) or not SaveCodec._integer(person.level, 0, 1):\n\t\t\treturn _fail(result, \"invalid memory affinity/level\")\n\t\tfor field: String in [\"flags\", \"learned_fact_ids\", \"seen_node_ids\", \"applied_choice_ids\"]:\n\t\t\tif not _unique_strings(person[field]): return _fail(result, \"invalid independent memory set \" + field)\n\t\tvar expected_facts: PackedStringArray = []\n\t\tfor node_id: String in person.seen_node_ids:\n\t\t\tvar node: NpcDialogueGraph.NodeDefinition = npc.graph.nodes.get(node_id)\n\t\t\tif node == null or not node.availability.is_enabled(): return _fail(result, \"foreign/deferred seen node\")\n\t\t\tfor fact_id: String in node.revealed_fact_ids: ConversationMemory._add_unique(expected_facts, fact_id)\n\t\tvar expected_flags: PackedStringArray = []\n\t\tvar expected_receipts: PackedStringArray = []\n\t\tvar expected_affinity: int = 0\n\t\tfor choice: NpcDialogueGraph.Choice in npc.graph.choices.values():\n\t\t\tvar count: int = events.count(NpcEventMemory.CHOICE, id, choice.id)\n\t\t\tif count == 0: continue\n\t\t\tif choice.has_one_time_effect():\n\t\t\t\tif count != 1: return _fail(result, \"one-time choice repeated\")\n\t\t\t\tConversationMemory._add_unique(expected_receipts, choice.id)\n\t\t\tfor flag: String in choice.added_flags: ConversationMemory._add_unique(expected_flags, flag)\n\t\t\tif not choice.one_time_reward_flag.is_empty(): ConversationMemory._add_unique(expected_flags, choice.one_time_reward_flag)\n\t\t\texpected_affinity += choice.affinity_delta * count\n\t\t\t# Current pin has only nonnegative deltas; reject drift rather than invent order.\n\t\t\tif choice.affinity_delta < 0: return _fail(result, \"signed affinity requires ordered persistence policy\")\n\t\t\tvar owner_node: NpcDialogueGraph.NodeDefinition\n\t\t\tfor node: NpcDialogueGraph.NodeDefinition in npc.graph.nodes.values():\n\t\t\t\tif choice in node.choices: owner_node = node\n\t\t\tif owner_node == null or owner_node.id not in person.seen_node_ids or (not choice.target_node_id.is_empty() and choice.target_node_id not in person.seen_node_ids):\n\t\t\t\treturn _fail(result, \"choice event missing authored entry/target\")\n\t\t# Pinned ordinary introductions are mutually exclusive, even neutral rewards.\n\t\tif expected_receipts.size() > 1: return _fail(result, \"opposite introduction receipts\")\n\t\tif not _same_set(person.learned_fact_ids, expected_facts) or not _same_set(person.flags, expected_flags) or not _same_set(person.applied_choice_ids, expected_receipts) or int(person.affinity) != clampi(expected_affinity, 0, ConversationMemory.MAX_AFFINITY):\n\t\t\treturn _fail(result, \"memory disclosure/reward/event derivation mismatch\")\n\t\tvar memory: ConversationMemory = ConversationMemory.new(id)\n\t\tmemory.affinity = int(person.affinity)\n\t\tif memory.level(npc.level_one_affinity) != int(person.level): return _fail(result, \"derived relationship level mismatch\")\n\t\tmemory.flags = PackedStringArray(person.flags); memory.flags.sort()\n\t\tmemory.learned_fact_ids = PackedStringArray(person.learned_fact_ids); memory.learned_fact_ids.sort()\n\t\tmemory.seen_node_ids = PackedStringArray(person.seen_node_ids); memory.seen_node_ids.sort()\n\t\tmemory.applied_choice_ids = PackedStringArray(person.applied_choice_ids); memory.applied_choice_ids.sort()\n\t\tstate = state.with_person(memory)\n\tresult.state = state\n\treturn result\n\n",
+          "sha256": "b22e06212779051c887b964fe70a295e217c4e48f093dbe7aa7945a8d88df84b"
+        }
+      ]
+    },
+    {
+      "path": "game/features/items/item_definition.gd",
+      "sha256": "a23c2fcfc39ab139fa2dc289153d1228202269767f391e85fbe245c8321582d3",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 28,
+          "text": "class_name ItemDefinition\nextends ContentDefinition\n## Immutable authored item metadata; ownership and selection belong to InventoryState.\n\n@export var source_item_id: String = \"\"\n@export_enum(\"forage\", \"tool\") var category: String = \"forage\"\n@export var stack_limit: int = 99\n@export var movable_pickup: bool = false\n@export_multiline var description: String = \"\"\n\n\nfunc validation_errors() -> PackedStringArray:\n\tvar errors: PackedStringArray = super.validation_errors()\n\tif source_item_id.is_empty() or source_item_id != source_item_id.strip_edges():\n\t\terrors.append(\"source_item_id must be nonempty with no surrounding whitespace\")\n\tif category not in [\"forage\", \"tool\"]:\n\t\terrors.append(\"item category must be forage or tool\")\n\tif stack_limit < 1 or stack_limit > 99:\n\t\terrors.append(\"stack_limit must be in 1..99\")\n\tif movable_pickup and category != \"tool\":\n\t\terrors.append(\"movable pickup must be a tool\")\n\tif description.strip_edges().is_empty():\n\t\terrors.append(\"item description must be nonempty\")\n\treturn errors\n\n\nfunc is_tool() -> bool:\n\treturn category == \"tool\"\n",
+          "sha256": "a23c2fcfc39ab139fa2dc289153d1228202269767f391e85fbe245c8321582d3"
+        }
+      ]
+    },
+    {
+      "path": "game/features/items/inventory_state.gd",
+      "sha256": "26084a9bf99debc261d2752a313744722355329f93048bbb2f97727e5ea11d62",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 107,
+          "text": "class_name InventoryState\nextends RefCounted\n## Pure session-owned rules. No scene, signal, reward, UI or save ownership.\n## Commands accept integer Variants deliberately: typed int arguments coerce fractions.\n\nconst MAX_TYPES: int = 20\n\nvar initialized: bool = false\nvar _catalog: ContentCatalog\nvar _item_counts: Dictionary[String, int] = {}\nvar _active_item_id: String = \"\"\nvar _revision: int = 0\n\n\nfunc initialize(catalog: ContentCatalog) -> PackedStringArray:\n\tif initialized:\n\t\treturn PackedStringArray([\"inventory is already initialized\"])\n\tif catalog == null or not catalog.initialized:\n\t\treturn PackedStringArray([\"inventory requires an initialized content catalog\"])\n\t_catalog = catalog\n\tinitialized = true\n\treturn []\n\n\nfunc revision() -> int:\n\treturn _revision\n\n\nfunc snapshot() -> InventorySnapshot:\n\treturn InventorySnapshot.new(_item_counts, null if _active_item_id.is_empty() else _active_item_id)\n\n\nfunc count(item_id: String) -> int:\n\treturn _item_counts.get(item_id, 0)\n\n\nfunc active_tool() -> ItemDefinition:\n\tif not initialized or _active_item_id.is_empty():\n\t\treturn null\n\tvar definition: ItemDefinition = _catalog.get_item(_active_item_id)\n\treturn definition if definition != null and definition.is_tool() else null\n\n\nfunc can_add(item_id: String, quantity: Variant = 1) -> PackedStringArray:\n\tvar errors: PackedStringArray = _validate_command(item_id, quantity)\n\tif not errors.is_empty():\n\t\treturn errors\n\tvar definition: ItemDefinition = _catalog.get_item(item_id)\n\t# Subtraction before addition prevents integer overflow for hostile quantities.\n\tif quantity > definition.stack_limit - count(item_id):\n\t\treturn PackedStringArray([\"stack_full\"])\n\tif not _item_counts.has(item_id) and _item_counts.size() >= MAX_TYPES:\n\t\treturn PackedStringArray([\"backpack_full\"])\n\treturn []\n\n\nfunc add(item_id: String, quantity: Variant = 1) -> PackedStringArray:\n\tvar errors: PackedStringArray = can_add(item_id, quantity)\n\tif errors.is_empty():\n\t\t_item_counts[item_id] = count(item_id) + int(quantity)\n\t\t_revision += 1\n\treturn errors\n\n\nfunc consume(item_id: String, quantity: Variant = 1) -> PackedStringArray:\n\tvar errors: PackedStringArray = _validate_command(item_id, quantity)\n\tif not errors.is_empty():\n\t\treturn errors\n\tif quantity > count(item_id):\n\t\treturn PackedStringArray([\"insufficient_items\"])\n\t_revision += 1\n\tvar remaining: int = count(item_id) - int(quantity)\n\tif remaining == 0:\n\t\t_item_counts.erase(item_id)\n\t\tif _active_item_id == item_id:\n\t\t\t_active_item_id = \"\"\n\telse:\n\t\t_item_counts[item_id] = remaining\n\treturn []\n\n\nfunc select(item_id: Variant) -> PackedStringArray:\n\tif not initialized:\n\t\treturn PackedStringArray([\"inventory is not initialized\"])\n\tif item_id == null:\n\t\tif not _active_item_id.is_empty():\n\t\t\t_revision += 1\n\t\t_active_item_id = \"\"\n\t\treturn []\n\tif not item_id is String or _catalog.get_item(item_id) == null:\n\t\treturn PackedStringArray([\"unknown_item\"])\n\tif count(item_id) == 0:\n\t\treturn PackedStringArray([\"missing_owned_item\"])\n\tif _active_item_id != item_id:\n\t\t_revision += 1\n\t_active_item_id = item_id\n\treturn []\n\n\nfunc _validate_command(item_id: String, quantity: Variant) -> PackedStringArray:\n\tif not initialized:\n\t\treturn PackedStringArray([\"inventory is not initialized\"])\n\tif _catalog.get_item(item_id) == null:\n\t\treturn PackedStringArray([\"unknown_item\"])\n\tif typeof(quantity) != TYPE_INT or quantity <= 0:\n\t\treturn PackedStringArray([\"invalid_quantity\"])\n\treturn []\n",
+          "sha256": "26084a9bf99debc261d2752a313744722355329f93048bbb2f97727e5ea11d62"
+        }
+      ]
+    },
+    {
+      "path": "game/features/items/foraging_registry.gd",
+      "sha256": "1b1c939a23c30a01d9a75dbf1be5def34a7b366045e7ff6cab626670cd270713",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 47,
+          "text": "class_name ForagingRegistry\nextends RefCounted\n## F001 pinned identities/source feet, with user-approved safe runtime relocations.\n\nconst LOCATION: String = \"prototype-alderwake\"\nconst ROD_ORIGIN: String = \"fishing-rod-dock-01\"\nconst ROD_ITEM: String = \"item-fishing-rod\"\nconst ROD_RESOURCE: String = \"resource-fishing-rod\"\nconst DROP_ID: String = \"dropped-fishing_rod\"\nconst PLACEMENT_LOCATIONS: PackedStringArray = [\"prototype-alderwake\", \"prototype-tollworks\"]\n# Approved 2026-10-07: rod centred on east dock, flower east of cliff.\n# Preserve pinned source geography; saved placements override these defaults.\nconst RUNTIME_FEET: Dictionary = {\n\tROD_ORIGIN: Vector3(-6.5, 0, 15.75),\n\t\"moonflower-01\": Vector3(26.75, 0.25, -2),\n}\nconst ROWS: Array = [\n\t[ROD_ORIGIN, ROD_RESOURCE, ROD_ITEM, Vector3(-8, 0, 15.75)],\n\t[\"moonflower-01\", \"resource-moonflower\", \"item-moonflower\", Vector3(26, 0.25, -2)],\n\t[\"moonflower-02\", \"resource-moonflower\", \"item-moonflower\", Vector3(34, 0.25, 7)],\n\t[\"moonflower-03\", \"resource-moonflower\", \"item-moonflower\", Vector3(30, 0.5, -9)],\n]\n\n\nstatic func entries() -> Array[Dictionary]:\n\tvar result: Array[Dictionary] = []\n\tfor row: Array in ROWS:\n\t\tresult.append({\"instance_id\": row[0], \"resource_id\": row[1], \"item_id\": row[2], \"location_id\": LOCATION, \"authored_foot\": row[3], \"foot\": RUNTIME_FEET.get(row[0], row[3])})\n\treturn result\n\n\nstatic func find(instance_id: String) -> Dictionary:\n\tfor entry: Dictionary in entries():\n\t\tif entry.instance_id == instance_id:\n\t\t\treturn entry\n\treturn {}\n\n\nstatic func validation_errors(catalog: ContentCatalog) -> PackedStringArray:\n\tfor entry: Dictionary in entries():\n\t\tvar resource: ForagingResourceDefinition = catalog.get_resource(entry.resource_id)\n\t\tif catalog.get_location(entry.location_id) == null or resource == null or resource.item_id != entry.item_id or catalog.get_item(entry.item_id) == null:\n\t\t\treturn PackedStringArray([\"foraging registry references absent/mismatched content\"])\n\tfor location: String in PLACEMENT_LOCATIONS:\n\t\tif catalog.get_location(location) == null:\n\t\t\treturn PackedStringArray([\"foraging placement location is missing\"])\n\treturn []\n",
+          "sha256": "1b1c939a23c30a01d9a75dbf1be5def34a7b366045e7ff6cab626670cd270713"
+        }
+      ]
+    },
+    {
+      "path": "game/features/items/foraging_state.gd",
+      "sha256": "a6fadaef52f1f5aaa631d7cc7671ec0ad3160d95fa74d17938aa7d0e1c1cbd94",
+      "excerpts": [
+        {
+          "start_line": 15,
+          "end_line": 25,
+          "text": "var _placement_validator: Callable\nvar _restored: bool = false\n\n\nfunc initialize(catalog: ContentCatalog, session: GameSession) -> PackedStringArray:\n\tif initialized or catalog == null or not catalog.initialized or session == null or not session.inventory.initialized:\n\t\treturn PackedStringArray([\"foraging requires a fresh state, catalog and session inventory\"])\n\tvar errors: PackedStringArray = ForagingRegistry.validation_errors(catalog)\n\tif not errors.is_empty():\n\t\treturn errors\n\t_catalog = catalog\n",
+          "sha256": "890c26aea7536233991a5d7bae8e9ffd86c66e259bfcc026636db262c5cb6029"
+        },
+        {
+          "start_line": 64,
+          "end_line": 76,
+          "text": "\n\nfunc revision() -> int:\n\tvar session: GameSession = _session()\n\treturn _world_revision + (session.inventory.revision() if session != null else 0)\n\n\nfunc snapshot() -> Dictionary:\n\tvar placements: Array[Dictionary] = []\n\tvar ids: Array[String] = _placements.keys()\n\tids.sort()\n\tfor id: String in ids:\n\t\tplacements.append(_placements[id].to_dictionary())\n",
+          "sha256": "47bdd37c446cd36ad637125ff1fd4ad0f74cdf98dc9d6d1e735164e95c1f379e"
+        },
+        {
+          "start_line": 125,
+          "end_line": 173,
+          "text": "\t\t\tif (kind == \"pickup\") != definition.movable_pickup:\n\t\t\t\terrors.append(\"wrong_operation\")\n\t\t\telif is_collected(instance_id):\n\t\t\t\terrors.append(\"already_collected\")\n\t\t\telse:\n\t\t\t\terrors.append_array(_session().inventory.can_add(item_id))\n\tif not errors.is_empty():\n\t\treturn _result(kind, instance_id, item_id, errors)\n\t# Stage event before mutation; only an accepted authored flower gather publishes.\n\tvar conversation_candidate: NpcConversationState\n\tif kind == \"gather\" and item_id == \"item-moonflower\":\n\t\tvar run: GameSession = _session()\n\t\tvar event: NpcEventMemory = run.conversations.events().record(NpcEventMemory.GATHER, \"moonflower\", null, run.elapsed_play_seconds)\n\t\tif event == null: return _result(kind, instance_id, item_id, PackedStringArray([\"event_memory_unavailable\"]))\n\t\tconversation_candidate = run.conversations.with_events(event)\n\t_command_active = true\n\t# No callbacks/signals between inventory mutation and world-fact commit.\n\t_session().inventory.add(item_id)\n\tif instance_id != ForagingRegistry.DROP_ID:\n\t\t_collected.append(instance_id)\n\t\t_collected.sort()\n\t_placements.erase(instance_id)\n\tif conversation_candidate != null: _session().conversations = conversation_candidate\n\treturn _publish(kind, instance_id, item_id)\n\n\nfunc drop(location_id: String, item_id: String, foot: Vector3, expected_revision: Variant) -> ForagingCommandResult:\n\tvar errors: PackedStringArray = _guard(location_id, expected_revision)\n\tif errors.is_empty():\n\t\tif item_id != ForagingRegistry.ROD_ITEM:\n\t\t\terrors.append(\"not_movable\")\n\t\telif not is_collected(ForagingRegistry.ROD_ORIGIN) or not _placements.is_empty() or _session().inventory.count(item_id) != 1:\n\t\t\terrors.append(\"missing_owned_item\")\n\tif not errors.is_empty():\n\t\treturn _result(\"drop\", ForagingRegistry.DROP_ID, item_id, errors)\n\tvar candidate: WorldItemPlacement = WorldItemPlacement.new(ForagingRegistry.DROP_ID, location_id, foot, WorldItemPlacement.GENERATED)\n\treturn _place(\"drop\", candidate, expected_revision)\n\n\nfunc move(location_id: String, instance_id: String, item_id: String, foot: Vector3, expected_revision: Variant) -> ForagingCommandResult:\n\tvar errors: PackedStringArray = _guard(location_id, expected_revision)\n\tvar candidate: WorldItemPlacement = placement(instance_id)\n\tif errors.is_empty():\n\t\tif item_id != ForagingRegistry.ROD_ITEM:\n\t\t\terrors.append(\"not_movable\")\n\t\telif candidate == null and instance_id == ForagingRegistry.ROD_ORIGIN and not is_collected(instance_id) and location_id == ForagingRegistry.LOCATION:\n\t\t\tcandidate = WorldItemPlacement.new(instance_id, location_id, foot, WorldItemPlacement.AUTHORED)\n\t\telif candidate == null:\n\t\t\terrors.append(\"missing_world_item\")\n",
+          "sha256": "2c5f5dbc473d7cf29d19cb060a072bbae348bb352070dbdacd83482071a29750"
+        }
+      ]
+    },
+    {
+      "path": "game/content/items/moonflower.tres",
+      "sha256": "2dd66dfd8020e32d8e7edc9b55105d2581a477f686dd121cfa9553fa19735ae4",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 12,
+          "text": "[gd_resource type=\"Resource\" script_class=\"ItemDefinition\" format=3]\n\n[ext_resource type=\"Script\" path=\"res://features/items/item_definition.gd\" id=\"1\"]\n\n[resource]\nscript = ExtResource(\"1\")\nstable_id = \"item-moonflower\"\ndisplay_name = \"Moonflower\"\nsource_item_id = \"moonflower\"\ncategory = \"forage\"\nstack_limit = 99\ndescription = \"A pale Moonwood flower. Gathered for keeping; no direct use in this slice.\"\n",
+          "sha256": "2dd66dfd8020e32d8e7edc9b55105d2581a477f686dd121cfa9553fa19735ae4"
+        }
+      ]
+    },
+    {
+      "path": "game/content/items/fishing_rod.tres",
+      "sha256": "36fb755173cbe44d2189fc085aa700e807f9f85e204cb40476b1fefb7129cc1b",
+      "excerpts": [
+        {
+          "start_line": 1,
+          "end_line": 13,
+          "text": "[gd_resource type=\"Resource\" script_class=\"ItemDefinition\" format=3]\n\n[ext_resource type=\"Script\" path=\"res://features/items/item_definition.gd\" id=\"1\"]\n\n[resource]\nscript = ExtResource(\"1\")\nstable_id = \"item-fishing-rod\"\ndisplay_name = \"Fishing rod\"\nsource_item_id = \"fishing_rod\"\ncategory = \"tool\"\nstack_limit = 1\nmovable_pickup = true\ndescription = \"A movable rod. Can be selected as a tool; fishing is unavailable in this slice.\"\n",
+          "sha256": "36fb755173cbe44d2189fc085aa700e807f9f85e204cb40476b1fefb7129cc1b"
+        }
+      ]
+    },
+    {
+      "path": "game/app/game_root.gd",
+      "sha256": "fae0e4350f85fb75733e9e7426a16e2a2ccd1aefc9c7aa1afb4fe01bff0e9643",
+      "excerpts": [
+        {
+          "start_line": 171,
+          "end_line": 198,
+          "text": "\nfunc _process(delta: float) -> void:\n\tif not session.initialized or player_placeholder.state == null:\n\t\treturn\n\t_sync_npc_visuals()\n\tif world_host.current_location is AlderwakeTerrainPreview and not world_host.transitioning:\n\t\t(world_host.current_location as AlderwakeTerrainPreview).tree_art.update_visibility(camera_rig.camera, player_placeholder, companion)\n\tif not get_tree().paused and not world_host.transitioning and not loading_save and not retrying:\n\t\tsession.advance(delta)\n\t\tif window_focused and player_placeholder.state.health > 0 and world_host.current_location != null:\n\t\t\tworld_host.current_location.npc_events.observe(session, world_host.current_location, player_placeholder.global_position, dialogue)\n\t\t_present_environment()\n\t\tui.show_play_time(session.elapsed_play_seconds)\n\t\t_refresh_interaction()\n\t_tick_item_drag()\n\t_tick_foraging_hold(delta)\n\tui.show_inventory(session.inventory.snapshot(),catalog)\n\tui.show_combat(player_placeholder.state, guardian, retrying, player_placeholder.combat.damage)\n\tui.show_debug_time(session.environment.day_cycle_progress)\n\tif is_instance_valid(companion):\n\t\tui.show_companion(companion.state, companion_ai.mode, session.relationship.trust)\n\tui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)\n\n\nfunc _input(event: InputEvent) -> void:\n\t# Observe releases even when GUI consumes input. A hold never rearms itself.\n\tif event.is_action_released(\"interact\"):\n\t\t_e_down = false\n",
+          "sha256": "7e1e9f6001b82dc2697716713217e310a24302814ef8ef04766c2715f0238b05"
+        },
+        {
+          "start_line": 380,
+          "end_line": 400,
+          "text": "\tvar enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open and not backpack_open\n\tif item_drag.active() and (not enabled or retrying or player_placeholder.state.health <= 0):\n\t\t_dispose_item_drag()\n\tenabled = enabled and not item_drag.active()\n\tif not enabled or player_placeholder.state.health <= 0:\n\t\t_cancel_foraging_hold(\"input mode\")\n\tplayer_placeholder.set_controls_enabled(enabled and player_placeholder.state.health > 0)\n\tplayer_placeholder.combat_enabled = enabled\n\tif is_instance_valid(companion):\n\t\tcompanion.combat_enabled = enabled and player_placeholder.state.health > 0\n\t\tcompanion_ai.enabled = companion.combat_enabled\n\t\tif not companion_ai.enabled:\n\t\t\tcompanion.clear_input()\n\tif is_instance_valid(guardian):\n\t\tguardian.combat_enabled = enabled and player_placeholder.state.health > 0\n\t\tguardian_ai.enabled = guardian.combat_enabled\n\t\tif not guardian.combat_enabled:\n\t\t\tguardian.clear_input()\n\tui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)\n\nfunc _sync_npc_visuals() -> void:\n",
+          "sha256": "34bc74bf9cf482aaf346bbb62be56219b32bfb721fac21cace897c60a42ca95f"
+        },
+        {
+          "start_line": 500,
+          "end_line": 521,
+          "text": "func _save_boundary_errors() -> PackedStringArray:\n\tif session.review_only:\n\t\treturn PackedStringArray([\"developer environment review cannot Save/Load; restart without review flag for normal play\"])\n\tif not _combat_stable():\n\t\treturn PackedStringArray([\"save/load requires living hero outside combat/action windows; retreat or retry first\"])\n\tif backpack_open:\n\t\treturn PackedStringArray([\"close backpack before save/load\"])\n\tif journal_open:\n\t\treturn PackedStringArray([\"close journal before save/load\"])\n\tif dialogue.active():\n\t\treturn PackedStringArray([\"close dialogue before save/load\"])\n\tif not session.initialized or world_host.current_location == null:\n\t\treturn PackedStringArray([\"run is not ready\"])\n\tif world_host.transitioning or loading_save:\n\t\treturn PackedStringArray([\"save/load unavailable during transition\"])\n\tif not get_tree().paused:\n\t\treturn PackedStringArray([\"pause first; save/load only at stable pause boundary\"])\n\treturn PackedStringArray()\n\n\nfunc save_run() -> PackedStringArray:\n\tvar errors: PackedStringArray = _save_boundary_errors()\n",
+          "sha256": "79dbec4155bf2c43f653f1aaab80395d53df48cdd4c11bd35e232aadcc416ce4"
+        },
+        {
+          "start_line": 662,
+          "end_line": 712,
+          "text": "func load_run() -> PackedStringArray:\n\t_cancel_item_drag()\n\t_cancel_foraging_hold(\"load\")\n\tvar errors: PackedStringArray = _save_boundary_errors()\n\tif not errors.is_empty():\n\t\tui.show_save_status(\"Load failed: \" + \"; \".join(errors))\n\t\treturn errors\n\tvar saved: SaveRepository.ReadResult = save_repository.read(catalog)\n\tif saved.session == null:\n\t\tui.show_save_status(\"Load failed: \" + \"; \".join(saved.errors))\n\t\tprint(\"P005 load rejected: \", saved.errors)\n\t\treturn saved.errors\n\tloading_save = true\n\t_pending_restore = saved.session\n\t_update_controls()\n\tui.show_save_status(\"Loading saved run…\")\n\terrors = world_host.request_transition(saved.session.current_location_id, saved.session.current_spawn_id, saved.session)\n\tif errors.is_empty():\n\t\tvar arrival: Array = await world_host.transition_finished\n\t\tif not arrival[0]:\n\t\t\terrors = arrival[1]\n\t_pending_restore = null\n\tloading_save = false\n\t_update_controls()\n\tui.show_play_time(session.elapsed_play_seconds)\n\tvar message: String = \"Recovered backup. Primary left unchanged.\" if saved.recovered else \"Loaded saved run at arrival anchor.\"\n\tui.show_save_status(message if errors.is_empty() else \"Load failed: \" + \"; \".join(errors))\n\tprint(\"P005 load: \", message if errors.is_empty() else errors)\n\treturn errors\n\n\nfunc _quit() -> void:\n\tprint(\"P001: Quit requested%s.\" % [\" while paused\" if get_tree().paused else \"\"])\n\tget_tree().quit(0)\n\n\nfunc _quest_command(quest_id: String, action_id: String, source_id: String) -> NpcDialogueService.Result:\n\tif world_host.transitioning or loading_save or get_tree().paused or not dialogue.active() or not window_focused:\n\t\treturn NpcDialogueService.Result.new(false, \"Quest command blocked by input mode.\", action_id)\n\tvar exists: bool = false\n\tfor target: PrototypeInteractable in world_host.current_location.interactables():\n\t\tif target.instance_id == source_id and target.dialogue_id == dialogue.snapshot().get(\"graph_id\", \"\"):\n\t\t\tvar definition: ConversationDefinition = catalog.get_dialogue(target.dialogue_id)\n\t\t\tfor choice: NpcDialogueGraph.Choice in definition.graph().nodes[dialogue.snapshot().node_id].choices:\n\t\t\t\tif choice.command.get(\"quest_id\", \"\") == quest_id and choice.command.get(\"action_id\", \"\") == action_id: exists = true\n\tif not exists:\n\t\treturn NpcDialogueService.Result.new(false, \"Quest source unloaded.\", action_id)\n\treturn quests.apply(quest_id, action_id, session.current_location_id, source_id)\n\n\nfunc _refresh_journal() -> void:\n",
+          "sha256": "55a0467c2430ec114a3527b6f9a8aba3ad95b028b6cc8b63abb8f47985857db2"
+        },
+        {
+          "start_line": 784,
+          "end_line": 795,
+          "text": "func _toggle_journal() -> void:\n\t_cancel_item_drag()\n\tif not journal_open and not _combat_stable():\n\t\treturn\n\tif backpack_open or dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:\n\t\treturn\n\tjournal_open = not journal_open\n\tui.show_journal(journal_open, _journal_text())\n\tui.show_upgrade(progression)\n\t_update_controls()\n\t_refresh_interaction()\n\n",
+          "sha256": "6f36ba5b2ea46ffe7f8dfbaa5aa8fe000575e05f5d7e377110a286eabda54f15"
+        },
+        {
+          "start_line": 900,
+          "end_line": 902,
+          "text": "func _journal_text() -> String:\n\treturn quests.journal() + \"\\n\\n\" + relationships.description()\n\n",
+          "sha256": "ccd5862a403011cc2f6f743083608648ebc3d818cfd8b8a3bac915612e7f5742"
+        }
+      ]
+    },
+    {
+      "path": "game/ui/prototype_ui.gd",
+      "sha256": "faa593f5494275dffd6d30993d677862b596d71020b19885a2ad0a6e45fa653e",
+      "excerpts": [
+        {
+          "start_line": 339,
+          "end_line": 364,
+          "text": "func show_journal(open: bool, text: String) -> void:\n\tjournal_overlay.visible = open\n\tif open: foraging_notice.hide()\n\tjournal_text.text = text\n\ttravel_label.visible = not open and not dialogue_overlay.visible and not backpack.visible and not pause_overlay.visible\n\tpause_button.disabled = open or pause_overlay.visible or dialogue_overlay.visible\n\tif open:\n\t\tjournal_close.grab_focus()\n\telse:\n\t\tvar focused: Control = get_viewport().gui_get_focus_owner()\n\t\tif focused != null and journal_panel.is_ancestor_of(focused):\n\t\t\tfocused.release_focus()\n\n\nfunc show_upgrade(service: ProgressionService) -> void:\n\tvar selected: bool = ProgressionService.UPGRADE_ID in service.session.progression.upgrade_ids\n\tupgrade_button.disabled = selected or service.available_points() < 1\n\tupgrade_button.text = \"Deliberate Strike selected · damage 40\" if selected else \"Spend 1 preparation point: Deliberate Strike (+15 damage)\"\n\tupgrade_status.text = \"Preparation complete · Deliberate Strike: 25 → 40 damage (prototype training).\" if selected else \"Preparation points: %d · %s\" % [service.available_points(), \"Select below before entering Tollworks.\" if service.available_points() > 0 else \"Accept Maris's lead to earn 1. Prototype training.\"]\n\tvar buttons: Array[Button] = []\n\tif not upgrade_button.disabled:\n\t\tbuttons.append(upgrade_button)\n\tbuttons.append(journal_close)\n\tfor index: int in range(buttons.size()):\n\t\tbuttons[index].focus_next = buttons[index].get_path_to(buttons[(index + 1) % buttons.size()])\n\t\tbuttons[index].focus_previous = buttons[index].get_path_to(buttons[(index + buttons.size() - 1) % buttons.size()])\n",
+          "sha256": "73a8cf2cec91003c94a52ec50011333cf7e952e9fea16c6c4de312b48a8c8a8f"
+        }
+      ]
+    },
+    {
+      "path": "game/content/npcs/catalog.json",
+      "sha256": "9490a7a2ca4e4cb926c9919c52be1a53f47cc0699a44059723b17d814068f9d9",
+      "excerpts": []
+    }
+  ]
+}

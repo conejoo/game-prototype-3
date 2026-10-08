@@ -1,0 +1,4 @@
+# Bounded snapshots and hashes preserve exact bytes on all hosts.
+reference/** -text
+*.py text eol=lf
+*.md text eol=lf

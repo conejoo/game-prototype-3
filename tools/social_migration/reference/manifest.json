@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "social-60c20eb2-g001",
+  "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+  "source_head": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+  "source_worktree_status": "",
+  "selected_ids": [
+    "npc-01",
+    "npc-02",
+    "npc-03",
+    "npc-04",
+    "npc-06",
+    "npc-07",
+    "npc-08",
+    "npc-14"
+  ],
+  "npc_snapshot_id": "villagers-60c20eb2-n001",
+  "npc_reference_files": [
+    {
+      "path": "adaptations.json",
+      "sha256": "e08787c3328d043767fa32a9f6352bfaec2a49144f27fae8be8af6a47a8ebae9"
+    },
+    {
+      "path": "assets/data/npcs/npc-01/dialogue.json",
+      "sha256": "d8c02f4a20f2b4b742185e0838a0c5d75e359e85f702169594092691e097a7d8"
+    },
+    {
+      "path": "assets/data/npcs/npc-01/runtime.json",
+      "sha256": "0c8e49b32043944282af715197854a7ac7121b2fb8bae9d3cc9472b6a64ff606"
+    },
+    {
+      "path": "assets/data/npcs/npc-01/visuals.json",
+      "sha256": "d649de88b7f68695ee1e9bf9c387f93221c24484762038991135b5cc3676d171"
+    },
+    {
+      "path": "assets/data/npcs/npc-02/dialogue.json",
+      "sha256": "82a66882a08aaf642fc64880b049d14f8a79941800b335f706db241708fadf97"
+    },
+    {
+      "path": "assets/data/npcs/npc-02/runtime.json",
+      "sha256": "fd315a8841dba7ce3d7e0cf00cf085ed575633f68532157b83e8bbd4098de500"
+    },
+    {
+      "path": "assets/data/npcs/npc-02/visuals.json",
+      "sha256": "fa1365db5a501fb7682839f3354dff452148d4f25fee645475b74d89afe3f6e2"
+    },
+    {
+      "path": "assets/data/npcs/npc-03/dialogue.json",
+      "sha256": "dec45c71ef461ae790d49444723482113ddc8dd24413e9a1334413f18ac648ee"
+    },
+    {
+      "path": "assets/data/npcs/npc-03/runtime.json",
+      "sha256": "569f7f387487a6c13c9f7a49921b7c67ecb766de2cde8cdc74a935af6147dd6a"
+    },
+    {
+      "path": "assets/data/npcs/npc-03/visuals.json",
+      "sha256": "83a8110fb0d16109c8354792719e9cea84b76935440ff8ee653d0536dadd6697"
+    },
+    {
+      "path": "assets/data/npcs/npc-04/dialogue.json",
+      "sha256": "b9e4c04f4446cbaa30f31e8830a6a4954a6e71958d91c6c8a851f8bbb40edaf6"
+    },
+    {
+      "path": "assets/data/npcs/npc-04/runtime.json",
+      "sha256": "20dd6224a3c87dd68d939d694b5a5022c8213f451b4b2b168e3fba862f0af2f9"
+    },
+    {
+      "path": "assets/data/npcs/npc-04/visuals.json",
+      "sha256": "99665a7f830ab40fa466e709cb7c694a3a0ca10d97ae4981db4f7b0a2aa2e390"
+    },
+    {
+      "path": "assets/data/npcs/npc-06/dialogue.json",
+      "sha256": "d3fa48216d554d4d8c061880c49e36be4114f43cc5335718f212da826ab5de5b"
+    },
+    {
+      "path": "assets/data/npcs/npc-06/runtime.json",
+      "sha256": "362430a53319f81d13174d20f1a0e9043e7fa3f632dcfc0505a2655eee240a83"
+    },
+    {
+      "path": "assets/data/npcs/npc-06/visuals.json",
+      "sha256": "ee67b307c1a580c8550c09a051ed5e9f55c1dad9eb1a24bd382e206994c86bfb"
+    },
+    {
+      "path": "assets/data/npcs/npc-07/dialogue.json",
+      "sha256": "ba3ebcefde219f66b75c85fab2e246f9fd050ee3ddda36634b233ad5c1cfbf76"
+    },
+    {
+      "path": "assets/data/npcs/npc-07/runtime.json",
+      "sha256": "9359aad263a3fdb1bba1ad2152b973f58fd2c9999a1f89fa6aabd4af1f14dee8"
+    },
+    {
+      "path": "assets/data/npcs/npc-07/visuals.json",
+      "sha256": "8013d3c5a783db56159142609a9971f089ff362be7958861501e521a8eb3d730"
+    },
+    {
+      "path": "assets/data/npcs/npc-08/dialogue.json",
+      "sha256": "72789aa97ec899a86acd2c35e94bb92101fccfcce507db5ca463a1d95641a4a3"
+    },
+    {
+      "path": "assets/data/npcs/npc-08/runtime.json",
+      "sha256": "8227ffb98e7ba3dc468406938206c07d567d22afe0415ef43140a0fcc0afe021"
+    },
+    {
+      "path": "assets/data/npcs/npc-08/visuals.json",
+      "sha256": "423eb6fd0d8e4ff8af4416ae5313644f15ae2703e444d9b9bdc712aed0e655ef"
+    },
+    {
+      "path": "assets/data/npcs/npc-14/dialogue.json",
+      "sha256": "b2f54f797f61ff207b3636b010ae1c9bd100d932250671a259060397424c60cb"
+    },
+    {
+      "path": "assets/data/npcs/npc-14/runtime.json",
+      "sha256": "3cd462415d9bc152c6ff8ad0d8ac2670d9d5b8b7c192fd83c5b2b9b2ae536354"
+    },
+    {
+      "path": "assets/data/npcs/npc-14/visuals.json",
+      "sha256": "de3e91816e0900237c97065f3538d368e84d5aad84dbeb01c568f2dfb2a60325"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_01_idle_sheet.png",
+      "sha256": "f0a3c9b3757cd42f0f8132f388f5f6cfd91b8958a7e18582d01c5b839a6a93b9"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_01_river_fishing_sheet.png",
+      "sha256": "9744b485513ecbe5b00c176eb5229f7a42f308c4d48ce4400093f62da0368b74"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_01_walk_sheet.png",
+      "sha256": "a3be1612ecdd1205d2739c81b6724773ae15bfefb1d0309fa288204dd171d497"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_02_archive_work_sheet.png",
+      "sha256": "a874907c43823f50bfd4d49a4c191bb97f6a5ee5790aa29d88bfab7900d2cae8"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_02_idle_sheet.png",
+      "sha256": "ecbe11281d8891fff673b8b4fdec92140dafacb7dc5f1b684e2dcc4c984e2f94"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_02_walk_sheet.png",
+      "sha256": "3adf1e561ed30fb9fe27c8a61fced9da10e01361d25e822bbef3d85fbc8f616f"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_03_idle_sheet.png",
+      "sha256": "e8784cd38dbee8d8d21563231f99f1cf755ee35649d964630fe00ee0d45a9e4e"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_03_walk_sheet.png",
+      "sha256": "6476799dea0008b7ab54210ca7c861f47ab85a23e6576d3a34d660ace246bc12"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_04_idle_sheet.png",
+      "sha256": "a2bed41deae90115c26d69229c17dcf259afd9fbce623f76d4ef588b52a30d11"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_04_walk_sheet.png",
+      "sha256": "78b8590117861b636cdabd79911072cc88fe72ffa018a187f557a9487f53c7b9"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_06_idle_sheet.png",
+      "sha256": "438fbec50c4507ae29d442473f85a262078590d5f3c0664c41d331dc49dae7bc"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_06_walk_sheet.png",
+      "sha256": "5e52f774dd720264ab981b637081c9b87c61d85cc842189d6aff8e663e3edcd5"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_07_idle_sheet.png",
+      "sha256": "c68a14094d1a30235be5467a1143d5ccc758dc88b4e36b6038410c1fcc58ec9a"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_07_walk_sheet.png",
+      "sha256": "174974767dc2e3ed079170217e69d671f7e235909aded761cfdc9a84add4b0d7"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_08_idle_sheet.png",
+      "sha256": "20bd8cd67609702d373bf7f014577dd18e2e0ffc25fafc6bd2fa4edad856ba89"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_08_walk_sheet.png",
+      "sha256": "afddbe68899a660e73b9361df2abe2394bfd03f2fd02eaf46eb18ec44e1157a3"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_14_idle_sheet.png",
+      "sha256": "a6ca1a4096fccf0c61027c69232b21ab70f04439815eb95d61a32c391f34efcb"
+    },
+    {
+      "path": "assets/images/actors/npcs/npc_14_walk_sheet.png",
+      "sha256": "e9bab23e377c4ff7a9cdbde52dc1eb2f0355995f4012591e11788f677e08d3ca"
+    },
+    {
+      "path": "assets/images/portraits/npc-01/fishing-gear.png",
+      "sha256": "38d175430d3cd7bf278ed96123e0bb8452e0376d03d5d6e81ad45d7558ff63af"
+    },
+    {
+      "path": "assets/images/portraits/npc-01/official-neutral.png",
+      "sha256": "abe9f898b59d9f9b1ce9152ebef79f480e1bf4a6e05b1bd336295ed935d49c94"
+    },
+    {
+      "path": "assets/images/portraits/npc-01/pleased.png",
+      "sha256": "46a605634573984afafd3bd4be128ce0d41d1a2f304bbfcf920b6f574bd276c8"
+    },
+    {
+      "path": "assets/images/portraits/npc-01/practiced-smile.png",
+      "sha256": "976f907f9fc87aec18e1d063de94c44d13b9799eb7ca8179750254ddfa1ec129"
+    },
+    {
+      "path": "assets/images/portraits/npc-01/skeptical.png",
+      "sha256": "b2da629a1872fde64bcb5453f78da535caee3c6f408137a67c12160ab8fa41c2"
+    },
+    {
+      "path": "assets/images/portraits/npc-01/tired-rumpled.png",
+      "sha256": "45a47bcad8d030580c8daa3a200abdc99094a84a5d7c8a33f41bf7e9e18d0c03"
+    },
+    {
+      "path": "assets/images/portraits/npc-02/archive-work.png",
+      "sha256": "2fd6088835adb12cb14e6918f1e57b883afdf7d69c6a1285411550a1cdf5d6bd"
+    },
+    {
+      "path": "assets/images/portraits/npc-02/official-neutral.png",
+      "sha256": "fd520d6e42d76a4ad5749d71a2d2e3b2b8efd95fabcb772d06acf1ee78b9a0f8"
+    },
+    {
+      "path": "assets/images/portraits/npc-02/pleased.png",
+      "sha256": "cbd45551a6219613be1b95d5c200d72cc5b812c9e509bce9256c4a9126aaf48f"
+    },
+    {
+      "path": "assets/images/portraits/npc-02/practiced-smile.png",
+      "sha256": "462ec380fb88476cea83a5fb4a6defb9819181a9fab9d935bc85f650a3aab86a"
+    },
+    {
+      "path": "assets/images/portraits/npc-02/skeptical.png",
+      "sha256": "3ff1b080857d7a45f43ced5e1af3aa4c6bfae4c9b0fba6c3830c6b28a1607ac1"
+    },
+    {
+      "path": "assets/images/portraits/npc-02/tired-rumpled.png",
+      "sha256": "6e0e955b5018725b7994b43721d676d62054d3ce9a79b8ad7e3658038ad1c2de"
+    },
+    {
+      "path": "assets/images/portraits/npc-03/official-neutral.png",
+      "sha256": "95d831f9a073418f3d02162c73ff9dc29dbd8fdeecd01939a2fad1bc0410e07e"
+    },
+    {
+      "path": "assets/images/portraits/npc-03/pleased.png",
+      "sha256": "e22591e090eecc6f95971a75c315bfcb88ddbd8933e8a13a4b658c036efee88e"
+    },
+    {
+      "path": "assets/images/portraits/npc-03/practiced-smile.png",
+      "sha256": "0036e8f6b16d4d4208f4cc64c77ea7542de97399ecec05bf55355e4055a60afd"
+    },
+    {
+      "path": "assets/images/portraits/npc-03/ropework.png",
+      "sha256": "f855d49da00dbc81445b85556bdc20286860b64fd85e8bc859dc1e05895768f1"
+    },
+    {
+      "path": "assets/images/portraits/npc-03/skeptical.png",
+      "sha256": "1eed3bb2c709ad2c9e59bc78b727799119e7e7c28d49a466dda4511ed744de15"
+    },
+    {
+      "path": "assets/images/portraits/npc-03/tired-rumpled.png",
+      "sha256": "99c8a671ccc35faf3c745efe3cc8c2f3b1f68ab2af2515a80f843d0409769b85"
+    },
+    {
+      "path": "assets/images/portraits/npc-04/birdwatching.png",
+      "sha256": "f742b71ae1ab61926a89a7ac64e33b379bfd1207bd27013d29130259039b7888"
+    },
+    {
+      "path": "assets/images/portraits/npc-04/official-neutral.png",
+      "sha256": "9a624800aa5d1d76855180412ce6399da23a1253801925de1a6d7755f96ac029"
+    },
+    {
+      "path": "assets/images/portraits/npc-04/pleased.png",
+      "sha256": "ddf531ecbded193fdaf0e7d5ed32501583fd3bb20b8557af8ebd721496125d9a"
+    },
+    {
+      "path": "assets/images/portraits/npc-04/practiced-smile.png",
+      "sha256": "98b071fdb0123b952e2b1037c3d2660c047643bcb3932962fcd3f04cfb219d45"
+    },
+    {
+      "path": "assets/images/portraits/npc-04/skeptical.png",
+      "sha256": "da436930ac05db7b729c7d09eee8a9b0d59ecc36603ae08828a8d3c3d196898f"
+    },
+    {
+      "path": "assets/images/portraits/npc-04/tired-rumpled.png",
+      "sha256": "4f1ffe8a649ed66b7221d4b22a399c64e45b27262ca5eaa52ee2efb9883f8c44"
+    },
+    {
+      "path": "assets/images/portraits/npc-06/flower-pressing.png",
+      "sha256": "8e8d5ed3d6b62adde991cc8ffe035ee8d47084adbf6c8cd9a3e53c3fbc1f50b2"
+    },
+    {
+      "path": "assets/images/portraits/npc-06/official-neutral.png",
+      "sha256": "3a53f792a6fb8f66d29bffc0c24cd2dcef8031b2d1e6473ca625e5227ea8591d"
+    },
+    {
+      "path": "assets/images/portraits/npc-06/pleased.png",
+      "sha256": "314639afc7d5934419535c5ba44afd905a4e810f6d661187827357a6849f4da7"
+    },
+    {
+      "path": "assets/images/portraits/npc-06/practiced-smile.png",
+      "sha256": "d5414daff75772840eb30e3d5d91149c6859ebe97ba5290eab137f13797040d7"
+    },
+    {
+      "path": "assets/images/portraits/npc-06/skeptical.png",
+      "sha256": "560c524abaffb6cf33f69561e09ae526085f65e65bc9a092a5ad2b7a8f488f1f"
+    },
+    {
+      "path": "assets/images/portraits/npc-06/tired-rumpled.png",
+      "sha256": "de9c37d3eeb6aabe35547f1552e35e995fecd73bfb4db86265b579f0017a4d4a"
+    },
+    {
+      "path": "assets/images/portraits/npc-07/knotwork.png",
+      "sha256": "cd0e01addd8ccdfe49a72a266f26451ff63290b5c2ceb629f4b33f3bd327c6e1"
+    },
+    {
+      "path": "assets/images/portraits/npc-07/official-neutral.png",
+      "sha256": "ddf995d50ee55c58f0d60f1a2d8e51db458a2de0af2ee96143e3a97a66dcdf5a"
+    },
+    {
+      "path": "assets/images/portraits/npc-07/pleased.png",
+      "sha256": "b0e630240a1e30ee5a2bc20059f4815014b60c8e2e3f2f35c7eada7f376343a2"
+    },
+    {
+      "path": "assets/images/portraits/npc-07/practiced-smile.png",
+      "sha256": "9f94b19b7e646350b9c591b1fb18984956b001928cd8cdc26b89b9ace9553eae"
+    },
+    {
+      "path": "assets/images/portraits/npc-07/skeptical.png",
+      "sha256": "8e5f268e65acf9876ea7fc30b6f61aff447087cf2eaf453661d9496b8022cb98"
+    },
+    {
+      "path": "assets/images/portraits/npc-07/tired-rumpled.png",
+      "sha256": "cc14ebd2360b63d4539c5e766172329ab380e366a4148dea90b51d380a31428c"
+    },
+    {
+      "path": "assets/images/portraits/npc-08/official-neutral.png",
+      "sha256": "22cb39cb0a5456aba2857a333903f27bb33a8ff2093eec2b355ccebd5b9ea832"
+    },
+    {
+      "path": "assets/images/portraits/npc-08/pleased.png",
+      "sha256": "db1632baf36836f957fcd7506b004d7ac85f455158c5d307f33e8e375424994c"
+    },
+    {
+      "path": "assets/images/portraits/npc-08/practiced-smile.png",
+      "sha256": "c510c196e22f147a8a506395a08bdc0cee8decc930ade58c31bd5d6a53c3cb99"
+    },
+    {
+      "path": "assets/images/portraits/npc-08/skeptical.png",
+      "sha256": "0d364d87d220a3705c8c12eab3b1af7c6adc0790b810204240d5fd7ca61b3a09"
+    },
+    {
+      "path": "assets/images/portraits/npc-08/tired-rumpled.png",
+      "sha256": "3a23d74744da49fce65f3373937adae4322c49334520fd5f91c710871fcf0599"
+    },
+    {
+      "path": "assets/images/portraits/npc-08/woodcarving.png",
+      "sha256": "92fbda2c5bffe162b00b7041ef3ed05c4c8b90775068858aef661c33924b958d"
+    },
+    {
+      "path": "assets/images/portraits/npc-14/official-neutral.png",
+      "sha256": "7c779ead06a31afe4dceab36c3cbaeb9596594ac62e2b42be4bc9de864ea5684"
+    },
+    {
+      "path": "assets/images/portraits/npc-14/pleased.png",
+      "sha256": "3a6b5ecf2442020cf9ce1561998ed599296bccd94a1cbebff012f9e4dbb2aaca"
+    },
+    {
+      "path": "assets/images/portraits/npc-14/practiced-smile.png",
+      "sha256": "ebce4529c5c5f20473578c96ec57b4feed06e10e30dcd664637a1139f7e1c6a8"
+    },
+    {
+      "path": "assets/images/portraits/npc-14/quilting.png",
+      "sha256": "d79d40edd01b44109960990b1b64b9f30655cf21516da6b5086dd44d920f7023"
+    },
+    {
+      "path": "assets/images/portraits/npc-14/skeptical.png",
+      "sha256": "a2890efca2067788fb28081a380e3b220e2e046fc3d428bc9c607e3f4a6f2b4e"
+    },
+    {
+      "path": "assets/images/portraits/npc-14/tired-rumpled.png",
+      "sha256": "bfad899e046e0d8cfd9c973ca1a59cbbdf2dc6b8571e3c274c25dcb461945dde"
+    },
+    {
+      "path": "contact_registry.json",
+      "sha256": "5663f3b7bc6aa648193f82c89358c49ff5950b12f04e3da2e0475c6349837033"
+    },
+    {
+      "path": "coverage.json",
+      "sha256": "8ad509e69cd1a806448560d36b03341bdfa0d50704036403bc69202270443492"
+    },
+    {
+      "path": "COVERAGE.md",
+      "sha256": "69f48e0f4e8ef5cafed3878e6521f16fd092dcb949364f6797004580c73caa65"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "e1000ef19ecd73eb48e795f6e2f33dcfb5b5f4157fa0faf4862f6177bba86b58"
+    },
+    {
+      "path": "placement_context.json",
+      "sha256": "2227abc5486b97356dbb36d5a52aae306e8703f4307a835b5d7dc9de94e0045f"
+    },
+    {
+      "path": "routine_context.json",
+      "sha256": "454b3e5ecbc8174e1b8428eab6f8fecbbd364d85e24e1114c1376f234243b1b3"
+    },
+    {
+      "path": "selected_catalog.json",
+      "sha256": "5cd843e6fa7d709b2af141827231061cd5df4f7ab24896173cee07d3b91feb42"
+    },
+    {
+      "path": "target_baseline.json",
+      "sha256": "69b562612b8b26eaa18e1c66d0c6ba6296c2eef57803fff7dddc061dda8f7e01"
+    },
+    {
+      "path": "tooling.json",
+      "sha256": "5cf53f9efe8b70a9af1629e2e43bf7723e9f07d7f8dcc0ea828c3c0bf8986cc3"
+    }
+  ],
+  "source_inputs": [
+    {
+      "source_path": "lib/game/dialogue/dialogue_choice_eligibility.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "eb36c9ef24d6ebdd0b39726635d28e62113e5b836e6b31bbc187abcc60e692df",
+      "bytes": 2697,
+      "snapshot_path": "source/lib/game/dialogue/dialogue_choice_eligibility.dart.json",
+      "snapshot_sha256": "dc2f0af27cc6689559acc156f0836cfabb942f37a15716a24511e5f35cb07b8a",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "lib/game/dialogue/dialogue_model.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "72a28bbe068f5b7fb24f147eb969d350c2fe2d6ad64a86d5315884f37aaaeb93",
+      "bytes": 16239,
+      "snapshot_path": "source/lib/game/dialogue/dialogue_model.dart.json",
+      "snapshot_sha256": "550d9ca05f32bb639184f04216577c2ee2127d3adb27ac508b573adaddc24538",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "lib/game/state/runtime_game_controller.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "29bef8302107fb116b9814840ae24386163f1442e50a9eb06c7803e0bd8c8c26",
+      "bytes": 37703,
+      "snapshot_path": "source/lib/game/state/runtime_game_controller.dart.json",
+      "snapshot_sha256": "2f1bbec853a0c7602fbc4ab6404dd52463b34c9a71e342bc6ddad65f4c49fd9e",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "lib/game/state/runtime_game_state.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "5b965d130ef38a6ee2c8e6769eb51744fc01c17458deaf58d4a076e4c9db2cae",
+      "bytes": 21119,
+      "snapshot_path": "source/lib/game/state/runtime_game_state.dart.json",
+      "snapshot_sha256": "89099023b74a72cf998a3eeda6a9034064740ea1eaa26f316a962c7dda8b0895",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "lib/game/state/player_event_journal.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "82035f10057834af4ea98f26aa369a906a7ab63046789091059351fd77228921",
+      "bytes": 6199,
+      "snapshot_path": "source/lib/game/state/player_event_journal.dart.json",
+      "snapshot_sha256": "238bbfc75503a0a6cdb07bc5844d5518d936b060cf4edec79c27c34134b7ab3d",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "lib/game/state/people_snapshot.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "c11b124cba68822baf5e3e4fe8f47adf7abbab11c73079fe65ea2cdb7ca830ac",
+      "bytes": 3933,
+      "snapshot_path": "source/lib/game/state/people_snapshot.dart.json",
+      "snapshot_sha256": "545760fe1c31a4ca5e5e9bf509c99b0c2ef5a4fd7685670fde2f7da34cdbff98",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "lib/ui/people_journal_overlay.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "e7fb3b3ab2f8e395ffbad0ce149c4c31ab8da5e6433f7b6853bfb6924cdc490f",
+      "bytes": 8969,
+      "snapshot_path": "source/lib/ui/people_journal_overlay.dart.json",
+      "snapshot_sha256": "efbb700d14d7aa3f52cfa0d3a7a4f5cdaa2726c5ab1f09d3d85768491666e472",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "lib/ui/dialogue_overlay.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "5be8046e253d090dfbe2724b213f0002fc350678e75ce710376cc0aad1e05d62",
+      "bytes": 9013,
+      "snapshot_path": "source/lib/ui/dialogue_overlay.dart.json",
+      "snapshot_sha256": "9fdc6c3fe99ca5b2593a8d47afbaad7ea0c5a237bad2919fce05a8f2cdb8c34a",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "lib/game/npc/npc_content.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "d6fc17116b6fb1295a9accd2c037fffcb9ed490ae2c13aa83527e697d5bfe12b",
+      "bytes": 17205,
+      "snapshot_path": "source/lib/game/npc/npc_content.dart.json",
+      "snapshot_sha256": "a1f46c5c72b550d74d1ea16daf482bd06cfa911970e4d5b8a9cdef69de08d8c5",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "assets/data/gameplay/catalog.json",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "c3677ed12a62a51e49e67479b383d6acf6a2b8aa9e468027a2ad9b83e64fbc2a",
+      "bytes": 3497,
+      "snapshot_path": "source/assets/data/gameplay/catalog.json.json",
+      "snapshot_sha256": "6262feedbae73f0eb703c0c28bb18a157a27d556dcd9d9b3490086f81cf3277e",
+      "purpose": "Bounded public social/item/presentation semantics; runtime never depends on this snapshot."
+    },
+    {
+      "source_path": "test/game/dialogue/dialogue_choice_eligibility_test.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "ebecb39fd8dc93cdb1c327dd76477575137f095e2292a338c2d279e70770cab1",
+      "bytes": 2296,
+      "snapshot_path": "source/test/game/dialogue/dialogue_choice_eligibility_test.dart.json",
+      "snapshot_sha256": "ba115c6146dc1228bac11482e35934d5d2380dae865aab8e63e1b13f95dc76d8",
+      "purpose": "Reviewed social reference only; test inputs/expectations are not fresh execution evidence."
+    },
+    {
+      "source_path": "test/game/state/runtime_game_controller_test.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "52191ce10f80f3a4b5ec8ac7dd0617cfd8d2213365796919fe45b048f4c9b095",
+      "bytes": 28764,
+      "snapshot_path": "source/test/game/state/runtime_game_controller_test.dart.json",
+      "snapshot_sha256": "0977cfabf18c4974ef034e44adb5aebf71df84a14924c5c54504d504185360e3",
+      "purpose": "Reviewed social reference only; test inputs/expectations are not fresh execution evidence."
+    },
+    {
+      "source_path": "test/game/state/runtime_game_state_test.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "b88d0aca89860a9fff525d7c27ceb8d49543b29b76ab299a1c6b498c5dd3abd2",
+      "bytes": 12825,
+      "snapshot_path": "source/test/game/state/runtime_game_state_test.dart.json",
+      "snapshot_sha256": "8dc5d631e141d50263227868c17d8ac3c3a1712f388843da9d8a5786bd91b26b",
+      "purpose": "Reviewed social reference only; test inputs/expectations are not fresh execution evidence."
+    },
+    {
+      "source_path": "test/game/state/presentation_snapshots_test.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "b5042df87a1b9cf63baa5b0359e799370a60d7609bd692dc67626579a822a756",
+      "bytes": 7017,
+      "snapshot_path": "source/test/game/state/presentation_snapshots_test.dart.json",
+      "snapshot_sha256": "01420ebe2512e2b47df1871fb9b70cf74829368e1a9ce9a263502ec79fc2a72c",
+      "purpose": "Reviewed social reference only; test inputs/expectations are not fresh execution evidence."
+    },
+    {
+      "source_path": "test/game/state/player_event_journal_test.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "26f83138d64149321351ebc98c386699e904560cd1ae0cc42270d3c3820b55bc",
+      "bytes": 2837,
+      "snapshot_path": "source/test/game/state/player_event_journal_test.dart.json",
+      "snapshot_sha256": "9732ce7d844460626b2574dc32ba7dc9ba138710632162716cc7dfeb62558556",
+      "purpose": "Reviewed social reference only; test inputs/expectations are not fresh execution evidence."
+    },
+    {
+      "source_path": "test/ui/people_journal_overlay_test.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "04bac310025c9909ae0e1dbc1440d07bbb819f408c48ceeebfa129ea76a2fab1",
+      "bytes": 5450,
+      "snapshot_path": "source/test/ui/people_journal_overlay_test.dart.json",
+      "snapshot_sha256": "e5b57f402827139055586357d721ca4231abcfe510f0dea92bd15b6ff86c930a",
+      "purpose": "Reviewed social reference only; test inputs/expectations are not fresh execution evidence."
+    },
+    {
+      "source_path": "lib/game/dialogue/dialogue_repository.dart",
+      "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+      "sha256": "afd8c31cd9a7c45d579d6da0a3422457af0fcf408675ca608ac8926a659ed289",
+      "bytes": 3361,
+      "snapshot_path": "source/lib/game/dialogue/dialogue_repository.dart.json",
+      "snapshot_sha256": "b8a00618bb0b06026d06cabd37f6e1c794d978a1f81360a1484015f2e9b49aad",
+      "purpose": "Bounded existing source resolver semantics, already hash-pinned in N001; no runtime dependency."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "social_activation.json",
+      "sha256": "05347622812a8795cd984e6594e2dc8ca425fa79622e5565b8a4679613e1276f"
+    },
+    {
+      "path": "behavior_vectors.json",
+      "sha256": "d7c310f250a5428373b3a38a88a1630778ed9508be44eab8cb03c3b121a2f0b2"
+    },
+    {
+      "path": "target_baseline.json",
+      "sha256": "dabe281c42823d63c5d4a1a38014ffa59ad1c2448ae70d2d0bd9776d2101cc23"
+    }
+  ],
+  "pin_policy": "No automatic refresh/repin. Hash or source identity differences require reconciliation. Existing NPC public assets/coverage are reused, never copied or edited."
+}

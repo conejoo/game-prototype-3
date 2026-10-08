@@ -1,0 +1,11 @@
+{
+  "source_path": "lib/game/dialogue/dialogue_repository.dart",
+  "excerpts": [
+    {
+      "start_line": 1,
+      "end_line": 40,
+      "text": "import '../npc/npc_content.dart';\nimport '../state/player_event_journal.dart';\nimport '../state/runtime_game_state.dart';\nimport 'dialogue_model.dart';\n\n/// Stable priority resolver for entry nodes in one finite dialogue graph.\nclass DialogueResolver {\n  const DialogueResolver(this.nodes, {this.entryNodeIds});\n\n  final List<DialogueNode> nodes;\n  final List<String>? entryNodeIds;\n\n  DialogueNode? resolve(\n    NpcRelationshipState relationship, {\n    PlayerEventJournal? journal,\n    double activePlaySeconds = 0,\n  }) {\n    final entries = entryNodeIds;\n    final allowed = entries?.toSet();\n    final matches =\n        nodes\n            .where(\n              (node) =>\n                  node.npcId == relationship.npcId &&\n                  (allowed == null || allowed.contains(node.id)) &&\n                  node.conditions.matches(\n                    relationship,\n                    journal: journal,\n                    activePlaySeconds: activePlaySeconds,\n                  ),\n            )\n            .toList()\n          ..sort((left, right) {\n            final priority = right.priority.compareTo(left.priority);\n            return priority != 0 ? priority : left.id.compareTo(right.id);\n          });\n    return matches.isEmpty ? null : matches.first;\n  }\n}\n\n",
+      "sha256": "a3249645998b60805ac65a1b6a71684c7b549f46fc6dcfff9a1542fed7158639"
+    }
+  ]
+}

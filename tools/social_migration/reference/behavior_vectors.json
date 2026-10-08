@@ -1,0 +1,730 @@
+{
+  "schema_version": 1,
+  "policy_id": "social-60c20eb2-g001",
+  "evidence_kind": "Reviewed reference expectations; not executed source tests or target runtime acceptance.",
+  "source_sequences": [
+    {
+      "id": "npc-01:npc-01-helpful-response",
+      "npc_id": "npc-01",
+      "introduction_choice_id": "npc-01-helpful-response",
+      "gift_choice_ids": [
+        "npc-01-gift-moonflower-from-hint",
+        "npc-01-gift-moonflower-follow-up"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        1,
+        2,
+        3
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        1
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 1,
+      "seen_flag": "relationshipLevel1Seen"
+    },
+    {
+      "id": "npc-01:npc-01-neutral-response",
+      "npc_id": "npc-01",
+      "introduction_choice_id": "npc-01-neutral-response",
+      "gift_choice_ids": [
+        "npc-01-gift-moonflower-from-hint",
+        "npc-01-gift-moonflower-follow-up"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        0,
+        1,
+        2
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        0
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-02:npc-02-careful-research-response",
+      "npc_id": "npc-02",
+      "introduction_choice_id": "npc-02-careful-research-response",
+      "gift_choice_ids": [
+        "npc-02-gift-moonflower-from-hint",
+        "npc-02-gift-moonflower-follow-up"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        1,
+        2,
+        3
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        1
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-02:npc-02-neighborly-response",
+      "npc_id": "npc-02",
+      "introduction_choice_id": "npc-02-neighborly-response",
+      "gift_choice_ids": [
+        "npc-02-gift-moonflower-from-hint",
+        "npc-02-gift-moonflower-follow-up"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        0,
+        1,
+        2
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        0
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-03:npc-03-careful-response",
+      "npc_id": "npc-03",
+      "introduction_choice_id": "npc-03-careful-response",
+      "gift_choice_ids": [
+        "npc-03-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        1,
+        2,
+        3
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        1
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-03:npc-03-passing-response",
+      "npc_id": "npc-03",
+      "introduction_choice_id": "npc-03-passing-response",
+      "gift_choice_ids": [
+        "npc-03-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        0,
+        1,
+        2
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        0
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-04:npc-04-careful-response",
+      "npc_id": "npc-04",
+      "introduction_choice_id": "npc-04-careful-response",
+      "gift_choice_ids": [
+        "npc-04-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        1,
+        2,
+        3
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        1
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-04:npc-04-passing-response",
+      "npc_id": "npc-04",
+      "introduction_choice_id": "npc-04-passing-response",
+      "gift_choice_ids": [
+        "npc-04-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        0,
+        1,
+        2
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        0
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-06:npc-06-careful-response",
+      "npc_id": "npc-06",
+      "introduction_choice_id": "npc-06-careful-response",
+      "gift_choice_ids": [
+        "npc-06-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        1,
+        2,
+        3
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        1
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-06:npc-06-passing-response",
+      "npc_id": "npc-06",
+      "introduction_choice_id": "npc-06-passing-response",
+      "gift_choice_ids": [
+        "npc-06-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        0,
+        1,
+        2
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        0
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-07:npc-07-careful-response",
+      "npc_id": "npc-07",
+      "introduction_choice_id": "npc-07-careful-response",
+      "gift_choice_ids": [
+        "npc-07-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        1,
+        2,
+        3
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        1
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-07:npc-07-passing-response",
+      "npc_id": "npc-07",
+      "introduction_choice_id": "npc-07-passing-response",
+      "gift_choice_ids": [
+        "npc-07-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        0,
+        1,
+        2
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        0
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-08:npc-08-careful-response",
+      "npc_id": "npc-08",
+      "introduction_choice_id": "npc-08-careful-response",
+      "gift_choice_ids": [
+        "npc-08-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        1,
+        2,
+        3
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        1
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-08:npc-08-passing-response",
+      "npc_id": "npc-08",
+      "introduction_choice_id": "npc-08-passing-response",
+      "gift_choice_ids": [
+        "npc-08-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        0,
+        1,
+        2
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        0
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-14:npc-14-careful-response",
+      "npc_id": "npc-14",
+      "introduction_choice_id": "npc-14-careful-response",
+      "gift_choice_ids": [
+        "npc-14-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        1,
+        2,
+        3
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        1
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    },
+    {
+      "id": "npc-14:npc-14-passing-response",
+      "npc_id": "npc-14",
+      "introduction_choice_id": "npc-14-passing-response",
+      "gift_choice_ids": [
+        "npc-14-gift-moonflower"
+      ],
+      "precondition": "Actual entered preference node and two owned Moonflowers; introduction accepted once.",
+      "affinity_after_intro_and_each_gift": [
+        0,
+        1,
+        2
+      ],
+      "level_after_intro_and_each_gift": [
+        0,
+        0,
+        0
+      ],
+      "remaining_from_two_owned_after_each_gift": [
+        1,
+        0
+      ],
+      "item_gifted_counts": [
+        1,
+        2
+      ],
+      "third_gift": "acceptanceCapReached",
+      "milestone_entry_count": 0,
+      "seen_flag": null
+    }
+  ],
+  "eligibility_cases": [
+    {
+      "case": "allowed",
+      "conditions": true,
+      "rule": true,
+      "giftable": true,
+      "owned": 1,
+      "fact": true,
+      "gift_count": 0,
+      "reason": null
+    },
+    {
+      "case": "second deliberate gift",
+      "conditions": true,
+      "rule": true,
+      "giftable": true,
+      "owned": 1,
+      "fact": true,
+      "gift_count": 1,
+      "reason": null
+    },
+    {
+      "case": "conditions first",
+      "conditions": false,
+      "rule": false,
+      "giftable": false,
+      "owned": 0,
+      "fact": false,
+      "gift_count": 2,
+      "reason": "conditions"
+    },
+    {
+      "case": "missing rule",
+      "conditions": true,
+      "rule": false,
+      "giftable": true,
+      "owned": 1,
+      "fact": true,
+      "gift_count": 0,
+      "reason": "missingGiftRule"
+    },
+    {
+      "case": "unknown or non-giftable item",
+      "conditions": true,
+      "rule": true,
+      "giftable": false,
+      "owned": 1,
+      "fact": true,
+      "gift_count": 0,
+      "reason": "itemNotGiftable"
+    },
+    {
+      "case": "missing item",
+      "conditions": true,
+      "rule": true,
+      "giftable": true,
+      "owned": 0,
+      "fact": true,
+      "gift_count": 0,
+      "reason": "missingItem"
+    },
+    {
+      "case": "missing learned fact",
+      "conditions": true,
+      "rule": true,
+      "giftable": true,
+      "owned": 1,
+      "fact": false,
+      "gift_count": 0,
+      "reason": "missingRequiredFact"
+    },
+    {
+      "case": "cap boundary",
+      "conditions": true,
+      "rule": true,
+      "giftable": true,
+      "owned": 1,
+      "fact": true,
+      "gift_count": 2,
+      "reason": "acceptanceCapReached"
+    }
+  ],
+  "eligibility_precedence": [
+    "missingRelationship (controller)",
+    "conditions",
+    "missingGiftRule",
+    "itemNotGiftable",
+    "missingItem",
+    "missingRequiredFact",
+    "acceptanceCapReached",
+    "available"
+  ],
+  "gift_events_in_order": [
+    {
+      "kind": "itemGifted",
+      "subjectId": "moonflower",
+      "targetId": "<npc_id>"
+    },
+    {
+      "kind": "dialogueChoiceSelected",
+      "subjectId": "<npc_id>",
+      "targetId": "<choice_id>"
+    }
+  ],
+  "event_time": "Both events use the same activePlaySeconds; distinct consecutive sequence numbers.",
+  "transition_order": [
+    "choice effects/one-time guard",
+    "gift affinity delta with clamping",
+    "level crossing/milestone candidate",
+    "endsConversation wins",
+    "milestone or authored next",
+    "entry seen IDs/facts/milestone flag",
+    "gift event",
+    "choice event",
+    "publish state",
+    "observers/quest callback"
+  ],
+  "shared_cap": [
+    {
+      "npc_id": "npc-01",
+      "choice_ids": [
+        "npc-01-gift-moonflower-from-hint",
+        "npc-01-gift-moonflower-follow-up"
+      ],
+      "counts_after_alternating_choices": [
+        1,
+        2
+      ],
+      "next_choice_rejected": true
+    },
+    {
+      "npc_id": "npc-02",
+      "choice_ids": [
+        "npc-02-gift-moonflower-from-hint",
+        "npc-02-gift-moonflower-follow-up"
+      ],
+      "counts_after_alternating_choices": [
+        1,
+        2
+      ],
+      "next_choice_rejected": true
+    }
+  ],
+  "selection": [
+    {
+      "owned_before": 2,
+      "owned_after": 1,
+      "active_after": "item-moonflower"
+    },
+    {
+      "owned_before": 1,
+      "owned_after": 0,
+      "active_after": null
+    }
+  ],
+  "generic_source_boundaries": [
+    {
+      "case": "signed_clamp",
+      "before": 0,
+      "delta": -1,
+      "after": 0
+    },
+    {
+      "case": "upper_clamp",
+      "before": 2147483647,
+      "delta": 1,
+      "after": 2147483647
+    },
+    {
+      "case": "endsConversation crossing",
+      "milestone_candidate": true,
+      "next_dialogue": null,
+      "milestone_flag_on_entry": false
+    },
+    {
+      "case": "normal entry to Edric milestone",
+      "flag_on_entry": "relationshipLevel1Seen"
+    },
+    {
+      "case": "seen flag then decline/re-cross",
+      "milestone_injection": false
+    }
+  ],
+  "people": {
+    "initial": [],
+    "met_gate": "seenDialogueIds is not empty",
+    "name_sort": [
+      "npc-08",
+      "npc-14",
+      "npc-04",
+      "npc-02",
+      "npc-07",
+      "npc-03",
+      "npc-01",
+      "npc-06"
+    ],
+    "fact_sort": [
+      "category",
+      "label"
+    ],
+    "facts": "Only authored facts whose IDs occur in learnedFactIds",
+    "primary_portrait": "official-neutral, else first valid authored portrait",
+    "level_zero_label": null,
+    "level_one_label": "Acquaintance",
+    "progress": "affinity / levelOneAffinity (3); no level2",
+    "opening_or_selection_mutations": [],
+    "proximity_or_title_disclosure": [],
+    "edric_after_hint_facts": [
+      "npc-01-moonflower-preference"
+    ],
+    "della_after_intro_facts": [
+      "npc-14-public-role"
+    ],
+    "undisclosed_fact_ids": [
+      "npc-01-public-role",
+      "npc-01-river-fishing",
+      "npc-02-archive-practice"
+    ]
+  },
+  "target_strengthening_not_source_proof": [
+    "stale/double-click token rejection",
+    "foreign NPC/node/instance rejection",
+    "inventory revision rejection",
+    "event exhaustion rollback",
+    "reentrancy rejection",
+    "invalid target rollback",
+    "detached caller mutation isolation",
+    "save gift/choice count and milestone derivation"
+  ],
+  "ordinary_supply": {
+    "flower_node_ids": [
+      "moonflower-01",
+      "moonflower-02",
+      "moonflower-03"
+    ],
+    "total": 3,
+    "possible": "Positive Edric introduction + two gifts + one different recipient gift",
+    "all_eight_cap_coverage": "Synthetic fixtures or independent fresh runs; never free items/respawn"
+  }
+}
