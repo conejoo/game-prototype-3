@@ -118,7 +118,7 @@ func _run() -> void:
 		if mode == "pause": game._set_paused(true)
 		elif mode == "journal": game._toggle_journal()
 		elif mode == "dialogue":
-			game.dialogue.begin(game.catalog.get_dialogue("prototype-maris-counter"), "npc-03-counter")
+			game.dialogue.begin_graph(game.catalog.get_dialogue("prototype-maris-counter"), "npc-03-counter")
 			game._update_controls()
 		else: game._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
 		var projection: int = rig.camera.projection

@@ -108,7 +108,7 @@ func _run() -> void:
 		match mode:
 			"pause": game._set_paused(true)
 			"journal": game._toggle_journal()
-			"dialogue": game._present_dialogue(game.dialogue.begin(game.catalog.get_dialogue("prototype-companion-greeting"),"fixture"))
+			"dialogue": game._present_dialogue(game.dialogue.begin_graph(game.catalog.get_dialogue("prototype-companion-greeting"),"fixture"))
 			"loading": game.loading_save = true
 			"travel": game.world_host.transitioning = true
 			"retry": game.retrying = true

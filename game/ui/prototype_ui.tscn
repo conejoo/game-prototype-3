@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://btqrtm12khtky"]
 
+[ext_resource type="Script" path="res://ui/conversation_view.gd" id="conversation"]
 [ext_resource type="Script" path="res://ui/prototype_ui.gd" id="1_ui"]
 
 [sub_resource type="Theme" id="Theme_ui"]
@@ -300,49 +301,11 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Panel" type="PanelContainer" parent="Screen/DialogueOverlay/Center"]
+script = ExtResource("conversation")
 custom_minimum_size = Vector2(680, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("Style_panel")
 
-[node name="Margin" type="MarginContainer" parent="Screen/DialogueOverlay/Center/Panel"]
-layout_mode = 2
-theme_override_constants/margin_left = 28
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 28
-theme_override_constants/margin_bottom = 24
-
-[node name="Options" type="VBoxContainer" parent="Screen/DialogueOverlay/Center/Panel/Margin"]
-layout_mode = 2
-theme_override_constants/separation = 14
-
-[node name="Title" type="Label" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-autowrap_mode = 2
-
-[node name="Text" type="Label" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
-layout_mode = 2
-custom_minimum_size = Vector2(0, 80)
-autowrap_mode = 2
-
-[node name="Choices" type="VBoxContainer" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="Next" type="Button" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
-layout_mode = 2
-custom_minimum_size = Vector2(0, 44)
-text = "Continue"
-
-[node name="Close" type="Button" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
-layout_mode = 2
-custom_minimum_size = Vector2(0, 44)
-text = "Close [Esc]"
-
-[node name="Status" type="Label" parent="Screen/DialogueOverlay/Center/Panel/Margin/Options"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 14
-autowrap_mode = 2
 [node name="JournalOverlay" type="Control" parent="Screen"]
 visible = false
 layout_mode = 1

@@ -1,28 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+[gd_resource type="Resource" script_class="ConversationDefinition" format=3]
 
-[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
-[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
-
-[sub_resource type="Resource" id="Recover"]
-script = ExtResource("2")
-stable_id = "maris-vessel-choice"
-label = "Identify Maris's experience and open its return path."
-quest_id = "prototype-maris-recovery"
-action_id = "maris-open-return-path"
-response = PackedStringArray("[Prototype adaptation] The refuge index identifies Maris's early fitting experience. Its local return path opens. Return to her counter for reconnection; touching the vessel does not restore the shop or repair the ship.")
-
-[sub_resource type="Resource" id="Leave"]
-script = ExtResource("2")
-stable_id = "maris-vessel-leave"
-label = "Leave the vessel."
-action_id = "prototype-leave"
-response = PackedStringArray("The vessel remains here.")
+[ext_resource type="Script" path="res://features/dialogue/conversation_definition.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-maris-vessel"
 display_name = "Recovery vessel — prototype adaptation"
-prototype_fixture = true
 speaker_actor_id = "prototype-hero"
-lines = PackedStringArray("[Prototype vessel] A small vessel and refuge index identify Maris's fitting experience. The protective guardian must be cleared before its return path can open.")
-choices = Array[ExtResource("2")]([SubResource("Recover"), SubResource("Leave")])
+prototype_fixture = true
+graph_json = "{\"npcId\":\"prototype-hero\",\"entryNodeIds\":[\"prototype-maris-vessel:intro-0\"],\"nodes\":[{\"id\":\"prototype-maris-vessel:intro-0\",\"text\":\"[Prototype vessel] A small vessel and refuge index identify Maris's fitting experience. The protective guardian must be cleared before its return path can open.\",\"portraitId\":\"\",\"presentationIndex\":0,\"choices\":[{\"id\":\"maris-vessel-choice\",\"text\":\"Identify Maris's experience and open its return path.\",\"targetNodeId\":\"maris-vessel-choice:response-0\",\"command\":{\"action_id\":\"maris-open-return-path\",\"quest_id\":\"prototype-maris-recovery\"}},{\"id\":\"maris-vessel-leave\",\"text\":\"Leave the vessel.\",\"targetNodeId\":\"maris-vessel-leave:response-0\",\"command\":{\"action_id\":\"prototype-leave\"}}]},{\"id\":\"maris-vessel-choice:response-0\",\"text\":\"[Prototype adaptation] The refuge index identifies Maris's early fitting experience. Its local return path opens. Return to her counter for reconnection; touching the vessel does not restore the shop or repair the ship.\",\"portraitId\":\"\",\"presentationIndex\":0},{\"id\":\"maris-vessel-leave:response-0\",\"text\":\"The vessel remains here.\",\"portraitId\":\"\",\"presentationIndex\":0}]}"

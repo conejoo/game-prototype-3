@@ -92,7 +92,7 @@ func _run() -> void:
 	game._toggle_journal()
 	_blocked("journal")
 	game._toggle_journal()
-	game._present_dialogue(game.dialogue.begin(game.catalog.get_dialogue("prototype-companion-greeting"), "synthetic-debug-gate"))
+	game._present_dialogue(game.dialogue.begin_graph(game.catalog.get_dialogue("prototype-companion-greeting"), "synthetic-debug-gate"))
 	_blocked("dialogue")
 	game._cancel_dialogue()
 	for gate: String in ["loading_save", "retrying"]:

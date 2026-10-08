@@ -84,7 +84,7 @@ func _run() -> void:
 		match gate:
 			"pause": game._set_paused(true)
 			"dialogue":
-				game.dialogue.begin(game.catalog.get_dialogue("prototype-companion-greeting"), "m010-synthetic-station")
+				game.dialogue.begin_graph(game.catalog.get_dialogue("prototype-companion-greeting"), "m010-synthetic-station")
 				game._update_controls()
 			"focus": game._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
 			"journal":

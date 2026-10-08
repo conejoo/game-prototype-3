@@ -37,8 +37,8 @@ func _rules(game: Node3D) -> void:
 		for definition: ContentDefinition in game.content_manifest.definitions:
 			manifest.definitions.append(definition.duplicate(true))
 		for definition: ContentDefinition in manifest.definitions:
-			if definition is DialogueDefinition and definition.stable_id == "prototype-companion-greeting" and mutation == "reaction-reference":
-				(definition as DialogueDefinition).choices[2].reaction_id = "missing-reaction"
+			if definition is ConversationDefinition and definition.stable_id == "prototype-companion-greeting" and mutation == "reaction-reference":
+				TestRunConversation.mutate(definition, func(data: Dictionary) -> void: data.nodes[0].choices[2].command.reaction_id = "missing-reaction")
 			if definition is ReactionDefinition:
 				if mutation == "reaction-delta": (definition as ReactionDefinition).trust_delta = 0
 				if mutation == "reaction-owner": (definition as ReactionDefinition).companion_id = "npc-03"

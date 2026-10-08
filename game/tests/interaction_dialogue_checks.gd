@@ -18,36 +18,54 @@ func _initialize() -> void:
 func _run() -> void:
 	var catalog: ContentCatalog = ContentCatalog.new()
 	_check(catalog.initialize(load("res://content/prototype_catalog.tres")).is_empty(), "Authored catalog rejected")
-	var content: DialogueDefinition = catalog.get_dialogue("prototype-companion-greeting")
-	var first: DialogueService = DialogueService.new()
-	var second: DialogueService = DialogueService.new()
-	_check(not first.begin(null, "test").ok and not first.active(), "Missing dialogue accepted")
-	_check(first.begin(content, "test-first").ok and second.begin(content, "test-second").ok, "Conversation failed")
-	_check(not first.begin(content, "test-again").ok, "Reentry reset active conversation")
-	_check(first.awaiting_choice() and not first.advance().ok, "Choice skipped")
-	_check(not first.choose("missing").ok and first.awaiting_choice(), "Unknown choice changed state")
-	_check(first.choose("prototype-ask-room").ok and first.last_result.action_id == "prototype-observe", "Action result missing")
-	_check(not first.choose("prototype-ask-room").ok, "Repeated choice executed")
-	_check(second.awaiting_choice() and second.selected_choice_id.is_empty() and content.lines.size() == 1, "Dialogue state leaked to instance/definition")
-	_check(first.advance().ok and not first.active(), "Terminal response failed to close")
-	_check(not first.advance().ok, "Closed conversation advanced")
+	var content: ConversationDefinition = catalog.get_dialogue("prototype-companion-greeting")
+	var npcs: NpcContentCatalog = NpcContentCatalog.new()
+	_check(npcs.initialize_path(catalog).is_empty(), "NPC catalog invalid")
+	var session: GameSession = GameSession.new()
+	session.initialize(catalog, "prototype-alderwake", "alderwake-start", "prototype-hero", null, npcs)
+	var first: NpcDialogueService = NpcDialogueService.new()
+	var second: NpcDialogueService = NpcDialogueService.new()
+	first.initialize(npcs, session)
+	second.initialize(npcs, session)
+	_check(not first.begin_graph(null, "test").ok and not first.active(), "Missing dialogue accepted")
+	_check(first.begin_graph(content, "test-first").ok and second.begin_graph(content, "test-second").ok, "Conversation failed")
+	_check(not first.begin_graph(content, "test-again").ok, "Reentry reset active conversation")
+	_check(not first.snapshot().choices.is_empty() and not TestRunConversation.advance(first).ok, "Choice skipped")
+	_check(not TestRunConversation.choose(first, "missing").ok and not first.snapshot().choices.is_empty(), "Unknown choice changed state")
+	_check(TestRunConversation.choose(first, "prototype-ask-room").action_id == "prototype-observe", "Action result missing")
+	_check(not TestRunConversation.choose(first, "prototype-ask-room").ok, "Repeated choice executed")
+	_check(not second.snapshot().choices.is_empty() and second.snapshot().selected_choice_id.is_empty() and content.document().nodes[0].choices.size() == 4, "State leaked")
+	_check(TestRunConversation.advance(first).ok and not first.active(), "Terminal response failed to close")
+	_check(not TestRunConversation.advance(first).ok, "Closed conversation advanced")
 	second.cancel()
 	second.cancel()
-	var detached: DialogueDefinition = content.duplicate(true)
-	detached.choices[0].action_id = "grant-quest-reward"
-	_check("unsupported dialogue action" in "; ".join(detached.validation_errors()), "Unsupported authored action accepted")
-	detached = content.duplicate(true)
-	detached.choices[1].stable_id = detached.choices[0].stable_id
-	_check("duplicate choice ID" in "; ".join(detached.validation_errors()), "Duplicate choice accepted")
-	detached = content.duplicate(true)
-	detached.choices[0].response = [" "]
-	_check("blank line" in "; ".join(detached.validation_errors()), "Blank choice response accepted")
-	_check(content.choices[0].action_id == "prototype-observe", "Negative fixture mutated authored resource")
-	var multi: DialogueDefinition = content.duplicate(true)
-	multi.lines = ["First line.", "Second line."]
-	_check(first.begin(multi, "test-multiline").ok and not first.awaiting_choice(), "Multiline begin failed")
-	_check(not first.choose("prototype-ask-room").ok and first.advance().ok and first.awaiting_choice(), "Choice before introduction accepted")
+	for mutation: String in ["action", "duplicate", "blank", "cycle", "dangling"]:
+		var detached: ConversationDefinition = content.duplicate(true)
+		TestRunConversation.mutate(detached, func(data: Dictionary) -> void:
+			match mutation:
+				"action": data.nodes[0].choices[0].command.action_id = "grant-quest-reward"
+				"duplicate": data.nodes[0].choices[1].id = data.nodes[0].choices[0].id
+				"blank": data.nodes[1].text = " "
+				"cycle": data.nodes[1]["continueTargetId"] = data.nodes[0].id
+				"dangling": data.nodes[0].choices[0].targetNodeId = "absent"
+		)
+		_check(not detached.validation_errors().is_empty(), "Malformed finite graph accepted: " + mutation)
+	_check(content.graph().choices["prototype-ask-room"].command.action_id == "prototype-observe", "Fixture mutated authored resource")
+	var multi: ConversationDefinition = catalog.get_dialogue("prototype-maris-fitting")
+	_check(first.begin_graph(multi, "test-multiline").ok and first.snapshot().choices.is_empty(), "Multinode begin failed")
+	_check(not TestRunConversation.choose(first, "maris-reconnect-choice").ok and TestRunConversation.advance(first).ok and first.snapshot().choices.is_empty(), "Early choice accepted")
+	_check(TestRunConversation.advance(first).ok and first.snapshot().choices.size() == 2, "Finite continuation failed")
 	first.cancel()
+	# Owner callbacks cannot reenter a choice or resurrect a canceled cursor.
+	var command_count: Array[int] = [0]
+	first.reaction_command = func(_id: String, _instance: String) -> NpcDialogueService.Result:
+		command_count[0] += 1
+		_check(not TestRunConversation.choose(first, "prototype-plan-together").ok, "Callback reentered choice")
+		first.cancel()
+		return NpcDialogueService.Result.new(true, "Owned fixture command accepted.")
+	first.begin_graph(content, "test-owner-callback")
+	_check(TestRunConversation.choose(first, "prototype-plan-together").ok and command_count[0] == 1 and not first.active(), "Callback cancellation resurrected cursor or duplicated command")
+	first.reaction_command = Callable() # Release fixture's self-capturing callback.
 
 	game = (load("res://app/game_root.tscn") as PackedScene).instantiate()
 	game.developer_fixtures = true # Explicit P006 reusable practice-prop fixture.
@@ -74,7 +92,7 @@ func _run() -> void:
 			_key(KEY_E, true)
 			_key(KEY_E, false)
 			await process_frame
-			_check(game.dialogue.active() and game.dialogue.source_instance_id == target.instance_id, "E did not open correct interaction")
+			_check(game.dialogue.active() and game.dialogue.snapshot().get("instance_id", "") == target.instance_id, "E did not open correct interaction")
 			_check(not actor.controls_enabled and actor.movement_buttons.is_empty() and game.ui.dialogue_overlay.visible, "Modal failed to clear held movement")
 			var before: Vector3 = actor.global_position
 			var camera_before: String = game.camera_rig.description()
@@ -95,7 +113,7 @@ func _run() -> void:
 			_key(KEY_ENTER, true)
 			_key(KEY_ENTER, false)
 			await process_frame
-			_check(game.dialogue.selected_choice_id != "" and game.dialogue.last_result.ok, "GUI choice failed")
+			_check(game.dialogue.snapshot().get("selected_choice_id", "") != "" and game.conversation_result.ok, "GUI choice failed")
 			_key(KEY_ESCAPE, true)
 			_key(KEY_ESCAPE, false)
 			await process_frame

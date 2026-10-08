@@ -12,6 +12,9 @@ static func backpack(game: Node3D, label: String, directory: String, kind: Strin
 static func drag(game: Node3D, label: String, directory: String, kind: String, note: String) -> Dictionary:
 	return await _capture(game, label, directory, kind, note, "drag")
 
+static func dialogue(game: Node3D, label: String, directory: String, kind: String, note: String) -> Dictionary:
+	return await _capture(game, label, directory, kind, note, "dialogue")
+
 static func _capture(game: Node3D, label: String, directory: String, kind: String, note: String, mode: String) -> Dictionary:
 	if DisplayServer.get_name() == "headless": return _failure("capture requires real renderer")
 	# Share pause capture's lock: a hidden pause overlay cannot masquerade as live play.
@@ -31,16 +34,19 @@ static func _capture(game: Node3D, label: String, directory: String, kind: Strin
 	var target: PrototypeInteractable = game.foraging_hold.target() if mode == "hold" else game.item_drag.target() if mode == "drag" else null
 	var target_id: int = target.get_instance_id() if target != null else 0
 	var items: String = _items(game)
+	var conversation_token: String = game.dialogue.snapshot().get("token", "")
 	var started: int = Time.get_ticks_msec()
 	TestRunCapture._capturing = true
 	for frame: int in range(SETTLE_FRAMES):
 		await tree.process_frame
 		error = _stable_guard(game, mode, owner, location_id, target_id, items)
+		if mode == "dialogue" and game.dialogue.snapshot().get("token", "") != conversation_token: error = "conversation changed while settling"
 		if not error.is_empty():
 			TestRunCapture._capturing = false
 			return _failure(error)
 	await RenderingServer.frame_post_draw
 	error = _stable_guard(game, mode, owner, location_id, target_id, items)
+	if mode == "dialogue" and game.dialogue.snapshot().get("token", "") != conversation_token: error = "conversation changed while settling"
 	if error.is_empty() and mode == "backpack" and not tree.root.get_visible_rect().encloses(game.ui.backpack.panel.get_global_rect()):
 		error = "backpack panel exceeds viewport"
 	# Revalidate path after awaits (including ownership, links, and no overwrite).
@@ -59,7 +65,7 @@ static func _capture(game: Node3D, label: String, directory: String, kind: Strin
 	var focus: Control = tree.root.gui_get_focus_owner()
 	var result: Dictionary = {"ok":true, "mode":mode, "state_verified":true,
 		"label":label, "path":checked.path, "kind":kind, "note":note,
-		"paused":false, "pause_overlay_verified":false, "overlay":mode == "backpack",
+		"paused":false, "pause_overlay_verified":false, "overlay":mode in ["backpack", "dialogue"],
 		"settled_frames":SETTLE_FRAMES, "frame_post_draw_verified":true,
 		"started_ticks_msec":started, "ticks_msec":Time.get_ticks_msec(),
 		"controls_enabled":game.player_placeholder.controls_enabled, "window_focused":game.window_focused,
@@ -77,6 +83,9 @@ static func _capture(game: Node3D, label: String, directory: String, kind: Strin
 	elif mode == "backpack":
 		result.merge({"backpack_modal_verified":true, "panel_fits":true,
 			"display_slot_ids":game.ui.backpack.slot_ids.duplicate(), "details":game.ui.backpack.details.text})
+	elif mode == "dialogue":
+		result.merge({"dialogue_modal_verified":true, "panel_fits":true,
+			"conversation":game.dialogue.snapshot(), "display":game.ui.dialogue_view._snapshot.duplicate(true)})
 	else:
 		result.merge({"drag_verified":true, "instance_id":target.instance_id, "preview_visible":true,
 			"preview_errors":game.item_drag.errors.duplicate(),
@@ -95,6 +104,14 @@ static func _stable_guard(game: Variant, mode: String, owner: GameSession, locat
 static func _guard(game: Variant, mode: String) -> String:
 	if not is_instance_valid(game) or game.is_queued_for_deletion() or not game.is_inside_tree(): return "capture game unavailable"
 	if game.get_tree().paused or game.ui.pause_overlay.visible: return "live capture requires resumed tree and hidden pause overlay"
+	if mode == "dialogue":
+		if not game.window_focused or game.world_host.transitioning or game.loading_save or game.retrying or game.journal_open or game.backpack_open or game.foraging_hold.active() or game.item_drag.active(): return "dialogue capture input mode unavailable"
+		if not game.dialogue.active() or not game.ui.dialogue_overlay.is_visible_in_tree() or game.player_placeholder.controls_enabled or game.companion_ai.enabled: return "dialogue capture requires visible modal and blocked actors"
+		var modal_focus: Control = game.get_viewport().gui_get_focus_owner()
+		if modal_focus == null or not game.ui.dialogue_panel.is_ancestor_of(modal_focus) or not modal_focus.is_visible_in_tree(): return "dialogue focus outside modal"
+		if not game.get_viewport().get_visible_rect().encloses(game.ui.dialogue_panel.get_global_rect()): return "dialogue panel exceeds viewport"
+		if game.ui.dialogue_view._snapshot.get("token", "") != game.dialogue.snapshot().get("token", ""): return "display cursor stale"
+		return ""
 	if not game.window_focused or game.world_host.transitioning or game.loading_save or game.retrying or game.dialogue.active() or game.journal_open or game.ui.settings_open() or game.player_placeholder.state.health <= 0:
 		return "live capture input mode unavailable"
 	if game.world_host.session != game.session or not is_instance_valid(game.world_host.current_location): return "capture world owner unavailable"

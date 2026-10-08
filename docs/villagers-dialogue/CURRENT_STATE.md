@@ -6,20 +6,96 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001/N002/N003/N004 Done; N005-N018 Pending. Active task: none. Exactly N004
-completed this invocation. Next eligible N005 — portrait branches/facts UI and
-conversion of all legacy dialogue callers. N007 independently ready. Neither started.
-Remaining unfinished IDs: N005, N006, N007, N008, N009, N010, N011, N012, N013,
-N014, N015, N016, N017, N018. All checklist items through N018 are not complete.
+N001-N005 Done; N006-N018 Pending. No active task. N005 accepted and stopped.
+Target began clean at 2efc420902f2e6a68825dfbfb6827a25f762d89f (N004 commit);
+source remains clean/pinned at 60c20eb2816e7271fb84afaba286af006ebe3ccf. No user edits
+at selection. N005 implementation was accepted without committing, as originally
+requested. The later authorized N005 commit follow-up is recorded below; no push.
 
-Exact next action: recheck Git/source pin and actual schema7/content1, read N004
-acceptance and current dialogue/root/UI owners. Mark N005 In progress, implement
-only its portrait conversation/fact UI and required legacy caller/content conversion.
-Retain N004 strict persistence/manual boundaries, no old-format migration or cursor
-save. Convert Maris/companion/vessel/practice into the current flow, preserve legal
-quest/trust/service commands, remove superseded engine only after callers convert.
-No normal eight-person route/scene activation/art/package claim until owning tasks.
-Stop after N005; do not extend beyond N018 or repeat completed tasks.
+Next eligible N006. Next action: recheck target/source Git state and N005 acceptance,
+read N001 placement inventory/current WorldHost/navigation/interaction/foraging
+owners, mark N006 In progress, then implement only scene-owned contact registry,
+safe identity/lifecycle binding and actual crossing/committed-gather event adapters.
+Villager activation remains controlled by N008-N015. Retain the one current cursor,
+deferred gifts/routines, strict schema7/manual save boundaries and pinned geometry.
+N007 independently ready; no ART/native package claim yet. Do not continue without
+a fresh one-task invocation. Do not invent tasks beyond N018.
+
+Remaining unfinished IDs: N006, N007, N008, N009, N010, N011, N012, N013, N014,
+N015, N016, N017, N018. All checklist items through N018 are not complete.
+
+## N005 result and durable evidence
+
+[N005 acceptance](N005_ACCEPTANCE.md) records every criterion, actual interfaces,
+full commands, inspection and retained failures. GameRoot.dialogue now owns one
+NpcDialogueService, accepting source graphs via begin(npc_id, instance_id), current
+prototype graphs via begin_graph(ConversationDefinition, instance_id). Same finite
+graph/node/token commands, snapshot, UI, cancellation and save gate serve both.
+No GameRoot.npc_dialogue or parallel line cursor remains. Six converted resources
+preserve24 nodes/15 choices and exact original words/identity/quest/reaction commands.
+Old DialogueDefinition/DialogueChoice/DialogueService scripts and UIDs removed.
+
+New ConversationDefinition, ConversationView, npc_dialogue_ui_checks and
+TestRunConversation plus UIDs; narrow graph/service/root/catalog/UI/quest/reaction
+result and existing caller/test conversions. Shared TestRunInteractionCapture and
+capture_evidence.py now verify dialogue modal snapshots/focus/token/input provenance;
+Python guard tests extended. Snapshot provides source portrait/speaker/formatted text,
+current-node highlights, compact authoritative learned facts and unavailable reasons.
+Maris recovery reads the same ordinary learned facts without new NPC reward.
+Scrolling body/choices/facts and fixed exits work with contained focus; lifecycle and
+world input exclusion verified. Schema7/content1, NPC source catalog/art and geometry
+unchanged. Read-only converter checks all132 pinned hashes/67 outputs exact; catalog
+9490a7a2ca4e4cb926c9919c52be1a53f47cc0699a44059723b17d814068f9d9 unchanged.
+
+Shared runner expanded import/parse20 gameplay/content/save/UI/regression suites,
+two independent NPC process phases and render PASS all26 cases:
+docs/evidence/N005/20261008-092317416-ddbcf325/. Writer PID29640/reader PID23608
+compare complete old/new saved facts. Following player-facing gift text/contrast polish,
+required four suites + NPC rules + parse/version/render PASS all8 cases:
+docs/evidence/N005/20261008-092745965-d02fca8d/. Only production changes since the
+expanded run were unavailable-reason presentation and disabled contrast; focused
+checks cover both. Latest test-only unavailable-gift mouse/keyboard proof extension
+PASS all4 cases: docs/evidence/N005/20261008-093803876-0c2316ed/.
+
+Latest headless384/rendered452 assertions including evidence write (JSON383/451),
+eight people/48 expressions/68 captures, Compatibility. Source772 game/tools files
+stable at772c6550121c97b32ef69b438904f00275ea3581e8edef4278bc912ee75a76a0.
+All three runs exit0, no forbidden diagnostics/timeouts/source changes. Current
+production bytes identical between final8-case and4-case runs. Python capture guard
+suite and read-only conversion PASS. Matching builds/testing/N005 run directories
+provide isolated appdata/localappdata/named slots; normal user saves never accessed.
+
+Viewed six modal contact sheets/all48 portrait crops in092745 run, full-size Maris
+intro/recovery, unavailable-gift and960x640/larger long-text captures; latest gift
+full-size/contact-06 viewed again. Actual PNG dimensions960x640 and1350x900;
+1440x900 is requested window size only. Captures are synthetic contact/display/length
+fixtures with actual root viewport GUI input, not ordinary NPC route or native proof.
+visual-review.json/final-audit.json in latest run preserve manual review, source/byte/
+scope/link/status/process audits. Raw runs/builds ignored; acceptance doc is tracked.
+
+Retained failures: sandbox launch, overlapping edit/generated UID source guards,
+focus-neighbor API/old callers, strict long-fixture whitespace, leaked self-capturing
+fixture callback. Repairs retain strict validation/diagnostic guards. Initial render
+review found raw bold markers and technical gift text; both corrected and reverified.
+Auto-review approved isolated engine execution after initial sandbox denial; no
+permission blocker. All owned processes exited; no editor/cleanup, remaining N005
+criterion or blocker. No agents/chats/schedules/external messages/publication/commit.
+
+## N005 commit follow-up
+
+The user authorized committing the successfully completed N005 task. Commit scope
+is the previously audited58 N005 paths: implementation/converted content/callers,
+tests/support/UIDs, acceptance summary, checklist/contract/current state and
+README/architecture discovery. Runtime bytes still match the final772-file passing
+manifest; all26 expanded,8 focused and4 final test-only cases retain their results.
+No new gameplay change or repeated unrelated testing is needed for this follow-up.
+
+Raw runs/screenshots/logs and builds remain ignored under repository evidence
+policy; N005_ACCEPTANCE.md is the committed evidence summary with exact local run
+paths, commands and inspection. No unrelated change, push or N006 work is included.
+Pre-commit scope/byte/staging checks and post-commit identity/tree verification are
+recorded in the latest local N005 evidence directory. The resulting commit identity
+is available in Git history and the follow-up report.
 
 ## N004 result and durable evidence
 

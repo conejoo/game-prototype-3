@@ -280,3 +280,37 @@ SaveRepository backup, failed staging, incompatible-file preservation and read-o
 visible recovery remain unchanged. Physical placement rejection keeps every prior
 and new live fact/owner. Tests use fresh isolated slots; source, user saves, geometry,
 content/portraits, companion/quest/trust authority and manual boundaries are retained.
+
+## N005 delivered conversation composition (2026-10-08)
+
+This replaces the historical two-service root composition above. GameRoot.dialogue
+is the single NpcDialogueService owner. begin(npc_id, instance_id) and
+begin_graph(ConversationDefinition, instance_id) select source and current prototype
+graphs through the same NpcDialogueGraph/cursor/snapshot/UI/lifecycle. Stable commands
+carry person, instance, node and generation token; prototype commands remain in
+authored Choice.command and dispatch only to root-owned legal quest/reaction hooks.
+Callback reentry rejects; callback cancellation cannot resurrect a cursor. No
+DialogueDefinition/DialogueChoice/DialogueService or parallel legacy cursor remains.
+
+Six existing prototype resources retain all original stable IDs, speakers, words,
+response order and15 legal commands across24 finite nodes. Presentation indexes are
+read-only fixture observation metadata, never a second line-navigation API. Prototype
+graphs apply no source NPC facts/affinity; Maris recovery reads the same person's
+already learned facts. The temporary companion retains its original role/labels.
+
+Snapshot supplies graph_id/npc_id/instance_id/node_id/token, speaker/text/portrait,
+available choices with honest reasons, can_continue/can_close, learned fact records
+and current-node revealed IDs. ConversationView formats paired source bold markers,
+preserves literal brackets, highlights current disclosures and renders only learned
+facts. Body/choices/facts scroll; exits stay visible and keyboard focus contained.
+Open/node change/close clear held input; modal blocks world/combat/gather/drag/camera/
+save commands. Focus loss/unload cancel without unselected effects; focus gain needs
+fresh controls. Save restoration always binds an inactive cursor. Schema7/content1
+and manual save boundaries retained.
+
+[N005 acceptance](N005_ACCEPTANCE.md) records exact conversion, all criteria,48
+source expressions/eight people, actual960x640/1350x900 captures, unavailable-gift
+mouse/keyboard exits and required/affected regressions. UI bindings/expression and
+length fixtures are synthetic. Ordinary eight-person routes/3D art/native packages
+remain N006-N018 work; existing source portraits are reused byte-exactly. Pinned
+geography, source hashes, deferred capabilities and normal user saves unchanged.

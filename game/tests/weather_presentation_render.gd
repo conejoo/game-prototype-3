@@ -128,7 +128,7 @@ func _run() -> void:
 		await _capture("gui-load-storm", true)
 		await _capture("reconstructed-storm-flash")
 		# Legitimate detached quest setup; stable indoor visual tested during storm/flash.
-		var lead: DialogueService.ActionResult = game.quests.apply("prototype-maris-recovery", "maris-accept-lead", "prototype-alderwake", "npc-03-counter")
+		var lead: NpcDialogueService.Result = game.quests.apply("prototype-maris-recovery", "maris-accept-lead", "prototype-alderwake", "npc-03-counter")
 		_check(lead.ok, "synthetic guardian setup")
 		var old: WeakRef = weakref(game.world_host.current_location.world_rain)
 		_check(game.world_host.request_transition("prototype-tollworks", "tollworks-from-alderwake").is_empty(), "travel request")

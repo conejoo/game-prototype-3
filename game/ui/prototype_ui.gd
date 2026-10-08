@@ -9,8 +9,8 @@ signal resume_requested
 signal quit_requested
 signal save_requested
 signal load_requested
-signal dialogue_advance_requested
-signal dialogue_choice_requested(choice_id: String)
+signal dialogue_advance_requested(command: Dictionary)
+signal dialogue_choice_requested(choice_id: String, command: Dictionary)
 signal dialogue_cancel_requested
 signal journal_requested
 signal upgrade_requested
@@ -29,12 +29,13 @@ signal debug_mode_requested(enabled: bool)
 @onready var save_status: Label = $Screen/PauseOverlay/Center/Panel/Margin/Options/SaveStatus
 @onready var dialogue_overlay: Control = $Screen/DialogueOverlay
 @onready var dialogue_panel: PanelContainer = $Screen/DialogueOverlay/Center/Panel
-@onready var dialogue_title: Label = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Title
-@onready var dialogue_text: Label = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Text
-@onready var dialogue_choices: VBoxContainer = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Choices
-@onready var dialogue_next: Button = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Next
-@onready var dialogue_close: Button = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Close
-@onready var dialogue_status: Label = $Screen/DialogueOverlay/Center/Panel/Margin/Options/Status
+@onready var dialogue_view: ConversationView = $Screen/DialogueOverlay/Center/Panel
+@onready var dialogue_title: Label = dialogue_view.title
+@onready var dialogue_text: RichTextLabel = dialogue_view.body
+@onready var dialogue_choices: VBoxContainer = dialogue_view.choices
+@onready var dialogue_next: Button = dialogue_view.next
+@onready var dialogue_close: Button = dialogue_view.close
+@onready var dialogue_status: Label = dialogue_view.status
 @onready var journal_overlay: Control = $Screen/JournalOverlay
 @onready var journal_panel: PanelContainer = $Screen/JournalOverlay/Center/Panel
 @onready var journal_text: Label = $Screen/JournalOverlay/Center/Panel/Margin/Options/Scroll/Text
@@ -139,7 +140,8 @@ func _ready() -> void:
 	upgrade_button.pressed.connect(func() -> void: upgrade_requested.emit())
 	journal_button.pressed.connect(func() -> void: journal_requested.emit())
 	journal_close.pressed.connect(func() -> void: journal_requested.emit())
-	dialogue_next.pressed.connect(func() -> void: dialogue_advance_requested.emit())
+	dialogue_view.advance_requested.connect(func(command: Dictionary) -> void: dialogue_advance_requested.emit(command))
+	dialogue_view.choice_requested.connect(func(id: String, command: Dictionary) -> void: dialogue_choice_requested.emit(id, command))
 	dialogue_close.pressed.connect(func() -> void: dialogue_cancel_requested.emit())
 	pause_button.pressed.connect(func() -> void: pause_requested.emit())
 	resume_button.pressed.connect(func() -> void: resume_requested.emit())
@@ -314,46 +316,20 @@ func dialogue_accepts_pointer(point: Vector2) -> bool:
 	return dialogue_overlay.visible and dialogue_panel.get_global_rect().has_point(point)
 
 
-func show_dialogue(service: DialogueService, result: DialogueService.ActionResult) -> void:
+func show_dialogue(view: Dictionary, result: NpcDialogueService.Result) -> void:
 	var was_visible: bool = dialogue_overlay.visible
-	for child: Node in dialogue_choices.get_children():
-		dialogue_choices.remove_child(child)
-		child.queue_free()
-	dialogue_overlay.visible = service.active()
-	if service.active(): foraging_notice.hide()
-	travel_label.visible = not service.active() and not backpack.visible and not pause_overlay.visible
-	pause_button.disabled = pause_overlay.visible or service.active()
-	journal_button.disabled = pause_overlay.visible or service.active()
-	if not service.active():
+	dialogue_overlay.visible = not view.is_empty()
+	if not view.is_empty(): foraging_notice.hide()
+	travel_label.visible = view.is_empty() and not backpack.visible and not pause_overlay.visible
+	pause_button.disabled = pause_overlay.visible or not view.is_empty()
+	journal_button.disabled = pause_overlay.visible or not view.is_empty()
+	backpack_button.disabled = pause_overlay.visible or not view.is_empty()
+	if view.is_empty():
 		if was_visible:
 			var focused: Control = get_viewport().gui_get_focus_owner()
-			if focused != null:
-				focused.release_focus()
+			if focused != null: focused.release_focus()
 		return
-	dialogue_title.text = service.definition.display_name
-	dialogue_text.text = service.current_lines()[service.line_index]
-	dialogue_status.text = result.message
-	dialogue_next.visible = not service.awaiting_choice()
-	dialogue_next.text = "Continue" if service.line_index + 1 < service.current_lines().size() else "Finish"
-	var focus_buttons: Array[Button] = []
-	if service.awaiting_choice():
-		for choice: DialogueChoice in service.definition.choices:
-			var button: Button = Button.new()
-			button.name = choice.stable_id
-			button.text = choice.label
-			button.custom_minimum_size.y = 44
-			button.pressed.connect(func() -> void: dialogue_choice_requested.emit(choice.stable_id))
-			dialogue_choices.add_child(button)
-			focus_buttons.append(button)
-		(dialogue_choices.get_child(0) as Button).grab_focus()
-	else:
-		focus_buttons.append(dialogue_next)
-		dialogue_next.grab_focus()
-	focus_buttons.append(dialogue_close)
-	for index: int in range(focus_buttons.size()):
-		var button: Button = focus_buttons[index]
-		button.focus_next = button.get_path_to(focus_buttons[(index + 1) % focus_buttons.size()])
-		button.focus_previous = button.get_path_to(focus_buttons[(index + focus_buttons.size() - 1) % focus_buttons.size()])
+	dialogue_view.present(view, result.message)
 
 
 func show_objective(text: String) -> void:

@@ -16,16 +16,16 @@ func available_points() -> int:
 	var definition: UpgradeDefinition = catalog.get_upgrade(UPGRADE_ID)
 	return (1 if definition.earned_effect_id in session.completed_effect_ids else 0) - session.progression.upgrade_ids.size()
 
-func select_upgrade(id: String) -> DialogueService.ActionResult:
+func select_upgrade(id: String) -> NpcDialogueService.Result:
 	if id != UPGRADE_ID or catalog.get_upgrade(id) == null:
-		return DialogueService.ActionResult.new(false, "Unknown upgrade.")
+		return NpcDialogueService.Result.new(false, "Unknown upgrade.")
 	if id in session.progression.upgrade_ids:
-		return DialogueService.ActionResult.new(true, "Upgrade already selected; no point spent again.")
+		return NpcDialogueService.Result.new(true, "Upgrade already selected; no point spent again.")
 	if available_points() < 1:
-		return DialogueService.ActionResult.new(false, "Accept Maris's lead to earn one preparation point.")
+		return NpcDialogueService.Result.new(false, "Accept Maris's lead to earn one preparation point.")
 	session.progression.upgrade_ids.append(id)
 	changed.emit()
-	return DialogueService.ActionResult.new(true, "Deliberate Strike selected: hero damage 25 → 40.")
+	return NpcDialogueService.Result.new(true, "Deliberate Strike selected: hero damage 25 → 40.")
 
 func hero_damage() -> int:
 	var damage: int = BASE_DAMAGE

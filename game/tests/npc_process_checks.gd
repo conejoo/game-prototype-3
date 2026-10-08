@@ -31,11 +31,11 @@ func _run() -> void:
 		_check(expected.session != null, "exact persisted oracle readable")
 		if expected.session != null:
 			_check(SaveCodec.snapshot(game.session) == SaveCodec.snapshot(expected.session), "every durable field exactly restored")
-		_check(game.session != previous and game.npc_dialogue._session == game.session and not game.npc_dialogue.active(), "fresh bound cursor owner")
+		_check(game.session != previous and game.dialogue._session == game.session and not game.dialogue.active(), "fresh bound cursor owner")
 		_check(game.party.members().size() == 2 and game.player_placeholder.state == game.session.actors[GameSession.PLAYER_INSTANCE_ID] and game.companion.state == game.session.actors[GameSession.COMPANION_INSTANCE_ID], "party bindings preserved")
 		_check(game.player_placeholder.global_position.distance_to(Vector3(0,0,-2.5)) < 0.01, "arrival restoration")
 		var events: NpcEventMemory = game.session.conversations.events()
-		_check(game.npc_dialogue.record_event(NpcEventMemory.AREA, "woods", null).ok and game.session.conversations.events().count(NpcEventMemory.AREA, "woods", null) == events.count(NpcEventMemory.AREA, "woods", null) + 1, "allowlist/latest timestamp rebuilt")
+		_check(game.dialogue.record_event(NpcEventMemory.AREA, "woods", null).ok and game.session.conversations.events().count(NpcEventMemory.AREA, "woods", null) == events.count(NpcEventMemory.AREA, "woods", null) + 1, "allowlist/latest timestamp rebuilt")
 		_check(previous.conversations.events().snapshot().last_sequence == 0, "old session remains detached")
 	_check(TestRunEvidence.write_json("npc-process-write.json" if writing else "npc-process-read.json", {"phase":"write" if writing else "read", "pid":OS.get_process_id(), "assertions":assertions, "failures":failures, "snapshot":SaveCodec.snapshot(game.session), "proof":"synthetic fixture / independent-process production Save-Load"}), "report")
 	game._set_paused(false); game.queue_free(); await process_frame

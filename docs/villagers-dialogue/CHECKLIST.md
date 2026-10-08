@@ -7,7 +7,7 @@ Status authority: this checklist. Rules/mappings: [CONTRACT](CONTRACT.md).
 Preparation and invocation: [AGENT_PROMPT](AGENT_PROMPT.md).
 Detailed continuation: [CURRENT_STATE](CURRENT_STATE.md).
 
-N001 reference audit, N002 typed content, N003 dialogue rules and N004 persistence Done. N005-N018 remain Pending.
+N001 reference audit, N002 typed content, N003 dialogue rules, N004 persistence and N005 portrait conversation UI Done. N006-N018 remain Pending.
 Existing P/M/W/F workflows remain delivered baseline history.
 
 ## Selection and completion
@@ -25,7 +25,7 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N002 | Done | N001 | Validated typed NPC/graph catalogs; all selected source content classified. |
 | N003 | Done | N002 | Pure dialogue selection, memory and atomic choice rules. |
 | N004 | Done | N003 | Strict current-schema saves and persistent conversation/event memory. |
-| N005 | Pending | N004 | Multi-node portrait dialogue and known-facts UI integrated with existing gameplay. |
+| N005 | Done | N004 | Multi-node portrait dialogue and known-facts UI integrated with existing gameplay. |
 | N006 | Pending | N005 | Safe scene-owned town contacts and real event adapters. |
 | N007 | Pending | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
 | N008 | Pending | N006, N007 | Edric complete and reachable; first real villager vertical slice. |
@@ -329,3 +329,31 @@ and normal user saves unchanged. Final source/byte/link/diff/status audit record
 Exactly N004 completed. No owned live process/editor/cleanup, blocker or unrun
 N004 criterion. No agents/chats/schedules/commit/publication. Remaining N005-N018;
 N005 next eligible, N007 independently ready. All through N018 are not complete.
+
+### N005 - 2026-10-08, UTC
+
+Result: one GameRoot.dialogue/NpcDialogueService finite cursor drives current source
+NPC and converted prototype graphs. ConversationView renders source portraits,
+formatted node text, current-node fact highlights, only learned facts, scrolling
+branches/body/facts and fixed Continue/Close with contained focus. Existing six
+prototype resources preserve exact IDs/words/commands across24 nodes/15 choices;
+old DialogueDefinition/DialogueChoice/DialogueService scripts/UIDs removed.
+Maris recovery reads the same person's facts; legal quest/companion outcomes retained.
+Schema7/content1, source catalog/art and pinned geometry unchanged.
+
+Every criterion verified: actual root GUI branches, stale/reentrant command rejection,
+48 source expressions/eight people, 960x640 and actual1350x900 captures, long scrolling,
+unavailable gift pointer Close/Esc/Enter Continue/Tab/Shift-Tab/arrows, input exclusion,
+focus loss/unload/held controls and exact manual isolated save restore. UI fixtures
+are explicitly synthetic, with no ordinary eight-person route/art/native release claim.
+Full commands, evidence/inspection and retained failures: [N005 acceptance](N005_ACCEPTANCE.md).
+
+Shared runner expanded26 cases PASS (092317416-ddbcf325); final UI/rule/required
+regression8 cases PASS (092745965-d02fca8d); final test-only pointer/focus extension4
+cases PASS (093803876-0c2316ed). No forbidden diagnostics/timeouts/source changes.
+Latest headless384/rendered452 assertions,68 captures; Python provenance/strict guards
+and read-only pinned conversion pass.772 game/tools files stable. Owned processes
+exited; no editor/cleanup, remaining N005 acceptance, blocker or commit/push.
+
+Exactly N005 completed; stop. Remaining N006-N018; N006 next eligible, N007
+independently ready. All checklist items through N018 are not complete.

@@ -10,12 +10,12 @@ extends Node3D
 var session: GameSession = GameSession.new()
 var catalog: ContentCatalog = ContentCatalog.new()
 var npc_catalog: NpcContentCatalog = NpcContentCatalog.new()
-var npc_dialogue: NpcDialogueService = NpcDialogueService.new()
 var window_focused: bool = true
 var save_repository: SaveRepository = SaveRepository.new()
 var loading_save: bool = false
 var _pending_restore: GameSession
-var dialogue: DialogueService = DialogueService.new()
+var dialogue: NpcDialogueService = NpcDialogueService.new()
+var conversation_result: NpcDialogueService.Result = NpcDialogueService.Result.new(true, "No conversation started.")
 var selected_interaction: PrototypeInteractable
 var quests: QuestService = QuestService.new()
 var journal_open: bool = false
@@ -71,7 +71,7 @@ func _ready() -> void:
 	if errors.is_empty():
 		errors = session.initialize(catalog, initial_location_id, initial_spawn_id, "prototype-hero", null, npc_catalog)
 	if errors.is_empty():
-		errors = npc_dialogue.initialize(npc_catalog, session)
+		errors = dialogue.initialize(npc_catalog, session)
 	if not errors.is_empty():
 		set_process(false)
 		set_process_unhandled_input(false)
@@ -133,8 +133,8 @@ func _ready() -> void:
 	ui.quit_requested.connect(_quit)
 	ui.save_requested.connect(func() -> void: save_run())
 	ui.load_requested.connect(func() -> void: await load_run())
-	ui.dialogue_advance_requested.connect(func() -> void: _present_dialogue(dialogue.advance()))
-	ui.dialogue_choice_requested.connect(func(id: String) -> void: _present_dialogue(dialogue.choose(id)))
+	ui.dialogue_advance_requested.connect(_advance_dialogue)
+	ui.dialogue_choice_requested.connect(_choose_dialogue)
 	ui.dialogue_cancel_requested.connect(_cancel_dialogue)
 	ui.journal_requested.connect(_toggle_journal)
 	ui.backpack_requested.connect(_toggle_backpack)
@@ -344,6 +344,7 @@ func _notification(what: int) -> void:
 		_quit()
 	elif what == NOTIFICATION_APPLICATION_FOCUS_OUT and is_instance_valid(player_placeholder):
 		window_focused = false
+		_cancel_dialogue()
 		_update_controls()
 	elif what == NOTIFICATION_APPLICATION_FOCUS_IN and is_instance_valid(player_placeholder):
 		window_focused = true
@@ -430,7 +431,7 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		relationships.initialize(catalog, session)
 		progression.initialize(catalog, session)
 		# Bind restored durable memory; dialogue cursor is always fresh.
-		npc_dialogue.initialize(npc_catalog, session)
+		dialogue.initialize(npc_catalog, session)
 		_refresh_progression()
 	_pending_restore = null
 	camera_rig.set_target(player_placeholder)
@@ -488,7 +489,7 @@ func _save_boundary_errors() -> PackedStringArray:
 		return PackedStringArray(["close backpack before save/load"])
 	if journal_open:
 		return PackedStringArray(["close journal before save/load"])
-	if dialogue.active() or npc_dialogue.active():
+	if dialogue.active():
 		return PackedStringArray(["close dialogue before save/load"])
 	if not session.initialized or world_host.current_location == null:
 		return PackedStringArray(["run is not ready"])
@@ -533,15 +534,15 @@ func _refresh_interaction() -> void:
 		ui.show_travel(light_feedback + " · " + ui.travel_label.text)
 
 
-func switch_light(target_reference: WeakRef, expected_enabled: bool) -> DialogueService.ActionResult:
+func switch_light(target_reference: WeakRef, expected_enabled: bool) -> NpcDialogueService.Result:
 	var target: PrototypeInteractable = target_reference.get_ref() as PrototypeInteractable if target_reference != null else null
 	if item_drag.active() or not _combat_stable() or dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
-		return DialogueService.ActionResult.new(false, "Light switching blocked by current input mode.", "light")
+		return NpcDialogueService.Result.new(false, "Light switching blocked by current input mode.", "light")
 	var location: PrototypeLocation = world_host.current_location
 	if not is_instance_valid(target) or target.is_queued_for_deletion() or location == null or not target.is_inside_tree() or not location.is_ancestor_of(target) or InteractionSelector.select(player_placeholder, location) != target:
-		return DialogueService.ActionResult.new(false, "Light target unloaded, stale or out of reach.", "light")
+		return NpcDialogueService.Result.new(false, "Light target unloaded, stale or out of reach.", "light")
 	if target.kind != "light" or target.light_action == null or not target.validation_errors(catalog).is_empty():
-		return DialogueService.ActionResult.new(false, "Invalid light source interaction.", "light")
+		return NpcDialogueService.Result.new(false, "Invalid light source interaction.", "light")
 	var errors: PackedStringArray = session.toggle_light(target.light_action, expected_enabled)
 	var message: String = "; ".join(errors)
 	if errors.is_empty():
@@ -551,56 +552,78 @@ func switch_light(target_reference: WeakRef, expected_enabled: bool) -> Dialogue
 	light_feedback_instance_id = target.instance_id
 	light_feedback_until = session.elapsed_play_seconds + 2.5
 	_refresh_interaction()
-	return DialogueService.ActionResult.new(errors.is_empty(), message, "light")
+	return NpcDialogueService.Result.new(errors.is_empty(), message, "light")
 
 
-func interact() -> DialogueService.ActionResult:
+func interact() -> NpcDialogueService.Result:
 	if _e_down and _e_consumed:
-		return DialogueService.ActionResult.new(false, "Release E before another interaction.")
+		return NpcDialogueService.Result.new(false, "Release E before another interaction.")
 	if _e_down: _e_consumed = true
 	if not _combat_stable():
-		return DialogueService.ActionResult.new(false, "Finish combat or retreat before interaction.")
+		return NpcDialogueService.Result.new(false, "Finish combat or retreat before interaction.")
 	if item_drag.active() or dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
-		return DialogueService.ActionResult.new(false, "Interaction blocked by current input mode.")
+		return NpcDialogueService.Result.new(false, "Interaction blocked by current input mode.")
 	# Never trust last frame's prompt or hold an old room's node after travel.
 	var target: PrototypeInteractable = InteractionSelector.select(player_placeholder, world_host.current_location)
 	if target == null:
-		return DialogueService.ActionResult.new(false, "No nearby visible interaction.")
+		return NpcDialogueService.Result.new(false, "No nearby visible interaction.")
 	if target.foraging_action != null:
 		if not _e_down or not _foraging_input_allowed() or not target.validation_errors(catalog).is_empty():
-			return DialogueService.ActionResult.new(false, "Press and hold E near the pickup.")
+			return NpcDialogueService.Result.new(false, "Press and hold E near the pickup.")
 		var definition: ForagingResourceDefinition = catalog.get_resource(target.foraging_action.resource_id)
 		foraging_feedback = ""
 		ui.show_foraging_feedback("")
 		foraging_hold.start(target, session, definition.hold_milliseconds / 1000.0)
 		ui.show_foraging_progress(0, true)
-		return DialogueService.ActionResult.new(true, "Hold started.", target.kind)
+		return NpcDialogueService.Result.new(true, "Hold started.", target.kind)
 	if target.kind == "travel":
 		var location: PrototypeLocation = world_host.current_location
 		var errors: PackedStringArray = world_host.request_transition(location.destination_id, location.destination_spawn_id)
-		var result: DialogueService.ActionResult = DialogueService.ActionResult.new(errors.is_empty(), "Travel started." if errors.is_empty() else "; ".join(errors), "travel")
+		var result: NpcDialogueService.Result = NpcDialogueService.Result.new(errors.is_empty(), "Travel started." if errors.is_empty() else "; ".join(errors), "travel")
 		if not result.ok:
 			ui.show_travel(result.message)
 		return result
 	if target.kind == "light":
 		if target.light_action == null:
-			return DialogueService.ActionResult.new(false, "Invalid light source interaction.", "light")
+			return NpcDialogueService.Result.new(false, "Invalid light source interaction.", "light")
 		var action: LightSwitchAction = target.light_action
 		return switch_light(weakref(target), session.environment.light_enabled(action.location_id, action.prop_id, action.source_id))
-	var result: DialogueService.ActionResult = dialogue.begin(catalog.get_dialogue(target.dialogue_id), target.instance_id)
+	var result: NpcDialogueService.Result = dialogue.begin_graph(catalog.get_dialogue(target.dialogue_id), target.instance_id)
 	_present_dialogue(result)
 	return result
 
 
-func _present_dialogue(result: DialogueService.ActionResult) -> void:
-	ui.show_dialogue(dialogue, result)
+func _present_dialogue(result: NpcDialogueService.Result) -> void:
+	conversation_result = result
+	ui.show_dialogue(dialogue.snapshot(), result)
 	_update_controls()
 	if not world_host.transitioning:
 		_refresh_interaction()
 
 
+func _advance_dialogue(command: Dictionary = {}) -> NpcDialogueService.Result:
+	var view: Dictionary = dialogue.snapshot() if command.is_empty() else command
+	if not _dialogue_command_allowed(view): return NpcDialogueService.Result.new(false, "Conversation input unavailable.")
+	var result: NpcDialogueService.Result = dialogue.advance(view.npc_id, view.instance_id, view.node_id, view.token)
+	_present_dialogue(result)
+	return result
+
+
+func _choose_dialogue(id: String, command: Dictionary = {}) -> NpcDialogueService.Result:
+	var view: Dictionary = dialogue.snapshot() if command.is_empty() else command
+	if not _dialogue_command_allowed(view): return NpcDialogueService.Result.new(false, "Conversation input unavailable.")
+	var result: NpcDialogueService.Result = dialogue.choose(view.npc_id, view.instance_id, view.node_id, view.token, id)
+	_present_dialogue(result)
+	return result
+
+
+func _dialogue_command_allowed(view: Dictionary) -> bool:
+	return not view.is_empty() and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying
+
+
 func _cancel_dialogue() -> void:
-	_present_dialogue(dialogue.cancel())
+	dialogue.cancel()
+	_present_dialogue(NpcDialogueService.Result.new(true, "Conversation closed."))
 
 
 func load_run() -> PackedStringArray:
@@ -639,15 +662,17 @@ func _quit() -> void:
 	get_tree().quit(0)
 
 
-func _quest_command(quest_id: String, action_id: String, source_id: String) -> DialogueService.ActionResult:
-	if world_host.transitioning or loading_save or get_tree().paused or not dialogue.active():
-		return DialogueService.ActionResult.new(false, "Quest command blocked by input mode.", action_id)
+func _quest_command(quest_id: String, action_id: String, source_id: String) -> NpcDialogueService.Result:
+	if world_host.transitioning or loading_save or get_tree().paused or not dialogue.active() or not window_focused:
+		return NpcDialogueService.Result.new(false, "Quest command blocked by input mode.", action_id)
 	var exists: bool = false
 	for target: PrototypeInteractable in world_host.current_location.interactables():
-		if target.instance_id == source_id and target.dialogue_id == dialogue.definition.stable_id:
-			exists = true
+		if target.instance_id == source_id and target.dialogue_id == dialogue.snapshot().get("graph_id", ""):
+			var definition: ConversationDefinition = catalog.get_dialogue(target.dialogue_id)
+			for choice: NpcDialogueGraph.Choice in definition.graph().nodes[dialogue.snapshot().node_id].choices:
+				if choice.command.get("quest_id", "") == quest_id and choice.command.get("action_id", "") == action_id: exists = true
 	if not exists:
-		return DialogueService.ActionResult.new(false, "Quest source unloaded.", action_id)
+		return NpcDialogueService.Result.new(false, "Quest source unloaded.", action_id)
 	return quests.apply(quest_id, action_id, session.current_location_id, source_id)
 
 
@@ -779,7 +804,7 @@ func _combat_stable() -> bool:
 func _on_guardian_defeated(actor: ActorPlaceholder) -> void:
 	if actor != guardian or actor.state.health != 0 or session.current_location_id != "prototype-tollworks":
 		return
-	var result: DialogueService.ActionResult = quests.apply("prototype-maris-recovery", "maris-clear-guardian", session.current_location_id, actor.state.instance_id)
+	var result: NpcDialogueService.Result = quests.apply("prototype-maris-recovery", "maris-clear-guardian", session.current_location_id, actor.state.instance_id)
 	if not result.ok:
 		push_error("Guardian clearance failed: " + result.message)
 	print("P008 guardian defeat: ", result.message)
@@ -817,20 +842,21 @@ func retry_encounter() -> void:
 	_update_controls()
 
 
-func _reaction_command(id: String, source_id: String) -> DialogueService.ActionResult:
+func _reaction_command(id: String, source_id: String) -> NpcDialogueService.Result:
 	if world_host.transitioning or loading_save or get_tree().paused or not dialogue.active() or not window_focused:
-		return DialogueService.ActionResult.new(false, "Reaction blocked by input mode.")
+		return NpcDialogueService.Result.new(false, "Reaction blocked by input mode.")
 	for target: PrototypeInteractable in world_host.current_location.interactables():
-		if target.instance_id == source_id and target.dialogue_id == dialogue.definition.stable_id:
-			for choice: DialogueChoice in dialogue.definition.choices:
-				if choice.reaction_id == id:
+		if target.instance_id == source_id and target.dialogue_id == dialogue.snapshot().get("graph_id", ""):
+			var definition: ConversationDefinition = catalog.get_dialogue(target.dialogue_id)
+			for choice: NpcDialogueGraph.Choice in definition.graph().nodes[dialogue.snapshot().node_id].choices:
+				if choice.command.get("reaction_id", "") == id:
 					return relationships.apply(id)
-	return DialogueService.ActionResult.new(false, "Reaction source/action unavailable.")
+	return NpcDialogueService.Result.new(false, "Reaction source/action unavailable.")
 
 func _select_upgrade() -> void:
 	if not journal_open or backpack_open or not window_focused or get_tree().paused or dialogue.active() or world_host.transitioning or loading_save or not _combat_stable():
 		return
-	var result: DialogueService.ActionResult = progression.select_upgrade(ProgressionService.UPGRADE_ID)
+	var result: NpcDialogueService.Result = progression.select_upgrade(ProgressionService.UPGRADE_ID)
 	_refresh_progression()
 	ui.upgrade_status.text = result.message
 

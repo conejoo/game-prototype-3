@@ -68,8 +68,8 @@ func _run() -> void:
 			if authored is QuestDefinition:
 				if mutation == "duplicate": authored.steps.append(authored.steps[0])
 				if mutation == "location": authored.steps[0].location_id = "absent"
-			if mutation == "dialogue" and authored is DialogueDefinition and authored.stable_id == "prototype-maris-counter":
-				authored.choices[0].action_id = "absent"
+			if mutation == "dialogue" and authored is ConversationDefinition and authored.stable_id == "prototype-maris-counter":
+				TestRunConversation.mutate(authored, func(data: Dictionary) -> void: data.nodes[0].choices[0].command.action_id = "absent")
 		_check(not ContentCatalog.new().initialize(manifest).is_empty(), "Malformed quest content accepted: " + mutation)
 	# Root source command and arrival wiring; no teleport claim of normal gameplay.
 	var game: Node3D = load("res://app/game_root.tscn").instantiate()
@@ -79,9 +79,9 @@ func _run() -> void:
 	game.player_placeholder.global_position = game.world_host.current_location.get_node("MarisCounter").global_position + Vector3(1.5, 0, -0.4)
 	await physics_frame
 	await physics_frame
-	_check(game.interact().ok and game.dialogue.definition.stable_id == "prototype-maris-counter", "Maris interaction absent")
-	_check(not game.dialogue.choose("maris-reconnect-choice").ok and game.dialogue.awaiting_choice(), "Rejected reconnection changed cursor")
-	_check(game.dialogue.choose("maris-lead-choice").ok, "Lead not routed to quest owner")
+	_check(game.interact().ok and game.dialogue.snapshot().get("graph_id", "") == "prototype-maris-counter", "Maris interaction absent")
+	_check(not game._choose_dialogue("maris-reconnect-choice").ok and not game.dialogue.snapshot().choices.is_empty(), "Rejected reconnection changed cursor")
+	_check(game._choose_dialogue("maris-lead-choice").ok, "Lead not routed to quest owner")
 	game._cancel_dialogue()
 	game._toggle_journal()
 	_check(game.journal_open and not game.player_placeholder.controls_enabled and "[done]" in game.ui.journal_text.text, "Journal/modal did not reflect lead")

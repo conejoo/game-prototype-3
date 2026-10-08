@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence and N005 portrait conversation integration.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -926,3 +926,28 @@ represent pre-conversation gameplay, preserving all authored prior facts.
 rule checks, complete old/new-state round trips, root staging/placement/recovery
 and separate-process restart with an exact whole-state oracle. Synthetic service/
 root checks make no ordinary NPC route/UI/art or new native-package claim.
+
+### Delivered portrait conversation composition (N005)
+
+GameRoot.dialogue now owns one NpcDialogueService for source NPC graphs and converted
+prototype ConversationDefinitions. Both use finite NpcDialogueGraph nodes, stable
+identity/token commands, one snapshot/view/cancellation/save gate. Superseded
+DialogueDefinition/DialogueChoice/DialogueService and the second root owner are
+removed. Existing six conversations preserve exact IDs/words/quest/reaction commands
+across24 nodes/15 choices; legal callbacks validate the actual live source and node.
+Reentry rejects and callback cancellation cannot restore an old cursor.
+
+ConversationView renders current speaker/expression/source portrait, authored bold
+text/current disclosure highlights and only learned facts. Body, choices and facts
+scroll independently; Continue/Close remain visible with contained focus. Deferred
+gift/interior choices explain unavailability and retain valid exits. Existing Maris
+recovery reads the same person's learned facts without new ordinary rewards.
+Modal input clearing/world exclusion, focus loss/unload cleanup and closed-dialogue
+manual exact save restore pass. Schema7/content1 and pinned geography remain intact.
+
+[N005 acceptance](villagers-dialogue/N005_ACCEPTANCE.md) records all criteria, exact
+conversion/removed-API audit, expanded26 plus focused8 plus final test-only4 passing
+runner cases,48 expressions/68 captures and source/diagnostic/isolation guards.
+Actual960x640/1350x900 modal renders inspected. Eight-person contact/expression/length
+fixtures are explicitly synthetic; ordinary villager scene activation/routes, 3D
+character assets and a new native release remain later N tasks. N006 next eligible.

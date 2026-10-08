@@ -93,7 +93,7 @@ func _run() -> void:
 			"pause": game._set_paused(true)
 			"backpack": _key(KEY_B)
 			"journal": _key(KEY_J)
-			"dialogue": game.dialogue.begin(game.catalog.get_dialogue("prototype-companion-greeting"),"fixture"); game._update_controls()
+			"dialogue": game.dialogue.begin_graph(game.catalog.get_dialogue("prototype-companion-greeting"),"fixture"); game._update_controls()
 			"gui-focus": game.ui.pause_button.grab_focus(); game._tick_item_drag()
 			"travel": game.world_host.transitioning = true; game._tick_item_drag()
 			"load": game.loading_save = true; game._tick_item_drag()

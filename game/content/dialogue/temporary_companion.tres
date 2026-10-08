@@ -1,43 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+[gd_resource type="Resource" script_class="ConversationDefinition" format=3]
 
-[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
-[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
-
-[sub_resource type="Resource" id="Choice_look"]
-script = ExtResource("2")
-stable_id = "prototype-ask-room"
-label = "What should we look at?"
-action_id = "prototype-observe"
-response = PackedStringArray("Start with Maris at Reed Chandlery on Dock Row, southwest of town start. Her lead earns a preparation point: open J to choose Deliberate Strike. Then walk east into Moonwood, cross the bridge or sand ford to the forest Tollworks entrance, clear the guardian and inspect the southeast vessel. Return to Maris for the fitting. This stationary prototype station voices your active ally; our identity and dialogue are noncanonical.")
-
-[sub_resource type="Resource" id="Choice_leave"]
-script = ExtResource("2")
-stable_id = "prototype-keep-moving"
-label = "Let's keep moving."
-action_id = "prototype-leave"
-response = PackedStringArray("All right. Our active companion follows you; this stationary fixture only hosts prototype dialogue.")
-
-[sub_resource type="Resource" id="Choice_shared"]
-script = ExtResource("2")
-stable_id = "prototype-plan-together"
-label = "Let us plan together. [Trust +1; once]"
-action_id = "companion-react"
-reaction_id = "prototype-shared-plan"
-response = PackedStringArray("[Noncanonical prototype] Thanks for hearing me. I would rather face this together.")
-
-[sub_resource type="Resource" id="Choice_orders"]
-script = ExtResource("2")
-stable_id = "prototype-give-orders"
-label = "Follow my orders. [Trust -1; once]"
-action_id = "companion-react"
-reaction_id = "prototype-orders"
-response = PackedStringArray("[Noncanonical prototype] I will help, but I wanted a say. This is companionship, not romance.")
+[ext_resource type="Script" path="res://features/dialogue/conversation_definition.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-companion-greeting"
 display_name = "Temporary companion (prototype fixture)"
-prototype_fixture = true
 speaker_actor_id = "prototype-companion"
-lines = PackedStringArray("[Prototype fixture; noncanonical] Your temporary ally follows and helps in combat. This purple station voices our dialogue. We can share the plan or take orders: choose once to record a trust reaction. Maris's lead starts at Reed Chandlery on Dock Row, southwest of town start.")
-choices = Array[ExtResource("2")]([SubResource("Choice_look"), SubResource("Choice_leave"), SubResource("Choice_shared"), SubResource("Choice_orders")])
+prototype_fixture = true
+graph_json = "{\"npcId\":\"prototype-companion\",\"entryNodeIds\":[\"prototype-companion-greeting:intro-0\"],\"nodes\":[{\"id\":\"prototype-companion-greeting:intro-0\",\"text\":\"[Prototype fixture; noncanonical] Your temporary ally follows and helps in combat. This purple station voices our dialogue. We can share the plan or take orders: choose once to record a trust reaction. Maris's lead starts at Reed Chandlery on Dock Row, southwest of town start.\",\"portraitId\":\"\",\"presentationIndex\":0,\"choices\":[{\"id\":\"prototype-ask-room\",\"text\":\"What should we look at?\",\"targetNodeId\":\"prototype-ask-room:response-0\",\"command\":{\"action_id\":\"prototype-observe\"}},{\"id\":\"prototype-keep-moving\",\"text\":\"Let's keep moving.\",\"targetNodeId\":\"prototype-keep-moving:response-0\",\"command\":{\"action_id\":\"prototype-leave\"}},{\"id\":\"prototype-plan-together\",\"text\":\"Let us plan together. [Trust +1; once]\",\"targetNodeId\":\"prototype-plan-together:response-0\",\"command\":{\"action_id\":\"companion-react\",\"reaction_id\":\"prototype-shared-plan\"}},{\"id\":\"prototype-give-orders\",\"text\":\"Follow my orders. [Trust -1; once]\",\"targetNodeId\":\"prototype-give-orders:response-0\",\"command\":{\"action_id\":\"companion-react\",\"reaction_id\":\"prototype-orders\"}}]},{\"id\":\"prototype-ask-room:response-0\",\"text\":\"Start with Maris at Reed Chandlery on Dock Row, southwest of town start. Her lead earns a preparation point: open J to choose Deliberate Strike. Then walk east into Moonwood, cross the bridge or sand ford to the forest Tollworks entrance, clear the guardian and inspect the southeast vessel. Return to Maris for the fitting. This stationary prototype station voices your active ally; our identity and dialogue are noncanonical.\",\"portraitId\":\"\",\"presentationIndex\":0},{\"id\":\"prototype-keep-moving:response-0\",\"text\":\"All right. Our active companion follows you; this stationary fixture only hosts prototype dialogue.\",\"portraitId\":\"\",\"presentationIndex\":0},{\"id\":\"prototype-plan-together:response-0\",\"text\":\"[Noncanonical prototype] Thanks for hearing me. I would rather face this together.\",\"portraitId\":\"\",\"presentationIndex\":0},{\"id\":\"prototype-give-orders:response-0\",\"text\":\"[Noncanonical prototype] I will help, but I wanted a say. This is companionship, not romance.\",\"portraitId\":\"\",\"presentationIndex\":0}]}"

@@ -1,28 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+[gd_resource type="Resource" script_class="ConversationDefinition" format=3]
 
-[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
-[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
-
-[sub_resource type="Resource" id="Reconnect"]
-script = ExtResource("2")
-stable_id = "maris-reconnect-choice"
-label = "Check the fit together and restore specialist service."
-quest_id = "prototype-maris-recovery"
-action_id = "maris-reconnect"
-response = PackedStringArray("[Prototype adaptation] Maris checks the adjusted fitting against the customer's gear. It sits securely without catching the line. Recognition returns through the familiar work: she can offer specialist fittings again.", "The counter now displays fitted river gear and repair fittings. Ordinary supplies remain available. The passenger ship still needs separate salvage and repairs; the fair remains closed.")
-
-[sub_resource type="Resource" id="Leave"]
-script = ExtResource("2")
-stable_id = "maris-fitting-leave"
-label = "Pause the fitting; return later."
-action_id = "prototype-leave"
-response = PackedStringArray("No fitting completed. The returned experience is safe; specialist service remains unavailable until you finish the work together.")
+[ext_resource type="Script" path="res://features/dialogue/conversation_definition.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-maris-fitting"
 display_name = "Maris — return and fitting (prototype adaptation)"
-prototype_fixture = true
 speaker_actor_id = "npc-03"
-lines = PackedStringArray("[Shortened prototype adaptation] The experience has returned from the Tollworks. At Maris's counter, an unnamed familiar customer and a quiet helper stand in for the authored reconnection scene; both are temporary fixtures.", "The customer lays out worn river gear. You compare the old fitting with the returned experience while the helper gives Maris room to recognize it. Ordinary supplies are still available; recovered experience alone has not restored specialist service.", "Maris recalls why this customer's line needed a different fitting. Together you adjust the gear and test its hold. Finish the practical check to restore specialist service, or pause without completing reconnection.")
-choices = Array[ExtResource("2")]([SubResource("Reconnect"), SubResource("Leave")])
+prototype_fixture = true
+graph_json = "{\"npcId\":\"npc-03\",\"entryNodeIds\":[\"prototype-maris-fitting:intro-0\"],\"nodes\":[{\"id\":\"prototype-maris-fitting:intro-0\",\"text\":\"[Shortened prototype adaptation] The experience has returned from the Tollworks. At Maris's counter, an unnamed familiar customer and a quiet helper stand in for the authored reconnection scene; both are temporary fixtures.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0,\"continueTargetId\":\"prototype-maris-fitting:intro-1\"},{\"id\":\"prototype-maris-fitting:intro-1\",\"text\":\"The customer lays out worn river gear. You compare the old fitting with the returned experience while the helper gives Maris room to recognize it. Ordinary supplies are still available; recovered experience alone has not restored specialist service.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":1,\"continueTargetId\":\"prototype-maris-fitting:intro-2\"},{\"id\":\"prototype-maris-fitting:intro-2\",\"text\":\"Maris recalls why this customer's line needed a different fitting. Together you adjust the gear and test its hold. Finish the practical check to restore specialist service, or pause without completing reconnection.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":2,\"choices\":[{\"id\":\"maris-reconnect-choice\",\"text\":\"Check the fit together and restore specialist service.\",\"targetNodeId\":\"maris-reconnect-choice:response-0\",\"command\":{\"action_id\":\"maris-reconnect\",\"quest_id\":\"prototype-maris-recovery\"}},{\"id\":\"maris-fitting-leave\",\"text\":\"Pause the fitting; return later.\",\"targetNodeId\":\"maris-fitting-leave:response-0\",\"command\":{\"action_id\":\"prototype-leave\"}}]},{\"id\":\"maris-reconnect-choice:response-0\",\"text\":\"[Prototype adaptation] Maris checks the adjusted fitting against the customer's gear. It sits securely without catching the line. Recognition returns through the familiar work: she can offer specialist fittings again.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0,\"continueTargetId\":\"maris-reconnect-choice:response-1\"},{\"id\":\"maris-reconnect-choice:response-1\",\"text\":\"The counter now displays fitted river gear and repair fittings. Ordinary supplies remain available. The passenger ship still needs separate salvage and repairs; the fair remains closed.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":1},{\"id\":\"maris-fitting-leave:response-0\",\"text\":\"No fitting completed. The returned experience is safe; specialist service remains unavailable until you finish the work together.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0}]}"

@@ -1,27 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+[gd_resource type="Resource" script_class="ConversationDefinition" format=3]
 
-[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
-[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
-
-[sub_resource type="Resource" id="Inspect"]
-script = ExtResource("2")
-stable_id = "maris-specialist-inspect"
-label = "Inspect the specialist river-gear service."
-action_id = "prototype-observe"
-response = PackedStringArray("[Prototype service preview] Fitted river gear and repair fittings are available again. Maris can match fittings to a customer's needs; line and lamp oil remain on the basic shelf. This prototype previews service availability, with no purchase or inventory transaction.")
-
-[sub_resource type="Resource" id="Leave"]
-script = ExtResource("2")
-stable_id = "maris-specialist-leave"
-label = "Leave the restored counter."
-action_id = "prototype-leave"
-response = PackedStringArray("Maris's specialist service stays restored. The wider town, closed fair and damaged passenger ship still have their own work ahead.")
+[ext_resource type="Script" path="res://features/dialogue/conversation_definition.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-maris-specialist"
 display_name = "Maris — specialist service restored (prototype)"
-prototype_fixture = true
 speaker_actor_id = "npc-03"
-lines = PackedStringArray("[Prototype Reed Chandlery] Reconnection and the practical fitting are complete. Specialist fitting service has returned alongside ordinary supplies. Inspect the counter's river gear and repair fittings.")
-choices = Array[ExtResource("2")]([SubResource("Inspect"), SubResource("Leave")])
+prototype_fixture = true
+graph_json = "{\"npcId\":\"npc-03\",\"entryNodeIds\":[\"prototype-maris-specialist:intro-0\"],\"nodes\":[{\"id\":\"prototype-maris-specialist:intro-0\",\"text\":\"[Prototype Reed Chandlery] Reconnection and the practical fitting are complete. Specialist fitting service has returned alongside ordinary supplies. Inspect the counter's river gear and repair fittings.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0,\"choices\":[{\"id\":\"maris-specialist-inspect\",\"text\":\"Inspect the specialist river-gear service.\",\"targetNodeId\":\"maris-specialist-inspect:response-0\",\"command\":{\"action_id\":\"prototype-observe\"}},{\"id\":\"maris-specialist-leave\",\"text\":\"Leave the restored counter.\",\"targetNodeId\":\"maris-specialist-leave:response-0\",\"command\":{\"action_id\":\"prototype-leave\"}}]},{\"id\":\"maris-specialist-inspect:response-0\",\"text\":\"[Prototype service preview] Fitted river gear and repair fittings are available again. Maris can match fittings to a customer's needs; line and lamp oil remain on the basic shelf. This prototype previews service availability, with no purchase or inventory transaction.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0},{\"id\":\"maris-specialist-leave:response-0\",\"text\":\"Maris's specialist service stays restored. The wider town, closed fair and damaged passenger ship still have their own work ahead.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0}]}"

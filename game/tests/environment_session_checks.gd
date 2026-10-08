@@ -44,7 +44,7 @@ func _run() -> void:
 	await _frames()
 	_check(game.journal_open and not game.player_placeholder.controls_enabled and _minutes() > before, "journal incorrectly froze environment")
 	game._toggle_journal()
-	game._present_dialogue(game.dialogue.begin(game.catalog.get_dialogue("prototype-companion-greeting"), "synthetic-clock-gate"))
+	game._present_dialogue(game.dialogue.begin_graph(game.catalog.get_dialogue("prototype-companion-greeting"), "synthetic-clock-gate"))
 	before = _minutes()
 	await _frames()
 	_check(game.dialogue.active() and not game.player_placeholder.controls_enabled and _minutes() > before, "dialogue incorrectly froze environment")

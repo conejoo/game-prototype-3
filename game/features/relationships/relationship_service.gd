@@ -10,17 +10,17 @@ func initialize(content: ContentCatalog, run: GameSession) -> void:
 	catalog = content
 	session = run
 
-func apply(id: String) -> DialogueService.ActionResult:
+func apply(id: String) -> NpcDialogueService.Result:
 	var definition: ReactionDefinition = catalog.get_reaction(id)
 	if definition == null:
-		return DialogueService.ActionResult.new(false, "Unknown companion reaction.")
+		return NpcDialogueService.Result.new(false, "Unknown companion reaction.")
 	for recorded: String in session.relationship.reaction_ids:
 		if catalog.get_reaction(recorded).decision_id == definition.decision_id:
-			return DialogueService.ActionResult.new(recorded == id, "Decision already recorded; trust unchanged.")
+			return NpcDialogueService.Result.new(recorded == id, "Decision already recorded; trust unchanged.")
 	session.relationship.reaction_ids.append(id)
 	session.relationship.trust += definition.trust_delta
 	changed.emit()
-	return DialogueService.ActionResult.new(true, "%s · Trust %+d (now %d)." % [definition.display_name, definition.trust_delta, session.relationship.trust])
+	return NpcDialogueService.Result.new(true, "%s · Trust %+d (now %d)." % [definition.display_name, definition.trust_delta, session.relationship.trust])
 
 static func validate_state(data: Variant, catalog: ContentCatalog) -> PackedStringArray:
 	if not data is Dictionary or data.size() != 3 or not data.has_all(["companion_id", "trust", "reaction_ids"]) or data.get("companion_id") != "prototype-companion" or not data.get("reaction_ids") is Array:

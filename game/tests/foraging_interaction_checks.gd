@@ -51,7 +51,7 @@ func _run() -> void:
 		_check(game.foraging_hold.active(), "hold begins before " + mode)
 		match mode:
 			"pause": game._set_paused(true)
-			"dialogue": game.dialogue.begin(game.catalog.get_dialogue("prototype-companion-greeting"),"fixture")
+			"dialogue": game.dialogue.begin_graph(game.catalog.get_dialogue("prototype-companion-greeting"),"fixture")
 			"journal": game.journal_open = true
 			"focus": game._notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
 			"travel": game.world_host.transitioning = true

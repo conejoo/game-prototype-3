@@ -13,28 +13,28 @@ func initialize(content: ContentCatalog, run: GameSession) -> void:
 	session = run
 
 
-func apply(quest_id: String, action_id: String, location_id: String, source_id: String) -> DialogueService.ActionResult:
+func apply(quest_id: String, action_id: String, location_id: String, source_id: String) -> NpcDialogueService.Result:
 	var definition: QuestDefinition = catalog.get_quest(quest_id)
 	var state: QuestState = session.quests.get(quest_id)
 	if definition == null or state == null:
-		return DialogueService.ActionResult.new(false, "Unknown quest.", action_id)
+		return NpcDialogueService.Result.new(false, "Unknown quest.", action_id)
 	for index: int in range(definition.steps.size()):
 		var step: QuestStep = definition.steps[index]
 		if step.action_id != action_id:
 			continue
 		if step.location_id != location_id or step.source_id != source_id:
-			return DialogueService.ActionResult.new(false, "Wrong quest location or source.", action_id)
+			return NpcDialogueService.Result.new(false, "Wrong quest location or source.", action_id)
 		if index < state.completed_step_ids.size():
-			return DialogueService.ActionResult.new(true, "Already recorded; no effect repeated.", action_id)
+			return NpcDialogueService.Result.new(true, "Already recorded; no effect repeated.", action_id)
 		if index != state.completed_step_ids.size():
-			return DialogueService.ActionResult.new(false, "Prerequisite incomplete. " + objective(quest_id), action_id)
+			return NpcDialogueService.Result.new(false, "Prerequisite incomplete. " + objective(quest_id), action_id)
 		if step.effect_id in session.completed_effect_ids:
-			return DialogueService.ActionResult.new(false, "Inconsistent completed effect; command rejected.", action_id)
+			return NpcDialogueService.Result.new(false, "Inconsistent completed effect; command rejected.", action_id)
 		state.completed_step_ids.append(step.stable_id)
 		session.completed_effect_ids.append(step.effect_id)
 		changed.emit()
-		return DialogueService.ActionResult.new(true, "Recorded. " + objective(quest_id), action_id)
-	return DialogueService.ActionResult.new(false, "Unknown quest action.", action_id)
+		return NpcDialogueService.Result.new(true, "Recorded. " + objective(quest_id), action_id)
+	return NpcDialogueService.Result.new(false, "Unknown quest action.", action_id)
 
 
 func record_arrival(location_id: String) -> void:

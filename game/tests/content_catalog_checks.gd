@@ -55,10 +55,10 @@ func _run() -> void:
 	(fixture.definitions[3] as LocationDefinition).actor_ids.append("absent-actor")
 	_reject(fixture, "missing actor reference 'absent-actor'")
 	fixture = _fixture()
-	(fixture.definitions[4] as DialogueDefinition).speaker_actor_id = LOCATION_ID
+	(fixture.definitions[4] as ConversationDefinition).speaker_actor_id = LOCATION_ID
 	_reject(fixture, "must be an ActorDefinition")
 	fixture = _fixture()
-	(fixture.definitions[4] as DialogueDefinition).speaker_actor_id = "absent-speaker"
+	(fixture.definitions[4] as ConversationDefinition).speaker_actor_id = "absent-speaker"
 	_reject(fixture, "missing actor reference 'absent-speaker'")
 	fixture = _fixture()
 	(fixture.definitions[3] as LocationDefinition).scene_path = "res://world/absent.tscn"
@@ -76,14 +76,14 @@ func _run() -> void:
 	(fixture.definitions[3] as LocationDefinition).spawn_ids.append(" ")
 	_reject(fixture, "whitespace-padded ID")
 	fixture = _fixture()
-	(fixture.definitions[4] as DialogueDefinition).lines = []
-	_reject(fixture, "at least one line")
+	TestRunConversation.mutate(fixture.definitions[4], func(data: Dictionary) -> void: data.nodes = [])
+	_reject(fixture, "at least one node")
 	fixture = _fixture()
-	(fixture.definitions[4] as DialogueDefinition).lines = [" "]
+	TestRunConversation.mutate(fixture.definitions[4], func(data: Dictionary) -> void: data.nodes[0].text = " ")
 	_reject(fixture, "blank line")
 	_check(not catalog.initialize(fixture).is_empty(), "Bad replacement catalog must fail")
 	_check(catalog.definition_count() == 21 and catalog.get_actor(HERO_ID) != null, "Rejected catalog must preserve published definitions")
-	_check(catalog.get_dialogue("prototype-companion-greeting").lines[0].begins_with("[Prototype fixture"), "Rejected catalog replaced valid dialogue with malformed content")
+	_check(catalog.get_dialogue("prototype-companion-greeting").document().nodes[0].text.begins_with("[Prototype fixture"), "Rejected catalog replaced valid dialogue with malformed content")
 
 	var actor_definition: ActorDefinition = catalog.get_actor(HERO_ID)
 	var first: ActorState = ActorState.new("test-actor-1", actor_definition)

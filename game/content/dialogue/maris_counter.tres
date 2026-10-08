@@ -1,36 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+[gd_resource type="Resource" script_class="ConversationDefinition" format=3]
 
-[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
-[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
-
-[sub_resource type="Resource" id="Lead"]
-script = ExtResource("2")
-stable_id = "maris-lead-choice"
-label = "Accept the recovery lead."
-quest_id = "prototype-maris-recovery"
-action_id = "maris-accept-lead"
-response = PackedStringArray("[Shortened prototype adaptation] The Tollworks refuge holds an experience of fitting river gear for a familiar customer. Walk east into Moonwood, cross the timber bridge or sand ford, then use the glowing forest Tollworks entrance to investigate.")
-
-[sub_resource type="Resource" id="Reconnect"]
-script = ExtResource("2")
-stable_id = "maris-reconnect-choice"
-label = "Support reconnection and a familiar fitting."
-quest_id = "prototype-maris-recovery"
-action_id = "maris-reconnect"
-response = PackedStringArray("[Prototype adaptation] Recognition and specialist service return through a familiar practical fitting. The passenger ship still needs separate salvage and repairs.")
-
-[sub_resource type="Resource" id="Leave"]
-script = ExtResource("2")
-stable_id = "maris-leave-choice"
-label = "Leave the counter."
-action_id = "prototype-leave"
-response = PackedStringArray("You step away. Recovery requires the journey and a return to this counter.")
+[ext_resource type="Script" path="res://features/dialogue/conversation_definition.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-maris-counter"
 display_name = "Maris — prototype counter adaptation"
-prototype_fixture = true
 speaker_actor_id = "npc-03"
-lines = PackedStringArray("[Prototype adaptation, not the full campaign opening] Maris's specialist fitting judgment is missing. Ordinary supplies remain available. Choose a recovery lead or reconnect after opening her vessel's return path.")
-choices = Array[ExtResource("2")]([SubResource("Lead"), SubResource("Reconnect"), SubResource("Leave")])
+prototype_fixture = true
+graph_json = "{\"npcId\":\"npc-03\",\"entryNodeIds\":[\"prototype-maris-counter:intro-0\"],\"nodes\":[{\"id\":\"prototype-maris-counter:intro-0\",\"text\":\"[Prototype adaptation, not the full campaign opening] Maris's specialist fitting judgment is missing. Ordinary supplies remain available. Choose a recovery lead or reconnect after opening her vessel's return path.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0,\"choices\":[{\"id\":\"maris-lead-choice\",\"text\":\"Accept the recovery lead.\",\"targetNodeId\":\"maris-lead-choice:response-0\",\"command\":{\"action_id\":\"maris-accept-lead\",\"quest_id\":\"prototype-maris-recovery\"}},{\"id\":\"maris-reconnect-choice\",\"text\":\"Support reconnection and a familiar fitting.\",\"targetNodeId\":\"maris-reconnect-choice:response-0\",\"command\":{\"action_id\":\"maris-reconnect\",\"quest_id\":\"prototype-maris-recovery\"}},{\"id\":\"maris-leave-choice\",\"text\":\"Leave the counter.\",\"targetNodeId\":\"maris-leave-choice:response-0\",\"command\":{\"action_id\":\"prototype-leave\"}}]},{\"id\":\"maris-lead-choice:response-0\",\"text\":\"[Shortened prototype adaptation] The Tollworks refuge holds an experience of fitting river gear for a familiar customer. Walk east into Moonwood, cross the timber bridge or sand ford, then use the glowing forest Tollworks entrance to investigate.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0},{\"id\":\"maris-reconnect-choice:response-0\",\"text\":\"[Prototype adaptation] Recognition and specialist service return through a familiar practical fitting. The passenger ship still needs separate salvage and repairs.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0},{\"id\":\"maris-leave-choice:response-0\",\"text\":\"You step away. Recovery requires the journey and a return to this counter.\",\"portraitId\":\"official-neutral\",\"presentationIndex\":0}]}"

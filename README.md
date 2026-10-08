@@ -3,9 +3,10 @@
 NPC migration: [eight villagers and richer dialogue](docs/villagers-dialogue/CHECKLIST.md),
 [reusable fresh-agent prompt](docs/villagers-dialogue/AGENT_PROMPT.md), and
 [durable state](docs/villagers-dialogue/CURRENT_STATE.md).
-N001 reference audit, N002 typed content, N003 dialogue rules and N004 persistence Done; N005-N018 Pending. Next eligible: N005.
+N001 reference audit, N002 typed content, N003 dialogue rules, N004 persistence and N005 portrait conversation UI Done; N006-N018 Pending. Next eligible: N006.
 [N002 acceptance](docs/villagers-dialogue/N002_ACCEPTANCE.md) verifies eight bundled graphs, strict validation and atomic publication; villagers are not activated yet.
 [N003 acceptance](docs/villagers-dialogue/N003_ACCEPTANCE.md) verifies per-person memory, graph selection and atomic choices; [N004 acceptance](docs/villagers-dialogue/N004_ACCEPTANCE.md) records strict schema7 persistence and restart validation.
+[N005 acceptance](docs/villagers-dialogue/N005_ACCEPTANCE.md) verifies one finite conversation flow, source portraits/branches/learned facts, converted existing recovery/companion content and modal safety. Eight-person UI fixtures are verified; ordinary villager activation remains pending.
 
 Current feature work: [foraging, items and backpack migration](docs/foraging-items-backpack/CHECKLIST.md),
 with [fresh-agent prompt](docs/foraging-items-backpack/AGENT_PROMPT.md).

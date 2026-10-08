@@ -19,7 +19,7 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 			errors.append("definition[%d] is null" % index)
 			continue
 		var label: String = "definition[%d] '%s'" % [index, definition.stable_id]
-		if not (definition is ActorDefinition or definition is LocationDefinition or definition is DialogueDefinition or definition is QuestDefinition or definition is ReactionDefinition or definition is UpgradeDefinition or definition is ItemDefinition or definition is ForagingResourceDefinition):
+		if not (definition is ActorDefinition or definition is LocationDefinition or definition is ConversationDefinition or definition is QuestDefinition or definition is ReactionDefinition or definition is UpgradeDefinition or definition is ItemDefinition or definition is ForagingResourceDefinition):
 			errors.append("%s has unsupported definition type" % label)
 		for error: String in definition.validation_errors():
 			errors.append("%s: %s" % [label, error])
@@ -48,22 +48,22 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 		elif definition is LocationDefinition:
 			for actor_id: String in (definition as LocationDefinition).actor_ids:
 				_validate_actor_reference(candidate, definition.stable_id, actor_id, errors)
-		elif definition is DialogueDefinition:
-			_validate_actor_reference(candidate, definition.stable_id, (definition as DialogueDefinition).speaker_actor_id, errors)
-			for choice: DialogueChoice in (definition as DialogueDefinition).choices:
-				if choice != null and not choice.reaction_id.is_empty():
-					var reaction: ReactionDefinition = candidate.get(choice.reaction_id) as ReactionDefinition
-					if reaction == null or reaction.companion_id != (definition as DialogueDefinition).speaker_actor_id:
-						errors.append("dialogue references absent/wrong companion reaction")
-				if choice != null and not choice.quest_id.is_empty():
-					var quest: QuestDefinition = candidate.get(choice.quest_id) as QuestDefinition
-					var found: bool = false
-					if quest != null:
-						for step: QuestStep in quest.steps:
-							if step != null and step.action_id == choice.action_id:
-								found = true
-					if not found:
-						errors.append("dialogue references absent quest/action")
+		elif definition is ConversationDefinition:
+			var conversation: ConversationDefinition = definition
+			_validate_actor_reference(candidate, definition.stable_id, conversation.speaker_actor_id, errors)
+			if conversation.validation_errors().is_empty():
+				for choice: NpcDialogueGraph.Choice in conversation.graph().choices.values():
+					var command: Dictionary = choice.command
+					if not command.get("reaction_id", "").is_empty():
+						var reaction: ReactionDefinition = candidate.get(command.reaction_id) as ReactionDefinition
+						if reaction == null or reaction.companion_id != conversation.speaker_actor_id: errors.append("dialogue references absent/wrong companion reaction")
+					if not command.get("quest_id", "").is_empty():
+						var quest: QuestDefinition = candidate.get(command.quest_id) as QuestDefinition
+						var found: bool = false
+						if quest != null:
+							for step: QuestStep in quest.steps:
+								if step != null and step.action_id == command.action_id: found = true
+						if not found: errors.append("dialogue references absent quest/action")
 		elif definition is ReactionDefinition:
 			_validate_actor_reference(candidate, definition.stable_id, (definition as ReactionDefinition).companion_id, errors)
 			if (definition as ReactionDefinition).companion_id != "prototype-companion":
@@ -99,8 +99,8 @@ func get_location(id: String) -> LocationDefinition:
 	return _definitions.get(id) as LocationDefinition
 
 
-func get_dialogue(id: String) -> DialogueDefinition:
-	return _definitions.get(id) as DialogueDefinition
+func get_dialogue(id: String) -> ConversationDefinition:
+	return _definitions.get(id) as ConversationDefinition
 
 
 func definition_count() -> int:

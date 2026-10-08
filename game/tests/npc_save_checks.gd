@@ -151,17 +151,17 @@ func _root_checks(run: GameSession) -> void:
 	_check(DirAccess.remove_absolute(game.save_repository.path + ".tmp") == OK,"remove owned obstruction")
 	var malformed: Dictionary = before.duplicate(true); malformed.conversations.people["npc-01"].affinity = 99
 	_write(game.save_repository.path,JSON.stringify(malformed,"",true,true)); _write(game.save_repository.path + ".bak","broken backup")
-	_check(not (await game.load_run()).is_empty() and game.session == live and game.npc_dialogue._session == live and SaveCodec.snapshot(live) == before,"malformed NPC candidate cannot swap live owners/facts")
+	_check(not (await game.load_run()).is_empty() and game.session == live and game.dialogue._session == live and SaveCodec.snapshot(live) == before,"malformed NPC candidate cannot swap live owners/facts")
 	_write(game.save_repository.path,raw); _write(game.save_repository.path + ".bak",raw)
-	_check(game.npc_dialogue.begin("npc-14","fixture-contact").ok, "conversation open")
+	_check(game.dialogue.begin("npc-14","fixture-contact").ok, "conversation open")
 	_check(not game.save_run().is_empty() and not (await game.load_run()).is_empty(), "active NPC dialogue blocks manual Save/Load")
-	game.npc_dialogue.cancel()
+	game.dialogue.cancel()
 	before = SaveCodec.snapshot(live)
 	for spawn: String in unsafe.spawn_ids:
 		var bad: Dictionary = before.duplicate(true); bad.location_id = unsafe.stable_id; bad.spawn_id = spawn
 		_write(game.save_repository.path,JSON.stringify(bad,"",true,true))
 		_check(not (await game.load_run()).is_empty(), "unsafe placement rejected " + spawn)
-		_check(game.session == live and game.world_host.current_location == room and game.npc_dialogue._session == live and SaveCodec.snapshot(live) == before and game.player_placeholder.global_position == foot, "unsafe restore preserves all new/old state " + spawn)
+		_check(game.session == live and game.world_host.current_location == room and game.dialogue._session == live and SaveCodec.snapshot(live) == before and game.player_placeholder.global_position == foot, "unsafe restore preserves all new/old state " + spawn)
 	_write(game.save_repository.path,"broken")
 	_check((await game.load_run()).is_empty() and "Recovered backup" in game.ui.save_status.text, "backup recovers complete NPC state")
 	_check(SaveCodec.snapshot(game.session) == SaveCodec.snapshot(run) and FileAccess.get_file_as_string(game.save_repository.path) == "broken", "backup exact/restoration read-only")

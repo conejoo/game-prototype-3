@@ -61,8 +61,8 @@ func _run() -> void:
 	game.player_placeholder.global_position = Vector3(2.9, 0, 2.5)
 	await physics_frame
 	await physics_frame
-	_check(game.interact().ok and game.dialogue.definition.stable_id == "prototype-maris-vessel", "Vessel normal selector/dialogue disconnected")
-	_check(game.dialogue.choose("maris-vessel-choice").ok, "Vessel choice rejected after guardian defeat")
+	_check(game.interact().ok and game.dialogue.snapshot().get("graph_id", "") == "prototype-maris-vessel", "Vessel normal selector/dialogue disconnected")
+	_check(game._choose_dialogue("maris-vessel-choice").ok, "Vessel choice rejected after guardian defeat")
 	game._cancel_dialogue()
 	_check(game.session.completed_effect_ids.size() == 4, "Recovery did not commit exactly one effect")
 	game.quests.apply(QUEST, "maris-open-return-path", "prototype-tollworks", vessel.instance_id)

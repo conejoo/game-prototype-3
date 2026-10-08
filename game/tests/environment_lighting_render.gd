@@ -62,7 +62,7 @@ func _run() -> void:
 				game._present_environment()
 				await _capture("%s-%s-%s" % [goal, phase, "orthographic" if orthographic else "perspective"])
 	# Legitimate quest service setup, explicitly synthetic, spawns the real guardian.
-	var lead: DialogueService.ActionResult = game.quests.apply("prototype-maris-recovery", "maris-accept-lead", "prototype-alderwake", "npc-03-counter")
+	var lead: NpcDialogueService.Result = game.quests.apply("prototype-maris-recovery", "maris-accept-lead", "prototype-alderwake", "npc-03-counter")
 	if not lead.ok: failures.append(lead.message)
 	game.ui.show_paused(true)
 	game.session.environment.day_cycle_progress = .625

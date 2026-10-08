@@ -56,6 +56,7 @@ class Choice extends RefCounted:
 	var gift_rule_id: String
 	var conditions: Conditions
 	var availability: NpcContentAvailability
+	var command: Dictionary = {}
 	func _init(data: Dictionary, coverage: Dictionary) -> void:
 		id = data["id"]
 		text = data["text"]
@@ -69,6 +70,7 @@ class Choice extends RefCounted:
 		gift_rule_id = data.get("giftRuleId", "")
 		conditions = Conditions.new(data.get("conditions", {}))
 		availability = NpcContentAvailability.new(coverage)
+		command = data.get("command", {}).duplicate(true)
 	func has_one_time_effect() -> bool:
 		return one_time or not one_time_reward_flag.is_empty()
 
@@ -83,6 +85,7 @@ class NodeDefinition extends RefCounted:
 	var revealed_fact_ids: PackedStringArray
 	var choices: Array[Choice] = []
 	var continue_target_id: String
+	var presentation_index: int = 0
 	var availability: NpcContentAvailability
 	func _init(data: Dictionary, owner_id: String, owner_name: String, coverage: Dictionary) -> void:
 		id = data["id"]
@@ -94,6 +97,7 @@ class NodeDefinition extends RefCounted:
 		conditions = Conditions.new(data.get("conditions", {}))
 		revealed_fact_ids = PackedStringArray(data.get("revealedFactIds", []))
 		continue_target_id = data.get("continueTargetId", "")
+		presentation_index = int(data.get("presentationIndex", 0))
 		availability = NpcContentAvailability.new(coverage["node"][id])
 		for choice: Dictionary in data.get("choices", []):
 			choices.append(Choice.new(choice, coverage["choice"][choice["id"]]))

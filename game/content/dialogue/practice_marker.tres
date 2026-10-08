@@ -1,27 +1,11 @@
-[gd_resource type="Resource" script_class="DialogueDefinition" format=3]
+[gd_resource type="Resource" script_class="ConversationDefinition" format=3]
 
-[ext_resource type="Script" path="res://features/dialogue/dialogue_definition.gd" id="1"]
-[ext_resource type="Script" path="res://features/dialogue/dialogue_choice.gd" id="2"]
-
-[sub_resource type="Resource" id="Choice_detail"]
-script = ExtResource("2")
-stable_id = "prototype-marker-detail"
-label = "Look closer."
-action_id = "prototype-observe"
-response = PackedStringArray("A replaceable graybox marker. Inspecting it changes no quest, reward, or recovery state.")
-
-[sub_resource type="Resource" id="Choice_leave"]
-script = ExtResource("2")
-stable_id = "prototype-marker-leave"
-label = "Leave it alone."
-action_id = "prototype-leave"
-response = PackedStringArray("You step back from the practice marker.")
+[ext_resource type="Script" path="res://features/dialogue/conversation_definition.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-marker-inspection"
 display_name = "Practice marker (prototype fixture)"
-prototype_fixture = true
 speaker_actor_id = "prototype-hero"
-lines = PackedStringArray("[Prototype inspection] A practice marker for testing prop interactions in either room.")
-choices = Array[ExtResource("2")]([SubResource("Choice_detail"), SubResource("Choice_leave")])
+prototype_fixture = true
+graph_json = "{\"npcId\":\"prototype-hero\",\"entryNodeIds\":[\"prototype-marker-inspection:intro-0\"],\"nodes\":[{\"id\":\"prototype-marker-inspection:intro-0\",\"text\":\"[Prototype inspection] A practice marker for testing prop interactions in either room.\",\"portraitId\":\"\",\"presentationIndex\":0,\"choices\":[{\"id\":\"prototype-marker-detail\",\"text\":\"Look closer.\",\"targetNodeId\":\"prototype-marker-detail:response-0\",\"command\":{\"action_id\":\"prototype-observe\"}},{\"id\":\"prototype-marker-leave\",\"text\":\"Leave it alone.\",\"targetNodeId\":\"prototype-marker-leave:response-0\",\"command\":{\"action_id\":\"prototype-leave\"}}]},{\"id\":\"prototype-marker-detail:response-0\",\"text\":\"A replaceable graybox marker. Inspecting it changes no quest, reward, or recovery state.\",\"portraitId\":\"\",\"presentationIndex\":0},{\"id\":\"prototype-marker-leave:response-0\",\"text\":\"You step back from the practice marker.\",\"portraitId\":\"\",\"presentationIndex\":0}]}"

@@ -44,6 +44,9 @@ with tempfile.TemporaryDirectory(prefix="returning-fair-capture-") as folder:
                           "hold_progress": 0, "progress_visible": False, "e_down": False, "instance_id": ""},
         "backpack": {"controls_enabled": False, "backpack_modal_verified": True, "panel_fits": True,
                      "focus": "/root/game/ui/backpack/Slot01", "overlay": True},
+        "dialogue": {"controls_enabled": False, "dialogue_modal_verified": True, "panel_fits": True,
+                     "focus": "/root/game/ui/dialogue/Close", "overlay": True,
+                     "conversation": {"token": "fixture:1"}, "display": {"token": "fixture:1"}},
         "drag": {"controls_enabled": False, "drag_verified": True, "preview_visible": True,
                  "instance_id": "rod", "preview_errors": [], "preview_foot": [1, 0, 2]},
     }
@@ -79,6 +82,10 @@ with tempfile.TemporaryDirectory(prefix="returning-fair-capture-") as folder:
         elif mode == "backpack":
             for field, bad in [("backpack_modal_verified", False), ("panel_fits", False), ("focus", "")]:
                 reject({**fixture, field: bad})
+        elif mode == "dialogue":
+            for field, bad in [("dialogue_modal_verified", False), ("panel_fits", False), ("focus", ""),
+                               ("conversation", {}), ("display", {"token": "stale"})]:
+                reject({**fixture, field: bad})
         else:
             for field, bad in [("drag_verified", False), ("preview_visible", False), ("instance_id", ""),
                                ("preview_errors", "error"), ("preview_errors", [True]),
@@ -88,11 +95,11 @@ with tempfile.TemporaryDirectory(prefix="returning-fair-capture-") as folder:
             write({**fixture, "preview_errors": ["no dry ground"], "preview_foot": None})
             assert module.collect([manifest], root)[0][0]["mode"] == "drag"
     # Both unified views and existing named live arrays are fully validated/included.
-    mixed = {"views": [view], "live_frames": [fixtures["hold"], fixtures["hold-released"]],
+    mixed = {"views": [view, fixtures["dialogue"]], "live_frames": [fixtures["hold"], fixtures["hold-released"]],
              "modal_views": [fixtures["backpack"]], "drag_views": [fixtures["drag"]], "failures": []}
     manifest.write_text(json.dumps(mixed))
     _, accepted = module.build([manifest], root)
-    assert accepted["count"] == 5 and {v["mode"] for v in accepted["views"]} == {"pause", *modes}
+    assert accepted["count"] == 6 and {v["mode"] for v in accepted["views"]} == {"pause", *modes}
     manifest.write_text(json.dumps({"views": [], "drag_views": [fixtures["drag"], fixtures["drag"]]}))
     try:
         module.collect([manifest], root)
