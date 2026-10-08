@@ -1,5 +1,9 @@
 # Weather and interactive lighting migration contract
 
+Current save policy (2026-10-08) supersedes historical migration clauses below:
+only schema6/content1 is supported; older formats are rejected without migration
+or invented defaults. See [architecture](../ARCHITECTURE.md).
+
 This is the verified design for the completed W001-W010 workflow. W001 completed source inventory and behavior pinning on 2026-10-04. Runtime weather/lifecycle/HUD, W009 visual/performance gates and W010 package/native acceptance are verified in their acceptance records. All tasks Done; no next item. Earlier task-specific scope/next statements below describe their historical completion boundaries.
 
 Prepared 2026-10-04, America/Vancouver. Scope is the existing Godot Alderwake exterior, stable Tollworks interior lighting, saved environment time/forecast and authored exterior light behavior.

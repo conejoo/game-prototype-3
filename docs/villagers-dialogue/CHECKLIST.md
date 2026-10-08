@@ -24,8 +24,8 @@ Complete exactly one task per invocation. Mark In progress before implementation
 | N001 | Done | None; inspect actual delivered baseline | Pinned eight-person references, exact scope/placement/coverage contract. |
 | N002 | Done | N001 | Validated typed NPC/graph catalogs; all selected source content classified. |
 | N003 | Pending | N002 | Pure dialogue selection, memory and atomic choice rules. |
-| N004 | Pending | N003 | Strict save migration and persistent conversation/event memory. |
-| N005 | Pending | N004 | Multi-node portrait dialogue and known-facts UI integrated with legacy flows. |
+| N004 | Pending | N003 | Strict current-schema saves and persistent conversation/event memory. |
+| N005 | Pending | N004 | Multi-node portrait dialogue and known-facts UI integrated with existing gameplay. |
 | N006 | Pending | N005 | Safe scene-owned town contacts and real event adapters. |
 | N007 | Pending | N001, N002 | Reusable exported 3D rig/animation/presenter pipeline. |
 | N008 | Pending | N006, N007 | Edric complete and reachable; first real villager vertical slice. |
@@ -79,21 +79,21 @@ For every task retain commands/cwd, isolated data paths, exact outcomes, source/
 - Deliverables: proposed ConversationMemory and bounded event-memory service, graph selection/eligibility/choice transaction/query services, detached snapshots and npc_dialogue_rule_checks.gd.
 - Scope: node-independent rules and session ownership; preserve companion RelationshipState/trust and QuestService. No gifts, scheduling, UI or implicit quest rewards.
 - Acceptance: real source introductions/revisits and fact/event gates select correct nodes; priorities/ties/source defaults verified. Entry records only authored facts/seen nodes; accepted responses atomically apply flags, choice receipts and bounded affinity. Opposite introduction reward cannot replay; two people/sessions remain independent. Hidden/stale/unknown/wrong-speaker/deferred commands mutate nothing. Close applies no unselected reward. Empty/unavailable choices have a valid exit; finite graph continuation cannot soft-lock.
-- Verification: RULE; new rule checks use real eight-person graphs plus deliberate malformed fixtures. Reuse consequence_checks and quest_checks to detect authority overlap. Cover legacy line/terminal-choice dialogue via its unchanged adapter boundary.
+- Verification: RULE; new rule checks use real eight-person graphs plus deliberate malformed fixtures. Reuse consequence_checks and quest_checks to detect authority overlap. Keep current line/terminal-choice gameplay working until N005 converts its content and callers to the new conversation flow.
 
-## N004 - Persist memory and preserve all existing save formats
+## N004 - Persist memory in the current save format
 
-- Inputs: N003 authoritative state, current SaveCodec/SaveRepository/rebind/rollback rules and actual shipped schema (planning baseline 6).
-- Deliverables: documented next schema/version policy, strict per-person/event serialization/migration, save/session restoration, proposed npc_save_checks.gd and two-phase npc_process_checks.gd.
-- Scope: one additive schema change, provisionally 7/content1; reconcile version drift first. Preserve manual save boundaries/arrival restoration and all supported legacy routes. No imported Flutter saves, auto-load or mid-dialogue cursor persistence.
-- Acceptance: current-schema round trip/restart restores independent memories/event aggregates exactly; schema6 initializes empty new memories with every prior durable field exact. Exercise every currently supported older schema through existing migration chain. Malformed/foreign/newer IDs, numeric bounds, mismatched derived values and shared mutable collections reject before live swap. Backup/recovery/failure and unsafe placement retain existing behavior. No legacy possessions imply fabricated past events; dialogue remains unsaveable until closed.
+- Inputs: N003 authoritative state, current SaveCodec/SaveRepository/rebind/rollback rules and actual current schema (planning baseline 6).
+- Deliverables: documented next schema/version policy, strict per-person/event serialization, save/session restoration, proposed npc_save_checks.gd and two-phase npc_process_checks.gd.
+- Scope: one additive schema change, provisionally 7/content1; reconcile version drift first. Preserve manual save boundaries/arrival restoration. Support only the resulting current save format; no older-format migration. No imported Flutter saves, auto-load or mid-dialogue cursor persistence.
+- Acceptance: current-schema round trip/restart restores independent memories/event aggregates and all existing durable facts exactly. Reject schema6 and every other noncurrent format without defaults or migration. Malformed/foreign/newer IDs, numeric bounds, mismatched derived values and shared mutable collections reject before live swap. Backup/recovery/failure and unsafe placement retain existing behavior. Do not infer past events from possessions; dialogue remains unsaveable until closed.
 - Verification: RULE and independent process phases; new checks plus save_checks, save_process_checks, foraging_save_checks, environment_save_checks, map_save_checks and consequence_checks. Exact oracle includes new state and all existing party/quest/trust/upgrade/environment/lights/items/placements. Use isolated appdata only.
 
 ## N005 - Portrait dialogue, branches and known-facts presentation
 
 - Inputs: N004 durable services, existing PrototypeUI/GameRoot/DialogueService and pinned portraits.
 - Deliverables: graph-aware conversation snapshot/router integration, speaker/expression portrait, authored formatted text, selectable branch/Continue/Close, compact learned-facts view, copied verified portrait assets and proposed npc_dialogue_ui_checks.gd.
-- Scope: UI/root composition and assets; legacy Maris/companion/vessel/practice dialogue continues through its adapter. No full People journal or gift UI transactions.
+- Scope: UI/root composition and assets; convert Maris/companion/vessel/practice dialogue and callers into the current conversation flow, preserving quest/reaction outcomes. Remove superseded formats/services when no callers remain; no parallel legacy API or engine. No full People journal or gift UI transactions.
 - Acceptance: source portrait/body/fact highlights match current node; long text/choices scroll and all eight expressions render without distortion. Keyboard/mouse navigation and close work when optional gift choices unavailable. Facts view shows only actually disclosed facts. Opening/closing/changing node clears held controls; dialogue blocks attacks/dodge/foraging/drag/zoom/save/load and contains focus. Cancel/focus loss/unload cannot duplicate effects or leave input locked.
 - Verification: UI plus RULE; new UI checks, interaction_dialogue_checks, backpack_ui_checks and live_playtest_checks. Inspect full-size 960x640 captures, plus a larger viewport, using fixtures explicitly labeled UI evidence. No claim of normal NPC routes yet.
 
@@ -201,7 +201,7 @@ Verification: actor-specific RULE/UI/WORLD/ART/PLAY evidence, npc_content_checks
 - Prerequisite: N017 Done, actual existing export presets/templates and owned native input tooling available.
 - Deliverables: fresh Windows validation/release packages in separate task staging, pack audit/hashes, standalone native writer/reader all-eight walkthrough, concise delivery/limits documentation and updated parent discovery/architecture where needed.
 - Scope: preserve/archive existing known-good local packages before any deliberate promotion; never overwrite unrelated artifacts or normal saves. No public upload, deployment, release-store flow or source writes.
-- Acceptance: new .exe/.pck pair starts outside checkout and source reference tree; portraits/models/clips/public graphs all bundled and resolve. Private profiles/Flutter files/tests/bridge absent from release. Native public controls reach all eight, exercise real branches/facts/legacy Maris route, GUI Save/quit/new-process Load/revisit and exact prior/new-state comparison with clean logs/normal exits. Synthetic setup, validation build input bridge or N017 development runs cannot substitute for release acceptance. If native focus/input or another required gate fails, retain incomplete status and precise safe retry.
+- Acceptance: new .exe/.pck pair starts outside checkout and source reference tree; portraits/models/clips/public graphs all bundled and resolve. Private profiles/Flutter files/tests/bridge absent from release. Native public controls reach all eight, exercise real branches/facts/Maris route, GUI Save/quit/new-process Load/revisit and exact prior/new-state comparison with clean logs/normal exits. Synthetic setup, validation build input bridge or N017 development runs cannot substitute for release acceptance. If native focus/input or another required gate fails, retain incomplete status and precise safe retry.
 - Verification: PACK/PLAY plus affected focused pre-export checks; executable/resource audit, inspected native captures/contact sheets and command/isolation/PID provenance. Final report identifies runtime versus review-only clips and deferred gifts/routines/interiors. Workflow ends here.
 
 ## Completion records

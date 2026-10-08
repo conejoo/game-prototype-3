@@ -24,19 +24,19 @@ func _run() -> void:
 	var registry: Array[Dictionary] = LightSourceRegistry.entries()
 	registry[0].default_enabled = false
 	_check(LightSourceRegistry.entries() == expected_registry, "Registry query must be detached")
-	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v5.json"))
+	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v6.json"))
 	var duplicate_time: String = JSON.stringify(data).replace('"day_index":146', '"day_cycle_progress":0.5,"day_index":146')
 	_check(SaveCodec.decode(duplicate_time, catalog).session == null, "Duplicate clock lexeme rejected")
-	var newer_time: String = duplicate_time.replace('"schema_version":5', '"schema_version":7')
+	var newer_time: String = duplicate_time.replace('"schema_version":6', '"schema_version":7')
 	_check(SaveCodec.decode(newer_time, catalog).incompatible, "Newer envelope protects files even with duplicate numeric fields")
 	var escaped_time: String = JSON.stringify(data, "", true, true).replace('"day_cycle_progress"', '"day_cycle_\\u0070rogress"')
 	_check(SaveCodec.decode(escaped_time, catalog).session != null, "Escaped JSON key decoded normally")
 	var decoded: SaveCodec.DecodeResult = SaveCodec.validate(data, catalog)
-	_check(decoded.session != null and decoded.errors.is_empty() and decoded.migrated, "Authored v5 fixture validates")
+	_check(decoded.session != null and decoded.errors.is_empty(), "Authored current-schema fixture validates")
 	if decoded.session == null:
 		_finish()
 		return
-	_check(_plain(SaveCodec.snapshot(decoded.session)) == _current_expected(data), "Exact v5 clock/seed/six overrides and every old fact")
+	_check(_plain(SaveCodec.snapshot(decoded.session)) == _plain(data), "Exact clock/seed/six overrides and every durable fact")
 	var original: String = JSON.stringify(data)
 	var state: EnvironmentState = decoded.session.environment
 	for row: Dictionary in expected_registry:
@@ -54,7 +54,7 @@ func _run() -> void:
 	unordered.light_source_overrides.reverse()
 	var unsorted_bytes: String = JSON.stringify(unordered)
 	var sorted_run: GameSession = SaveCodec.validate(unordered, catalog).session
-	_check(sorted_run != null and _plain(SaveCodec.snapshot(sorted_run)) == _current_expected(data) and JSON.stringify(unordered) == unsorted_bytes, "Tuple sort on snapshot only, without caller mutation")
+	_check(sorted_run != null and _plain(SaveCodec.snapshot(sorted_run)) == _plain(data) and JSON.stringify(unordered) == unsorted_bytes, "Tuple sort on snapshot only, without caller mutation")
 	for field: String in ["environment", "light_source_overrides"]:
 		var bad: Dictionary = data.duplicate(true)
 		bad.erase(field)
@@ -111,7 +111,7 @@ func _run() -> void:
 				duplicate.enabled = not duplicate.enabled
 				bad.light_source_overrides.append(duplicate)
 		_reject(bad, mutation)
-	_legacy_and_disk(data)
+	_disk_checks(data)
 	var edge_run: GameSession = SaveCodec.validate(data, catalog).session
 	edge_run.environment.day_index = 3650
 	edge_run.environment.day_cycle_progress = 1.0 - pow(2.0, -53.0)
@@ -125,55 +125,23 @@ func _run() -> void:
 	_finish()
 
 
-func _legacy_and_disk(current: Dictionary) -> void:
+func _disk_checks(current: Dictionary) -> void:
 	var directory: String = "user://saves/w003-codec-%d" % OS.get_process_id()
 	_check(DirAccess.make_dir_recursive_absolute(directory) == OK, "Isolated directory")
-	for version: int in [1, 2, 3, 4]:
-		# Independent legacy shapes, with nonzero prior facts when schema permits.
-		var legacy: Dictionary = current.duplicate(true)
-		legacy.schema_version = version
-		legacy.erase("environment")
-		legacy.erase("light_source_overrides")
-		if version < 4:
-			legacy.erase("relationship")
-			legacy.erase("progression")
-		if version < 3:
-			legacy.party_member_ids = ["party-player"]
-			legacy.actors = [legacy.actors[0]]
-		if version == 1:
-			legacy.erase("quests")
-			legacy.erase("completed_effect_ids")
-		var before: String = JSON.stringify(legacy, "\t", true, true)
-		var result: SaveCodec.DecodeResult = SaveCodec.decode(before, catalog)
-		_check(result.session != null and result.migrated and JSON.stringify(legacy, "\t", true, true) == before, "Exact v%d detached migration" % version)
-		if result.session == null:
-			continue
-		var run: GameSession = result.session
-		var migrated: Dictionary = SaveCodec.snapshot(run)
-		_check(migrated.environment == {"day_index":0, "day_cycle_progress":0.0, "weather_seed":1821285621} and migrated.light_source_overrides == [], "Fixed environment defaults v%d" % version)
-		for field: String in legacy:
-			if field == "schema_version" or (version < 3 and field in ["actors", "party_member_ids"]):
-				continue
-			_check(_plain(migrated[field]) == _plain(legacy[field]), "Preserve v%d %s" % [version, field])
-		_check(_plain(migrated.actors[0]) == _plain(legacy.actors[0]) and migrated.actors[1].health == (100 if version < 3 else legacy.actors[1].health), "Preserve/add appropriate ally v%d" % version)
-		if version < 4:
-			_check(migrated.relationship.trust == 0 and migrated.relationship.reaction_ids == [] and migrated.progression.upgrade_ids == [], "Neutral consequences v%d only" % version)
-		if version == 1:
-			_check(migrated.quests == {"prototype-maris-recovery":[]} and migrated.completed_effect_ids == [], "V1 empty quest defaults")
-		_check(SaveCodec.snapshot(SaveCodec.decode(before, catalog).session) == migrated, "Repeated migration deterministic v%d" % version)
-		var extra: Dictionary = legacy.duplicate(true)
-		extra["environment"] = current.environment
-		_reject(extra, "Legacy must remain exact v%d" % version)
-		var repository: SaveRepository = SaveRepository.new(directory.path_join("legacy-%d.json" % version))
-		_write(repository.path, before)
-		_write(repository.path + ".bak", before)
-		var read: SaveRepository.ReadResult = repository.read(catalog)
-		_check(read.session != null and read.migrated and FileAccess.get_file_as_string(repository.path) == before and FileAccess.get_file_as_string(repository.path + ".bak") == before, "Decode/read never rewrites legacy/backup v%d" % version)
-		_check(repository.write(read.session, catalog).is_empty(), "Explicit v5 publication v%d" % version)
-		_check(_plain(JSON.parse_string(FileAccess.get_file_as_string(repository.path))) == _plain(migrated) and _plain(JSON.parse_string(FileAccess.get_file_as_string(repository.path + ".bak"))) == _plain(migrated), "Validated additive primary/backup v%d" % version)
-		_write(repository.path, "{broken")
-		read = repository.read(catalog)
-		_check(read.recovered and read.session != null and _plain(SaveCodec.snapshot(read.session)) == _plain(migrated) and FileAccess.get_file_as_string(repository.path) == "{broken", "Environment backup recovery without writes v%d" % version)
+	var before: String = JSON.stringify(current, "\t", true, true)
+	var repository: SaveRepository = SaveRepository.new(directory.path_join("current.json"))
+	_write(repository.path, before)
+	_write(repository.path + ".bak", before)
+	var read: SaveRepository.ReadResult = repository.read(catalog)
+	_check(read.session != null and _plain(SaveCodec.snapshot(read.session)) == _plain(current), "Exact current-schema disk read")
+	_check(FileAccess.get_file_as_string(repository.path) == before and FileAccess.get_file_as_string(repository.path + ".bak") == before, "Read leaves primary/backup unchanged")
+	if read.session == null:
+		return
+	_check(repository.write(read.session, catalog).is_empty(), "Explicit current-schema publication")
+	_check(_plain(JSON.parse_string(FileAccess.get_file_as_string(repository.path))) == _plain(current) and _plain(JSON.parse_string(FileAccess.get_file_as_string(repository.path + ".bak"))) == _plain(current), "Primary/backup preserve all durable facts")
+	_write(repository.path, "{broken")
+	read = repository.read(catalog)
+	_check(read.recovered and read.session != null and _plain(SaveCodec.snapshot(read.session)) == _plain(current) and FileAccess.get_file_as_string(repository.path) == "{broken", "Environment backup recovery without writes")
 	print("W003 codec pid=%d; user_data=%s; files=%s" % [OS.get_process_id(), OS.get_user_data_dir(), ProjectSettings.globalize_path(directory)])
 
 
@@ -209,12 +177,3 @@ func _finish() -> void:
 		push_error(failure)
 	print("W003 environment codec: %s; assertions=%d" % ["PASS" if failures.is_empty() else "FAILED", assertions])
 	quit(0 if failures.is_empty() else 1)
-
-
-func _current_expected(legacy: Dictionary) -> Variant:
-	var result: Dictionary = legacy.duplicate(true)
-	result.schema_version = 6
-	result["inventory"] = {"item_counts":{}, "active_item_id":null}
-	result["collected_resource_ids"] = []
-	result["world_item_placements"] = []
-	return _plain(result)

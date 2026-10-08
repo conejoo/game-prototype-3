@@ -5,7 +5,7 @@ tools/map_migration/extract_layout.py text eol=lf
 tools/map_migration/extraction_report.json text eol=lf
 game/content/maps/alderwake_layout.json text eol=lf
 
-# M017 historical-save provenance hashes refer to exact captured bytes.
+# Current map-save fixture provenance hashes refer to exact authored bytes.
 game/tests/fixtures/map_saves/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 
 # Exact weather reference hashes survive Windows and Unix checkouts.

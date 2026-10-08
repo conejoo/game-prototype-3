@@ -1,5 +1,19 @@
 # Current prototype state
 
+Save compatibility cleanup (2026-10-08): user explicitly requires no backward
+compatibility for this new project. Runtime accepts only schema6/content1; old
+schema branches, migration flags and load notices removed. Reusable map/environment
+fixtures now author full schema6 data. Future N004 plan uses only its resulting
+current format; historical migration acceptance below is not a current requirement.
+Validation, exact timers, checked IO, backup recovery and live restore remain intact.
+Existing Windows packages predate this cleanup and require rebuilding to include it.
+Verification: nine focused headless checks and five independent writer/reader
+pairs pass; dependency parsing passes, source fingerprints remain unchanged and
+`git diff --check` is clean. Isolated reports:
+`docs/evidence/SAVE_CLEANUP/20261008-070519091-3f120853/results.json` and
+`docs/evidence/SAVE_RESTART/20261008-070622124-698f250f/results.json`.
+No native/export acceptance rerun; normal save files remain untouched.
+
 Updated 2026-10-07, America/Vancouver. P001-P014, map M001-M019, weather W001-W010
 and [foraging F001-F010](foraging-items-backpack/CURRENT_STATE.md) Done; no next item.
 [F010 acceptance](foraging-items-backpack/F010_ACCEPTANCE.md) verifies fresh current

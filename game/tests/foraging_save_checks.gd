@@ -16,7 +16,7 @@ func _run() -> void:
 		var data: Dictionary = SaveCodec.snapshot(run)
 		var bytes: String = JSON.stringify(data, "", true, true)
 		var decoded: SaveCodec.DecodeResult = SaveCodec.decode(bytes, catalog)
-		_check(decoded.session != null and decoded.errors.is_empty() and not decoded.migrated, "round-trip " + kind)
+		_check(decoded.session != null and decoded.errors.is_empty(), "round-trip " + kind)
 		if decoded.session != null:
 			_check(SaveCodec.snapshot(decoded.session) == data and decoded.session.foraging.revision() == 0, "exact durable facts/fresh revision " + kind)
 			decoded.session.inventory.consume("item-moonflower")
@@ -69,15 +69,6 @@ func _run() -> void:
 	var future: Dictionary = _mutable(good)
 	future.schema_version = 7
 	_check(SaveCodec.validate(future,catalog).incompatible, "newer protected")
-	var legacy: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v5.json"))
-	var previous: String = JSON.stringify(legacy, "", true, true)
-	var migrated: SaveCodec.DecodeResult = SaveCodec.validate(legacy, catalog)
-	var expected: Dictionary = legacy.duplicate(true)
-	expected.schema_version = 6
-	expected["inventory"] = {"item_counts":{}, "active_item_id":null}
-	expected["collected_resource_ids"] = []
-	expected["world_item_placements"] = []
-	_check(migrated.session != null and migrated.migrated and JSON.parse_string(JSON.stringify(SaveCodec.snapshot(migrated.session),"",true,true)) == JSON.parse_string(JSON.stringify(expected,"",true,true)) and JSON.stringify(legacy,"",true,true) == previous, "v5 exact prior facts/defaults/detachment")
 	_capacity_save(good)
 	var empty: GameSession = GameSession.new()
 	empty.initialize(catalog, ForagingRegistry.LOCATION, "alderwake-start", "prototype-hero")

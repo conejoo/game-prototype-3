@@ -20,7 +20,7 @@ joint collection/placement commits and rod conservation.
 nonblocking pickups, cancellable held E and exact persisted physical reconstruction.
 [Backpack acceptance](docs/foraging-items-backpack/F006_ACCEPTANCE.md) delivers B/HUD20 slots, active selection/tool HUD and blocked world input.
 [Rod placement acceptance](docs/foraging-items-backpack/F007_ACCEPTANCE.md) enables safe nearby Drop and pointer drag, rollback/cancel and exact travel/restart recollection. [Save/lifecycle acceptance](docs/foraging-items-backpack/F004_ACCEPTANCE.md)
-verifies schema6 item facts, legacy migration, geometry rollback and exact isolated restart.
+records schema6 item facts, historical migration checks, geometry rollback and exact isolated restart. Current runtime accepts only schema6/content1.
 [Art/feedback acceptance](docs/foraging-items-backpack/F008_ACCEPTANCE.md) delivers local moonflower/rod mesh art, backpack icons and day/night/rain-readable progress/feedback.
 [Pinned geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md) record
 original blocked source anchors; approved runtime rod/flower01 relocation now clears
@@ -185,18 +185,15 @@ boundaries: [architecture](docs/ARCHITECTURE.md). Schema v6/content v1 requires 
 and temporary companion records, validated reaction/trust and upgrade IDs,
 environment day/progress/uint32 seed and map-qualified exterior light overrides,
 plus validated inventory/active selection, collected origins and rod placements.
-Exact v1/v2 saves add fixture ally at full health; v1 starts with no quest effects.
-Exact v3 preserves both members; v1-v3 start with neutral trust/no selected upgrades.
-V4 retains existing trust/reactions/upgrades. V1-v4 use day 0/progress 0/fixed
-migration seed and original light defaults while preserving elapsed play time.
-V1-v5 receive empty inventory/collected/placement facts.
+Only schema v6/content v1 is supported. Older and newer formats are rejected;
+there are no save migrations, ID remapping or missing-field defaults. This is a
+new project with no released-save compatibility requirement.
 Load does not rewrite files; explicit Save writes v6. Six lantern keys accept
 boolean overrides; automatic sources and malformed/newer data are rejected.
 
 Guardian appears after accepting the lead and entering Tollworks. Its stable
 instance `tollworks-guardian-01` reports actual death to the quest owner. Clearance
-uses the existing durable `tollworks-guardian-cleared` effect; saved P007 completion
-remains compatible. No simulated guardian prop/flag remains. An unfinished fight
+uses the durable `tollworks-guardian-cleared` effect in current-schema saves. No simulated guardian prop/flag remains. An unfinished fight
 resets on room reload; party health persists. R restores full party health at the
 arrival anchor after death, preserving quest facts. Cleared guardians stay defeated
 through retry, travel and save/restart. Combat pause permits Resume, but locks
@@ -230,7 +227,7 @@ Godot cache/certificate access; final checks used normal local application acces
   upgrade, separate mutable session states, once-only rule services. Root applies
   derived strike damage; journal/HUD display reactions and submit upgrade command.
 - `game/tests/consequence_checks.gd`: alternative/replay protection, earned point,
-  strict consequence data/legacy migrations, physical strike and separate-process save.
+  strict current-schema consequence data, physical strike and separate-process save.
 - `game/features/items/`: immutable item/resource definitions, session-owned20-type
   inventory rules, atomic collection/drop/move services and detached sorted snapshots;
   transient hold control; physical pickups apply committed facts through location adapter.
@@ -249,7 +246,7 @@ Godot cache/certificate access; final checks used normal local application acces
 - `game/features/quests/`: ordered immutable steps, separate runtime progress,
   legal command/effect transactions and journal queries.
 - `game/tests/quest_checks.gd`, `quest_process_checks.gd`: legality/idempotency,
-  strict save progress/migration, root journal/travel/rebinding and OS-process
+  strict current-schema save progress, root journal/travel/rebinding and OS-process
   persistence. Direct rule/guardian setup is explicitly synthetic test content.
 - `game/app/world_host.gd`, `party.gd`: synchronous travel lock, actor suspension,
   scene/anchor validation, physics/navigation synchronization, safe placement,
@@ -263,7 +260,7 @@ Godot cache/certificate access; final checks used normal local application acces
 - `game/features/actors/companion_controller.gd`, `companion.tscn`: injected follow/
   fight/return, collision-derived navigation, safe recovery and persistent wrapper.
 - `game/tests/companion_checks.gd`: physical obstacle/barrier fixtures, safe catch-up,
-  incapacitation/recovery, combat assist, party restore and v1/v2 migration/rejection.
+  incapacitation/recovery, combat assist, party restore and strict actor validation.
 - `game/tests/combat_checks.gd`: windows, single hit, dodge, range/facing/LOS,
   pause, rollback, death/retry, durable defeat and save restore. Direct fixtures are
   rule/lifecycle checks; normal rendered combat is recorded separately.

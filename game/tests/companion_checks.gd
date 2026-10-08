@@ -87,27 +87,6 @@ func _run() -> void:
 	await _frames(195)
 	_check(ally.state.health == 100 and ai.recoveries == 1 and game.session.completed_effect_ids.is_empty(), "Safe recovery changed quest or failed")
 	await _capture("fixture-recovered")
-	# v1/v2 exact migration keeps old facts, deliberately adds fixture member.
-	for version: int in [1, 2]:
-		var legacy: Dictionary = data.duplicate(true)
-		legacy.erase("relationship")
-		legacy.erase("progression")
-		legacy.erase("environment")
-		legacy.erase("light_source_overrides")
-		legacy.erase("inventory")
-		legacy.erase("collected_resource_ids")
-		legacy.erase("world_item_placements")
-		legacy.schema_version = version
-		legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
-		legacy.actors = [legacy.actors[0]]
-		if version == 1:
-			legacy.erase("quests")
-			legacy.erase("completed_effect_ids")
-		var bytes: String = JSON.stringify(legacy)
-		decoded = SaveCodec.validate(legacy, game.catalog)
-		_check(decoded.migrated and decoded.session != null and decoded.session.actors[GameSession.COMPANION_INSTANCE_ID].health == 100 and JSON.stringify(legacy) == bytes, "Legacy migration failed/mutated caller")
-		if decoded.session != null:
-			_check(decoded.session.inventory.snapshot().item_counts.is_empty() and decoded.session.inventory.snapshot().active_item_id == null and decoded.session.foraging.rod_count() == 1, "Legacy companion migration invented item ownership")
 	for mutation: String in ["duplicate", "missing", "wrong-definition", "bad-health", "extra", "order"]:
 		var broken: Dictionary = data.duplicate(true)
 		match mutation:
@@ -160,7 +139,7 @@ func _run() -> void:
 	for failure: String in failures:
 		push_error(failure)
 	if failures.is_empty():
-		print("P009 checks: PASS — both obstacle routes, stale-barrier catch-up rejection, separated safe catch-up, incapacitation/recovery, assist, once-only guardian effect, v1/v2 migration/rejection, party restore and identity.")
+		print("P009 checks: PASS — both obstacle routes, stale-barrier catch-up rejection, separated safe catch-up, incapacitation/recovery, assist, once-only guardian effect, party restore and identity.")
 	quit(0 if failures.is_empty() else 1)
 
 

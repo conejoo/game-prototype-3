@@ -27,7 +27,7 @@ func _run() -> void:
 	_check(run.actors[GameSession.PLAYER_INSTANCE_ID].health == 37 and catalog.get_actor("prototype-hero").max_health == 100, "Decoded state shares mutable health/definition")
 	for invalid: Variant in [null, [], true, "string"]:
 		_check(SaveCodec.validate(invalid, catalog).session == null, "Non-object envelope accepted")
-	for key: String in ["schema_version", "content_version", "elapsed_play_seconds", "party_member_ids", "actors", "location_id", "spawn_id", "player_instance_id"]:
+	for key: String in ["schema_version", "content_version", "elapsed_play_seconds", "party_member_ids", "actors", "location_id", "spawn_id", "player_instance_id", "quests", "completed_effect_ids", "relationship", "progression", "environment", "light_source_overrides", "inventory", "collected_resource_ids", "world_item_placements"]:
 		var broken: Dictionary = data.duplicate(true)
 		broken.erase(key)
 		_reject(broken, "missing " + key)
@@ -44,6 +44,29 @@ func _run() -> void:
 	_reject(extra, "unknown field")
 	_check(SaveCodec.decode("{bad", catalog).session == null, "Malformed JSON accepted")
 	_check(SaveCodec.decode(" ".repeat(SaveCodec.MAX_BYTES + 1), catalog).session == null, "Oversized save accepted")
+
+	for version: int in range(1, SaveCodec.SCHEMA_VERSION):
+		var unsupported: Dictionary = data.duplicate(true)
+		unsupported.schema_version = version
+		var raw: String = JSON.stringify(unsupported, "", true, true)
+		var rejected: SaveCodec.DecodeResult = SaveCodec.validate(unsupported, catalog)
+		_check(rejected.incompatible and rejected.session == null and not rejected.errors.is_empty(), "Old schema rejected v%d" % version)
+		_check(JSON.stringify(unsupported, "", true, true) == raw, "Version rejection mutated caller v%d" % version)
+		_check(SaveCodec.decode(raw, catalog).incompatible, "Old schema bytes rejected v%d" % version)
+		unsupported.erase("inventory")
+		_check(SaveCodec.validate(unsupported, catalog).incompatible, "Old partial envelope cannot receive defaults v%d" % version)
+		var old_slot: SaveRepository = SaveRepository.new(directory.path_join("unsupported-%d.json" % version))
+		var current_raw: String = JSON.stringify(data, "", true, true)
+		_write(old_slot.path, raw)
+		_write(old_slot.path + ".bak", current_raw)
+		var old_read: SaveRepository.ReadResult = old_slot.read(catalog)
+		_check(old_read.status == "incompatible" and old_read.session == null and not old_read.recovered, "Old primary cannot fall back to current backup v%d" % version)
+		_check(not old_slot.write(run, catalog).is_empty(), "Old primary cannot be overwritten v%d" % version)
+		_unchanged(old_slot, raw, current_raw, "unsupported primary v%d" % version)
+		_write(old_slot.path, current_raw)
+		_write(old_slot.path + ".bak", raw)
+		_check(not old_slot.write(run, catalog).is_empty(), "Old backup cannot be overwritten v%d" % version)
+		_unchanged(old_slot, current_raw, raw, "unsupported backup v%d" % version)
 
 	var repository: SaveRepository = SaveRepository.new(directory.path_join("slot.json"))
 	_check(repository.read(catalog).session == null, "Missing save unexpectedly loaded")
@@ -175,6 +198,15 @@ func _root_checks() -> void:
 	_write(game.save_repository.path, JSON.stringify(future))
 	_check(not (await game.load_run()).is_empty(), "Future root save accepted")
 	_check(game.session == live and game.world_host.current_location == room and game.player_placeholder.state.health == 37, "Rejected save replaced live session/world")
+	for version: int in range(1, SaveCodec.SCHEMA_VERSION):
+		var unsupported: Dictionary = JSON.parse_string(saved)
+		unsupported.schema_version = version
+		var raw: String = JSON.stringify(unsupported)
+		_write(game.save_repository.path, raw)
+		_write(game.save_repository.path + ".bak", saved)
+		_check(not (await game.load_run()).is_empty(), "Old root save rejected v%d" % version)
+		_check(game.session == live and game.world_host.current_location == room and game.session.environment == live_environment and SaveCodec.snapshot(live).environment == environment_before and SaveCodec.snapshot(live).light_source_overrides == overrides_before, "Old root save changed live owners/facts v%d" % version)
+		_check(FileAccess.get_file_as_string(game.save_repository.path) == raw, "Old root save changed disk v%d" % version)
 	_write(game.save_repository.path, "broken")
 	_write(game.save_repository.path + ".bak", "broken backup")
 	_check(not (await game.load_run()).is_empty() and game.session == live, "Corrupt root save replaced live run")

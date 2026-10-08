@@ -1,5 +1,9 @@
 # Foraging, items and backpack migration contract
 
+Current save policy (2026-10-08) supersedes historical migration clauses below:
+only schema6/content1 is supported; older formats are rejected without migration
+or invented defaults. See [architecture](../ARCHITECTURE.md).
+
 Prepared 2026-10-04; F001 reference audit completed2026-10-05, America/Vancouver.
 F002 content/inventory and F003 atomic commands completed2026-10-07;
 world/UI activation remains F005+.

@@ -1,5 +1,13 @@
 # Returning Fair prototype architecture
 
+Current save policy (2026-10-08): accept only schema6/content1. The project has no
+released data or customers requiring backward compatibility. No old-schema
+migrations, ID remapping or missing-field defaults. Future schema changes replace
+the supported format and update fixtures; reject other versions before live swap.
+Historical delivery sections below describe past implementations and do not
+reinstate compatibility requirements. Backup/recovery, validation and atomic
+restore remain required.
+
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
 W010 weather and F010 foraging/native delivery, current schema6/content1.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
@@ -116,7 +124,7 @@ autoload only for a demonstrated application-wide need.
 | Actor components | Movement, health, attacks, interaction, animation hooks | Town-wide quest state |
 | World presenter | Maps persistent facts to scene variants | Independent copies of campaign progress |
 | UI | Displays state and submits commands | Reward rules or save authority |
-| Save repository | Validated snapshots and version migration | Live scene-tree serialization |
+| Save repository | Validated current-schema snapshots and checked backup recovery | Live scene-tree serialization |
 
 Use typed Resources for authored definitions. Treat them as immutable; runtime
 state belongs in separate typed objects. Implement story, relationship, reward,
@@ -152,8 +160,9 @@ Validate a candidate save before replacing the current session. Write via a
 temporary sibling file, retain a known-good backup, and check every file
 operation. Use Godot's `user://` path for saves. Handle missing/corrupt files,
 unknown newer versions, renamed IDs, and invalid spawn positions deliberately.
-Introduce migrations when a previously shipped save schema changes. Default
-new optional fields only when the compatibility rule is documented.
+Support only the current schema/content versions. Change the schema deliberately
+when required, update complete test fixtures, and reject other formats. Do not add
+migrations or silently default missing saved fields.
 
 At first, save at stable boundaries outside an active attack/dialogue/cutscene.
 Document that limit in UI and tests. Support arbitrary mid-scene saving only

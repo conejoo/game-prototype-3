@@ -1,5 +1,5 @@
 extends SceneTree
-## M017 real historical bytes + labeled synthetic transaction/lifecycle checks.
+## M017 current-schema fixtures + labeled synthetic transaction/lifecycle checks.
 ## All writes use an isolated user:// slot. No normal-play journey claim.
 const FIXTURES: PackedStringArray = ["town-fresh", "town-lead", "town-complete", "tollworks-vessel", "tollworks-start-downed"]
 var failures: PackedStringArray = []
@@ -40,13 +40,13 @@ func _run() -> void:
 		var source: String = FileAccess.get_file_as_string("res://tests/fixtures/map_saves/%s.json" % name)
 		var data: Dictionary = JSON.parse_string(source)
 		var decoded: SaveCodec.DecodeResult = SaveCodec.decode(source,game.catalog)
-		_check(decoded.errors.is_empty() and decoded.migrated, "Historical v4 migration failed: " + name)
+		_check(decoded.errors.is_empty() and decoded.session != null, "Current-schema fixture decode failed: " + name)
 		if phase != "read":
 			_write(_slot(name),source)
 		var before_bytes: String = FileAccess.get_file_as_string(_slot(name))
-		_check(TestRunSave.configure(game, _slot(name)).is_empty(), "Historical fixture repository")
-		_check((await game.load_run()).is_empty(), "Historical load rejected: " + name)
-		_assert_snapshot(_v5_expected(data),name)
+		_check(TestRunSave.configure(game, _slot(name)).is_empty(), "Current-schema fixture repository")
+		_check((await game.load_run()).is_empty(), "Current-schema load rejected: " + name)
+		_assert_snapshot(data,name)
 		await _lifecycle(name)
 		_assert_arrival(name)
 		_check(FileAccess.get_file_as_string(_slot(name)) == before_bytes, "Load changed saved bytes: " + name)
@@ -60,7 +60,7 @@ func _run() -> void:
 		if phase == "write":
 			_check(game.save_run().is_empty(), "Process writer failed: " + name)
 			# Same parsed envelope, but disk writer formatting need not be identical.
-			_check(JSON.parse_string(FileAccess.get_file_as_string(_slot(name))) == JSON.parse_string(JSON.stringify(_v5_expected(data))), "Writer changed durable fields: " + name)
+			_check(JSON.parse_string(FileAccess.get_file_as_string(_slot(name))) == JSON.parse_string(JSON.stringify(data)), "Writer changed durable fields: " + name)
 	if phase == "checks":
 		await _transactions()
 		await _round_trips()
@@ -78,22 +78,11 @@ func _run() -> void:
 	await process_frame
 	for failure: String in failures:
 		push_error(failure)
-	print("M017 ",phase,": ","PASS" if failures.is_empty() else "FAILED","; historical fixtures=",report.fixtures.size(),"; round trips=",report.round_trips.size(),"; rejections=",report.rejections.size(),"; retries=",report.retries.size())
+	print("M017 ",phase,": ","PASS" if failures.is_empty() else "FAILED","; current-schema fixtures=",report.fixtures.size(),"; round trips=",report.round_trips.size(),"; rejections=",report.rejections.size(),"; retries=",report.retries.size())
 	quit(0 if failures.is_empty() else 1)
 
 func _slot(name: String) -> String:
 	return "user://saves/m017-process-%s.json" % name
-
-func _v5_expected(data: Dictionary) -> Dictionary:
-	# Independent expected additive migration; historical fixture bytes stay v4.
-	var result: Dictionary = data.duplicate(true)
-	result.schema_version = 6
-	result["inventory"] = {"item_counts":{}, "active_item_id":null}
-	result["collected_resource_ids"] = []
-	result["world_item_placements"] = []
-	result["environment"] = {"day_index":0,"day_cycle_progress":0.0,"weather_seed":1821285621}
-	result["light_source_overrides"] = []
-	return result
 
 func _assert_snapshot(expected: Dictionary,label: String) -> void:
 	_check(JSON.parse_string(JSON.stringify(SaveCodec.snapshot(game.session))) == JSON.parse_string(JSON.stringify(expected)),"Durable envelope changed: " + label)
@@ -136,7 +125,7 @@ func _load_complete() -> Dictionary:
 	_check(TestRunSave.configure(game, "user://saves/m017-transaction.json").is_empty(), "Transaction fixture repository")
 	_write(game.save_repository.path,JSON.stringify(data))
 	_check((await game.load_run()).is_empty(),"Complete fixture rejected")
-	return _v5_expected(data)
+	return data
 
 func _transactions() -> void:
 	var data: Dictionary = await _load_complete()

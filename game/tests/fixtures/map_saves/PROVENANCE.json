@@ -2,31 +2,41 @@
   {
     "fixture": "town-fresh",
     "origin": "docs/evidence/P014/release-fresh-save.json",
-    "sha256": "e6435f596cc456483469ddde922c85316477ecdb54277fc79ade8a4591aaf8d9",
-    "kind": "byte-exact pre-map schema-4 gameplay save"
+    "kind": "current-schema synthetic fixture adapted from captured gameplay facts",
+    "source_sha256": "e6435f596cc456483469ddde922c85316477ecdb54277fc79ade8a4591aaf8d9",
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
+    "sha256": "6f8ef980bb0e16c70cf55f3df3ca58715781261bcf66e83239dc0bcedacf7a20"
   },
   {
     "fixture": "town-lead",
     "origin": "docs/evidence/P013/repeat-lead-save.json",
-    "sha256": "a239beffaab805f6fcb297ded8b48c8707751698cf57541dc111c96c25f1938b",
-    "kind": "byte-exact pre-map schema-4 gameplay save"
+    "kind": "current-schema synthetic fixture adapted from captured gameplay facts",
+    "source_sha256": "a239beffaab805f6fcb297ded8b48c8707751698cf57541dc111c96c25f1938b",
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
+    "sha256": "90308fa03443465eba9e1fbf2ab66bd53f558a0e9d44fa21543d4e1986da9fdc"
   },
   {
     "fixture": "town-complete",
     "origin": "docs/evidence/P014/native-holds/release-completed-save.json",
-    "sha256": "01f61ffce23d52f38580b87b18b4b146d98f72b794dad46b3a2cfb33f2b7ddae",
-    "kind": "byte-exact pre-map schema-4 gameplay save"
+    "kind": "current-schema synthetic fixture adapted from captured gameplay facts",
+    "source_sha256": "01f61ffce23d52f38580b87b18b4b146d98f72b794dad46b3a2cfb33f2b7ddae",
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
+    "sha256": "c754d6c6303ba151b2bc2459c18d8e2dd5cf270ea109fdb3049fa69592731469"
   },
   {
     "fixture": "tollworks-vessel",
     "origin": "docs/evidence/P013/repeat-vessel-save.json",
-    "sha256": "16c7547703565f45814ba379b18a37471868c909f85edb3d584d538a8cee8c91",
-    "kind": "byte-exact pre-map schema-4 gameplay save"
+    "kind": "current-schema synthetic fixture adapted from captured gameplay facts",
+    "source_sha256": "16c7547703565f45814ba379b18a37471868c909f85edb3d584d538a8cee8c91",
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
+    "sha256": "2c3a7432adad520b1c0dc8e8777664cd82efa9d1d43e524320a0729f17a9f5f1"
   },
   {
     "fixture": "tollworks-start-downed",
     "origin": "town-complete",
-    "kind": "synthetic legacy anchor / unequal health / downed ally; only location, spawn and health changed",
-    "sha256": "4e9c984560c19ca9003c62691bd120c90568d74dd6a619ea93dfc0d6e498eecb"
+    "kind": "current-schema synthetic fixture with start anchor, unequal health and downed ally",
+    "source_sha256": "4e9c984560c19ca9003c62691bd120c90568d74dd6a619ea93dfc0d6e498eecb",
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
+    "sha256": "754618fb3e2fc5d0b7471d62e114b9603bc843a245f7270e0bca62b314a55862"
   }
 ]

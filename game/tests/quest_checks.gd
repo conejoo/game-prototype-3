@@ -1,5 +1,5 @@
 extends SceneTree
-## Rules, strict compatibility, real root lifecycle. Positions below are test setup.
+## Rules, strict save validation, real root lifecycle. Positions below are test setup.
 
 const QUEST: String = "prototype-maris-recovery"
 var failures: PackedStringArray = []
@@ -45,7 +45,7 @@ func _run() -> void:
 	_check(restored.session.completed_effect_ids.size() == 6 and notifications[0] == 6, "Load replay duplicated effects")
 	restored.session.quests[QUEST].completed_step_ids.clear()
 	_check(run.quests[QUEST].completed_step_ids.size() == 6, "Decoded quests share mutable state")
-	for mutation: String in ["missing-quests", "missing-effects", "unknown-quest", "skipped-step", "duplicate-step", "unknown-effect", "duplicate-effect", "missing-effect", "future", "legacy-with-extra"]:
+	for mutation: String in ["missing-quests", "missing-effects", "unknown-quest", "skipped-step", "duplicate-step", "unknown-effect", "duplicate-effect", "missing-effect", "future", "old-schema"]:
 		var bad: Dictionary = data.duplicate(true)
 		match mutation:
 			"missing-quests": bad.erase("quests")
@@ -57,43 +57,8 @@ func _run() -> void:
 			"duplicate-effect": bad.completed_effect_ids[1] = bad.completed_effect_ids[0]
 			"missing-effect": bad.completed_effect_ids.pop_back()
 			"future": bad.schema_version = SaveCodec.SCHEMA_VERSION + 1
-			"legacy-with-extra": bad.schema_version = 1
+			"old-schema": bad.schema_version = 1
 		_check(SaveCodec.validate(bad, catalog).session == null, "Malformed progress accepted: " + mutation)
-	var legacy: Dictionary = SaveCodec.snapshot(other)
-	legacy.erase("relationship")
-	legacy.erase("progression")
-	legacy.erase("environment")
-	legacy.erase("light_source_overrides")
-	legacy.erase("inventory")
-	legacy.erase("collected_resource_ids")
-	legacy.erase("world_item_placements")
-	legacy.schema_version = 1
-	legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
-	legacy.actors = [legacy.actors[0]]
-	legacy.erase("quests")
-	legacy.erase("completed_effect_ids")
-	legacy.elapsed_play_seconds = 42.5
-	legacy.actors[0].health = 37
-	var legacy_bytes: String = JSON.stringify(legacy)
-	var migrated: SaveCodec.DecodeResult = SaveCodec.decode(legacy_bytes, catalog)
-	_check(migrated.migrated and migrated.errors.is_empty(), "Exact v1 failed migration")
-	_check(migrated.session != null and migrated.session.inventory.snapshot().item_counts.is_empty() and migrated.session.inventory.snapshot().active_item_id == null and migrated.session.foraging.rod_count() == 1, "Legacy quest migration invented item ownership")
-	_check(migrated.session.quests[QUEST].completed_step_ids.is_empty() and migrated.session.completed_effect_ids.is_empty(), "Migration invented progress")
-	_check(migrated.session.actors[GameSession.PLAYER_INSTANCE_ID].health == 37 and migrated.session.elapsed_play_seconds == 42.5, "Migration lost v1 facts")
-	_check(JSON.stringify(legacy) == legacy_bytes, "Migration mutated caller")
-	var path: String = "user://saves/p007-migration-%d.json" % OS.get_process_id()
-	_check(DirAccess.make_dir_recursive_absolute(path.get_base_dir()) == OK, "Isolated migration fixture directory unavailable")
-	var file: FileAccess = FileAccess.open(path, FileAccess.WRITE)
-	_check(file != null, "Migration fixture IO blocked")
-	if file == null:
-		_finish()
-		return
-	file.store_string(legacy_bytes)
-	file.close()
-	var repository: SaveRepository = SaveRepository.new(path)
-	_check(repository.read(catalog).migrated and FileAccess.get_file_as_string(path) == legacy_bytes, "Read migration changed disk")
-	_check(repository.write(migrated.session, catalog).is_empty(), "Explicit v2 publication failed")
-	_check(JSON.parse_string(FileAccess.get_file_as_string(path)).schema_version == SaveCodec.SCHEMA_VERSION and repository.read(catalog).session != null, "Explicit save did not publish current schema")
 	# Negative authored content: duplicate step/action/effect, absent location/action.
 	for mutation: String in ["duplicate", "location", "dialogue"]:
 		var manifest: ContentManifest = ContentManifest.new()
@@ -161,5 +126,5 @@ func _finish() -> void:
 	for failure: String in failures:
 		push_error(failure)
 	if failures.is_empty():
-		print("P007 checks: PASS — legal prefixes, source/location gates, atomic once-only effects, independent state, strict v2/v1 migration, root journal/travel/restore.")
+		print("P007 checks: PASS — legal prefixes, source/location gates, atomic once-only effects, independent state, strict current-schema progress, root journal/travel/restore.")
 	quit(0 if failures.is_empty() else 1)

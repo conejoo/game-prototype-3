@@ -23,7 +23,7 @@ func _run() -> void:
 	for message: String in failures:
 		push_error(message)
 	if failures.is_empty():
-		print("P010 checks: PASS — once-only alternatives/trust, earned selection, physical 40 damage, strict current-schema data and exact v1–v3 migrations; phase=", OS.get_cmdline_user_args())
+		print("P010 checks: PASS — once-only alternatives/trust, earned selection, physical 40 damage, strict current-schema data; phase=", OS.get_cmdline_user_args())
 	quit(0 if failures.is_empty() else 1)
 
 func _rules(game: Node3D) -> void:
@@ -83,29 +83,6 @@ func _rules(game: Node3D) -> void:
 			"upgrade-unknown": bad.progression.upgrade_ids = ["unknown"]
 			"unearned": bad.quests[QUEST] = []; bad.completed_effect_ids = []
 		_check(SaveCodec.validate(bad, game.catalog).session == null, "Invalid consequence accepted: " + mutation)
-	for version: int in [1, 2, 3]:
-		var legacy: Dictionary = data.duplicate(true)
-		legacy.schema_version = version
-		legacy.erase("relationship")
-		legacy.erase("progression")
-		legacy.erase("environment")
-		legacy.erase("light_source_overrides")
-		legacy.erase("inventory")
-		legacy.erase("collected_resource_ids")
-		legacy.erase("world_item_placements")
-		if version < 3:
-			legacy.party_member_ids = [GameSession.PLAYER_INSTANCE_ID]
-			legacy.actors = [legacy.actors[0]]
-		else:
-			legacy.actors[1].health = 43
-		if version == 1:
-			legacy.erase("quests")
-			legacy.erase("completed_effect_ids")
-		var bytes: String = JSON.stringify(legacy)
-		decoded = SaveCodec.validate(legacy, game.catalog)
-		_check(decoded.session != null and decoded.migrated and decoded.session.relationship.trust == 0 and decoded.session.progression.upgrade_ids.is_empty() and JSON.stringify(legacy) == bytes, "Legacy migration failed/changed caller")
-		if version == 3:
-			_check(decoded.session.actors[GameSession.COMPANION_INSTANCE_ID].health == 43 and decoded.session.completed_effect_ids.size() == 1, "V3 migration lost existing companion/quest")
 	# Isolated physical contact verifies actual wrapper damage and one swing contact.
 	game.world_host.request_transition("prototype-tollworks", "tollworks-from-alderwake")
 	await game.world_host.transition_finished

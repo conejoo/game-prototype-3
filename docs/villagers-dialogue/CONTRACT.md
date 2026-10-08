@@ -86,7 +86,7 @@ The following ownership describes the intended integration. N002 definition/cata
 - GameSession owns persistent per-person memory and the bounded player-event memory queried by selected graphs.
 - GameRoot injects services and arbitrates all input/modal/lifecycle commands.
 - UI displays a conversation snapshot and submits stable node/choice commands; it does not decide rewards.
-- Existing legacy DialogueService/quest/reaction route remains supported through deliberate adapters; do not replace it wholesale with a general string event bus.
+- During N005, convert existing Maris/companion/vessel/practice dialogue content and quest/reaction commands into the current conversation flow. Preserve authored outcomes and identities, then remove superseded dialogue formats/services after their callers are converted. Do not keep a parallel legacy engine or old API for compatibility, and do not introduce a general string event bus.
 
 Validate the whole candidate before publishing catalogs. Fail unsupported keys/IDs/duplicate definitions, missing portraits, dangling graph/fact/flag/choice references and illegal source-to-target identity mapping. Mirror selected source rules: deterministic priority/tie resolution, authored entry order where significant, finite next/continue/end transitions, condition reevaluation at command time, source once-only flags/choice IDs, node-entry facts/seen state, milestones and affinity derivation. N001 identifies exact tie, cap and event-window behavior before fixtures encode it.
 
@@ -94,11 +94,11 @@ Persist only real event aggregates needed by selected graph conditions. Connect 
 
 A rejected/stale choice, wrong speaker/instance, hidden condition, missing graph or unavailable deferred action changes no memory, inventory or quest state. Publishing an accepted choice must update its facts/flags/affinity/receipts together before observers see the result. Cancel/Close must never apply unselected choice effects. On-node-entry disclosure follows source behavior and is recorded separately from accepting a response.
 
-## Save compatibility
+## Current-schema persistence
 
-N004 owns one deliberate additive schema change, provisionally schema7/content1 if schema6 is still current. If another workflow has changed versions, reconcile actual current format and document the next version before editing; never reuse or downgrade a shipped version.
+N004 owns one deliberate schema change, provisionally schema7/content1 if schema6 is still current. Reconcile actual current format and document the next version before editing. Only the resulting current format is supported; this new project has no backward compatibility requirement.
 
-Add strict plain-data per-NPC memories and bounded event aggregates. Validate all IDs against pinned converted content, numeric limits, independent sets and complete envelope structure. Migrate every currently supported legacy format through the existing migration path. A schema6 save receives empty/new conversation memory and no fabricated history; all prior health, quest, trust, upgrade, environment, light, inventory, collected IDs and rod placements remain exact.
+Add strict plain-data per-NPC memories and bounded event aggregates. Validate all IDs against pinned converted content, numeric limits, independent sets and complete envelope structure. Do not migrate older formats or infer conversation/event history from them. After the schema change, reject schema6 and all other noncurrent formats. Current-schema round trips must preserve health, quest, trust, upgrade, environment, light, inventory, collected IDs, rod placements and new memories exactly.
 
 Do not serialize dialogue cursor, NodePaths, imported visuals, paths, NPC animation time or placement caches. Keep manual Save/Load and current stable-boundary exclusion during dialogue. Closing dialogue retains accepted facts in session; saving later makes them durable. Loading reconstructs actor bindings from stable identity. Failed validation/placement rolls back without replacing current session; corrupt/newer files retain existing reject/backup/preservation rules. Tests use isolated APPDATA/LOCALAPPDATA and named slots; normal user saves are never opened.
 
@@ -118,7 +118,7 @@ N016 ports only the two actually authored semantic actions: Edric river-fishing 
 
 Use current shared testing tools and project gameplay skill, not historical hard-coded PIDs or stale evidence paths. Existing headless/viewport checks, a fresh rendered route and a fresh packaged native release each prove different things. Proposed checks must be created by their owning task before commands reference them.
 
-Focused task tests cover observable successful and rejected commands, cross-person isolation, legacy compatibility, lifecycle, real graph use and physical access. Rendered/live acceptance uses ordinary movement and actual UI; synthetic state seeding is labeled rule/fixture evidence. Capture full-size portraits/facts/branches and inspect images.
+Focused task tests cover observable successful and rejected commands, cross-person isolation, rejection of unsupported save versions, lifecycle, real graph use and physical access. Rendered/live acceptance uses ordinary movement and actual UI; synthetic state seeding is labeled rule/fixture evidence. Capture full-size portraits/facts/branches and inspect images.
 
 Final integrated route reaches all eight people, exercises alternative/repeat conversations, saves via pause UI, exits, loads in a separate process and verifies all prior and new durable facts exactly. Alternative mutually exclusive introduction branches need separate isolated fresh sessions. Complete the existing guardian/vessel/Maris fitting flow as a regression. Final Windows packages must work outside the checkout with no source reference dependency, test bridge or private content in release. Record native focus/pause/input/capture provenance, pack audit and actual exit/log results. No publishing is requested.
 

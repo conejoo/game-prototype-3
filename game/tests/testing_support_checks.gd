@@ -8,7 +8,7 @@ func _initialize() -> void:
 func _run() -> void:
 	var catalog: ContentCatalog = ContentCatalog.new()
 	_check(catalog.initialize(load("res://content/prototype_catalog.tres")).is_empty(), "catalog")
-	var session: GameSession = SaveCodec.decode(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v5.json"), catalog).session
+	var session: GameSession = SaveCodec.decode(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v6.json"), catalog).session
 	_check(session != null, "typed fixture")
 	if session == null:
 		quit(1)
