@@ -9,7 +9,7 @@ reinstate compatibility requirements. Backup/recovery, validation and atomic
 restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
-W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N012 ordinary Edric/Helena/Maris/Harlan/Tess contacts/art.
+W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration and N013 ordinary Edric/Helena/Maris/Harlan/Tess/Ivo contacts/art.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
 
@@ -1023,3 +1023,18 @@ branches/three facts/revisit/store lane, exact manual new-process GUI restart,
 physical/lifecycle regressions and inspected exported identity/loops/weather.
 Runtime idle/facing; walk review-only. N013 next eligible, full integrated eight-
 person and standalone native acceptance remain N017/N018.
+
+
+## N013 Ivo public booking-shore contact (2026-10-08 UTC)
+
+NpcRegistry now activates npc-01/npc-02/npc-03/npc-04/npc-06/npc-07. Ivo's
+source identity uses approved dry foot(36,0,20)/approach(34.5,0,20), distinct
+editable8135-triangle3D skin and existing transient presenter/lifecycle/facing.
+Exact ordinary graph/six portraits and public-role/local-seamanship/knotwork
+memory remain independently owned. Fixed modal notice makes booking/salvage/
+departure unavailability explicit without changing source text. No hull repair,
+passage, payout, ship/gate/geometry change, new party member or source migration.
+Existing recovery helper stays explicitly temporary. Manual schema7/content1
+unchanged; ordinary input/exact separate-process GUI restart and inspected
+day/night/rain/exported clips in [N013 acceptance](villagers-dialogue/N013_ACCEPTANCE.md).
+Idle/facing runtime; walk review-only. N014 next; all-eight/native gates N017/N018.

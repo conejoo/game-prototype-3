@@ -484,3 +484,26 @@ gift transaction, schedule or interior. Strict manual schema7/content1 unchanged
 record all criteria, actual ordinary input/exact GUI restart, lane/support/lifecycle
 and inspected art/weather evidence. N013 next eligible; N017/N018 keep final
 integrated all-eight/native gates.
+
+
+## N013 delivered Ivo dry booking-shore boundary (2026-10-08 UTC)
+
+Current activation exactly npc-01/npc-02/npc-03/npc-04/npc-06/npc-07. Source
+alderwake:ivo-passenger-dock-01/passenger-booking-ivo-01 foot(1856,1216) maps
+to approved dry target(36,0,20), approach(34.5,0,20), stable instance
+alderwake-npc-07-contact. No pinned map refresh, quay/ship change or service.
+Distinct8135-triangle/16-bone/packed-palette3D skin mounts under existing
+VisualRoot/Presenter. Fixed noncombatant idle/facing runtime, walk review-only;
+no Party member, saved pose or profession action.
+
+Exact source graph/six portraits and public-role/local-seamanship/knotwork
+disclosures retained. Careful+1/passing0 exclusive receipts and public branches
+work at level0; gifts remain deferred. Fixed modal explicitly says booking,
+salvage jobs and departures unavailable. No second-city passage, hull repair,
+payout/customer sequence, quest/trust change or private disclosure. Existing
+shortened-recovery helper remains unnamed/temporary, separate from Ivo.
+Strict manual schema7/content1 unchanged. [N013 acceptance](N013_ACCEPTANCE.md)
+and [Ivo package](../../art/exports/NPC_07_PACKAGE.md) verify ordinary access,
+exact independent GUI restart, dry-footprint/quay return/water negatives,
+lifecycle/facing and inspected source-informed art/weather. N014 next eligible;
+N016-N018 retain semantic actions/integrated all-eight/native acceptance.

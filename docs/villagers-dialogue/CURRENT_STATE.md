@@ -6,17 +6,71 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N012 Done; N013-N018 Pending. No active task. Exactly N012 completed.
-Target started clean at `b649bff4b2696b3448225ff071c52c91a8fe0bcc`.
+N001-N013 Done; N014-N018 Pending. No active task. Exactly N013 completed.
+Target began clean at `0217d186fb79ec45b2c8133466617663ed9ec21e`.
 Source remains clean/pinned at `60c20eb2816e7271fb84afaba286af006ebe3ccf`.
-Successful N012 task commit authorized by follow-up; verified identity is available
-in Git history and follow-up report.
-No unrelated user changes. Next eligible N013: Ivo ordinary dry booking-neighborhood
-contact/art. Inspect npc-07 source package and approved dry approach before any
-implementation. N014-N016 independently eligible; lowest N013 selects next.
-Remaining N013,N014,N015,N016,N017,N018; all through N018 not complete.
-No current blocker/remaining N012 acceptance, normal-save access or owned cleanup.
-No successor work or push. Stop after the authorized N012 task commit.
+No unrelated user work. Successful N013 task commit authorized by follow-up;
+verified identity is available in Git history and the follow-up report. No push.
+Next eligible N014: Celia ordinary repair-neighborhood contact/art. Inspect
+npc-08 source public package/portrait/sheets/canon and approved dry repair
+foot(-3.5,0,12)/approach(-3.5,0,13) before implementation. N015/N016 independently
+eligible; lowest N014 selects next. N017/N018 wait for their declared prerequisites.
+Remaining N014,N015,N016,N017,N018; all through N018 incomplete.
+No current blocker/unrun N013 criterion, normal-save access or owned cleanup.
+All owned check/helpers exited; original Blender RF-RecoveryVessel scene/file
+preserved. Owned RF-Npc07-Ivo and pre-refinement scene available. Stop now.
+
+## N013 result and durable evidence
+
+Result: Ivo Oran/npc-07 at approved dry booking-shore foot(36,0,20),
+approach(34.5,0,20), source graph/six exact portraits and three public facts.
+Distinct editable lean clean-shaven face/dark curls/ribbed navy beanie/navy
+waistcoat/teal knotted scarf/ochre rolled shirt/trousers/boots;8135 triangles/
+16 bones/packed32x32 palette. Idle/facing runtime, walk review-only. Fixed modal
+states booking/salvage jobs/departures unavailable; no second-city passage,
+hull repair, departure, payout, customer sequence or recovery-helper replacement.
+
+Target began clean at0217d186fb79ec45b2c8133466617663ed9ec21e; source remains
+clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf.132 authority hashes/
+67 outputs exact; other people/art, pinned geography and schema7/content1 retained.
+Every criterion/command/isolation/failure in [N013 acceptance](N013_ACCEPTANCE.md)
+and [Ivo package](../../art/exports/NPC_07_PACKAGE.md).
+
+Expanded140635441-6d3fc93b22/23 cases PASS; sole test-only incorrect surname
+fixed without production identity change. Focused141102168-ae1c824f all11 cases
+PASS, including separate synthetic process pair and rendered phases. Visual
+inspection then filled shoulder gaps/removed chin seam, retaining first asset.
+Final141422977-42597bdb all12 cases PASS/import/skin/pipeline/save/interaction/
+startup plus review/write/read/neutral.843 stable files SHA256
+859abda80213885570e469cc6b3ea77ff584aa9bbbd3a8831b9c80f88aff7fd2.
+Zero forbidden diagnostics/timeouts/source changes; fresh per-case/group isolated
+APPDATA/LOCALAPPDATA/named slots, normal saves untouched.733 owning/384 affected
+UI/194 final rendered assertions; all71 final captures viewed in six sheets and
+selected full-size views,46 strict pause/dialogue provenance validations pass.
+
+Ordinary writerPID15156/new readerPID35728 GUI Save/Load exact complete typed
+state/forecast, physical fact revisit and public quay return. NeutralPID62336
+passing0 versus careful1; exclusive receipts/all public branches at level0,
+disabled gifts/no prior-state or other-person changes. Full dry footprint/LOS/
+navigation, three water negatives, actual facing/holds/travel/retry pass. Existing
+helper remains explicitly temporary; source ship/gates/quest facts unchanged.
+Synthetic rule/physical/art proofs distinct from ordinary input.
+Soles0/seams0,196 stance samples max drift1.9073486e-6m,120 blend maxstep.012204223m.
+GLB936e6fd2c9d240735ac8e4bfb0cc3aad1d06733620c8041824e05cd0b8101ca8;
+.blende4dfd1b8e6add66862421f23c271b1ddec4cc6ea96273a0630d305a205894c8f.
+
+All owned engines/helpers exited; original Blender scene/file/other assets
+preserved, owned Ivo available. No cleanup/blocker/unrun N013 criterion,
+commit/push or successor implementation. Exactly N013 complete; stop.
+Remaining N014,N015,N016,N017,N018. Next eligible N014; all through N018 incomplete.
+
+Files changed: named build/normalize/raw/source audits/.blend/GLB/import/palette/
+export JSON/package; npc_registry activation/asset mapping, adapter prompt,
+Ivo-only ConversationView service notice; npc_07_checks/render and UIDs;
+acceptance/checklist/current-state/contract/README/architecture. No existing
+other-person skin, catalog/portrait, save format, helper/recovery/ship/gate or
+geography file changed. Runtime checks compare full old fields and independent
+memories. Final evidence source identity/art hashes and intended diff audited.
 
 ## N012 result and durable evidence
 
@@ -819,3 +873,14 @@ statuses remain unchanged. Raw evidence stays ignored under existing policy.
 Fresh commit scope/tree/identity/status audits are retained in the final local
 N011 run. Commit identity is available in Git history and follow-up report.
 No push or N012 implementation.
+
+## N013 authorized commit follow-up - 2026-10-08 UTC
+
+User authorized committing successful N013 implementation/art, reusable checks,
+acceptance report, checklist/durable state and scoped discovery documentation.
+Preflight verifies exactly24 task paths, all843 accepted runtime/tool files and
+final GLB/.blend hashes, no unrelated or staged work. Accepted runtime/art bytes
+and all task status rows remain unchanged. Raw runs/captures/appdata stay ignored.
+Commit scope/tree/identity/status audits are retained in the latest N013 evidence
+run; verified commit identity is available in Git history and follow-up report.
+No push or N014 implementation.

@@ -2,8 +2,8 @@ class_name NpcRegistry
 extends RefCounted
 ## N001 measured public feet. Activation belongs to N008-N015, not this registry.
 const LOCATION: String = "prototype-alderwake"
-const ENABLED: PackedStringArray = ["npc-01", "npc-02", "npc-03", "npc-04", "npc-06"]
-const VISUAL_ASSETS: Dictionary = {"npc-01":"res://assets/models/npcs/npc-01.glb", "npc-02":"res://assets/models/npcs/npc-02.glb", "npc-03":"res://assets/models/npcs/npc-03.glb", "npc-04":"res://assets/models/npcs/npc-04.glb", "npc-06":"res://assets/models/npcs/npc-06.glb"}
+const ENABLED: PackedStringArray = ["npc-01", "npc-02", "npc-03", "npc-04", "npc-06", "npc-07"]
+const VISUAL_ASSETS: Dictionary = {"npc-01":"res://assets/models/npcs/npc-01.glb", "npc-02":"res://assets/models/npcs/npc-02.glb", "npc-03":"res://assets/models/npcs/npc-03.glb", "npc-04":"res://assets/models/npcs/npc-04.glb", "npc-06":"res://assets/models/npcs/npc-06.glb", "npc-07":"res://assets/models/npcs/npc-07.glb"}
 const ROWS: Array = [
 	["npc-01", Vector3(-0.5,0,-1.5), Vector3(-0.5,0,-0.5)],
 	["npc-02", Vector3(1.5,0,-1.5), Vector3(2.5,0,-1.5)],
