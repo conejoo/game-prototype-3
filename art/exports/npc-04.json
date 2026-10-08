@@ -1,0 +1,21 @@
+{
+  "npc_id": "npc-04",
+  "triangles": 7387,
+  "vertices": 3860,
+  "bones": 16,
+  "materials": 1,
+  "texture": [
+    32,
+    32
+  ],
+  "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\npc-04.blend",
+  "glb": "D:\\development\\game-dev-blender\\returning-fair-prototype\\game\\assets\\models\\npcs\\npc-04.glb",
+  "idle": "runtime fixed contact",
+  "walk": "review only",
+  "preserved_scene": "RF-RecoveryVessel",
+  "references": [
+    "portraits/npc-04/official-neutral.png",
+    "reference/npc-04/npc_04_idle_sheet.png"
+  ],
+  "identity": "48-year-old dockmaster, broad square bearded face, short tousled brown/gray hair, teal vest, brass buttons, rust scarf, rolled cream sleeves, brown trousers/boots"
+}

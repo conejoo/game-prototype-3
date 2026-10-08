@@ -6,17 +6,62 @@ Updated: 2026-10-08, UTC.
 
 ## Selection and exact continuation
 
-N001-N010 Done; N011-N018 Pending. No active task. Exactly N010 completed and stopped.
-N010 began clean at6432a815858e931ee1e2dd9040215cabc56d28be. Source remains
-clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf; no unrelated user changes.
-N010 successful-task commit authorized by follow-up. Commit identity is available
-in Git history and follow-up report after verification. No push or N011 work.
+N001-N011 Done; N012-N018 Pending. No active task. Exactly N011 completed.
+Target began clean at8f93a77369b8633acc7964d901cd3946df7764b6; source remains
+clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf. No unrelated user changes.
+Next eligible N012: Tess ordinary store contact/art, with N008 verified Done.
+Inspect source npc-06 package and approved store approach before implementation.
+N013-N015 and N016 independently eligible; select lowest N012. Do not invent
+tasks beyond N018. Remaining N012,N013,N014,N015,N016,N017,N018.
+All through N018 are not complete. Successful N011 commit authorized by follow-up;
+verified identity is available in Git history and follow-up report. No push or N012 work.
 
-Next eligible N011: Harlan public dock contact/art only. Inspect its source package,
-approved dry foot/approach and current three-person activation before implementation.
-N012-N015 and N016 independently eligible; select lowest N011. Do not invent tasks
-beyond N018. Remaining unfinished: N011,N012,N013,N014,N015,N016,N017,N018.
-All checklist items through N018 are not complete.
+## N011 result and durable evidence
+
+Result: named editable Harlan Reed/npc-04 at approved dry control-hut foot(41,0,17),
+approach(42.5,0,17), source graph/six exact portraits and three public facts.
+Custom square bearded face/short gray-templed hair/teal vest/brass buttons/rust
+scarf/rolled cream sleeves/brown trousers and boots;7387 triangles/16 bones/
+one packed32x32 palette. Idle/facing runtime, walk review-only. No ship stage,
+sluice, travel service, private testimony/accident or campaign/reward invented.
+
+Target began clean at8f93a77369b8633acc7964d901cd3946df7764b6; source remains
+clean/pinned at60c20eb2816e7271fb84afaba286af006ebe3ccf.132 input hashes/67
+runtime outputs exact; other people/art, geometry, schema7/content1 unchanged.
+Files/interfaces/criteria/commands/isolation/failures in
+[N011 acceptance](N011_ACCEPTANCE.md) and
+[Harlan package](../../art/exports/NPC_04_PACKAGE.md).
+
+First125854163-a3a37977 all8 cases PASS before inspected hair/jaw/shoulder
+refinement; previous assets retained. Refined130353486-aecdfeb8 all26 cases
+PASS: four named skins, required content/rules/save/world/pipeline/interaction/
+quest/foraging/light/travel/map/navigation/startup, separate synthetic process
+pair and ordinary/render phases. Final131017190-309a93bd all9 cases PASS after
+owning test-only mouse-wheel facts/gift visibility proof; no production/art change.
+827 stable files SHA256bc46e28e85e43e0e4557930ec00f0f36a3c14ce54f738e261755432cd2b85423.
+Zero forbidden diagnostics/timeouts/source changes; fresh per-case/group appdata/
+localappdata/slots. Normal saves untouched. All64 final captures viewed in six
+sheets/full-size selected source/skin/portrait/facts/ordinary/weather views;39
+strict pause/dialogue provenance records pass.738 owning skin/world assertions,
+384 UI/48 portraits/eight people,161 rendered assertions including evidence writes.
+
+Ordinary writerPID25168/new readerPID66276 GUI Save/Load exact complete typed
+durable-state/forecast oracle; physically revisits all three facts. NeutralPID31540
+passing0 versus careful1 affinity, exclusive receipts, all public branches at
+level0, stale alternate rejection, no quest/trust/items/other-person changes.
+Six lamps plus rod arbitration, three water-negative/full support samples,
+ordinary public quay return, travel/retry/holds/disposal pass. Synthetic art,
+physical fixture and process proof remain distinct from ordinary input.
+Soles0/seams0;196 stance samples drift1.9073486e-6m;120 blend maxstep.012204223m.
+GLB7ea634f11a34a5962a67fac2cba77fec27399627d8112b7e9804c154976d5c2b;
+.blenddd1721d4233efd556597778d539646fd47a573e2420860de57f5c0be214ac479.
+
+Final source/diff/link/status/hash/process audits retained. All owned engines/
+helpers exited; original Blender scene/file and other assets preserved, owned
+Harlan available. No cleanup/blocker/unrun criterion, commit/push, successor,
+agent/chat/schedule, installation/publication or normal-save access. Exactly
+N011 complete; stop. Remaining N012,N013,N014,N015,N016,N017,N018; N012 next
+eligible. All checklist items through N018 are not complete.
 
 ## N010 result and durable evidence
 
@@ -715,3 +760,14 @@ reusable skin/render/world checks and N010 workflow/discovery documentation. Raw
 runs/captures/appdata remain ignored. Commit scope/tree/identity/status verification
 is retained in the latest local N010 run; resulting identity appears in Git history
 and follow-up report. No push, unrelated change or N011 implementation.
+
+## Authorized N011 commit follow-up — 2026-10-08 UTC
+
+User authorized committing successful N011 implementation/art, reusable checks,
+acceptance report and checklist/durable-state/discovery documents. Preflight
+verified exactly23 task paths, all827 accepted runtime/tool files and final
+GLB/.blend hashes; no unrelated or staged work. Runtime/art bytes and task
+statuses remain unchanged. Raw evidence stays ignored under existing policy.
+Fresh commit scope/tree/identity/status audits are retained in the final local
+N011 run. Commit identity is available in Git history and follow-up report.
+No push or N012 implementation.

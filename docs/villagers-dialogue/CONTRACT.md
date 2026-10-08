@@ -443,3 +443,25 @@ record source-informed3D art/ordinary branches/exact new-process restart,
 physical/lifecycle/regression proof and explicit returned-fitting prerequisite5
 segment. Idle runtime, walk review-only; gifts/commerce/routines unavailable.
 N011 next eligible; full fresh all-eight/recovery/native proof stays N017/N018.
+
+## N011 delivered Harlan public dock boundary (2026-10-08 UTC)
+
+Current activation is exactly npc-01/npc-02/npc-03/npc-04, superseding historical
+three-person activation above. Source alderwake:harlan-dockmaster-01/anchor
+harlan-sluice-practice-01 foot(2016,1120) maps to approved dry target(41,0,17),
+approach(42.5,0,17), exact instance alderwake-npc-04-contact and source prompt
+Talk to Harlan Reed. No geographic refresh, interior, quay/ship/stage change or
+sluice/travel capability. Existing scene-owned wrapper retains capsule/navigation;
+distinct7387-triangle/16-bone/packed-palette skin mounts under VisualRoot/Presenter.
+No Party actor/save field/pose persistence. Idle/facing ordinary, walk review-only.
+
+Exact source graph/six portraits and three public-role/shared-checks/shore-birds
+facts retained. Careful+1/passing0 introductions exclusive with one receipt;
+public work/weather/hobby available at zero level. Gift transaction/target remain
+honestly deferred. No accident/private testimony/household or future campaign
+disclosure, quest effect, companion trust or item/service grant. Manual schema7/
+content1 and all prior state preserved. Ordinary input/GUI separate-process
+restart, actual dry contact, lamp/rod arbitration and viewed art evidence are in
+[N011 acceptance](N011_ACCEPTANCE.md) and
+[Harlan package](../../art/exports/NPC_04_PACKAGE.md). N012 next eligible;
+N017/N018 retain fresh integrated all-eight/native package acceptance.
