@@ -6,15 +6,91 @@ Updated: 2026-10-09 UTC.
 
 ## Current selection and exact continuation
 
-G001-G008 Done. Active task: none. G009 Pending; whole checklist incomplete.
-Exactly G008 completed the implementation invocation with no blocker. The separate
-successful-task follow-up authorizes committing only G008 files and this state.
-No push. Next eligible
-G009. Read [G008 acceptance](G008_ACCEPTANCE.md), current export presets and N018
-delivery/native ownership helpers; archive exact previous packages before any
-replacement, then implement only fresh local Windows/native social/restart proof.
-No G009 implementation/export occurred here. Stop after G008. This state is included
-with the authorized G008 commit; raw ignored evidence stays local.
+G001-G009 Done. Active task: none. Remaining task IDs: none. Every item through
+G009 is complete; G009 is final with no successor. Stop without creating work.
+The implementation invocation completed exactly G009 without commit/push/publication.
+The separate successful-task follow-up authorizes committing only G009 delivery,
+acceptance, checklist and durable/discovery state. No push or successor. No blocker.
+[G009 acceptance](G009_ACCEPTANCE.md) maps every criterion to current evidence.
+
+Entry HEAD5046448521994f7441c63a37b89af35c2f801f3f, clean worktree; source read-only
+clean at60c20eb2816e7271fb84afaba286af006ebe3ccf. G008 prerequisite reviewed, no
+nested instructions. Unrelated docs/fishing/ appeared during execution and is
+preserved untouched. All754 accepted game files, schema7/content1, geography,
+catalog/pins/art, three flowers and historical presets remain byte-identical.
+
+Fresh package delivery passes six cases at
+docs/evidence/G009/packages-20261009-002820-2a489af0/results.json. Exact prior folders
+archived under builds/gifts-friendship-people-journal/G009/20261009-002820-2a489af0/
+previous-packages before promotion. Debug validation and release both use Desktop's
+tests-excluding filter; pack audits check67 nodes/48 choices/21 facts/eight gift
+rules, rigs/portraits/actions/People/save7 and exclusions. Both start outside checkout.
+Current canonical builds/windows release PCK
+c7a2455ecaf28ab1b225b7f53cda9d9828ab749f2afe1625e2789c8162c39de2;
+EXE d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562;
+unchanged override8f5fc180acedec304e626cb811982472a2e867a28ee3f50920ccb45b38a74654.
+Validation canonical at builds/windows-validation; exact hashes in package report.
+Validation has no override, matching its archived predecessor; release retains its
+existing override. Initial read-only final-review script assumed a validation
+override and failed before writing its report; final-review-initial-error.json
+retains the attempt. Corrected audit checks actual presence/absence and bytes.
+Final-review-whitespace.json retains a later new-line CRLF whitespace failure;
+new README/architecture lines repaired to LF, older mixed sections preserved.
+
+From repository root with verified bundled PowerShell7/Python, installed Godot
+console4.7.2.stable.mono.official.ed1daf0bf and standard4.7.2.stable templates:
+focused runner20261009-002620299-dc70cc69 passes9 cases, integration402/social-save844/
+560 malformed/People134/content/smoke/write3/read29/engine/parse; zero diagnostics,
+timeouts or source changes. Source/reference and current converter pass at
+docs/evidence/G009/reference-20261009-0029/. Dispatcher729 passes, final log in
+native-20261009-0030/guard-checks-final2.log; standalone guards7 pass at
+guards-44a40a536a4844138bf42a19132557a7/results.json. Pure scoped guard fixtures use
+native-guards-658b6e443dc04b9882d703d81bfdcf93. Guard files/input simulations are
+separate from native gameplay. Initial sandbox-denied runner and intermediate
+parameter-shadow error retained; corrected runs pass. Export-only exact missing
+.NET SDK10.0.9 diagnostic allowed for GDScript; runtime logs clean. No install.
+
+Native evidence docs/evidence/G009/native-20261009-0030/{writer,reader,neutral}:
+writer47860, reader56372, neutral18176 all normal F10 exits0. Exact direct owned
+TEMP package copy outside checkout, isolated APPDATA/LOCALAPPDATA and unchanged
+override; writer/reader share only explicit restart group, neutral starts empty.
+Guarded mouse/WASD/E/B/J/Esc physically gather distinct flowers, source choices,
+public facts/People: helpful Edric3/level1/one milestone, third-flower Maris2/level0,
+bag0. Ordinary lead/J upgrade/bridge/Tollworks/combat/vessel/return/fitting completes
+all6 effects, strike40/party2/trust0; hero100 and companion100 after ordinary return.
+People/items/gift endpoints conserved. Early intro Enter and missed combat aims
+retained; actual later accepted outcomes alone establish proof.
+
+Writer GUI Save/new-process reader GUI Load/paused Save has exact whole bytes SHA
+e65a815d64e2346532c9039bacc3ea53d65fbed36c261978df21326e8695ae69. Reader physical
+Maris/Edric revisits preserve People, complete event ledger and all old fields except
+actual elapsed/environment1215.090680720933->1421.9022385847989. Detached packed
+typed/forecast oracle passes. Separate neutral ordinary intro0/two actual gifts2
+has no milestone, only met Edric, bag0, no quest/upgrades, third flower untouched;
+GUI save and normal quit pass. One shell-path typo failed before input and is
+retained in neutral/launcher-path-typo.json; corrected verified-path retry passes.
+No inventory/fact/time/position/quest setup, teleport or bridge.
+
+native-audit.json PASS5106 assertions, failures[], clean logs/provenance and204
+actual960x640 PNGs. visual-review.json records all17 sheets individually inspected
+and full-size required details; first truncated batch discarded. Cleanup.json
+records no owned game/held controls, exact verified TEMP three-file/empty-directory
+removal without recursion; packages/archives/evidence/save groups preserved.
+Desktop disconnects did not block execution or require intervention.
+
+Changed interfaces: shared testing_paths/native_input admits matching G009/N018
+direct TEMP names and canonical EXE/PCK/override hashes with reparse refusal;
+existing PID/window/desktop/focus/coordinate/key cleanup remains. Dispatcher checks
+support -EvidenceTask G009 to isolate pure fixture outputs. New social_migration
+build_packages.py/package_audit.gd/launch_native.ps1/native_guard_checks.ps1/
+audit_native.py own current delivery/provenance only. PLAYTEST/DELIVERY record
+updated ownership; historical skill copies unchanged. Python AST/PowerShell syntax,
+archive/current game/package/source/link/status/diff review recorded in
+docs/evidence/G009/{powershell-syntax,final-review}.json. Discovery README/architecture
+and CONTRACT reflect current delivery. No acceptance criterion failed/unrun.
+
+Historical handoffs below preserve earlier boundaries; this completed G009 record
+supersedes their pending G009 statements. There is no next eligible task.
 
 ## G008 outcome, interfaces and verification
 

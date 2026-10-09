@@ -23,10 +23,45 @@ function Resolve-NativeEvidenceDirectory {
     param([Parameter(Mandatory)][string]$ProjectRoot, [Parameter(Mandatory)][string]$OutputDirectory)
     $absolute = Resolve-ProjectChildPath $ProjectRoot $OutputDirectory 'docs/evidence'
     $relative = [IO.Path]::GetRelativePath((Join-Path $ProjectRoot 'docs/evidence'), $absolute).Replace('\','/')
-    if ($relative -notmatch '^(P014|W00[1-9]|W010|F00[1-9]|F010|N018)/[^/]+(?:/.*)?$') {
-        throw 'Native output must be a run subdirectory of docs/evidence/P014, W001-W010, F001-F010 or N018.'
+    if ($relative -notmatch '^(P014|W00[1-9]|W010|F00[1-9]|F010|N018|G009)/[^/]+(?:/.*)?$') {
+        throw 'Native output must be a run subdirectory of docs/evidence/P014, W001-W010, F001-F010, N018 or G009.'
     }
     return $absolute
+}
+function Resolve-NativeStandaloneDirectory {
+    param([Parameter(Mandatory)][string]$ProjectRoot, [Parameter(Mandatory)][string]$Directory,
+          [Parameter(Mandatory)][string]$EvidenceDirectory)
+    $evidence = Resolve-NativeEvidenceDirectory $ProjectRoot $EvidenceDirectory
+    $standalone = [IO.Path]::GetFullPath($Directory).TrimEnd([char[]]'\/')
+    $temporary = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd([char[]]'\/')
+    $relative = [IO.Path]::GetRelativePath($temporary, $standalone)
+    if ($relative -notmatch '^ReturningFair-(N018|G009)-[A-Za-z0-9_-]{1,64}$' -or
+        -not $standalone.StartsWith($temporary + [IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)) {
+        throw 'Standalone input requires an owned N018/G009 directory directly below TEMP.'
+    }
+    $task = $Matches[1]
+    $evidenceRelative = [IO.Path]::GetRelativePath((Join-Path $ProjectRoot 'docs/evidence'),$evidence).Replace('\','/')
+    if (-not $evidenceRelative.StartsWith($task + '/', [StringComparison]::Ordinal)) { throw 'Standalone task and evidence differ.' }
+    $ancestor = $standalone
+    while ($ancestor.Length -gt 0) {
+        if ((Test-Path -LiteralPath $ancestor) -and ((Get-Item -LiteralPath $ancestor -Force).Attributes -band [IO.FileAttributes]::ReparsePoint)) {
+            throw 'Reparse point in standalone path.'
+        }
+        $parent = Split-Path $ancestor -Parent
+        if ($parent -eq $ancestor) { break }
+        $ancestor = $parent
+    }
+    foreach ($leaf in @('ReturningFair.exe','ReturningFair.pck','override.cfg')) {
+        $copy = Join-Path $standalone $leaf
+        $canonical = Join-Path $ProjectRoot ('builds/windows/' + $leaf)
+        if (-not (Test-Path -LiteralPath $copy -PathType Leaf) -or
+            ((Get-Item -LiteralPath $copy -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) -or
+            ((Get-Item -LiteralPath $canonical -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) -or
+            (Get-FileHash -LiteralPath $copy -Algorithm SHA256).Hash -ne (Get-FileHash -LiteralPath $canonical -Algorithm SHA256).Hash) {
+            throw 'Standalone copy differs from this project release package.'
+        }
+    }
+    return $standalone
 }
 function Assert-NewEvidenceCaptures {
     param([Parameter(Mandatory)][string]$Directory, [AllowEmptyCollection()][string[]]$Labels)

@@ -1,5 +1,9 @@
 # Social migration reference tooling
 
+Current G009 local package/native interfaces: [delivery contract](DELIVERY.md).
+Builder/auditor/launcher/native guard/provenance helpers stay outside runtime packs.
+Historical reference and activation commands below retain their recorded scope.
+
 G001 records reviewed public source semantics, an exact future activation overlay,
 reference expectations and a bounded historical target baseline. It does not
 activate gifts, milestones or People, and it never reads normal saves.

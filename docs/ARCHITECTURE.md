@@ -1203,3 +1203,28 @@ gifted-roster focus/retry remain explicitly distinguished from ordinary input.
 New fixtures reuse shared owners; only an old NPC test count changes, with no
 runtime/content/supply/schema change. G009 alone owns fresh Windows/native proof;
 historical packages remain unchanged.
+
+## G009 current local Windows/native delivery (2026-10-09 UTC)
+
+[G009 acceptance](gifts-friendship-people-journal/G009_ACCEPTANCE.md) completes
+fresh native social delivery. Canonical release builds/windows and validation
+builds/windows-validation replace exact archived prior packages only after six
+passing export/pack-audit/outside-checkout-startup cases. Both use Desktop's
+tests-excluding filter, with unchanged historical presets/overrides. External
+audits check current social policy67/48/21/eight rules, rigs/portraits/actions,
+People/save7/geography and source/private/bridge exclusions.
+
+Shared native input admits only matching G009/N018 evidence and direct TEMP copies
+with canonical executable/PCK/override hashes, rejecting reparse points; existing
+owned PID/window/desktop/focus/client bounds/finally-cleanup controls remain.
+Social delivery helpers record isolated launch/normal exits, audit copied GUI
+saves/input/capture provenance and create review sheets; they add no game owner.
+
+Ordinary guarded release controls prove helpful Edric/two distinct flowers/one
+milestone/met-only People, third-flower Maris/full shortened recovery and exact
+new-process GUI restart/re-save/revisit. Independent fresh neutral reaches2 with
+no milestone. Read-only packed typed/forecast oracle and inspected204 frames/17
+sheets support the data audit. All owned processes/controls/TEMP copy cleaned;
+normal saves untouched. All754 accepted G008 game files remain exact bytes;
+no runtime/content/save/geography/supply change. This supersedes historical
+pre-social package/pending-native boundaries above. G001-G009 Done, no next task.

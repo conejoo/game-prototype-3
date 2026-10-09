@@ -10,6 +10,15 @@ the rendered viewport. Normal gameplay services and input gates remain active.
 
 ## Shared checks and evidence
 
+Current G009 native delivery adds a matching G009 run-child evidence path and an
+exact direct TEMP copy through `-StandaloneDirectory`; N018 support remains.
+Canonical EXE/PCK/override hashes, reparse guards and all existing PID/window/
+desktop/foreground/client/cleanup checks remain mandatory. The historical native
+skill reference below predates these ownership additions; see the current
+[G009 delivery contract](social_migration/DELIVERY.md) for launch, guard tests,
+packed audits, isolated restart and native provenance commands. Project and
+installed skill copies remain unchanged.
+
 Use [shared testing tools](skills/returning-fair-gameplay-testing/references/testing-tools.md)
 for the versioned bounded runner, isolated app-data, exact restart oracle,
 read-only environment/camera observations and pause/provenance capture manifests.

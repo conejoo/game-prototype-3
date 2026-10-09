@@ -8,7 +8,8 @@ Godot application: game/, entry res://app/game_root.tscn.
 
 ## Selection and completion
 
-G001-G008 Done; G009 Pending. No active task.
+G001-G009 Done. Active task: none. Remaining task IDs: none.
+Every item through G009 is complete. G009 is final; no successor task.
 Resume the single In progress task first. Reassess Blocked work when its blocker changes; unresolved blockers exclude that task and its dependents, not independent branches.
 Otherwise select the lowest-numbered Pending task with verified Done prerequisites. Check actual prerequisite capability/evidence, not only checkboxes. Reconcile ambiguous status with artifacts before selecting.
 Complete exactly one task per invocation. Mark In progress before implementation, verify its criteria, update state even when interrupted, and stop before its successor. Done requires every criterion to have evidence; do not replace ordinary play with synthetic fixtures.
@@ -26,7 +27,7 @@ P/M/W/F/N workflows are baseline references, not selectors for this workflow. Do
 | G006 | Done | G001 | Detached met-only People projection with no disclosure side effects |
 | G007 | Done | G006 | People journal integrated with existing J journal/HUD and modal lifecycle |
 | G008 | Done | G005, G007 | Integrated ordinary social loop, cross-system regression and restart proof |
-| G009 | Pending | G008 | Fresh local Windows packages and native social/restart acceptance |
+| G009 | Done | G008 | Fresh local Windows packages and native social/restart acceptance |
 
 G006 is independent of gift implementation after G001: its source of truth is existing per-person memories. It may be selected when an earlier gift branch is blocked. Shared files still require sequential execution; these dependencies do not request agent spawning.
 
@@ -329,3 +330,38 @@ processes, held controls, commit or push. Stop after exactly G008.
 G008 successful-task commit follow-up authorized on 2026-10-09 UTC. Commit only
 G008 integration fixtures, corrected NPC coverage expectation, acceptance and
 workflow/discovery state. Keep ignored raw evidence local; no push or G009 work.
+
+### G009 / 2026-10-09 UTC / Done
+
+Every G009 criterion passed; [G009 acceptance](G009_ACCEPTANCE.md) maps fresh local
+validation/release packages, exact prior archives, current resource/exclusion audits
+and outside-checkout startups to guarded ordinary native social/recovery/restart.
+Helpful Edric/two distinct existing flowers gives3/one milestone; third flower
+gives Maris2. Full shortened recovery conserves People/items/gift endpoints.
+GUI Save/normal F10/new-process GUI Load and paused re-save preserve whole bytes/
+typed snapshot/forecast. Physical Maris/Edric revisits preserve social/event/old
+fields; actual elapsed/environment changes recorded separately. Independent fresh
+neutral plus two real flowers gives2/no milestone. No state setup or bridge.
+
+Focused runner20261009-002620299-dc70cc69 passes9 cases; fresh package run
+packages-20261009-002820-2a489af0 passes6. Native dispatcher729 and standalone
+guard7 assertions pass. Native run20261009-0030 audit passes5106 assertions,
+zero failures, all204 actual960x640 captures tied to successful requests; all17
+sheets and required full-size details inspected. Source/reference/converter,
+Python/PowerShell syntax, exact754 game-byte/archive/package/override preservation,
+local links/status/dependencies and intended diff review pass. Failed attempts
+retained honestly; editor-only known .NET export allowance distinct from clean
+runtime logs. All three native processes exit0, no held keys/buttons or cleanup
+errors; exact verified owned TEMP copy removed, evidence/isolated saves preserved.
+Desktop disconnects did not block execution or require intervention.
+
+Only delivery/native guards/helpers and G009 workflow/discovery docs change;
+all accepted game/source/pin/art/geography/supply/schema bytes unchanged. Unrelated
+docs/fishing/ preserved. No blocker, commit/push, installer or publication.
+Exactly G009 completed this invocation. Remaining task IDs: none. Every item
+through G009 is complete. G009 is final; no successor task. Stop.
+
+G009 successful-task commit follow-up authorized on 2026-10-09 UTC. Commit only
+G009 delivery/native ownership helpers, acceptance and workflow/discovery state.
+Keep ignored raw evidence, build packages and exact previous archives local;
+exclude unrelated docs/fishing/. No push. Zero unfinished G items; no successor.

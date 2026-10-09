@@ -348,3 +348,37 @@ whole durable/forecast oracle; paused re-save equality is distinct from legitima
 time/woods changes during later walking. [G008 acceptance](G008_ACCEPTANCE.md)
 supersedes the historical pending restart gate above. No runtime ownership or
 format change; G009 remains fresh Windows/native delivery acceptance.
+
+## G009 package/native interfaces (2026-10-09 UTC)
+
+`tools/social_migration/build_packages.py` archives exact previous canonical local
+packages, exports fresh validation/debug and release through Windows Desktop's
+tests-excluding filter, audits packed current resources and isolated startup, and
+promotes only after all six cases pass. Historical export presets and accepted G008
+game bytes remain unchanged. External `package_audit.gd` is never packed; current
+gift rules,67 enabled nodes/48 choices/21 facts/eight rigs and portraits, People
+and schema7/content1 must pass alongside source/private/bridge exclusions.
+
+`launch_native.ps1` owns writer/reader/neutral processes, exact direct TEMP copies,
+isolated APPDATA/LOCALAPPDATA, unchanged override bytes and original normal-exit
+handles. Writer/reader share only their explicit restart group; neutral is fresh.
+Shared native input validates matching task/path, canonical package hashes,
+reparse points, actual owned executable/PID/window, unlocked desktop, foreground,
+client coordinates and finally cleanup. Existing N018 ownership stays supported.
+`native_guard_checks.ps1` tests those guards with synthetic files, never input.
+
+`audit_native.py` reads actual requests/captures/copied GUI saves/launches/exits;
+it cannot drive input or change state. Detached packed `save_oracle.gd` compares
+the production typed save/forecast. Human image review and ordinary release routes
+remain separate gates; neither fixtures nor request success prove gameplay.
+G009 is the final task, with no successor. No installation/publication/commit/push
+is part of these interfaces.
+
+[G009 acceptance](G009_ACCEPTANCE.md) completes the previously pending native gate:
+fresh outside-checkout release, helpful Edric/two actual gifts/one milestone,
+third-flower Maris/full recovery, separate-process GUI Load/exact paused re-save,
+physical revisit and independent neutral2/no milestone. All754 accepted G008 game
+bytes and schema7/content1 stay unchanged. Data audit5106,204 inspected native
+frames/17 sheets, clean logs and owned process/control/TEMP cleanup pass.
+G001-G009 Done, every item complete; G009 has no successor. Historical pending
+delivery statements above are superseded by this record, not new tasks.
