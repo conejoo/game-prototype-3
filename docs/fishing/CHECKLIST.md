@@ -8,8 +8,8 @@ This file owns task status; [CURRENT_STATE](CURRENT_STATE.md) owns continuation;
 [CONTRACT](CONTRACT.md) owns behavior and source mappings;
 [AGENT_PROMPT](AGENT_PROMPT.md) selects this workflow.
 
-Planning complete on 2026-10-08, America/Vancouver. FS001-FS006 Done on 2026-10-09 UTC;
-FS007-FS008 Pending. Next FS007; final task FS008; checklist incomplete.
+Planning complete on 2026-10-08, America/Vancouver. FS001-FS007 Done on 2026-10-09 UTC;
+FS008 Pending. Next/final FS008; checklist incomplete.
 
 ## Selection and evidence
 
@@ -41,7 +41,7 @@ FS007-FS008 Pending. Next FS007; final task FS008; checklist incomplete.
 | FS004 | Done | FS002 | Correct 3D water targeting and cast preview |
 | FS005 | Done | FS003, FS004 | Root-owned fishing lifecycle with exactly-once rewards |
 | FS006 | Done | FS005 | Readable public controls, HUD, fish icons and cast/bite feedback |
-| FS007 | Pending | FS006 | Integrated ordinary play, cancellation and independent-process persistence |
+| FS007 | Done | FS006 | Integrated ordinary play, cancellation and independent-process persistence |
 | FS008 | Pending | FS007; completed/stable independent native-delivery baseline | Fresh Windows packages and ordinary native fishing/restart proof |
 
 ## FS001 — Freeze references and map-safe casting requirements
@@ -407,3 +407,33 @@ Normal saves/instructions/source/packages preserved; no process/editor/input or
 cleanup owed, approval rejection, commit or push. FS006 blockers none.
 Next FS007; remaining FS007,FS008; not every item throughFS008 is complete.
 No ordinary unforced catch/restart or native delivery claim. Stop before successor.
+
+### FS007 / 2026-10-09 UTC / Done
+
+Entry/final HEAD `2fc801f49e069e4bfb0e4b27c510e31b6d8fe588`; entry Git clean.
+Added three reusable integration/process/ordinary-render fixtures and their UIDs,
+plus fishing checklist/handoff/acceptance only. No production, schema7/content1,
+luck/time, geography, instruction, source, native helper/package or normal-save change.
+Every criterion and exact commands in [FS007 acceptance](FS007_ACCEPTANCE.md).
+
+Accepted isolated integration/ordinary run `20261009-052244450-562877fb`: all7 cases
+PASS, rich integration59/process writer23/reader22 assertions. Actual fresh WASD/E
+rod pickup, B/pointer selection, all four dry cast sites/three areas/two overlaps,
+F/world click and visible pointer Reel land one ordinary unforced bluegill. Real
+dry/early/missed-hook/canceled-golden-carp fight, immediate recast and post-cancel
+Drop/retrieve pass. GUI Save/F10 quit/new PID GUI Load restores exact typed whole
+facts/forecast/fish selection before resumed travel/revisit with no duplicate catch.
+Ordinary PIDs44024/10696; separate rich synthetic PIDs44848/54904 prove all3 species,
+gifts/quest/party/flowers/lamps/weather and failed-save/retry/no-resumed-attempt facts.
+
+Affected regression run `20261009-052616250-f33827b1`: all30 cases PASS,27 focused
+checks plus parse/version and synthetic renderer225. All85 ordinary/synthetic PNGs
+and8 sheets inspected; capacity/all results/species, lighting/cameras and final
+pause confirmed. Live audit143 before/after;18 source pins/layout unchanged.
+Both runs same1031-file digest
+`46304c72ab1af127ca9cee167f34a1ae9a33e77f9a8986e30a12a9b061070d78`,
+source.changed=false/error=null, no runtime/parse diagnostics or timeouts. Initial
+launch/UID-import/starting-health fixture failures retained/excluded and corrected.
+All owned processes exited, no cleanup or approval rejection outstanding.
+No commit/push/export/native delivery or successor work. FS007 blockers none.
+Remaining/next FS008; every item through FS008 complete: no. Stop here.

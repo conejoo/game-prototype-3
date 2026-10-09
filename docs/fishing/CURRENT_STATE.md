@@ -1,34 +1,35 @@
 # Fishing migration current state
 
-Updated: 2026-10-09 UTC (FS006 execution complete; prior history retained below).
+Updated: 2026-10-09 UTC (FS007 complete; prior history retained below).
 [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns stable
 behavior/mappings; [AGENT_PROMPT](AGENT_PROMPT.md) supplies invocation.
 
 ## Selection and next safe action
 
-Active fishing task: none. **FS001-FS006 Done**, FS007-FS008 Pending.
-Next eligible: **FS007 - Integrated fishing, persistence and existing-game regression**.
-Final task: **FS008**. Remaining IDs: FS007, FS008.
-Whole fishing checklist: incomplete. FS006 blockers: none.
+Active fishing task: none. **FS001-FS007 Done**, FS008 Pending.
+Next/final eligible ID: **FS008 - Fresh Windows release and native acceptance**,
+subject to its explicit current independent-delivery gate.
+Remaining IDs: FS008. Whole fishing checklist: incomplete. FS007 blockers: none.
 Exact next safe action: await the next authorized invocation, recheck Git/current
-interfaces and [FS006 acceptance](FS006_ACCEPTANCE.md), then mark FS007 In progress.
-Use TestRunJourney/Gui/Snapshot and guarded fishing captures for ordinary movement,
-rod pickup/selection, all three audited catch areas plus overlap, visible reeling
-and at least one unforced-RNG catch. Complete independent-process actual GUI
-Save/quit/startup/Load with the exact typed stable oracle and no resurrected attempt,
-then travel/revisit and affected regressions. Label deterministic species/negative
-fixtures separately; preserve luck, geography, ownership and normal slots. No
-teleport or debug mutation can establish ordinary catch acceptance. Shared native
-tools now support F and FS008 paths; package/native acceptance remains FS008 and
-still requires its independent delivery coordination gate.
-FS006 finished at HEAD `93aea06a59552ce152473f95582ddc3333749a84`, without commit.
-Only FS006 ran in this invocation; no successor started.
+interfaces and [FS007 acceptance](FS007_ACCEPTANCE.md), verify G009 Done/current
+native baseline ownership and installed export templates, then mark FS008 In progress.
+Stage fresh Windows Desktop/Validation under its own builds/fishing/FS008 run,
+audit final packed/runtime content, and prove actual ordinary native unforced catch,
+GUI Save/normal quit/new process GUI Load/revisit with exact typed stable oracle.
+Preserve canonical packages/override and prior archives before any authorized local
+promotion. Native timing must react to rendered HUD through bounded ordinary input;
+debug bridge/synthetic RNG/fixed poses cannot satisfy FS008. If supported tooling
+cannot handle hook/tension timing, keep the precise native/human gate incomplete.
+FS007 finished at HEAD `2fc801f49e069e4bfb0e4b27c510e31b6d8fe588`, without commit.
+Only FS007 ran in the execution invocation; no successor started. The authorized
+local commit follow-up below records its scope; no push or publication authorized.
 
 Production now supports F targeting/world-click cast, E hook/hold/release, all
 phase/lifecycle cancellation and exactly-once inventory fish rewards. Public
 snapshot-only phase/tension/progress HUD, pointer Reel/Cancel, source fish icons,
 rod/bag help and anchored line/bobber/bite effects are complete. Ordinary unforced
-catch/restart remains FS007; native release FS008.
+catch/routes/cancellation/GUI restart and cross-system regressions now pass FS007.
+Fresh Windows/native acceptance remains FS008.
 Earlier planning/execution paragraphs below retain their historical boundaries.
 
 ## Planning baseline and independent work (historical)
@@ -670,3 +671,106 @@ source fish assets, effects, guarded helpers, reusable tests, durable acceptance
 checklist and handoff are versioned. Ignored raw reports/logs/captures remain local
 as project testing policy requires. No unrelated files staged, no push or FS007 work.
 Verified commit hash is reported after commit; it is not embedded in its own content.
+
+## FS007 executed handoff (2026-10-09 UTC)
+
+Selected/status: FS007 Done; [acceptance](FS007_ACCEPTANCE.md) maps every criterion.
+Entry/final HEAD `2fc801f49e069e4bfb0e4b27c510e31b6d8fe588`; entry Git clean.
+Root instructions/fishing prompt/checklist/handoff/contract/current architecture,
+FS006/current root/service/UI/item/save APIs and project-owned gameplay-testing
+skill/shared recipes/PLAYTEST read. No nested AGENTS or `.agents` directory found.
+No other conversation/agent/new chat/schedule used. Current G001-G009 remains Done;
+independent source/native tools/packages preserved and FS008 not started.
+
+Bounded actual nine files touched:
+- New `game/tests/fishing_integration_checks.gd`, `fishing_process_checks.gd`,
+  `fishing_integrated_render.gd`, and their three generated UIDs.
+- `docs/fishing/CHECKLIST.md`, `CURRENT_STATE.md`, new `FS007_ACCEPTANCE.md`.
+No existing production/game/tool/asset/native/schema/geography/instruction file edited.
+Source HEAD `60c20eb2816e7271fb84afaba286af006ebe3ccf` remains clean/read-only.
+Live audit143 before/after, all18 pins and layout SHA256
+`7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be` unchanged.
+Only new test fixtures and durable docs; no new owner, save field, schema/content
+version, input bypass, luck adjustment, collision/navigation or package change.
+
+Ordinary renderer starts empty, proves camera-relative movement, walks/picks up the
+existing rod, selects through B/pointer, approaches four audited dry sites and
+asserts actual target-cell area profiles including both reeds overlaps. F/world
+click plus visible pointer Reel holds/releases use automatic root/world/challenge
+time and untouched randomized production RNG. First dock cast lands Bluegill1;
+other three site casts miss normally. Actual dry/early/missed-hook negatives,
+unforced golden-carp fight canceled through visible Cancel, fresh recast/F cancel,
+ordinary Drop/retrieve conserve rod and fish. Eight traced attempts retain misses/
+failures; only one ordinary landed fish is claimed. Nine writer/three reader
+TestRunJourney routes pass, including physical gates and post-load dock revisit.
+
+Actual GUI Save, normal F10 quit, independent fresh process GUI Load compare the
+exact typed stable whole snapshot and full-precision forecast before resuming.
+Ordinary writer/reader engine PIDs44024/10696 differ. Fish counts/bluegill selection
+restore, no attempt/hold/drag/effect resumes. Normal outbound/return E gates and
+revisit preserve exact counts; time advances separately. Final pause screenshots
+and production quit logs inspected. This is viewport/debug input proof, no native
+release claim. Shared helpers consume every journey/GUI/capture/evidence failure.
+
+Synthetic integration separately supplies complete old social/gift/quest/party/
+flower/lamp/weather facts, legal rod retrieval, deterministic all-three encounters
+and legal feedback trajectories. Exact whole-state oracle changes only +1 species.
+Starting hero health is normalized before recording this declared synthetic
+baseline because the shared cast fixture starts healthy. Ordinary session has no
+setup/healing/teleport/RNG/time mutation. Synthetic writer/reader PIDs44848/54904
+prove exact all-three counts1/selected golden carp and all old facts/forecast.
+Real isolated `.tmp` obstruction makes root Save fail; primary/backup bytes and
+all live facts survive, slot remains valid, retry never grants another fish.
+All-phase cancel/save/load/recast keeps exact rich facts and no resurrected attempt.
+
+Commands/cwd/isolated slots: prototype root, PowerShell7 and installed
+Godot4.7.2.stable.mono.official.ed1daf0bf; exact commands in acceptance.
+- `20261009-052244450-562877fb`: all7 engine/parse/integration/process-write/read/
+  ordinary-render-write/read cases PASS/exit0; integration59/process23/22 assertions.
+  `check-000`, `process-001`, `render-002` are three distinct save/app-data groups
+  under matching builds/testing/FS007 run. Each process pair shares only its slot.
+- `20261009-052616250-f33827b1`: all30 cases PASS,27 affected checks plus
+  version/parse and current synthetic UI renderer225 assertions. Twenty-seven
+  independent check groups plus one rendered group. Fishing session/reward/lifecycle/
+  UI, inventory/foraging/bag/placement, social/gifts/People/eight NPCs, shortened
+  recovery/combat/ally, travel/cameras/terrain/water/crossings, lamps/weather/startup
+  all pass. No deferred existing-game regression or failed current criterion.
+Both accepted runs same1031-file digest
+`46304c72ab1af127ca9cee167f34a1ae9a33e77f9a8986e30a12a9b061070d78`,
+source.changed=false/error=null, no runtime/parse diagnostics/timeouts.
+Normal slots and prior evidence untouched. No native helper, export or OS input run.
+
+All85 PNGs/eight sheets and selected full-size ordinary fight/restored bag and
+synthetic capacity inspected. Ordinary write23/read5 captures have honest live
+phase/token/automatic-time or verified pause provenance; synthetic57 show current
+three species/capacity/results and lighting/projection/size matrix. Capture reports:
+- ordinary writer `render/derived/20261009-052537-24ad9788/capture-report.json`;
+  reader `render/derived/20261009-052647-1e084715/capture-report.json` in first run.
+- synthetic `render/derived/20261009-053137-9ba4c0f4/capture-report.json` in second run.
+No paused/canceled screenshot claimed as active bite/fight. Only ordinary Bluegill1
+is claimed; deterministic three-species and capacity evidence remain synthetic.
+
+Retained excluded runs: `052133285-b0417121` sandbox process access denied, resolved
+by scoped approved runner escalation; `052149981-3ee3796e` first import generated
+three UIDs and correctly invalidated source stability; `052209471-a6d1466f` exact
+rich oracle exposed initial injured-health versus inherited cast-healing fixture,
+corrected before the accepted baseline. Known import-only SDK10.0.9 advisory retained,
+no install. No automatic approval rejection or unresolved permission gate.
+
+Final intended nine-file diff/source/UID/docs/local-link/status/whitespace review
+PASS. All accepted launcher/observed-engine PIDs absent, normal exits recorded;
+no owned process/editor/input/obstruction or cleanup owed. No unowned process stopped.
+No commit/push/package publication/deployment or successor work. FS007 Done/blockers
+none. Remaining/next FS008; all-through-FS008 complete: no. Stop; separate commit
+instruction required before staging/committing these task files.
+
+### FS007 commit follow-up
+
+Subsequent user authorization requests the successful FS007 local commit only.
+The execution records above describe the pre-commit acceptance boundary. Rechecked
+all37 accepted cases and all1031 tested game/tool byte hashes before staging the
+reviewed nine-file task allowlist. Three reusable integration/process/ordinary
+render fixtures and UIDs, durable acceptance, checklist and handoff are versioned;
+ignored raw reports/logs/captures remain local as project testing policy requires.
+No unrelated changes staged, no push, no FS008 work. Verified commit hash is
+reported after commit; it is not embedded in its own content.
