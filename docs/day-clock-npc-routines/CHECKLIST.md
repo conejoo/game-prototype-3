@@ -16,7 +16,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | --- | --- | --- | --- |
 | R001 | Done | Current target/source read access | Pinned 25-routine inventory, mappings, vectors and declared gates |
 | R002 | Done | R001 | Strict immutable routine content/reference validation |
-| R003 | Pending | R002 | Deterministic assignments from existing clock/conditions |
+| R003 | Done | R002 | Deterministic assignments from existing clock/conditions |
 | R004 | Pending | R003 | Durable routine commands/current-schema persistence |
 | R005 | Pending | R001 | Qualified multi-portal routing, existing travel preserved |
 | R006 | Pending | R002, R005 | Safe exterior anchors/door approaches on pinned geometry |
@@ -163,10 +163,11 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001 and R002 completed; R003-R016 remain Pending. Final task ID: R016.
-Next eligible: R003 (R005 independently ready; ordered selection chooses R003).
+R001-R003 completed; R004-R016 remain Pending. Final task ID: R016.
+Next eligible: R004 (R005 independently ready; ordered selection chooses R004).
 Whole checklist complete: no. No current blocker.
-[R001 acceptance](R001_ACCEPTANCE.md) and [R002 acceptance](R002_ACCEPTANCE.md) own evidence.
+[R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
+[R003 acceptance](R003_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -229,3 +230,33 @@ physical routes. Deferred graph entries remain deferred; action art unchanged.
 No schema/source/private cast/save/runtime ownership change; no commit/push.
 Next eligible ID and exact next action: R003; consume immutable catalog/R001 vectors,
 implement pure clock/condition selector and its checks. Stop before R003.
+
+R003 - Done 2026-10-09 (America/Vancouver and UTC)
+Result and changed files: four new game/features/routines/ context/plan/resolver/
+director scripts and UIDs; routine_resolver_checks.gd/routine_clock_checks.gd and
+UIDs; CHECKLIST/CURRENT_STATE/R003_ACCEPTANCE. Transient data only; no root wiring.
+Verified prerequisites and preserved user changes: clean target2f0d60f/source60c20eb2;
+R001 live-source audit PASS1624; actual R002 catalog PASS848/228 invalid fixtures.
+All pre-existing game/tools/content bytes, source pins, schema7/content1, geography,
+AGENT_PROMPT/user instructions and unrelated Blender2664 preserved.
+Commands/cwd/isolation and actual outcomes: repository cwd; run_checks.ps1 -Task
+R003 -Names routine_resolver_checks,routine_clock_checks -ParseScripts the four
+new routine components -TimeoutSeconds150 PASS4 cases, stable source/no diagnostics.
+New checks PASS13310/301 assertions. Earlier stable run passed import/parse,
+routine_content_checks, environment_rule_checks12792 and environment_session_checks;
+its two new weather-fixture failures repaired and affected checks rerun. Distinct
+task check groups/APPDATA/LOCALAPPDATA/slots; no primary or backup save access.
+Evidence and inspected artifacts: docs/evidence/R003/20261009-091213986-0fcf01c2/
+results.json and two detailed rule reports; prerequisite cases in091034 run;
+reference-preflight/results.json. All25 IDs selected in18 pinned vectors,1440-minute
+roster/group sweep, exact boundaries/elapsed, precedence, recency/window expiry,
+unchanged-frame stability, day suppression and actual seeded weather union.
+Decisions/compatibility changes/retained limits: narrow existing weather epsilon
+normalizes clock round trips; later-day weather fixtures explicitly synthetic.
+Director samples caller-owned truth without effects/new clock/durable suppression;
+R004 owns persistence, R013 owns activation. No movement/gameplay/native claim.
+Import-generated six UID additions invalidated first run as expected; failure
+reports retained. Owned Godot processes exited; no input/editor/cleanup owed.
+Next eligible ID and exact next action: R004; recheck current save architecture,
+implement minimal durable events/current-day suppression and required isolated
+save/restart/atomicity checks. Stop before R004; no commit/push.

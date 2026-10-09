@@ -1,12 +1,111 @@
 # Day clock and NPC routines current state
 
-Updated 2026-10-09 UTC / America/Vancouver. R001/R002 complete.
-Routine content delivered as data only; production schedule activation not started.
+Updated 2026-10-09 UTC / America/Vancouver. R001-R003 complete.
+Routine content and pure selection delivered; production activation not started.
 Read [CHECKLIST](CHECKLIST.md), [CONTRACT](CONTRACT.md), [AGENT_PROMPT](AGENT_PROMPT.md).
 
 ## Current selection
 
-Active task: none. R002 Done (2026-10-09 UTC). R001 Done; R003-R016 Pending.
+Active task: none. R003 Done; R004-R016 Pending. Exactly R003 completed this invocation.
+Baseline HEAD 2f0d60f39ae87731309d8f3bbd1c356a1913a8c5, clean before work; source
+clean at60c20eb2. No nested AGENTS.md or workspace/target .agents found. Source
+test-gameplay skill read; its Flutter/Linux tools do not apply to Godot target.
+Current versioned/installed gameplay-testing skill, runner and shared save/journey/
+interaction/native guidance read. Supplied engine exists; no SDK install required.
+
+R003 allowlist/actual changes: four new context/plan/resolver/director scripts and
+their UIDs under game/features/routines/, two new routine_* checks and their UIDs,
+CHECKLIST.md/CURRENT_STATE.md/R003_ACCEPTANCE.md and ignored R003 evidence/staging.
+All pre-existing game/tools/content bytes preserved, including R001/R002 pins,
+schema7/content1 and geography. AGENT_PROMPT/user instructions/source unchanged.
+No baseline user changes existed. Unrelated Blender PID2664 preserved.
+No root activation, movement, save field, geometry, dialogue/art or extra task.
+Implementation ended without commit/push. Separate R003-only successful-task commit
+is now authorized; follow-up details below. No push or R004 work authorized here.
+
+## R003 result and verification
+
+RoutineResolutionContext detaches environment clock, weather-derived/authored event
+union and actual conversation/event-memory snapshots. Reuses NpcEventMemory.matches
+for exact keys/inclusive count and recency. Invalid samples fail before director
+publication. Caller supplies authoritative suppression day; old-day IDs are ignored
+only at day-index rollover, with no mutation or durable suppression owner here.
+R004 must implement actual commands/persistence/expiry; R003 fixtures are not saved
+delivery. Narrow existing WeatherSchedule epsilon normalizes float boundary round
+trips; no second clock/time seek/offline advancement.
+
+RoutineResolver applies suppression/window/AND-conditions/conflict precedence,
+priority descending/ID ascending and whole-group acceptance. Immutable transient
+plans expose detached stable assignments/ID-enum rejection diagnostics and current
+elapsed window seconds. RoutineAssignmentDirector compares actual decision truth
+and day, reevaluating when window/condition/suppression/recency changes; unchanged
+updates refresh elapsed without resolution/revision/restart. Caller must sample on
+updates even without player input. Changed participants include both group members;
+same-routine new day is a new assignment generation. No actor/executor/effects.
+
+R001 preflight: bundled Python3.12.14 tools/routine_migration/reference_checks.py
+--source D:/development/game-prototype-2 --report
+docs/evidence/R003/reference-preflight/results.json PASS1624, source hashes unchanged.
+Repository cwd for all commands. Final affected checks:
+./tools/run_checks.ps1 -Task R003 -Names routine_resolver_checks,routine_clock_checks
+-ParseScripts features/routines/routine_resolution_context,features/routines/routine_assignment_plan,features/routines/routine_resolver,features/routines/routine_assignment_director
+-TimeoutSeconds150
+PASS4 cases at docs/evidence/R003/20261009-091213986-0fcf01c2/results.json.
+13310 resolver /301 clock assertions, zero failures; all exits0/diagnostics empty.
+source.changed=false/source.error=null; fingerprint
+60653ad0b08587974c6c55069251d2e1762c4c72d927244d8a5d62519074b323 (1194 files).
+Two independent check-000/001 save groups with distinct named slots and task-local
+APPDATA/LOCALAPPDATA under builds/testing/R003/<run>/; checks never access primary
+or backup saves. No ordinary save/profile access.
+
+Earlier stable run20261009-091034886-f9e57a6c passed engine/import/parse and actual
+routine_content_checks848/228 rejections, environment_rule_checks12792 and
+environment_session_checks (active/pause/resume/modal/focus/travel/shared clock).
+Its two new checks failed because initial clear day0 cannot produce desired rain/
+storm at18:00, and some times cannot be sunny. Fixture now selects real seeded
+later-day rain/storm and any nonstorm baseline. All affected checks rerun above;
+unaffected prerequisite scripts/bytes unchanged. First091011 import run correctly
+failed source guard because six owned UID files were generated. All failures and
+logs retained; no failed overall report relabeled as passing.
+
+Viewed structured results/source manifests/logs and detailed two rule reports:
+18 pinned selection vectors select all25 IDs;1440-minute full roster/group sweep;
+all start/end/overnight boundaries; priority/ties/rejection order; facts/flags/AND/
+count/recency/exact-null keys; max clock/elapsed vectors; window/recency reevaluation;
+120 unchanged updates; midnight versus10AM suppression; actual seeded rain/storm
+and authored union. Synthetic branches clearly labeled, no ordinary gameplay,
+saved-state, rendered, movement, reconstruction or native claims. Full criterion
+mapping in [R003 acceptance](R003_ACCEPTANCE.md).
+
+No current blocker. Default exec helper setup fails; reviewed execution works.
+Final readback/diff audit passed16 statuses/64 relative links/dependencies and15
+allowlisted changed files; R004/R005 ready, ordered next R004. Source remains clean.
+One unmatched final documentation patch refused atomically; corrected, no partial
+write or runtime-source change.
+No automatic approval rejection. Per-command Git safe.directory only; no global
+configuration changes. All owned Godot checks exited; no editor/game/input/held
+controls or cleanup owed. Ignored task evidence/staging retained; Blender untouched.
+
+Remaining unfinished IDs: R004,R005,R006,R007,R008,R009,R010,R011,R012,R013,R014,R015,R016.
+Every item through R016 complete: no. Next eligible R004 (R005 independently ready;
+ordered selection chooses R004). Exact next action: recheck current architecture/
+SaveCodec/fixtures; implement only minimal session-owned authored active events/
+current-day suppression, strict current-format commands/persistence/detached restore,
+then required isolated save/restart/rollback checks. Stop before R004 here.
+
+## R003 authorized successful-task commit follow-up
+
+After successful acceptance, user authorized committing exactly delivered R003
+components/checks/UIDs, durable acceptance, checklist and handoff. Baseline index
+empty; all15 changed paths belong to R003, no unrelated changes. Raw evidence/logs
+and staging stay ignored under existing policy. Current game/tools fingerprint
+matches accepted60653ad0b08587974c6c55069251d2e1762c4c72d927244d8a5d62519074b323;
+no runtime source changed after acceptance. Stage explicit allowlist, verify staged
+tree/whitespace and unchanged accepted fingerprint, commit, then verify committed
+paths and clean working tree. R004 remains Pending; no push or successor work.
+
+## Historical R002 selection (superseded, evidence preserved)
+
 Baseline target HEAD fc049516ae90deffac78bd2f7bb6ded804fbe28c, worktree clean;
 source clean and R001 live-source audit passes 1624 assertions. No nested target
 AGENTS.md or target/workspace .agents found. Source .agents/skills/test-gameplay
