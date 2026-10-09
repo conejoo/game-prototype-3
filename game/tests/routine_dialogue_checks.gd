@@ -5,9 +5,28 @@ func _run() -> void:
 		reset_archive()
 		_entries_and_policy()
 		_stale()
+		_chat()
 		_gift()
 		await _group()
 	await finish("routine-dialogue.json")
+
+func _chat() -> void:
+	reset_archive()
+	if not begin("npc-02"): return
+	var view: Dictionary = game.dialogue.snapshot()
+	var lease: RoutineDialogueContext = execution._lease
+	var actor: Dictionary = execution.actor("npc-02").snapshot()
+	check(view.routine_chat,"routine entry exposes ordinary Chat")
+	for field: String in ["npc_id","instance_id","node_id","token"]:
+		var wrong: Dictionary = view.duplicate(true); wrong[field] = "wrong"
+		check(not game.dialogue.ordinary_chat(wrong.npc_id,wrong.instance_id,wrong.node_id,wrong.token).ok,"foreign chat field inert "+field)
+	check(game.dialogue.ordinary_chat(view.npc_id,view.instance_id,view.node_id,view.token).ok,"ordinary Chat from actual indexing")
+	check(game.dialogue.snapshot().node_id == "npc-02-initial-conversation" and not game.dialogue.snapshot().routine_chat,"ordinary introduction available at zero affinity during routine")
+	check(execution._lease == lease and lease.valid() and execution.actor("npc-02").snapshot() == actor,"Chat keeps same group lease/step/feet/timer")
+	var before: Dictionary = SaveCodec.snapshot(game.session)
+	check(not game.dialogue.ordinary_chat(view.npc_id,view.instance_id,view.node_id,view.token).ok and SaveCodec.snapshot(game.session) == before,"stale Chat cannot repeat disclosure")
+	game.dialogue.cancel()
+	check(execution._lease == null,"ordinary Chat closes/resumes original routine")
 
 func _entries_and_policy() -> void:
 	check(begin("npc-02"),"open archive indexing")

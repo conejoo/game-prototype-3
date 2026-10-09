@@ -98,7 +98,7 @@ func _fallback() -> void:
 
 func _view_lane() -> void:
 	# Retain/diagnose the first rendered fixture's full river approach.
-	# This is a synthetic occupancy refusal, not a successful ambient journey.
+	# R013 bounded live-contact repath repairs the retained Tess obstruction.
 	if execution != null: execution.dispose()
 	if game != null: game.queue_free(); await process_frame
 	if not await setup(1020): return
@@ -112,11 +112,12 @@ func _view_lane() -> void:
 		if cursor.state in [RoutineExecutor.State.FAILED,RoutineExecutor.State.SPEAKING]: break
 	var adapter: NpcWorldAdapter = game.world_host.current_location.npc_contacts
 	observations.append({"case":"original full river leg with ordinary stationary contacts","cursor":cursor.snapshot(),"movement":adapter.movers["npc-01"].failure,"blocker":adapter.movers["npc-01"].blocker,"hero":game.player_placeholder.global_position,"ally":game.companion.global_position})
-	check(cursor.state == RoutineExecutor.State.FAILED and cursor.failure_detail.get("blocker","") == "npc-06","stationary Tess on navigation leg causes typed bounded refusal; safe presentation remains inert")
-	check(adapter.presenters["npc-01"].active_action().is_empty() and not adapter.routine_presentations["npc-01"].speech.visible,"failed movement publishes no false action/speech")
+	observations.append({"detours":adapter.movers["npc-01"].detour_attempts})
+	check(cursor.state == RoutineExecutor.State.SPEAKING and cursor.failure == RoutineExecutor.Failure.NONE,"stationary Tess detour completes full unchanged river leg")
+	check(adapter.movers["npc-01"].repaths <= 2 and cursor.foot.distance_to(Vector3(15,0,1.5)) < .005,"bounded physical detour retains exact source river endpoint")
 
 func _finish_r012() -> void:
-	check(TestRunEvidence.write_json("routine-presentation.json",{"task":"R012","assertions":assertions,"failures":failures,"observations":observations,"provenance":"synthetic initial clocks/cursor/action/party cases; real wrappers, active holds, unload/dispose and negative full-leg occupancy; no ordinary schedule/native claim"}),"R012 evidence")
+	check(TestRunEvidence.write_json("routine-presentation.json",{"task":"R012","assertions":assertions,"failures":failures,"observations":observations,"provenance":"synthetic initial clocks/cursor/action/party cases; real wrappers, active holds, unload/dispose and R013 repaired full physical river leg; no ordinary schedule/native claim"}),"R012 evidence")
 	paused = false
 	if execution != null: execution.dispose()
 	if game != null: game.queue_free()

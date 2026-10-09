@@ -29,7 +29,7 @@ func _run() -> void:
 		var ready: Dictionary=await TestRunJourney.wait_navigation(room,Vector3.ZERO)
 		_check(ready.ok,ready.error)
 		if not ready.ok: break
-		_check(room.npc_contacts.targets.size()==(NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() if enabled else 0),"measured crowd size")
+		_check(TestRunRoutines.contacts_match(game),"measured actual scheduled crowd/unique noncombatants")
 		var goals: Array[Vector3]=[Vector3(93,0,-.5),Vector3(103,0,-.5),Vector3(66,0,12.5),Vector3(75,0,12.5),Vector3(107.25,0,-1.25)]
 		for contact: Dictionary in NpcRegistry.entries(NpcRegistry.LOCATION): goals.append(contact.approach)
 		for index: int in goals.size():
@@ -72,7 +72,14 @@ func _run() -> void:
 	# Labeled synthetic service setup creates eight valid, independent memories;
 	# actual root death/retry must retain all complete durable facts exactly.
 	for id: String in NpcRegistry.ENABLED:
-		_check(game.dialogue.begin(id,NpcRegistry.find(id).instance_id).ok,"synthetic legal memory entry "+id)
+		var map_id: String = game.routine_execution.actor(id).map_id
+		var definition: LocationDefinition = game.catalog.get_location(map_id)
+		_check(game.world_host.request_transition(map_id,definition.spawn_ids[0]).is_empty(),"scheduled contact visit "+id)
+		_check((await game.world_host.transition_finished)[0],"scheduled contact map arrival "+id)
+		var target: PrototypeInteractable = game.world_host.current_location.npc_contacts.targets.get(id)
+		_check(target != null,"one contact on actual map "+id)
+		if target == null: continue
+		_check(game.dialogue.begin(id,target.instance_id).ok,"synthetic legal actual-instance memory entry "+id)
 		var snap: Dictionary=game.dialogue.snapshot()
 		_check(game.dialogue.choose(id,snap.instance_id,snap.node_id,snap.token,snap.choices[0].id).ok,"synthetic exclusive memory "+id)
 		game.dialogue.cancel()
@@ -80,7 +87,7 @@ func _run() -> void:
 	game.player_placeholder.receive_damage(100)
 	await game.retry_encounter()
 	_check(SaveCodec.snapshot(game.session)==before_retry,"all-eight death/retry preserves whole healed durable state")
-	_check(game.world_host.current_location.npc_contacts.targets.size()==NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.party.members().size()==2,"retry reconstructs exactly seven town contacts/two party actors")
+	_check(TestRunRoutines.contacts_match(game),"retry reconstructs actual scheduled contacts/two party actors")
 	for row: Dictionary in deferred: _check(not row.reason.is_empty(),"deferred coverage explicit "+row.id)
 	_check(TestRunEvidence.write_json("npc-integration-checks.json",{"task":"N017","proof":"synthetic controlled map baseline/crowd; not ordinary input","assertions":assertions,"failures":failures,"measurements":measurements,"enabled_nodes":nodes,"enabled_choices":choices,"enabled_facts":facts,"deferred":deferred}),"integration rule evidence")
 	game.queue_free(); await process_frame

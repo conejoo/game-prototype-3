@@ -104,7 +104,21 @@ func snapshot() -> Dictionary:
 	for id: String in memory.learned_fact_ids:
 		var fact: NpcDefinition.Fact = npc.facts[id]
 		facts.append({"id":id, "label":fact.label, "description":fact.description, "highlight_term":fact.highlight_term})
-	return {"graph_id":_npc_id, "npc_id": _npc_id, "instance_id": _instance_id, "node_id": _node_id, "token": _token(), "speaker": node.speaker, "text": node.text, "portrait_id": node.portrait_id, "portrait_path": npc.portraits[node.portrait_id], "choices": rows, "can_continue": not node.continue_target_id.is_empty() or available == 0, "can_close": true, "memory": memory.snapshot(npc.level_one_affinity), "social":_social_snapshot(npc), "gift_feedback":_gift_feedback, "facts":facts, "revealed_fact_ids":node.revealed_fact_ids.duplicate(), "selected_choice_id":_selected_choice, "presentation_index":0}
+	return {"graph_id":_npc_id, "npc_id": _npc_id, "instance_id": _instance_id, "node_id": _node_id, "token": _token(), "speaker": node.speaker, "text": node.text, "portrait_id": node.portrait_id, "portrait_path": npc.portraits[node.portrait_id], "choices": rows, "can_continue": not node.continue_target_id.is_empty() or available == 0, "can_close": true, "memory": memory.snapshot(npc.level_one_affinity), "social":_social_snapshot(npc), "gift_feedback":_gift_feedback, "facts":facts, "revealed_fact_ids":node.revealed_fact_ids.duplicate(), "selected_choice_id":_selected_choice, "presentation_index":0, "routine_chat":_routine_context != null and _node_id in _routine_context.entries()}
+
+func ordinary_chat(npc_id: String, instance_id: String, node_id: String, token: String) -> Result:
+	if not _command_matches(npc_id,instance_id,node_id,token) or _prototype != null or _routine_context == null or _node_id not in _routine_context.entries():
+		return Result.new(false,"Stale or unavailable routine chat route.")
+	var npc: NpcDefinition = _catalog.get_npc(_npc_id)
+	var memory: ConversationMemory = _session.conversations.memory(_npc_id)
+	var node: NpcDialogueGraph.NodeDefinition = NpcDialogueRules.resolve(npc,memory,_session.conversations.events(),_session.elapsed_play_seconds)
+	if node == null: return Result.new(false,"No available ordinary entry.")
+	# Keep the same group lease and source step. Only ordinary authored entry
+	# disclosure changes, just as Begin; no directive, reward or replan occurs.
+	_session.conversations = _session.conversations.with_person(NpcDialogueRules.enter(npc,memory,node))
+	_cursor_state = _session.conversations; _node_id = node.id; _generation += 1
+	_notify()
+	return Result.new(true,"Chat opened.")
 
 func _social_snapshot(npc: NpcDefinition) -> Dictionary:
 	var memory: ConversationMemory = _session.conversations.memory(npc.id)

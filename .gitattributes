@@ -172,3 +172,8 @@ tools/routine_migration/dialogue_overlay.py -text whitespace=blank-at-eol,blank-
 game/features/routines/routine_presentation.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/tests/routine_presentation_*.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/tests/npc_action_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R013 active catalog and synthetic/public input fixtures retain accepted bytes.
+game/tests/npc_dialogue_ui_checks.gd -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_activation_*.gd* -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/support/test_run_routines.gd* -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

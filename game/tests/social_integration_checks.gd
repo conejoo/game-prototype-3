@@ -57,7 +57,11 @@ func _root_lifecycle() -> void:
 	root.add_child(game)
 	_check((await game.world_host.transition_finished)[0], "root lifecycle arrival")
 	game.set_process(false) # Synthetic exact state, no claim of ordinary elapsed time.
-	var pair: Dictionary = {"catalog":game.npc_catalog,"session":game.session,"service":game.dialogue}
+	# All-eight rich memory is detached synthetic setup; live dialogue keeps its
+	# actual-map lease guard, exercised by R013 ordinary scheduled contact evidence.
+	var fixture_service: NpcDialogueService = NpcDialogueService.new()
+	_check(fixture_service.initialize(game.npc_catalog,game.session).is_empty(),"detached synthetic social service")
+	var pair: Dictionary = {"catalog":game.npc_catalog,"session":game.session,"service":fixture_service}
 	for id: String in NpcContentCatalog.ROSTER:
 		SocialSaveFixture.introduce(pair,id)
 		SocialSaveFixture.preference(pair,id)
@@ -74,6 +78,6 @@ func _root_lifecycle() -> void:
 	game.player_placeholder.receive_damage(100) # Explicit synthetic death trigger.
 	await game.retry_encounter()
 	_check(SaveCodec.snapshot(game.session) == before,"gifted all-eight retry exact durable state")
-	_check(game.party.members().size() == 2 and game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size(),"retry reconstructs party and contacts once")
+	_check(TestRunRoutines.contacts_match(game),"retry reconstructs actual scheduled party and contacts once")
 	_check(SaveCodec.validate(before,game.catalog).session != null,"lifecycle social save valid")
 	game.queue_free(); await process_frame

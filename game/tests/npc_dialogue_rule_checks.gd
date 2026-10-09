@@ -48,8 +48,8 @@ func _new_service(content: NpcContentCatalog = null) -> Dictionary:
 	_check(service.initialize(catalog if content == null else content, session).is_empty(), "Fresh dialogue owner")
 	return {"session": session, "service": service}
 
-func _begin(service: NpcDialogueService, id: String, expected: String) -> Dictionary:
-	_check(service.begin(id, "contact-" + id).ok, "Begin " + id)
+func _begin(service: NpcDialogueService, id: String, expected: String, instance_id: String = "") -> Dictionary:
+	_check(service.begin(id, "contact-" + id if instance_id.is_empty() else instance_id).ok, "Begin " + id)
 	var view: Dictionary = service.snapshot()
 	_check(view.get("node_id", "") == expected, "Source selection " + expected)
 	if not view.is_empty(): visited[view.node_id] = true
@@ -326,6 +326,8 @@ func _isolation_and_atomicity() -> void:
 
 func _root_binding() -> void:
 	var game: Node3D = load("res://app/game_root.tscn").instantiate()
+	game.initial_location_id = RoutineExecutionWorld.INN
+	game.initial_spawn_id = "lantern-rest-from-alderwake"
 	root.add_child(game)
 	await game.world_host.transition_finished
 	_check(game.session.conversations.initialized and game.dialogue._session == game.session, "Actual root owns ready NPC rules")
@@ -333,7 +335,8 @@ func _root_binding() -> void:
 	_check(game.save_run().is_empty(), "Existing manual stable-boundary current-schema save")
 	var saved: Dictionary = SaveCodec.snapshot(game.session)
 	_check(SaveCodec.SCHEMA_VERSION == 8 and saved.has("conversations"), "N004 current-schema memory durability")
-	var view: Dictionary = _begin(game.dialogue, "npc-14", "npc-14-introduction")
+	var target: PrototypeInteractable = game.world_host.current_location.npc_contacts.targets["npc-14"]
+	var view: Dictionary = _begin(game.dialogue, "npc-14", "npc-14-introduction",target.instance_id)
 	_choose(game.dialogue, view, "npc-14-careful-response", "npc-14-careful-end")
 	game.dialogue.cancel()
 	var previous: GameSession = game.session

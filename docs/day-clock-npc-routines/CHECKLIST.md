@@ -26,7 +26,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R010 | Done | R003, R004, R007, R008, R009 | Group/cross-map execution and safe night reconstruction |
 | R011 | Done | R004, R010 | Routine dialogue, group leases and directives |
 | R012 | Done | R009, R010 | Readable walk/actions/speech under lifecycle holds |
-| R013 | Pending | R011, R012 | All 25 routines active in ordinary play |
+| R013 | Done | R011, R012 | All 25 routines active in ordinary play |
 | R014 | Pending | R013 | Integrated restart/rollback/retry and measured runtime bounds |
 | R015 | Pending | R014 | Ordinary full-day/social/recovery rendered walkthrough |
 | R016 | Pending | R015 | Fresh Windows packages/native restart/travel acceptance |
@@ -580,3 +580,34 @@ No commit/push/default activation/native/full-day claim. Remaining unfinished:
 R013,R014,R015,R016. Every item throughR016 complete:no. Next eligibleR013; integrate
 catalog and resolve/verify Tess obstruction. Stop before successor; separate user
 instruction follows review for authorized successful-task commit.
+
+
+## R013 completion record (2026-10-09 UTC)
+
+Exactly R013 Done; all acceptance criteria pass. [R013 acceptance](R013_ACCEPTANCE.md)
+owns30 intended paths, commands/isolation, exact25 coverage, retained failures and
+19 inspected captures. Default root/world/dialogue share one owner; actual-map
+contacts/hints and guarded ordinary Chat retain identities/group leases and
+existing gifts/quests/party. Full Tess-blocked river leg now reaches unchanged
+endpoint with one rendered physical repath; no geometry/anchor/source/speed change.
+Matrix2610/25 routines/eight full physical Ivo/Vale/river plans; required NPC/social/
+fishing/playable/recovery and affected movement/occupancy/dialogue/directive/UI/
+gift/executor/cross-map checks pass as documented stable accepted cases. Failed
+whole reports remain failed. Final214625899 PASS3; fresh ordinary101/16 captures/
+94.54 active seconds earns introductions, gather/gift, ledger flag and both room
+returns; separate synthetic river16/3 captures. All accepted exits0/zero diagnostics,
+source stable/isolated primary-backup groups and APPDATA/LOCALAPPDATA, no normal saves.
+Deferred Edric fishing fact remains unsaved synthetic selector input; no forged
+save/source gate enabled. All original content/art/geography/schema8/content1 and
+instructions preserved. Live reference1626/88pins/81 exact adaptations/ten refusals;
+original before-hashes/prior reasons retained. Final game/tools1297 accepted bytes
+remain exact except later offline ledger/owner gate; final audit records scope.
+No owned Godot/held input/editor/cleanup owed; Blender2664 preserved. Blockers or
+unrun R013 criteria:none. No commit/push; separate user instruction follows review.
+Remaining unfinished:R014,R015,R016; every item throughR016 complete:no. Next eligible
+R014 integrated restart/rollback/retry and runtime measurements; stop before successor.
+
+R013 commit follow-up: user reviewed successful acceptance and explicitly authorized
+the task commit. Commit turn verifies/stages only30 intended paths, including
+acceptance/exact coverage/checklist/handoff. Git and local R013 commit-audit.json
+record the result. No push or R014 work; R014-R016 remain Pending.

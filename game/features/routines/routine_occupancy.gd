@@ -42,6 +42,12 @@ func snapshot() -> Dictionary:
 	_prune()
 	return {"bodies":_bodies.size(),"reservations":_stations.duplicate(true)}
 
+func footprint(id: String) -> Dictionary:
+	_prune()
+	if not _bodies.has(id): return {}
+	var body: CharacterBody3D = _bodies[id].body.get_ref()
+	return {"foot":body.global_position,"radius":_bodies[id].radius,"moving":body.get_meta("routine_moving",false)}
+
 func clear() -> void:
 	_bodies.clear()
 	_stations.clear()

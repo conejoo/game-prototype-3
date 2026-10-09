@@ -13,6 +13,7 @@ func _run() -> void:
 	rendered = DisplayServer.get_name() != "headless"
 	root.size = Vector2i(960,640)
 	game = load("res://app/game_root.tscn").instantiate()
+	game.routine_execution = null # Explicit test-room portrait/modal fixtures, no live contacts.
 	game.initial_location_id = "prototype-test-room"
 	game.initial_spawn_id = "prototype-start"
 	root.add_child(game)

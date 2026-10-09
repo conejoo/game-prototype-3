@@ -1,5 +1,33 @@
 # Returning Fair prototype architecture
 
+Current complete routine activation (2026-10-09, R013): the production GameRoot
+owns one default RoutineExecutionDirector. Existing world/dialogue owners bind the
+same instance; loaded contacts follow actual map-qualified feet, with one wrapper
+per present villager and no replacement party or combatant. All 25 selected
+routines and eight villagers use the existing selector/catalog/portal/anchor and
+presentation APIs. Home/inn hints reflect scheduled access; Della stays indoors.
+
+A bounded physical repath around a stationary live roster contact repairs the
+recorded Tess obstruction of Edric's full market-to-river route. Two lateral
+candidates per existing retry must pass navigation, occupancy and dry-support
+checks; actual move_and_collide remains authoritative. Occupied endpoints,
+party blockers and opposing moving actors still fail safely. No source anchor,
+geometry, speed, blocked wait/retry budget or durable field changes.
+
+The routine dialogue view exposes Chat to the same speaker's ordinary authored
+entry. Identity/token/context guards retain the existing routine/group lease;
+ordinary introductions and gifts therefore remain accessible at actual scheduled
+contacts. Existing atomic social/gift commands and Maris quest route stay intact.
+The deferred Edric river-fishing fact has no enabled public source disclosure:
+its selector branch is tested only with explicitly unsaved synthetic memory.
+Real public introductions, moonflower gather/gift and Helena ledger flag are
+separately exercised by fresh rendered input. Deterministic weather/clock probes
+are labeled; a full natural day and fresh native packages remain R015/R016.
+Schema8/content1, original source pins, art, geography and closed gates remain.
+
+Historical implementation notes follow; R013 supersedes their default-disabled
+activation statements without rewriting their recorded evidence.
+
 Current routine presentation (2026-10-09, R012): production mappings mount the
 reviewed Edric fishing/Helena archive GLBs once per existing contact. Achieved
 motion owns walk; stopped declared action steps explicitly select their portable

@@ -12,6 +12,7 @@ func _initialize() -> void: _run.call_deferred()
 
 func _run() -> void:
 	game = load("res://app/game_root.tscn").instantiate()
+	game.routine_execution = null # Explicit R009 stationary manual-leg fixture; default activation tested by R013.
 	root.add_child(game)
 	var arrival: Array = await game.world_host.transition_finished
 	_check(arrival[0],"production startup")

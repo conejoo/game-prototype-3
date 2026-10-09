@@ -10,7 +10,7 @@ extends Node3D
 var session: GameSession = GameSession.new()
 var catalog: ContentCatalog = ContentCatalog.new()
 var npc_catalog: NpcContentCatalog = NpcContentCatalog.new()
-var routine_execution: RoutineExecutionDirector # Injected by R010 checks; activation belongs R013.
+var routine_execution: RoutineExecutionDirector = RoutineExecutionDirector.new()
 var window_focused: bool = true
 var save_repository: SaveRepository = SaveRepository.new()
 var loading_save: bool = false
@@ -615,7 +615,7 @@ func _refresh_interaction() -> void:
 		ui.show_travel("Quest progress kept; retry restarts at last arrival anchor." if player_placeholder.state.health == 0 else "Click: attack · Space: dodge · Finish fight or retreat to interact / save")
 		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
-	ui.show_travel(("Hold E %.1fs: " % (catalog.get_resource(selected_interaction.foraging_action.resource_id).hold_milliseconds / 1000.0) if selected_interaction.foraging_action != null else "E: ") + selected_interaction.display_prompt(session.environment) if selected_interaction != null else "E near lamps / Chandlery Maris / purple station / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near south home exit" if session.current_location_id == "prototype-mayor-vale-home" else "E near Della / south inn exit" if session.current_location_id == "prototype-lantern-rest" else "E near southeast vessel / north return gate")
+	ui.show_travel(("Hold E %.1fs: " % (catalog.get_resource(selected_interaction.foraging_action.resource_id).hold_milliseconds / 1000.0) if selected_interaction.foraging_action != null else "E: ") + selected_interaction.display_prompt(session.environment) if selected_interaction != null else "E near villagers on daily rounds / Maris Chandlery / Vale home / Lantern Rest / purple station / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near south home exit" if session.current_location_id == "prototype-mayor-vale-home" else "E near Della / south inn exit" if session.current_location_id == "prototype-lantern-rest" else "E near southeast vessel / north return gate")
 	if not foraging_feedback.is_empty() and session.elapsed_play_seconds < foraging_feedback_until:
 		ui.show_foraging_feedback(foraging_feedback)
 	else:
@@ -717,6 +717,13 @@ func _dialogue_command_allowed(view: Dictionary) -> bool:
 
 func _switch_maris_route(command: Dictionary) -> NpcDialogueService.Result:
 	var current: Dictionary = dialogue.snapshot()
+	if _dialogue_command_allowed(command) and command == current and current.get("routine_chat",false):
+		var target: PrototypeInteractable = world_host.current_location.npc_contacts.targets.get(current.npc_id)
+		if target == null or InteractionSelector.select(player_placeholder,world_host.current_location) != target:
+			return NpcDialogueService.Result.new(false,"Chat contact unavailable.")
+		var chat: NpcDialogueService.Result = dialogue.ordinary_chat(current.npc_id,current.instance_id,current.node_id,current.token)
+		_present_dialogue(chat)
+		return chat
 	if not _dialogue_command_allowed(command) or current.is_empty() or command != current or current.npc_id != "npc-03" or current.instance_id != "npc-03-counter":
 		return NpcDialogueService.Result.new(false, "Stale or unavailable counter route.")
 	var counter: MarisCounter = world_host.current_location.get_node_or_null("MarisCounter") as MarisCounter

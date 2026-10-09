@@ -16,6 +16,7 @@ var path_requests: int = 0
 var repaths: int = 0
 var blocked_seconds: float = 0
 var blocker: String = ""
+var detour_attempts: Array[Dictionary] = []
 var goal: Vector3
 var _id: String
 var _target: WeakRef
@@ -39,18 +40,22 @@ func configure(id: String, target: PrototypeInteractable, body: CharacterBody3D,
 func begin(foot: Vector3) -> bool:
 	cancel()
 	failure = Failure.NONE; path_requests = 0; repaths = 0; blocked_seconds = 0; _wait = 0; blocker = ""
+	detour_attempts.clear()
 	if not _live(): return _fail(Failure.DISPOSED)
 	if not foot.is_finite(): return _fail(Failure.INVALID_TARGET)
 	goal = foot
 	if not _make_path(): return _fail(Failure.NO_PATH)
 	state = State.MOVING
+	(_body.get_ref() as CharacterBody3D).set_meta("routine_moving",true)
 	_reserved = _occupancy.reserve(_id,goal,_radius)
 	return true
 
 func cancel() -> void:
 	if _occupancy != null: _occupancy.release(_id)
 	_reserved = false; achieved_speed = 0; achieved_direction = Vector3.ZERO; _path.clear()
-	if _body != null and is_instance_valid(_body.get_ref()): (_body.get_ref() as CharacterBody3D).velocity = Vector3.ZERO
+	if _body != null and is_instance_valid(_body.get_ref()):
+		(_body.get_ref() as CharacterBody3D).velocity = Vector3.ZERO
+		(_body.get_ref() as CharacterBody3D).set_meta("routine_moving",false)
 	state = State.CANCELLED
 
 func dispose() -> void:
@@ -85,6 +90,7 @@ func step(delta: float, held: bool = false) -> void:
 	while _index < _path.size() and current.distance_to(_path[_index]) <= ARRIVAL_EPSILON: _index += 1
 	if _index >= _path.size():
 		state = State.ARRIVED; _occupancy.release(_id); _reserved = false
+		body.set_meta("routine_moving",false)
 		return
 	var direction: Vector3 = _path[_index]-current
 	var distance: float = Vector2(direction.x,direction.z).length()
@@ -129,7 +135,46 @@ func _make_path() -> bool:
 	# Exact station/feet are physical terminal legs, never a visible endpoint snap.
 	_path[0] = start
 	if _path[-1] != goal: _path.append(goal)
+	# Static navigation does not include live contact capsules. On a bounded repath,
+	# try either side of one blocking villager. Every subleg still uses navigation
+	# and physical sweep/support; party and occupied goals retain ordinary refusal.
+	if repaths > 0 and blocker in NpcRegistry.ENABLED:
+		_detour_contact(start,blocker)
 	return true
+
+func _detour_contact(start: Vector3, id: String) -> void:
+	var obstacle: Dictionary = _occupancy.footprint(id)
+	if obstacle.is_empty() or obstacle.moving: return
+	var margin: float = _radius+float(obstacle.radius)+RoutineOccupancy.CLEARANCE+.18
+	var center: Vector3 = obstacle.foot
+	if Vector2(goal.x-center.x,goal.z-center.z).length() <= margin: return
+	var forward: Vector3 = Vector3(goal.x-start.x,0,goal.z-start.z).normalized()
+	if forward.is_zero_approx(): return
+	var side: Vector3 = Vector3(-forward.z,0,forward.x)
+	var room: PrototypeLocation = _location.get_ref()
+	var best: PackedVector3Array = []
+	var best_length: float = INF
+	for sign_value: float in [1.0,-1.0]:
+		var outward: Vector3 = Vector3(start.x-center.x,0,start.z-center.z).normalized()
+		var points: Array[Vector3] = [start,center+outward*margin*1.4,center-forward*margin+side*margin*sign_value,center+side*margin*sign_value,center+forward*margin+side*margin*sign_value,goal]
+		var candidate: PackedVector3Array = []
+		var valid: bool = true
+		for leg: int in range(1,points.size()):
+			var path: PackedVector3Array = _query.call(points[leg-1],points[leg]) if _query.is_valid() else NavigationServer3D.map_get_path(room.get_world_3d().navigation_map,points[leg-1],points[leg],true)
+			if path.is_empty() or path[0].distance_to(points[leg-1]) > .3 or path[-1].distance_to(points[leg]) > .3: valid = false; break
+			path[0] = points[leg-1]; path.append(points[leg])
+			for point: Vector3 in path:
+				point.y = (room as AlderwakeTerrainPreview).elevation.height_at(Vector2(point.x,point.z)) if room is AlderwakeTerrainPreview else goal.y
+				if not point.is_finite(): valid = false; break
+				if not candidate.is_empty() and not _occupancy.blocked(_id,candidate[-1],point,_radius).is_empty(): valid = false; break
+				candidate.append(point)
+			if not valid: break
+		detour_attempts.append({"blocker":id,"side":sign_value,"valid":valid,"path":candidate})
+		if not valid: continue
+		var length: float = 0
+		for index: int in range(1,candidate.size()): length += candidate[index-1].distance_to(candidate[index])
+		if length < best_length: best = candidate; best_length = length
+	if not best.is_empty(): _path = best; _index = 0
 
 func _supported(room: PrototypeLocation, foot: Vector3, body: CharacterBody3D) -> bool:
 	var space: PhysicsDirectSpaceState3D = room.get_world_3d().direct_space_state

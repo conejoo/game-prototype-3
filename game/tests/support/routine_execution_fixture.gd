@@ -17,10 +17,12 @@ func setup(minute: float, location: String = "prototype-alderwake", manual: bool
 	check(ready[0],"fresh root startup")
 	if not ready[0]: return false
 	game.set_process(false)
+	game.routine_execution.dispose() # Synthetic seek replaces the default production owner.
 	game.session.environment.day_cycle_progress = fposmod((minute-600.0)/1440.0,1.0)
 	execution = RoutineExecutionDirector.new()
 	check(execution.initialize(game.catalog,game.npc_catalog,game.session).is_empty(),"validated executor initialize")
 	game.routine_execution = execution; game.world_host.routine_execution = execution
+	game.dialogue.routine_owner = execution
 	var definition: LocationDefinition = game.catalog.get_location(location)
 	check(game.world_host.request_transition(location,definition.spawn_ids[0]).is_empty(),"synthetic fresh placement request")
 	ready = await game.world_host.transition_finished

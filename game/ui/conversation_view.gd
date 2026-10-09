@@ -166,8 +166,8 @@ func present(view: Dictionary, message: String) -> void:
 	choice_scroll.scroll_vertical = 0
 	next.visible = view.can_continue
 	if next.visible: focus.append(next)
-	counter_route.visible = view.npc_id == "npc-03" and view.instance_id == "npc-03-counter"
-	counter_route.text = "Recovery / counter" if view.graph_id == "npc-03" else "Chat with Maris"
+	counter_route.visible = (view.npc_id == "npc-03" and view.instance_id == "npc-03-counter") or view.get("routine_chat",false)
+	counter_route.text = "Chat" if view.get("routine_chat",false) else "Recovery / counter" if view.graph_id == "npc-03" else "Chat with Maris"
 	if counter_route.visible: focus.append(counter_route)
 	focus.append(close)
 	status.text = message

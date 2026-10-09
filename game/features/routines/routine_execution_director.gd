@@ -1,6 +1,6 @@
 class_name RoutineExecutionDirector
 extends RefCounted
-## Root-owned transient execution. Default root leaves this injection absent until R013.
+## Root-owned transient execution of the complete production catalog.
 const MAX_TOTAL_TRANSITIONS: int = 512
 var world: RoutineExecutionWorld = RoutineExecutionWorld.new()
 var selector: RoutineAssignmentDirector = RoutineAssignmentDirector.new()

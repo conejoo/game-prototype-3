@@ -1,5 +1,53 @@
 # Day clock and NPC routines current state
 
+## Current R013 completion (2026-10-09 UTC)
+
+Active task:none. Exactly R013 Done; R001-R013 Done, R014-R016 Pending.
+Authoritative checklist still ends at R016. Every item through R016 complete:no.
+[R013 acceptance](R013_ACCEPTANCE.md) and [exact coverage](R013_COVERAGE.json) own
+30 intended paths, all criteria, actual commands/isolation, failed attempts and
+19 inspected frames. Implementation stopped without commit/push. Separate user
+follow-up now authorizes the successful R013 commit after review. Commit turn
+verifies accepted bytes and stages only30 intended paths, including acceptance,
+exact coverage, checklist and handoff. Git plus ignored docs/evidence/R013/
+commit-audit.json record the resulting hash. No push or R014 work.
+
+Default production root owns one existing routine director, bound to world/dialogue.
+Actual-map contacts/room hints and identity-bound ordinary Chat preserve routine
+leases and existing social/gift/quest/party owners. The R012 Tess obstruction is
+resolved: full physical market-to-river leg reaches unchanged endpoint with one
+rendered repath, then authored speech/fishing. Party/moving actor/occupied endpoints
+still refuse safely; no source/anchor/geometry/speed/wait/retry/schema change.
+
+Baseline HEAD5cbb4ab960dd4bf4f41bc792cee58c7841f1311c, empty index/clean tree before
+selection; source60c20eb2816e7271fb84afaba286af006ebe3ccf clean/read-only. No unrelated
+user work, instructions, content/art/pins, normal saves or historical package changes.
+Matrix2610 assertions/exact25/eight full physical selected plans passes; five required
+regressions and affected dialogue/UI/gift/movement/occupancy/directive/executor/
+cross-map checks pass as individually stable accepted cases. Final214625899 PASS3,
+fresh ordinary101/16 captures/94.54 active seconds earns introductions, actual
+moonflower gather/gift, Helena flag and both interiors/returns; separate river16/3
+captures uses explicitly synthetic17:00/party viewing setup. All accepted exits0,
+no diagnostics/source stable; isolated R013 primary/backup/save groups plus
+APPDATA/LOCALAPPDATA. Never relabel failed whole runs. Live source audit1626/88pins/
+81exact adaptations/ten refusals passes; original before-hashes/reasons retained.
+
+Deferred Edric fishing fact still has no enabled public disclosure; its matrix
+branch is UNSAVED synthetic memory. Natural earned public facts/gather/gift/flag
+are separate. Retained failures include strict-save refusal, UID/fixture/static
+count/test-room binding fixes, shop waypoint, arrival-lane party obstruction and
+wrong test hint ID. Final public route walks party clear of actual home lane before
+waiting for Helena ACTING. No full natural-day/native package/R014 stress claim.
+
+Final30-path audit verifies accepted runtime/test hashes, only later offline
+ledger/owner-gate differences, current docs links/status/dependencies, unchanged
+HEAD/empty index/clean source and instructions/content/geography preservation.
+All owned Godot exited; no held input/editor/cleanup owed. Blender2664 untouched.
+Blockers/unrun R013 criteria:none. Stop now; no successor started.
+Next eligible R014: integrated restart/rollback/retry and declared runtime bounds.
+
+Historical handoff below preserved byte-for-byte.
+
 ## Current R012 completion (2026-10-09 UTC)
 
 Active task:none. Exactly R012 Done; all criteria verified. R001-R012 Done,
