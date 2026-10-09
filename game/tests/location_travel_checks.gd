@@ -68,7 +68,12 @@ func _run() -> void:
 
 	# Physical validation after suspension must rollback to the exact old scene.
 	for spawn: String in unsafe.spawn_ids:
-		_check(host.request_transition(unsafe.stable_id, spawn).is_empty(), "Unsafe fixture did not reach placement validation")
+		var request_errors: PackedStringArray = host.request_transition(unsafe.stable_id, spawn)
+		_check(request_errors.is_empty(), "Unsafe fixture did not reach placement validation: " + "; ".join(request_errors))
+		if not request_errors.is_empty():
+			for failure: String in failures: push_error(failure)
+			quit(1)
+			return
 		var arrival: Array = await host.transition_finished
 		print("P004 expected placement rejection: ", arrival[1])
 		_check(not arrival[0] and not arrival[1].is_empty(), "Unsafe spawn committed")

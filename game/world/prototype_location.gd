@@ -1,10 +1,11 @@
 class_name PrototypeLocation
 extends Node3D
-## Compact location presentation. One prototype travel gate; no quest authority.
+## Replaceable location presentation with individually bound directed portals.
 
 @export var location_id: String = ""
 @export var destination_id: String = ""
 @export var destination_spawn_id: String = ""
+# Legacy single-gate diagnostic mirrors only; never used for travel dispatch.
 @export var gate_label: String = ""
 const GATE_RADIUS: float = 1.6
 var navigation_region: NavigationRegion3D
@@ -127,7 +128,16 @@ func validation_errors(definition: LocationDefinition, catalog: ContentCatalog) 
 		if not has_node("TravelGate"):
 			errors.append("travel gate marker missing")
 	var interactions_seen: PackedStringArray = []
+	var portals_seen: PackedStringArray = []
 	for target: PrototypeInteractable in interactables():
+		if target.kind == "travel" and target.portal != null:
+			var binding: PortalBinding = target.portal
+			var declared: bool = false
+			for portal: PortalBinding in definition.portals:
+				if portal != null and portal.snapshot() == binding.snapshot(): declared = true
+			if binding.source_location_id != location_id or not declared: errors.append("wrong source/undeclared portal binding")
+			if binding.portal_id in portals_seen: errors.append("duplicate physical portal")
+			portals_seen.append(binding.portal_id)
 		if target.light_action != null and target.light_action.location_id != location_id:
 			errors.append("light action location differs from owning location")
 		for error: String in target.validation_errors(catalog):
@@ -135,6 +145,8 @@ func validation_errors(definition: LocationDefinition, catalog: ContentCatalog) 
 		if target.instance_id in interactions_seen:
 			errors.append("duplicate interaction instance '%s'" % target.instance_id)
 		interactions_seen.append(target.instance_id)
+	for portal: PortalBinding in definition.portals:
+		if portal != null and portal.portal_id not in portals_seen: errors.append("declared portal missing physical interaction: " + portal.portal_id)
 	return errors
 
 
@@ -152,4 +164,6 @@ func _collect_interactables(parent: Node, targets: Array[PrototypeInteractable])
 
 
 func can_travel(actor: ActorPlaceholder) -> bool:
-	return not destination_id.is_empty() and actor.global_position.distance_to($TravelGate.global_position) <= GATE_RADIUS
+	for target: PrototypeInteractable in interactables():
+		if target.kind == "travel" and target.portal != null and target.portal.source_location_id == location_id and actor.global_position.distance_to(target.global_position) <= target.reach: return true
+	return false

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://features/interaction/prop_interaction.tscn" id="5_prop"]
 [ext_resource type="PackedScene" path="res://features/interaction/recovery_vessel.tscn" id="6_vessel"]
 [ext_resource type="PackedScene" path="res://assets/models/tollworks_plinth.glb" id="7_plinth"]
+[ext_resource type="Resource" path="res://content/portals/tollworks_alderwake.tres" id="8_portal"]
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.18, 0.24, 0.29, 1)
@@ -157,6 +158,7 @@ stable_id = "tollworks-from-alderwake"
 position = Vector3(0, 0, -5)
 script = ExtResource("3_interact")
 instance_id = "tollworks-travel-gate"
+portal = ExtResource("8_portal")
 kind = "travel"
 prompt = "Return to Alderwake"
 reach = 1.6

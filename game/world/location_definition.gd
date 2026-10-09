@@ -5,6 +5,7 @@ extends ContentDefinition
 @export_file("*.tscn") var scene_path: String = ""
 @export var spawn_ids: PackedStringArray = []
 @export var actor_ids: PackedStringArray = []
+@export var portals: Array[PortalBinding] = []
 enum LightingProfile { STABLE_INDOOR, OUTDOOR_CYCLE }
 ## Fixtures default to the established stable room lighting.
 @export var lighting_profile: LightingProfile = LightingProfile.STABLE_INDOOR

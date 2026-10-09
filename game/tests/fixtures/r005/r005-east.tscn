@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://world/prototype_location.gd" id="1"]
+[ext_resource type="Script" path="res://world/spawn_anchor.gd" id="2"]
+[ext_resource type="Script" path="res://features/interaction/interactable.gd" id="3"]
+[ext_resource type="Script" path="res://world/portal_binding.gd" id="4"]
+
+[sub_resource type="BoxShape3D" id="FloorShape"]
+size = Vector3(20, 0.4, 20)
+
+[sub_resource type="Resource" id="ReturnBinding"]
+script = ExtResource("4")
+portal_id = "return"
+source_location_id = "r005-east"
+destination_location_id = "r005-source"
+arrival_id = "start"
+
+[node name="Fixture" type="Node3D"]
+script = ExtResource("1")
+location_id = "r005-east"
+
+[node name="Spawns" type="Node3D" parent="."]
+
+[node name="Start" type="Marker3D" parent="Spawns"]
+script = ExtResource("2")
+stable_id = "start"
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("FloorShape")
+
+[node name="Return" type="Node3D" parent="."]
+position = Vector3(-4, 0, -4)
+script = ExtResource("3")
+instance_id = "r005-east-return"
+kind = "travel"
+prompt = "Synthetic return"
+portal = SubResource("ReturnBinding")

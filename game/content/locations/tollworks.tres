@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="LocationDefinition" format=3]
 
 [ext_resource type="Script" path="res://world/location_definition.gd" id="1"]
+[ext_resource type="Script" path="res://world/portal_binding.gd" id="2"]
+[ext_resource type="Resource" path="res://content/portals/tollworks_alderwake.tres" id="3"]
 
 [resource]
 script = ExtResource("1")
@@ -11,3 +13,4 @@ scene_path = "res://world/tollworks.tscn"
 spawn_ids = PackedStringArray("tollworks-start", "tollworks-from-alderwake")
 actor_ids = PackedStringArray("prototype-hero")
 lighting_profile = 0
+portals = Array[ExtResource("2")]([ExtResource("3")])

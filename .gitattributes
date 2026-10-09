@@ -48,3 +48,18 @@ tools/social_migration/package_audit.gd -text whitespace=blank-at-eol,blank-at-e
 # R004 authoritative checklist and handoff retain their authored bytes.
 docs/day-clock-npc-routines/CHECKLIST.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 docs/day-clock-npc-routines/CURRENT_STATE.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R005 exact portal/fixture adaptation bytes survive Git checkout.
+game/app/game_root.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/app/world_host.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/content/locations/alderwake.tres -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/content/locations/tollworks.tres -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/core/content_catalog.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/interaction/interactable.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/fixtures/compact_alderwake.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/fixtures/unsafe_location.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/location_travel_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/world/alderwake_exterior.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/world/location_definition.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/world/prototype_location.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/world/tollworks.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

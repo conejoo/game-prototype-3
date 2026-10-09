@@ -39,6 +39,7 @@ func _init() -> void:
 	gate.name = "TravelGate"
 	gate.instance_id = "alderwake-travel-gate"
 	gate.kind = "travel"
+	gate.portal = preload("res://content/portals/alderwake_tollworks.tres")
 	gate.prompt = gate_label
 	gate.reach = 1.6
 	gate.position = Vector3(107.25, 0, -1.25)

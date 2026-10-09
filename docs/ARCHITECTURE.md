@@ -1,5 +1,19 @@
 # Returning Fair prototype architecture
 
+Current portal contract (2026-10-09, R005): each travel interaction carries an
+explicit PortalBinding (portal ID, source location, destination location, arrival).
+LocationDefinition declares its own exits; ContentCatalog validates the complete
+directed graph before publication. Scene validation requires each declared exit
+exactly once and rejects wrong-source, missing, duplicate or foreign bindings.
+GameRoot reselects the live interaction, then WorldHost accepts its weak reference
+and validates the authored edge before using the existing placement transaction.
+The legacy destination fields remain diagnostic mirrors; dispatch never reads them.
+PortalRoutes owns detached deterministic directed metadata; NPC route queries
+never load scenes, move player/party/camera, advance time or publish session facts.
+Only the existing Alderwake/Tollworks pair is enabled. Home/inn declarations and
+their source IDs remain pinned for R006-R008; no absent room or future gate opens.
+Strict schema8/content1, manual saves, geography and current arrival IDs stay intact.
+
 Current save policy (2026-10-09, R004): accept only schema8/content1.
 Routine facts persist only authored active event IDs and suppressed routine IDs;
 the existing saved environment day defines suppression lifetime. No additional

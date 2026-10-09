@@ -53,6 +53,29 @@ func request_transition(location_id: String, spawn_id: String, restored_run: Gam
 	return PackedStringArray()
 
 
+func npc_portal_route(source: String, destination: String) -> Dictionary:
+	var routes: PortalRoutes = PortalRoutes.new()
+	var errors: PackedStringArray = routes.initialize(catalog.location_definitions())
+	if not errors.is_empty(): return {"ok":false, "error":"; ".join(errors), "legs":[]}
+	return routes.route(source, destination)
+
+
+func request_portal(contact: WeakRef) -> PackedStringArray:
+	if transitioning: return PackedStringArray(["transition already in progress"])
+	var target: PrototypeInteractable = contact.get_ref() as PrototypeInteractable if contact != null else null
+	if current_location == null or not is_instance_valid(target) or target.is_queued_for_deletion() or not current_location.is_ancestor_of(target) or target not in current_location.interactables():
+		return PackedStringArray(["stale/foreign portal interaction"])
+	if target.kind != "travel" or target.portal == null: return PackedStringArray(["explicit travel portal required"])
+	var errors: PackedStringArray = target.validation_errors(catalog)
+	var routes: PortalRoutes = PortalRoutes.new()
+	errors.append_array(routes.initialize(catalog.location_definitions()))
+	if target.portal.source_location_id != current_location.location_id or target.portal.source_location_id != session.current_location_id:
+		errors.append("portal source differs from active location")
+	if routes.binding(current_location.location_id, target.portal.portal_id) != target.portal.snapshot(): errors.append("portal binding differs from authored route")
+	if not errors.is_empty(): return errors
+	return request_transition(target.portal.destination_location_id, target.portal.arrival_id)
+
+
 func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_id: String, facts_run: GameSession) -> void:
 	var previous: PrototypeLocation = current_location
 	if previous != null:

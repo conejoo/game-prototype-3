@@ -18,7 +18,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R002 | Done | R001 | Strict immutable routine content/reference validation |
 | R003 | Done | R002 | Deterministic assignments from existing clock/conditions |
 | R004 | Done | R003 | Durable routine commands/current-schema persistence |
-| R005 | Pending | R001 | Qualified multi-portal routing, existing travel preserved |
+| R005 | Done | R001 | Qualified multi-portal routing, existing travel preserved |
 | R006 | Pending | R002, R005 | Safe exterior anchors/door approaches on pinned geometry |
 | R007 | Pending | R005, R006 | Mayor Vale home and its nine required anchors |
 | R008 | Pending | R005, R006 | Lantern Rest and Della's real station |
@@ -296,3 +296,35 @@ unchanged. Owned checks exited, no input/editor/cleanup owed; no commit/push.
 Next eligible ID and exact next action: R005; inspect explicit qualified portal,
 PrototypeLocation/WorldHost/interactable/party-arrival contracts; implement only
 multi-exit/NPC-query routing and required existing-travel rollback checks. Stop here.
+
+R005 - Done 2026-10-09 UTC
+Result and changed files: PortalBinding/PortalRoutes/UIDs and two active edge resources;
+LocationDefinition/ContentCatalog/interactable/scene validation; existing exterior/
+Tollworks bindings; narrow root/WorldHost weak-reference player dispatch and pure
+NPC queries; three synthetic scenes/new portal checks/UID; affected compact/unsafe
+fixtures and bounded travel-fixture refusal; exact ledger/gate/byte attributes,
+architecture, handoff and [R005 acceptance](R005_ACCEPTANCE.md).
+Verified prerequisites/preserved user changes: target clean cb324427/source60c20eb2;
+R001 live-source PASS1624/88 inputs/ten refusals.45 exact target adaptations retain
+original source/derived/baseline pins and prior R004 reasons. No baseline user changes;
+AGENT_PROMPT/workspace instructions/geography/save8/content1 preserved.
+Commands/cwd/isolation/results: repository cwd, PowerShell7, explicit Godot4.7.2.
+Runner -Task R005 required location_travel/map_activation/save plus companion/routine-
+save/content_catalog/interaction_dialogue PASS9 cases in101306934-3d036361; final
+routine_portal_checks/parse PASS3 cases in101719323-6ff3196c.364 portal assertions,
+100 inert NPC-query repetitions, two distinct physical fixture destinations/returns,
+wrong/stale/missing/duplicate binding refusals and one navigation region. Ten real
+Tollworks round trips and original no-floor/blocked-capsule rollback pass. All accepted
+exits0/diagnostics empty/source.changed=false/error=null; each check independently
+isolated including primary/backup and APPDATA/LOCALAPPDATA.
+Evidence inspected: structured results/detailed reports/physical/save logs/manifests,
+reference-final/results.json, fixture-geometry-audit.json and intended diff. Final1214-
+file game/tool fingerprint c2d19d0d270bb1fb778dd01c391d623cff8e043568f12f7a5a074caa636b7e14.
+Decisions/limits: only existing Tollworks pair enabled; planned home/inn pins stay
+inactive. Legacy single-destination fields remain diagnostic only. WeakRef rejects
+freed contacts safely. Synthetic placement/rooms are labeled, no ordinary/rendered/
+native routine/interior claim. Original fixture physical geometry preserved; failed
+and interrupted reports retained with exact repair history in acceptance/handoff.
+All owned engines exited, no input/editor/cleanup owed. Blockers/unrun R005 criteria:
+none. No commit/push. Next eligible R006; inspect qualified exterior anchors/door
+approaches and implement measured registry/physical checks only. Stop here.

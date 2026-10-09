@@ -9,6 +9,7 @@ extends Node3D
 @export var npc_id: String = ""
 @export var light_action: LightSwitchAction
 @export var foraging_action: ForagingAction
+@export var portal: PortalBinding
 @export_range(0.5, 3.0) var reach: float = 1.7
 
 
@@ -22,6 +23,14 @@ func validation_errors(catalog: ContentCatalog) -> PackedStringArray:
 		errors.append("unknown interaction kind '%s'" % kind)
 	if not is_finite(reach) or reach < 0.5 or reach > 3.0:
 		errors.append("interaction reach must be 0.5..3m")
+	if kind == "travel":
+		if portal == null: errors.append("travel requires explicit portal binding")
+		else:
+			errors.append_array(portal.validation_errors())
+			var destination: LocationDefinition = catalog.get_location(portal.destination_location_id)
+			if destination == null or portal.arrival_id not in destination.spawn_ids: errors.append("portal destination/arrival absent")
+		if light_action != null or foraging_action != null or not dialogue_id.is_empty() or not npc_id.is_empty(): errors.append("travel cannot share another action")
+	elif portal != null: errors.append("portal binding requires travel kind")
 	if not npc_id.is_empty() and (kind != "talk" or light_action != null or foraging_action != null):
 		errors.append("NPC dialogue cannot share another action")
 	if kind in ["gather", "pickup"]:

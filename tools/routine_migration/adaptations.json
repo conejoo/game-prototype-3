@@ -5,9 +5,9 @@
       "path": ".gitattributes",
       "after_path": ".gitattributes",
       "before_sha256": "bc9404e0f67f76a0508577255e08c21eac64c2621391862621f04e3ab523e128",
-      "after_sha256": "e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de",
-      "owner": "R004",
-      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged."
+      "after_sha256": "2a9e5c73d09fbd0979e36046b8c44fd379a8e55cbee6176d8825970ad0934285",
+      "owner": "R005",
+      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de; source pins and original baseline retained."
     },
     {
       "path": "README.md",
@@ -21,9 +21,17 @@
       "path": "docs/ARCHITECTURE.md",
       "after_path": "docs/ARCHITECTURE.md",
       "before_sha256": "98ab868216cc24ab99bf657ed37257e6d680f6b1ec7cfdb38525252e5f972456",
-      "after_sha256": "328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302",
-      "owner": "R004",
-      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+      "after_sha256": "41a5ebd9bf1babc023b52fdf207f7cde472f1567b753014f7bc731350144e990",
+      "owner": "R005",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash 328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302; source pins and original baseline retained."
+    },
+    {
+      "path": "game/app/game_root.gd",
+      "after_path": "game/app/game_root.gd",
+      "before_sha256": "15e441e4842a4c1430c4733da332cec47ad8b3f218f094e125d3da01740acb3f",
+      "after_sha256": "33472be8ac34af2154c0ea978ebb80ec3e481b65ad7978dc38e86f961006c9c1",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
     },
     {
       "path": "game/app/game_session.gd",
@@ -34,12 +42,52 @@
       "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
     },
     {
+      "path": "game/app/world_host.gd",
+      "after_path": "game/app/world_host.gd",
+      "before_sha256": "cc1266901fa97fbb2eb78197cceb563d68be301f1eefe112fc4184ae2ab609ee",
+      "after_sha256": "d02bffe33d45ef8c97616831bc7684873833c04c2c6b92962bfd9894bc552cb8",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
+      "path": "game/content/locations/alderwake.tres",
+      "after_path": "game/content/locations/alderwake.tres",
+      "before_sha256": "64436ee4376f3c689ecf2a11957b3880743772354476e0dd41b7083c60e8e33b",
+      "after_sha256": "fd07eae3796c2abcc1fe1ba9fd5bfd9d60db66d1d39bcda8ec7ccce09a94284e",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
+      "path": "game/content/locations/tollworks.tres",
+      "after_path": "game/content/locations/tollworks.tres",
+      "before_sha256": "a6ddec1d8ac681217863ae72a5bbc9d8b68f7911dbeadf1e4cb9f54dcab17d42",
+      "after_sha256": "72dacc865a38092bc843be774d4d200e4294b48b0d0e1876b65ace28bad23f42",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
+      "path": "game/core/content_catalog.gd",
+      "after_path": "game/core/content_catalog.gd",
+      "before_sha256": "244a9b3fbe2eb5ce67ea236407adc0924edf9484932acd2cc5165adbfd158629",
+      "after_sha256": "9aec70435902b7288e62a38fc7f0e151effd58f0b1be168837296dd322634dd6",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
       "path": "game/core/save_codec.gd",
       "after_path": "game/core/save_codec.gd",
       "before_sha256": "4cd0fae453569ea4dd497718691cbbc742b4455198770ce7faab0c04cf5eb430",
       "after_sha256": "399a76c9a89080586dc1bbbb8fe9a0aeb5f1c188c538036c09e08a76d8067e85",
       "owner": "R004",
       "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/features/interaction/interactable.gd",
+      "after_path": "game/features/interaction/interactable.gd",
+      "before_sha256": "d5101e91f28fc5362ad6092c79805bba1e2fd3c0f64968df191959bb025c7386",
+      "after_sha256": "e3d9e146f0e1f7e8a18b779f7c013890dfd500eebc7c822b8f984696f8a86ce1",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
     },
     {
       "path": "game/features/npcs/npc_save_data.gd",
@@ -72,6 +120,14 @@
       "after_sha256": "7fc14c075b8cd2aa7def299361c4b95f7b1d07a33351232201deb2ca68d79a06",
       "owner": "R004",
       "reason": "Current schema8 consumer; replace obsolete pre-FS002 reserved-fish absence with exact existing species ID/cap/category/challenge/nonpickup assertions. All shipped item content remains unchanged."
+    },
+    {
+      "path": "game/tests/fixtures/compact_alderwake.tscn",
+      "after_path": "game/tests/fixtures/compact_alderwake.tscn",
+      "before_sha256": "a67fe4af252ec07f4db3ee8cd35dcbb15c1aba0e573c72a3add2ce1129677275",
+      "after_sha256": "e05599baa55c59f46749be3ab7e58c183e36317c40845468cd90ff5ffda3bce5",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
     },
     {
       "path": "game/tests/fixtures/environment_save_v7.json",
@@ -130,6 +186,14 @@
       "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
     },
     {
+      "path": "game/tests/fixtures/unsafe_location.tscn",
+      "after_path": "game/tests/fixtures/unsafe_location.tscn",
+      "before_sha256": "2e4537ab168d1af337ae8d7c7b6ba5dd0e867f6e68693c68530dc954915c1df3",
+      "after_sha256": "ef8b1a9fbc60f7ca42b0785dd101e7ad08ee4220cf273cf1959aa1b00319070c",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
       "path": "game/tests/foraging_transaction_checks.gd",
       "after_path": "game/tests/foraging_transaction_checks.gd",
       "before_sha256": "3e5e84255e8e7aa5dbd92c0fa3fa5265c22fccc724e47d4757475733fb71c54d",
@@ -144,6 +208,14 @@
       "after_sha256": "99555b257bc0d521d321d6aabf5b73ff31d6f7d9aaa7a7919e9c2c8dcef88c7d",
       "owner": "R004",
       "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/location_travel_checks.gd",
+      "after_path": "game/tests/location_travel_checks.gd",
+      "before_sha256": "a53f040f602466a3c2780ba11b684b593f11472556693a2e759aa452916c154b",
+      "after_sha256": "427eadcb3e10ad6e116fe57c6ae22020c04ef78bd38394af567fa864514e8204",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
     },
     {
       "path": "game/tests/npc_dialogue_rule_checks.gd",
@@ -200,6 +272,38 @@
       "after_sha256": "ae86c2b080ce9db72188d5753011473cb9191c739e71e7ef89a6670daeed21cb",
       "owner": "R004",
       "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/world/alderwake_exterior.gd",
+      "after_path": "game/world/alderwake_exterior.gd",
+      "before_sha256": "d2f0fdd605b92026344721cf54a7aa9d70e17230c0aa09db7f3f7e41d3e6f391",
+      "after_sha256": "0bace23958b7f14ab18b1b8c72f3fd6315008d925dccd88a9690c00caad1b51a",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
+      "path": "game/world/location_definition.gd",
+      "after_path": "game/world/location_definition.gd",
+      "before_sha256": "c53749b2e958d08e88cb40215bbfd98c94fc6e681ffecc16345a865ca0579b21",
+      "after_sha256": "9cb27e5134b8375dda1470b417b40b04e0be5f70812bd8205b6a727b188b9145",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
+      "path": "game/world/prototype_location.gd",
+      "after_path": "game/world/prototype_location.gd",
+      "before_sha256": "62f6d77071a0720c4cf78bdb054a83e047da6e0a191cdb81ba8969557205e64e",
+      "after_sha256": "185bf79879b6eeab8aa2ca22587e8869d06f2e67344a4bd08b33787e44839de8",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
+      "path": "game/world/tollworks.tscn",
+      "after_path": "game/world/tollworks.tscn",
+      "before_sha256": "ad07782fd962e1ef919fe73c8a41db2a32cc9df1e199b282cf54ee6a9a4de666",
+      "after_sha256": "e143fc0cb47eb3b95759af410a716bca8ad9fbce02d6f7816a769841b7fa3613",
+      "owner": "R005",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
     },
     {
       "path": "tools/fishing/audit_native.py",

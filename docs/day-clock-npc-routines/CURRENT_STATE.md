@@ -1,6 +1,122 @@
 # Day clock and NPC routines current state
 
-## Current selection and R004 completion (2026-10-09 UTC)
+## Current selection and R005 completion (2026-10-09 UTC)
+
+Active task: none. R001-R005 Done; R006-R016 Pending. Exactly R005 completed this
+invocation. [R005 acceptance](R005_ACCEPTANCE.md) maps every criterion and records
+actual commands/isolation/results, preserved bytes and retained failures. No blocker
+or unrun R005 criterion. Every item through R016 complete: no. No commit or push.
+
+Baseline target cb3244275db2a91286d4b8c9f92ab6a61657fbf9, source60c20eb2; both clean.
+No baseline user changes. Workspace instructions/current architecture, installed/
+versioned testing skill, shared runner/save/journey/interaction/native guidance and
+source .agents/skills/test-gameplay read. Source Flutter/Linux harness does not apply.
+No nested target instructions or workspace/target .agents. Both installed engine
+paths verified. Default sandbox helper fails setup; reviewed bounded commands work.
+No approval rejection. No live Godot/editor/input at baseline or after owned cleanup.
+
+### Actual changes and decisions
+
+PortalBinding/PortalRoutes and UIDs; two current portal resources; LocationDefinition
+exits/ContentCatalog cross-reference validation; interactable/current scene validation;
+existing exterior/Tollworks bindings; narrow root dispatch/WorldHost weak-contact
+commands and pure NPC route queries. Three synthetic fixture scenes and portal check/
+UID. Affected compact fixture receives its explicit binding; unsafe fixture preserves
+all collider/body/floor geometry and both probes, with obsolete inherited travel
+removed. Travel fixture now exits on synchronous refusal instead of waiting forever.
+Exact reference adaptation ledger/gate, 13 narrow appended byte attributes, current
+architecture and this workflow's checklist/handoff/acceptance. Allowlist expanded
+only for those necessary compact/unsafe fixture repairs and byte preservation.
+
+Source-qualified edges validate atomically and snapshot detached directed chains;
+no reverse exit inferred. Physical scenes require each authored exit exactly once.
+Root reselects live target, host rejects stale/foreign/wrong source/arrival/altered
+edge before using original placement transaction. WeakRef guards freed objects
+before Godot's typed-node boundary. Legacy destination fields remain diagnostics,
+never dispatch inputs. NPC queries have no scene/player/party/camera authority.
+
+Existing Alderwake/Tollworks feet/gate instance IDs/arrival IDs stay exact. Existing
+return gate gains target-local binding ID tollworks-exit-to-alderwake. All four R001
+home/inn portal and nine directed-chain pins remain unchanged and inactive. No room/
+anchor/schedule/movement/save field or geography activation. Schema8/content1,
+current social/item/party/recovery/weather owners and historical packages preserved.
+Original source/derived pins unchanged. Ledger now45 exact adaptations (15 owned
+R005 including updated prior architecture/attributes records); before hashes remain
+original R001 baseline, with prior accepted hashes/reasons retained. Gate accepts
+only R004/R005 owners. No source writes or normal save access.
+
+### Verification and retained failures
+
+Repository cwd, PowerShell7, explicit console4.7.2. Stable required/affected command:
+`./tools/run_checks.ps1 -Task R005 -Names location_travel_checks,map_activation_checks,save_checks,companion_checks,routine_save_checks,content_catalog_checks,interaction_dialogue_checks -ParseScripts world/portal_binding,world/portal_routes -TimeoutSeconds 150`
+PASS9 cases at docs/evidence/R005/20261009-101306934-3d036361/results.json.
+Seven independent check save groups/APPDATA/LOCALAPPDATA and isolated primary/backup.
+Actual no-floor/blocked-capsule failures restore exact prior scene/session/grounded
+feet/party. Ten full Tollworks round trips, map region ownership, save rollback/backup,
+companion/modal interaction and routine save213/44 malformed cases all pass.
+
+Final focused command: same runner -Task R005 -Names routine_portal_checks
+-ParseScripts world/portal_binding,world/portal_routes -TimeoutSeconds150.
+PASS3 cases at docs/evidence/R005/20261009-101719323-6ff3196c/results.json;
+364 assertions/zero failures (report363 before evidence-write assertion). One distinct
+save group. Two actual synthetic exits/returns, physical duplicate/missing/wrong/
+unbound scene refusals, directed multi-hop/no reverse/detached graph reload checks,
+freed/null/foreign/wrong/valid-but-altered arrivals and production selector dispatch.
+100 NPC query repetitions preserve exact full durable snapshot/feet/camera/party.
+One room/navigation region after replacements. Synthetic placement remains labeled;
+no ordinary walk, production interior, rendered/native or schedule delivery claim.
+
+All accepted cases exits0/diagnostics empty, source.changed=false/error=null. Final
+1214-file game/tools fingerprint c2d19d0d270bb1fb778dd01c391d623cff8e043568f12f7a5a074caa636b7e14.
+Runtime/old regression bytes unchanged since PASS9; only focused-test coverage and
+reference gate/ledger changed afterwards, separately verified. Final audit compares
+those manifests. Stable import/parse passed after three generated owned UIDs settled.
+
+Live-source reference_checks.py --source D:/development/game-prototype-2 --self-test
+--report docs/evidence/R005/reference-final/results.json PASS1624/ten drift refusals,
+88 original source inputs/45 exact adaptations. Fixture geometry audit proves all
+original physical shapes/transforms/colliders and authored probes exact. Structured
+reports, detailed portal evidence, logs/source manifests/isolation and intended diff
+inspected; whitespace/readback/link/status audit completes below.
+
+Retained: initial import source invalidation; freed typed-node diagnostic repaired
+with WeakRef; premature synthetic grounded check repaired with settled physics.
+Unsafe inherited gate rejected before placement; interrupted runs retained with
+unfinished reports, never relabeled. Precise diagnostic run101129 and failed
+inherited override retained; standalone geometry repair and affected reruns pass.
+See R005_ACCEPTANCE for exact IDs. All owned engines cleaned after interruptions;
+no held controls/editor/cleanup owed. Ignored evidence/staging retained. Command-local
+Git safe.directory only; index empty/HEAD unchanged. No commit/push/extra agents.
+
+Remaining unfinished IDs: R006,R007,R008,R009,R010,R011,R012,R013,R014,R015,R016.
+Every item through R016 complete: no. Blockers: none. Next eligible R006, with Done
+R002/R005 prerequisites. Exact next action: inspect qualified exterior declarations,
+pinned anchor/door coordinates, current capsules/party approaches/navigation;
+implement only additive safe anchor/entrance registry and measured physical checks.
+Stop before R006. Await separate user commit request for R005.
+
+Final readback/audit PASS:31 intended changed paths,68 relative links,all16 statuses/
+dependencies and nextR006. Final1214 accepted game/tool files still exact; only three
+focused-check/reference-tool paths differ from the earlier accepted regression
+manifest, with every production/old regression/fixture byte unchanged. AGENT_PROMPT/
+CONTRACT have no diff (existing checkout CRLF handled); source clean,index empty,
+HEAD unchanged,no Godot process/held input/editor/cleanup owed. Evidence:
+docs/evidence/R005/final-audit.json. Initial instruction audit compared normalized Git
+blobs to raw checkout bytes; corrected comparison without editing instructions.
+
+## Authorized R005 successful-task commit follow-up
+
+User authorized committing accepted R005 task changes, durable acceptance,
+checklist and handoff after successful validation. Preflight finds exactly the
+31 accepted R005 paths and an empty index; no unrelated changes. All1214 accepted
+game/tool files remain exact at c2d19d0d270bb1fb778dd01c391d623cff8e043568f12f7a5a074caa636b7e14.
+Raw evidence/staging remain ignored and preserved. No gameplay source changes or
+new acceptance work, no R006 and no push. Stage only explicit allowlist; verify
+staged blobs against disk/accepted hashes, exact reference pins/ledger, whitespace
+and task statuses, then commit and verify commit paths/blobs/source/working tree.
+Final commit hash is reported separately to avoid a self-referential handoff edit.
+
+## Historical R004 completion (superseded selection; evidence preserved; 2026-10-09 UTC)
 
 Active task: none. R001-R004 Done; R005-R016 Pending. Exactly R004 completed this
 invocation. [R004 acceptance](R004_ACCEPTANCE.md) maps every criterion, actual

@@ -90,6 +90,10 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 				if step != null and not candidate.get(step.location_id) is LocationDefinition:
 					errors.append("quest references absent location '%s'" % step.location_id)
 	if not is_finite(fishing_weight): errors.append("aggregate fishing weights must be finite")
+	var locations: Array[LocationDefinition] = []
+	for definition: ContentDefinition in candidate.values():
+		if definition is LocationDefinition: locations.append(definition)
+	errors.append_array(PortalRoutes.new().initialize(locations))
 	# Effect identities must be unique across quests, too.
 	var effects: PackedStringArray = []
 	for definition: ContentDefinition in manifest.definitions:
@@ -115,6 +119,13 @@ func get_actor(id: String) -> ActorDefinition:
 
 func get_location(id: String) -> LocationDefinition:
 	return _definitions.get(id) as LocationDefinition
+
+
+func location_definitions() -> Array[LocationDefinition]:
+	var result: Array[LocationDefinition] = []
+	for definition: ContentDefinition in _definitions.values():
+		if definition is LocationDefinition: result.append(definition)
+	return result
 
 
 func get_dialogue(id: String) -> ConversationDefinition:

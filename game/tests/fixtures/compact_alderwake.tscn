@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://features/interaction/npc_interaction.tscn" id="4_npc"]
 [ext_resource type="PackedScene" path="res://features/interaction/prop_interaction.tscn" id="5_prop"]
 [ext_resource type="PackedScene" path="res://world/maris_counter.tscn" id="6_counter"]
+[ext_resource type="Resource" path="res://content/portals/alderwake_tollworks.tres" id="7_portal"]
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.29, 0.36, 0.28, 1)
@@ -158,6 +159,7 @@ stable_id = "alderwake-from-tollworks"
 position = Vector3(0, 0, -5)
 script = ExtResource("3_interact")
 instance_id = "alderwake-travel-gate"
+portal = ExtResource("7_portal")
 kind = "travel"
 prompt = "Enter Tollworks"
 reach = 1.6

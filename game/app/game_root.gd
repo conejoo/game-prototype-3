@@ -660,8 +660,7 @@ func interact() -> NpcDialogueService.Result:
 		ui.show_foraging_progress(0, true)
 		return NpcDialogueService.Result.new(true, "Hold started.", target.kind)
 	if target.kind == "travel":
-		var location: PrototypeLocation = world_host.current_location
-		var errors: PackedStringArray = world_host.request_transition(location.destination_id, location.destination_spawn_id)
+		var errors: PackedStringArray = world_host.request_portal(weakref(target))
 		var result: NpcDialogueService.Result = NpcDialogueService.Result.new(errors.is_empty(), "Travel started." if errors.is_empty() else "; ".join(errors), "travel")
 		if not result.ok:
 			ui.show_travel(result.message)
