@@ -8,8 +8,8 @@ This file owns task status; [CURRENT_STATE](CURRENT_STATE.md) owns continuation;
 [CONTRACT](CONTRACT.md) owns behavior and source mappings;
 [AGENT_PROMPT](AGENT_PROMPT.md) selects this workflow.
 
-Planning complete on 2026-10-08, America/Vancouver. FS001-FS002 Done on 2026-10-09 UTC;
-FS003-FS008 Pending. Next eligible FS003. Final task FS008; checklist incomplete.
+Planning complete on 2026-10-08, America/Vancouver. FS001-FS003 Done on 2026-10-09 UTC;
+FS004-FS008 Pending. Next eligible FS004. Final task FS008; checklist incomplete.
 
 ## Selection and evidence
 
@@ -37,7 +37,7 @@ FS003-FS008 Pending. Next eligible FS003. Final task FS008; checklist incomplete
 | --- | --- | --- | --- |
 | FS001 | Done | Current F010 item capability and pinned map available | Frozen source rules, area mappings and usable cast-site audit |
 | FS002 | Done | FS001 | Three fish definitions, strict activity resolver and inventory/save support |
-| FS003 | Pending | FS002 | Deterministic bite, hook and tension challenge |
+| FS003 | Done | FS002 | Deterministic bite, hook and tension challenge |
 | FS004 | Pending | FS002 | Correct 3D water targeting and cast preview |
 | FS005 | Pending | FS003, FS004 | Root-owned fishing lifecycle with exactly-once rewards |
 | FS006 | Pending | FS005 | Readable public controls, HUD, fish icons and cast/bite feedback |
@@ -295,3 +295,27 @@ and excluded. No ordinary catch/render/native claim required by this content tas
 No owned process/editor or cleanup owed; no commit/push. FS002 blockers none.
 Next FS003; FS004 also dependency-ready. Remaining FS003-FS008; whole checklist
 incomplete. Stop before successor.
+
+### FS003 / 2026-10-09 UTC / Done
+
+Entry/final HEAD `044a0fe9c99eb7b876ebd509644d6dcf258e9ab8`; clean entry Git status.
+Pure transient FishingChallengeController with typed detached snapshots/results,
+source species curves/constants, fresh hook presses, bounded 240Hz fight simulation
+and phase-time carry. Every failure/cancel distinct; one terminal/local token,
+no repeated eligible success and no inventory/session/save/scene authority.
+Source/manual schema7/content1/geography/instructions/social/native work preserved.
+Controller/test/two UIDs plus fishing docs only; no successor integration.
+Every criterion and exact timing/input precision in [FS003 acceptance](FS003_ACCEPTANCE.md).
+
+Live source audit 143 assertions PASS before/after. Accepted isolated runner
+`20261009-033554872-0f0043b7`: all six import/parse/challenge/content/activity cases
+PASS; challenge 8,786/content 255/activity 208 assertions. Three species legal synthetic
+landings and all slack/snap/timeout trajectories, exact hooks/zones/grace/priority,
+partition/hitch equality <=1e-9, stale/invalid/replay/detachment and all-phase seven-
+reason cancellation/restart proven. No ordinary-player/render/native claim.
+All 990 game/tools files stable, source.changed=false/error=null, no runtime/parse
+errors/timeouts; known import-only SDK 10.0.9 advisory retained. Failed launch and
+first-UID-import runs preserved/excluded; scoped escalation allowed, no approval
+rejection. Final logs/traces/docs/links/scope/hash review PASS; no owned process or
+cleanup owed. No commit/push. FS003 blockers none. Next FS004; remaining FS004-FS008,
+whole checklist incomplete. Stop before successor.

@@ -1,22 +1,21 @@
 # Fishing migration current state
 
-Updated: 2026-10-09 UTC (FS002 execution; planning/FS001 history retained below).
+Updated: 2026-10-09 UTC (FS003 execution complete; prior history retained below).
 [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns stable
 behavior/mappings; [AGENT_PROMPT](AGENT_PROMPT.md) supplies invocation.
 
 ## Selection and next safe action
 
-Active fishing task: none. **FS001-FS002 Done**, FS003-FS008 Pending.
-Next eligible: **FS003 - Deterministic fishing challenge rules**.
-FS004 is also dependency-ready; default numeric selection chooses FS003.
-Final task: **FS008**. Remaining IDs: FS003, FS004, FS005, FS006, FS007, FS008.
+Active fishing task: none. **FS001-FS003 Done**, FS004-FS008 Pending.
+Next eligible: **FS004 - 3D water target resolution and preview**.
+Final task: **FS008**. Remaining IDs: FS004, FS005, FS006, FS007, FS008.
 Whole fishing checklist: incomplete. Current blockers: none.
 Exact next safe action: await the next authorized invocation, recheck Git/current
-interfaces and FS002 acceptance, then mark FS003 In progress and implement its pure
-transient challenge using published species metadata and frozen challenge rules.
-Do not activate world fishing input, rewards or HUD ahead of their owning tasks.
-FS002 completed at HEAD `24b5a01c21c8fe5edfb6f31dbcfe310eaf8dd3aa`, without commit.
-Only FS002 ran in this invocation; no successor started.
+interfaces and FS002/FS003 acceptance, then mark FS004 In progress and implement
+water targeting/preview using FS001 geometry and current camera/pointer owners.
+No active world cast/reward/HUD integration until its owning task.
+FS003 finished at HEAD `044a0fe9c99eb7b876ebd509644d6dcf258e9ab8`, without commit.
+Only FS003 ran in this invocation; no successor started.
 
 The planning invocation created instructions only. FS001 now adds development-only
 reference tools/tests and casting-site proof; production fishing remains inactive.
@@ -246,3 +245,77 @@ all12 passed cases and every986 tested game/tool file hash before staging the re
 tests are versioned; ignored raw runner reports/logs remain local as project policy
 requires. No unrelated changes staged, no push, no FS003 work. Verified commit hash
 is reported to the user after commit; it is not embedded in its own content.
+
+## FS003 executed handoff (2026-10-09 UTC)
+
+Selected/status: FS003 Done; [acceptance](FS003_ACCEPTANCE.md) maps every criterion.
+Entry/final HEAD `044a0fe9c99eb7b876ebd509644d6dcf258e9ab8`; entry Git clean.
+Read root AGENTS, fishing prompt/checklist/current state/contract, architecture,
+FS002 acceptance/current catalog/species/resolver, frozen source challenge and
+project-owned gameplay-testing skill/shared testing-tools/PLAYTEST. No nested AGENTS
+or workspace/repository .agents directory; no agents/new chats/conversations used.
+No current coordination conflict. Immutable source pins and pinned layout exact;
+live audit 143 assertions PASS before/after. Source is read-only and unchanged.
+
+Bounded actual files touched:
+- New game/features/fishing/fishing_challenge_controller.gd and generated UID.
+- New game/tests/fishing_challenge_checks.gd and generated UID.
+- docs/fishing/CHECKLIST.md, CURRENT_STATE.md and new FS003_ACCEPTANCE.md.
+Original AGENT_PROMPT/CONTRACT/other user instructions remain exact. No existing
+production/content/root/UI/inventory/save/tool/native/package/map file changed.
+
+Ownership/decisions: one pure RefCounted controller owns transient attempt only,
+local increasing token, detached Resource/snapshot/result. Paired no-fish metadata
+models normal waiting miss. Fresh generations plus observed release forbid automatic
+hooking from held input. Commands sample inputs at interval start. Source curves,
+constants and danger/landed/exhausted priority preserved. Exact waiting/bite phase
+carry; fixed 240Hz end-sample Euler fight steps with remainder/final partial timeout
+step. Accepted dt finite [0,60], max 14,401 bounded steps/call; giant delta rejected.
+Timing precision 4.167ms, same-timestamp partitions numeric tolerance 1e-9, boundary
+roundoff 1e-10. No claim of source's frame-dependent numerical equivalence.
+Root FS005 still must bind current session/location/rod and consume verified token
+before any existing inventory command; controller emits eligibility only. No reward,
+save field/schema/content change, input activation, targeting, HUD or durable count.
+
+Verification/cwd: prototype root, PowerShell7, supplied console 4.7.2. Exact command
+in acceptance. Accepted `docs/evidence/FS003/20261009-033554872-0f0043b7/results.json`,
+six cases PASS/exit0. Three independent check groups/slots under matching
+builds/testing/FS003 run, suffixes -000/-001/-002; app-data/localappdata isolated.
+Challenge 8,786/content 255/activity 208 assertions, twelve retained legal synthetic
+species land/slack/snap/timeout traces. Exact species hooks/waits/zones/grace/reset,
+priority boundary fixtures, phase carry/hitches/partition equality, invalid inputs,
+stale tokens, terminal replay, detached values and every-phase seven-reason cancel/
+restart pass. Isolated priority/zone states seeded directly in tests only; no
+production force command. Synthetic rules, no actual-player/render/save/native claim.
+Inventory/content owners untouched; no unrelated gameplay regression rerun required.
+All 990 game/tools files stable, digest
+`a8fb54f8e337f45adc618143ecf01e19b5203ea4e56fdcd8ec3d8df2d8b078e0`;
+source.changed=false/error=null. Logs/reports/traces reviewed, no runtime/parse
+diagnostic/timeout. Import-only known SDK 10.0.9 advisory retained; no installation.
+
+Retained attempts:
+- 20261009-033347206-b3b5813e: sandbox engine-launch Access denied; scoped runner
+  escalation allowed and resolved it. No automatic approval rejection/user gate.
+- 20261009-033410139-23b3fab9: first import generated two reviewed UIDs; changed-
+  source run correctly failed, excluded from acceptance.
+- 20261009-033430121-259a9c46: stable initial six-case run PASS, challenge 8,675;
+  final additional hook/replay/detachment checks motivated the accepted rerun above.
+All evidence preserved, none relabeled. Final runner-owned PID lookup: none alive.
+No editor/game/held-input process or cleanup owed; no unowned process stopped.
+Normal saves, old evidence, source game, geography/navigation/portals and independent
+social/native delivery preserved. No commit/push/publication or successor work.
+FS003 remaining criteria/blockers: none. FS004 next; remaining FS004-FS008, whole
+checklist incomplete. Exact next action above. Final read-back/local-links/eight
+status rows/dependencies/allowlist/990-file rehash/whitespace PASS recorded in
+accepted run final-review.json. HEAD unchanged. Stop; commit awaits user instruction.
+
+### FS003 commit follow-up
+
+Subsequent user instruction authorizes the successful FS003 local commit only.
+The execution records above describe the pre-commit acceptance boundary. Rechecked
+all six passed cases and every 990 tested game/tool file hash before staging the
+reviewed seven-file task allowlist. Durable acceptance, checklist, handoff and
+reusable controller/tests are versioned; ignored raw runner reports/logs remain
+local as project policy requires. No unrelated changes staged, no push, no FS004
+work. Verified commit hash is reported after commit; it is not embedded in its
+own content.
