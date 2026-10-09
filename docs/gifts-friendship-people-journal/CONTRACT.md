@@ -333,3 +333,18 @@ frames/post-draw. Strict Python evidence validation/tests retain current mode
 guards and record tab/selection. [G007 acceptance](G007_ACCEPTANCE.md) identifies
 synthetic setup/actual viewport proof. G008/G009 ordinary restart/native gates
 remain pending.
+
+## G008 integrated proof interfaces (2026-10-09 UTC)
+
+`social_integration_checks.gd` uses explicit synthetic all-eight supply/events and
+root damage/focus triggers; no ordinary acquisition claim. The separate
+`social_integration_render.gd` supports write/read/neutral phases through current
+N017 navigation/recovery/combat plus shared Journey/Gui/Capture/Snapshot helpers.
+Write/read deliberately share only their runner save group; neutral primary proof
+uses a separate fresh group. All accepted positive paths use viewport input with
+no item/fact/quest/position/time setup. Actual Tab/Enter reaches every People row.
+GUI Save/normal F10 quit/new-process GUI Load retains schema7/content1 and exact
+whole durable/forecast oracle; paused re-save equality is distinct from legitimate
+time/woods changes during later walking. [G008 acceptance](G008_ACCEPTANCE.md)
+supersedes the historical pending restart gate above. No runtime ownership or
+format change; G009 remains fresh Windows/native delivery acceptance.

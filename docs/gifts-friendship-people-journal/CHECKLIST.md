@@ -8,7 +8,7 @@ Godot application: game/, entry res://app/game_root.tscn.
 
 ## Selection and completion
 
-G001-G007 Done; G008-G009 Pending. No active task.
+G001-G008 Done; G009 Pending. No active task.
 Resume the single In progress task first. Reassess Blocked work when its blocker changes; unresolved blockers exclude that task and its dependents, not independent branches.
 Otherwise select the lowest-numbered Pending task with verified Done prerequisites. Check actual prerequisite capability/evidence, not only checkboxes. Reconcile ambiguous status with artifacts before selecting.
 Complete exactly one task per invocation. Mark In progress before implementation, verify its criteria, update state even when interrupted, and stop before its successor. Done requires every criterion to have evidence; do not replace ordinary play with synthetic fixtures.
@@ -25,7 +25,7 @@ P/M/W/F/N workflows are baseline references, not selectors for this workflow. Do
 | G005 | Done | G004 | Ordinary conversation gifting, progress and rejection feedback |
 | G006 | Done | G001 | Detached met-only People projection with no disclosure side effects |
 | G007 | Done | G006 | People journal integrated with existing J journal/HUD and modal lifecycle |
-| G008 | Pending | G005, G007 | Integrated ordinary social loop, cross-system regression and restart proof |
+| G008 | Done | G005, G007 | Integrated ordinary social loop, cross-system regression and restart proof |
 | G009 | Pending | G008 | Fresh local Windows packages and native social/restart acceptance |
 
 G006 is independent of gift implementation after G001: its source of truth is existing per-person memories. It may be selected when an earlier gift branch is blocked. Shared files still require sequential execution; these dependencies do not request agent spawning.
@@ -302,3 +302,30 @@ Stop after exactly G007; do not begin G008.
 G007 successful-task commit follow-up authorized on 2026-10-08 UTC. Commit only
 G007 journal/root/UI, fixtures, capture tooling, acceptance and workflow/discovery
 state. Keep ignored raw evidence local; no push or G008 implementation.
+
+### G008 / 2026-10-09 UTC / Done
+
+Every G008 criterion passed; [G008 acceptance](G008_ACCEPTANCE.md) maps ordinary
+helpful Edric/two actual flowers/one milestone, third-flower Maris, all-eight
+public facts/People Tab/Enter, full shortened recovery and independent neutral2
+to actual inputs/captures. GUI Save/normal F10 quit/new-process GUI Load matches
+the entire typed durable oracle/forecast; paused re-save preserves exact bytes.
+Physical all-eight revisits preserve social/items/old fields; time/woods events
+are separately recorded. No production/supply/content/schema/package changes.
+
+Bulk235752 passes34 cases:24 headless suites, three process pairs and engine/
+parse/initial renders. Final000811 passes5 engine/parse/render cases: writer540/
+100 captures, reader84/13, neutral78/11. Independent fresh001331 passes3 cases,
+neutral78/11. All accepted runs have zero diagnostics/timeouts/source changes/
+errors. Final948-file digest7bf51aec36d9c8afb9065dca63dd15c6da964a0e7a8bdde8e84c160ece8cb530.
+All135 final images/13 sheets plus full-size details inspected; source/converter,
+preservation/diff/links/state audit pass. Failed attempts retained. All-eight
+synthetic items/events/focus/death remain separate from ordinary routes.
+
+Next eligible/remaining G009: fresh local Windows packages/native social/restart
+acceptance. Every item through G009: not complete. No blockers, owned live
+processes, held controls, commit or push. Stop after exactly G008.
+
+G008 successful-task commit follow-up authorized on 2026-10-09 UTC. Commit only
+G008 integration fixtures, corrected NPC coverage expectation, acceptance and
+workflow/discovery state. Keep ignored raw evidence local; no push or G009 work.

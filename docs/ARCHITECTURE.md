@@ -10,9 +10,9 @@ restore remain required.
 
 Status: implementation contract; runnable Godot prototype through P014, M019 map,
 W010 weather and F010 foraging/native delivery, current schema7/content1 with N004 persistence, N005 portrait conversation integration, N015 ordinary contacts/art for all eight requested villagers and N016 separate review-only semantic action variants, N017 integrated all-eight/recovery/restart acceptance and N018 fresh Windows/native delivery.
-Current development source also includes G001-G007 social rules/save/activation,
+Current development source also includes G001-G008 social rules/save/activation,
 friendship/bag feedback, ordinary viewport gifting and met-only People journal.
-Fresh integrated social restart/native delivery remain G008-G009. Historical N018 packages retain
+Integrated ordinary social recovery/restart is verified; fresh native delivery remains G009. Historical N018 packages retain
 their pre-social boundary.
 Prepared: 2026-10-01. These decisions reflect the current conversation and can
 be revised deliberately when playable evidence supports a change.
@@ -1190,3 +1190,16 @@ suppression remains intact. [G007 acceptance](gifts-friendship-people-journal/G0
 records actual viewport UI/captures960x640/1350x900, synthetic social/long-text/night
 fixtures and affected projection/movement/dialogue/bag/foraging/quest/drag checks.
 G008/G009 still own ordinary integrated restart and fresh native delivery.
+
+## G008 integrated social and exact restart (2026-10-09 UTC)
+
+[G008 acceptance](gifts-friendship-people-journal/G008_ACCEPTANCE.md) proves ordinary
+helpful Edric/two existing flowers/one milestone, third-flower Maris, all-eight
+met/public facts/People Tab/Enter, full recovery and independent neutral affinity2.
+GUI Save/normal quit/new-process GUI Load and paused re-save match exact typed
+durable state/forecast/bytes. Physical revisits preserve gifts/old fields; legitimate
+elapsed/woods changes are separate. Synthetic all-eight gates/caps/levels and
+gifted-roster focus/retry remain explicitly distinguished from ordinary input.
+New fixtures reuse shared owners; only an old NPC test count changes, with no
+runtime/content/supply/schema change. G009 alone owns fresh Windows/native proof;
+historical packages remain unchanged.

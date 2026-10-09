@@ -1,10 +1,87 @@
 # Gifts, friendship and People journal current state
 
-Updated: 2026-10-08 UTC.
+Updated: 2026-10-09 UTC.
 [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns stable rules;
 [AGENT_PROMPT](AGENT_PROMPT.md) supplies the reusable invocation.
 
 ## Current selection and exact continuation
+
+G001-G008 Done. Active task: none. G009 Pending; whole checklist incomplete.
+Exactly G008 completed the implementation invocation with no blocker. The separate
+successful-task follow-up authorizes committing only G008 files and this state.
+No push. Next eligible
+G009. Read [G008 acceptance](G008_ACCEPTANCE.md), current export presets and N018
+delivery/native ownership helpers; archive exact previous packages before any
+replacement, then implement only fresh local Windows/native social/restart proof.
+No G009 implementation/export occurred here. Stop after G008. This state is included
+with the authorized G008 commit; raw ignored evidence stays local.
+
+## G008 outcome, interfaces and verification
+
+Entry HEAD d9751d5ae9ec126eaf11a0e3432cabddb277fbba, clean worktree; no nested
+instructions/unrelated changes. Source read-only clean at60c20eb2816e7271fb84afaba286af006ebe3ccf.
+Of944 pre-existing game/tools files,943 remain byte-identical; only existing NPC
+integration's enabled-count expectation changes58/38 to approved67/48. Source/
+pins/catalog/art/geography/three flowers/rod placement/packages and schema7/
+content1 unchanged. No production runtime repair.
+
+New social_integration_checks.gd/render.gd and UIDs under game/tests. Checks402
+assertions use explicit synthetic inventory/events/damage/focus and production
+mixed-roster services/People/codec/caps/root retry. Renderer inherits current N017
+physical recovery/combat/navigation and shared Journey/Gui/Capture/Snapshot owners.
+Accepted routes use actual viewport WASD/E/mouse/Tab/Enter/F10; no position/item/
+fact/quest/timer setup. Direct stale-command rejection is negative rule proof.
+
+Writer physically gathers two distinct flowers for helpful Edric: affinity3,
+one milestone; meets all8/all21 facts and selects every People row with contained
+Tab/Enter/scroll. Third actual flower goes to Maris, affinity2. Full shortened
+recovery uses lead/J upgrade/physical gates/combat/vessel/return/fitting: six effects,
+specialist, damage40, two party/eight contacts and social/item conservation. GUI
+Save equals typed disk; normal F10 quit. Reader PID37312 differs from writer5756,
+starts default, GUI Loads exact whole durable oracle/forecast, then GUI re-saves
+identical16549 bytes while paused. All-eight physical chats/People retain social/
+items/old fields; elapsed177.359679751747->241.566684418399 and woods5->6 after
+walking recorded separately. Independent empty-save neutral gives twice: affinity2,
+no milestone. No hardware/native/package claim.
+
+Accepted docs/evidence/G008 runs:
+- 20261008-235752905-d991f487/results.json: all34 cases (24 suites, three process
+  pairs, engine/parse/initial renders). Digestd87eff1cdaeeb78c64030f713c73072917ca3b37e329146721ccfb6488738786.
+- 20261009-000811061-dde318b2/results.json: all5 final engine/parse/render cases;
+  writer540/100 captures, reader84/13, neutral78/11. Only renderer changed since
+  bulk: replace direct focus with ordinary Tab/Enter, capture every People entry,
+  strengthen post-walk old-field equality. Final948-file digest
+  7bf51aec36d9c8afb9065dca63dd15c6da964a0e7a8bdde8e84c160ece8cb530.
+- 20261009-001331279-279274fa/results.json: all3 cases, independent fresh neutral
+  78/11 and normal quit; same final bytes, separate empty app-data/save group.
+
+Accepted diagnostics/timeouts/source changes/errors zero. Installed4.7.2 console
+checked first. Exact bundled PowerShell7/Python commands/cwd/executables/groups/
+PIDs in acceptance/reports; runner owns fresh APPDATA/LOCALAPPDATA/slots under
+builds/testing/G008/<run>. Normal saves untouched. Primary SHA256
+3052be6ab3b153fb94544365c960049efaea9fce7c5d778c779331e33361d1b1; catalog
+efb76e8a42796a92fab80fa5815885adc7abdfd565ee7cfe036a7d165409e1d3 unchanged.
+
+All135 final images/13 sheets at actual960x640 inspected; full-size milestone/
+bag feedback, Maris People, Tess scroll, saved status and independent neutral2/3.
+Strict capture hash/mode/focus/pause reports linked in acceptance. Earlier neutral
+11/sheet/full-size also inspected; bulk renders superseded for final visual proof.
+Reference/current converter exit0/empty stderr under reference-20261008-2356.
+Diff/links/status/dependency/preservation/process review under final-review.
+
+Retained failures:235407 sandbox console Access denied then reviewed escalation;
+235427 import-generated UIDs correctly invalidated source guard, existing editor-
+only SDK allowance/no install;235443 wrong NODE constant fixed to seen memory;
+235509 HUD click before normal per-frame state settled after close, fixed with
+four frames. Early235623 neutral passes402 synthetic/70 ordinary/11 captures,
+superseded by final keyboard proof. No failed evidence relabeled or runtime gate
+bypassed. All owned runners/engines exited; no held input/cleanup owed.
+
+Every G008 criterion passed; none failed/unrun. No blocker, export/publication,
+external message, commit/push or successor work. Remaining G009; every item through
+G009 is not complete. Stop here.
+
+### Previous G007 handoff (historical)
 
 G001-G007 Done. Active task: none. G008-G009 Pending. Whole checklist incomplete;
 final task G009. Exactly G007 completed the implementation invocation. No blocker.

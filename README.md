@@ -1,10 +1,10 @@
 # Returning Fair prototype
 
-Current development source: [G005 acceptance](docs/gifts-friendship-people-journal/G005_ACCEPTANCE.md)
-verifies ordinary gathered Moonflower gifts, friendship/bag feedback and Edric's
-once-only Acquaintance milestone through source service/rules and inspected
-viewport input. G001-G005 Done; G006-G009 remain for People and fresh integrated
-social restart/native delivery. Existing Windows packages and NPC acceptance below are historical
+Current development source: [G008 acceptance](docs/gifts-friendship-people-journal/G008_ACCEPTANCE.md)
+verifies ordinary gathered gifts, Edric's once-only Acquaintance milestone,
+all-eight learned People entries, full recovery and exact new-process GUI restart.
+G001-G008 Done; G009 remains for fresh Windows/native social delivery.
+Existing Windows packages and NPC acceptance below are historical
 pre-social releases; their gift deferrals describe that delivered boundary.
 
 NPC migration: [eight villagers and richer dialogue](docs/villagers-dialogue/CHECKLIST.md),
