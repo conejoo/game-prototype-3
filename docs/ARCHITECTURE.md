@@ -1,5 +1,25 @@
 # Returning Fair prototype architecture
 
+Current exterior routine metadata (2026-10-09, R006): RoutineExteriorRegistry
+returns detached location-qualified records for the eleven pinned exterior
+stations and two inactive home/inn entrances, including physical elevation,
+source facing, dialogue approaches and safe exterior party returns. All station
+and door X/Z remain exact. The civic player approach moves 0.1m north from the
+fixed-contact approach to clear town-start; the home-return hero foot moves 0.9m
+south from source to clear the unchanged rain-shelter station. Return ally feet
+use the existing WorldHost/Party 1m east convention. Unknown/wrong-map queries
+return empty and metadata cannot activate absent destinations.
+
+Maris retains the same counter, visuals, actor capsule and bench shape/transform.
+The bench collider has its own BenchBody so excluding Maris as a station's own
+actor cannot exclude furniture. Static contact outlines/nav and production
+placement stay unchanged; R009 owns their dynamic replacement. R006 proves
+production-nav approaches plus collision-swept terminal station legs with a
+0.4m capsule, dry footprint support and LOS; this is labeled synthetic physical
+evidence, not ordinary NPC motion or room delivery. R007/R008 consume the new
+door/arrival metadata; R013 still owns live schedule activation. Schema8/content1,
+current source/geography pins and player travel/save/social owners stay intact.
+
 Current portal contract (2026-10-09, R005): each travel interaction carries an
 explicit PortalBinding (portal ID, source location, destination location, arrival).
 LocationDefinition declares its own exits; ContentCatalog validates the complete

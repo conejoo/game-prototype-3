@@ -63,3 +63,12 @@ game/world/alderwake_exterior.gd -text whitespace=blank-at-eol,blank-at-eof,spac
 game/world/location_definition.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/world/prototype_location.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/world/tollworks.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R006 bounded collider/physical-fixture adaptations retain exact reviewed bytes.
+game/world/maris_counter.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/npc_03_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/recovery_presentation_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/map_navigation_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/fixtures/map_navigation_failure.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Authorized R006 commit: retain the exact adaptation ledger bytes as well.
+tools/routine_migration/adaptations.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

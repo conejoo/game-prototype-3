@@ -19,7 +19,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R003 | Done | R002 | Deterministic assignments from existing clock/conditions |
 | R004 | Done | R003 | Durable routine commands/current-schema persistence |
 | R005 | Done | R001 | Qualified multi-portal routing, existing travel preserved |
-| R006 | Pending | R002, R005 | Safe exterior anchors/door approaches on pinned geometry |
+| R006 | Done | R002, R005 | Safe exterior anchors/door approaches on pinned geometry |
 | R007 | Pending | R005, R006 | Mayor Vale home and its nine required anchors |
 | R008 | Pending | R005, R006 | Lantern Rest and Della's real station |
 | R009 | Pending | R002, R006 | Physical same-map movement/bounded occupancy |
@@ -163,11 +163,12 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001-R004 completed; R005-R016 remain Pending. Final task ID: R016.
-Next eligible: R005 (R001 prerequisite and pins verified).
+R001-R006 completed; R007-R016 remain Pending. Final task ID: R016.
+Next eligible: R007 (R005/R006 prerequisites verified).
 Whole checklist complete: no. No current blocker.
 [R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
-[R003 acceptance](R003_ACCEPTANCE.md) and [R004 acceptance](R004_ACCEPTANCE.md) own evidence.
+[R003 acceptance](R003_ACCEPTANCE.md), [R004 acceptance](R004_ACCEPTANCE.md) and
+[R005 acceptance](R005_ACCEPTANCE.md) and [R006 acceptance](R006_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -328,3 +329,39 @@ and interrupted reports retained with exact repair history in acceptance/handoff
 All owned engines exited, no input/editor/cleanup owed. Blockers/unrun R005 criteria:
 none. No commit/push. Next eligible R006; inspect qualified exterior anchors/door
 approaches and implement measured registry/physical checks only. Stop here.
+
+R006 - Done 2026-10-09 UTC
+Result and changed files: detached RoutineExteriorRegistry/UID for eleven exact
+exterior stations/two inactive entrances and safe party approaches/returns;
+routine_anchor_checks/UID; actor-only Maris body separated from unchanged real
+bench; two original bench assertion paths updated; stale navigation-failure
+fixture/check repaired for current qualified portal contract; exact owner ledger/
+gate, five byte-preservation attributes, architecture and this workflow's state/
+checklist/[R006 acceptance](R006_ACCEPTANCE.md).
+Verified prerequisites/preserved user changes: clean target3dfdea9b/source60c20eb2;
+R002/R005 artifacts and original accepted1214-file baseline verified. R001 source
+audit PASS1624/88 inputs/ten refusals;50 exact adaptations retain original pins.
+No baseline user changes; user instructions/source/geography/schema8/content1,
+fixed contact feet/nav outlines/current owners/packages preserved.
+Commands/cwd/isolation/results: repository cwd, PowerShell7/console4.7.2. Final
+anchor case104604 PASS53330 assertions/7491 collision sweeps/32 routes. Required
+crossing/NPC-world/item and affected Maris/recovery cases104142 pass. Their whole
+reports retain subsequently repaired nav failures, never relabeled. Final repaired
+map_navigation_checks104721 PASS3 cases/336373 samples/three rollback probes/eight
+replacements/query p95=856us. All accepted cases exit0/diagnostics empty/source
+unchanged, independently isolated APPDATA/LOCALAPPDATA/named primary/backup slots.
+Stable import/parse pass; final live-source reference gate PASS1624/50 adaptations.
+Evidence inspected: full station/source/elevation/facing/approach and door records,
+continuous physical routes/dry footprints/LOS/overlap/negative water/barrier/bench/
+occupied shelter probes, structured reports/logs/manifests/isolation/intended diff.
+Final1218 game/tool fingerprint cb1e4386fc8cc003cfd22a62735be635f56a9888c45526c039796a31f960e123.
+Decisions/limits: source stations/doors stay exact; civic routine approach0.1m north,
+home hero return0.9m south, ally uses existing1m east arrival. Real bench remains
+solid under self-body exclusion. Synthetic geometry/sweeps are labeled; dynamic
+occupancy/movement and actual interiors/ordinary travel/render/native remain their
+own tasks. Retained UID/overlap/nav timeout/wrong fixture-ID failures repaired.
+All owned engines exited, no held input/editor/cleanup owed; Blender2664 preserved.
+Blockers/unrun R006 criteria: none. No commit/push. Remaining R007-R016; every item
+through R016 complete: no. Next eligible R007; consume measured home doorway and
+return metadata, build its bounded room/nine stations and verify its own criteria.
+Stop after R006; await separate user commit request.

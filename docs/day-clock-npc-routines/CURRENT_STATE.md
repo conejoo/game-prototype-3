@@ -1,6 +1,137 @@
 # Day clock and NPC routines current state
 
-## Current selection and R005 completion (2026-10-09 UTC)
+## Current selection and R006 completion (2026-10-09 UTC)
+
+Active task: none. R001-R006 Done; R007-R016 Pending. Exactly R006 completed this
+invocation. [R006 acceptance](R006_ACCEPTANCE.md) maps every criterion, exact source/
+runtime feet, measured adaptations, actual commands/isolation/results and retained
+failures. Blockers/unrun R006 criteria: none. Every item through R016 complete: no.
+No commit or push; await a separate successful-task commit request.
+
+Baseline target3dfdea9b04b140f48e11a02499d0fd071a3d4161/source60c20eb2, both clean;
+no baseline user changes. R002/R005 artifacts and accepted1214-file game/tools
+fingerprint verified. Stale CHECKLIST completion summary reconciled with R005 Done
+table/record before selection. Workspace instructions, source AGENTS/test-gameplay,
+current installed/versioned gameplay skill, architecture and shared runner/save/
+journey/interaction/native guidance read. No nested target AGENTS/.agents. Supplied
+engines exist; source Flutter/Linux harness does not apply. Default sandbox helper
+fails setup; bounded reviewed commands work, no approval rejection.
+
+### Actual changes and measured decisions
+
+Detached RoutineExteriorRegistry and UID for eleven exact source station feet,
+source facing/physical Y/dialogue approaches and two disabled home/inn door sites;
+safe exterior party returns use current WorldHost/Party1m east convention. Wrong
+maps/IDs return empty; no scene, travel, motion, clock, facts or routine activation.
+Source X/Z and pinned geography unchanged. Civic routine approach moves0.1m north
+to clear existing start arrival; home hero return moves0.9m south to clear unchanged
+rain-shelter station, with0.1m conservative capsule gap. Inn return stays exact.
+
+Maris bench moves only to its own BenchBody; original2.2x0.85x0.7 shape/global
+transform/visuals/counter ID/nav outline remain. Own-actor exclusion cannot hide
+furniture. Required two bench assertion paths change without losing assertions.
+Old navigation-failure fixture now has a matching source-qualified portal and its
+check does not await a signal after synchronous refusal. All original geometry,
+three rollback probes/full-mesh/path/budget/lifecycle checks remain, with exact
+intentional bake rejection additionally asserted. These are necessary R006 checks.
+
+Actual bounded16-path allowlist: new registry/check and two UIDs; Maris scene and
+two existing bench-path tests; map_navigation_checks and map_navigation_failure
+scene; reference_checks.py/adaptations.json; five narrow .gitattributes rules;
+architecture; CHECKLIST/CURRENT_STATE/R006_ACCEPTANCE. Ignored R006 evidence/staging
+retained. Existing user instructions/source/reference pins/fixed contacts/nav,
+schema8/content1/social/item/recovery/party/weather and packages preserved. Exact
+adaptation ledger now50 records; gate accepts R004/R005/R006 owning tasks only.
+
+### Verification and retained failures
+
+Repository cwd, PowerShell7, explicit console4.7.2. Stable import/parse PASS4 cases
+103820. Expanded required/affected command: runner -Task R006 -Names
+routine_anchor_checks,map_navigation_checks,map_crossing_checks,npc_world_checks,
+world_item_placement_checks,npc_03_checks,recovery_presentation_checks -ParseScripts
+features/routines/routine_exterior_registry -TimeoutSeconds150.104142 crossing/
+NPC-world/item/Maris/recovery cases pass; whole run retains repaired nav timeout.
+
+Final anchor case104604 PASS53330 assertions (JSON53329 before evidence write),
+7491 continuous physical sweeps/32 routes. Eleven endpoint footprints/elevations/
+facing, dialogue/door LOS/reach, resource/lamp/other actor/arrival separation, both
+party approaches/returns, exact snapshots/feet/camera/eight contacts/one nav region
+and water/bench/thin-wall/occupied-shelter negatives pass. Fixture placement is
+labeled synthetic; it is never route proof. Each path displacement collides
+physically; actor self alone is excluded, furniture and other NPCs stay solid.
+Static bake holes remain; nav approach plus proved terminal station leg is explicit.
+Dynamic occupancy/ordinary movement and real room/render/native proof stay downstream.
+
+Final repaired command runner -Task R006 -Names map_navigation_checks
+-TimeoutSeconds150 PASS3 cases at docs/evidence/R006/20261009-104721562-d6e285ec/.
+336373 nav samples/22 routes/three original rollbacks/eight replacements,
+query p95=856us. All accepted cases exit0/diagnostics empty/source.changed=false/
+source.error=null. Independent save groups/APPDATA/LOCALAPPDATA/primary/backup
+isolation inspected. No normal save access; new anchor checks write no save.
+Earlier passing affected runtime/test bytes remain exact after their cases.
+
+Final live-source reference_checks.py --source D:/development/game-prototype-2
+--self-test --report docs/evidence/R006/reference-final/results.json PASS1624/88
+source inputs/50 exact adaptations/ten refusals. Final1218 game/tool fingerprint
+cb1e4386fc8cc003cfd22a62735be635f56a9888c45526c039796a31f960e123. Detailed structured
+reports, source/runtime feet/routes, logs, manifest diffs/isolation and intended
+source diff inspected. Source and original/derived reference pins unchanged.
+
+Retained failures:103736 import-generated two owned UIDs;104005 civic overlap
+found/repaired0.1m;104142 malformed old inherited portal caused150s test timeout;
+104604 repair had wrong portal ID, corrected to actual tollworks-entrance-01;
+104721 exact bake failure and full regression pass. No failed report relabeled.
+All owned engines exited; no held input/editor/cleanup owed. Unrelated Blender2664
+preserved. Index empty/HEAD unchanged; no commit/push/messages/agents/extra task.
+
+Remaining unfinished IDs: R007,R008,R009,R010,R011,R012,R013,R014,R015,R016.
+Every checklist item through R016 complete: no. Blockers: none. Next eligible R007.
+Exact next action: read measured home entrance/exterior returns from registry and
+acceptance, build only bounded Mayor Vale home/nine stations/reciprocal door and
+verify all R007 criteria. Stop after R006.
+
+Final readback/audit PASS:16 intended changed paths,76 relative links,all16 task
+statuses/dependencies,nextR007. All1218 final game/tool files match passing final
+navigation manifest; earlier accepted runtime/regression byte comparisons pass.
+Exact Maris scene comparison proves only collider ownership changed. Source clean,
+index empty,HEAD unchanged,AGENT_PROMPT/CONTRACT/user instructions preserved.
+Evidence: docs/evidence/R006/final-audit.json. The audit's initial porcelain parsing
+trimmed first-line whitespace; corrected without changing project files, rerun
+passes. No live Godot/editor/held input/cleanup owed; Blender2664 preserved.
+The npc_03 -text rule exposes prior checkout CRLF in Git diff; normalized HEAD/
+disk audit proves only its single bench-path assertion changed. Recovery test
+receives the same exact semantic comparison; reviewed raw bytes remain preserved.
+
+## Authorized R006 successful-task commit follow-up
+
+User authorized committing accepted R006 task changes, durable acceptance,
+checklist and handoff. Preflight finds exactly the16 accepted paths and an empty
+index; no unrelated changes. Before the portability repair below, all1218 accepted
+game/tool bytes match
+cb1e4386fc8cc003cfd22a62735be635f56a9888c45526c039796a31f960e123. Original source
+and derived pins remain unchanged; strict live-source/reference gate and final
+audit pass. No gameplay/runtime/test changes, additional acceptance task or R007 work.
+Raw evidence/staging stay ignored and preserved. No push.
+
+Stage only the explicit16-path allowlist, verify staged blobs against current
+accepted bytes/ledger/pins, whitespace and task states, then commit and verify
+commit paths/blobs/source/working-tree status. The final commit hash is reported
+separately to avoid a self-referential handoff edit. Existing R006 completion
+records describe its pre-commit implementation boundary; this authorization
+supersedes the pending separate-commit request above.
+
+Staged verification caught Git normalizing CRLF in adaptations.json. Add one
+additional narrow -text rule for that ledger and update only the existing root
+attribute record's exact after-hash/reason, preserving all50 original before-hashes
+and source/derived pins. Every runtime/test byte stays exact. Current1218-file
+game/tools fingerprint after ledger-only portability metadata:
+4a01b01fd8b8a4eca11795c6e9fc3cef81aa88cf0963a9116942d111cf9e3be4.
+Strict live-source/reference gate PASS1624/ten refusals; same16 commit paths.
+Compare original accepted manifest to commit manifest with this sole documented
+ledger exception; no gameplay rerun required. Raw portability/staging/blob results
+remain ignored under docs/evidence/R006, alongside retained failed staged attempt.
+
+## Historical R005 completion (superseded selection; evidence preserved; 2026-10-09 UTC)
 
 Active task: none. R001-R005 Done; R006-R016 Pending. Exactly R005 completed this
 invocation. [R005 acceptance](R005_ACCEPTANCE.md) maps every criterion and records

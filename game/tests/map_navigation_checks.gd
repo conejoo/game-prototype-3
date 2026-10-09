@@ -27,6 +27,10 @@ func _run() -> void:
 		definition.prototype_fixture = true
 		definition.scene_path = fixture.scene
 		definition.spawn_ids = PackedStringArray(fixture.spawns)
+		if fixture.id == "candidate-nav-failure":
+			var binding: PortalBinding = preload("res://content/portals/alderwake_tollworks.tres").duplicate(true)
+			binding.source_location_id = fixture.id
+			definition.portals = [binding]
 		detached.definitions.append(definition)
 	game.content_manifest = detached
 	root.add_child(game)
@@ -48,15 +52,22 @@ func _run() -> void:
 	var original: PrototypeLocation = host.current_location
 	var original_region: RID = original.navigation_region.get_rid()
 	var transition_count: int = host.transition_count
+	var rollback_rejections: int = 0
 	for fixture: Array in [["prototype-unsafe-location", "unsafe-no-floor"], ["prototype-unsafe-location", "unsafe-blocked"], ["candidate-nav-failure", "alderwake-start"]]:
-		_check(host.request_transition(fixture[0], fixture[1]).is_empty(), "Rollback fixture failed to reach placement/bake")
+		var request_errors: PackedStringArray = host.request_transition(fixture[0], fixture[1])
+		_check(request_errors.is_empty(), "Rollback fixture failed to reach placement/bake: " + str(request_errors))
+		if not request_errors.is_empty(): continue # A refused request emits no arrival signal.
 		var rejected: Array = await host.transition_finished
 		_check(not rejected[0] and not rejected[1].is_empty(), "Rollback fixture unexpectedly committed")
+		if fixture[0] == "candidate-nav-failure":
+			_check("M009 expected navigation bake rejection" in rejected[1], "Exact bake failure exercised")
+		rollback_rejections += 1
 		_check(host.current_location == original and host.transition_count == transition_count, "Rollback replaced original exterior")
 		_check(not game.party.suspended and host.get_child_count() == 1, "Rollback lost party/lifecycle")
 		_check(NavigationServer3D.map_get_regions(map) == [original_region], "Rollback leaked failed navigation region")
 		_check(NavigationServer3D.map_get_path(map, Vector3.ZERO, Vector3(31.51317596435547, 0.5, 5.25), true).size() >= 2, "Rollback lost exterior connectivity")
-	report["rollback_rejections"] = 3
+	_check(rollback_rejections == 3, "All original rollback probes exercised")
+	report["rollback_rejections"] = rollback_rejections
 	var goals: Dictionary[String, Vector3] = {
 		"bridge-west": Vector3(93, 0, -0.5), "bridge-east": Vector3(103, 0, -0.5),
 		"ford-west": Vector3(66, 0, 12.5), "ford-east": Vector3(75, 0, 12.5),

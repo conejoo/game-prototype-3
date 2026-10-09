@@ -110,7 +110,9 @@ Basic supplies"
 position = Vector3(0, 0.8, 0)
 shape = SubResource("Maris_shape")
 
-[node name="BenchCollision" type="CollisionShape3D" parent="Body"]
+[node name="BenchBody" type="StaticBody3D" parent="."]
+
+[node name="BenchCollision" type="CollisionShape3D" parent="BenchBody"]
 position = Vector3(0, 0.425, 0.8)
 shape = SubResource("Bench_shape")
 

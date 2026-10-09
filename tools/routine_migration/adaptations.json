@@ -5,25 +5,17 @@
       "path": ".gitattributes",
       "after_path": ".gitattributes",
       "before_sha256": "bc9404e0f67f76a0508577255e08c21eac64c2621391862621f04e3ab523e128",
-      "after_sha256": "2a9e5c73d09fbd0979e36046b8c44fd379a8e55cbee6176d8825970ad0934285",
-      "owner": "R005",
-      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de; source pins and original baseline retained."
-    },
-    {
-      "path": "README.md",
-      "after_path": "README.md",
-      "before_sha256": "b5e845f845fb2753b3b71404cd8f282ca8cc8928a7a3b111457cee72e984d897",
-      "after_sha256": "f490921255dee444ee4315048696f7808775d6e4790e49f244e973c947ed37b3",
-      "owner": "R004",
-      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+      "after_sha256": "2cea4f447f8781f6bd6f6041113aba01ef86fe15d0bdd26dac70650763365326",
+      "owner": "R006",
+      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de; source pins and original baseline retained. R006 five narrow exact-byte rules; prior attributes preserved. Prior accepted target hash 2a9e5c73d09fbd0979e36046b8c44fd379a8e55cbee6176d8825970ad0934285; original baseline/source pins retained. Authorized R006 successful-task commit adds one exact-byte rule for the adaptation ledger after staged Git normalization was detected; previous accepted attribute hash 36a3f8dedb57262f5256bc00fa871cb5d1a9af3798fe9b1b440447fafa0deaf2 retained in this record, original baseline/source pins unchanged."
     },
     {
       "path": "docs/ARCHITECTURE.md",
       "after_path": "docs/ARCHITECTURE.md",
       "before_sha256": "98ab868216cc24ab99bf657ed37257e6d680f6b1ec7cfdb38525252e5f972456",
-      "after_sha256": "41a5ebd9bf1babc023b52fdf207f7cde472f1567b753014f7bc731350144e990",
-      "owner": "R005",
-      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash 328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302; source pins and original baseline retained."
+      "after_sha256": "b199e23e572309ee656369cab7b526c2fdcccea7180ab7189e1369f5a0f956cd",
+      "owner": "R006",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash 328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302; source pins and original baseline retained. R006 data-only qualified exterior station/door metadata, measured approach/arrival adaptations, real bench ownership; no routine/room activation. Prior accepted target hash 41a5ebd9bf1babc023b52fdf207f7cde472f1567b753014f7bc731350144e990; original baseline/source pins retained."
     },
     {
       "path": "game/app/game_root.gd",
@@ -138,6 +130,14 @@
       "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
     },
     {
+      "path": "game/tests/fixtures/map_navigation_failure.tscn",
+      "after_path": "game/tests/fixtures/map_navigation_failure.tscn",
+      "before_sha256": "953cb8ed65680cd32156b383c5f7acbc9e826f53f5530b3dce2c3d1744d53ac3",
+      "after_sha256": "9a9ea64bc1144d2143935e159ea8b1d23b0ae77aa7df09f0a1ec759cf2ce2498",
+      "owner": "R006",
+      "reason": "R006 required regression fixture adopts current R005 source-qualified inherited portal; original scene geometry and intentional prepare_navigation failure unchanged."
+    },
+    {
       "path": "game/tests/fixtures/map_saves/PROVENANCE.json",
       "after_path": "game/tests/fixtures/map_saves/PROVENANCE.json",
       "before_sha256": "6804e302a8578c489e25db697927a30710e3e614ef5a63700641b4bc9b50f83a",
@@ -218,6 +218,22 @@
       "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
     },
     {
+      "path": "game/tests/map_navigation_checks.gd",
+      "after_path": "game/tests/map_navigation_checks.gd",
+      "before_sha256": "c7ea62e961b0a0974ca3c6bf6f7b94ba0c450edb48f79fee51b4291ea75fd120",
+      "after_sha256": "b61eb8ffb44598358ee5d3d537e7c8650a1283357c24bda0287761923395e54c",
+      "owner": "R006",
+      "reason": "R006 required regression repair: qualified navigation-failure fixture binding and immediate rejected-request guard; all geometry, three rollback probes, full mesh, paths, budgets and lifecycle assertions retained; exact bake rejection asserted."
+    },
+    {
+      "path": "game/tests/npc_03_checks.gd",
+      "after_path": "game/tests/npc_03_checks.gd",
+      "before_sha256": "953b742b90f1ebc818f8f0d4a30e278384db1815a5fc011be1d5559cfe85db1a",
+      "after_sha256": "87b7c5536195297198102c9041e6409a3653c785e2a54ecf423892c1d8e98969",
+      "owner": "R006",
+      "reason": "R006 preserve original solid-bench assertion at its new independent BenchBody path."
+    },
+    {
       "path": "game/tests/npc_dialogue_rule_checks.gd",
       "after_path": "game/tests/npc_dialogue_rule_checks.gd",
       "before_sha256": "4d2bb595f07688bb80de8acacfb0266842e87651e5cbf9d5f739235f0f62554e",
@@ -240,6 +256,14 @@
       "after_sha256": "f4698352a3d6326fbbad91a1e1f6a990311d5adce6dea5914583992cc5888d89",
       "owner": "R004",
       "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/recovery_presentation_checks.gd",
+      "after_path": "game/tests/recovery_presentation_checks.gd",
+      "before_sha256": "465e92e305233a10a2615ae61d15e46a1a5e559d5564d7abfc98eddddffb7bc6",
+      "after_sha256": "f52c971cededa4b78e9ccddfaf6dc69c2883c57cde7c0a5713c4de9547eda903",
+      "owner": "R006",
+      "reason": "R006 preserve every recovery variant collision assertion at new independent BenchBody path."
     },
     {
       "path": "game/tests/reference_mapping_checks.gd",
@@ -290,6 +314,14 @@
       "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
     },
     {
+      "path": "game/world/maris_counter.tscn",
+      "after_path": "game/world/maris_counter.tscn",
+      "before_sha256": "7c8778892f2146e719f611c2ca31183ad4487efb7ecb490aba7c8b70c4458d99",
+      "after_sha256": "034e9b8990363c77b11155c9f577cc36dff443fb51fe91042b46107a9dea3790",
+      "owner": "R006",
+      "reason": "R006 separate actor-only self exclusion from real BenchBody; original shapes, global transforms, visuals, counter identity and service outlines preserved."
+    },
+    {
       "path": "game/world/prototype_location.gd",
       "after_path": "game/world/prototype_location.gd",
       "before_sha256": "62f6d77071a0720c4cf78bdb054a83e047da6e0a191cdb81ba8969557205e64e",
@@ -304,6 +336,14 @@
       "after_sha256": "e143fc0cb47eb3b95759af410a716bca8ad9fbce02d6f7816a769841b7fa3613",
       "owner": "R005",
       "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+    },
+    {
+      "path": "README.md",
+      "after_path": "README.md",
+      "before_sha256": "b5e845f845fb2753b3b71404cd8f282ca8cc8928a7a3b111457cee72e984d897",
+      "after_sha256": "f490921255dee444ee4315048696f7808775d6e4790e49f244e973c947ed37b3",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
     },
     {
       "path": "tools/fishing/audit_native.py",

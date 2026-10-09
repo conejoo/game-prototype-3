@@ -115,7 +115,7 @@ func _run() -> void:
 	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "retry exactly one")
 	var counter: MarisCounter = game.world_host.current_location.get_node("MarisCounter")
 	_check(counter == game.world_host.current_location.npc_contacts.targets["npc-03"] and not counter.get_node("VisualRoot/Maris").visible,"existing one counter, capsule hidden, original bench retained")
-	_check(counter.get_node("VisualRoot/Bench").visible and counter.get_node("Body/BenchCollision").disabled == false,"bench/physics preserved")
+	_check(counter.get_node("VisualRoot/Bench").visible and counter.get_node("BenchBody/BenchCollision").disabled == false,"bench/physics preserved")
 	await _finish()
 
 func _check(ok: bool, message: String) -> void:

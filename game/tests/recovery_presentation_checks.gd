@@ -140,7 +140,7 @@ func _assert_view(game: Node3D, expected: String) -> void:
 	_check(counter.get_node("VisualRoot/BasicSupplies").visible, "Basic supplies disappeared")
 	_check(counter.get_node("VisualRoot/SpecialistGear").visible == (expected == "specialist"), "Wrong specialist gear visibility")
 	_check(counter.get_node("VisualRoot/FittingGear").visible == (expected == "fitting"), "Wrong fitting gear visibility")
-	_check(counter.get_node("Body/BenchCollision").disabled == false, "Variant changed collision")
+	_check(counter.get_node("BenchBody/BenchCollision").disabled == false, "Variant changed collision")
 
 
 func _check(condition: bool, message: String) -> void:

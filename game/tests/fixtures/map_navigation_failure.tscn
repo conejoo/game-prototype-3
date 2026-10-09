@@ -2,7 +2,18 @@
 
 [ext_resource type="PackedScene" path="res://tests/fixtures/compact_alderwake.tscn" id="1"]
 [ext_resource type="Script" path="res://tests/fixtures/map_navigation_failure.gd" id="2"]
+[ext_resource type="Script" path="res://world/portal_binding.gd" id="3"]
+
+[sub_resource type="Resource" id="QualifiedFixturePortal"]
+script = ExtResource("3")
+portal_id = "tollworks-entrance-01"
+source_location_id = "candidate-nav-failure"
+destination_location_id = "prototype-tollworks"
+arrival_id = "tollworks-from-alderwake"
 
 [node name="NavigationFailure" instance=ExtResource("1")]
 script = ExtResource("2")
 location_id = "candidate-nav-failure"
+
+[node name="TravelGate" parent="."]
+portal = SubResource("QualifiedFixturePortal")
