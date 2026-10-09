@@ -13,7 +13,10 @@ var _day: int = -1
 var last_error: String = ""
 var revisions: int = 0
 var transfers: Array[Dictionary] = []
+var directives: Array[Dictionary] = []
 var _night_lane: Dictionary = {}
+var _lease: RoutineDialogueContext
+var reconciliations: int = 0
 
 func initialize(content: ContentCatalog, npcs: NpcContentCatalog, run: GameSession) -> PackedStringArray:
 	if _catalog != null: return ["execution director already initialized"]
@@ -64,6 +67,7 @@ func commit(candidate: Dictionary, run: GameSession, location: PrototypeLocation
 	bind_location(location)
 
 func bind_location(location: PrototypeLocation) -> void:
+	if _lease != null: _lease.close()
 	_location = weakref(location)
 	if not _night_lane.is_empty(): _night_lane.started = false
 	# Scene replacement/disposal releases movement bindings. Reissue only the
@@ -79,6 +83,7 @@ func bind_location(location: PrototypeLocation) -> void:
 			location.npc_contacts.occupancy.reserve(id,cursor.foot,.4)
 
 func dispose() -> void:
+	if _lease != null: _lease.close()
 	var location: PrototypeLocation = _live_location()
 	if location != null:
 		for id: String in _actors: location.npc_contacts.cancel_move(id)
@@ -102,6 +107,7 @@ func _reconstructed(run: GameSession) -> Dictionary:
 			return {"ok":false,"error":"reconstruction refused "+id+" failure="+str(cursor.failure)}
 		count += cursor.transitions
 		if count > MAX_TOTAL_TRANSITIONS: return {"ok":false,"error":"total reconstruction transition limit"}
+		cursor.assignment_day = plan.day_index
 		actors[id] = cursor; positions[id] = {"map":cursor.map_id,"foot":cursor.foot}
 	return {"ok":true,"error":"","actors":actors,"positions":positions,"day":plan.day_index,"transitions":count}
 
@@ -121,6 +127,16 @@ func apply_plan(plan: RoutineAssignmentPlan) -> bool:
 		if definition == null: return false
 		for id: String in definition.participants:
 			if plan.routine_for(id) != routine_id: return false
+	if _lease != null:
+		var assignments: Dictionary = plan.assignments()
+		for routine_id: String in plan.routine_ids():
+			var definition: RoutineDefinition = _catalog.get_routine(routine_id)
+			var conflict: bool = false
+			for id: String in definition.participants: conflict = conflict or id in _lease._cursors
+			if conflict:
+				for id: String in definition.participants: assignments.erase(id)
+		for id: String in _lease._cursors: assignments[id] = _lease._data.routine
+		plan = RoutineAssignmentPlan.new(plan.day_index,plan.minute_of_day,assignments,{},plan.rejections())
 	capture_loaded()
 	var candidate: Dictionary[String,RoutineExecutor] = {}
 	var changed: PackedStringArray = []
@@ -128,19 +144,20 @@ func apply_plan(plan: RoutineAssignmentPlan) -> bool:
 	for id: String in NpcRegistry.ENABLED:
 		var routine_id: String = plan.routine_for(id)
 		var old: RoutineExecutor = _actors.get(id)
-		if old != null and old.routine.id == routine_id and not day_changed:
+		if old != null and old.routine.id == routine_id and (old.assignment_day == plan.day_index or (_lease != null and id in _lease._cursors)):
 			candidate[id] = old; continue
 		if old == null and routine_id.is_empty(): continue
 		changed.append(id)
 		if routine_id.is_empty(): continue
 		var cursor: RoutineExecutor = RoutineExecutor.new()
 		if not cursor.initialize(_catalog.get_routine(routine_id),id,_positions[id]): return false
+		cursor.assignment_day = plan.day_index
 		candidate[id] = cursor
 	var location: PrototypeLocation = _live_location()
 	if location != null:
 		for id: String in changed: location.npc_contacts.cancel_move(id)
 	_actors = candidate; _day = plan.day_index
-	if not changed.is_empty(): _night_lane.clear()
+	if "npc-01" in changed or "npc-02" in changed: _night_lane.clear()
 	if not changed.is_empty() or day_changed: revisions += 1
 	return true
 
@@ -154,6 +171,7 @@ func tick(delta: float, held: bool = false) -> void:
 	var ids: Array = _actors.keys(); ids.sort()
 	for id: String in ids:
 		var cursor: RoutineExecutor = _actors[id]
+		if _lease != null and id in _lease._cursors: continue
 		if cursor.state in [RoutineExecutor.State.FAILED,RoutineExecutor.State.CANCELLED,RoutineExecutor.State.COMPLETED]: continue
 		if not _tick_night_lane(cursor,minf(delta,.1)): _tick_actor(cursor,minf(delta,.1))
 		if cursor.state == RoutineExecutor.State.FAILED: _fail_group(cursor)
@@ -239,6 +257,7 @@ func _fail_group(failed: RoutineExecutor) -> void:
 		if id != failed.npc_id: _actors[id].state = RoutineExecutor.State.CANCELLED; _actors[id].remaining = 0; _actors[id].phase = ""
 
 func _prepare_night_lane() -> void:
+	if _lease != null and ("npc-01" in _lease._cursors or "npc-02" in _lease._cursors): return
 	if not _night_lane.is_empty() or not _actors.has("npc-01") or not _actors.has("npc-02"): return
 	var edric: RoutineExecutor = _actors["npc-01"]
 	var helena: RoutineExecutor = _actors["npc-02"]
@@ -292,3 +311,54 @@ func _tick_night_lane(cursor: RoutineExecutor, _dt: float) -> bool:
 func _live_location() -> PrototypeLocation:
 	var location: PrototypeLocation = _location.get_ref() as PrototypeLocation if _location != null else null
 	return location if is_instance_valid(location) and location.is_inside_tree() and not location.is_queued_for_deletion() else null
+
+func acquire_dialogue(speaker: String, instance: String) -> Dictionary:
+	if _session == null or _lease != null: return {"ok":false,"reason":"Routine dialogue owner unavailable."}
+	var location: PrototypeLocation = _live_location()
+	if location == null or location.npc_contacts == null: return {"ok":false,"reason":"Routine contact unloaded."}
+	var target: PrototypeInteractable = location.npc_contacts.targets.get(speaker)
+	if target == null or not is_instance_valid(target) or target.is_queued_for_deletion() or target.instance_id != instance:
+		return {"ok":false,"reason":"Routine contact instance is stale or foreign."}
+	var cursor: RoutineExecutor = _actors.get(speaker)
+	if cursor == null: return {"ok":true,"context":null}
+	if not cursor.routine.allow_dialogue: return {"ok":false,"reason":"Current routine does not allow dialogue."}
+	if cursor.state in [RoutineExecutor.State.FAILED,RoutineExecutor.State.CANCELLED]: return {"ok":true,"context":null}
+	var context: RoutineDialogueContext = RoutineDialogueContext.new()
+	context._owner = weakref(self)
+	context._data = {"speaker":speaker,"instance":instance,"session":_session,"location":weakref(location),"revision":revisions,"routine":cursor.routine.id,"steps":{}}
+	for id: String in cursor.routine.participants:
+		var member: RoutineExecutor = _actors.get(id)
+		if member == null or member.routine.id != cursor.routine.id: return {"ok":false,"reason":"Incomplete routine group."}
+		context._cursors[id] = member
+		var step: RoutineDefinition.Step = member.current_step()
+		context._data.steps[id] = step.id if step != null else ""
+		if location.npc_contacts.targets.has(id): context._targets[id] = weakref(location.npc_contacts.targets[id])
+	RoutineDefinition.freeze(context._data)
+	_lease = context
+	location.npc_contacts.dialogue_leased = PackedStringArray(context._targets.keys())
+	return {"ok":true,"context":context}
+
+func valid_lease(context: RoutineDialogueContext) -> bool:
+	if _lease != context or context._data.session != _session: return false
+	var location: PrototypeLocation = _live_location()
+	if location == null or context._data.location.get_ref() != location: return false
+	for id: String in context._cursors:
+		var cursor: RoutineExecutor = _actors.get(id)
+		if cursor != context._cursors[id] or cursor.routine.id != context._data.routine: return false
+		var step: RoutineDefinition.Step = cursor.current_step()
+		if (step.id if step != null else "") != context._data.steps[id]: return false
+	for id: String in context._targets:
+		var target: PrototypeInteractable = context._targets[id].get_ref()
+		if target == null or target.is_queued_for_deletion() or location.npc_contacts.targets.get(id) != target: return false
+	return location.npc_contacts.targets[context._data.speaker].instance_id == context._data.instance
+
+func release_lease(context: RoutineDialogueContext) -> void:
+	if _lease != context: return
+	var location: PrototypeLocation = _live_location()
+	if location != null: location.npc_contacts.dialogue_leased = []
+	_lease = null
+	if _session == null: return
+	var update: Dictionary = selector.update(RoutineResolutionContext.from_session(_session))
+	if not update.errors.is_empty(): last_error = "; ".join(update.errors); return
+	reconciliations += 1
+	if not apply_plan(update.plan): last_error = "invalid plan after dialogue closure"

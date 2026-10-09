@@ -155,3 +155,15 @@ game/tests/routine_cross_map_checks.gd* -text whitespace=blank-at-eol,blank-at-e
 game/tests/routine_reconstruction_checks.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/tests/routine_cross_map_render.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/tests/support/routine_execution_fixture.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R011 dialogue contexts, current policy assertions and public input fixtures.
+game/features/routines/routine_dialogue_context.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_dialogue_checks.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_directive_checks.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_dialogue_render.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/support/routine_dialogue_fixture.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/npcs/npc_content_catalog.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/npcs/npc_dialogue_rules.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/people_snapshot_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/social_gift_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/dialogue_overlay.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

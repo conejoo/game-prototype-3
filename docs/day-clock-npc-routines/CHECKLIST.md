@@ -24,7 +24,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R008 | Done | R005, R006 | Lantern Rest and Della's real station |
 | R009 | Done | R002, R006 | Physical same-map movement/bounded occupancy |
 | R010 | Done | R003, R004, R007, R008, R009 | Group/cross-map execution and safe night reconstruction |
-| R011 | Pending | R004, R010 | Routine dialogue, group leases and directives |
+| R011 | Done | R004, R010 | Routine dialogue, group leases and directives |
 | R012 | Pending | R009, R010 | Readable walk/actions/speech under lifecycle holds |
 | R013 | Pending | R011, R012 | All 25 routines active in ordinary play |
 | R014 | Pending | R013 | Integrated restart/rollback/retry and measured runtime bounds |
@@ -520,3 +520,30 @@ day-index test retained and corrected to minute wrap; existing clock day begins
 10:00, no second calendar/semantics added. Refreshed194406532 combined PASS7,
 194742864 bounded PASS3/max31.246ms and seven fresh inspected captures supersede
 earlier accepted runtime; final audit-midnight owns current exact bytes.
+
+## R011 completion record (2026-10-09 UTC)
+
+Exactly R011 Done; every criterion passes. [R011 acceptance](R011_ACCEPTANCE.md)
+owns scope, commands/isolation, source decisions, failed attempts and seven inspected
+captures. Actual instance/routine/step group leases, eligible step/default/ordinary
+entry order and strict staged resume/jump/end/event routing delivered. Only two
+public Helena nodes/five real choices/practice fact activated after current social
+overlay; gifts/milestones/Della indoor text/private gates/schema8/content1 retained.
+Moving night group cannot cancel its leased leg; both loaded contacts/feet/timers
+hold across10AM day rollover, independent assignments continue, close reconciles
+once from actual feet. Ordinary prototype owner cancellation preserved.
+Final203724924 PASS14; dialogue69/directives128, required rules/UI/social/gift/
+recovery plus interaction/executor/Helena and distinct-process actual GUI Save/Load
+primary/backup/full durable-forecast oracle. Seven fresh inspected frames include
+far-side Edric access and both projections via bounded public input. Additional
+content/People/integration/NPC-save/cross-map/reconstruction/routine/social-save
+cases passed individually in retained202707 failed whole report; scoped final
+repairs supersede affected behavior. Final source stable1285 files; only later
+reference-tool audit change; live reference PASS1626/88pins/79exact adaptations/
+ten refusals; original source/derived/before-hashes/reasons preserved. Conversion
+PASS67 files; catalog changes only approved eight coverage entries. All failures
+retained, no native/full-day/default-activation/art-promotion claim. No owned Godot,
+held input/editor or cleanup owed; Blender2664 preserved. Blockers:none.
+Remaining unfinished:R012,R013,R014,R015,R016; every item throughR016 complete:no.
+Next eligibleR012 action/speech presentation; stop before successor. Separate
+user follow-up authorizes the successful R011 commit after review. No push/R012.

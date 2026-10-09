@@ -42,14 +42,14 @@ func _run() -> void:
 			for choice: NpcDialogueGraph.Choice in node.choices:
 				totals.choices += 1
 				if not choice.availability.is_enabled(): totals.deferred_choices += 1
-	_check(totals == {"nodes": 70, "choices": 54, "facts": 24, "portraits": 48, "sheets": 18, "deferred_nodes": 3, "deferred_choices": 6, "gifts": 8}, "Full enabled/deferred coverage counts")
+	_check(totals == {"nodes": 70, "choices": 54, "facts": 24, "portraits": 48, "sheets": 18, "deferred_nodes": 1, "deferred_choices": 1, "gifts": 8}, "Full enabled/deferred coverage counts")
 	var edric: NpcDefinition = catalog.get_npc("npc-01")
 	_check(edric.graph.entry_node_ids[0] == "npc-01-level-1-milestone" and edric.graph.entry_node_ids[4] == "npc-01-initial-conversation", "Authored entry order")
 	_check(edric.graph.nodes["npc-01-initial-conversation"].choices[0].has_one_time_effect(), "Once-only metadata")
 	var event: NpcDialogueGraph.EventCondition = edric.graph.nodes["npc-01-woods-first"].conditions.events[0]
 	_check(event.kind == NpcDialogueGraph.EventCondition.Kind.AREA_ENTERED and event.subject_id == "woods" and event.target_id == null and event.maximum_count == 1, "Typed exact-key event")
 	_check(not edric.facts["npc-01-public-role"].availability.is_enabled() and not edric.facts["npc-01-river-fishing"].availability.is_enabled(), "No fabricated Edric disclosure")
-	_check(not catalog.get_npc("npc-02").facts["npc-02-archive-practice"].availability.is_enabled(), "Archive practice remains routine-only")
+	_check(catalog.get_npc("npc-02").facts["npc-02-archive-practice"].availability.is_enabled(), "Archive practice enabled with routine-only entry")
 	_check(catalog.get_npc("npc-14").graph.nodes["npc-14-introduction"].text.contains("meal room") and not catalog.get_npc("npc-14").graph.nodes["npc-14-introduction"].text.contains("interior is not open"), "Audited current indoor Della wording")
 	_check(not catalog.get_npc("npc-14").graph.choices["npc-14-ask-room"].availability.is_enabled(), "Della room branch unavailable")
 	_check(edric.sheets.has("river-fishing") and catalog.get_npc("npc-02").sheets.has("archive-work"), "Source action indexes")
@@ -153,8 +153,8 @@ func _run() -> void:
 	_reject("must be enabled", func(d: Dictionary) -> void: d.packages[0].coverage.gift_rule["npc-01-moonflower-gift"]["status"] = "deferred")
 	_reject("must be enabled", func(d: Dictionary) -> void: d.packages[0].coverage.node["npc-01-gift-response"]["status"] = "deferred")
 	_reject("must be enabled", func(d: Dictionary) -> void: d.packages[0].coverage.node["npc-01-level-1-milestone"]["status"] = "deferred")
-	_reject("must stay deferred", func(d: Dictionary) -> void: d.packages[1].coverage.node["npc-02-routine-archive-indexing"]["status"] = "enabled")
-	_reject("fact disclosure classification", func(d: Dictionary) -> void: d.packages[1].coverage.fact["npc-02-archive-practice"]["status"] = "enabled")
+	_reject("must stay deferred", func(d: Dictionary) -> void: d.packages[7].coverage.node["npc-14-room"]["status"] = "enabled")
+	_reject("fact disclosure classification", func(d: Dictionary) -> void: d.packages[1].coverage.fact["npc-02-archive-practice"]["status"] = "deferred")
 	_reject("must stay deferred", func(d: Dictionary) -> void: d.packages[7].coverage.choice["npc-14-ask-room"]["status"] = "enabled")
 	_reject("enabled continue targets deferred", func(d: Dictionary) -> void: d.packages[7].dialogue.nodes[1]["continueTargetId"] = "npc-14-room")
 	_reject("owned target-local", func(d: Dictionary) -> void: d.packages[0].visuals.portraits["skeptical"] = "res://assets/npcs/portraits/npc-01/../npc-02/skeptical.png")

@@ -12,6 +12,8 @@ class Result extends RefCounted:
 		action_id = action
 var quest_command: Callable
 var reaction_command: Callable
+var routine_owner: RoutineExecutionDirector
+var _routine_context: RoutineDialogueContext
 var _prototype: ConversationDefinition
 var _selected_choice: String = ""
 var _executing: bool = false
@@ -44,8 +46,18 @@ func begin(npc_id: String, instance_id: String) -> Result:
 	if _executing or _session == null or active() or instance_id.strip_edges().is_empty(): return Result.new(false, "Conversation owner unavailable, active or invalid instance.")
 	var npc: NpcDefinition = _catalog.get_npc(npc_id)
 	var memory: ConversationMemory = _session.conversations.memory(npc_id)
-	var node: NpcDialogueGraph.NodeDefinition = NpcDialogueRules.resolve(npc, memory, _session.conversations.events(), _session.elapsed_play_seconds)
-	if node == null: return Result.new(false, "No available ordinary entry.")
+	var acquired: Dictionary = _acquire_routine(npc_id,instance_id)
+	if not acquired.ok: return Result.new(false, acquired.reason)
+	var node: NpcDialogueGraph.NodeDefinition
+	if _routine_context != null:
+		for id: String in _routine_context.entries():
+			var preferred: NpcDialogueGraph.NodeDefinition = npc.graph.nodes.get(id)
+			if preferred != null and preferred.availability.is_enabled() and NpcDialogueRules.matches(preferred.conditions,memory,_session.conversations.events(),_session.elapsed_play_seconds,npc.level_one_affinity):
+				node = preferred; break
+	if node == null: node = NpcDialogueRules.resolve(npc, memory, _session.conversations.events(), _session.elapsed_play_seconds)
+	if node == null:
+		_release_routine()
+		return Result.new(false, "No available ordinary entry.")
 	_session.conversations = _session.conversations.with_person(NpcDialogueRules.enter(npc, memory, node))
 	_cursor_state = _session.conversations
 	_cursor_inventory = _session.inventory
@@ -53,12 +65,14 @@ func begin(npc_id: String, instance_id: String) -> Result:
 	_instance_id = instance_id
 	_node_id = node.id
 	_generation += 1
-	changed.emit()
+	_notify()
 	return Result.new(true, "Conversation opened.")
 
 func begin_graph(content: ConversationDefinition, instance_id: String) -> Result:
 	if _executing or _session == null or active() or content == null or not content.validation_errors().is_empty() or instance_id.strip_edges().is_empty():
 		return Result.new(false, "Invalid or active conversation owner.")
+	var acquired: Dictionary = _acquire_routine(content.speaker_actor_id,instance_id)
+	if not acquired.ok: return Result.new(false,acquired.reason)
 	_prototype = content.duplicate(true) as ConversationDefinition
 	_npc_id = content.speaker_actor_id
 	_instance_id = instance_id
@@ -66,7 +80,7 @@ func begin_graph(content: ConversationDefinition, instance_id: String) -> Result
 	_cursor_state = _session.conversations
 	_cursor_inventory = _session.inventory
 	_generation += 1
-	changed.emit()
+	_notify()
 	return Result.new(true, "Conversation opened.")
 
 func snapshot() -> Dictionary:
@@ -78,7 +92,7 @@ func snapshot() -> Dictionary:
 	var rows: Array[Dictionary] = []
 	var available: int = 0
 	for choice: NpcDialogueGraph.Choice in node.choices:
-		var reason: String = NpcDialogueRules.choice_reason(npc, choice, memory, _session.conversations.events(), _session.elapsed_play_seconds, _session.inventory)
+		var reason: String = NpcDialogueRules.choice_reason(npc, choice, memory, _session.conversations.events(), _session.elapsed_play_seconds, _session.inventory, _routine_context)
 		# Hidden conditions stay hidden; deferred capability rows explain availability.
 		if not NpcDialogueRules.matches(choice.conditions, memory, _session.conversations.events(), _session.elapsed_play_seconds, npc.level_one_affinity): continue
 		var notice: String = reason
@@ -121,9 +135,14 @@ func choose(npc_id: String, instance_id: String, node_id: String, token: String,
 		if row.id == choice_id: choice = row
 	if choice == null: return Result.new(false, "Unknown response on current node.")
 	var memory: ConversationMemory = _session.conversations.memory(_npc_id)
-	var reason: String = NpcDialogueRules.choice_reason(npc, choice, memory, _session.conversations.events(), _session.elapsed_play_seconds, _session.inventory)
+	var reason: String = NpcDialogueRules.choice_reason(npc, choice, memory, _session.conversations.events(), _session.elapsed_play_seconds, _session.inventory, _routine_context)
 	if not reason.is_empty(): return Result.new(false, reason)
 	if not choice.gift_rule_id.is_empty(): return _choose_gift(npc, choice)
+	var staged: Dictionary = {"ok":true,"reason":"","command":null,"directive":null}
+	if not choice.outcome_tag.is_empty():
+		if _routine_context == null: return Result.new(false,"Routine context unavailable.")
+		staged = _routine_context.stage(choice.outcome_tag)
+		if not staged.ok: return Result.new(false,staged.reason)
 	var candidate: ConversationMemory = memory.responded(choice)
 	var transition: Dictionary = NpcDialogueRules.transition(npc, choice, memory, candidate)
 	if not transition.reason.is_empty(): return Result.new(false, transition.reason)
@@ -131,7 +150,14 @@ func choose(npc_id: String, instance_id: String, node_id: String, token: String,
 	var event_value: NpcEventMemory = _session.conversations.events().record(NpcEventMemory.CHOICE, _npc_id, choice.id, _session.elapsed_play_seconds)
 	if event_value == null: return Result.new(false, "Event memory range exhausted or invalid active time.")
 	if next != null: candidate = NpcDialogueRules.enter(npc, candidate, next)
-	_session.conversations = _session.conversations.with_person(candidate, event_value)
+	_executing = true
+	var conversations_candidate: NpcConversationState = _session.conversations.with_person(candidate, event_value)
+	if staged.directive != null:
+		var errors: PackedStringArray = _session._publish_routine_dialogue(_routine_context,staged,conversations_candidate,_session.inventory)
+		if not errors.is_empty():
+			_executing = false
+			return Result.new(false,"; ".join(errors))
+	else: _session.conversations = conversations_candidate
 	_cursor_state = _session.conversations
 	if next == null: _clear()
 	else:
@@ -139,7 +165,7 @@ func choose(npc_id: String, instance_id: String, node_id: String, token: String,
 		_selected_choice = choice_id
 		_generation += 1
 	_executing = true
-	changed.emit()
+	_notify()
 	_executing = false
 	return Result.new(true, "Response accepted.")
 
@@ -159,7 +185,7 @@ func _choose_gift(npc: NpcDefinition, choice: NpcDialogueGraph.Choice) -> Result
 		_selected_choice = choice.id
 		_generation += 1
 	_gift_feedback = "Gifted Moonflower to %s. Backpack: %d remaining. Friendship +%d (%d / %d toward %s)." % [npc.display_name, _session.inventory.count("item-moonflower"), npc.gifts[choice.gift_rule_id].affinity_delta, _session.conversations.memory(npc.id).affinity, npc.level_one_affinity, npc.level_one_label]
-	changed.emit()
+	_notify()
 	_executing = false
 	return Result.new(true, _gift_feedback)
 
@@ -185,7 +211,7 @@ func _choose_prototype(choice_id: String) -> Result:
 	_node_id = choice.target_node_id
 	_selected_choice = choice_id
 	_generation += 1
-	changed.emit()
+	_notify()
 	return Result.new(true, result.message, command.action_id)
 
 func advance(npc_id: String, instance_id: String, node_id: String, token: String) -> Result:
@@ -196,13 +222,13 @@ func advance(npc_id: String, instance_id: String, node_id: String, token: String
 		if current.continue_target_id.is_empty(): return close(npc_id, instance_id, node_id, token)
 		_node_id = current.continue_target_id
 		_generation += 1
-		changed.emit()
+		_notify()
 		return Result.new(true, "Conversation continued.")
 	var npc: NpcDefinition = _catalog.get_npc(_npc_id)
 	var node: NpcDialogueGraph.NodeDefinition = npc.graph.nodes[_node_id]
 	if node.continue_target_id.is_empty():
 		for choice: NpcDialogueGraph.Choice in node.choices:
-			if NpcDialogueRules.choice_reason(npc, choice, _session.conversations.memory(_npc_id), _session.conversations.events(), _session.elapsed_play_seconds, _session.inventory).is_empty(): return Result.new(false, "Choose a response or Close.")
+			if NpcDialogueRules.choice_reason(npc, choice, _session.conversations.memory(_npc_id), _session.conversations.events(), _session.elapsed_play_seconds, _session.inventory, _routine_context).is_empty(): return Result.new(false, "Choose a response or Close.")
 		return close(npc_id, instance_id, node_id, token)
 	var next: NpcDialogueGraph.NodeDefinition = npc.graph.nodes.get(node.continue_target_id)
 	if next == null or not next.availability.is_enabled(): return Result.new(false, "Continuation unavailable; Close remains available.")
@@ -210,20 +236,20 @@ func advance(npc_id: String, instance_id: String, node_id: String, token: String
 	_cursor_state = _session.conversations
 	_node_id = next.id
 	_generation += 1
-	changed.emit()
+	_notify()
 	return Result.new(true, "Conversation continued.")
 
 func close(npc_id: String, instance_id: String, node_id: String, token: String) -> Result:
 	if not _command_matches(npc_id, instance_id, node_id, token): return Result.new(false, "Stale or foreign conversation command.")
 	_clear()
-	changed.emit()
+	_notify()
 	return Result.new(true, "Conversation closed.")
 
 func cancel() -> void:
 	# Owner lifecycle cancellation applies no unselected effects.
-	if not active(): return
+	if (_executing and _routine_context != null) or not active(): return
 	_clear()
-	changed.emit()
+	_notify()
 
 func record_event(kind: String, subject: Variant, target: Variant) -> Result:
 	if _executing or _session == null: return Result.new(false, "Event owner unavailable or command busy.")
@@ -233,16 +259,27 @@ func record_event(kind: String, subject: Variant, target: Variant) -> Result:
 	if candidate == null: return Result.new(false, "Unsupported event key, time or range.")
 	_session.conversations = _session.conversations.with_events(candidate)
 	if active(): _cursor_state = _session.conversations
-	changed.emit()
+	_notify()
 	return Result.new(true, "Event recorded.")
 
 func _command_matches(npc_id: String, instance_id: String, node_id: String, token: String) -> bool:
-	return not _executing and active() and _cursor_state == _session.conversations and _npc_id == npc_id and _instance_id == instance_id and _node_id == node_id and _token() == token
+	return not _executing and active() and (_routine_context == null or _routine_context.valid()) and _cursor_state == _session.conversations and _npc_id == npc_id and _instance_id == instance_id and _node_id == node_id and _token() == token
 
 func _token() -> String:
 	return "%d:%d:%d" % [get_instance_id(), _generation, _session.inventory.revision() if _session != null else -1]
 
+func _acquire_routine(npc_id: String, instance_id: String) -> Dictionary:
+	if routine_owner == null: return {"ok":true}
+	var acquired: Dictionary = routine_owner.acquire_dialogue(npc_id,instance_id)
+	if acquired.ok: _routine_context = acquired.context
+	return acquired
+
+func _release_routine() -> void:
+	if _routine_context != null: _routine_context.close()
+	_routine_context = null
+
 func _clear() -> void:
+	_release_routine()
 	_gift_feedback = ""
 	_prototype = null
 	_selected_choice = ""
@@ -252,3 +289,9 @@ func _clear() -> void:
 	_instance_id = ""
 	_node_id = ""
 	_generation += 1
+
+func _notify() -> void:
+	var previous: bool = _executing
+	_executing = true
+	changed.emit()
+	_executing = previous

@@ -8,6 +8,7 @@ var occupancy: RoutineOccupancy = RoutineOccupancy.new()
 var _holds: Dictionary = {}
 var contact_records: Dictionary = {}
 var scheduled: bool = false
+var dialogue_leased: PackedStringArray = []
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -39,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	var ids: Array = movers.keys()
 	ids.sort()
 	for id: String in ids:
-		movers[id].step(delta,held)
+		movers[id].step(delta,held or id in dialogue_leased)
 		if presenters.has(id):
 			presenters[id].set_locomotion(movers[id].achieved_speed)
 			if movers[id].achieved_speed > .001:

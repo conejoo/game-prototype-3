@@ -102,7 +102,7 @@ func _gates() -> void:
 	_check(not bag.item_definition("item-fishing-rod").giftable and bag.item_definition("item-moonflower").giftable, "explicit authored item metadata")
 	var baseline: Dictionary = Fixture.pair("npc-01", 3, false)
 	_reject(baseline.npc, row, baseline.session.conversations, baseline.session.inventory, baseline.session.inventory.revision(), 0.0, "synthetic disabled gift gate")
-	_check(baseline.session.conversations.events().supported_key_count() == 40 and state.events().supported_key_count() == 58, "bounded conditional allowlist 40 disabled / 58 production")
+	_check(baseline.session.conversations.events().supported_key_count() == 45 and state.events().supported_key_count() == 63, "bounded conditional allowlist 45 social-disabled / 63 composed production")
 	var metadata: ItemDefinition = bag.item_definition("item-moonflower"); metadata.giftable = false
 	_check(bag.item_definition("item-moonflower").giftable, "item query detaches authored metadata")
 	var missing: NpcConversationState = state.detached_copy(); missing._memories.erase("npc-01")

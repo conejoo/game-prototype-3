@@ -51,7 +51,7 @@ func _run() -> void:
 			"missing-person": bad.conversations.people.erase("npc-01")
 			"extra-field": bad.conversations.people["npc-01"]["cursor"] = "transient"
 			"deferred-node": bad.conversations.people["npc-01"].seen_node_ids.append("npc-01-level-one-milestone")
-			"deferred-fact": bad.conversations.people["npc-02"].learned_fact_ids.append("npc-02-archive-practice")
+			"deferred-fact": bad.conversations.people["npc-01"].learned_fact_ids.append("npc-01-river-fishing")
 			"cross-person-node": bad.conversations.people["npc-01"].seen_node_ids.append("npc-14-introduction")
 			"opposite-receipt": bad.conversations.people["npc-01"].applied_choice_ids.append("npc-01-neutral-response")
 		_reject(bad, mutation)

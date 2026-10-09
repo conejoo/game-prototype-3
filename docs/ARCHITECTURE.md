@@ -1,5 +1,26 @@
 # Returning Fair prototype architecture
 
+Current routine dialogue (2026-10-09, R011): the injected execution director
+mints one transient identity-bound context for the actual loaded speaker instance,
+current routine/step and participant cursors. Step entry, then eligible routine
+default, then ordinary entry resolves under existing condition rules. A false
+interaction policy refuses before disclosure/token publication. Leased group
+bodies and timers hold through clock/window/day changes; independent assignments
+continue. Close/cancel releases once and reconciles current conditions.
+
+Only Helena's two public archive nodes, five authored resume/jump/end choices
+and practice fact are enabled, composed after the existing social overlay.
+Ordinary resolution excludes routine entries. Existing gifts/milestones, Della's
+current indoor wording and all private/deferred capabilities remain preserved.
+Typed staged directives validate the registered speaker/instance/routine/step,
+participant jump and current-day fact command. Signal-free social/event/fact and
+transient directive publication occurs while leased, before observers; service
+and session guards refuse reentrant commands. Event on/off exists only in labeled
+tests. No new durable cursor, clock or schema fields: schema8/content1 remains.
+Actual GUI interaction and separate-process Save/Load verify flag/fact/suppression,
+both slots and owner rebinding. R012 owns action/speech presentation; R013 owns
+default activation, still disabled. The director never moves player/party.
+
 Current cross-map routine execution (2026-10-09, R010): GameRoot optionally owns
 one injected RoutineExecutionDirector; default gameplay activation remains R013.
 RoutineExecutor retains a transient map-qualified foot/cursor and finite active
@@ -38,7 +59,7 @@ Only physical loaded legs are reissued on binding; unrelated offscreen travel
 keeps its phase/remaining time across rollback. A player arrival occupied by an
 NPC correctly refuses, then succeeds after that finite offscreen leg clears it.
 Schema8/content1 and all existing save/clock/social/recovery/party owners unchanged.
-R011 owns dialogue leases/directives, R012 action/speech presentation, R013 default
+R011 delivers dialogue leases/directives, R012 owns action/speech presentation, R013 default
 activation and R014 measured whole-runtime bounds. No new clock or saved cursor.
 
 Current same-map routine movement (2026-10-09, R009): scene-owned

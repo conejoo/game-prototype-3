@@ -104,10 +104,10 @@ func _run() -> void:
 	var memory: ConversationMemory=game.session.conversations.memory("npc-02")
 	for id: String in ["npc-02-routine-archive-default","npc-02-routine-archive-indexing"]:
 		var node: NpcDialogueGraph.NodeDefinition=npc.graph.nodes[id]
-		_check(not node.availability.is_enabled() and not node.availability.reason.is_empty(),"archive preferred entry honestly deferred "+id)
+		_check(node.availability.is_enabled() and not node.availability.reason.is_empty(),"archive preferred entry requires live routine context "+id)
 		for choice: NpcDialogueGraph.Choice in node.choices:
 			_check(not NpcDialogueRules.choice_reason(npc,choice,memory,game.session.conversations.events(),game.session.elapsed_play_seconds).is_empty(),"routine outcome unavailable "+choice.id)
-	_check(not npc.facts["npc-02-archive-practice"].availability.is_enabled() and "npc-02-archive-practice" not in memory.learned_fact_ids,"archive practice unknown in ordinary public context")
+	_check(npc.facts["npc-02-archive-practice"].availability.is_enabled() and "npc-02-archive-practice" not in memory.learned_fact_ids,"archive practice unknown in ordinary public context")
 	_check(game.world_host.current_location.npc_contacts.presenters["npc-02"].model.scene_file_path != "res://assets/models/npcs/npc-01.glb","Helena distinct named model")
 	await _finish()
 

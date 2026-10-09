@@ -27,14 +27,17 @@ static func resolve(npc: NpcDefinition, memory: ConversationMemory, events: NpcE
 	var selected: NpcDialogueGraph.NodeDefinition
 	for id: String in npc.graph.entry_node_ids:
 		var node: NpcDialogueGraph.NodeDefinition = npc.graph.nodes.get(id)
-		if node == null or not node.availability.is_enabled() or not matches(node.conditions, memory, events, seconds, npc.level_one_affinity): continue
+		if node == null or node.id.begins_with("npc-02-routine-") or not node.availability.is_enabled() or not matches(node.conditions, memory, events, seconds, npc.level_one_affinity): continue
 		if selected == null or node.priority > selected.priority or (node.priority == selected.priority and node.id < selected.id): selected = node
 	return selected
 
-static func choice_reason(npc: NpcDefinition, choice: NpcDialogueGraph.Choice, memory: ConversationMemory, events: NpcEventMemory, seconds: float, inventory: InventoryState = null) -> String:
+static func choice_reason(npc: NpcDefinition, choice: NpcDialogueGraph.Choice, memory: ConversationMemory, events: NpcEventMemory, seconds: float, inventory: InventoryState = null, context: RoutineDialogueContext = null) -> String:
 	if not choice.availability.is_enabled(): return choice.availability.reason
 	if not choice.gift_rule_id.is_empty(): return NpcGiftRules.eligibility(npc, choice, memory, events, inventory, seconds)
-	if not choice.outcome_tag.is_empty(): return "Routine capability is unavailable."
+	if not choice.outcome_tag.is_empty():
+		if context == null: return "Routine capability is unavailable."
+		var staged: Dictionary = context.stage(choice.outcome_tag)
+		if not staged.ok: return staged.reason
 	if memory.consumed(choice): return "Response already applied."
 	if not matches(choice.conditions, memory, events, seconds, npc.level_one_affinity): return "Response conditions are not met."
 	return ""

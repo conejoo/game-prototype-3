@@ -28,11 +28,11 @@ func _run() -> void:
 		var npc: NpcDefinition = catalog.get_npc(id)
 		for node: NpcDialogueGraph.NodeDefinition in npc.graph.nodes.values():
 			# Original public branch coverage; G004 social_milestone_checks covers new nodes.
-			if node.availability.is_enabled() and node.id != npc.milestone_node_id and not node.id.ends_with("gift-response") and not node.id.ends_with("gift-end"):
+			if node.availability.is_enabled() and node.id != npc.milestone_node_id and not node.id.ends_with("gift-response") and not node.id.ends_with("gift-end") and not node.id.begins_with("npc-02-routine-"):
 				enabled_nodes += 1
 				_check(visited.has(node.id), "Enabled node exercised " + node.id)
 		for choice: NpcDialogueGraph.Choice in npc.graph.choices.values():
-			if choice.availability.is_enabled() and choice.gift_rule_id.is_empty():
+			if choice.availability.is_enabled() and choice.gift_rule_id.is_empty() and choice.outcome_tag.is_empty():
 				enabled_choices += 1
 				_check(accepted.has(choice.id), "Enabled choice exercised " + choice.id)
 	_check(enabled_nodes == 58 and enabled_choices == 38, "Exact enabled coverage")
@@ -162,7 +162,7 @@ func _event_gates() -> void:
 	var before: Dictionary = session.conversations.snapshot()
 	for event: Array in [[NpcEventMemory.AREA, "woods", "npc-01"], [NpcEventMemory.GATHER, "unknown", null], ["itemGifted", "moonflower", "npc-01"], [NpcEventMemory.CHOICE, "npc-01", "npc-01-helpful-response"]]:
 		_check(not service.record_event(event[0], event[1], event[2]).ok and session.conversations.snapshot() == before, "Unsupported/null mismatch event unchanged")
-	_check(session.conversations.events().supported_key_count() == 58, "Fixed allowlist two world keys plus 48 responses plus eight gifts")
+	_check(session.conversations.events().supported_key_count() == 63, "Fixed allowlist two world keys plus 53 responses plus eight gifts")
 	_check(session.conversations.events().count(NpcEventMemory.AREA, "woods", null) == 2 and session.conversations.events().count(NpcEventMemory.AREA, "woods", "npc-01") == 0, "Null exact key")
 	var rows: Dictionary = session.conversations.events().snapshot()
 	_check(rows.last_sequence == 5, "Exactly two introductions, two woods and one gather")

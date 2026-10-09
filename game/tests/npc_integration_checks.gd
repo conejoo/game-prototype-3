@@ -68,7 +68,7 @@ func _run() -> void:
 		for fact: NpcDefinition.Fact in npc.facts.values():
 			if fact.availability.is_enabled(): facts+=1
 			else: deferred.append({"kind":"fact","id":fact.id,"reason":fact.availability.reason})
-	_check(nodes==67 and choices==48 and facts==21,"exact approved social coverage contract")
+	_check(nodes==69 and choices==53 and facts==22,"exact composed social/public-routine coverage contract")
 	# Labeled synthetic service setup creates eight valid, independent memories;
 	# actual root death/retry must retain all complete durable facts exactly.
 	for id: String in NpcRegistry.ENABLED:

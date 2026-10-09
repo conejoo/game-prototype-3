@@ -208,7 +208,11 @@ func _validate_package(package: Dictionary, id: String, errors: PackedStringArra
 		_require_enabled(coverage["gift_rule"][gift_id], gift_id, errors)
 	for choice_id: String in choices:
 		var choice: Dictionary = choices[choice_id]
-		if choice.has("outcomeTag") or choice_id == "npc-14-ask-room":
+		if choice.has("outcomeTag"):
+			if choice_id not in ["npc-02-resume-archive-default-choice","npc-02-end-archive-default-choice","npc-02-resume-archive-indexing-choice","npc-02-review-archive-ledger-choice","npc-02-end-archive-indexing-choice"]:
+				errors.append(choice_id + ": unsupported routine outcome")
+			_require_enabled(coverage["choice"][choice_id], choice_id, errors)
+		if choice_id == "npc-14-ask-room":
 			_require_deferred(coverage["choice"][choice_id], choice_id, errors)
 		if choice.has("giftRuleId"):
 			_require_enabled(coverage["choice"][choice_id], choice_id, errors)
@@ -218,7 +222,9 @@ func _validate_package(package: Dictionary, id: String, errors: PackedStringArra
 		var node: Dictionary = nodes[node_id]
 		if node_id == "npc-01-level-1-milestone":
 			_require_enabled(coverage["node"][node_id], node_id, errors)
-		if node_id.begins_with("npc-02-routine-") or node_id == "npc-14-room":
+		if node_id in ["npc-02-routine-archive-default","npc-02-routine-archive-indexing"]:
+			_require_enabled(coverage["node"][node_id], node_id, errors)
+		if node_id == "npc-14-room":
 			_require_deferred(coverage["node"][node_id], node_id, errors)
 		if coverage["node"][node_id]["status"] == "deferred":
 			for choice: Dictionary in node.get("choices", []):

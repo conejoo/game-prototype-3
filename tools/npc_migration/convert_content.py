@@ -67,6 +67,9 @@ def expected_outputs(source=None, social=True):
         sys.path.insert(0, str(ROOT / "tools/social_migration"))
         from activation_overlay import apply
         packages = apply(packages)
+        sys.path.insert(0, str(ROOT / "tools/routine_migration"))
+        from dialogue_overlay import apply as apply_routines
+        packages = apply_routines(packages)
     document = {"format_version": 1, "source_revision": manifest["source_revision"], "packages": packages}
     outputs[OUTPUT] = (json.dumps(document, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
     return outputs

@@ -1,6 +1,71 @@
 # Day clock and NPC routines current state
 
-## Current R010 completion (2026-10-09 UTC)
+## Current R011 completion (2026-10-09 UTC)
+
+Active task:none. Exactly R011 Done; all criteria verified, no blockers/unrun R011
+criteria. R001-R011 Done; R012-R016 Pending. Every item throughR016 complete:no.
+[R011 acceptance](R011_ACCEPTANCE.md) owns35 implementation paths plus one
+nearer attribute-file commit portability repair, criterion mapping,
+commands/isolation, source decisions, retained failures and seven inspected views.
+Stop before R012. Separate user follow-up now authorizes the successful R011
+commit after review; no push or successor work. Implementation validation remains
+unchanged. Scoped staging/commit verification records the accepted source bytes.
+Staging detected inherited eol normalization of the accepted overlay. Narrow
+-eol/-text overlay exception in the nearer tools/routine_migration/.gitattributes
+file overrides its generic Python rule and preserves original accepted CRLF. Root
+trial override restored. Commit includes36 scoped paths; only portability metadata
+changed, all prior attribute rules/runtime/tests/source pins remain exact.
+
+Baseline clean HEAD3cd74ce29ab36297bc52fe0049f09df7fa1b6708, empty index/no user
+changes; source60c20eb2 clean/read-only. Applicable instructions/current testing,
+save/journey/capture/native guidance read. No nested target instructions or target/
+workspace .agents skills. Installed Godot4.7.2 paths verified. Default shell sandbox
+fails before execution; scoped reviewed shell works, no approval rejection.
+
+Delivered actual instance/routine/step context, group lease, eligible step/default/
+ordinary precedence, strict typed staged directives, atomic social/event/fact
+publication and once-only post-close reconciliation. Leased actual moving paths/
+feet/timers hold across10AM rollover; independent assignments update. Night-lane
+setup now respects leases. Ordinary prototype callback cancellation remains valid;
+routine busy cancellation/reentrant command inert. Exactly two Helena archive
+nodes/five choices/practice fact enabled after existing social overlay; Della indoor
+wording/gifts/milestones/private gates/schema8/content1 preserved. Default routines
+remain disabled untilR013; action/speech mapping remainsR012. No art/geometry/
+anchor/nav/collision/source/clock/save-field or normal-save change.
+
+Final evidence `docs/evidence/R011/20261009-203724924-687d44fb/results.json` PASS14:
+dialogue69/directives128, rule929/UI384/social transaction238/gift335/recovery,
+ordinary interaction/executor71/Helena731, rendered writer51/reader15. All exits0,
+forbidden diagnostics empty, source stable1285 files. Distinct GUI Save/Load process
+PID11008/72376; exact full typed durable/forecast and primary/backup, restored owner
+with no saved lease. Required five regressions all pass. Additional content432,
+NPC-save569/People960/integration85/cross-map3495/reconstruction495/routine-save213/
+social-save844 passed in retained202707 overall failed report; final scoped repairs
+supersede affected behavior. Only post-run source edit: reference audit recognizes
+reviewed current archive enabled markers while preserving immutable R001 coverage.
+Final inventory7e474e9f701c895d106ea7f1502f85a971f31155bf2739481330ec3550acac85.
+Live reference PASS1626/88pins/79exact target adaptations/ten refusals; original
+pins/before-hashes/prior reasons retained. Converter PASS67/eightpeople/48portraits/
+18sheets, exact approved coverage-only catalog diff. Seven final frames inspected:
+Helena indexing/default public fact, paused Save/Load, actual far-side Edric rest,
+room both projections. Synthetic initial clocks/arrivals labeled, then ordinary
+focused viewport WASD/E/GUI/P/Esc with unaccelerated clock and verified pause.
+Bed/wardrobe corner uses three bounded atomic <=30frame public key holds, guaranteed
+release; actual physics/range/LOS, no placement/collision/nav override. No natural
+full-day/native package claim.
+
+Failures retained: UID-source-change imports; snapshot/event-exhaustion/count/
+Della-overlay/UTF-8 issues; redundant backup Save; nav detour into Helena; old
+one-loaded group test corrected, true two-loaded moving group exposes lane cancel;
+LF edit refusal/repeated unpatched attempt; ordinary callback cancellation and
+historical current-enabled coverage mismatch. Scoped fixes and final validation
+complete; no retry remaining. No owned Godot/editor/held input or cleanup owed;
+Blender2664 unchanged. Final readback: intended35 paths, status/dependencies/links,
+1284 accepted source hashes unchanged plus reference-tool-only repair, HEAD same,
+index empty, source clean, whitespace. Next eligibleR012: declared walk/actions/
+timed public speech under lifecycle holds usingR009/R010; stop before successor.
+
+## Prior R010 completion (2026-10-09 UTC)
 
 Active task:none. Exactly R010 completed; every criterion passes, including final
 absent-assignment stability and actual civil-midnight loaded wait continuity.

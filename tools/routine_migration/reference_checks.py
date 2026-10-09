@@ -151,7 +151,7 @@ def adaptations(reference, path):
         require(isinstance(row, dict) and set(row) == {'path', 'after_path', 'before_sha256', 'after_sha256', 'owner', 'reason'}, 'Invalid adaptation record')
         name = row['path']
         require(name in baseline and name not in result and row['before_sha256'] == baseline[name], 'Foreign/duplicate/mismatched adaptation baseline')
-        require(row['owner'] in {'R004', 'R005', 'R006', 'R007', 'R008', 'R009', 'R010'} and isinstance(row['reason'], str) and bool(row['reason'].strip()), 'Undocumented adaptation owner/reason')
+        require(row['owner'] in {'R004', 'R005', 'R006', 'R007', 'R008', 'R009', 'R010', 'R011'} and isinstance(row['reason'], str) and bool(row['reason'].strip()), 'Undocumented adaptation owner/reason')
         after = child(pin.ROOT, row['after_path'])
         require(after.is_file() and not after.is_symlink() and pin.sha(after) == row['after_sha256'], 'Adapted target hash drift: '+name)
         if row['after_path'] != name:
@@ -207,7 +207,23 @@ def validate(reference=REFERENCE, source=None, adaptation_path=ADAPTATIONS):
     contacts = pin.read(pin.ROOT/'tools/npc_migration/reference/contact_registry.json')['contacts']
     require(mapping == pin.mapping_data(routines,maps,layout,definitions,contacts), 'Anchor geometry/portal mapping differs from pinned source/target'); assertions += 1
     coverage = pin.read(reference/'coverage.json')
-    require(coverage == pin.coverage(routines, packages, pin.read(pin.ROOT/'game/content/npcs/catalog.json'), maps), 'Routine/step/dialogue/outcome ownership drift'); assertions += 1
+    target_catalog = pin.read(pin.ROOT/'game/content/npcs/catalog.json')
+    expected_coverage = copy.deepcopy(coverage)
+    # R001 coverage is immutable historical truth. Only this reviewed R011 public
+    # activation changes current_target_enabled; every source field/owner stays exact.
+    if changes.get('game/content/npcs/catalog.json', {}).get('owner') == 'R011':
+        helena = next(p for p in target_catalog['packages'] if p['id'] == 'npc-02')
+        enabled = {'node': ['npc-02-routine-archive-default', 'npc-02-routine-archive-indexing'],
+                   'choice': ['npc-02-resume-archive-default-choice', 'npc-02-end-archive-default-choice', 'npc-02-resume-archive-indexing-choice', 'npc-02-review-archive-ledger-choice', 'npc-02-end-archive-indexing-choice'],
+                   'fact': ['npc-02-archive-practice']}
+        require(all(helena['coverage'][kind][identity]['status'] == 'enabled' for kind, ids in enabled.items() for identity in ids), 'R011 public archive activation incomplete'); assertions += 1
+        for row in expected_coverage['routines']:
+            for entry in row['dialogue_entries']:
+                if entry['npc_id'] == 'npc-02' and entry['node_id'] in enabled['node']:
+                    require(entry['owner'] == 'R011' and entry['current_target_enabled'] is False, 'Historical archive ownership/activation drift')
+                    entry['current_target_enabled'] = True
+        assertions += 1
+    require(expected_coverage == pin.coverage(routines, packages, target_catalog, maps), 'Routine/step/dialogue/outcome ownership drift'); assertions += 1
     tags = {c['outcomeTag'] for p in packages.values() for n in p['dialogue']['nodes'] for c in n.get('choices',[]) if c.get('outcomeTag')}
     for r in routines:
         for d in r['interactionPolicy']['outcomeDirectives']:

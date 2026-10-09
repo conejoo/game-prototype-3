@@ -90,6 +90,7 @@ func _ready() -> void:
 	if errors.is_empty() and routine_execution != null:
 		errors = routine_execution.initialize(catalog,npc_catalog,session)
 		world_host.routine_execution = routine_execution
+		dialogue.routine_owner = routine_execution
 	if not errors.is_empty():
 		set_process(false)
 		set_process_unhandled_input(false)
@@ -508,6 +509,7 @@ func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
 		progression.initialize(catalog, session)
 		# Bind restored durable memory; dialogue cursor is always fresh.
 		dialogue.initialize(npc_catalog, session)
+		dialogue.routine_owner = routine_execution
 		_refresh_progression()
 	_pending_restore = null
 	camera_rig.set_target(player_placeholder)

@@ -4,6 +4,7 @@ extends RefCounted
 enum State { READY, MOVING, WAITING, ACTING, SPEAKING, COMPLETED, FAILED, CANCELLED }
 enum Failure { NONE, INVALID_ORIGIN, INVALID_ANCHOR, INVALID_CHAIN, MOVEMENT, ARRIVAL_BLOCKED, TRANSITION_LIMIT }
 const MAX_TRANSITIONS: int = 64
+var assignment_day: int = -1
 var npc_id: String
 var routine: RoutineDefinition
 var steps: Array[RoutineDefinition.Step] = []

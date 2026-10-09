@@ -728,12 +728,12 @@
             "reason": "Approved social activation social-60c20eb2-g001"
           },
           "npc-02-routine-archive-default": {
-            "status": "deferred",
-            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+            "status": "enabled",
+            "reason": "R011 public archive dialogue; live routine lease gates entry/directives, authored node entry alone discloses fact."
           },
           "npc-02-routine-archive-indexing": {
-            "status": "deferred",
-            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+            "status": "enabled",
+            "reason": "R011 public archive dialogue; live routine lease gates entry/directives, authored node entry alone discloses fact."
           }
         },
         "choice": {
@@ -754,24 +754,24 @@
             "reason": "Approved social activation social-60c20eb2-g001"
           },
           "npc-02-resume-archive-default-choice": {
-            "status": "deferred",
-            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+            "status": "enabled",
+            "reason": "R011 public archive dialogue; live routine lease gates entry/directives, authored node entry alone discloses fact."
           },
           "npc-02-end-archive-default-choice": {
-            "status": "deferred",
-            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+            "status": "enabled",
+            "reason": "R011 public archive dialogue; live routine lease gates entry/directives, authored node entry alone discloses fact."
           },
           "npc-02-resume-archive-indexing-choice": {
-            "status": "deferred",
-            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+            "status": "enabled",
+            "reason": "R011 public archive dialogue; live routine lease gates entry/directives, authored node entry alone discloses fact."
           },
           "npc-02-review-archive-ledger-choice": {
-            "status": "deferred",
-            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+            "status": "enabled",
+            "reason": "R011 public archive dialogue; live routine lease gates entry/directives, authored node entry alone discloses fact."
           },
           "npc-02-end-archive-indexing-choice": {
-            "status": "deferred",
-            "reason": "Requires archive routine entry/consumer; no preferred-entry injection, ledger jump or daily suppression."
+            "status": "enabled",
+            "reason": "R011 public archive dialogue; live routine lease gates entry/directives, authored node entry alone discloses fact."
           }
         },
         "fact": {
@@ -780,8 +780,8 @@
             "reason": "Disclosure only on authored node entry."
           },
           "npc-02-archive-practice": {
-            "status": "deferred",
-            "reason": "Only archive routine discloses this fact."
+            "status": "enabled",
+            "reason": "R011 public archive dialogue; live routine lease gates entry/directives, authored node entry alone discloses fact."
           },
           "npc-02-moonflower-pressing": {
             "status": "enabled",

@@ -132,3 +132,24 @@ func toggle_light(action: LightSwitchAction, expected_enabled: bool) -> PackedSt
 	if environment.light_enabled(action.location_id, action.prop_id, action.source_id) != expected_enabled:
 		return PackedStringArray(["light command is stale; source already changed"])
 	return environment.set_light_enabled(action.location_id, action.prop_id, action.source_id, not expected_enabled)
+
+func _publish_routine_dialogue(context: RoutineDialogueContext, staged: Dictionary, conversations_candidate: NpcConversationState, inventory_candidate: InventoryState) -> PackedStringArray:
+	if _applying_routine_command or context == null or context._data.get("session") != self or not context.valid_staged(staged) or conversations_candidate == null or not conversations_candidate.initialized or inventory_candidate != inventory: return ["stale or busy routine dialogue publication"]
+	var command: RoutineFactCommand = staged.command
+	var facts: RoutineFacts = routines
+	if command != null:
+		var errors: PackedStringArray = command.validation_errors(self)
+		if not errors.is_empty(): return errors
+		facts = command.candidate(routines)
+		errors = RoutineFacts.restore(facts.snapshot()).errors
+		if not errors.is_empty(): return errors
+	_applying_routine_command = true
+	conversations = conversations_candidate
+	inventory = inventory_candidate
+	routines = facts
+	if command != null: _routine_revision += 1
+	context.commit_transient(staged)
+	# All signal-free assignments and transient directive precede first observer.
+	if command != null: routine_facts_changed.emit()
+	_applying_routine_command = false
+	return []
