@@ -8,8 +8,8 @@ This file owns task status; [CURRENT_STATE](CURRENT_STATE.md) owns continuation;
 [CONTRACT](CONTRACT.md) owns behavior and source mappings;
 [AGENT_PROMPT](AGENT_PROMPT.md) selects this workflow.
 
-Planning complete on 2026-10-08, America/Vancouver. FS001-FS007 Done on 2026-10-09 UTC;
-FS008 Pending. Next/final FS008; checklist incomplete.
+Planning complete on 2026-10-08, America/Vancouver. FS001-FS008 Done on 2026-10-09 UTC.
+No unfinished or eligible successor tasks. Whole checklist complete.
 
 ## Selection and evidence
 
@@ -42,7 +42,7 @@ FS008 Pending. Next/final FS008; checklist incomplete.
 | FS005 | Done | FS003, FS004 | Root-owned fishing lifecycle with exactly-once rewards |
 | FS006 | Done | FS005 | Readable public controls, HUD, fish icons and cast/bite feedback |
 | FS007 | Done | FS006 | Integrated ordinary play, cancellation and independent-process persistence |
-| FS008 | Pending | FS007; completed/stable independent native-delivery baseline | Fresh Windows packages and ordinary native fishing/restart proof |
+| FS008 | Done | FS007; completed/stable independent native-delivery baseline | Fresh Windows packages and ordinary native fishing/restart proof |
 
 ## FS001 — Freeze references and map-safe casting requirements
 
@@ -437,3 +437,37 @@ launch/UID-import/starting-health fixture failures retained/excluded and correct
 All owned processes exited, no cleanup or approval rejection outstanding.
 No commit/push/export/native delivery or successor work. FS007 blockers none.
 Remaining/next FS008; every item through FS008 complete: no. Stop here.
+
+### FS008 / 2026-10-09 UTC / Done
+
+Entry/final HEAD `0907b2a69e5fdca6bbe3da48a1da6d107148c71d`; entry Git clean.
+G009 Done/current helpers/canonical baseline and installed4.7.2 templates verified.
+Fresh actual Desktop/Validation presets, strict test exclusions, packed fish/live
+state audits, exact prior archives and safe local promotion complete. Fourteen-file
+scope: ten fishing delivery/guard/classifier/audit files, export exclusions and
+three fishing docs. Gameplay/schema7/content1/source/layout/instructions/social/
+normal saves preserved. Every criterion in [FS008 acceptance](FS008_ACCEPTANCE.md).
+
+Package run `20261009-054725-1f89786c`: eight cases PASS, fishing500 assertions per
+preset plus inherited social audits and external startup. Final focused runner
+`20261009-060809861-e9b5865a`: all13 engine/parse/check/process cases PASS, 1040 game/
+tool bytes stable, source.changed=false/error=null. Native/classifier/dispatcher
+guards13/10/739 PASS; live reference143 PASS before/after. No runtime errors/timeouts;
+known editor-only SDK10.0.9 advisory retained. Canonical/archive/override identities
+and exported production byte equality verified in final review.
+
+Native writer50204 physically picks/selects rod, casts/hooks/reels from real rendered
+HUD and lands one unforced Bluegill. Cancel/recast, GUI Save/F10 exit0, fresh reader
+27060 GUI Load/Save exact whole typed snapshot/forecast before resume, physical
+rod/dock revisit with selected Bluegill1/rod1 and baseline facts retained. All120
+captures/20 sheets inspected; explicit native audit375 assertions PASS. Only Bluegill
+native claim; all-three-species correctness separately deterministic. Seven No Bite,
+one exhausted fight/one missed hook retained. One initial foreground request failed,
+never accepted, explicitly excluded with clean release and inspected successful retry;
+generic capture review honestly retains that sole failure. Earlier failed package/
+launch/helper checks retained and corrected, no failed export promoted.
+
+Native PIDs normal exit0; exact owned TEMP copy removed, archives/evidence/pair saves
+preserved. No process/editor/input/cleanup owed or approval rejection. No commit,
+push/publication/deployment/successor. FS008 blockers none. Remaining unfinished IDs:
+none. Every item through FS008 complete: yes. Stop; await separate commit instruction.

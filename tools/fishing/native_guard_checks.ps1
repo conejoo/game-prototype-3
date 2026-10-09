@@ -1,5 +1,6 @@
 #Requires -Version 7.0
-## FS006 tests the future FS008 route without starting native fishing or FS008.
+param([ValidateSet('FS006','FS008')][string]$EvidenceTask='FS006')
+## Synthetic guard checks only; never native fishing acceptance.
 $ErrorActionPreference='Stop'
 $projectRoot=Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 . (Join-Path $projectRoot 'tools/testing_paths.ps1')
@@ -8,7 +9,7 @@ function Check([bool]$Pass,[string]$Message) { $script:count++; if (-not $Pass) 
 function Refuse([scriptblock]$Action,[string]$Message) {
     $rejected=$false; try {& $Action | Out-Null} catch {$rejected=$true}; Check $rejected $Message
 }
-$run=Join-Path $projectRoot ('docs/evidence/FS006/native-guards-'+[guid]::NewGuid().ToString('N'))
+$run=Join-Path $projectRoot ('docs/evidence/'+$EvidenceTask+'/native-guards-'+[guid]::NewGuid().ToString('N'))
 $fixture=Join-Path $run 'fixture'
 $canonical=Join-Path $fixture 'builds/windows'
 $copy=Join-Path ([IO.Path]::GetTempPath()) ('ReturningFair-FS008-guards-'+[guid]::NewGuid().ToString('N'))
@@ -39,5 +40,5 @@ foreach ($owned in @($linked,$copy)) {
 }
 Remove-Item -LiteralPath $linked
 Remove-Item -LiteralPath $copy -Recurse
-@{task='FS006';status='passed';assertions=$count;proof='Synthetic exact-hash/path/reparse guards for future FS008; no OS input or package modification'} | ConvertTo-Json | Set-Content (Join-Path $run 'results.json')
-Write-Output "FS006 native guards: PASS assertions=$count REPORT=$run/results.json"
+@{task=$EvidenceTask;status='passed';assertions=$count;proof='Synthetic exact-hash/path/reparse guards for FS008; no OS input or package modification'} | ConvertTo-Json | Set-Content (Join-Path $run 'results.json')
+Write-Output "$EvidenceTask native guards: PASS assertions=$count REPORT=$run/results.json"
