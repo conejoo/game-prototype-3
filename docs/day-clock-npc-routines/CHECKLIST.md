@@ -25,7 +25,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R009 | Done | R002, R006 | Physical same-map movement/bounded occupancy |
 | R010 | Done | R003, R004, R007, R008, R009 | Group/cross-map execution and safe night reconstruction |
 | R011 | Done | R004, R010 | Routine dialogue, group leases and directives |
-| R012 | Pending | R009, R010 | Readable walk/actions/speech under lifecycle holds |
+| R012 | Done | R009, R010 | Readable walk/actions/speech under lifecycle holds |
 | R013 | Pending | R011, R012 | All 25 routines active in ordinary play |
 | R014 | Pending | R013 | Integrated restart/rollback/retry and measured runtime bounds |
 | R015 | Pending | R014 | Ordinary full-day/social/recovery rendered walkthrough |
@@ -547,3 +547,36 @@ held input/editor or cleanup owed; Blender2664 preserved. Blockers:none.
 Remaining unfinished:R012,R013,R014,R015,R016; every item throughR016 complete:no.
 Next eligibleR012 action/speech presentation; stop before successor. Separate
 user follow-up authorizes the successful R011 commit after review. No push/R012.
+
+
+## R012 completion record (2026-10-09 UTC)
+
+Exactly R012 Done; all presentation criteria pass. [R012 acceptance](R012_ACCEPTANCE.md)
+owns18 exact paths, commands/isolation, mappings, inspected images and retained
+failures/limits. Production Edric/Helena action variants mount once per wrapper;
+scene-owned public speech follows existing executor timers, facing and root holds.
+Achieved motion owns walk; pause/focus preserve action pose, unsafe holds hide text/
+props and resume same step. Active unload/cancel/disposal clear output; optional
+unmapped actions use exported idle. No rewards/geometry/source/schema change.
+Combined210402630 PASS10: action1814/asset839/camera330/movement1363/executor71/
+dialogue69/render60 with13 inspected captures/two sheets. Final210904390 PASS3,
+presentation94, active speech unload/accessory disposal and typed Tess-blocked
+full river leg. All accepted exits0/no diagnostics/source stable; isolated per-case
+APPDATA/LOCALAPPDATA/primary-backup slots, no normal saves. Runtime/render/assets/
+reused checks retain exact combined accepted bytes; final1291-file fingerprint
+8b7a473dd9a4b0b4556ad116b2e32948515ad718e92bed5da61a9cc1ef90a9a2.
+Live reference PASS1626/88pins/80adaptations/ten refusals; original pins/before-
+hashes/prior reasons retained. All13 images inspected, full far/near and archive
+speech readable, planted feet/props; both projections and real0.8/1.15 public zoom.
+Synthetic clocks/party and one-metre river art precursor labeled; later physical
+steps/timers unaccelerated, public projection/zoom/J/Esc and verified pause.
+Retained full-route failure identifies stationary Tess npc-06 at(6.6001,0,4.6001),
+bounded BLOCKED/two repaths. R013 owns ordinary route/contact integration; this
+negative case is explicit, not a successful full-route claim. R012 blockers/unrun
+criteria:none. UID/encoding/boundary/camera-loop/short archive observation/incorrect
+party-blocker assumptions retained and repaired; no failed whole run relabeled.
+All owned Godot exited; no held input/editor/cleanup owed; Blender2664 preserved.
+No commit/push/default activation/native/full-day claim. Remaining unfinished:
+R013,R014,R015,R016. Every item throughR016 complete:no. Next eligibleR013; integrate
+catalog and resolve/verify Tess obstruction. Stop before successor; separate user
+instruction follows review for authorized successful-task commit.

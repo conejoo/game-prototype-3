@@ -1,5 +1,22 @@
 # Returning Fair prototype architecture
 
+Current routine presentation (2026-10-09, R012): production mappings mount the
+reviewed Edric fishing/Helena archive GLBs once per existing contact. Achieved
+motion owns walk; stopped declared action steps explicitly select their portable
+clips/accessories and qualified station facing. Remaining villagers use existing
+exported idle for an optional unmapped action, with no invented sheet or reward.
+Scene-owned RoutinePresentation displays only current authored public speech via
+an outlined billboard Label3D above actual feet, with no input/collision node.
+Executor active time owns expiry; no extra clock, durable pose/text or saved timer.
+Root/director synchronize holds, cancellation, reassignment and map disposal.
+Pause retains speech/action pose; focus hides speech but retains the action pose.
+Dialogue/modal/travel/death hide speech and cancel unsafe accessories; the same
+held live action resumes after release. Move/completion/failure/disposal clear
+stale output. Synthetic short-leg/clock art setups and real unaccelerated rendered
+transitions are inspected in both projections and actual0.8/1.15 zoom bounds.
+Default routine activation remains R013; source/geometry/schema8/content1,
+portraits/identities and existing rewards/social/item/save owners stay unchanged.
+
 Current routine dialogue (2026-10-09, R011): the injected execution director
 mints one transient identity-bound context for the actual loaded speaker instance,
 current routine/step and participant cursors. Step entry, then eligible routine

@@ -1,6 +1,69 @@
 # Day clock and NPC routines current state
 
-## Current R011 completion (2026-10-09 UTC)
+## Current R012 completion (2026-10-09 UTC)
+
+Active task:none. Exactly R012 Done; all criteria verified. R001-R012 Done,
+R013-R016 Pending. Every item through R016 complete:no. R012 blockers/unrun
+criteria:none. [R012 acceptance](R012_ACCEPTANCE.md) owns18 exact intended paths,
+criterion mapping, commands/isolation, preserved baseline, retained failures and
+13 inspected captures/two contact sheets. Implementation stopped before R013
+without commit/push. Separate user follow-up now authorizes the successful R012
+commit after review. Commit turn verifies accepted source bytes and stages only
+the18 intended paths, including acceptance/checklist/handoff; no push or R013 work.
+Git and ignored docs/evidence/R012/commit-audit.json record the resulting hash.
+
+Clean baseline HEAD28d6f9e0e6fcaa0ac02cd2a071d5d54d134676c5, empty index/no user
+changes; source60c20eb2 clean/read-only. Applicable workspace instructions and current
+installed/versioned testing/save/journey/capture/native guidance read. No nested
+AGENTS/.agents skills; installed Godot console/editor paths verified. Sandbox shell
+setup fails; scoped reviewed shell succeeds, no automatic review rejection.
+
+Delivered existing Edric/Helena action assets mounted once, explicit action mappings,
+qualified facing, achieved-motion walk, scene-owned current public speech and root/
+executor hold/cancel/unload integration. No local timer/reward/saved text/private
+diagnostic/geometry/source/portrait/schema change. Others optional idle fallback;
+default schedules remain disabled untilR013. Root injection hook was the necessary
+bounded allowlist extension; exact18 paths documented, no unrelated work touched.
+
+Combined210402630 PASS10: presentation87, required action1814/asset839/camera330,
+movement1363/412samples/executor71/dialogue69, renderer60/13captures. All13 inspected
+on both sheets plus full speech/fishing/Helena frames: readable at actual far1.15/
+near0.8 and both projections, feet/props/identity/transitions valid. Public projection/
+zoom/J/Esc, verified pause. Synthetic initial clocks/party and one-metre Edric art
+precursor are labeled; subsequent physics/timers unaccelerated. No full ordinary
+river route, default activation, natural day/native/package claim.
+Final210904390 PASS3 / presentation94 strengthens active speech unload/action
+accessory disposal and diagnoses original full river approach's typed Tess blockade.
+Accepted exits0/no forbidden diagnostics/source.changed=false/error=null. Separate
+APPDATA/LOCALAPPDATA/save groups/named primary-backup per check; render separate,
+no normal saves. Final1291-file fingerprint
+8b7a473dd9a4b0b4556ad116b2e32948515ad718e92bed5da61a9cc1ef90a9a2.
+Runtime/render/assets/reused tests exactly match successful inspected combined run;
+only later game change is focused-test strengthening, tool change exact ledger.
+Live reference PASS1626/88pins/80adaptations/ten refusals; original before-hashes/
+source pins/prior reasons intact. Narrow byte rules prevent commit normalization.
+
+Retained failures: generated UIDs invalidate initial imports; READY-boundary test;
+UTF-8/mixed-ending helper repairs; blocked original river leg; short40s archive
+observation, too-small speech, paused camera keys; inline camera-loop parse error;
+incorrect party-blocker assumption. All actual R012 criteria repaired/validated;
+failed reports remain failed. Original river leg physically meets stationary Tess
+npc-06 at(6.6001,0,4.6001), movement BLOCKED/two repaths/three path requests.
+Negative case retains safe failure with no false label/action. R013 ordinary-route
+integration must resolve/verify that contact obstruction; R012 art precursor is
+explicit and cannot substitute for it. No R013 work performed.
+
+All owned Godot exited, no held input/editor/cleanup owed; Blender2664 untouched.
+Final readback/audit records18 exact paths, accepted current hashes, status/links/
+dependencies, unchanged HEAD/empty index/clean source and whitespace. Remaining
+unfinished IDs:R013,R014,R015,R016. Next eligibleR013:activate complete catalog,
+verify real scheduled access/dialogue/presentation, resolve/verify Tess river leg.
+Authorized R012 commit follow-up: exact18-path/current1291-hash preflight passed;
+no unrelated changes, unchanged HEAD/empty index/clean read-only source. Stage only
+accepted18 paths, verify index bytes/whitespace, commit once, verify committed
+paths/tree. Retained Edric/Tess obstruction remains R013 follow-up. No push or R013.
+
+## Prior R011 completion (2026-10-09 UTC)
 
 Active task:none. Exactly R011 Done; all criteria verified, no blockers/unrun R011
 criteria. R001-R011 Done; R012-R016 Pending. Every item throughR016 complete:no.

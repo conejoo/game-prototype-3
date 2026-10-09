@@ -87,6 +87,7 @@ func dispose() -> void:
 	var location: PrototypeLocation = _live_location()
 	if location != null:
 		for id: String in _actors: location.npc_contacts.cancel_move(id)
+		location.npc_contacts.clear_routines()
 	_actors.clear(); _positions.clear(); _location = null; _session = null
 	_night_lane.clear()
 
@@ -159,10 +160,21 @@ func apply_plan(plan: RoutineAssignmentPlan) -> bool:
 	_actors = candidate; _day = plan.day_index
 	if "npc-01" in changed or "npc-02" in changed: _night_lane.clear()
 	if not changed.is_empty() or day_changed: revisions += 1
+	present()
 	return true
 
+func present() -> void:
+	var location: PrototypeLocation = _live_location()
+	if location == null or location.npc_contacts == null: return
+	var loaded: Dictionary = {}
+	for id: String in _actors:
+		if _actors[id].map_id == location.location_id: loaded[id] = _actors[id]
+	location.npc_contacts.present_routines(loaded)
+
 func tick(delta: float, held: bool = false) -> void:
-	if held or _session == null or not is_finite(delta) or delta <= 0: return
+	if held or _session == null or not is_finite(delta) or delta <= 0:
+		present()
+		return
 	capture_loaded()
 	var update: Dictionary = selector.update(RoutineResolutionContext.from_session(_session))
 	if not update.errors.is_empty(): last_error = "; ".join(update.errors); return
@@ -176,6 +188,8 @@ func tick(delta: float, held: bool = false) -> void:
 		if not _tick_night_lane(cursor,minf(delta,.1)): _tick_actor(cursor,minf(delta,.1))
 		if cursor.state == RoutineExecutor.State.FAILED: _fail_group(cursor)
 		_positions[id] = {"map":cursor.map_id,"foot":cursor.foot}
+
+	present()
 
 func _tick_actor(cursor: RoutineExecutor, dt: float) -> void:
 	var step: RoutineDefinition.Step = cursor.current_step()

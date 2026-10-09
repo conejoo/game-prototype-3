@@ -167,3 +167,8 @@ game/features/npcs/npc_dialogue_rules.gd -text whitespace=blank-at-eol,blank-at-
 game/tests/people_snapshot_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/tests/social_gift_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tools/routine_migration/dialogue_overlay.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R012 production presentation and focused action acceptance preserve reviewed bytes.
+game/features/routines/routine_presentation.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_presentation_*.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/npc_action_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

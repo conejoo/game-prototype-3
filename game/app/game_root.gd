@@ -466,6 +466,7 @@ func _sync_npc_visuals() -> void:
 		"travel":world_host.transitioning or loading_save or retrying,
 		"modal":journal_open or backpack_open, "death":player_placeholder.state != null and player_placeholder.state.health <= 0
 	}, dialogue.snapshot().get("npc_id", ""), player_placeholder.global_position, [player_placeholder,companion])
+	if routine_execution != null: routine_execution.present()
 
 
 func _on_transition_started() -> void:

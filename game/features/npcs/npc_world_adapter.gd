@@ -3,6 +3,7 @@ extends Node3D
 ## Scene-owned noncombatant wrappers. VisualRoot is replaced by character tasks.
 var targets: Dictionary[String, PrototypeInteractable] = {}
 var presenters: Dictionary[String, NpcVisualPresenter] = {}
+var routine_presentations: Dictionary[String, RoutinePresentation] = {}
 var movers: Dictionary[String, RoutineMovement] = {}
 var occupancy: RoutineOccupancy = RoutineOccupancy.new()
 var _holds: Dictionary = {}
@@ -120,6 +121,11 @@ func build(location: PrototypeLocation, enabled: PackedStringArray, placements: 
 			if not errors.is_empty(): return errors
 			presenter.face_direction(entry.approach-entry.foot)
 			presenters[id] = presenter
+			var presentation: RoutinePresentation = RoutinePresentation.new()
+			presentation.name = "RoutinePresentation"
+			target.get_node("VisualRoot").add_child(presentation)
+			presentation.configure(id,presenter)
+			routine_presentations[id] = presentation
 			if id == "npc-03": target.get_node("VisualRoot/Maris").visible = false
 			if id == "npc-01": target.prompt = "Talk to Mayor Vale"
 			if id == "npc-02": target.prompt = "Talk to Archivist Vale"
@@ -152,6 +158,7 @@ func materialize(location: PrototypeLocation, id: String, foot: Vector3, facing:
 func dematerialize(id: String) -> void:
 	if not targets.has(id): return
 	if movers.has(id): movers[id].dispose(); movers.erase(id)
+	routine_presentations.erase(id)
 	presenters.erase(id); contact_records.erase(id)
 	var target: PrototypeInteractable = targets[id]
 	targets.erase(id)
@@ -170,6 +177,13 @@ func sync_visuals(holds: Dictionary, speaker: String, player_foot: Vector3, bloc
 			else: presenter.resume(reason)
 		presenter.set_locomotion(movers[id].achieved_speed)
 		if speaker == id: presenter.face_direction(player_foot-targets[id].global_position)
+
+func present_routines(actors: Dictionary) -> void:
+	for id: String in routine_presentations:
+		routine_presentations[id].sync(actors.get(id),_holds,id in dialogue_leased)
+
+func clear_routines() -> void:
+	for presentation: RoutinePresentation in routine_presentations.values(): presentation.clear()
 
 func placement_errors(location: PrototypeLocation, excluded: Array[RID]) -> PackedStringArray:
 	var errors: PackedStringArray = []

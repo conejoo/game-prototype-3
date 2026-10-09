@@ -136,7 +136,7 @@ func _owners() -> void:
 		memories = TestRunSnapshot.exact_json(game.session.conversations.snapshot())
 		var target: PrototypeInteractable=game.world_host.current_location.npc_contacts.targets[id]
 		var wrapper_transform: Transform3D=target.global_transform
-		_check(p.model.scene_file_path == NpcRegistry.VISUAL_ASSETS[id] and not p.set_action(CLIPS[index]), "ordinary civic asset has no ambient action " + id)
+		_check(p.model.scene_file_path == NpcRegistry.VISUAL_ASSETS[id] and p.active_action().is_empty() and p.player.has_animation(CLIPS[index]), "promoted civic asset starts idle without ambient action " + id)
 		# Synthetic replacement exercises real production owner hooks, not ordinary access.
 		_check(p.mount(load(ASSETS[index])).is_empty() and p.set_action(CLIPS[index]), "synthetic action mount in scene-owned contact")
 		refs.append(weakref(p))
@@ -168,7 +168,7 @@ func _owners() -> void:
 		var id: String="npc-0%d" % (index+1)
 		var p: NpcVisualPresenter=game.world_host.current_location.npc_contacts.presenters[id]
 		_check(p.model.scene_file_path == NpcRegistry.VISUAL_ASSETS[id] and p.active_action().is_empty(), "reconstruction restores ordinary asset without saved pose")
-	_check(game.world_host.current_location.npc_contacts.presenters.size()==8 and game.party.members().size()==2, "eight contacts and original party retained")
+	_check(game.world_host.current_location.npc_contacts.presenters.size()==NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.party.members().size()==2, "eight contacts and original party retained")
 	game.queue_free(); await process_frame
 
 func _check(ok: bool, message: String) -> void:
