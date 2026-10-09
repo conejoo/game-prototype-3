@@ -171,7 +171,8 @@ Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Target is not this p
 Check (-not (Test-Path -LiteralPath $output)) 'refused executable created output directory'
 $lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory (Join-Path $projectRoot 'docs/evidence/N018/native-guard-refusal') -StandaloneDirectory $projectRoot 2>&1)
 Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Standalone input requires an owned N018/G009 directory*') 'entrypoint accepted foreign standalone directory'
-$lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory $output -StandaloneDirectory (Join-Path ([IO.Path]::GetTempPath()) 'ReturningFair-N018-guard-refusal') 2>&1)
+$guardCrossTask = if ($EvidenceTask -eq 'N018') {'G009'} else {'N018'}
+$lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory $output -StandaloneDirectory (Join-Path ([IO.Path]::GetTempPath()) "ReturningFair-$guardCrossTask-guard-refusal") 2>&1)
 Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Standalone task and evidence differ*') 'entrypoint accepted standalone outside N018 evidence'
 $lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory (Join-Path $projectRoot 'docs/evidence/F010') 2>&1)
 Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Native output must be a run subdirectory*') 'entrypoint accepted task-root output'

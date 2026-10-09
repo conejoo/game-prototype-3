@@ -7,7 +7,8 @@ description: Test Returning Fair Godot prototype gameplay, combat, UI, travel, s
 
 Produce evidence for the requested gameplay acceptance criteria. The project keeps
 this skill's versioned source under `tools/skills/returning-fair-gameplay-testing`;
-the installed personal copy is scoped to this project by its description.
+read that source when testing here, since an installed personal copy can lag behind
+current project tools. The installed copy remains scoped by its description.
 
 ## Establish current state
 
@@ -66,9 +67,11 @@ to an archived report or loosen output guards to make a legacy fixture pass.
   `tools/native_input.ps1`. The debug bridge is excluded/guarded in release.
   Read [native commands](references/native-commands.md) when using this route.
   Native B and atomic bounded drag are supported. Use client coordinates from a
-  fresh native capture and a unique F-task/run evidence child; never carry a held
+  fresh native capture and the current authorized task/run evidence child; never carry a held
   button across requests. Check cleanup_errors/unreleased_keys/mouse_unreleased
-  on failures before sending another batch. Helper checks do not complete F010.
+  on failures before sending another batch. Helper checks do not complete gameplay
+  acceptance. The native reference records current output/standalone rules and the
+  reusable read-only native evidence reviewer; request success cannot verify pause.
 
 Use available purpose-built tools when suitable. Native helper supplies holds when
 the Computer Use API only supplies taps; inspect applicable installed Computer Use

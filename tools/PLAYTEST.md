@@ -10,14 +10,17 @@ the rendered viewport. Normal gameplay services and input gates remain active.
 
 ## Shared checks and evidence
 
+See [G009 testing review](TESTING_REVIEW.md) for the concrete follow-up improvements,
+verification, limits and remaining recommendations; this does not start a migration.
+
 Current G009 native delivery adds a matching G009 run-child evidence path and an
 exact direct TEMP copy through `-StandaloneDirectory`; N018 support remains.
 Canonical EXE/PCK/override hashes, reparse guards and all existing PID/window/
-desktop/foreground/client/cleanup checks remain mandatory. The historical native
-skill reference below predates these ownership additions; see the current
+desktop/foreground/client/cleanup checks remain mandatory. The versioned project
+skill reference below includes these ownership additions; installed personal copies
+may lag behind it. See the current
 [G009 delivery contract](social_migration/DELIVERY.md) for launch, guard tests,
-packed audits, isolated restart and native provenance commands. Project and
-installed skill copies remain unchanged.
+packed audits, isolated restart and native provenance commands.
 
 Use [shared testing tools](skills/returning-fair-gameplay-testing/references/testing-tools.md)
 for the versioned bounded runner, isolated app-data, exact restart oracle,
@@ -130,11 +133,12 @@ A rendered capture is not a Windows export test or a quest completion shortcut.
 ## Native release input
 
 `native_input.ps1` sends bounded Windows scan-code key holds (including B), mouse clicks and atomic drags to
-this project's existing `builds/windows/ReturningFair.exe` only. No game bridge,
+this project's canonical `builds/windows/ReturningFair.exe` or matching exact
+N018/G009 standalone copy through `-StandaloneDirectory`. No game bridge,
 state mutation, installation or source-project change. It verifies the target
 process/window, unlocked input desktop and foreground focus; releases its keys
 and mouse button in `finally`; writes timing/captures only under a run child of
-P014, W001-W010 or F001-F010. Junctions, unsafe paths and capture overwrites are rejected.
+P014, W001-W010, F001-F010, N018 or G009. Junctions, unsafe paths and capture overwrites are rejected.
 `drag` takes integer from_x/from_y/to_x/to_y/duration_ms: left press, interpolated
 client motion, release. Durations16-5000ms and fixed click/quit waits count toward
 the30-second batch budget. Every coordinate is preflighted against the real client
@@ -142,6 +146,16 @@ before input, then rechecked during motion. Cleanup attempts all acquired inputs
 retries failed releases at request end and records errors/unreleased state.
 See [native command examples](skills/returning-fair-gameplay-testing/references/native-commands.md)
 for reusable instructions. Historical session drivers are optional local archives.
+Native launches need fresh APPDATA/LOCALAPPDATA as well as the unchanged override.
+Use the reference's isolated launch recipe/current phase helper and preserve its
+original process handle for exact normal exit evidence.
+
+`native_evidence.py --run <native-folder> [<another-folder>] --last 12` audits
+request/launch identity, cleanup and capture provenance, then produces fresh ignored
+chronological review sheets/index. It sends no input and verifies no gameplay
+outcome. Omit `--last` for all images; audit always checks every source request.
+Inspect sheets individually and required full-size frames. See the native reference
+for missing legacy launch identity and failed-request handling.
 
 Game simulation continues between shell calls and during helper startup. Key-hold
 duration does not limit that interval. For combat, inspect a paused screen first,
