@@ -8,8 +8,8 @@ This file owns task status; [CURRENT_STATE](CURRENT_STATE.md) owns continuation;
 [CONTRACT](CONTRACT.md) owns behavior and source mappings;
 [AGENT_PROMPT](AGENT_PROMPT.md) selects this workflow.
 
-Planning complete on 2026-10-08, America/Vancouver. FS001-FS003 Done on 2026-10-09 UTC;
-FS004-FS008 Pending. Next eligible FS004. Final task FS008; checklist incomplete.
+Planning complete on 2026-10-08, America/Vancouver. FS001-FS004 Done on 2026-10-09 UTC;
+FS005-FS008 Pending. Next eligible FS005. Final task FS008; checklist incomplete.
 
 ## Selection and evidence
 
@@ -38,7 +38,7 @@ FS004-FS008 Pending. Next eligible FS004. Final task FS008; checklist incomplete
 | FS001 | Done | Current F010 item capability and pinned map available | Frozen source rules, area mappings and usable cast-site audit |
 | FS002 | Done | FS001 | Three fish definitions, strict activity resolver and inventory/save support |
 | FS003 | Done | FS002 | Deterministic bite, hook and tension challenge |
-| FS004 | Pending | FS002 | Correct 3D water targeting and cast preview |
+| FS004 | Done | FS002 | Correct 3D water targeting and cast preview |
 | FS005 | Pending | FS003, FS004 | Root-owned fishing lifecycle with exactly-once rewards |
 | FS006 | Pending | FS005 | Readable public controls, HUD, fish icons and cast/bite feedback |
 | FS007 | Pending | FS006 | Integrated ordinary play, cancellation and independent-process persistence |
@@ -319,3 +319,30 @@ first-UID-import runs preserved/excluded; scoped escalation allowed, no approval
 rejection. Final logs/traces/docs/links/scope/hash review PASS; no owned process or
 cleanup owed. No commit/push. FS003 blockers none. Next FS004; remaining FS004-FS008,
 whole checklist incomplete. Stop before successor.
+
+### FS004 / 2026-10-09 UTC / Done
+
+Entry/final HEAD `cd07b4d4a27c0d6e11df4c0b69c56bdbfa667b2f`; clean entry Git.
+Read-only semantic/physical water resolver and detached transient target preview:
+map-anchored .5m cells, inclusive12m XZ range, measured waterY.015, both camera
+projections/zoom, dry structure/land/solid/UI/invalid/interior rejection, distinct
+no-area feedback and complete cast revalidation. Only known water safety bodies
+excluded; camera ground aim/root/physics/navigation/inventory/schema7/content1,
+source/user instructions/social/native packages/normal saves unchanged.
+Four new scripts/four UIDs and fishing checklist/handoff/acceptance only.
+Every criterion in [FS004 acceptance](FS004_ACCEPTANCE.md).
+
+Live source audit143 assertions PASS before/after. Final isolated runner
+`20261009-035302983-41ba302d`: all10 import/parse/targeting/content/activity/camera/
+movement/water/render cases PASS; targeting135/content255/activity208/render72
+assertions,24 targeting projection/zoom/site samples,330 existing ground-camera
+samples. All18 paused synthetic preview PNGs/contact sheets and selected full-size
+frames inspected; captions enlarged after first visual review. Stable998-file
+digest `611484d8fdcbe4817d125bc955ee2d4ba4548f8cf35806549c312a1e52582421`;
+source.changed=false/error=null, no runtime diagnostics/timeouts. Known import-only
+SDK10.0.9 advisory retained. Failed launch/first-UID-import/fixture runs preserved,
+pre-refinement passing run retained; final acceptance uses final stable bytes.
+No ordinary casting/catch/live challenge/native claim; input activation is FS005.
+No process/editor or cleanup owed; no approval rejection, commit or push.
+FS004 blockers none. Next FS005; remaining FS005-FS008, checklist incomplete.
+Stop before successor.

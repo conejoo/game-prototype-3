@@ -1,21 +1,24 @@
 # Fishing migration current state
 
-Updated: 2026-10-09 UTC (FS003 execution complete; prior history retained below).
+Updated: 2026-10-09 UTC (FS004 execution complete; prior history retained below).
 [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns stable
 behavior/mappings; [AGENT_PROMPT](AGENT_PROMPT.md) supplies invocation.
 
 ## Selection and next safe action
 
-Active fishing task: none. **FS001-FS003 Done**, FS004-FS008 Pending.
-Next eligible: **FS004 - 3D water target resolution and preview**.
-Final task: **FS008**. Remaining IDs: FS004, FS005, FS006, FS007, FS008.
+Active fishing task: none. **FS001-FS004 Done**, FS005-FS008 Pending.
+Next eligible: **FS005 - Fishing orchestration, input ownership and reward commit**.
+Final task: **FS008**. Remaining IDs: FS005, FS006, FS007, FS008.
 Whole fishing checklist: incomplete. Current blockers: none.
 Exact next safe action: await the next authorized invocation, recheck Git/current
-interfaces and FS002/FS003 acceptance, then mark FS004 In progress and implement
-water targeting/preview using FS001 geometry and current camera/pointer owners.
+interfaces and FS003/FS004 acceptance, then mark FS005 In progress and implement
+root-owned fishing orchestration/input/cancellation/atomic rewards. Use FS004
+refresh each targeting update and complete revalidate at cast with current player,
+ray, UI/mode, committed map and rod/session capability. Never authorize from cached
+preview or consume a reward from an unbound challenge result.
 No active world cast/reward/HUD integration until its owning task.
-FS003 finished at HEAD `044a0fe9c99eb7b876ebd509644d6dcf258e9ab8`, without commit.
-Only FS003 ran in this invocation; no successor started.
+FS004 finished at HEAD `cd07b4d4a27c0d6e11df4c0b69c56bdbfa667b2f`, without commit.
+Only FS004 ran in this invocation; no successor started.
 
 The planning invocation created instructions only. FS001 now adds development-only
 reference tools/tests and casting-site proof; production fishing remains inactive.
@@ -319,3 +322,97 @@ reusable controller/tests are versioned; ignored raw runner reports/logs remain
 local as project policy requires. No unrelated changes staged, no push, no FS004
 work. Verified commit hash is reported after commit; it is not embedded in its
 own content.
+
+## FS004 executed handoff (2026-10-09 UTC)
+
+Selected/status: FS004 Done; [acceptance](FS004_ACCEPTANCE.md) maps every criterion.
+Entry/final HEAD `cd07b4d4a27c0d6e11df4c0b69c56bdbfa667b2f`, entry Git clean.
+Read root AGENTS, fishing prompt/checklist/handoff/contract, current architecture,
+FS001/FS002 acceptance and actual water/terrain/crossings/camera/UI/rod/catalog
+interfaces. Project-owned gameplay-testing skill, shared testing-tools and PLAYTEST
+used. No nested AGENTS or workspace/repository .agents directory found. No agents,
+new chats, another conversation or schedules used. Independent G009 still Done;
+its native/package files untouched. No coordination conflict or approval rejection.
+
+Bounded actual files touched (11):
+
+- New game/features/fishing/fishing_water_target_resolver.gd and generated UID.
+- New game/features/fishing/fishing_target_preview.gd and generated UID.
+- New game/tests/fishing_targeting_checks.gd, fishing_targeting_render.gd and UIDs.
+- docs/fishing/CHECKLIST.md, CURRENT_STATE.md and new FS004_ACCEPTANCE.md.
+
+Original AGENT_PROMPT/CONTRACT/AGENTS/user instructions unchanged. Existing root,
+camera/UI, scene/map/physics/navigation/geography, inventory/content/save/schema,
+social/environment/quest/party and native/package owners unchanged.
+
+Decisions: dedicated read-only resolver consumes committed Alderwake semantic
+water cells, map origin/grid and actual undisplaced water mesh elevationY.015.
+Half-open occupancy and floor-snapped .5m centers; inclusive12m horizontal range.
+Layer1 camera/raw/cell and rod/cell segments exclude only identified water safety
+bodies owned by water_blockers, preserving actual future gate/terrain/cliff/props.
+Dry dock/bridge semantics win; underwater support never supplies fishability.
+Result/status/no-area and preview snapshots detached. Snapshot-only unshaded ring/
+billboard words at target; current-context refresh and full revalidate, no stored
+cast authorization or input activation. Clear hides/removes transient presentation.
+Schema7/content1/manual persistence/rod conservation unchanged; no inventory/RNG/
+reward/challenge authority added. FS005 remains root input/lifecycle/reward owner.
+
+Source HEAD `60c20eb2816e7271fb84afaba286af006ebe3ccf`, working tree clean. Live
+reference audit143 assertions PASS before/after, all18 source pins exact. Pinned
+layout SHA256 `7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be`;
+no geography refresh. Frozen reference/casting sites/area weights unchanged.
+
+Commands/cwd: prototype root, PowerShell7, installed supplied console4.7.2.
+Exact final command/dependencies/contact-sheet recipe in acceptance. Accepted
+`docs/evidence/FS004/20261009-035302983-41ba302d/results.json`: all10 version/import/
+parse/targeting/content/activity/camera/movement/water/render cases PASS/exit0.
+Targeting135/content255/activity208/render72 assertions;24 all-site/projection/zoom
+target samples,330 existing ground-camera samples. Six independent check groups
+and one renderer group under matching builds/testing/FS004 run, slots suffix000-006;
+APPDATA/LOCALAPPDATA isolated, no normal slot access. All998 game/tool files stable:
+digest `611484d8fdcbe4817d125bc955ee2d4ba4548f8cf35806549c312a1e52582421`;
+source.changed=false/error=null, no runtime/parse diagnostic/timeouts. Existing exact
+import-only SDK10.0.9 advisory retained; no C# or installation claim.
+
+18 fresh real960x640 frames via shared pause-gated TestRunCapture; capture_evidence
+validated all PNG provenance/dimensions and created two derived sheets under
+render/derived/20261009-035418-d8584553. Both sheets and full-size dock-ortho-1_0,
+west-overlap-perspective and no-area reviewed. All camera/zoom/site, dry deck/bridge/
+bank, no-area and solid-blocked samples show correctly anchored preview and distinct
+words/color. Captions now readable; fixture camera HUD reflects actual projection/
+zoom. Final actual pause overlay visible and preview cleared. Samples are explicitly
+paused synthetic poses/rays/presenter, not ordinary movement/casting, active
+waiting/bite/fight or native evidence. Production pause/UI rejection verified in
+target suite; no capture is mislabeled as an active attempt.
+
+Retained runs and repairs:
+
+- 20261009-034933090-a166700a: sandbox installed-engine Access denied; scoped runner
+  escalation approved/resolved. No automatic approval rejection/user gate.
+- 20261009-034949860-e589a5ce: first import generated four UIDs; correctly rejected
+  source change, UIDs reviewed/retained before stable rerun.
+- 20261009-035008475-56986696: one changed-solid fixture stood above target rather
+  than on oblique camera ray. Moved fixture onto actual ray and independently
+  asserted fixture intersection. Production logic unchanged; failed run excluded.
+- 20261009-035110873-88e286d1: all10 PASS, source stable; visual review found tiny
+  caption and stale fixture camera HUD. Caption enlarged and fixture HUD refreshed;
+  final all10 stable rerun above supplies acceptance. Earlier evidence preserved.
+
+Final launcher PID lookup: none alive. Runner-owned engine processes exited;
+no editor/game/held input or cleanup owed. Never stopped an unowned process.
+Normal saves/old evidence/source/instructions/independent native packages preserved.
+FS004 remaining criteria/blockers: none. FS005 next; FS005-FS008 unfinished and
+whole checklist incomplete. No commit/push/publication/package promotion/successor.
+Final docs read-back/local links/task statuses/dependencies/11-file allowlist/998-file
+rehash and whitespace verification recorded in accepted run final-review.json.
+Stop; commit awaits separate user instruction.
+
+### FS004 commit follow-up
+
+Subsequent user instruction authorizes the successful FS004 local commit only.
+The execution records above describe the pre-commit acceptance boundary. Rechecked
+all10 passed cases and every998 tested game/tool file hash before staging the
+reviewed11-file task allowlist. Durable acceptance, checklist, handoff and reusable
+resolver/preview/tests are versioned; ignored raw runner reports/logs/captures remain
+local as project policy requires. No unrelated changes staged, no push or FS005 work.
+Verified commit hash is reported after commit; it is not embedded in its own content.
