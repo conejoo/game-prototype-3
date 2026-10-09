@@ -83,7 +83,7 @@ func snapshot() -> Dictionary:
 		if not NpcDialogueRules.matches(choice.conditions, memory, _session.conversations.events(), _session.elapsed_play_seconds, npc.level_one_affinity): continue
 		var notice: String = reason
 		if not reason.is_empty() and not choice.availability.is_enabled():
-			notice = "Gifts are unavailable in this prototype." if not choice.gift_rule_id.is_empty() else "Interior access is unavailable in this prototype." if choice.id == "npc-14-ask-room" else "This response is unavailable in this prototype."
+			notice = "Gifts are unavailable in this prototype." if not choice.gift_rule_id.is_empty() else "Paid rooms, booking and sleep are unavailable in this prototype." if choice.id == "npc-14-ask-room" else "This response is unavailable in this prototype."
 		rows.append({"id": choice.id, "text": choice.text, "available": reason.is_empty(), "reason": notice})
 		if reason.is_empty(): available += 1
 	var facts: Array[Dictionary] = []

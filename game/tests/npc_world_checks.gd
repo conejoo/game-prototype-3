@@ -19,7 +19,7 @@ func _run() -> void:
 	game.player_placeholder.set_physics_process(false)
 	game.companion.set_physics_process(false)
 	game.companion_ai.set_physics_process(false)
-	_check(game.world_host.current_location.npc_contacts.targets.keys() == Array(NpcRegistry.ENABLED), "production activation matches completed registry")
+	_check(game.world_host.current_location.npc_contacts.targets.keys() == Array(NpcRegistry.enabled_for(NpcRegistry.LOCATION)), "production activation matches completed registry")
 	var ids: PackedStringArray = []
 	for entry: Dictionary in NpcRegistry.entries(): ids.append(entry.npc_id)
 	game.world_host.enabled_npcs = ids
@@ -28,12 +28,12 @@ func _run() -> void:
 	_check(arrival[0], "all-eight placement: " + str(arrival[1]))
 	if not arrival[0]: await _finish(); return
 	var room: AlderwakeExterior = game.world_host.current_location
-	_check(room.npc_contacts.targets.size() == 8 and room.get_node("MarisCounter") == room.npc_contacts.targets["npc-03"], "one wrapper per person; reuse Maris")
+	_check(room.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and room.get_node("MarisCounter") == room.npc_contacts.targets["npc-03"], "one wrapper per person; reuse Maris")
 	_check(game.party.members().size() == 2, "NPCs outside party")
 	var excluded: Array[RID] = [game.player_placeholder.get_rid(),game.companion.get_rid()]
 	_check(room.npc_contacts.placement_errors(room,excluded).is_empty(), "all contact footprints/navigation/LOS")
 	var pin: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://../tools/npc_migration/reference/contact_registry.json"))
-	for entry: Dictionary in NpcRegistry.entries():
+	for entry: Dictionary in NpcRegistry.entries(NpcRegistry.LOCATION):
 		var target: PrototypeInteractable = room.npc_contacts.targets[entry.npc_id]
 		var source: Dictionary
 		for candidate: Dictionary in pin.contacts:
@@ -54,6 +54,8 @@ func _run() -> void:
 		_check(not game._choose_dialogue(choice_id,view).ok and game.session.conversations.snapshot() == chosen, "stale world choice no replay " + entry.npc_id)
 		game._cancel_dialogue()
 		contacts.append({"npc_id":entry.npc_id,"instance_id":entry.instance_id,"path_samples":_audit_path(room,entry.approach,excluded)})
+	await _indoor_host()
+	room = game.world_host.current_location
 	# Fixed contact crowd must preserve all established critical routes.
 	for goal: Vector3 in [Vector3(93,0,-0.5),Vector3(103,0,-0.5),Vector3(66,0,12.5),Vector3(75,0,12.5),Vector3(31.51317596435547,0.5,5.25),Vector3(107.25,0,-1.25),Vector3(121.5,0,-7),Vector3(-6,0,11.5)]:
 		_audit_path(room,goal,excluded)
@@ -69,6 +71,31 @@ func _run() -> void:
 	await _lifecycle(old_room)
 	_rule_failures()
 	await _finish()
+
+func _indoor_host() -> void:
+	var town: WeakRef = weakref(game.world_host.current_location)
+	_check(not game.world_host.current_location.npc_contacts.targets.has("npc-14"),"no invisible town host")
+	_check(game.world_host.request_transition("prototype-lantern-rest","lantern-rest-from-alderwake").is_empty(),"actual-map host access")
+	var arrival: Array = await game.world_host.transition_finished
+	_check(arrival[0] and town.get_ref()==null,"host access disposes old town owner")
+	if not arrival[0]: return
+	var room: PrototypeLocation=game.world_host.current_location
+	var entry: Dictionary=NpcRegistry.find("npc-14")
+	_check(room.npc_contacts.targets.keys()==["npc-14"] and entry.location_id==room.location_id,"one host on actual map")
+	var target: PrototypeInteractable=room.npc_contacts.targets["npc-14"]
+	_check(target.global_position==Vector3(-6,0,-12) and target.instance_id=="della-inn-host-01","exact source-qualified host")
+	var excluded: Array[RID]=[game.player_placeholder.get_rid(),game.companion.get_rid()]
+	_check(room.npc_contacts.placement_errors(room,excluded).is_empty(),"real indoor host support/navigation/LOS")
+	game.player_placeholder.global_position=entry.approach
+	await physics_frame
+	_check(InteractionSelector.select(game.player_placeholder,room)==target and game.interact().ok,"real selected indoor host/root binding")
+	var snap: Dictionary=game.dialogue.snapshot()
+	_check(snap.npc_id=="npc-14" and snap.instance_id==entry.instance_id,"real indoor identity")
+	_check(game._choose_dialogue(snap.choices[0].id,snap).ok,"existing source host choice")
+	game._cancel_dialogue()
+	contacts.append({"npc_id":"npc-14","instance_id":entry.instance_id,"location_id":room.location_id,"physical_access":"actual map transition/validated capsule/nav/LOS/root binding"})
+	_check(game.world_host.request_transition(NpcRegistry.LOCATION,"alderwake-from-lantern-rest").is_empty(),"host return through declared arrival")
+	_check((await game.world_host.transition_finished)[0] and not game.world_host.current_location.npc_contacts.targets.has("npc-14"),"host remains only indoors after real return")
 
 func _audit_path(room: AlderwakeExterior, end: Vector3, excluded: Array[RID]) -> int:
 	var path: PackedVector3Array = NavigationServer3D.map_get_path(room.get_world_3d().navigation_map,Vector3.ZERO,end,true)
@@ -199,7 +226,7 @@ func _lifecycle(old_room: WeakRef) -> void:
 	game._process(0)
 	_check(run.conversations.events().snapshot() == events, "arrival inside woods no crossing")
 	room = game.world_host.current_location
-	_check(room.npc_contacts.targets.size() == 8 and run.foraging.get_signal_connection_list("committed").size() == 1, "return single wrappers/listener")
+	_check(room.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and run.foraging.get_signal_connection_list("committed").size() == 1, "return single wrappers/listener")
 	# Malformed staged physical placement must preserve current scene/session/memory.
 	_check(game.world_host.request_transition(NpcRegistry.LOCATION,"alderwake-start").is_empty(), "stage invalid NPC")
 	while game.world_host.get_child_count() == 0 or game.world_host.get_child(0) == room: await process_frame
@@ -208,12 +235,12 @@ func _lifecycle(old_room: WeakRef) -> void:
 	var rejected: Array = await game.world_host.transition_finished
 	_check(not rejected[0] and not rejected[1].is_empty(), "invalid foot rejected")
 	_check(game.world_host.current_location == room and game.session == run and run.conversations.events().snapshot() == events, "placement rollback preserves owners/facts")
-	_check(room.npc_contacts.targets.size() == 8 and run.foraging.get_signal_connection_list("committed").size() == 1, "rollback reconnects one owner")
+	_check(room.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and run.foraging.get_signal_connection_list("committed").size() == 1, "rollback reconnects one owner")
 	game.player_placeholder.state.health = 0
 	game.retry_encounter()
 	_check((await game.world_host.transition_finished)[0], "retry contact reconstruction")
 	await process_frame
-	_check(game.world_host.current_location.npc_contacts.targets.size() == 8 and run.conversations.events().snapshot() == events and run.foraging.get_signal_connection_list("committed").size() == 1, "retry no duplicate/event")
+	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and run.conversations.events().snapshot() == events and run.foraging.get_signal_connection_list("committed").size() == 1, "retry no duplicate/event")
 	var detached: NpcWorldAdapter = NpcWorldAdapter.new()
 	_check(not detached.build(game.world_host.current_location,PackedStringArray(["npc-01","npc-01"])).is_empty() and detached.targets.is_empty(), "duplicate activation rejects before publication")
 	detached.free()

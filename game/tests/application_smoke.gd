@@ -40,7 +40,7 @@ func _run() -> void:
 	var session: GameSession = game.session
 	_check(session.initialized and game.catalog.initialized, "Root services were not initialized")
 	_check(game.npc_catalog.initialized and game.npc_catalog.definition_count() == 8, "Root NPC definitions were not validated")
-	_check(game.catalog.definition_count() == 28, "Root catalog must retain twenty-seven prior definitions plus Mayor Vale home")
+	_check(game.catalog.definition_count() == 29, "Root catalog must retain twenty-eight prior definitions plus Lantern Rest")
 	_check(session.current_location_id == "prototype-test-room", "Root location ID is wrong")
 	_check(game.player_placeholder.state == session.actors[GameSession.PLAYER_INSTANCE_ID], "Wrapper does not receive authoritative session actor state")
 	_check(game.player_placeholder.has_node("VisualRoot"), "Actor visual wrapper missing")

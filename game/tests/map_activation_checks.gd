@@ -24,9 +24,10 @@ func _run() -> void:
 	for target: PrototypeInteractable in room.interactables():
 		ids.append(target.instance_id)
 	var expected: PackedStringArray = ["npc-03-counter", "alderwake-temporary-companion", "alderwake-travel-gate", "dock-lamp-01", "dock-lamp-02", "dock-lamp-03", "dock-lamp-04", "dock-lamp-05", "dock-row-lamp-01", "fishing-rod-dock-01", "moonflower-01", "moonflower-02", "moonflower-03"]
-	for npc_id: String in NpcRegistry.ENABLED:
+	for npc_id: String in NpcRegistry.enabled_for(NpcRegistry.LOCATION):
 		var instance_id: String = NpcRegistry.find(npc_id).instance_id
 		if instance_id not in expected: expected.append(instance_id)
+	expected.append_array(["mayor-vale-home-entrance","lantern-rest-entrance-01"])
 	ids.sort()
 	expected.sort()
 	_check(ids == expected, "Duplicated/missing/inactive interactions")
@@ -34,7 +35,7 @@ func _run() -> void:
 	_check(room.get_node("TravelGate").position == Vector3(107.25, 0, -1.25) and room.destination_id == "prototype-tollworks" and room.destination_spawn_id == "tollworks-from-alderwake", "Single mapped gate wrong")
 	for pad: Vector3 in room.town.portal_pads.values():
 		for target: PrototypeInteractable in room.interactables():
-			_check(target.kind != "travel" or target.position.distance_to(pad) > 1.6, "Inactive source route became travel")
+			_check(target.kind != "travel" or target.instance_id in ["mayor-vale-home-entrance","lantern-rest-entrance-01"] or target.position.distance_to(pad) > 1.6, "Inactive source route became travel")
 	game._set_paused(true)
 	# Synthetic debug observer regression: detached live wrapper has no global transform.
 	var observer: Node = preload("res://tests/live_playtest_bridge.gd").new()

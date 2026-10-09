@@ -2706,7 +2706,7 @@
             "id": "npc-14-introduction",
             "priority": 100,
             "portraitId": "official-neutral",
-            "text": "Della Pike, **innkeeper** at Lantern Rest. I am meeting visitors here at the public entrance. Questions and quiet company are welcome; the inn interior is not open in this prototype.",
+            "text": "Della Pike, **innkeeper** at Lantern Rest. Questions and quiet company are welcome here in the meal room. Paid rooms, booking and sleep are unavailable in this prototype.",
             "conditions": {
               "excludedFlags": [
                 "npc-14-introduced"
@@ -2906,7 +2906,7 @@
           },
           "npc-14-room": {
             "status": "deferred",
-            "reason": "Interior directional branch unavailable at exterior contact; no room entitlement or guessed indoor transform."
+            "reason": "Paid lodging directions remain deferred; public meal-room access grants no room entitlement or sleep."
           },
           "npc-14-busy": {
             "status": "enabled",
@@ -2940,7 +2940,7 @@
           },
           "npc-14-ask-room": {
             "status": "deferred",
-            "reason": "Interior directional branch unavailable at exterior contact; no room entitlement or guessed indoor transform."
+            "reason": "Paid lodging directions remain deferred; public meal-room access grants no room entitlement or sleep."
           },
           "npc-14-ask-busy": {
             "status": "enabled",

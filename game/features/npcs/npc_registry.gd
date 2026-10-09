@@ -12,16 +12,24 @@ const ROWS: Array = [
 	["npc-06", Vector3(7.5,0,5), Vector3(9,0,5)],
 	["npc-07", Vector3(36,0,20), Vector3(34.5,0,20)],
 	["npc-08", Vector3(-3.5,0,12), Vector3(-3.5,0,13)],
-	["npc-14", Vector3(-9,0,3.5), Vector3(-9,0,4.5)],
+	["npc-14", Vector3(-6,0,-12), Vector3(-6,0,-10.8)],
 ]
 
-static func entries() -> Array[Dictionary]:
+static func entries(location_id: String = "") -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
 	for row: Array in ROWS:
-		result.append({"npc_id":row[0], "instance_id":"npc-03-counter" if row[0] == "npc-03" else "alderwake-%s-contact" % row[0], "foot":row[1], "approach":row[2], "reach":1.7})
+		var row_location: String = "prototype-lantern-rest" if row[0] == "npc-14" else LOCATION
+		if not location_id.is_empty() and row_location != location_id: continue
+		result.append({"npc_id":row[0], "location_id":"prototype-lantern-rest" if row[0] == "npc-14" else LOCATION, "instance_id":"npc-03-counter" if row[0] == "npc-03" else "della-inn-host-01" if row[0] == "npc-14" else "alderwake-%s-contact" % row[0], "foot":row[1], "approach":row[2], "reach":1.7})
 	return result
 
 static func find(id: String) -> Dictionary:
 	for entry: Dictionary in entries():
 		if entry.npc_id == id: return entry
 	return {}
+
+static func enabled_for(location_id: String) -> PackedStringArray:
+	var ids: PackedStringArray = []
+	for entry: Dictionary in entries(location_id):
+		if entry.npc_id in ENABLED: ids.append(entry.npc_id)
+	return ids

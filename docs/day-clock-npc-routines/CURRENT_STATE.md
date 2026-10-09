@@ -1,6 +1,104 @@
 # Day clock and NPC routines current state
 
-## Current R007 completion (2026-10-09 UTC)
+## Current R008 completion (2026-10-09 UTC)
+
+Active task:none. Exactly R008 completed; every criterion passed. R001-R008 Done,
+R009-R016 Pending. Blockers/unrun R008 criteria:none. Whole checklist through R016
+complete:no. [R008 acceptance](R008_ACCEPTANCE.md) owns the criterion mapping,
+53-path exact allowlist,actual commands/isolation,source/geometry/compatibility
+choices,retained failures and final evidence. Implementation ended without commit/push. The separate follow-up now explicitly
+authorizes the successful R008-only commit after review. Stage only the53 accepted
+paths and verify staged source/ledger bytes, then commit and verify tree/status.
+No push or successor work; R009 remains Pending.
+
+Baseline clean target2c81026ed4249990595e3f3afcc7f92f540303ad,empty index;
+source60c20eb2816e7271fb84afaba286af006ebe3ccf clean/read-only. R005/R006 actual
+routing/door/return verified. Workspace/source instructions,current architecture,
+installed/versioned gameplay-testing and save/journey/capture/native guidance read.
+No nested target/workspace AGENTS/.agents found. Supplied engine paths verified.
+Default sandbox launcher fails setup;scoped reviewed shell succeeds,no auto-review
+rejection. No user changes or another-agent conversation used. Blender2664 preserved.
+
+### Delivered implementation and validation
+
+Inn-local transform(448,672)/32,19exact source colliders/floor/threshold,original
+party arrivals(0,0,0)/(1,0,0),exact host(-6,0,-12),south/approach(-6,0,-10.8).
+Measured R006 public reciprocal door/exterior return unchanged. Warm fixed indoor
+lights,real furniture/nav/capsules,clear party/host/breakfast/lounge lanes. Registry/
+adapter bind actual map:seven town contacts/one indoor Della,no invisible exterior
+host;whole-roster duplicate/unknown and wrong claimed-map rejection. Existing graph/
+rig/public/social owners and strict save8/content1 retained. Narrow obsolete words/
+fixed-contact fixtures corrected. Guest-room branch deferred;paid rooms/booking/
+sleep/morning/routines remain unavailable. Exact original pins/before-hashes and
+prior reasons preserved in74-record ledger;deterministic derivative --check passes.
+
+Repository cwd/PowerShell7/bundled Python3.12.14/console4.7.2. Exact commands in
+acceptance. [Final required report](../evidence/R008/20261009-173207168-ca890496/results.json)
+has completed passing engine/parse,inn1981/942sweeps,Della738,gift355,People134,
+travel10roundtrips/rollback,environment157,NPC-world10130/10003samples. Session lost
+during next anchor;original whole report remains running/unfinished,no Godot remained.
+Do not represent it as a passed whole run. Remaining cases resumed on identical
+bytes: [Final resumed report](../evidence/R008/20261009-173612477-a360ae66/results.json)
+PASS10:engine/parse,anchors54016/7493samples,NPC04/06/07/08,integration93,
+render-write108/21/read22/3. Accepted exits0/no diagnostics,identical before/after
+fingerprint fec442fd426f3acd511937ffab3b56d18f9227ac55f2b0925c9f330d6bdc096a
+for1248game/tool files. Live reference-complete PASS1624/88pins/74adaptations/ten
+refusals. Earlier content/asset/map/social/fishing/routine/save regressions pass
+individually;failed whole reports retained,never relabeled.
+
+Ordinary public WASD/E/Esc/P/+/-/mouse/Tab/Enter:affinity0entry,reach/talk/intro/close,
+physical town return,real finite Moonflower01gather,reentry/preference/gift/close,
+paused GUI Save and different-process GUI Load exact typed durable snapshot/forecast.
+Restore affinity2/one receipt/zero bag flowers,remembered dialogue,physical return;
+saved37.59s,reader later paused44.31s. Live-nav route guidance only,no ordinary
+position/item/affinity/weather/time seeding. All24final images viewed on two sheets,
+earlier24/full host perspective80;warm clear room/party-host lanes,both projections/
+three zooms,readable portraits/choices/gift feedback/correct south exit/Save-Load.
+Synthetic three storms/capsule/unsafe bed arrival/primary-backup probes labeled.
+Each check isolated under builds/testing/R008/<run> with separate APPDATA/LOCALAPPDATA/
+named slots;only renderer writer/read pair shares its own group. Normal saves,
+source/packages/instructions untouched. No native/export/natural full-day/routine
+execution claimed; downstream owners remain. No owned Godot/input/editor/cleanup
+owed;unrelated Blender2664 preserved. Ignored evidence/staging retained.
+
+Failure history:four import-generated UIDs correctly invalidate early changed-source
+runs;catalog count/exterior words,actual pointer-motion/scroll enclosure,own-return
+marker overlap,four stale pre-social gift targets and crowd count repaired/rerun.
+Final documentation write encountered mixed-EOL summary match,leaving only acceptance
+written;readback and targeted replacements completed checklist/state. A readback
+utility encountered null unfinished-case metadata;corrected bounded readback. These
+utility errors changed no runtime source. All actual affected checks pass.
+
+Final [readback audit](../evidence/R008/final-audit.json) passes1248 exact source
+hashes,53 intended paths,empty index,unchanged HEAD/pins,all16 statuses/dependencies/
+relative links and whitespace. Larger NPC02/04 diffs preserve actual Windows CRLF
+baseline bytes under new byte attributes;semantic edits remain three/four lines.
+No live Godot;only unrelated Blender2664 remains. No cleanup owed.
+
+### Authorized successful-task commit follow-up
+
+Separate follow-up authorizes committing exactly delivered R008 changes, durable
+acceptance, checklist and handoff. Preflight: empty index, all53 changes match the
+accepted allowlist, all1248 game/tool hashes still match accepted
+fec442fd426f3acd511937ffab3b56d18f9227ac55f2b0925c9f330d6bdc096a.
+No unrelated changes found. Raw R008 reports/captures and isolated task save groups
+stay ignored under existing policy. Preserve all original source/baseline pins and
+user instructions. Stage explicit paths, validate staged exact bytes/whitespace,
+commit, then verify committed paths and clean working tree; outcome recorded by
+Git and ignored commit audit. No push or R009 implementation.
+
+### Exact continuation
+
+No current blocker. Remaining IDs:R009,R010,R011,R012,R013,R014,R015,R016.
+Next eligibleR009 has Done R002/R006 prerequisites:read current rigs/capsules/nav
+and pinned movement64source units/s,wait0.5s/two repaths;implement physical
+noncombatant same-map movement/injected bounded occupancy and required checks,
+preserving real furniture/actual-position interaction. Only next invocation owns
+that work. This implementation stops after R008 without commit or successor work.
+
+
+
+## Historical R007 completion (superseded) (2026-10-09 UTC)
 
 Active task: none. Exactly R007 completed this invocation. R001-R007 Done;
 R008-R016 Pending. [R007 acceptance](R007_ACCEPTANCE.md) maps every criterion,

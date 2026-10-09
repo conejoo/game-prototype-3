@@ -12,7 +12,7 @@ func _exercise() -> void:
 		var expected: Dictionary = before.duplicate(true)
 		expected.inventory.item_counts[id] = int(before.inventory.item_counts.get(id,0))+1
 		_check(TestRunSnapshot.exact_json(SaveCodec.snapshot(game.session)) == TestRunSnapshot.exact_json(expected),"rich all-fact baseline changes only +1 " + id)
-		_check(game.world_host.current_location.npc_contacts.targets.size() == 8 and game.party.members().size() == 2,"all-eight/two-party wrappers survive " + id)
+		_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.party.members().size() == 2,"actual-map villagers/two-party wrappers survive " + id)
 	await _failed_save()
 	for phase: String in ["waiting","bite","fighting"]:
 		_phase(phase)

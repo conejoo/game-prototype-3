@@ -127,7 +127,7 @@ func _world() -> void:
 	for iteration: int in range(100):
 		_check(host.npc_portal_route("prototype-alderwake","prototype-tollworks").ok, "NPC current route " + str(iteration))
 		_check(host.npc_portal_route("r005-west","r005-east").legs.size() == 2, "NPC qualified chain " + str(iteration))
-		_check(host.npc_portal_route("prototype-alderwake","prototype-mayor-vale-home").ok and not host.npc_portal_route("prototype-alderwake","prototype-lantern-rest").ok, "delivered home route present; absent inn remains inactive " + str(iteration))
+		_check(host.npc_portal_route("prototype-alderwake","prototype-mayor-vale-home").ok and host.npc_portal_route("prototype-alderwake","prototype-lantern-rest").ok, "both delivered interior routes present " + str(iteration))
 	_check(SaveCodec.snapshot(game.session) == durable and host.current_location == location and host.transition_count == count and not host.transitioning and game.party.members() == party and game.camera_rig.global_transform == camera, "NPC queries preserve player/session/camera/party ownership")
 	for index: int in range(party.size()): _check(party[index].global_position == feet[index], "NPC queries preserve feet")
 	var source_gate: PrototypeInteractable = location.get_node("TravelGate")

@@ -187,7 +187,7 @@ func _ordinary_travel(counts: Dictionary) -> void:
 			await _normal_gate(ForagingRegistry.LOCATION)
 			if await _walk(sites[0].foot,phase+"-dock-revisit"):
 				_check(game.session.inventory.snapshot().item_counts == counts and game.session.elapsed_play_seconds > seconds,"ordinary travel/revisit exact counts, separate monotonic time")
-				_check(game.world_host.current_location.npc_contacts.targets.size() == 8 and game.party.members().size() == 2,"revisit eight villagers/two party actors")
+				_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.party.members().size() == 2,"revisit actual town villagers/two party actors")
 				await _pause()
 				await _capture("fish-dock-revisit")
 				await _resume()

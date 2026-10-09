@@ -14,7 +14,7 @@ func _run() -> void:
 	_check(startup[0], "production arrival")
 	if not startup[0]: await _finish(); return
 	var room: PrototypeLocation = game.world_host.current_location
-	_check(room.npc_contacts.targets.keys() == Array(NpcRegistry.ENABLED) and room.npc_contacts.presenters.keys() == Array(NpcRegistry.ENABLED), "each enabled named person activated once")
+	_check(room.npc_contacts.targets.keys() == Array(NpcRegistry.enabled_for(NpcRegistry.LOCATION)) and room.npc_contacts.presenters.keys() == Array(NpcRegistry.enabled_for(NpcRegistry.LOCATION)), "each enabled named person activated once")
 	var target: PrototypeInteractable = room.npc_contacts.targets["npc-04"]
 	var p: NpcVisualPresenter = room.npc_contacts.presenters["npc-04"]
 	_check(target.instance_id == "alderwake-npc-04-contact" and target.prompt == "Talk to Harlan Reed" and target.global_position == Vector3(41,0,17), "source identity/approved foot/prompt")
@@ -94,11 +94,11 @@ func _run() -> void:
 	_check((await game.world_host.transition_finished)[0] and original.get_ref() == null, "travel disposes old named presenter")
 	_check(game.world_host.request_transition(NpcRegistry.LOCATION,"alderwake-start").is_empty(), "fixture return request")
 	_check((await game.world_host.transition_finished)[0], "return arrival")
-	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "return exactly one")
+	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size(), "return exactly one")
 	game.player_placeholder.state.health=0
 	game.retry_encounter()
 	_check((await game.world_host.transition_finished)[0], "retry arrival")
-	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "retry exactly one")
+	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size(), "retry exactly one")
 	# Production dock support/negative water and arbitration fixtures (synthetic).
 	var live: AlderwakeExterior=game.world_host.current_location
 	var excluded: Array[RID]=[game.player_placeholder.get_rid(),game.companion.get_rid()]
@@ -133,7 +133,7 @@ func _run() -> void:
 	var npc: NpcDefinition=game.npc_catalog.get_npc("npc-04")
 	var memory: ConversationMemory=game.session.conversations.memory("npc-04")
 	_check(npc.facts.size()==3,"only three source public facts")
-	_check(not npc.graph.nodes["npc-04-gift-end"].availability.is_enabled(),"gift target deferred")
+	_check(npc.graph.nodes["npc-04-gift-end"].availability.is_enabled(),"existing authored social gift target retained")
 	_check(game.session.completed_effect_ids.is_empty() and game.session.relationship.trust==0,"dock dialogue cannot progress campaign")
 	await _finish()
 

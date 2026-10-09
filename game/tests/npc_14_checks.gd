@@ -13,11 +13,16 @@ func _run() -> void:
 	var startup: Array = await game.world_host.transition_finished
 	_check(startup[0], "production arrival")
 	if not startup[0]: await _finish(); return
+	_check(not game.world_host.current_location.npc_contacts.targets.has("npc-14"),"no invisible or duplicate town Della")
+	_check(game.world_host.request_transition("prototype-lantern-rest","lantern-rest-from-alderwake").is_empty(),"zero-affinity inn access")
+	var arrived: Array = await game.world_host.transition_finished
+	_check(arrived[0],"actual inn arrival")
+	if not arrived[0]: await _finish(); return
 	var room: PrototypeLocation = game.world_host.current_location
-	_check(room.npc_contacts.targets.keys() == Array(NpcRegistry.ENABLED) and room.npc_contacts.presenters.keys() == Array(NpcRegistry.ENABLED), "each enabled named person activated once")
+	_check(room is LanternRest and room.npc_contacts.targets.keys() == ["npc-14"] and room.npc_contacts.presenters.keys() == ["npc-14"],"one real host on her actual map")
 	var target: PrototypeInteractable = room.npc_contacts.targets["npc-14"]
 	var p: NpcVisualPresenter = room.npc_contacts.presenters["npc-14"]
-	_check(target.instance_id == "alderwake-npc-14-contact" and target.prompt == "Talk to Della Pike" and target.global_position == Vector3(-9,0,3.5), "source identity/approved foot/prompt")
+	_check(target.instance_id == "della-inn-host-01" and target.prompt == "Talk to Della Pike" and target.global_position == Vector3(-6,0,-12),"exact source indoor host identity/foot/prompt")
 	_check(p.model.scene_file_path == "res://assets/models/npcs/npc-14.glb" and p.skeleton.get_bone_count() == 16, "named exported skin")
 	_check(game.party.members().size() == 2 and game.session.actors.size() == 2, "noncombatant outside party")
 	p.player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
@@ -88,63 +93,45 @@ func _run() -> void:
 	await physics_frame
 	_check(game.interact().ok and game.dialogue.snapshot().npc_id == "npc-14" and p.suspended(), "actual dialogue owner and binding")
 	var direction: Vector3=game.player_placeholder.global_position-target.global_position
-	_check(is_equal_approx(p.rotation.y,atan2(-direction.x,-direction.z)) and target.global_position==Vector3(-9,0,3.5),"speaking faces actual player without moving contact")
+	_check(is_equal_approx(p.rotation.y,atan2(-direction.x,-direction.z)) and target.global_position==Vector3(-6,0,-12),"speaking faces actual player without moving contact")
 	game._cancel_dialogue()
 	_check(not p.suspended(), "dialogue release")
 	var original: WeakRef = weakref(p)
-	_check(game.world_host.request_transition("prototype-test-room","prototype-start").is_empty(), "fixture travel request")
-	_check((await game.world_host.transition_finished)[0] and original.get_ref() == null, "travel disposes old named presenter")
-	_check(game.world_host.request_transition(NpcRegistry.LOCATION,"alderwake-start").is_empty(), "fixture return request")
-	_check((await game.world_host.transition_finished)[0], "return arrival")
-	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "return exactly one")
+	var learned: Dictionary = game.session.conversations.snapshot()
+	_check(game.world_host.request_transition(NpcRegistry.LOCATION,"alderwake-from-lantern-rest").is_empty(),"real town return request")
+	_check((await game.world_host.transition_finished)[0] and original.get_ref() == null,"return disposes old host presenter")
+	_check(not game.world_host.current_location.npc_contacts.targets.has("npc-14") and game.world_host.current_location.npc_contacts.targets.size() == 7,"town retains seven contacts and no Della")
+	_check(game.world_host.request_transition("prototype-lantern-rest","lantern-rest-from-alderwake").is_empty(),"real inn revisit")
+	_check((await game.world_host.transition_finished)[0],"real revisit arrives")
+	_check(game.world_host.current_location.npc_contacts.targets.keys() == ["npc-14"] and game.session.conversations.snapshot() == learned,"one rebound host/exact social facts")
 	game.player_placeholder.state.health=0
 	game.retry_encounter()
-	_check((await game.world_host.transition_finished)[0], "retry arrival")
-	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "retry exactly one")
-	# Production inn-entry/dock full-footprint support and neighboring lane (synthetic).
+	_check((await game.world_host.transition_finished)[0],"inn retry arrival")
+	_check(game.world_host.current_location.npc_contacts.targets.keys() == ["npc-14"],"retry exactly one real host")
 	var live: PrototypeLocation=game.world_host.current_location
 	var excluded: Array[RID]=[]
 	for actor: CharacterBody3D in game.party.members(): excluded.append(actor.get_rid())
-	_check(live.npc_contacts.placement_errors(live,excluded).is_empty(),"all eight full support/navigation/LOS contacts valid")
-	var lane_goal: Vector3=Vector3(-7,0,4.25)
-	var lane: PackedVector3Array=NavigationServer3D.map_get_path(live.get_world_3d().navigation_map,NpcRegistry.find("npc-14").approach,lane_goal,true)
-	_check(lane.size()>=2 and lane[-1].distance_to(lane_goal)<.3 and NpcWorldAdapter.foot_errors(live,lane_goal,excluded).is_empty(),"inn-entry/dock lane remains navigable and supports full player footprint")
-	metrics.inn_entry_lane=Array(lane)
-	for i: int in range(lane.size()-1):
-		var samples: int=ceili(lane[i].distance_to(lane[i+1])/.25)
-		for sample: int in range(samples+1):
-			var foot: Vector3=lane[i].lerp(lane[i+1],float(sample)/maxi(samples,1))
-			_check(NpcWorldAdapter.foot_errors(live,foot,excluded).is_empty(),"inn-entry lane full player footprint "+str(foot))
-	for water: Vector3 in [Vector3(35,0,25),Vector3(38,0,25),Vector3(41,0,24)]:
-		_check(not NpcWorldAdapter.foot_errors(live,water,excluded).is_empty(),"water/quay full-footprint rejection "+str(water))
-	_check(live.npc_contacts.presenters["npc-14"].model.scene_file_path != live.npc_contacts.presenters["npc-03"].model.scene_file_path,"distinct Della skin rather than Maris reuse")
+	_check(live.npc_contacts.placement_errors(live,excluded).is_empty(),"actual indoor host full support/navigation/LOS valid")
 	var npc: NpcDefinition=game.npc_catalog.get_npc("npc-14")
-	_check(npc.facts.size()==3 and npc.graph.nodes.size()==10,"exact source public graph")
-	_check(not npc.graph.nodes["npc-14-gift-end"].availability.is_enabled(),"gift target deferred")
-	_check(game.session.completed_effect_ids.is_empty() and game.session.relationship.trust==0 and game.session.inventory.count("item-moonflower")==0,"conversation no item/quest/trust/service reward")
-	# Exact pinned inert future portal, never synthesized from indoor coordinates.
-	var portal: Rect2=Rect2(-8,3.5,2,1.5)
-	var body_rect: Rect2=Rect2(-9.4,3.1,.8,.8)
-	_check(not portal.intersects(body_rect),"Della full capsule stays outside future portal pad")
-	metrics.placement={"source_map":"lantern-rest","source_placement":"della-inn-host-01","source_anchor":"inn-host-01","source_interior_units":[256,288],"target_foot":[-9,0,3.5],"approach":[-9,0,4.5],"policy":"public exterior adaptation; no interior transform","portal_rect":[-8,3.5,2,1.5]}
-	for z: float in [3.9,4.25,4.6]:
-		for x: float in [-7.6,-7,-6.4]:
-			_check(NpcWorldAdapter.foot_errors(live,Vector3(x,0,z),excluded).is_empty(),"future door pad full footprint remains clear "+str(Vector3(x,0,z)))
-	_check(not npc.graph.nodes["npc-14-room"].availability.is_enabled(),"indoor directions deferred")
+	_check(npc.facts.size()==3 and npc.graph.nodes.size()==10,"exact source public graph IDs")
+	_check(npc.graph.nodes["npc-14-gift-end"].availability.is_enabled(),"existing authored gift target retained")
+	_check(not npc.graph.nodes["npc-14-room"].availability.is_enabled(),"paid room branch still deferred")
 	game.player_placeholder.global_position=NpcRegistry.find("npc-14").approach
 	await physics_frame
-	_check(game.interact().ok,"bound public Della route")
+	_check(game.interact().ok,"actual indoor host interaction")
 	var intro: Dictionary=game.dialogue.snapshot()
 	_check(game._choose_dialogue("npc-14-careful-response",intro).ok,"source introduction choice")
 	game._cancel_dialogue()
-	_check(game.interact().ok,"public Della return")
+	_check(game.interact().ok,"actual indoor return dialogue")
 	var choices: Dictionary=game.dialogue.snapshot()
+	game.set_process(false)
 	var before_reject: Dictionary=SaveCodec.snapshot(game.session)
-	_check(not game._choose_dialogue("npc-14-ask-room",choices).ok and SaveCodec.snapshot(game.session)==before_reject,"hidden indoor command cannot grant room or leak directions")
-	_check(not game._choose_dialogue("npc-14-gift-moonflower",choices).ok and SaveCodec.snapshot(game.session)==before_reject,"gift command inert")
-	_check(not game.ui.dialogue_view.body.get_parsed_text().contains("guest room is on the right"),"no indoor directions leaked")
+	_check(not game._choose_dialogue("npc-14-ask-room",choices).ok and SaveCodec.snapshot(game.session)==before_reject,"deferred room command cannot grant entitlement")
+	_check(not game._choose_dialogue("npc-14-gift-moonflower",choices).ok and SaveCodec.snapshot(game.session)==before_reject,"unowned undisclosed gift inert")
+	_check(not game.ui.dialogue_view.body.get_parsed_text().contains("interior is not open") and game.ui.dialogue_view.status.text.contains("Paid rooms"),"obsolete location wording removed; services stay explicit")
 	game._cancel_dialogue()
-
+	_check(game.session.completed_effect_ids.is_empty() and game.session.relationship.trust==0 and game.session.inventory.count("item-moonflower")==0,"no item/quest/trust/service reward")
+	metrics.placement={"source_map":"lantern-rest","source_placement":"della-inn-host-01","source_anchor":"inn-host-01","source_units":[256,288],"target_foot":[-6,0,-12],"approach":[-6,0,-10.8],"policy":"exact indoor transform; no duplicate exterior actor"}
 	await _finish()
 
 func _check(ok: bool, message: String) -> void:

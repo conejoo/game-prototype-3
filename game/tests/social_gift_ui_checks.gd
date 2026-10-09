@@ -137,8 +137,11 @@ func _scroll_to(button: Button) -> void:
 	if button == null: return
 	for frame: int in range(3): await process_frame
 	var scroll: ScrollContainer = game.ui.dialogue_view.choice_scroll
-	for step: int in range(8):
+	for step: int in range(20):
 		if scroll.get_global_rect().encloses(button.get_global_rect()): break
+		var motion: InputEventMouseMotion = InputEventMouseMotion.new()
+		motion.position = scroll.get_global_rect().get_center()
+		root.push_input(motion,true)
 		var event: InputEventMouseButton = InputEventMouseButton.new()
 		event.position = scroll.get_global_rect().get_center()
 		event.button_index = MOUSE_BUTTON_WHEEL_DOWN
@@ -148,7 +151,7 @@ func _scroll_to(button: Button) -> void:
 		event.pressed = false
 		root.push_input(event,true)
 		await process_frame
-	_check(scroll.get_global_rect().encloses(button.get_global_rect()),"mouse wheel reveals full gift choice/rejection")
+	_check(scroll.get_global_rect().encloses(button.get_global_rect()),"mouse wheel reveals full gift choice/rejection "+str(button.name)+" button="+str(button.get_global_rect())+" scroll="+str(scroll.get_global_rect())+" value="+str(scroll.scroll_vertical))
 
 func _capture(label: String) -> void:
 	if DisplayServer.get_name() == "headless": return

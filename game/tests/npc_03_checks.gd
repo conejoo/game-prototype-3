@@ -14,7 +14,7 @@ func _run() -> void:
 	_check(startup[0], "production arrival")
 	if not startup[0]: await _finish(); return
 	var room: PrototypeLocation = game.world_host.current_location
-	_check(room.npc_contacts.targets.keys() == Array(NpcRegistry.ENABLED) and room.npc_contacts.presenters.keys() == Array(NpcRegistry.ENABLED), "each enabled named person activated once")
+	_check(room.npc_contacts.targets.keys() == Array(NpcRegistry.enabled_for(NpcRegistry.LOCATION)) and room.npc_contacts.presenters.keys() == Array(NpcRegistry.enabled_for(NpcRegistry.LOCATION)), "each enabled named person activated once")
 	var target: PrototypeInteractable = room.npc_contacts.targets["npc-03"]
 	var p: NpcVisualPresenter = room.npc_contacts.presenters["npc-03"]
 	_check(target.instance_id == "npc-03-counter" and target is MarisCounter and target.dialogue_id == "prototype-maris-counter" and target.global_position == Vector3(-7.5,0,11), "source identity/approved foot/prompt")
@@ -108,11 +108,11 @@ func _run() -> void:
 	_check((await game.world_host.transition_finished)[0] and original.get_ref() == null, "travel disposes old named presenter")
 	_check(game.world_host.request_transition(NpcRegistry.LOCATION,"alderwake-start").is_empty(), "fixture return request")
 	_check((await game.world_host.transition_finished)[0], "return arrival")
-	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "return exactly one")
+	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size(), "return exactly one")
 	game.player_placeholder.state.health=0
 	game.retry_encounter()
 	_check((await game.world_host.transition_finished)[0], "retry arrival")
-	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.ENABLED.size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.ENABLED.size(), "retry exactly one")
+	_check(game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.world_host.current_location.npc_contacts.presenters.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size(), "retry exactly one")
 	var counter: MarisCounter = game.world_host.current_location.get_node("MarisCounter")
 	_check(counter == game.world_host.current_location.npc_contacts.targets["npc-03"] and not counter.get_node("VisualRoot/Maris").visible,"existing one counter, capsule hidden, original bench retained")
 	_check(counter.get_node("VisualRoot/Bench").visible and counter.get_node("BenchBody/BenchCollision").disabled == false,"bench/physics preserved")

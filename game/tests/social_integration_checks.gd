@@ -74,6 +74,6 @@ func _root_lifecycle() -> void:
 	game.player_placeholder.receive_damage(100) # Explicit synthetic death trigger.
 	await game.retry_encounter()
 	_check(SaveCodec.snapshot(game.session) == before,"gifted all-eight retry exact durable state")
-	_check(game.party.members().size() == 2 and game.world_host.current_location.npc_contacts.targets.size() == 8,"retry reconstructs party and contacts once")
+	_check(game.party.members().size() == 2 and game.world_host.current_location.npc_contacts.targets.size() == NpcRegistry.enabled_for(NpcRegistry.LOCATION).size(),"retry reconstructs party and contacts once")
 	_check(SaveCodec.validate(before,game.catalog).session != null,"lifecycle social save valid")
 	game.queue_free(); await process_frame

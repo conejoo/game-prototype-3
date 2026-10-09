@@ -1,0 +1,367 @@
+{
+  "schema_version": 1,
+  "location_id": "prototype-lantern-rest",
+  "source_map_sha256": "fbe3d5e901d65586d400e933c44a22f4e00777bbd74b2eb54b7965c58d89e216",
+  "origin_units": [
+    448,
+    672
+  ],
+  "units_per_metre": 32,
+  "floor_rects_xz_m": [
+    [
+      -14,
+      -21,
+      28,
+      23
+    ],
+    [
+      -1,
+      2,
+      2,
+      1
+    ]
+  ],
+  "cleared_floor_cells": [
+    {
+      "x": 0,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 1,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 2,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 3,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 4,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 5,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 6,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 7,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 8,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 9,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 10,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 11,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 12,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 15,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 16,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 17,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 18,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 19,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 20,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 21,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 22,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 23,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 24,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 25,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 26,
+      "y": 23,
+      "paint": null
+    },
+    {
+      "x": 27,
+      "y": 23,
+      "paint": null
+    }
+  ],
+  "colliders": [
+    {
+      "id": "inn-breakfast-table-01",
+      "rect_xz_m": [
+        4.5,
+        -5.75,
+        1.0,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-breakfast-table-02",
+      "rect_xz_m": [
+        6.5,
+        -5.75,
+        1.0,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-guest-bed-01",
+      "rect_xz_m": [
+        6.625,
+        -15.0,
+        1.25,
+        2.0
+      ]
+    },
+    {
+      "id": "inn-guest-bedside-01",
+      "rect_xz_m": [
+        5.3125,
+        -13.5,
+        0.875,
+        0.5
+      ]
+    },
+    {
+      "id": "inn-guest-wall-south",
+      "rect_xz_m": [
+        4.0,
+        -8.0,
+        9.5,
+        0.5
+      ]
+    },
+    {
+      "id": "inn-guest-wall-west",
+      "rect_xz_m": [
+        2.0,
+        -19.0,
+        0.5,
+        9.0
+      ]
+    },
+    {
+      "id": "inn-guest-wardrobe-01",
+      "rect_xz_m": [
+        3.25,
+        -17.0,
+        1.5,
+        1.0
+      ]
+    },
+    {
+      "id": "inn-kitchen-stove-01",
+      "rect_xz_m": [
+        -11.09375,
+        -18.25,
+        2.1875,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-kitchen-worktop-01",
+      "rect_xz_m": [
+        -6.59375,
+        -18.25,
+        2.1875,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-meal-table-01",
+      "rect_xz_m": [
+        -8.5,
+        -14.75,
+        1.0,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-meal-table-02",
+      "rect_xz_m": [
+        -6.0,
+        -14.75,
+        1.0,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-personal-desk-01",
+      "rect_xz_m": [
+        6.5625,
+        -11.25,
+        1.375,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-recovery-armchair-01",
+      "rect_xz_m": [
+        -5.96875,
+        -6.75,
+        0.9375,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-recovery-sofa-01",
+      "rect_xz_m": [
+        -8.9375,
+        -6.75,
+        1.875,
+        0.75
+      ]
+    },
+    {
+      "id": "inn-wall-east",
+      "rect_xz_m": [
+        13.5,
+        -21.0,
+        0.5,
+        23.0
+      ]
+    },
+    {
+      "id": "inn-wall-north",
+      "rect_xz_m": [
+        -14.0,
+        -21.0,
+        28.0,
+        1.0
+      ]
+    },
+    {
+      "id": "inn-wall-south-east",
+      "rect_xz_m": [
+        1.0,
+        1.75,
+        13.0,
+        1.25
+      ]
+    },
+    {
+      "id": "inn-wall-south-west",
+      "rect_xz_m": [
+        -14.0,
+        1.75,
+        13.0,
+        1.25
+      ]
+    },
+    {
+      "id": "inn-wall-west",
+      "rect_xz_m": [
+        -14.0,
+        -21.0,
+        0.5,
+        23.0
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "anchor_id": "inn-host-01",
+      "foot": [
+        -6,
+        0,
+        -12
+      ],
+      "facing": "south"
+    }
+  ],
+  "arrival": {
+    "id": "lantern-rest-from-alderwake",
+    "foot": [
+      0,
+      0,
+      0
+    ],
+    "ally_foot": [
+      1,
+      0,
+      0
+    ]
+  },
+  "exit": {
+    "portal_id": "lantern-rest-exit-01",
+    "foot": [
+      0,
+      0,
+      1.75
+    ],
+    "player_approach": [
+      0,
+      0,
+      0.65
+    ]
+  },
+  "adaptations": []
+}

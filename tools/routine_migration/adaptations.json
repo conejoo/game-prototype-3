@@ -5,25 +5,25 @@
       "path": ".gitattributes",
       "after_path": ".gitattributes",
       "before_sha256": "bc9404e0f67f76a0508577255e08c21eac64c2621391862621f04e3ab523e128",
-      "after_sha256": "ad79050c0c19674b565a93759ab4dcd9b19ed0838b34e1328053e845cf3bdb3d",
-      "owner": "R007",
-      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de; source pins and original baseline retained. R006 five narrow exact-byte rules; prior attributes preserved. Prior accepted target hash 2a9e5c73d09fbd0979e36046b8c44fd379a8e55cbee6176d8825970ad0934285; original baseline/source pins retained. Authorized R006 successful-task commit adds one exact-byte rule for the adaptation ledger after staged Git normalization was detected; previous accepted attribute hash 36a3f8dedb57262f5256bc00fa871cb5d1a9af3798fe9b1b440447fafa0deaf2 retained in this record, original baseline/source pins unchanged. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash 2cea4f447f8781f6bd6f6041113aba01ef86fe15d0bdd26dac70650763365326 retained; original source/baseline and other geography unchanged. R007 necessary exact 28-definition assertions/current delivered home metadata and byte preservation; previous accepted hash 62df4c5c4f32b0224ce01436235ab082e042d87fa1440a456944606813d32e2f retained."
+      "after_sha256": "8fa74cd72c5405951dfc0eac2ea467c81ca9a6c01083b8b570a60205e02ef789",
+      "owner": "R008",
+      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de; source pins and original baseline retained. R006 five narrow exact-byte rules; prior attributes preserved. Prior accepted target hash 2a9e5c73d09fbd0979e36046b8c44fd379a8e55cbee6176d8825970ad0934285; original baseline/source pins retained. Authorized R006 successful-task commit adds one exact-byte rule for the adaptation ledger after staged Git normalization was detected; previous accepted attribute hash 36a3f8dedb57262f5256bc00fa871cb5d1a9af3798fe9b1b440447fafa0deaf2 retained in this record, original baseline/source pins unchanged. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash 2cea4f447f8781f6bd6f6041113aba01ef86fe15d0bdd26dac70650763365326 retained; original source/baseline and other geography unchanged. R007 necessary exact 28-definition assertions/current delivered home metadata and byte preservation; previous accepted hash 62df4c5c4f32b0224ce01436235ab082e042d87fa1440a456944606813d32e2f retained. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash ad79050c0c19674b565a93759ab4dcd9b19ed0838b34e1328053e845cf3bdb3d retained."
     },
     {
       "path": "docs/ARCHITECTURE.md",
       "after_path": "docs/ARCHITECTURE.md",
       "before_sha256": "98ab868216cc24ab99bf657ed37257e6d680f6b1ec7cfdb38525252e5f972456",
-      "after_sha256": "350aa72394aa9523b897b2545800193ff629675c014e4e9b27c78e57e42037fe",
-      "owner": "R007",
-      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash 328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302; source pins and original baseline retained. R006 data-only qualified exterior station/door metadata, measured approach/arrival adaptations, real bench ownership; no routine/room activation. Prior accepted target hash 41a5ebd9bf1babc023b52fdf207f7cde472f1567b753014f7bc731350144e990; original baseline/source pins retained. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash b199e23e572309ee656369cab7b526c2fdcccea7180ab7189e1369f5a0f956cd retained; original source/baseline and other geography unchanged. R007 necessary exact 28-definition assertions/current delivered home metadata and byte preservation; previous accepted hash 25640b80a68571afa3e5acfe25ff9f49419fafb0c7c248ef1b874ec489a4d84b retained. R007 home-only south-exit/return hint, external companion station wording or unchanged historical line endings; previous accepted hash 271c61a1561ea71428de2cf4aab44f1a885ba22b17be06eeeeb416e6070f6f1e retained; command/effect owners unchanged."
+      "after_sha256": "933d7c8c3cb2c2f7d06b0acdfb239e316d67372232823540bd13dbfba60f4082",
+      "owner": "R008",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash 328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302; source pins and original baseline retained. R006 data-only qualified exterior station/door metadata, measured approach/arrival adaptations, real bench ownership; no routine/room activation. Prior accepted target hash 41a5ebd9bf1babc023b52fdf207f7cde472f1567b753014f7bc731350144e990; original baseline/source pins retained. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash b199e23e572309ee656369cab7b526c2fdcccea7180ab7189e1369f5a0f956cd retained; original source/baseline and other geography unchanged. R007 necessary exact 28-definition assertions/current delivered home metadata and byte preservation; previous accepted hash 25640b80a68571afa3e5acfe25ff9f49419fafb0c7c248ef1b874ec489a4d84b retained. R007 home-only south-exit/return hint, external companion station wording or unchanged historical line endings; previous accepted hash 271c61a1561ea71428de2cf4aab44f1a885ba22b17be06eeeeb416e6070f6f1e retained; command/effect owners unchanged. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash 350aa72394aa9523b897b2545800193ff629675c014e4e9b27c78e57e42037fe retained."
     },
     {
       "path": "game/app/game_root.gd",
       "after_path": "game/app/game_root.gd",
       "before_sha256": "15e441e4842a4c1430c4733da332cec47ad8b3f218f094e125d3da01740acb3f",
-      "after_sha256": "f6aaf88953c2bc2797f721bff6a5082e0bc8875033c824a06e4dc57443d15f8d",
-      "owner": "R007",
-      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 home-only south-exit/return hint, external companion station wording or unchanged historical line endings; previous accepted hash 33472be8ac34af2154c0ea978ebb80ec3e481b65ad7978dc38e86f961006c9c1 retained; command/effect owners unchanged."
+      "after_sha256": "ec5aa3f3dda17681a6dbcf5405a974de5814c7cbd37952f502ee1b6452331510",
+      "owner": "R008",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 home-only south-exit/return hint, external companion station wording or unchanged historical line endings; previous accepted hash 33472be8ac34af2154c0ea978ebb80ec3e481b65ad7978dc38e86f961006c9c1 retained; command/effect owners unchanged. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash f6aaf88953c2bc2797f721bff6a5082e0bc8875033c824a06e4dc57443d15f8d retained."
     },
     {
       "path": "game/app/game_session.gd",
@@ -45,9 +45,9 @@
       "path": "game/content/locations/alderwake.tres",
       "after_path": "game/content/locations/alderwake.tres",
       "before_sha256": "64436ee4376f3c689ecf2a11957b3880743772354476e0dd41b7083c60e8e33b",
-      "after_sha256": "66eb10b46b2bdef65add6acb816d8d2422164a24675dae109cfa9c80a26919e3",
-      "owner": "R007",
-      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash fd07eae3796c2abcc1fe1ba9fd5bfd9d60db66d1d39bcda8ec7ccce09a94284e retained; original source/baseline and other geography unchanged."
+      "after_sha256": "c9f52e268802c731b2b888bb188f3c0dac122f564955238f51b72be7552babc6",
+      "owner": "R008",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash fd07eae3796c2abcc1fe1ba9fd5bfd9d60db66d1d39bcda8ec7ccce09a94284e retained; original source/baseline and other geography unchanged. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash 66eb10b46b2bdef65add6acb816d8d2422164a24675dae109cfa9c80a26919e3 retained."
     },
     {
       "path": "game/content/locations/tollworks.tres",
@@ -229,9 +229,9 @@
       "path": "game/tests/npc_03_checks.gd",
       "after_path": "game/tests/npc_03_checks.gd",
       "before_sha256": "953b742b90f1ebc818f8f0d4a30e278384db1815a5fc011be1d5559cfe85db1a",
-      "after_sha256": "87b7c5536195297198102c9041e6409a3653c785e2a54ecf423892c1d8e98969",
-      "owner": "R006",
-      "reason": "R006 preserve original solid-bench assertion at its new independent BenchBody path."
+      "after_sha256": "d344bd892a5bd42118a5477f0ff960ad4e73e59732ba8d4d0ffa9670ee52d77b",
+      "owner": "R008",
+      "reason": "R006 preserve original solid-bench assertion at its new independent BenchBody path. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash 87b7c5536195297198102c9041e6409a3653c785e2a54ecf423892c1d8e98969 retained."
     },
     {
       "path": "game/tests/npc_dialogue_rule_checks.gd",
@@ -301,9 +301,9 @@
       "path": "game/world/alderwake_exterior.gd",
       "after_path": "game/world/alderwake_exterior.gd",
       "before_sha256": "d2f0fdd605b92026344721cf54a7aa9d70e17230c0aa09db7f3f7e41d3e6f391",
-      "after_sha256": "a78ac8cdcecb5560369e1c984efbdacfba70313bf873836665a2c37f266cab65",
-      "owner": "R007",
-      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash 0bace23958b7f14ab18b1b8c72f3fd6315008d925dccd88a9690c00caad1b51a retained; original source/baseline and other geography unchanged."
+      "after_sha256": "c208a08e8bb5e7f4b5a17e06495289280e0e41bf7dfe798774e6f28954d13498",
+      "owner": "R008",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash 0bace23958b7f14ab18b1b8c72f3fd6315008d925dccd88a9690c00caad1b51a retained; original source/baseline and other geography unchanged. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash a78ac8cdcecb5560369e1c984efbdacfba70313bf873836665a2c37f266cab65 retained."
     },
     {
       "path": "game/world/location_definition.gd",
@@ -405,25 +405,193 @@
       "path": "game/content/prototype_catalog.tres",
       "after_path": "game/content/prototype_catalog.tres",
       "before_sha256": "5a7d127cbe4efc3798c15f15e988ef639ac7824d8aacbfcab651ceff0f106749",
-      "reason": "R007 enables only public Mayor Vale home/reciprocal portals, with pinned exterior geometry/old arrivals and all other content preserved; original source/baseline unchanged.",
-      "after_sha256": "7bcb33bad3054d1a764c891c674012d3deb6792e355fd95b72a02b615975c73c",
-      "owner": "R007"
+      "reason": "R007 enables only public Mayor Vale home/reciprocal portals, with pinned exterior geometry/old arrivals and all other content preserved; original source/baseline unchanged. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash 7bcb33bad3054d1a764c891c674012d3deb6792e355fd95b72a02b615975c73c retained.",
+      "after_sha256": "04f8393f3a9cca74c79e51f6ce6f8642221c50f915b509d44552d2fedef21b88",
+      "owner": "R008"
     },
     {
       "path": "game/tests/content_catalog_checks.gd",
       "after_path": "game/tests/content_catalog_checks.gd",
       "before_sha256": "ca0a0d952ccf5c824e25ff35db8b7f766e43323df36a0e595f767fb9d398db26",
-      "reason": "R007 exact expected core catalog count 27 -> 28 for one added home; all malformed/atomicity/legacy-NPC/root ownership assertions preserved.",
-      "after_sha256": "f7f5cacac4f8bc38f4410ddbe3894baa5ff0bccd02860b42043072731f96e1c2",
-      "owner": "R007"
+      "reason": "R007 exact expected core catalog count 27 -> 28 for one added home; all malformed/atomicity/legacy-NPC/root ownership assertions preserved. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash f7f5cacac4f8bc38f4410ddbe3894baa5ff0bccd02860b42043072731f96e1c2 retained.",
+      "after_sha256": "b97b033f2edc1212ac2eeb567f52e4510e0cd0e9304a50d585d976b11055eecf",
+      "owner": "R008"
     },
     {
       "path": "game/tests/application_smoke.gd",
       "after_path": "game/tests/application_smoke.gd",
       "before_sha256": "ac034d902db1b5cfe35c37c1fb5e129fe91cd9e458dd04fc56acd6be7a51350d",
-      "reason": "R007 exact expected core catalog count 27 -> 28 for one added home; all malformed/atomicity/legacy-NPC/root ownership assertions preserved.",
-      "after_sha256": "fce24aff635dac89bc176fee890ca6506776161808de1f7bdcfc403f3fdd84de",
-      "owner": "R007"
+      "reason": "R007 exact expected core catalog count 27 -> 28 for one added home; all malformed/atomicity/legacy-NPC/root ownership assertions preserved. R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. Previous accepted target hash fce24aff635dac89bc176fee890ca6506776161808de1f7bdcfc403f3fdd84de retained.",
+      "after_sha256": "1128232d5d6df8e24f719867aba024e168522f0c3ed52263dd6a0094236a6d21",
+      "owner": "R008"
+    },
+    {
+      "path": "game/content/npcs/catalog.json",
+      "after_path": "game/content/npcs/catalog.json",
+      "before_sha256": "efb76e8a42796a92fab80fa5815885adc7abdfd565ee7cfe036a7d165409e1d3",
+      "after_sha256": "97fc14f80e88dd308e5aac76d3227f8b0235659eeabc4cd8016d5772a6595a40",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/features/npcs/npc_dialogue_service.gd",
+      "after_path": "game/features/npcs/npc_dialogue_service.gd",
+      "before_sha256": "54bb030d07498f3a4300fa7f30fd652687173869ba6b2f51c855fec27fdc6fd2",
+      "after_sha256": "0543792d26eca8c711ac201f38a04e21459eda8b062db8e95c9bc659b7799043",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/features/npcs/npc_registry.gd",
+      "after_path": "game/features/npcs/npc_registry.gd",
+      "before_sha256": "f53255799eddd4ca17876d1560ed1211bc18aaa1e2db734f560f25a9bb60a793",
+      "after_sha256": "d04398d1d45aee456b384fded0a98d1d99c97bf616e2eba04a53d3751a66a596",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/features/npcs/npc_world_adapter.gd",
+      "after_path": "game/features/npcs/npc_world_adapter.gd",
+      "before_sha256": "e4589cba872b3595d5617ea182250f5e8732de4c515c43f61280e7cccbc3ac0a",
+      "after_sha256": "840e391555984c969360ed756c824b6e12afbd49a28d24f756a9132a70b847be",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. R008 preserves whole-roster duplicate validation before actual-map filtering and aligns affected historical fixture assertions to delivered social activation/current town count; previous accepted hash b1159d29c1ff46f22a31f528292da722ce186027a05b73b82f24de48d4274b40 retained."
+    },
+    {
+      "path": "game/tests/fishing_integrated_render.gd",
+      "after_path": "game/tests/fishing_integrated_render.gd",
+      "before_sha256": "f22ec3b39ad2e91d46aa73896f84ea0ec9b06b3b325cf37aa51b674456247c2e",
+      "after_sha256": "acf1871fe1793ce8c10f226a586ebfb07ce580bfb757d8e8ebf32d503505de32",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/fishing_integration_checks.gd",
+      "after_path": "game/tests/fishing_integration_checks.gd",
+      "before_sha256": "88e16afb016ea8a4cb96d82dc9ea50ba5bb0a82cff2464b8c61b165e4fe1fe86",
+      "after_sha256": "284940f74c616c45280ffa3c9a74b0e9f19e9a3d102745585dd1eb136145725d",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/map_activation_checks.gd",
+      "after_path": "game/tests/map_activation_checks.gd",
+      "before_sha256": "dde6d28b63e48e2c536235e6f25eca7191f6abfd30f2e2d93d45aab47111b835",
+      "after_sha256": "c3895cb42f1baa754d92ce5017d8e9ad101ea35e816962005a67fc8e8e691dce",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/npc_01_checks.gd",
+      "after_path": "game/tests/npc_01_checks.gd",
+      "before_sha256": "f79002bfcf18e049ac25b624fb4e031f9c4b3fd4286a652e3e3322a12f502047",
+      "after_sha256": "1e40f88976fff0687b4cc06ac27d615f84e69b9514931822cbe4a72b9516434f",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/npc_02_checks.gd",
+      "after_path": "game/tests/npc_02_checks.gd",
+      "before_sha256": "1f51b6d4c11aae813c80979112622236b85f02af0fa4341cd140cce578b27f3a",
+      "after_sha256": "4d3cbf983032ad37bcacbb6363b1975fb3d6fe6e392ebc2a68ce10c82de6a022",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/npc_04_checks.gd",
+      "after_path": "game/tests/npc_04_checks.gd",
+      "before_sha256": "01b21e933ee94707e4464deff7410a315895635577bdcc5a75e70d15a6e2a11c",
+      "after_sha256": "5375d7f1c8e1faf8e4f4a553c8457d106b2c5d636dbfe7fde128c983e2d92d3a",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. R008 preserves whole-roster duplicate validation before actual-map filtering and aligns affected historical fixture assertions to delivered social activation/current town count; previous accepted hash 951e518781cdc1d28db003d54f501fdbb4b4328062418a2e89959bcb268502e7 retained."
+    },
+    {
+      "path": "game/tests/npc_06_checks.gd",
+      "after_path": "game/tests/npc_06_checks.gd",
+      "before_sha256": "a9c0df4b19876a5df93e110442442b067f4b23b94ff0a4acd6850d644d36f6bf",
+      "after_sha256": "7925d0dcb91ebd52d374d9c6f2a541277ed162ff8adf0a509a5cc0dd5eb6f07f",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. R008 preserves whole-roster duplicate validation before actual-map filtering and aligns affected historical fixture assertions to delivered social activation/current town count; previous accepted hash 8b9614eff31c984306bc3f6d62bee131c4a086b66846e32130b9d69151ff2eb6 retained."
+    },
+    {
+      "path": "game/tests/npc_07_checks.gd",
+      "after_path": "game/tests/npc_07_checks.gd",
+      "before_sha256": "ea8dd6a3f6990e8c83aeb5baf4d9d4e677cb0a141d57a7f753217920bb1ed07e",
+      "after_sha256": "d5aff03e4c35d7d50df36e6678f8dd90e3eae670eecadd339bdfd6f920f66393",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. R008 preserves whole-roster duplicate validation before actual-map filtering and aligns affected historical fixture assertions to delivered social activation/current town count; previous accepted hash 35e65741f1929ae0ed3ab0448f84562c15d8eaa329aeb600cac4e416a84c5691 retained."
+    },
+    {
+      "path": "game/tests/npc_08_checks.gd",
+      "after_path": "game/tests/npc_08_checks.gd",
+      "before_sha256": "86adbd0ab670f3e348014eff2cde6e072dc9695b31aabbae849da3f7f9008aa8",
+      "after_sha256": "ec0ee9e5f3a92c80371388d000cefe3bdcb35a904275cc54b956090ce6f1b043",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. R008 preserves whole-roster duplicate validation before actual-map filtering and aligns affected historical fixture assertions to delivered social activation/current town count; previous accepted hash 94b64e36e715bc1d10b3b95063727654b5fd74ec4db56bcdcfcf0208f89b5cd1 retained."
+    },
+    {
+      "path": "game/tests/npc_14_checks.gd",
+      "after_path": "game/tests/npc_14_checks.gd",
+      "before_sha256": "1f1836d1f0d6515688d34c8e7d1d5cde1f7ba9c6968d0c1de1471ffde93a6759",
+      "after_sha256": "892449c04637a5a5aeafb294f31562be3361c94af5ff93efe76e02cbc71ffe7c",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/npc_asset_pipeline_checks.gd",
+      "after_path": "game/tests/npc_asset_pipeline_checks.gd",
+      "before_sha256": "7ceaca7aeb6a1cac749ab0b90ec33581c0956509cf1928bae5c65ded70c84ef9",
+      "after_sha256": "a80975bf4a5cd0a45e277a0099e457034d9ec3fd7e093b567357c3e9102e2f3a",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/npc_content_checks.gd",
+      "after_path": "game/tests/npc_content_checks.gd",
+      "before_sha256": "3822b0d6b6e8136454392b2b6ea1e3944a50f47174d858e7b9c291386dcf97f7",
+      "after_sha256": "f92be7612840ca5ae34005d28a6afdf14bd1447a7717c8709526242bb94f0c66",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/npc_integration_checks.gd",
+      "after_path": "game/tests/npc_integration_checks.gd",
+      "before_sha256": "4fcf89acdb80f52128246eb3d9635be3cb4d0e08151d02d6fa71207fdb23e5b1",
+      "after_sha256": "25b2eb93163d2b0761376b602303003a93175c29d12168a1c4a9e3db2a3e9af7",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained. R008 preserves whole-roster duplicate validation before actual-map filtering and aligns affected historical fixture assertions to delivered social activation/current town count; previous accepted hash 82926c301a2f3ed07f23c9cf59852a0a01e801ec5dc0d5e77ea0d27a55415a23 retained."
+    },
+    {
+      "path": "game/tests/npc_world_checks.gd",
+      "after_path": "game/tests/npc_world_checks.gd",
+      "before_sha256": "4291ec0fd302e2e6036b6ad87cfab12250a0fb5224516191ef1e797bf8d2f06d",
+      "after_sha256": "4712a7aeed76675ae2020eb8bc369abd876ee066c678777522affec22d4098e8",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/social_gift_ui_checks.gd",
+      "after_path": "game/tests/social_gift_ui_checks.gd",
+      "before_sha256": "4ec0ee339a822933dc821d2a7d4d45110d597520f3d61166ef78cf81f42c8de3",
+      "after_sha256": "926d20edc999b3a90dd80642f36671fde3ea5df2e4aa0f914bf3de15a3b437d2",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/tests/social_integration_checks.gd",
+      "after_path": "game/tests/social_integration_checks.gd",
+      "before_sha256": "d5900100ddf95d0eb2ffde26bfb4849a912ab18f358466744fa3958383fd4a87",
+      "after_sha256": "35823d7a828917af18a0460e1f00b50019e6ae2d5e61fa260b0c8a8b84e2d7d1",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
+    },
+    {
+      "path": "game/ui/conversation_view.gd",
+      "after_path": "game/ui/conversation_view.gd",
+      "before_sha256": "a7c71bfb0d531ab722abe0d15bade6bfe995fb89ed06ddb31d9e109180ccfc29",
+      "after_sha256": "89f37690b18d09b0785589531a433959e11b3ff7a40f2a26f41f59d7042a2daf",
+      "owner": "R008",
+      "reason": "R008 bounded source-informed inn/reciprocal public portals, real map-qualified indoor Della, current indoor wording or necessary actual-map/GUI regression assertions; all original source/baseline pins, graph IDs/activation, furniture/exterior geometry and save/service owners retained."
     }
   ]
 }

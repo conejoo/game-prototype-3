@@ -1288,3 +1288,29 @@ sheets support the data audit. All owned processes/controls/TEMP copy cleaned;
 normal saves untouched. All754 accepted G008 game files remain exact bytes;
 no runtime/content/save/geography/supply change. This supersedes historical
 pre-social package/pending-native boundaries above. G001-G009 Done, no next task.
+
+
+## R008 Lantern Rest public interior (2026-10-09 UTC)
+
+LanternRest uses an inn-local origin(448,672),32 units/metre and immutable
+public source geometry:19 exact colliders, source floor/cleared threshold and
+one qualified inn-host-01 station at(-6,0,-12),facing south. Reciprocal explicit
+portals enable zero-affinity public entry/return with persistent two-person party.
+Fixed warm indoor lighting excludes exterior rain/shadows while global clock and
+forecast continue through existing owners. No routine execution is enabled.
+
+NpcRegistry now qualifies contact map/instance/foot/approach and exposes actual-map
+entries/enabled IDs. NpcWorldAdapter stages exactly seven existing town contacts
+and one Della in Lantern Rest, rejects wrong claimed geometry before mutation,
+checks real host floor/capsule/nav/LOS and owns one presenter per loaded contact.
+Della keeps original graph IDs,skin/portraits,public facts/gift rules/People memory;
+only obsolete exterior/introduction/unavailable-interior wording changes. Paid
+room direction/entitlement,booking,sleep,morning scene remain deferred. Current
+schema8/content1/manual-save/party/recovery/item/social/weather owners unchanged.
+
+R008 checks cover full-party/host lanes, exact physics/source station, synthetic
+three-storm lighting/save-primary-backup/occupied-arrival rollback and ordinary
+public input for entry/talk/gather/gift/close/return. Separate-process GUI Save/Load
+checks exact complete typed durable snapshot/forecast and physical host revisit.
+Fixed-contact regression assertions now use actual map; all-eight social/asset
+roster assertions remain. Full schedules/native packages keep R013/R016 owners.

@@ -17,7 +17,7 @@ func _run() -> void:
 	var compact: PrototypeLocation=load("res://tests/fixtures/compact_alderwake.tscn").instantiate()
 	compact.location_id=NpcRegistry.LOCATION
 	var adapter: NpcWorldAdapter=NpcWorldAdapter.new()
-	_check(adapter.build(compact,NpcRegistry.ENABLED)==PackedStringArray(["NPC contacts require the pinned Alderwake exterior"]),"wrong geometry fails before contact mutation")
+	_check(adapter.build(compact,NpcRegistry.ENABLED)==PackedStringArray(["NPC contacts require their pinned actual map"]),"wrong geometry fails before contact mutation")
 	_check(adapter.targets.is_empty() and adapter.get_child_count()==0,"wrong geometry no partial actors")
 	adapter.free(); compact.free()
 	var baseline: Dictionary={}
@@ -29,9 +29,9 @@ func _run() -> void:
 		var ready: Dictionary=await TestRunJourney.wait_navigation(room,Vector3.ZERO)
 		_check(ready.ok,ready.error)
 		if not ready.ok: break
-		_check(room.npc_contacts.targets.size()==(8 if enabled else 0),"measured crowd size")
+		_check(room.npc_contacts.targets.size()==(NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() if enabled else 0),"measured crowd size")
 		var goals: Array[Vector3]=[Vector3(93,0,-.5),Vector3(103,0,-.5),Vector3(66,0,12.5),Vector3(75,0,12.5),Vector3(107.25,0,-1.25)]
-		for contact: Dictionary in NpcRegistry.entries(): goals.append(contact.approach)
+		for contact: Dictionary in NpcRegistry.entries(NpcRegistry.LOCATION): goals.append(contact.approach)
 		for index: int in goals.size():
 			var samples: PackedFloat64Array=[]
 			var path: PackedVector3Array=[]
@@ -80,7 +80,7 @@ func _run() -> void:
 	game.player_placeholder.receive_damage(100)
 	await game.retry_encounter()
 	_check(SaveCodec.snapshot(game.session)==before_retry,"all-eight death/retry preserves whole healed durable state")
-	_check(game.world_host.current_location.npc_contacts.targets.size()==8 and game.party.members().size()==2,"retry reconstructs exactly eight contacts/two party actors")
+	_check(game.world_host.current_location.npc_contacts.targets.size()==NpcRegistry.enabled_for(NpcRegistry.LOCATION).size() and game.party.members().size()==2,"retry reconstructs exactly seven town contacts/two party actors")
 	for row: Dictionary in deferred: _check(not row.reason.is_empty(),"deferred coverage explicit "+row.id)
 	_check(TestRunEvidence.write_json("npc-integration-checks.json",{"task":"N017","proof":"synthetic controlled map baseline/crowd; not ordinary input","assertions":assertions,"failures":failures,"measurements":measurements,"enabled_nodes":nodes,"enabled_choices":choices,"enabled_facts":facts,"deferred":deferred}),"integration rule evidence")
 	game.queue_free(); await process_frame

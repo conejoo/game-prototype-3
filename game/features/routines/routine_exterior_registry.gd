@@ -45,7 +45,7 @@ static func entrances(location_id: String = LOCATION) -> Array[Dictionary]:
 			"return_ally_foot":Vector3(5,0,-4.6), "return_facing":Vector3.BACK},
 		{"portal_id":"lantern-rest-entrance-01", "source_location_id":LOCATION,
 			"destination_location_id":"prototype-lantern-rest",
-			"arrival_id":"lantern-rest-from-alderwake", "enabled":false,
+			"arrival_id":"lantern-rest-from-alderwake", "enabled":true,
 			"foot":Vector3(-7,0,4.25), "facing":Vector3.FORWARD,
 			"player_approach":Vector3(-7,0,5.35), "ally_approach":Vector3(-7,0,6.55),
 			"return_portal_id":"lantern-rest-exit-01", "return_arrival_id":"alderwake-from-lantern-rest",

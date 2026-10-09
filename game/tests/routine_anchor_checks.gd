@@ -93,14 +93,14 @@ func _run() -> void:
 		_check(door.return_ally_foot == door.return_foot+Vector3.RIGHT, "existing WorldHost/Party 1m east arrival contract " + door.portal_id)
 		for entry: Dictionary in RoutineExteriorRegistry.anchors():
 			_check(door.return_foot.distance_to(entry.foot) >= 0.85 and door.return_ally_foot.distance_to(entry.foot) >= 0.85, "arrival/station separation " + door.portal_id+"/"+entry.anchor_id)
-		_check(door.enabled == (door.portal_id == "mayor-vale-home-entrance") and (game.catalog.get_location(door.destination_location_id) != null if door.enabled else game.catalog.get_location(door.destination_location_id) == null), "delivered home enabled; absent inn remains inactive " + door.portal_id)
+		_check(door.enabled and (game.catalog.get_location(door.destination_location_id) != null if door.enabled else game.catalog.get_location(door.destination_location_id) == null), "both delivered rooms enabled " + door.portal_id)
 		doors.append({"portal_id":door.portal_id,"foot":_xyz(door.foot),"approach":_xyz(door.player_approach),"ally_approach":_xyz(door.ally_approach),
 			"source_return":_xyz(door.source_return_foot),"return_hero":_xyz(door.return_foot),"return_ally":_xyz(door.return_ally_foot),
 			"return_delta_m":door.return_foot.distance_to(door.source_return_foot),"enabled":door.enabled})
 	await _negative(excluded)
 	_check(SaveCodec.snapshot(game.session) == before, "geometry queries preserve entire durable snapshot")
 	_check(game.camera_rig.global_transform == camera_before and actor_feet == [game.player_placeholder.global_position,game.companion.global_position], "queries preserve player/ally/camera")
-	_check(room.npc_contacts.targets.size() == 8 and game.party.members().size() == 2, "contacts/party preserved")
+	_check(room.npc_contacts.targets.size() == 7 and game.party.members().size() == 2, "seven town contacts/indoor Della excluded/party preserved")
 	_check(NavigationServer3D.map_get_regions(room.get_world_3d().navigation_map) == [room.navigation_region.get_rid()], "one unchanged navigation region")
 	probe.queue_free()
 	await physics_frame
@@ -176,7 +176,7 @@ func _overlap(foot: Vector3, radius: float, own_npc: String, future_arrival: boo
 	for spawn: Node3D in room.get_node("Spawns").get_children():
 		# Public return may share a transient player interaction approach. Actual
 		# NPC station feet must remain disjoint; no actor reserves both player feet.
-		if spawn.stable_id == "alderwake-from-mayor-vale-home":
+		if spawn.stable_id in ["alderwake-from-mayor-vale-home","alderwake-from-lantern-rest"]:
 			for station: Dictionary in RoutineExteriorRegistry.anchors():
 				_check(station.foot.distance_to(spawn.global_position) >= .85 and station.foot.distance_to(spawn.global_position+Vector3.RIGHT) >= .85,"delivered return clears actual station " + station.anchor_id)
 			continue

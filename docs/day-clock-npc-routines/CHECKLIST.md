@@ -21,7 +21,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R005 | Done | R001 | Qualified multi-portal routing, existing travel preserved |
 | R006 | Done | R002, R005 | Safe exterior anchors/door approaches on pinned geometry |
 | R007 | Done | R005, R006 | Mayor Vale home and its nine required anchors |
-| R008 | Pending | R005, R006 | Lantern Rest and Della's real station |
+| R008 | Done | R005, R006 | Lantern Rest and Della's real station |
 | R009 | Pending | R002, R006 | Physical same-map movement/bounded occupancy |
 | R010 | Pending | R003, R004, R007, R008, R009 | Group/cross-map execution and safe night reconstruction |
 | R011 | Pending | R004, R010 | Routine dialogue, group leases and directives |
@@ -163,13 +163,13 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001-R007 completed; R008-R016 remain Pending. Final task ID: R016.
-Next eligible: R008 (R005/R006 prerequisites verified).
+R001-R008 completed; R009-R016 remain Pending. Final task ID: R016.
+Next eligible: R009 (R002/R006 prerequisites verified).
 Whole checklist complete: no. No current blocker.
 [R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
 [R003 acceptance](R003_ACCEPTANCE.md), [R004 acceptance](R004_ACCEPTANCE.md) and
 [R005 acceptance](R005_ACCEPTANCE.md), [R006 acceptance](R006_ACCEPTANCE.md) and
-[R007 acceptance](R007_ACCEPTANCE.md) own evidence.
+[R007 acceptance](R007_ACCEPTANCE.md), [R008 acceptance](R008_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -400,3 +400,36 @@ All owned Godot processes exited, no held input/editor/cleanup owed. Blockers/un
 R007 criteria:none. No commit/push. Remaining R008-R016; every item throughR016
 complete:no. Next eligible R008: inspect pinned inn/host/current doorway, deliver
 Lantern Rest and actual Della access criteria. Stop here, await separate commit.
+
+R008 - Done 2026-10-09 UTC
+Result/changed files: bounded source-informed LanternRest map/script/scene/resource,
+reciprocal inn portals/public door and original safe party arrivals; exact host
+and one actual indoor Della, map-aware registry/adapter, narrow obsolete wording/
+HUD; converter, physical/rendered/blocked-arrival checks and necessary fixed-contact
+fixtures,74-record exact ledger/attributes/architecture.53 paths listed in
+[R008 acceptance](R008_ACCEPTANCE.md). All source geometry/host feet unchanged.
+Prerequisites/preserved work: clean target2c81026e/source60c20eb2, actual R005/R006
+routes/door/returns verified; no user changes, source/instructions/normal saves/
+packages/Blender2664 preserved. Repository cwd,PowerShell7,console4.7.2; separate
+check APPDATA/LOCALAPPDATA/named slots,only each renderer pair shares one group.
+Final173207 completed inn1981/942sweeps,Della738,gift355,People134,travel10roundtrips,
+environment157,NPC-world10130 before runner session interruption. Whole report
+stays unfinished. Resumed173612 PASS10(engine/parse,anchors54016/7493samples,
+NPC04/06/07/08,integration93,rendered write108/21/read22/3) on identical1248-file
+fingerprint fec442fd426f3acd511937ffab3b56d18f9227ac55f2b0925c9f330d6bdc096a.
+Every accepted case exit0/no diagnostics/stable source. Exact primary/backup and
+separate-process GUI whole durable/forecast restore. Reference-complete PASS1624/
+88pins/74adaptations/ten refusals; derivative --check passes19exact colliders.
+Additional content/asset/map/social/fishing/routine/save regressions pass individually;
+failed reports retained and affected failures repaired/rerun. Evidence inspected:
+structured results/logs/manifests/saves,all24final captures on two sheets,earlier24/
+full host perspective80. Ordinary affinity0 entry,talk/close,real flower gather,
+reentry/preference/gift/close,GUI Save/Load,physical return; both projections/three
+zooms/verified pause. Synthetic storms/capsules/unsafe-arrival probes labeled.
+No geometry repair; strict schema8/content1/existing owners/social activation and
+deferred room branch preserved. Paid lodging/booking/sleep/morning/routines stay
+unavailable. No native/natural full-day claim. All owned Godot exited,no held input/
+editor/cleanup owed. Blockers/unrun R008 criteria:none. No commit/push; separate
+instruction follows review. Remaining R009-R016; every item throughR016 complete:no.
+Next eligibleR009:physical same-map movement/bounded occupancy using R002/R006 and
+pinned movement/wait/repath constants. Stop before successor.

@@ -20,7 +20,7 @@ func _run() -> void:
 		return
 	canonical = catalog.document_snapshot()
 	_check(catalog.npc_ids() == NpcContentCatalog.ROSTER and catalog.definition_count() == 8, "Exact selected roster")
-	_check(actors.definition_count() == 27 and actors.get_actor("npc-03").display_name == "Maris", "Legacy actor catalog/Maris unchanged")
+	_check(actors.definition_count() == 29 and actors.get_actor("npc-03").display_name == "Maris", "Legacy actor catalog/Maris unchanged")
 	_check(catalog.get_npc("npc-05") == null and catalog.get_npc("prototype-companion") == null, "Unrequested people excluded")
 	var totals: Dictionary = {"nodes": 0, "choices": 0, "facts": 0, "portraits": 0, "sheets": 0, "deferred_nodes": 0, "deferred_choices": 0, "gifts": 0}
 	for id: String in catalog.npc_ids():
@@ -50,7 +50,7 @@ func _run() -> void:
 	_check(event.kind == NpcDialogueGraph.EventCondition.Kind.AREA_ENTERED and event.subject_id == "woods" and event.target_id == null and event.maximum_count == 1, "Typed exact-key event")
 	_check(not edric.facts["npc-01-public-role"].availability.is_enabled() and not edric.facts["npc-01-river-fishing"].availability.is_enabled(), "No fabricated Edric disclosure")
 	_check(not catalog.get_npc("npc-02").facts["npc-02-archive-practice"].availability.is_enabled(), "Archive practice remains routine-only")
-	_check(catalog.get_npc("npc-14").graph.nodes["npc-14-introduction"].text.contains("public entrance"), "Audited Della adaptation")
+	_check(catalog.get_npc("npc-14").graph.nodes["npc-14-introduction"].text.contains("meal room") and not catalog.get_npc("npc-14").graph.nodes["npc-14-introduction"].text.contains("interior is not open"), "Audited current indoor Della wording")
 	_check(not catalog.get_npc("npc-14").graph.choices["npc-14-ask-room"].availability.is_enabled(), "Della room branch unavailable")
 	_check(edric.sheets.has("river-fishing") and catalog.get_npc("npc-02").sheets.has("archive-work"), "Source action indexes")
 	# Mutating input, exported snapshots or nested typed views cannot alter publication.

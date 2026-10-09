@@ -6,17 +6,19 @@ var presenters: Dictionary[String, NpcVisualPresenter] = {}
 
 func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStringArray:
 	if not targets.is_empty(): return PackedStringArray(["NPC contacts already built"])
-	if location.location_id != NpcRegistry.LOCATION: return []
-	if not enabled.is_empty() and not location is AlderwakeExterior:
-		return PackedStringArray(["NPC contacts require the pinned Alderwake exterior"])
+	if location.location_id not in [NpcRegistry.LOCATION,"prototype-lantern-rest"]: return []
+	if not enabled.is_empty() and not (location is AlderwakeExterior if location.location_id == NpcRegistry.LOCATION else location is LanternRest):
+		return PackedStringArray(["NPC contacts require their pinned actual map"])
 	var seen: PackedStringArray = []
 	for id: String in enabled:
 		if NpcRegistry.find(id).is_empty() or id in seen: return PackedStringArray(["Unknown or duplicate NPC contact"])
+		seen.append(id)
+		if NpcRegistry.find(id).location_id != location.location_id: continue
 		if id == "npc-03" and not location.get_node_or_null("MarisCounter") is PrototypeInteractable:
 			return PackedStringArray(["Existing Maris counter missing"])
-		seen.append(id)
 	for id: String in enabled:
 		var entry: Dictionary = NpcRegistry.find(id)
+		if entry.location_id != location.location_id: continue
 		var target: PrototypeInteractable
 		if id == "npc-03":
 			target = location.get_node_or_null("MarisCounter") as PrototypeInteractable
@@ -42,7 +44,7 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			var visual: Node3D = Node3D.new()
 			visual.name = "VisualRoot"
 			target.add_child(visual)
-			(location as AlderwakeExterior).service_outlines.append(Rect2(entry.foot.x-0.4,entry.foot.z-0.4,0.8,0.8))
+			if location is AlderwakeExterior: (location as AlderwakeExterior).service_outlines.append(Rect2(entry.foot.x-0.4,entry.foot.z-0.4,0.8,0.8))
 		target.npc_id = id
 		targets[id] = target
 		if NpcRegistry.VISUAL_ASSETS.has(id):
@@ -80,13 +82,13 @@ func placement_errors(location: PrototypeLocation, excluded: Array[RID]) -> Pack
 		var target: PrototypeInteractable = targets[id]
 		var entry: Dictionary = NpcRegistry.find(id)
 		var own: Array[RID] = excluded.duplicate()
-		if target.global_position != entry.foot: errors.append("NPC foot differs from approved fixed contact: " + id)
+		if target.global_position != entry.foot: errors.append("NPC foot differs from approved map-qualified contact: " + id)
 		var body: StaticBody3D = target.get_node("Body" if id == "npc-03" else "ContactBody")
 		own.append(body.get_rid())
 		errors.append_array(foot_errors(location, target.global_position, own))
 		errors.append_array(foot_errors(location, entry.approach, excluded))
 		var nearest: Vector3 = NavigationServer3D.map_get_closest_point(map, entry.approach)
-		var path: PackedVector3Array = NavigationServer3D.map_get_path(map, location.find_spawn("alderwake-start").global_position, entry.approach, true)
+		var path: PackedVector3Array = NavigationServer3D.map_get_path(map, location.get_node("Spawns").get_child(0).global_position, entry.approach, true)
 		if nearest.distance_to(entry.approach) > 0.3 or path.size() < 2 or path[-1].distance_to(entry.approach) > 0.3:
 			errors.append("NPC approach unreachable: " + id)
 		var hit: Dictionary = location.get_world_3d().direct_space_state.intersect_ray(PhysicsRayQueryParameters3D.create(entry.approach+Vector3.UP*0.8,target.global_position+Vector3.UP*0.8,1,excluded))
