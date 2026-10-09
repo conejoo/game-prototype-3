@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "id": "ivo-docks-day",
+  "priority": 100,
+  "timeWindow": {
+    "start": "06:00",
+    "end": "22:00"
+  },
+  "participants": [
+    "npc-07"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-07",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "reach-booking-station",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "passenger-booking-ivo-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "listen-to-dock-questions",
+          "durationSeconds": 45
+        },
+        {
+          "kind": "move",
+          "id": "check-shore-handoff",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "passenger-salvage-handoff-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "review-shore-lines",
+          "durationSeconds": 20
+        },
+        {
+          "kind": "move",
+          "id": "return-to-booking-station",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "passenger-booking-ivo-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "remain-available-at-berth",
+          "durationSeconds": 400
+        }
+      ]
+    }
+  ]
+}

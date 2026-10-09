@@ -1,0 +1,50 @@
+{
+  "entryMapId": "alderwake",
+  "maps": [
+    {
+      "mapId": "alderwake",
+      "displayLabel": "Alderwake",
+      "jsonPath": "assets/maps/mvp_world.json"
+    },
+    {
+      "mapId": "alderwake-hall",
+      "displayLabel": "Alderwake Hall",
+      "jsonPath": "assets/maps/alderwake_hall.json"
+    },
+    {
+      "mapId": "alderwake-starter-home",
+      "displayLabel": "Alder Rise Home",
+      "jsonPath": "assets/maps/alderwake_starter_home.json"
+    },
+    {
+      "mapId": "buried-tollworks",
+      "displayLabel": "Buried Tollworks",
+      "jsonPath": "assets/maps/buried_tollworks.json"
+    },
+    {
+      "mapId": "lantern-rest",
+      "displayLabel": "Lantern Rest",
+      "jsonPath": "assets/maps/lantern_rest.json"
+    },
+    {
+      "mapId": "mayor-vale-home",
+      "displayLabel": "Mayor Vale’s Home",
+      "jsonPath": "assets/maps/mayor_vale_home.json"
+    },
+    {
+      "mapId": "night-orchard-inner",
+      "displayLabel": "House of Echoes",
+      "jsonPath": "assets/maps/night_orchard_inner.json"
+    },
+    {
+      "mapId": "night-orchard-outer",
+      "displayLabel": "Outer Night Orchard",
+      "jsonPath": "assets/maps/night_orchard_outer.json"
+    },
+    {
+      "mapId": "old-bridge-fairground",
+      "displayLabel": "Old Bridge Fairground",
+      "jsonPath": "assets/maps/old_bridge_fairground.json"
+    }
+  ]
+}

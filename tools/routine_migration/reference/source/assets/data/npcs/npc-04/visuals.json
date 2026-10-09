@@ -1,0 +1,36 @@
+{
+  "npcId": "npc-04",
+  "portraits": {
+    "official-neutral": "assets/images/portraits/npc-04/official-neutral.png",
+    "practiced-smile": "assets/images/portraits/npc-04/practiced-smile.png",
+    "skeptical": "assets/images/portraits/npc-04/skeptical.png",
+    "pleased": "assets/images/portraits/npc-04/pleased.png",
+    "tired-rumpled": "assets/images/portraits/npc-04/tired-rumpled.png",
+    "birdwatching": "assets/images/portraits/npc-04/birdwatching.png"
+  },
+  "world": {
+    "worldCellWidth": 48,
+    "worldCellHeight": 48,
+    "rowOrder": [
+      "south",
+      "north",
+      "west",
+      "east"
+    ],
+    "idle": {
+      "asset": "assets/images/actors/npcs/npc_04_idle_sheet.png",
+      "textureCellWidth": 192,
+      "textureCellHeight": 192,
+      "framesPerFacing": 4,
+      "stepSeconds": 0.24
+    },
+    "walk": {
+      "asset": "assets/images/actors/npcs/npc_04_walk_sheet.png",
+      "textureCellWidth": 192,
+      "textureCellHeight": 192,
+      "framesPerFacing": 3,
+      "stepSeconds": 0.16
+    },
+    "actions": {}
+  }
+}

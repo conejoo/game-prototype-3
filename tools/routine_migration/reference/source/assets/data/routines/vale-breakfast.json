@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "id": "vale-breakfast",
+  "priority": 100,
+  "timeWindow": {
+    "start": "06:00",
+    "end": "08:00"
+  },
+  "participants": ["npc-01", "npc-02"],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-01",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "take-breakfast-seat",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "edric-breakfast"
+          }
+        },
+        {
+          "kind": "speech",
+          "id": "review-town-notices",
+          "text": "The morning notices are ready for Market Lane.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "wait",
+          "id": "finish-breakfast",
+          "durationSeconds": 45
+        }
+      ]
+    },
+    {
+      "participantId": "npc-02",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "take-breakfast-seat",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "helena-breakfast"
+          }
+        },
+        {
+          "kind": "speech",
+          "id": "check-archive-list",
+          "text": "I have three archive references to cross-check today.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "wait",
+          "id": "finish-breakfast",
+          "durationSeconds": 45
+        }
+      ]
+    }
+  ]
+}

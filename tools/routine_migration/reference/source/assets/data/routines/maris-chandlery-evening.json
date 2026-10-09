@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "maris-chandlery-evening",
+  "priority": 100,
+  "timeWindow": {
+    "start": "22:00",
+    "end": "06:00"
+  },
+  "participants": [
+    "npc-03"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-03",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "reach-chandlery",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "maris-fitting-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "sort-evening-stock",
+          "durationSeconds": 400
+        }
+      ]
+    }
+  ]
+}

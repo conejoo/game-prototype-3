@@ -1,0 +1,38 @@
+{
+  "routine_ids": [
+    "asha-herb-day",
+    "asha-herb-evening",
+    "corin-route-day",
+    "corin-route-evening",
+    "fara-waterfront-day",
+    "fara-waterfront-evening",
+    "nessa-town-day",
+    "nessa-town-evening",
+    "orren-town-day",
+    "orren-town-evening",
+    "pella-dock-day",
+    "pella-dock-evening",
+    "rook-town-day",
+    "rook-town-evening"
+  ],
+  "npc_ids": [
+    "npc-15",
+    "npc-16",
+    "npc-17",
+    "npc-19",
+    "npc-20",
+    "visitor-nessa-quill",
+    "visitor-orren-vey"
+  ],
+  "excluded_features": [
+    "Hall/fair/Orchard/starter-home migration",
+    "booking/paid room/sleep/morning campaign",
+    "shops/economy",
+    "extra cast/companions/relationships",
+    "private profiles/households",
+    "autosave",
+    "web/mobile",
+    "behavior editor"
+  ],
+  "map_snapshot_policy": "full public map JSON is geographic/door authority; excluded NPC/anchor/portal records are NOT target runtime content"
+}

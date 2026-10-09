@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "edric-evening-fishing",
+  "priority": 100,
+  "timeWindow": {
+    "start": "17:00",
+    "end": "20:00"
+  },
+  "participants": ["npc-01"],
+  "conditions": [
+    {
+      "kind": "worldEventInactive",
+      "eventId": "heavy-rain"
+    }
+  ],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-01",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "finish-afternoon-rounds",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "edric-market-rounds"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "walk-to-river-bank",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "edric-river-bank"
+          }
+        },
+        {
+          "kind": "speech",
+          "id": "greet-river",
+          "text": "A quiet river rewards patience more than ceremony.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "action",
+          "id": "fish-river",
+          "actionId": "river-fishing",
+          "durationSeconds": 66
+        }
+      ]
+    }
+  ]
+}

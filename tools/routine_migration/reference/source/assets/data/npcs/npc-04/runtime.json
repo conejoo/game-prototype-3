@@ -1,0 +1,64 @@
+{
+  "id": "npc-04",
+  "displayName": "Harlan Reed",
+  "shortName": "Harlan",
+  "title": "Dockmaster",
+  "pronouns": "he/him",
+  "interactionPrompt": "Talk to Harlan Reed",
+  "relationship": {
+    "levelOneAffinity": 3,
+    "levelOneLabel": "Acquaintance"
+  },
+  "dimensions": {
+    "hitWidth": 32,
+    "hitHeight": 32,
+    "interactionRadius": 64
+  },
+  "routine": {
+    "agentProfile": {
+      "id": "town-adult",
+      "footprintRadius": 10,
+      "clearance": 0
+    },
+    "actionIds": [],
+    "relationshipFlagIds": [
+      "npc-04-introduced",
+      "npc-04-careful-response",
+      "npc-04-careful-reward",
+      "npc-04-passing-response",
+      "npc-04-passing-reward"
+    ]
+  },
+  "facts": [
+    {
+      "id": "npc-04-public-role",
+      "category": "Public life",
+      "label": "Dockmaster",
+      "description": "Harlan Reed coordinates boats, weather calls and ordinary dock repairs in Alderwake.",
+      "highlightTerm": "dockmaster"
+    },
+    {
+      "id": "npc-04-shared-checks",
+      "category": "Work",
+      "label": "Shared dock checks",
+      "description": "Harlan asks workers to keep the public quay clear and check lines and weather together.",
+      "highlightTerm": "shared checks"
+    },
+    {
+      "id": "npc-04-shore-birds",
+      "category": "Interests",
+      "label": "Shore birds",
+      "description": "Harlan enjoys watching shore birds on quiet breaks; a Moonflower suits the little pot beside his notes.",
+      "highlightTerm": "shore birds"
+    }
+  ],
+  "acceptedGiftRules": [
+    {
+      "id": "npc-04-moonflower-gift",
+      "itemId": "moonflower",
+      "requiredFactId": "npc-04-shore-birds",
+      "affinityDelta": 1,
+      "acceptanceCap": 2
+    }
+  ]
+}

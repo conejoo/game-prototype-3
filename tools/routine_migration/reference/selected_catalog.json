@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "routines": [
+    {
+      "schemaVersion": 1,
+      "id": "celia-repairs-day",
+      "asset": "assets/data/routines/celia-repairs-day.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "celia-repairs-evening",
+      "asset": "assets/data/routines/celia-repairs-evening.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "della-inn-day",
+      "asset": "assets/data/routines/della-inn-day.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "della-inn-evening",
+      "asset": "assets/data/routines/della-inn-evening.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "edric-afternoon-river-notes",
+      "asset": "assets/data/routines/edric-afternoon-river-notes.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "edric-afternoon-rounds",
+      "asset": "assets/data/routines/edric-afternoon-rounds.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "edric-evening-fishing",
+      "asset": "assets/data/routines/edric-evening-fishing.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "edric-evening-rain-shelter",
+      "asset": "assets/data/routines/edric-evening-rain-shelter.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "harlan-docks-day",
+      "asset": "assets/data/routines/harlan-docks-day.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "harlan-docks-evening",
+      "asset": "assets/data/routines/harlan-docks-evening.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "helena-afternoon-archive",
+      "asset": "assets/data/routines/helena-afternoon-archive.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "helena-afternoon-ledger-review",
+      "asset": "assets/data/routines/helena-afternoon-ledger-review.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "helena-afternoon-moonflower-records",
+      "asset": "assets/data/routines/helena-afternoon-moonflower-records.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "helena-evening-archive",
+      "asset": "assets/data/routines/helena-evening-archive.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "ivo-docks-day",
+      "asset": "assets/data/routines/ivo-docks-day.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "ivo-docks-evening",
+      "asset": "assets/data/routines/ivo-docks-evening.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "maris-chandlery-day",
+      "asset": "assets/data/routines/maris-chandlery-day.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "maris-chandlery-evening",
+      "asset": "assets/data/routines/maris-chandlery-evening.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "tess-store-day",
+      "asset": "assets/data/routines/tess-store-day.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "tess-store-evening",
+      "asset": "assets/data/routines/tess-store-evening.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "vale-breakfast",
+      "asset": "assets/data/routines/vale-breakfast.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "vale-evening-home",
+      "asset": "assets/data/routines/vale-evening-home.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "vale-midday-briefing",
+      "asset": "assets/data/routines/vale-midday-briefing.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "vale-morning-work",
+      "asset": "assets/data/routines/vale-morning-work.json"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "vale-overnight-home",
+      "asset": "assets/data/routines/vale-overnight-home.json"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "id": "vale-overnight-home",
+  "priority": 100,
+  "timeWindow": {
+    "start": "22:00",
+    "end": "06:00"
+  },
+  "participants": ["npc-01", "npc-02"],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-01",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "settle-for-night",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "edric-rest"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "rest-until-morning",
+          "durationSeconds": 240
+        }
+      ]
+    },
+    {
+      "participantId": "npc-02",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "settle-for-night",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "helena-rest"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "rest-until-morning",
+          "durationSeconds": 240
+        }
+      ]
+    }
+  ]
+}

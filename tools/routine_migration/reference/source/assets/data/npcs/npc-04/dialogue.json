@@ -1,0 +1,125 @@
+{
+  "npcId": "npc-04",
+  "entryNodeIds": [
+    "npc-04-introduction",
+    "npc-04-return"
+  ],
+  "nodes": [
+    {
+      "id": "npc-04-introduction",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "Harlan Reed, **dockmaster**. I help keep boats, weather calls and repairs in order. Mind the working lanes and there is room for everyone.",
+      "conditions": {
+        "excludedFlags": [
+          "npc-04-introduced"
+        ]
+      },
+      "revealedFactIds": [
+        "npc-04-public-role"
+      ],
+      "choices": [
+        {
+          "id": "npc-04-careful-response",
+          "text": "I will keep the working lanes clear.",
+          "targetNodeId": "npc-04-careful-end",
+          "affinityDelta": 1,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-04-careful-reward",
+          "addedFlags": [
+            "npc-04-introduced",
+            "npc-04-careful-response"
+          ]
+        },
+        {
+          "id": "npc-04-passing-response",
+          "text": "I am learning my way around town.",
+          "targetNodeId": "npc-04-passing-end",
+          "affinityDelta": 0,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-04-passing-reward",
+          "addedFlags": [
+            "npc-04-introduced",
+            "npc-04-passing-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc-04-careful-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Much appreciated. A clear lane saves everyone a little trouble."
+    },
+    {
+      "id": "npc-04-passing-end",
+      "priority": 0,
+      "portraitId": "practiced-smile",
+      "text": "Take your time on the public quay. A busy dock rewards a patient pair of eyes."
+    },
+    {
+      "id": "npc-04-return",
+      "priority": 100,
+      "portraitId": "practiced-smile",
+      "text": "Good to see you. What would you like to know?",
+      "conditions": {
+        "requiredFlags": [
+          "npc-04-introduced"
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-04-ask-work",
+          "text": "What keeps the docks running?",
+          "targetNodeId": "npc-04-work"
+        },
+        {
+          "id": "npc-04-ask-weather",
+          "text": "How do you make a weather call?",
+          "targetNodeId": "npc-04-weather"
+        },
+        {
+          "id": "npc-04-ask-hobby",
+          "text": "What do you watch on a quiet break?",
+          "targetNodeId": "npc-04-hobby"
+        },
+        {
+          "id": "npc-04-gift-moonflower",
+          "text": "I brought a Moonflower for your notes pot.",
+          "targetNodeId": "npc-04-gift-end",
+          "giftRuleId": "npc-04-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-04-work",
+      "priority": 0,
+      "portraitId": "official-neutral",
+      "text": "Clear lanes, sound lines and **shared checks**. I would rather ask another pair of eyes than hurry someone into a repair.",
+      "revealedFactIds": [
+        "npc-04-shared-checks"
+      ]
+    },
+    {
+      "id": "npc-04-weather",
+      "priority": 0,
+      "portraitId": "skeptical",
+      "text": "Watch the wind and listen to the crew. A fine-looking sky is no reason to ignore what the river is doing."
+    },
+    {
+      "id": "npc-04-hobby",
+      "priority": 0,
+      "portraitId": "birdwatching",
+      "text": "The **shore birds**. They can turn a quiet break into quite a performance. A Moonflower in the little pot beside my notes makes a pleasant spot to sit.",
+      "revealedFactIds": [
+        "npc-04-shore-birds"
+      ]
+    },
+    {
+      "id": "npc-04-gift-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Thank you. That will sit nicely beside the notes."
+    }
+  ]
+}

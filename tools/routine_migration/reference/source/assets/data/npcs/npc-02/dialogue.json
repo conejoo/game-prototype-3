@@ -1,0 +1,158 @@
+{
+  "npcId": "npc-02",
+  "entryNodeIds": [
+    "npc-02-moonflower-hint",
+    "npc-02-initial-conversation",
+    "npc-02-follow-up-conversation",
+    "npc-02-routine-archive-indexing",
+    "npc-02-routine-archive-default"
+  ],
+  "nodes": [
+    {
+      "id": "npc-02-initial-conversation",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "I'm Helena Vale. You will usually find me among the **town archives**, making certain yesterday remains useful tomorrow.",
+      "revealedFactIds": ["npc-02-public-role"],
+      "conditions": {
+        "excludedFlags": ["npc-02-first-conversation-complete"]
+      },
+      "choices": [
+        {
+          "id": "npc-02-careful-research-response",
+          "text": "I would rather check a story than repeat it carelessly.",
+          "targetNodeId": "npc-02-initial-careful-end",
+          "affinityDelta": 1,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-02-careful-reward-applied",
+          "addedFlags": [
+            "npc-02-first-conversation-complete",
+            "npc-02-careful-research-response"
+          ]
+        },
+        {
+          "id": "npc-02-neighborly-response",
+          "text": "I mostly hope to learn my neighbors' names.",
+          "targetNodeId": "npc-02-initial-neighborly-end",
+          "affinityDelta": 0,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-02-neighborly-reward-applied",
+          "addedFlags": [
+            "npc-02-first-conversation-complete",
+            "npc-02-neighborly-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc-02-initial-careful-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Good. A careful question leaves less damage than a confident mistake."
+    },
+    {
+      "id": "npc-02-initial-neighborly-end",
+      "priority": 0,
+      "portraitId": "practiced-smile",
+      "text": "A sound beginning. Names are the first index any town keeps."
+    },
+    {
+      "id": "npc-02-moonflower-hint",
+      "priority": 180,
+      "portraitId": "pleased",
+      "text": "Those would make lovely **pressed Moonflowers**. Their color marks a season more honestly than ink alone.",
+      "revealedFactIds": ["npc-02-moonflower-pressing"],
+      "conditions": {
+        "requiredFlags": ["npc-02-first-conversation-complete"],
+        "unknownFactIds": ["npc-02-moonflower-pressing"],
+        "events": [
+          {
+            "kind": "resourceGathered",
+            "subjectId": "moonflower",
+            "minimumCount": 1
+          }
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-02-gift-moonflower-from-hint",
+          "text": "Then please keep one for the archive.",
+          "targetNodeId": "npc-02-gift-response",
+          "giftRuleId": "npc-02-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-02-follow-up-conversation",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "Welcome back. Have you found anything in Alderwake that deserves a closer look?",
+      "conditions": {
+        "requiredFlags": ["npc-02-first-conversation-complete"]
+      },
+      "choices": [
+        {
+          "id": "npc-02-gift-moonflower-follow-up",
+          "text": "I brought a Moonflower for your seasonal notes.",
+          "targetNodeId": "npc-02-gift-response",
+          "giftRuleId": "npc-02-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-02-gift-response",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Thank you. I will press it beside today's date and credit the collector."
+    },
+    {
+      "id": "npc-02-routine-archive-default",
+      "priority": 10,
+      "portraitId": "tired-rumpled",
+      "text": "Mind the open folios, please. I **cross-check every entry** before returning a page to its box.",
+      "revealedFactIds": ["npc-02-archive-practice"],
+      "choices": [
+        {
+          "id": "npc-02-resume-archive-default-choice",
+          "text": "I will let you continue.",
+          "outcomeTag": "npc-02-resume-archive-default",
+          "endsConversation": true
+        },
+        {
+          "id": "npc-02-end-archive-default-choice",
+          "text": "The light is fading; perhaps stop here for today.",
+          "outcomeTag": "npc-02-end-archive-default",
+          "endsConversation": true
+        }
+      ]
+    },
+    {
+      "id": "npc-02-routine-archive-indexing",
+      "priority": 11,
+      "portraitId": "archive-work",
+      "text": "One moment. This index says the volume is here, while the shelf insists otherwise.",
+      "choices": [
+        {
+          "id": "npc-02-resume-archive-indexing-choice",
+          "text": "Keep tracing it; I can wait.",
+          "outcomeTag": "npc-02-resume-archive-indexing",
+          "endsConversation": true
+        },
+        {
+          "id": "npc-02-review-archive-ledger-choice",
+          "text": "I noticed a ledger reference that does not match the index.",
+          "oneTime": true,
+          "addedFlags": ["npc-02-archive-lead-shared"],
+          "outcomeTag": "npc-02-review-archive-ledger",
+          "endsConversation": true
+        },
+        {
+          "id": "npc-02-end-archive-indexing-choice",
+          "text": "Leave the mismatch marked and rest for today.",
+          "outcomeTag": "npc-02-end-archive-indexing",
+          "endsConversation": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1753 @@
+{
+  "mapId": "mayor-vale-home",
+  "columns": 16,
+  "rows": 14,
+  "tileSize": 32,
+  "artDirection": {
+    "styleId": "clean-hd-storybook-v1",
+    "styleReferenceImagePath": "assets/maps/mvp_world/clean-hd-style-reference.png"
+  },
+  "lighting": {
+    "mode": "interiorWarm"
+  },
+  "tileLayers": [
+    {
+      "id": "ground",
+      "name": "Oak floor",
+      "visible": true,
+      "cellSize": 32,
+      "defaultPaint": {
+        "kind": "raw",
+        "tileId": "tiles/interiors/mayor_vale_home/floor_oak.png"
+      },
+      "cells": [
+        {
+          "x": 0,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 1,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 2,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 3,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 4,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 5,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 6,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 9,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 10,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 11,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 12,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 13,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 14,
+          "y": 13,
+          "paint": null
+        },
+        {
+          "x": 15,
+          "y": 13,
+          "paint": null
+        }
+      ]
+    },
+    {
+      "id": "floor-decor",
+      "name": "Room rugs",
+      "visible": true,
+      "cellSize": 32,
+      "cells": [
+        {
+          "x": 1,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c0.png"
+          }
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c1.png"
+          }
+        },
+        {
+          "x": 3,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c2.png"
+          }
+        },
+        {
+          "x": 4,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c3.png"
+          }
+        },
+        {
+          "x": 5,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c4.png"
+          }
+        },
+        {
+          "x": 10,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c0.png"
+          }
+        },
+        {
+          "x": 11,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c1.png"
+          }
+        },
+        {
+          "x": 12,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c2.png"
+          }
+        },
+        {
+          "x": 13,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c3.png"
+          }
+        },
+        {
+          "x": 14,
+          "y": 2,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c4.png"
+          }
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c0.png"
+          }
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c1.png"
+          }
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c2.png"
+          }
+        },
+        {
+          "x": 4,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c3.png"
+          }
+        },
+        {
+          "x": 5,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c4.png"
+          }
+        },
+        {
+          "x": 10,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c0.png"
+          }
+        },
+        {
+          "x": 11,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c1.png"
+          }
+        },
+        {
+          "x": 12,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c2.png"
+          }
+        },
+        {
+          "x": 13,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c3.png"
+          }
+        },
+        {
+          "x": 14,
+          "y": 3,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c4.png"
+          }
+        },
+        {
+          "x": 1,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c0.png"
+          }
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c1.png"
+          }
+        },
+        {
+          "x": 3,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c2.png"
+          }
+        },
+        {
+          "x": 4,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c3.png"
+          }
+        },
+        {
+          "x": 5,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c4.png"
+          }
+        },
+        {
+          "x": 10,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c0.png"
+          }
+        },
+        {
+          "x": 11,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c1.png"
+          }
+        },
+        {
+          "x": 12,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c2.png"
+          }
+        },
+        {
+          "x": 13,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c3.png"
+          }
+        },
+        {
+          "x": 14,
+          "y": 4,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c4.png"
+          }
+        },
+        {
+          "x": 1,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c0.png"
+          }
+        },
+        {
+          "x": 2,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c1.png"
+          }
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c2.png"
+          }
+        },
+        {
+          "x": 4,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c3.png"
+          }
+        },
+        {
+          "x": 5,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c4.png"
+          }
+        },
+        {
+          "x": 10,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c0.png"
+          }
+        },
+        {
+          "x": 11,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c1.png"
+          }
+        },
+        {
+          "x": 12,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c2.png"
+          }
+        },
+        {
+          "x": 13,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c3.png"
+          }
+        },
+        {
+          "x": 14,
+          "y": 5,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c4.png"
+          }
+        },
+        {
+          "x": 1,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c0.png"
+          }
+        },
+        {
+          "x": 2,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c1.png"
+          }
+        },
+        {
+          "x": 3,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c2.png"
+          }
+        },
+        {
+          "x": 4,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c3.png"
+          }
+        },
+        {
+          "x": 5,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r0-c4.png"
+          }
+        },
+        {
+          "x": 10,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c0.png"
+          }
+        },
+        {
+          "x": 11,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c1.png"
+          }
+        },
+        {
+          "x": 12,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c2.png"
+          }
+        },
+        {
+          "x": 13,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c3.png"
+          }
+        },
+        {
+          "x": 14,
+          "y": 8,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c4.png"
+          }
+        },
+        {
+          "x": 1,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c0.png"
+          }
+        },
+        {
+          "x": 2,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c1.png"
+          }
+        },
+        {
+          "x": 3,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c2.png"
+          }
+        },
+        {
+          "x": 4,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c3.png"
+          }
+        },
+        {
+          "x": 5,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r1-c4.png"
+          }
+        },
+        {
+          "x": 10,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c0.png"
+          }
+        },
+        {
+          "x": 11,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c1.png"
+          }
+        },
+        {
+          "x": 12,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c2.png"
+          }
+        },
+        {
+          "x": 13,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c3.png"
+          }
+        },
+        {
+          "x": 14,
+          "y": 9,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c4.png"
+          }
+        },
+        {
+          "x": 1,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c0.png"
+          }
+        },
+        {
+          "x": 2,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c1.png"
+          }
+        },
+        {
+          "x": 3,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c2.png"
+          }
+        },
+        {
+          "x": 4,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c3.png"
+          }
+        },
+        {
+          "x": 5,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r2-c4.png"
+          }
+        },
+        {
+          "x": 10,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c0.png"
+          }
+        },
+        {
+          "x": 11,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c1.png"
+          }
+        },
+        {
+          "x": 12,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c2.png"
+          }
+        },
+        {
+          "x": 13,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c3.png"
+          }
+        },
+        {
+          "x": 14,
+          "y": 10,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c4.png"
+          }
+        },
+        {
+          "x": 1,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c0.png"
+          }
+        },
+        {
+          "x": 2,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c1.png"
+          }
+        },
+        {
+          "x": 3,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c2.png"
+          }
+        },
+        {
+          "x": 4,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c3.png"
+          }
+        },
+        {
+          "x": 5,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_burgundy_r3-c4.png"
+          }
+        },
+        {
+          "x": 10,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c0.png"
+          }
+        },
+        {
+          "x": 11,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c1.png"
+          }
+        },
+        {
+          "x": 12,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c2.png"
+          }
+        },
+        {
+          "x": 13,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c3.png"
+          }
+        },
+        {
+          "x": 14,
+          "y": 11,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c4.png"
+          }
+        }
+      ]
+    }
+  ],
+  "artLayers": [],
+  "elevation": {
+    "cells": [],
+    "slopes": []
+  },
+  "playerSpawn": {
+    "x": 256.0,
+    "y": 384.0
+  },
+  "zones": [],
+  "activityAreas": [],
+  "objects": [
+    {
+      "type": "prop",
+      "id": "bedroom-bed",
+      "definitionId": "mayor-interior-bed",
+      "x": 112.0,
+      "y": 384.0
+    },
+    {
+      "type": "prop",
+      "id": "bedroom-bedside-east",
+      "definitionId": "mayor-interior-bedside-table",
+      "x": 144.0,
+      "y": 384.0
+    },
+    {
+      "type": "prop",
+      "id": "bedroom-bedside-east-lamp",
+      "definitionId": "mayor-interior-table-lamp-ivory",
+      "x": 144.0,
+      "y": 365.0,
+      "renderDepthOffsetY": 20.0
+    },
+    {
+      "type": "prop",
+      "id": "bedroom-bedside-west",
+      "definitionId": "mayor-interior-bedside-table",
+      "x": 80.0,
+      "y": 384.0
+    },
+    {
+      "type": "prop",
+      "id": "bedroom-bedside-west-lamp",
+      "definitionId": "mayor-interior-table-lamp-brass",
+      "x": 80.0,
+      "y": 365.0,
+      "renderDepthOffsetY": 20.0
+    },
+    {
+      "type": "prop",
+      "id": "bedroom-wardrobe",
+      "definitionId": "mayor-interior-wardrobe",
+      "x": 48.0,
+      "y": 304.0
+    },
+    {
+      "type": "prop",
+      "id": "bedroom-wide-painting",
+      "definitionId": "mayor-interior-painting-wide",
+      "x": 112.0,
+      "y": 220.0
+    },
+    {
+      "type": "prop",
+      "id": "dining-chair-east",
+      "definitionId": "mayor-interior-chair-west",
+      "x": 400.0,
+      "y": 176.0
+    },
+    {
+      "type": "prop",
+      "id": "dining-chair-north-east",
+      "definitionId": "mayor-interior-chair-south",
+      "x": 368.0,
+      "y": 144.0
+    },
+    {
+      "type": "prop",
+      "id": "dining-chair-north-west",
+      "definitionId": "mayor-interior-chair-south",
+      "x": 336.0,
+      "y": 144.0
+    },
+    {
+      "type": "prop",
+      "id": "dining-chair-south-east",
+      "definitionId": "mayor-interior-chair-north",
+      "x": 368.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "dining-chair-south-west",
+      "definitionId": "mayor-interior-chair-north",
+      "x": 336.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "dining-chair-west",
+      "definitionId": "mayor-interior-chair-east",
+      "x": 312.0,
+      "y": 176.0
+    },
+    {
+      "type": "prop",
+      "id": "dining-table",
+      "definitionId": "mayor-interior-dining-table",
+      "x": 352.0,
+      "y": 176.0
+    },
+    {
+      "type": "prop",
+      "id": "dining-table-plant",
+      "definitionId": "mayor-interior-plant-small",
+      "x": 352.0,
+      "y": 160.0,
+      "renderDepthOffsetY": 17.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "edric-breakfast",
+      "facing": "east",
+      "tags": [
+        "morning"
+      ],
+      "x": 312.0,
+      "y": 176.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "edric-evening-seat",
+      "facing": "north",
+      "tags": [
+        "evening"
+      ],
+      "x": 64.0,
+      "y": 168.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "edric-home-study",
+      "facing": "east",
+      "tags": [
+        "study"
+      ],
+      "x": 320.0,
+      "y": 384.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "edric-rest",
+      "facing": "north",
+      "tags": [
+        "rest"
+      ],
+      "x": 80.0,
+      "y": 392.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "helena-archive-desk",
+      "facing": "north",
+      "tags": [
+        "archive"
+      ],
+      "x": 384.0,
+      "y": 384.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "helena-archive-shelves",
+      "facing": "north",
+      "tags": [
+        "archive"
+      ],
+      "x": 448.0,
+      "y": 336.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "helena-breakfast",
+      "facing": "west",
+      "tags": [
+        "morning"
+      ],
+      "x": 400.0,
+      "y": 176.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "helena-evening-seat",
+      "facing": "north",
+      "tags": [
+        "evening"
+      ],
+      "x": 160.0,
+      "y": 168.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "helena-rest",
+      "facing": "north",
+      "tags": [
+        "rest"
+      ],
+      "x": 144.0,
+      "y": 392.0
+    },
+    {
+      "type": "prop",
+      "id": "kitchen-counter-sink",
+      "definitionId": "mayor-interior-kitchen-counter-sink",
+      "x": 336.0,
+      "y": 88.0
+    },
+    {
+      "type": "prop",
+      "id": "kitchen-counter-stove",
+      "definitionId": "mayor-interior-kitchen-counter-stove",
+      "x": 400.0,
+      "y": 80.0
+    },
+    {
+      "type": "prop",
+      "id": "kitchen-counter-worktop",
+      "definitionId": "mayor-interior-kitchen-counter-worktop",
+      "x": 464.0,
+      "y": 80.0
+    },
+    {
+      "type": "prop",
+      "id": "kitchen-island",
+      "definitionId": "mayor-interior-kitchen-island",
+      "x": 448.0,
+      "y": 208.0
+    },
+    {
+      "type": "prop",
+      "id": "kitchen-side-counter",
+      "definitionId": "mayor-interior-kitchen-side-counter",
+      "x": 488.0,
+      "y": 160.0
+    },
+    {
+      "type": "prop",
+      "id": "kitchen-window",
+      "definitionId": "mayor-interior-window",
+      "x": 336.0,
+      "y": 56.0
+    },
+    {
+      "type": "prop",
+      "id": "parlor-armchair-east",
+      "definitionId": "mayor-interior-armchair",
+      "x": 160.0,
+      "y": 128.0
+    },
+    {
+      "type": "prop",
+      "id": "parlor-armchair-west",
+      "definitionId": "mayor-interior-armchair",
+      "x": 64.0,
+      "y": 128.0
+    },
+    {
+      "type": "prop",
+      "id": "parlor-coffee-table",
+      "definitionId": "mayor-interior-coffee-table",
+      "x": 112.0,
+      "y": 160.0
+    },
+    {
+      "type": "prop",
+      "id": "parlor-fireplace",
+      "definitionId": "mayor-interior-fireplace",
+      "x": 112.0,
+      "y": 72.0
+    },
+    {
+      "type": "prop",
+      "id": "parlor-plant",
+      "definitionId": "mayor-interior-plant",
+      "x": 32.0,
+      "y": 96.0
+    },
+    {
+      "type": "prop",
+      "id": "parlor-sofa",
+      "definitionId": "mayor-interior-sofa",
+      "x": 112.0,
+      "y": 208.0
+    },
+    {
+      "type": "prop",
+      "id": "parlor-window-east",
+      "definitionId": "mayor-interior-window",
+      "x": 176.0,
+      "y": 56.0
+    },
+    {
+      "type": "prop",
+      "id": "parlor-window-west",
+      "definitionId": "mayor-interior-window",
+      "x": 48.0,
+      "y": 56.0
+    },
+    {
+      "type": "prop",
+      "id": "study-bookcase-east",
+      "definitionId": "mayor-interior-bookcase-wide",
+      "x": 440.0,
+      "y": 304.0
+    },
+    {
+      "type": "prop",
+      "id": "study-bookcase-west",
+      "definitionId": "mayor-interior-bookcase-wide",
+      "x": 376.0,
+      "y": 304.0
+    },
+    {
+      "type": "prop",
+      "id": "study-chair",
+      "definitionId": "mayor-interior-chair-north",
+      "x": 384.0,
+      "y": 384.0
+    },
+    {
+      "type": "prop",
+      "id": "study-desk",
+      "definitionId": "mayor-interior-desk",
+      "x": 384.0,
+      "y": 352.0
+    },
+    {
+      "type": "prop",
+      "id": "study-desk-paper",
+      "definitionId": "mayor-interior-paper",
+      "x": 383.0,
+      "y": 339.0,
+      "renderDepthOffsetY": 14.0
+    },
+    {
+      "type": "prop",
+      "id": "study-desk-plant",
+      "definitionId": "mayor-interior-plant-small",
+      "x": 398.0,
+      "y": 339.0,
+      "renderDepthOffsetY": 14.0
+    },
+    {
+      "type": "prop",
+      "id": "study-desk-quill",
+      "definitionId": "mayor-interior-quill-and-ink",
+      "x": 371.0,
+      "y": 339.0,
+      "renderDepthOffsetY": 14.0
+    },
+    {
+      "type": "prop",
+      "id": "study-globe",
+      "definitionId": "mayor-interior-globe",
+      "x": 320.0,
+      "y": 272.0
+    },
+    {
+      "type": "prop",
+      "id": "study-plant",
+      "definitionId": "mayor-interior-plant-spiky",
+      "x": 480.0,
+      "y": 336.0
+    },
+    {
+      "type": "prop",
+      "id": "study-sideboard",
+      "definitionId": "mayor-interior-sideboard",
+      "x": 464.0,
+      "y": 384.0
+    },
+    {
+      "type": "prop",
+      "id": "study-small-painting",
+      "definitionId": "mayor-interior-painting-small",
+      "x": 464.0,
+      "y": 220.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-east-02-05",
+      "definitionId": "mayor-interior-wall-east-128",
+      "x": 504.0,
+      "y": 160.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-east-06-09",
+      "definitionId": "mayor-interior-wall-east-128",
+      "x": 504.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-east-10-13",
+      "definitionId": "mayor-interior-wall-east-128",
+      "x": 504.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-east-02",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 288.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-east-03",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 288.0,
+      "y": 96.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-east-06",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 288.0,
+      "y": 192.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-east-08",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 288.0,
+      "y": 256.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-east-09",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 288.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-east-12",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 288.0,
+      "y": 384.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-east-13",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 288.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-east-14",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 288.0,
+      "y": 447.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-west-02",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 224.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-west-03",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 224.0,
+      "y": 96.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-west-06",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 224.0,
+      "y": 192.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-west-08",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 224.0,
+      "y": 256.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-west-09",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 224.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-west-12",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 224.0,
+      "y": 384.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-west-13",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 224.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-hall-west-14",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 224.0,
+      "y": 447.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-middle-east-0-3",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 352.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-middle-east-4",
+      "definitionId": "mayor-interior-wall-north",
+      "x": 432.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-middle-east-5",
+      "definitionId": "mayor-interior-wall-north",
+      "x": 464.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-middle-east-6",
+      "definitionId": "mayor-interior-wall-north",
+      "x": 496.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-middle-west-0-3",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 64.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-middle-west-4",
+      "definitionId": "mayor-interior-wall-north",
+      "x": 144.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-middle-west-5",
+      "definitionId": "mayor-interior-wall-north",
+      "x": 176.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-middle-west-6",
+      "definitionId": "mayor-interior-wall-north",
+      "x": 208.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-north-00-03",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 64.0,
+      "y": 48.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-north-04-07",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 192.0,
+      "y": 48.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-north-08-11",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 320.0,
+      "y": 48.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-north-12-15",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 448.0,
+      "y": 48.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-entrance-east",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 288.0,
+      "y": 447.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-entrance-west",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 224.0,
+      "y": 447.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-middle-east",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 504.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-middle-hall-east",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 288.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-middle-hall-west",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 224.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-middle-west",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 8.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-north-east",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 504.0,
+      "y": 48.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-north-west",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 8.0,
+      "y": 48.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-south-east",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 504.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-south-hall-east",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 288.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-south-hall-west",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 224.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-post-south-west",
+      "definitionId": "mayor-interior-wall-post",
+      "x": 8.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-south-east-0-3",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 352.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-south-east-4",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 432.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-south-east-5",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 464.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-south-east-6",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 496.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-south-west-0-3",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 64.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-south-west-4",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 144.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-south-west-5",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 176.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-south-west-6",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 208.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-west-02-05",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 8.0,
+      "y": 160.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-west-06-09",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 8.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "wall-west-10-13",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 8.0,
+      "y": 416.0
+    }
+  ],
+  "colliders": [
+    {
+      "id": "bedroom-bed",
+      "left": 92.0,
+      "top": 320.0,
+      "width": 40.0,
+      "height": 64.0
+    },
+    {
+      "id": "bedroom-wardrobe",
+      "left": 24.0,
+      "top": 272.0,
+      "width": 48.0,
+      "height": 32.0
+    },
+    {
+      "id": "dining-table",
+      "left": 336.0,
+      "top": 152.0,
+      "width": 32.0,
+      "height": 24.0
+    },
+    {
+      "id": "kitchen-counter-sink",
+      "left": 301.0,
+      "top": 48.0,
+      "width": 70.0,
+      "height": 32.0
+    },
+    {
+      "id": "kitchen-counter-stove",
+      "left": 365.0,
+      "top": 48.0,
+      "width": 70.0,
+      "height": 32.0
+    },
+    {
+      "id": "kitchen-counter-worktop",
+      "left": 429.0,
+      "top": 48.0,
+      "width": 67.0,
+      "height": 32.0
+    },
+    {
+      "id": "kitchen-island",
+      "left": 421.0,
+      "top": 184.0,
+      "width": 54.0,
+      "height": 24.0
+    },
+    {
+      "id": "kitchen-side-counter",
+      "left": 472.0,
+      "top": 96.0,
+      "width": 24.0,
+      "height": 64.0
+    },
+    {
+      "id": "parlor-armchair-east",
+      "left": 145.0,
+      "top": 104.0,
+      "width": 30.0,
+      "height": 24.0
+    },
+    {
+      "id": "parlor-armchair-west",
+      "left": 49.0,
+      "top": 104.0,
+      "width": 30.0,
+      "height": 24.0
+    },
+    {
+      "id": "parlor-coffee-table",
+      "left": 93.0,
+      "top": 144.0,
+      "width": 38.0,
+      "height": 20.0
+    },
+    {
+      "id": "parlor-fireplace",
+      "left": 80.0,
+      "top": 32.0,
+      "width": 64.0,
+      "height": 40.0
+    },
+    {
+      "id": "parlor-sofa",
+      "left": 82.0,
+      "top": 192.0,
+      "width": 60.0,
+      "height": 16.0
+    },
+    {
+      "id": "study-bookcase-east",
+      "left": 413.0,
+      "top": 280.0,
+      "width": 54.0,
+      "height": 24.0
+    },
+    {
+      "id": "study-bookcase-west",
+      "left": 349.0,
+      "top": 280.0,
+      "width": 54.0,
+      "height": 24.0
+    },
+    {
+      "id": "study-desk",
+      "left": 362.0,
+      "top": 320.0,
+      "width": 44.0,
+      "height": 32.0
+    },
+    {
+      "id": "study-sideboard",
+      "left": 432.0,
+      "top": 360.0,
+      "width": 64.0,
+      "height": 24.0
+    },
+    {
+      "id": "wall-east",
+      "left": 496.0,
+      "top": 0.0,
+      "width": 16.0,
+      "height": 416.0
+    },
+    {
+      "id": "wall-hall-east-north-a",
+      "left": 280.0,
+      "top": 32.0,
+      "width": 16.0,
+      "height": 64.0
+    },
+    {
+      "id": "wall-hall-east-north-b",
+      "left": 280.0,
+      "top": 160.0,
+      "width": 16.0,
+      "height": 32.0
+    },
+    {
+      "id": "wall-hall-east-south-a",
+      "left": 280.0,
+      "top": 208.0,
+      "width": 16.0,
+      "height": 80.0
+    },
+    {
+      "id": "wall-hall-east-south-b",
+      "left": 280.0,
+      "top": 352.0,
+      "width": 16.0,
+      "height": 96.0
+    },
+    {
+      "id": "wall-hall-west-north-a",
+      "left": 216.0,
+      "top": 32.0,
+      "width": 16.0,
+      "height": 64.0
+    },
+    {
+      "id": "wall-hall-west-north-b",
+      "left": 216.0,
+      "top": 160.0,
+      "width": 16.0,
+      "height": 32.0
+    },
+    {
+      "id": "wall-hall-west-south-a",
+      "left": 216.0,
+      "top": 208.0,
+      "width": 16.0,
+      "height": 80.0
+    },
+    {
+      "id": "wall-hall-west-south-b",
+      "left": 216.0,
+      "top": 352.0,
+      "width": 16.0,
+      "height": 96.0
+    },
+    {
+      "id": "wall-middle-east",
+      "left": 288.0,
+      "top": 192.0,
+      "width": 224.0,
+      "height": 16.0
+    },
+    {
+      "id": "wall-middle-west",
+      "left": 0.0,
+      "top": 192.0,
+      "width": 224.0,
+      "height": 16.0
+    },
+    {
+      "id": "wall-north",
+      "left": 0.0,
+      "top": 0.0,
+      "width": 512.0,
+      "height": 32.0
+    },
+    {
+      "id": "wall-south-east",
+      "left": 288.0,
+      "top": 408.0,
+      "width": 224.0,
+      "height": 8.0
+    },
+    {
+      "id": "wall-south-west",
+      "left": 0.0,
+      "top": 408.0,
+      "width": 224.0,
+      "height": 8.0
+    },
+    {
+      "id": "wall-west",
+      "left": 0.0,
+      "top": 0.0,
+      "width": 16.0,
+      "height": 416.0
+    }
+  ],
+  "portals": [
+    {
+      "id": "mayor-vale-home-exit",
+      "label": "Mayor Vale home exit",
+      "prompt": "Exit Mayor Vale’s home",
+      "left": 224.0,
+      "top": 400.0,
+      "width": 64.0,
+      "height": 48.0,
+      "destinationMapId": "alderwake",
+      "destinationX": 832.0,
+      "destinationY": 400.0
+    }
+  ],
+  "groups": []
+}

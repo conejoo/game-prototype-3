@@ -1,0 +1,30 @@
+[
+  {
+    "npc_id": "npc-01",
+    "path": "game/assets/models/npcs/npc-01-actions.glb",
+    "sha256": "eda2b6639a8229baf90d9220367156a63cc46ab00f9cae414bb76d125ef09544",
+    "animations": [
+      "idle",
+      "walk",
+      "action_river_fishing"
+    ],
+    "proposed_action_clip": "action_river_fishing",
+    "mesh_count": 2,
+    "owner": "R012",
+    "status": "review variant only; metadata read, no new render/promotion"
+  },
+  {
+    "npc_id": "npc-02",
+    "path": "game/assets/models/npcs/npc-02-actions.glb",
+    "sha256": "61d668f5976ea5f3d93b2e770bfd0357d4585daf0d3b87245b6f94787268a330",
+    "animations": [
+      "idle",
+      "walk",
+      "action_archive_work"
+    ],
+    "proposed_action_clip": "action_archive_work",
+    "mesh_count": 2,
+    "owner": "R012",
+    "status": "review variant only; metadata read, no new render/promotion"
+  }
+]

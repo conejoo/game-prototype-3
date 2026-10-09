@@ -1,0 +1,960 @@
+{
+  "schemaVersion": 8,
+  "objects": [
+    {
+      "id": "mayor-interior-dining-table",
+      "label": "Mayor Interior · Dining Table",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/dining-table.png",
+        "textureWidth": 192,
+        "textureHeight": 128,
+        "worldWidth": 48,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 48,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-chair-east",
+      "label": "Mayor Interior · Chair East",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/chair-east.png",
+        "textureWidth": 88,
+        "textureHeight": 128,
+        "worldWidth": 22,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-chair-west",
+      "label": "Mayor Interior · Chair West",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/chair-west.png",
+        "textureWidth": 88,
+        "textureHeight": 128,
+        "worldWidth": 22,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-chair-north",
+      "label": "Mayor Interior · Chair North",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/chair-north.png",
+        "textureWidth": 88,
+        "textureHeight": 128,
+        "worldWidth": 22,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-chair-south",
+      "label": "Mayor Interior · Chair South",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/chair-south.png",
+        "textureWidth": 88,
+        "textureHeight": 128,
+        "worldWidth": 22,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-counter-worktop",
+      "label": "Mayor Interior · Counter Worktop",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-counter-worktop.png",
+        "textureWidth": 280,
+        "textureHeight": 128,
+        "worldWidth": 70,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 70,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-counter-sink",
+      "label": "Mayor Interior · Counter Sink",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-counter-sink.png",
+        "textureWidth": 280,
+        "textureHeight": 160,
+        "worldWidth": 70,
+        "worldHeight": 40
+      },
+      "hitbox": {
+        "width": 70,
+        "height": 40
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-counter-stove",
+      "label": "Mayor Interior · Counter Stove",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-counter-stove.png",
+        "textureWidth": 280,
+        "textureHeight": 128,
+        "worldWidth": 70,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 70,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-island",
+      "label": "Mayor Interior · Kitchen Island",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-island.png",
+        "textureWidth": 216,
+        "textureHeight": 152,
+        "worldWidth": 54,
+        "worldHeight": 38
+      },
+      "hitbox": {
+        "width": 54,
+        "height": 38
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-kitchen-side-counter",
+      "label": "Mayor Interior · Kitchen Side Counter",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/kitchen-side-counter.png",
+        "textureWidth": 128,
+        "textureHeight": 280,
+        "worldWidth": 32,
+        "worldHeight": 70
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 70
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-plant",
+      "label": "Mayor Interior · Potted Plant",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/plant.png",
+        "textureWidth": 88,
+        "textureHeight": 144,
+        "worldWidth": 22,
+        "worldHeight": 36
+      },
+      "hitbox": {
+        "width": 22,
+        "height": 36
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bed",
+      "label": "Mayor Interior · Bed",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bed.png",
+        "textureWidth": 160,
+        "textureHeight": 256,
+        "worldWidth": 40,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 40,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-desk",
+      "label": "Mayor Interior · Writing Desk",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/desk.png",
+        "textureWidth": 176,
+        "textureHeight": 128,
+        "worldWidth": 44,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 44,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bookcase-wide",
+      "label": "Mayor Interior · Bookcase Wide",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bookcase-wide.png",
+        "textureWidth": 216,
+        "textureHeight": 248,
+        "worldWidth": 54,
+        "worldHeight": 62
+      },
+      "hitbox": {
+        "width": 54,
+        "height": 62
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-sofa",
+      "label": "Mayor Interior · Sofa",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/sofa.png",
+        "textureWidth": 240,
+        "textureHeight": 152,
+        "worldWidth": 60,
+        "worldHeight": 38
+      },
+      "hitbox": {
+        "width": 60,
+        "height": 38
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-armchair",
+      "label": "Mayor Interior · Armchair",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/armchair.png",
+        "textureWidth": 120,
+        "textureHeight": 152,
+        "worldWidth": 30,
+        "worldHeight": 38
+      },
+      "hitbox": {
+        "width": 30,
+        "height": 38
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-coffee-table",
+      "label": "Mayor Interior · Coffee Table",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/coffee-table.png",
+        "textureWidth": 152,
+        "textureHeight": 96,
+        "worldWidth": 38,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 38,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wardrobe",
+      "label": "Mayor Interior · Wardrobe",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wardrobe.png",
+        "textureWidth": 192,
+        "textureHeight": 256,
+        "worldWidth": 48,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 48,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-fireplace",
+      "label": "Mayor Interior · Unlit Fireplace",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/fireplace.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "worldWidth": 64,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-window",
+      "label": "Mayor Interior · Window",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/window.png",
+        "textureWidth": 128,
+        "textureHeight": 192,
+        "worldWidth": 32,
+        "worldHeight": 48
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 48
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-painting-small",
+      "label": "Mayor Interior · Small Painting",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/painting-small.png",
+        "textureWidth": 128,
+        "textureHeight": 128,
+        "worldWidth": 32,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-painting-wide",
+      "label": "Mayor Interior · Wide Painting",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/painting-wide.png",
+        "textureWidth": 256,
+        "textureHeight": 128,
+        "worldWidth": 64,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-globe",
+      "label": "Mayor Interior · Globe",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/globe.png",
+        "textureWidth": 128,
+        "textureHeight": 176,
+        "worldWidth": 32,
+        "worldHeight": 44
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 44
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-bedside-table",
+      "label": "Mayor Interior · Bedside Table",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/bedside-table.png",
+        "textureWidth": 112,
+        "textureHeight": 128,
+        "worldWidth": 28,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 28,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-table-lamp-brass",
+      "label": "Mayor Interior · Brass Table Lamp",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/table-lamp-brass.png",
+        "textureWidth": 64,
+        "textureHeight": 104,
+        "worldWidth": 16,
+        "worldHeight": 26
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 26
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.5,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-table-lamp-ivory",
+      "label": "Mayor Interior · Ivory Table Lamp",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/table-lamp-ivory.png",
+        "textureWidth": 64,
+        "textureHeight": 104,
+        "worldWidth": 16,
+        "worldHeight": 26
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 26
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.5,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-plant-small",
+      "label": "Mayor Interior · Small Potted Plant",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/plant-small.png",
+        "textureWidth": 64,
+        "textureHeight": 96,
+        "worldWidth": 16,
+        "worldHeight": 24
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 24
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.55,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-plant-spiky",
+      "label": "Mayor Interior · Spiky Potted Plant",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/plant-spiky.png",
+        "textureWidth": 80,
+        "textureHeight": 152,
+        "worldWidth": 20,
+        "worldHeight": 38
+      },
+      "hitbox": {
+        "width": 20,
+        "height": 38
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.55,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.12
+      }
+    },
+    {
+      "id": "mayor-interior-paper",
+      "label": "Mayor Interior · Paper",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/paper.png",
+        "textureWidth": 56,
+        "textureHeight": 64,
+        "worldWidth": 14,
+        "worldHeight": 16
+      },
+      "hitbox": {
+        "width": 14,
+        "height": 16
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "mayor-interior-quill-and-ink",
+      "label": "Mayor Interior · Quill and Ink",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/quill-and-ink.png",
+        "textureWidth": 56,
+        "textureHeight": 88,
+        "worldWidth": 14,
+        "worldHeight": 22
+      },
+      "hitbox": {
+        "width": 14,
+        "height": 22
+      },
+      "collision": {
+        "kind": "none"
+      },
+      "shadow": {
+        "maskStrategy": "silhouette",
+        "footInsetBottom": 1,
+        "crossAxisScale": 0.35,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.08
+      }
+    },
+    {
+      "id": "mayor-interior-sideboard",
+      "label": "Mayor Interior · Sideboard",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/sideboard.png",
+        "textureWidth": 256,
+        "textureHeight": 160,
+        "worldWidth": 64,
+        "worldHeight": 40
+      },
+      "hitbox": {
+        "width": 64,
+        "height": 40
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-north",
+      "label": "Mayor Interior · Modular North Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-north.png",
+        "textureWidth": 128,
+        "textureHeight": 256,
+        "worldWidth": 32,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-north-128",
+      "label": "Mayor Interior · Long North Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-north-128.png",
+        "textureWidth": 512,
+        "textureHeight": 256,
+        "worldWidth": 128,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-south",
+      "label": "Mayor Interior · Modular South Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-south.png",
+        "textureWidth": 128,
+        "textureHeight": 64,
+        "worldWidth": 32,
+        "worldHeight": 16
+      },
+      "hitbox": {
+        "width": 32,
+        "height": 16
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-south-128",
+      "label": "Mayor Interior · Long South Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-south-128.png",
+        "textureWidth": 512,
+        "textureHeight": 64,
+        "worldWidth": 128,
+        "worldHeight": 16
+      },
+      "hitbox": {
+        "width": 128,
+        "height": 16
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-west",
+      "label": "Mayor Interior · Modular West Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-west.png",
+        "textureWidth": 64,
+        "textureHeight": 128,
+        "worldWidth": 16,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-west-128",
+      "label": "Mayor Interior · Long West Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-west-128.png",
+        "textureWidth": 64,
+        "textureHeight": 512,
+        "worldWidth": 16,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 128
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-east",
+      "label": "Mayor Interior · Modular East Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-east.png",
+        "textureWidth": 64,
+        "textureHeight": 128,
+        "worldWidth": 16,
+        "worldHeight": 32
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 32
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-east-128",
+      "label": "Mayor Interior · Long East Wall",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-east-128.png",
+        "textureWidth": 64,
+        "textureHeight": 512,
+        "worldWidth": 16,
+        "worldHeight": 128
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 128
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-interior-wall-post",
+      "label": "Mayor Interior · Modular Wall Post",
+      "kind": "prop",
+      "category": "furniture",
+      "sprite": {
+        "asset": "images/world/props/interiors/mayor_vale_home/wall-post.png",
+        "textureWidth": 64,
+        "textureHeight": 256,
+        "worldWidth": 16,
+        "worldHeight": 64
+      },
+      "hitbox": {
+        "width": 16,
+        "height": 64
+      },
+      "collision": {
+        "kind": "none"
+      }
+    },
+    {
+      "id": "mayor-vale-home",
+      "label": "Mayor Vale’s Home",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/mayor-vale-home.png",
+        "textureWidth": 768,
+        "textureHeight": 704,
+        "worldWidth": 192,
+        "worldHeight": 176
+      },
+      "hitbox": {
+        "width": 192,
+        "height": 176
+      },
+      "collision": {
+        "kind": "box",
+        "left": -83,
+        "top": -79,
+        "width": 162,
+        "height": 71
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 8,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/mayor-vale-home-light.png",
+          "textureWidth": 768,
+          "textureHeight": 704,
+          "worldWidth": 192,
+          "worldHeight": 176,
+          "glowProfile": "window",
+          "origin": {
+            "x": 96,
+            "y": 88
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    },
+    {
+      "id": "lantern-rest",
+      "label": "Lantern Rest",
+      "kind": "structure",
+      "category": "structures",
+      "sprite": {
+        "asset": "images/world/buildings/lantern-rest.png",
+        "textureWidth": 896,
+        "textureHeight": 768,
+        "worldWidth": 224,
+        "worldHeight": 192
+      },
+      "hitbox": {
+        "width": 224,
+        "height": 192
+      },
+      "collision": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": -108,
+            "y": -17
+          },
+          {
+            "x": -84,
+            "y": -62
+          },
+          {
+            "x": 99,
+            "y": -41
+          },
+          {
+            "x": 73,
+            "y": -1
+          }
+        ]
+      },
+      "shadow": {
+        "maskStrategy": "baseConnected",
+        "footInsetBottom": 9,
+        "crossAxisScale": 0.85,
+        "minVerticalDisplacement": 0.03,
+        "maxVerticalDisplacement": 0.2
+      },
+      "lightSources": [
+        {
+          "id": "windows",
+          "label": "Windows",
+          "asset": "images/world/lights/lantern-rest-light.png",
+          "textureWidth": 896,
+          "textureHeight": 768,
+          "worldWidth": 224,
+          "worldHeight": 192,
+          "glowProfile": "window",
+          "origin": {
+            "x": 112,
+            "y": 96
+          },
+          "initiallyOn": true,
+          "switchable": false
+        }
+      ]
+    }
+  ],
+  "policy": "room and two exterior shell geometry only; no art/campaign import"
+}

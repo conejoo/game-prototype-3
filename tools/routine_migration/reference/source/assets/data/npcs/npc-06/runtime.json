@@ -1,0 +1,64 @@
+{
+  "id": "npc-06",
+  "displayName": "Tess Reed",
+  "shortName": "Tess",
+  "title": "General-store owner",
+  "pronouns": "she/her",
+  "interactionPrompt": "Talk to Tess Reed",
+  "relationship": {
+    "levelOneAffinity": 3,
+    "levelOneLabel": "Acquaintance"
+  },
+  "dimensions": {
+    "hitWidth": 32,
+    "hitHeight": 32,
+    "interactionRadius": 64
+  },
+  "routine": {
+    "agentProfile": {
+      "id": "town-adult",
+      "footprintRadius": 10,
+      "clearance": 0
+    },
+    "actionIds": [],
+    "relationshipFlagIds": [
+      "npc-06-introduced",
+      "npc-06-careful-response",
+      "npc-06-careful-reward",
+      "npc-06-passing-response",
+      "npc-06-passing-reward"
+    ]
+  },
+  "facts": [
+    {
+      "id": "npc-06-public-role",
+      "category": "Public life",
+      "label": "General goods",
+      "description": "Tess Reed runs Alderwake's general store, carrying staples, cloth, household goods and packed trail food.",
+      "highlightTerm": "general goods"
+    },
+    {
+      "id": "npc-06-everyday-supplies",
+      "category": "Work",
+      "label": "Everyday supplies",
+      "description": "Tess starts with practical everyday needs and welcomes supply questions without requiring favors.",
+      "highlightTerm": "everyday supplies"
+    },
+    {
+      "id": "npc-06-pressed-flowers",
+      "category": "Interests",
+      "label": "Pressed flowers",
+      "description": "Tess keeps pressed flowers in a small book; she welcomes a Moonflower for its next page.",
+      "highlightTerm": "pressed flowers"
+    }
+  ],
+  "acceptedGiftRules": [
+    {
+      "id": "npc-06-moonflower-gift",
+      "itemId": "moonflower",
+      "requiredFactId": "npc-06-pressed-flowers",
+      "affinityDelta": 1,
+      "acceptanceCap": 2
+    }
+  ]
+}

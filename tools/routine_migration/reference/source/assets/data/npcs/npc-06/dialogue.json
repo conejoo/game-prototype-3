@@ -1,0 +1,136 @@
+{
+  "npcId": "npc-06",
+  "entryNodeIds": [
+    "npc-06-introduction",
+    "npc-06-return"
+  ],
+  "nodes": [
+    {
+      "id": "npc-06-introduction",
+      "priority": 100,
+      "portraitId": "official-neutral",
+      "text": "Tess Reed. I keep the **general goods** here. Tell me what you need, and leave room for the next person at the door.",
+      "conditions": {
+        "excludedFlags": [
+          "npc-06-introduced"
+        ]
+      },
+      "revealedFactIds": [
+        "npc-06-public-role"
+      ],
+      "choices": [
+        {
+          "id": "npc-06-careful-response",
+          "text": "I will start with what people need.",
+          "targetNodeId": "npc-06-careful-end",
+          "affinityDelta": 1,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-06-careful-reward",
+          "addedFlags": [
+            "npc-06-introduced",
+            "npc-06-careful-response"
+          ]
+        },
+        {
+          "id": "npc-06-passing-response",
+          "text": "I am looking around town.",
+          "targetNodeId": "npc-06-passing-end",
+          "affinityDelta": 0,
+          "oneTime": true,
+          "oneTimeRewardFlag": "npc-06-passing-reward",
+          "addedFlags": [
+            "npc-06-introduced",
+            "npc-06-passing-response"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npc-06-careful-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "A good place to start. A useful parcel matters more than a grand gesture."
+    },
+    {
+      "id": "npc-06-passing-end",
+      "priority": 0,
+      "portraitId": "practiced-smile",
+      "text": "Take your time. You can ask a practical question before we have become old friends."
+    },
+    {
+      "id": "npc-06-return",
+      "priority": 100,
+      "portraitId": "practiced-smile",
+      "text": "Hello again. What is on your mind?",
+      "conditions": {
+        "requiredFlags": [
+          "npc-06-introduced"
+        ]
+      },
+      "choices": [
+        {
+          "id": "npc-06-ask-supplies",
+          "text": "What supplies do people ask for?",
+          "targetNodeId": "npc-06-supplies"
+        },
+        {
+          "id": "npc-06-ask-work",
+          "text": "How would I arrange useful delivery work?",
+          "targetNodeId": "npc-06-work"
+        },
+        {
+          "id": "npc-06-ask-busy",
+          "text": "Is keeping the store tiring?",
+          "targetNodeId": "npc-06-busy"
+        },
+        {
+          "id": "npc-06-ask-hobby",
+          "text": "What do you do away from the shelves?",
+          "targetNodeId": "npc-06-hobby"
+        },
+        {
+          "id": "npc-06-gift-moonflower",
+          "text": "I brought a Moonflower for your book.",
+          "targetNodeId": "npc-06-gift-end",
+          "giftRuleId": "npc-06-moonflower-gift"
+        }
+      ]
+    },
+    {
+      "id": "npc-06-supplies",
+      "priority": 0,
+      "portraitId": "official-neutral",
+      "text": "We start with **everyday supplies**: staples, cloth and packed trail food. Ask for what you need; favors are never an entry fee.",
+      "revealedFactIds": [
+        "npc-06-everyday-supplies"
+      ]
+    },
+    {
+      "id": "npc-06-work",
+      "priority": 0,
+      "portraitId": "skeptical",
+      "text": "Useful help starts with a clear list: what needs carrying, where, and for whom. I check those details before making an arrangement."
+    },
+    {
+      "id": "npc-06-busy",
+      "priority": 0,
+      "portraitId": "tired-rumpled",
+      "text": "Some days. A cup of tea between columns helps. Listening is easier when I remember to sit down."
+    },
+    {
+      "id": "npc-06-hobby",
+      "priority": 0,
+      "portraitId": "flower-pressing",
+      "text": "I keep **pressed flowers** in a little book. Each page asks me to slow down. A Moonflower would make a lovely next page.",
+      "revealedFactIds": [
+        "npc-06-pressed-flowers"
+      ]
+    },
+    {
+      "id": "npc-06-gift-end",
+      "priority": 0,
+      "portraitId": "pleased",
+      "text": "Thank you. I will make room for it in the book."
+    }
+  ]
+}

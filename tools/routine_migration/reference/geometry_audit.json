@@ -1,0 +1,648 @@
+{
+  "audit_kind": "static source/target geometry and capability audit; no gameplay launched",
+  "rooms": [
+    {
+      "map_id": "mayor-vale-home",
+      "runtime_id": "prototype-mayor-vale-home",
+      "local_origin_units": [
+        256,
+        384
+      ],
+      "bounds_xz_m": [
+        -8.0,
+        -12.0,
+        8.0,
+        2.0
+      ],
+      "source_columns_rows": [
+        16,
+        14
+      ],
+      "source_collider_count": 32,
+      "required_anchor_count": 9,
+      "lighting": {
+        "mode": "interiorWarm"
+      },
+      "source_floor_policy": "preserve explicit cleared tiles/door threshold; map rectangle is NOT collision floor proof",
+      "proposed_player_arrival_xyz_m": [
+        0,
+        0,
+        0
+      ],
+      "proposed_ally_arrival_xyz_m": [
+        0,
+        0,
+        -1.2
+      ],
+      "arrival_status": "proposal only; validate both bodies/support/reachability/camera and rollback in room task",
+      "owner": "R007"
+    },
+    {
+      "map_id": "lantern-rest",
+      "runtime_id": "prototype-lantern-rest",
+      "local_origin_units": [
+        448,
+        672
+      ],
+      "bounds_xz_m": [
+        -14.0,
+        -21.0,
+        14.0,
+        3.0
+      ],
+      "source_columns_rows": [
+        28,
+        24
+      ],
+      "source_collider_count": 19,
+      "required_anchor_count": 1,
+      "lighting": {
+        "mode": "interiorWarm"
+      },
+      "source_floor_policy": "preserve explicit cleared tiles/door threshold; map rectangle is NOT collision floor proof",
+      "proposed_player_arrival_xyz_m": [
+        0,
+        0,
+        0
+      ],
+      "proposed_ally_arrival_xyz_m": [
+        0,
+        0,
+        -1.2
+      ],
+      "arrival_status": "proposal only; validate both bodies/support/reachability/camera and rollback in room task",
+      "owner": "R008"
+    }
+  ],
+  "doors": [
+    {
+      "portal_id": "lantern-rest-entrance-01",
+      "source_map_id": "alderwake",
+      "rect_units": [
+        448.0,
+        688.0,
+        64.0,
+        48.0
+      ],
+      "portal_trigger_width_m": 2.0,
+      "center_xz_m": [
+        -7.0,
+        4.25
+      ],
+      "nearest_static_geometry": [
+        {
+          "id": "prop:lantern-rest-exterior-building",
+          "center_clearance_m": 1.477147,
+          "capsule_margin_m": 1.077147
+        },
+        {
+          "id": "prop:reed-chandlery-exterior-building",
+          "center_clearance_m": 3.5,
+          "capsule_margin_m": 3.1
+        },
+        {
+          "id": "prop:dock-row-willow-tree-01",
+          "center_clearance_m": 4.697074,
+          "capsule_margin_m": 4.297074
+        }
+      ],
+      "destination_xz_m": [
+        0.0,
+        0.0
+      ],
+      "status": "unrun dry support/nav/LOS/party approach; trigger width is NOT wall clearance",
+      "owners": [
+        "R005",
+        "R006"
+      ]
+    },
+    {
+      "portal_id": "mayor-vale-home-entrance",
+      "source_map_id": "alderwake",
+      "rect_units": [
+        832.0,
+        352.0,
+        64.0,
+        48.0
+      ],
+      "portal_trigger_width_m": 2.0,
+      "center_xz_m": [
+        5.0,
+        -6.25
+      ],
+      "nearest_static_geometry": [
+        {
+          "id": "prop:mayor-vale-home-building",
+          "center_clearance_m": 2.0,
+          "capsule_margin_m": 1.6
+        },
+        {
+          "id": "prop:alderwake-hall-exterior-building",
+          "center_clearance_m": 2.820994,
+          "capsule_margin_m": 2.420994
+        },
+        {
+          "id": "prop:dock-lamp-03",
+          "center_clearance_m": 2.872031,
+          "capsule_margin_m": 2.472031
+        }
+      ],
+      "destination_xz_m": [
+        0.0,
+        0.0
+      ],
+      "status": "unrun dry support/nav/LOS/party approach; trigger width is NOT wall clearance",
+      "owners": [
+        "R005",
+        "R006"
+      ]
+    },
+    {
+      "portal_id": "mayor-vale-home-exit",
+      "source_map_id": "mayor-vale-home",
+      "rect_units": [
+        224.0,
+        400.0,
+        64.0,
+        48.0
+      ],
+      "portal_trigger_width_m": 2.0,
+      "center_xz_m": [
+        0.0,
+        1.25
+      ],
+      "nearest_static_geometry": [
+        {
+          "id": "wall-hall-east-south-b",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "wall-hall-west-south-b",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "wall-south-east",
+          "center_clearance_m": 1.030776,
+          "capsule_margin_m": 0.630776
+        }
+      ],
+      "destination_xz_m": [
+        4.0,
+        -5.5
+      ],
+      "status": "unrun dry support/nav/LOS/party approach; trigger width is NOT wall clearance",
+      "owners": [
+        "R005",
+        "R007"
+      ]
+    },
+    {
+      "portal_id": "lantern-rest-exit-01",
+      "source_map_id": "lantern-rest",
+      "rect_units": [
+        416.0,
+        704.0,
+        64.0,
+        48.0
+      ],
+      "portal_trigger_width_m": 2.0,
+      "center_xz_m": [
+        0.0,
+        1.75
+      ],
+      "nearest_static_geometry": [
+        {
+          "id": "inn-wall-south-east",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "inn-wall-south-west",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "inn-breakfast-table-01",
+          "center_clearance_m": 8.11249,
+          "capsule_margin_m": 7.71249
+        }
+      ],
+      "destination_xz_m": [
+        -11.5,
+        4.5
+      ],
+      "status": "unrun dry support/nav/LOS/party approach; trigger width is NOT wall clearance",
+      "owners": [
+        "R005",
+        "R008"
+      ]
+    }
+  ],
+  "consecutive_move_legs": [
+    {
+      "routine_id": "edric-afternoon-river-notes",
+      "participant_id": "npc-01",
+      "step_id": "inspect-river-bank",
+      "source": "alderwake:edric-town-square",
+      "destination": "alderwake:edric-river-bank",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 15.787653403846944,
+      "intersected_static_geometry": [
+        "prop:market-alder-willow-tree-01"
+      ],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "edric-afternoon-rounds",
+      "participant_id": "npc-01",
+      "step_id": "walk-market-rounds",
+      "source": "alderwake:edric-town-square",
+      "destination": "alderwake:edric-market-rounds",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 3.8078865529319543,
+      "intersected_static_geometry": [],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "edric-evening-fishing",
+      "participant_id": "npc-01",
+      "step_id": "walk-to-river-bank",
+      "source": "alderwake:edric-market-rounds",
+      "destination": "alderwake:edric-river-bank",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 17.00735135169495,
+      "intersected_static_geometry": [
+        "prop:tess-general-goods-exterior-building"
+      ],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "edric-evening-rain-shelter",
+      "participant_id": "npc-01",
+      "step_id": "review-notices-indoors",
+      "source": "alderwake:edric-rain-shelter",
+      "destination": "mayor-vale-home:edric-home-study",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R010",
+      "required_chain": [
+        "mayor-vale-home-entrance"
+      ]
+    },
+    {
+      "routine_id": "helena-afternoon-archive",
+      "participant_id": "npc-02",
+      "step_id": "return-to-archive",
+      "source": "alderwake:helena-town-square",
+      "destination": "mayor-vale-home:helena-archive-desk",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R010",
+      "required_chain": [
+        "mayor-vale-home-entrance"
+      ]
+    },
+    {
+      "routine_id": "helena-afternoon-archive",
+      "participant_id": "npc-02",
+      "step_id": "check-archive-shelves",
+      "source": "mayor-vale-home:helena-archive-desk",
+      "destination": "mayor-vale-home:helena-archive-shelves",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 2.5,
+      "intersected_static_geometry": [
+        "study-desk",
+        "study-sideboard"
+      ],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "helena-afternoon-ledger-review",
+      "participant_id": "npc-02",
+      "step_id": "return-to-archive",
+      "source": "alderwake:helena-town-square",
+      "destination": "mayor-vale-home:helena-archive-desk",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R010",
+      "required_chain": [
+        "mayor-vale-home-entrance"
+      ]
+    },
+    {
+      "routine_id": "helena-afternoon-ledger-review",
+      "participant_id": "npc-02",
+      "step_id": "check-archive-shelves",
+      "source": "mayor-vale-home:helena-archive-desk",
+      "destination": "mayor-vale-home:helena-archive-shelves",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 2.5,
+      "intersected_static_geometry": [
+        "study-desk",
+        "study-sideboard"
+      ],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "helena-afternoon-moonflower-records",
+      "participant_id": "npc-02",
+      "step_id": "return-to-archive",
+      "source": "alderwake:helena-town-square",
+      "destination": "mayor-vale-home:helena-archive-desk",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R010",
+      "required_chain": [
+        "mayor-vale-home-entrance"
+      ]
+    },
+    {
+      "routine_id": "helena-afternoon-moonflower-records",
+      "participant_id": "npc-02",
+      "step_id": "check-archive-shelves",
+      "source": "mayor-vale-home:helena-archive-desk",
+      "destination": "mayor-vale-home:helena-archive-shelves",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 2.5,
+      "intersected_static_geometry": [
+        "study-desk",
+        "study-sideboard"
+      ],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "helena-evening-archive",
+      "participant_id": "npc-02",
+      "step_id": "check-evening-shelves",
+      "source": "mayor-vale-home:helena-archive-desk",
+      "destination": "mayor-vale-home:helena-archive-shelves",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 2.5,
+      "intersected_static_geometry": [
+        "study-desk",
+        "study-sideboard"
+      ],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "ivo-docks-day",
+      "participant_id": "npc-07",
+      "step_id": "check-shore-handoff",
+      "source": "alderwake:passenger-booking-ivo-01",
+      "destination": "alderwake:passenger-salvage-handoff-01",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 5.0,
+      "intersected_static_geometry": [],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "ivo-docks-day",
+      "participant_id": "npc-07",
+      "step_id": "return-to-booking-station",
+      "source": "alderwake:passenger-salvage-handoff-01",
+      "destination": "alderwake:passenger-booking-ivo-01",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 5.0,
+      "intersected_static_geometry": [],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "ivo-docks-evening",
+      "participant_id": "npc-07",
+      "step_id": "check-shore-handoff",
+      "source": "alderwake:passenger-booking-ivo-01",
+      "destination": "alderwake:passenger-salvage-handoff-01",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 5.0,
+      "intersected_static_geometry": [],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "ivo-docks-evening",
+      "participant_id": "npc-07",
+      "step_id": "return-to-booking-station",
+      "source": "alderwake:passenger-salvage-handoff-01",
+      "destination": "alderwake:passenger-booking-ivo-01",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 5.0,
+      "intersected_static_geometry": [],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "vale-evening-home",
+      "participant_id": "npc-01",
+      "step_id": "take-evening-seat",
+      "source": "alderwake:edric-rain-shelter",
+      "destination": "mayor-vale-home:edric-evening-seat",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R010",
+      "required_chain": [
+        "mayor-vale-home-entrance"
+      ]
+    },
+    {
+      "routine_id": "vale-evening-home",
+      "participant_id": "npc-02",
+      "step_id": "take-evening-seat",
+      "source": "mayor-vale-home:helena-archive-desk",
+      "destination": "mayor-vale-home:helena-evening-seat",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 9.724325169388361,
+      "intersected_static_geometry": [
+        "study-desk",
+        "wall-hall-east-south-a",
+        "wall-hall-west-south-a",
+        "wall-middle-west"
+      ],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "vale-midday-briefing",
+      "participant_id": "npc-01",
+      "step_id": "join-civic-briefing",
+      "source": "alderwake:edric-market-rounds",
+      "destination": "alderwake:edric-town-square",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 3.8078865529319543,
+      "intersected_static_geometry": [],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    },
+    {
+      "routine_id": "vale-midday-briefing",
+      "participant_id": "npc-02",
+      "step_id": "join-civic-briefing",
+      "source": "mayor-vale-home:helena-archive-desk",
+      "destination": "alderwake:helena-town-square",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R010",
+      "required_chain": [
+        "mayor-vale-home-exit"
+      ]
+    },
+    {
+      "routine_id": "vale-morning-work",
+      "participant_id": "npc-01",
+      "step_id": "open-town-office",
+      "source": "mayor-vale-home:edric-breakfast",
+      "destination": "alderwake:edric-town-square",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R010",
+      "required_chain": [
+        "mayor-vale-home-exit"
+      ]
+    },
+    {
+      "routine_id": "vale-morning-work",
+      "participant_id": "npc-02",
+      "step_id": "open-archive",
+      "source": "mayor-vale-home:helena-breakfast",
+      "destination": "mayor-vale-home:helena-archive-desk",
+      "validation": "NOT route proof; static candidate audit only",
+      "owner": "R009",
+      "straight_distance_m": 6.519202405202649,
+      "intersected_static_geometry": [
+        "study-bookcase-west",
+        "study-desk",
+        "wall-middle-east"
+      ],
+      "sample_spacing_max_m": 0.1,
+      "repair": "actual navmesh detour required for any intersected static body; preserve furniture/terrain; prove continuous capsule route in owner task"
+    }
+  ],
+  "conflicts_and_repairs": [
+    {
+      "id": "fixed-contact-bake",
+      "owners": [
+        "R009"
+      ],
+      "measured": "seven 0.8m actor squares plus Maris 0.7m body square; grow(0.2) projected obstruction before nav erosion; these cover their own routine endpoints",
+      "proposal": "replace actor-only static bodies/outlines with transient occupancy; preserve 2.2x0.7m Maris bench, authored worktop and TemporaryCompanion station/party identity"
+    },
+    {
+      "id": "home-hall-opposing-capsules",
+      "owners": [
+        "R007",
+        "R009"
+      ],
+      "source_wall_inner_faces_units": [
+        232,
+        280
+      ],
+      "clear_width_m": 1.5,
+      "required_two_npc_width_with_0_1m_gap": 1.7,
+      "deficit_m": 0.2,
+      "proposal": "retain hall; single-file reservations and deterministic yield at room pockets. If physical tests require width repair, propose bounded target-local wall adaptation <=0.3m with before/after evidence; source stays read-only"
+    },
+    {
+      "id": "home-rest-bed-corner",
+      "owners": [
+        "R007"
+      ],
+      "center_clearance_m": 0.450694,
+      "npc_radius_m": 0.4,
+      "physical_margin_m": 0.050694,
+      "current_exterior_nav_obstruction_margin_m": 0.2,
+      "proposal": "verify exact room nav/capsules/feet at both rest anchors. If conservative bake removes access, measure target furniture clearance repair (estimated deficit to 0.6m center clearance 0.149306m); no silent anchor shift or accepted route claim"
+    },
+    {
+      "id": "single-destination-player-travel",
+      "owners": [
+        "R005"
+      ],
+      "measured": "PrototypeLocation.destination_id/destination_spawn_id dispatch cannot distinguish several room exits",
+      "proposal": "explicit qualified per-portal source/destination/arrival IDs; separate NPC query API; preserve Tollworks IDs, party/camera/rollback"
+    },
+    {
+      "id": "Della-map-ownership",
+      "owners": [
+        "R008",
+        "R013"
+      ],
+      "before_xyz_m": [
+        -9,
+        0,
+        3.5
+      ],
+      "after_location": "prototype-lantern-rest",
+      "after_xyz_m": [
+        -6,
+        0,
+        -12
+      ],
+      "proposal": "retire exactly one exterior Della and move same identity to actual indoor host; no booking/sleep activation"
+    },
+    {
+      "id": "INT-064-unknown-enum",
+      "owners": [
+        "R010"
+      ],
+      "source_report": "Pending; vale-overnight-home/settle-for-night failed, hidden Edric town (704,528), absent home rest (80,392); exact enum unconfirmed",
+      "proposal": "capture initialMapId/currentMapId/origin/occupancy/qualified route diagnostics before repair; regress ordinary transition separately from seek/fresh-start/load at 22:00/00:00/06:00"
+    },
+    {
+      "id": "source-executor-adaptations",
+      "owners": [
+        "R009",
+        "R010",
+        "R003"
+      ],
+      "measured": "source unloaded same-map snap and cross-map goal snap; cancel does not release registration directly; director increments resolution each replan; update uses steps.length+1024 transitions",
+      "proposal": "root owns safe finite reconstruction/arrival registration and release on cancel/unload/rollback; retain loaded feet; suppress unchanged reassignment; no visible snap or elapsed reward replay"
+    }
+  ],
+  "envelopes": {
+    "source_town_adult_radius_units": 10,
+    "source_radius_m": 0.3125,
+    "target_npc_radius_m": 0.4,
+    "target_npc_height_m": 1.6,
+    "target_hero_ally_radius_m": 0.35,
+    "target_hero_ally_height_m": 1.6,
+    "Maris_current_radius_m": 0.35,
+    "nav_agent_radius_m": 0.4,
+    "nav_agent_height_m": 1.6,
+    "nav_cell_m": 0.2,
+    "nav_climb_m": 0.1,
+    "nav_slope_degrees": 20
+  },
+  "unrun": [
+    "all route/capsule/swept physics/terrain support and LOS acceptance",
+    "two room construction/render/projections/zoom",
+    "ordinary door travel/full party",
+    "source Dart suites and native source INT-064 reproduction",
+    "moving-NPC performance and max-clock reconstruction"
+  ],
+  "owners": {
+    "exterior_physics": "R006",
+    "home_physics": "R007",
+    "inn_physics": "R008",
+    "moving_capsules": "R009",
+    "night_regression": "R010",
+    "presentation": "R012",
+    "full_day": "R015",
+    "native_packages": "R016"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "npcId": "npc-02",
+  "portraits": {
+    "official-neutral": "assets/images/portraits/npc-02/official-neutral.png",
+    "practiced-smile": "assets/images/portraits/npc-02/practiced-smile.png",
+    "skeptical": "assets/images/portraits/npc-02/skeptical.png",
+    "pleased": "assets/images/portraits/npc-02/pleased.png",
+    "tired-rumpled": "assets/images/portraits/npc-02/tired-rumpled.png",
+    "archive-work": "assets/images/portraits/npc-02/archive-work.png"
+  },
+  "world": {
+    "worldCellWidth": 48,
+    "worldCellHeight": 48,
+    "rowOrder": ["south", "north", "west", "east"],
+    "idle": {
+      "asset": "assets/images/actors/npcs/npc_02_idle_sheet.png",
+      "textureCellWidth": 192,
+      "textureCellHeight": 192,
+      "framesPerFacing": 4,
+      "stepSeconds": 0.24
+    },
+    "walk": {
+      "asset": "assets/images/actors/npcs/npc_02_walk_sheet.png",
+      "textureCellWidth": 192,
+      "textureCellHeight": 192,
+      "framesPerFacing": 3,
+      "stepSeconds": 0.16
+    },
+    "actions": {
+      "archive-work": {
+        "asset": "assets/images/actors/npcs/npc_02_archive_work_sheet.png",
+        "textureCellWidth": 192,
+        "textureCellHeight": 192,
+        "framesPerFacing": 4,
+        "stepSeconds": 0.2
+      }
+    }
+  }
+}

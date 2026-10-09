@@ -1,0 +1,1894 @@
+{
+  "coordinate_origins_units": {
+    "alderwake": [
+      704,
+      576
+    ],
+    "mayor-vale-home": [
+      256,
+      384
+    ],
+    "lantern-rest": [
+      448,
+      672
+    ]
+  },
+  "metres_per_cell": 1,
+  "anchors": [
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "celia-basic-repairs-01",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        592.0,
+        960.0
+      ],
+      "source_facing": "west",
+      "source_tags": [],
+      "derived_xz_m": [
+        -3.5,
+        12.0
+      ],
+      "proposed_foot_xyz_m": [
+        -3.5,
+        0.0,
+        12
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "source newer actor absent from pinned map; additive local wrapper at repair anchor",
+      "pinned_exterior_anchor": {
+        "id": "celia-basic-repairs-01",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          -3.5,
+          0.0,
+          12.0
+        ],
+        "metadata": {
+          "facing": "west"
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[8]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "chandlery-repair-worktop-base-01",
+          "center_clearance_m": 1.922574,
+          "capsule_margin_m": 1.522574
+        },
+        {
+          "id": "prop:reed-chandlery-exterior-building",
+          "center_clearance_m": 2.362012,
+          "capsule_margin_m": 1.962012
+        },
+        {
+          "id": "prop:dock-row-home-01-building",
+          "center_clearance_m": 2.723244,
+          "capsule_margin_m": 2.323244
+        },
+        {
+          "id": "south-water-08",
+          "center_clearance_m": 3.5,
+          "capsule_margin_m": 3.1
+        },
+        {
+          "id": "south-water-09",
+          "center_clearance_m": 3.605551,
+          "capsule_margin_m": 3.205551
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [
+        "alderwake-npc-08-contact"
+      ],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "retain geography; remove retired actor bake obstacle in R009; measure minimal station/approach adaptation in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "edric-market-rounds",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        640.0,
+        640.0
+      ],
+      "source_facing": "south",
+      "source_tags": [
+        "market"
+      ],
+      "derived_xz_m": [
+        -2.0,
+        2.0
+      ],
+      "proposed_foot_xyz_m": [
+        -2.0,
+        0.0,
+        2.0
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": {
+        "id": "edric-market-rounds",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          -2.0,
+          0.0,
+          2.0
+        ],
+        "metadata": {
+          "facing": "south",
+          "tags": [
+            "market"
+          ]
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[35]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "prop:lantern-rest-exterior-building",
+          "center_clearance_m": 1.926886,
+          "capsule_margin_m": 1.526886
+        },
+        {
+          "id": "prop:dock-lamp-01",
+          "center_clearance_m": 2.554492,
+          "capsule_margin_m": 2.154492
+        },
+        {
+          "id": "prop:alderwake-hall-exterior-building",
+          "center_clearance_m": 4.15625,
+          "capsule_margin_m": 3.75625
+        },
+        {
+          "id": "prop:dock-row-willow-tree-01",
+          "center_clearance_m": 4.25,
+          "capsule_margin_m": 3.85
+        },
+        {
+          "id": "prop:dock-lamp-02",
+          "center_clearance_m": 4.45858,
+          "capsule_margin_m": 4.05858
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "edric-rain-shelter",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        832.0,
+        400.0
+      ],
+      "source_facing": "south",
+      "source_tags": [
+        "shelter"
+      ],
+      "derived_xz_m": [
+        4.0,
+        -5.5
+      ],
+      "proposed_foot_xyz_m": [
+        4.0,
+        0.0,
+        -5.5
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": {
+        "id": "edric-rain-shelter",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          4.0,
+          0.0,
+          -5.5
+        ],
+        "metadata": {
+          "facing": "south",
+          "tags": [
+            "shelter"
+          ]
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[36]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "prop:alderwake-hall-exterior-building",
+          "center_clearance_m": 1.572779,
+          "capsule_margin_m": 1.172779
+        },
+        {
+          "id": "prop:dock-lamp-03",
+          "center_clearance_m": 2.69041,
+          "capsule_margin_m": 2.29041
+        },
+        {
+          "id": "prop:mayor-vale-home-building",
+          "center_clearance_m": 2.75,
+          "capsule_margin_m": 2.35
+        },
+        {
+          "id": "prop:alder-rise-home-03-building",
+          "center_clearance_m": 4.180147,
+          "capsule_margin_m": 3.780147
+        },
+        {
+          "id": "prop:market-alder-maple-tree-02",
+          "center_clearance_m": 5.945389,
+          "capsule_margin_m": 5.545389
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "edric-river-bank",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        1184.0,
+        624.0
+      ],
+      "source_facing": "east",
+      "source_tags": [
+        "fishing",
+        "river"
+      ],
+      "derived_xz_m": [
+        15.0,
+        1.5
+      ],
+      "proposed_foot_xyz_m": [
+        15.0,
+        0.0,
+        1.5
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": {
+        "id": "edric-river-bank",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          15.0,
+          0.0,
+          1.5
+        ],
+        "metadata": {
+          "facing": "east",
+          "tags": [
+            "fishing",
+            "river"
+          ]
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[37]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "prop:market-alder-oak-tree-01",
+          "center_clearance_m": 1.644118,
+          "capsule_margin_m": 1.244118
+        },
+        {
+          "id": "prop:market-alder-willow-tree-01",
+          "center_clearance_m": 3.40166,
+          "capsule_margin_m": 3.00166
+        },
+        {
+          "id": "prop:tess-general-goods-exterior-building",
+          "center_clearance_m": 3.672374,
+          "capsule_margin_m": 3.272374
+        },
+        {
+          "id": "prop:remedy-display-shelf-prop-01",
+          "center_clearance_m": 4.168919,
+          "capsule_margin_m": 3.768919
+        },
+        {
+          "id": "prop:dock-row-boulder-cluster-01",
+          "center_clearance_m": 4.758063,
+          "capsule_margin_m": 4.358063
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "edric-town-square",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        688.0,
+        528.0
+      ],
+      "source_facing": "south",
+      "source_tags": [
+        "civic"
+      ],
+      "derived_xz_m": [
+        -0.5,
+        -1.5
+      ],
+      "proposed_foot_xyz_m": [
+        -0.5,
+        0.0,
+        -1.5
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain pinned civic anchor; ordinary placement npc-01 is 0.5m east",
+      "pinned_exterior_anchor": {
+        "id": "edric-town-square",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          -0.5,
+          0.0,
+          -1.5
+        ],
+        "metadata": {
+          "facing": "south",
+          "tags": [
+            "civic"
+          ]
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[38]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "prop:alderwake-hall-exterior-building",
+          "center_clearance_m": 0.65625,
+          "capsule_margin_m": 0.25625
+        },
+        {
+          "id": "prop:dock-lamp-01",
+          "center_clearance_m": 2.043667,
+          "capsule_margin_m": 1.643667
+        },
+        {
+          "id": "prop:lantern-rest-exterior-building",
+          "center_clearance_m": 4.686458,
+          "capsule_margin_m": 4.286458
+        },
+        {
+          "id": "prop:dock-lamp-02",
+          "center_clearance_m": 5.397784,
+          "capsule_margin_m": 4.997784
+        },
+        {
+          "id": "prop:mill-road-oak-tree-02",
+          "center_clearance_m": 5.701433,
+          "capsule_margin_m": 5.301433
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [
+        "alderwake-npc-01-contact"
+      ],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "retain geography; remove retired actor bake obstacle in R009; measure minimal station/approach adaptation in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "harlan-sluice-practice-01",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        2016.0,
+        1120.0
+      ],
+      "source_facing": "south",
+      "source_tags": [],
+      "derived_xz_m": [
+        41.0,
+        17.0
+      ],
+      "proposed_foot_xyz_m": [
+        41,
+        0.0,
+        17
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain pinned dry control-hut foot; no sluice controls",
+      "pinned_exterior_anchor": {
+        "id": "harlan-sluice-practice-01",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          41.0,
+          0.0,
+          17.0
+        ],
+        "metadata": {
+          "facing": "south"
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[56]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "passenger-hut-south-baffle-01",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "south-water-24-berth-remainder-01",
+          "center_clearance_m": 1.414214,
+          "capsule_margin_m": 1.014214
+        },
+        {
+          "id": "passenger-hut-west-baffle-01",
+          "center_clearance_m": 1.5,
+          "capsule_margin_m": 1.1
+        },
+        {
+          "id": "prop:east-shore-pine-tree-01",
+          "center_clearance_m": 2.565547,
+          "capsule_margin_m": 2.165547
+        },
+        {
+          "id": "prop:east-shore-garden-wall-vertical-01",
+          "center_clearance_m": 3.0625,
+          "capsule_margin_m": 2.6625
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [
+        "alderwake-npc-04-contact"
+      ],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "retain geography; remove retired actor bake obstacle in R009; measure minimal station/approach adaptation in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "helena-town-square",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        752.0,
+        528.0
+      ],
+      "source_facing": "west",
+      "source_tags": [
+        "civic"
+      ],
+      "derived_xz_m": [
+        1.5,
+        -1.5
+      ],
+      "proposed_foot_xyz_m": [
+        1.5,
+        0.0,
+        -1.5
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain pinned public civic anchor; archive/home remain deferred",
+      "pinned_exterior_anchor": {
+        "id": "helena-town-square",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          1.5,
+          0.0,
+          -1.5
+        ],
+        "metadata": {
+          "facing": "west",
+          "tags": [
+            "civic"
+          ]
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[58]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "prop:alderwake-hall-exterior-building",
+          "center_clearance_m": 0.65625,
+          "capsule_margin_m": 0.25625
+        },
+        {
+          "id": "prop:dock-lamp-01",
+          "center_clearance_m": 4.010064,
+          "capsule_margin_m": 3.610064
+        },
+        {
+          "id": "prop:market-alder-maple-tree-02",
+          "center_clearance_m": 4.165052,
+          "capsule_margin_m": 3.765052
+        },
+        {
+          "id": "prop:dock-lamp-02",
+          "center_clearance_m": 4.674997,
+          "capsule_margin_m": 4.274997
+        },
+        {
+          "id": "prop:market-lane-notice-sign-01",
+          "center_clearance_m": 4.989931,
+          "capsule_margin_m": 4.589931
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [
+        "alderwake-npc-02-contact"
+      ],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "retain geography; remove retired actor bake obstacle in R009; measure minimal station/approach adaptation in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "maris-fitting-01",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        464.0,
+        928.0
+      ],
+      "source_facing": "east",
+      "source_tags": [],
+      "derived_xz_m": [
+        -7.5,
+        11.0
+      ],
+      "proposed_foot_xyz_m": [
+        -7.5,
+        0.0,
+        11
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "reuse existing npc-03-counter and its unchanged body/bench",
+      "pinned_exterior_anchor": {
+        "id": "maris-fitting-01",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          -7.5,
+          0.0,
+          11.0
+        ],
+        "metadata": {
+          "facing": "east"
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[63]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "prop:reed-chandlery-exterior-building",
+          "center_clearance_m": 1.125,
+          "capsule_margin_m": 0.725
+        },
+        {
+          "id": "chandlery-repair-worktop-base-01",
+          "center_clearance_m": 1.25,
+          "capsule_margin_m": 0.85
+        },
+        {
+          "id": "prop:dock-row-net-shed-01-building",
+          "center_clearance_m": 2.806417,
+          "capsule_margin_m": 2.406417
+        },
+        {
+          "id": "prop:mill-road-home-03-building",
+          "center_clearance_m": 3.647157,
+          "capsule_margin_m": 3.247157
+        },
+        {
+          "id": "south-water-06",
+          "center_clearance_m": 4.5,
+          "capsule_margin_m": 4.1
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [
+        "npc-03-counter",
+        "MarisBench"
+      ],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "retain geography; remove retired actor bake obstacle in R009; measure minimal station/approach adaptation in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "passenger-booking-ivo-01",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        1856.0,
+        1216.0
+      ],
+      "source_facing": "west",
+      "source_tags": [],
+      "derived_xz_m": [
+        36.0,
+        20.0
+      ],
+      "proposed_foot_xyz_m": [
+        36,
+        0.0,
+        20
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "source newer actor absent from pinned map; additive local wrapper on dry booking shore",
+      "pinned_exterior_anchor": {
+        "id": "passenger-booking-ivo-01",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          36.0,
+          0.0,
+          20.0
+        ],
+        "metadata": {
+          "facing": "west"
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[482]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "passenger-basin-water-01",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "south-water-23-berth-remainder-01",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "south-water-22",
+          "center_clearance_m": 1.118034,
+          "capsule_margin_m": 0.718034
+        },
+        {
+          "id": "moonwood-water-033-berth-remainder-01",
+          "center_clearance_m": 2.0,
+          "capsule_margin_m": 1.6
+        },
+        {
+          "id": "south-water-24",
+          "center_clearance_m": 2.236068,
+          "capsule_margin_m": 1.836068
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [
+        "alderwake-npc-07-contact"
+      ],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "retain geography; remove retired actor bake obstacle in R009; measure minimal station/approach adaptation in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "passenger-salvage-handoff-01",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        1696.0,
+        1216.0
+      ],
+      "source_facing": "east",
+      "source_tags": [],
+      "derived_xz_m": [
+        31.0,
+        20.0
+      ],
+      "proposed_foot_xyz_m": [
+        31.0,
+        0.0,
+        20.0
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": {
+        "id": "passenger-salvage-handoff-01",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          31.0,
+          0.0,
+          20.0
+        ],
+        "metadata": {
+          "facing": "east"
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[494]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "passenger-basin-water-01",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "south-water-21",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "south-water-20",
+          "center_clearance_m": 1.118034,
+          "capsule_margin_m": 0.718034
+        },
+        {
+          "id": "moonwood-water-033-berth-remainder-01",
+          "center_clearance_m": 2.0,
+          "capsule_margin_m": 1.6
+        },
+        {
+          "id": "south-water-22",
+          "center_clearance_m": 2.236068,
+          "capsule_margin_m": 1.836068
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R006"
+    },
+    {
+      "source_map_id": "alderwake",
+      "anchor_id": "store-service-tess-01",
+      "runtime_location_id": "prototype-alderwake",
+      "source_foot_units": [
+        944.0,
+        736.0
+      ],
+      "source_facing": "east",
+      "source_tags": [],
+      "derived_xz_m": [
+        7.5,
+        5.0
+      ],
+      "proposed_foot_xyz_m": [
+        7.5,
+        0.0,
+        5
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "source newer actor absent from pinned map; additive local wrapper at existing anchor",
+      "pinned_exterior_anchor": {
+        "id": "store-service-tess-01",
+        "kind": "routineAnchor",
+        "foot_xyz_m": [
+          7.5,
+          0.0,
+          5.0
+        ],
+        "metadata": {
+          "facing": "east"
+        },
+        "runtime_mapping": null,
+        "runtime_enabled": false,
+        "source": {
+          "path": "objects[517]",
+          "group_id": null
+        }
+      },
+      "nearest_static_geometry": [
+        {
+          "id": "prop:tess-general-goods-exterior-building",
+          "center_clearance_m": 1.09375,
+          "capsule_margin_m": 0.69375
+        },
+        {
+          "id": "prop:market-lane-notice-sign-01",
+          "center_clearance_m": 2.644644,
+          "capsule_margin_m": 2.244644
+        },
+        {
+          "id": "prop:dock-row-home-03-building",
+          "center_clearance_m": 2.872621,
+          "capsule_margin_m": 2.472621
+        },
+        {
+          "id": "prop:dock-row-home-02-building",
+          "center_clearance_m": 3.415881,
+          "capsule_margin_m": 3.015881
+        },
+        {
+          "id": "prop:dock-row-boulder-cluster-01",
+          "center_clearance_m": 3.586542,
+          "capsule_margin_m": 3.186542
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [
+        "alderwake-npc-06-contact"
+      ],
+      "owner": "R006",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "retain geography; remove retired actor bake obstacle in R009; measure minimal station/approach adaptation in R006"
+    },
+    {
+      "source_map_id": "lantern-rest",
+      "anchor_id": "inn-host-01",
+      "runtime_location_id": "prototype-lantern-rest",
+      "source_foot_units": [
+        256.0,
+        288.0
+      ],
+      "source_facing": "south",
+      "source_tags": [],
+      "derived_xz_m": [
+        -6.0,
+        -12.0
+      ],
+      "proposed_foot_xyz_m": [
+        -6.0,
+        0.0,
+        -12.0
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "inn-meal-table-02",
+          "center_clearance_m": 2.0,
+          "capsule_margin_m": 1.6
+        },
+        {
+          "id": "inn-meal-table-01",
+          "center_clearance_m": 2.5,
+          "capsule_margin_m": 2.1
+        },
+        {
+          "id": "inn-recovery-armchair-01",
+          "center_clearance_m": 5.250093,
+          "capsule_margin_m": 4.850093
+        },
+        {
+          "id": "inn-recovery-sofa-01",
+          "center_clearance_m": 5.356436,
+          "capsule_margin_m": 4.956436
+        },
+        {
+          "id": "inn-kitchen-worktop-01",
+          "center_clearance_m": 5.5,
+          "capsule_margin_m": 5.1
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R008",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R008"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "edric-breakfast",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        312.0,
+        176.0
+      ],
+      "source_facing": "east",
+      "source_tags": [
+        "morning"
+      ],
+      "derived_xz_m": [
+        1.75,
+        -6.5
+      ],
+      "proposed_foot_xyz_m": [
+        1.75,
+        0.0,
+        -6.5
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "wall-hall-east-north-b",
+          "center_clearance_m": 0.5,
+          "capsule_margin_m": 0.1
+        },
+        {
+          "id": "wall-middle-east",
+          "center_clearance_m": 0.5,
+          "capsule_margin_m": 0.1
+        },
+        {
+          "id": "dining-table",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "wall-hall-east-south-a",
+          "center_clearance_m": 1.118034,
+          "capsule_margin_m": 0.718034
+        },
+        {
+          "id": "wall-hall-west-north-b",
+          "center_clearance_m": 2.5,
+          "capsule_margin_m": 2.1
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "edric-evening-seat",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        64.0,
+        168.0
+      ],
+      "source_facing": "north",
+      "source_tags": [
+        "evening"
+      ],
+      "derived_xz_m": [
+        -6.0,
+        -6.75
+      ],
+      "proposed_foot_xyz_m": [
+        -6.0,
+        0.0,
+        -6.75
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "wall-middle-west",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "parlor-coffee-table",
+          "center_clearance_m": 0.91483,
+          "capsule_margin_m": 0.51483
+        },
+        {
+          "id": "parlor-sofa",
+          "center_clearance_m": 0.9375,
+          "capsule_margin_m": 0.5375
+        },
+        {
+          "id": "parlor-armchair-west",
+          "center_clearance_m": 1.25,
+          "capsule_margin_m": 0.85
+        },
+        {
+          "id": "wall-west",
+          "center_clearance_m": 1.5,
+          "capsule_margin_m": 1.1
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "edric-home-study",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        320.0,
+        384.0
+      ],
+      "source_facing": "east",
+      "source_tags": [
+        "study"
+      ],
+      "derived_xz_m": [
+        2.0,
+        0.0
+      ],
+      "proposed_foot_xyz_m": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "wall-hall-east-south-b",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "wall-south-east",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "study-desk",
+          "center_clearance_m": 1.650047,
+          "capsule_margin_m": 1.250047
+        },
+        {
+          "id": "study-bookcase-west",
+          "center_clearance_m": 2.65919,
+          "capsule_margin_m": 2.25919
+        },
+        {
+          "id": "wall-hall-west-south-b",
+          "center_clearance_m": 2.75,
+          "capsule_margin_m": 2.35
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "edric-rest",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        80.0,
+        392.0
+      ],
+      "source_facing": "north",
+      "source_tags": [
+        "rest"
+      ],
+      "derived_xz_m": [
+        -5.5,
+        0.25
+      ],
+      "proposed_foot_xyz_m": [
+        -5.5,
+        0.0,
+        0.25
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "bedroom-bed",
+          "center_clearance_m": 0.450694,
+          "capsule_margin_m": 0.050694
+        },
+        {
+          "id": "wall-south-west",
+          "center_clearance_m": 0.5,
+          "capsule_margin_m": 0.1
+        },
+        {
+          "id": "wall-west",
+          "center_clearance_m": 2.0,
+          "capsule_margin_m": 1.6
+        },
+        {
+          "id": "bedroom-wardrobe",
+          "center_clearance_m": 2.76134,
+          "capsule_margin_m": 2.36134
+        },
+        {
+          "id": "wall-hall-west-south-b",
+          "center_clearance_m": 4.25,
+          "capsule_margin_m": 3.85
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "helena-archive-desk",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        384.0,
+        384.0
+      ],
+      "source_facing": "north",
+      "source_tags": [
+        "archive"
+      ],
+      "derived_xz_m": [
+        4.0,
+        0.0
+      ],
+      "proposed_foot_xyz_m": [
+        4.0,
+        0.0,
+        0.0
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "wall-south-east",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "study-desk",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "study-sideboard",
+          "center_clearance_m": 1.5,
+          "capsule_margin_m": 1.1
+        },
+        {
+          "id": "study-bookcase-west",
+          "center_clearance_m": 2.5,
+          "capsule_margin_m": 2.1
+        },
+        {
+          "id": "study-bookcase-east",
+          "center_clearance_m": 2.65919,
+          "capsule_margin_m": 2.25919
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "helena-archive-shelves",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        448.0,
+        336.0
+      ],
+      "source_facing": "north",
+      "source_tags": [
+        "archive"
+      ],
+      "derived_xz_m": [
+        6.0,
+        -1.5
+      ],
+      "proposed_foot_xyz_m": [
+        6.0,
+        0.0,
+        -1.5
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "study-sideboard",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "study-bookcase-east",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "study-desk",
+          "center_clearance_m": 1.3125,
+          "capsule_margin_m": 0.9125
+        },
+        {
+          "id": "wall-east",
+          "center_clearance_m": 1.5,
+          "capsule_margin_m": 1.1
+        },
+        {
+          "id": "study-bookcase-west",
+          "center_clearance_m": 1.725555,
+          "capsule_margin_m": 1.325555
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "helena-breakfast",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        400.0,
+        176.0
+      ],
+      "source_facing": "west",
+      "source_tags": [
+        "morning"
+      ],
+      "derived_xz_m": [
+        4.5,
+        -6.5
+      ],
+      "proposed_foot_xyz_m": [
+        4.5,
+        0.0,
+        -6.5
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "wall-middle-east",
+          "center_clearance_m": 0.5,
+          "capsule_margin_m": 0.1
+        },
+        {
+          "id": "kitchen-island",
+          "center_clearance_m": 0.702256,
+          "capsule_margin_m": 0.302256
+        },
+        {
+          "id": "dining-table",
+          "center_clearance_m": 1.0,
+          "capsule_margin_m": 0.6
+        },
+        {
+          "id": "kitchen-side-counter",
+          "center_clearance_m": 2.304886,
+          "capsule_margin_m": 1.904886
+        },
+        {
+          "id": "kitchen-counter-stove",
+          "center_clearance_m": 3.0,
+          "capsule_margin_m": 2.6
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "helena-evening-seat",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        160.0,
+        168.0
+      ],
+      "source_facing": "north",
+      "source_tags": [
+        "evening"
+      ],
+      "derived_xz_m": [
+        -3.0,
+        -6.75
+      ],
+      "proposed_foot_xyz_m": [
+        -3.0,
+        0.0,
+        -6.75
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "wall-middle-west",
+          "center_clearance_m": 0.75,
+          "capsule_margin_m": 0.35
+        },
+        {
+          "id": "parlor-coffee-table",
+          "center_clearance_m": 0.91483,
+          "capsule_margin_m": 0.51483
+        },
+        {
+          "id": "parlor-sofa",
+          "center_clearance_m": 0.9375,
+          "capsule_margin_m": 0.5375
+        },
+        {
+          "id": "parlor-armchair-east",
+          "center_clearance_m": 1.25,
+          "capsule_margin_m": 0.85
+        },
+        {
+          "id": "wall-hall-west-north-b",
+          "center_clearance_m": 1.75,
+          "capsule_margin_m": 1.35
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "anchor_id": "helena-rest",
+      "runtime_location_id": "prototype-mayor-vale-home",
+      "source_foot_units": [
+        144.0,
+        392.0
+      ],
+      "source_facing": "north",
+      "source_tags": [
+        "rest"
+      ],
+      "derived_xz_m": [
+        -3.5,
+        0.25
+      ],
+      "proposed_foot_xyz_m": [
+        -3.5,
+        0.0,
+        0.25
+      ],
+      "delta_xz_m": [
+        0.0,
+        0.0
+      ],
+      "adaptation": "retain source anchor; physical clearance validation pending",
+      "pinned_exterior_anchor": null,
+      "nearest_static_geometry": [
+        {
+          "id": "bedroom-bed",
+          "center_clearance_m": 0.450694,
+          "capsule_margin_m": 0.050694
+        },
+        {
+          "id": "wall-south-west",
+          "center_clearance_m": 0.5,
+          "capsule_margin_m": 0.1
+        },
+        {
+          "id": "wall-hall-west-south-b",
+          "center_clearance_m": 2.25,
+          "capsule_margin_m": 1.85
+        },
+        {
+          "id": "bedroom-wardrobe",
+          "center_clearance_m": 3.553168,
+          "capsule_margin_m": 3.153168
+        },
+        {
+          "id": "wall-hall-west-south-a",
+          "center_clearance_m": 3.952847,
+          "capsule_margin_m": 3.552847
+        }
+      ],
+      "static_conflicts": [],
+      "fixed_contact_conflicts": [],
+      "owner": "R007",
+      "validation": "static audit only; paths/support/capsule/LOS/occupancy NOT accepted",
+      "repair_proposal": "validate dry support, current capsule, paths and LOS in R007"
+    }
+  ],
+  "portals": [
+    {
+      "id": "lantern-rest-entrance-01",
+      "source_map_id": "alderwake",
+      "destination_map_id": "lantern-rest",
+      "source_location_id": "prototype-alderwake",
+      "destination_location_id": "prototype-lantern-rest",
+      "source_group": {
+        "id": "lantern-rest-exterior",
+        "pivotX": 15,
+        "pivotY": 21,
+        "quarterTurns": 0,
+        "artLayers": [],
+        "props": [
+          {
+            "type": "prop",
+            "id": "lantern-rest-exterior-building",
+            "definitionId": "lantern-rest",
+            "x": 0.0,
+            "y": 0.0,
+            "lightSourceStates": {
+              "windows": true
+            }
+          }
+        ],
+        "colliders": [],
+        "portals": [
+          {
+            "id": "lantern-rest-entrance-01",
+            "label": "Lantern Rest entrance",
+            "prompt": "Enter Lantern Rest",
+            "left": -32.0,
+            "top": 16.0,
+            "width": 64.0,
+            "height": 48.0,
+            "destinationMapId": "lantern-rest",
+            "destinationX": 448.0,
+            "destinationY": 672.0
+          }
+        ]
+      },
+      "flattened_rect_units": [
+        448.0,
+        688.0,
+        64.0,
+        48.0
+      ],
+      "source_point_units": [
+        480.0,
+        712.0
+      ],
+      "source_point_xz_m": [
+        -7.0,
+        4.25
+      ],
+      "destination_units": [
+        448.0,
+        672.0
+      ],
+      "destination_point_xz_m": [
+        0.0,
+        0.0
+      ],
+      "arrival_id": "lantern-rest-from-alderwake",
+      "owners": [
+        "R005",
+        "R006"
+      ],
+      "physical_validation": "unrun; source door center is not yet an accepted player/NPC approach"
+    },
+    {
+      "id": "mayor-vale-home-entrance",
+      "source_map_id": "alderwake",
+      "destination_map_id": "mayor-vale-home",
+      "source_location_id": "prototype-alderwake",
+      "destination_location_id": "prototype-mayor-vale-home",
+      "source_group": {
+        "id": "mayor-vale-home-exterior",
+        "pivotX": 26,
+        "pivotY": 10,
+        "quarterTurns": 0,
+        "artLayers": [],
+        "props": [
+          {
+            "type": "prop",
+            "id": "mayor-vale-home-building",
+            "definitionId": "mayor-vale-home",
+            "x": 0.0,
+            "y": 0.0,
+            "lightSourceStates": {
+              "windows": true
+            }
+          }
+        ],
+        "colliders": [],
+        "portals": [
+          {
+            "id": "mayor-vale-home-entrance",
+            "label": "Mayor Vale home entrance",
+            "prompt": "Enter Mayor Vale’s home",
+            "left": 0.0,
+            "top": 32.0,
+            "width": 64.0,
+            "height": 48.0,
+            "destinationMapId": "mayor-vale-home",
+            "destinationX": 256.0,
+            "destinationY": 384.0
+          }
+        ]
+      },
+      "flattened_rect_units": [
+        832.0,
+        352.0,
+        64.0,
+        48.0
+      ],
+      "source_point_units": [
+        864.0,
+        376.0
+      ],
+      "source_point_xz_m": [
+        5.0,
+        -6.25
+      ],
+      "destination_units": [
+        256.0,
+        384.0
+      ],
+      "destination_point_xz_m": [
+        0.0,
+        0.0
+      ],
+      "arrival_id": "mayor-vale-home-from-alderwake",
+      "owners": [
+        "R005",
+        "R006"
+      ],
+      "physical_validation": "unrun; source door center is not yet an accepted player/NPC approach"
+    },
+    {
+      "id": "mayor-vale-home-exit",
+      "source_map_id": "mayor-vale-home",
+      "destination_map_id": "alderwake",
+      "source_location_id": "prototype-mayor-vale-home",
+      "destination_location_id": "prototype-alderwake",
+      "source_group": null,
+      "flattened_rect_units": [
+        224.0,
+        400.0,
+        64.0,
+        48.0
+      ],
+      "source_point_units": [
+        256.0,
+        424.0
+      ],
+      "source_point_xz_m": [
+        0.0,
+        1.25
+      ],
+      "destination_units": [
+        832.0,
+        400.0
+      ],
+      "destination_point_xz_m": [
+        4.0,
+        -5.5
+      ],
+      "arrival_id": "alderwake-from-mayor-vale-home",
+      "owners": [
+        "R005",
+        "R007"
+      ],
+      "physical_validation": "unrun; source door center is not yet an accepted player/NPC approach"
+    },
+    {
+      "id": "lantern-rest-exit-01",
+      "source_map_id": "lantern-rest",
+      "destination_map_id": "alderwake",
+      "source_location_id": "prototype-lantern-rest",
+      "destination_location_id": "prototype-alderwake",
+      "source_group": null,
+      "flattened_rect_units": [
+        416.0,
+        704.0,
+        64.0,
+        48.0
+      ],
+      "source_point_units": [
+        448.0,
+        728.0
+      ],
+      "source_point_xz_m": [
+        0.0,
+        1.75
+      ],
+      "destination_units": [
+        336.0,
+        720.0
+      ],
+      "destination_point_xz_m": [
+        -11.5,
+        4.5
+      ],
+      "arrival_id": "alderwake-from-lantern-rest",
+      "owners": [
+        "R005",
+        "R008"
+      ],
+      "physical_validation": "unrun; source door center is not yet an accepted player/NPC approach"
+    }
+  ],
+  "directed_chains": [
+    {
+      "source_map_id": "alderwake",
+      "destination_map_id": "alderwake",
+      "portal_ids": []
+    },
+    {
+      "source_map_id": "alderwake",
+      "destination_map_id": "mayor-vale-home",
+      "portal_ids": [
+        "mayor-vale-home-entrance"
+      ]
+    },
+    {
+      "source_map_id": "alderwake",
+      "destination_map_id": "lantern-rest",
+      "portal_ids": [
+        "lantern-rest-entrance-01"
+      ]
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "destination_map_id": "alderwake",
+      "portal_ids": [
+        "mayor-vale-home-exit"
+      ]
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "destination_map_id": "mayor-vale-home",
+      "portal_ids": []
+    },
+    {
+      "source_map_id": "mayor-vale-home",
+      "destination_map_id": "lantern-rest",
+      "portal_ids": [
+        "mayor-vale-home-exit",
+        "lantern-rest-entrance-01"
+      ]
+    },
+    {
+      "source_map_id": "lantern-rest",
+      "destination_map_id": "alderwake",
+      "portal_ids": [
+        "lantern-rest-exit-01"
+      ]
+    },
+    {
+      "source_map_id": "lantern-rest",
+      "destination_map_id": "mayor-vale-home",
+      "portal_ids": [
+        "lantern-rest-exit-01",
+        "mayor-vale-home-entrance"
+      ]
+    },
+    {
+      "source_map_id": "lantern-rest",
+      "destination_map_id": "lantern-rest",
+      "portal_ids": []
+    }
+  ],
+  "fixed_obstacles": [
+    {
+      "id": "alderwake-npc-01-contact",
+      "npc_id": "npc-01",
+      "rect_xz_m": [
+        -0.9,
+        -1.9,
+        0.8,
+        0.8
+      ],
+      "owner": "R009",
+      "repair": "remove static actor outline/body when dynamic owner installed; retain unique identity"
+    },
+    {
+      "id": "alderwake-npc-02-contact",
+      "npc_id": "npc-02",
+      "rect_xz_m": [
+        1.1,
+        -1.9,
+        0.8,
+        0.8
+      ],
+      "owner": "R009",
+      "repair": "remove static actor outline/body when dynamic owner installed; retain unique identity"
+    },
+    {
+      "id": "npc-03-counter",
+      "npc_id": "npc-03",
+      "rect_xz_m": [
+        -7.85,
+        10.65,
+        0.7,
+        0.7
+      ],
+      "owner": "R009",
+      "repair": "remove static actor outline/body when dynamic owner installed; retain unique identity"
+    },
+    {
+      "id": "alderwake-npc-04-contact",
+      "npc_id": "npc-04",
+      "rect_xz_m": [
+        40.6,
+        16.6,
+        0.8,
+        0.8
+      ],
+      "owner": "R009",
+      "repair": "remove static actor outline/body when dynamic owner installed; retain unique identity"
+    },
+    {
+      "id": "alderwake-npc-06-contact",
+      "npc_id": "npc-06",
+      "rect_xz_m": [
+        7.1,
+        4.6,
+        0.8,
+        0.8
+      ],
+      "owner": "R009",
+      "repair": "remove static actor outline/body when dynamic owner installed; retain unique identity"
+    },
+    {
+      "id": "alderwake-npc-07-contact",
+      "npc_id": "npc-07",
+      "rect_xz_m": [
+        35.6,
+        19.6,
+        0.8,
+        0.8
+      ],
+      "owner": "R009",
+      "repair": "remove static actor outline/body when dynamic owner installed; retain unique identity"
+    },
+    {
+      "id": "alderwake-npc-08-contact",
+      "npc_id": "npc-08",
+      "rect_xz_m": [
+        -3.9,
+        11.6,
+        0.8,
+        0.8
+      ],
+      "owner": "R009",
+      "repair": "remove static actor outline/body when dynamic owner installed; retain unique identity"
+    },
+    {
+      "id": "alderwake-npc-14-contact",
+      "npc_id": "npc-14",
+      "rect_xz_m": [
+        -9.4,
+        3.1,
+        0.8,
+        0.8
+      ],
+      "owner": "R009",
+      "repair": "remove static actor outline/body when dynamic owner installed; retain unique identity"
+    },
+    {
+      "id": "MarisBench",
+      "rect_xz_m": [
+        -8.6,
+        11.45,
+        2.2,
+        0.7
+      ],
+      "owner": "R009",
+      "repair": "retain real furniture collision"
+    },
+    {
+      "id": "TemporaryCompanion",
+      "rect_xz_m": [
+        -2.35,
+        -0.35,
+        0.7,
+        0.7
+      ],
+      "owner": "R009",
+      "repair": "preserve station/party identity; query actual occupied body"
+    }
+  ],
+  "existing_player_travel": {
+    "source_location": "prototype-alderwake",
+    "interaction_id": "alderwake-travel-gate",
+    "destination_location": "prototype-tollworks",
+    "arrival_id": "tollworks-from-alderwake",
+    "return_arrival_id": "alderwake-from-tollworks",
+    "owners": [
+      "R005"
+    ],
+    "policy": "retain existing real IDs; runtime APIs remain single destination until R005"
+  },
+  "excluded_portals": [
+    "fair-north-entrance-01",
+    "fair-south-entrance-01",
+    "starter-home-entrance-01",
+    "hall-entrance-01"
+  ]
+}

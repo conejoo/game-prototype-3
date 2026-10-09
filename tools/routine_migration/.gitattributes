@@ -1,0 +1,5 @@
+# R001 manifest hashes refer to exact source and derived reference bytes.
+reference/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Keep executable reference tools consistent across Windows and Unix checkouts.
+*.py text eol=lf
+README.md text eol=lf

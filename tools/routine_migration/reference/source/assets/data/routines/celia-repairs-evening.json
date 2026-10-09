@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "celia-repairs-evening",
+  "priority": 100,
+  "timeWindow": {
+    "start": "22:00",
+    "end": "06:00"
+  },
+  "participants": [
+    "npc-08"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-08",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "reach-basic-repair-station",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "celia-basic-repairs-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "remain-available-for-repairs",
+          "durationSeconds": 400
+        }
+      ]
+    }
+  ]
+}

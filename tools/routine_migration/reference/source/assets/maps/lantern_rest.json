@@ -1,0 +1,983 @@
+{
+  "mapId": "lantern-rest",
+  "columns": 28,
+  "rows": 24,
+  "tileSize": 32,
+  "artDirection": {
+    "styleId": "clean-hd-storybook-v1",
+    "styleReferenceImagePath": "assets/maps/mvp_world/clean-hd-style-reference.png"
+  },
+  "lighting": {
+    "mode": "interiorWarm"
+  },
+  "tileLayers": [
+    {
+      "id": "ground",
+      "name": "Oak floor",
+      "visible": true,
+      "cellSize": 32,
+      "defaultPaint": {
+        "kind": "raw",
+        "tileId": "tiles/interiors/mayor_vale_home/floor_oak.png"
+      },
+      "cells": [
+        {
+          "x": 0,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 1,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 2,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 3,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 4,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 5,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 6,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 7,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 8,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 9,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 10,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 11,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 12,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 15,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 16,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 17,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 18,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 19,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 20,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 21,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 22,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 23,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 24,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 25,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 26,
+          "y": 23,
+          "paint": null
+        },
+        {
+          "x": 27,
+          "y": 23,
+          "paint": null
+        }
+      ]
+    },
+    {
+      "id": "floor-decor",
+      "name": "Breakfast rug",
+      "visible": true,
+      "cellSize": 32,
+      "cells": [
+        {
+          "x": 18,
+          "y": 15,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c0.png"
+          }
+        },
+        {
+          "x": 19,
+          "y": 15,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c1.png"
+          }
+        },
+        {
+          "x": 20,
+          "y": 15,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c2.png"
+          }
+        },
+        {
+          "x": 21,
+          "y": 15,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c3.png"
+          }
+        },
+        {
+          "x": 22,
+          "y": 15,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r0-c4.png"
+          }
+        },
+        {
+          "x": 18,
+          "y": 16,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c0.png"
+          }
+        },
+        {
+          "x": 19,
+          "y": 16,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c1.png"
+          }
+        },
+        {
+          "x": 20,
+          "y": 16,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c2.png"
+          }
+        },
+        {
+          "x": 21,
+          "y": 16,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c3.png"
+          }
+        },
+        {
+          "x": 22,
+          "y": 16,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r1-c4.png"
+          }
+        },
+        {
+          "x": 18,
+          "y": 17,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c0.png"
+          }
+        },
+        {
+          "x": 19,
+          "y": 17,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c1.png"
+          }
+        },
+        {
+          "x": 20,
+          "y": 17,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c2.png"
+          }
+        },
+        {
+          "x": 21,
+          "y": 17,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c3.png"
+          }
+        },
+        {
+          "x": 22,
+          "y": 17,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r2-c4.png"
+          }
+        },
+        {
+          "x": 18,
+          "y": 18,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c0.png"
+          }
+        },
+        {
+          "x": 19,
+          "y": 18,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c1.png"
+          }
+        },
+        {
+          "x": 20,
+          "y": 18,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c2.png"
+          }
+        },
+        {
+          "x": 21,
+          "y": 18,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c3.png"
+          }
+        },
+        {
+          "x": 22,
+          "y": 18,
+          "paint": {
+            "kind": "raw",
+            "tileId": "tiles/interiors/mayor_vale_home/rug_navy_r3-c4.png"
+          }
+        }
+      ]
+    }
+  ],
+  "artLayers": [],
+  "elevation": {
+    "cells": [],
+    "slopes": []
+  },
+  "playerSpawn": {
+    "x": 448.0,
+    "y": 672.0
+  },
+  "zones": [
+    {
+      "id": "inn-breakfast-01",
+      "role": "landmark",
+      "label": "Breakfast",
+      "left": 512.0,
+      "top": 448.0,
+      "width": 320.0,
+      "height": 192.0
+    },
+    {
+      "id": "inn-guest-room-01",
+      "role": "landmark",
+      "label": "Guest room",
+      "left": 512.0,
+      "top": 96.0,
+      "width": 320.0,
+      "height": 288.0
+    },
+    {
+      "id": "inn-meals-01",
+      "role": "landmark",
+      "label": "Meals",
+      "left": 64.0,
+      "top": 96.0,
+      "width": 256.0,
+      "height": 256.0
+    },
+    {
+      "id": "inn-recovery-01",
+      "role": "landmark",
+      "label": "Quiet recovery",
+      "left": 64.0,
+      "top": 416.0,
+      "width": 256.0,
+      "height": 224.0
+    }
+  ],
+  "activityAreas": [],
+  "objects": [
+    {
+      "type": "npc",
+      "id": "della-inn-host-01",
+      "definitionId": "npc-14",
+      "x": 256.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-breakfast-chair-01",
+      "definitionId": "mayor-interior-chair-north",
+      "x": 608.0,
+      "y": 552.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-breakfast-chair-02",
+      "definitionId": "mayor-interior-chair-north",
+      "x": 672.0,
+      "y": 552.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-breakfast-companion-01",
+      "facing": "north",
+      "x": 672.0,
+      "y": 576.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-breakfast-player-01",
+      "facing": "north",
+      "x": 608.0,
+      "y": 576.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-breakfast-table-01",
+      "definitionId": "mayor-interior-dining-table",
+      "x": 608.0,
+      "y": 512.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-breakfast-table-02",
+      "definitionId": "mayor-interior-dining-table",
+      "x": 672.0,
+      "y": 512.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-bed-01",
+      "definitionId": "mayor-interior-bed",
+      "x": 680.0,
+      "y": 256.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-bedside-01",
+      "definitionId": "mayor-interior-bedside-table",
+      "x": 632.0,
+      "y": 256.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-wall-south-01",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 640.0,
+      "y": 432.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-wall-south-02",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 768.0,
+      "y": 432.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-wall-south-short-01",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 848.0,
+      "y": 432.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-wall-south-short-02",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 880.0,
+      "y": 432.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-wall-west-01",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 520.0,
+      "y": 192.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-wall-west-02",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 520.0,
+      "y": 320.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-wall-west-short-01",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 520.0,
+      "y": 352.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-guest-wardrobe-01",
+      "definitionId": "mayor-interior-wardrobe",
+      "x": 576.0,
+      "y": 160.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-host-01",
+      "facing": "south",
+      "x": 256.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-kitchen-stove-01",
+      "definitionId": "mayor-interior-kitchen-counter-stove",
+      "x": 128.0,
+      "y": 112.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-kitchen-worktop-01",
+      "definitionId": "mayor-interior-kitchen-counter-worktop",
+      "x": 272.0,
+      "y": 112.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-letter-visitor-01",
+      "facing": "west",
+      "x": 768.0,
+      "y": 576.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-meal-chair-01",
+      "definitionId": "mayor-interior-chair-north",
+      "x": 192.0,
+      "y": 264.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-meal-chair-02",
+      "definitionId": "mayor-interior-chair-north",
+      "x": 272.0,
+      "y": 264.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-meal-player-01",
+      "facing": "east",
+      "x": 192.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-meal-table-01",
+      "definitionId": "mayor-interior-dining-table",
+      "x": 192.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-meal-table-02",
+      "definitionId": "mayor-interior-dining-table",
+      "x": 272.0,
+      "y": 224.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-opening-sleep-01",
+      "facing": "west",
+      "x": 736.0,
+      "y": 224.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-personal-desk-01",
+      "definitionId": "mayor-interior-desk",
+      "x": 680.0,
+      "y": 336.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-personal-object-01",
+      "facing": "west",
+      "x": 736.0,
+      "y": 320.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-recovery-armchair-01",
+      "definitionId": "mayor-interior-armchair",
+      "x": 272.0,
+      "y": 480.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-recovery-player-01",
+      "facing": "north",
+      "x": 192.0,
+      "y": 544.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-recovery-sofa-01",
+      "definitionId": "mayor-interior-sofa",
+      "x": 192.0,
+      "y": 480.0
+    },
+    {
+      "type": "routineAnchor",
+      "id": "inn-recovery-visitor-01",
+      "facing": "west",
+      "x": 256.0,
+      "y": 544.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-east-01",
+      "definitionId": "mayor-interior-wall-east-128",
+      "x": 888.0,
+      "y": 160.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-east-02",
+      "definitionId": "mayor-interior-wall-east-128",
+      "x": 888.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-east-03",
+      "definitionId": "mayor-interior-wall-east-128",
+      "x": 888.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-east-04",
+      "definitionId": "mayor-interior-wall-east-128",
+      "x": 888.0,
+      "y": 544.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-east-05",
+      "definitionId": "mayor-interior-wall-east-128",
+      "x": 888.0,
+      "y": 672.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-east-short-01",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 888.0,
+      "y": 704.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-east-short-02",
+      "definitionId": "mayor-interior-wall-east",
+      "x": 888.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-north-01",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 64.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-north-02",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 192.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-north-03",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 320.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-north-04",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 448.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-north-05",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 576.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-north-06",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 704.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-north-07",
+      "definitionId": "mayor-interior-wall-north-128",
+      "x": 832.0,
+      "y": 64.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-south-run-01",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 64.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-south-run-02",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 192.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-south-run-03",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 320.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-south-run-04",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 544.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-south-run-05",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 672.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-south-run-06",
+      "definitionId": "mayor-interior-wall-south-128",
+      "x": 800.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-south-short-01",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 400.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-south-short-02",
+      "definitionId": "mayor-interior-wall-south",
+      "x": 880.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-west-01",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 8.0,
+      "y": 160.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-west-02",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 8.0,
+      "y": 288.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-west-03",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 8.0,
+      "y": 416.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-west-04",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 8.0,
+      "y": 544.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-west-05",
+      "definitionId": "mayor-interior-wall-west-128",
+      "x": 8.0,
+      "y": 672.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-west-short-01",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 8.0,
+      "y": 704.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-wall-west-short-02",
+      "definitionId": "mayor-interior-wall-west",
+      "x": 8.0,
+      "y": 736.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-window-01",
+      "definitionId": "mayor-interior-window",
+      "x": 192.0,
+      "y": 56.0,
+      "renderDepthOffsetY": 9.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-window-02",
+      "definitionId": "mayor-interior-window",
+      "x": 448.0,
+      "y": 56.0,
+      "renderDepthOffsetY": 9.0
+    },
+    {
+      "type": "prop",
+      "id": "inn-window-03",
+      "definitionId": "mayor-interior-window",
+      "x": 704.0,
+      "y": 56.0,
+      "renderDepthOffsetY": 9.0
+    }
+  ],
+  "colliders": [
+    {
+      "id": "inn-breakfast-table-01",
+      "left": 592.0,
+      "top": 488.0,
+      "width": 32.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-breakfast-table-02",
+      "left": 656.0,
+      "top": 488.0,
+      "width": 32.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-guest-bed-01",
+      "left": 660.0,
+      "top": 192.0,
+      "width": 40.0,
+      "height": 64.0
+    },
+    {
+      "id": "inn-guest-bedside-01",
+      "left": 618.0,
+      "top": 240.0,
+      "width": 28.0,
+      "height": 16.0
+    },
+    {
+      "id": "inn-guest-wall-south",
+      "left": 576.0,
+      "top": 416.0,
+      "width": 304.0,
+      "height": 16.0
+    },
+    {
+      "id": "inn-guest-wall-west",
+      "left": 512.0,
+      "top": 64.0,
+      "width": 16.0,
+      "height": 288.0
+    },
+    {
+      "id": "inn-guest-wardrobe-01",
+      "left": 552.0,
+      "top": 128.0,
+      "width": 48.0,
+      "height": 32.0
+    },
+    {
+      "id": "inn-kitchen-stove-01",
+      "left": 93.0,
+      "top": 88.0,
+      "width": 70.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-kitchen-worktop-01",
+      "left": 237.0,
+      "top": 88.0,
+      "width": 70.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-meal-table-01",
+      "left": 176.0,
+      "top": 200.0,
+      "width": 32.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-meal-table-02",
+      "left": 256.0,
+      "top": 200.0,
+      "width": 32.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-personal-desk-01",
+      "left": 658.0,
+      "top": 312.0,
+      "width": 44.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-recovery-armchair-01",
+      "left": 257.0,
+      "top": 456.0,
+      "width": 30.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-recovery-sofa-01",
+      "left": 162.0,
+      "top": 456.0,
+      "width": 60.0,
+      "height": 24.0
+    },
+    {
+      "id": "inn-wall-east",
+      "left": 880.0,
+      "top": 0.0,
+      "width": 16.0,
+      "height": 736.0
+    },
+    {
+      "id": "inn-wall-north",
+      "left": 0.0,
+      "top": 0.0,
+      "width": 896.0,
+      "height": 32.0
+    },
+    {
+      "id": "inn-wall-south-east",
+      "left": 480.0,
+      "top": 728.0,
+      "width": 416.0,
+      "height": 40.0
+    },
+    {
+      "id": "inn-wall-south-west",
+      "left": 0.0,
+      "top": 728.0,
+      "width": 416.0,
+      "height": 40.0
+    },
+    {
+      "id": "inn-wall-west",
+      "left": 0.0,
+      "top": 0.0,
+      "width": 16.0,
+      "height": 736.0
+    }
+  ],
+  "portals": [
+    {
+      "id": "lantern-rest-exit-01",
+      "label": "Inn exit",
+      "prompt": "Return to Alderwake",
+      "left": 416.0,
+      "top": 704.0,
+      "width": 64.0,
+      "height": 48.0,
+      "destinationMapId": "alderwake",
+      "destinationX": 336.0,
+      "destinationY": 720.0
+    }
+  ],
+  "groups": []
+}

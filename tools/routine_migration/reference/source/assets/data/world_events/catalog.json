@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "schemaVersion": 1,
+      "id": "harbor-festival"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "heavy-rain"
+    }
+  ]
+}

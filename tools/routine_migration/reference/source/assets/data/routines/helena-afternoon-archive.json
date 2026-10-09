@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "helena-afternoon-archive",
+  "priority": 100,
+  "timeWindow": {
+    "start": "13:00",
+    "end": "17:00"
+  },
+  "participants": ["npc-02"],
+  "conditions": [
+    {
+      "kind": "relationshipFlagUnset",
+      "npcId": "npc-02",
+      "flagId": "npc-02-archive-lead-shared"
+    }
+  ],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+    "stepDialogueEntries": [
+      {
+        "participantId": "npc-02",
+        "stepId": "afternoon-index",
+        "dialogueEntryNodeId": "npc-02-routine-archive-indexing"
+      }
+    ],
+    "outcomeDirectives": [
+      {
+        "outcomeTag": "npc-02-resume-archive-default",
+        "directive": {
+          "kind": "resume"
+        }
+      },
+      {
+        "outcomeTag": "npc-02-resume-archive-indexing",
+        "directive": {
+          "kind": "resume"
+        }
+      },
+      {
+        "outcomeTag": "npc-02-review-archive-ledger",
+        "directive": {
+          "kind": "jumpToStep",
+          "participantId": "npc-02",
+          "stepId": "afternoon-review-ledger"
+        }
+      },
+      {
+        "outcomeTag": "npc-02-end-archive-default",
+        "directive": {
+          "kind": "endRoutineForDay"
+        }
+      },
+      {
+        "outcomeTag": "npc-02-end-archive-indexing",
+        "directive": {
+          "kind": "endRoutineForDay"
+        }
+      }
+    ]
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-02",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "leave-civic-briefing",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "helena-town-square"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "return-to-archive",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "helena-archive-desk"
+          }
+        },
+        {
+          "kind": "action",
+          "id": "afternoon-index",
+          "actionId": "archive-work",
+          "durationSeconds": 70
+        },
+        {
+          "kind": "speech",
+          "id": "confirm-index-progress",
+          "text": "These entries now agree with their shelf marks.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "move",
+          "id": "check-archive-shelves",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "helena-archive-shelves"
+          }
+        },
+        {
+          "kind": "action",
+          "id": "afternoon-review-ledger",
+          "actionId": "archive-work",
+          "durationSeconds": 24
+        }
+      ]
+    }
+  ]
+}

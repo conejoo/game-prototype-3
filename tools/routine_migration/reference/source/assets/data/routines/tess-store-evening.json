@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "tess-store-evening",
+  "priority": 100,
+  "timeWindow": {
+    "start": "22:00",
+    "end": "06:00"
+  },
+  "participants": [
+    "npc-06"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-06",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "reach-store-station",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "store-service-tess-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "review-store-list",
+          "durationSeconds": 400
+        }
+      ]
+    }
+  ]
+}

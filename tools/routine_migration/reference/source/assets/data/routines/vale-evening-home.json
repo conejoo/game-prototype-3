@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "vale-evening-home",
+  "priority": 100,
+  "timeWindow": {
+    "start": "20:00",
+    "end": "22:00"
+  },
+  "participants": ["npc-01", "npc-02"],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-01",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "leave-evening-post",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "edric-rain-shelter"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "take-evening-seat",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "edric-evening-seat"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "evening-at-home",
+          "durationSeconds": 50
+        }
+      ]
+    },
+    {
+      "participantId": "npc-02",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "close-archive",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "helena-archive-desk"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "take-evening-seat",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "helena-evening-seat"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "evening-at-home",
+          "durationSeconds": 50
+        }
+      ]
+    }
+  ]
+}

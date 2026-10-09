@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "harlan-docks-day",
+  "priority": 100,
+  "timeWindow": {
+    "start": "06:00",
+    "end": "22:00"
+  },
+  "participants": [
+    "npc-04"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-04",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "reach-dock-station",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "harlan-sluice-practice-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "coordinate-dock-work",
+          "durationSeconds": 400
+        }
+      ]
+    }
+  ]
+}

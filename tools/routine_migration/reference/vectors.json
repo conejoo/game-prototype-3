@@ -1,0 +1,49 @@
+{
+  "authority": "Pinned source resolver/director/event journal plus existing target clock/weather. Python oracle only; source Dart tests not executed. R003/R010/R011 must consume these cases in actual target tests.",
+  "selection_cases": [
+    {"id":"breakfast-start","time":"06:00","vale":["vale-breakfast"],"service_suffix":"day"},
+    {"id":"work-start","time":"08:00","vale":["vale-morning-work"],"service_suffix":"day"},
+    {"id":"fresh-10AM","time":"10:00","vale":["vale-morning-work"],"service_suffix":"day"},
+    {"id":"midday-start","time":"12:00","vale":["vale-midday-briefing"],"service_suffix":"day"},
+    {"id":"afternoon-base","time":"13:00","vale":["edric-afternoon-rounds","helena-afternoon-archive"],"service_suffix":"day"},
+    {"id":"real-fact-branch","time":"14:00","facts":{"npc-01":["npc-01-river-fishing"]},"vale":["edric-afternoon-river-notes","helena-afternoon-archive"],"service_suffix":"day"},
+    {"id":"real-gather-branch","time":"14:00","gather_count":1,"vale":["edric-afternoon-rounds","helena-afternoon-moonflower-records"],"service_suffix":"day"},
+    {"id":"zero-gather-inert","time":"14:00","gather_count":0,"vale":["edric-afternoon-rounds","helena-afternoon-archive"],"service_suffix":"day"},
+    {"id":"ledger-flag-precedence","time":"14:00","gather_count":2,"flags":{"npc-02":["npc-02-archive-lead-shared"]},"vale":["edric-afternoon-rounds","helena-afternoon-ledger-review"],"service_suffix":"day"},
+    {"id":"combined-fact-gather","time":"16:59","gather_count":1,"facts":{"npc-01":["npc-01-river-fishing"]},"vale":["edric-afternoon-river-notes","helena-afternoon-moonflower-records"],"service_suffix":"day"},
+    {"id":"evening-start","time":"17:00","vale":["edric-evening-fishing","helena-evening-archive"],"service_suffix":"day"},
+    {"id":"ordinary-rain","time":"18:00","weather":"rain","vale":["edric-evening-fishing","helena-evening-archive"],"service_suffix":"day"},
+    {"id":"derived-storm","time":"18:00","weather":"thunderstorm","vale":["edric-evening-rain-shelter","helena-evening-archive"],"service_suffix":"day"},
+    {"id":"authored-heavy-rain-fixture","time":"18:00","authored_events":["heavy-rain"],"vale":["edric-evening-rain-shelter","helena-evening-archive"],"service_suffix":"day"},
+    {"id":"home-start","time":"20:00","vale":["vale-evening-home"],"service_suffix":"day"},
+    {"id":"overnight-start","time":"22:00","vale":["vale-overnight-home"],"service_suffix":"evening"},
+    {"id":"midnight-not-day-wrap","time":"00:00","vale":["vale-overnight-home"],"service_suffix":"evening"},
+    {"id":"overnight-last-minute","time":"05:59","vale":["vale-overnight-home"],"service_suffix":"evening"}
+  ],
+  "invariants": {
+    "window":"start inclusive, end exclusive; overnight OR; empty/equal invalid",
+    "order":"priority descending then id ascending; reject whole conflicting group",
+    "rejection_precedence":["suppressedForDay","outsideWindow","conditionNotMet","participantConflict"],
+    "conditions":"all AND; event aggregate exact (kind,subjectId,targetId), min/max inclusive; now-last <= recency inclusive",
+    "weather":"effective events = authored union thunderstorm-derived heavy-rain; ordinary rain derives nothing",
+    "suppression":"clear only on day_index rollover at 10AM, not display midnight",
+    "holds":"clock advances dialogue/journal/backpack/focus-loss; movement/actions/speech held; pause/travel/load/retry freeze clock",
+    "dialogue":"eligible step, default, ordinary; allowDialogue false blocks; group lease before overlay; apply validated directive while leased, reconcile once on close",
+    "durability":"events and day suppression only; reuse memories; positions/cursors/paths/timers/leases/presentation absent from save"
+  },
+  "clock_cases": [
+    {"id":"fresh","day_index":0,"progress":0,"minute":600},
+    {"id":"midnight","day_index":0,"progress":0.5833333333333334,"minute":0},
+    {"id":"day-wrap","day_index":1,"progress":0,"minute":600},
+    {"id":"max-clock","day_index":3650,"progress":0.99,"minute":585.6}
+  ],
+  "reconstruction_cases": [
+    {"time":"22:00","routine":"vale-overnight-home","elapsed_seconds":0,"owner":"R010"},
+    {"time":"00:00","routine":"vale-overnight-home","elapsed_seconds":50,"owner":"R010"},
+    {"time":"06:00","routine":"vale-breakfast","elapsed_seconds":0,"owner":"R010"},
+    {"time":"09:45","routine":"vale-morning-work","elapsed_seconds":43.75,"owner":"R010"}
+  ],
+  "reconstruction_modes":["ordinary elapsed night transition","synthetic seek","fresh startup","manual load","scene replacement rollback/retry"],
+  "negative_directive_cases":["stale instance","wrong speaker","wrong routine","wrong step","jump outside participant plan","unknown event","reentry","invalid lease"],
+  "owners":{"selection":"R003","durable facts":"R004","cross-map and INT-064":"R010","dialogue directives":"R011","exact 25 coverage":"R013"}
+}

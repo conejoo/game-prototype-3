@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "edric-evening-rain-shelter",
+  "priority": 200,
+  "timeWindow": {
+    "start": "17:00",
+    "end": "20:00"
+  },
+  "participants": ["npc-01"],
+  "conditions": [
+    {
+      "kind": "worldEventActive",
+      "eventId": "heavy-rain"
+    }
+  ],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-01",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "reach-home-shelter",
+          "target": {
+            "mapId": "alderwake",
+            "anchorId": "edric-rain-shelter"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "review-notices-indoors",
+          "target": {
+            "mapId": "mayor-vale-home",
+            "anchorId": "edric-home-study"
+          }
+        },
+        {
+          "kind": "speech",
+          "id": "postpone-fishing",
+          "text": "The river can wait until the heavy rain passes.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "wait",
+          "id": "review-civic-notices",
+          "durationSeconds": 70
+        }
+      ]
+    }
+  ]
+}

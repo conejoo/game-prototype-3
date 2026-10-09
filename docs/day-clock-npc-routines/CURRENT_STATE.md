@@ -1,0 +1,146 @@
+# Day clock and NPC routines current state
+
+Updated 2026-10-09 UTC / America/Vancouver. R001 reference task complete;
+runtime implementation not started.
+Read [CHECKLIST](CHECKLIST.md), [CONTRACT](CONTRACT.md), [AGENT_PROMPT](AGENT_PROMPT.md).
+
+## Current selection
+
+Active task: none. R001 Done; R002-R016 Pending. Final task ID: R016. Exactly R001
+completed; stop before successor. Next eligible: R002 (R005 independently ready;
+ordered selection chooses R002). Exact next action: read local manifest/coverage,
+implement strict detached immutable routine content and routine_content_checks.gd,
+then use current tools/run_checks.ps1 with its required tests and isolated groups.
+No R001 blocker; whole checklist incomplete. [R001 acceptance](R001_ACCEPTANCE.md)
+supplies criterion evidence.
+
+Completed scope/allowlist: tools/routine_migration/**; this workflow's CHECKLIST.md,
+CURRENT_STATE.md, CONTRACT.md and R001_ACCEPTANCE.md; ignored docs/evidence/R001/**.
+No runtime activation/gameplay execution. AGENT_PROMPT.md/user workspace instructions
+preserved. Implementation ended without commit/push. Separate successful-task follow-up
+now authorizes an R001-only commit; no push or successor work.
+
+Verified baseline: target e10d13edd6035aeb3bac4cbaded6f82b756f8e39, source 60c20eb2816e7271fb84afaba286af006ebe3ccf. Source clean; target only pre-existing untracked docs/day-clock-npc-routines/ (all four user-authored planning files preserved). No nested AGENTS.md found; workspace .agents absent. Versioned and installed gameplay-testing skill/current runner/save isolation/observation guidance read. Both installed Godot executables exist. Existing Blender process is unrelated and untouched. No owned editor/game/input process started.
+
+Default sandbox process helper failed before execution twice; read-only commands work with reviewed require_escalated execution. Git reads use per-command safe.directory for both repositories, with no global configuration changes. Python alias is unavailable; verified bundled Python 3.12.14 at C:/Users/aldoc/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe. rg unavailable; bounded Python/PowerShell reads used. No automatic approval rejection.
+
+CHECKLIST owns status; CONTRACT owns stable rules and identities. Older completed N/G/F/FS/W/M/P selectors do not select this workflow's work.
+
+## Inspected baseline
+
+Repository D:/development/game-dev-blender/returning-fair-prototype; application game/.
+Read-only source D:/development/game-prototype-2.
+Target HEAD e10d13edd6035aeb3bac4cbaded6f82b756f8e39; source HEAD 60c20eb2816e7271fb84afaba286af006ebe3ccf. Both worktrees clean before plan creation. No nested target AGENTS.md found; workspace instructions supply caveman mode and Godot paths. These revisions are observations, not reset targets.
+
+Clock gap in the earlier investigation is stale: current target delivers ten-minute day/night, saved forecast/lights and heavy-rain service. Eight real NPCs/dialogue/portraits/rigs, foraging/backpack, gifts/friendship/People journal and fishing handoffs report delivery. Actual save codec is schema7/content1; architecture rejects other versions without migration/defaulting. Some handoffs retain older historical boundaries. This audit inspected current implementation/status references, not fresh gameplay/regression acceptance.
+
+Missing routine integration: NpcRegistry fixed exterior feet; NpcWorldAdapter static contact bodies/service_outlines baked into navigation and zero locomotion; single-destination PrototypeLocation travel; absent routine director/executor and Mayor-home/inn rooms. Existing GameRoot clock advances through dialogue/journal/backpack/focus loss and freezes for pause/travel/load/retry. Motion holds are separate and must preserve this policy.
+
+## Decisions and risks
+
+- Requested 25 routines exactly match existing eight villagers. Current source 39 includes 14 routines/seven people outside scope. CONTRACT enumerates selected IDs and 21 qualified move targets.
+- Add only required Mayor Vale home/Lantern Rest interiors and reciprocal doors, with real party/NPC clearance and visual review. No full-map/campaign/sleep/housing expansion.
+- Reuse existing clock/weather/social event truth. R004 chooses the next current schema after rechecking then-current bytes; no invented legacy history or cursor serialization.
+- Fixed NPC blockers must become dynamic without losing true counter/furniture collision. Loaded actors walk physically; no companion catch-up/teleport behavior.
+- Source INT-064 remains Pending: Edric can fail offscreen overnight arrival under reconstruction. R010 owns diagnosis/regression and ordinary versus seek/load proof.
+- Edric/Helena action GLBs are review variants. R012 explicitly validates/promotes production mappings.
+- Portal/room branch is independent of selector/save branch. Exactly one task per invocation; no agents launched by planning.
+
+## Planning files and investigation (historical)
+
+Only new docs/day-clock-npc-routines/{CHECKLIST,CONTRACT,AGENT_PROMPT,CURRENT_STATE}.md. No runtime, source, art, saves, exports or older workflow files changed.
+
+Read-only inspection used git status/rev-parse in both repositories; source JSON filtering; target clock/NPC/conversation/save/travel implementations; source resolver/director/executor, schema/tests and INT-064 status; relevant current handoffs. Verified installed Godot console/editor paths. Inventory returned 39 total/25 selected/21 unique qualified targets; target catalog/registry confirms eight people and codec confirms schema7. No runtime/test suite/build ran.
+
+One oversized combined documentation write failed before process creation with Windows command-length error; no files were written by that attempt. Split bounded writes created the four requested documents. This was a tooling failure, not an approval rejection or implementation blocker.
+
+## Remaining work and cleanup
+
+R002-R016 criteria remain. No current task blocker: required source/target/tool access
+exists. R001 supplies hashes/vectors and static anchor/portal/capsule audit; physical
+path/support/LOS/room checks remain their owning tasks. Reconcile later source/schema/
+world drift explicitly; never silently refresh pins or imply safe routes from static data.
+
+No owned editor/game/input process started; no held input, test save, package promotion or cleanup owed. Future tests must isolate task saves/primary/backup/APPDATA/LOCALAPPDATA and confirm pause checkpoints. Old packages do not certify future routines.
+
+## Planning verification - passed
+
+Python documentation audit read all four files and passed: 23 relative links resolve; R001-R016 each have a matching task section; all 16 statuses Pending; dependency references valid/acyclic; only R001 initially ready; copyable invocation selects this workflow. All 40 referenced existing check stems and required runner/native/support/action-asset paths resolve. Proposed routine checks remain clearly future deliverables. Source JSON independently reconfirmed 39 total routines, 25 selected, 21 qualified move targets, with every selected ID in CONTRACT. Both installed Godot executable paths exist.
+
+Readback of checklist/prompt/state and git diff --check passed. Git status shows only the four-file untracked docs/day-clock-npc-routines/ folder; source remains clean at the recorded revision. A sandbox read of source Git status initially rejected ownership; one-command safe.directory configuration repeated the read successfully, without changing global Git configuration or source files. No gameplay tests/builds ran. Planning checks verify workflow consistency, not migration acceptance.
+
+## R001 completion and exact continuation
+
+New [tools](../../tools/routine_migration/README.md) and
+[manifest](../../tools/routine_migration/reference/manifest.json) pin88 source authority
+inputs/85 selected public snapshots, exact25 IDs/eight people,14 routines/seven people
+excluded,21 anchors(11/9/1),four doors/nine directed map-pair chains. Coverage maps
+every routine/step/dialogue/outcome/condition/action/public dependency to its owner.
+No private profiles or additional runtime cast imported. All1238 pre-existing tracked
+files remain exact; source clean at60c20eb2, target HEAD e10d13ed unchanged.
+
+Interior origins: home(256,384),inn(448,672),32 units/metre. All source-anchor deltas
+zero. Proposed indoor arrivals remain unaccepted. Static audit measured seven fixed
+contact destinations, home1.5m hall versus1.7m opposing-NPC width, rest bed-corner
+center clearance0.450694m. Seven bounded repair records own R005/R007/R008/R009/R010
+work, retaining geography/counter furniture.21 consecutive move legs identify
+straight-line detours/qualified chains without certifying routes. Source INT-064
+Pending/enum unknown; actual world caller origin/release/start/elapsed pinned,
+not reproduced. Source tests read are not tests run.
+
+Targets declared before implementation: eight-NPC scheduler p95<=2ms,path p95<=5ms,
+no per-frame requests for unchanged legs,0.5s wait/two repaths; reconstruction50ms,
+64 transitions/actor512 total; one room/region/wrapper; ten-cycle owned-object/
+reservation/listener growth0 and working-set<=64MiB. Current machine/settings and
+historical N017 fixed-actor ABBA/query baseline recorded; moving budgets unmeasured.
+Existing GLBs expose action_river_fishing/action_archive_work; R012 owns promotion.
+Save7/content1 unchanged; only authored events/day suppression identified for R004.
+
+Commands used repository cwd and verified bundled Python3.12.14:
+pin_reference.py --source D:/development/game-prototype-2; audit_geometry.py;
+reference_checks.py --source D:/development/game-prototype-2 --self-test --report
+docs/evidence/R001/20261009-reference-final/results.json; audit_geometry.py --check.
+Final reference PASS1624 assertions/six drift refusals; geometry PASS2 rooms/4 doors/
+21 legs/7 repairs. JSON/text/GLB metadata inspected; no PNG claimed. Actual console
+--version confirms4.7.2.stable.mono.official.ed1daf0bf.
+
+Failure history retained: sandbox helper setup before execution, Python Store alias,
+collision.kind=none KeyError before writes, first check Windows charmap/cwd. Explicit
+none/UTF-8/correct cwd repaired them. Failed report and stable1613-assertion pass
+retained; final repeat justified by actual source world reconstruction caller/closed
+snapshot additions. Initial coverage corrected to actual coverage.status/singular
+outcomeTag before acceptance; source pins never refreshed. One final multi-file doc
+patch rejected unmatched CONTRACT context atomically; readback confirmed no partial
+status changes, then corrected patch succeeded.
+
+Default helper unavailable; bounded reviewed elevated commands succeeded. No
+auto-review rejection/extra user permission request. Per-command Git safe.directory
+only. TEMP negative copies cleaned; no APPDATA/save/test-slot use. No owned editor/
+game/native input/process or cleanup owed; unrelated Blender untouched. No source
+edits/packages/export/agents/chats/commit/push.
+
+All R001 criteria pass. Unrun gameplay/source Dart/room rendering/physical routes/
+moving performance/INT-064 reproduction is downstream work, not waived. Remaining
+unfinished IDs: R002,R003,R004,R005,R006,R007,R008,R009,R010,R011,R012,R013,R014,R015,R016.
+
+Final readback: all16 task statuses/sections/dependencies and50 relative links pass;
+nextR002/finalR016 correct. Git diff --check passes; new files only this workflow
+and tools/routine_migration. Offline reference check without live --source passes.
+No Godot process remains; unrelated Blender PID2664 untouched, no cleanup owed.
+
+## Authorized successful-task commit follow-up
+
+R001-only commit authorized after acceptance. Preflight found no unrelated staged,
+tracked or untracked changes; all new paths belong to this workflow/reference tools.
+Include unchanged pre-existing AGENT_PROMPT.md as required workflow dependency,
+preserving its authored instructions. Add tools/routine_migration/.gitattributes:
+core.autocrlf=true otherwise converts LF pins to CRLF on a fresh Windows checkout,
+invalidating exact hashes. Scoped -text reference rule preserves original and derived
+bytes; tools use LF. No root attributes, runtime, source pins or task statuses changed.
+Durable acceptance/audits are versioned; raw docs/evidence logs remain ignored per
+existing policy. Verify staged blobs against pin SHA256 before commit and commit
+tree afterwards. R002 remains Pending; no push or successor.
+Staged whitespace check found one generated INT-064 excerpt blank line at EOF.
+Trimmed that derived excerpt and updated only its derived hash/capture-history hash;
+all85 byte-exact source snapshots stayed unchanged. Rechecked reference acceptance
+and staged whitespace/blob hashes before committing.

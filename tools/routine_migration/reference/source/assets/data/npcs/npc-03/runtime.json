@@ -1,0 +1,64 @@
+{
+  "id": "npc-03",
+  "displayName": "Maris Reed",
+  "shortName": "Maris",
+  "title": "Chandlery owner",
+  "pronouns": "she/her",
+  "interactionPrompt": "Talk to Maris Reed",
+  "relationship": {
+    "levelOneAffinity": 3,
+    "levelOneLabel": "Acquaintance"
+  },
+  "dimensions": {
+    "hitWidth": 32,
+    "hitHeight": 32,
+    "interactionRadius": 64
+  },
+  "routine": {
+    "agentProfile": {
+      "id": "town-adult",
+      "footprintRadius": 10,
+      "clearance": 0
+    },
+    "actionIds": [],
+    "relationshipFlagIds": [
+      "npc-03-introduced",
+      "npc-03-careful-response",
+      "npc-03-careful-reward",
+      "npc-03-passing-response",
+      "npc-03-passing-reward"
+    ]
+  },
+  "facts": [
+    {
+      "id": "npc-03-public-role",
+      "category": "Public life",
+      "label": "Reed Chandlery",
+      "description": "Maris Reed supplies ordinary river gear at Reed Chandlery.",
+      "highlightTerm": "Reed Chandlery"
+    },
+    {
+      "id": "npc-03-supplier-practice",
+      "category": "Work",
+      "label": "Practical supplies",
+      "description": "Maris keeps line, hooks, rope and lamp oil available and asks what a fitting must do before recommending it.",
+      "highlightTerm": "line, hooks, rope and lamp oil"
+    },
+    {
+      "id": "npc-03-decorative-knots",
+      "category": "Interests",
+      "label": "Decorative knots",
+      "description": "Maris enjoys tying small decorative knots beside a cup of tea; a Moonflower brightens her work table.",
+      "highlightTerm": "decorative knots"
+    }
+  ],
+  "acceptedGiftRules": [
+    {
+      "id": "npc-03-moonflower-gift",
+      "itemId": "moonflower",
+      "requiredFactId": "npc-03-decorative-knots",
+      "affinityDelta": 1,
+      "acceptanceCap": 2
+    }
+  ]
+}

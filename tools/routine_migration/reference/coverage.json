@@ -1,0 +1,4190 @@
+{
+  "routines": [
+    {
+      "routine_id": "celia-repairs-day",
+      "participants": [
+        "npc-08"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-08",
+          "step_id": "reach-basic-repair-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-basic-repair-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "celia-basic-repairs-01"
+            }
+          },
+          "qualified_target": "alderwake:celia-basic-repairs-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-08",
+          "step_id": "remain-available-for-repairs",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "remain-available-for-repairs",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "celia-repairs-evening",
+      "participants": [
+        "npc-08"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-08",
+          "step_id": "reach-basic-repair-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-basic-repair-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "celia-basic-repairs-01"
+            }
+          },
+          "qualified_target": "alderwake:celia-basic-repairs-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-08",
+          "step_id": "remain-available-for-repairs",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "remain-available-for-repairs",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "della-inn-day",
+      "participants": [
+        "npc-14"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-14",
+          "step_id": "reach-inn-host-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-inn-host-station",
+            "target": {
+              "mapId": "lantern-rest",
+              "anchorId": "inn-host-01"
+            }
+          },
+          "qualified_target": "lantern-rest:inn-host-01",
+          "mapping_owner": "R008",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-14",
+          "step_id": "remain-available-for-guests",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "remain-available-for-guests",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "della-inn-evening",
+      "participants": [
+        "npc-14"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-14",
+          "step_id": "reach-inn-host-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-inn-host-station",
+            "target": {
+              "mapId": "lantern-rest",
+              "anchorId": "inn-host-01"
+            }
+          },
+          "qualified_target": "lantern-rest:inn-host-01",
+          "mapping_owner": "R008",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-14",
+          "step_id": "remain-available-for-guests",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "remain-available-for-guests",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "edric-afternoon-river-notes",
+      "participants": [
+        "npc-01"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [
+        {
+          "source": {
+            "kind": "learnedFact",
+            "npcId": "npc-01",
+            "factId": "npc-01-river-fishing"
+          },
+          "owner": "R003",
+          "durable_owner": "existing conversation/event memory"
+        }
+      ],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "leave-civic-briefing",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-town-square"
+            }
+          },
+          "qualified_target": "alderwake:edric-town-square",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "inspect-river-bank",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "inspect-river-bank",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-river-bank"
+            }
+          },
+          "qualified_target": "alderwake:edric-river-bank",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:edric-town-square"
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "share-river-observation",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "share-river-observation",
+            "text": "The river is quieter beyond the Old Ford.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "note-river-conditions",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "note-river-conditions",
+            "actionId": "river-fishing",
+            "durationSeconds": 86
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "edric-afternoon-rounds",
+      "participants": [
+        "npc-01"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "leave-civic-briefing",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-town-square"
+            }
+          },
+          "qualified_target": "alderwake:edric-town-square",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "walk-market-rounds",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "walk-market-rounds",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-market-rounds"
+            }
+          },
+          "qualified_target": "alderwake:edric-market-rounds",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:edric-town-square"
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "check-market-lane",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "check-market-lane",
+            "text": "Market Lane appears orderly this afternoon.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "receive-town-reports",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "receive-town-reports",
+            "durationSeconds": 90
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "edric-evening-fishing",
+      "participants": [
+        "npc-01"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [
+        {
+          "source": {
+            "kind": "worldEventInactive",
+            "eventId": "heavy-rain"
+          },
+          "owner": "R003",
+          "durable_owner": "R004 authored events + existing weather service"
+        }
+      ],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "finish-afternoon-rounds",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "finish-afternoon-rounds",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-market-rounds"
+            }
+          },
+          "qualified_target": "alderwake:edric-market-rounds",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "walk-to-river-bank",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "walk-to-river-bank",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-river-bank"
+            }
+          },
+          "qualified_target": "alderwake:edric-river-bank",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:edric-market-rounds"
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "greet-river",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "greet-river",
+            "text": "A quiet river rewards patience more than ceremony.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "fish-river",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "fish-river",
+            "actionId": "river-fishing",
+            "durationSeconds": 66
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "edric-evening-rain-shelter",
+      "participants": [
+        "npc-01"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [
+        {
+          "source": {
+            "kind": "worldEventActive",
+            "eventId": "heavy-rain"
+          },
+          "owner": "R003",
+          "durable_owner": "R004 authored events + existing weather service"
+        }
+      ],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "reach-home-shelter",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-home-shelter",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-rain-shelter"
+            }
+          },
+          "qualified_target": "alderwake:edric-rain-shelter",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "review-notices-indoors",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "review-notices-indoors",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-home-study"
+            }
+          },
+          "qualified_target": "mayor-vale-home:edric-home-study",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:edric-rain-shelter"
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "postpone-fishing",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "postpone-fishing",
+            "text": "The river can wait until the heavy rain passes.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "review-civic-notices",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "review-civic-notices",
+            "durationSeconds": 70
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "harlan-docks-day",
+      "participants": [
+        "npc-04"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-04",
+          "step_id": "reach-dock-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-dock-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "harlan-sluice-practice-01"
+            }
+          },
+          "qualified_target": "alderwake:harlan-sluice-practice-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-04",
+          "step_id": "coordinate-dock-work",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "coordinate-dock-work",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "harlan-docks-evening",
+      "participants": [
+        "npc-04"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-04",
+          "step_id": "reach-dock-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-dock-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "harlan-sluice-practice-01"
+            }
+          },
+          "qualified_target": "alderwake:harlan-sluice-practice-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-04",
+          "step_id": "review-dock-notes",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "review-dock-notes",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "helena-afternoon-archive",
+      "participants": [
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [
+        {
+          "source": {
+            "kind": "relationshipFlagUnset",
+            "npcId": "npc-02",
+            "flagId": "npc-02-archive-lead-shared"
+          },
+          "owner": "R003",
+          "durable_owner": "existing conversation/event memory"
+        }
+      ],
+      "steps": [
+        {
+          "participant_id": "npc-02",
+          "step_id": "leave-civic-briefing",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "helena-town-square"
+            }
+          },
+          "qualified_target": "alderwake:helena-town-square",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "return-to-archive",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "return-to-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-desk",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:helena-town-square"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "afternoon-index",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "afternoon-index",
+            "actionId": "archive-work",
+            "durationSeconds": 70
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "confirm-index-progress",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "confirm-index-progress",
+            "text": "These entries now agree with their shelf marks.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "check-archive-shelves",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "check-archive-shelves",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-shelves"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-shelves",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "mayor-vale-home:helena-archive-desk"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "afternoon-review-ledger",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "afternoon-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 24
+          }
+        }
+      ],
+      "dialogue_entries": [
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-indexing",
+          "step_id": "afternoon-index",
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-indexing",
+            "priority": 11,
+            "portraitId": "archive-work",
+            "text": "One moment. This index says the volume is here, while the shelf insists otherwise.",
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-indexing-choice",
+                "text": "Keep tracing it; I can wait.",
+                "outcomeTag": "npc-02-resume-archive-indexing",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-review-archive-ledger-choice",
+                "text": "I noticed a ledger reference that does not match the index.",
+                "oneTime": true,
+                "addedFlags": [
+                  "npc-02-archive-lead-shared"
+                ],
+                "outcomeTag": "npc-02-review-archive-ledger",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-indexing-choice",
+                "text": "Leave the mismatch marked and rest for today.",
+                "outcomeTag": "npc-02-end-archive-indexing",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-indexing-choice",
+            "npc-02-review-archive-ledger-choice",
+            "npc-02-end-archive-indexing-choice"
+          ]
+        },
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-default",
+          "step_id": null,
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-default",
+            "priority": 10,
+            "portraitId": "tired-rumpled",
+            "text": "Mind the open folios, please. I **cross-check every entry** before returning a page to its box.",
+            "revealedFactIds": [
+              "npc-02-archive-practice"
+            ],
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-default-choice",
+                "text": "I will let you continue.",
+                "outcomeTag": "npc-02-resume-archive-default",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-default-choice",
+                "text": "The light is fading; perhaps stop here for today.",
+                "outcomeTag": "npc-02-end-archive-default",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-default-choice",
+            "npc-02-end-archive-default-choice"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-default",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-indexing",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-review-archive-ledger",
+            "directive": {
+              "kind": "jumpToStep",
+              "participantId": "npc-02",
+              "stepId": "afternoon-review-ledger"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-default",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-indexing",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        }
+      ]
+    },
+    {
+      "routine_id": "helena-afternoon-ledger-review",
+      "participants": [
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [
+        {
+          "source": {
+            "kind": "relationshipFlagSet",
+            "npcId": "npc-02",
+            "flagId": "npc-02-archive-lead-shared"
+          },
+          "owner": "R003",
+          "durable_owner": "existing conversation/event memory"
+        }
+      ],
+      "steps": [
+        {
+          "participant_id": "npc-02",
+          "step_id": "leave-civic-briefing",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "helena-town-square"
+            }
+          },
+          "qualified_target": "alderwake:helena-town-square",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "return-to-archive",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "return-to-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-desk",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:helena-town-square"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "afternoon-index",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "afternoon-index",
+            "actionId": "archive-work",
+            "durationSeconds": 58
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "confirm-ledger-lead",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "confirm-ledger-lead",
+            "text": "That ledger reference deserves a careful review.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "check-archive-shelves",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "check-archive-shelves",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-shelves"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-shelves",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "mayor-vale-home:helena-archive-desk"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "afternoon-review-ledger",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "afternoon-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 36
+          }
+        }
+      ],
+      "dialogue_entries": [
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-indexing",
+          "step_id": "afternoon-index",
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-indexing",
+            "priority": 11,
+            "portraitId": "archive-work",
+            "text": "One moment. This index says the volume is here, while the shelf insists otherwise.",
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-indexing-choice",
+                "text": "Keep tracing it; I can wait.",
+                "outcomeTag": "npc-02-resume-archive-indexing",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-review-archive-ledger-choice",
+                "text": "I noticed a ledger reference that does not match the index.",
+                "oneTime": true,
+                "addedFlags": [
+                  "npc-02-archive-lead-shared"
+                ],
+                "outcomeTag": "npc-02-review-archive-ledger",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-indexing-choice",
+                "text": "Leave the mismatch marked and rest for today.",
+                "outcomeTag": "npc-02-end-archive-indexing",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-indexing-choice",
+            "npc-02-review-archive-ledger-choice",
+            "npc-02-end-archive-indexing-choice"
+          ]
+        },
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-default",
+          "step_id": null,
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-default",
+            "priority": 10,
+            "portraitId": "tired-rumpled",
+            "text": "Mind the open folios, please. I **cross-check every entry** before returning a page to its box.",
+            "revealedFactIds": [
+              "npc-02-archive-practice"
+            ],
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-default-choice",
+                "text": "I will let you continue.",
+                "outcomeTag": "npc-02-resume-archive-default",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-default-choice",
+                "text": "The light is fading; perhaps stop here for today.",
+                "outcomeTag": "npc-02-end-archive-default",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-default-choice",
+            "npc-02-end-archive-default-choice"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-default",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-indexing",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-review-archive-ledger",
+            "directive": {
+              "kind": "jumpToStep",
+              "participantId": "npc-02",
+              "stepId": "afternoon-review-ledger"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-default",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-indexing",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        }
+      ]
+    },
+    {
+      "routine_id": "helena-afternoon-moonflower-records",
+      "participants": [
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [
+        {
+          "source": {
+            "kind": "relationshipFlagUnset",
+            "npcId": "npc-02",
+            "flagId": "npc-02-archive-lead-shared"
+          },
+          "owner": "R003",
+          "durable_owner": "existing conversation/event memory"
+        },
+        {
+          "source": {
+            "kind": "playerEvent",
+            "eventKind": "resourceGathered",
+            "subjectId": "moonflower",
+            "targetId": null,
+            "minimumCount": 1,
+            "maximumCount": null,
+            "occurredWithinActiveSeconds": null
+          },
+          "owner": "R003",
+          "durable_owner": "existing conversation/event memory"
+        }
+      ],
+      "steps": [
+        {
+          "participant_id": "npc-02",
+          "step_id": "leave-civic-briefing",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "helena-town-square"
+            }
+          },
+          "qualified_target": "alderwake:helena-town-square",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "return-to-archive",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "return-to-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-desk",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:helena-town-square"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "afternoon-index",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "afternoon-index",
+            "actionId": "archive-work",
+            "durationSeconds": 70
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "record-moonflower-season",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "record-moonflower-season",
+            "text": "A Moonflower sighting belongs in the seasonal index.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "check-archive-shelves",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "check-archive-shelves",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-shelves"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-shelves",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "mayor-vale-home:helena-archive-desk"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "afternoon-review-ledger",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "afternoon-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 24
+          }
+        }
+      ],
+      "dialogue_entries": [
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-indexing",
+          "step_id": "afternoon-index",
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-indexing",
+            "priority": 11,
+            "portraitId": "archive-work",
+            "text": "One moment. This index says the volume is here, while the shelf insists otherwise.",
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-indexing-choice",
+                "text": "Keep tracing it; I can wait.",
+                "outcomeTag": "npc-02-resume-archive-indexing",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-review-archive-ledger-choice",
+                "text": "I noticed a ledger reference that does not match the index.",
+                "oneTime": true,
+                "addedFlags": [
+                  "npc-02-archive-lead-shared"
+                ],
+                "outcomeTag": "npc-02-review-archive-ledger",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-indexing-choice",
+                "text": "Leave the mismatch marked and rest for today.",
+                "outcomeTag": "npc-02-end-archive-indexing",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-indexing-choice",
+            "npc-02-review-archive-ledger-choice",
+            "npc-02-end-archive-indexing-choice"
+          ]
+        },
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-default",
+          "step_id": null,
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-default",
+            "priority": 10,
+            "portraitId": "tired-rumpled",
+            "text": "Mind the open folios, please. I **cross-check every entry** before returning a page to its box.",
+            "revealedFactIds": [
+              "npc-02-archive-practice"
+            ],
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-default-choice",
+                "text": "I will let you continue.",
+                "outcomeTag": "npc-02-resume-archive-default",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-default-choice",
+                "text": "The light is fading; perhaps stop here for today.",
+                "outcomeTag": "npc-02-end-archive-default",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-default-choice",
+            "npc-02-end-archive-default-choice"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-default",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-indexing",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-review-archive-ledger",
+            "directive": {
+              "kind": "jumpToStep",
+              "participantId": "npc-02",
+              "stepId": "afternoon-review-ledger"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-default",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-indexing",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        }
+      ]
+    },
+    {
+      "routine_id": "helena-evening-archive",
+      "participants": [
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-02",
+          "step_id": "return-to-archive-desk",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "return-to-archive-desk",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-desk",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "evening-index",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "evening-index",
+            "actionId": "archive-work",
+            "durationSeconds": 48
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "prepare-shelf-check",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "prepare-shelf-check",
+            "text": "One final shelf check, then the folios can rest.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "check-evening-shelves",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "check-evening-shelves",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-shelves"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-shelves",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "mayor-vale-home:helena-archive-desk"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "evening-review-ledger",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "evening-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 24
+          }
+        }
+      ],
+      "dialogue_entries": [
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-indexing",
+          "step_id": "evening-index",
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-indexing",
+            "priority": 11,
+            "portraitId": "archive-work",
+            "text": "One moment. This index says the volume is here, while the shelf insists otherwise.",
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-indexing-choice",
+                "text": "Keep tracing it; I can wait.",
+                "outcomeTag": "npc-02-resume-archive-indexing",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-review-archive-ledger-choice",
+                "text": "I noticed a ledger reference that does not match the index.",
+                "oneTime": true,
+                "addedFlags": [
+                  "npc-02-archive-lead-shared"
+                ],
+                "outcomeTag": "npc-02-review-archive-ledger",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-indexing-choice",
+                "text": "Leave the mismatch marked and rest for today.",
+                "outcomeTag": "npc-02-end-archive-indexing",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-indexing-choice",
+            "npc-02-review-archive-ledger-choice",
+            "npc-02-end-archive-indexing-choice"
+          ]
+        },
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-default",
+          "step_id": null,
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-default",
+            "priority": 10,
+            "portraitId": "tired-rumpled",
+            "text": "Mind the open folios, please. I **cross-check every entry** before returning a page to its box.",
+            "revealedFactIds": [
+              "npc-02-archive-practice"
+            ],
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-default-choice",
+                "text": "I will let you continue.",
+                "outcomeTag": "npc-02-resume-archive-default",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-default-choice",
+                "text": "The light is fading; perhaps stop here for today.",
+                "outcomeTag": "npc-02-end-archive-default",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-default-choice",
+            "npc-02-end-archive-default-choice"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-default",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-indexing",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-review-archive-ledger",
+            "directive": {
+              "kind": "jumpToStep",
+              "participantId": "npc-02",
+              "stepId": "evening-review-ledger"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-default",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-indexing",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        }
+      ]
+    },
+    {
+      "routine_id": "ivo-docks-day",
+      "participants": [
+        "npc-07"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-07",
+          "step_id": "reach-booking-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-booking-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-booking-ivo-01"
+            }
+          },
+          "qualified_target": "alderwake:passenger-booking-ivo-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "listen-to-dock-questions",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "listen-to-dock-questions",
+            "durationSeconds": 45
+          }
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "check-shore-handoff",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "check-shore-handoff",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-salvage-handoff-01"
+            }
+          },
+          "qualified_target": "alderwake:passenger-salvage-handoff-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:passenger-booking-ivo-01"
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "review-shore-lines",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "review-shore-lines",
+            "durationSeconds": 20
+          }
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "return-to-booking-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "return-to-booking-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-booking-ivo-01"
+            }
+          },
+          "qualified_target": "alderwake:passenger-booking-ivo-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:passenger-salvage-handoff-01"
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "remain-available-at-berth",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "remain-available-at-berth",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "ivo-docks-evening",
+      "participants": [
+        "npc-07"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-07",
+          "step_id": "reach-booking-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-booking-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-booking-ivo-01"
+            }
+          },
+          "qualified_target": "alderwake:passenger-booking-ivo-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "listen-to-dock-questions",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "listen-to-dock-questions",
+            "durationSeconds": 45
+          }
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "check-shore-handoff",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "check-shore-handoff",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-salvage-handoff-01"
+            }
+          },
+          "qualified_target": "alderwake:passenger-salvage-handoff-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:passenger-booking-ivo-01"
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "review-shore-lines",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "review-shore-lines",
+            "durationSeconds": 20
+          }
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "return-to-booking-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "return-to-booking-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "passenger-booking-ivo-01"
+            }
+          },
+          "qualified_target": "alderwake:passenger-booking-ivo-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:passenger-salvage-handoff-01"
+        },
+        {
+          "participant_id": "npc-07",
+          "step_id": "remain-available-at-berth",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "remain-available-at-berth",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "maris-chandlery-day",
+      "participants": [
+        "npc-03"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-03",
+          "step_id": "reach-chandlery",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-chandlery",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "maris-fitting-01"
+            }
+          },
+          "qualified_target": "alderwake:maris-fitting-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-03",
+          "step_id": "tend-ordinary-stock",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "tend-ordinary-stock",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "maris-chandlery-evening",
+      "participants": [
+        "npc-03"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-03",
+          "step_id": "reach-chandlery",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-chandlery",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "maris-fitting-01"
+            }
+          },
+          "qualified_target": "alderwake:maris-fitting-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-03",
+          "step_id": "sort-evening-stock",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "sort-evening-stock",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "tess-store-day",
+      "participants": [
+        "npc-06"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-06",
+          "step_id": "reach-store-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-store-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "store-service-tess-01"
+            }
+          },
+          "qualified_target": "alderwake:store-service-tess-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-06",
+          "step_id": "listen-to-supply-needs",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "listen-to-supply-needs",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "tess-store-evening",
+      "participants": [
+        "npc-06"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-06",
+          "step_id": "reach-store-station",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "reach-store-station",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "store-service-tess-01"
+            }
+          },
+          "qualified_target": "alderwake:store-service-tess-01",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-06",
+          "step_id": "review-store-list",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "review-store-list",
+            "durationSeconds": 400
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "vale-breakfast",
+      "participants": [
+        "npc-01",
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "take-breakfast-seat",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "take-breakfast-seat",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-breakfast"
+            }
+          },
+          "qualified_target": "mayor-vale-home:edric-breakfast",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "review-town-notices",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "review-town-notices",
+            "text": "The morning notices are ready for Market Lane.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "finish-breakfast",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "finish-breakfast",
+            "durationSeconds": 45
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "take-breakfast-seat",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "take-breakfast-seat",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-breakfast"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-breakfast",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "check-archive-list",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "check-archive-list",
+            "text": "I have three archive references to cross-check today.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "finish-breakfast",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "finish-breakfast",
+            "durationSeconds": 45
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "vale-evening-home",
+      "participants": [
+        "npc-01",
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "leave-evening-post",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-evening-post",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-rain-shelter"
+            }
+          },
+          "qualified_target": "alderwake:edric-rain-shelter",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "take-evening-seat",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "take-evening-seat",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-evening-seat"
+            }
+          },
+          "qualified_target": "mayor-vale-home:edric-evening-seat",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:edric-rain-shelter"
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "evening-at-home",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "evening-at-home",
+            "durationSeconds": 50
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "close-archive",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "close-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-desk",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "take-evening-seat",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "take-evening-seat",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-evening-seat"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-evening-seat",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "mayor-vale-home:helena-archive-desk"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "evening-at-home",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "evening-at-home",
+            "durationSeconds": 50
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "vale-midday-briefing",
+      "participants": [
+        "npc-01",
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "leave-morning-post",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-morning-post",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-market-rounds"
+            }
+          },
+          "qualified_target": "alderwake:edric-market-rounds",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "join-civic-briefing",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "join-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-town-square"
+            }
+          },
+          "qualified_target": "alderwake:edric-town-square",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "alderwake:edric-market-rounds"
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "open-civic-briefing",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "open-civic-briefing",
+            "text": "Let us compare the council notes with the public record.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "hold-civic-briefing",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "hold-civic-briefing",
+            "durationSeconds": 20
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "leave-archive",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-desk",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "join-civic-briefing",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "join-civic-briefing",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "helena-town-square"
+            }
+          },
+          "qualified_target": "alderwake:helena-town-square",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "mayor-vale-home:helena-archive-desk"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "answer-civic-briefing",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "answer-civic-briefing",
+            "text": "The archive copy and the council note now agree.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "hold-civic-briefing",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "hold-civic-briefing",
+            "durationSeconds": 20
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    },
+    {
+      "routine_id": "vale-morning-work",
+      "participants": [
+        "npc-01",
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "leave-breakfast",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-breakfast",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-breakfast"
+            }
+          },
+          "qualified_target": "mayor-vale-home:edric-breakfast",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "open-town-office",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "open-town-office",
+            "target": {
+              "mapId": "alderwake",
+              "anchorId": "edric-town-square"
+            }
+          },
+          "qualified_target": "alderwake:edric-town-square",
+          "mapping_owner": "R006",
+          "movement_owner": "R009",
+          "previous_qualified_target": "mayor-vale-home:edric-breakfast"
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "announce-office-hours",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "announce-office-hours",
+            "text": "Town questions can be brought here before noon.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "hold-office-hours",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "hold-office-hours",
+            "durationSeconds": 90
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "leave-breakfast",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "leave-breakfast",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-breakfast"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-breakfast",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "open-archive",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "open-archive",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-archive-desk"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-archive-desk",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": "mayor-vale-home:helena-breakfast"
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "morning-index",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "morning-index",
+            "actionId": "archive-work",
+            "durationSeconds": 70
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "mark-index-mismatch",
+          "kind": "speech",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "speech",
+            "id": "mark-index-mismatch",
+            "text": "This shelf index needs one more check.",
+            "durationSeconds": 4
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "morning-review-ledger",
+          "kind": "action",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "action",
+            "id": "morning-review-ledger",
+            "actionId": "archive-work",
+            "durationSeconds": 24
+          }
+        }
+      ],
+      "dialogue_entries": [
+        {
+          "npc_id": "npc-02",
+          "node_id": "npc-02-routine-archive-indexing",
+          "step_id": "morning-index",
+          "owner": "R011",
+          "source_node": {
+            "id": "npc-02-routine-archive-indexing",
+            "priority": 11,
+            "portraitId": "archive-work",
+            "text": "One moment. This index says the volume is here, while the shelf insists otherwise.",
+            "choices": [
+              {
+                "id": "npc-02-resume-archive-indexing-choice",
+                "text": "Keep tracing it; I can wait.",
+                "outcomeTag": "npc-02-resume-archive-indexing",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-review-archive-ledger-choice",
+                "text": "I noticed a ledger reference that does not match the index.",
+                "oneTime": true,
+                "addedFlags": [
+                  "npc-02-archive-lead-shared"
+                ],
+                "outcomeTag": "npc-02-review-archive-ledger",
+                "endsConversation": true
+              },
+              {
+                "id": "npc-02-end-archive-indexing-choice",
+                "text": "Leave the mismatch marked and rest for today.",
+                "outcomeTag": "npc-02-end-archive-indexing",
+                "endsConversation": true
+              }
+            ]
+          },
+          "current_target_enabled": false,
+          "directive_choice_ids": [
+            "npc-02-resume-archive-indexing-choice",
+            "npc-02-review-archive-ledger-choice",
+            "npc-02-end-archive-indexing-choice"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-default",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-resume-archive-indexing",
+            "directive": {
+              "kind": "resume"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-review-archive-ledger",
+            "directive": {
+              "kind": "jumpToStep",
+              "participantId": "npc-02",
+              "stepId": "morning-review-ledger"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": null
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-default",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        },
+        {
+          "source": {
+            "outcomeTag": "npc-02-end-archive-indexing",
+            "directive": {
+              "kind": "endRoutineForDay"
+            }
+          },
+          "owner": "R011",
+          "durable_owner": "R004"
+        }
+      ]
+    },
+    {
+      "routine_id": "vale-overnight-home",
+      "participants": [
+        "npc-01",
+        "npc-02"
+      ],
+      "selector_owner": "R003",
+      "activation_owner": "R013",
+      "conditions": [],
+      "steps": [
+        {
+          "participant_id": "npc-01",
+          "step_id": "settle-for-night",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "settle-for-night",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "edric-rest"
+            }
+          },
+          "qualified_target": "mayor-vale-home:edric-rest",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-01",
+          "step_id": "rest-until-morning",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "rest-until-morning",
+            "durationSeconds": 240
+          }
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "settle-for-night",
+          "kind": "move",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "move",
+            "id": "settle-for-night",
+            "target": {
+              "mapId": "mayor-vale-home",
+              "anchorId": "helena-rest"
+            }
+          },
+          "qualified_target": "mayor-vale-home:helena-rest",
+          "mapping_owner": "R007",
+          "movement_owner": "R009",
+          "previous_qualified_target": null
+        },
+        {
+          "participant_id": "npc-02",
+          "step_id": "rest-until-morning",
+          "kind": "wait",
+          "definition_owner": "R002",
+          "execution_owner": "R010",
+          "presentation_owner": "R012",
+          "source": {
+            "kind": "wait",
+            "id": "rest-until-morning",
+            "durationSeconds": 240
+          }
+        }
+      ],
+      "dialogue_entries": [],
+      "outcomes": []
+    }
+  ],
+  "public_dependencies": [
+    {
+      "npc_id": "npc-01",
+      "runtime": {
+        "id": "npc-01",
+        "displayName": "Mayor Edric Vale",
+        "shortName": "Edric",
+        "title": "Mayor",
+        "pronouns": "he/him",
+        "interactionPrompt": "Talk to Mayor Vale",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance",
+          "levelOneMilestone": {
+            "dialogueNodeId": "npc-01-level-1-milestone",
+            "seenFlagId": "relationshipLevel1Seen"
+          }
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 48
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [
+            "river-fishing"
+          ],
+          "relationshipFlagIds": [
+            "npc-01-first-conversation-complete",
+            "npc-01-helpful-response",
+            "npc-01-neutral-response",
+            "npc-01-helpful-reward-applied",
+            "npc-01-neutral-reward-applied",
+            "relationshipLevel1Seen"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-01-public-role",
+            "category": "Public life",
+            "label": "Town mayor",
+            "description": "Edric Vale serves as the town's mayor.",
+            "highlightTerm": "Mayor"
+          },
+          {
+            "id": "npc-01-moonflower-preference",
+            "category": "Preferences",
+            "label": "Moonflowers",
+            "description": "Edric has a particular fondness for Moonflowers.",
+            "highlightTerm": "Moonflowers"
+          },
+          {
+            "id": "npc-01-river-fishing",
+            "category": "Interests",
+            "label": "River fishing",
+            "description": "Edric values quiet mornings spent fishing by the river.",
+            "highlightTerm": "river fishing"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-01-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-01-moonflower-preference",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue_nodes": [
+        {
+          "node_id": "npc-01-initial-conversation",
+          "choice_ids": [
+            "npc-01-helpful-response",
+            "npc-01-neutral-response"
+          ],
+          "flag_ids": [
+            "npc-01-first-conversation-complete",
+            "npc-01-helpful-response",
+            "npc-01-neutral-response"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-01-initial-helpful-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-01-initial-guarded-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-01-woods-first",
+          "choice_ids": [],
+          "flag_ids": [
+            "npc-01-first-conversation-complete"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-01-woods-repeat",
+          "choice_ids": [],
+          "flag_ids": [
+            "npc-01-first-conversation-complete"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-01-moonflower-hint",
+          "choice_ids": [
+            "npc-01-gift-moonflower-from-hint"
+          ],
+          "flag_ids": [
+            "npc-01-first-conversation-complete"
+          ],
+          "fact_ids": [
+            "npc-01-moonflower-preference"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-01-follow-up-conversation",
+          "choice_ids": [
+            "npc-01-gift-moonflower-follow-up"
+          ],
+          "flag_ids": [
+            "npc-01-first-conversation-complete"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-01-gift-response",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-01-level-1-milestone",
+          "choice_ids": [],
+          "flag_ids": [
+            "relationshipLevel1Seen"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        }
+      ]
+    },
+    {
+      "npc_id": "npc-02",
+      "runtime": {
+        "id": "npc-02",
+        "displayName": "Helena Vale",
+        "shortName": "Helena",
+        "title": "Town Archivist",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Archivist Vale",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 48
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [
+            "archive-work"
+          ],
+          "relationshipFlagIds": [
+            "npc-02-first-conversation-complete",
+            "npc-02-careful-research-response",
+            "npc-02-neighborly-response",
+            "npc-02-careful-reward-applied",
+            "npc-02-neighborly-reward-applied",
+            "npc-02-archive-lead-shared"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-02-public-role",
+            "category": "Public life",
+            "label": "Town archivist",
+            "description": "Helena Vale keeps Alderwake's town archives and helps residents trace public records.",
+            "highlightTerm": "town archives"
+          },
+          {
+            "id": "npc-02-archive-practice",
+            "category": "Work",
+            "label": "Careful records",
+            "description": "Helena cross-checks every archive entry before treating it as settled history.",
+            "highlightTerm": "cross-check every entry"
+          },
+          {
+            "id": "npc-02-moonflower-pressing",
+            "category": "Interests",
+            "label": "Pressed Moonflowers",
+            "description": "Helena presses Moonflowers to preserve seasonal color beside dated archive notes.",
+            "highlightTerm": "pressed Moonflowers"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-02-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-02-moonflower-pressing",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue_nodes": [
+        {
+          "node_id": "npc-02-initial-conversation",
+          "choice_ids": [
+            "npc-02-careful-research-response",
+            "npc-02-neighborly-response"
+          ],
+          "flag_ids": [
+            "npc-02-careful-research-response",
+            "npc-02-first-conversation-complete",
+            "npc-02-neighborly-response"
+          ],
+          "fact_ids": [
+            "npc-02-public-role"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-02-initial-careful-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-02-initial-neighborly-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-02-moonflower-hint",
+          "choice_ids": [
+            "npc-02-gift-moonflower-from-hint"
+          ],
+          "flag_ids": [
+            "npc-02-first-conversation-complete"
+          ],
+          "fact_ids": [
+            "npc-02-moonflower-pressing"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-02-follow-up-conversation",
+          "choice_ids": [
+            "npc-02-gift-moonflower-follow-up"
+          ],
+          "flag_ids": [
+            "npc-02-first-conversation-complete"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-02-gift-response",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-02-routine-archive-default",
+          "choice_ids": [
+            "npc-02-resume-archive-default-choice",
+            "npc-02-end-archive-default-choice"
+          ],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-02-archive-practice"
+          ],
+          "outcome_tags": [
+            "npc-02-resume-archive-default",
+            "npc-02-end-archive-default"
+          ],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-02-routine-archive-indexing",
+          "choice_ids": [
+            "npc-02-resume-archive-indexing-choice",
+            "npc-02-review-archive-ledger-choice",
+            "npc-02-end-archive-indexing-choice"
+          ],
+          "flag_ids": [
+            "npc-02-archive-lead-shared"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [
+            "npc-02-resume-archive-indexing",
+            "npc-02-review-archive-ledger",
+            "npc-02-end-archive-indexing"
+          ],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        }
+      ]
+    },
+    {
+      "npc_id": "npc-03",
+      "runtime": {
+        "id": "npc-03",
+        "displayName": "Maris Reed",
+        "shortName": "Maris",
+        "title": "Chandlery owner",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Maris Reed",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-03-introduced",
+            "npc-03-careful-response",
+            "npc-03-careful-reward",
+            "npc-03-passing-response",
+            "npc-03-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-03-public-role",
+            "category": "Public life",
+            "label": "Reed Chandlery",
+            "description": "Maris Reed supplies ordinary river gear at Reed Chandlery.",
+            "highlightTerm": "Reed Chandlery"
+          },
+          {
+            "id": "npc-03-supplier-practice",
+            "category": "Work",
+            "label": "Practical supplies",
+            "description": "Maris keeps line, hooks, rope and lamp oil available and asks what a fitting must do before recommending it.",
+            "highlightTerm": "line, hooks, rope and lamp oil"
+          },
+          {
+            "id": "npc-03-decorative-knots",
+            "category": "Interests",
+            "label": "Decorative knots",
+            "description": "Maris enjoys tying small decorative knots beside a cup of tea; a Moonflower brightens her work table.",
+            "highlightTerm": "decorative knots"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-03-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-03-decorative-knots",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue_nodes": [
+        {
+          "node_id": "npc-03-introduction",
+          "choice_ids": [
+            "npc-03-careful-response",
+            "npc-03-passing-response"
+          ],
+          "flag_ids": [
+            "npc-03-careful-response",
+            "npc-03-introduced",
+            "npc-03-passing-response"
+          ],
+          "fact_ids": [
+            "npc-03-public-role"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-03-careful-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-03-passing-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-03-return",
+          "choice_ids": [
+            "npc-03-ask-supplies",
+            "npc-03-ask-practice",
+            "npc-03-ask-hobby",
+            "npc-03-gift-moonflower"
+          ],
+          "flag_ids": [
+            "npc-03-introduced"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-03-supplies",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-03-supplier-practice"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-03-practice",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-03-hobby",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-03-decorative-knots"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-03-gift-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        }
+      ]
+    },
+    {
+      "npc_id": "npc-04",
+      "runtime": {
+        "id": "npc-04",
+        "displayName": "Harlan Reed",
+        "shortName": "Harlan",
+        "title": "Dockmaster",
+        "pronouns": "he/him",
+        "interactionPrompt": "Talk to Harlan Reed",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-04-introduced",
+            "npc-04-careful-response",
+            "npc-04-careful-reward",
+            "npc-04-passing-response",
+            "npc-04-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-04-public-role",
+            "category": "Public life",
+            "label": "Dockmaster",
+            "description": "Harlan Reed coordinates boats, weather calls and ordinary dock repairs in Alderwake.",
+            "highlightTerm": "dockmaster"
+          },
+          {
+            "id": "npc-04-shared-checks",
+            "category": "Work",
+            "label": "Shared dock checks",
+            "description": "Harlan asks workers to keep the public quay clear and check lines and weather together.",
+            "highlightTerm": "shared checks"
+          },
+          {
+            "id": "npc-04-shore-birds",
+            "category": "Interests",
+            "label": "Shore birds",
+            "description": "Harlan enjoys watching shore birds on quiet breaks; a Moonflower suits the little pot beside his notes.",
+            "highlightTerm": "shore birds"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-04-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-04-shore-birds",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue_nodes": [
+        {
+          "node_id": "npc-04-introduction",
+          "choice_ids": [
+            "npc-04-careful-response",
+            "npc-04-passing-response"
+          ],
+          "flag_ids": [
+            "npc-04-careful-response",
+            "npc-04-introduced",
+            "npc-04-passing-response"
+          ],
+          "fact_ids": [
+            "npc-04-public-role"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-04-careful-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-04-passing-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-04-return",
+          "choice_ids": [
+            "npc-04-ask-work",
+            "npc-04-ask-weather",
+            "npc-04-ask-hobby",
+            "npc-04-gift-moonflower"
+          ],
+          "flag_ids": [
+            "npc-04-introduced"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-04-work",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-04-shared-checks"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-04-weather",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-04-hobby",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-04-shore-birds"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-04-gift-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        }
+      ]
+    },
+    {
+      "npc_id": "npc-06",
+      "runtime": {
+        "id": "npc-06",
+        "displayName": "Tess Reed",
+        "shortName": "Tess",
+        "title": "General-store owner",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Tess Reed",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-06-introduced",
+            "npc-06-careful-response",
+            "npc-06-careful-reward",
+            "npc-06-passing-response",
+            "npc-06-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-06-public-role",
+            "category": "Public life",
+            "label": "General goods",
+            "description": "Tess Reed runs Alderwake's general store, carrying staples, cloth, household goods and packed trail food.",
+            "highlightTerm": "general goods"
+          },
+          {
+            "id": "npc-06-everyday-supplies",
+            "category": "Work",
+            "label": "Everyday supplies",
+            "description": "Tess starts with practical everyday needs and welcomes supply questions without requiring favors.",
+            "highlightTerm": "everyday supplies"
+          },
+          {
+            "id": "npc-06-pressed-flowers",
+            "category": "Interests",
+            "label": "Pressed flowers",
+            "description": "Tess keeps pressed flowers in a small book; she welcomes a Moonflower for its next page.",
+            "highlightTerm": "pressed flowers"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-06-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-06-pressed-flowers",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue_nodes": [
+        {
+          "node_id": "npc-06-introduction",
+          "choice_ids": [
+            "npc-06-careful-response",
+            "npc-06-passing-response"
+          ],
+          "flag_ids": [
+            "npc-06-careful-response",
+            "npc-06-introduced",
+            "npc-06-passing-response"
+          ],
+          "fact_ids": [
+            "npc-06-public-role"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-06-careful-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-06-passing-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-06-return",
+          "choice_ids": [
+            "npc-06-ask-supplies",
+            "npc-06-ask-work",
+            "npc-06-ask-busy",
+            "npc-06-ask-hobby",
+            "npc-06-gift-moonflower"
+          ],
+          "flag_ids": [
+            "npc-06-introduced"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-06-supplies",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-06-everyday-supplies"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-06-work",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-06-busy",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-06-hobby",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-06-pressed-flowers"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-06-gift-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        }
+      ]
+    },
+    {
+      "npc_id": "npc-07",
+      "runtime": {
+        "id": "npc-07",
+        "displayName": "Ivo Oran",
+        "shortName": "Ivo",
+        "title": "River-run captain and fishmonger",
+        "pronouns": "he/him",
+        "interactionPrompt": "Talk to Ivo Oran",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-07-introduced",
+            "npc-07-careful-response",
+            "npc-07-careful-reward",
+            "npc-07-passing-response",
+            "npc-07-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-07-public-role",
+            "category": "Public life",
+            "label": "River-run captain",
+            "description": "Ivo Oran is Alderwake's river-run captain and fishmonger. He handles passenger-berth business and local fish supplies.",
+            "highlightTerm": "river-run captain"
+          },
+          {
+            "id": "npc-07-local-seamanship",
+            "category": "Work",
+            "label": "Local seamanship",
+            "description": "Ivo knows ordinary fishing and local seamanship, checking weather, lines and a clear shore before work.",
+            "highlightTerm": "local seamanship"
+          },
+          {
+            "id": "npc-07-knotwork",
+            "category": "Interests",
+            "label": "Knotwork",
+            "description": "Ivo practices knotwork and keeps river notes in a small book; he likes a pressed Moonflower between its pages.",
+            "highlightTerm": "knotwork"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-07-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-07-knotwork",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue_nodes": [
+        {
+          "node_id": "npc-07-introduction",
+          "choice_ids": [
+            "npc-07-careful-response",
+            "npc-07-passing-response"
+          ],
+          "flag_ids": [
+            "npc-07-careful-response",
+            "npc-07-introduced",
+            "npc-07-passing-response"
+          ],
+          "fact_ids": [
+            "npc-07-public-role"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-07-careful-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-07-passing-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-07-return",
+          "choice_ids": [
+            "npc-07-ask-supplies",
+            "npc-07-ask-work",
+            "npc-07-ask-busy",
+            "npc-07-ask-hobby",
+            "npc-07-gift-moonflower"
+          ],
+          "flag_ids": [
+            "npc-07-introduced"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-07-supplies",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-07-local-seamanship"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-07-work",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-07-busy",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-07-hobby",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-07-knotwork"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-07-gift-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        }
+      ]
+    },
+    {
+      "npc_id": "npc-08",
+      "runtime": {
+        "id": "npc-08",
+        "displayName": "Celia Oran",
+        "shortName": "Celia",
+        "title": "Boatwright",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Celia Oran",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-08-introduced",
+            "npc-08-careful-response",
+            "npc-08-careful-reward",
+            "npc-08-passing-response",
+            "npc-08-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-08-public-role",
+            "category": "Public life",
+            "label": "Boatwright",
+            "description": "Celia Oran is Alderwake's boatwright. She checks old hulls carefully and repairs what can safely be kept.",
+            "highlightTerm": "boatwright"
+          },
+          {
+            "id": "npc-08-basic-repairs",
+            "category": "Work",
+            "label": "Basic repairs",
+            "description": "Celia can inspect seams, mend fittings and make basic repairs. These ordinary skills are distinct from her advanced hull-shaping technique.",
+            "highlightTerm": "basic repairs"
+          },
+          {
+            "id": "npc-08-woodcarving",
+            "category": "Interests",
+            "label": "Woodcarving",
+            "description": "Celia enjoys woodcarving, making small river birds from spare wood. She likes keeping a Moonflower beside the finished carvings.",
+            "highlightTerm": "woodcarving"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-08-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-08-woodcarving",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue_nodes": [
+        {
+          "node_id": "npc-08-introduction",
+          "choice_ids": [
+            "npc-08-careful-response",
+            "npc-08-passing-response"
+          ],
+          "flag_ids": [
+            "npc-08-careful-response",
+            "npc-08-introduced",
+            "npc-08-passing-response"
+          ],
+          "fact_ids": [
+            "npc-08-public-role"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-08-careful-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-08-passing-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-08-return",
+          "choice_ids": [
+            "npc-08-ask-supplies",
+            "npc-08-ask-demo",
+            "npc-08-ask-busy",
+            "npc-08-ask-hobby",
+            "npc-08-gift-moonflower"
+          ],
+          "flag_ids": [
+            "npc-08-introduced"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-08-supplies",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-08-basic-repairs"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-08-demo",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-08-busy",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-08-hobby",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-08-woodcarving"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-08-gift-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        }
+      ]
+    },
+    {
+      "npc_id": "npc-14",
+      "runtime": {
+        "id": "npc-14",
+        "displayName": "Della Pike",
+        "shortName": "Della",
+        "title": "Lantern Rest innkeeper",
+        "pronouns": "she/her",
+        "interactionPrompt": "Talk to Della Pike",
+        "relationship": {
+          "levelOneAffinity": 3,
+          "levelOneLabel": "Acquaintance"
+        },
+        "dimensions": {
+          "hitWidth": 32,
+          "hitHeight": 32,
+          "interactionRadius": 64
+        },
+        "routine": {
+          "agentProfile": {
+            "id": "town-adult",
+            "footprintRadius": 10,
+            "clearance": 0
+          },
+          "actionIds": [],
+          "relationshipFlagIds": [
+            "npc-14-introduced",
+            "npc-14-careful-response",
+            "npc-14-careful-reward",
+            "npc-14-passing-response",
+            "npc-14-passing-reward"
+          ]
+        },
+        "facts": [
+          {
+            "id": "npc-14-public-role",
+            "category": "Public life",
+            "label": "Innkeeper",
+            "description": "Della Pike is the innkeeper at Lantern Rest, welcoming visitors and neighbors to its meal room.",
+            "highlightTerm": "innkeeper"
+          },
+          {
+            "id": "npc-14-quiet-company",
+            "category": "Care",
+            "label": "Quiet company",
+            "description": "Della offers quiet company without asking people to explain private matters. Guests may ask for space or conversation.",
+            "highlightTerm": "quiet company"
+          },
+          {
+            "id": "npc-14-quilting",
+            "category": "Interests",
+            "label": "Quilting",
+            "description": "Della enjoys quilting with useful scraps of cloth. She likes a Moonflower beside her sewing basket.",
+            "highlightTerm": "quilting"
+          }
+        ],
+        "acceptedGiftRules": [
+          {
+            "id": "npc-14-moonflower-gift",
+            "itemId": "moonflower",
+            "requiredFactId": "npc-14-quilting",
+            "affinityDelta": 1,
+            "acceptanceCap": 2
+          }
+        ]
+      },
+      "dialogue_nodes": [
+        {
+          "node_id": "npc-14-introduction",
+          "choice_ids": [
+            "npc-14-careful-response",
+            "npc-14-passing-response"
+          ],
+          "flag_ids": [
+            "npc-14-careful-response",
+            "npc-14-introduced",
+            "npc-14-passing-response"
+          ],
+          "fact_ids": [
+            "npc-14-public-role"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-careful-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-passing-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-return",
+          "choice_ids": [
+            "npc-14-ask-hosting",
+            "npc-14-ask-quiet",
+            "npc-14-ask-room",
+            "npc-14-ask-busy",
+            "npc-14-ask-hobby",
+            "npc-14-gift-moonflower"
+          ],
+          "flag_ids": [
+            "npc-14-introduced"
+          ],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-hosting",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-quiet",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-14-quiet-company"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-room",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-busy",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-hobby",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [
+            "npc-14-quilting"
+          ],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        },
+        {
+          "node_id": "npc-14-gift-end",
+          "choice_ids": [],
+          "flag_ids": [],
+          "fact_ids": [],
+          "outcome_tags": [],
+          "owner": "R011",
+          "policy": "compose with current social activation; preserve exact public text/IDs; deferred service/private nodes remain gated"
+        }
+      ]
+    }
+  ],
+  "directive_kinds": [
+    {
+      "kind": "resume",
+      "owner": "R011",
+      "exposure": "real Helena choices"
+    },
+    {
+      "kind": "jumpToStep",
+      "owner": "R011",
+      "exposure": "real Helena choices"
+    },
+    {
+      "kind": "endRoutineForDay",
+      "owner": "R011",
+      "exposure": "real Helena choices"
+    },
+    {
+      "kind": "activateWorldEvent",
+      "owner": "R011",
+      "exposure": "fixture-only; no selected production choice"
+    },
+    {
+      "kind": "deactivateWorldEvent",
+      "owner": "R011",
+      "exposure": "fixture-only; no selected production choice"
+    }
+  ],
+  "actions": [
+    {
+      "action_id": "river-fishing",
+      "npc_id": "npc-01",
+      "review_asset": "game/assets/models/npcs/npc-01-actions.glb",
+      "owner": "R012",
+      "reward": "none"
+    },
+    {
+      "action_id": "archive-work",
+      "npc_id": "npc-02",
+      "review_asset": "game/assets/models/npcs/npc-02-actions.glb",
+      "owner": "R012",
+      "reward": "none"
+    }
+  ],
+  "events": [
+    {
+      "id": "heavy-rain",
+      "owner": "R004",
+      "production": "only thunderstorm derived; authored command separate/fixture-only"
+    },
+    {
+      "id": "harbor-festival",
+      "owner": "R004",
+      "production": "allowlisted authored event, fixture-only for selected catalog"
+    }
+  ]
+}

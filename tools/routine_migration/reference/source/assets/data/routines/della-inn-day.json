@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "della-inn-day",
+  "priority": 100,
+  "timeWindow": {
+    "start": "06:00",
+    "end": "22:00"
+  },
+  "participants": [
+    "npc-14"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-14",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "reach-inn-host-station",
+          "target": {
+            "mapId": "lantern-rest",
+            "anchorId": "inn-host-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "remain-available-for-guests",
+          "durationSeconds": 400
+        }
+      ]
+    }
+  ]
+}

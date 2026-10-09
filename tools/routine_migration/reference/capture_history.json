@@ -1,0 +1,41 @@
+{
+  "failures": [
+    {
+      "phase": "shell setup",
+      "attempts": 2,
+      "error": "setup refresh had errors",
+      "writes": false,
+      "retry": "reviewed elevated commands succeeded"
+    },
+    {
+      "phase": "Python alias",
+      "error": "Microsoft Store alias; no interpreter",
+      "writes": false,
+      "retry": "verified bundled Python 3.12.14"
+    },
+    {
+      "phase": "initial mapping capture",
+      "error": "KeyError: left (collision.kind=none)",
+      "writes": false,
+      "retry": "explicit none collision handling; 87-input capture passed"
+    },
+    {
+      "phase": "first reference check",
+      "error": "Windows default charmap could not decode UTF-8 source code; preceding finalization used wrong relative cwd",
+      "evidence": "docs/evidence/R001/20261009-reference-first/results.json",
+      "retry": "explicit UTF-8 reads and repository cwd; source snapshots unchanged"
+    }
+  ],
+  "initial_derivation_correction": {
+    "file": "coverage.json",
+    "before_sha256": "f49a53886ab5a7bb01fd805982da2633ecacc868bf547dec47286637162f031d",
+    "after_sha256": "22d24f2ea0d799130b3b1e0fdecb0e808e4261c39ce8aaf9535970b40bcdcb83",
+    "reason": "actual target coverage.status and source singular outcomeTag fields verified before first acceptance check"
+  },
+  "commit_preflight_correction": {
+    "file": "INT-064.md",
+    "before_sha256": "4598a0e4caf1649f9746c0207eca94b4428ee971bfb214b05bdc71c80a096472",
+    "after_sha256": "149e445004dd2c44d83905532835d90d132b62b6859f45f896fce60d40b66d16",
+    "reason": "trim generated excerpt blank EOF line detected by staged git diff --check; original source snapshots unchanged"
+  }
+}
