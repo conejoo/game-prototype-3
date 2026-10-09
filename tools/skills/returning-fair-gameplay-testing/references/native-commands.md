@@ -8,6 +8,14 @@ coordinates: never reuse its old PID or overwrite its captures.
 
 ## Current helper contract
 
+FS006 adds F (virtual key 0x46) with the existing bounded holds, foreground and
+finally-release checks. Native output additionally admits only FS008 run children;
+standalone `TEMP/ReturningFair-FS008-<owned-name>` must match FS008 evidence and the
+canonical EXE/PCK/override hashes. All N018/G009 routes stay supported. Tests live
+under `tools/fishing/native_guard_checks.ps1`; run the shared
+`tools/tests/native_input_checks.ps1 -EvidenceTask FS006` too. These synthetic guards neither export packages nor prove
+ordinary native fishing. FS008 remains the fresh-package/timed-input human gate.
+
 ```powershell
 ./tools/native_input.ps1 -TargetProcessId $gameProcessId `
   -CommandFile $requestPath -OutputDirectory $runEvidence

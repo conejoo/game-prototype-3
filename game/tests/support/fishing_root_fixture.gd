@@ -5,6 +5,7 @@ var failures: PackedStringArray = []
 var assertions: int = 0
 var rows: Array[Dictionary] = []
 var suite: String = "fixture"
+var task: String = "FS005"
 const FISH: Array[String] = ["item-bluegill","item-river-trout","item-golden-carp"]
 
 func _initialize() -> void: _run.call_deferred()
@@ -43,12 +44,12 @@ func _run() -> void:
 	_check(game.session.inventory.select(ForagingRegistry.ROD_ITEM).is_empty(),"owned selected rod")
 	await physics_frame
 	await _exercise()
-	_check(TestRunEvidence.write_json("fishing-"+suite+".json",{"task":"FS005","proof":"synthetic positions, deterministic RNG, capacity/lifecycle fixtures; actual production root and viewport input; no ordinary catch/native claim","assertions":assertions+1,"failures":failures,"rows":rows}),"evidence write")
+	_check(TestRunEvidence.write_json("fishing-"+suite+".json",{"task":task,"proof":"synthetic positions, deterministic RNG, capacity/lifecycle fixtures; actual production root and viewport input; no ordinary catch/native claim","assertions":assertions+1,"failures":failures,"rows":rows}),"evidence write")
 	game.queue_free()
 	await process_frame
 	paused = false
 	for failure: String in failures: push_error(failure)
-	print("FS005 fishing ",suite," ","PASS" if failures.is_empty() else "FAIL"," assertions=",assertions)
+	print(task," fishing ",suite," ","PASS" if failures.is_empty() else "FAIL"," assertions=",assertions)
 	quit(0 if failures.is_empty() else 1)
 
 func _exercise() -> void: pass

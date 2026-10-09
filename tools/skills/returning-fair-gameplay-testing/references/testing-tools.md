@@ -276,6 +276,20 @@ clearly labeled. Helpers do not turn synthetic setup into normal-play evidence.
 
 ## Read-only bridge observation
 
+FS006 adds bounded debug `F` input and `fishing` observations through the same
+opt-in bridge. Observations include mode/phase/token, committed water point,
+tension/progress/zone thresholds, held state, result, displayed text/effects and
+Reel/Cancel rectangles. They invoke no commands or RNG/time/reward shortcuts.
+
+`await TestRunInteractionCapture.fishing(game, label, directory, kind, note, phase)`
+captures `targeting`, `waiting`, `bite`, `fighting` or `result`. It requires automatic
+root processing, visible contained HUD, current binding and the phase's actual
+actor/effect gates. Four live frames plus post-draw preserve session/location/item
+facts and phase/token/result identity. An expired bite or changed result is refused,
+with no PNG. Before/after observations and timing accompany genuine live frames;
+`capture_evidence.py` validates these separately from paused screenshots. Consume
+returned failures. Synthetic pose/encounter/terminal fixtures stay labeled synthetic.
+
 `observe` additionally returns `pause_overlay_visible`, `camera_controls` (projection,
 zoom, size/FOV and camera-derived movement vectors), and `environment`:
 clock/day/progress/display time/absolute minutes, weather seed and exact sample,

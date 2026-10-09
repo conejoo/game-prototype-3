@@ -45,6 +45,7 @@ var _drag_pointer: Vector2 = Vector2(-1,-1)
 var _drag_mouse_owned: bool = false
 var fishing: FishingSessionService = FishingSessionService.new()
 var fishing_preview: FishingTargetPreview
+var fishing_effects: FishingEffects
 var _fishing_pointer: Vector2 = Vector2(-1,-1)
 var _fishing_feedback: String = ""
 var _fishing_feedback_until: float = 0.0
@@ -61,6 +62,10 @@ func _ready() -> void:
 	_fishing_rng.randomize()
 	fishing_preview = FishingTargetPreview.new()
 	add_child(fishing_preview)
+	fishing_effects = FishingEffects.new()
+	add_child(fishing_effects)
+	ui.fishing_view.reel_requested.connect(func(held: bool) -> void: set_fishing_reel("pointer",held))
+	ui.fishing_view.cancel_requested.connect(func() -> void: _cancel_fishing("explicit"))
 	ui.debug_mode_requested.connect(_set_debug_shortcuts_enabled)
 	_set_debug_shortcuts_enabled("--debug-shortcuts" in OS.get_cmdline_user_args())
 	world_host.developer_fixtures = OS.is_debug_build() and (developer_fixtures or "--developer-fixtures" in OS.get_cmdline_user_args())
@@ -582,6 +587,7 @@ func save_run() -> PackedStringArray:
 
 func _refresh_interaction() -> void:
 	ui.show_foraging_feedback("")
+	ui.travel_label.visible = not get_tree().paused and not dialogue.active() and not journal_open and not backpack_open
 	if fishing.mode() != "idle":
 		selected_interaction = null
 		_present_fishing()
@@ -607,8 +613,6 @@ func _refresh_interaction() -> void:
 		ui.show_foraging_feedback("")
 	if selected_interaction != null and selected_interaction.instance_id == light_feedback_instance_id and not light_feedback.is_empty() and session.elapsed_play_seconds < light_feedback_until:
 		ui.show_travel(light_feedback + " · " + ui.travel_label.text)
-	if not _fishing_feedback.is_empty() and session.elapsed_play_seconds < _fishing_feedback_until:
-		ui.show_foraging_feedback(_fishing_feedback)
 
 
 func switch_light(target_reference: WeakRef, expected_enabled: bool) -> NpcDialogueService.Result:
@@ -1235,7 +1239,9 @@ func set_fishing_reel(source: String, held: bool) -> void:
 
 
 func _tick_fishing(delta: float) -> void:
-	if fishing.mode() == "idle": return
+	if fishing.mode() == "idle":
+		_present_fishing()
+		return
 	if not _fishing_context_allowed():
 		_cancel_fishing("combat or context changed")
 		return
@@ -1262,29 +1268,30 @@ func _publish_fishing(result: FishingSessionService.Result) -> void:
 
 func _present_fishing() -> void:
 	var view: Dictionary = fishing.snapshot()
+	view["feedback"] = _fishing_feedback if session.elapsed_play_seconds < _fishing_feedback_until else ""
+	var item: ItemDefinition = catalog.get_item(view.item_id) if catalog.initialized else null
+	view["fish_name"] = item.display_name if item != null else "fish"
+	var available: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not backpack_open and not journal_open and not dialogue.active()
+	ui.fishing_view.present(view,available)
+	ui.get_node("Screen/Footer").visible = view.mode == "idle" or not available
+	fishing_effects.present(view if available else {},player_placeholder.global_position)
 	if view.mode == "idle": return
-	var text: String = "F / right-click: cancel; Esc: cancel + pause"
-	if view.mode == "targeting":
-		text = "Fishing: aim at open water; click to cast. " + text
-	elif view.phase == "waiting":
-		text = "Fishing: waiting for a bite... " + text
-	elif view.phase == "bite":
-		text = "BITE! Fresh E: hook, then hold / release E. " + text
-	elif view.phase == "fighting":
-		text = "Fishing: hold E raises tension; release lowers. Tension %.0f%% / landed %.0f%%. " % [view.tension*100,view.progress*100] + text
-	ui.show_travel(text)
-	if session.elapsed_play_seconds < _fishing_feedback_until: ui.show_foraging_feedback(_fishing_feedback)
+	ui.travel_label.hide()
+	ui.show_travel("")
+	ui.show_foraging_feedback("")
 
 
 func _cancel_fishing(reason: String, refresh_controls: bool = true) -> void:
 	if fishing.mode() == "idle": return
 	var result: FishingSessionService.Result = fishing.cancel(reason)
 	fishing_preview.clear()
+	fishing_effects.clear()
 	if _e_down: _e_consumed = true
 	player_placeholder.clear_input()
 	player_placeholder.pointer_position = Vector2(-1,-1)
 	_fishing_feedback = result.message
 	_fishing_feedback_until = session.elapsed_play_seconds + 4.0
+	_present_fishing()
 	if refresh_controls: _update_controls()
 
 
@@ -1292,3 +1299,4 @@ func _exit_tree() -> void:
 	# No stale service can reward after its root or scene has been removed.
 	fishing.cancel("root teardown")
 	if is_instance_valid(fishing_preview): fishing_preview.clear()
+	if is_instance_valid(fishing_effects): fishing_effects.clear()

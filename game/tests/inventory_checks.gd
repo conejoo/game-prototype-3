@@ -42,7 +42,7 @@ func _definitions(catalog: ContentCatalog) -> void:
 		return
 	_check(flower.source_item_id == "moonflower" and flower.category == "forage" and flower.stack_limit == 99 and not flower.movable_pickup, "flower source behavior")
 	_check(rod.source_item_id == "fishing_rod" and rod.is_tool() and rod.stack_limit == 1 and rod.movable_pickup, "rod source behavior")
-	_check("unavailable" in rod.description, "no working fishing claim")
+	_check("press F" in rod.description and "E or Reel" in rod.description and not "unavailable" in rod.description, "implemented fishing control help")
 	for mapping: Dictionary in [
 		{"resource": "resource-moonflower", "item": FLOWER, "source": "moonflower", "hold": 600},
 		{"resource": "resource-fishing-rod", "item": ROD, "source": "fishing_rod", "hold": 500}

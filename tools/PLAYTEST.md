@@ -76,7 +76,7 @@ remain in the ignored session directory. Use a fresh directory for each run.
 | capture | none | Save actual viewport PNG; requires windowed renderer |
 | quit | none | Last step only; publish response, then normal F10 quit |
 
-Keys: W, A, S, D, E, J, B, P, SPACE, R, ESC, TAB, ENTER, +, -. Coordinates use viewport pixels
+Keys: W, A, S, D, E, F, J, B, P, SPACE, R, ESC, TAB, ENTER, +, -. Coordinates use viewport pixels
 (current prototype captures are 960x640), not desktop coordinates. Holds/waits
 are 16–5000 ms, up to 32 steps/30 seconds per request. Monotonic deadlines never
 release early; scheduling and physics quantization can extend observed duration.
@@ -131,6 +131,13 @@ it does not verify OS/hardware keyboard or window focus. Test those separately.
 A rendered capture is not a Windows export test or a quest completion shortcut.
 
 ## Native release input
+
+FS006 adds guarded native F input and matching FS008 evidence/TEMP-copy routing.
+Existing G009/N018 paths, exact canonical package hashes, foreground/client/PID
+checks and release cleanup remain mandatory. This tooling change provides access
+only: current canonical packages do not yet contain fishing, and FS008 owns fresh
+exports plus ordinary timed native catch/restart evidence. Fishing observation and
+live-phase capture APIs are documented in the shared testing-tools reference.
 
 `native_input.ps1` sends bounded Windows scan-code key holds (including B), mouse clicks and atomic drags to
 this project's canonical `builds/windows/ReturningFair.exe` or matching exact

@@ -59,6 +59,7 @@ var _fps_sample_seconds: float = 0.0
 var foraging_notice: Label
 var gather_progress: ProgressBar
 var backpack: BackpackView
+var fishing_view: FishingView
 var backpack_button: Button
 var active_item_label: Label
 var people_button: Button
@@ -120,6 +121,9 @@ func _ready() -> void:
 	$Screen.add_child(backpack)
 	backpack.selection_requested.connect(func(id: Variant) -> void: inventory_selection_requested.emit(id))
 	backpack.close_requested.connect(func() -> void: backpack_requested.emit())
+	fishing_view = FishingView.new()
+	fishing_view.name = "FishingView"
+	$Screen.add_child(fishing_view)
 	gather_progress = ProgressBar.new()
 	gather_progress.name = "GatherProgress"
 	gather_progress.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -197,7 +201,7 @@ func show_inventory(snapshot: InventorySnapshot, catalog: ContentCatalog) -> voi
 		active_item_label.text = "Active item: none · B: backpack"
 	else:
 		var item: ItemDefinition = catalog.get_item(snapshot.active_item_id)
-		active_item_label.text = ("Active tool: " if item.is_tool() else "Selected item: ") + item.display_name + (" · Fishing unavailable" if item.is_tool() else " · Gift through conversation" if item.giftable else " · No direct use")
+		active_item_label.text = ("Active tool: " if item.is_tool() else "Selected item: ") + item.display_name + (" · F: aim / cast · E: reel" if item.is_tool() else " · No direct use or current gift recipient" if item.category == "fish" else " · Gift through conversation" if item.giftable else " · No direct use")
 	backpack_button.disabled = pause_overlay.visible or dialogue_overlay.visible or journal_overlay.visible or backpack.visible
 
 
@@ -212,6 +216,9 @@ func show_foraging_progress(progress: float, active: bool) -> void:
 
 
 func show_paused(paused: bool) -> void:
+	if paused and fishing_view != null:
+		fishing_view.hide()
+		fishing_view._release_pointer()
 	settings_options.hide()
 	pause_options.show()
 	pause_overlay.visible = paused
@@ -300,13 +307,14 @@ func accepts_world_pointer(point: Vector2) -> bool:
 		and not journal_overlay.visible
 		and not dialogue_overlay.visible
 		and not $Screen/Header.get_global_rect().has_point(point)
-		and not $Screen/Footer.get_global_rect().has_point(point)
+		and not ($Screen/Footer.visible and $Screen/Footer.get_global_rect().has_point(point))
+		and not fishing_view.accepts_pointer(point)
 		and $Screen.get_global_rect().has_point(point)
 	)
 
 
 func show_camera(description: String) -> void:
-	camera_label.text = "WASD: move · Mouse: face / click attack · Space: dodge · E: interact · B: backpack · J: journal\n%s · Wheel / +/-: zoom · P: projection · Esc: pause · F10: quit" % description
+	camera_label.text = "WASD: move · Mouse: face / click attack · Space: dodge · E: interact / reel · F: fish · B: backpack · J: journal\n%s · Wheel / +/-: zoom · P: projection · Esc: pause · F10: quit" % description
 
 
 func show_location(description: String) -> void:

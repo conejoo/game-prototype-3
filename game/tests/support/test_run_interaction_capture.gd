@@ -18,6 +18,10 @@ static func dialogue(game: Node3D, label: String, directory: String, kind: Strin
 static func journal(game: Node3D, label: String, directory: String, kind: String, note: String) -> Dictionary:
 	return await _capture(game, label, directory, kind, note, "journal")
 
+static func fishing(game: Node3D, label: String, directory: String, kind: String, note: String, phase: String) -> Dictionary:
+	if phase not in ["targeting","waiting","bite","fighting","result"]: return _failure("unknown fishing capture phase")
+	return await _capture(game,label,directory,kind,note,"fishing-"+phase)
+
 static func _capture(game: Node3D, label: String, directory: String, kind: String, note: String, mode: String) -> Dictionary:
 	if DisplayServer.get_name() == "headless": return _failure("capture requires real renderer")
 	# Share pause capture's lock: a hidden pause overlay cannot masquerade as live play.
@@ -38,17 +42,20 @@ static func _capture(game: Node3D, label: String, directory: String, kind: Strin
 	var target_id: int = target.get_instance_id() if target != null else 0
 	var items: String = _items(game)
 	var conversation_token: String = game.dialogue.snapshot().get("token", "")
+	var fishing_before: Dictionary = TestRunObservation.fishing(game) if mode.begins_with("fishing-") else {}
 	var started: int = Time.get_ticks_msec()
 	TestRunCapture._capturing = true
 	for frame: int in range(SETTLE_FRAMES):
 		await tree.process_frame
 		error = _stable_guard(game, mode, owner, location_id, target_id, items)
+		if mode.begins_with("fishing-") and not _fishing_stable(game,fishing_before): error = "fishing phase/token/result changed while settling"
 		if mode == "dialogue" and game.dialogue.snapshot().get("token", "") != conversation_token: error = "conversation changed while settling"
 		if not error.is_empty():
 			TestRunCapture._capturing = false
 			return _failure(error)
 	await RenderingServer.frame_post_draw
 	error = _stable_guard(game, mode, owner, location_id, target_id, items)
+	if mode.begins_with("fishing-") and not _fishing_stable(game,fishing_before): error = "fishing phase/token/result changed while drawing"
 	if mode == "dialogue" and game.dialogue.snapshot().get("token", "") != conversation_token: error = "conversation changed while settling"
 	if error.is_empty() and mode == "backpack" and not tree.root.get_visible_rect().encloses(game.ui.backpack.panel.get_global_rect()):
 		error = "backpack panel exceeds viewport"
@@ -79,7 +86,10 @@ static func _capture(game: Node3D, label: String, directory: String, kind: Strin
 		"location":game.session.current_location_id, "snapshot":SaveCodec.snapshot(game.session),
 		"environment":TestRunObservation.environment(game), "prompt":game.ui.travel_label.text,
 		"inventory":game.session.inventory.snapshot().to_dictionary()}
-	if mode in ["hold", "hold-released"]:
+	if mode.begins_with("fishing-"):
+		result.merge({"fishing_verified":true,"panel_fits":true,"fishing_before":fishing_before,
+			"fishing_after":TestRunObservation.fishing(game),"automatic_time":game.is_processing()})
+	elif mode in ["hold", "hold-released"]:
 		result.merge({"hold_active":game.foraging_hold.active(), "hold_progress":game.foraging_hold.progress(),
 			"progress_visible":game.ui.gather_progress.is_visible_in_tree(), "e_down":game._e_down,
 			"hold_verified":true, "instance_id":target.instance_id if target != null else ""})
@@ -129,6 +139,16 @@ static func _guard(game: Variant, mode: String) -> String:
 		return "live capture input mode unavailable"
 	if game.world_host.session != game.session or not is_instance_valid(game.world_host.current_location): return "capture world owner unavailable"
 	var focus: Control = game.get_viewport().gui_get_focus_owner()
+	if mode.begins_with("fishing-"):
+		var phase: String = mode.trim_prefix("fishing-")
+		var state: Dictionary = game.fishing.snapshot()
+		if not game.is_processing() or not game.ui.fishing_view.is_visible_in_tree() or game.backpack_open or game.item_drag.active() or game.foraging_hold.active() or focus != null: return "fishing capture requires automatic time, visible HUD and free world input"
+		if not game.get_viewport().get_visible_rect().encloses(game.ui.fishing_view.panel.get_global_rect()): return "fishing panel exceeds viewport: " + str(game.ui.fishing_view.panel.get_global_rect()) + " viewport=" + str(game.get_viewport().get_visible_rect()) + " root=" + str(game.ui.fishing_view.size)
+		if phase == "result":
+			return "fishing result unavailable" if state.mode != "idle" or state.outcome.is_empty() or not game.player_placeholder.controls_enabled or game.fishing_effects.visible else ""
+		if state.phase != phase or state.mode != ("targeting" if phase == "targeting" else "attempt") or not game.fishing.binding_valid(game.session,game.world_host.current_location,game.catalog): return "fishing phase/context unavailable"
+		if phase != "targeting" and (not game.fishing.active() or game.player_placeholder.controls_enabled or not game.fishing_effects.visible): return "active fishing controls/effects unavailable"
+		return ""
 	if mode == "backpack":
 		if not game.backpack_open or not game.ui.backpack.is_visible_in_tree() or game.player_placeholder.controls_enabled or game.foraging_hold.active() or game.item_drag.active():
 			return "backpack capture requires visible modal and blocked world controls"
@@ -159,6 +179,10 @@ static func _guard(game: Variant, mode: String) -> String:
 
 static func _items(game: Node3D) -> String:
 	return TestRunSnapshot.exact_json({"inventory":game.session.inventory.snapshot().to_dictionary(), "foraging":game.session.foraging.snapshot()})
+
+static func _fishing_stable(game: Node3D, before: Dictionary) -> bool:
+	var after: Dictionary = game.fishing.snapshot()
+	return after.token == before.token and after.phase == before.phase and after.mode == before.mode and after.outcome == before.outcome
 
 static func _failure(error: String) -> Dictionary:
 	return {"ok":false, "error":error}

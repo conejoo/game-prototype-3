@@ -2,10 +2,14 @@ class_name ForagingItemVisual
 extends Node3D
 ## Editable local mesh kit. Visuals own no identity, collision, command or saved facts.
 const FLOWER_ICON: Texture2D = preload("res://assets/items/moonflower.svg")
+const FISH_ICONS: Dictionary[String, Texture2D] = {
+	"item-bluegill":preload("res://assets/items/bluegill.png"),
+	"item-river-trout":preload("res://assets/items/river_trout.png"),
+	"item-golden-carp":preload("res://assets/items/golden_carp.png")}
 const ROD_ICON: Texture2D = preload("res://assets/items/fishing_rod.svg")
 
 static func icon(item_id: String) -> Texture2D:
-	return ROD_ICON if item_id == ForagingRegistry.ROD_ITEM else FLOWER_ICON if item_id == "item-moonflower" else null
+	return ROD_ICON if item_id == ForagingRegistry.ROD_ITEM else FLOWER_ICON if item_id == "item-moonflower" else FISH_ICONS.get(item_id)
 
 func build(rod: bool) -> void:
 	if rod: _rod()

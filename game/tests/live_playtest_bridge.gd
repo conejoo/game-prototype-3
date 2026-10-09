@@ -3,7 +3,7 @@ extends Node
 
 const KEYS: Dictionary[String, int] = {
 	"W": KEY_W, "A": KEY_A, "S": KEY_S, "D": KEY_D,
-	"P": KEY_P, "E": KEY_E, "J": KEY_J, "B": KEY_B, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
+	"P": KEY_P, "E": KEY_E, "J": KEY_J, "B": KEY_B, "F": KEY_F, "ESC": KEY_ESCAPE, "TAB": KEY_TAB, "ENTER": KEY_ENTER,
 	"+": KEY_EQUAL, "-": KEY_MINUS,
 	"SPACE": KEY_SPACE, "R": KEY_R,
 }
@@ -243,6 +243,7 @@ func _observe() -> Dictionary:
 		"window_focused": game.window_focused, "retrying": game.retrying,
 		"accepted_keys": actor.movement_buttons.keys(), "ui_focus": str(focus.name) if focus != null else "",
 		"play_seconds": game.session.elapsed_play_seconds,
+		"fishing": TestRunObservation.fishing(game),
 		"health": actor.state.health, "spawn_id": game.session.current_spawn_id,
 		"transitioning": game.world_host.transitioning,
 		"transition_count": game.world_host.transition_count,

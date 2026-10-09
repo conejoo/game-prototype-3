@@ -37,7 +37,9 @@ func snapshot() -> Dictionary:
 		"tension":state.tension, "progress":state.landing_progress,
 		"wait_seconds":state.wait_seconds, "phase_seconds":state.phase_elapsed_seconds,
 		"outcome":_last.outcome, "message":_last.message, "rewarded":_last.rewarded,
-		"reel_held":not _sources.is_empty()}
+		"reel_held":not _sources.is_empty(), "safe_min":state.optimal_minimum,
+		"safe_max":state.optimal_maximum, "danger_min":state.danger_minimum,
+		"danger_max":state.danger_maximum, "danger_seconds":state.danger_seconds}
 
 static func rod(session: GameSession) -> RodActivationDefinition:
 	if session == null or not session.initialized: return null
@@ -175,7 +177,7 @@ func _result(accepted: bool, outcome: String, message: String) -> Result:
 	result.accepted = accepted
 	result.outcome = outcome
 	result.message = message
-	if accepted or (_mode == "targeting" and not message.is_empty()): _remember(result)
+	if accepted or (_mode == "targeting" and not message.is_empty()) or (_mode == "idle" and outcome in ["rod_required","invalid_map","invalid_context"]): _remember(result)
 	return result
 
 func _remember(result: Result) -> void:

@@ -60,6 +60,26 @@ with tempfile.TemporaryDirectory(prefix="returning-fair-capture-") as folder:
         except (ValueError, TypeError):
             return
         raise AssertionError(f"invalid live capture accepted: {value}")
+    for phase in ("targeting", "waiting", "bite", "fighting", "result"):
+        state = {"token": 1, "mode": "idle" if phase == "result" else "targeting" if phase == "targeting" else "attempt",
+                 "phase": "idle" if phase == "result" else phase, "outcome": "landed" if phase == "result" else "waiting",
+                 "hud_visible": True, "effects_visible": phase in {"waiting", "bite", "fighting"},
+                 "tension": .5, "progress": .25, "phase_seconds": .3}
+        fixture = {**live, "mode": "fishing-" + phase, "controls_enabled": phase in {"targeting", "result"},
+                   "automatic_time": True, "fishing_verified": True, "panel_fits": True,
+                   "fishing_before": state, "fishing_after": {**state, "phase_seconds": .4}}
+        write(fixture)
+        assert module.collect([manifest], root)[0][0]["mode"] == "fishing-" + phase
+        for field, bad in [("automatic_time", False), ("fishing_verified", False), ("panel_fits", False),
+                           ("focus", "foreign"), ("controls_enabled", not fixture["controls_enabled"]),
+                           ("fishing_before", None), ("kind", "native-input"), ("paused", True)]:
+            reject({**fixture, field: bad})
+        for field, bad in [("token", True), ("phase", "inactive"), ("mode", "wrong"),
+                           ("hud_visible", False), ("effects_visible", not state["effects_visible"]),
+                           ("tension", float("nan")), ("progress", 2), ("phase_seconds", -.1)]:
+            reject({**fixture, "fishing_before": {**state, field: bad}})
+        reject({**fixture, "fishing_after": {**state, "phase_seconds": .2}})
+        if phase == "result": reject({**fixture, "fishing_before": {**state, "outcome": ""}, "fishing_after": {**state, "outcome": ""}})
     fixtures = {}
     for mode, fields in modes.items():
         live_image = root / f"{mode}.png"

@@ -8,8 +8,8 @@ This file owns task status; [CURRENT_STATE](CURRENT_STATE.md) owns continuation;
 [CONTRACT](CONTRACT.md) owns behavior and source mappings;
 [AGENT_PROMPT](AGENT_PROMPT.md) selects this workflow.
 
-Planning complete on 2026-10-08, America/Vancouver. FS001-FS005 Done on 2026-10-09 UTC;
-FS006-FS008 Pending. Next eligible FS006. Final task FS008; checklist incomplete.
+Planning complete on 2026-10-08, America/Vancouver. FS001-FS006 Done on 2026-10-09 UTC;
+FS007-FS008 Pending. Next FS007; final task FS008; checklist incomplete.
 
 ## Selection and evidence
 
@@ -40,7 +40,7 @@ FS006-FS008 Pending. Next eligible FS006. Final task FS008; checklist incomplete
 | FS003 | Done | FS002 | Deterministic bite, hook and tension challenge |
 | FS004 | Done | FS002 | Correct 3D water targeting and cast preview |
 | FS005 | Done | FS003, FS004 | Root-owned fishing lifecycle with exactly-once rewards |
-| FS006 | Pending | FS005 | Readable public controls, HUD, fish icons and cast/bite feedback |
+| FS006 | Done | FS005 | Readable public controls, HUD, fish icons and cast/bite feedback |
 | FS007 | Pending | FS006 | Integrated ordinary play, cancellation and independent-process persistence |
 | FS008 | Pending | FS007; completed/stable independent native-delivery baseline | Fresh Windows packages and ordinary native fishing/restart proof |
 
@@ -373,3 +373,37 @@ final owned processes exited, no cleanup or approval rejection outstanding.
 Static public help/icons/effects remain FS006; ordinary unforced catch/restart FS007,
 native delivery FS008. No commit/push or successor. FS005 blockers none.
 Next FS006; remaining FS006,FS007,FS008; whole checklist incomplete. Stop here.
+
+### FS006 / 2026-10-09 UTC / Done
+
+Entry/final HEAD `93aea06a59552ce152473f95582ddc3333749a84`; clean entry Git.
+Public snapshot-only phase/bite/tension/progress HUD with text/color zones, E and
+pointer Reel/Cancel, clear rejection/result feedback, exact source fish icons and
+honest rod/bag help. Small water-anchored line/bobber/ripple cues have no collision
+or navigation. Shared detached observation/live captures enforce actual phase/
+token/automatic-time provenance and expired-bite refusal. Guarded native F/FS008
+routes preserve existing N018/G009 ownership/hash/bounds/foreground/release gates.
+No challenge luck/rules, inventory/save/schema7/content1, geography or delivery change.
+Every criterion and scope in [FS006 acceptance](FS006_ACCEPTANCE.md).
+
+Live source audit143 assertions PASS before/after;18 pins/layout/source unchanged.
+Broad isolated runner `20261009-050233710-b5e072de`: all14 cases PASS;
+UI75/session57/reward72/lifecycle344/bag148/support64/inventory199/People134/
+environment157 plus bridge/startup/render. Shared pause/settings/GUI capture
+regression `20261009-050439596-ea61d5d0`: all3 cases PASS,3 inspected PNGs.
+Final focused runner `20261009-050532433-270cde49`: all4 cases PASS,
+UI75/render225. All57 final captures/5 contact sheets and selected full-size frames
+inspected:36 automatic waiting/bite/fight across2 sizes/2 cameras/3 lighting states,
+actual warning/danger,10 terminal results,3 bags,5 entry/target negatives, final
+verified pause. Synthetic pose/seed/weather/trajectory provenance explicit.
+Python capture guards PASS; native739/FS00813/existingG0097 guards PASS, no OS input.
+
+Final1025-file digest
+`4682338c71cd307fc52812f4414b34e83652e0101a6bc544c6bf45b9d55c19d0`;
+all accepted runs source.changed=false/error=null, no diagnostics/timeouts.
+Only final render fixture warning timing/assertions differ from broad/shared runs.
+Earlier launch/import/fixture failures retained/excluded, corrected in final evidence.
+Normal saves/instructions/source/packages preserved; no process/editor/input or
+cleanup owed, approval rejection, commit or push. FS006 blockers none.
+Next FS007; remaining FS007,FS008; not every item throughFS008 is complete.
+No ordinary unforced catch/restart or native delivery claim. Stop before successor.

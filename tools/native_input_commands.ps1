@@ -1,7 +1,7 @@
 # Pure request validation and bounded dispatch, shared by the native entrypoint
 # and deterministic fault-injection tests. This file performs no OS input itself.
 function Get-NativeInputKeys {
-    return @{ W=0x57; A=0x41; S=0x53; D=0x44; E=0x45; J=0x4A; B=0x42; SPACE=0x20; ESC=0x1B; R=0x52; F10=0x79; TAB=0x09; ENTER=0x0D }
+    return @{ W=0x57; A=0x41; S=0x53; D=0x44; E=0x45; J=0x4A; B=0x42; F=0x46; SPACE=0x20; ESC=0x1B; R=0x52; F10=0x79; TAB=0x09; ENTER=0x0D }
 }
 function Assert-NativeInteger($Value, [int]$Minimum, [int]$Maximum, [string]$Name) {
     if (($Value -isnot [int] -and $Value -isnot [long]) -or $Value -lt $Minimum -or $Value -gt $Maximum) {

@@ -137,7 +137,7 @@ func present(snapshot: InventorySnapshot, catalog: ContentCatalog, force: bool =
 		details.text = "No active item. Select an owned item to inspect it.\nGathering does not select items automatically."
 	else:
 		var item: ItemDefinition = catalog.get_item(snapshot.active_item_id)
-		details.text = "%s · %d / %d\n%s\n%s" % [item.display_name,snapshot.item_counts[item.stable_id],item.stack_limit,item.description,"Active tool · Fishing unavailable." if item.is_tool() else "Selected item · Gift through conversation." if item.giftable else "Selected item · No direct use."]
+		details.text = "%s · %d / %d\n%s\n%s" % [item.display_name,snapshot.item_counts[item.stable_id],item.stack_limit,item.description,"Active tool · Close bag, F to aim, click water, E / Reel on BITE." if item.is_tool() else "Selected fish · No direct use, drop or current gift recipient." if item.category == "fish" else "Selected item · Gift through conversation." if item.giftable else "Selected item · No direct use."]
 	_focus_cycle()
 
 func open(snapshot: InventorySnapshot, catalog: ContentCatalog) -> void:

@@ -1,5 +1,5 @@
 #Requires -Version 7.0
-param([ValidateSet('F010','N018','G009')][string]$EvidenceTask='F010')
+param([ValidateSet('F010','N018','G009','FS006')][string]$EvidenceTask='F010')
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $projectRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
@@ -81,6 +81,15 @@ $result = Run-Steps $valid.steps $state
 Check ($result.ok -and $result.steps.Count -eq 3 -and $result.cleanup_errors.Count -eq 0) 'normal dispatch failed'
 Check ($state.keys.Count -eq 0 -and -not $state.mouse -and -not $result.mouse_unreleased) 'normal dispatch leaked input'
 Check (@($state.calls | Where-Object { $_.op -eq 'Key' -and $_.arguments[0] -eq 0x42 }).Count -eq 2) 'B did not send down/up'
+$fishing = @{steps=@(@{op='hold';keys=@('F','E');duration_ms=70})}
+Check ((Assert-NativeInputRequest $fishing) -eq 70) 'F/E bounded request refused'
+$fishingState = New-State
+$fishingResult = Run-Steps $fishing.steps $fishingState
+Check ($fishingResult.ok -and $fishingState.keys.Count -eq 0 -and $fishingResult.cleanup_errors.Count -eq 0) 'F/E release cleanup failed'
+Check (@($fishingState.calls | Where-Object { $_.op -eq 'Key' -and $_.arguments[0] -eq 0x46 }).Count -eq 2) 'F did not send exact down/up'
+$fishingState = New-State; $fishingState.fail_op='Wait'; $fishingState.fail_at=1
+$fishingResult = Run-Steps $fishing.steps $fishingState
+Check (-not $fishingResult.ok -and $fishingState.keys.Count -eq 0 -and $fishingResult.unreleased_keys.Count -eq 0) 'focus failure leaked F/E'
 $points = @($state.calls | Where-Object op -eq 'Pointer')
 Check ($points[0].arguments[0] -eq 40 -and $points[-1].arguments[0] -eq 220 -and $points[-1].arguments[1] -eq 110) 'drag endpoints changed'
 $waits = @($state.calls | Where-Object op -eq 'Wait')
@@ -143,11 +152,11 @@ foreach ($operation in @('click','quit')) {
     $state = New-State; $result = Run-Steps @($step) $state
     Check ($result.ok -and $result.requested_duration_ms -eq 50 -and -not $state.mouse -and $state.keys.Count -eq 0) "$operation lifecycle regression"
 }
-foreach ($task in @('F001','F007','F009','F010','P014','W010','N018','G009')) {
+foreach ($task in @('F001','F007','F009','F010','P014','W010','N018','G009','FS008')) {
     $path = Join-Path $projectRoot "docs/evidence/$task/native-future"
     Check ((Resolve-NativeEvidenceDirectory $projectRoot $path) -eq [IO.Path]::GetFullPath($path)) "native route rejected $task"
 }
-foreach ($relative in @('F000/run','F011/run','F010','F010-sibling/run','F010/../../outside/run','../evidence-sibling/F010/run','N017/run','N019/run','N018','N018-sibling/run','N018/../../outside/run','G008/run','G010/run','G009','G009-sibling/run','G009/../../outside/run')) {
+foreach ($relative in @('F000/run','F011/run','F010','F010-sibling/run','F010/../../outside/run','../evidence-sibling/F010/run','N017/run','N019/run','N018','N018-sibling/run','N018/../../outside/run','G008/run','G010/run','G009','G009-sibling/run','G009/../../outside/run','FS007/run','FS009/run','FS008','FS008-sibling/run','FS008/../../outside/run')) {
     $rejected = $false
     try { $null = Resolve-NativeEvidenceDirectory $projectRoot (Join-Path $projectRoot "docs/evidence/$relative") } catch { $rejected=$true }
     Check $rejected "unsafe F route accepted: $relative"
@@ -165,12 +174,13 @@ $guardRun = Join-Path $projectRoot ('docs/evidence/'+$EvidenceTask+'/native-guar
 New-Item -ItemType Directory -Path $guardRun | Out-Null
 $requestFile = Join-Path $guardRun 'request.json'
 $valid | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $requestFile -Encoding utf8NoBOM
-$output = Join-Path $guardRun 'refused-output'
+# FS006 verifies future FS008 routing; fixture reporting remains under FS006.
+$output = if ($EvidenceTask -eq 'FS006') {Join-Path $projectRoot ('docs/evidence/FS008/fs006-refusal-'+[Guid]::NewGuid().ToString('N'))} else {Join-Path $guardRun 'refused-output'}
 $lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory $output 2>&1)
 Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Target is not this project release executable*') 'entrypoint accepted non-release PID'
 Check (-not (Test-Path -LiteralPath $output)) 'refused executable created output directory'
 $lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory (Join-Path $projectRoot 'docs/evidence/N018/native-guard-refusal') -StandaloneDirectory $projectRoot 2>&1)
-Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Standalone input requires an owned N018/G009 directory*') 'entrypoint accepted foreign standalone directory'
+Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Standalone input requires an owned N018/G009/FS008 directory*') 'entrypoint accepted foreign standalone directory'
 $guardCrossTask = if ($EvidenceTask -eq 'N018') {'G009'} else {'N018'}
 $lines = @(& (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $projectRoot 'tools/native_input.ps1') -TargetProcessId $PID -CommandFile $requestFile -OutputDirectory $output -StandaloneDirectory (Join-Path ([IO.Path]::GetTempPath()) "ReturningFair-$guardCrossTask-guard-refusal") 2>&1)
 Check ($LASTEXITCODE -ne 0 -and ($lines -join "`n") -like '*Standalone task and evidence differ*') 'entrypoint accepted standalone outside N018 evidence'

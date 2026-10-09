@@ -43,3 +43,19 @@ static func camera(game: Node3D) -> Dictionary:
 
 static func vector(value: Vector3) -> Array[float]:
 	return [value.x, value.y, value.z]
+
+static func fishing(game: Node3D) -> Dictionary:
+	var view: Dictionary = game.fishing.snapshot()
+	view.point = vector(view.point)
+	view["hud_visible"] = game.ui.fishing_view.is_visible_in_tree()
+	view["title"] = game.ui.fishing_view.title.text
+	view["instruction"] = game.ui.fishing_view.instruction.text
+	view["tension_text"] = game.ui.fishing_view.tension_text.text
+	view["effects_visible"] = game.fishing_effects.is_visible_in_tree()
+	view["reel_rect"] = _rect(game.ui.fishing_view.reel_button)
+	view["cancel_rect"] = _rect(game.ui.fishing_view.cancel_button)
+	return view
+
+static func _rect(control: Control) -> Array[float]:
+	var rect: Rect2 = control.get_global_rect()
+	return [rect.position.x,rect.position.y,rect.size.x,rect.size.y]

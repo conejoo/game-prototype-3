@@ -20,7 +20,8 @@ def validate_state(view, path):
         if view.get("paused") is not True or view.get("pause_overlay_verified") is not True:
             raise ValueError(f"Unverified pause: {path}")
         return mode
-    if mode not in {"hold", "hold-released", "backpack", "drag", "dialogue", "journal"}:
+    fishing_modes = {"fishing-targeting", "fishing-waiting", "fishing-bite", "fishing-fighting", "fishing-result"}
+    if mode not in {"hold", "hold-released", "backpack", "drag", "dialogue", "journal", *fishing_modes}:
         raise ValueError(f"Unknown capture mode: {path}")
     if (view.get("paused") is not False or view.get("pause_overlay_verified") is not False
             or view.get("state_verified") is not True or view.get("window_focused") is not True
@@ -34,9 +35,35 @@ def validate_state(view, path):
         raise ValueError(f"Live viewport helper cannot claim native input: {path}")
     if view.get("overlay") is not (mode in {"backpack", "dialogue", "journal"}):
         raise ValueError(f"Incorrect live overlay mode: {path}")
-    if view.get("controls_enabled") is not (mode in {"hold", "hold-released"}):
+    if view.get("controls_enabled") is not (mode in {"hold", "hold-released", "fishing-targeting", "fishing-result"}):
         raise ValueError(f"Incorrect live controls: {path}")
-    if mode == "dialogue":
+    if mode in fishing_modes:
+        before, after = view.get("fishing_before"), view.get("fishing_after")
+        phase = mode.removeprefix("fishing-")
+        if (view.get("fishing_verified") is not True or view.get("automatic_time") is not True
+                or view.get("panel_fits") is not True or view.get("focus") != ""
+                or not isinstance(before, dict) or not isinstance(after, dict)):
+            raise ValueError(f"Unverified fishing capture: {path}")
+        for field in ("token", "phase", "mode", "outcome"):
+            if field not in before or before[field] != after.get(field):
+                raise ValueError(f"Fishing identity/phase changed: {path}")
+        if type(before["token"]) is not int or before["token"] < 0:
+            raise ValueError(f"Invalid fishing token: {path}")
+        expected_mode = "idle" if phase == "result" else "targeting" if phase == "targeting" else "attempt"
+        if before["mode"] != expected_mode or before["phase"] != ("idle" if phase == "result" else phase):
+            raise ValueError(f"Incorrect fishing phase: {path}")
+        for state in (before, after):
+            if state.get("hud_visible") is not True or state.get("effects_visible") is not (phase in {"waiting", "bite", "fighting"}):
+                raise ValueError(f"Incorrect fishing HUD/effects: {path}")
+            for field in ("tension", "progress", "phase_seconds"):
+                value = state.get(field)
+                if type(value) not in (int, float) or not math.isfinite(value) or value < 0 or (field != "phase_seconds" and value > 1):
+                    raise ValueError(f"Invalid fishing numeric field: {path}")
+        if after["phase_seconds"] < before["phase_seconds"] or (expected_mode == "attempt" and before["token"] <= 0):
+            raise ValueError(f"Invalid fishing time/token progression: {path}")
+        if phase == "result" and not before["outcome"]:
+            raise ValueError(f"Missing fishing result: {path}")
+    elif mode == "dialogue":
         conversation, display = view.get("conversation"), view.get("display")
         if (view.get("dialogue_modal_verified") is not True or view.get("panel_fits") is not True
                 or not isinstance(view.get("focus"), str) or not view["focus"]

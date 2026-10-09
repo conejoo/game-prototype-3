@@ -23,8 +23,8 @@ function Resolve-NativeEvidenceDirectory {
     param([Parameter(Mandatory)][string]$ProjectRoot, [Parameter(Mandatory)][string]$OutputDirectory)
     $absolute = Resolve-ProjectChildPath $ProjectRoot $OutputDirectory 'docs/evidence'
     $relative = [IO.Path]::GetRelativePath((Join-Path $ProjectRoot 'docs/evidence'), $absolute).Replace('\','/')
-    if ($relative -notmatch '^(P014|W00[1-9]|W010|F00[1-9]|F010|N018|G009)/[^/]+(?:/.*)?$') {
-        throw 'Native output must be a run subdirectory of docs/evidence/P014, W001-W010, F001-F010, N018 or G009.'
+    if ($relative -notmatch '^(P014|W00[1-9]|W010|F00[1-9]|F010|N018|G009|FS008)/[^/]+(?:/.*)?$') {
+        throw 'Native output must be a run subdirectory of docs/evidence/P014, W001-W010, F001-F010, N018, G009 or FS008.'
     }
     return $absolute
 }
@@ -35,9 +35,9 @@ function Resolve-NativeStandaloneDirectory {
     $standalone = [IO.Path]::GetFullPath($Directory).TrimEnd([char[]]'\/')
     $temporary = [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd([char[]]'\/')
     $relative = [IO.Path]::GetRelativePath($temporary, $standalone)
-    if ($relative -notmatch '^ReturningFair-(N018|G009)-[A-Za-z0-9_-]{1,64}$' -or
+    if ($relative -notmatch '^ReturningFair-(N018|G009|FS008)-[A-Za-z0-9_-]{1,64}$' -or
         -not $standalone.StartsWith($temporary + [IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)) {
-        throw 'Standalone input requires an owned N018/G009 directory directly below TEMP.'
+        throw 'Standalone input requires an owned N018/G009/FS008 directory directly below TEMP.'
     }
     $task = $Matches[1]
     $evidenceRelative = [IO.Path]::GetRelativePath((Join-Path $ProjectRoot 'docs/evidence'),$evidence).Replace('\','/')
