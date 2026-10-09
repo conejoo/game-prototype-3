@@ -13,6 +13,7 @@ func _run() -> void:
 	unsafe.prototype_fixture = true; unsafe.scene_path = "res://tests/fixtures/unsafe_location.tscn"
 	unsafe.spawn_ids = ["unsafe-no-floor","unsafe-blocked"]; manifest.definitions.append(unsafe); game.content_manifest = manifest
 	root.add_child(game); await game.world_host.transition_finished
+	game.set_process(false) # Exact paused restart oracle; explicit replay probes below.
 	game._set_paused(true)
 	var pair: Dictionary = SocialSaveFixture.setup()
 	game.npc_catalog = pair.catalog
@@ -43,8 +44,21 @@ func _run() -> void:
 		failures.append_array(game.save_run())
 		_check(FileAccess.get_file_as_string(repo.path) == raw and SaveCodec.snapshot(game.session) == before,"paused re-save exact bytes/state")
 		for id: String in ["npc-01","npc-03"]:
-			_check(game.dialogue.begin(id,"fixture-reopen").ok,"restore reopen " + id)
+			# Active routines require the real contact on its actual current map.
+			var map_id: String = game.routine_execution.actor(id).map_id
+			var definition: LocationDefinition = game.catalog.get_location(map_id)
+			var errors: PackedStringArray = game.world_host.request_transition(map_id,definition.spawn_ids[0])
+			_check(errors.is_empty(),"scheduled revisit request " + id)
+			if not errors.is_empty(): continue
+			var arrived: Array = await game.world_host.transition_finished
+			_check(arrived[0] and TestRunRoutines.contacts_match(game),"scheduled revisit unique contact " + id)
+			if not arrived[0]: continue
+			var target: PrototypeInteractable = game.world_host.current_location.npc_contacts.targets.get(id)
+			_check(target != null,"real scheduled speaker " + id)
+			if target != null: _check(game.dialogue.begin(id,target.instance_id).ok,"restore actual-instance reopen " + id)
 			game.dialogue.cancel()
+		_check(game.world_host.request_transition(before.location_id,before.spawn_id).is_empty(),"return to original saved arrival")
+		_check((await game.world_host.transition_finished)[0],"original saved map/anchor restored after physical revisits")
 		_check(SaveCodec.snapshot(game.session) == before,"reopen cannot duplicate milestone/gift/rewards/facts")
 		var live: GameSession = game.session
 		var room: PrototypeLocation = game.world_host.current_location

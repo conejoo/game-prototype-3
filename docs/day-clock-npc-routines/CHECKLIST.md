@@ -27,7 +27,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R011 | Done | R004, R010 | Routine dialogue, group leases and directives |
 | R012 | Done | R009, R010 | Readable walk/actions/speech under lifecycle holds |
 | R013 | Done | R011, R012 | All 25 routines active in ordinary play |
-| R014 | Pending | R013 | Integrated restart/rollback/retry and measured runtime bounds |
+| R014 | Done | R013 | Integrated restart/rollback/retry and measured runtime bounds |
 | R015 | Pending | R014 | Ordinary full-day/social/recovery rendered walkthrough |
 | R016 | Pending | R015 | Fresh Windows packages/native restart/travel acceptance |
 
@@ -163,14 +163,16 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001-R010 completed; R011-R016 remain Pending. Final task ID: R016.
-Next eligible: R011 (R004/R010 prerequisites verified).
+R001-R014 completed; R015-R016 remain Pending. Final task ID: R016.
+Next eligible: R015 (R014 prerequisites verified).
 Whole checklist complete: no. No current blocker.
 [R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
 [R003 acceptance](R003_ACCEPTANCE.md), [R004 acceptance](R004_ACCEPTANCE.md) and
 [R005 acceptance](R005_ACCEPTANCE.md), [R006 acceptance](R006_ACCEPTANCE.md) and
 [R007 acceptance](R007_ACCEPTANCE.md), [R008 acceptance](R008_ACCEPTANCE.md),
-[R009 acceptance](R009_ACCEPTANCE.md) and [R010 acceptance](R010_ACCEPTANCE.md) own evidence.
+[R009 acceptance](R009_ACCEPTANCE.md), [R010 acceptance](R010_ACCEPTANCE.md),
+[R011 acceptance](R011_ACCEPTANCE.md), [R012 acceptance](R012_ACCEPTANCE.md),
+[R013 acceptance](R013_ACCEPTANCE.md) and [R014 acceptance](R014_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -611,3 +613,46 @@ R013 commit follow-up: user reviewed successful acceptance and explicitly author
 the task commit. Commit turn verifies/stages only30 intended paths, including
 acceptance/exact coverage/checklist/handoff. Git and local R013 commit-audit.json
 record the result. No push or R014 work; R014-R016 remain Pending.
+
+
+R014 - Done 2026-10-09 UTC
+Result: default-root distinct-PID restart, rollback/retry, ten-cycle ownership and
+focused rendered scheduling/path/reconstruction/memory checks; bounded companion
+lease repair, actual-map social fixture and immutable-condition/assignment sampling
+optimization. Exact17 paths and all methods in R014_ACCEPTANCE.md.
+Prerequisites: R013 production director/25 routines/eight people verified. Baseline
+HEAD d84192a0 clean/empty index; source60c20eb2 untouched; no user changes overwritten.
+Final command/cwd/isolation: repository root tools/run_checks.ps1 -Task R014,
+6 named integration/preservation checks,3 writer/reader pairs, rendered profile;
+20261009-222953740-f71896fa PASS15/15, exact source fingerprint5178e0bf/1303files,
+isolated named primary/backup and APPDATA/LOCALAPPDATA under builds/testing/R014.
+Lifecycle783 including evidence write; writer51992/reader69760 exact complete state,
+no duplicate effects/cursors. Ten cycles exact per-room ownership, growth4.984MiB.
+6000 focused samples, eight live movers,23 qualified query segments; final peak
+p952.556ms, frame p959.168ms/p9913.525ms, draw363; path maxp95.464ms,
+reconstruction max2.079ms/15 total transitions, huge tick.412ms.
+CONTRACT allowed explicit measured scheduler ceiling revision2->4ms after
+3.319/3.659ms before and2.985/3.305ms optimized; original2ms failures/pins retained,
+all other budgets unchanged. Eight focused routine checks also passed on identical
+runtime owners; reference audit1626/25routines/21anchors/88pins/82adaptations/10refusals.
+All failed reports/parse and helper repair history retained; six paused synthetic
+PNGs inspected. No ordinary full-day/native proof claimed. Schema8/content1,
+source pins/geography/art/save/social/item/party owners preserved.
+Final diff/link/status/dependency/index/source/process readback: final-audit.json.
+No blockers/unrun R014 criteria. Owned engines/windows exited; no held input or
+cleanup owed, unrelated Blender preserved. No commit/push; await separate user
+instruction after review. Remaining R015,R016; all through R016 complete:no.
+Next eligible R015: ordinary600-active-second full day/social/recovery rendered
+walkthrough and its deterministic branch matrix. Stop after exactly R014.
+
+
+R014 approved budget / authorized commit follow-up
+User approved the4ms scheduler p95 ceiling after the measured FPS/cadence review:
+"yes, lets accept that and continue". Original2ms noncompliance/failed evidence and
+original R001 pins preserved; combined-slice/synthetic-fixture limits unchanged.
+Commit only17 reviewed task paths, including tracked R014 acceptance evidence,
+checklist/handoff; ignored raw evidence retained locally. All1303 accepted source
+bytes and task hashes were reverified unchanged before this approval record.
+Git and local docs/evidence/R014/commit-audit.json record commit/hash/index/tree
+verification. No push or R015 work. Threading investigations deferred.
+Remaining R015,R016; every item through R016 complete:no.

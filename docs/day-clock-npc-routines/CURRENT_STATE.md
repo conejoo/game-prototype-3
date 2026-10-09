@@ -1,5 +1,76 @@
 # Day clock and NPC routines current state
 
+## R014 approved budget and commit handoff
+
+User explicitly accepted the4ms test budget after being told the2.5ms measured
+slice includes movement/visual updates, not only schedule decisions: "yes, lets
+accept that and continue". Original2ms misses, before/after evidence and original
+budget pin retained. Approval does not change benchmark limitations or imply
+ordinary/native FPS acceptance. Threading investigation remains future work.
+
+Authorized R014 commit stages only17 reviewed paths, including tracked acceptance
+evidence/checklist/handoff; raw generated reports and failed runs remain ignored
+local evidence. Before this approval record: exact17-file task hashes, all1303
+accepted source bytes, baseline HEAD/empty index and clean original source passed.
+Commit result recorded in Git and [commit audit](../evidence/R014/commit-audit.json).
+No push; no R015 work started. R001-R014 Done; R015/R016 Pending, next eligibleR015.
+
+The following completion entry describes the implementation turn before this
+separately authorized commit.
+
+## Current R014 completion (2026-10-09 UTC)
+
+Active task:none. Exactly R014 Done; R001-R014 Done, R015/R016 Pending.
+Authoritative checklist ends at R016. Every item through R016 complete:no.
+Next eligible:R015; read CONTRACT/R014 acceptance and current testing guidance,
+then ordinary600-active-second full-day/social/recovery walkthrough and deterministic
+branch matrix. No R015 work begun. User will separately request reviewed commit;
+this implementation turn made no commit/push.
+
+Baseline HEAD d84192a07427b1bba8acb5b7d6c5c3499c8b036f, clean tree/empty index.
+Source60c20eb2816e7271fb84afaba286af006ebe3ccf unchanged. No baseline user work.
+Exact17 intended paths, acceptance criteria/commands/isolation/captures/history:
+[R014 acceptance](R014_ACCEPTANCE.md). [Final report](../evidence/R014/20261009-222953740-f71896fa/results.json)
+PASS15/15, zero diagnostics, unchanged1303-file source fingerprint5178e0bf.
+Full-root lifecycle783 including evidence write; process writer51992/reader69760
+preserve exact complete durable/forecast oracle, primary/backup and no cursor effects.
+Rollback/retry bindings intact; ten settled cycles exact per-room owners/listeners,
+4.984MiB working-set growth. Required save/social/fishing/environment/combat/
+companion/testing support checks pass on final source; no normal-save data touched.
+
+Bounded repairs: existing non-roster prototype companion graph keeps original
+service authority, only eight villagers acquire routine leases; real social process
+fixture visits actual scheduled contacts and returns to saved arrival. Immutable
+condition cache/assignment-only sample avoids rebuilding unchanged plans while
+all time/weather/fact/suppression/recency gates still evaluate each active update.
+Eight focused routine regressions passed; lifecycle additionally compares fast and
+sampled plans including finite recency expiry. All strict guards/owners preserved.
+
+Measured CONTRACT-permitted scheduler revision4ms (original2ms budget/failures
+retained): before3.319/3.659ms, optimized2.985/3.305ms; final fresh profile
+2.491/2.556ms peaks. All other budgets retained:6000 focused frames, framep959.168ms,
+p9913.525ms/draw363,23 segments maxpathp95.464ms, maxreconstruction2.079ms/
+15 total transitions, huge finite tick.412ms. Every eight mover sampled1876+
+actual motion updates/60+ completed legs;15032 unchanged-leg zero-query comparisons.
+Machine/settings/method/raw CSVs and six inspected paused synthetic PNGs in report.
+Synthetic seeds/placements/short legs are not ordinary full-day/natural-weather/
+native-package acceptance; those R015/R016 gates remain.
+
+Reference audit PASS1626 assertions/25routines/21anchors/88sourcepins/82adaptations/
+10 drift refusals. Original instructions/source/reference/geometry/art/packages
+preserved, except explicitly allowed measured CONTRACT budget paragraph. Narrow
+attributes protect accepted bytes for later separately authorized commit.
+Failed earlier runs retained (companion/social fixtures, vsync/water profile setup,
+original2ms before/after misses, repaired parse indentation); no failed report
+relabeled passed. Final audit: [scoped preservation and cleanup](../evidence/R014/final-audit.json).
+
+Blockers/unrun R014 criteria:none. Owned Godot/check windows exited, no held input
+or editor/cleanup owed; unrelated Blender preserved. Default sandbox helper setup
+failed; scoped automatically reviewed shell worked. No approval rejection.
+
+Historical handoffs below preserve earlier accepted records; current checklist
+and this newest completion control selection.
+
 ## Current R013 completion (2026-10-09 UTC)
 
 Active task:none. Exactly R013 Done; R001-R013 Done, R014-R016 Pending.

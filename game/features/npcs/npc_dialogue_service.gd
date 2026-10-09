@@ -283,7 +283,9 @@ func _token() -> String:
 	return "%d:%d:%d" % [get_instance_id(), _generation, _session.inventory.revision() if _session != null else -1]
 
 func _acquire_routine(npc_id: String, instance_id: String) -> Dictionary:
-	if routine_owner == null: return {"ok":true}
+	# Existing prototype companion graphs have their own root/service authority.
+	# Only the established villager roster can acquire a routine actor/group lease.
+	if routine_owner == null or npc_id not in NpcContentCatalog.ROSTER: return {"ok":true}
 	var acquired: Dictionary = routine_owner.acquire_dialogue(npc_id,instance_id)
 	if acquired.ok: _routine_context = acquired.context
 	return acquired

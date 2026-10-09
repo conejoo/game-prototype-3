@@ -135,6 +135,16 @@ justified budget revision requires measured before/after record. Historical stat
 statistics do not prove moving-NPC performance. Basic termination/ownership gates
 already belong R009/R010, not postponed to profiling.
 
+R014 measured revision (original R001 budget pin retained): scheduler plus eight
+loaded NPC p95<=4ms. Before optimization:3.319/3.659ms; after immutable-condition
+cache/assignment-only sampling:2.985/3.305ms on the same machine/settings, with
+physical/rig work p95 1.334/1.431ms and full-frame p95<=14.368ms. The original2ms
+additive estimate came from fixed idle contacts and had no moving physics sample.
+The4ms bound covers actual eight-body ground-support/collision/occupancy and
+visual-owner work without weakening safety, path-request or frame limits. All other
+R001 numeric budgets remain unchanged. See R014_ACCEPTANCE.md for raw before/after
+reports and final remeasurement; a failed original-budget report stays failed.
+
 R015 observes at least 600 active seconds without acceleration: night/rest/morning and solo/group departures/returns, both interiors, real learned-fact/gather/gift conditions, Helena outcomes and full existing recovery with river crossings. Deterministic matrices cover every routine/directive and thunderstorm shelter separately; random weather must not become an indefinite native gate. Claim a natural storm only when actually observed.
 
 R016 builds fresh local Windows validation/release with routine/room/action assets and current schema, pack exclusions and outside-checkout startup, then ordinary native routes, conversation/gift/recovery plus GUI Save/quit/new-process Load/revisit. Isolate saves and preserve previous packages/override by verified archive before local promotion. No publication. Historical packages/build-only/debug-bridge evidence cannot certify routines.

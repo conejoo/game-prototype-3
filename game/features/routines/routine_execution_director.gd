@@ -176,9 +176,10 @@ func tick(delta: float, held: bool = false) -> void:
 		present()
 		return
 	capture_loaded()
-	var update: Dictionary = selector.update(RoutineResolutionContext.from_session(_session))
+	var update: Dictionary = selector.update(RoutineResolutionContext.from_session(_session),false)
 	if not update.errors.is_empty(): last_error = "; ".join(update.errors); return
-	if not apply_plan(update.plan): last_error = "invalid atomic assignment plan"; return
+	if (not update.changed_participants.is_empty() or _day != update.plan.day_index) and not apply_plan(update.plan):
+		last_error = "invalid atomic assignment plan"; return
 	_prepare_night_lane()
 	var ids: Array = _actors.keys(); ids.sort()
 	for id: String in ids:
