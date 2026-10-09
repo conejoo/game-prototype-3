@@ -458,7 +458,7 @@ func _sync_npc_visuals() -> void:
 		"dialogue":dialogue.active(), "pause":get_tree().paused, "focus":not window_focused,
 		"travel":world_host.transitioning or loading_save or retrying,
 		"modal":journal_open or backpack_open, "death":player_placeholder.state != null and player_placeholder.state.health <= 0
-	}, dialogue.snapshot().get("npc_id", ""), player_placeholder.global_position)
+	}, dialogue.snapshot().get("npc_id", ""), player_placeholder.global_position, [player_placeholder,companion])
 
 
 func _on_transition_started() -> void:

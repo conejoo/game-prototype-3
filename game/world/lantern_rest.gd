@@ -114,8 +114,6 @@ func prepare_navigation() -> PackedStringArray:
 		var rect: Rect2 = Rect2(r[0],r[1],r[2],r[3]).grow(.1)
 		var points: PackedVector3Array = [Vector3(rect.position.x,0,rect.position.y),Vector3(rect.end.x,0,rect.position.y),Vector3(rect.end.x,0,rect.end.y),Vector3(rect.position.x,0,rect.end.y)]
 		geometry.add_projected_obstruction(points,-.1,2,false)
-	var host_rect: Rect2 = Rect2(-6.4,-12.4,.8,.8).grow(.1)
-	geometry.add_projected_obstruction([Vector3(host_rect.position.x,0,host_rect.position.y),Vector3(host_rect.end.x,0,host_rect.position.y),Vector3(host_rect.end.x,0,host_rect.end.y),Vector3(host_rect.position.x,0,host_rect.end.y)],-.1,2,false)
 	NavigationServer3D.bake_from_source_geometry_data(mesh,geometry)
 	if mesh.get_polygon_count() == 0: return ["Lantern Rest has no walkable navigation"]
 	navigation_region = NavigationRegion3D.new()

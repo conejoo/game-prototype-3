@@ -22,7 +22,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R006 | Done | R002, R005 | Safe exterior anchors/door approaches on pinned geometry |
 | R007 | Done | R005, R006 | Mayor Vale home and its nine required anchors |
 | R008 | Done | R005, R006 | Lantern Rest and Della's real station |
-| R009 | Pending | R002, R006 | Physical same-map movement/bounded occupancy |
+| R009 | Done | R002, R006 | Physical same-map movement/bounded occupancy |
 | R010 | Pending | R003, R004, R007, R008, R009 | Group/cross-map execution and safe night reconstruction |
 | R011 | Pending | R004, R010 | Routine dialogue, group leases and directives |
 | R012 | Pending | R009, R010 | Readable walk/actions/speech under lifecycle holds |
@@ -163,13 +163,14 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001-R008 completed; R009-R016 remain Pending. Final task ID: R016.
-Next eligible: R009 (R002/R006 prerequisites verified).
+R001-R009 completed; R010-R016 remain Pending. Final task ID: R016.
+Next eligible: R010 (R003/R004/R007/R008/R009 prerequisites verified).
 Whole checklist complete: no. No current blocker.
 [R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
 [R003 acceptance](R003_ACCEPTANCE.md), [R004 acceptance](R004_ACCEPTANCE.md) and
 [R005 acceptance](R005_ACCEPTANCE.md), [R006 acceptance](R006_ACCEPTANCE.md) and
-[R007 acceptance](R007_ACCEPTANCE.md), [R008 acceptance](R008_ACCEPTANCE.md) own evidence.
+[R007 acceptance](R007_ACCEPTANCE.md), [R008 acceptance](R008_ACCEPTANCE.md),
+[R009 acceptance](R009_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -433,3 +434,37 @@ editor/cleanup owed. Blockers/unrun R008 criteria:none. No commit/push; separate
 instruction follows review. Remaining R009-R016; every item throughR016 complete:no.
 Next eligibleR009:physical same-map movement/bounded occupancy using R002/R006 and
 pinned movement/wait/repath constants. Stop before successor.
+
+R009 - Done 2026-10-09 UTC
+Result/changed files: RoutineMovement/RoutineOccupancy and UIDs, dynamic existing
+NPC wrappers/root party injection, removal of retired bake holes, fixed world
+Maris furniture, physical/occupancy/render checks; necessary body/static-audit
+and compact portal/spawn fixture assertions, exact ledger/attributes/architecture.
+27 intended paths in [R009 acceptance](R009_ACCEPTANCE.md). No schedule activation.
+Prerequisites/preserved work: clean target9e4521c/source60c20eb2; actual R002/R006
+catalog/anchors/navigation verified. Source/user instructions/geography/schema8/
+content1/normal saves/packages/Blender2664 preserved. Scoped reviewed shell works
+around sandbox setup error; no automatic approval rejection or extra approval.
+Repository cwd,PowerShell7,console4.7.2; isolated per-check R009 APPDATA/LOCALAPPDATA/
+save_group/named primary-backup slots, separate renderer group. Final181351610
+PASS14 import/parse/required and affected cases, all exits0/forbidden diagnostics
+empty/source stable;1258-file fingerprint
+bc60cc4228e5fb3b17acb95c1a1e64e75e336bf9febfd8a77c5dc3bc7408e8bc.
+Movement1363/412samples/18legs/all eight bodies; occupancy311/opposing exact repeat/
+hero-ally/barrier/narrow-wide door/cancel-unload; NPC-world9884/9757samples,
+anchors51230/7095sweeps,inn1997/950sweeps,asset839,render31/6captures. Required
+movement-camera/companion/interaction/recovery and isolated restores pass. Live
+reference gate PASS1624/88pins/74exact adaptations/ten refusals; original before-
+hashes/source pins/reasons retained. All final six captures and full perspective
+walk inspected; both projections/planted feet/exported walk-idle/actual-foot
+public E,J,Esc holds and physical resume. Synthetic commands/party setup labeled.
+0.5s wait/two repaths/1.5s block, typed no-path/blocked/disposed, no per-frame path
+query, no attacks/teleport/ghosting/new durable fields. Maris one counter/person,
+bench/gear exact world transforms; static audits retain terrain/furniture while
+live-body blocking has dedicated actual mover evidence. Failed UID/nav-height/
+staged transforms/civic occupancy/stale compact-static assumptions retained and
+repaired/rerun; first ledger report path reused with exact failed stdout retained.
+All owned Godot exited,no input/editor/cleanup owed. Blockers/unrun R009 criteria:
+none. No commit/push; separate instruction follows review. Remaining R010-R016;
+every item throughR016 complete:no. Next eligibleR010:group/cross-map executor and
+bounded night reconstruction/sourceINT-064 regression. Stop before successor.

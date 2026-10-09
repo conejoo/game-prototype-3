@@ -98,6 +98,12 @@ func _indoor_host() -> void:
 	_check((await game.world_host.transition_finished)[0] and not game.world_host.current_location.npc_contacts.targets.has("npc-14"),"host remains only indoors after real return")
 
 func _audit_path(room: AlderwakeExterior, end: Vector3, excluded: Array[RID]) -> int:
+	# R009 navigation contains static terrain/furniture only. Transient body
+	# blocking is verified by routine_movement/occupancy_checks, not baked holes.
+	var static_excluded: Array[RID]=excluded.duplicate()
+	for id: String in room.npc_contacts.targets:
+		var target: PrototypeInteractable=room.npc_contacts.targets[id]
+		static_excluded.append((target.get_node("Body" if id=="npc-03" else "ContactBody") as CharacterBody3D).get_rid())
 	var path: PackedVector3Array = NavigationServer3D.map_get_path(room.get_world_3d().navigation_map,Vector3.ZERO,end,true)
 	_check(path.size() >= 2 and path[-1].distance_to(end) < 0.3, "reachable path " + str(end))
 	var count: int = 0
@@ -106,7 +112,7 @@ func _audit_path(room: AlderwakeExterior, end: Vector3, excluded: Array[RID]) ->
 		for step: int in range(steps+1):
 			var point: Vector3 = path[i-1].lerp(path[i],float(step)/steps)
 			point.y = room.elevation.height_at(Vector2(point.x,point.z))
-			_check(_route_safe(room,point,excluded), "full capsule route support " + str(point))
+			_check(_route_safe(room,point,static_excluded), "full static terrain/furniture capsule route support " + str(point))
 			count += 1
 	samples += count
 	return count

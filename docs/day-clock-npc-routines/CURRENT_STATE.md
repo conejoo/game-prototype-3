@@ -1,6 +1,78 @@
 # Day clock and NPC routines current state
 
-## Current R008 completion (2026-10-09 UTC)
+## Current R009 completion (2026-10-09 UTC)
+
+Active task:none. Exactly R009 completed, every criterion passes. R001-R009 Done;
+R010-R016 Pending. Blockers/unrun R009 criteria:none. Whole checklist throughR016
+complete:no. [R009 acceptance](R009_ACCEPTANCE.md) owns criterion mapping, exact
+27-path allowlist, commands/isolation/retained failures and inspected evidence.
+Implementation ended without commit/push. Separate follow-up now authorizes the
+successful R009-only commit after review. No push or R010 work.
+
+Clean target baseline9e4521c/source60c20eb2; empty index/no user changes. R002/R006
+current catalog/registry/nav artifacts verified; instructions/testing guidance and
+architecture read. No nested target AGENTS/.agents. Explicit installed engines
+verified. Sandbox shell setup fails; scoped reviewed shell works, no auto-review
+rejection. Source/user instructions/normal saves/packages/Blender2664 preserved.
+
+### Delivered scope and validation
+
+RoutineMovement/RoutineOccupancy supply injected scene-local same-map legs, weak
+live NPC/hero/ally footprints and exclusive station claims. Existing single
+wrappers now have noncombatant kinematic bodies. Maris's original bench/gear stay
+at exact world transforms under existing presentation paths. Retired NPC nav holes
+and inn host bake obstruction removed; all terrain/furniture/real counter remain.
+Physical2m/s,0.5s wait/two repaths/1.5s blockage, typed finite failures, achieved-
+motion walk/idle/facing, actual-foot reach/LOS, root holds and cancel/unload cleanup.
+No schedule activation, new saves/clock, attacks/ghosting/snaps/duplicate contacts.
+
+Repository cwd,PowerShell7,console4.7.2,GL Compatibility960x640,bundled Python3.12.14.
+[Final report](../evidence/R009/20261009-181351610-f8325aab/results.json) PASS14 cases
+including stable import/parse, all required movement/companion/dialogue/NPC-world
+checks and affected anchor/inn/asset/recovery checks plus rendered public holds.
+All exits0/forbidden diagnostics empty/source.changed=false/error=null;1258-file
+fingerprint bc60cc4228e5fb3b17acb95c1a1e64e75e336bf9febfd8a77c5dc3bc7408e8bc.
+Movement1363/412samples/18legs across all eight bodies; occupancy311; NPC-world
+9884/9757samples; anchors51230/7095sweeps; inn1997/950sweeps; asset839; renderer31.
+Each check has separate R009 save_group/slot/APPDATA/LOCALAPPDATA; renderer its own
+group. Existing isolated primary/backup/save/restore boundaries retained. No normal
+save access. Live reference gate PASS1624/88pins/74exact adaptations/ten refusals;
+original before-hashes/source pins/prior reasons preserved. No geography/schema
+change; current8/content1/social/item/party/recovery/weather ownership unchanged.
+
+Six final captures viewed on contact sheet and full walk-perspective frame:
+Ivo moves/arrives/resumes physically, exported walk/idle, planted feet/dock lane,
+both projections, public E actual contact, J modal and Esc pause. Public journeys/
+capture provenance pass; synthetic initial party placement and leg commands labeled.
+Earlier six also inspected. No ordinary schedule/natural weather/native claim.
+All owned Godot exited; no held inputs/editor/cleanup owed; Blender2664 untouched.
+
+Failed UID imports175855/180832, physical waypoint/furniture staging175932/180119,
+occupied civic return180203 and old compact/static-route assumptions180258 retained.
+Repairs preserve full static terrain/furniture sweeps while new live occupancy
+checks cover bodies; source endpoints/geography unchanged.180546 repaired cases
+pass;180858 strengthened movement/occupancy/render pass; final full run above passes.
+First ignored ledger helper missed preservation_baseline; refused drift fixed.
+Its original results path was reused; exact failed stdout is transparently retained
+in reference-first-observation.json. No failed whole run relabeled.
+
+[Final readback audit](../evidence/R009/final-audit.json) verifies1258 exact accepted
+source hashes,27 intended paths,all16 statuses/dependencies/links,isolated groups,
+unchanged HEAD/empty index/clean source and whitespace. No cleanup owed.
+
+### Exact continuation
+
+Authorized R009 commit follow-up: preflight passes all1258 accepted source hashes,
+exact27 intended paths and empty index/unchanged HEAD; no unrelated changes found.
+Stage only27 accepted paths, verify staged exact bytes/whitespace, commit, then
+verify committed paths and working-tree status. Git and ignored commit audit record
+the resulting hash. Raw task reports/captures/isolated save groups stay ignored.
+Do not push or implement successor. Remaining IDs:R010,R011,R012,R013,R014,R015,R016.
+Next implementation eligibleR010:read current plans/facts/real rooms/R009 physical
+APIs and pinned sourceINT-064, deliver group/cross-map execution and bounded night
+reconstruction, verify its own criteria. Stop after R009.
+
+## Historical R008 completion (superseded) (2026-10-09 UTC)
 
 Active task:none. Exactly R008 completed; every criterion passed. R001-R008 Done,
 R009-R016 Pending. Blockers/unrun R008 criteria:none. Whole checklist through R016

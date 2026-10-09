@@ -52,7 +52,7 @@ func _run() -> void:
 	await physics_frame
 	for entry: Dictionary in RoutineExteriorRegistry.anchors():
 		var owner: PrototypeInteractable = room.npc_contacts.targets[entry.npc_id]
-		var body: StaticBody3D = owner.get_node("Body" if entry.npc_id == "npc-03" else "ContactBody")
+		var body: CharacterBody3D = owner.get_node("Body" if entry.npc_id == "npc-03" else "ContactBody")
 		var excluded: Array[RID] = party_excluded.duplicate()
 		excluded.append(body.get_rid())
 		excluded.append(probe.get_rid())
@@ -142,6 +142,14 @@ func _nav(start: Vector3, end: Vector3, label: String) -> PackedVector3Array:
 
 func _audit(path: PackedVector3Array, label: String, excluded: Array[RID]) -> void:
 	if path.size() < 2: return
+	# This audit owns static terrain/furniture support and station fitting.
+	# R009's actual movers separately prove live occupancy/collision outcomes.
+	excluded=excluded.duplicate()
+	for id: String in room.npc_contacts.targets:
+		var target: PrototypeInteractable=room.npc_contacts.targets[id]
+		var body: CharacterBody3D=target.get_node("Body" if id=="npc-03" else "ContactBody")
+		excluded.append(body.get_rid())
+		probe.add_collision_exception_with(body)
 	probe.global_position = _height(path[0])+Vector3.UP*0.02 # labeled fixture start only
 	var length: float = 0
 	var count: int = 0
@@ -193,7 +201,7 @@ func _negative(excluded: Array[RID]) -> void:
 		_check(not NpcWorldAdapter.foot_errors(room,foot,excluded).is_empty(), "negative water/building/elevation/nonfinite " + str(foot))
 	var maris: PrototypeInteractable = room.npc_contacts.targets["npc-03"]
 	var self_excluded: Array[RID] = excluded.duplicate()
-	self_excluded.append((maris.get_node("Body") as StaticBody3D).get_rid())
+	self_excluded.append((maris.get_node("Body") as CharacterBody3D).get_rid())
 	_check(not NpcWorldAdapter.foot_errors(room,Vector3(-7.5,0,11.8),self_excluded).is_empty(), "real bench remains solid with Maris self excluded")
 	var bench: CollisionShape3D = maris.get_node("BenchBody/BenchCollision")
 	_check(bench.position == Vector3(0,0.425,0.8) and (bench.shape as BoxShape3D).size == Vector3(2.2,0.85,0.7), "original bench geometry retained")

@@ -133,3 +133,15 @@ game/world/lantern_rest.gd -text whitespace=blank-at-eol,blank-at-eof,space-befo
 game/world/lantern_rest.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/world/lantern_rest.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tools/routine_migration/build_inn.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R009 movement/occupancy components and physical/rendered evidence fixtures.
+game/features/routines/routine_movement.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/routines/routine_movement.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/routines/routine_occupancy.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/routines/routine_occupancy.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_movement_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_movement_checks.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_occupancy_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_occupancy_checks.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_movement_render.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_movement_render.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

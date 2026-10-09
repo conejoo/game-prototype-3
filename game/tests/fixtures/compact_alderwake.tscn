@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" path="res://features/interaction/prop_interaction.tscn" id="5_prop"]
 [ext_resource type="PackedScene" path="res://world/maris_counter.tscn" id="6_counter"]
 [ext_resource type="Resource" path="res://content/portals/alderwake_tollworks.tres" id="7_portal"]
+[ext_resource type="Resource" path="res://content/portals/alderwake_home.tres" id="8_home"]
+[ext_resource type="Resource" path="res://content/portals/alderwake_inn.tres" id="9_inn"]
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.29, 0.36, 0.28, 1)
@@ -154,6 +156,32 @@ stable_id = "alderwake-start"
 position = Vector3(0, 0, -2.5)
 script = ExtResource("2_spawn")
 stable_id = "alderwake-from-tollworks"
+
+[node name="HomeArrival" type="Marker3D" parent="Spawns"]
+position = Vector3(0, 0, -2.5)
+script = ExtResource("2_spawn")
+stable_id = "alderwake-from-mayor-vale-home"
+
+[node name="InnArrival" type="Marker3D" parent="Spawns"]
+position = Vector3(0, 0, -2.5)
+script = ExtResource("2_spawn")
+stable_id = "alderwake-from-lantern-rest"
+
+[node name="HomeGate" type="Node3D" parent="."]
+position = Vector3(-6, 0, -5)
+script = ExtResource("3_interact")
+instance_id = "r009-compact-home-gate"
+kind = "travel"
+prompt = "Synthetic home exit"
+portal = ExtResource("8_home")
+
+[node name="InnGate" type="Node3D" parent="."]
+position = Vector3(6, 0, -5)
+script = ExtResource("3_interact")
+instance_id = "r009-compact-inn-gate"
+kind = "travel"
+prompt = "Synthetic inn exit"
+portal = ExtResource("9_inn")
 
 [node name="TravelGate" type="Marker3D" parent="."]
 position = Vector3(0, 0, -5)

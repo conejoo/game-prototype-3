@@ -27,7 +27,6 @@ func _init() -> void:
 	counter.position = Vector3(-7.5, 0, 11)
 	counter.set_meta("source_instance_id", "maris-chandlery-01")
 	add_child(counter)
-	service_outlines.append(Rect2(-7.85, 10.65, 0.7, 0.7))
 	service_outlines.append(Rect2(-8.6, 11.45, 2.2, 0.7))
 	var station: PrototypeInteractable = preload("res://features/interaction/npc_interaction.tscn").instantiate()
 	station.name = "TemporaryCompanion"

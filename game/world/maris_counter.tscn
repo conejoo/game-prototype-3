@@ -104,7 +104,7 @@ font_size = 24
 text = "Prototype Reed Chandlery
 Basic supplies"
 
-[node name="Body" type="StaticBody3D" parent="."]
+[node name="Body" type="CharacterBody3D" parent="."]
 
 [node name="MarisCollision" type="CollisionShape3D" parent="Body"]
 position = Vector3(0, 0.8, 0)

@@ -158,7 +158,7 @@ func _wrappers() -> void:
 	_check(arrival[0],"synthetic contact wrapper arrival")
 	if arrival[0]:
 		var target: PrototypeInteractable = game.world_host.current_location.npc_contacts.targets["npc-01"]
-		var body: StaticBody3D = target.get_node("ContactBody")
+		var body: CharacterBody3D = target.get_node("ContactBody")
 		var before: Transform3D = body.global_transform
 		var p: NpcVisualPresenter = NpcVisualPresenter.new()
 		target.get_node("VisualRoot").add_child(p)

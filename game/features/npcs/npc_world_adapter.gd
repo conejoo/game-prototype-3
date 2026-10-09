@@ -3,6 +3,48 @@ extends Node3D
 ## Scene-owned noncombatant wrappers. VisualRoot is replaced by character tasks.
 var targets: Dictionary[String, PrototypeInteractable] = {}
 var presenters: Dictionary[String, NpcVisualPresenter] = {}
+var movers: Dictionary[String, RoutineMovement] = {}
+var occupancy: RoutineOccupancy = RoutineOccupancy.new()
+var _holds: Dictionary = {}
+
+func _init() -> void:
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+
+func _ready() -> void:
+	_pin_counter_furniture()
+
+func _pin_counter_furniture() -> void:
+	if not targets.has("npc-03"): return
+	# Staging builds contacts before location enters the tree. Pin furniture
+	# only once world transforms are available, before any physics motion.
+	for path: String in ["BenchBody","VisualRoot/Bench","VisualRoot/BasicSupplies","VisualRoot/FittingGear","VisualRoot/SpecialistGear","VisualRoot/ServiceBoard"]:
+		var furnishing: Node3D = targets["npc-03"].get_node(path)
+		var fixed_transform: Transform3D = furnishing.global_transform
+		furnishing.set_as_top_level(true)
+		furnishing.global_transform = fixed_transform
+
+func _physics_process(delta: float) -> void:
+	var held: bool = false
+	for reason: String in _holds:
+		held = held or _holds[reason]
+	var ids: Array = movers.keys()
+	ids.sort()
+	for id: String in ids:
+		movers[id].step(delta,held)
+		if presenters.has(id):
+			presenters[id].set_locomotion(movers[id].achieved_speed)
+			if movers[id].achieved_speed > .001:
+				presenters[id].face_direction(movers[id].achieved_direction)
+
+func _exit_tree() -> void:
+	for mover: RoutineMovement in movers.values(): mover.dispose()
+	occupancy.clear()
+
+func move_to(id: String, foot: Vector3) -> bool:
+	return movers.has(id) and movers[id].begin(foot)
+
+func cancel_move(id: String) -> void:
+	if movers.has(id): movers[id].cancel()
 
 func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStringArray:
 	if not targets.is_empty(): return PackedStringArray(["NPC contacts already built"])
@@ -31,7 +73,7 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			target.position = entry.foot
 			target.reach = entry.reach
 			add_child(target)
-			var body: StaticBody3D = StaticBody3D.new()
+			var body: CharacterBody3D = CharacterBody3D.new()
 			body.name = "ContactBody"
 			var shape: CollisionShape3D = CollisionShape3D.new()
 			var capsule: CapsuleShape3D = CapsuleShape3D.new()
@@ -44,9 +86,12 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			var visual: Node3D = Node3D.new()
 			visual.name = "VisualRoot"
 			target.add_child(visual)
-			if location is AlderwakeExterior: (location as AlderwakeExterior).service_outlines.append(Rect2(entry.foot.x-0.4,entry.foot.z-0.4,0.8,0.8))
 		target.npc_id = id
 		targets[id] = target
+		var body: CharacterBody3D = target.get_node("Body" if id == "npc-03" else "ContactBody")
+		var mover: RoutineMovement = RoutineMovement.new()
+		if not mover.configure(id,target,body,location,occupancy,.35 if id == "npc-03" else .4): return ["NPC movement binding rejected: "+id]
+		movers[id] = mover
 		if NpcRegistry.VISUAL_ASSETS.has(id):
 			var presenter: NpcVisualPresenter = NpcVisualPresenter.new()
 			presenter.name = "Presenter"
@@ -63,16 +108,19 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			if id == "npc-07": target.prompt = "Talk to Ivo Oran"
 			if id == "npc-08": target.prompt = "Talk to Celia Oran"
 			if id == "npc-14": target.prompt = "Talk to Della Pike"
+	if is_inside_tree(): _pin_counter_furniture()
 	return []
 
-func sync_visuals(holds: Dictionary, speaker: String, player_foot: Vector3) -> void:
+func sync_visuals(holds: Dictionary, speaker: String, player_foot: Vector3, blockers: Array[CharacterBody3D] = []) -> void:
+	_holds = holds.duplicate()
+	for index: int in range(blockers.size()):
+		occupancy.bind("party-%d" % index,blockers[index],.35)
 	for id: String in presenters:
 		var presenter: NpcVisualPresenter = presenters[id]
 		for reason: String in holds:
 			if holds[reason]: presenter.suspend(reason)
 			else: presenter.resume(reason)
-		# Fixed public contacts do not acquire routes or fabricated achieved motion.
-		presenter.set_locomotion(0)
+		presenter.set_locomotion(movers[id].achieved_speed)
 		if speaker == id: presenter.face_direction(player_foot-targets[id].global_position)
 
 func placement_errors(location: PrototypeLocation, excluded: Array[RID]) -> PackedStringArray:
@@ -83,7 +131,7 @@ func placement_errors(location: PrototypeLocation, excluded: Array[RID]) -> Pack
 		var entry: Dictionary = NpcRegistry.find(id)
 		var own: Array[RID] = excluded.duplicate()
 		if target.global_position != entry.foot: errors.append("NPC foot differs from approved map-qualified contact: " + id)
-		var body: StaticBody3D = target.get_node("Body" if id == "npc-03" else "ContactBody")
+		var body: CharacterBody3D = target.get_node("Body" if id == "npc-03" else "ContactBody")
 		own.append(body.get_rid())
 		errors.append_array(foot_errors(location, target.global_position, own))
 		errors.append_array(foot_errors(location, entry.approach, excluded))

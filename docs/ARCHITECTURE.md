@@ -1,5 +1,30 @@
 # Returning Fair prototype architecture
 
+Current same-map routine movement (2026-10-09, R009): scene-owned
+NpcWorldAdapter exposes explicit move/cancel legs through RoutineMovement and
+injected RoutineOccupancy. Production remains stationary until R013 activation.
+Each existing single interaction wrapper has a noncombatant CharacterBody3D;
+Maris retains her one recovery/social identity. Her real bench/supplies/gear stay
+at their original world transforms under the same fact/presentation paths.
+Contact capsules and the inn host are no longer baked as fixed navigation holes;
+terrain, furniture, counter and unrelated fixed stations remain solid.
+
+Navigation supplies one static path per leg from real current feet; bake heights
+are converted to measured physical floor heights, with exact terminal stations
+walked rather than snapped. Actual swept body displacement drives exported walk
+speed/facing, then idle. Live NPC/hero/ally capsules and exclusive station claims
+block physical motion. Sorted actor stepping and first accepted station claim
+are deterministic; blockage waits 0.5s, repaths at most twice, and fails within
+1.5 active blocked seconds with typed no-path/blocked/support/disposal reasons.
+Unchanged clear legs query no paths per frame. No attacks, catch-up teleport,
+phasing, saved positions/cursors or additional clock. Common root pause/dialogue/
+modal/focus/death/travel holds freeze motion/timers/presentation; cancellation,
+failed legs and scene unload release reservations and weak body registrations.
+Interaction reach/LOS follows the existing wrapper's actual feet. R009 physics,
+blocker/doorway and rendered Ivo input/hold checks are synthetic leg setup;
+ordinary schedules, cross-map reconstruction, action/speech and native packages
+retain their R010-R016 owners. Schema8/content1 and prior gameplay owners unchanged.
+
 Current Mayor Vale home delivery (2026-10-09, R007): a bounded public four-room
 cutaway reuses the pinned home origin (256,384)/32 units per metre, all nine station
 feet/facing and all walls. Thirty furniture/wall footprints stay exact; only bed

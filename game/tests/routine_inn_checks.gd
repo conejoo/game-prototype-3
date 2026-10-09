@@ -75,7 +75,7 @@ func _run() -> void:
 		var facing: Dictionary = {"north":Vector3.FORWARD,"south":Vector3.BACK,"east":Vector3.RIGHT,"west":Vector3.LEFT}
 		_check(record.facing == facing[entry.source_facing],"exact pinned facing " + entry.anchor_id)
 		var own: Array[RID] = excluded.duplicate()
-		var host_body: StaticBody3D = room.npc_contacts.targets["npc-14"].get_node("ContactBody")
+		var host_body: CharacterBody3D = room.npc_contacts.targets["npc-14"].get_node("ContactBody")
 		own.append(host_body.get_rid())
 		_check(NpcWorldAdapter.foot_errors(room,record.foot,own).is_empty(),"host capsule supported; only own body excluded")
 		_check(not NpcWorldAdapter.foot_errors(room,record.foot,excluded).is_empty(),"host is actual physical blocker")
