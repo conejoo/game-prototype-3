@@ -15,6 +15,10 @@ window/stretch/mode="canvas_items"
 export/convert_text_resources_to_binary=false
 
 [input]
+fishing={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"keycode":70)]
+}
 backpack={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"keycode":66)]

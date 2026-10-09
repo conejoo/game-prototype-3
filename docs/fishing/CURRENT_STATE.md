@@ -1,27 +1,31 @@
 # Fishing migration current state
 
-Updated: 2026-10-09 UTC (FS004 execution complete; prior history retained below).
+Updated: 2026-10-09 UTC (FS005 execution complete; prior history retained below).
 [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns stable
 behavior/mappings; [AGENT_PROMPT](AGENT_PROMPT.md) supplies invocation.
 
 ## Selection and next safe action
 
-Active fishing task: none. **FS001-FS004 Done**, FS005-FS008 Pending.
-Next eligible: **FS005 - Fishing orchestration, input ownership and reward commit**.
-Final task: **FS008**. Remaining IDs: FS005, FS006, FS007, FS008.
-Whole fishing checklist: incomplete. Current blockers: none.
+Active fishing task: none. **FS001-FS005 Done**, FS006-FS008 Pending.
+Next eligible: **FS006 - Public HUD, visual feedback and testing access**.
+Final task: **FS008**. Remaining IDs: FS006, FS007, FS008.
+Whole fishing checklist: incomplete. FS005 blockers: none.
 Exact next safe action: await the next authorized invocation, recheck Git/current
-interfaces and FS003/FS004 acceptance, then mark FS005 In progress and implement
-root-owned fishing orchestration/input/cancellation/atomic rewards. Use FS004
-refresh each targeting update and complete revalidate at cast with current player,
-ray, UI/mode, committed map and rod/session capability. Never authorize from cached
-preview or consume a reward from an unbound challenge result.
-No active world cast/reward/HUD integration until its owning task.
-FS004 finished at HEAD `cd07b4d4a27c0d6e11df4c0b69c56bdbfa667b2f`, without commit.
-Only FS004 ran in this invocation; no successor started.
+interfaces and FS005 acceptance, then mark FS006 In progress. Build the public
+snapshot-only fishing HUD, pointer Reel/Cancel, source-derived fish icons and
+anchored effects; replace obsolete unavailable/gift help. Extend only guarded
+read-only observations/captures and native F/FS008 evidence routing as FS006 owns.
+Reuse root's FishingSessionService and set_fishing_reel input aggregation, private
+verified token commit and current lifecycle gates. Do not create another inventory,
+save, catalog or root mode owner. Existing native delivery remains unchanged.
+FS005 finished at HEAD `199dd77a977b2a56fa156294f1644104ca80b438`, without commit.
+Only FS005 ran in this invocation; no successor started.
 
-The planning invocation created instructions only. FS001 now adds development-only
-reference tools/tests and casting-site proof; production fishing remains inactive.
+Production now supports F targeting/world-click cast, E hook/hold/release, all
+phase/lifecycle cancellation and exactly-once inventory fish rewards. Provisional
+root phase/outcome feedback is functional; finished public HUD/help/icons/effects
+remain FS006. Ordinary unforced catch/restart remains FS007; native release FS008.
+Earlier planning/execution paragraphs below retain their historical boundaries.
 
 ## Planning baseline and independent work (historical)
 
@@ -415,4 +419,107 @@ all10 passed cases and every998 tested game/tool file hash before staging the
 reviewed11-file task allowlist. Durable acceptance, checklist, handoff and reusable
 resolver/preview/tests are versioned; ignored raw runner reports/logs/captures remain
 local as project policy requires. No unrelated changes staged, no push or FS005 work.
+Verified commit hash is reported after commit; it is not embedded in its own content.
+
+## FS005 executed handoff (2026-10-09 UTC)
+
+Selected/status: FS005 Done; [acceptance](FS005_ACCEPTANCE.md) maps every criterion.
+Entry/final HEAD `199dd77a977b2a56fa156294f1644104ca80b438`; entry Git clean.
+Root AGENTS and full fishing preparation/current architecture/prerequisite
+acceptance/current code read, plus project-owned gameplay-testing skill, shared
+testing-tools and PLAYTEST. No nested AGENTS or workspace/repository .agents found.
+No agent/chat creation or another conversation used. No coordination conflict.
+Independent social G001-G009 remains Done; native tools/packages unchanged.
+
+Bounded actual files touched (17 including six generated UIDs):
+- game/app/game_root.gd and game/project.godot.
+- New game/features/fishing/fishing_session_service.gd and UID.
+- New game/tests/fishing_session_checks.gd, fishing_reward_checks.gd,
+  fishing_lifecycle_checks.gd, fishing_session_render.gd and four UIDs.
+- New game/tests/support/fishing_root_fixture.gd and UID.
+- docs/fishing/CHECKLIST.md, CURRENT_STATE.md and new FS005_ACCEPTANCE.md.
+No existing catalog/content/inventory/save/actor/UI/map/tool/native/package/source
+file edited. Original user AGENT_PROMPT/CONTRACT/workspace instructions preserved.
+
+Decisions: one root-composed transient service owns targeting/attempt/reel binding.
+Current weak session/map/inventory/catalog identities, rod capability signature,
+starting hero health and private challenge result/token protect rewards. No callback
+exists between validation/token consumption and synchronous InventoryState.add(+1).
+Production uint32-scaled independent encounter/wait draws are strictly [0,1); no-area
+consumes neither. Active attempt locks hero controls but keeps damage/combat/ally and
+world clock/weather simulation available so engagement cancels before reward.
+Targeting retains movement; current ray/player/UI is revalidated at cast. E release
+is observed before GUI consumption; source aggregation and cancellation/release
+gates prevent stale keyboard/pointer hooks. Esc cancels and opens actual pause.
+Existing durable owners, schema7/content1, rod conservation and manual Save remain.
+
+Current functional surface: F toggles targeting, world click casts, E fresh press
+hooks and hold/release reels, F/right-click cancels, Esc cancels+pauses. Provisional
+phase/outcome feedback uses existing root/UI snapshot routes. Public pointer Reel,
+finished tension HUD, fish icons/effects, static rod's obsolete "Fishing unavailable"
+help and generic fish gift wording are explicitly FS006 work, not silently completed.
+No ordinary unforced-RNG catch, independent-process fishing restart or native release
+claim. Synthetic fixtures disable actor physics and manually step challenge where
+stated; live render captures reenable automatic root/world/challenge time and retain
+before/after phase/token provenance. No production force/time/RNG/reward command.
+
+Commands/cwd: prototype root, PowerShell7, supplied console4.7.2. Exact final command
+in acceptance; explicit dynamic parse dependencies include root/service and existing
+environment_review/live_playtest_bridge. Accepted final
+`docs/evidence/FS005/20261009-041614814-97f748a6/results.json`: all22 cases PASS/exit0,
+nineteen headless checks plus renderer/version/parse. Session57/reward72/lifecycle344/
+render33 assertions; challenge8786/targeting135 and all selected root/save/item/social/
+combat/ally/environment regressions PASS. All1010 game/tools files stable, digest
+`17a92c7979b09433eba69725c43f889ac6f8adf7b25397d1ff120e099a21ec91`,
+source.changed=false/error=null, no runtime/parse diagnostics/timeouts. Twenty groups
+under matching builds/testing/FS005/run, nineteen check slots plus rendered slot,
+isolated APPDATA/LOCALAPPDATA. No normal slot accessed or cleared.
+
+Seven final960x640 frames and shared four-frame pause/bag/Save/Load contact sheet
+inspected. Waiting/bite/fighting are genuinely live automatic phases under synthetic
+pose/seed, with root time continuing during capture. Exact same-process actual GUI
+Save/Load restores complete typed snapshot, bluegill1 and fish selection at arrival;
+no canceled phase resumes. All-three-species and full/capacity-lost results are legal
+synthetic trajectories, exact unchanged-fact/revision assertions and verified private
+dispatch negatives. Forty-five all-phase/reason cancels plus actual failed physical
+transition rollback/save/load/room replacement/root teardown pass. Fresh-input and
+immediate-recast checks pass. FS007 alone owns ordinary unforced/restart proof.
+
+Live source audit143 assertions PASS before/after; source HEAD
+`60c20eb2816e7271fb84afaba286af006ebe3ccf`, clean, all18 file pins exact.
+Layout SHA256 `7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be`
+unchanged. No geometry refresh/navigation bake/collision/portal/art alteration.
+
+Retained failed/unaccepted and earlier runs:
+- 20261009-040619261-bc8667fd: sandbox engine launch access denied. Scoped isolated
+  runner escalation resolved it; no automatic approval rejection/user gate.
+- 20261009-040632815-2d449590: first service import generated UID; changed-source
+  rejection. Existing import-only missing SDK10.0.9 advisory remained allowed.
+- 20261009-041026496-68b7832f: first fixtures import generated four UIDs; rejected.
+- 20261009-041112085-d7ab30f2: session/reward passed; lifecycle fixture awaited a
+  transition after its scene/catalog IDs differed. Verified recorded launcher39872
+  and exact Godot child68592 command line before stopping only those owned PIDs.
+  Fixed fixture IDs/spawn declarations and fail-fast request guard, not production.
+- 20261009-041411924-7013c263: render fixture first import generated UID; rejected.
+- 20261009-041516869-581b208f: all six focused cases PASS, seven frames inspected.
+  Final broader stable run above accepts the same bytes and complete regressions.
+All failures/raw evidence preserved; failed runs never serve as acceptance.
+
+Final runner logs/results/source changes/diagnostics and owned PID exits reviewed.
+No active owned gameplay/editor/held input or cleanup owed. No unowned process
+stopped; normal saves, prior evidence, source, user instructions and independent
+packages preserved. Final docs read-back/local links/eight task rows/dependencies/
+17-file scope/1010-file rehash/whitespace verified in accepted final-review.json.
+FS005 remaining criteria/blockers: none. Next eligible FS006, remaining FS006-FS008,
+whole checklist incomplete. No commit/push/publication/package promotion/successor.
+Stop here; commit awaits separate user instruction.
+
+### FS005 commit follow-up
+
+Subsequent user authorization requests the successful FS005 local commit only.
+Execution records above describe the pre-commit acceptance boundary. Rechecked
+all22 passing cases and all1010 tested game/tool file hashes before staging the
+reviewed17-file task allowlist. Durable acceptance, checklist, handoff and reusable
+service/tests are versioned; ignored raw runner reports/logs/captures remain local
+as project policy requires. No unrelated files staged, no push or FS006 work.
 Verified commit hash is reported after commit; it is not embedded in its own content.

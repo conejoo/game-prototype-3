@@ -43,6 +43,12 @@ var item_drag: WorldItemDrag = WorldItemDrag.new()
 var drag_preview: Node3D
 var _drag_pointer: Vector2 = Vector2(-1,-1)
 var _drag_mouse_owned: bool = false
+var fishing: FishingSessionService = FishingSessionService.new()
+var fishing_preview: FishingTargetPreview
+var _fishing_pointer: Vector2 = Vector2(-1,-1)
+var _fishing_feedback: String = ""
+var _fishing_feedback_until: float = 0.0
+var _fishing_rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 @export var content_manifest: ContentManifest = preload("res://content/prototype_catalog.tres")
 @export var initial_location_id: String = "prototype-alderwake"
@@ -52,6 +58,9 @@ var _drag_mouse_owned: bool = false
 
 func _ready() -> void:
 	get_tree().auto_accept_quit = false
+	_fishing_rng.randomize()
+	fishing_preview = FishingTargetPreview.new()
+	add_child(fishing_preview)
 	ui.debug_mode_requested.connect(_set_debug_shortcuts_enabled)
 	_set_debug_shortcuts_enabled("--debug-shortcuts" in OS.get_cmdline_user_args())
 	world_host.developer_fixtures = OS.is_debug_build() and (developer_fixtures or "--developer-fixtures" in OS.get_cmdline_user_args())
@@ -185,12 +194,13 @@ func _process(delta: float) -> void:
 		_refresh_interaction()
 	_tick_item_drag()
 	_tick_foraging_hold(delta)
+	_tick_fishing(delta)
 	ui.show_inventory(session.inventory.snapshot(),catalog)
 	ui.show_combat(player_placeholder.state, guardian, retrying, player_placeholder.combat.damage)
 	ui.show_debug_time(session.environment.day_cycle_progress)
 	if is_instance_valid(companion):
 		ui.show_companion(companion.state, companion_ai.mode, session.relationship.trust)
-	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)
+	ui.set_save_busy(session.review_only or fishing.mode() != "idle" or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 
 func _input(event: InputEvent) -> void:
@@ -205,6 +215,39 @@ func _input(event: InputEvent) -> void:
 			return
 		_e_down = true
 		if not _foraging_input_allowed(): _e_consumed = true
+	if event is InputEventMouseMotion or event is InputEventMouseButton:
+		_fishing_pointer = event.position
+	if event.is_action_released("interact"):
+		_publish_fishing(fishing.reel("keyboard",false,session,world_host.current_location,catalog))
+	if event.is_action_pressed("fishing") and not event.is_echo():
+		_toggle_fishing()
+		get_viewport().set_input_as_handled()
+		return
+	if fishing.mode() != "idle":
+		if event.is_action_pressed("pause") and not event.is_echo():
+			_cancel_fishing("pause")
+			_set_paused(true)
+			get_viewport().set_input_as_handled()
+			return
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			_cancel_fishing("explicit")
+			get_viewport().set_input_as_handled()
+			return
+		if event.is_action("interact"):
+			_e_consumed = _e_down
+			if event.is_action_pressed("interact"):
+				set_fishing_reel("keyboard",true)
+			get_viewport().set_input_as_handled()
+			return
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+			if ui.accepts_world_pointer(event.position):
+				if event.pressed and fishing.mode() == "targeting": _cast_fishing(event.position)
+				get_viewport().set_input_as_handled()
+				return
+		if fishing.active() and not event.is_action("quit"):
+			if event is InputEventKey and event.keycode not in [KEY_P,KEY_PLUS,KEY_EQUAL,KEY_MINUS]:
+				get_viewport().set_input_as_handled()
+				return
 	if foraging_hold.active() and not _foraging_input_allowed():
 		_cancel_foraging_hold("input mode")
 	if _drag_mouse_owned and not item_drag.active() and (event is InputEventMouseMotion or event is InputEventMouseButton):
@@ -351,6 +394,7 @@ func _notification(what: int) -> void:
 		_quit()
 	elif what == NOTIFICATION_APPLICATION_FOCUS_OUT and is_instance_valid(player_placeholder):
 		window_focused = false
+		_cancel_fishing("focus loss")
 		_close_journal()
 		_cancel_dialogue()
 		_update_controls()
@@ -368,6 +412,7 @@ func _resume() -> void:
 
 
 func _set_paused(paused: bool) -> void:
+	if paused: _cancel_fishing("pause")
 	if loading_save or dialogue.active() or journal_open or backpack_open:
 		return
 	_cancel_item_drag()
@@ -380,6 +425,7 @@ func _set_paused(paused: bool) -> void:
 
 
 func _update_controls() -> void:
+	if fishing.mode() != "idle" and not _fishing_context_allowed(): _cancel_fishing("input mode",false)
 	_sync_npc_visuals()
 	var enabled: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not dialogue.active() and not journal_open and not backpack_open
 	if item_drag.active() and (not enabled or retrying or player_placeholder.state.health <= 0):
@@ -387,7 +433,7 @@ func _update_controls() -> void:
 	enabled = enabled and not item_drag.active()
 	if not enabled or player_placeholder.state.health <= 0:
 		_cancel_foraging_hold("input mode")
-	player_placeholder.set_controls_enabled(enabled and player_placeholder.state.health > 0)
+	player_placeholder.set_controls_enabled(enabled and not fishing.active() and player_placeholder.state.health > 0)
 	player_placeholder.combat_enabled = enabled
 	if is_instance_valid(companion):
 		companion.combat_enabled = enabled and player_placeholder.state.health > 0
@@ -399,7 +445,7 @@ func _update_controls() -> void:
 		guardian_ai.enabled = guardian.combat_enabled
 		if not guardian.combat_enabled:
 			guardian.clear_input()
-	ui.set_save_busy(session.review_only or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)
+	ui.set_save_busy(session.review_only or fishing.mode() != "idle" or world_host.transitioning or loading_save or dialogue.active() or journal_open or backpack_open or not _combat_stable(), world_host.transitioning or loading_save)
 
 func _sync_npc_visuals() -> void:
 	if world_host.current_location == null or not is_instance_valid(player_placeholder): return
@@ -411,6 +457,7 @@ func _sync_npc_visuals() -> void:
 
 
 func _on_transition_started() -> void:
+	_cancel_fishing("travel")
 	_cancel_item_drag()
 	_close_backpack()
 	_cancel_foraging_hold("travel")
@@ -436,6 +483,7 @@ func _on_transition_started() -> void:
 
 
 func _on_transition_finished(success: bool, errors: PackedStringArray) -> void:
+	_cancel_fishing("room/session replacement")
 	# Root commits candidate only after WorldHost proves physical placement safe.
 	# This handler is connected before other observers; UI sees one restored run.
 	var restoring: bool = _pending_restore != null
@@ -502,6 +550,8 @@ func _present_environment() -> void:
 
 
 func _save_boundary_errors() -> PackedStringArray:
+	if fishing.mode() != "idle":
+		return PackedStringArray(["cancel fishing before save/load"])
 	if session.review_only:
 		return PackedStringArray(["developer environment review cannot Save/Load; restart without review flag for normal play"])
 	if not _combat_stable():
@@ -532,6 +582,10 @@ func save_run() -> PackedStringArray:
 
 func _refresh_interaction() -> void:
 	ui.show_foraging_feedback("")
+	if fishing.mode() != "idle":
+		selected_interaction = null
+		_present_fishing()
+		return
 	if item_drag.active():
 		selected_interaction = null
 		ui.show_travel("Place rod: release mouse · Esc: cancel" if item_drag.errors.is_empty() else "Cannot place here · Release keeps original · Esc: cancel")
@@ -553,9 +607,12 @@ func _refresh_interaction() -> void:
 		ui.show_foraging_feedback("")
 	if selected_interaction != null and selected_interaction.instance_id == light_feedback_instance_id and not light_feedback.is_empty() and session.elapsed_play_seconds < light_feedback_until:
 		ui.show_travel(light_feedback + " · " + ui.travel_label.text)
+	if not _fishing_feedback.is_empty() and session.elapsed_play_seconds < _fishing_feedback_until:
+		ui.show_foraging_feedback(_fishing_feedback)
 
 
 func switch_light(target_reference: WeakRef, expected_enabled: bool) -> NpcDialogueService.Result:
+	if fishing.mode() != "idle": return NpcDialogueService.Result.new(false,"Cancel fishing before interaction.","light")
 	var target: PrototypeInteractable = target_reference.get_ref() as PrototypeInteractable if target_reference != null else null
 	if item_drag.active() or not _combat_stable() or dialogue.active() or journal_open or backpack_open or get_tree().paused or world_host.transitioning or loading_save or not window_focused or get_viewport().gui_get_focus_owner() != null:
 		return NpcDialogueService.Result.new(false, "Light switching blocked by current input mode.", "light")
@@ -577,6 +634,7 @@ func switch_light(target_reference: WeakRef, expected_enabled: bool) -> NpcDialo
 
 
 func interact() -> NpcDialogueService.Result:
+	if fishing.mode() != "idle": return NpcDialogueService.Result.new(false,"Cancel fishing before world interaction.")
 	if _e_down and _e_consumed:
 		return NpcDialogueService.Result.new(false, "Release E before another interaction.")
 	if _e_down: _e_consumed = true
@@ -616,6 +674,7 @@ func interact() -> NpcDialogueService.Result:
 
 
 func _present_dialogue(result: NpcDialogueService.Result) -> void:
+	if dialogue.active(): _cancel_fishing("dialogue")
 	conversation_result = result
 	ui.show_dialogue(dialogue.snapshot(), result)
 	ui.show_inventory(session.inventory.snapshot(), catalog)
@@ -665,6 +724,9 @@ func _cancel_dialogue() -> void:
 
 
 func load_run() -> PackedStringArray:
+	if fishing.mode() != "idle":
+		_cancel_fishing("load request")
+		return PackedStringArray(["load blocked during fishing; pause before loading"])
 	_cancel_item_drag()
 	_cancel_foraging_hold("load")
 	var errors: PackedStringArray = _save_boundary_errors()
@@ -696,6 +758,7 @@ func load_run() -> PackedStringArray:
 
 
 func _quit() -> void:
+	_cancel_fishing("quit",false)
 	print("P001: Quit requested%s." % [" while paused" if get_tree().paused else ""])
 	get_tree().quit(0)
 
@@ -743,6 +806,8 @@ func _refresh_world_presentation() -> void:
 
 
 func _toggle_backpack() -> void:
+	if fishing.active(): return
+	_cancel_fishing("backpack")
 	_cancel_item_drag()
 	if backpack_open:
 		_close_backpack()
@@ -796,6 +861,8 @@ func _open_people() -> void:
 	_open_journal("people")
 
 func _open_journal(tab: String) -> void:
+	if fishing.active(): return
+	_cancel_fishing("journal")
 	_cancel_item_drag()
 	if journal_open or not session.initialized or not window_focused or retrying or not _combat_stable() or backpack_open or dialogue.active() or get_tree().paused or world_host.transitioning or loading_save:
 		return
@@ -867,12 +934,14 @@ func _on_guardian_defeated(actor: ActorPlaceholder) -> void:
 
 
 func _on_player_defeated(_actor: ActorPlaceholder) -> void:
+	_cancel_fishing("death")
 	_close_journal()
 	_update_controls()
 	print("P008 hero defeated; R retries at arrival anchor, quest facts retained.")
 
 
 func retry_encounter() -> void:
+	_cancel_fishing("retry")
 	_cancel_item_drag()
 	_close_journal()
 	_close_backpack()
@@ -945,7 +1014,7 @@ func _foraging_input_allowed() -> bool:
 
 
 func _drag_input_allowed() -> bool:
-	return _combat_stable() and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying and not dialogue.active() and not journal_open and not backpack_open and not ui.settings_open() and get_viewport().gui_get_focus_owner() == null
+	return fishing.mode() == "idle" and _combat_stable() and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying and not dialogue.active() and not journal_open and not backpack_open and not ui.settings_open() and get_viewport().gui_get_focus_owner() == null
 
 
 func _validate_live_placement(candidate: WorldItemPlacement, _facts: Dictionary, owner: WeakRef) -> PackedStringArray:
@@ -955,6 +1024,7 @@ func _validate_live_placement(candidate: WorldItemPlacement, _facts: Dictionary,
 
 
 func _drop_active_rod() -> void:
+	if fishing.mode() != "idle": return
 	if not backpack_open or not window_focused or get_tree().paused or world_host.transitioning or loading_save or retrying or dialogue.active() or journal_open or not _combat_stable() or session.inventory.snapshot().active_item_id != ForagingRegistry.ROD_ITEM:
 		return
 	var foot: Variant = ForagingPlacementGeometry.nearby_drop(world_host.current_location,player_placeholder)
@@ -1111,3 +1181,114 @@ func _tick_foraging_hold(delta: float) -> void:
 		foraging_feedback = "Gather cancelled — pickup unchanged."
 	foraging_feedback_until = session.elapsed_play_seconds + 2.5
 	_refresh_interaction()
+
+
+func _fishing_context_allowed() -> bool:
+	return session.initialized and window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not retrying and not dialogue.active() and not journal_open and not backpack_open and not item_drag.active() and not ui.settings_open() and _combat_stable() and world_host.session == session and fishing.binding_valid(session,world_host.current_location,catalog)
+
+
+func _toggle_fishing() -> void:
+	if fishing.mode() != "idle":
+		_cancel_fishing("explicit")
+		return
+	if not _drag_input_allowed() or foraging_hold.active(): return
+	_publish_fishing(fishing.enter(session,world_host.current_location,catalog))
+	if fishing.mode() == "targeting":
+		_cancel_foraging_hold("fishing")
+		selected_interaction = null
+		player_placeholder.pointer_position = Vector2(-1,-1)
+		_refresh_fishing_preview()
+
+
+func _refresh_fishing_preview() -> FishingWaterTargetResolver.Result:
+	return fishing_preview.refresh(world_host.current_location,catalog,camera_rig.camera,_fishing_pointer,player_placeholder.global_position,_fishing_context_allowed() and get_viewport().gui_get_focus_owner() == null and ui.accepts_world_pointer(_fishing_pointer),FishingSessionService.rod(session))
+
+
+func _cast_fishing(pointer: Vector2) -> void:
+	_fishing_pointer = pointer
+	if fishing.mode() != "targeting" or not _fishing_context_allowed():
+		_cancel_fishing("cast context changed")
+		return
+	var allowed: bool = get_viewport().gui_get_focus_owner() == null and ui.accepts_world_pointer(pointer)
+	var target: FishingWaterTargetResolver.Result = fishing_preview.revalidate(world_host.current_location,catalog,camera_rig.camera,pointer,player_placeholder.global_position,allowed,FishingSessionService.rod(session))
+	if target.status != "eligible":
+		_fishing_feedback = "No fishing area here; aim elsewhere." if target.status == "no_area" else "Cannot cast: " + target.reason.replace("_"," ") + "."
+		_fishing_feedback_until = session.elapsed_play_seconds + 4.0
+		_present_fishing()
+		return # No-area/invalid consumes neither RNG draw.
+	# Integer scaling gives a strictly half-open domain, including maximum randi().
+	var encounter_roll: float = float(_fishing_rng.randi()) / 4294967296.0
+	var wait_roll: float = float(_fishing_rng.randi()) / 4294967296.0
+	_publish_fishing(fishing.cast(session,world_host.current_location,catalog,camera_rig.camera,pointer,player_placeholder.global_position,allowed,encounter_roll,wait_roll,_e_down))
+	if fishing.active():
+		fishing_preview.clear()
+		player_placeholder.combat.cancel()
+		_update_controls()
+	_present_fishing()
+
+
+func set_fishing_reel(source: String, held: bool) -> void:
+	# Future pointer view submits the same command; keyboard releases bypass GUI focus.
+	if held and (not fishing.active() or not _fishing_context_allowed()): return
+	_publish_fishing(fishing.reel(source,held,session,world_host.current_location,catalog))
+	_present_fishing()
+
+
+func _tick_fishing(delta: float) -> void:
+	if fishing.mode() == "idle": return
+	if not _fishing_context_allowed():
+		_cancel_fishing("combat or context changed")
+		return
+	if fishing.mode() == "targeting":
+		_refresh_fishing_preview()
+	else:
+		_publish_fishing(fishing.advance(delta,session,world_host.current_location,catalog))
+	_present_fishing()
+
+
+func _publish_fishing(result: FishingSessionService.Result) -> void:
+	if result.accepted and fishing.active() and result.message.is_empty(): _fishing_feedback = ""
+	if not result.message.is_empty() and (result.accepted or result.outcome not in ["inactive","held","blocked"]):
+		_fishing_feedback = result.message
+		_fishing_feedback_until = session.elapsed_play_seconds + 6.0
+	if result.accepted and fishing.mode() == "idle":
+		if _e_down: _e_consumed = true
+		fishing_preview.clear()
+		player_placeholder.pointer_position = Vector2(-1,-1)
+		_update_controls()
+		ui.show_inventory(session.inventory.snapshot(),catalog)
+		_refresh_interaction()
+
+
+func _present_fishing() -> void:
+	var view: Dictionary = fishing.snapshot()
+	if view.mode == "idle": return
+	var text: String = "F / right-click: cancel; Esc: cancel + pause"
+	if view.mode == "targeting":
+		text = "Fishing: aim at open water; click to cast. " + text
+	elif view.phase == "waiting":
+		text = "Fishing: waiting for a bite... " + text
+	elif view.phase == "bite":
+		text = "BITE! Fresh E: hook, then hold / release E. " + text
+	elif view.phase == "fighting":
+		text = "Fishing: hold E raises tension; release lowers. Tension %.0f%% / landed %.0f%%. " % [view.tension*100,view.progress*100] + text
+	ui.show_travel(text)
+	if session.elapsed_play_seconds < _fishing_feedback_until: ui.show_foraging_feedback(_fishing_feedback)
+
+
+func _cancel_fishing(reason: String, refresh_controls: bool = true) -> void:
+	if fishing.mode() == "idle": return
+	var result: FishingSessionService.Result = fishing.cancel(reason)
+	fishing_preview.clear()
+	if _e_down: _e_consumed = true
+	player_placeholder.clear_input()
+	player_placeholder.pointer_position = Vector2(-1,-1)
+	_fishing_feedback = result.message
+	_fishing_feedback_until = session.elapsed_play_seconds + 4.0
+	if refresh_controls: _update_controls()
+
+
+func _exit_tree() -> void:
+	# No stale service can reward after its root or scene has been removed.
+	fishing.cancel("root teardown")
+	if is_instance_valid(fishing_preview): fishing_preview.clear()

@@ -8,8 +8,8 @@ This file owns task status; [CURRENT_STATE](CURRENT_STATE.md) owns continuation;
 [CONTRACT](CONTRACT.md) owns behavior and source mappings;
 [AGENT_PROMPT](AGENT_PROMPT.md) selects this workflow.
 
-Planning complete on 2026-10-08, America/Vancouver. FS001-FS004 Done on 2026-10-09 UTC;
-FS005-FS008 Pending. Next eligible FS005. Final task FS008; checklist incomplete.
+Planning complete on 2026-10-08, America/Vancouver. FS001-FS005 Done on 2026-10-09 UTC;
+FS006-FS008 Pending. Next eligible FS006. Final task FS008; checklist incomplete.
 
 ## Selection and evidence
 
@@ -39,7 +39,7 @@ FS005-FS008 Pending. Next eligible FS005. Final task FS008; checklist incomplete
 | FS002 | Done | FS001 | Three fish definitions, strict activity resolver and inventory/save support |
 | FS003 | Done | FS002 | Deterministic bite, hook and tension challenge |
 | FS004 | Done | FS002 | Correct 3D water targeting and cast preview |
-| FS005 | Pending | FS003, FS004 | Root-owned fishing lifecycle with exactly-once rewards |
+| FS005 | Done | FS003, FS004 | Root-owned fishing lifecycle with exactly-once rewards |
 | FS006 | Pending | FS005 | Readable public controls, HUD, fish icons and cast/bite feedback |
 | FS007 | Pending | FS006 | Integrated ordinary play, cancellation and independent-process persistence |
 | FS008 | Pending | FS007; completed/stable independent native-delivery baseline | Fresh Windows packages and ordinary native fishing/restart proof |
@@ -346,3 +346,30 @@ No ordinary casting/catch/live challenge/native claim; input activation is FS005
 No process/editor or cleanup owed; no approval rejection, commit or push.
 FS004 blockers none. Next FS005; remaining FS005-FS008, checklist incomplete.
 Stop before successor.
+
+### FS005 / 2026-10-09 UTC / Done
+
+Entry/final HEAD `199dd77a977b2a56fa156294f1644104ca80b438`; entry Git clean.
+Root-owned transient FishingSessionService binds current session/map/inventory/rod,
+routes F/world-click/E, locks hero actions while world/ally/weather continue and
+invalidates every phase on lifecycle exits. Private verified terminal identity/token
+is consumed before one existing inventory +1 command; replay/reentry/stale bindings/
+capacity loss cannot grant fish. No cast consumption, autosave or schema7/content1
+change. Existing source/layout/instructions/social/native packages/saves preserved.
+Root/project/service, five reusable fixture scripts, six UIDs and fishing docs only.
+Every criterion and provisional UI boundary in [FS005 acceptance](FS005_ACCEPTANCE.md).
+
+Live source audit143 assertions PASS before/after. Final isolated runner
+`20261009-041614814-97f748a6`: all22 version/parse/nineteen check/render cases PASS;
+session57/reward72/lifecycle344/render33 assertions, all-three legal synthetic
+landings, exact +1-only facts,45 phase/reason cancellations, actual physical rollback,
+manual restore and GUI Save/Load with inspected7 frames. Fresh FS003/FS004 and
+affected inventory/foraging/bag/combat/ally/dialogue/travel/social/environment/save/
+People/placement/startup regressions PASS. All1010 game/tools files stable,
+source.changed=false/error=null, no runtime diagnostics/timeouts. Twenty isolated
+save groups; normal saves untouched. Failed launch/UID-generation/stalled fixture
+runs retained/excluded. Only verified owned stalled fixture processes stopped;
+final owned processes exited, no cleanup or approval rejection outstanding.
+Static public help/icons/effects remain FS006; ordinary unforced catch/restart FS007,
+native delivery FS008. No commit/push or successor. FS005 blockers none.
+Next FS006; remaining FS006,FS007,FS008; whole checklist incomplete. Stop here.
