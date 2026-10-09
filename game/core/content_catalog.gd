@@ -13,13 +13,18 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 	if manifest.definitions.is_empty():
 		return PackedStringArray(["catalog manifest has no definitions"])
 	var candidate: Dictionary[String, ContentDefinition] = {}
-	for index: int in range(manifest.definitions.size()):
-		var definition: ContentDefinition = manifest.definitions[index]
+	var definitions: Array[ContentDefinition] = manifest.definitions.duplicate()
+	if not manifest.fishing_area_layout_path.is_empty():
+		var adapted: FishingAreaAdapter.Result = FishingAreaAdapter.read_layout(manifest.fishing_area_layout_path)
+		errors.append_array(adapted.errors)
+		for area: FishingAreaDefinition in adapted.areas: definitions.append(area)
+	for index: int in range(definitions.size()):
+		var definition: ContentDefinition = definitions[index]
 		if definition == null:
 			errors.append("definition[%d] is null" % index)
 			continue
 		var label: String = "definition[%d] '%s'" % [index, definition.stable_id]
-		if not (definition is ActorDefinition or definition is LocationDefinition or definition is ConversationDefinition or definition is QuestDefinition or definition is ReactionDefinition or definition is UpgradeDefinition or definition is ItemDefinition or definition is ForagingResourceDefinition):
+		if not (definition is ActorDefinition or definition is LocationDefinition or definition is ConversationDefinition or definition is QuestDefinition or definition is ReactionDefinition or definition is UpgradeDefinition or definition is ItemDefinition or definition is ForagingResourceDefinition or definition is FishingAreaDefinition):
 			errors.append("%s has unsupported definition type" % label)
 		for error: String in definition.validation_errors():
 			errors.append("%s: %s" % [label, error])
@@ -29,12 +34,24 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 			candidate[definition.stable_id] = definition
 	var item_sources: PackedStringArray = []
 	var resource_sources: PackedStringArray = []
-	for definition: ContentDefinition in manifest.definitions:
+	var fishing_weight: float = 0.0
+	for definition: ContentDefinition in definitions:
 		if definition is ItemDefinition:
 			var item: ItemDefinition = definition as ItemDefinition
 			if item.source_item_id in item_sources:
 				errors.append("duplicate source item ID")
 			item_sources.append(item.source_item_id)
+		elif definition is FishingAreaDefinition:
+			var area: FishingAreaDefinition = definition
+			fishing_weight += area.blend_weight
+			if not candidate.get(area.location_id) is LocationDefinition:
+				errors.append("fishing area references unknown location")
+			for source_id: String in area.outcome_source_ids:
+				var fish: ItemDefinition = null
+				for content: ContentDefinition in definitions:
+					if content is ItemDefinition and (content as ItemDefinition).source_item_id == source_id: fish = content
+				if fish == null or fish.category != "fish" or fish.fishing_challenge == null:
+					errors.append("fishing area references unknown/nonfish outcome '%s'" % source_id)
 		elif definition is ForagingResourceDefinition:
 			var resource: ForagingResourceDefinition = definition as ForagingResourceDefinition
 			if resource.source_resource_id in resource_sources:
@@ -72,6 +89,7 @@ func initialize(manifest: ContentManifest) -> PackedStringArray:
 			for step: QuestStep in (definition as QuestDefinition).steps:
 				if step != null and not candidate.get(step.location_id) is LocationDefinition:
 					errors.append("quest references absent location '%s'" % step.location_id)
+	if not is_finite(fishing_weight): errors.append("aggregate fishing weights must be finite")
 	# Effect identities must be unique across quests, too.
 	var effects: PackedStringArray = []
 	for definition: ContentDefinition in manifest.definitions:
@@ -141,3 +159,18 @@ func get_item(id: String) -> ItemDefinition:
 
 func get_resource(id: String) -> ForagingResourceDefinition:
 	return _definitions.get(id) as ForagingResourceDefinition
+
+
+func get_item_by_source(source_id: String) -> ItemDefinition:
+	for definition: ContentDefinition in _definitions.values():
+		if definition is ItemDefinition and (definition as ItemDefinition).source_item_id == source_id:
+			return definition as ItemDefinition
+	return null
+
+
+func fishing_areas() -> Array[FishingAreaDefinition]:
+	var result: Array[FishingAreaDefinition] = []
+	for definition: ContentDefinition in _definitions.values():
+		if definition is FishingAreaDefinition: result.append(definition as FishingAreaDefinition)
+	result.sort_custom(func(a: FishingAreaDefinition, b: FishingAreaDefinition) -> bool: return a.stable_id < b.stable_id)
+	return result

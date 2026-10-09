@@ -16,7 +16,7 @@ func _initialize() -> void:
 func _run() -> void:
 	var catalog: ContentCatalog = ContentCatalog.new()
 	_check(catalog.initialize(load(MANIFEST) as ContentManifest).is_empty(), "production catalog validates")
-	_check(catalog.definition_count() == 21, "17 prior + 2 item + 2 resource definitions")
+	_check(catalog.definition_count() == 27, "21 prior + 3 fish + 3 adapted areas")
 	_definitions(catalog)
 	_invalid_catalogs(catalog)
 	_capacity()
@@ -103,7 +103,7 @@ func _invalid_catalogs(catalog: ContentCatalog) -> void:
 	var prior_item: ItemDefinition = catalog.get_item(FLOWER)
 	var prior_resource: ForagingResourceDefinition = catalog.get_resource("resource-moonflower")
 	_check(not catalog.initialize(bad).is_empty(), "bad replacement rejected")
-	_check(catalog.initialized and catalog.definition_count() == 21 and catalog.get_item(FLOWER) == prior_item and catalog.get_resource("resource-moonflower") == prior_resource, "bad replacement retains all published item/resource indexes")
+	_check(catalog.initialized and catalog.definition_count() == 27 and catalog.get_item(FLOWER) == prior_item and catalog.get_resource("resource-moonflower") == prior_resource, "bad replacement retains all published item/resource indexes")
 
 
 func _capacity() -> void:
@@ -238,6 +238,7 @@ func _authored_facts(catalog: ContentCatalog) -> Array[Dictionary]:
 
 func _fixture() -> ContentManifest:
 	var result: ContentManifest = ContentManifest.new()
+	result.fishing_area_layout_path = (load(MANIFEST) as ContentManifest).fishing_area_layout_path
 	for definition: ContentDefinition in (load(MANIFEST) as ContentManifest).definitions:
 		result.definitions.append(definition.duplicate(true) as ContentDefinition)
 	return result

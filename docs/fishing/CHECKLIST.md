@@ -8,8 +8,8 @@ This file owns task status; [CURRENT_STATE](CURRENT_STATE.md) owns continuation;
 [CONTRACT](CONTRACT.md) owns behavior and source mappings;
 [AGENT_PROMPT](AGENT_PROMPT.md) selects this workflow.
 
-Planning complete on 2026-10-08, America/Vancouver. FS001 Done on 2026-10-09 UTC;
-FS002-FS008 Pending. Next eligible FS002. Final task FS008; checklist incomplete.
+Planning complete on 2026-10-08, America/Vancouver. FS001-FS002 Done on 2026-10-09 UTC;
+FS003-FS008 Pending. Next eligible FS003. Final task FS008; checklist incomplete.
 
 ## Selection and evidence
 
@@ -36,7 +36,7 @@ FS002-FS008 Pending. Next eligible FS002. Final task FS008; checklist incomplete
 | ID | Status | Dependencies | Observable outcome |
 | --- | --- | --- | --- |
 | FS001 | Done | Current F010 item capability and pinned map available | Frozen source rules, area mappings and usable cast-site audit |
-| FS002 | Pending | FS001 | Three fish definitions, strict activity resolver and inventory/save support |
+| FS002 | Done | FS001 | Three fish definitions, strict activity resolver and inventory/save support |
 | FS003 | Pending | FS002 | Deterministic bite, hook and tension challenge |
 | FS004 | Pending | FS002 | Correct 3D water targeting and cast preview |
 | FS005 | Pending | FS003, FS004 | Root-owned fishing lifecycle with exactly-once rewards |
@@ -268,3 +268,30 @@ runtime diagnostics/timeouts; known import-only SDK advisory retained. Failed
 fixture/preflight/first-UID-import runs retained and excluded from acceptance.
 No active process or cleanup owed; no commit/push. FS001 blockers none.
 Next FS002; remaining FS002-FS008, whole checklist incomplete. Stop before successor.
+
+### FS002 / 2026-10-09 UTC / Done
+
+Entry/final HEAD `24b5a01c21c8fe5edfb6f31dbcfe310eaf8dd3aa`; entry Git status clean.
+Registered exact bluegill/river trout/golden carp cap99 items and typed species/rod
+metadata in existing catalog. Strict target-local adapter publishes three validated
+retained areas through that same catalog; pure resolver preserves sorted source-ID
+intervals, overlap weights, miss mass and no-area distinction. No reward, input,
+geography, inventory/save authority or schema change; schema7/content1 retained.
+Instructions, source, independent social/native packages and normal saves preserved.
+Seven generated UIDs retained; four existing fixture counts reflect27 definitions.
+Actual scope and every criterion in [FS002 acceptance](FS002_ACCEPTANCE.md).
+
+Live reference audit143 assertions PASS before/after. Final isolated runner
+`20261009-031709346-24ed574e`: all12 engine/import/parse/content/activity/inventory/
+catalog/foraging-save/social-save/startup/NPC/backpack cases PASS. Content255,
+activity208, inventory199, foraging-save111, social-save844, NPC432, backpack148
+assertions; exact full social/environment/quest/party/rod snapshot and forecast,
+hostile counts/selection,20-type bag/fish99 stack and atomic rejected operations proved.
+All986 game/tool files stable, digest
+`c1854214fc96f2d08c74986d05b9ff51a9d04da3fa95593005ff7a3e3eb6c42a`;
+source.changed=false/error=null, no runtime diagnostics/timeouts. Known import-only
+SDK10.0.9 advisory retained. Failed launch/first-UID-import/hostile fixture runs kept
+and excluded. No ordinary catch/render/native claim required by this content task.
+No owned process/editor or cleanup owed; no commit/push. FS002 blockers none.
+Next FS003; FS004 also dependency-ready. Remaining FS003-FS008; whole checklist
+incomplete. Stop before successor.

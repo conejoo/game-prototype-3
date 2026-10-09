@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3]
+
+[ext_resource type="Script" path="res://features/items/item_definition.gd" id="1"]
+[ext_resource type="Script" path="res://features/fishing/fishing_challenge_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="Challenge"]
+script = ExtResource("2")
+difficulty = "hard"
+hook_window_seconds = 0.7
+minimum_fight_seconds = 15.0
+maximum_fight_seconds = 30.0
+
+[resource]
+script = ExtResource("1")
+stable_id = "item-golden-carp"
+display_name = "Golden Carp"
+source_item_id = "golden_carp"
+category = "fish"
+stack_limit = 99
+giftable = true
+description = "A freshwater golden carp. Can be inspected and selected; no direct use."
+fishing_challenge = SubResource("Challenge")

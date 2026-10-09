@@ -20,7 +20,7 @@ func _run() -> void:
 		return
 	canonical = catalog.document_snapshot()
 	_check(catalog.npc_ids() == NpcContentCatalog.ROSTER and catalog.definition_count() == 8, "Exact selected roster")
-	_check(actors.definition_count() == 21 and actors.get_actor("npc-03").display_name == "Maris", "Legacy actor catalog/Maris unchanged")
+	_check(actors.definition_count() == 27 and actors.get_actor("npc-03").display_name == "Maris", "Legacy actor catalog/Maris unchanged")
 	_check(catalog.get_npc("npc-05") == null and catalog.get_npc("prototype-companion") == null, "Unrequested people excluded")
 	var totals: Dictionary = {"nodes": 0, "choices": 0, "facts": 0, "portraits": 0, "sheets": 0, "deferred_nodes": 0, "deferred_choices": 0, "gifts": 0}
 	for id: String in catalog.npc_ids():

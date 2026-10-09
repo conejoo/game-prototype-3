@@ -1,19 +1,22 @@
 # Fishing migration current state
 
-Updated: 2026-10-09 UTC (FS001 execution; planning history retained below).
+Updated: 2026-10-09 UTC (FS002 execution; planning/FS001 history retained below).
 [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns stable
 behavior/mappings; [AGENT_PROMPT](AGENT_PROMPT.md) supplies invocation.
 
 ## Selection and next safe action
 
-Active fishing task: none. **FS001 Done**, FS002-FS008 Pending.
-Next eligible: **FS002 - Fish content, catch areas and atomic backpack compatibility**.
-Final task: **FS008**. Remaining IDs: FS002, FS003, FS004, FS005, FS006, FS007, FS008.
+Active fishing task: none. **FS001-FS002 Done**, FS003-FS008 Pending.
+Next eligible: **FS003 - Deterministic fishing challenge rules**.
+FS004 is also dependency-ready; default numeric selection chooses FS003.
+Final task: **FS008**. Remaining IDs: FS003, FS004, FS005, FS006, FS007, FS008.
 Whole fishing checklist: incomplete. Current blockers: none.
-Exact next safe action: recheck Git/current interfaces and audit FS001 reference
-pins; verify its accepted sites/rules, then mark FS002 In progress and implement
-fish catalog/area resolver/current-format inventory compatibility within its scope.
-No successor was started in the FS001 invocation.
+Exact next safe action: await the next authorized invocation, recheck Git/current
+interfaces and FS002 acceptance, then mark FS003 In progress and implement its pure
+transient challenge using published species metadata and frozen challenge rules.
+Do not activate world fishing input, rewards or HUD ahead of their owning tasks.
+FS002 completed at HEAD `24b5a01c21c8fe5edfb6f31dbcfe310eaf8dd3aa`, without commit.
+Only FS002 ran in this invocation; no successor started.
 
 The planning invocation created instructions only. FS001 now adds development-only
 reference tools/tests and casting-site proof; production fishing remains inactive.
@@ -160,3 +163,86 @@ historical evidence and canonical packages preserved. No commit/push or publicat
 Remaining FS001 criteria/blockers: none. FS002 next; stop here.
 Final docs read-back/46 local links/eight status rows/Python syntax/whitespace and
 intended scope review PASS; accepted run retains final-review.json. HEAD unchanged.
+
+## FS002 executed handoff (2026-10-09 UTC)
+
+Selected/status: FS002 Done; [acceptance](FS002_ACCEPTANCE.md) maps every criterion.
+Entry/final HEAD `24b5a01c21c8fe5edfb6f31dbcfe310eaf8dd3aa`; clean entry Git status.
+Root AGENTS, current architecture, fishing prompt/contract/reference acceptance,
+project-owned gameplay-testing skill, testing-tools recipe and PLAYTEST read. No
+repository/nested AGENTS or workspace/repository `.agents` directory found. No
+subagents/new threads or another agent conversation used. Social G001-G009 remains
+Done; independent native tools/packages/instructions untouched. Read-only source HEAD
+`60c20eb2816e7271fb84afaba286af006ebe3ccf`, status clean. Live reference audit before/
+after143 assertions PASS: all18 source pins and layout SHA256
+`7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be` exact.
+
+Bounded actual files touched:
+
+- docs/fishing/CHECKLIST.md, CURRENT_STATE.md, new FS002_ACCEPTANCE.md.
+- game/core/content_catalog.gd, content_manifest.gd;
+  game/features/items/item_definition.gd; game/content/prototype_catalog.tres,
+  game/content/items/fishing_rod.tres and new bluegill/river_trout/golden_carp.tres.
+- New game/features/fishing/fishing_challenge_definition.gd,
+  rod_activation_definition.gd, fishing_area_definition.gd, fishing_area_adapter.gd,
+  fishing_activity_resolver.gd and their five UIDs.
+- New game/tests/fishing_content_checks.gd, fishing_activity_checks.gd and two UIDs.
+  Existing inventory_checks.gd, content_catalog_checks.gd, application_smoke.gd,
+  npc_content_checks.gd receive catalog-count/manifest-fixture updates only.
+
+Ownership/decisions:24 authored catalog entries plus three adapted retained areas
+publish atomically as27 definitions. Manifest explicitly references target layout;
+adapter validates inert records without altering runtime_enabled=false/map bytes.
+Area/source IDs, shapes, weights/probabilities and fish references validate before
+existing catalog publication. Weighted/closed-edge/sorted/no-area/miss rules exact;
+query accepts supplied finite [0,1) roll and owns no RNG generator/inventory command.
+Species metadata retains difficulty/hook/fight times; rod capability uses metres.
+No challenge controller, root input, reward, UI/icon/help, schema or content version
+change. Existing inventory, ForagingState, SaveCodec, social/environment/quest/party
+owners remain. Fish giftable metadata adds no authored NPC preference/action.
+
+Verification/cwd: prototype root, PowerShell7, installed console4.7.2. Exact final
+command and explicit runtime parse dependencies in acceptance. Accepted report
+`docs/evidence/FS002/20261009-031709346-24ed574e/results.json`:12 cases PASS/exit0;
+nine distinct check groups under matching `builds/testing/FS002/` appdata/localappdata,
+slots `check-20261009-031709346-24ed574e-000` through `-008`.
+Stable986-file game/tools digest
+`c1854214fc96f2d08c74986d05b9ff51a9d04da3fa95593005ff7a3e3eb6c42a`,
+source.changed=false/error=null. No runtime/parse diagnostics or timeouts; exact known
+import-only SDK10.0.9 advisory allowed, no installation. Content255/activity208/
+inventory199/foraging-save111/social-save844/NPC432/backpack148 assertions; catalog/
+startup PASS. Exact complete typed fish/selection save and forecast roundtrip preserves
+old facts. Full-bag/new-fish rejection, existing fish stack growth/cap99,20-type save,
+malformed counts/selection, rod conservation, detached snapshots/metadata and atomic
+failed operations proven. Synthetic fixtures, no ordinary catch/render/native claim.
+
+Retained failed/unaccepted runs:
+- `20261009-031344435-ec3da8f2`: sandbox engine-launch access denial; authorized scoped
+  escalation resolved it. No automatic approval rejection or user gate outstanding.
+- `20261009-031408508-e65d7a8a`: first import generated seven UIDs; changed-source run
+  rejected. UIDs reviewed/retained before stable reruns.
+- `20261009-031441393-590071d9`: hostile count fixture used typed dictionary, coercing
+  malformed values; replaced with untyped plain data. Activity suite passed.
+- `20261009-031522659-18665db7`: serializing NaN/Infinity emitted warnings; nonfinite
+  fixtures now test plain-data validator, JSON-safe hostile values test actual decode.
+  Required regressions passed, overall run excluded.
+
+Final all-case launcher PID lookup: none alive. No owned editor/game or cleanup owed;
+no unowned process stopped. Normal saves, prior evidence, source, geography/collision/
+navigation/portals, original AGENT_PROMPT and native packages preserved. No commit/
+push/deployment/publication. FS002 criteria/blockers remaining: none. FS003 next;
+remaining FS003-FS008, whole checklist incomplete. Stop before successor.
+
+Final docs read-back,48 local links,eight status rows/dependencies, bounded29-file
+allowlist,986-file byte rehash and command-local CRLF-aware whitespace review PASS.
+Accepted run retains final-review.json. HEAD unchanged; no process or cleanup owed.
+
+### FS002 commit follow-up
+
+Subsequent user instruction authorizes the successful FS002 local commit only.
+The execution records above describe the pre-commit acceptance boundary. Rechecked
+all12 passed cases and every986 tested game/tool file hash before staging the reviewed
+29-file task allowlist. Durable acceptance, checklist, handoff and reusable source/
+tests are versioned; ignored raw runner reports/logs remain local as project policy
+requires. No unrelated changes staged, no push, no FS003 work. Verified commit hash
+is reported to the user after commit; it is not embedded in its own content.

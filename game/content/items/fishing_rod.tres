@@ -1,6 +1,10 @@
 [gd_resource type="Resource" script_class="ItemDefinition" format=3]
 
 [ext_resource type="Script" path="res://features/items/item_definition.gd" id="1"]
+[ext_resource type="Script" path="res://features/fishing/rod_activation_definition.gd" id="2"]
+
+[sub_resource type="Resource" id="RodActivation"]
+script = ExtResource("2")
 
 [resource]
 script = ExtResource("1")
@@ -12,3 +16,4 @@ stack_limit = 1
 movable_pickup = true
 giftable = false
 description = "A movable rod. Can be selected as a tool; fishing is unavailable in this slice."
+rod_activation = SubResource("RodActivation")
