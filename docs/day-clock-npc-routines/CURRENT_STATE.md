@@ -1,6 +1,112 @@
 # Day clock and NPC routines current state
 
-## Current R009 completion (2026-10-09 UTC)
+## Current R010 completion (2026-10-09 UTC)
+
+Active task:none. Exactly R010 completed; every criterion passes, including final
+absent-assignment stability and actual civil-midnight loaded wait continuity.
+Clock day remains authoritative10:00-based; no calendar semantics change.
+R001-R010 Done,R011-R016 Pending. Blockers/unrun R010 criteria:none. Whole checklist throughR016
+complete:no. [R010 acceptance](R010_ACCEPTANCE.md) owns criterion mapping, exact27
+intended paths, commands/isolation, source decisions, retained failures and visuals.
+Implementation stopped without commit/push. Separate follow-up now authorizes
+the successful R010-only commit after review. No push or R011 work.
+
+Clean target baseline4b9d45d/source60c20eb2; empty index/no user changes. Current
+R003/R004/R007/R008/R009 APIs/evidence, applicable instructions/testing guidance,
+contract/architecture and save/journey/capture/native guards read. No nested target
+instructions. Supplied engines exist. Default shell sandbox fails before execution;
+scoped reviewed shell works with no automatic approval rejection. Source/user
+instructions/normal saves/packages/geography/room geometry/content/art preserved.
+
+### Delivered scope and validation
+
+One root-owned injected transient RoutineExecutionDirector, typed participant
+move/wait/action/speech cursors, atomic assignments/cancellation, qualified public
+world/portal metadata. Loaded NPCs physically walk source doors; offscreen legs
+require measured directed chains. Safe active arrival owns one wrapper/body/claim;
+bounded blocked arrival keeps safe source and cancels whole group. Reassignment
+starts at actual feet. Detached restore and failed scene rollback rebind exact
+actual bodies; waits and unrelated offscreen phases/timers retain progress.
+No second clock/save cursor/reward replay/NPC-driven player travel/party membership.
+Default activation remains R013; dialogue R011, art R012, stress/profile R014.
+Schema8/content1 and existing clock/social/item/recovery/party/manual-save owners
+unchanged. Authored anchors/steps/geometry/source pins unchanged.
+
+Repository cwd,PowerShell7,explicit console4.7.2,GL Compatibility960x640,bundled
+Python3.12.14. [Final combined report](../evidence/R010/20261009-194406532-09e2abb0/results.json)
+PASS7 cases: executor71/cross-map3495/process writer20/reader30/render47/7 captures.
+Actual distinct-process paused Load/Save at22/00/06 verifies exact primary/backup
+and complete durable/forecast oracle; cursors remain absent from save JSON.
+[Final bounded report](../evidence/R010/20261009-194742864-677989af/results.json)
+PASS3/495 assertions; all25 participants/huge finite elapsed, maxday3650/.99,
+20 samples/max31.246ms<50ms,64 actor/512 total limits.
+[Earlier clear morning report](../evidence/R010/20261009-193018784-064f399c/results.json)
+PASS3/19 assertions/2 captures retained; final combined run also includes clear
+morning capture. Combined/bounded share identical1274-file fingerprint
+e8158a168e4a30e01e159f45dc056e239ed4aa70bf7d2629e3c0148ff56d19b5.
+Accepted exits0/forbidden diagnostics empty/source.changed=false/error=null.
+Every independent check/process pair/render has isolated save_group/slot and
+APPDATA/LOCALAPPDATA under builds/testing/R010; normal saves untouched.
+
+Existing movement1363/occupancy311/NPC-world9884/home5368/inn1997/save/travel/companion
+passed190708's first13 cases; its optional contact renderer failed and whole report
+stays failed. Existing default game/check bytes stay exact; final new director/
+focused regression/restart checks revalidated after offscreen rollback repair.
+[Final live reference gate](../evidence/R010/reference-final-midnight/results.json)
+PASS1624/88pins/74exact adaptations/ten refusals. Original source snapshots,
+before-hashes and all previous adaptation reasons/accepted hashes preserved.
+
+Viewed all final7 on contact sheet, full doorway/night-rest and supplemental clear
+town morning frame: exported identity/planted feet, both real home people/rest,
+one town Edric return, persistent party/room/furniture, both projections. Public
+WASD/E/P/Esc and verified pause checkpoints; initial20:00/08:00/party placement
+and deterministic headless deltas remain labeled synthetic. Rendered clock then
+advances unaccelerated. No full natural-day/weather/native/package/dialogue-art claim.
+
+### Retained diagnosis and cleanup
+
+SourceINT-064 hidden town-foot observation retained; original enum unconfirmed,
+source not executed. Target mixed town/home-origin `(14,0,4.5)` genuinely fails
+home floor/capsule; qualified predecessor reconstruction fixes that failure class.
+Loaded night also proved Helena near-side rest blocks Edric far-side route. A
+bounded physical archive-desk yield lets Edric rest first, then Helena returns,
+with exact authored feet/no teleport/hidden actor/anchor or step edits.
+Actual early player return finds Edric temporarily occupying town arrival and
+correctly refuses. Rollback used to restart unrelated offscreen leg; it now keeps
+exact phase/time/foot and ordinary finite wait/E retry safely publishes town.
+
+Failed UID/import/argument/body-count/morning-count/party-lane/focus/extra rest-talk/
+occupied-arrival attempts retained under R010. Unfinished185628 session-loss report
+never relabeled. Real OS foreground activation/verified root focus repair leaves
+guards intact. Optional Edric rest-dialogue probe hit Helena's solid capsule in the
+bed passage; outside R010 acceptance, retained for R011 group interaction review.
+Final required physical night/rest/morning and rollback gates all pass.
+Final review adds20 stable sparse plans and loaded civil-midnight wait continuity:
+same actors/feet,233.7->214.7 over19 active seconds, no repeated yield.194105's
+failed test wrongly equated midnight with clock day-index rollover; corrected
+minute-wrap test honors existing10:00-based clock. No calendar change; speculative
+predicate removed. Empty-to-empty assignments no longer revise/cancel group lanes.
+All owned Godot exited; no held input/editor or cleanup owed. Blender2664 untouched.
+[Final readback audit](../evidence/R010/final-audit-midnight.json) owns27 exact intended paths,
+1274 current accepted game/tools hashes,1448 unchanged pinned hashes and unchanged
+content of all1459 unrelated tracked files (ordinary CRLF checkout accounted for),
+all16 statuses/links, unchanged HEAD/empty index/clean source and whitespace.
+
+### Exact continuation
+
+Authorized R010 commit follow-up: preflight passed exact27 accepted paths and1274
+runtime hashes, unchanged HEAD/empty index/clean source; no unrelated changes.
+Stage only27 paths, verify staged exact bytes/whitespace, commit once, then verify
+committed paths and working-tree status. Git and the ignored R010 commit audit
+record the resulting hash. Do not push or implement successor in this commit turn.
+Stop after R010. Raw reports/captures/isolated
+save groups stay ignored. Remaining IDs:R011,R012,R013,R014,R015,R016.
+Next implementation eligibleR011:read current R004 atomic commands/R010 groups
+and context, bind routine dialogue/leases/directives and review far-side rest
+interaction access within that task. R012 is also dependency-ready; sequential
+lowest-numbered selection remains R011. Whole checklist throughR016 complete:no.
+
+## Historical R009 completion (2026-10-09 UTC)
 
 Active task:none. Exactly R009 completed, every criterion passes. R001-R009 Done;
 R010-R016 Pending. Blockers/unrun R009 criteria:none. Whole checklist throughR016

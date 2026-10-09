@@ -6,12 +6,21 @@ var presenters: Dictionary[String, NpcVisualPresenter] = {}
 var movers: Dictionary[String, RoutineMovement] = {}
 var occupancy: RoutineOccupancy = RoutineOccupancy.new()
 var _holds: Dictionary = {}
+var contact_records: Dictionary = {}
+var scheduled: bool = false
 
 func _init() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 
 func _ready() -> void:
 	_pin_counter_furniture()
+
+func _enter_tree() -> void:
+	# Rollback reattaches the same location after _exit_tree disposed weak bindings.
+	# Rebind real bodies; execution owner reissues unfinished legs from real feet.
+	for id: String in movers:
+		var body: CharacterBody3D = targets[id].get_node("Body" if id == "npc-03" else "ContactBody")
+		movers[id].configure(id,targets[id],body,get_parent() as PrototypeLocation,occupancy,.35 if id == "npc-03" else .4)
 
 func _pin_counter_furniture() -> void:
 	if not targets.has("npc-03"): return
@@ -46,21 +55,30 @@ func move_to(id: String, foot: Vector3) -> bool:
 func cancel_move(id: String) -> void:
 	if movers.has(id): movers[id].cancel()
 
-func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStringArray:
-	if not targets.is_empty(): return PackedStringArray(["NPC contacts already built"])
-	if location.location_id not in [NpcRegistry.LOCATION,"prototype-lantern-rest"]: return []
-	if not enabled.is_empty() and not (location is AlderwakeExterior if location.location_id == NpcRegistry.LOCATION else location is LanternRest):
+func build(location: PrototypeLocation, enabled: PackedStringArray, placements: Dictionary = {}, append: bool = false) -> PackedStringArray:
+	if not targets.is_empty() and not append: return PackedStringArray(["NPC contacts already built"])
+	if location.location_id not in [NpcRegistry.LOCATION,"prototype-lantern-rest","prototype-mayor-vale-home"]: return []
+	if not enabled.is_empty() and not (location is AlderwakeExterior if location.location_id == NpcRegistry.LOCATION else location is LanternRest if location.location_id == "prototype-lantern-rest" else location is MayorValeHome):
 		return PackedStringArray(["NPC contacts require their pinned actual map"])
 	var seen: PackedStringArray = []
 	for id: String in enabled:
 		if NpcRegistry.find(id).is_empty() or id in seen: return PackedStringArray(["Unknown or duplicate NPC contact"])
 		seen.append(id)
-		if NpcRegistry.find(id).location_id != location.location_id: continue
+		if id in targets: return ["duplicate live NPC contact: "+id]
+		if placements.is_empty() and NpcRegistry.find(id).location_id != location.location_id: continue
+		if not placements.is_empty() and not placements.has(id): continue
 		if id == "npc-03" and not location.get_node_or_null("MarisCounter") is PrototypeInteractable:
 			return PackedStringArray(["Existing Maris counter missing"])
 	for id: String in enabled:
 		var entry: Dictionary = NpcRegistry.find(id)
-		if entry.location_id != location.location_id: continue
+		if scheduled or not placements.is_empty():
+			if not placements.has(id): continue
+			entry.location_id = location.location_id
+			entry.foot = placements[id].foot
+			entry.approach = entry.foot+placements[id].facing*1.1
+			entry.facing = placements[id].facing
+		elif entry.location_id != location.location_id: continue
+		contact_records[id] = entry.duplicate(true)
 		var target: PrototypeInteractable
 		if id == "npc-03":
 			target = location.get_node_or_null("MarisCounter") as PrototypeInteractable
@@ -87,6 +105,7 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 			visual.name = "VisualRoot"
 			target.add_child(visual)
 		target.npc_id = id
+		if id == "npc-03" and scheduled: target.position = entry.foot
 		targets[id] = target
 		var body: CharacterBody3D = target.get_node("Body" if id == "npc-03" else "ContactBody")
 		var mover: RoutineMovement = RoutineMovement.new()
@@ -111,6 +130,34 @@ func build(location: PrototypeLocation, enabled: PackedStringArray) -> PackedStr
 	if is_inside_tree(): _pin_counter_furniture()
 	return []
 
+func materialize(location: PrototypeLocation, id: String, foot: Vector3, facing: Vector3) -> PackedStringArray:
+	if targets.has(id): return ["NPC already materialized"]
+	var errors: PackedStringArray = foot_errors(location,foot,[])
+	if not occupancy.blocked(id,foot,foot,.4).is_empty(): errors.append("NPC arrival occupied")
+	for claim: Dictionary in occupancy.snapshot().reservations.values():
+		if Vector2(foot.x-claim.foot.x,foot.z-claim.foot.z).length() < .4+claim.radius+RoutineOccupancy.CLEARANCE: errors.append("NPC arrival reserved")
+	var nearest: Vector3 = NavigationServer3D.map_get_closest_point(location.get_world_3d().navigation_map,foot)
+	if nearest.distance_to(foot) > .3: errors.append("NPC arrival outside navigation")
+	if not errors.is_empty(): return errors
+	errors = build(location,[id],{id:{"foot":foot,"facing":facing}},true)
+	if not errors.is_empty():
+		dematerialize(id)
+		return errors
+	if not occupancy.reserve(id,foot,.4):
+		dematerialize(id)
+		return ["NPC arrival reservation refused"]
+	return []
+
+func dematerialize(id: String) -> void:
+	if not targets.has(id): return
+	if movers.has(id): movers[id].dispose(); movers.erase(id)
+	presenters.erase(id); contact_records.erase(id)
+	var target: PrototypeInteractable = targets[id]
+	targets.erase(id)
+	# Remove interaction and collision synchronously before another arrival query.
+	if target.get_parent() != null: target.get_parent().remove_child(target)
+	target.free()
+
 func sync_visuals(holds: Dictionary, speaker: String, player_foot: Vector3, blockers: Array[CharacterBody3D] = []) -> void:
 	_holds = holds.duplicate()
 	for index: int in range(blockers.size()):
@@ -128,12 +175,15 @@ func placement_errors(location: PrototypeLocation, excluded: Array[RID]) -> Pack
 	var map: RID = location.get_world_3d().navigation_map
 	for id: String in targets:
 		var target: PrototypeInteractable = targets[id]
-		var entry: Dictionary = NpcRegistry.find(id)
+		var entry: Dictionary = contact_records[id]
 		var own: Array[RID] = excluded.duplicate()
 		if target.global_position != entry.foot: errors.append("NPC foot differs from approved map-qualified contact: " + id)
 		var body: CharacterBody3D = target.get_node("Body" if id == "npc-03" else "ContactBody")
 		own.append(body.get_rid())
 		errors.append_array(foot_errors(location, target.global_position, own))
+		if scheduled:
+			if NavigationServer3D.map_get_closest_point(map,target.global_position).distance_to(target.global_position) > .3: errors.append("Scheduled NPC outside navigation: "+id)
+			continue
 		errors.append_array(foot_errors(location, entry.approach, excluded))
 		var nearest: Vector3 = NavigationServer3D.map_get_closest_point(map, entry.approach)
 		var path: PackedVector3Array = NavigationServer3D.map_get_path(map, location.get_node("Spawns").get_child(0).global_position, entry.approach, true)

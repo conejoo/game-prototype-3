@@ -13,6 +13,7 @@ var transitioning: bool = false
 var transition_count: int = 0
 var developer_fixtures: bool = false
 var enabled_npcs: PackedStringArray = NpcRegistry.ENABLED
+var routine_execution: RoutineExecutionDirector
 
 
 func initialize(content: ContentCatalog, run: GameSession, persistent_party: PrototypeParty) -> void:
@@ -40,7 +41,14 @@ func request_transition(location_id: String, spawn_id: String, restored_run: Gam
 		for child: Node in candidate.get_children():
 			if child.is_in_group("developer_fixture"):
 				child.free()
-	var errors: PackedStringArray = candidate.prepare_npcs(enabled_npcs)
+	var facts_run: GameSession = restored_run if restored_run != null else session
+	var routine_stage: Dictionary = {}
+	if routine_execution != null:
+		routine_stage = routine_execution.stage(facts_run)
+		if not routine_stage.ok:
+			candidate.free()
+			return [routine_stage.error]
+	var errors: PackedStringArray = candidate.prepare_npcs(enabled_npcs,routine_execution.placements(routine_stage,location_id) if routine_execution != null else {},routine_execution != null)
 	errors.append_array(candidate.validation_errors(definition, catalog))
 	if not errors.is_empty():
 		candidate.free()
@@ -49,7 +57,7 @@ func request_transition(location_id: String, spawn_id: String, restored_run: Gam
 	transitioning = true
 	party.suspend_for_travel()
 	transition_started.emit()
-	_replace_location.call_deferred(candidate, location_id, spawn_id, restored_run if restored_run != null else session)
+	_replace_location.call_deferred(candidate, location_id, spawn_id, facts_run, routine_stage)
 	return PackedStringArray()
 
 
@@ -76,7 +84,7 @@ func request_portal(contact: WeakRef) -> PackedStringArray:
 	return request_transition(target.portal.destination_location_id, target.portal.arrival_id)
 
 
-func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_id: String, facts_run: GameSession) -> void:
+func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_id: String, facts_run: GameSession, routine_stage: Dictionary = {}) -> void:
 	var previous: PrototypeLocation = current_location
 	if previous != null:
 		remove_child(previous)
@@ -125,6 +133,7 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 			await _synchronize_navigation(previous, previous.find_spawn(session.current_spawn_id))
 		party.resume_after_travel()
 		transitioning = false
+		if routine_execution != null and previous != null: routine_execution.bind_location(previous)
 		transition_finished.emit(false, errors)
 		return
 	party.place_at(anchor)
@@ -141,6 +150,7 @@ func _replace_location(candidate: PrototypeLocation, location_id: String, spawn_
 	party.resume_after_travel()
 	transition_count += 1
 	transitioning = false
+	if routine_execution != null: routine_execution.commit(routine_stage,facts_run,candidate)
 	print("P004: arrived %s/%s; party=%d; transition=%d" % [location_id, spawn_id, party.members().size(), transition_count])
 	transition_finished.emit(true, PackedStringArray())
 
@@ -196,7 +206,8 @@ func _foreign_placement_errors(placed: WorldItemPlacement) -> PackedStringArray:
 		for child: Node in probe.get_children():
 			if child.is_in_group("developer_fixture"): child.free()
 	probe.visible = false
-	var npc_errors: PackedStringArray = probe.prepare_npcs(enabled_npcs)
+	# Foreign placement audit is a bounded probe, never an NPC simulation world.
+	var npc_errors: PackedStringArray = probe.prepare_npcs([] if routine_execution != null else enabled_npcs)
 	probe.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(probe)
 	probe.set_process(false)

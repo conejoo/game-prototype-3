@@ -145,3 +145,13 @@ game/tests/routine_occupancy_checks.gd -text whitespace=blank-at-eol,blank-at-eo
 game/tests/routine_occupancy_checks.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/tests/routine_movement_render.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/tests/routine_movement_render.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R010 qualified execution and cross-map/reconstruction fixtures.
+game/features/routines/routine_execution_director.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/routines/routine_execution_world.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/routines/routine_executor.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_executor_checks.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_cross_map_checks.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_reconstruction_checks.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_cross_map_render.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/support/routine_execution_fixture.gd* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

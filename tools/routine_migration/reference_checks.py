@@ -151,7 +151,7 @@ def adaptations(reference, path):
         require(isinstance(row, dict) and set(row) == {'path', 'after_path', 'before_sha256', 'after_sha256', 'owner', 'reason'}, 'Invalid adaptation record')
         name = row['path']
         require(name in baseline and name not in result and row['before_sha256'] == baseline[name], 'Foreign/duplicate/mismatched adaptation baseline')
-        require(row['owner'] in {'R004', 'R005', 'R006', 'R007', 'R008', 'R009'} and isinstance(row['reason'], str) and bool(row['reason'].strip()), 'Undocumented adaptation owner/reason')
+        require(row['owner'] in {'R004', 'R005', 'R006', 'R007', 'R008', 'R009', 'R010'} and isinstance(row['reason'], str) and bool(row['reason'].strip()), 'Undocumented adaptation owner/reason')
         after = child(pin.ROOT, row['after_path'])
         require(after.is_file() and not after.is_symlink() and pin.sha(after) == row['after_sha256'], 'Adapted target hash drift: '+name)
         if row['after_path'] != name:

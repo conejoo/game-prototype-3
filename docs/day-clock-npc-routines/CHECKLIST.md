@@ -23,7 +23,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R007 | Done | R005, R006 | Mayor Vale home and its nine required anchors |
 | R008 | Done | R005, R006 | Lantern Rest and Della's real station |
 | R009 | Done | R002, R006 | Physical same-map movement/bounded occupancy |
-| R010 | Pending | R003, R004, R007, R008, R009 | Group/cross-map execution and safe night reconstruction |
+| R010 | Done | R003, R004, R007, R008, R009 | Group/cross-map execution and safe night reconstruction |
 | R011 | Pending | R004, R010 | Routine dialogue, group leases and directives |
 | R012 | Pending | R009, R010 | Readable walk/actions/speech under lifecycle holds |
 | R013 | Pending | R011, R012 | All 25 routines active in ordinary play |
@@ -163,14 +163,14 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001-R009 completed; R010-R016 remain Pending. Final task ID: R016.
-Next eligible: R010 (R003/R004/R007/R008/R009 prerequisites verified).
+R001-R010 completed; R011-R016 remain Pending. Final task ID: R016.
+Next eligible: R011 (R004/R010 prerequisites verified).
 Whole checklist complete: no. No current blocker.
 [R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
 [R003 acceptance](R003_ACCEPTANCE.md), [R004 acceptance](R004_ACCEPTANCE.md) and
 [R005 acceptance](R005_ACCEPTANCE.md), [R006 acceptance](R006_ACCEPTANCE.md) and
 [R007 acceptance](R007_ACCEPTANCE.md), [R008 acceptance](R008_ACCEPTANCE.md),
-[R009 acceptance](R009_ACCEPTANCE.md) own evidence.
+[R009 acceptance](R009_ACCEPTANCE.md) and [R010 acceptance](R010_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -468,3 +468,55 @@ All owned Godot exited,no input/editor/cleanup owed. Blockers/unrun R009 criteri
 none. No commit/push; separate instruction follows review. Remaining R010-R016;
 every item throughR016 complete:no. Next eligibleR010:group/cross-map executor and
 bounded night reconstruction/sourceINT-064 regression. Stop before successor.
+
+R010 - Done 2026-10-09 (America/Vancouver and UTC)
+Result and changed files: root-owned injected transient move/wait/action/speech
+execution, qualified world/portal metadata, atomic assignments/cancellation,
+physical loaded door legs, finite offscreen travel and one safe active arrival.
+Detached restore staging and scene rollback/rebinding preserve actual feet/timers.
+Exactly27 intended paths listed in R010_ACCEPTANCE.md; default activation R013.
+Verified prerequisites and preserved user changes: R003/R004/R007/R008/R009 APIs
+and evidence inspected; clean target4b9d45d/source60c20eb2, empty index/no baseline
+user changes. Source, instructions, geography/room geometry/content/art/schema8/
+content1 and existing clock/social/item/recovery/party/save owners preserved.
+Commands/cwd/isolation and actual outcomes: repository cwd,PowerShell7,explicit
+Godot4.7.2 console/GL960x640,bundled Python3.12.14. Final194406532 PASS7 cases:
+executor71/cross-map3495/process writer20/reader30/render47/7 captures; distinct
+22/00/06 primary/backup/full durable-forecast restart oracles.194742864 bounded
+PASS3/495 assertions/20 max-clock samples/max31.246ms<50ms/64 actor-512 total cap.
+193018784 clear morning PASS3/19 assertions/2 captures. All accepted exits0,
+forbidden diagnostics empty/source stable. Existing movement/occupancy/NPC-world/
+home/inn/save/travel/companion passed190708's first13 cases; its whole report stays
+failed. Existing default game/check bytes unchanged; final lifecycle repair reruns
+focused cross-map/restart checks. Every save group/slot/APPDATA/LOCALAPPDATA isolated
+under R010 builds/testing; no normal save access. Live reference PASS1624/88pins/
+74exact adaptations/ten refusals; original pins/before-hashes/prior reasons retained.
+Evidence and inspected captures/artifacts: final seven-frame contact sheet, full
+door/night-rest and clearer town-morning frame; both projections, actual visible
+Edric/Helena rest, one civic Edric return, physical arrival reservations/rollback.
+Synthetic initial clocks/party and deterministic deltas labeled; rendered clock
+then unaccelerated with public viewport WASD/E/P/Esc and verified pause captures.
+Decisions/compatibility changes/retained limits: sourceINT-064 original enum
+unconfirmed/source not executed; mixed home-origin foot actually rejects physics.
+Measured Helena near-side rest blocks Edric: physical archive yield/far-side first/
+return repairs it without teleport/anchor/step edit. Occupied player return rightly
+refuses; offscreen phase/timer now survive rollback and public finite wait/E retry
+succeeds. Failed UID/preflight/count/party-lane/focus/optional-rest-dialogue/arrival
+reports retained; unfinished185628 not relabeled. Extra rest-dialogue access is
+explicit R011 interaction review, not a claimed R010 feature. No native/full-day/
+presentation/default-activation claim. All owned Godot exited; no held input,
+editor or cleanup owed; Blender2664 untouched. Final audit verifies exact27 paths,
+1274 accepted game/tools hashes, all16 statuses/links, preserved content/pinned bytes,
+unchanged HEAD/empty index/clean source/whitespace. Blockers/unrun R010 criteria:none.
+No commit/push; separate commit instruction follows review. Remaining unfinished
+IDs:R011,R012,R013,R014,R015,R016; every item throughR016 complete:no.
+Next eligibleR011: bind routine dialogue/group leases/directives using R004 atomic
+commands and R010 context; include far-side rest interaction access review.
+Stop after exactly R010, before successor.
+Final acceptance refresh: unchanged sparse assignments stay inert (20 repetitions,
+no revision churn/group-lane cancellation); continuous loaded civil midnight keeps
+both rest cursors/feet and consumes exactly19s of wait.194105's mistaken midnight
+day-index test retained and corrected to minute wrap; existing clock day begins
+10:00, no second calendar/semantics added. Refreshed194406532 combined PASS7,
+194742864 bounded PASS3/max31.246ms and seven fresh inspected captures supersede
+earlier accepted runtime; final audit-midnight owns current exact bytes.

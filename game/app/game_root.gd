@@ -10,6 +10,7 @@ extends Node3D
 var session: GameSession = GameSession.new()
 var catalog: ContentCatalog = ContentCatalog.new()
 var npc_catalog: NpcContentCatalog = NpcContentCatalog.new()
+var routine_execution: RoutineExecutionDirector # Injected by R010 checks; activation belongs R013.
 var window_focused: bool = true
 var save_repository: SaveRepository = SaveRepository.new()
 var loading_save: bool = false
@@ -86,6 +87,9 @@ func _ready() -> void:
 		errors = session.initialize(catalog, initial_location_id, initial_spawn_id, "prototype-hero", null, npc_catalog)
 	if errors.is_empty():
 		errors = dialogue.initialize(npc_catalog, session)
+	if errors.is_empty() and routine_execution != null:
+		errors = routine_execution.initialize(catalog,npc_catalog,session)
+		world_host.routine_execution = routine_execution
 	if not errors.is_empty():
 		set_process(false)
 		set_process_unhandled_input(false)
@@ -188,6 +192,8 @@ func _process(delta: float) -> void:
 	if not session.initialized or player_placeholder.state == null:
 		return
 	_sync_npc_visuals()
+	if routine_execution != null:
+		routine_execution.tick(delta,get_tree().paused or world_host.transitioning or loading_save or retrying or dialogue.active() or journal_open or backpack_open or not window_focused or player_placeholder.state.health <= 0)
 	if world_host.current_location is AlderwakeTerrainPreview and not world_host.transitioning:
 		(world_host.current_location as AlderwakeTerrainPreview).tree_art.update_visibility(camera_rig.camera, player_placeholder, companion)
 	if not get_tree().paused and not world_host.transitioning and not loading_save and not retrying:

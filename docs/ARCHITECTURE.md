@@ -1,5 +1,46 @@
 # Returning Fair prototype architecture
 
+Current cross-map routine execution (2026-10-09, R010): GameRoot optionally owns
+one injected RoutineExecutionDirector; default gameplay activation remains R013.
+RoutineExecutor retains a transient map-qualified foot/cursor and finite active
+move/wait/action/speech state. Whole-group assignment validation precedes one
+publication; unchanged assignments preserve cursors. Reassignment on loaded maps
+uses actual physical feet. Common root lifecycle holds stop execution/timers.
+Unchanged absent assignments are inert: they cannot churn revisions or cancel
+an unrelated group lane. Civil midnight preserves overnight cursors/waits under
+the existing10:00-based clock day; no second calendar/day index is introduced.
+
+RoutineExecutionWorld reads existing public station/door/arrival metadata and
+validated PortalRoutes without instantiating unloaded rooms. Loaded NPCs walk
+the measured source door before synchronous contact/body/presenter removal.
+Offscreen legs consume finite distance/speed time through validated directed
+chains. Active arrivals require dry capsule/nav/live-body/station clearance,
+one wrapper and one reservation; blocked arrival fails within1.5 active seconds
+at its safe source, cancels its group and publishes no stale active actor.
+NPC transfer never calls player WorldHost travel or changes camera/party/session
+location, quest/social/items or weather. Diagnostics contain only IDs/enums.
+
+Fresh/restore reconstruction starts from qualified guaranteed predecessor stations
+and sweeps each authored step once (64/actor,512total), never replaying rewards
+or historical days. Partial historical moves retain safe qualified origins;
+loaded presentation walks rather than interpolating through collision. Source
+INT-064's hidden-town observation and unconfirmed original enum remain recorded;
+target regression rejects the mixed home-origin foot and verifies overnight
+rest/breakfast/morning under continuous time, fresh22/00/06 and manual restart.
+Measured loaded-home regression also found Helena's near-side rest blocks Edric's
+far-side path. A bounded three-phase group lane physically yields Helena to her
+existing archive desk, rests Edric first, then returns Helena to unchanged rest.
+No authored steps/rewards/anchors change; held/rest timers retain their ownership.
+WorldHost stages detached restore execution before scene publication; failed
+replacement restores old scene, qualified positions/timers and weak actual body
+bindings. Successful replacement commits exactly one new active scene/region.
+Only physical loaded legs are reissued on binding; unrelated offscreen travel
+keeps its phase/remaining time across rollback. A player arrival occupied by an
+NPC correctly refuses, then succeeds after that finite offscreen leg clears it.
+Schema8/content1 and all existing save/clock/social/recovery/party owners unchanged.
+R011 owns dialogue leases/directives, R012 action/speech presentation, R013 default
+activation and R014 measured whole-runtime bounds. No new clock or saved cursor.
+
 Current same-map routine movement (2026-10-09, R009): scene-owned
 NpcWorldAdapter exposes explicit move/cancel legs through RoutineMovement and
 injected RoutineOccupancy. Production remains stationary until R013 activation.

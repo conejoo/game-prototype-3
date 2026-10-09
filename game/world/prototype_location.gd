@@ -15,12 +15,13 @@ var npc_contacts: NpcWorldAdapter
 var npc_events: NpcWorldEvents = NpcWorldEvents.new()
 
 
-func prepare_npcs(enabled: PackedStringArray) -> PackedStringArray:
+func prepare_npcs(enabled: PackedStringArray, placements: Dictionary = {}, scheduled: bool = false) -> PackedStringArray:
 	if npc_contacts != null: return PackedStringArray(["NPC scene owner already prepared"])
 	npc_contacts = NpcWorldAdapter.new()
 	npc_contacts.name = "NpcContacts"
+	npc_contacts.scheduled = scheduled
 	add_child(npc_contacts)
-	return npc_contacts.build(self, enabled)
+	return npc_contacts.build(self, enabled, placements)
 
 
 func _exit_tree() -> void:
