@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "edric-afternoon-river-notes",
+  "priority": 200,
+  "timeWindow": {
+    "start": "13:00",
+    "end": "17:00"
+  },
+  "participants": [
+    "npc-01"
+  ],
+  "conditions": [
+    {
+      "kind": "learnedFact",
+      "npcId": "npc-01",
+      "factId": "npc-01-river-fishing"
+    }
+  ],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-01",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "leave-civic-briefing",
+          "target": {
+            "mapId": "prototype-alderwake",
+            "anchorId": "edric-town-square"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "inspect-river-bank",
+          "target": {
+            "mapId": "prototype-alderwake",
+            "anchorId": "edric-river-bank"
+          }
+        },
+        {
+          "kind": "speech",
+          "id": "share-river-observation",
+          "text": "The river is quieter beyond the Old Ford.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "action",
+          "id": "note-river-conditions",
+          "actionId": "river-fishing",
+          "durationSeconds": 86
+        }
+      ]
+    }
+  ]
+}

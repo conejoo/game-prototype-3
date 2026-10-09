@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+  "routines": [
+    {
+      "id": "celia-repairs-day",
+      "source_sha256": "2067600680ca15634f24262fc466b5b49fc7c40c4e302134aa0db13f0fe0fa0f",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "celia-repairs-evening",
+      "source_sha256": "4ddc0059b238738212ee75ab7a9b0a9d3a516c00c39b81097f6e8dcfeb0ca75f",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "della-inn-day",
+      "source_sha256": "839f580e2d33a06991bb4cfcc969fa410c19ed0ec1f4079db85c1e48beff306b",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "della-inn-evening",
+      "source_sha256": "f3572618bc7c91b46bb3cc906df39b7ca7e0a46561419dacd773382bb0ea5813",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "edric-afternoon-river-notes",
+      "source_sha256": "d33c8cca7fd82e155f4c096413b919a6c8c41f7b8d04d710a53fd2d601ef24ae",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "edric-afternoon-rounds",
+      "source_sha256": "044954bb65abeea94485af144791ee4b72b3845ea9e8c3379735443a2d7f5851",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "edric-evening-fishing",
+      "source_sha256": "82cfbc9dd22bed07731049e13505b2d288cc331f86ed69532f3f4a1abe7ee540",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "edric-evening-rain-shelter",
+      "source_sha256": "5045a0c583a310ced57093ea1871debc42eb6c9adfa7797f709157de68715f99",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "harlan-docks-day",
+      "source_sha256": "6585e230eead63f1cda728f979745cd46ec459ccff094c71a07e9dcd6cc6f688",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "harlan-docks-evening",
+      "source_sha256": "4b29a33f82e012f1aa3ad1cbd4e3945c0b9b6a353c2fc3fd58f86a382275b68e",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "helena-afternoon-archive",
+      "source_sha256": "a42557a2383e9529e0d3c29f075ebbab1d0801f649b19de8e8a0b1aa406c3427",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "helena-afternoon-ledger-review",
+      "source_sha256": "e549d901a76ebee99e21c735e96a7f2c2301772c480045c0aab5afc89d56dfaa",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "helena-afternoon-moonflower-records",
+      "source_sha256": "c8bef17e39f7053558f689cadcc0836036800fd576194f9d936b347afa578e03",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "helena-evening-archive",
+      "source_sha256": "f1511bf9238f33456d935bc6746ac4507fdb070edaa7b0576837584eef0723f0",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "ivo-docks-day",
+      "source_sha256": "f30e03ba385967c44ffa53d9509573c389c9b5516d4f7e23993f6c26db0c7c43",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "ivo-docks-evening",
+      "source_sha256": "a2f0508efea693564266f2ec76fb4f3a42394271bb0ae4fb146b82e8ffc821fd",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "maris-chandlery-day",
+      "source_sha256": "466e7e33b5100a2d9a97fbc27e8a8da3127e23a7f2eea92ae8e95581a5779046",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "maris-chandlery-evening",
+      "source_sha256": "fc13f13031e3a930cc003e762ca14ebb18be5bacd109d36a0f31f24ec76236c3",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "tess-store-day",
+      "source_sha256": "d8451ad933f7e50366ebf2a1915658e56904630c0e75d3f8c540569887706982",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "tess-store-evening",
+      "source_sha256": "076101c439197d6ad6c5a38de02b0f4b2642ad4abf216fcefeb6783b4d4ac15c",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "vale-breakfast",
+      "source_sha256": "f2b19e21a36675f7f4afe79ddaf332a469ed2ac2097ac8c147ae206e360486c3",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "vale-evening-home",
+      "source_sha256": "b3f23342dba104ac8e71bdac6d5ffdad68b15da8b90d4538456ef2e24acfeabe",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "vale-midday-briefing",
+      "source_sha256": "6012f914992e7d339bfdcce051deeecf9bccffbf2f006676685b7a9709f2c39c",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "vale-morning-work",
+      "source_sha256": "250639d61bbc29a9ba4deb9dde2c1808b51e9669c023901ba6ba587ebe861da2",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    },
+    {
+      "id": "vale-overnight-home",
+      "source_sha256": "1c1e6e583185392bd79c06b13482517f5a0711aa8cb23881e6f56432519bac11",
+      "adaptation": "mapId gains prototype- prefix; all other authored values exact"
+    }
+  ]
+}

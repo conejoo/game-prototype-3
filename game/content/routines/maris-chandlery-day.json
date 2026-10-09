@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "maris-chandlery-day",
+  "priority": 100,
+  "timeWindow": {
+    "start": "06:00",
+    "end": "22:00"
+  },
+  "participants": [
+    "npc-03"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-03",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "reach-chandlery",
+          "target": {
+            "mapId": "prototype-alderwake",
+            "anchorId": "maris-fitting-01"
+          }
+        },
+        {
+          "kind": "wait",
+          "id": "tend-ordinary-stock",
+          "durationSeconds": 400
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "id": "vale-morning-work",
+  "priority": 100,
+  "timeWindow": {
+    "start": "08:00",
+    "end": "12:00"
+  },
+  "participants": [
+    "npc-01",
+    "npc-02"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [
+      {
+        "participantId": "npc-02",
+        "stepId": "morning-index",
+        "dialogueEntryNodeId": "npc-02-routine-archive-indexing"
+      }
+    ],
+    "outcomeDirectives": [
+      {
+        "outcomeTag": "npc-02-resume-archive-default",
+        "directive": {
+          "kind": "resume"
+        }
+      },
+      {
+        "outcomeTag": "npc-02-resume-archive-indexing",
+        "directive": {
+          "kind": "resume"
+        }
+      },
+      {
+        "outcomeTag": "npc-02-review-archive-ledger",
+        "directive": {
+          "kind": "jumpToStep",
+          "participantId": "npc-02",
+          "stepId": "morning-review-ledger"
+        }
+      },
+      {
+        "outcomeTag": "npc-02-end-archive-default",
+        "directive": {
+          "kind": "endRoutineForDay"
+        }
+      },
+      {
+        "outcomeTag": "npc-02-end-archive-indexing",
+        "directive": {
+          "kind": "endRoutineForDay"
+        }
+      }
+    ]
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-01",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "leave-breakfast",
+          "target": {
+            "mapId": "prototype-mayor-vale-home",
+            "anchorId": "edric-breakfast"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "open-town-office",
+          "target": {
+            "mapId": "prototype-alderwake",
+            "anchorId": "edric-town-square"
+          }
+        },
+        {
+          "kind": "speech",
+          "id": "announce-office-hours",
+          "text": "Town questions can be brought here before noon.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "wait",
+          "id": "hold-office-hours",
+          "durationSeconds": 90
+        }
+      ]
+    },
+    {
+      "participantId": "npc-02",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "leave-breakfast",
+          "target": {
+            "mapId": "prototype-mayor-vale-home",
+            "anchorId": "helena-breakfast"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "open-archive",
+          "target": {
+            "mapId": "prototype-mayor-vale-home",
+            "anchorId": "helena-archive-desk"
+          }
+        },
+        {
+          "kind": "action",
+          "id": "morning-index",
+          "actionId": "archive-work",
+          "durationSeconds": 70
+        },
+        {
+          "kind": "speech",
+          "id": "mark-index-mismatch",
+          "text": "This shelf index needs one more check.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "action",
+          "id": "morning-review-ledger",
+          "actionId": "archive-work",
+          "durationSeconds": 24
+        }
+      ]
+    }
+  ]
+}

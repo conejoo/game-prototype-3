@@ -1,12 +1,93 @@
 # Day clock and NPC routines current state
 
-Updated 2026-10-09 UTC / America/Vancouver. R001 reference task complete;
-runtime implementation not started.
+Updated 2026-10-09 UTC / America/Vancouver. R001/R002 complete.
+Routine content delivered as data only; production schedule activation not started.
 Read [CHECKLIST](CHECKLIST.md), [CONTRACT](CONTRACT.md), [AGENT_PROMPT](AGENT_PROMPT.md).
 
 ## Current selection
 
-Active task: none. R001 Done; R002-R016 Pending. Final task ID: R016. Exactly R001
+Active task: none. R002 Done (2026-10-09 UTC). R001 Done; R003-R016 Pending.
+Baseline target HEAD fc049516ae90deffac78bd2f7bb6ded804fbe28c, worktree clean;
+source clean and R001 live-source audit passes 1624 assertions. No nested target
+AGENTS.md or target/workspace .agents found. Source .agents/skills/test-gameplay
+read: Flutter/Linux workflow does not apply to target Godot checks. Current versioned
+and installed target testing skill/runner/save isolation guidance read.
+Unrelated Blender PID2664 preserved; owned Godot checks exited.
+Bounded allowlist: game/features/routines/**, game/content/routines/**,
+game/tests/routine_content_checks.gd*, tools/routine_migration/convert_content.py,
+this folder's CHECKLIST.md/CURRENT_STATE.md/R002_ACCEPTANCE.md and ignored R002 evidence.
+Delivered detached typed content/reference validation and invalid fixtures; no root
+wiring, save/graph/rig/geometry change. Required checks all pass; full details in
+[R002 acceptance](R002_ACCEPTANCE.md). Default exec helper fails setup; reviewed
+commands work. No automatic approval rejection. No commit/push performed.
+
+## R002 completion and next action
+
+25 definitions/eight people/104 steps load through RoutineContentCatalog without
+production activation. RoutineDefinition typed window/step/condition/directive views
+own recursively read-only copies; public snapshots detach. Strict bounded JSON
+rejects duplicate raw keys before Godot can collapse them. Complete catalog candidate
+must pass exact schema/IDs/paths and current NPC fact/flag/action/node/outcome references
+before publication; failed initial loads publish nothing and failed reloads retain
+previous accepted catalog. Target-only references pin three maps/21 anchors/four
+directed portals and declared arrivals; planned rooms remain declarations.
+
+Converter verified R001 pins before writing, preserving source speech, IDs, windows,
+conditions, policy and durations. Only move mapId gains prototype- prefix. Catalog
+assets become res://content/routines paths. Existing NPC/social catalogs unchanged.
+JSON -text attributes preserve byte pin across Windows checkout.
+Save schema7/content1 unchanged. No new art, physics, room, clock/history/save owner.
+
+Final runner from repository cwd:
+./tools/run_checks.ps1 -Task R002 -Names routine_content_checks,npc_content_checks,content_catalog_checks,application_smoke
+-ParseScripts features/routines/routine_content_catalog,features/routines/routine_definition,features/routines/routine_json
+-TimeoutSeconds150
+PASS6 cases in docs/evidence/R002/20261009-085202820-ad2f415e/results.json;
+source.changed=false/source.error=null, all exits0/diagnostics empty.
+Routine-content stdout reports848 assertions/228 rejection fixtures/zero failures
+(structured report records847 before final evidence-write assertion).
+Source digest6501daece5c783a731b969dbeaf320e715358740a6f1c09db3a5edd941349a87.
+Separate check-000..003 groups use builds/testing/R002/<run>/{appdata,localappdata};
+no normal save/primary/backup access. Stable import passed in084429 run, including
+known runner-allowed optional Mono SDK editor message; no SDK installation needed.
+Bundled Python3.12.14 converter --check passes28 documents and offline1535 R001
+assertions. Live-source preflight passes1624; source remains clean at60c20eb2.
+
+Retained failures: first import generated four owned UID files, so source guard
+rightly invalidated run. Negative allowDialogue fixture revealed unsafe int/bool
+comparison; repaired type gates. Huge raw exponent revealed Godot conversion warning;
+bounded preflight now refuses before conversion. A repair used wrong regex capture
+and test path int/string comparison; fixed. Final wrong-map fixture originally used
+valid same-home Edric rest anchor; corrected to actual wrong-map anchor. Two patch
+attempts rejected out-of-order contexts atomically; corrected ordered patch succeeded.
+Failed reports/logs remain under R002, and affected checks rerun successfully.
+Final coherent required-suite repeat adds explicit new-script parse coverage.
+
+Inspected JSON/source/logs/manifests; no rendered captures requested/claimed for data
+task. Future physical routes, actual dialogue directives/actions, selector, durable
+facts and native delivery remain owning tasks. No held input/editor/game/owned process
+or cleanup owed; isolated ignored evidence/staging retained. Blender2664 untouched.
+No source writes, exports, agents/chats/messages/schedules/commit/push.
+
+Remaining unfinished IDs: R003,R004,R005,R006,R007,R008,R009,R010,R011,R012,R013,R014,R015,R016.
+Every item through R016 complete: no. Blockers: none. Next eligible R003 (R005
+independently ready; ordered selection selects R003). Exact next action: read immutable
+catalog/R001 vectors and current clock/weather/conversation/event snapshot APIs,
+implement pure selector/transient assignment plan and routine_resolver_checks.gd/
+routine_clock_checks.gd; no movement or new durable owner. This invocation stops here.
+
+## R002 authorized successful-task commit follow-up
+
+R002 successful-task commit follow-up authorized after the acceptance above.
+Commit only delivered R002 code/content/fixtures/converter, durable acceptance,
+checklist and this handoff. Raw logs/staging remain ignored under existing policy.
+Baseline index empty; all current changes belong to R002. Verify staged reference
+bytes and unchanged accepted game/tool fingerprint before commit, then committed
+tree and clean working tree afterwards. R003 remains Pending; no push.
+
+## Historical R001 handoff (superseded selection, preserved evidence)
+
+Prior R001 continuation (historical): Final task ID: R016. Exactly R001
 completed; stop before successor. Next eligible: R002 (R005 independently ready;
 ordered selection chooses R002). Exact next action: read local manifest/coverage,
 implement strict detached immutable routine content and routine_content_checks.gd,

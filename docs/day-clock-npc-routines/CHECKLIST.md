@@ -15,7 +15,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | ID | Status | Dependencies | Observable outcome |
 | --- | --- | --- | --- |
 | R001 | Done | Current target/source read access | Pinned 25-routine inventory, mappings, vectors and declared gates |
-| R002 | Pending | R001 | Strict immutable routine content/reference validation |
+| R002 | Done | R001 | Strict immutable routine content/reference validation |
 | R003 | Pending | R002 | Deterministic assignments from existing clock/conditions |
 | R004 | Pending | R003 | Durable routine commands/current-schema persistence |
 | R005 | Pending | R001 | Qualified multi-portal routing, existing travel preserved |
@@ -163,9 +163,10 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001 completed; R002-R016 remain Pending. Final task ID: R016. Next eligible: R002
-(R005 independently ready; ordered selection chooses R002). Whole checklist complete:
-no. No current blocker. [R001 acceptance](R001_ACCEPTANCE.md) owns evidence.
+R001 and R002 completed; R003-R016 remain Pending. Final task ID: R016.
+Next eligible: R003 (R005 independently ready; ordered selection chooses R003).
+Whole checklist complete: no. No current blocker.
+[R001 acceptance](R001_ACCEPTANCE.md) and [R002 acceptance](R002_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -199,3 +200,32 @@ indoor origins/numeric budgets finalized. Physical routes/room rendering/moving 
 and source INT-064 remain explicit downstream gates.
 Next eligible ID and exact next action: R002; read R001 pins/coverage then implement
 strict detached immutable content and actual content checks. Stop before R002.
+
+R002 - Done 2026-10-09 (America/Vancouver and UTC)
+Result and changed files: game/features/routines/ typed read-only definitions,
+strict bounded JSON and complete atomic catalog loader; game/content/routines/
+25 converted routines, catalog/declarations/provenance and stable-byte attributes;
+game/tests/routine_content_checks.gd; tools/routine_migration/convert_content.py;
+CHECKLIST/CURRENT_STATE/R002_ACCEPTANCE. Data-only exposure; no root activation.
+Verified prerequisites and preserved user changes: target fc049516/source60c20eb2,
+clean baseline; R001 live-source audit PASS1624. Existing NPC/social source pins,
+all pre-existing game/tool tracked bytes, save7/content1 and geography unchanged.
+AGENT_PROMPT/workspace instructions/source preserved; unrelated Blender2664 untouched.
+Commands/cwd/isolation and actual outcomes: repository cwd; converter --check
+PASS28 documents/offline1535 assertions. run_checks.ps1 -Task R002 -Names
+routine_content_checks,npc_content_checks,content_catalog_checks,application_smoke
+-ParseScripts features/routines/routine_content_catalog,features/routines/routine_definition,features/routines/routine_json
+-TimeoutSeconds150 PASS6 cases, stable source and no diagnostics. Routine check
+PASS848 assertions/228 rejection fixtures/25 routines/104 steps/21 anchors.
+Import passed in earlier retained run. Distinct R002 check-000..003 save groups
+and APPDATA/LOCALAPPDATA; data-only checks never load/write primary or backup saves.
+Evidence and inspected artifacts: docs/evidence/R002/20261009-085202820-ad2f415e/
+results.json, strict-content report/logs/source manifests and all converted content;
+R002_ACCEPTANCE maps every criterion. Failed UID/malformed-type/numeric/fixture
+attempts retained, repaired and rerun. No captures/gameplay/physical-route claims.
+Decisions/compatibility changes/retained limits: source mapId -> prototype-mapId
+only; all other authored values exact. Declared rooms/portals do not certify
+physical routes. Deferred graph entries remain deferred; action art unchanged.
+No schema/source/private cast/save/runtime ownership change; no commit/push.
+Next eligible ID and exact next action: R003; consume immutable catalog/R001 vectors,
+implement pure clock/condition selector and its checks. Stop before R003.

@@ -1,0 +1,2 @@
+# References have a byte pin; converter/check requires stable JSON bytes.
+*.json -text

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+  "validation": "declarations-only; no physical navigation or room acceptance",
+  "maps": [
+    {
+      "id": "prototype-alderwake",
+      "sourceId": "alderwake",
+      "anchors": [
+        "celia-basic-repairs-01",
+        "edric-market-rounds",
+        "edric-rain-shelter",
+        "edric-river-bank",
+        "edric-town-square",
+        "harlan-sluice-practice-01",
+        "helena-town-square",
+        "maris-fitting-01",
+        "passenger-booking-ivo-01",
+        "passenger-salvage-handoff-01",
+        "store-service-tess-01"
+      ]
+    },
+    {
+      "id": "prototype-mayor-vale-home",
+      "sourceId": "mayor-vale-home",
+      "anchors": [
+        "edric-breakfast",
+        "edric-evening-seat",
+        "edric-home-study",
+        "edric-rest",
+        "helena-archive-desk",
+        "helena-archive-shelves",
+        "helena-breakfast",
+        "helena-evening-seat",
+        "helena-rest"
+      ]
+    },
+    {
+      "id": "prototype-lantern-rest",
+      "sourceId": "lantern-rest",
+      "anchors": [
+        "inn-host-01"
+      ]
+    }
+  ],
+  "portals": [
+    {
+      "id": "lantern-rest-entrance-01",
+      "sourceMapId": "prototype-alderwake",
+      "destinationMapId": "prototype-lantern-rest",
+      "arrivalId": "lantern-rest-from-alderwake"
+    },
+    {
+      "id": "mayor-vale-home-entrance",
+      "sourceMapId": "prototype-alderwake",
+      "destinationMapId": "prototype-mayor-vale-home",
+      "arrivalId": "mayor-vale-home-from-alderwake"
+    },
+    {
+      "id": "mayor-vale-home-exit",
+      "sourceMapId": "prototype-mayor-vale-home",
+      "destinationMapId": "prototype-alderwake",
+      "arrivalId": "alderwake-from-mayor-vale-home"
+    },
+    {
+      "id": "lantern-rest-exit-01",
+      "sourceMapId": "prototype-lantern-rest",
+      "destinationMapId": "prototype-alderwake",
+      "arrivalId": "alderwake-from-lantern-rest"
+    }
+  ],
+  "events": [
+    "harbor-festival",
+    "heavy-rain"
+  ],
+  "areas": [
+    "woods"
+  ],
+  "resources": [
+    "moonflower"
+  ],
+  "giftItems": [
+    "moonflower"
+  ]
+}

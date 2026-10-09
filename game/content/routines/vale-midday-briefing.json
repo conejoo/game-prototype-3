@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "vale-midday-briefing",
+  "priority": 100,
+  "timeWindow": {
+    "start": "12:00",
+    "end": "13:00"
+  },
+  "participants": [
+    "npc-01",
+    "npc-02"
+  ],
+  "conditions": [],
+  "interactionPolicy": {
+    "allowDialogue": true,
+    "defaultDialogueEntryNodeId": null,
+    "stepDialogueEntries": [],
+    "outcomeDirectives": []
+  },
+  "participantSteps": [
+    {
+      "participantId": "npc-01",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "leave-morning-post",
+          "target": {
+            "mapId": "prototype-alderwake",
+            "anchorId": "edric-market-rounds"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "join-civic-briefing",
+          "target": {
+            "mapId": "prototype-alderwake",
+            "anchorId": "edric-town-square"
+          }
+        },
+        {
+          "kind": "speech",
+          "id": "open-civic-briefing",
+          "text": "Let us compare the council notes with the public record.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "wait",
+          "id": "hold-civic-briefing",
+          "durationSeconds": 20
+        }
+      ]
+    },
+    {
+      "participantId": "npc-02",
+      "steps": [
+        {
+          "kind": "move",
+          "id": "leave-archive",
+          "target": {
+            "mapId": "prototype-mayor-vale-home",
+            "anchorId": "helena-archive-desk"
+          }
+        },
+        {
+          "kind": "move",
+          "id": "join-civic-briefing",
+          "target": {
+            "mapId": "prototype-alderwake",
+            "anchorId": "helena-town-square"
+          }
+        },
+        {
+          "kind": "speech",
+          "id": "answer-civic-briefing",
+          "text": "The archive copy and the council note now agree.",
+          "durationSeconds": 4
+        },
+        {
+          "kind": "wait",
+          "id": "hold-civic-briefing",
+          "durationSeconds": 20
+        }
+      ]
+    }
+  ]
+}
