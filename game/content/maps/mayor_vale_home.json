@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "location_id": "prototype-mayor-vale-home",
+  "source_map_sha256": "1a97bf6182c8dcd2482400bb2b568bd4bc4c73c4f93f1d62a26605167d00e041",
+  "origin_units": [
+    256,
+    384
+  ],
+  "units_per_metre": 32,
+  "floor_rects_xz_m": [
+    [
+      -8,
+      -12,
+      16,
+      13
+    ],
+    [
+      -1,
+      1,
+      2,
+      1
+    ]
+  ],
+  "cleared_floor_cells": [
+    {
+      "x": 0,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 1,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 2,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 3,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 4,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 5,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 6,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 9,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 10,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 11,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 12,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 13,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 14,
+      "y": 13,
+      "paint": null
+    },
+    {
+      "x": 15,
+      "y": 13,
+      "paint": null
+    }
+  ],
+  "colliders": [
+    {
+      "id": "bedroom-bed",
+      "rect_xz_m": [
+        -5.125,
+        -2.0,
+        1.25,
+        1.7
+      ]
+    },
+    {
+      "id": "bedroom-wardrobe",
+      "rect_xz_m": [
+        -7.25,
+        -3.5,
+        1.5,
+        1.0
+      ]
+    },
+    {
+      "id": "dining-table",
+      "rect_xz_m": [
+        2.5,
+        -7.25,
+        1.0,
+        0.75
+      ]
+    },
+    {
+      "id": "kitchen-counter-sink",
+      "rect_xz_m": [
+        1.40625,
+        -10.5,
+        2.1875,
+        1.0
+      ]
+    },
+    {
+      "id": "kitchen-counter-stove",
+      "rect_xz_m": [
+        3.40625,
+        -10.5,
+        2.1875,
+        1.0
+      ]
+    },
+    {
+      "id": "kitchen-counter-worktop",
+      "rect_xz_m": [
+        5.40625,
+        -10.5,
+        2.09375,
+        1.0
+      ]
+    },
+    {
+      "id": "kitchen-island",
+      "rect_xz_m": [
+        5.15625,
+        -6.25,
+        1.6875,
+        0.75
+      ]
+    },
+    {
+      "id": "kitchen-side-counter",
+      "rect_xz_m": [
+        6.75,
+        -9.0,
+        0.75,
+        2.0
+      ]
+    },
+    {
+      "id": "parlor-armchair-east",
+      "rect_xz_m": [
+        -3.46875,
+        -8.75,
+        0.9375,
+        0.75
+      ]
+    },
+    {
+      "id": "parlor-armchair-west",
+      "rect_xz_m": [
+        -6.46875,
+        -8.75,
+        0.9375,
+        0.75
+      ]
+    },
+    {
+      "id": "parlor-coffee-table",
+      "rect_xz_m": [
+        -5.09375,
+        -7.5,
+        1.1875,
+        0.625
+      ]
+    },
+    {
+      "id": "parlor-fireplace",
+      "rect_xz_m": [
+        -5.5,
+        -11.0,
+        2.0,
+        1.25
+      ]
+    },
+    {
+      "id": "parlor-sofa",
+      "rect_xz_m": [
+        -5.4375,
+        -6.0,
+        1.875,
+        0.5
+      ]
+    },
+    {
+      "id": "study-bookcase-east",
+      "rect_xz_m": [
+        4.90625,
+        -3.25,
+        1.6875,
+        0.75
+      ]
+    },
+    {
+      "id": "study-bookcase-west",
+      "rect_xz_m": [
+        2.90625,
+        -3.25,
+        1.6875,
+        0.75
+      ]
+    },
+    {
+      "id": "study-desk",
+      "rect_xz_m": [
+        3.3125,
+        -2.0,
+        1.375,
+        1.0
+      ]
+    },
+    {
+      "id": "study-sideboard",
+      "rect_xz_m": [
+        5.75,
+        -0.75,
+        1.75,
+        0.75
+      ]
+    },
+    {
+      "id": "wall-east",
+      "rect_xz_m": [
+        7.5,
+        -12.0,
+        0.5,
+        13.0
+      ]
+    },
+    {
+      "id": "wall-hall-east-north-a",
+      "rect_xz_m": [
+        0.75,
+        -11.0,
+        0.5,
+        2.0
+      ]
+    },
+    {
+      "id": "wall-hall-east-north-b",
+      "rect_xz_m": [
+        0.75,
+        -7.0,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "id": "wall-hall-east-south-a",
+      "rect_xz_m": [
+        0.75,
+        -5.5,
+        0.5,
+        2.5
+      ]
+    },
+    {
+      "id": "wall-hall-east-south-b",
+      "rect_xz_m": [
+        0.75,
+        -1.0,
+        0.5,
+        3.0
+      ]
+    },
+    {
+      "id": "wall-hall-west-north-a",
+      "rect_xz_m": [
+        -1.25,
+        -11.0,
+        0.5,
+        2.0
+      ]
+    },
+    {
+      "id": "wall-hall-west-north-b",
+      "rect_xz_m": [
+        -1.25,
+        -7.0,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "id": "wall-hall-west-south-a",
+      "rect_xz_m": [
+        -1.25,
+        -5.5,
+        0.5,
+        2.5
+      ]
+    },
+    {
+      "id": "wall-hall-west-south-b",
+      "rect_xz_m": [
+        -1.25,
+        -1.0,
+        0.5,
+        3.0
+      ]
+    },
+    {
+      "id": "wall-middle-east",
+      "rect_xz_m": [
+        1.0,
+        -6.0,
+        7.0,
+        0.5
+      ]
+    },
+    {
+      "id": "wall-middle-west",
+      "rect_xz_m": [
+        -8.0,
+        -6.0,
+        7.0,
+        0.5
+      ]
+    },
+    {
+      "id": "wall-north",
+      "rect_xz_m": [
+        -8.0,
+        -12.0,
+        16.0,
+        1.0
+      ]
+    },
+    {
+      "id": "wall-south-east",
+      "rect_xz_m": [
+        1.0,
+        0.75,
+        7.0,
+        0.25
+      ]
+    },
+    {
+      "id": "wall-south-west",
+      "rect_xz_m": [
+        -8.0,
+        0.75,
+        7.0,
+        0.25
+      ]
+    },
+    {
+      "id": "wall-west",
+      "rect_xz_m": [
+        -8.0,
+        -12.0,
+        0.5,
+        13.0
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "anchor_id": "edric-breakfast",
+      "foot": [
+        1.75,
+        0.0,
+        -6.5
+      ],
+      "facing": "east"
+    },
+    {
+      "anchor_id": "edric-evening-seat",
+      "foot": [
+        -6.0,
+        0.0,
+        -6.75
+      ],
+      "facing": "north"
+    },
+    {
+      "anchor_id": "edric-home-study",
+      "foot": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "facing": "east"
+    },
+    {
+      "anchor_id": "edric-rest",
+      "foot": [
+        -5.5,
+        0.0,
+        0.25
+      ],
+      "facing": "north"
+    },
+    {
+      "anchor_id": "helena-archive-desk",
+      "foot": [
+        4.0,
+        0.0,
+        0.0
+      ],
+      "facing": "north"
+    },
+    {
+      "anchor_id": "helena-archive-shelves",
+      "foot": [
+        6.0,
+        0.0,
+        -1.5
+      ],
+      "facing": "north"
+    },
+    {
+      "anchor_id": "helena-breakfast",
+      "foot": [
+        4.5,
+        0.0,
+        -6.5
+      ],
+      "facing": "west"
+    },
+    {
+      "anchor_id": "helena-evening-seat",
+      "foot": [
+        -3.0,
+        0.0,
+        -6.75
+      ],
+      "facing": "north"
+    },
+    {
+      "anchor_id": "helena-rest",
+      "foot": [
+        -3.5,
+        0.0,
+        0.25
+      ],
+      "facing": "north"
+    }
+  ],
+  "arrival": {
+    "id": "mayor-vale-home-from-alderwake",
+    "source_foot": [
+      0,
+      0,
+      0
+    ],
+    "foot": [
+      0,
+      0,
+      -2
+    ],
+    "ally_foot": [
+      1,
+      0,
+      -2
+    ],
+    "reason": "Source 1.5m hall cannot fit default 1m east ally plus two 0.35m radii. Move 2m north into existing 2m doorway pocket; preserve all walls/stations and party offset."
+  },
+  "exit": {
+    "portal_id": "mayor-vale-home-exit",
+    "foot": [
+      0,
+      0,
+      1.25
+    ],
+    "player_approach": [
+      0,
+      0,
+      0.25
+    ]
+  },
+  "adaptations": [
+    {
+      "id": "bedroom-bed",
+      "before_rect_xz_m": [
+        -5.125,
+        -2.0,
+        1.25,
+        2.0
+      ],
+      "after_rect_xz_m": [
+        -5.125,
+        -2.0,
+        1.25,
+        1.7
+      ],
+      "reason": "Exact source .75m bed-to-south-wall passage disconnects 0.4m-radius bake; shorten bed south edge 0.3m for 1.05m passage, leaving both rest feet unchanged."
+    },
+    {
+      "id": "study-sideboard",
+      "before_rect_xz_m": [
+        5.5,
+        -0.75,
+        2.0,
+        0.75
+      ],
+      "after_rect_xz_m": [
+        5.75,
+        -0.75,
+        1.75,
+        0.75
+      ],
+      "reason": "Exact .8125m desk-to-sideboard throat disconnects shelf station under conservative 0.4m capsule bake. Retract only sideboard west edge .25m to obtain 1.0625m throat; east wall and archive feet unchanged."
+    }
+  ]
+}

@@ -1,9 +1,31 @@
 # Returning Fair prototype architecture
 
+Current Mayor Vale home delivery (2026-10-09, R007): a bounded public four-room
+cutaway reuses the pinned home origin (256,384)/32 units per metre, all nine station
+feet/facing and all walls. Thirty furniture/wall footprints stay exact; only bed
+south edge retracts 0.30m and sideboard west edge retracts 0.25m after actual nav/
+0.4m capsule failures. Target-local geometry records exact before/after/reasons.
+No source dependency at runtime. Oak floor omits all source-cleared south cells
+except the two-cell entry threshold. Cabinetry, archive books/desk, parlor seating/
+fireplace, bed linen/windows and four warm indoor lights are separate from physics.
+
+Explicit reciprocal home bindings are now public at zero affinity; new home arrival
+(0,0,-2) uses the existing party 1m east offset in an open doorway pocket because
+source (0,0,0) cannot fit that offset in its 1.5m hall. Exterior return consumes R006
+(4,0,-4.6)/(5,0,-4.6); pinned exterior building geometry is unchanged. Home uses
+stable indoor environment while the sole session clock/forecast advances. Weather
+effects and exterior cycling shadows are absent; fixed indoor shadows remain.
+One room/region and exact travel rollback owners stay intact. Room-local 5cm nav
+voxels/tight contours and measured obstacle margins preserve narrow source routes.
+Nine station records are detached/qualified; no household/private facts, sleep or
+service activation. No duplicate Vale actors: actual routine placement/activation
+remains R010/R013. Inn still inactive. Schema8/content1 unchanged.
+
 Current exterior routine metadata (2026-10-09, R006): RoutineExteriorRegistry
 returns detached location-qualified records for the eleven pinned exterior
-stations and two inactive home/inn entrances, including physical elevation,
-source facing, dialogue approaches and safe exterior party returns. All station
+stations and two home/inn entrances, including physical elevation,
+source facing, dialogue approaches and safe exterior party returns. R007 enables
+only home metadata/bindings; inn remains inactive. All station
 and door X/Z remain exact. The civic player approach moves 0.1m north from the
 fixed-contact approach to clear town-start; the home-return hero foot moves 0.9m
 south from source to clear the unchanged rain-shelter station. Return ally feet
@@ -30,8 +52,9 @@ and validates the authored edge before using the existing placement transaction.
 The legacy destination fields remain diagnostic mirrors; dispatch never reads them.
 PortalRoutes owns detached deterministic directed metadata; NPC route queries
 never load scenes, move player/party/camera, advance time or publish session facts.
-Only the existing Alderwake/Tollworks pair is enabled. Home/inn declarations and
-their source IDs remain pinned for R006-R008; no absent room or future gate opens.
+The existing Alderwake/Tollworks pair and delivered R007 Mayor Vale home pair are
+enabled. Inn declarations remain pinned and inactive for R008; no absent room or
+future gate opens.
 Strict schema8/content1, manual saves, geography and current arrival IDs stay intact.
 
 Current save policy (2026-10-09, R004): accept only schema8/content1.
@@ -73,7 +96,7 @@ defeat a protective construct, recover Maris's missing experience, return for
 reconnection, and see her specialist service recover. Include one optional
 dialogue choice with a companion reaction and one character upgrade.
 
-This is a systems prototype, not a claim that MQ00–MQ03 or the full fair opening
+This is a systems prototype, not a claim that MQ00Ã¢â‚¬â€œMQ03 or the full fair opening
 have shipped. Do not silently change the existing campaign's canonical order.
 The source story puts a return scene and practical work after recovery; touching
 a vessel should not instantly restore the whole town or repair the ship.
@@ -402,13 +425,13 @@ before guardian combat. ProgressionService derives unspent point from authoritat
 quest effect minus selected upgrade IDs; no duplicate reward counter/effect exists.
 Session owns ProgressionState selected IDs. Selection requires earned point and
 stable journal mode; repeat selection acknowledges without spending/notifying again.
-Root applies derived hero strike damage 25→40 through existing combat wrapper.
+Root applies derived hero strike damage 25Ã¢â€ â€™40 through existing combat wrapper.
 Journal scroll/upgrade button and HUD display state; UI owns no reward rules.
 
 Schema4/content1 adds exactly `relationship` (companion definition ID, integer trust,
 reaction ID array) and `progression` (upgrade ID array). Validate unknown/duplicate/
 conflicting reactions, trust disagreement, extra/missing fields and unearned/duplicate
-upgrades before candidate replacement. Exact schema1–3 envelopes validate original
+upgrades before candidate replacement. Exact schema1Ã¢â‚¬â€œ3 envelopes validate original
 party/quest contract first, preserving old facts; v3 retains both actor health values.
 Legacy trust/reactions/upgrades start neutral/empty. Accepted lead in old saves makes
 one point available; no auto-selection. Read never rewrites disk. Explicit Save

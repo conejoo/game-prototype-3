@@ -93,10 +93,10 @@ func _run() -> void:
 		_check(door.return_ally_foot == door.return_foot+Vector3.RIGHT, "existing WorldHost/Party 1m east arrival contract " + door.portal_id)
 		for entry: Dictionary in RoutineExteriorRegistry.anchors():
 			_check(door.return_foot.distance_to(entry.foot) >= 0.85 and door.return_ally_foot.distance_to(entry.foot) >= 0.85, "arrival/station separation " + door.portal_id+"/"+entry.anchor_id)
-		_check(not door.enabled and game.catalog.get_location(door.destination_location_id) == null, "absent door destination remains inactive " + door.portal_id)
+		_check(door.enabled == (door.portal_id == "mayor-vale-home-entrance") and (game.catalog.get_location(door.destination_location_id) != null if door.enabled else game.catalog.get_location(door.destination_location_id) == null), "delivered home enabled; absent inn remains inactive " + door.portal_id)
 		doors.append({"portal_id":door.portal_id,"foot":_xyz(door.foot),"approach":_xyz(door.player_approach),"ally_approach":_xyz(door.ally_approach),
 			"source_return":_xyz(door.source_return_foot),"return_hero":_xyz(door.return_foot),"return_ally":_xyz(door.return_ally_foot),
-			"return_delta_m":door.return_foot.distance_to(door.source_return_foot),"enabled":false})
+			"return_delta_m":door.return_foot.distance_to(door.source_return_foot),"enabled":door.enabled})
 	await _negative(excluded)
 	_check(SaveCodec.snapshot(game.session) == before, "geometry queries preserve entire durable snapshot")
 	_check(game.camera_rig.global_transform == camera_before and actor_feet == [game.player_placeholder.global_position,game.companion.global_position], "queries preserve player/ally/camera")
@@ -126,8 +126,8 @@ func _rules(catalog: RoutineContentCatalog) -> void:
 	detached.clear()
 	_check(RoutineExteriorRegistry.find(RoutineExteriorRegistry.LOCATION,expected[0]).foot.is_finite(), "station metadata detached")
 	var entrance: Dictionary = RoutineExteriorRegistry.entrance(RoutineExteriorRegistry.LOCATION,"mayor-vale-home-entrance")
-	entrance.enabled = true
-	_check(not RoutineExteriorRegistry.entrance(RoutineExteriorRegistry.LOCATION,"mayor-vale-home-entrance").enabled, "door metadata detached")
+	entrance.enabled = false
+	_check(RoutineExteriorRegistry.entrance(RoutineExteriorRegistry.LOCATION,"mayor-vale-home-entrance").enabled, "door metadata detached")
 	_check(RoutineExteriorRegistry.entrance("prototype-lantern-rest","lantern-rest-entrance-01").is_empty(), "wrong-source entrance rejected")
 	for portal: Dictionary in pin.portals:
 		if portal.source_map_id != "alderwake": continue
@@ -174,6 +174,12 @@ func _overlap(foot: Vector3, radius: float, own_npc: String, future_arrival: boo
 		if target.kind in ["gather","pickup","light"] or not target.npc_id.is_empty() or target.instance_id == "alderwake-temporary-companion":
 			_check(foot.distance_to(target.global_position) >= radius+0.4, "no resource/lamp/other actor/station overlap " + str(foot)+"/"+target.instance_id)
 	for spawn: Node3D in room.get_node("Spawns").get_children():
+		# Public return may share a transient player interaction approach. Actual
+		# NPC station feet must remain disjoint; no actor reserves both player feet.
+		if spawn.stable_id == "alderwake-from-mayor-vale-home":
+			for station: Dictionary in RoutineExteriorRegistry.anchors():
+				_check(station.foot.distance_to(spawn.global_position) >= .85 and station.foot.distance_to(spawn.global_position+Vector3.RIGHT) >= .85,"delivered return clears actual station " + station.anchor_id)
+			continue
 		_check(foot.distance_to(spawn.global_position) >= radius+0.35, "no existing arrival overlap " + str(foot)+"/"+spawn.name)
 		_check(foot.distance_to(spawn.global_position+Vector3.RIGHT) >= radius+0.35, "no existing ally arrival overlap " + str(foot)+"/"+spawn.name)
 	if future_arrival:

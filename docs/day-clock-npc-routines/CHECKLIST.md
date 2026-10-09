@@ -20,7 +20,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R004 | Done | R003 | Durable routine commands/current-schema persistence |
 | R005 | Done | R001 | Qualified multi-portal routing, existing travel preserved |
 | R006 | Done | R002, R005 | Safe exterior anchors/door approaches on pinned geometry |
-| R007 | Pending | R005, R006 | Mayor Vale home and its nine required anchors |
+| R007 | Done | R005, R006 | Mayor Vale home and its nine required anchors |
 | R008 | Pending | R005, R006 | Lantern Rest and Della's real station |
 | R009 | Pending | R002, R006 | Physical same-map movement/bounded occupancy |
 | R010 | Pending | R003, R004, R007, R008, R009 | Group/cross-map execution and safe night reconstruction |
@@ -163,12 +163,13 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001-R006 completed; R007-R016 remain Pending. Final task ID: R016.
-Next eligible: R007 (R005/R006 prerequisites verified).
+R001-R007 completed; R008-R016 remain Pending. Final task ID: R016.
+Next eligible: R008 (R005/R006 prerequisites verified).
 Whole checklist complete: no. No current blocker.
 [R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
 [R003 acceptance](R003_ACCEPTANCE.md), [R004 acceptance](R004_ACCEPTANCE.md) and
-[R005 acceptance](R005_ACCEPTANCE.md) and [R006 acceptance](R006_ACCEPTANCE.md) own evidence.
+[R005 acceptance](R005_ACCEPTANCE.md), [R006 acceptance](R006_ACCEPTANCE.md) and
+[R007 acceptance](R007_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -365,3 +366,37 @@ Blockers/unrun R006 criteria: none. No commit/push. Remaining R007-R016; every i
 through R016 complete: no. Next eligible R007; consume measured home doorway and
 return metadata, build its bounded room/nine stations and verify its own criteria.
 Stop after R006; await separate user commit request.
+
+R007 - Done 2026-10-09 UTC
+Result and changed files: source-informed bounded MayorValeHome scene/map/resource,
+nine exact anchors, reciprocal public home portals and safe persistent-party
+arrivals; additive exterior door/return, local converter, home physical/rendered
+checks and blocked-home fixture; necessary old catalog-count/portal/registry
+assertions, home-only HUD directions, exact ledger/attributes/architecture and
+[R007 acceptance](R007_ACCEPTANCE.md). Thirty-one intended paths; no activation.
+Verified prerequisites/preserved user changes: clean target2625957d/source60c20eb2;
+actual R005 qualified routes and R006 doorway/return/registry inspected. R001 gate
+PASS1624/88 pins/ten refusals/53 exact adaptations; source/baseline pins preserved.
+No baseline user changes; instructions/normal saves/packages/Blender2664 untouched.
+Commands/cwd/isolation/results: repository cwd, PowerShell7/console4.7.2. Final
+113551246-df5b9349 PASS10 cases: home5368/2586 continuous sweeps/25 routes,
+save/primary-backup, required travel10 round trips/weather157/camera330 samples,
+portal364/exterior53682/7491 samples and renderer125/28 captures. Earlier112953
+PASS5 cases covers repaired catalog/application; accepted112707 routine-content848.
+All accepted exits0/diagnostics empty/source stable; final1233-file fingerprint
+9fb61c22de4bbbdf5bc4850219d689c7e2abb71fcdaf81af5ac840b40836c5e5.
+Separate check/render APPDATA/LOCALAPPDATA/save groups and slots; no normal saves.
+Evidence inspected: final structured reports/source manifests/isolated saves,
+all28 images on three contact sheets plus full archive perspective80 image;
+public WASD/E/P/+/-/Esc entrance, four stations/return/revisit and verified pause.
+Decisions/limits: all walls/nine source feet/facing exact; bed south edge-.30m,
+sideboard west edge+.25m repair measured capsule bottlenecks; attempted chair
+repair removed. Arrival uses existing doorway pocket(0,0,-2)/(1,0,-2); R006
+exterior return unchanged. Synthetic paired Vale bodies/storm/rollback/save probes
+labeled; ordinary route has only nav guidance and public inputs. All retained
+UID/nav/weather/count failures repaired; final south-exit HUD verified. No failed
+whole run relabeled. No routines/private facts/duplicate Vale/inn/native expansion.
+All owned Godot processes exited, no held input/editor/cleanup owed. Blockers/unrun
+R007 criteria:none. No commit/push. Remaining R008-R016; every item throughR016
+complete:no. Next eligible R008: inspect pinned inn/host/current doorway, deliver
+Lantern Rest and actual Della access criteria. Stop here, await separate commit.

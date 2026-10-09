@@ -4,13 +4,15 @@
 [ext_resource type="Script" path="res://world/portal_binding.gd" id="2"]
 [ext_resource type="Resource" path="res://content/portals/alderwake_tollworks.tres" id="3"]
 
+[ext_resource type="Resource" path="res://content/portals/alderwake_home.tres" id="4"]
+
 [resource]
 script = ExtResource("1")
 stable_id = "prototype-alderwake"
 display_name = "Alderwake (prototype)"
 prototype_fixture = true
 scene_path = "res://world/alderwake.tscn"
-spawn_ids = PackedStringArray("alderwake-start", "alderwake-from-tollworks")
+spawn_ids = PackedStringArray("alderwake-start", "alderwake-from-tollworks", "alderwake-from-mayor-vale-home")
 actor_ids = PackedStringArray("prototype-hero")
 lighting_profile = 1
-portals = Array[ExtResource("2")]([ExtResource("3")])
+portals = Array[ExtResource("2")]([ExtResource("3"), ExtResource("4")])

@@ -1,6 +1,96 @@
 # Day clock and NPC routines current state
 
-## Current selection and R006 completion (2026-10-09 UTC)
+## Current R007 completion (2026-10-09 UTC)
+
+Active task: none. Exactly R007 completed this invocation. R001-R007 Done;
+R008-R016 Pending. [R007 acceptance](R007_ACCEPTANCE.md) maps every criterion,
+commands/source decisions/geometry/isolation/retained failures and viewed evidence.
+Blockers/unrun R007 criteria: none. Every checklist item through R016 complete: no.
+Commit request follows originating thread's reported direct user confirmation
+"yes commit" to the explicit staged-R007 question. The two earlier approval
+rejections remain historical: neither created a commit. Thirty-one task paths
+reverified, all1233 accepted source hashes and all53 staged adaptation hashes match;
+no unstaged edits or unrelated files in commit scope. Final commit outcome is
+recorded by Git. No push or successor work. Stop before R008.
+
+Baseline target2625957d43ec73bf54bd90be941c4d1cc2da7201, clean index/worktree;
+source60c20eb2816e7271fb84afaba286af006ebe3ccf remains clean/read-only. R005/R006
+actual portal/registry and measured door/return artifacts verified before selection.
+Workspace/source instructions, current architecture and installed/versioned testing
+plus save/journey/capture/native guidance read. Target/workspace no nested AGENTS
+or .agents. Explicit supplied Godot paths verified. Default sandbox helper fails
+before commands; bounded reviewed shell succeeds, no approval rejection. Unsaved
+unrelated Blender2664 preserved; no baseline user changes or other chat context.
+
+### Delivered scope and exact allowlist
+
+Thirty-one intended paths, detailed in acceptance: new home script/UID/scene,
+local map/location/two portals, home check/render scripts/UIDs, blocked-home
+fixture/script/UID, converter and acceptance; existing exterior/registry/Alderwake
+location/catalog, home-only root HUD, four affected checks, ledger/reference gate,
+attributes/architecture/checklist/state. Ignored R007 evidence/staging retained.
+Real bounded 3D floor/furnishings/nav, nine exact source feet/facing, zero-affinity
+reciprocal public entrance and safe original party identities. All walls unchanged;
+only bed south edge-.30m and sideboard west edge+.25m repair measured narrow lanes.
+Thirty exact colliders/two documented repairs. Temporary chair repair removed.
+Home hero/ally arrivals(0,0,-2)/(1,0,-2) use existing doorway pocket; R006 exterior
+return(4,0,-4.6)/(5,0,-4.6) unchanged. No exterior-origin transform inside.
+No routine activation/private facts/services/sleep/ownership/duplicate Vale contacts.
+Inn stays inactive; current town contacts stay until R010/R013. Current schema8/
+content1 and old Tollworks hint preserved. Equal historical root/architecture/ledger
+lines restored byte-for-byte after mixed-EOL normalization detected; attributes
+preserve exact reviewed bytes and adaptation hashes.
+
+### Actual validation, evidence and retained repairs
+
+Repository cwd; PowerShell7, bundled Python3.12.14, console4.7.2. Final command:
+runner -Task R007 -Names routine_home_checks,save_checks,location_travel_checks,
+environment_lifecycle_checks,map_camera_checks,routine_portal_checks,
+routine_anchor_checks -RenderScript routine_home_render -RenderPhases check
+-ParseScripts world/mayor_vale_home,tests/fixtures/r007/blocked_home
+-TimeoutSeconds150. [Final report](../evidence/R007/20261009-113551246-df5b9349/results.json)
+PASS10 cases/exits0/no diagnostics/errors; source.changed=false/error=null. Final
+1233-file game/tool fingerprint9fb61c22de4bbbdf5bc4850219d689c7e2abb71fcdaf81af5ac840b40836c5e5.
+Home5368 assertions/2586 continuous physical sweeps/25 routes; all nine targets,
+six source legs, paired synthetic Vale capsules plus real party, clock advance,
+three synthetic storms, exact unsafe-home rollback and typed primary/backup pass.
+Required travel10 complete Tollworks cycles/rollback; weather157; camera330 samples
+max aim error0.00000769120834m; portals364/exterior53682 with7491 physical samples.
+Renderer125 final assertions/28 captures; JSON counts omit last evidence assertion.
+Earlier112953 PASS5 cases covers repaired catalog count/application; accepted case
+routine_content848 in whole112707 report. Stable import/parse observed earlier.
+
+Fresh ordinary GameRoot walking uses public viewport WASD/E/P/+/-/Esc and explicit
+runtime navigation guidance, no placement/clock/weather/social setup. Seven traces
+pass door/archive/bedroom/parlor/breakfast/exit/town revisit; both projections,
+three zooms. All final28 images viewed on contact01/02/03, plus full-resolution
+archive perspective80; warm readable cutaway/party/lanes/correct south-exit HUD.
+Pause captures/overlay state verified. Synthetic geometry/storm/save/rollback
+probes remain labeled; no native or natural-storm claim. Final derived report:
+render/derived/20261009-114002-263759d3/capture-report.json under113551 run.
+
+UID-changing first imports invalidated111316/111453; failed nav/weather fixtures
+111513..112042 retained. Contours/margins plus two measured furniture repairs
+fixed all routes;112300 passed after chair repair removed. Whole112707 FAILED
+only two stale27-count checks;112953 repaired/reran them. Its visual review exposed
+wrong generic northgate hint: home-only south-exit/exterior companion wording
+fixed,113551 reran all affected final gates/render. No failed whole report relabeled.
+Reference-complete PASS1624/88 inputs/ten refusals/53 exact adaptations; converter
+--check PASS30 exact/two repairs/nine anchors. Original source and prior pins exact.
+
+Each check/render has distinct runner save_group/slot and isolated APPDATA/
+LOCALAPPDATA under builds/testing/R007/<run>. Home two manual synthetic saves
+validate exact full typed primary/backup; normal saves untouched. All owned Godot
+processes exited; no held input/editor/cleanup owed. Only Blender2664 remains.
+Final readback audits source hashes, intended diff, instructions/links/status and
+next dependency selection; task-owned [final audit](../evidence/R007/20261009-113551246-df5b9349/final-audit.json) retains evidence.
+
+Next eligible R008 (R005/R006 actual prerequisites verified): inspect pinned
+Lantern Rest map/host and current doorway/returns, implement only bounded inn
+with real Della station, then verify its ordinary talk/gift/return criteria.
+Remaining IDs: R008,R009,R010,R011,R012,R013,R014,R015,R016. Do not begin R008.
+
+## Historical R006 completion (2026-10-09 UTC)
 
 Active task: none. R001-R006 Done; R007-R016 Pending. Exactly R006 completed this
 invocation. [R006 acceptance](R006_ACCEPTANCE.md) maps every criterion, exact source/

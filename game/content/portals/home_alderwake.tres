@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PortalBinding" format=3]
+
+[ext_resource type="Script" path="res://world/portal_binding.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+portal_id = "mayor-vale-home-exit"
+source_location_id = "prototype-mayor-vale-home"
+destination_location_id = "prototype-alderwake"
+arrival_id = "alderwake-from-mayor-vale-home"

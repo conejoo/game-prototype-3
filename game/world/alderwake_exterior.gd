@@ -63,6 +63,29 @@ func _init() -> void:
 	label.pixel_size = 0.012
 	label.font_size = 28
 	gate.add_child(label)
+	# R007 enables only the measured home edge; pinned building art stays exact.
+	var home_site: Dictionary = RoutineExteriorRegistry.entrance(location_id,"mayor-vale-home-entrance")
+	var home_gate: PrototypeInteractable = PrototypeInteractable.new()
+	home_gate.name = "MayorHomeEntrance"
+	home_gate.instance_id = "mayor-vale-home-entrance"
+	home_gate.kind = "travel"
+	home_gate.portal = preload("res://content/portals/alderwake_home.tres")
+	home_gate.position = home_site.foot
+	home_gate.reach = 1.6
+	home_gate.prompt = "Enter Mayor Vale home"
+	add_child(home_gate)
+	var home_label: Label3D = Label3D.new()
+	home_label.text = "Mayor Vale home\n[E] Enter"
+	home_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	home_label.position.y = 1.25
+	home_label.font_size = 24
+	home_label.pixel_size = .008
+	home_gate.add_child(home_label)
+	var home_return: SpawnAnchor = SpawnAnchor.new()
+	home_return.name = "HomeReturn"
+	home_return.stable_id = home_site.return_arrival_id
+	home_return.position = home_site.return_foot
+	get_node("Spawns").add_child(home_return)
 	# Remove obsolete reservations/inactive label, retaining pinned provenance.
 	town.get_node("MarisReservedPad").free()
 	forest.get_node("tollworks-entrance-01/VisualRoot").visible = false
@@ -71,7 +94,7 @@ func _init() -> void:
 		for child: Node in anchor.get_children():
 			if child is Label3D:
 				child.text = "ALDERWAKE · TOWN START" if anchor.stable_id == "alderwake-start" else "MOONWOOD · TOLLWORKS RETURN"
-	preview_report["limits"] = "Recovery slice active; six other portals inactive; routines/resources/other NPCs data only."
+	preview_report["limits"] = "Recovery slice and Mayor Vale home active; other five portals inactive; routines remain data only."
 
 
 func add_service_navigation_obstructions(geometry: NavigationMeshSourceGeometryData3D) -> void:

@@ -37,7 +37,7 @@ static func entrances(location_id: String = LOCATION) -> Array[Dictionary]:
 	return [
 		{"portal_id":"mayor-vale-home-entrance", "source_location_id":LOCATION,
 			"destination_location_id":"prototype-mayor-vale-home",
-			"arrival_id":"mayor-vale-home-from-alderwake", "enabled":false,
+			"arrival_id":"mayor-vale-home-from-alderwake", "enabled":true,
 			"foot":Vector3(5,0,-6.25), "facing":Vector3.FORWARD,
 			"player_approach":Vector3(5,0,-5.15), "ally_approach":Vector3(5,0,-3.95),
 			"return_portal_id":"mayor-vale-home-exit", "return_arrival_id":"alderwake-from-mayor-vale-home",

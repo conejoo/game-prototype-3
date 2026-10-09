@@ -606,7 +606,7 @@ func _refresh_interaction() -> void:
 		ui.show_travel("Quest progress kept; retry restarts at last arrival anchor." if player_placeholder.state.health == 0 else "Click: attack · Space: dodge · Finish fight or retreat to interact / save")
 		return
 	selected_interaction = InteractionSelector.select(player_placeholder, world_host.current_location)
-	ui.show_travel(("Hold E %.1fs: " % (catalog.get_resource(selected_interaction.foraging_action.resource_id).hold_milliseconds / 1000.0) if selected_interaction.foraging_action != null else "E: ") + selected_interaction.display_prompt(session.environment) if selected_interaction != null else "E near lamps / Chandlery Maris / purple station / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near southeast vessel / north return gate")
+	ui.show_travel(("Hold E %.1fs: " % (catalog.get_resource(selected_interaction.foraging_action.resource_id).hold_milliseconds / 1000.0) if selected_interaction.foraging_action != null else "E: ") + selected_interaction.display_prompt(session.environment) if selected_interaction != null else "E near lamps / Chandlery Maris / purple station / forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "E near south home exit" if session.current_location_id == "prototype-mayor-vale-home" else "E near southeast vessel / north return gate")
 	if not foraging_feedback.is_empty() and session.elapsed_play_seconds < foraging_feedback_until:
 		ui.show_foraging_feedback(foraging_feedback)
 	else:
@@ -788,9 +788,11 @@ func _refresh_journal() -> void:
 		var step: QuestStep = definition.steps[count]
 		if step.source_id != "location-arrival" and step.location_id != session.current_location_id:
 			objective = "E at %s: travel to %s for next objective." % ["forest Tollworks entrance" if session.current_location_id == "prototype-alderwake" else "north return gate", catalog.get_location(step.location_id).display_name]
+			if session.current_location_id == "prototype-mayor-vale-home":
+				objective = "E at south home exit: return to Alderwake for next objective."
 	var optional: PackedStringArray = []
 	if session.relationship.reaction_ids.is_empty():
-		optional.append("purple station: companion choice")
+		optional.append("Alderwake purple station: companion choice" if session.current_location_id == "prototype-mayor-vale-home" else "purple station: companion choice")
 	if progression.available_points() > 0:
 		optional.append("J: spend preparation point")
 	var hint: String = "Optional · " + " · ".join(optional) if not optional.is_empty() else "Esc: save outside combat · No autosave; reopen then Load"

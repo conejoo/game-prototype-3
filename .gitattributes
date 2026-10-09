@@ -72,3 +72,26 @@ game/tests/map_navigation_checks.gd -text whitespace=blank-at-eol,blank-at-eof,s
 game/tests/fixtures/map_navigation_failure.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 # Authorized R006 commit: retain the exact adaptation ledger bytes as well.
 tools/routine_migration/adaptations.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R007 bounded home assets/checks retain exact accepted bytes.
+game/content/prototype_catalog.tres -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_anchor_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_portal_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/features/routines/routine_exterior_registry.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/content/maps/mayor_vale_home.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/content/locations/mayor_vale_home.tres -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/content/portals/alderwake_home.tres -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/content/portals/home_alderwake.tres -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/world/mayor_vale_home.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/world/mayor_vale_home.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/world/mayor_vale_home.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_home_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_home_checks.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_home_render.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/routine_home_render.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/fixtures/r007/blocked_home.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/fixtures/r007/blocked_home.gd.uid -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/fixtures/r007/blocked_home.tscn -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/build_home.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/content_catalog_checks.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/tests/application_smoke.gd -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

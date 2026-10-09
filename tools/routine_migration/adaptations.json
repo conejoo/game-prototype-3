@@ -5,25 +5,25 @@
       "path": ".gitattributes",
       "after_path": ".gitattributes",
       "before_sha256": "bc9404e0f67f76a0508577255e08c21eac64c2621391862621f04e3ab523e128",
-      "after_sha256": "2cea4f447f8781f6bd6f6041113aba01ef86fe15d0bdd26dac70650763365326",
-      "owner": "R006",
-      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de; source pins and original baseline retained. R006 five narrow exact-byte rules; prior attributes preserved. Prior accepted target hash 2a9e5c73d09fbd0979e36046b8c44fd379a8e55cbee6176d8825970ad0934285; original baseline/source pins retained. Authorized R006 successful-task commit adds one exact-byte rule for the adaptation ledger after staged Git normalization was detected; previous accepted attribute hash 36a3f8dedb57262f5256bc00fa871cb5d1a9af3798fe9b1b440447fafa0deaf2 retained in this record, original baseline/source pins unchanged."
+      "after_sha256": "ad79050c0c19674b565a93759ab4dcd9b19ed0838b34e1328053e845cf3bdb3d",
+      "owner": "R007",
+      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de; source pins and original baseline retained. R006 five narrow exact-byte rules; prior attributes preserved. Prior accepted target hash 2a9e5c73d09fbd0979e36046b8c44fd379a8e55cbee6176d8825970ad0934285; original baseline/source pins retained. Authorized R006 successful-task commit adds one exact-byte rule for the adaptation ledger after staged Git normalization was detected; previous accepted attribute hash 36a3f8dedb57262f5256bc00fa871cb5d1a9af3798fe9b1b440447fafa0deaf2 retained in this record, original baseline/source pins unchanged. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash 2cea4f447f8781f6bd6f6041113aba01ef86fe15d0bdd26dac70650763365326 retained; original source/baseline and other geography unchanged. R007 necessary exact 28-definition assertions/current delivered home metadata and byte preservation; previous accepted hash 62df4c5c4f32b0224ce01436235ab082e042d87fa1440a456944606813d32e2f retained."
     },
     {
       "path": "docs/ARCHITECTURE.md",
       "after_path": "docs/ARCHITECTURE.md",
       "before_sha256": "98ab868216cc24ab99bf657ed37257e6d680f6b1ec7cfdb38525252e5f972456",
-      "after_sha256": "b199e23e572309ee656369cab7b526c2fdcccea7180ab7189e1369f5a0f956cd",
-      "owner": "R006",
-      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash 328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302; source pins and original baseline retained. R006 data-only qualified exterior station/door metadata, measured approach/arrival adaptations, real bench ownership; no routine/room activation. Prior accepted target hash 41a5ebd9bf1babc023b52fdf207f7cde472f1567b753014f7bc731350144e990; original baseline/source pins retained."
+      "after_sha256": "350aa72394aa9523b897b2545800193ff629675c014e4e9b27c78e57e42037fe",
+      "owner": "R007",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved. R005 qualified portal routing/fixture or architecture integration; prior accepted adaptation hash 328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302; source pins and original baseline retained. R006 data-only qualified exterior station/door metadata, measured approach/arrival adaptations, real bench ownership; no routine/room activation. Prior accepted target hash 41a5ebd9bf1babc023b52fdf207f7cde472f1567b753014f7bc731350144e990; original baseline/source pins retained. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash b199e23e572309ee656369cab7b526c2fdcccea7180ab7189e1369f5a0f956cd retained; original source/baseline and other geography unchanged. R007 necessary exact 28-definition assertions/current delivered home metadata and byte preservation; previous accepted hash 25640b80a68571afa3e5acfe25ff9f49419fafb0c7c248ef1b874ec489a4d84b retained. R007 home-only south-exit/return hint, external companion station wording or unchanged historical line endings; previous accepted hash 271c61a1561ea71428de2cf4aab44f1a885ba22b17be06eeeeb416e6070f6f1e retained; command/effect owners unchanged."
     },
     {
       "path": "game/app/game_root.gd",
       "after_path": "game/app/game_root.gd",
       "before_sha256": "15e441e4842a4c1430c4733da332cec47ad8b3f218f094e125d3da01740acb3f",
-      "after_sha256": "33472be8ac34af2154c0ea978ebb80ec3e481b65ad7978dc38e86f961006c9c1",
-      "owner": "R005",
-      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+      "after_sha256": "f6aaf88953c2bc2797f721bff6a5082e0bc8875033c824a06e4dc57443d15f8d",
+      "owner": "R007",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 home-only south-exit/return hint, external companion station wording or unchanged historical line endings; previous accepted hash 33472be8ac34af2154c0ea978ebb80ec3e481b65ad7978dc38e86f961006c9c1 retained; command/effect owners unchanged."
     },
     {
       "path": "game/app/game_session.gd",
@@ -45,9 +45,9 @@
       "path": "game/content/locations/alderwake.tres",
       "after_path": "game/content/locations/alderwake.tres",
       "before_sha256": "64436ee4376f3c689ecf2a11957b3880743772354476e0dd41b7083c60e8e33b",
-      "after_sha256": "fd07eae3796c2abcc1fe1ba9fd5bfd9d60db66d1d39bcda8ec7ccce09a94284e",
-      "owner": "R005",
-      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+      "after_sha256": "66eb10b46b2bdef65add6acb816d8d2422164a24675dae109cfa9c80a26919e3",
+      "owner": "R007",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash fd07eae3796c2abcc1fe1ba9fd5bfd9d60db66d1d39bcda8ec7ccce09a94284e retained; original source/baseline and other geography unchanged."
     },
     {
       "path": "game/content/locations/tollworks.tres",
@@ -301,9 +301,9 @@
       "path": "game/world/alderwake_exterior.gd",
       "after_path": "game/world/alderwake_exterior.gd",
       "before_sha256": "d2f0fdd605b92026344721cf54a7aa9d70e17230c0aa09db7f3f7e41d3e6f391",
-      "after_sha256": "0bace23958b7f14ab18b1b8c72f3fd6315008d925dccd88a9690c00caad1b51a",
-      "owner": "R005",
-      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change."
+      "after_sha256": "a78ac8cdcecb5560369e1c984efbdacfba70313bf873836665a2c37f266cab65",
+      "owner": "R007",
+      "reason": "R005 explicit directed portal binding/validation/query/player dispatch; affected synthetic fixture repair preserves floor/blocker geometry and original arrivals. No routine/room activation or save change. R007 public bounded home/reciprocal binding or exact-byte portability/current architecture; previous accepted hash 0bace23958b7f14ab18b1b8c72f3fd6315008d925dccd88a9690c00caad1b51a retained; original source/baseline and other geography unchanged."
     },
     {
       "path": "game/world/location_definition.gd",
@@ -400,6 +400,30 @@
       "after_sha256": "7b7bd9ad71d5ffb1f116ad694438a9060fe258316058c575db9e7b7b44f6f92c",
       "owner": "R004",
       "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/content/prototype_catalog.tres",
+      "after_path": "game/content/prototype_catalog.tres",
+      "before_sha256": "5a7d127cbe4efc3798c15f15e988ef639ac7824d8aacbfcab651ceff0f106749",
+      "reason": "R007 enables only public Mayor Vale home/reciprocal portals, with pinned exterior geometry/old arrivals and all other content preserved; original source/baseline unchanged.",
+      "after_sha256": "7bcb33bad3054d1a764c891c674012d3deb6792e355fd95b72a02b615975c73c",
+      "owner": "R007"
+    },
+    {
+      "path": "game/tests/content_catalog_checks.gd",
+      "after_path": "game/tests/content_catalog_checks.gd",
+      "before_sha256": "ca0a0d952ccf5c824e25ff35db8b7f766e43323df36a0e595f767fb9d398db26",
+      "reason": "R007 exact expected core catalog count 27 -> 28 for one added home; all malformed/atomicity/legacy-NPC/root ownership assertions preserved.",
+      "after_sha256": "f7f5cacac4f8bc38f4410ddbe3894baa5ff0bccd02860b42043072731f96e1c2",
+      "owner": "R007"
+    },
+    {
+      "path": "game/tests/application_smoke.gd",
+      "after_path": "game/tests/application_smoke.gd",
+      "before_sha256": "ac034d902db1b5cfe35c37c1fb5e129fe91cd9e458dd04fc56acd6be7a51350d",
+      "reason": "R007 exact expected core catalog count 27 -> 28 for one added home; all malformed/atomicity/legacy-NPC/root ownership assertions preserved.",
+      "after_sha256": "fce24aff635dac89bc176fee890ca6506776161808de1f7bdcfc403f3fdd84de",
+      "owner": "R007"
     }
   ]
 }
