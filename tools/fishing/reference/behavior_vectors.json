@@ -1,0 +1,768 @@
+{
+  "membership": [
+    {
+      "label": "fishing-dock-shallows-left-top",
+      "area": "fishing-dock-shallows",
+      "point": [
+        -11.0,
+        16.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-dock-shallows-right-bottom",
+      "area": "fishing-dock-shallows",
+      "point": [
+        5.0,
+        34.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-dock-shallows-outside-left",
+      "area": "fishing-dock-shallows",
+      "point": [
+        -11.0001,
+        16.0
+      ],
+      "inside": false
+    },
+    {
+      "label": "fishing-dock-shallows-outside-right",
+      "area": "fishing-dock-shallows",
+      "point": [
+        5.0001,
+        34.0
+      ],
+      "inside": false
+    },
+    {
+      "label": "fishing-lake-channel-vertex-0",
+      "area": "fishing-lake-channel",
+      "point": [
+        5.0,
+        16.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-edge-0",
+      "area": "fishing-lake-channel",
+      "point": [
+        14.25,
+        16.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-vertex-1",
+      "area": "fishing-lake-channel",
+      "point": [
+        23.5,
+        16.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-edge-1",
+      "area": "fishing-lake-channel",
+      "point": [
+        23.5,
+        25.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-vertex-2",
+      "area": "fishing-lake-channel",
+      "point": [
+        23.5,
+        34.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-edge-2",
+      "area": "fishing-lake-channel",
+      "point": [
+        20.25,
+        35.25
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-vertex-3",
+      "area": "fishing-lake-channel",
+      "point": [
+        17.0,
+        36.5
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-edge-3",
+      "area": "fishing-lake-channel",
+      "point": [
+        11.0,
+        35.25
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-vertex-4",
+      "area": "fishing-lake-channel",
+      "point": [
+        5.0,
+        34.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-edge-4",
+      "area": "fishing-lake-channel",
+      "point": [
+        5.0,
+        25.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-lake-channel-outside",
+      "area": "fishing-lake-channel",
+      "point": [
+        -21,
+        -17
+      ],
+      "inside": false
+    },
+    {
+      "label": "fishing-sunken-reeds-vertex-0",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        2.0,
+        21.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-edge-0",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        5.25,
+        20.25
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-vertex-1",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        8.5,
+        19.5
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-edge-1",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        10.25,
+        22.75
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-vertex-2",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        12.0,
+        26.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-edge-2",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        9.75,
+        28.5
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-vertex-3",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        7.5,
+        31.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-edge-3",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        4.5,
+        29.5
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-vertex-4",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        1.5,
+        28.0
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-edge-4",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        1.75,
+        24.5
+      ],
+      "inside": true
+    },
+    {
+      "label": "fishing-sunken-reeds-outside",
+      "area": "fishing-sunken-reeds",
+      "point": [
+        -21,
+        -17
+      ],
+      "inside": false
+    }
+  ],
+  "distributions": [
+    {
+      "label": "dock",
+      "point": [
+        -4.75,
+        20.25
+      ],
+      "probabilities": {
+        "bluegill": 0.3,
+        "river_trout": 0.1
+      },
+      "miss": 0.6
+    },
+    {
+      "label": "channel",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "probabilities": {
+        "bluegill": 0.12,
+        "golden_carp": 0.03,
+        "river_trout": 0.3
+      },
+      "miss": 0.55
+    },
+    {
+      "label": "reeds-dock",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "probabilities": {
+        "bluegill": 0.15333333333333332,
+        "golden_carp": 0.13333333333333333,
+        "river_trout": 0.18000000000000002
+      },
+      "miss": 0.5333333333333334
+    },
+    {
+      "label": "reeds-channel",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "probabilities": {
+        "bluegill": 0.09333333333333334,
+        "golden_carp": 0.14333333333333334,
+        "river_trout": 0.24666666666666667
+      },
+      "miss": 0.5166666666666666
+    },
+    {
+      "label": "no-area",
+      "point": [
+        -12.75,
+        20.25
+      ],
+      "probabilities": {},
+      "miss": 1
+    }
+  ],
+  "rolls": [
+    {
+      "label": "dock-bluegill-start",
+      "point": [
+        -4.75,
+        20.25
+      ],
+      "roll": 0.0,
+      "expected": "bluegill"
+    },
+    {
+      "label": "dock-bluegill-before-end",
+      "point": [
+        -4.75,
+        20.25
+      ],
+      "roll": 0.2999999999,
+      "expected": "bluegill"
+    },
+    {
+      "label": "dock-bluegill-end",
+      "point": [
+        -4.75,
+        20.25
+      ],
+      "roll": 0.3,
+      "expected": "river_trout"
+    },
+    {
+      "label": "dock-river_trout-start",
+      "point": [
+        -4.75,
+        20.25
+      ],
+      "roll": 0.3,
+      "expected": "river_trout"
+    },
+    {
+      "label": "dock-river_trout-before-end",
+      "point": [
+        -4.75,
+        20.25
+      ],
+      "roll": 0.3999999999,
+      "expected": "river_trout"
+    },
+    {
+      "label": "dock-river_trout-end",
+      "point": [
+        -4.75,
+        20.25
+      ],
+      "roll": 0.4,
+      "expected": "miss"
+    },
+    {
+      "label": "dock-high-roll",
+      "point": [
+        -4.75,
+        20.25
+      ],
+      "roll": 0.999999,
+      "expected": "miss"
+    },
+    {
+      "label": "channel-bluegill-start",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.0,
+      "expected": "bluegill"
+    },
+    {
+      "label": "channel-bluegill-before-end",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.1199999999,
+      "expected": "bluegill"
+    },
+    {
+      "label": "channel-bluegill-end",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.12,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "channel-golden_carp-start",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.12,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "channel-golden_carp-before-end",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.1499999999,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "channel-golden_carp-end",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.15,
+      "expected": "river_trout"
+    },
+    {
+      "label": "channel-river_trout-start",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.15,
+      "expected": "river_trout"
+    },
+    {
+      "label": "channel-river_trout-before-end",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.44999999989999995,
+      "expected": "river_trout"
+    },
+    {
+      "label": "channel-river_trout-end",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.44999999999999996,
+      "expected": "miss"
+    },
+    {
+      "label": "channel-high-roll",
+      "point": [
+        10.25,
+        17.25
+      ],
+      "roll": 0.999999,
+      "expected": "miss"
+    },
+    {
+      "label": "reeds-dock-bluegill-start",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.0,
+      "expected": "bluegill"
+    },
+    {
+      "label": "reeds-dock-bluegill-before-end",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.1533333332333333,
+      "expected": "bluegill"
+    },
+    {
+      "label": "reeds-dock-bluegill-end",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.15333333333333332,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "reeds-dock-golden_carp-start",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.15333333333333332,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "reeds-dock-golden_carp-before-end",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.2866666665666666,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "reeds-dock-golden_carp-end",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.2866666666666666,
+      "expected": "river_trout"
+    },
+    {
+      "label": "reeds-dock-river_trout-start",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.2866666666666666,
+      "expected": "river_trout"
+    },
+    {
+      "label": "reeds-dock-river_trout-before-end",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.46666666656666667,
+      "expected": "river_trout"
+    },
+    {
+      "label": "reeds-dock-river_trout-end",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.4666666666666667,
+      "expected": "miss"
+    },
+    {
+      "label": "reeds-dock-high-roll",
+      "point": [
+        3.25,
+        22.25
+      ],
+      "roll": 0.999999,
+      "expected": "miss"
+    },
+    {
+      "label": "reeds-channel-bluegill-start",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.0,
+      "expected": "bluegill"
+    },
+    {
+      "label": "reeds-channel-bluegill-before-end",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.09333333323333334,
+      "expected": "bluegill"
+    },
+    {
+      "label": "reeds-channel-bluegill-end",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.09333333333333334,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "reeds-channel-golden_carp-start",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.09333333333333334,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "reeds-channel-golden_carp-before-end",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.23666666656666668,
+      "expected": "golden_carp"
+    },
+    {
+      "label": "reeds-channel-golden_carp-end",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.2366666666666667,
+      "expected": "river_trout"
+    },
+    {
+      "label": "reeds-channel-river_trout-start",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.2366666666666667,
+      "expected": "river_trout"
+    },
+    {
+      "label": "reeds-channel-river_trout-before-end",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.4833333332333334,
+      "expected": "river_trout"
+    },
+    {
+      "label": "reeds-channel-river_trout-end",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.4833333333333334,
+      "expected": "miss"
+    },
+    {
+      "label": "reeds-channel-high-roll",
+      "point": [
+        6.25,
+        22.25
+      ],
+      "roll": 0.999999,
+      "expected": "miss"
+    },
+    {
+      "label": "no-area-high-roll",
+      "point": [
+        -12.75,
+        20.25
+      ],
+      "roll": 0.999999,
+      "expected": "no_area"
+    }
+  ],
+  "waits": [
+    {
+      "roll": 0,
+      "seconds": 1.5
+    },
+    {
+      "roll": 0.5,
+      "seconds": 2.25
+    },
+    {
+      "roll": 0.999999,
+      "seconds": 2.9999985
+    }
+  ],
+  "sites": [
+    {
+      "id": "dock-shallows",
+      "foot": [
+        -7,
+        0,
+        18
+      ],
+      "target": [
+        -4.75,
+        0.015,
+        20.25
+      ],
+      "areas": [
+        "fishing-dock-shallows"
+      ]
+    },
+    {
+      "id": "lake-channel",
+      "foot": [
+        10,
+        0,
+        13
+      ],
+      "target": [
+        10.25,
+        0.015,
+        17.25
+      ],
+      "areas": [
+        "fishing-lake-channel"
+      ]
+    },
+    {
+      "id": "sunken-reeds-dock",
+      "foot": [
+        3,
+        0,
+        13
+      ],
+      "target": [
+        3.25,
+        0.015,
+        22.25
+      ],
+      "areas": [
+        "fishing-dock-shallows",
+        "fishing-sunken-reeds"
+      ]
+    },
+    {
+      "id": "sunken-reeds-channel",
+      "foot": [
+        6,
+        0,
+        13
+      ],
+      "target": [
+        6.25,
+        0.015,
+        22.25
+      ],
+      "areas": [
+        "fishing-lake-channel",
+        "fishing-sunken-reeds"
+      ]
+    }
+  ],
+  "negative_points": [
+    {
+      "label": "dry-dock",
+      "point": [
+        -7,
+        18
+      ],
+      "kind": "deck"
+    },
+    {
+      "label": "dry-bridge",
+      "point": [
+        98,
+        -0.5
+      ],
+      "kind": "bridge"
+    },
+    {
+      "label": "shoreline-dry",
+      "point": [
+        10,
+        13
+      ],
+      "kind": "dry_land"
+    },
+    {
+      "label": "out-of-map",
+      "point": [
+        125,
+        62
+      ],
+      "kind": "out_of_map"
+    },
+    {
+      "label": "no-area-water",
+      "point": [
+        -12.75,
+        20.25
+      ],
+      "kind": "no_area"
+    }
+  ]
+}

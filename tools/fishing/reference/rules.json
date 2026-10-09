@@ -1,0 +1,459 @@
+{
+  "schema": 1,
+  "items": [
+    {
+      "id": "fishing_rod",
+      "label": "Fishing Rod",
+      "iconAsset": "assets/images/items/fishing_rod.png",
+      "category": "tool",
+      "stackLimit": 1,
+      "useBehavior": "activeTool",
+      "giftBehavior": "notGiftable",
+      "worldBehavior": "movablePickup",
+      "contentRoles": [],
+      "features": [
+        {
+          "type": "rangedTileActivation",
+          "activityId": "fishing",
+          "targetCellSize": 16,
+          "maximumRange": 384,
+          "requiredSurface": "water",
+          "action": "castFishingLine"
+        }
+      ]
+    },
+    {
+      "id": "river_trout",
+      "label": "River Trout",
+      "iconAsset": "assets/images/items/river_trout.png",
+      "category": "fish",
+      "stackLimit": 99,
+      "useBehavior": "none",
+      "giftBehavior": "giftable",
+      "worldBehavior": "none",
+      "contentRoles": [],
+      "features": [
+        {
+          "type": "fishingChallenge",
+          "minimumFightSeconds": 6,
+          "maximumFightSeconds": 12,
+          "hookWindowSeconds": 0.9,
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "id": "bluegill",
+      "label": "Bluegill",
+      "iconAsset": "assets/images/items/bluegill.png",
+      "category": "fish",
+      "stackLimit": 99,
+      "useBehavior": "none",
+      "giftBehavior": "giftable",
+      "worldBehavior": "none",
+      "contentRoles": [],
+      "features": [
+        {
+          "type": "fishingChallenge",
+          "minimumFightSeconds": 2,
+          "maximumFightSeconds": 5,
+          "hookWindowSeconds": 1.2,
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "id": "golden_carp",
+      "label": "Golden Carp",
+      "iconAsset": "assets/images/items/golden_carp.png",
+      "category": "fish",
+      "stackLimit": 99,
+      "useBehavior": "none",
+      "giftBehavior": "giftable",
+      "worldBehavior": "none",
+      "contentRoles": [],
+      "features": [
+        {
+          "type": "fishingChallenge",
+          "minimumFightSeconds": 15,
+          "maximumFightSeconds": 30,
+          "hookWindowSeconds": 0.7,
+          "difficulty": "hard"
+        }
+      ]
+    }
+  ],
+  "source_areas": [
+    {
+      "id": "fishing-dock-shallows",
+      "label": "Dock Shallows",
+      "shape": {
+        "kind": "rectangle",
+        "left": 352.0,
+        "top": 1088.0,
+        "width": 512.0,
+        "height": 576.0
+      },
+      "activities": [
+        {
+          "activityId": "fishing",
+          "blendWeight": 1.0,
+          "outcomes": [
+            {
+              "itemId": "bluegill",
+              "probability": 0.3
+            },
+            {
+              "itemId": "river_trout",
+              "probability": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fishing-lake-channel",
+      "label": "Lake Channel",
+      "shape": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": 864.0,
+            "y": 1088.0
+          },
+          {
+            "x": 1456.0,
+            "y": 1088.0
+          },
+          {
+            "x": 1456.0,
+            "y": 1664.0
+          },
+          {
+            "x": 1248.0,
+            "y": 1744.0
+          },
+          {
+            "x": 864.0,
+            "y": 1664.0
+          }
+        ]
+      },
+      "activities": [
+        {
+          "activityId": "fishing",
+          "blendWeight": 1.0,
+          "outcomes": [
+            {
+              "itemId": "river_trout",
+              "probability": 0.3
+            },
+            {
+              "itemId": "bluegill",
+              "probability": 0.12
+            },
+            {
+              "itemId": "golden_carp",
+              "probability": 0.03
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fishing-sunken-reeds",
+      "label": "Sunken Reeds",
+      "shape": {
+        "kind": "polygon",
+        "points": [
+          {
+            "x": 768.0,
+            "y": 1248.0
+          },
+          {
+            "x": 976.0,
+            "y": 1200.0
+          },
+          {
+            "x": 1088.0,
+            "y": 1408.0
+          },
+          {
+            "x": 944.0,
+            "y": 1568.0
+          },
+          {
+            "x": 752.0,
+            "y": 1472.0
+          }
+        ]
+      },
+      "activities": [
+        {
+          "activityId": "fishing",
+          "blendWeight": 2.0,
+          "outcomes": [
+            {
+              "itemId": "river_trout",
+              "probability": 0.22
+            },
+            {
+              "itemId": "bluegill",
+              "probability": 0.08
+            },
+            {
+              "itemId": "golden_carp",
+              "probability": 0.2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "areas": [
+    {
+      "id": "fishing-dock-shallows",
+      "label": "Dock Shallows",
+      "shape": {
+        "kind": "rectangle",
+        "rect_xz_m": [
+          -11.0,
+          16.0,
+          16.0,
+          18.0
+        ]
+      },
+      "source_profiles": [
+        {
+          "activityId": "fishing",
+          "blendWeight": 1.0,
+          "outcomes": [
+            {
+              "itemId": "bluegill",
+              "probability": 0.3
+            },
+            {
+              "itemId": "river_trout",
+              "probability": 0.1
+            }
+          ]
+        }
+      ],
+      "runtime_enabled": false
+    },
+    {
+      "id": "fishing-lake-channel",
+      "label": "Lake Channel",
+      "shape": {
+        "kind": "polygon",
+        "vertices_xz_m": [
+          [
+            5.0,
+            16.0
+          ],
+          [
+            23.5,
+            16.0
+          ],
+          [
+            23.5,
+            34.0
+          ],
+          [
+            17.0,
+            36.5
+          ],
+          [
+            5.0,
+            34.0
+          ]
+        ]
+      },
+      "source_profiles": [
+        {
+          "activityId": "fishing",
+          "blendWeight": 1.0,
+          "outcomes": [
+            {
+              "itemId": "river_trout",
+              "probability": 0.3
+            },
+            {
+              "itemId": "bluegill",
+              "probability": 0.12
+            },
+            {
+              "itemId": "golden_carp",
+              "probability": 0.03
+            }
+          ]
+        }
+      ],
+      "runtime_enabled": false
+    },
+    {
+      "id": "fishing-sunken-reeds",
+      "label": "Sunken Reeds",
+      "shape": {
+        "kind": "polygon",
+        "vertices_xz_m": [
+          [
+            2.0,
+            21.0
+          ],
+          [
+            8.5,
+            19.5
+          ],
+          [
+            12.0,
+            26.0
+          ],
+          [
+            7.5,
+            31.0
+          ],
+          [
+            1.5,
+            28.0
+          ]
+        ]
+      },
+      "source_profiles": [
+        {
+          "activityId": "fishing",
+          "blendWeight": 2.0,
+          "outcomes": [
+            {
+              "itemId": "river_trout",
+              "probability": 0.22
+            },
+            {
+              "itemId": "bluegill",
+              "probability": 0.08
+            },
+            {
+              "itemId": "golden_carp",
+              "probability": 0.2
+            }
+          ]
+        }
+      ],
+      "runtime_enabled": false
+    }
+  ],
+  "transform": {
+    "source_origin": [
+      704,
+      576
+    ],
+    "units_per_metre": 32,
+    "target_origin": [
+      -22,
+      -18
+    ],
+    "cell_m": 0.5,
+    "range_m": 12
+  },
+  "challenge": {
+    "initial_tension": 0.5,
+    "wait_min": 1.5,
+    "wait_max": 3,
+    "danger_grace": 0.75,
+    "held_rise": 0.65,
+    "release_fall": 0.55,
+    "warning_progress": 0.25,
+    "danger_progress": 0,
+    "optimal_progress": 1,
+    "priority": [
+      "danger",
+      "landed",
+      "exhausted"
+    ],
+    "tiers": {
+      "easy": {
+        "optimal": [
+          0.3,
+          0.7
+        ],
+        "danger": [
+          0.1,
+          0.9
+        ],
+        "struggle": [
+          [
+            0.12,
+            2
+          ]
+        ]
+      },
+      "medium": {
+        "optimal": [
+          0.35,
+          0.65
+        ],
+        "danger": [
+          0.15,
+          0.85
+        ],
+        "struggle": [
+          [
+            0.22,
+            1.35
+          ]
+        ]
+      },
+      "hard": {
+        "optimal": [
+          0.4,
+          0.6
+        ],
+        "danger": [
+          0.2,
+          0.8
+        ],
+        "struggle": [
+          [
+            0.22,
+            1.9
+          ],
+          [
+            0.1,
+            0.8
+          ]
+        ]
+      }
+    }
+  },
+  "boundaries": {
+    "areas": "rectangle closed; polygon edges included using source-unit predicate epsilon 1e-6",
+    "map": "left/top included; right/bottom excluded",
+    "range": "cell-center horizontal <=12m",
+    "water_y": 0.015,
+    "deck_physics_y": 0,
+    "deck_visual_y": 0.022
+  },
+  "rng": {
+    "encounter": "finite uniform [0,1), sorted source IDs, one roll only when matching profiles exist",
+    "wait": "independent finite [0,1), 1.5+1.5*roll; source helper clamps but target rejects out-of-domain",
+    "no_area": "immediate, no challenge, no reward",
+    "miss": "normal waiting then no_bite"
+  },
+  "cancellation": {
+    "explicit": [
+      "F",
+      "right_click",
+      "Cancel"
+    ],
+    "esc": "cancel then existing pause",
+    "lifecycle": [
+      "focus_loss",
+      "pause_or_modal",
+      "room_or_session_replacement",
+      "retry_or_death",
+      "combat_engagement",
+      "rod_or_capability_invalidated"
+    ],
+    "exit": "invalidate token, clear held controls, require fresh input; no reward; no saved attempt"
+  }
+}

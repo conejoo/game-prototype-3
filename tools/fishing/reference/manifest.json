@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "task": "FS001",
+  "target_entry_head": "210c2b7a38600a1c9c144e4b773c89a5c1be8ad8",
+  "entry_dirty": "?? docs/fishing/ (user-authored instructions preserved)",
+  "source_head": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+  "source_status": "",
+  "source_files": [
+    {
+      "path": "assets/data/gameplay/catalog.json",
+      "bytes": 3497,
+      "sha256": "c3677ed12a62a51e49e67479b383d6acf6a2b8aa9e468027a2ad9b83e64fbc2a"
+    },
+    {
+      "path": "assets/maps/mvp_world.json",
+      "bytes": 2477973,
+      "sha256": "777b99288fb18852d51c96ea1705cd264eba3a9703e6b043757c408cc8c637da"
+    },
+    {
+      "path": "lib/game/fishing/fishing_challenge.dart",
+      "bytes": 10851,
+      "sha256": "738d365f3609ae311580bc9ff884cf81ba16adb70e83a2f69d0339f9a40112ce"
+    },
+    {
+      "path": "lib/game/activities/activity_outcome_resolver.dart",
+      "bytes": 2562,
+      "sha256": "335e7f3bf42ca68a3c4032a4aa3816e16a029adbadc988b0759154fe0a533874"
+    },
+    {
+      "path": "lib/game/items/item_targeting.dart",
+      "bytes": 5129,
+      "sha256": "dfe02f79fbe199343c8e8a4b3c1c61f451dc5a70a9bdf85bb6948286a43684fc"
+    },
+    {
+      "path": "lib/world_map/world_map.dart",
+      "bytes": 31882,
+      "sha256": "cd2825d5d51d7af0f8ef6891acd3cb653bda061ca50bd7b30944bf127f258137"
+    },
+    {
+      "path": "lib/game/cozy_adventure_game.dart",
+      "bytes": 79011,
+      "sha256": "acf5043f59b58bd7439efb9683863844338ef6b0c97966b95f743aae7534c295"
+    },
+    {
+      "path": "lib/game/items/item_definition.dart",
+      "bytes": 4173,
+      "sha256": "63208933a13e63450c6f75d796743ba9d0aa85dfc085dde5de6930c195477b7d"
+    },
+    {
+      "path": "lib/ui/fishing_hud_overlay.dart",
+      "bytes": 10303,
+      "sha256": "17892eb602ae190bc9c4066751e9cc4c97e33115c4ddc647981bf9e106620880"
+    },
+    {
+      "path": "lib/game/input/desktop_input_adapter.dart",
+      "bytes": 2972,
+      "sha256": "380b026b6865ce937aed83b3836cc254ad20c6592ad5c3d1cf723deee5c9f4b2"
+    },
+    {
+      "path": "test/game/fishing/fishing_challenge_test.dart",
+      "bytes": 5720,
+      "sha256": "83bb97aacc28ae0920001cb313369596764e7f157a0df8848846158f231b4a2e"
+    },
+    {
+      "path": "test/game/activities/activity_outcome_resolver_test.dart",
+      "bytes": 3860,
+      "sha256": "5c75fe2321cb7c27cd6ab2e7606c41f707a0dbfbf5668caf76ea98cfb864ccef"
+    },
+    {
+      "path": "test/game/items/item_targeting_test.dart",
+      "bytes": 4977,
+      "sha256": "131c2c7fe597c7cd86fdd7ad06afaf46a84a06dbdf00e9a30e2a1bc7cfabf7fc"
+    },
+    {
+      "path": "test/ui/fishing_hud_overlay_test.dart",
+      "bytes": 5571,
+      "sha256": "6af1df717787a092b4ab167dc400b78b92f891b180d52ad5bdf0dba68b4447be"
+    },
+    {
+      "path": "assets/images/items/fishing_rod.png",
+      "bytes": 4952,
+      "sha256": "32c88922ebd2b2363bc52b0bfabda033265eb4c18741b985ae12ce596da9b7b0"
+    },
+    {
+      "path": "assets/images/items/bluegill.png",
+      "bytes": 16121,
+      "sha256": "cff56f8d6edb842828750593309b80b5e908d4fa192f111dc887e572af89a45d"
+    },
+    {
+      "path": "assets/images/items/river_trout.png",
+      "bytes": 10760,
+      "sha256": "2ef86aa5f619faf7b1f7756eb4f3565639d62ff465e8c48d754442dc3a414216"
+    },
+    {
+      "path": "assets/images/items/golden_carp.png",
+      "bytes": 12388,
+      "sha256": "1fa3a6f3af7f4e564652be721a0fdbfd550688966186a902aaf67d5d1363cf65"
+    }
+  ],
+  "local_artifacts": [
+    {
+      "path": "game/content/maps/alderwake_layout.json",
+      "sha256": "7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be"
+    },
+    {
+      "path": "game/world/map_candidate/water_blockers.gd",
+      "sha256": "d0dc9b20edfb8f3b82d3f89e1b089cddfdbdf95d98d4fee7ede9994c56a5f9b1"
+    },
+    {
+      "path": "game/world/map_candidate/dock_surfaces.gd",
+      "sha256": "3e6bb1f520695a0429c33a3fff909d89531394fb74d233c28158a85240bdaf01"
+    },
+    {
+      "path": "game/world/map_candidate/crossings.gd",
+      "sha256": "c0bf65386a7821463f485caf6312ac1a687c055725148499384d090e6b045543"
+    },
+    {
+      "path": "game/world/map_candidate/elevation_surfaces.gd",
+      "sha256": "625d4b7c3f132e63fb26cd22329d77c21307ea54b2fa5a792d2d752d45fdea98"
+    },
+    {
+      "path": "game/world/map_candidate/river.gdshader",
+      "sha256": "a2b9ef57d726ebc4f26f9cf3834bfd254566aec7bbe449f79f4fecebee39f565"
+    },
+    {
+      "path": "tools/fishing/reference/behavior_vectors.json",
+      "sha256": "633889087f0fe811679a4d09c94520f848761bd56499d6eaa4a346f7e0826e31"
+    },
+    {
+      "path": "tools/fishing/reference/rules.json",
+      "sha256": "6335082dfd7e13417eba573824a5f8c8b3bac94956b1adee92738bb5b58176be"
+    },
+    {
+      "path": "tools/fishing/reference/source_excerpts.json",
+      "sha256": "75f529e16a9cf7372624481da2a1370f11951917869ca9af1e68c48200141671"
+    }
+  ],
+  "historical_map_sha256": "af67bd904eeaf9a8c08a763f60471a5be7d74e7dafe99753381d38577499294f",
+  "reconciliation": "Live map differs; only fishing area transforms/profiles match. No geography regeneration.",
+  "runtime_dependency": false
+}
