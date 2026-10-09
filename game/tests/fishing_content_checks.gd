@@ -39,7 +39,7 @@ func _metadata(catalog: ContentCatalog) -> void:
 			_check(item.display_name == source.label and not item.is_tool() and not item.movable_pickup and item.giftable and item.rod_activation == null, "immutable nontool/nonpickup fish " + source.id)
 			_check(challenge != null and challenge.difficulty == feature.difficulty and challenge.hook_window_seconds == feature.hookWindowSeconds and challenge.minimum_fight_seconds == feature.minimumFightSeconds and challenge.maximum_fight_seconds == feature.maximumFightSeconds, "exact challenge metadata " + source.id)
 			_check(catalog.get_resource(item.stable_id) == null, "fish has no foraging origin")
-	_check(SaveCodec.SCHEMA_VERSION == 7 and SaveCodec.CONTENT_VERSION == 1, "same current schema7/content1")
+	_check(SaveCodec.SCHEMA_VERSION == 8 and SaveCodec.CONTENT_VERSION == 1, "same current schema8/content1")
 
 func _fixture() -> ContentManifest:
 	var result: ContentManifest = ContentManifest.new()

@@ -92,7 +92,7 @@ func _run() -> void:
 		_check(SaveCodec.decode(bytes.replace('"count":1', '"count":' + token), catalog).session == null, "fraction lexeme event count " + token)
 	_check(SaveCodec.decode(bytes.replace('"affinity":1', '"affinity":0,"affinity":1'), catalog).session == null,"duplicate memory numeric field")
 	_check(SaveCodec.decode(bytes.replace('"count":1', '"count":0,"co\\u0075nt":1'), catalog).session == null,"escaped duplicate event field")
-	for version: int in [1,2,3,4,5,6,8,99,2147483647]:
+	for version: int in [1,2,3,4,5,6,7,9,99,2147483647]:
 		var bad: Dictionary = data.duplicate(true); bad.schema_version = version; bad.erase("conversations")
 		var rejected_version: SaveCodec.DecodeResult = SaveCodec.decode(JSON.stringify(bad), catalog)
 		_check(rejected_version.session == null and rejected_version.incompatible, "version rejects without default/migration " + str(version))

@@ -4,39 +4,49 @@
     "origin": "docs/evidence/P014/release-fresh-save.json",
     "kind": "current-schema synthetic fixture adapted from captured gameplay facts",
     "source_sha256": "e6435f596cc456483469ddde922c85316477ecdb54277fc79ade8a4591aaf8d9",
-    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
-    "sha256": "6f8ef980bb0e16c70cf55f3df3ca58715781261bcf66e83239dc0bcedacf7a20"
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained. R004 replaces current format with schema8/content1 and explicit empty routine authored-event/suppression sets; all prior parsed values retained.",
+    "sha256": "a8d9eae02ad84045ee943f4c61789b9d1ec3b23d28ec555bd4c4d48dfd57c3cf",
+    "prior_schema7_sha256": "3e5e6f538f8d54c5c7a237e7495e0894e54923e0d27daf4fa041de9105131159",
+    "prior_recorded_sha256": "6f8ef980bb0e16c70cf55f3df3ca58715781261bcf66e83239dc0bcedacf7a20"
   },
   {
     "fixture": "town-lead",
     "origin": "docs/evidence/P013/repeat-lead-save.json",
     "kind": "current-schema synthetic fixture adapted from captured gameplay facts",
     "source_sha256": "a239beffaab805f6fcb297ded8b48c8707751698cf57541dc111c96c25f1938b",
-    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
-    "sha256": "90308fa03443465eba9e1fbf2ab66bd53f558a0e9d44fa21543d4e1986da9fdc"
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained. R004 replaces current format with schema8/content1 and explicit empty routine authored-event/suppression sets; all prior parsed values retained.",
+    "sha256": "c3012329e775155bdc5f8d853786a0d5b954ec201b9bce0867a082cc8a177bd7",
+    "prior_schema7_sha256": "6e1a8b6ee2b87d8780b41fb926088c4591f8871532f84efb64c5e9c3be08ac4f",
+    "prior_recorded_sha256": "90308fa03443465eba9e1fbf2ab66bd53f558a0e9d44fa21543d4e1986da9fdc"
   },
   {
     "fixture": "town-complete",
     "origin": "docs/evidence/P014/native-holds/release-completed-save.json",
     "kind": "current-schema synthetic fixture adapted from captured gameplay facts",
     "source_sha256": "01f61ffce23d52f38580b87b18b4b146d98f72b794dad46b3a2cfb33f2b7ddae",
-    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
-    "sha256": "c754d6c6303ba151b2bc2459c18d8e2dd5cf270ea109fdb3049fa69592731469"
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained. R004 replaces current format with schema8/content1 and explicit empty routine authored-event/suppression sets; all prior parsed values retained.",
+    "sha256": "79781f5bebca050d502bc9bcbe5124bc5f606f5422ccdcd522f0bf8723cd1735",
+    "prior_schema7_sha256": "54ba05f1d500b5df0d80290b071a89a10a3b19ee2acceebffd85cd305a7d8b87",
+    "prior_recorded_sha256": "c754d6c6303ba151b2bc2459c18d8e2dd5cf270ea109fdb3049fa69592731469"
   },
   {
     "fixture": "tollworks-vessel",
     "origin": "docs/evidence/P013/repeat-vessel-save.json",
     "kind": "current-schema synthetic fixture adapted from captured gameplay facts",
     "source_sha256": "16c7547703565f45814ba379b18a37471868c909f85edb3d584d538a8cee8c91",
-    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
-    "sha256": "2c3a7432adad520b1c0dc8e8777664cd82efa9d1d43e524320a0729f17a9f5f1"
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained. R004 replaces current format with schema8/content1 and explicit empty routine authored-event/suppression sets; all prior parsed values retained.",
+    "sha256": "b349981c27712b8a59999e940a86f0d0b1d661b968ccec57c363cb8c67bad3b3",
+    "prior_schema7_sha256": "560d9bf1a3ad4278d596396febaf859d90cb26c1b0707208d09355860d2a052a",
+    "prior_recorded_sha256": "2c3a7432adad520b1c0dc8e8777664cd82efa9d1d43e524320a0729f17a9f5f1"
   },
   {
     "fixture": "tollworks-start-downed",
     "origin": "town-complete",
     "kind": "current-schema synthetic fixture with start anchor, unequal health and downed ally",
     "source_sha256": "4e9c984560c19ca9003c62691bd120c90568d74dd6a619ea93dfc0d6e498eecb",
-    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained.",
-    "sha256": "754618fb3e2fc5d0b7471d62e114b9603bc843a245f7270e0bca62b314a55862"
+    "adaptation": "Schema6; explicit environment, light overrides and empty inventory/collected/placement facts. Original actor/quest/location/time/consequence facts retained. R004 replaces current format with schema8/content1 and explicit empty routine authored-event/suppression sets; all prior parsed values retained.",
+    "sha256": "574d8eb11e90ebd787feb9f35a87d0a5c463f7a9b9e4a97edef3ceac2729b720",
+    "prior_schema7_sha256": "2d73b55b628c6cea4590ed3823921a7d450bfd68fa867f3864c9ab98db9ebc30",
+    "prior_recorded_sha256": "754618fb3e2fc5d0b7471d62e114b9603bc843a245f7270e0bca62b314a55862"
   }
 ]

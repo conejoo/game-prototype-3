@@ -160,7 +160,7 @@ func _disk_checks(pair: Dictionary) -> void:
 	read = repo.read(pair.actors)
 	_check(read.recovered and read.session != null and SaveCodec.snapshot(read.session) == before,"backup restores exact social/old state")
 	_check(FileAccess.get_file_as_string(repo.path) == "broken","recovery read-only")
-	var invalid: Dictionary = before.duplicate(true); invalid.schema_version = 8
+	var invalid: Dictionary = before.duplicate(true); invalid.schema_version = SaveCodec.SCHEMA_VERSION + 1
 	_write(repo.path,JSON.stringify(invalid,"",true,true))
 	var incompatible: String = FileAccess.get_file_as_string(repo.path)
 	_check(repo.read(pair.actors).status == "incompatible" and not repo.write(pair.session,pair.actors).is_empty(),"unsupported no fallback/overwrite")

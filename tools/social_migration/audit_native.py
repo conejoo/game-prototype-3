@@ -90,7 +90,7 @@ def main():
     oracle = read(base / "packed-save-oracle.json")
     check(oracle.get("typed_snapshot_exact") and oracle.get("forecast_exact") and not oracle["failures"], "packed typed/forecast oracle")
     for key, save in saves.items():
-        check(save["schema_version"] == 7 and save["content_version"] == 1, key + " supported format")
+        check(save["schema_version"] == 8 and save["content_version"] == 1, key + " supported format")
         people = save["conversations"]["people"]
         edric = people["npc-01"]
         neutral = key == "neutral"

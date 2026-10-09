@@ -1,5 +1,138 @@
 # Day clock and NPC routines current state
 
+## Current selection and R004 completion (2026-10-09 UTC)
+
+Active task: none. R001-R004 Done; R005-R016 Pending. Exactly R004 completed this
+invocation. [R004 acceptance](R004_ACCEPTANCE.md) maps every criterion, actual
+commands/isolation/results and retained failures. No R004 blocker or unrun criterion.
+Whole checklist through R016 complete: no. Implementation ended without commit/push.
+Successful-task R004 commit authorized separately below. No push or R005 work.
+
+Baseline HEAD6c8b09d585b83a5cb90cd82bd9c9680a8475205b, source60c20eb2, both clean.
+No baseline user changes. Actual schema7 became strict schema8/content1;
+no old-format migration/defaults. Workspace AGENTS/current architecture, installed
+and versioned testing skill, current runner/shared isolation/journey/interaction/
+native guidance and source .agents/skills/test-gameplay read. Source skill's
+Flutter/Linux runtime does not apply. No nested target instructions or workspace/
+target .agents. Supplied Godot engine verified, unrelated Blender2664 preserved.
+
+### Actual R004 changes and ownership
+
+Bounded allowlist/actual changes: RoutineFacts/RoutineFactCommand and UIDs;
+GameSession/SaveCodec/session resolution sampling; routine_save_checks/process
+checks and UIDs; complete current save fixtures/path/version/provenance consumers;
+current native/package audit constants; routine reference gate/README plus exact
+adaptations.json; README/current architecture and this workflow's checklist/state/
+acceptance; ignored R004 evidence/staging. No other task implemented.
+
+Only authored active events and suppressed routine IDs persist. Existing saved
+environment day determines expiry; no duplicated day/clock/history or saved NPC
+position/path/cursor/timer/revision. Live commands bind weak session/day/revision/
+expected fact, validate detached candidate then publish once. Invalid/stale/foreign/
+reentrant commands inert. Midnight retains suppression; authoritative10AM rollover
+clears it. Authored heavy-rain removal cannot clear derived storm/alter forecast.
+Current root manual restore rebinds all existing owners atomically; rollback/backup
+remain exact. R011 still owns dialogue authority and R013 production activation.
+
+Six complete current JSON fixtures preserve every previous parsed value; weather
+fixture renamed v8 and direct consumers updated. Explicit schema consumers now8.
+Social unsupported fixture uses supported+1. One affected old fishing reference
+assertion expected shipped fish IDs absent; now checks exact existing species
+ID/cap/category/challenge/nonpickup, no production item/content change. Historical
+source/reference bytes and previous packages untouched.30 intended baseline
+adaptations record before/after hashes; any unrecorded change still fails.
+
+### Actual verification, failures and isolation
+
+Repository cwd, PowerShell7, explicit console4.7.2. Three stable runtime runs:
+
+- `093524352-fcec8465`: required save/environment441/NPC569/foraging111 plus routine
+  content848/clock301 passed. Whole run FAILED for social's now-current hardcoded8.
+- `093842444-84a9b488`: routine save213/44 malformed cases, all6 fixtures; repaired
+  social844; fishing content255, foraging transactions587, inventory199, NPC
+  dialogue929, mapping1657 route samples and support64 passed. Whole run FAILED
+  only for obsolete fish-absence assertion, subsequently repaired/rerun.
+- `094110226-c4b0055b`: final PASS7 cases. Names fishing_reference_checks134;
+  ProcessScripts routine_process_checks (writer12/reader18) and save_process_checks
+  write/read. ParseScripts new facts/command/session-context. Timeout150.
+  All exits0/diagnostics empty; source.changed=false/error=null. Final1203-file
+  fingerprint637278940925301b2936119dbf634b7d02e6b30ca9282f172ce63531107bdebb.
+
+Routine writer69272/reader25584 use different processes, exact full typed snapshot
+and forecast before next-day advance; both primary/backup exact after re-save.
+Reader accepts fresh binding, rejects prior-owner command, clears only suppression
+at actual next day. Clock/commands create no automatic save. Actual root no-floor/
+blocked-spawn failures preserve full owner/world/feet state; failed .tmp/.bak.tmp
+writes preserve disk/live facts; old7/new9 refuse fallback and overwrite.
+Each independent case has its own R004 named slot/APPDATA/LOCALAPPDATA. Routine
+process-001 and existing-save process-002 each share only their own write/read
+group under builds/testing/R004/<run>; both primary/backup isolated. Normal save
+and user appdata untouched. No rendered/native/ordinary-schedule claim or PNG.
+
+Final R001 live-source audit PASS1624/ten drift refusals with30 exact target
+adaptations, all88 source inputs and original derived/preservation pins unchanged.
+`docs/evidence/R004/reference-final/results.json` inspected. All4 changed Python
+consumers parse; independent fixture comparison confirms six prior fact sets exact.
+Structured results, logs, rule/IO/restore reports, writer oracle/save bytes, source
+manifests and intended diff inspected. Import/parse gates passed. Documentation
+and CRLF-tolerant whitespace/readback checks complete; final audit below.
+
+Failures retained: initial import generated four owned UIDs and source guard
+invalidated it; subsequent stable import passed. New backup-loop fixture forgot
+to reset its backup; corrected. Unsafe fixture ID corrected to reach physical
+floor/body probes. One repair began before later save case ended; source guard
+invalidated/stopped that run, repeated at stable bytes. Social/fish obsolete
+assumptions above repaired and rerun; whole failed reports never relabeled.
+First intentional schema drift failed reference gate before recorded adaptation;
+final strict audit passes without refreshing pins. Two scoped fixture-update
+scripts interrupted on non-save metadata/optional missing text; finished before
+verification and independently audited. One inspection stdout cp1252 error fixed
+with explicit UTF-8. No remaining failed/unrun R004 acceptance criterion.
+
+Default sandbox helper fails setup; reviewed execution succeeds. No approval
+rejection or redundant question. Git safe.directory only command-local. No normal
+save access/source writes/editor/native inputs/messages/agents/commits/pushes.
+All owned Godot processes exited; no held controls or cleanup owed. Ignored task
+evidence/staging retained; unrelated Blender2664 still untouched.
+
+Remaining unfinished IDs: R005,R006,R007,R008,R009,R010,R011,R012,R013,R014,R015,R016.
+Every checklist item through R016 complete: no. Blockers: none. Next eligible R005.
+Exact next action: inspect R001 qualified portal pins and actual PrototypeLocation/
+WorldHost/interactable/party-arrival contracts; implement only directed multi-exit
+routing/NPC queries and required current-travel rollback checks. Stop here.
+
+Final readback/audit passed16 statuses,66 relative links and19 accepted required/
+affected runtime cases across stable source runs. Final1203 game/tool files exactly
+match the accepted fingerprint; all46 changed paths are intended R004 deliverables/
+consumers/documentation, index empty, HEAD unchanged, source clean. AGENT_PROMPT/
+CONTRACT preserved, no Godot process remains; Blender2664 preserved. Evidence:
+docs/evidence/R004/documentation-audit.json and final-audit.json. No cleanup owed.
+
+## Authorized R004 successful-task commit follow-up
+
+After all acceptance criteria passed, user authorized committing only R004 task
+changes, durable acceptance, checklist and handoff. Preflight index empty; no new
+unrelated changes. Exactly46 accepted paths plus two bounded byte-preservation
+attribute files form the48-path commit allowlist. Raw evidence/staging stay ignored.
+No source/game/test bytes changed after acceptance.
+
+Git filters would normalize21 exact adapted files. Appended only explicit R004
+-text rules to root .gitattributes and one nested social audit override, preserving
+all existing user/source rules. Record those two attribute adaptations in the
+existing ledger; now32 exact before/after records. Historical reference/source pins
+unchanged. This is commit portability, not new runtime behavior or another task.
+Current1203-file game/tool fingerprint after only ledger/nested-attributes changes:
+d08a05d6d48949be89b1464a826dc9778d20d7fd8d3eaa01c6db4f24d47bfcaf.
+Every runtime/test byte still matches accepted63727894 manifest. No gameplay
+rerun needed for attributes/ledger-only changes; strict live-source/reference gate
+and staged blob/pin/whitespace/tree checks verify commit portability.
+
+Stage explicit allowlist, validate staged blobs against exact disk/ledger hashes,
+commit R004, then verify committed paths/blobs, unchanged source and clean working
+tree. Final commit hash reported in response. R005 stays Pending; no push.
+
+## Historical R003 handoff (superseded selection, preserved evidence)
+
 Updated 2026-10-09 UTC / America/Vancouver. R001-R003 complete.
 Routine content and pure selection delivered; production activation not started.
 Read [CHECKLIST](CHECKLIST.md), [CONTRACT](CONTRACT.md), [AGENT_PROMPT](AGENT_PROMPT.md).

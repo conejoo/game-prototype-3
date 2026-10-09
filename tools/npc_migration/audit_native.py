@@ -125,7 +125,7 @@ def main():
         for event in save["conversations"]["events"]["facts"]:
             if event["kind"] == "dialogueChoiceSelected":
                 actual_choices.add(event["target_id"])
-        check(save["schema_version"] == 7 and save["content_version"] == 1, label + " strict current schema")
+        check(save["schema_version"] == 8 and save["content_version"] == 1, label + " strict current schema")
     check(actual_facts == expected_facts and len(actual_facts) == 21, "all21 enabled public facts, no deferred fact")
     check(actual_choices == expected_choices and len(actual_choices) == 38, "all38 enabled public choices across native runs")
     for person in revisit["conversations"]["people"].values():

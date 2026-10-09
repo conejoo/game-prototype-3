@@ -1,6 +1,9 @@
 # Returning Fair prototype architecture
 
-Current save policy (2026-10-08): accept only schema7/content1. The project has no
+Current save policy (2026-10-09, R004): accept only schema8/content1.
+Routine facts persist only authored active event IDs and suppressed routine IDs;
+the existing saved environment day defines suppression lifetime. No additional
+clock/day/history or transient execution fields. R004 does not activate schedules. The project has no
 released data or customers requiring backward compatibility. No old-schema
 migrations, ID remapping or missing-field defaults. Future schema changes replace
 the supported format and update fixtures; reject other versions before live swap.

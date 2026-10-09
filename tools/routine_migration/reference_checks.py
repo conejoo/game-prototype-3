@@ -1,6 +1,7 @@
 """R001 offline pin/count/coverage/semantic gate. No Godot, saves or source writes.
 
-Default verifies target-local snapshots and baseline bytes. Optional --source
+Default verifies target-local snapshots and baseline bytes, allowing only exact
+reviewed before/after hashes in adaptations.json. Source pins never change. Optional --source
 refuses any live source input/revision drift. --self-test exercises fail-closed
 hash, allowlist, exclusion, traversal and mapping refusals in isolated TEMP copies.
 This is reference evidence, not target gameplay/route or source Dart test proof.
@@ -19,6 +20,7 @@ import time
 import pin_reference as pin
 
 REFERENCE = pin.ROOT/'tools/routine_migration/reference'
+ADAPTATIONS = pin.ROOT/'tools/routine_migration/adaptations.json'
 EXPECTED_IDS = sorted('celia-repairs-day celia-repairs-evening della-inn-day della-inn-evening edric-afternoon-river-notes edric-afternoon-rounds edric-evening-fishing edric-evening-rain-shelter harlan-docks-day harlan-docks-evening helena-afternoon-archive helena-afternoon-ledger-review helena-afternoon-moonflower-records helena-evening-archive ivo-docks-day ivo-docks-evening maris-chandlery-day maris-chandlery-evening tess-store-day tess-store-evening vale-breakfast vale-evening-home vale-midday-briefing vale-morning-work vale-overnight-home'.split())
 SERVICES = ['celia-repairs', 'della-inn', 'harlan-docks', 'ivo-docks', 'maris-chandlery', 'tess-store']
 
@@ -136,8 +138,38 @@ def semantics(routines, vectors):
     return assertions
 
 
-def validate(reference=REFERENCE, source=None):
+def adaptations(reference, path):
+    """Owning-task records explain bounded target changes without replacing pins."""
+    if not path.exists():
+        return {}
+    data = pin.read(path)
+    require(set(data) == {'schema_version', 'changes'} and data['schema_version'] == 1 and isinstance(data['changes'], list), 'Invalid adaptation envelope')
+    baseline = {e['path']: e['sha256'] for e in pin.read(reference/'preservation_baseline.json')['files']}
+    baseline.update({e['path']: e['sha256'] for e in pin.read(reference/'manifest.json')['target_baseline']})
+    result = {}
+    for row in data['changes']:
+        require(isinstance(row, dict) and set(row) == {'path', 'after_path', 'before_sha256', 'after_sha256', 'owner', 'reason'}, 'Invalid adaptation record')
+        name = row['path']
+        require(name in baseline and name not in result and row['before_sha256'] == baseline[name], 'Foreign/duplicate/mismatched adaptation baseline')
+        require(row['owner'] == 'R004' and isinstance(row['reason'], str) and bool(row['reason'].strip()), 'Undocumented adaptation owner/reason')
+        after = child(pin.ROOT, row['after_path'])
+        require(after.is_file() and not after.is_symlink() and pin.sha(after) == row['after_sha256'], 'Adapted target hash drift: '+name)
+        if row['after_path'] != name:
+            require(name == 'game/tests/fixtures/environment_save_v7.json' and row['after_path'] == 'game/tests/fixtures/environment_save_v8.json' and not child(pin.ROOT, name).exists(), 'Unexplained target relocation')
+        result[name] = row
+    return result
+
+
+def target_unchanged_or_adapted(entry, changes):
+    if entry['path'] in changes:
+        require(entry['sha256'] == changes[entry['path']]['before_sha256'], 'Adaptation cannot override pin: '+entry['path'])
+    else:
+        require(pin.sha(child(pin.ROOT, entry['path'])) == entry['sha256'], 'Unexplained target baseline drift: '+entry['path'])
+
+
+def validate(reference=REFERENCE, source=None, adaptation_path=ADAPTATIONS):
     manifest = pin.read(reference/'manifest.json'); assertions = 0
+    changes = adaptations(reference, adaptation_path)
     require(manifest['selected_ids'] == EXPECTED_IDS and manifest['roster'] == pin.ROSTER, 'Exact selected allowlist/roster drift'); assertions += 1
     require(manifest['source_catalog_count'] == 39, 'Source catalog count drift'); assertions += 1
     snapshot_paths = [e['snapshot_path'] for e in manifest['inputs'] if e['snapshot_path']]
@@ -156,7 +188,7 @@ def validate(reference=REFERENCE, source=None):
     for entry in manifest['derived']:
         require(pin.sha(child(reference, entry['path'])) == entry['sha256'], 'Derived hash drift: '+entry['path']); assertions += 1
     for entry in manifest['target_baseline']:
-        require(pin.sha(child(pin.ROOT, entry['path'])) == entry['sha256'], 'Unexplained target baseline drift: '+entry['path']); assertions += 1
+        target_unchanged_or_adapted(entry, changes); assertions += 1
     catalog = pin.read(reference/'selected_catalog.json')
     require([e['id'] for e in catalog['routines']] == EXPECTED_IDS, 'Selected catalog allowlist drift'); assertions += 1
     routines = [pin.read(child(reference, 'source/'+e['asset'])) for e in catalog['routines']]
@@ -206,13 +238,13 @@ def validate(reference=REFERENCE, source=None):
     require('**Status:** Pending' in (reference/'INT-064.md').read_text(encoding='utf-8'), 'Source INT-064 authority changed'); assertions += 1
     baseline = pin.read(reference/'preservation_baseline.json')
     for f in baseline['files']:
-        require(pin.sha(child(pin.ROOT,f['path'])) == f['sha256'], 'Preserved tracked file changed: '+f['path']); assertions += 1
+        target_unchanged_or_adapted(f, changes); assertions += 1
     budgets = pin.read(reference/'budgets.json')
     require(budgets['declared_before_runtime_implementation'] and budgets['targets']['scheduler_plus_eight_loaded_npc_p95_ms']==2 and budgets['targets']['path_query_p95_ms']==5 and budgets['targets']['ten_cycle_working_set_growth_mib']==64, 'Declared budgets missing/drift'); assertions += 1
     import audit_geometry
     require(pin.read(reference/'geometry_audit.json') == audit_geometry.build(), 'Static geometry audit drift'); assertions += 1
     assertions += semantics(routines, pin.read(reference/'vectors.json'))
-    return {'status':'passed','assertions':assertions,'routines':25,'anchors':21,'source_inputs':len(manifest['inputs']),'source_revision':manifest['source_revision'],'target_revision':manifest['target_revision'],'mode':'offline reference audit; no gameplay, source Dart tests, physical route or save claims'}
+    return {'status':'passed','assertions':assertions,'routines':25,'anchors':21,'source_inputs':len(manifest['inputs']),'source_revision':manifest['source_revision'],'target_revision':manifest['target_revision'],'target_adaptations':len(changes),'mode':'offline reference audit with exact target adaptations; no gameplay, source Dart tests, physical route or save claims'}
 
 
 def self_test():
@@ -235,6 +267,20 @@ def self_test():
                 failures.append({'case':name,'status':'correctly refused','reason':str(e)})
             else:
                 raise ValueError('Negative fixture incorrectly accepted: '+name)
+        if ADAPTATIONS.exists():
+            for name, change in [
+                ('adaptation-after-drift', lambda d: d['changes'][0].__setitem__('after_sha256', '0'*64)),
+                ('adaptation-before-drift', lambda d: d['changes'][0].__setitem__('before_sha256', '0'*64)),
+                ('adaptation-foreign-path', lambda d: d['changes'][0].__setitem__('path', '../outside')),
+                ('adaptation-duplicate', lambda d: d['changes'].append(dict(d['changes'][0])))
+            ]:
+                ledger = root/(name+'.json'); shutil.copyfile(ADAPTATIONS, ledger); mutate(ledger, change)
+                try:
+                    validate(adaptation_path=ledger)
+                except (ValueError, FileNotFoundError) as error:
+                    failures.append({'case':name,'status':'correctly refused','reason':str(error)})
+                else:
+                    raise ValueError('Negative adaptation incorrectly accepted: '+name)
     return failures
 
 

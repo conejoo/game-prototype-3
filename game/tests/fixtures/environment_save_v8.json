@@ -129,7 +129,7 @@
     ],
     "trust": 1
   },
-  "schema_version": 7,
+  "schema_version": 8,
   "spawn_id": "alderwake-from-tollworks",
   "environment": {
     "day_index": 146,
@@ -179,5 +179,6 @@
     "active_item_id": null
   },
   "collected_resource_ids": [],
-  "world_item_placements": []
+  "world_item_placements": [],
+	"routine_facts": {"authored_event_ids": [], "suppressed_routine_ids": []}
 }

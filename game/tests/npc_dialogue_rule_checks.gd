@@ -332,7 +332,7 @@ func _root_binding() -> void:
 	game._set_paused(true)
 	_check(game.save_run().is_empty(), "Existing manual stable-boundary current-schema save")
 	var saved: Dictionary = SaveCodec.snapshot(game.session)
-	_check(SaveCodec.SCHEMA_VERSION == 7 and saved.has("conversations"), "N004 current-schema memory durability")
+	_check(SaveCodec.SCHEMA_VERSION == 8 and saved.has("conversations"), "N004 current-schema memory durability")
 	var view: Dictionary = _begin(game.dialogue, "npc-14", "npc-14-introduction")
 	_choose(game.dialogue, view, "npc-14-careful-response", "npc-14-careful-end")
 	game.dialogue.cancel()

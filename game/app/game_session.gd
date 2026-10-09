@@ -15,8 +15,14 @@ var progression: ProgressionState = ProgressionState.new()
 var environment: EnvironmentState = EnvironmentState.new()
 var inventory: InventoryState = InventoryState.new()
 var foraging: ForagingState = ForagingState.new()
-# Schema7 durable per-person and bounded event state; cursor stays transient.
+# Durable per-person and bounded event state; cursor stays transient.
 var conversations: NpcConversationState = NpcConversationState.new()
+var routines: RoutineFacts = RoutineFacts.new()
+signal routine_facts_changed
+var _routine_revision: int = 0
+var _applying_routine_command: bool = false
+var routine_revision: int:
+	get: return _routine_revision
 var weather_conditions: WeatherConditionService = WeatherConditionService.new()
 # Transient developer provenance, never a save field.
 var review_only: bool = false
@@ -82,13 +88,37 @@ func initialize(catalog: ContentCatalog, location_id: String, spawn_id: String, 
 func advance(delta: float) -> PackedStringArray:
 	if not initialized:
 		return PackedStringArray(["session is not initialized"])
+	if _applying_routine_command:
+		return PackedStringArray(["session advance blocked during routine publication"])
 	# Validate before publishing either timer, including the supported clock cap.
 	if not is_finite(delta) or delta < 0.0 or not is_finite(elapsed_play_seconds + delta):
 		return PackedStringArray(["session delta must be finite and nonnegative"])
+	var old_day: int = environment.day_index
 	var errors: PackedStringArray = environment.advance(delta)
 	if errors.is_empty():
 		elapsed_play_seconds += delta
+		if environment.day_index != old_day:
+			routines = routines.without_suppression()
+			_routine_revision += 1
 	return errors
+
+
+func apply_routine_command(command: RoutineFactCommand) -> PackedStringArray:
+	if not initialized or command == null or _applying_routine_command:
+		return PackedStringArray(["routine command requires ready session and non-reentrant typed command"])
+	var errors: PackedStringArray = environment.validation_errors()
+	errors.append_array(RoutineFacts.restore(routines.snapshot()).errors)
+	errors.append_array(command.validation_errors(self))
+	if not errors.is_empty(): return errors
+	var candidate: RoutineFacts = command.candidate(routines)
+	errors = RoutineFacts.restore(candidate.snapshot()).errors
+	if not errors.is_empty(): return errors
+	_applying_routine_command = true
+	routines = candidate
+	_routine_revision += 1
+	routine_facts_changed.emit()
+	_applying_routine_command = false
+	return []
 
 
 func toggle_light(action: LightSwitchAction, expected_enabled: bool) -> PackedStringArray:

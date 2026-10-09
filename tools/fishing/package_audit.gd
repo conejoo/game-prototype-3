@@ -44,7 +44,7 @@ func _run() -> void:
 	_check(fresh.initialize(catalog,"prototype-alderwake","alderwake-start","prototype-hero",null,npcs).is_empty(), "fresh packed session")
 	var baseline: Dictionary = SaveCodec.snapshot(fresh)
 	_check(fresh.inventory.snapshot().item_counts.is_empty() and fresh.inventory.active_tool() == null, "fresh bag empty/unselected")
-	_check(SaveCodec.SCHEMA_VERSION == 7 and SaveCodec.CONTENT_VERSION == 1, "schema7/content1")
+	_check(SaveCodec.SCHEMA_VERSION == 8 and SaveCodec.CONTENT_VERSION == 1, "schema8/content1")
 	var fixture: SaveCodec.DecodeResult = SaveCodec.validate(baseline,catalog,npcs)
 	_check(fixture.errors.is_empty() and fixture.session != null, "detached fixture baseline")
 	if fixture.session != null:

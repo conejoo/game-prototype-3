@@ -45,7 +45,7 @@ joint collection/placement commits and rod conservation.
 nonblocking pickups, cancellable held E and exact persisted physical reconstruction.
 [Backpack acceptance](docs/foraging-items-backpack/F006_ACCEPTANCE.md) delivers B/HUD20 slots, active selection/tool HUD and blocked world input.
 [Rod placement acceptance](docs/foraging-items-backpack/F007_ACCEPTANCE.md) enables safe nearby Drop and pointer drag, rollback/cancel and exact travel/restart recollection. [Save/lifecycle acceptance](docs/foraging-items-backpack/F004_ACCEPTANCE.md)
-records historical schema6 item facts, migration checks, geometry rollback and exact isolated restart. Current runtime accepts only schema7/content1.
+records historical schema6 item facts, migration checks, geometry rollback and exact isolated restart. Current runtime accepts only schema8/content1 (R004 routine facts).
 [Art/feedback acceptance](docs/foraging-items-backpack/F008_ACCEPTANCE.md) delivers local moonflower/rod mesh art, backpack icons and day/night/rain-readable progress/feedback.
 [Pinned geometry findings](docs/foraging-items-backpack/F001_ACCEPTANCE.md) record
 original blocked source anchors; approved runtime rod/flower01 relocation now clears
@@ -53,7 +53,7 @@ colliders without pinned geography changes.
 
 Current work: [weather and lighting](docs/weather-lighting/CURRENT_STATE.md).
 W001-W010 verified Done; no next item. Clock/seed/cached forecast rules run through
-the existing session gate and current schema v7 saves retain environment/light facts.
+the existing session gate and current schema v8 saves retain environment/light and routine facts.
 W010 package evidence remains historical schema5; F010 verifies the historical schema6 item build.
 Moving sun and smooth day/dusk/navy-night/dawn lighting now apply outdoors;
 Tollworks keeps its stable indoor profile while the global clock advances.
@@ -212,15 +212,16 @@ Normal slot is `user://saves/returning-fair.json` in Godot's application user-da
 directory, with `.bak` recovery. Missing/corrupt primary may recover validated
 backup visibly; incompatible versions are rejected and preserved. Both corrupt
 files require repair or archiving that slot before saving. Version rules and
-boundaries: [architecture](docs/ARCHITECTURE.md). Schema v7/content v1 requires hero
+boundaries: [architecture](docs/ARCHITECTURE.md). Schema v8/content v1 requires hero
 and temporary companion records, validated reaction/trust and upgrade IDs,
 environment day/progress/uint32 seed and map-qualified exterior light overrides,
 plus validated inventory/active selection, collected origins and rod placements,
-eight per-person conversation memories and bounded exact event aggregates.
-Only schema v7/content v1 is supported. Older and newer formats are rejected;
+eight per-person conversation memories, bounded exact event aggregates and routine
+authored-event/current-day suppression sets. Schedules remain inactive until R013.
+Only schema v8/content v1 is supported. Older and newer formats are rejected;
 there are no save migrations, ID remapping or missing-field defaults. This is a
 new project with no released-save compatibility requirement.
-Load does not rewrite files; explicit Save writes v7. Six lantern keys accept
+Load does not rewrite files; explicit Save writes v8. Six lantern keys accept
 boolean overrides; automatic sources and malformed/newer data are rejected.
 
 Guardian appears after accepting the lead and entering Tollworks. Its stable

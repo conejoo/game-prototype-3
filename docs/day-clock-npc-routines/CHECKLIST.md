@@ -17,7 +17,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R001 | Done | Current target/source read access | Pinned 25-routine inventory, mappings, vectors and declared gates |
 | R002 | Done | R001 | Strict immutable routine content/reference validation |
 | R003 | Done | R002 | Deterministic assignments from existing clock/conditions |
-| R004 | Pending | R003 | Durable routine commands/current-schema persistence |
+| R004 | Done | R003 | Durable routine commands/current-schema persistence |
 | R005 | Pending | R001 | Qualified multi-portal routing, existing travel preserved |
 | R006 | Pending | R002, R005 | Safe exterior anchors/door approaches on pinned geometry |
 | R007 | Pending | R005, R006 | Mayor Vale home and its nine required anchors |
@@ -163,11 +163,11 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001-R003 completed; R004-R016 remain Pending. Final task ID: R016.
-Next eligible: R004 (R005 independently ready; ordered selection chooses R004).
+R001-R004 completed; R005-R016 remain Pending. Final task ID: R016.
+Next eligible: R005 (R001 prerequisite and pins verified).
 Whole checklist complete: no. No current blocker.
 [R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
-[R003 acceptance](R003_ACCEPTANCE.md) own evidence.
+[R003 acceptance](R003_ACCEPTANCE.md) and [R004 acceptance](R004_ACCEPTANCE.md) own evidence.
 Append only after every selected criterion passes:
 
 ```text
@@ -260,3 +260,39 @@ reports retained. Owned Godot processes exited; no input/editor/cleanup owed.
 Next eligible ID and exact next action: R004; recheck current save architecture,
 implement minimal durable events/current-day suppression and required isolated
 save/restart/atomicity checks. Stop before R004; no commit/push.
+
+R004 - Done 2026-10-09 (America/Vancouver and UTC)
+Result and changed files: RoutineFacts/RoutineFactCommand and UIDs; GameSession
+atomic commands/rollover, strict SaveCodec8 and session-to-selector sampling;
+routine_save_checks/routine_process_checks and UIDs; six complete current fixtures,
+their version/path/provenance consumers and current package/native audit constants;
+exact target adaptation ledger/gate, README/current architecture, this handoff and
+R004_ACCEPTANCE. No schedule activation or execution/cursor fields.
+Verified prerequisites and preserved user changes: clean target6c8b09d/source60c20eb2;
+R002 catalog848 and R003 clock301 actual passing cases. R001 final live-source
+audit PASS1624/ten negative refusals;30 intentional target adaptations with exact
+before/after hashes, historical source/derived pins unchanged. No baseline user
+changes; AGENT_PROMPT/workspace instructions/unrelated Blender2664 preserved.
+Commands/cwd/isolation and actual outcomes: repository cwd; required persistence
+checks and affected consumers each pass in stable-source cases across093524 and
+093842 runs. Superseded whole runs FAILED for repaired fixture assumptions, not
+relabeled. Final -Task R004 -Names fishing_reference_checks -ProcessScripts
+routine_process_checks,save_process_checks -ParseScripts routine facts/command/context
+-TimeoutSeconds 150 PASS7 cases at docs/evidence/R004/20261009-094110226-c4b0055b/.
+Final source.changed=false/error=null, all exits0/diagnostics empty; fingerprint
+637278940925301b2936119dbf634b7d02e6b30ca9282f172ce63531107bdebb (1203 files).
+Evidence and inspected artifacts: routine save213 assertions/44 bad-save cases;
+all prior fixture parsed values exact, six complete fixtures valid; independent
+writer69272/reader25584 with exact full typed/forecast oracle and primary/backup;
+real root unsafe-floor/blocked-spawn rollback, clock/day/weather and no-autosave
+checks. Existing save/environment441/NPC569/social844/foraging111 pass, plus seven
+affected consumers. Detailed mapping/commands/failures in R004_ACCEPTANCE.
+Decisions/compatibility changes/retained limits: only schema8/content1 supported,
+no migrations/defaults; environment saved day owns suppression expiry. Commands
+validate session/day/revision/expected facts, publish detached facts once and reject
+reentry. R011 still owns dialogue-context authority; R013 activation/R016 packages.
+No ordinary/native/rendered schedule claim. Existing packages/source/geometry/art
+unchanged. Owned checks exited, no input/editor/cleanup owed; no commit/push.
+Next eligible ID and exact next action: R005; inspect explicit qualified portal,
+PrototypeLocation/WorldHost/interactable/party-arrival contracts; implement only
+multi-exit/NPC-query routing and required existing-travel rollback checks. Stop here.

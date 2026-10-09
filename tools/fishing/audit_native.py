@@ -68,7 +68,7 @@ def main():
     writer, reader, revisit = map(read, (writer_path, reader_path, revisit_path))
     check(writer_path.read_bytes() == reader_path.read_bytes() and writer == reader, "exact whole native paused Save/Load/re-Save bytes")
     check(writer["inventory"] == {"active_item_id": "item-bluegill", "item_counts": {"item-bluegill": 1, "item-fishing-rod": 1}}, "ordinary landed fish count/selection/rod")
-    check(writer["schema_version"] == 7 and writer["content_version"] == 1, "current save format")
+    check(writer["schema_version"] == 8 and writer["content_version"] == 1, "current save format")
     check(writer["collected_resource_ids"] == ["fishing-rod-dock-01"] and writer["world_item_placements"] == [], "rod origin conserved")
     check(revisit["inventory"] == writer["inventory"], "revisit preserves fish/selection without duplicate catch")
     check(revisit["elapsed_play_seconds"] > writer["elapsed_play_seconds"], "actual resumed monotonic time")

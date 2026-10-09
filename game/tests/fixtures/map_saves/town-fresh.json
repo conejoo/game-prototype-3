@@ -111,7 +111,7 @@
 		"reaction_ids": [],
 		"trust": 0
 	},
-	"schema_version": 7,
+	"schema_version": 8,
 	"spawn_id": "alderwake-start",
 	"inventory": {
 		"item_counts": {},
@@ -124,5 +124,6 @@
 		"day_cycle_progress": 0.0,
 		"weather_seed": 1821285621
 	},
-	"light_source_overrides": []
+	"light_source_overrides": [],
+	"routine_facts": {"authored_event_ids": [], "suppressed_routine_ids": []}
 }

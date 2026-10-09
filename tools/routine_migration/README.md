@@ -32,6 +32,12 @@ owning task, recording path/before/after hash/reason; source pins must not be si
 refreshed. A later runtime task changes target baseline expectations only with its
 documented adaptation; this is not a new permission gate.
 
+R004 records schema8/current-fixture adaptations in `adaptations.json` without
+editing historical reference bytes. The gate checks each original pin and exact
+current after-hash, unique known paths, owner/reason and the one explicit v7-to-v8
+fixture relocation. Any unrecorded change still fails. Later tasks must extend
+this narrowly reviewed owner policy when recording their own changes.
+
 `pin_reference.py --source <read-only-root>` is a one-shot initial capture, refusing
 an existing reference directory. `audit_geometry.py` likewise refuses overwrite.
 They are not update commands. Initial capture corrections/dependency additions are

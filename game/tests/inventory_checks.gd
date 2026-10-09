@@ -222,7 +222,7 @@ func _detachment(catalog: ContentCatalog) -> void:
 	var invalid: GameSession = GameSession.new()
 	_check(not invalid.initialize(catalog, "absent-location", "prototype-start", "prototype-hero").is_empty(), "bad session rejects before inventory publication")
 	_check(not invalid.initialized and not invalid.inventory.initialized and invalid.inventory.snapshot().item_counts.is_empty(), "bad session has no partial inventory")
-	_check(SaveCodec.SCHEMA_VERSION == 7 and SaveCodec.snapshot(first).inventory == first.inventory.snapshot().to_dictionary(), "F004 serializes detached inventory")
+	_check(SaveCodec.SCHEMA_VERSION == 8 and SaveCodec.snapshot(first).inventory == first.inventory.snapshot().to_dictionary(), "F004 serializes detached inventory")
 
 
 func _authored_facts(catalog: ContentCatalog) -> Array[Dictionary]:

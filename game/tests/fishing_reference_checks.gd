@@ -91,9 +91,14 @@ func _resolve(point: Vector2, roll: float) -> String:
 
 func _geometry(game: Node3D) -> void:
 	_check(room.location_id == "prototype-alderwake" and room.layout.activity_areas == rules.areas, "pinned production area records")
-	_check(SaveCodec.SCHEMA_VERSION == 7 and SaveCodec.CONTENT_VERSION == 1, "current save policy")
+	_check(SaveCodec.SCHEMA_VERSION == 8 and SaveCodec.CONTENT_VERSION == 1, "current save policy")
 	_check(game.catalog.get_item("item-fishing-rod").stack_limit == 1 and InventoryState.MAX_TYPES == 20, "F010 rod/capacity capability")
-	for id: String in ["item-bluegill","item-river-trout","item-golden-carp"]: _check(game.catalog.get_item(id) == null, "reserved fish ID unused " + id)
+	# FS002 already delivered these species; retain identity/conservation coverage
+	# against current content rather than the obsolete FS001 reserved-ID absence.
+	for source: Dictionary in rules.items:
+		if source.id == "fishing_rod": continue
+		var item: ItemDefinition = game.catalog.get_item_by_source(source.id)
+		_check(item != null and item.stable_id == "item-" + source.id.replace("_", "-") and item.stack_limit == source.stackLimit and item.category == source.category and item.fishing_challenge != null and not item.movable_pickup, "existing fish identity/capability " + source.id)
 	_check(room.water_blockers.records.size() == 90 and room.water_blockers.water_cells.size() == 8598, "preserved effective water/blockers")
 	var mesh: Mesh = room.water_blockers.get_node("WaterVisuals/AuthoredWaterPreview").mesh
 	var vertices: PackedVector3Array = mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX]

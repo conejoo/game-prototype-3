@@ -13,6 +13,19 @@ var minute_of_day: float:
 var active_seconds: float:
 	get: return float(_data.get("active_seconds", 0.0))
 
+static func from_session(session: GameSession) -> RoutineResolutionContext:
+	if session == null or not session.initialized:
+		var invalid: RoutineResolutionContext = RoutineResolutionContext.new()
+		invalid._errors.append("routine context requires initialized session")
+		return invalid
+	var facts: RoutineFacts.Result = RoutineFacts.restore(session.routines.snapshot())
+	if not facts.errors.is_empty():
+		var invalid: RoutineResolutionContext = RoutineResolutionContext.new()
+		invalid._errors = facts.errors
+		return invalid
+	return capture(session.environment, session.conversations, session.elapsed_play_seconds,
+		session.routines.authored_events(), session.routines.suppressed_ids(), session.environment.day_index)
+
 static func capture(environment: EnvironmentState, conversations: NpcConversationState, seconds: float, authored_events: PackedStringArray = [], suppressed_ids: PackedStringArray = [], suppression_day: int = -1) -> RoutineResolutionContext:
 	var result: RoutineResolutionContext = RoutineResolutionContext.new()
 	if environment == null or conversations == null or not conversations.initialized:
@@ -27,7 +40,7 @@ static func capture(environment: EnvironmentState, conversations: NpcConversatio
 	if suppression_day > environment.day_index:
 		result._errors.append("routine suppression day is in the future")
 	for id: String in authored_events:
-		if id not in ["harbor-festival", "heavy-rain"]: result._errors.append("unknown authored routine event " + id)
+		if id not in RoutineFacts.EVENT_IDS: result._errors.append("unknown authored routine event " + id)
 	for id: String in suppressed_ids:
 		if id not in RoutineContentCatalog.IDS: result._errors.append("unknown suppressed routine " + id)
 	result._events = conversations.events()

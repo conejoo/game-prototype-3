@@ -2,7 +2,7 @@ class_name SaveCodec
 extends RefCounted
 ## Current-schema plain-data boundary. Validation creates a detached candidate only.
 
-const SCHEMA_VERSION: int = 7
+const SCHEMA_VERSION: int = 8
 const CONTENT_VERSION: int = 1
 const MAX_BYTES: int = 131072
 
@@ -24,6 +24,7 @@ static func snapshot(run: GameSession) -> Dictionary:
 			actor_data.append({"instance_id": id, "definition_id": actor.definition_id, "health": actor.health})
 	var facts: Dictionary = run.foraging.snapshot()
 	return {
+		"routine_facts": run.routines.snapshot(),
 		"conversations": run.conversations.snapshot(),
 		"inventory": facts.inventory, "collected_resource_ids": Array(facts.collected_resource_ids),
 		"world_item_placements": facts.world_item_placements,
@@ -88,7 +89,7 @@ static func validate(raw_data: Variant, catalog: ContentCatalog, npc_catalog: Np
 		"player_instance_id", "party_member_ids", "actors", "elapsed_play_seconds",
 		"quests", "completed_effect_ids", "relationship", "progression",
 		"environment", "light_source_overrides", "inventory",
-		"collected_resource_ids", "world_item_placements", "conversations",
+		"collected_resource_ids", "world_item_placements", "conversations", "routine_facts",
 	]
 	if not _exact_fields(data, fields):
 		result.errors.append("schema v%d requires exactly: " % int(data.schema_version) + ", ".join(fields))
@@ -162,6 +163,9 @@ static func validate(raw_data: Variant, catalog: ContentCatalog, npc_catalog: Np
 	var restored: NpcSaveData.Result = NpcSaveData.restore(data.conversations, npc_catalog, float(seconds), catalog)
 	result.errors = restored.errors
 	if not result.errors.is_empty(): return result
+	var routine_restore: RoutineFacts.Result = RoutineFacts.restore(data.routine_facts)
+	result.errors = routine_restore.errors
+	if not result.errors.is_empty(): return result
 	var candidate: GameSession = GameSession.new()
 	result.errors = candidate.initialize(catalog, data.location_id, data.spawn_id, "prototype-hero", environment, npc_catalog)
 	if result.errors.is_empty():
@@ -177,6 +181,7 @@ static func validate(raw_data: Variant, catalog: ContentCatalog, npc_catalog: Np
 		result.errors = ForagingSaveData.restore(candidate, data.inventory, data.collected_resource_ids, data.world_item_placements, catalog)
 		if not result.errors.is_empty(): return result
 		candidate.conversations = restored.state
+		candidate.routines = routine_restore.state
 		result.session = candidate
 	return result
 

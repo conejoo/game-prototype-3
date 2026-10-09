@@ -1,6 +1,6 @@
 class_name NpcSaveData
 extends RefCounted
-## Schema7 strict plain-data restore. Never infer history from inventory or actors.
+## Current-schema strict plain-data restore. Never infer history from inventory or actors.
 class Result extends RefCounted:
 	var state: NpcConversationState
 	var errors: PackedStringArray = []

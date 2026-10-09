@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "changes": [
+    {
+      "path": ".gitattributes",
+      "after_path": ".gitattributes",
+      "before_sha256": "bc9404e0f67f76a0508577255e08c21eac64c2621391862621f04e3ab523e128",
+      "after_sha256": "e7886274eb09762c137ca710730b6cedf6f0a7f7487ce9e2d9f6c47cc37802de",
+      "owner": "R004",
+      "reason": "Successful-task commit portability: narrow -text rules preserve exact accepted target adaptation hashes against Git normalization, with prior attributes unchanged."
+    },
+    {
+      "path": "README.md",
+      "after_path": "README.md",
+      "before_sha256": "b5e845f845fb2753b3b71404cd8f282ca8cc8928a7a3b111457cee72e984d897",
+      "after_sha256": "f490921255dee444ee4315048696f7808775d6e4790e49f244e973c947ed37b3",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "after_path": "docs/ARCHITECTURE.md",
+      "before_sha256": "98ab868216cc24ab99bf657ed37257e6d680f6b1ec7cfdb38525252e5f972456",
+      "after_sha256": "328348680ffe73c3be73328420c84dce5e66cdef7fde039a289a4f94c9cfa302",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/app/game_session.gd",
+      "after_path": "game/app/game_session.gd",
+      "before_sha256": "31681f3486ed6b4a44b79719c98467091de9c180eb2866d3c73052fa778cc84b",
+      "after_sha256": "934fa0db838eea6ac1187ea8cd14784bbf4748667ec7ed7520184ecbcfe5469b",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/core/save_codec.gd",
+      "after_path": "game/core/save_codec.gd",
+      "before_sha256": "4cd0fae453569ea4dd497718691cbbc742b4455198770ce7faab0c04cf5eb430",
+      "after_sha256": "399a76c9a89080586dc1bbbb8fe9a0aeb5f1c188c538036c09e08a76d8067e85",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/features/npcs/npc_save_data.gd",
+      "after_path": "game/features/npcs/npc_save_data.gd",
+      "before_sha256": "f9a9da9973f853a677e4433645c170cd891300ed67ac0280fd524134be930963",
+      "after_sha256": "70cb8f44a16f628b54a382abbb7de236d45a70a52906ee93210f6c63ede3a351",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/environment_save_checks.gd",
+      "after_path": "game/tests/environment_save_checks.gd",
+      "before_sha256": "fd631958116e3da3252e1f4091b5e0e8714956b2a8ec207f774603b8bbf238b4",
+      "after_sha256": "ecb1e6a325532fc8171f0941be4e0bfbc8301b5fdb80c0c33909cb25bdc81356",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/fishing_content_checks.gd",
+      "after_path": "game/tests/fishing_content_checks.gd",
+      "before_sha256": "c6920943c84f953c233fbce7f601c7efe5f032834d6567abc90c2c6b00f2d849",
+      "after_sha256": "76902942a172df1d16d3803356f60d9df85e66bc8af452b2a22fcc90624ff8be",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/fishing_reference_checks.gd",
+      "after_path": "game/tests/fishing_reference_checks.gd",
+      "before_sha256": "53d8de4826036a4e5e4586186e481eb76724cbdeef03b39ad4e06da3a1e90505",
+      "after_sha256": "7fc14c075b8cd2aa7def299361c4b95f7b1d07a33351232201deb2ca68d79a06",
+      "owner": "R004",
+      "reason": "Current schema8 consumer; replace obsolete pre-FS002 reserved-fish absence with exact existing species ID/cap/category/challenge/nonpickup assertions. All shipped item content remains unchanged."
+    },
+    {
+      "path": "game/tests/fixtures/environment_save_v7.json",
+      "after_path": "game/tests/fixtures/environment_save_v8.json",
+      "before_sha256": "111058effc3c20a98e9ccb169f1d5370745880979d054a168056890b22714182",
+      "after_sha256": "70ecf97c3051f7b9ac3bf73b597a89453430180c988f6fad119832abb1263cff",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/fixtures/map_saves/PROVENANCE.json",
+      "after_path": "game/tests/fixtures/map_saves/PROVENANCE.json",
+      "before_sha256": "6804e302a8578c489e25db697927a30710e3e614ef5a63700641b4bc9b50f83a",
+      "after_sha256": "a195c8ff6d4daa361079ae0660d455f65c4661db47ccd3c64ad38f560f593ede",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/fixtures/map_saves/tollworks-start-downed.json",
+      "after_path": "game/tests/fixtures/map_saves/tollworks-start-downed.json",
+      "before_sha256": "2d73b55b628c6cea4590ed3823921a7d450bfd68fa867f3864c9ab98db9ebc30",
+      "after_sha256": "574d8eb11e90ebd787feb9f35a87d0a5c463f7a9b9e4a97edef3ceac2729b720",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/fixtures/map_saves/tollworks-vessel.json",
+      "after_path": "game/tests/fixtures/map_saves/tollworks-vessel.json",
+      "before_sha256": "560d9bf1a3ad4278d596396febaf859d90cb26c1b0707208d09355860d2a052a",
+      "after_sha256": "b349981c27712b8a59999e940a86f0d0b1d661b968ccec57c363cb8c67bad3b3",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/fixtures/map_saves/town-complete.json",
+      "after_path": "game/tests/fixtures/map_saves/town-complete.json",
+      "before_sha256": "54ba05f1d500b5df0d80290b071a89a10a3b19ee2acceebffd85cd305a7d8b87",
+      "after_sha256": "79781f5bebca050d502bc9bcbe5124bc5f606f5422ccdcd522f0bf8723cd1735",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/fixtures/map_saves/town-fresh.json",
+      "after_path": "game/tests/fixtures/map_saves/town-fresh.json",
+      "before_sha256": "3e5e6f538f8d54c5c7a237e7495e0894e54923e0d27daf4fa041de9105131159",
+      "after_sha256": "a8d9eae02ad84045ee943f4c61789b9d1ec3b23d28ec555bd4c4d48dfd57c3cf",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/fixtures/map_saves/town-lead.json",
+      "after_path": "game/tests/fixtures/map_saves/town-lead.json",
+      "before_sha256": "6e1a8b6ee2b87d8780b41fb926088c4591f8871532f84efb64c5e9c3be08ac4f",
+      "after_sha256": "c3012329e775155bdc5f8d853786a0d5b954ec201b9bce0867a082cc8a177bd7",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/foraging_transaction_checks.gd",
+      "after_path": "game/tests/foraging_transaction_checks.gd",
+      "before_sha256": "3e5e84255e8e7aa5dbd92c0fa3fa5265c22fccc724e47d4757475733fb71c54d",
+      "after_sha256": "d6066e0f1fddc501a4b833f516bf5a9f300c229977654c1f3aad380d13db781a",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/inventory_checks.gd",
+      "after_path": "game/tests/inventory_checks.gd",
+      "before_sha256": "dff23b3634c57fdfede5e8e9f67a3326621879e53ec3b1013ee59dab5357bd3a",
+      "after_sha256": "99555b257bc0d521d321d6aabf5b73ff31d6f7d9aaa7a7919e9c2c8dcef88c7d",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/npc_dialogue_rule_checks.gd",
+      "after_path": "game/tests/npc_dialogue_rule_checks.gd",
+      "before_sha256": "4d2bb595f07688bb80de8acacfb0266842e87651e5cbf9d5f739235f0f62554e",
+      "after_sha256": "5f366acfa8e89325c3167855dd8b482276bb5d68292d609458f5c10aea1798e1",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/npc_process_checks.gd",
+      "after_path": "game/tests/npc_process_checks.gd",
+      "before_sha256": "39bbea3d37ecbc0d1517af1b4501f916a85a4f7380ddd8457eca55f123e06d21",
+      "after_sha256": "e33239903cc4207379514ba163d5e13a280a083833b8b6ffaa24323cc40b98c5",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/npc_save_checks.gd",
+      "after_path": "game/tests/npc_save_checks.gd",
+      "before_sha256": "747c7aa4de73d297d060ba432ca8f33b68266c537077bdae162a948338e42adf",
+      "after_sha256": "f4698352a3d6326fbbad91a1e1f6a990311d5adce6dea5914583992cc5888d89",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/reference_mapping_checks.gd",
+      "after_path": "game/tests/reference_mapping_checks.gd",
+      "before_sha256": "7a24fe7dc6ff8d2b75ac5058bd57d75cae32eca090999a7b81a798ae71f586db",
+      "after_sha256": "5ba05e42747230cbafbce581a3d8cb4788716edd65bd4371b5d5c2d1588dd351",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/save_process_checks.gd",
+      "after_path": "game/tests/save_process_checks.gd",
+      "before_sha256": "74d11d74e23de1596b91993e5c0f1981971754a080ab79cc2a8243ecde5091dc",
+      "after_sha256": "40ccf6292236d90e1325f78b9b5cb3b77f4bf64edb696ce0abffecaa72c60a16",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "game/tests/social_save_checks.gd",
+      "after_path": "game/tests/social_save_checks.gd",
+      "before_sha256": "f18c6fa394827df0f3c76d4a092eb95973b343a91b4e345e034de53261f9fda5",
+      "after_sha256": "071144833bb2ad704e31ef44b3cfd5b350996f97a700e37b7f0a6f9f3b124816",
+      "owner": "R004",
+      "reason": "Preserve unsupported-version regression after schema8 becomes current; fixture now uses current version plus one."
+    },
+    {
+      "path": "game/tests/testing_support_checks.gd",
+      "after_path": "game/tests/testing_support_checks.gd",
+      "before_sha256": "ad8f6d8795a6d09877a41602446da788f7a4139f4dc53166bcd87d9ecb64b59a",
+      "after_sha256": "ae86c2b080ce9db72188d5753011473cb9191c739e71e7ef89a6670daeed21cb",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "tools/fishing/audit_native.py",
+      "after_path": "tools/fishing/audit_native.py",
+      "before_sha256": "8ee840d98534bdc189027743924083d7359047e0107dc46ca17ff23a4bbd4fc1",
+      "after_sha256": "aba1e623643bb271b5d81705174b0da06d000cdb5be7a7aa5f197f20c8d6d962",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "tools/fishing/package_audit.gd",
+      "after_path": "tools/fishing/package_audit.gd",
+      "before_sha256": "bf2373544f7945c660100ccfe8ceaf3c165ee4cd1a63b4eba3a5e9ae08660a21",
+      "after_sha256": "6c7f5ffb5b638c3d569ad3126a24a844d88beb3d6f1c0d5b13b47e594fdce02a",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "tools/npc_migration/audit_native.py",
+      "after_path": "tools/npc_migration/audit_native.py",
+      "before_sha256": "bb86d22ea7b1c95acfc405413c25f40632d5316d05d080d5dcfd76df9e477494",
+      "after_sha256": "db7877fe9511032d11530b6d54c396d88b4fc99130b4bcd0e9af61f125414e17",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "tools/npc_migration/package_audit.gd",
+      "after_path": "tools/npc_migration/package_audit.gd",
+      "before_sha256": "9776180e461ec16723263f555846c387ff3a1d67e98f61fbdb33e123696da0d4",
+      "after_sha256": "9b61e6e9f32404e954a05c3f5b5629ac7e47561c72da873d0ce6024d9ab8b3a1",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "tools/social_migration/.gitattributes",
+      "after_path": "tools/social_migration/.gitattributes",
+      "before_sha256": "21a088787eb11f604c3a686d7934b940d4d5ec7afd5667e0b00ffd025e1df2b6",
+      "after_sha256": "f5e51f8b66890815d3c2c66461ac536f4cfa291fd969ee6f7cc42064fe922e37",
+      "owner": "R004",
+      "reason": "Successful-task commit portability: specific audit_native.py -text overrides nested generic Python normalization; all previous social/source reference rules retained."
+    },
+    {
+      "path": "tools/social_migration/audit_native.py",
+      "after_path": "tools/social_migration/audit_native.py",
+      "before_sha256": "408eac3c05af19acb5e48c75c9c89bfc4fe772a036a810168d7ae2dcdad9f9f3",
+      "after_sha256": "33a77fed9c3aa7ecd927e77487a54e2a784b73f4b175b80995904093d2188137",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    },
+    {
+      "path": "tools/social_migration/package_audit.gd",
+      "after_path": "tools/social_migration/package_audit.gd",
+      "before_sha256": "868ebcf37298291cda768170562bf339b340d40df95689bed660f078b6288bb8",
+      "after_sha256": "7b7bd9ad71d5ffb1f116ad694438a9060fe258316058c575db9e7b7b44f6f92c",
+      "owner": "R004",
+      "reason": "Strict schema8/content1 routine facts and complete current-format fixtures/consumers; prior authored gameplay values and historical source pins preserved."
+    }
+  ]
+}

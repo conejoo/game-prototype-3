@@ -45,7 +45,7 @@ func _run() -> void:
 		_check(game.companion.state.health == 43 and game.companion.state == game.session.actors[GameSession.COMPANION_INSTANCE_ID], "Restart lost companion health/state binding")
 		_check(game.session.party_member_ids == PackedStringArray(["party-player", "party-companion"]) and game.party.members().size() == 2, "Restart lost party")
 		_check(game.player_placeholder.global_position.distance_to(Vector3(0, 0, -2.5)) < 0.01, "Restart spawned outside safe anchor")
-		var expected: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v7.json"))
+		var expected: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/fixtures/environment_save_v8.json"))
 		var actual: Dictionary = SaveCodec.snapshot(game.session)
 		_check(JSON.parse_string(JSON.stringify(actual.environment, "", true, true)) == expected.environment and actual.light_source_overrides == expected.light_source_overrides, "Separate-process restore lost exact clock/seed/six overrides")
 		var sample: WeatherSchedule.Sample = game.session.environment.weather_sample()

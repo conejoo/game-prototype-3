@@ -1,5 +1,5 @@
 extends SceneTree
-## Independent processes, real root manual Save/Load, full exact schema7 oracle.
+## Independent processes, real root manual Save/Load, full exact schema8 oracle.
 var failures: PackedStringArray = []
 var assertions: int = 0
 func _initialize() -> void:

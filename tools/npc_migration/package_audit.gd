@@ -16,7 +16,7 @@ func _initialize() -> void:
 	var npcs: NpcContentCatalog = NpcContentCatalog.new()
 	failures.append_array(npcs.initialize_path(catalog))
 	if NpcRegistry.ENABLED != NpcContentCatalog.ROSTER: failures.append("Eight contact roster differs")
-	if SaveCodec.SCHEMA_VERSION != 7: failures.append("Current schema7 absent")
+	if SaveCodec.SCHEMA_VERSION != 8: failures.append("Current schema8 absent")
 	if ProjectSettings.get_setting("rendering/renderer/rendering_method") != "gl_compatibility": failures.append("Renderer changed")
 	var layout: String = FileAccess.get_sha256("res://content/maps/alderwake_layout.json")
 	if layout != "7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be": failures.append("Pinned geography differs")
