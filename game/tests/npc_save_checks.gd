@@ -153,9 +153,13 @@ func _root_checks(run: GameSession) -> void:
 	_write(game.save_repository.path,JSON.stringify(malformed,"",true,true)); _write(game.save_repository.path + ".bak","broken backup")
 	_check(not (await game.load_run()).is_empty() and game.session == live and game.dialogue._session == live and SaveCodec.snapshot(live) == before,"malformed NPC candidate cannot swap live owners/facts")
 	_write(game.save_repository.path,raw); _write(game.save_repository.path + ".bak",raw)
-	_check(game.dialogue.begin("npc-14","fixture-contact").ok, "conversation open")
+	# Isolated manual-save guard fixture; no fabricated world-contact lease.
+	var routine_owner: RoutineExecutionDirector = game.dialogue.routine_owner
+	game.dialogue.routine_owner = null
+	_check(game.dialogue.begin("npc-14","fixture-contact").ok, "synthetic standalone conversation open")
 	_check(not game.save_run().is_empty() and not (await game.load_run()).is_empty(), "active NPC dialogue blocks manual Save/Load")
 	game.dialogue.cancel()
+	game.dialogue.routine_owner = routine_owner
 	before = SaveCodec.snapshot(live)
 	for spawn: String in unsafe.spawn_ids:
 		var bad: Dictionary = before.duplicate(true); bad.location_id = unsafe.stable_id; bad.spawn_id = spawn

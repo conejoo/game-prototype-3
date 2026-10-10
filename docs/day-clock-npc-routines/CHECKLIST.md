@@ -28,7 +28,7 @@ Mark the selected task In progress before implementation. Complete exactly one t
 | R012 | Done | R009, R010 | Readable walk/actions/speech under lifecycle holds |
 | R013 | Done | R011, R012 | All 25 routines active in ordinary play |
 | R014 | Done | R013 | Integrated restart/rollback/retry and measured runtime bounds |
-| R015 | Pending | R014 | Ordinary full-day/social/recovery rendered walkthrough |
+| R015 | Done | R014 | Ordinary full-day/social/recovery rendered walkthrough |
 | R016 | Pending | R015 | Fresh Windows packages/native restart/travel acceptance |
 
 R005-R008 do not depend on selector/save implementation; R007/R008 are sibling rooms, and R009 needs neither room. Ordered selection does not make these a single dependency chain. Shared-file ownership stays sequential; no parallel execution is started by this plan.
@@ -147,10 +147,11 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## R015 - Walk a real full day and recovery loop
 
+- Approved correction (2026-10-10 UTC): user accepted "validate Ivo's movement, waits, and conversation, and verify routine actions/speech on Edric and Helena instead" with "yes, validate that". This resolves the recorded absent-Ivo-action/speech conflict; authored routine content stays exact. R015 is accepted below; R016 remains Pending. All R015 criteria pass.
 - Inputs/prerequisites: R014 accepted integration, actual rendered/nav readiness and bounded input/capture/journey helpers.
 - Outputs/allowed changes: task-owned ordinary rendered journey, concise criterion/coverage record and bounded repairs required to finish it.
 - Preserve: no forced time/weather/state/health/affinity or teleport presented as ordinary play. Random thunderstorm is not a completion gate; earlier deterministic weather/path checks cover it.
-- Acceptance: observe >=600 active seconds without acceleration, including night/rest/morning and solo/group transitions. Walk town/both interiors/returns, encounter Della/Vale family, observe Ivo movement/actions/speech, earn actual facts/gather/gift changes and exercise Helena routine choices. Complete Maris lead/Tollworks combat/vessel/fitting with ally and both crossings. Inspect rendering, Save/restart/revisit and cleanup.
+- Acceptance: observe >=600 active seconds without acceleration, including night/rest/morning and solo/group transitions. Walk town/both interiors/returns, encounter Della/Vale family, observe Ivo movement, waits and conversation, and authored routine actions/speech on Edric and Helena; earn actual facts/gather/gift changes and exercise Helena routine choices. Complete Maris lead/Tollworks combat/vessel/fitting with ally and both crossings. Inspect rendering, Save/restart/revisit and cleanup.
 - Checks/evidence: reuse public input and game/tests/support/ TestRunJourney/TestRunInteractionCapture helpers; create a proposed routine journey driver only if needed. Record viewed captures, actor IDs/location/context, confirmed pause/modal checkpoints, active versus inspection time, failures/runtime errors and owned-process cleanup. Rerun affected checks after repairs; no unrelated suite loops.
 
 ## R016 - Build fresh Windows packages and test native release
@@ -163,9 +164,9 @@ R005-R008 do not depend on selector/save implementation; R007/R008 are sibling r
 
 ## Completion records
 
-R001-R014 completed; R015-R016 remain Pending. Final task ID: R016.
-Next eligible: R015 (R014 prerequisites verified).
-Whole checklist complete: no. No current blocker.
+R001-R015 completed; R016 Pending. Final task ID: R016.
+R015 validated under the user-approved correction; next eligible R016.
+Whole checklist complete: no. R015 complete; only R016 remains unfinished.
 [R001 acceptance](R001_ACCEPTANCE.md), [R002 acceptance](R002_ACCEPTANCE.md) and
 [R003 acceptance](R003_ACCEPTANCE.md), [R004 acceptance](R004_ACCEPTANCE.md) and
 [R005 acceptance](R005_ACCEPTANCE.md), [R006 acceptance](R006_ACCEPTANCE.md) and
@@ -656,3 +657,46 @@ bytes and task hashes were reverified unchanged before this approval record.
 Git and local docs/evidence/R014/commit-audit.json record commit/hash/index/tree
 verification. No push or R015 work. Threading investigations deferred.
 Remaining R015,R016; every item through R016 complete:no.
+
+R015 - Done 2026-10-10 UTC
+Exactly one task completed under user-approved Ivo movement/waits/conversation and
+Edric/Helena authored action/speech correction. Ten intended paths and all retained
+failures/results in [R015 acceptance](R015_ACCEPTANCE.md). Real Helena earned intro
+plus ledger Save receipt rejection repaired narrowly; strict tamper/opposite-intro
+regression passes. Original schema8/content1/source/content/geography/assets and
+R0144ms approval/original2ms misses/measurement limits/threading deferral preserved.
+Final005834284-09fd668e PASS4: writer17464/reader12208,236/28 assertions,50 viewed
+captures;681.722769 active/687.976 observed wall seconds, actual night/rest/breakfast/
+morning, Ivo14.999771m circuit, two rooms/returns, earned gift/facts/ledger, full
+six-effect Maris recovery with ally and bridge/ford, GUI Save/new-PID Load exact
+complete typed primary/backup/forecast and physical Maris/Della remembered revisits.
+Stable earlier case checks: NPC-save568/510 refusals, routine-save213, directive139,
+exact25 matrix2610, integrated synthetic restart82/98. Prior whole report remains
+failed for corrected driver backup assumption; final rerun fixes it. All accepted
+case exits0/zero diagnostics/source stable, isolated saves/app-data. Static reference
+1626/88pins/82 exact adaptations/ten drift refusals; final audit verifies scope,
+links/history/index/bytes. Simultaneous speech overlap recorded; solo lines readable.
+No Godot/held input/editor changes/cleanup owed; unrelated Blender preserved.
+Blockers/unrun R015 criteria:none. No commit/push; user separately instructs commit
+after review. Remaining:R016; every item throughR016 complete:no. Next eligibleR016
+fresh Windows/native packages; stop before successor.
+R015 authorized successful-task commit follow-up (2026-10-10 UTC)
+User reviewed the successful R015 result and explicitly instructed this commit.
+Include only the ten reviewed task paths; verify accepted game/tools bytes and
+staged blobs before committing. Retain ignored raw evidence locally. Git and
+../evidence/R015/commit-audit.json record the verified commit/tree/index outcome.
+No push or R016 work. R016 remains the only unfinished task; all throughR016
+complete:no. R0144ms approval/original2ms misses/measurement limits and deferred
+threading remain unchanged. Historical implementation-turn no-commit statements
+above retain their original meaning.
+Commit portability correction: initial ten-path staging normalized the validated
+ordinary driver (work SHA256f910c600... vs stagedd27f2396...). Added exactly one
+root .gitattributes driver/UID -text/-eol rule, making commit scope eleven paths.
+Exact existing attribute adaptation retains original before-hash, previous accepted
+7f9c203d... hash, all earlier rules/reasons and immutable pins. Only that offline
+ledger changes inside accepted game/tools source; every tested game/other tool byte
+remains exact. Restage verifies exact blobs. Static reference audit reruns; gameplay
+checks are not repeated for Git attributes/offline ownership metadata.
+First restage reused the cached normalized blob. Explicit path-scoped
+git add --renormalize applies the new exact-byte attribute rule; all tested
+game bytes stay unchanged. Commit verification refuses any remaining mismatch.

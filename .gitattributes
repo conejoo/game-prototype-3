@@ -185,3 +185,6 @@ game/tests/routine_integration_process_checks.gd* -text -eol whitespace=blank-at
 game/tests/routine_performance_profile.gd* -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/features/routines/routine_assignment_director.gd* -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 game/features/routines/routine_execution_director.gd* -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R015 authorized commit preserves the validated ordinary driver and UID bytes.
+game/tests/routine_full_day_render.gd* -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

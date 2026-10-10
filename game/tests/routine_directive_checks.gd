@@ -2,6 +2,7 @@ extends "res://tests/support/routine_dialogue_fixture.gd"
 
 func _run() -> void:
 	if await setup(810,"prototype-mayor-vale-home"):
+		_earned_save()
 		_real_choices()
 		_atomic_failures()
 		_event_fixtures()
@@ -130,3 +131,45 @@ func _boundaries() -> void:
 	var snapshot: Dictionary = SaveCodec.snapshot(game.session)
 	var restored: SaveCodec.DecodeResult = SaveCodec.validate(snapshot,game.catalog,game.npc_catalog)
 	check(restored.session != null and SaveCodec.snapshot(restored.session) == snapshot,"current schema roundtrip retains all new public routine outcomes")
+
+func _earned_save() -> void:
+	# Synthetic placement/items; real authored social and bound routine transactions.
+	reset_archive()
+	var pair: Dictionary = SocialSaveFixture.setup()
+	check(pair.session.inventory.add("item-moonflower",1).is_empty(),"synthetic owned gift item")
+	SocialSaveFixture.introduce(pair,"npc-02")
+	SocialSaveFixture.preference(pair,"npc-02")
+	SocialSaveFixture.gift(pair,"npc-02")
+	game.session.conversations = pair.session.conversations
+	game.session.inventory = pair.session.inventory
+	game.session.elapsed_play_seconds = pair.session.elapsed_play_seconds
+	if not begin("npc-02"): return
+	check(choose("npc-02-review-archive-ledger-choice").ok,"earned introduction/gift plus actual routine ledger")
+	var saved: Dictionary = SaveCodec.snapshot(game.session)
+	var restored: SaveCodec.DecodeResult = SaveCodec.validate(saved,game.catalog,game.npc_catalog)
+	check(restored.session != null and restored.errors.is_empty(),"independent introduction and ledger receipts restore "+str(restored.errors))
+	if restored.session != null:
+		check(SaveCodec.snapshot(restored.session) == saved,"earned social/routine facts restore exactly")
+	var person: Dictionary = saved.conversations.people["npc-02"]
+	check(person.applied_choice_ids.size() == 2 and person.affinity == 2,"introduction plus ledger retain two receipts and one gift reward")
+	for field: String in ["applied_choice_ids","flags","affinity"]:
+		var bad: Dictionary = saved.duplicate(true)
+		if field == "affinity": bad.conversations.people["npc-02"][field] += 1
+		else: bad.conversations.people["npc-02"][field].pop_back()
+		check(SaveCodec.validate(bad,game.catalog,game.npc_catalog).session == null,"earned save tampered "+field+" rejects")
+	# Both mutually exclusive introductions with fully derived rewards/events still fail.
+	var bad: Dictionary = saved.duplicate(true)
+	var opposite: NpcDialogueGraph.Choice = game.npc_catalog.get_npc("npc-02").graph.choices["npc-02-neighborly-response"]
+	var memory: Dictionary = bad.conversations.people["npc-02"]
+	memory.applied_choice_ids.append(opposite.id)
+	memory.flags.append(opposite.one_time_reward_flag)
+	for flag: String in opposite.added_flags:
+		if flag not in memory.flags: memory.flags.append(flag)
+	if opposite.target_node_id not in memory.seen_node_ids: memory.seen_node_ids.append(opposite.target_node_id)
+	memory.affinity += opposite.affinity_delta
+	bad.conversations.events.last_sequence += 1
+	var sequence: int = bad.conversations.events.last_sequence
+	bad.conversations.events.facts.append({"kind":NpcEventMemory.CHOICE,"subject_id":"npc-02","target_id":opposite.id,"count":1,"first_sequence":sequence,"last_sequence":sequence,"first_active_seconds":game.session.elapsed_play_seconds,"last_active_seconds":game.session.elapsed_play_seconds})
+	var rejected: SaveCodec.DecodeResult = SaveCodec.validate(bad,game.catalog,game.npc_catalog)
+	check(rejected.session == null and "opposite introduction receipts" in str(rejected.errors),"derived opposite introductions remain explicitly rejected")
+	observations.append({"case":"R015 earned introduction/gift/ledger save regression","snapshot":saved,"opposite_errors":rejected.errors,"provenance":"synthetic placement/items, production authored social/routine transactions; no ordinary-day claim"})

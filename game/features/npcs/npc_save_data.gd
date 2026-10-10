@@ -85,6 +85,7 @@ static func restore(data: Variant, catalog: NpcContentCatalog, seconds: float, i
 			if gift_count > 0: social = true
 		var expected_flags: PackedStringArray = []
 		var expected_receipts: PackedStringArray = []
+		var introduction_receipts: PackedStringArray = []
 		var expected_affinity: int = 0
 		for choice: NpcDialogueGraph.Choice in npc.graph.choices.values():
 			var count: int = events.count(NpcEventMemory.CHOICE, id, choice.id)
@@ -93,7 +94,9 @@ static func restore(data: Variant, catalog: NpcContentCatalog, seconds: float, i
 				if count != 1: return _fail(result, "one-time choice repeated")
 				ConversationMemory._add_unique(expected_receipts, choice.id)
 			for flag: String in choice.added_flags: ConversationMemory._add_unique(expected_flags, flag)
-			if not choice.one_time_reward_flag.is_empty(): ConversationMemory._add_unique(expected_flags, choice.one_time_reward_flag)
+			if not choice.one_time_reward_flag.is_empty():
+				ConversationMemory._add_unique(expected_flags, choice.one_time_reward_flag)
+				ConversationMemory._add_unique(introduction_receipts, choice.id)
 			expected_affinity += choice.affinity_delta * count
 			if not choice.gift_rule_id.is_empty():
 				var rule: NpcDefinition.GiftRule = npc.gifts.get(choice.gift_rule_id)
@@ -110,8 +113,9 @@ static func restore(data: Variant, catalog: NpcContentCatalog, seconds: float, i
 		if not npc.milestone_node_id.is_empty() and npc.milestone_node_id in person.seen_node_ids:
 			social = true
 			ConversationMemory._add_unique(expected_flags, npc.milestone_seen_flag_id)
-		# Pinned ordinary introductions are mutually exclusive, even neutral rewards.
-		if expected_receipts.size() > 1: return _fail(result, "opposite introduction receipts")
+		# Pinned reward-flag introductions are mutually exclusive, even neutral rewards.
+		# Independent oneTime routine choices still retain their own strict receipts.
+		if introduction_receipts.size() > 1: return _fail(result, "opposite introduction receipts")
 		if not _same_set(person.learned_fact_ids, expected_facts) or not _same_set(person.flags, expected_flags) or not _same_set(person.applied_choice_ids, expected_receipts) or int(person.affinity) != clampi(expected_affinity, 0, ConversationMemory.MAX_AFFINITY):
 			return _fail(result, "memory disclosure/reward/event derivation mismatch")
 		if social:

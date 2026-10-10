@@ -1,5 +1,145 @@
 # Day clock and NPC routines current state
 
+## R015 Done - final handoff (2026-10-10 UTC)
+
+Exactly R015 completed; R001-R015 Done, R016 Pending. Every item throughR016
+complete:NO. Next eligibleR016; stop now. No commit/push: user will separately
+instruct successful-task commit after review. No actual blocker or unrun criterion.
+
+[R015 acceptance](R015_ACCEPTANCE.md) owns exact ten paths, commands/cwd/isolation,
+retained failures and approved Ivo correction. Real earned Helena intro+ledger Save
+bug repaired only in introduction-exclusive receipt count; all exact receipt/flag/
+reward/event/gift chronology and schema8/content1 rules retained. Focused meaningful
+regression passes with forged opposite introductions/tampered memory still rejected.
+Final stable render005834284-09fd668e PASS4, zero diagnostics/all exits0/source stable:
+681.722769 active/687.976 observed wall seconds, writer17464/reader12208,236/28
+assertions,50 capture states verified and all PNGs inspected via five sheets plus
+full GUI Saved/Loaded and readable solo speech frames. Actual night/rest/breakfast/
+morning, Ivo14.999771m movement/waits/conversation, Edric/Helena art/speech, both
+rooms/returns, earned facts/gather/gift/ledger and full six-effect recovery/ally/
+main bridge+ford passed. GUI Save typed primary/first backup, F10 quit, new-process
+GUI Load exact complete durable/forecast oracle and physical Maris/Della revisits
+passed. No duplicate effects/gift. Named render-000 saves/app-data exclusively under
+builds/testing/R015/20261010-005834284-09fd668e.
+
+Eight earlier stable engine/parse/headless/process cases from004341624 pass NPC
+save568/510 refusals, routine-save213, directives139, all25 matrix2610, synthetic
+restart82/98. Whole earlier report stays FAILED: rendered driver incorrectly assumed
+first backup absent. Final driver-only correction/rerun repairs that failure; all
+runtime/headless bytes remain identical, source delta exactly one unused driver.
+Final sourcefingerprintfb77b28b/1305files; final live reference1626/25routines/21
+anchors/88pins/82adaptations/10 refusals. Original before-hashes/prior reasons/pins,
+source60c20eb2 clean and baseline targetHEADf2c601ed preserved. Ten intended paths,
+empty index, stable bytes and links verified in ../evidence/R015/final-audit.json.
+
+R014 user-approved4ms scheduler ceiling, original2ms misses and combined-slice/
+synthetic measurement limits unchanged; threading deferred. Natural morning
+Thunderstorm observed; evening shelter remains separately deterministic. Some
+simultaneous breakfast billboards overlap; individual staggered lines readable.
+No new performance/native-package claim. Normal profiles/packages/instructions
+untouched. No owned Godot/window/held input/editor changes/cleanup owed. Unrelated
+Blender2664/mcp-for-blender65880 untouched. Remaining unfinished:R016 only.
+Historical progress, original blocker and prior handoffs below retain their dates.
+## R015 live verification update (2026-10-10 01:09 UTC)
+
+No actual blocker. Exactly R015 remains In progress; R016 Pending; no commit/push.
+Helena Save validator repair and earned intro/gift/ledger regression pass, including
+strict tamper/opposite-introduction refusal. Final-runtime stable cases in
+004341624-42409a31 pass NPC-save568/510 refusals, routine-save213, directives139,
+matrix2610/25 routines, separate-PID integration82/98. Whole report failed only
+because rendered driver's first-backup assumption was wrong; runtime Save succeeded
+at681.775147 active seconds after full recovery. Source guard unchanged/diagnostics
+empty for the eight passing cases; original whole failure retained.
+Corrected driver checks both first-save files. Only unused driver bytes differ from
+those passing headless checks. Final ordinary writer/read run:
+20261010-005834284-09fd668e, sourcefb77b28b/1305 files, render-000 named save/app-data.
+At this update natural600-active-second day passed again with no errors; recovery
+and GUI Save/new-PID Load/physical revisits are advancing. Final capture inspection,
+cleanup/status audit and Done handoff remain. See R015_ACCEPTANCE.md for all failures.
+R0144ms approval/original2ms misses/measurement limitations and deferred threading
+remain exact. Historical blocker/resume records below retained.
+## R015 resumed with approved validation correction (2026-10-10 UTC)
+
+User approved the proposed correction with "yes, validate that": validate Ivo's
+movement, waits and conversation, and authored routine actions/speech on Edric
+and Helena. Original Ivo move/wait content stays unchanged. The prior blocker
+below is resolved; R015 In progress, R016 Pending. Only R015 may run this turn;
+no commit/push or R016 work. R0144ms approval/measurement limits and deferred
+threading remain intact.
+
+Baseline HEADf2c601ed1f0a20570995c29174aa2cf5c7ca8354; only the prior two blocker
+documentation edits existed. Preserve those records and unrelated unsaved Blender.
+Bounded intended allowlist now ten paths: CHECKLIST.md, CURRENT_STATE.md,
+R015_ACCEPTANCE.md, game/tests/routine_full_day_render.gd and its generated UID,
+game/features/npcs/npc_save_data.gd, game/tests/npc_save_checks.gd,
+game/tests/routine_directive_checks.gd, tools/routine_migration/adaptations.json
+and reference_checks.py. Real ordinary Save rejected the valid Helena intro plus
+ledger receipts; bounded validator/regression repair is documented in acceptance.
+Final full-day/Save/new-PID Load and affected stable-source checks are running. Reuse current root,
+public-input journey/capture/GUI helpers and existing deterministic branch checks.
+Record real active-clock time separately from paused inspection; do not force
+clock/weather/position/state/health/affinity for ordinary evidence.
+
+## R015 pre-implementation blocker (2026-10-09 UTC)
+
+Selected candidate:R015, status:Blocked. R001-R014 remain Done; R016 remains
+Pending with unmet R015 dependency. Every checklist item through R016 complete:no.
+No eligible unfinished task remains. No implementation, gameplay check, completion
+record, commit or push performed. AGENT_PROMPT Preparation step4 requires
+reconciling inconsistent artifacts before implementation and recording exact
+conflict/blocker and next safe action when selection remains ambiguous.
+
+Conflict: R015 acceptance says "observe Ivo movement/actions/speech". Both
+`ivo-docks-day` and `ivo-docks-evening`, in live read-only source, target content
+and R001 immutable coverage, contain exactly `move,wait,move,wait,move,wait`.
+Each has zero action and zero speech steps. Wait names are identifiers, not
+authored action/speech payloads. Ivo's public dialogue does not establish timed
+routine speech. CONTRACT preserves source step/content identity and says not to
+invent action sheets. A rendered driver cannot truthfully pass the literal gate;
+no authored behavior or acceptance requirement was silently changed.
+
+Read-only evidence, SHA256:
+
+| Routine | Source `assets/data/routines/` | Target `game/content/routines/` |
+| --- | --- | --- |
+| ivo-docks-day.json | f30e03ba385967c44ffa53d9509573c389c9b5516d4f7e23993f6c26db0c7c43 | d72376a2cbc9a1ba49fae87444448e2639ef61f739a338b6438dd33a581e8a1b |
+| ivo-docks-evening.json | a2f0508efea693564266f2ec76fb4f3a42394271bb0ae4fb146b82e8ffc821fd | ec34ebdc86535f2acd3196ebf83e56deb26ecd387b0f1833f5725f311bbbfc9a |
+
+R001 `tools/routine_migration/reference/coverage.json` independently records the
+same six kinds per Ivo routine; source manifest revision remains60c20eb2.
+Next safe action: resolve the R015 wording against pinned content. Recommended
+decision: require Ivo's actual movement/wait circuit and ordinary conversation,
+and observe authored action/timed speech on Edric/Helena. This is a proposed scope
+clarification, not an applied waiver. After explicit resolution, resume exactly
+R015 with ordinary>=600-active-second day, rooms/returns, earned social changes,
+Helena choices, full recovery/both crossings and exact GUI restart/revisit.
+R016 cannot begin until every resolved R015 criterion passes.
+
+Preflight/baseline: target HEADf2c601ed1f0a20570995c29174aa2cf5c7ca8354, clean tree
+and empty index; source HEAD60c20eb2816e7271fb84afaba286af006ebe3ccf, clean/read-only.
+Workspace AGENTS, workflow prompt/checklist/contract/current architecture,
+installed and current versioned testing skill, runner and save/journey/capture/
+native guidance inspected. No nested target AGENTS or workspace .agents found.
+Installed console path exists; no installation needed. Shell `rg` unavailable;
+PowerShell Get-Content/Select-String/ConvertFrom-Json/Get-FileHash used instead.
+Commands cwd:D:/development/game-dev-blender/returning-fair-prototype.
+Git reads used per-command safe.directory override, no global config change.
+Default sandbox shell startup failed before execution with setup-refresh error;
+scoped automatically reviewed read-only shell succeeded, no review rejection.
+Unrun: every R015 rendered/gameplay acceptance criterion; no saves/appdata/test
+slots or packages accessed/created. No owned Godot/editor/input/cleanup owed.
+Unrelated unsaved Blender PID2664 preserved. Only CHECKLIST.md and this handoff
+changed to record the blocker; all user-authored acceptance/instructions, source,
+runtime/assets/schema8/content1 and historical evidence remain unchanged.
+User-approved R0144ms budget and original2ms failures/measurement limitations
+preserved; threading investigation remains deferred.
+Final readback verifies exactly16 status rows through R016, R015 Blocked/R016
+Pending dependency, unchanged literal acceptance/AGENT_PROMPT/CONTRACT, only
+the two intended documentation paths changed, empty index and clean source.
+Git diff whitespace check passes. No acceptance success is claimed.
+
+Historical handoffs below remain unchanged; this newest blocker controls selection.
+
 ## R014 approved budget and commit handoff
 
 User explicitly accepted the4ms test budget after being told the2.5ms measured
@@ -1317,3 +1457,24 @@ Staged whitespace check found one generated INT-064 excerpt blank line at EOF.
 Trimmed that derived excerpt and updated only its derived hash/capture-history hash;
 all85 byte-exact source snapshots stayed unchanged. Rechecked reference acceptance
 and staged whitespace/blob hashes before committing.
+
+R015 authorized successful-task commit follow-up (2026-10-10 UTC)
+User reviewed the successful R015 result and explicitly instructed this commit.
+Include only the ten reviewed task paths; verify accepted game/tools bytes and
+staged blobs before committing. Retain ignored raw evidence locally. Git and
+../evidence/R015/commit-audit.json record the verified commit/tree/index outcome.
+No push or R016 work. R016 remains the only unfinished task; all throughR016
+complete:no. R0144ms approval/original2ms misses/measurement limits and deferred
+threading remain unchanged. Historical implementation-turn no-commit statements
+above retain their original meaning.
+Commit portability correction: initial ten-path staging normalized the validated
+ordinary driver (work SHA256f910c600... vs stagedd27f2396...). Added exactly one
+root .gitattributes driver/UID -text/-eol rule, making commit scope eleven paths.
+Exact existing attribute adaptation retains original before-hash, previous accepted
+7f9c203d... hash, all earlier rules/reasons and immutable pins. Only that offline
+ledger changes inside accepted game/tools source; every tested game/other tool byte
+remains exact. Restage verifies exact blobs. Static reference audit reruns; gameplay
+checks are not repeated for Git attributes/offline ownership metadata.
+First restage reused the cached normalized blob. Explicit path-scoped
+git add --renormalize applies the new exact-byte attribute rule; all tested
+game bytes stay unchanged. Commit verification refuses any remaining mismatch.
