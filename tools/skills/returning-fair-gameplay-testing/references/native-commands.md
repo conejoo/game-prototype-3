@@ -264,3 +264,17 @@ pause overlay. Invalid ground should leave the original rod intact. Esc may canc
 another mode instead of pausing; a successful request is not a pause assertion.
 This recipe and dispatcher checks prepare F010; only a fresh exported release
 journey can complete its native gameplay acceptance.
+
+## R016 task-native delivery extension (2026-10-10)
+
+Current guards also admit only `docs/evidence/R016/<run>/...` and matching exact
+`TEMP/ReturningFair-R016-<owned-name>` copies. Task roots, R015/R017, sibling prefixes,
+escapes, reparse points and mismatched EXE/PCK/override bytes remain refused.
+Use `tools/routine_migration/launch_native.ps1` for its fresh isolated writer/reader
+and `tools/tests/native_input_checks.ps1 -EvidenceTask R016` plus
+`tools/routine_migration/native_guard_checks.ps1` for synthetic guard checks.
+The native helper's unlocked Default desktop/owned PID/window/foreground/client
+and input-release requirements are unchanged. Stop immediately when desktop is
+locked; unlock before a fresh native session. No bridge replaces native evidence.
+See `tools/routine_migration/DELIVERY.md` for exact current package/acceptance scope.
+Historical commands/scopes above retain their original meaning.

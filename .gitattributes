@@ -188,3 +188,17 @@ game/features/routines/routine_execution_director.gd* -text -eol whitespace=blan
 
 # R015 authorized commit preserves the validated ordinary driver and UID bytes.
 game/tests/routine_full_day_render.gd* -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R016 authorized as-is commit preserves reviewed packaging/native evidence-tool bytes.
+docs/day-clock-npc-routines/R016_ACCEPTANCE.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+game/export_presets.cfg -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/testing_paths.ps1 -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/tests/native_input_checks.ps1 -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/package_audit.gd -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/launch_native.ps1 -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/native_guard_checks.ps1 -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/DELIVERY.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/skills/returning-fair-gameplay-testing/references/native-commands.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/walk_native.ps1 -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/native_route.gd -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/routine_migration/save_oracle.gd -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

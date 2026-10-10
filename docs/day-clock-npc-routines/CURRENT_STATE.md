@@ -1,5 +1,225 @@
 # Day clock and NPC routines current state
 
+## Final user-requested stop and as-is commit (2026-10-10 UTC)
+
+User instruction: "it is enough checking, could you tell your Ai agent to finish
+an commit as it is". This supersedes the earlier implementation-turn stop before
+commit. Testing and implementation stopped immediately; only owned cleanup,
+truthful acceptance/handoff documentation, scoped Git byte/scope checks and the
+authorized local commit follow. No push, successor or resumed native interaction.
+
+R001-R015 remain Done. R016 remains **Blocked / incomplete** because its full
+native acceptance was not verified before the user requested stopping. It is the
+only unfinished ID; every checklist item through R016 complete: **no**. Committing
+the existing work does not accept the remaining criteria or create a Done record.
+
+| R016 criterion | Actual outcome at stop |
+| --- | --- |
+| Fresh Desktop/Validation, exact package inventory/exclusions, startup outside checkout | PASS: eight package cases, exact 25 routines/two rooms/rig actions/social/schema8/content1, preserved prior archives/override. |
+| Focused engine/parse/smoke/content, synthetic native guards, immutable reference checks | PASS: focused 4/4 (848 assertions/228 rejection fixtures), guards7, dispatcher745, reference1626. These do not prove native gameplay. |
+| Native ordinary town/home/inn paths and physical returns | PASS in retained partial sessions; latest D completed both home and inn returns with party2. |
+| Natural solo/group transition and authored routine behavior | PASS partial observations: B Helena archive action/readable speech/shelf walk and solo boundary; C natural evening solo-to-family-group transition. No new full-day/branch-matrix claim. |
+| Native talk/gather/gift | PASS: earned Moonflower; Helena ordinary choices/facts/preference, flower1->0 and affinity2; Della helpful intro/remembered conversation. |
+| Native Maris recovery | PARTIAL: D earned Maris lead and one Journal preparation upgrade (Deliberate Strike25->40). Bridge crossings, Tollworks combat/vessel/fitting/reconnection/specialist recovery UNRUN. |
+| Actual native GUI Save | PASS three D intermediate checkpoints (flower, gift, lead); final recovered Save UNRUN. |
+| Native writer normal quit | PASS latest D stdout "P001: Quit requested while paused." at456.99s, writer42568 exit0 at2026-10-10T04:04:10.9699106Z. Earlier A forced exit and B/C unobserved terminations remain separate failures/limitations. |
+| New-PID GUI Load, exact typed whole durable/primary+backup/forecast oracle, physical remembered restart revisit | UNRUN. save_oracle.gd syntax-only check passed earlier; no executed restart oracle. |
+| Native input/capture provenance and visual review | PARTIAL: critical D checkpoints inspected. Retained B focus/input failure and obscured pixels, C lost writer, D transient Attach refusal and final walk absent PID remain failures; no final all-capture provenance/review acceptance. |
+| Owned process/input/TEMP cleanup | COMPLETE at stop: writer42568/controller60084 absent; previous failed requests released input. Last walk could not attach absent PID and sent no input. Exact B/C/D TEMP copies removed only after containment/reparse/live-process checks; A already removed. Evidence/isolated saves and unrelated work retained. |
+
+Latest session: r016-20261010-d, writer42568/controller60084. The detached option
+starts the same guarded launcher using a hidden WMI process; it supplies no
+gameplay/state/save setup and preserves all input guards. Startup worked, but no
+controlled executor-teardown survival test was performed. The paused writer
+quit normally before the second east-bridge batch; no bridge/recovery acceptance
+comes from that failed absent-PID request or its nonexistent capture filename.
+
+Actual GUI save SHA256s, copied from the isolated native session:
+flower fd64ac83bbec9aefa6c840d8e0644534993bdb8033aa84129548732f55f224b2;
+gift 799c2767fb5b100b5402adaaa99d5d0fb81a81c8d8df2ba71a49241aa379ac7d;
+lead 46608fb2d5aaeaa4bce1f084f055ef22e8c5bc6c0b5b6863e133cba832e6d047.
+These establish intermediate Save evidence, not exact restart/backup acceptance.
+
+Evidence: ../evidence/R016/native-r016-20261010-{b,c,d}/writer/ (requests,
+actual captures/logs/checkpoints); D writer/exit.json; as-is-stop-cleanup.json;
+resumed-final-audit.json and earlier package/focused/reference reports. Final
+local commit hash/tree/status and exact-byte scope are recorded separately in
+../evidence/R016/as-is-commit-audit.json after commit. Raw evidence/builds remain
+under their existing ignore policy. README/architecture remain unchanged because
+native delivery is incomplete. Unrelated docs/interiors-map-migration/ is excluded.
+
+R014 user-approved4ms ceiling, original2ms misses, combined-slice/synthetic
+measurement limitations and deferred threading remain intact. R015 still proves
+Ivo movement/waits/conversation and Edric/Helena authored actions/speech under the
+approved correction. No source/content/geometry/runtime changes were made here.
+
+Commit portability: exact staged-byte review found normalization of six new
+files. Narrow root/nearer attribute exceptions and immutable adaptation history
+preserve reviewed bytes. Final authorized scope is19 paths (17 task files plus
+two attribute files); unrelated interior documentation remains excluded.
+
+Workflow stops after this authorized as-is commit. No further task or testing is
+authorized by this handoff. Earlier continuation/no-commit statements below are
+historical snapshots superseded by this final user instruction.
+
+## R016 current writer lifetime repair (2026-10-10 UTC)
+
+Executor transport restart ended native writer42568 predecessor50672 after
+confirmed Della approach/pause298.45s; no Save/exit record, evidence retained.
+Current session r016-20261010-d writer42568, hidden detached controller60084.
+launch_native.ps1 -Detached uses WMI only to start its same guarded local launch
+controller outside executor job lifetime; exact TEMP EXE/PCK/override/isolation
+and all native desktop/focus/client/PID/input guards remain unchanged. No input
+or game/save setup comes from controller. Fresh startup/pause pixels inspected.
+Resume ordinary earned journey with GUI Save checkpoints, then final normal
+writer quit/reader restart oracle/revisit. Prior attempts remain incomplete;
+all owned TEMP copies/controllers require cleanup after completion.
+
+## R016 resumed on "continue now" (2026-10-10 UTC)
+
+Prior PID64496 no longer exists; no GUI save or captured exit status exists.
+Old partial evidence retained with unobserved termination; old TEMP cleanup owed.
+Fresh session r016-20261010-c required for earned durable writer/reader journey.
+Exactly R016 In progress; no commit/push. Reuse immutable package and detached
+guidance, then inspect fresh native guards/pixels. All earlier budget/correction
+and unrelated documentation preserved.
+
+## R016 Blocked - native window obscured after partial successful retry (2026-10-10 UTC)
+
+Exactly R016 resumed on user instruction "try again now it is unlocked".
+R001-R015 Done; R016 only unfinished; every item throughR016 complete:NO.
+No completion record/commit/push. [Current acceptance](R016_ACCEPTANCE.md)
+now owns17 intended paths: earlier14 plus task-owned walk_native.ps1,
+native_route.gd and save_oracle.gd. Packaged runtime/content/art unchanged.
+
+Session r016-20261010-b writer PID64496 launched exact release from
+C:/Users/aldoc/AppData/Local/Temp/ReturningFair-R016-r016-20261010-b/ReturningFair.exe
+with cwd same TEMP folder, isolated restart APPDATA/LOCALAPPDATA recorded in
+../evidence/R016/native-r016-20261010-b/writer/launch.json. No bridge/setup,
+state/time/weather/affinity/position grants or normal-save access. Guidance
+is detached synthetic nav output, never a native placement or save mutation.
+
+Actual native WASD/E/GUI: town Edric talk; gather one Moonflower; Mayor Vale
+home entry, Helena natural archive action -> readable authored speech ->
+physical shelf walk, afternoon/evening solo boundary; ordinary Helena Chat,
+careful response, learned archivist/preference facts and one gifted flower
+(consumed1->0, friendship0->1->2); physical home return to town; inn entry,
+physical Della approach/intro/helpful response (friendship1), with both party
+members. These partial checks do not satisfy all R016 native acceptance.
+
+Inn return stopped at(-4.136117,0,-7.86303) on "Release lost foreground
+focus; stopped." Request105b313541c1439ebcb3a4ddceab8262 had one failed S hold;
+cleanup released all inputs. Retry868a76e4d2a64cfb99f752ec269ddf49 failed Attach
+before input. Failed attempts remain. The walker finally paused the game,
+stdout confirms538.31 active seconds; last read-only capture shows Paused title
+but lower window is obscured by Windows taskbar/black area. A benign visible
+heading click did not repair it. No further gameplay input; restore requested
+through native user input panel. Metadata ok cannot establish valid pixels.
+The retry was incorrectly started after its earlier pause-named image proved
+obscured; it sent no input (Attach refusal). No acceptance is based on that image.
+
+217 requests/83 captures audited in partial-review/index.json; all14 sheets
+inspected. Captures1-79 clear,80-83 obscured; later desktop-visible-recheck.png
+also obscured/inspected (218 requests/84 captures total). Native provenance
+report remains FAILED for two retained focus requests/one failed step. All
+requests release keys/mouse with empty cleanup errors. No runtime diagnostics
+observed; writer still live, so normal exit is UNRUN. No writer GUI save exists.
+Isolated external save_oracle --check-only passes; actual typed/forecast oracle
+is UNRUN. Synthetic room guidance passes; unreachable shelf guidance and initial
+relative-script-path failure are separately recorded, not native proof.
+
+Next safe action: restore fully visible Default desktop; inspect fresh guarded
+capture for same owned PID/exe/hash and actual pause. If PID still alive, continue
+walk_native.ps1 -Goal inn-exit using inn-routes.json/index1, then ordinary E town
+return; town-recovery-routes.json supplies Maris lead/east bridge/Tollworks
+approaches, tollworks-routes.json supplies combat/vessel/exit, town-return-routes
+supplies ford/fitting. Earn preparation via actual Journal, complete recovery;
+GUI Save then normal F10 quit; launch same Session Phase reader/new PID; GUI Load,
+paused Save and packed external typed snapshot/forecast/primary+backup oracle;
+physical remembered Maris/Della/Helena revisit; inspect evidence and clean up.
+If live PID is gone, no save exists: fresh writer must repeat the durable earned
+journey; retained partial records cannot supply progress. Do not bypass guards.
+
+Live owned game PID64496 intentionally remains paused for desktop restoration,
+no keys/mouse held; original launcher exec session79815 waits for exit. Cleanup
+owed: normal quit and exact TEMP-copy removal after exit/path/PID checks.
+Unrelated editor/Blender untouched. New unrelated untracked docs/interiors-map-
+migration/ appeared during this turn; preserved byte-for-byte, excluded from
+R016 scope. README/architecture remain unchanged until native delivery passes.
+R014 approved4ms/original2ms misses/measurement limits/threading deferral and
+R015 Ivo movement/waits/conversation versus Edric/Helena actions/speech preserved.
+No approval rejection; scoped shell used after default sandbox setup failure.
+
+Historical attempts below retain original status/results.
+
+## R016 resumed after unlocked desktop (2026-10-10 UTC)
+
+User: "try again now it is unlocked". Fresh native writer session r016-20261010-b
+PID64496, exact release/pack/override hashes reverified. Desktop guard passes;
+startup world and actual pause captures produced, pause image inspected. R016
+In progress; all native criteria remain pending until verified. Historical failed
+locked-desktop attempt below retained. Only this task; no commit/push. Bounded
+allowlist extends to task-owned room-aware native walking/guidance and read-only
+restart/provenance audit tools as needed; no packaged runtime/content edits.
+
+## R016 Blocked — packages passed, native desktop unavailable (2026-10-10 UTC)
+
+Exactly R016 selected; R001-R015 Done, R016 Blocked. Every item throughR016
+complete:NO. No completion record/commit/push. [R016 incomplete acceptance](R016_ACCEPTANCE.md)
+owns14 intended paths, commands/isolation, hashes, retained failures and retry.
+Baseline HEAD4a2afda40c68f1bfc37ac3af06ebcad38ad313ae clean/empty index;
+source60c20eb2816e7271fb84afaba286af006ebe3ccf clean/read-only. No user changes.
+Only export preset metadata changes inside game; all accepted runtime/content/art
+and original source/geography/schema8/content1 bytes remain unchanged.
+
+Both presets include routine JSON. Fresh task-owned package builder/audit/native
+launch and guard fixtures reuse existing tools. Current R016 native paths require
+exact canonical EXE/PCK/override hashes, direct TEMP copy and matching task evidence;
+all PID/window/desktop/focus/client/input-release/reparse guards remain intact.
+R014 user-approved4ms ceiling/original2ms misses/measurement limits/threading
+deferral and R015 approved Ivo movement/waits/conversation versus Edric/Helena
+authored action/speech correction are preserved. README/architecture unchanged
+because native delivery remains unfinished. No source/normal-save writes.
+
+packages-20261010-012353-bfa9a577 PASS8, all exits0/no forbidden diagnostics:
+validation/debug and Desktop/release exports, packed routine/fishing audits,
+outside-checkout startup. Exact25 routines/two rooms/eight rigs/48portraits,
+production action clips/public social69/53/22/eight gifts/current schema/exclusions
+and shared live default director/eight actors pass. Prior packages copied and
+hash-verified under builds/day-clock-npc-routines/R016/<run>/previous-packages
+before promotion; original override preserved. Release builds/windows/ReturningFair.exe;
+validation builds/windows-validation/ReturningFairValidation.exe. EXE d34d36f3...,
+validation51498b72..., both PCK c9944be0...; full hashes in acceptance/results.
+
+Standalone guard PASS7, dispatcher PASS745. First dispatcher failure expected
+old guard message; real refusal was correct, failed directory retained, rerun fixes
+message and adds R016 positive/negative path coverage. Focused run012551316-109bdf2b
+PASS4: engine/parse/application smoke/routine-content848 assertions/228 refusals;
+zero diagnostics/exits0/source stable1309 files. Explicit per-check app-data/named
+primary-backup slots isolated under builds/testing/R016. Reference/preservation
+and final inventory/scope/link/process audit live under docs/evidence/R016.
+
+Native writer r016-20261010-a launched exact hashed outside-checkout TEMP copy,
+PID25216, isolated restart APPDATA/LOCALAPPDATA and original release override.
+First capture/pause request2e89691ddee3495f86de09f59a4bef9a refused BEFORE input:
+"Desktop locked or not Default; no input sent." Zero executed steps/PNGs,
+cleanup_errors empty/unreleased_keys empty/mouse_unreleased false. No image viewed.
+All subsequent native inputs stopped; no bridge/setup/bypass used. User asked to
+unlock Default desktop. This is capability blockage, not approval rejection.
+Owned PID identity verified/forcibly stopped; exit-1 retained and not accepted as
+normal native quit. Exact TEMP copy removed after exit and path checks. No owned
+Godot/window/held input/editor change/cleanup owed; unrelated processes untouched.
+
+Unrun: all native town/home/inn physical routes/returns/natural solo-group transition,
+talk/gift/Maris recovery, actual GUI Save/normal quit/new-PID Load/exact full typed
+snapshot/forecast/primary-backup oracle/physical remembered revisit/viewed captures.
+R015 full-day/deterministic evidence remains prerequisite evidence only.
+Next safe action: unlock Windows Default desktop, reverify current package/source
+hashes, then resume exactly R016 with a NEW writer session (failed writer has no
+save). Follow tools/routine_migration/DELIVERY.md; finish native gates before Done.
+No other task/eligible branch/successor exists. Remaining unfinished:R016 only.
+Default sandbox setup-refresh failed; scoped reviewed shell worked, no rejection.
+
 ## R015 Done - final handoff (2026-10-10 UTC)
 
 Exactly R015 completed; R001-R015 Done, R016 Pending. Every item throughR016

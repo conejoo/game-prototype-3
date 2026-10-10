@@ -6,3 +6,6 @@ README.md text eol=lf
 
 # R011 reviewed commit retains the overlay bytes under this nearer attribute file.
 dialogue_overlay.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# R016 package builder retains reviewed bytes under this nearer Python rule.
+build_packages.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
