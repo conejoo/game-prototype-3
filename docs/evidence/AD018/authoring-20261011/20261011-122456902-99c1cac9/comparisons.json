@@ -1,0 +1,294 @@
+{
+  "count": 18,
+  "pairs": [
+    {
+      "label": "maris-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/maris-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/maris-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "0e5215c056c639901ebc644ffe4f80b4dfd3c2c7828788f578899e69c5d00fbf",
+      "new_sha256": "63dc764062f75192b671100f3794806a2042050522b69eae62f287dac67f96b6"
+    },
+    {
+      "label": "maris-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/maris-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/maris-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "b4150bd2bf6e5827fce46ea1b07687306ef050fa8ce79bc44e78e52f4ff82bb4",
+      "new_sha256": "543e2ffb7b608c18f0a5674d87d0257b272861ddcb46eec7be591f0aca7b4f84"
+    },
+    {
+      "label": "dense-forest-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/dense-forest-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/dense-forest-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "3ac78c51e47e0fbb6cf1a9c191649714a715eaa14ab6f676ab6c52c8830d0f7c",
+      "new_sha256": "053a1e492b75edb36a61f352ed8bd5d0bb3f8b66dd1d440b9711c4b23031573c"
+    },
+    {
+      "label": "dense-forest-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/dense-forest-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/dense-forest-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "ba734c7898abfc38fb3b8e49b11540293926edfa84d67fde9a2bd3d4a8368a3a",
+      "new_sha256": "b126f9e2c43b90ab8a9d9a65381367b1b22f9e0e470771cbb357b0e9f350f827"
+    },
+    {
+      "label": "moonwell-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/moonwell-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/moonwell-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "e37e7e6ecdcb1af8f53828ee022afbb71565c516bb2030cc8e297fb2867cb7d4",
+      "new_sha256": "6493c676b94f3c21b3a1d841b23e3118c2c0a6d753a3398969b97c0888939816"
+    },
+    {
+      "label": "moonwell-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/moonwell-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/moonwell-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "dfcf860d48fb96dca8c4f625a97f3f13b43d8993d29808c96d91750ace0b76f0",
+      "new_sha256": "93693ee010f2b4a74dd60feef1dbbde12c17f0f33547ce4b36f19ce6eb431a3c"
+    },
+    {
+      "label": "bridge-west-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/bridge-west-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/bridge-west-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "229b83d2bb7e3646dea985fa6be0224d7a88f84a126564e866cbf4c01e0d7775",
+      "new_sha256": "a9dd233c21b4bca4a89cb207929b43e641ac261ec9df15cd962ad6b88e8e676b"
+    },
+    {
+      "label": "bridge-west-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/bridge-west-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/bridge-west-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "4ad1d8d693e33a5bb1e3200cfe852ac487d438f2faca1d0b22b90e13899e5271",
+      "new_sha256": "ebe069e7f297cf34137dbf5784eaf3d6876809a37e02384569771e22248aac7a"
+    },
+    {
+      "label": "ford-west-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/ford-west-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ford-west-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "968c03cc937c414e08132b49f1211913bd57a00c69aa13e710a0a6b77a80e48d",
+      "new_sha256": "d2372aa21e645b75ff7370a378b7b2d09112b5444b0cabed396c922b0532ec9f"
+    },
+    {
+      "label": "ford-west-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/ford-west-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ford-west-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "2d2295a35fec4622fb6794bacdc0860a2fe9c1696e699fa1836d384b2a60d8fa",
+      "new_sha256": "dad921008e7d00c0c212e0ad541039fdc64b728d6f8ea5437da06594c9ea135a"
+    },
+    {
+      "label": "maris-night-storm-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/maris-night-storm-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/maris-night-storm-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "b4081d48ebfe7abee3ecd35c1c50098e5e25282b1257af301b72d4c425933412",
+      "new_sha256": "30658ee9451655268cf32e3b321455cce7b76ada846f6cdc348edb2489ab96bc"
+    },
+    {
+      "label": "maris-night-storm-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/maris-night-storm-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/maris-night-storm-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": true,
+      "old_sha256": "613383786b25122a0d11983515790bfd689a96e5eb24df65f77b62b0beb290b4",
+      "new_sha256": "20dde237cb15b66f7b3a58894b988a1d3d086fe1d06867dc4534c7d508d9aa54"
+    },
+    {
+      "label": "home-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/home-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/home-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": false,
+      "old_sha256": "0c4ff038c0001e9d0eef44b9b25239e5339f9b6b6b76c6dfefc6dda6d979f01f",
+      "new_sha256": "655bed6da7cbf3485cd21f29ea85ee207485078f3b89d52f2151d9d8c40958bc"
+    },
+    {
+      "label": "home-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/home-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/home-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": false,
+      "old_sha256": "335d781aa5296898953f45d0697df1580e35d2ebfd16c968ae3d099458af755e",
+      "new_sha256": "13f681cee8e08891c1ae363f0c123c8b22949b525888112651061c37887cd8fa"
+    },
+    {
+      "label": "inn-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/inn-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/inn-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": false,
+      "old_sha256": "08f965e82f369492daaa39767acc955ff6cbc3eb894aa459a242b901afbfe35f",
+      "new_sha256": "47918364ea856aee5839b1028eea12534f3562ff230dce7d4e23fe60f1f7cc06"
+    },
+    {
+      "label": "inn-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/inn-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/inn-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": false,
+      "old_sha256": "2630ef526227268fac5917224c06c75eb1445eddd41de8e0b8b6b04198f9e870",
+      "new_sha256": "76834b5bd177805b34a72d80ab2113cd91268ec5a25bac2f6e44c4f6f53e7412"
+    },
+    {
+      "label": "tollworks-orthographic",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/tollworks-orthographic.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/tollworks-orthographic.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": false,
+      "old_sha256": "d9a36f5a7be35f6d55869175978abfcf40539f407f63fa6528008dcdb75e96a3",
+      "new_sha256": "8ecca7a53bbc7738417cfa4799bd63d53928b62e5d8741d47666aff3163b4681"
+    },
+    {
+      "label": "tollworks-perspective",
+      "old": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD001/20261011-044429132-895e7a0f/render/tollworks-perspective.png",
+      "new": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/tollworks-perspective.png",
+      "registration": {
+        "position": true,
+        "ally_position": true,
+        "camera": true,
+        "camera_transform": true,
+        "location": true,
+        "viewport_size": true
+      },
+      "environment_equal": false,
+      "old_sha256": "0c6f8658ac01c25d6705c4904ed4eb709e525d3bbe08df30c7af159a20c788e8",
+      "new_sha256": "1731aa5ce222d9617f5e69aea0f4c3d8f47ca66e70017730e8358bddd0400afe"
+    }
+  ],
+  "note": "Exact cameras/feet/size; changed materials/lighting/HUD intentional. Dynamic NPC/weather phase not pixel-identical. Indoor clock differs after movement but stable indoor profile remains."
+}

@@ -1,0 +1,338 @@
+{
+  "recorded_owned_pids": 66,
+  "running_count": 0,
+  "processes": [
+    {
+      "pid": 2620,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 3968,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 4596,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 6504,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 11148,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 11412,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 12388,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 12660,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 12784,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 13520,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 13664,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 15384,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 16316,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 18924,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 20212,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 21548,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 23468,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 24204,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 24364,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 24820,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 25264,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 25960,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 26836,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 27600,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 29796,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 30976,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 31128,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 32192,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 34580,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 35296,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 37356,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 37704,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 40268,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 41740,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 42356,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 42544,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 42980,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 44108,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 44188,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 44532,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 44720,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 44812,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 46168,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 46240,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 46588,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 46740,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 48220,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 48720,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 49224,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 50016,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 53012,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 53940,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 55024,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 56316,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 57556,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 58372,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 58388,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 59780,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 63008,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 65176,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 66440,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 66960,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 67104,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 68324,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 68756,
+      "running": false,
+      "name": null
+    },
+    {
+      "pid": 71080,
+      "running": false,
+      "name": null
+    }
+  ],
+  "no_held_input": true,
+  "note": "All successful input fixtures require released movement keys and final verified pause; runner handles own process tree. No editor/process-by-name termination."
+}

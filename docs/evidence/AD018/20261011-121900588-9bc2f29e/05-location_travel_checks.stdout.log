@@ -1,0 +1,42 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 27 definitions validated; player instance 'party-player' initialized.
+P004 expected placement rejection: ["spawn \'unsafe-no-floor\' has no safe floor for \'party-player\'", "spawn \'unsafe-no-floor\' has no safe floor for \'party-companion\'"]
+P004 expected placement rejection: ["spawn \'unsafe-blocked\' is obstructed for \'party-player\'", "spawn \'unsafe-blocked\' has no safe floor for \'party-companion\'", "spawn \'unsafe-blocked\' is obstructed for \'party-companion\'"]
+P001: Paused at play time 12.14s.
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=2
+P001: Resumed at play time 12.14s.
+P001: Paused at play time 12.24s.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=3
+P001: Resumed at play time 12.24s.
+P004 round trip 1 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=4
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=5
+P004 round trip 2 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=6
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=7
+P004 round trip 3 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=8
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=9
+P004 round trip 4 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=10
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=11
+P004 round trip 5 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=12
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=13
+P004 round trip 6 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=14
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=15
+P004 round trip 7 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=16
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=17
+P004 round trip 8 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=18
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=19
+P004 round trip 9 PASS; health=37; actor=95361697881
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=20
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=21
+P004 round trip 10 PASS; health=37; actor=95361697881
+P004 checks: PASS ΓÇö 10 round trips, stable identity/health/time, invalid IDs/anchors/gates, unsafe floor/obstruction rollback, input/reentry lock, pause/focus, grounded arrivals, stale room release.

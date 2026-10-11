@@ -1,0 +1,52 @@
+ERROR: Load did not lock synchronously
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Repeated save/load raced transaction
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Resume bypassed transaction
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Rollback input lock incorrect
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Ally-only failure did not isolate offset capsule
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Durable envelope changed: ["m017-ally-blocked", "alderwake-start"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Backup restore absent
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Durable envelope changed: backup
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Complete fixture rejected
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Durable envelope changed: roundtrip
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Durable envelope changed: once-only replay
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Retry prerequisite rejected
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)
+ERROR: Durable envelope changed: retry
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_save_checks.gd:80)

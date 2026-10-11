@@ -1,0 +1,58 @@
+[
+  {
+    "path": "art/direction/2026-10-10/01-painted-coastal-storybook.png",
+    "sha256": "57cbfbbaf4b011c0e393aa13f3fde3237a722dfd31be62c1e4dc50aa8bac6e8a"
+  },
+  {
+    "path": "art/direction/2026-10-10/02-graphic-cel-adventure.png",
+    "sha256": "e213999d0303a8484608c808c76c560ead04441f871dcddaf19d6519070dc227"
+  },
+  {
+    "path": "art/direction/2026-10-10/03-crafted-tabletop.png",
+    "sha256": "4d81528cbb1371b6aed047c562ade08811a1a1671388bd15d2cf97a0d0e5c4c4"
+  },
+  {
+    "path": "art/direction/2026-10-10/04-retro-pixel-3d.png",
+    "sha256": "bc496b4083133140e2361c4e8a0e565cc94ceae15a3beb4026c63428886c363e"
+  },
+  {
+    "path": "art/direction/2026-10-10/05-ink-and-wash.png",
+    "sha256": "849139f9295d9a9384d890dc748461b5a965eeabc1270831f6fa3a2675639215"
+  },
+  {
+    "path": "art/direction/2026-10-10/06-paper-collage.png",
+    "sha256": "26fef9c0a7ee115e2d5eacd3ea7fef4b9bde01977f187818dfdd2812e3295969"
+  },
+  {
+    "path": "art/direction/2026-10-10/07-soft-clay.png",
+    "sha256": "d5d8dd04d4f4c728311ba39f66adf906d6fcc4895560d2aee5516df400ce568c"
+  },
+  {
+    "path": "art/direction/2026-10-10/08-weathered-rustic.png",
+    "sha256": "70dc242922c75e26d3afd6deda03c0c27090a338d5bb11e9050994e441247dee"
+  },
+  {
+    "path": "art/direction/2026-10-10/prompts-round-02.json",
+    "sha256": "ccd0d0135a4226aa1c298adcd25bb386e43faed6707b4376b29d9c4f703ade14"
+  },
+  {
+    "path": "art/direction/2026-10-10/prompts.json",
+    "sha256": "d78ac034545829e9d6dbeb32c5528b36ff11c028e2bfd4c2aa59aa87e0cdd01c"
+  },
+  {
+    "path": "docs/interiors-map-migration/AGENT_PROMPT.md",
+    "sha256": "29bbbfd36afb3507c371773265fd1d249a2bf58aafd5c8a67f5364d85c9ae849"
+  },
+  {
+    "path": "docs/interiors-map-migration/CHECKLIST.md",
+    "sha256": "d9be3cb65f29e45f2ec299ae7bb3986005f9fbda6c1b0791d1b3b9595c0f22f9"
+  },
+  {
+    "path": "docs/interiors-map-migration/CONTRACT.md",
+    "sha256": "bcabb07426a3406d0696800da75423fb8e3d1bc187758921192803eea5fdb306"
+  },
+  {
+    "path": "docs/interiors-map-migration/CURRENT_STATE.md",
+    "sha256": "cc1b9c17462659c02b202ced14ee0af3d723511f480c4ec097363354c2390296"
+  }
+]

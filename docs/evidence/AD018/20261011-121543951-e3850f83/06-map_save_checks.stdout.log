@@ -1,0 +1,78 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=2
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=3
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=4
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=5
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-tollworks/tollworks-start; party=2; transition=6
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=7
+P005 load: Loaded saved run at arrival anchor.
+P005 save: ["save/load unavailable during transition"]
+P005 load: ["spawn \'unsafe-no-floor\' has no safe floor for \'party-player\'", "spawn \'unsafe-no-floor\' has no safe floor for \'party-companion\'"]
+P005 save: ["save/load unavailable during transition"]
+P005 load: ["spawn \'unsafe-blocked\' is obstructed for \'party-player\'", "spawn \'unsafe-blocked\' has no safe floor for \'party-companion\'", "spawn \'unsafe-blocked\' is obstructed for \'party-companion\'"]
+P005 load: ["invalid, duplicate or undeclared spawn \'alderwake-from-mayor-vale-home\'", "invalid, duplicate or undeclared spawn \'alderwake-from-lantern-rest\'", "wrong source/undeclared portal binding", "wrong source/undeclared portal binding", "wrong source/undeclared portal binding"]
+P005 save: OK
+P001: Resumed at play time 708.73s.
+P005 save: ["pause first; save/load only at stable pause boundary"]
+P001: Resumed at play time 708.74s.
+P005 save: ["pause first; save/load only at stable pause boundary"]
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=8
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=9
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=10
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=11
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=12
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=13
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=14
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=15
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=16
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=17
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=18
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=19
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=20
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=21
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=22
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=23
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=24
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=25
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=26
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=27
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=28
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=29
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=30
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=31
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=32
+P001: Paused at play time 708.99s.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=33
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=34
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=35
+P001: Paused at play time 708.73s.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=36
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-tollworks/tollworks-start; party=2; transition=37
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-tollworks/tollworks-start; party=2; transition=38
+P001: Paused at play time 708.73s.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=39
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=40
+P005 load: Loaded saved run at arrival anchor.
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=41
+P001: Paused at play time 708.73s.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=42
+P005 load: Loaded saved run at arrival anchor.
+Retry placement rejected: M009 expected navigation bake rejection
+P001: Paused at play time 708.73s.
+P001: Resumed at play time 708.73s.
+M017 checks: FAILED; current-schema fixtures=5; round trips=24; rejections=5; retries=5

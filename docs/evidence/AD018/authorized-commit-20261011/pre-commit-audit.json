@@ -1,0 +1,54 @@
+{
+  "validated_source_digest": "7d5fd7a3a68c505afa9b3f24b11ff6f09800bb253147f6deaa6530679b211fed",
+  "unexpected_changes": [],
+  "protected_tracked": 3542,
+  "protected_untracked": 14,
+  "final_capture_count": 113,
+  "validated_source_count": 1408,
+  "task": "AD018",
+  "starting_head": "87bee1ef8526311933ca0894994bc3aa87cf9904",
+  "all_through_AD020_complete": false,
+  "unfinished": [
+    "AD019",
+    "AD020"
+  ],
+  "blockers": [],
+  "runs": [
+    {
+      "status": "passed",
+      "run": "20261011-121900588-9bc2f29e",
+      "cases": 10
+    },
+    {
+      "status": "passed",
+      "run": "20261011-122456902-99c1cac9",
+      "cases": 5
+    },
+    {
+      "status": "passed",
+      "run": "20261011-122706940-cde18960",
+      "cases": 3
+    }
+  ],
+  "status": "passed",
+  "reviewed_task_paths": [
+    {
+      "path": "docs/art-direction-storybook/AD018_ACCEPTANCE.md",
+      "sha256": "94747ea29e18966879a6b18709d09b25aa6f3f987c77c292fade828a3c0993a7"
+    },
+    {
+      "path": "docs/art-direction-storybook/CHECKLIST.md",
+      "sha256": "e2913308fec5f41999454d5924d8a89a0acdb3eb324a45120508b3d5105870d8"
+    },
+    {
+      "path": "docs/art-direction-storybook/CURRENT_STATE.md",
+      "sha256": "fa6f08d8653730107af32d69ef0e781a3eecbcd2b19002260e719026a7fc59c9"
+    },
+    {
+      "path": "game/tests/art_direction_integration_render.gd",
+      "sha256": "11bf161a1f2f321762dc9ea175281734384f6269b8d53f9e14c5068a79caf90e"
+    }
+  ],
+  "mode": "authorized successful-task commit",
+  "index_unchanged": true
+}

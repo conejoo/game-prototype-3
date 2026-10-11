@@ -1,0 +1,1 @@
+Initial metric inherited AD008 strict gain for both hues. Failed ortho1.15: on cyan862/purple667; off cyan378/purple667. Purple already unobscured. No engine/source change; final metric requires no loss in either role plus strict total gain and retains all raw counts.

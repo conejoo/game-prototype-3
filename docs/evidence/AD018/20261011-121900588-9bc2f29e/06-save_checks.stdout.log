@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 27 definitions validated; player instance 'party-player' initialized.
+P005 save: ["pause first; save/load only at stable pause boundary"]
+P001: Paused at play time 0.01s.
+P005 save: ["save/load unavailable during transition"]
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=2
+P005 save: OK
+P001: Resumed at play time 42.50s.
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=3
+P001: Paused at play time 42.50s.
+P005 save: ["save/load unavailable during transition"]
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=4
+P005 load: Loaded saved run at arrival anchor.
+P005 load rejected: ["unsupported schema_version 99.0; supported 8; files left unchanged"]
+P005 load rejected: ["unsupported schema_version 1.0; supported 8; files left unchanged"]
+P005 load rejected: ["unsupported schema_version 2.0; supported 8; files left unchanged"]
+P005 load rejected: ["unsupported schema_version 3.0; supported 8; files left unchanged"]
+P005 load rejected: ["unsupported schema_version 4.0; supported 8; files left unchanged"]
+P005 load rejected: ["unsupported schema_version 5.0; supported 8; files left unchanged"]
+P005 load rejected: ["unsupported schema_version 6.0; supported 8; files left unchanged"]
+P005 load rejected: ["unsupported schema_version 7.0; supported 8; files left unchanged"]
+P005 load rejected: ["invalid save JSON at line 0: Expected \'true\', \'false\', or \'null\', got \'broken\'", "invalid save JSON at line 0: Expected \'true\', \'false\', or \'null\', got \'broken\'"]
+P005 load: ["spawn \'unsafe-no-floor\' has no safe floor for \'party-player\'", "spawn \'unsafe-no-floor\' has no safe floor for \'party-companion\'"]
+P005 load: ["spawn \'unsafe-blocked\' is obstructed for \'party-player\'", "spawn \'unsafe-blocked\' has no safe floor for \'party-companion\'", "spawn \'unsafe-blocked\' is obstructed for \'party-companion\'"]
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=5
+P005 load: Recovered backup. Primary left unchanged.
+P001: Resumed at play time 42.50s.
+P005 test files retained: D:/development/game-dev-blender/returning-fair-prototype/builds/testing/AD018/20261011-121900588-9bc2f29e/appdata/check-004/Godot/app_userdata/Returning Fair ΓÇö Prototype/saves/p005-checks-34580-991149
+P005 checks: PASS ΓÇö detached plain data, versions/IDs/types/health/size, checked IO, backup recovery/preservation, stable boundaries, atomic live restore and unsafe spawn rollback.

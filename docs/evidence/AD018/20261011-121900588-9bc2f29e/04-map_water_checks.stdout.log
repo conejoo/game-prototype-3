@@ -1,0 +1,32 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived candidate-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 27 definitions validated; player instance 'party-player' initialized.
+M014 candidate ready: {"crossings":{"bridge_clear_width_m":2.8,"bridge_rect":"[P: (95.0, -2.0), S: (6.0, 3.0)]","floor_y_m":0.0,"ford_rect":"[P: (67.0, 11.0), S: (7.0, 3.0)]"},"decorations":{"cell_size_m":1.0,"counts":{"raw:tiles/decor/driftwood_overlay_01.png":1,"raw:tiles/decor/driftwood_overlay_02.png":6,"raw:tiles/decor/flower_overlay_01.png":12,"raw:tiles/decor/flower_overlay_02.png":12,"raw:tiles/decor/flower_overlay_03.png":8,"raw:tiles/decor/grass_tuft_overlay_01.png":19,"raw:tiles/decor/grass_tuft_overlay_02.png":19,"raw:tiles/decor/lily_pad_overlay_01.png":13,"raw:tiles/decor/lily_pad_overlay_02.png":11,"raw:tiles/decor/pebble_cluster_overlay_01.png":9,"raw:tiles/decor/pebble_cluster_overlay_02.png":9,"raw:tiles/decor/reed_overlay_01.png":11,"raw:tiles/decor/reed_overlay_02.png":12,"raw:tiles/decor/river_stone_overlay_01.png":13,"raw:tiles/decor/river_stone_overlay_02.png":4,"raw:tiles/decor/weed_overlay_01.png":12,"raw:tiles/decor/weed_overlay_02.png":12},"rectangle_count":183,"visible":true},"elevation":{"cells":472,"cliffs":238,"height_per_level_m":0.25,"ramps":16},"forest":{"blocking_footprints":411,"inert_data_records":85,"markers":6,"props":412,"sizes":{"large":64,"small":65,"standard":266},"species":{"alder":70,"birch":37,"cherry":22,"maple":36,"oak":38,"pine":48,"rowan":36,"spruce":60,"willow":48}},"ground":{"cell_size_m":0.5,"counts":{"grass":47040},"rectangle_count":160,"visible":true},"landmark_art":{"instances":7,"kit_meshes":5,"landmark_ids":["moonwood-footbridge","moonwell-prop","future-exit-gate-prop"]},"landscape":{"runtime_source_images_reused":0,"semantic_mask_size":[294,160],"water_vertex_motion":false,"world_space_materials":true},"limits":"M014 landmark/town/tree/landscape art; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only.","shoreline-details":{"cell_size_m":0.5,"counts":{"wet_shoreline":156},"rectangle_count":55,"visible":true},"terrain":{"cell_size_m":0.5,"counts":{"cobblestone":1113,"dirt":2851,"sand":1140,"water":8374},"rectangle_count":758,"visible":true},"town":{"authored_colliders":11,"blocking_footprints":55,"inert_portal_pads":6,"props":56},"town_art":{"deck_modules":215,"kit_meshes":16,"quay_cells":165,"structure_ids":24},"tree_art":{"chunk_size_m":32.0,"kit_variants":21,"spatial_batches":106,"tree_ids":395},"water":{"authored_half_metre_cells":8766,"authored_records":90,"closed_exit":true,"dock_cutout_count":7,"union_half_metre_cells":8598}}
+M004/M006 authored blockers: 91 water=90 authored cells=8766 effective cells=8598 approved dock cells=168
+M004 occupied cells=8598 exposed-edge capsule sweeps=4027 spacing<=0.1m
+M004 dry nav polygons=6336 water center min horizontal distance=0.74989986419678 dry start=(0.0, 0.05, 0.0)
+M004 actual hero bridge-north dodge=false feet=(98.5, 0.0, -1.54974)
+M004 actual hero bridge-north dodge=true feet=(98.5, 0.0, -1.549479)
+M004 actual hero bridge-south dodge=false feet=(98.5, 0.0, 0.55)
+M004 actual hero bridge-south dodge=true feet=(98.5, 0.0, 0.549479)
+M004 actual hero ford-north dodge=false feet=(70.5, 0.0, 11.36667)
+M004 actual hero ford-north dodge=true feet=(70.5, 0.0, 11.35058)
+M004 actual hero ford-south dodge=false feet=(70.5, 0.0, 13.63333)
+M004 actual hero ford-south dodge=true feet=(70.5, 0.0, 13.64942)
+M004 actual hero bridge-row-seam dodge=false feet=(96.64973, 0.0, -3.0)
+M004 actual hero bridge-row-seam dodge=true feet=(96.64941, 0.0, -3.0)
+M004 actual hero ford-row-corner dodge=false feet=(68.64997, 0.0, 14.6499)
+M004 actual hero ford-row-corner dodge=true feet=(68.64991, 0.0, 14.64991)
+M004 actual hero basin-west dodge=false feet=(27.63335, 0.0, 25.0)
+M004 actual hero basin-west dodge=true feet=(27.64941, 0.0, 25.0)
+M004 actual hero lake-tip dodge=false feet=(114.5, 0.0, -16.34999)
+M004 actual hero lake-tip dodge=true feet=(114.5, 0.0, -16.35059)
+M004 actual hero south-shore dodge=false feet=(-10.0, 0.0, 13.43099)
+M004 actual hero south-shore dodge=true feet=(-10.0, 0.0, 13.43099)
+M004 actual hero water-perimeter-seam dodge=false feet=(-21.64142, 0.0, 15.6499)
+M004 actual hero water-perimeter-seam dodge=true feet=(-21.64906, -0.0, 15.64992)
+M004 actual hero closed-east-gate dodge=false feet=(122.6333, 0.0, -7.0)
+M004 actual hero closed-east-gate dodge=true feet=(122.6494, 0.0, -7.0)
+M004 map_water_checks PASS: authored inventory/registration, water union, capsule edges/seams, four negative probes, actual walk/dodge, floor/bounds/gate, dry navigation, opening/party clearance

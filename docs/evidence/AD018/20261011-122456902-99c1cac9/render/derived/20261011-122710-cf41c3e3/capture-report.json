@@ -1,0 +1,4478 @@
+{
+  "schema_version": 2,
+  "status": "ready-for-visual-review",
+  "source_failures": [],
+  "count": 10,
+  "views": [
+    {
+      "ally_position": [
+        1.4148359298706055,
+        0.0,
+        -1.5851640701293945
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 1,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (11.96588, 14.0, 15.90018)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 7.586899833766199,
+        "consumer_count": 0,
+        "day_cycle_progress": 0.005268680440115416,
+        "day_index": 0,
+        "emitter_count": 0,
+        "light_source_overrides": [],
+        "lighting_profile": 0,
+        "sources": [
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "10:07 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-home-stop-0",
+      "location": "prototype-mayor-vale-home",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-home-stop-0.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        1.9658781290054321,
+        0.0,
+        -0.09981536120176315
+      ],
+      "prompt": "E near south home exit",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": []
+            }
+          }
+        },
+        "elapsed_play_seconds": 3.16120826406926,
+        "environment": {
+          "day_cycle_progress": 0.005268680440115416,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-mayor-vale-home",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "mayor-vale-home-from-alderwake",
+        "world_item_placements": []
+      },
+      "sun_energy": 1.100000023841858,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "321ddaf3a4723bc4850df1fde35ef872b491605cb8a3be67de48da0ab71cdd71"
+    },
+    {
+      "ally_position": [
+        -1.1892987489700317,
+        0.0,
+        -1.4998148679733276
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 0,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (6.585192, 14.0, 16.13821)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 12.276228024242535,
+        "consumer_count": 0,
+        "day_cycle_progress": 0.008525158350168427,
+        "day_index": 0,
+        "emitter_count": 0,
+        "light_source_overrides": [],
+        "lighting_profile": 0,
+        "sources": [
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "10:12 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-home-stop-1",
+      "location": "prototype-mayor-vale-home",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-home-stop-1.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        -3.4148077964782715,
+        0.0,
+        0.13820746541023254
+      ],
+      "prompt": "E near south home exit",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": []
+            }
+          }
+        },
+        "elapsed_play_seconds": 5.115095010101105,
+        "environment": {
+          "day_cycle_progress": 0.008525158350168427,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-mayor-vale-home",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "mayor-vale-home-from-alderwake",
+        "world_item_placements": []
+      },
+      "sun_energy": 1.100000023841858,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "59874f7afc55d7a5a5fb7409109a297da0f2026558414ae09ffbe49824272fe2"
+    },
+    {
+      "ally_position": [
+        -0.42502766847610474,
+        0.0,
+        -7.335451126098633
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 0,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (7.136744, 14.0, 9.214067)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 19.86289469090949,
+        "consumer_count": 0,
+        "day_cycle_progress": 0.013793676868687146,
+        "day_index": 0,
+        "emitter_count": 0,
+        "light_source_overrides": [],
+        "lighting_profile": 0,
+        "sources": [
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "10:19 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-home-stop-2",
+      "location": "prototype-mayor-vale-home",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-home-stop-2.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        -2.863255262374878,
+        0.0,
+        -6.7859320640563965
+      ],
+      "prompt": "E near south home exit",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": []
+            }
+          }
+        },
+        "elapsed_play_seconds": 8.276206121212368,
+        "environment": {
+          "day_cycle_progress": 0.013793676868687146,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-mayor-vale-home",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "mayor-vale-home-from-alderwake",
+        "world_item_placements": []
+      },
+      "sun_energy": 1.100000023841858,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "124800358fa8ace3092b3fa322739f399260475859b0986743ae5537e3d6f897"
+    },
+    {
+      "ally_position": [
+        3.323099136352539,
+        0.0,
+        -7.737576484680176
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 0,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (14.44043, 14.00094, 9.354567)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 25.254990327272985,
+        "consumer_count": 0,
+        "day_cycle_progress": 0.017538187727272905,
+        "day_index": 0,
+        "emitter_count": 0,
+        "light_source_overrides": [],
+        "lighting_profile": 0,
+        "sources": [
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "10:25 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-home-stop-3",
+      "location": "prototype-mayor-vale-home",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-home-stop-3.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        4.440428733825684,
+        0.0009404230513609946,
+        -6.64543342590332
+      ],
+      "prompt": "E near south home exit",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": []
+            }
+          }
+        },
+        "elapsed_play_seconds": 10.522912636364275,
+        "environment": {
+          "day_cycle_progress": 0.017538187727272905,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-mayor-vale-home",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "mayor-vale-home-from-alderwake",
+        "world_item_placements": []
+      },
+      "sun_energy": 1.100000023841858,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "0aa51fdadc3c8259276092149ba4ea291ea269a876b9b0c45cde2814bb2ec4d7"
+    },
+    {
+      "ally_position": [
+        5.0,
+        0.0,
+        -4.599999904632568
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 0,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (14.0, 14.0, 11.4)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 33.68349236363561,
+        "consumer_count": 23,
+        "day_cycle_progress": 0.023391314141413617,
+        "day_index": 0,
+        "emitter_count": 8,
+        "light_source_overrides": [],
+        "lighting_profile": 1,
+        "sources": [
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "enabled": false,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "enabled": false,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": true,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "enabled": false,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "enabled": false,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": true,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": true,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "10:33 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-home-returned",
+      "location": "prototype-alderwake",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-home-returned.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        4.0,
+        0.0,
+        -4.599999904632568
+      ],
+      "prompt": "E near villagers on daily rounds / Maris Chandlery / Vale home / Lantern Rest / purple station / forest Tollworks entrance",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": []
+            }
+          }
+        },
+        "elapsed_play_seconds": 14.034788484849763,
+        "environment": {
+          "day_cycle_progress": 0.023391314141413617,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-alderwake",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "alderwake-from-mayor-vale-home",
+        "world_item_placements": []
+      },
+      "sun_energy": 0.9785224795341492,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "356d959c48ea21b98f6d66b2b86d28a4d22e76297af176109b4b531e602483f5"
+    },
+    {
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 0,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "controls_enabled": false,
+      "conversation": {
+        "can_close": true,
+        "can_continue": false,
+        "choices": [
+          {
+            "available": true,
+            "id": "npc-14-careful-response",
+            "reason": "",
+            "text": "Thank you. I will leave space for the other guests."
+          },
+          {
+            "available": true,
+            "id": "npc-14-passing-response",
+            "reason": "",
+            "text": "I am getting to know the town."
+          }
+        ],
+        "facts": [
+          {
+            "description": "Della Pike is the innkeeper at Lantern Rest, welcoming visitors and neighbors to its meal room.",
+            "highlight_term": "innkeeper",
+            "id": "npc-14-public-role",
+            "label": "Innkeeper"
+          }
+        ],
+        "gift_feedback": "",
+        "graph_id": "npc-14",
+        "instance_id": "della-inn-host-01",
+        "memory": {
+          "affinity": 0,
+          "applied_choice_ids": [],
+          "flags": [],
+          "learned_fact_ids": [
+            "npc-14-public-role"
+          ],
+          "level": 0,
+          "npc_id": "npc-14",
+          "seen_node_ids": [
+            "npc-14-introduction"
+          ]
+        },
+        "node_id": "npc-14-introduction",
+        "npc_id": "npc-14",
+        "portrait_id": "official-neutral",
+        "portrait_path": "res://assets/npcs/portraits/npc-14/official-neutral.png",
+        "presentation_index": 0,
+        "revealed_fact_ids": [
+          "npc-14-public-role"
+        ],
+        "routine_chat": false,
+        "selected_choice_id": "",
+        "social": {
+          "affinity": 0,
+          "level": 0,
+          "level_label": "Acquaintance",
+          "moonflowers": 0,
+          "threshold": 3
+        },
+        "speaker": "Della Pike",
+        "text": "Della Pike, **innkeeper** at Lantern Rest. Questions and quiet company are welcome here in the meal room. Paid rooms, booking and sleep are unavailable in this prototype.",
+        "token": "-9223371933305796531:2:0"
+      },
+      "dialogue_modal_verified": true,
+      "display": {
+        "can_close": true,
+        "can_continue": false,
+        "choices": [
+          {
+            "available": true,
+            "id": "npc-14-careful-response",
+            "reason": "",
+            "text": "Thank you. I will leave space for the other guests."
+          },
+          {
+            "available": true,
+            "id": "npc-14-passing-response",
+            "reason": "",
+            "text": "I am getting to know the town."
+          }
+        ],
+        "facts": [
+          {
+            "description": "Della Pike is the innkeeper at Lantern Rest, welcoming visitors and neighbors to its meal room.",
+            "highlight_term": "innkeeper",
+            "id": "npc-14-public-role",
+            "label": "Innkeeper"
+          }
+        ],
+        "gift_feedback": "",
+        "graph_id": "npc-14",
+        "instance_id": "della-inn-host-01",
+        "memory": {
+          "affinity": 0,
+          "applied_choice_ids": [],
+          "flags": [],
+          "learned_fact_ids": [
+            "npc-14-public-role"
+          ],
+          "level": 0,
+          "npc_id": "npc-14",
+          "seen_node_ids": [
+            "npc-14-introduction"
+          ]
+        },
+        "node_id": "npc-14-introduction",
+        "npc_id": "npc-14",
+        "portrait_id": "official-neutral",
+        "portrait_path": "res://assets/npcs/portraits/npc-14/official-neutral.png",
+        "presentation_index": 0,
+        "revealed_fact_ids": [
+          "npc-14-public-role"
+        ],
+        "routine_chat": false,
+        "selected_choice_id": "",
+        "social": {
+          "affinity": 0,
+          "level": 0,
+          "level_label": "Acquaintance",
+          "moonflowers": 0,
+          "threshold": 3
+        },
+        "speaker": "Della Pike",
+        "text": "Della Pike, **innkeeper** at Lantern Rest. Questions and quiet company are welcome here in the meal room. Paid rooms, booking and sleep are unavailable in this prototype.",
+        "token": "-9223371933305796531:2:0"
+      },
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 51.323125773172414,
+        "consumer_count": 0,
+        "day_cycle_progress": 0.035641059564703065,
+        "day_index": 0,
+        "emitter_count": 0,
+        "light_source_overrides": [],
+        "lighting_profile": 0,
+        "sources": [
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "10:51 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "focus": "/root/GameRoot/UI/Screen/DialogueOverlay/Center/Panel/@MarginContainer@4/@VBoxContainer@5/@HBoxContainer@8/@VBoxContainer@16/@ScrollContainer@22/@VBoxContainer@23/npc-14-careful-response",
+      "frame_post_draw_verified": true,
+      "inventory": {
+        "active_item_id": null,
+        "item_counts": {}
+      },
+      "kind": "debug-input",
+      "label": "ordinary-inn-host-dialogue",
+      "location": "prototype-lantern-rest",
+      "mode": "dialogue",
+      "note": "AD018 fresh public inn entry, actual WASD/E host; no placement/fact/time/affinity setup",
+      "ok": true,
+      "overlay": true,
+      "panel_fits": true,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-inn-host-dialogue.png",
+      "pause_overlay_verified": false,
+      "paused": false,
+      "position": [
+        -6.003421306610107,
+        0.0,
+        -10.672823905944824
+      ],
+      "prompt": "Dialogue open \u00b7 Esc: close",
+      "settled_frames": 4,
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [
+                "npc-14-public-role"
+              ],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": [
+                "npc-14-introduction"
+              ]
+            }
+          }
+        },
+        "elapsed_play_seconds": 21.384635738822226,
+        "environment": {
+          "day_cycle_progress": 0.035641059564703065,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-lantern-rest",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "lantern-rest-from-alderwake",
+        "world_item_placements": []
+      },
+      "started_ticks_msec": 26301,
+      "state_verified": true,
+      "ticks_msec": 26338,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "window_focused": true,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "b547aa16589421095ce7ecef5d30a336c7ad7ee497b4eb007944aea2e274b23a"
+    },
+    {
+      "ally_position": [
+        -5.232848167419434,
+        0.0,
+        -9.241350173950195
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 0,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (3.996579, 14.0, 5.327176)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 51.35099537317241,
+        "consumer_count": 0,
+        "day_cycle_progress": 0.03566041345359195,
+        "day_index": 0,
+        "emitter_count": 0,
+        "light_source_overrides": [],
+        "lighting_profile": 0,
+        "sources": [
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "10:51 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-inn-stop-0",
+      "location": "prototype-lantern-rest",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-inn-stop-0.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        -6.003421306610107,
+        0.0,
+        -10.672823905944824
+      ],
+      "prompt": "E: Talk to Della Pike",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [
+                "npc-14-public-role"
+              ],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": [
+                "npc-14-introduction"
+              ]
+            }
+          }
+        },
+        "elapsed_play_seconds": 21.396248072155558,
+        "environment": {
+          "day_cycle_progress": 0.03566041345359195,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-lantern-rest",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "lantern-rest-from-alderwake",
+        "world_item_placements": []
+      },
+      "sun_energy": 1.100000023841858,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "a9ef41d7846c63af13190a69ea7a5daacdbfabc3c288edf5ab125389ea507433"
+    },
+    {
+      "ally_position": [
+        -6.294514179229736,
+        0.0,
+        -8.0822114944458
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 1,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (3.097542, 14.0, 10.9001)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 55.234771601744896,
+        "consumer_count": 0,
+        "day_cycle_progress": 0.03835748027898951,
+        "day_index": 0,
+        "emitter_count": 0,
+        "light_source_overrides": [],
+        "lighting_profile": 0,
+        "sources": [
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "10:55 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-inn-stop-1",
+      "location": "prototype-lantern-rest",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-inn-stop-1.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        -6.9024577140808105,
+        0.0,
+        -5.09990119934082
+      ],
+      "prompt": "E near Della / south inn exit",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [
+                "npc-14-public-role"
+              ],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": [
+                "npc-14-introduction"
+              ]
+            }
+          }
+        },
+        "elapsed_play_seconds": 23.014488167394433,
+        "environment": {
+          "day_cycle_progress": 0.03835748027898951,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-lantern-rest",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "lantern-rest-from-alderwake",
+        "world_item_placements": []
+      },
+      "sun_energy": 1.100000023841858,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "f32fe728178421a82a51820e7f91662d1daa5ad13447ae0cf69bde0dfbb1896e"
+    },
+    {
+      "ally_position": [
+        4.352466583251953,
+        0.0,
+        -4.080334186553955
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 1,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (15.89915, 14.0, 12.01592)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 63.667865316033364,
+        "consumer_count": 0,
+        "day_cycle_progress": 0.044213795358356504,
+        "day_index": 0,
+        "emitter_count": 0,
+        "light_source_overrides": [],
+        "lighting_profile": 0,
+        "sources": [
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": false,
+            "enabled": false,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "default_enabled": true,
+            "enabled": true,
+            "location_id": "prototype-alderwake",
+            "presented": false,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "11:03 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-inn-stop-2",
+      "location": "prototype-lantern-rest",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-inn-stop-2.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        5.899148464202881,
+        0.0,
+        -3.984076976776123
+      ],
+      "prompt": "E near Della / south inn exit",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [
+                "npc-14-public-role"
+              ],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": [
+                "npc-14-introduction"
+              ]
+            }
+          }
+        },
+        "elapsed_play_seconds": 26.528277215015176,
+        "environment": {
+          "day_cycle_progress": 0.044213795358356504,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-lantern-rest",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "lantern-rest-from-alderwake",
+        "world_item_placements": []
+      },
+      "sun_energy": 1.100000023841858,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "417459c8c92deb8872832c5e00f45dfeac65eb950695aba487c8c9ab56b5c2d6"
+    },
+    {
+      "ally_position": [
+        -10.5,
+        0.0,
+        4.5
+      ],
+      "camera": {
+        "fov": 45.0,
+        "move_back": [
+          0.5299989581108093,
+          0.0,
+          0.847998321056366
+        ],
+        "move_right": [
+          0.8479982614517212,
+          0.0,
+          -0.5299989581108093
+        ],
+        "projection": 1,
+        "size": 18.0,
+        "zoom_factor": 1.0
+      },
+      "camera_transform": "[X: (0.847998, 0.0, -0.529999), Y: (-0.315816, 0.803074, -0.505305), Z: (0.425628, 0.59588, 0.681005), O: (-1.5, 14.0, 20.5)]",
+      "engine": "4.7.2-stable (official)",
+      "engine_pid": 67104,
+      "environment": {
+        "absolute_minutes": 68.7792589160352,
+        "consumer_count": 23,
+        "day_cycle_progress": 0.047763374247246665,
+        "day_index": 0,
+        "emitter_count": 8,
+        "light_source_overrides": [],
+        "lighting_profile": 1,
+        "sources": [
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "alder-rise-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "alder-rise-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-02",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-03",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-04",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": false,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-lamp-05",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-luminous-nets-01",
+            "source_id": "woven-lights",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "enabled": false,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-home-03-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "enabled": false,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-home-04-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": true,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "dock-row-lamp-01",
+            "source_id": "lantern",
+            "switchable": true
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "lantern-rest-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "mayor-vale-home-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "enabled": false,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "mill-road-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "mill-road-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "moonwood-edge-home-01-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": false,
+            "default_enabled": false,
+            "emission_energy": 0.0,
+            "enabled": false,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "moonwood-edge-home-02-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "reed-chandlery-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": true,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "safeguard-waylight-east-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "emitter_visible": false,
+            "enabled": true,
+            "has_emitter": true,
+            "intensity": 0.0,
+            "light_energy": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "safeguard-waylight-west-01",
+            "source_id": "answer-light",
+            "switchable": false
+          },
+          {
+            "consumer_enabled": true,
+            "default_enabled": true,
+            "emission_energy": 0.0,
+            "enabled": true,
+            "has_emitter": false,
+            "intensity": 0.0,
+            "location_id": "prototype-alderwake",
+            "presented": true,
+            "prop_id": "tess-general-goods-exterior-building",
+            "source_id": "windows",
+            "switchable": false
+          }
+        ],
+        "time": "11:08 AM",
+        "weather": {
+          "blend": 1.0,
+          "condition": 0,
+          "end": 264,
+          "heavy_rain": false,
+          "period": 0,
+          "previous": 0,
+          "start": 0
+        },
+        "weather_seed": 4008348220
+      },
+      "kind": "debug-input",
+      "label": "ordinary-inn-returned",
+      "location": "prototype-alderwake",
+      "note": "AD018 fresh ordinary input",
+      "ok": true,
+      "overlay": false,
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\ordinary-inn-returned.png",
+      "pause_overlay_verified": true,
+      "paused": true,
+      "position": [
+        -11.5,
+        0.0,
+        4.5
+      ],
+      "prompt": "E near villagers on daily rounds / Maris Chandlery / Vale home / Lantern Rest / purple station / forest Tollworks entrance",
+      "snapshot": {
+        "actors": [
+          {
+            "definition_id": "prototype-hero",
+            "health": 100,
+            "instance_id": "party-player"
+          },
+          {
+            "definition_id": "prototype-companion",
+            "health": 100,
+            "instance_id": "party-companion"
+          }
+        ],
+        "collected_resource_ids": [],
+        "completed_effect_ids": [],
+        "content_version": 1,
+        "conversations": {
+          "events": {
+            "facts": [],
+            "last_sequence": 0
+          },
+          "people": {
+            "npc-01": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-01",
+              "seen_node_ids": []
+            },
+            "npc-02": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-02",
+              "seen_node_ids": []
+            },
+            "npc-03": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-03",
+              "seen_node_ids": []
+            },
+            "npc-04": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-04",
+              "seen_node_ids": []
+            },
+            "npc-06": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-06",
+              "seen_node_ids": []
+            },
+            "npc-07": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-07",
+              "seen_node_ids": []
+            },
+            "npc-08": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [],
+              "level": 0,
+              "npc_id": "npc-08",
+              "seen_node_ids": []
+            },
+            "npc-14": {
+              "affinity": 0,
+              "applied_choice_ids": [],
+              "flags": [],
+              "learned_fact_ids": [
+                "npc-14-public-role"
+              ],
+              "level": 0,
+              "npc_id": "npc-14",
+              "seen_node_ids": [
+                "npc-14-introduction"
+              ]
+            }
+          }
+        },
+        "elapsed_play_seconds": 28.65802454834924,
+        "environment": {
+          "day_cycle_progress": 0.047763374247246665,
+          "day_index": 0,
+          "weather_seed": 4008348220
+        },
+        "inventory": {
+          "active_item_id": null,
+          "item_counts": {}
+        },
+        "light_source_overrides": [],
+        "location_id": "prototype-alderwake",
+        "party_member_ids": [
+          "party-player",
+          "party-companion"
+        ],
+        "player_instance_id": "party-player",
+        "progression": {
+          "upgrade_ids": []
+        },
+        "quests": {
+          "prototype-maris-recovery": []
+        },
+        "relationship": {
+          "companion_id": "prototype-companion",
+          "reaction_ids": [],
+          "trust": 0
+        },
+        "routine_facts": {
+          "authored_event_ids": [],
+          "suppressed_routine_ids": []
+        },
+        "schema_version": 8,
+        "spawn_id": "alderwake-from-lantern-rest",
+        "world_item_placements": []
+      },
+      "sun_energy": 0.9742665886878967,
+      "viewport_size": [
+        960,
+        640
+      ],
+      "mode": "pause",
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\integration-rooms-index.json",
+      "sha256": "3c07c7d195da5398b4635efc04ae108adadb3f870c93432521cdb26f69e6322d"
+    }
+  ],
+  "contact_sheets": [
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\20261011-122456902-99c1cac9\\render\\derived\\20261011-122710-cf41c3e3\\contact-01.png"
+  ]
+}

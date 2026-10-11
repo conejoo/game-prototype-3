@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.03s.
+P001: Resumed at play time 0.03s.
+M016 camera: samples=330 error=0.00000769120834 old_plane=1.17559814453125 terrain_occluded=18 failures=[]

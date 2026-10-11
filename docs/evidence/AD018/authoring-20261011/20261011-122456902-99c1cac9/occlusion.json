@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "pairs": [
+    {
+      "projection": "ortho",
+      "zoom": "0_8",
+      "on_role_pixels": {
+        "cyan": 1783,
+        "purple": 1397
+      },
+      "off_role_pixels": {
+        "cyan": 794,
+        "purple": 1363
+      },
+      "roi": [
+        390,
+        230,
+        570,
+        370
+      ]
+    },
+    {
+      "projection": "ortho",
+      "zoom": "1_15",
+      "on_role_pixels": {
+        "cyan": 862,
+        "purple": 667
+      },
+      "off_role_pixels": {
+        "cyan": 378,
+        "purple": 667
+      },
+      "roi": [
+        390,
+        230,
+        570,
+        370
+      ]
+    },
+    {
+      "projection": "persp",
+      "zoom": "0_8",
+      "on_role_pixels": {
+        "cyan": 1621,
+        "purple": 1638
+      },
+      "off_role_pixels": {
+        "cyan": 553,
+        "purple": 1450
+      },
+      "roi": [
+        390,
+        230,
+        570,
+        370
+      ]
+    },
+    {
+      "projection": "persp",
+      "zoom": "1_15",
+      "on_role_pixels": {
+        "cyan": 753,
+        "purple": 750
+      },
+      "off_role_pixels": {
+        "cyan": 279,
+        "purple": 663
+      },
+      "roi": [
+        390,
+        230,
+        570,
+        370
+      ]
+    }
+  ],
+  "note": "Existing AD003/AD008 fixed central lit-hue discrimination, not whole silhouette segmentation."
+}

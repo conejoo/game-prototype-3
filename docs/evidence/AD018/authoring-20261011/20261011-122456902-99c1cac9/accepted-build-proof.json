@@ -1,0 +1,8 @@
+{
+  "protected_files": 1407,
+  "all_match": true,
+  "new_paths": [
+    "game/tests/art_direction_integration_render.gd"
+  ],
+  "note": "AD017 final accepted production/test bytes unchanged; new AD018 fixture only. Legacy failed fixtures were original accepted checkout bytes."
+}

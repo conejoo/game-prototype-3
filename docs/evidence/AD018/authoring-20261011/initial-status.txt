@@ -1,0 +1,6 @@
+ M docs/art-direction-storybook/CHECKLIST.md
+?? art/direction/
+?? docs/art-direction-storybook/AGENT_PROMPT.md
+?? docs/art-direction-storybook/CONTRACT.md
+?? docs/interiors-map-migration/
+?? game/tests/art_direction_integration_render.gd

@@ -1,0 +1,65 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=2
+P005 load: Loaded saved run at arrival anchor.
+P005 save: OK
+P001: Resumed at play time 714.54s.
+P001: Paused at play time 714.54s.
+P005 load: ["spawn \'mayor-vale-home-from-alderwake\' is obstructed for \'party-player\'"]
+P005 load rejected: ["unsupported schema_version 7.0; supported 8; files left unchanged"]
+P005 load rejected: ["unsupported schema_version 9.0; supported 8; files left unchanged"]
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=3
+P005 load: Recovered backup. Primary left unchanged.
+P005 save: OK
+P001: Paused at play time 714.54s.
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=4
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=5
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=6
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=7
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=8
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=9
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=10
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=11
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=12
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=13
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=14
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=15
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=16
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=17
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=18
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=19
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=20
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=21
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=22
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=23
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=24
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=25
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=26
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=27
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=28
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=29
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=30
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=31
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=32
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=33
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=34
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=35
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=36
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=37
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=38
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=39
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=40
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=41
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=42
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=43
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=44
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=45
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=46
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=47
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=48
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=49
+R014 routine-lifecycle.json assertions=783 failures=0

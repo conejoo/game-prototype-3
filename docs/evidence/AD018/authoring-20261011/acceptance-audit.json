@@ -1,0 +1,521 @@
+{
+  "status": "passed",
+  "task": "AD018",
+  "task_paths": [
+    {
+      "path": "docs/art-direction-storybook/AD018_ACCEPTANCE.md",
+      "sha256": "94747ea29e18966879a6b18709d09b25aa6f3f987c77c292fade828a3c0993a7"
+    },
+    {
+      "path": "docs/art-direction-storybook/CHECKLIST.md",
+      "sha256": "e2913308fec5f41999454d5924d8a89a0acdb3eb324a45120508b3d5105870d8"
+    },
+    {
+      "path": "docs/art-direction-storybook/CURRENT_STATE.md",
+      "sha256": "fa6f08d8653730107af32d69ef0e781a3eecbcd2b19002260e719026a7fc59c9"
+    },
+    {
+      "path": "game/tests/art_direction_integration_render.gd",
+      "sha256": "11bf161a1f2f321762dc9ea175281734384f6269b8d53f9e14c5068a79caf90e"
+    }
+  ],
+  "initial_tracked": 3544,
+  "protected_tracked": 3542,
+  "protected_untracked": 14,
+  "unexpected_changes": [],
+  "source_files": 1408,
+  "source_digest": "7d5fd7a3a68c505afa9b3f24b11ff6f09800bb253147f6deaa6530679b211fed",
+  "accepted_AD017_inputs": 1407,
+  "runs": {
+    "20261011-121900588-9bc2f29e": {
+      "cases": 10,
+      "status": "passed",
+      "source_digest": "4348a4628fb2b71f06b6e794e1e2e4fdae2001e8c8f73b007879c646caf4131c"
+    },
+    "20261011-122456902-99c1cac9": {
+      "cases": 5,
+      "status": "passed",
+      "source_digest": "7d5fd7a3a68c505afa9b3f24b11ff6f09800bb253147f6deaa6530679b211fed"
+    },
+    "20261011-122706940-cde18960": {
+      "cases": 3,
+      "status": "passed",
+      "source_digest": "7d5fd7a3a68c505afa9b3f24b11ff6f09800bb253147f6deaa6530679b211fed"
+    }
+  },
+  "final_engine_frames": 113,
+  "engine_pids": [
+    15384,
+    25960,
+    56316,
+    67104
+  ],
+  "capture_hashes": [
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/maris-orthographic.png",
+      "sha256": "63dc764062f75192b671100f3794806a2042050522b69eae62f287dac67f96b6"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/maris-perspective.png",
+      "sha256": "543e2ffb7b608c18f0a5674d87d0257b272861ddcb46eec7be591f0aca7b4f84"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/dense-forest-orthographic.png",
+      "sha256": "053a1e492b75edb36a61f352ed8bd5d0bb3f8b66dd1d440b9711c4b23031573c"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/dense-forest-perspective.png",
+      "sha256": "b126f9e2c43b90ab8a9d9a65381367b1b22f9e0e470771cbb357b0e9f350f827"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/moonwell-orthographic.png",
+      "sha256": "6493c676b94f3c21b3a1d841b23e3118c2c0a6d753a3398969b97c0888939816"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/moonwell-perspective.png",
+      "sha256": "93693ee010f2b4a74dd60feef1dbbde12c17f0f33547ce4b36f19ce6eb431a3c"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/bridge-west-orthographic.png",
+      "sha256": "a9dd233c21b4bca4a89cb207929b43e641ac261ec9df15cd962ad6b88e8e676b"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/bridge-west-perspective.png",
+      "sha256": "ebe069e7f297cf34137dbf5784eaf3d6876809a37e02384569771e22248aac7a"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ford-west-orthographic.png",
+      "sha256": "d2372aa21e645b75ff7370a378b7b2d09112b5444b0cabed396c922b0532ec9f"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ford-west-perspective.png",
+      "sha256": "dad921008e7d00c0c212e0ad541039fdc64b728d6f8ea5437da06594c9ea135a"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/maris-night-storm-orthographic.png",
+      "sha256": "30658ee9451655268cf32e3b321455cce7b76ada846f6cdc348edb2489ab96bc"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/maris-night-storm-perspective.png",
+      "sha256": "20dde237cb15b66f7b3a58894b988a1d3d086fe1d06867dc4534c7d508d9aa54"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/dense-forest-dusk-cloudy-ortho.png",
+      "sha256": "eb44cc900e5bf59e8dff5b5c2b0b5be79f7a6dfca35d1206565cef37874fc7cb"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/dense-forest-dusk-cloudy-perspective.png",
+      "sha256": "a7bda4c7c4f584be05c07ab3cd29cd2a8264ee795be79251d2b5db2feb5b33f6"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ford-west-dawn-rain-ortho.png",
+      "sha256": "7507fcde84a47d2002fa889518ca248e03c7e52f78842ff8a97c73a55b6acd6f"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ford-west-dawn-rain-perspective.png",
+      "sha256": "c300208f031aac6160b546aba2efe443a8addeb7358a8f5ca3b5804ad48b5845"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/bridge-west-night-storm-ortho.png",
+      "sha256": "f84d9ae722b04ac63fd598dfb91970ba67b4fae9750f38182a7ed053dc51e3d3"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/bridge-west-night-storm-perspective.png",
+      "sha256": "14c8d8f314b7dc68d909ed755c29ddfe591ca840541988d72628f126c62a2dd6"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/canopy-ortho-0_8-on.png",
+      "sha256": "2d16485037345e0d49635b223f7c64a269f55aa5a4fa4b3b3125fe60c0291909"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/canopy-ortho-0_8-off.png",
+      "sha256": "99c61f6b143ff0296fdac2c19544e4020ea984627336551cbdc88b0ebbc76af6"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/canopy-ortho-1_15-on.png",
+      "sha256": "dd10e298b13075d22844e2a6a99730e8e19191c0bfcd5513231dc787501e65de"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/canopy-ortho-1_15-off.png",
+      "sha256": "27886dcbb73a1f1ce1159b421b824f0cf806910909eb4fcb74daf6594315756f"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/canopy-persp-0_8-on.png",
+      "sha256": "135f287297716d5ab6f68b0e70502d354a832cb7317017d7785f3cc8c7241aee"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/canopy-persp-0_8-off.png",
+      "sha256": "8f8e535e320731aeaf0b8d6e3f91b0ec0c1d5792fab5e4fffef55d6404ae1795"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/canopy-persp-1_15-on.png",
+      "sha256": "4cfcd9a915a2d65518233de08493d4eb7e6409395c00ea9c796eea6cebf36b18"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/canopy-persp-1_15-off.png",
+      "sha256": "f71cb477f6416b19a32e2a9b0023df243e6f0bacc602e61265211e102911bbd5"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-00.png",
+      "sha256": "d7060b4329cb105569c5a3dcda245127dee9d4f30e30ce641b3c767ceef0e493"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-01.png",
+      "sha256": "1f323cf316336b5fb57e74e0df85dc8c77b9a4605ebf387cdeca81c457cd0f18"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-02.png",
+      "sha256": "b1d5a98552ffda764cebbed10bf9ad3d8733858d6ee0e348792cf0b5457abed9"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-03.png",
+      "sha256": "b33bfa7d87d295698a8f432672f9c3131bf8ecadf31a0c5522fa2b198ce610ef"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-04.png",
+      "sha256": "3f248e35be17f17d7536309debfe737e98d43d2ad514985f2b8499d4933b24dc"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-05.png",
+      "sha256": "4cd675d00a933e0a9f8e4c51fa411042f662f2d181bb1aaab17e650e02a5c969"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-06.png",
+      "sha256": "c9794001680f78738226d9211d62469e41e9e3f946ed7d2dd50be980b489b2ea"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-07.png",
+      "sha256": "df971c3dbfcdae01ef31f91c5f3189a36611aa8d74f868bb647bd7e39d1a1df0"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-08.png",
+      "sha256": "27790cb8a48781f3cdedfe2b979640dca84a22a52af82c5ec4e850806130c842"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-09.png",
+      "sha256": "c4146ac206a5598a6f230e39b8148f755363b37ff1f74c56fd199765b00bb8f6"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-10.png",
+      "sha256": "0bfa0c2dddc444425e5858f32143b03c633000bf7dd01b7bcec99aec39b0203d"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-11.png",
+      "sha256": "c10f9ba44f35a6daaaa4a60a588ee1322ab79a31a24f612fda8fbcd31a20c76f"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/synthetic-forest-motion-final.png",
+      "sha256": "f122960e8694c4f05173758c99db325987ed8d378c7e68bdb898f2b9739fe4db"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/bridge-actual-crossed-east.png",
+      "sha256": "336925ef688427f20d1b9a5f03836aea47ce16f83c0720ebb076c869424fa94a"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/bridge-actual-return-west.png",
+      "sha256": "8bbd31f3ba49c40d0b7b187c75f5375f9c8332c28df4535a0d897a39099027c1"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ford-actual-crossed-east.png",
+      "sha256": "535e4c4c9c72f65352f459dc8abc1d0755e5bb52f6863dd1a49932c5aa20edbb"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ford-actual-return-west.png",
+      "sha256": "6a7fb984f98728ce0c2821b005e3975ea1a013de6b06278c2c9a4942628aaa06"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/home-orthographic.png",
+      "sha256": "655bed6da7cbf3485cd21f29ea85ee207485078f3b89d52f2151d9d8c40958bc"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/home-perspective.png",
+      "sha256": "13f681cee8e08891c1ae363f0c123c8b22949b525888112651061c37887cd8fa"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/inn-orthographic.png",
+      "sha256": "47918364ea856aee5839b1028eea12534f3562ff230dce7d4e23fe60f1f7cc06"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/inn-perspective.png",
+      "sha256": "76834b5bd177805b34a72d80ab2113cd91268ec5a25bac2f6e44c4f6f53e7412"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/tollworks-orthographic.png",
+      "sha256": "8ecca7a53bbc7738417cfa4799bd63d53928b62e5d8741d47666aff3163b4681"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/tollworks-perspective.png",
+      "sha256": "1731aa5ce222d9617f5e69aea0f4c3d8f47ca66e70017730e8358bddd0400afe"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-00.png",
+      "sha256": "e93d9094c56e270ed71b682f217af67f6a9b41caaaaffeb71e3f2ff969f28585"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-01.png",
+      "sha256": "39ce5f6ec19b490cf04f33a2c4dbc19a6ce3b7701db458133bdbadc50c31fe74"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-02.png",
+      "sha256": "30b5ee5257989b1f5adffcdabb0e823209704b8e96a9eced1dd4c6d7efd2b19a"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-03.png",
+      "sha256": "1c30be130d7678c0609b3ffa0ca168a19d10f57baf7ee10606d58cbd7e759ece"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-04.png",
+      "sha256": "08bf8e68224ef366d8c9b7737e49011404c00c833b0789cc432c0397ee315c35"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-05.png",
+      "sha256": "f551421082ab47af4030b1995f0e05e3b434017974fc5db07b8903ed667e2b07"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-06.png",
+      "sha256": "168e8d92054acc03266ffe0d98daa040cd80828d0e9b67777ae5171eca5c9f81"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-07.png",
+      "sha256": "055c1965171cfc222783bb8a0045da2f61ee6b36bd1bf8fdb924c51fa154260d"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-08.png",
+      "sha256": "942a2fbce300d0dab1f6b0e5e80a42c4550c40395ebe37fabe7b2514645b5381"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-09.png",
+      "sha256": "2a9dc2a6a1f9fc3c8ae5196691473e9b8dc177f5ada78899b385ef86f89c8075"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-10.png",
+      "sha256": "c47c75fd4047721b5f4bb60e9eca4d88988d5e82259e5c817cd1e28857f596d6"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-11.png",
+      "sha256": "7b82d8f8ca32ee7316726097dad8e564bd2dcf20140390544099d7fd2901e0de"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-town-motion-final.png",
+      "sha256": "1691dd3b20facee34cd91bd3a76425a964961a03eed2c03dbce8d653e1eabb67"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-start.png",
+      "sha256": "1691dd3b20facee34cd91bd3a76425a964961a03eed2c03dbce8d653e1eabb67"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-maris-approach.png",
+      "sha256": "3255ca2a3324751e3703e904fb3e52281f5281bd087100a1fe5000101577deb3"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-maris-dialogue.png",
+      "sha256": "057e1d8b9a082995335da5a90d4a7d60dff30857c7e8190952bedececca52635"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-arrival-02.png",
+      "sha256": "1ddb645572e62673b6c43d46a2cba65b3a2db3abe48d96a6a97549ee689853da"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-arrival-03.png",
+      "sha256": "c93aa9e71cf8536d55aba5b043a4b387498f891deb778f60cd4cd49636a684f3"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-arrival-04.png",
+      "sha256": "7bf92982da6b291c203ebed4ea391873b1c1e68bdcc5ad240f6749a82b9cbc66"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-arrival-05.png",
+      "sha256": "a3218c9349c5ea8bcaad3326dae092dc0990c74db078474938cf631a0968972e"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-arrival-06.png",
+      "sha256": "a0eb7c856fc747b5b35cf0e9e8588f293a930899439efc02df498af9cf96dd2d"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-return-perspective.png",
+      "sha256": "a460fb43e1c2987dfd44f7cafc1f10234d157de6d1d9f2cb54a8b7f9ec879e45"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-home-stop-0.png",
+      "sha256": "321ddaf3a4723bc4850df1fde35ef872b491605cb8a3be67de48da0ab71cdd71"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-home-stop-1.png",
+      "sha256": "59874f7afc55d7a5a5fb7409109a297da0f2026558414ae09ffbe49824272fe2"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-home-stop-2.png",
+      "sha256": "124800358fa8ace3092b3fa322739f399260475859b0986743ae5537e3d6f897"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-home-stop-3.png",
+      "sha256": "0aa51fdadc3c8259276092149ba4ea291ea269a876b9b0c45cde2814bb2ec4d7"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-home-returned.png",
+      "sha256": "356d959c48ea21b98f6d66b2b86d28a4d22e76297af176109b4b531e602483f5"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-inn-host-dialogue.png",
+      "sha256": "b547aa16589421095ce7ecef5d30a336c7ad7ee497b4eb007944aea2e274b23a"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-inn-stop-0.png",
+      "sha256": "a9ef41d7846c63af13190a69ea7a5daacdbfabc3c288edf5ab125389ea507433"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-inn-stop-1.png",
+      "sha256": "f32fe728178421a82a51820e7f91662d1daa5ad13447ae0cf69bde0dfbb1896e"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-inn-stop-2.png",
+      "sha256": "417459c8c92deb8872832c5e00f45dfeac65eb950695aba487c8c9ab56b5c2d6"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122456902-99c1cac9/render/ordinary-inn-returned.png",
+      "sha256": "3c07c7d195da5398b4635efc04ae108adadb3f870c93432521cdb26f69e6322d"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-ortho.png",
+      "sha256": "3656d8667b79a3fc7b47c57465ca759467a22606a64d73a32b1eb18718201c00"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-ortho-pause.png",
+      "sha256": "3f22b45f45252d344d040db572a611a0a917d39ed69f842dd18530d8872d3d46"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-ortho-settings.png",
+      "sha256": "8b6f7e5f581367959a022e4ea6a1dc23289a11c0078d8ac92d51f20f35373781"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-ortho-debug.png",
+      "sha256": "88bea76224363843459e36940811b94e9a55af7e309e28bc290ddae6fa2d6739"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-perspective.png",
+      "sha256": "8927459936e6b7341fd95da35efef77d98c21d95f49cab3cc5e6d4e296da7fff"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-perspective-pause.png",
+      "sha256": "3377a5fd2d1716172445e5732dd5ef11183daa00eef6f86150c7e5751c1c3e85"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-perspective-settings.png",
+      "sha256": "750ec16be15c91fae4d269682aa5c6a8aff90cfdae1c17dd67af967d5ac2fa0a"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-perspective-debug.png",
+      "sha256": "547c26c8fbb527427683b9a0463ea8efbca1c4d802e1a2a70182940126d0765f"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-bag.png",
+      "sha256": "d942b2015e7fcebc6959861ce49697808326c3c50ba3ba0f14a57f2f7d8c883a"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-journal.png",
+      "sha256": "ab1932c875564c2e215a032e44f0c23e5468b0340c4f06e182731b7e61787d05"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-people.png",
+      "sha256": "27f2244d915d852872364b22df39e8c068e03e80179cc95a56e4907cb4671872"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-dialogue.png",
+      "sha256": "30025d84458cf14c4d5511ccf466e5fad23797679d79b620d616a2a7dd05798a"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-choice.png",
+      "sha256": "6f50886e84b7737839b86c8a6a55f9ba73f268e7aada6089213bf643f9dccca5"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-fishing-waiting.png",
+      "sha256": "d19726018733a111efb8837024af65f3e477d8eddef3db41fc400cd66d5cca86"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-fishing-fighting.png",
+      "sha256": "adec105d1716f9787259b00593fbb4bb58ea398bfb028ed3d95965a29f695c19"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/960-night.png",
+      "sha256": "ccc34fc88b8a5ebe68ac644c31626c6d359cbaebb78d31e037228c69ccd3b289"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-ortho.png",
+      "sha256": "4c63e52fdb9685e5ef49d6f49774353f4c8210a9a6d0d1ff7a1b03b948760c36"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-ortho-pause.png",
+      "sha256": "6920e5683591ec2dd4cc063de39b469eedb3bb25d1779470869e296dd54ee228"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-ortho-settings.png",
+      "sha256": "7cf92edbb5087a71283137fe955f70c60646bd648e74d7dd06567aa9fd46183d"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-ortho-debug.png",
+      "sha256": "d672d450b98e652a255055c964920904d22466f1ccf67a2b90a7557483e32dd1"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-perspective.png",
+      "sha256": "ba61f7b4d47b57073366a8f887059b32c89114f361de3ec3bba530fb77b7cfeb"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-perspective-pause.png",
+      "sha256": "52e84c4fff8285e6be9e5b3d7245ff2df05c50ba7dd9a82f8f013954bab80fc5"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-perspective-settings.png",
+      "sha256": "287e8c8f14d26daedf88e7725fe9300a77d5c54ac809e7d3878833659349b79d"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-perspective-debug.png",
+      "sha256": "339178d14dd66395039156e3cbe015bf9fb5603ca21e4a1a3c574cc5b7de7556"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-bag.png",
+      "sha256": "6c1f2af5275b6f4cf7cbf440ba9331380931a79679ea24b4abecc3e222545303"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-journal.png",
+      "sha256": "9c14f4a652f4b73794b90ab1f6a53ab29310330889fb74935322f9557b3eb461"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-people.png",
+      "sha256": "017d67b151748ced6c0ec193f647fba59485dcb7c8305546e2aa053d32c8a083"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-dialogue.png",
+      "sha256": "5e76ec12d5d95ca6d4891028b4acf1faa3449fd1bf9ee0bdee372c59136ecf66"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-choice.png",
+      "sha256": "bf49d71c4cb8e5301e5a1ae1feaae7976f0713cac503cf3f8cee1dae8c04d033"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-fishing-waiting.png",
+      "sha256": "24f257f77a58bfa3ef1084c79bfffeef05b567ad91267d72380a5240f9e8b8c7"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-fishing-fighting.png",
+      "sha256": "d7b84c98c34c471b4aa7f32071ae304bd2536432c02cfcff159ca1fb04964ba4"
+    },
+    {
+      "path": "D:/development/game-dev-blender/returning-fair-prototype/docs/evidence/AD018/20261011-122706940-cde18960/render/1872-night.png",
+      "sha256": "9a56b75d9e26f0b55fd844b90a67341766e59d4683e8097c536daab511c30145"
+    }
+  ],
+  "recorded_owned_pids_exited": 66,
+  "head": "87bee1ef8526311933ca0894994bc3aa87cf9904",
+  "index_unchanged": true,
+  "links_checked": 35,
+  "blockers": [],
+  "unfinished": [
+    "AD019",
+    "AD020"
+  ],
+  "all_through_AD020_complete": false,
+  "limitations": [
+    "Retained failing historical synthetic fixtures; no general migration acceptance",
+    "No full profile/native/export/GUI restart claim"
+  ]
+}

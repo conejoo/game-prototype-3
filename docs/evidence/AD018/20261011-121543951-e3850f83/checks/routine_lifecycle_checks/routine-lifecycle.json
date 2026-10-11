@@ -1,0 +1,406 @@
+{
+	"assertions": 782,
+	"failures": [],
+	"observations": [
+		{
+			"execution": {
+				"actors": {
+					"npc-01": {
+						"failure": 0,
+						"failure_detail": {},
+						"foot": "(-5.5, 0.0, 0.25)",
+						"index": 1,
+						"map_id": "prototype-mayor-vale-home",
+						"npc_id": "npc-01",
+						"phase": "",
+						"remaining": 193.50891709327698,
+						"routine_id": "vale-overnight-home",
+						"state": 2,
+						"step_id": "rest-until-morning",
+						"transitions": 1
+					},
+					"npc-02": {
+						"failure": 0,
+						"failure_detail": {},
+						"foot": "(-3.5, 0.0, 0.25)",
+						"index": 1,
+						"map_id": "prototype-mayor-vale-home",
+						"npc_id": "npc-02",
+						"phase": "",
+						"remaining": 193.50891709327698,
+						"routine_id": "vale-overnight-home",
+						"state": 2,
+						"step_id": "rest-until-morning",
+						"transitions": 1
+					},
+					"npc-03": {
+						"failure": 0,
+						"failure_detail": {},
+						"foot": "(-7.5, 0.0, 11.0)",
+						"index": 1,
+						"map_id": "prototype-alderwake",
+						"npc_id": "npc-03",
+						"phase": "",
+						"remaining": 350.0,
+						"routine_id": "maris-chandlery-evening",
+						"state": 2,
+						"step_id": "sort-evening-stock",
+						"transitions": 1
+					},
+					"npc-04": {
+						"failure": 0,
+						"failure_detail": {},
+						"foot": "(41.0, 0.0, 17.0)",
+						"index": 1,
+						"map_id": "prototype-alderwake",
+						"npc_id": "npc-04",
+						"phase": "",
+						"remaining": 350.0,
+						"routine_id": "harlan-docks-evening",
+						"state": 2,
+						"step_id": "review-dock-notes",
+						"transitions": 1
+					},
+					"npc-06": {
+						"failure": 0,
+						"failure_detail": {},
+						"foot": "(7.5, 0.0, 5.0)",
+						"index": 1,
+						"map_id": "prototype-alderwake",
+						"npc_id": "npc-06",
+						"phase": "",
+						"remaining": 350.0,
+						"routine_id": "tess-store-evening",
+						"state": 2,
+						"step_id": "review-store-list",
+						"transitions": 1
+					},
+					"npc-07": {
+						"failure": 0,
+						"failure_detail": {},
+						"foot": "(31.0, 0.0, 20.0)",
+						"index": 3,
+						"map_id": "prototype-alderwake",
+						"npc_id": "npc-07",
+						"phase": "",
+						"remaining": 17.5,
+						"routine_id": "ivo-docks-evening",
+						"state": 2,
+						"step_id": "review-shore-lines",
+						"transitions": 3
+					},
+					"npc-08": {
+						"failure": 0,
+						"failure_detail": {},
+						"foot": "(-3.5, 0.0, 12.0)",
+						"index": 1,
+						"map_id": "prototype-alderwake",
+						"npc_id": "npc-08",
+						"phase": "",
+						"remaining": 350.0,
+						"routine_id": "celia-repairs-evening",
+						"state": 2,
+						"step_id": "remain-available-for-repairs",
+						"transitions": 1
+					},
+					"npc-14": {
+						"failure": 0,
+						"failure_detail": {},
+						"foot": "(-6.0, 0.0, -12.0)",
+						"index": 1,
+						"map_id": "prototype-lantern-rest",
+						"npc_id": "npc-14",
+						"phase": "",
+						"remaining": 350.0,
+						"routine_id": "della-inn-evening",
+						"state": 2,
+						"step_id": "remain-available-for-guests",
+						"transitions": 1
+					}
+				},
+				"day": 146,
+				"error": "",
+				"group_lane": "",
+				"positions": {
+					"npc-01": {
+						"foot": "(-5.5, 0.0, 0.25)",
+						"map": "prototype-mayor-vale-home"
+					},
+					"npc-02": {
+						"foot": "(-3.5, 0.0, 0.25)",
+						"map": "prototype-mayor-vale-home"
+					},
+					"npc-03": {
+						"foot": "(-7.5, 0.0, 11.0)",
+						"map": "prototype-alderwake"
+					},
+					"npc-04": {
+						"foot": "(41.0, 0.0, 17.0)",
+						"map": "prototype-alderwake"
+					},
+					"npc-06": {
+						"foot": "(7.5, 0.0, 5.0)",
+						"map": "prototype-alderwake"
+					},
+					"npc-07": {
+						"foot": "(31.0, 0.0, 20.0)",
+						"map": "prototype-alderwake"
+					},
+					"npc-08": {
+						"foot": "(-3.5, 0.0, 12.0)",
+						"map": "prototype-alderwake"
+					},
+					"npc-14": {
+						"foot": "(-6.0, 0.0, -12.0)",
+						"map": "prototype-lantern-rest"
+					}
+				},
+				"revisions": 4
+			},
+			"probe": "physical failed travel/current-schema failed Load/incompatible refusal/backup recovery"
+		},
+		{
+			"cycle": 1,
+			"memory_static": 164368854,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 2,
+			"memory_static": 164376066,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 3,
+			"memory_static": 164377922,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 4,
+			"memory_static": 164379802,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 5,
+			"memory_static": 164381634,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 6,
+			"memory_static": 164383538,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 7,
+			"memory_static": 164385370,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 8,
+			"memory_static": 164387202,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 9,
+			"memory_static": 164389130,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"cycle": 10,
+			"memory_static": 164390962,
+			"object_count": 8411.0,
+			"ownership": {
+				"bodies": 7,
+				"executors": 8,
+				"listeners": 1018,
+				"movers": 5,
+				"nodes": 3979,
+				"positions": 8,
+				"presenters": 5,
+				"regions": 1,
+				"reservations": 5,
+				"rooms": 1,
+				"speech_owners": 5,
+				"wrappers": 5
+			}
+		},
+		{
+			"baseline": {
+				"prototype-alderwake": {
+					"bodies": 7,
+					"executors": 8,
+					"listeners": 1018,
+					"movers": 5,
+					"nodes": 3979,
+					"positions": 8,
+					"presenters": 5,
+					"regions": 1,
+					"reservations": 5,
+					"rooms": 1,
+					"speech_owners": 5,
+					"wrappers": 5
+				},
+				"prototype-lantern-rest": {
+					"bodies": 3,
+					"executors": 8,
+					"listeners": 1010,
+					"movers": 1,
+					"nodes": 373,
+					"positions": 8,
+					"presenters": 1,
+					"regions": 1,
+					"reservations": 1,
+					"rooms": 1,
+					"speech_owners": 1,
+					"wrappers": 1
+				},
+				"prototype-mayor-vale-home": {
+					"bodies": 4,
+					"executors": 8,
+					"listeners": 1012,
+					"movers": 2,
+					"nodes": 466,
+					"positions": 8,
+					"presenters": 2,
+					"regions": 1,
+					"reservations": 2,
+					"rooms": 1,
+					"speech_owners": 2,
+					"wrappers": 2
+				}
+			},
+			"case": "ten town/home/town/inn/town cycles, 2s equal settling",
+			"growth_bytes": 7114752,
+			"working_set_after": 316608512,
+			"working_set_before": 309493760
+		}
+	],
+	"pid": 23468,
+	"provenance": "synthetic complete current-schema state, scripted physical scene replacement/rollback/retry; no ordinary journey/natural day/native claim",
+	"task": "R014"
+}

@@ -1,0 +1,51 @@
+{
+  "clips": [
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\authoring-20261011\\20261011-122456902-99c1cac9\\synthetic-forest.gif",
+      "sha256": "eaa9ee19e24fe95d5e2a5ca3f225658ab2cd2a8067f11de59457fa59f7c34c9a",
+      "source_frames": 12,
+      "duration_ms": 1555,
+      "distance_m": 6.199975967407227,
+      "released": true,
+      "source_hashes": [
+        "d7060b4329cb105569c5a3dcda245127dee9d4f30e30ce641b3c767ceef0e493",
+        "1f323cf316336b5fb57e74e0df85dc8c77b9a4605ebf387cdeca81c457cd0f18",
+        "b1d5a98552ffda764cebbed10bf9ad3d8733858d6ee0e348792cf0b5457abed9",
+        "b33bfa7d87d295698a8f432672f9c3131bf8ecadf31a0c5522fa2b198ce610ef",
+        "3f248e35be17f17d7536309debfe737e98d43d2ad514985f2b8499d4933b24dc",
+        "4cd675d00a933e0a9f8e4c51fa411042f662f2d181bb1aaab17e650e02a5c969",
+        "c9794001680f78738226d9211d62469e41e9e3f946ed7d2dd50be980b489b2ea",
+        "df971c3dbfcdae01ef31f91c5f3189a36611aa8d74f868bb647bd7e39d1a1df0",
+        "27790cb8a48781f3cdedfe2b979640dca84a22a52af82c5ec4e850806130c842",
+        "c4146ac206a5598a6f230e39b8148f755363b37ff1f74c56fd199765b00bb8f6",
+        "0bfa0c2dddc444425e5858f32143b03c633000bf7dd01b7bcec99aec39b0203d",
+        "c10f9ba44f35a6daaaa4a60a588ee1322ab79a31a24f612fda8fbcd31a20c76f"
+      ],
+      "note": "sequential actual rendered frames; timestamps retain variable capture cadence"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD018\\authoring-20261011\\20261011-122456902-99c1cac9\\ordinary-town.gif",
+      "sha256": "643d3ec5d9b8f32d1ac0158bc687d4c3d5419ac3ddf461bfee0df915bc2c5f55",
+      "source_frames": 12,
+      "duration_ms": 1580,
+      "distance_m": 6.196417808532715,
+      "released": true,
+      "source_hashes": [
+        "e93d9094c56e270ed71b682f217af67f6a9b41caaaaffeb71e3f2ff969f28585",
+        "39ce5f6ec19b490cf04f33a2c4dbc19a6ce3b7701db458133bdbadc50c31fe74",
+        "30b5ee5257989b1f5adffcdabb0e823209704b8e96a9eced1dd4c6d7efd2b19a",
+        "1c30be130d7678c0609b3ffa0ca168a19d10f57baf7ee10606d58cbd7e759ece",
+        "08bf8e68224ef366d8c9b7737e49011404c00c833b0789cc432c0397ee315c35",
+        "f551421082ab47af4030b1995f0e05e3b434017974fc5db07b8903ed667e2b07",
+        "168e8d92054acc03266ffe0d98daa040cd80828d0e9b67777ae5171eca5c9f81",
+        "055c1965171cfc222783bb8a0045da2f61ee6b36bd1bf8fdb924c51fa154260d",
+        "942a2fbce300d0dab1f6b0e5e80a42c4550c40395ebe37fabe7b2514645b5381",
+        "2a9dc2a6a1f9fc3c8ae5196691473e9b8dc177f5ada78899b385ef86f89c8075",
+        "c47c75fd4047721b5f4bb60e9eca4d88988d5e82259e5c817cd1e28857f596d6",
+        "7b82d8f8ca32ee7316726097dad8e564bd2dcf20140390544099d7fd2901e0de"
+      ],
+      "note": "sequential actual rendered frames; timestamps retain variable capture cadence"
+    }
+  ],
+  "note": "Unaltered sequential actual engine frames; variable recorded cadence. GIF palette quantization only; source PNGs retain exact pixels."
+}

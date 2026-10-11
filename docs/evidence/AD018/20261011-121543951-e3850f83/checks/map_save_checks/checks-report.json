@@ -1,0 +1,563 @@
+{
+	"failures": [
+		"Load did not lock synchronously",
+		"Repeated save/load raced transaction",
+		"Resume bypassed transaction",
+		"Rollback input lock incorrect",
+		"Ally-only failure did not isolate offset capsule",
+		"Durable envelope changed: [\"m017-ally-blocked\", \"alderwake-start\"]",
+		"Backup restore absent",
+		"Durable envelope changed: backup",
+		"Complete fixture rejected",
+		"Durable envelope changed: roundtrip",
+		"Durable envelope changed: once-only replay",
+		"Retry prerequisite rejected",
+		"Durable envelope changed: retry"
+	],
+	"fixtures": [
+		{
+			"effects": [],
+			"health": [
+				{
+					"definition_id": "prototype-hero",
+					"health": 100.0,
+					"instance_id": "party-player"
+				},
+				{
+					"definition_id": "prototype-companion",
+					"health": 100.0,
+					"instance_id": "party-companion"
+				}
+			],
+			"location": "prototype-alderwake",
+			"name": "town-fresh",
+			"position": [
+				[
+					0.0,
+					0.0,
+					0.0
+				],
+				[
+					1.0,
+					0.0,
+					0.0
+				]
+			],
+			"source_sha256": "a8d9eae02ad84045ee943f4c61789b9d1ec3b23d28ec555bd4c4d48dfd57c3cf",
+			"spawn": "alderwake-start"
+		},
+		{
+			"effects": [
+				"maris-lead-accepted"
+			],
+			"health": [
+				{
+					"definition_id": "prototype-hero",
+					"health": 100.0,
+					"instance_id": "party-player"
+				},
+				{
+					"definition_id": "prototype-companion",
+					"health": 100.0,
+					"instance_id": "party-companion"
+				}
+			],
+			"location": "prototype-alderwake",
+			"name": "town-lead",
+			"position": [
+				[
+					0.0,
+					0.0,
+					0.0
+				],
+				[
+					1.0,
+					0.0,
+					0.0
+				]
+			],
+			"source_sha256": "c3012329e775155bdc5f8d853786a0d5b954ec201b9bce0867a082cc8a177bd7",
+			"spawn": "alderwake-start"
+		},
+		{
+			"effects": [
+				"maris-lead-accepted",
+				"maris-expedition-started",
+				"tollworks-guardian-cleared",
+				"maris-return-path-open",
+				"maris-returned-to-town",
+				"maris-reconnected"
+			],
+			"health": [
+				{
+					"definition_id": "prototype-hero",
+					"health": 75.0,
+					"instance_id": "party-player"
+				},
+				{
+					"definition_id": "prototype-companion",
+					"health": 75.0,
+					"instance_id": "party-companion"
+				}
+			],
+			"location": "prototype-alderwake",
+			"name": "town-complete",
+			"position": [
+				[
+					107.25,
+					0.0,
+					1.25
+				],
+				[
+					108.25,
+					0.0,
+					1.25
+				]
+			],
+			"source_sha256": "79781f5bebca050d502bc9bcbe5124bc5f606f5422ccdcd522f0bf8723cd1735",
+			"spawn": "alderwake-from-tollworks"
+		},
+		{
+			"effects": [
+				"maris-lead-accepted",
+				"maris-expedition-started",
+				"tollworks-guardian-cleared",
+				"maris-return-path-open"
+			],
+			"health": [
+				{
+					"definition_id": "prototype-hero",
+					"health": 100.0,
+					"instance_id": "party-player"
+				},
+				{
+					"definition_id": "prototype-companion",
+					"health": 100.0,
+					"instance_id": "party-companion"
+				}
+			],
+			"location": "prototype-tollworks",
+			"name": "tollworks-vessel",
+			"position": [
+				[
+					0.0,
+					0.0,
+					-2.5
+				],
+				[
+					1.0,
+					0.0,
+					-2.5
+				]
+			],
+			"source_sha256": "b349981c27712b8a59999e940a86f0d0b1d661b968ccec57c363cb8c67bad3b3",
+			"spawn": "tollworks-from-alderwake"
+		},
+		{
+			"effects": [
+				"maris-lead-accepted",
+				"maris-expedition-started",
+				"tollworks-guardian-cleared",
+				"maris-return-path-open",
+				"maris-returned-to-town",
+				"maris-reconnected"
+			],
+			"health": [
+				{
+					"definition_id": "prototype-hero",
+					"health": 37.0,
+					"instance_id": "party-player"
+				},
+				{
+					"definition_id": "prototype-companion",
+					"health": 0.0,
+					"instance_id": "party-companion"
+				}
+			],
+			"location": "prototype-tollworks",
+			"name": "tollworks-start-downed",
+			"position": [
+				[
+					0.0,
+					0.0,
+					0.0
+				],
+				[
+					1.0,
+					0.0,
+					0.0
+				]
+			],
+			"source_sha256": "574d8eb11e90ebd787feb9f35a87d0a5c463f7a9b9e4a97edef3ceac2729b720",
+			"spawn": "tollworks-start"
+		}
+	],
+	"phase": "checks",
+	"pid": 12784,
+	"rejections": [
+		{
+			"errors": [
+				"spawn 'unsafe-no-floor' has no safe floor for 'party-player'",
+				"spawn 'unsafe-no-floor' has no safe floor for 'party-companion'"
+			],
+			"target": [
+				"prototype-unsafe-location",
+				"unsafe-no-floor"
+			]
+		},
+		{
+			"errors": [
+				"spawn 'unsafe-blocked' is obstructed for 'party-player'",
+				"spawn 'unsafe-blocked' has no safe floor for 'party-companion'",
+				"spawn 'unsafe-blocked' is obstructed for 'party-companion'"
+			],
+			"target": [
+				"prototype-unsafe-location",
+				"unsafe-blocked"
+			]
+		},
+		{
+			"errors": [
+				"invalid, duplicate or undeclared spawn 'alderwake-from-mayor-vale-home'",
+				"invalid, duplicate or undeclared spawn 'alderwake-from-lantern-rest'",
+				"wrong source/undeclared portal binding",
+				"wrong source/undeclared portal binding",
+				"wrong source/undeclared portal binding"
+			],
+			"target": [
+				"candidate-nav-failure",
+				"alderwake-start"
+			]
+		},
+		{
+			"errors": [
+				"pause first; save/load only at stable pause boundary"
+			],
+			"target": [
+				"m017-ally-blocked",
+				"alderwake-start"
+			]
+		},
+		{
+			"errors": "incompatible primary retained; no backup fallback/overwrite",
+			"target": "schema99"
+		}
+	],
+	"retries": [
+		{
+			"health": [
+				100,
+				100
+			],
+			"position": [
+				[
+					107.25,
+					0.0,
+					1.25
+				],
+				[
+					108.25,
+					0.0,
+					1.25
+				]
+			],
+			"target": [
+				"prototype-alderwake",
+				"alderwake-start"
+			]
+		},
+		{
+			"health": [
+				100,
+				100
+			],
+			"position": [
+				[
+					107.25,
+					0.0,
+					1.25
+				],
+				[
+					108.25,
+					0.0,
+					1.25
+				]
+			],
+			"target": [
+				"prototype-alderwake",
+				"alderwake-from-tollworks"
+			]
+		},
+		{
+			"health": [
+				100,
+				100
+			],
+			"position": [
+				[
+					0.0,
+					0.0,
+					0.0
+				],
+				[
+					1.0,
+					0.0,
+					0.0
+				]
+			],
+			"target": [
+				"prototype-tollworks",
+				"tollworks-start"
+			]
+		},
+		{
+			"health": [
+				100,
+				100
+			],
+			"position": [
+				[
+					0.0,
+					0.0,
+					-2.5
+				],
+				[
+					1.0,
+					0.0,
+					-2.5
+				]
+			],
+			"target": [
+				"prototype-tollworks",
+				"tollworks-from-alderwake"
+			]
+		},
+		{
+			"health": [
+				0,
+				13
+			],
+			"retained_original": true,
+			"target": "synthetic nav failure"
+		}
+	],
+	"round_trips": [
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 0
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 0
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 1
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 1
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 2
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 2
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 3
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 3
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 4
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 4
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 5
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 5
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 6
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 6
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 7
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 7
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 8
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 8
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 9
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 9
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 10
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 10
+		},
+		{
+			"destination": "prototype-tollworks",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 11
+		},
+		{
+			"destination": "prototype-alderwake",
+			"party_wrappers": [
+				98532591707,
+				297141274598
+			],
+			"regions": 1,
+			"trip": 11
+		}
+	],
+	"save_path": "D:/development/game-dev-blender/returning-fair-prototype/builds/testing/AD018/20261011-121543951-e3850f83/appdata/check-004/Godot/app_userdata/Returning Fair — Prototype/saves/m017-transaction.json"
+}

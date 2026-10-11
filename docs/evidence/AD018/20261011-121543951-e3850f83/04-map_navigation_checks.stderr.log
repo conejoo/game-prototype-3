@@ -1,0 +1,8 @@
+ERROR: Rollback fixture failed to reach placement/bake: ["invalid, duplicate or undeclared spawn \'alderwake-from-mayor-vale-home\'", "invalid, duplicate or undeclared spawn \'alderwake-from-lantern-rest\'", "wrong source/undeclared portal binding", "wrong source/undeclared portal binding"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_navigation_checks.gd:139)
+ERROR: All original rollback probes exercised
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/map_navigation_checks.gd:139)

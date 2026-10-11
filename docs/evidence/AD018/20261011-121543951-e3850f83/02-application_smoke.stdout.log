@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P001 smoke: engine 4.7.2-stable (official)
+P004: arrived prototype-test-room/prototype-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.18s.
+P001: Resumed at play time 0.18s.
+P001 smoke: PASS ├óΓé¼ΓÇ¥ composition, bindings, independent state, pause and resume.
