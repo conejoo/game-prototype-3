@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001-AD004 baseline/shop/tree/ground work is Done. AD005-AD020 remain Pending; next eligible task is AD005.
+AD001-AD005 baseline/shop/tree/ground/river work is Done. AD006-AD020 remain Pending; next eligible task is AD006.
 
 ## Selection and completion
 
@@ -21,7 +21,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | AD002 | Done | AD001 | Painted shop and counter material pilot |
 | AD003 | Done | AD002 | Painted tree pilot with working canopy visibility |
 | AD004 | Done | AD002 | Paint meadow, dirt paths and elevation surfaces |
-| AD005 | Pending | AD004 | Paint river and shore transitions |
+| AD005 | Done | AD004 | Paint river and shore transitions |
 | AD006 | Pending | AD002, AD005 | Paint dock, plaza and low-wall modules |
 | AD007 | Pending | AD003, AD004, AD005, AD006 | Calibrate storybook day, night and weather lighting |
 | AD008 | Pending | AD007 | Accept playable Maris and Dock Row pilot |
@@ -243,3 +243,13 @@ Repository cwd; fresh before `./tools/run_checks.ps1 -Task AD004 -RenderOnly -Re
 Preservation/capture/comparison/CRLF-aware whitespace helpers exit0. Retained CIM/UID-generated source invalidation/bright initial palette and diagnostic crop corrections in acceptance, no guards loosened. Every owned PID exited, final engine70684/launcher35580; no input/editor cleanup owed. Schema8/content1, unrelated user direction/interiors/instructions and historical R016 incomplete status preserved. All criteria complete, no blockers/unrun required checks. Nine task paths ready for review; no commit/push. Next eligible AD005 only. Remaining unfinished AD005-AD020; final checklist AD020; every item complete: no.
 
 Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit contains exactly nine AD004 task paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence stay excluded. Accepted source bytes and preservation scope verified; exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD004/authorized-commit-20261011/commit-audit.json`. AD001-AD004 remain Done, AD005-AD020 Pending. No push or AD005 implementation.
+### AD005 - 2026-10-11 UTC - Done
+
+[AD005_ACCEPTANCE](AD005_ACCEPTANCE.md): existing opaque sea-green river with broad sparse painted strokes and muted wet-shoreline semantic kind5. Editable procedural recipe, three scoped shader/material files and reusable capture fixture/UID. No atlas/mesh/node/alpha/reflection/displacement addition. Eight semantic edge samples retained; world drift0.02826m/s and derivative filtering; no physics/nav/crossing/fishing-reach/light/schema change. Paired semantic/floor/all16 render-mesh hashes identical;8766 authored/8598 effective wet cells,168 dry dock-cutout cells/seven rectangles preserved.
+
+Repository cwd; fresh before RenderOnly art_direction_river_render passes3/3 exit0 in docs/evidence/AD005/20261011-060927664-d098d602/. Focused application_smoke,map_water_checks,map_crossing_checks,fishing_targeting_checks plus actual river render passes7/7 exit0 in 20261011-061250513-4a7e0af6/. Final close-HUD projection-label-only fixture correction RenderOnly passes3/3 exit0 in 20261011-061519012-8b094469/, unchanged1340-file digest3f75c8bf4cebb1654c34159aff5e95fd1aa44cfcf51af1822d232f3c131c4217/source.changed=false. Production bytes match preceding seven-case gate. Water4027 exposed-edge sweeps; crossing4032 floor/clearance probes,94 walk/dodge lanes/4 rail slides; fishing135 assertions. Capture/comparison/preservation/whitespace helpers exit0.
+
+Final83 actual Godot frames/seven sheets inspected: both projections/zoom extremes, day/night, both bridge/ford landings and close dock,24 real shader-TIME frames/16 translated-camera frames/6 synthetic production fishing cue snapshots. All83 paired feet/camera/environment match; shader phases explicitly independent. Water sequences2.275-2.364s with>=400ms intervals; no obvious shimmer/repeated wave bands/false crossing, cue colors readable. Short paused dock p95/p99 before2.070/2.646ms, final1.885/3.221ms; draw240,4067 nodes/444 resources and24,101,267 texture bytes unchanged. These observations do not accept AD019 full profiling.
+
+Retained CIM/UID-import failures and timer rounding395/398ms/stale close-HUD label corrections in acceptance; no guards/bounds relaxed. Nine task paths ready for review, unrelated user direction/interiors/instructions/source pins byte-preserved. Every owned PID exited including final engine51324/launcher24120; no cleanup owed. Schema8/content1 and historical R016 incomplete status retained. All criteria complete, no blockers/unrun required checks. No ordinary cast/route/native GUI Save/Load/new-process/package claim. No commit/push or successor work. Next eligible AD006 only. Remaining unfinished AD006-AD020; final checklist AD020; every item complete: no.
+Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit scope is exactly nine AD005 paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence remain excluded. Accepted source bytes and unrelated-file preservation verified before documentation-only updates/staging; exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD005/authorized-commit-20261011/commit-audit.json`. AD001-AD005 remain Done, AD006-AD020 Pending. No push or AD006 implementation.

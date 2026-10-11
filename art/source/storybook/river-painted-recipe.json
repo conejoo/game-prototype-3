@@ -1,0 +1,13 @@
+{
+  "task": "AD005",
+  "method": "Shared opaque world-space procedural painted water and existing wet-shoreline material; no atlas or geometry addition",
+  "editable_sources": ["game/world/map_candidate/river.gdshader", "game/world/map_candidate/landscape.gdshader", "game/world/map_candidate/landscape_materials.gd"],
+  "authoring_srgb": {"water": "#429c93", "stroke": "#87c7b7", "water_bank": "#6d8063", "wet_shoreline": "#768064"},
+  "color_space": "Authoring sRGB converted once to linear shader parameters; semantic mask remains linear data",
+  "water": {"wash_scale_m": 4.348, "wash_strength": 0.06, "stroke_scale_m": [1.818, 0.435], "stroke_threshold": [0.76, 0.92], "stroke_blend_max": 0.13, "world_drift_m_per_second": 0.02826, "derivative_fade": [0.25, 0.65], "inside_water_edge_probe_m": [0.3, 0.1], "bank_blend_max": 0.38, "foam_blend_max": 0.10, "roughness": 0.94, "specular": 0.12},
+  "wet_shoreline": {"semantic_kind": 5, "dabs_scale_m": [0.4, 0.588], "strength": 0.06, "roughness": 0.97},
+  "preserved": ["exact wet mask", "water union mesh at y=0.015", "dry bridge/ford/dock cutouts", "water blockers and fishing reach", "sand-path palette owned by AD006", "existing shared material batches", "schema8/content1"],
+  "added_texture_bytes": 0,
+  "added_draw_surfaces": 0,
+  "reference_geometry_policy": "Selected concept guides appearance only; pinned current source layout remains geometry authority"
+}

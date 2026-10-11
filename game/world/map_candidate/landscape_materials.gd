@@ -8,7 +8,7 @@ const KINDS: Dictionary[String, int] = {"grass": 1, "dirt": 2, "sand": 3, "cobbl
 const COLORS: Dictionary[String, Color] = {
 	"grass": Color("949f68"), "dirt": Color("e1bf94"),
 	"sand": Color(0.82, 0.71, 0.43), "cobblestone": Color(0.48, 0.47, 0.40),
-	"wet_shoreline": Color(0.32, 0.38, 0.17), "raw-marker": Color(0.43, 0.49, 0.21),
+	"wet_shoreline": Color("768064"), "raw-marker": Color(0.43, 0.49, 0.21),
 }
 var mask: ImageTexture
 var mask_image: Image
@@ -45,7 +45,7 @@ func terrain(kind: String) -> ShaderMaterial:
 	material.shader = TERRAIN_SHADER
 	# Supply calibrated painted colors in linear form. Keep legacy kinds
 	# unchanged; convert only new painted authoring sRGB swatches once.
-	material.set_shader_parameter("base_color", COLORS[kind].srgb_to_linear() if kind in ["grass", "dirt"] else COLORS[kind])
+	material.set_shader_parameter("base_color", COLORS[kind].srgb_to_linear() if kind in ["grass", "dirt", "wet_shoreline"] else COLORS[kind])
 	material.set_shader_parameter("kind", KINDS[kind])
 	material.set_shader_parameter("meadow_color", COLORS.grass.srgb_to_linear())
 	_common(material)
@@ -64,6 +64,10 @@ static func painted_riser() -> ShaderMaterial:
 func river() -> ShaderMaterial:
 	var material: ShaderMaterial = ShaderMaterial.new()
 	material.shader = WATER_SHADER
+	# Authoring sRGB swatches converted once, like accepted painted ground.
+	material.set_shader_parameter("water_color", Color("429c93").srgb_to_linear())
+	material.set_shader_parameter("stroke_color", Color("87c7b7").srgb_to_linear())
+	material.set_shader_parameter("bank_color", Color("6d8063").srgb_to_linear())
 	_common(material)
 	return material
 

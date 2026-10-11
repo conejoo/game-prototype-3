@@ -43,6 +43,9 @@ void fragment() {
 		color *= 1.0 - smoothstep(0.45, 0.85, noise(p * 0.17)) * 0.05;
 	} else if (kind == 2) {
 		color = painted_surface(p + vec2(7.3, -3.7), base_color.rgb, 0.08);
+	} else if (kind == 5) {
+		// Existing authored wet-shoreline cells only; no mask or sand-path change.
+		color = painted_surface(p, base_color.rgb, 0.06);
 	} else if (kind == 7) {
 		// Vertical metre scale prevents XZ-only sampling stretching down cliffs.
 		vec2 face = abs(world_normal.x) > abs(world_normal.z) ? world_position.zy : world_position.xy;
