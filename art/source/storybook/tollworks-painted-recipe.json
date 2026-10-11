@@ -1,0 +1,17 @@
+{
+  "task": "AD016",
+  "runtime_adapter": "game/world/storybook_tollworks_material.gd",
+  "shared_shader": "game/world/storybook_inn.gdshader",
+  "atlas": "game/assets/environment/storybook/town-painted-albedo.png",
+  "appearance": "Cool worn slate combat floor and softer cool grey stone walls; accepted warm bronze/timber and teal recovery/guardian accents remain unchanged. No new timber geometry in this compact stone room.",
+  "families": {"worn-slate-floor": "#4d5d63", "cool-stone-wall": "#858b85"},
+  "coverage": "All six faces, world-metre triplanar projection, 64 texels/metre, mirrored fold in existing stone patch; normalize source atlas palette exactly once.",
+  "patch_origin": [528, 528],
+  "patch_span": [224, 224],
+  "patch_reference": "#8b8c7b",
+  "stroke_strength": 0.7,
+  "roughness": 0.92,
+  "imports": "Existing1024 atlas, mipmapped linear filter, clamped atlas; no new texture or import change.",
+  "cache": "Two immutable family materials shared across all five box meshes and reloads.",
+  "preserve": "Original BoxMesh/material resources, six room/plinth colliders, guardian/vessel/plinth source GLBs and their accepted adapters, all transforms, anchors, IDs, navigation, stable dry indoor light profile, exit cue, developer fixtures, combat/quest/save semantics. Remove five material overrides to recover original room colors."
+}

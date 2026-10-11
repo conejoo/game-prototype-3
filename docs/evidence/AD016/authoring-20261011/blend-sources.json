@@ -1,0 +1,411 @@
+{
+  "version": "5.2.2 LTS",
+  "kind": "read-only background source inspection; no save or live editor mutation",
+  "records": [
+    {
+      "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\guardian.blend",
+      "sha256": "f284cae441a1fdf43cf7935d1aac8e57dc7a178c760b125fb1b7152595d12222",
+      "scenes": [
+        "RF-Guardian"
+      ],
+      "meshes": [
+        {
+          "name": "GEO-guardian-arm--1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-guardian-arm-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-guardian-brow",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-guardian-chest-seal",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-recovery-teal"
+          ]
+        },
+        {
+          "name": "GEO-guardian-fist--1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-guardian-fist-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-guardian-foot--1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-slate"
+          ]
+        },
+        {
+          "name": "GEO-guardian-foot-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-slate"
+          ]
+        },
+        {
+          "name": "GEO-guardian-head",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-slate"
+          ]
+        },
+        {
+          "name": "GEO-guardian-hip",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-guardian-knee--1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-guardian-knee-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-guardian-leg--1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-guardian-leg-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-guardian-neck",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-guardian-shoulder--1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-fired-clay-plate"
+          ]
+        },
+        {
+          "name": "GEO-guardian-shoulder-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-fired-clay-plate"
+          ]
+        },
+        {
+          "name": "GEO-guardian-torso",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-fired-clay-plate"
+          ]
+        },
+        {
+          "name": "GEO-guardian-visor",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-recovery-teal"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\recovery_vessel.blend",
+      "sha256": "2e81c2fbd1c404e346f48994f80d25c6102bc0f71a3aa0ae6430910805f086b8",
+      "scenes": [
+        "RF-RecoveryVessel"
+      ],
+      "meshes": [
+        {
+          "name": "GEO-vessel-base-band",
+          "vertices": 64,
+          "polygons": 50,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-core",
+          "vertices": 64,
+          "polygons": 50,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-recovery-teal"
+          ]
+        },
+        {
+          "name": "GEO-vessel-foot",
+          "vertices": 48,
+          "polygons": 34,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-handle",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-handle-post--0.11",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-handle-post-0.11",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-lid",
+          "vertices": 48,
+          "polygons": 34,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-return-mark",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-return-mark-back",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-rib-0",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-rib-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-rib-2",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-rib-3",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-rib-4",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-rib-5",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bright-bronze"
+          ]
+        },
+        {
+          "name": "GEO-vessel-top-band",
+          "vertices": 64,
+          "polygons": 50,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "D:\\development\\game-dev-blender\\returning-fair-prototype\\art\\source\\tollworks_plinth.blend",
+      "sha256": "b9118ae3472f41f08380e297f4863025d3f1e7364ae48b2c65a4605aa678aa54",
+      "scenes": [
+        "RF-TollworksPlinth"
+      ],
+      "meshes": [
+        {
+          "name": "GEO-plinth-block",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-slate"
+          ]
+        },
+        {
+          "name": "GEO-plinth-cap",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-bronze"
+          ]
+        },
+        {
+          "name": "GEO-plinth-foot",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-plinth-inset-0--1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-plinth-inset-0-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-plinth-inset-1--1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        },
+        {
+          "name": "GEO-plinth-inset-1-1",
+          "vertices": 8,
+          "polygons": 6,
+          "uv_layers": [],
+          "materials": [
+            "MAT-RF-dark-joints"
+          ]
+        }
+      ]
+    }
+  ]
+}

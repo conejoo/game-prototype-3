@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" path="res://assets/models/tollworks_plinth.glb" id="7_plinth"]
 [ext_resource type="Resource" path="res://content/portals/tollworks_alderwake.tres" id="8_portal"]
 [ext_resource type="Script" path="res://world/storybook_prop_material.gd" id="9_paint"]
+[ext_resource type="Script" path="res://world/storybook_tollworks_material.gd" id="10_room_paint"]
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.18, 0.24, 0.29, 1)
@@ -85,6 +86,7 @@ gate_label = "Return to Alderwake"
 position = Vector3(0, -0.2, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Floor"]
+script = ExtResource("10_room_paint")
 mesh = SubResource("Mesh_floor")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
@@ -94,6 +96,7 @@ shape = SubResource("Shape_floor")
 position = Vector3(0, 0.75, -6)
 
 [node name="Mesh" type="MeshInstance3D" parent="BackWall"]
+script = ExtResource("10_room_paint")
 mesh = SubResource("Mesh_back_wall")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall"]
@@ -103,6 +106,7 @@ shape = SubResource("Shape_back_wall")
 position = Vector3(-7, 0.75, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="SideWall"]
+script = ExtResource("10_room_paint")
 mesh = SubResource("Mesh_side_wall")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SideWall"]
@@ -112,6 +116,7 @@ shape = SubResource("Shape_side_wall")
 position = Vector3(0, 0.3, 6)
 
 [node name="Mesh" type="MeshInstance3D" parent="FrontWall"]
+script = ExtResource("10_room_paint")
 mesh = SubResource("Mesh_front_wall")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FrontWall"]
@@ -121,6 +126,7 @@ shape = SubResource("Shape_front_wall")
 position = Vector3(7, 0.3, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="RightWall"]
+script = ExtResource("10_room_paint")
 mesh = SubResource("Mesh_right_wall")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall"]

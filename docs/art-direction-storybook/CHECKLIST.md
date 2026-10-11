@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001-AD015 baseline/material/lighting/playable pilot/town/forest/landmark/prop/villager/party/home/inn work is Done. AD016-AD020 remain Pending.
+AD001-AD016 baseline/material/lighting/playable pilot/town/forest/landmark/prop/villager/party/home/inn/Tollworks work is Done. AD017-AD020 remain Pending.
 
 ## Selection and completion
 
@@ -32,7 +32,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | AD013 | Done | AD008 | Harmonize party, guardian and combat cues |
 | AD014 | Done | AD008 | Paint existing Mayor Vale home |
 | AD015 | Done | AD008 | Paint existing Lantern Rest |
-| AD016 | Pending | AD008 | Paint existing Tollworks and recovery scene |
+| AD016 | Done | AD008 | Paint existing Tollworks and recovery scene |
 | AD017 | Pending | AD008 | Make gameplay HUD fit the painted scene |
 | AD018 | Pending | AD009, AD010, AD011, AD012, AD013, AD014, AD015, AD016, AD017 | Verify integrated visual and gameplay readability |
 | AD019 | Pending | AD018 | Profile and optimize painted build within budget |
@@ -372,3 +372,17 @@ All90 actual Godot images/nine provenance sheets and critical full-size frames i
 Retained sandbox-CIM/copied new-fixture wrong-path attempts;scoped elevation approved,no auto-review rejection. No original assertion/pin weakened,no gameplay/source/export/Blender/editor repair. Preservation3,032 starting/3,029 protected files,zero unexpected changes;all45 recorded owned PIDs exited,no held input/cleanup owed. Every AD015 criterion verified;blockers/required unrun checks:none. Unrelated direction/interiors/user instructions,historical R016 Blocked/incomplete and prior route/draw observations preserved. No native/GUI Save-Load/restart/package/full-profile claim. No staging/commit/push;separate post-review instruction awaits. Next eligible AD016 only;unfinished AD016,AD017,AD018,AD019,AD020. Final AD020;every checklist item complete:no. Stop before AD016.
 
 Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review,explicitly including acceptance evidence. Scope is ten AD015 paths plus selected reports/logs/source manifests,final90 engine frames/nine sheets,retained failed-attempt records and acceptance/preservation/pixel/process/pre-commit audits. All ten reviewed task hashes,1,401 validated source files,10/10 main and3/3 ordinary results,90 capture hashes and3,029 protected inputs reverified before documentation-only follow-up edits/staging. Temporary scripts/build/save archives and unrelated direction/interiors/prompt/contract stay excluded. [Commit review](../evidence/AD015/commit-review.json) records exact final scope/hashes;local `docs/evidence/AD015/authorized-commit-20261011/commit-audit.json` records verified commit/tree/path/blob identity and final working-tree status after commit. AD001-AD015 Done;AD016-AD020 Pending. No push or AD016 implementation.
+
+## AD016 completion - 2026-10-11 UTC
+
+[AD016_ACCEPTANCE](AD016_ACCEPTANCE.md):existing compact Tollworks uses cool worn slate combat floor and softer grey stone walls. Existing1024 town atlas/accepted inn triplanar shader reused at64texels/m/16px gutters;five boxes/two immutable cached materials/all six faces intentionally covered. Original flat materials retained beneath overrides. One resource plus five visual script attachments;every other scene byte,colliders/feet/anchors/IDs/navigation/exit cue/dry stable indoor profile preserved. AD011 bronze/timber/teal vessel/plinth and AD013 guardian/party byte-identical. No new texture/import/geometry/surface/node/emitter/durable field or combat/quest/input/schema8/content1 change. Eight task paths.
+
+Repository cwd command in acceptance passes13/13 exit0 at `docs/evidence/AD016/20261011-112536683-8b797983/results.json`:58 new material/cache/physical-pin assertions;original asset/combat/recovery/travel checks/ten round trips/rollback;30,053 lighting/157 lifecycle assertions;three rendered phases. Source.changed=false/error=null;stable1,404-file digest `222c5a20f51fabf25c1bdbc96bfeb2e3a7f9ed61a67d634b460f0b0a9375b502`. All current game/tools bytes reverified;no production/check edits afterward.
+
+All46 actual Godot frames/four provenance sheets/critical full-size views inspected.22 labeled synthetic room/feet/camera/time/weather views,eight exact original/painted camera/party/guardian/sun/environment pairs,32,670 safe all-face samples,zero clear/storm changed world pixels.24 fresh viewport-input views after synthetic lead/direct room setup show0.73333m A movement/released keys,click attack phases,SPACE dodge,natural guardian0.75s windup,real bounded combat clear1.998/2.049s,hero75/50HP and ally50HP,successful WASD vessel approach,E/Tab/Enter recorded recovery path and final verified pause. No damage/health/AI/reward injection after initial setup. Guardian/vessel/exit/party/cues readable in both projections;no missing textures/bleed/seam/weather leak.
+
+Read-only background Blender5.2.2 opens/hashes three original sources without saving;live editor untouched. Initial sandbox-CIM failure retained;scoped elevation approved,no auto-review rejection. No original assertion/pin weakened. Preservation3,262 starting/3,259 protected files,zero unexpected changes;all28 recorded owned Godot PIDs exited/background Blender exits0,no held input/cleanup owed. Every AD016 criterion verified;blockers/unrun required checks:none. Unrelated direction/interiors/user instructions,historical R016 Blocked/incomplete and prior route/draw limits preserved. No ordinary exterior-route/native/GUI Save-Load/restart/package/full-profile claim.
+
+No staging/commit/push;separate post-review commit instruction awaits. Next eligible AD017 only;unfinished AD017,AD018,AD019,AD020. Final AD020;every checklist item complete:no. Stop before AD017.
+
+Authorized commit follow-up (2026-10-11 UTC):user supplied separate successful-task commit instruction after review,including acceptance evidence. Scope:eight AD016 task paths plus selected reports/logs/source manifests,46 final engine frames/four sheets,retained sandbox-failure record and acceptance/preservation/pixel/process/pre-commit audits. All eight reviewed task hashes,1,404 validated source files,13/13 main cases,46 capture hashes and3,259 protected inputs reverified before documentation-only follow-up edits/staging. Temporary scripts/build/save archives and unrelated direction/interiors/prompt/contract excluded. [Commit review](../evidence/AD016/commit-review.json) records final scope/hashes;local `docs/evidence/AD016/authorized-commit-20261011/commit-audit.json` records verified commit/tree/path/blob identity and final status after commit. AD001-AD016 remain Done;AD017-AD020 Pending. No push or AD017 implementation.

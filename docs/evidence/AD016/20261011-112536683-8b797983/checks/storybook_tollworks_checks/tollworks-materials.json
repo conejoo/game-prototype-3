@@ -1,0 +1,85 @@
+{
+	"assertions": 58,
+	"atlas_bytes": 4194303,
+	"failures": [],
+	"inventory": [
+		{
+			"center": [
+				0.0,
+				-0.20000000298023224,
+				0.0
+			],
+			"family": "worn-slate-floor",
+			"owner": "Floor",
+			"paint_color": "(0.302, 0.3647, 0.3882, 1.0)",
+			"size": [
+				14.0,
+				0.4000000059604645,
+				12.0
+			]
+		},
+		{
+			"center": [
+				0.0,
+				0.75,
+				-6.0
+			],
+			"family": "cool-stone-wall",
+			"owner": "BackWall",
+			"paint_color": "(0.5216, 0.5451, 0.5216, 1.0)",
+			"size": [
+				14.0,
+				1.5,
+				0.4000000059604645
+			]
+		},
+		{
+			"center": [
+				-7.0,
+				0.75,
+				0.0
+			],
+			"family": "cool-stone-wall",
+			"owner": "SideWall",
+			"paint_color": "(0.5216, 0.5451, 0.5216, 1.0)",
+			"size": [
+				0.4000000059604645,
+				1.5,
+				12.0
+			]
+		},
+		{
+			"center": [
+				0.0,
+				0.30000001192092896,
+				6.0
+			],
+			"family": "cool-stone-wall",
+			"owner": "FrontWall",
+			"paint_color": "(0.5216, 0.5451, 0.5216, 1.0)",
+			"size": [
+				14.0,
+				0.6000000238418579,
+				0.4000000059604645
+			]
+		},
+		{
+			"center": [
+				7.0,
+				0.30000001192092896,
+				0.0
+			],
+			"family": "cool-stone-wall",
+			"owner": "RightWall",
+			"paint_color": "(0.5216, 0.5451, 0.5216, 1.0)",
+			"size": [
+				0.4000000059604645,
+				0.6000000238418579,
+				12.0
+			]
+		}
+	],
+	"kind": "synthetic material/scene inventory; original asset/combat/recovery/travel checks retain behavioral pins",
+	"materials": 2,
+	"task": "AD016"
+}

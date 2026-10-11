@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "starting_head": "42ce563d43cbff3f400515b4a56c26b56b64c51a",
+  "starting_files": 3262,
+  "protected_files": 3259,
+  "unexpected_changes": [],
+  "new_paths": [
+    "art/source/storybook/tollworks-painted-recipe.json",
+    "docs/art-direction-storybook/AD016_ACCEPTANCE.md",
+    "game/tests/art_direction_tollworks_render.gd",
+    "game/tests/storybook_tollworks_checks.gd",
+    "game/world/storybook_tollworks_material.gd"
+  ],
+  "missing_document_links": [],
+  "index_unchanged_empty": true,
+  "head_unchanged": true,
+  "room_diff": "exactly one resource plus five visual script attachments; all other scene bytes normalized identical",
+  "task_paths": [
+    {
+      "path": "game/world/tollworks.tscn",
+      "sha256": "172ea12c11ffe374c972ee5924c458eeb10c554230a59012b234ea85aa394baf"
+    },
+    {
+      "path": "game/world/storybook_tollworks_material.gd",
+      "sha256": "4455ac25b9e1769b4ab155d47334afa2482df08c466643edc49740b4a09c7ec7"
+    },
+    {
+      "path": "game/tests/storybook_tollworks_checks.gd",
+      "sha256": "dddd47d19a8ab5cab1e2f065cede2e1ba70b5274db9776604926a321f893b8ab"
+    },
+    {
+      "path": "game/tests/art_direction_tollworks_render.gd",
+      "sha256": "7bbc3f8d8959d210c5e72d5442d925240b941cce5115142fef562f505f03eaf6"
+    },
+    {
+      "path": "art/source/storybook/tollworks-painted-recipe.json",
+      "sha256": "200f516b40ea3c4c8c0e850d35ee29a8d2e903a5443ae85e4dcb7390d4c78dc9"
+    },
+    {
+      "path": "docs/art-direction-storybook/CHECKLIST.md",
+      "sha256": "25b455cecd1c8c3b888fd30b2d4d77fc40766ea174c9621f7b5671047aaa4d3b"
+    },
+    {
+      "path": "docs/art-direction-storybook/CURRENT_STATE.md",
+      "sha256": "897c3dbaa5b446282d4bcc8c1a0a53d2300330b5bf9338c4cf34598baa2bbace"
+    },
+    {
+      "path": "docs/art-direction-storybook/AD016_ACCEPTANCE.md",
+      "sha256": "c3530276cc3a8fd814db2e31b58ac693dd2f9266b26b99ce81ad66c5dad26871"
+    }
+  ],
+  "source_count": 1404,
+  "source_digest": "222c5a20f51fabf25c1bdbc96bfeb2e3a7f9ed61a67d634b460f0b0a9375b502",
+  "source_current_match": true,
+  "registered_original_painted_pairs": [
+    "entry-ortho-100",
+    "entry-perspective-100",
+    "combat-ortho-80",
+    "combat-ortho-115",
+    "combat-perspective-80",
+    "combat-perspective-115",
+    "vessel-ortho-100",
+    "vessel-perspective-100"
+  ],
+  "dry_indoor_world_roi": [
+    0,
+    170,
+    960,
+    510
+  ],
+  "clear_storm_changed_pixels": 0,
+  "safe_all_face_samples": 32670,
+  "input_audits": [
+    {
+      "phase": "input-ortho",
+      "movement_m": 0.733332633972168,
+      "combat": {
+        "ally_health": 50,
+        "effects": [
+          "maris-lead-accepted",
+          "maris-expedition-started",
+          "tollworks-guardian-cleared"
+        ],
+        "elapsed_ms": 1998,
+        "guardian_health": 0,
+        "hero_health": 75,
+        "label": "bounded-real-combat"
+      },
+      "walk_ok": true,
+      "recovery_effect_verified": true
+    },
+    {
+      "phase": "input-perspective",
+      "movement_m": 0.733332633972168,
+      "combat": {
+        "ally_health": 50,
+        "effects": [
+          "maris-lead-accepted",
+          "maris-expedition-started",
+          "tollworks-guardian-cleared"
+        ],
+        "elapsed_ms": 2049,
+        "guardian_health": 0,
+        "hero_health": 50,
+        "label": "bounded-real-combat"
+      },
+      "walk_ok": true,
+      "recovery_effect_verified": true
+    }
+  ],
+  "inspected_images": 46,
+  "inspected_sheets": 4,
+  "full_size_inspected": [
+    "combat-perspective-80-painted.png",
+    "input-ortho-guardian-windup.png",
+    "input-perspective-vessel-recovered.png"
+  ],
+  "visual_result": "Cool matte stone floor and worn pale walls coherent with existing bronze/teal vessel and guardian; no bleed/seams/missing faces; original cue hues and party readable in both projections."
+}
