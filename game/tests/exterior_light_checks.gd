@@ -50,7 +50,13 @@ func _run() -> void:
 		_check(consumer.find_children("*", "CollisionObject3D", true, false).is_empty() and consumer.find_children("*", "NavigationRegion3D", true, false).is_empty(), "visual adds physics/nav")
 		if entry.kind == "windows":
 			var original: MeshInstance3D = wrapper.get_node("VisualRoot/ImportedExterior")
-			_check(not (original.get_active_material(0) as StandardMaterial3D).emission_enabled, "whole building emits")
+			var building_material: Material = original.get_active_material(0)
+			if building_material is ShaderMaterial:
+				# AD009's known opaque painted building shader has no emission output;
+				# registered window panes remain the only emitting building surfaces.
+				_check(building_material.shader == AlderwakeTownArt.BUILDING_SHADER and not building_material.shader.code.contains("EMISSION"), "whole painted building emits")
+			else:
+				_check(building_material is StandardMaterial3D and not building_material.emission_enabled, "whole building emits")
 			var pane_mesh: Mesh = (consumer.get_node("WindowPanes") as MeshInstance3D).mesh
 			var vertices: PackedVector3Array = pane_mesh.surface_get_arrays(0)[Mesh.ARRAY_VERTEX]
 			var recipe: Dictionary = entry.window_surface_recipe

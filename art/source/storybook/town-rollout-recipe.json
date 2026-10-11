@@ -1,0 +1,318 @@
+{
+  "task": "AD009",
+  "scope": "All fourteen current Alderwake building definitions; unchanged AD002 shop plus thirteen geometry-identical painted UV exports",
+  "source_original": "art/source/alderwake_town_kit.blend",
+  "editable": "art/source/storybook/alderwake_town_rollout.blend",
+  "runtime": "game/assets/environment/storybook/alderwake_town_rollout.glb",
+  "atlas_recipe": "art/source/storybook/town-painted-recipe.json",
+  "atlas": "game/assets/environment/storybook/town-painted-albedo.png",
+  "source_image_packed": true,
+  "glb_image": "relative sibling PNG; same existing resource, no additional atlas or embedded-image import",
+  "shader": "game/world/map_candidate/painted_building.gdshader",
+  "runtime_palette": "Five shared ShaderMaterials; Compatibility-renderer-calibrated RGB ratios on slate/plaster UV regions only; other regions unchanged. Neutral texture material in editable source, runtime color variants owned by recipe/shader.",
+  "groups": {
+    "slate": {
+      "roof": [
+        1,
+        1,
+        1
+      ],
+      "plaster": [
+        1,
+        1,
+        1
+      ]
+    },
+    "terracotta": {
+      "roof": [
+        2.7,
+        1.25,
+        0.65
+      ],
+      "plaster": [
+        1,
+        1,
+        1
+      ]
+    },
+    "teal": {
+      "roof": [
+        1,
+        1,
+        1
+      ],
+      "plaster": [
+        0.36,
+        0.65,
+        0.82
+      ]
+    },
+    "civic": {
+      "roof": [
+        2.7,
+        1.25,
+        0.65
+      ],
+      "plaster": [
+        1,
+        1,
+        1
+      ]
+    },
+    "woodland": {
+      "roof": [
+        1.7,
+        1.45,
+        0.65
+      ],
+      "plaster": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "coverage": [
+    {
+      "definition": "alderwake-hall",
+      "mesh": "GEO-alderwake-hall",
+      "faces": 303,
+      "coverage": {
+        "stone": 12,
+        "linen": 14,
+        "timber": 73,
+        "amber": 16,
+        "slate": 188
+      },
+      "density_min_max": [
+        35.76318979977909,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "civic"
+    },
+    {
+      "definition": "house-dockside",
+      "mesh": "GEO-house-dockside",
+      "faces": 144,
+      "coverage": {
+        "stone": 12,
+        "plaster": 8,
+        "timber": 49,
+        "amber": 8,
+        "slate": 67
+      },
+      "density_min_max": [
+        55.93700787401575,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "teal"
+    },
+    {
+      "definition": "house-plaster-slate",
+      "mesh": "GEO-house-plaster-slate",
+      "faces": 209,
+      "coverage": {
+        "stone": 12,
+        "plaster": 8,
+        "timber": 49,
+        "amber": 8,
+        "slate": 132
+      },
+      "density_min_max": [
+        52.62222222222222,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "slate"
+    },
+    {
+      "definition": "house-plaster-terracotta",
+      "mesh": "GEO-house-plaster-terracotta",
+      "faces": 209,
+      "coverage": {
+        "stone": 12,
+        "plaster": 8,
+        "timber": 49,
+        "amber": 8,
+        "slate": 132
+      },
+      "density_min_max": [
+        52.23529411764706,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "terracotta"
+    },
+    {
+      "definition": "house-timber-slate",
+      "mesh": "GEO-house-timber-slate",
+      "faces": 189,
+      "coverage": {
+        "stone": 12,
+        "timber": 57,
+        "amber": 8,
+        "slate": 112
+      },
+      "density_min_max": [
+        58.22950819672131,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "slate"
+    },
+    {
+      "definition": "house-timber-terracotta",
+      "mesh": "GEO-house-timber-terracotta",
+      "faces": 209,
+      "coverage": {
+        "stone": 12,
+        "timber": 57,
+        "amber": 8,
+        "slate": 132
+      },
+      "density_min_max": [
+        51.10791366906475,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "terracotta"
+    },
+    {
+      "definition": "house-woodland-cottage",
+      "mesh": "GEO-house-woodland-cottage",
+      "faces": 179,
+      "coverage": {
+        "stone": 12,
+        "timber": 57,
+        "amber": 8,
+        "slate": 102
+      },
+      "density_min_max": [
+        64,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "woodland"
+    },
+    {
+      "definition": "lantern-rest",
+      "mesh": "GEO-lantern-rest",
+      "faces": 173,
+      "coverage": {
+        "stone": 12,
+        "plaster": 14,
+        "timber": 73,
+        "amber": 16,
+        "slate": 58
+      },
+      "density_min_max": [
+        34.31884057971015,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "slate"
+    },
+    {
+      "definition": "mayor-vale-home",
+      "mesh": "GEO-mayor-vale-home",
+      "faces": 273,
+      "coverage": {
+        "stone": 12,
+        "linen": 14,
+        "timber": 73,
+        "amber": 16,
+        "slate": 158
+      },
+      "density_min_max": [
+        43.67929185108045,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "civic"
+    },
+    {
+      "definition": "mill-road-schoolhouse",
+      "mesh": "GEO-mill-road-schoolhouse",
+      "faces": 259,
+      "coverage": {
+        "stone": 12,
+        "plaster": 8,
+        "timber": 49,
+        "amber": 8,
+        "slate": 182
+      },
+      "density_min_max": [
+        35.698492462311556,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "slate"
+    },
+    {
+      "definition": "net-shed",
+      "mesh": "GEO-net-shed",
+      "faces": 159,
+      "coverage": {
+        "stone": 12,
+        "plaster": 8,
+        "timber": 49,
+        "amber": 8,
+        "slate": 82
+      },
+      "density_min_max": [
+        64,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "teal"
+    },
+    {
+      "definition": "passenger-control-shelter",
+      "mesh": "GEO-passenger-control-shelter",
+      "faces": 199,
+      "coverage": {
+        "stone": 12,
+        "plaster": 8,
+        "timber": 49,
+        "amber": 8,
+        "slate": 122
+      },
+      "density_min_max": [
+        55.5,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "slate"
+    },
+    {
+      "definition": "tess-general-goods",
+      "mesh": "GEO-tess-general-goods",
+      "faces": 241,
+      "coverage": {
+        "stone": 12,
+        "plaster": 8,
+        "timber": 49,
+        "amber": 8,
+        "slate": 152,
+        "linen": 6,
+        "sage": 6
+      },
+      "density_min_max": [
+        45.06470456423061,
+        64
+      ],
+      "geometry_unchanged": true,
+      "group": "terracotta"
+    },
+    {
+      "definition": "reed-chandlery",
+      "group": "AD002 unchanged pilot",
+      "mesh": "GEO-reed-chandlery"
+    }
+  ],
+  "uv": "Orthonormal isotropic projection per original face; timber along longest edge; canonical roof winding;64texels/m principal faces;34.32-64 minimum/maximum across subordinate long accents/civic small patch;16px gutters; all source vertices/topology and exported triangles preserved. Existing skewed dockside nonplanarity maximum0.64% anisotropy.",
+  "preservation": "Original kit/mapping/layout/feet/height/physics/nav/portals/window registration/schema8/content1 unchanged; no per-instance materials or new runtime nodes.",
+  "import": "root_scale1/Y up, full-precision meshes/UVs; existing1024RGB atlas sRGB lossless/full mips/clamp/linear mipmaps; opaque roughness0.92 metal0 no emission; two-sided culling preserves original mixed-winding faces"
+}

@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001-AD008 baseline/material/lighting/playable pilot work is Done. AD009-AD020 remain Pending; next eligible task is AD009.
+AD001-AD009 baseline/material/lighting/playable pilot/town rollout work is Done. AD010-AD020 remain Pending; next eligible task is AD010.
 
 ## Selection and completion
 
@@ -25,7 +25,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | AD006 | Done | AD002, AD005 | Paint dock, plaza and low-wall modules |
 | AD007 | Done | AD003, AD004, AD005, AD006 | Calibrate storybook day, night and weather lighting |
 | AD008 | Done | AD007 | Accept playable Maris and Dock Row pilot |
-| AD009 | Pending | AD008 | Roll painted materials through town buildings |
+| AD009 | Done | AD008 | Roll painted materials through town buildings |
 | AD010 | Pending | AD008 | Extend painted treatment through forest and landmarks |
 | AD011 | Pending | AD008 | Unify small props, lights and collectible visuals |
 | AD012 | Pending | AD008 | Harmonize existing villagers with painted world |
@@ -289,3 +289,15 @@ Roof/shaded-plaster separation41.71, meadow173.97 to126.68 luma, storm-night pat
 Capture/comparison/recipe/preservation/CRLF-aware whitespace audits exit0;1611 starting paths protected. Retained CIM/fixture weather-node/hue-diagnostic corrections in acceptance, no original guard/test weakened.34 owned PIDs exited, final visual24028/launcher13444 and journey14640/launcher39616 exit0; no input/editor/Blender/process cleanup owed. Every criterion complete; no blocker or required unrun check. No Save/Load/native/restart/package claim. No staging/commit/push; user requested separate post-review commit instruction. Next eligible AD009 only; unfinished AD009-AD020, final AD020, every item complete: no.
 
 Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit scope is exactly five AD008 paths, including durable acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence remain excluded. Accepted task hashes,9/9 checks,1354 game/tools bytes and1609 protected starting paths reverified before documentation-only follow-up updates/staging. Exact verified commit identity/tree/path/blob scope and final working-tree status recorded after commit in `docs/evidence/AD008/authorized-commit-20261011/commit-audit.json`. AD001-AD008 remain Done, AD009-AD020 Pending. No push or AD009 implementation.
+
+### AD009 - 2026-10-11 UTC - Done
+
+[AD009_ACCEPTANCE](AD009_ACCEPTANCE.md): all14 current town building definitions painted; original AD002 shop retained and13 remaining source meshes receive full-face UVs. Five shared slate/terracotta/teal/civic/woodland groups reuse existing1024RGB atlas, no new texture/node/per-instance material. Sibling packed-image Blender source, portable GLB+existing PNG, editable recipe/exporter; seventeen task paths. Original5466 rollout triangles/source vertices/topology, all town/portal/window/physics/schema8/content1 pins retained. Narrow painted-material assertions preserve original physical and non-emitting building guarantees.
+
+Repository cwd; final `./tools/run_checks.ps1 -Task AD009 -Names application_smoke,map_town_art_checks,map_town_checks,light_interaction_checks,exterior_light_checks,routine_portal_checks -RenderScript art_direction_town_render -RenderPhases pilot -TimeoutSeconds 180` passes9/9 exit0 in `docs/evidence/AD009/20261011-074511870-5b3461de/`; stable1363-file digest `e919d310219c3ac9bfec301344e04d8b7e3d75531ffa366d250ac2ceb6e1afb9`, source.changed=false/error=null.37325 physical probes/18325 navigation samples/74 routes,151 lamp/13289 exterior-light/364 portal assertions. All92 actual Godot frames/eight provenance sheets and four full-size views inspected: street/river/civic/rear/woodland/quay both projections, zoom bounds, six night views, four angles and checker for every14 definitions. Window defaults ten lit/four dark; original anchors/panes/eight emitters retained.
+
+All UV triangles inside one safe region, no degenerate UVs;34.32-64.005texels/m, maximum source-skew anisotropy0.6437%. Physical semantic/floor/all16 render fingerprints identical to AD008. Corrected initial visually rejected culling/Compatibility palette ratios; import-generation/CIM/obsolete StandardMaterial cast/offline source-skew diagnostic attempts retained, no failed run promoted. Final texture32,489,873bytes equals AD008, nodes4067/resources482. Short paused p95/p99 street2.675/2.931ms, river1.926/2.360ms; draws270/236. No AD019 full-profile claim; prior quay516 draws remains.
+
+Preservation/asset/capture/whitespace audits exit0;1484 starting/1479 protected paths.59 recorded Godot launchers/engines exited, final30244/11624 exit0; background Blender exited, live default scene untouched. No blocker, unrun required criterion or cleanup owed. Unrelated direction/interiors/user instructions and historical R016 incomplete preserved. No ordinary/native journey, GUI Save/Load/restart/package claim. No staging/commit/push; separate post-review instruction awaits. Next eligible AD010 only; unfinished AD010-AD020, final AD020, every item complete: no.
+
+Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit scope is exactly17 AD009 paths, including durable acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract and ignored raw evidence remain excluded. All17 accepted task hashes,1363 validated source files,9/9 checks and1610 protected inputs reverified before documentation-only follow-up edits/staging. Exact verified commit/tree/path/blob identity and final status recorded after commit in `docs/evidence/AD009/authorized-commit-20261011/commit-audit.json`. AD001-AD009 remain Done, AD010-AD020 Pending; no push or AD010 implementation.

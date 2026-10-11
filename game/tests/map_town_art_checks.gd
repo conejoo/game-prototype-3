@@ -27,14 +27,19 @@ func _run() -> void:
 		var mesh: Mesh = art.meshes[mapping.mesh_name]
 		_check(mesh.get_surface_count() == 1, "Single shared palette surface: " + id)
 		var arrays: Array = mesh.surface_get_arrays(0)
-		var material: StandardMaterial3D = mesh.surface_get_material(0)
-		_check(material != null and material.metallic == 0 and material.roughness > 0.85, "Portable matte material: " + id)
-		if id in ["reed-chandlery", "dock-plank-module", "quay-stone-module"]:
-			_check(not material.vertex_color_use_as_albedo and material.albedo_color == Color.WHITE, "Painted shop receives old palette tint")
-			var expected_atlas: Texture2D = AlderwakeTownArt.PAINTED_ATLAS if id == "reed-chandlery" else AlderwakeTownArt.DOCK_ATLAS
-			_check(material.albedo_texture == expected_atlas and material.albedo_texture.get_size() == Vector2(1024, 1024), "Missing/shared painted atlas")
-			_check(material.albedo_texture.get_image().has_mipmaps() and material.transparency == BaseMaterial3D.TRANSPARENCY_DISABLED, "Painted mip/opaque policy")
-			_check(material.texture_filter == BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS and not material.texture_repeat, "Atlas mip/clamp policy")
+		var surface_material: Material = mesh.surface_get_material(0)
+		var rollout: bool = mapping.has("definition_id") and id != "reed-chandlery"
+		var material: StandardMaterial3D = surface_material as StandardMaterial3D
+		if rollout:
+			var painted: ShaderMaterial = surface_material as ShaderMaterial
+			_check(painted != null and painted == art.building_materials[AlderwakeTownArt.building_group(id)], "Shared building palette: " + id)
+			_check(painted.shader == AlderwakeTownArt.BUILDING_SHADER and painted.get_shader_parameter("painted_atlas") == AlderwakeTownArt.PAINTED_ATLAS, "Building shader/shared atlas: " + id)
+			_check(painted.shader.code.contains("ROUGHNESS = 0.92") and painted.shader.code.contains("METALLIC = 0.0") and not painted.shader.code.contains("ALPHA"), "Opaque matte building: " + id)
+			_check(painted.shader.code.contains("render_mode cull_disabled"), "Original mixed-winding building coverage: " + id)
+			_check(arrays[Mesh.ARRAY_COLOR] == null or arrays[Mesh.ARRAY_COLOR].is_empty(), "Exported old building tint: " + id)
+		else:
+			_check(material != null and material.metallic == 0 and material.roughness > 0.85, "Portable matte material: " + id)
+		if rollout or id in ["reed-chandlery", "dock-plank-module", "quay-stone-module"]:
 			var uvs: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV]
 			_check(uvs.size() == arrays[Mesh.ARRAY_VERTEX].size(), "Painted UV coverage incomplete")
 			for uv: Vector2 in uvs:
@@ -44,8 +49,12 @@ func _run() -> void:
 				var b: Vector2 = uvs[arrays[Mesh.ARRAY_INDEX][i+1]]
 				var c: Vector2 = uvs[arrays[Mesh.ARRAY_INDEX][i+2]]
 				_check(absf((b-a).cross(c-a)) > 0.000000001, "Degenerate painted UV triangle")
-		else:
-			_check(not arrays[Mesh.ARRAY_COLOR].is_empty() and material.vertex_color_use_as_albedo and material.albedo_texture == null, "Unpainted palette changed: " + id)
+		if id in ["reed-chandlery", "dock-plank-module", "quay-stone-module"]:
+			_check(not material.vertex_color_use_as_albedo and material.albedo_color == Color.WHITE, "Painted shop receives old palette tint")
+			var expected_atlas: Texture2D = AlderwakeTownArt.PAINTED_ATLAS if id == "reed-chandlery" else AlderwakeTownArt.DOCK_ATLAS
+			_check(material.albedo_texture == expected_atlas and material.albedo_texture.get_size() == Vector2(1024, 1024), "Missing/shared painted atlas")
+			_check(material.albedo_texture.get_image().has_mipmaps() and material.transparency == BaseMaterial3D.TRANSPARENCY_DISABLED, "Painted mip/opaque policy")
+			_check(material.texture_filter == BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS and not material.texture_repeat, "Atlas mip/clamp policy")
 		var bounds: AABB = mesh.get_aabb()
 		_check(absf(bounds.end.y - float(mapping.height_m)) < 0.005, "Imported up-axis/height: " + id)
 		triangles += arrays[Mesh.ARRAY_INDEX].size() / 3
@@ -117,7 +126,8 @@ func _run() -> void:
 	_check(art.partial_module_meshes.size() == 1, "Fractional edge pieces must share one UV crop mesh")
 	_check(art.painted_wall_count == 10 and art.wall_material.get_shader_parameter("painted_atlas") == AlderwakeTownArt.DOCK_ATLAS, "Exact low-wall coverage/shared atlas")
 	_check(location.interactables().is_empty() and location.destination_id.is_empty() and location.town.portal_pads.size() == 6, "Inactive doors installed gameplay")
-	var report: Dictionary = {"structures": ids.size(), "kit_meshes": art.meshes.size(), "kit_triangles": triangles, "exact_base_samples": base_samples, "dock_area_m2": module_area, "deck_modules": art.module_count, "quay_cells": art.quay_cells, "failures": failures}
+	_check(art.building_materials.size() == 5, "Building materials must remain shared by group")
+	var report: Dictionary = {"structures": ids.size(), "kit_meshes": art.meshes.size(), "kit_triangles": triangles, "painted_building_definitions": art.mappings.keys().filter(func(id: String) -> bool: return art.mappings[id].has("definition_id")), "shared_building_groups": art.building_materials.keys(), "exact_base_samples": base_samples, "dock_area_m2": module_area, "deck_modules": art.module_count, "quay_cells": art.quay_cells, "failures": failures}
 	# Read-only navigation guide for subsequent ordinary-input rendered tour.
 	var map: RID = location.get_world_3d().navigation_map
 	for attempt: int in range(120):

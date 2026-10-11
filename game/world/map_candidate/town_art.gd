@@ -4,6 +4,8 @@ extends Node3D
 
 const KIT: PackedScene = preload("res://assets/environment/alderwake_town_kit.glb")
 const SHOP_PILOT: PackedScene = preload("res://assets/environment/storybook/alderwake_shop_pilot.glb")
+const TOWN_ROLLOUT: PackedScene = preload("res://assets/environment/storybook/alderwake_town_rollout.glb")
+const BUILDING_SHADER: Shader = preload("res://world/map_candidate/painted_building.gdshader")
 const PAINTED_ATLAS: Texture2D = preload("res://assets/environment/storybook/town-painted-albedo.png")
 const DOCK_PILOT: PackedScene = preload("res://assets/environment/storybook/alderwake_dock_pilot.glb")
 const DOCK_ATLAS: Texture2D = preload("res://assets/environment/storybook/dock-painted-albedo.png")
@@ -19,6 +21,15 @@ var quay_cells: int = 0
 var painted_wall_count: int = 0
 var wall_material: ShaderMaterial
 var partial_module_meshes: Dictionary[String, Mesh] = {}
+var building_materials: Dictionary[String, ShaderMaterial] = {}
+
+
+static func building_group(id: String) -> String:
+	if id in ["alderwake-hall", "mayor-vale-home"]: return "civic"
+	if id in ["house-dockside", "net-shed"]: return "teal"
+	if id == "house-woodland-cottage": return "woodland"
+	if id.contains("terracotta") or id == "tess-general-goods": return "terracotta"
+	return "slate"
 
 
 func build(town: AlderwakeTownFootprints, layout: Dictionary) -> void:
@@ -51,6 +62,22 @@ func build(town: AlderwakeTownFootprints, layout: Dictionary) -> void:
 			mesh.surface_set_material(surface, material)
 		meshes[str(visual.name)] = mesh
 	pilot.free()
+	# AD009: thirteen remaining building meshes; five shared palette variants.
+	# UVs carry every original face. Physics, light anchors and mapping stay external.
+	for group: String in ["slate", "terracotta", "teal", "civic", "woodland"]:
+		var material: ShaderMaterial = ShaderMaterial.new()
+		material.shader = BUILDING_SHADER
+		material.set_shader_parameter("painted_atlas", PAINTED_ATLAS)
+		material.set_shader_parameter("roof_tint", Vector3(2.7, 1.25, .65) if group in ["terracotta", "civic"] else (Vector3(1.7, 1.45, .65) if group == "woodland" else Vector3.ONE))
+		material.set_shader_parameter("plaster_tint", Vector3(.36, .65, .82) if group == "teal" else Vector3.ONE)
+		building_materials[group] = material
+	var rollout: Node3D = TOWN_ROLLOUT.instantiate()
+	for visual: Node in rollout.find_children("*", "MeshInstance3D", true, false):
+		var mesh: ArrayMesh = visual.mesh.duplicate()
+		var definition: String = str(visual.name).trim_prefix("GEO-")
+		mesh.surface_set_material(0, building_materials[building_group(definition)])
+		meshes[str(visual.name)] = mesh
+	rollout.free()
 	# AD006: existing metre modules only. Single shared material, full face UVs.
 	var dock_pilot: Node3D = DOCK_PILOT.instantiate()
 	var dock_material: StandardMaterial3D = StandardMaterial3D.new()
