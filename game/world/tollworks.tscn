@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://features/interaction/recovery_vessel.tscn" id="6_vessel"]
 [ext_resource type="PackedScene" path="res://assets/models/tollworks_plinth.glb" id="7_plinth"]
 [ext_resource type="Resource" path="res://content/portals/tollworks_alderwake.tres" id="8_portal"]
+[ext_resource type="Script" path="res://world/storybook_prop_material.gd" id="9_paint"]
 
 [sub_resource type="StandardMaterial3D" id="Material_floor"]
 albedo_color = Color(0.18, 0.24, 0.29, 1)
@@ -130,6 +131,7 @@ position = Vector3(3, 0.3, -2)
 
 [node name="VisualRoot" type="Node3D" parent="Plinth"]
 position = Vector3(0, -0.3, 0)
+script = ExtResource("9_paint")
 
 [node name="PlinthModel" parent="Plinth/VisualRoot" instance=ExtResource("7_plinth")]
 

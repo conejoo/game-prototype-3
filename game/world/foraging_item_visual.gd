@@ -7,6 +7,7 @@ const FISH_ICONS: Dictionary[String, Texture2D] = {
 	"item-river-trout":preload("res://assets/items/river_trout.png"),
 	"item-golden-carp":preload("res://assets/items/golden_carp.png")}
 const ROD_ICON: Texture2D = preload("res://assets/items/fishing_rod.svg")
+static var materials: Dictionary[String, StandardMaterial3D] = {}
 
 static func icon(item_id: String) -> Texture2D:
 	return ROD_ICON if item_id == ForagingRegistry.ROD_ITEM else FLOWER_ICON if item_id == "item-moonflower" else FISH_ICONS.get(item_id)
@@ -16,12 +17,16 @@ func build(rod: bool) -> void:
 	else: _flower()
 
 func _material(color: Color, glow: float = 0.0) -> StandardMaterial3D:
+	# Tiny silhouettes need quiet palette groups, not subpixel painted noise.
+	var key: String = "%s/%s" % [color,glow]
+	if materials.has(key): return materials[key]
 	var material: StandardMaterial3D = StandardMaterial3D.new()
 	material.albedo_color = color
-	material.roughness = .82
+	material.roughness = .92
 	material.emission_enabled = glow > 0
 	material.emission = color
 	material.emission_energy_multiplier = glow
+	materials[key] = material
 	return material
 
 func _part(label: String, mesh: Mesh, at: Vector3, material: Material, sizing: Vector3 = Vector3.ONE) -> MeshInstance3D:
@@ -52,9 +57,9 @@ func _shaft(label: String, at: Vector3, length: float, radius: float, material: 
 	if horizontal: part.rotation.z = PI / 2
 
 func _flower() -> void:
-	var green: StandardMaterial3D = _material(Color(.18,.48,.32),.14)
-	var ivory: StandardMaterial3D = _material(Color(.82,.87,1),.5)
-	var heart: StandardMaterial3D = _material(Color(.98,.78,.38),.4)
+	var green: StandardMaterial3D = _material(Color("69814b"),.14)
+	var ivory: StandardMaterial3D = _material(Color("e4e4f2"),.5)
+	var heart: StandardMaterial3D = _material(Color("e7ad58"),.4)
 	_shaft("Stem",Vector3(0,.22,0),.44,.023,green)
 	for sign_value: float in [-1.0,1.0]:
 		var leaf: MeshInstance3D = _ellipsoid("LeafLeft" if sign_value < 0 else "LeafRight",Vector3(sign_value * .1,.17,.02),Vector3(.24,.05,.09),green)
@@ -66,9 +71,9 @@ func _flower() -> void:
 	_ellipsoid("MoonHeart",Vector3(0,.46,0),Vector3(.13,.09,.13),heart)
 
 func _rod() -> void:
-	var shaft: StandardMaterial3D = _material(Color(.84,.87,.78),.3)
-	var cork: StandardMaterial3D = _material(Color(.72,.43,.19),.25)
-	var teal: StandardMaterial3D = _material(Color(.15,.6,.57),.35)
+	var shaft: StandardMaterial3D = _material(Color("ddd8b9"),.3)
+	var cork: StandardMaterial3D = _material(Color("946437"),.25)
+	var teal: StandardMaterial3D = _material(Color("3b9c93"),.35)
 	_shaft("RodShaft",Vector3(0,.08,0),.9,.028,shaft,true)
 	_shaft("CorkGrip",Vector3(-.31,.08,0),.24,.043,cork,true)
 	for index: int in range(3):

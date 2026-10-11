@@ -1,0 +1,22 @@
+{
+  "task": "AD011",
+  "source_authority": "Original exterior_light_kit, recovery_vessel, tollworks_plinth Blender/GLB files and pinned source mappings remain byte-identical. Current procedural meshes own tiny items and small props.",
+  "appearance_source": "game/world/storybook_prop_material.gd and game/world/storybook_prop.gdshader; runtime all-face material adaptation, no geometry re-export or live Blender mutation",
+  "shared_atlas": "game/assets/environment/storybook/town-painted-albedo.png",
+  "projection": "local-metre triplanar blend, fourth-power normal weights; continuous mirrored plaster-patch value at64texels/m inside16px gutters; vertex palette and original material/emission supply semantic hue",
+  "roughness": 0.92,
+  "new_textures": 0,
+  "new_emitters": 0,
+  "cache_policy": "One immutable shared shader material per source palette/metallic/emission tuple; six cached tiny-item materials across all pickup/preview rebuilds. Dynamic lamp cores remain existing per-source StandardMaterial3D state owners.",
+  "tiny_items": {
+    "stem_leaf": "#69814b",
+    "petals": "#e4e4f2",
+    "heart": "#e7ad58",
+    "rod_shaft": "#ddd8b9",
+    "cork": "#946437",
+    "binding_reel": "#3b9c93",
+    "policy": "No atlas for subpixel parts; original geometry, roughness-only finish, exact existing emission energies0.14/0.5/0.4 and0.3/0.25/0.35 retained"
+  },
+  "fishing": {"waiting_fighting":"#eadfba", "bite":"#edbb60", "policy":"Existing unshaded line/bobber/ripple shapes, motion equations and phase timing unchanged"},
+  "retained": "Maris counter/oil/line/fitting/specialist meshes already painted by AD002; existing five UI item icons retained. Original capsule/guardian/rooms/terrain/trees/town materials remain with their owners. No item, physics, state, schema, light pooling or gameplay changes."
+}

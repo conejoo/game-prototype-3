@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://features/interaction/interactable.gd" id="1"]
 [ext_resource type="PackedScene" path="res://assets/models/recovery_vessel.glb" id="2_model"]
+[ext_resource type="Script" path="res://world/storybook_prop_material.gd" id="3_paint"]
 
 [sub_resource type="BoxShape3D" id="Shape"]
 size = Vector3(0.7, 1.2, 0.7)
@@ -14,6 +15,7 @@ prompt = "Inspect Maris's recovery vessel"
 dialogue_id = "prototype-maris-vessel"
 
 [node name="VisualRoot" type="Node3D" parent="."]
+script = ExtResource("3_paint")
 
 [node name="VesselModel" parent="VisualRoot" instance=ExtResource("2_model")]
 

@@ -94,7 +94,8 @@ func _add_prism(wrapper: Node3D, id: String, outline: PackedVector2Array, height
 	material.albedo_color = color
 	material.roughness = 1.0
 	material.cull_mode = BaseMaterial3D.CULL_DISABLED
-	visual.material_override = material
+	# AD011 bounded small-prop list; accepted structures/trees/walls keep their owners.
+	visual.material_override = StorybookPropMaterial.painted(material) if wrapper.get_meta("definition_id", "") in StorybookPropMaterial.SMALL_DEFINITIONS else material
 	wrapper.get_node("VisualRoot").add_child(visual)
 
 

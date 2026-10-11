@@ -24,7 +24,8 @@ func build(location: AlderwakeTerrainPreview) -> void:
 		for index: int in range(mesh.get_surface_count()):
 			var material: StandardMaterial3D = visual.get_active_material(index).duplicate() as StandardMaterial3D
 			material.vertex_color_use_as_albedo = true
-			mesh.surface_set_material(index, material)
+			# Shared painted frames only. Dynamic cores retain consumer-owned emission.
+			mesh.surface_set_material(index, StorybookPropMaterial.painted(material, true) if str(visual.name).ends_with("-frame") else material)
 		meshes[str(visual.name)] = mesh
 	kit.free()
 	for row: Dictionary in parsed.entries:

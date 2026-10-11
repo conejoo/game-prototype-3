@@ -70,6 +70,19 @@ normal GUI save before export loaded in a fresh process after export. See
 `docs/evidence/P012/VALIDATION.md`. Gallery is visual inspection only; synthetic
 pipeline fixtures are not normal quest-completion evidence.
 
+## AD011 storybook prop presentation
+
+The original static Blender sources and GLBs above remain geometry/material pins.
+AD011 adapts recovery vessel/plinth materials under the existing VisualRoot using
+`game/world/storybook_prop_material.gd` and `storybook_prop.gdshader`. Exterior
+lamp frames and the bounded small-prop definition list reuse that shared adapter.
+It samples the existing town atlas through local-metre triplanar projection;
+imported semantic colors, metallic values and vessel emission remain intact.
+The lamp consumer still owns its dynamic StandardMaterial3D cores and eight
+unshadowed emitters. Tiny flower/rod parts share six quiet color materials.
+See `art/source/storybook/props-painted-recipe.json` for coverage/cache rules and
+`docs/art-direction-storybook/AD011_ACCEPTANCE.md` for current engine validation.
+
 ## N007 animated NPC extension
 
 The static P012 settings above remain valid for those three assets. Animated NPCs
