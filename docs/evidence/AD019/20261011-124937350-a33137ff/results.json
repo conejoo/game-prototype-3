@@ -1,0 +1,783 @@
+{
+  "schema_version": 2,
+  "task": "AD019",
+  "run_id": "20261011-124937350-a33137ff",
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype",
+  "engine_path": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe",
+  "engine_version": "4.7.2.stable.mono.official.ed1daf0bf",
+  "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-124937350-a33137ff\\appdata",
+  "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-124937350-a33137ff\\localappdata",
+  "save_groups": [],
+  "source": {
+    "before": {
+      "sha256": "b0f28fae00e9d813e827cc0f9fd3f5b24479a10541832d571c55342a89a63cd6",
+      "captured_utc": "2026-10-11T12:49:38.2657959Z",
+      "file_count": 1410,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\source-before.json"
+    },
+    "after": {
+      "sha256": "4b3ac03e83af0808f760ccda49344d0790e24705dbb91234d566605d46c1bcce",
+      "captured_utc": "2026-10-11T12:49:46.2697372Z",
+      "file_count": 1427,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\source-after.json"
+    },
+    "git": {
+      "head": "c6325cb76c30ed7ca3ddda1b7058b4f32b5b63a6",
+      "working_tree_dirty": true,
+      "status": [
+        " M docs/art-direction-storybook/CHECKLIST.md",
+        "?? art/direction/",
+        "?? docs/art-direction-storybook/AGENT_PROMPT.md",
+        "?? docs/art-direction-storybook/CONTRACT.md",
+        "?? docs/interiors-map-migration/",
+        "?? game/tests/art_direction_performance_profile.gd",
+        "?? tools/art_direction/profile_storybook.py"
+      ],
+      "error": null
+    },
+    "changed": true,
+    "changes": [
+      {
+        "checkpoint": "import-after",
+        "path": "game/features/actors/storybook_actor.gdshader.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "c4297bf73172109ac0134e9cb4d825e27ef5470eca9f283e0495619aeb366e32"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/features/actors/storybook_actor_material.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "2291c25c8d29c6f4cf66d98e64125e24b1179b27a5f545ec11e6f9f75e373e4f"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_actor_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "1c13e6448ea02657d98046fbd2ee16c3ab34a81c1dc1b322d679c896af2314f7"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_home_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "a2c9c6347de2d78c914feb8aa261069d20ff55d674e1ae6585694cc745e7de3b"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_hud_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "5e4b41cbe5e1869638a57800fe4986c3786f9d60a614aabb6c25cf5e7c137d7e"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_inn_journey_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "538bd9b949759d714b0a35062285cb0e2ae8db0dfa6b641e724d28380923d728"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_inn_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "55a4a5a07548344c8dafe1291f8247376577f564a283eb6e278c55e4c148511e"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_integration_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "a1b1549f9558f4cbfa8ed347b59b1773ede65288825308db8e7a021e72f1c489"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_performance_profile.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "96ead474dcae89c88fb9c083736efa9ed2a13e25c1e06779041dbe598f9c69e9"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_tollworks_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "4342bc8509123d1803cd09a09b7871f9a6f64e891b2853af1f481322b8e8f40d"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/storybook_actor_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "00902956b31ba66a0031935be963c8755faab31225d6fe50e0cdc7d600ea1ab6"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/storybook_home_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "5151f097b1fc68ad7f964437ad8cb023ea2c359419ca9031a572c73306d0363d"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/storybook_inn_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "0b1128ead2cec9ad6814aeba2a4405f04a90b9485fd20beb30406b3d0903c715"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/storybook_tollworks_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "b63c70fb1ad9461992ef042e056804466a0ea891af23ffa6a5a5b8b35da3fde0"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/world/storybook_inn.gdshader.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "3d441a414e39f8430fd5e982df27b6cb2d6116fe8a74ab957c7b7a48d3880df0"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/world/storybook_inn_material.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "a175a5a0a865af9e52f997e37d72c49d39571874bcdf60d66b6968459226753f"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/world/storybook_tollworks_material.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "3f0597909d056c8d5a31550a873e00a7952be5946d408c4510c60cdf1cbb3881"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/features/actors/storybook_actor.gdshader.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "c4297bf73172109ac0134e9cb4d825e27ef5470eca9f283e0495619aeb366e32"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/features/actors/storybook_actor_material.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "2291c25c8d29c6f4cf66d98e64125e24b1179b27a5f545ec11e6f9f75e373e4f"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_actor_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "1c13e6448ea02657d98046fbd2ee16c3ab34a81c1dc1b322d679c896af2314f7"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_home_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "a2c9c6347de2d78c914feb8aa261069d20ff55d674e1ae6585694cc745e7de3b"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_hud_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "5e4b41cbe5e1869638a57800fe4986c3786f9d60a614aabb6c25cf5e7c137d7e"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_inn_journey_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "538bd9b949759d714b0a35062285cb0e2ae8db0dfa6b641e724d28380923d728"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_inn_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "55a4a5a07548344c8dafe1291f8247376577f564a283eb6e278c55e4c148511e"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_integration_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "a1b1549f9558f4cbfa8ed347b59b1773ede65288825308db8e7a021e72f1c489"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_performance_profile.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "96ead474dcae89c88fb9c083736efa9ed2a13e25c1e06779041dbe598f9c69e9"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_tollworks_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "4342bc8509123d1803cd09a09b7871f9a6f64e891b2853af1f481322b8e8f40d"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/storybook_actor_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "00902956b31ba66a0031935be963c8755faab31225d6fe50e0cdc7d600ea1ab6"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/storybook_home_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "5151f097b1fc68ad7f964437ad8cb023ea2c359419ca9031a572c73306d0363d"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/storybook_inn_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "0b1128ead2cec9ad6814aeba2a4405f04a90b9485fd20beb30406b3d0903c715"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/storybook_tollworks_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "b63c70fb1ad9461992ef042e056804466a0ea891af23ffa6a5a5b8b35da3fde0"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/world/storybook_inn.gdshader.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "3d441a414e39f8430fd5e982df27b6cb2d6116fe8a74ab957c7b7a48d3880df0"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/world/storybook_inn_material.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "a175a5a0a865af9e52f997e37d72c49d39571874bcdf60d66b6968459226753f"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/world/storybook_tollworks_material.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "3f0597909d056c8d5a31550a873e00a7952be5946d408c4510c60cdf1cbb3881"
+      }
+    ],
+    "error": null
+  },
+  "started_utc": "2026-10-11T12:49:37.3950532Z",
+  "finished_utc": "2026-10-11T12:49:46.3550630Z",
+  "status": "failed",
+  "error": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+  "cases": [
+    {
+      "label": "engine-version",
+      "arguments": [
+        "--headless",
+        "--version"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-124937350-a33137ff\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-124937350-a33137ff\\localappdata",
+      "launcher_pid": 38380,
+      "engine_pids": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\00-engine-version.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\00-engine-version.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "b0f28fae00e9d813e827cc0f9fd3f5b24479a10541832d571c55342a89a63cd6",
+        "captured_utc": "2026-10-11T12:49:39.2704577Z",
+        "file_count": 1410,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\00-engine-version.source-before.json"
+      },
+      "source_after": {
+        "sha256": "b0f28fae00e9d813e827cc0f9fd3f5b24479a10541832d571c55342a89a63cd6",
+        "captured_utc": "2026-10-11T12:49:40.1849073Z",
+        "file_count": 1410,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\00-engine-version.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T12:49:38.6072422Z",
+      "finished_utc": "2026-10-11T12:49:40.2771335Z"
+    },
+    {
+      "label": "import",
+      "arguments": [
+        "--headless",
+        "--editor",
+        "--path",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\game",
+        "--import",
+        "--quit"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-124937350-a33137ff\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-124937350-a33137ff\\localappdata",
+      "launcher_pid": 47340,
+      "engine_pids": [
+        63820
+      ],
+      "exit_code": -1,
+      "timed_out": false,
+      "stopped_on_diagnostic": true,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "failed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\01-import.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\01-import.stderr.log",
+      "diagnostics": [
+        "WARNING: Missing .uid file for path \"res://features/actors/storybook_actor.gdshader\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://features/actors/storybook_actor_material.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/art_direction_actor_render.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/art_direction_home_render.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/art_direction_inn_journey_render.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/art_direction_inn_render.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/art_direction_tollworks_render.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/storybook_actor_checks.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/storybook_home_checks.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/storybook_inn_checks.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://tests/storybook_tollworks_checks.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://world/storybook_inn.gdshader\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://world/storybook_inn_material.gd\". The file was re-created from cache.",
+        "WARNING: Missing .uid file for path \"res://world/storybook_tollworks_material.gd\". The file was re-created from cache."
+      ],
+      "allowed_diagnostics": [
+        "ERROR: .NET Sdk not found. The required version is '10.0.9'."
+      ],
+      "source_before": {
+        "sha256": "b0f28fae00e9d813e827cc0f9fd3f5b24479a10541832d571c55342a89a63cd6",
+        "captured_utc": "2026-10-11T12:49:40.9529588Z",
+        "file_count": 1410,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\01-import.source-before.json"
+      },
+      "source_after": {
+        "sha256": "4b3ac03e83af0808f760ccda49344d0790e24705dbb91234d566605d46c1bcce",
+        "captured_utc": "2026-10-11T12:49:45.6521978Z",
+        "file_count": 1427,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\01-import.source-after.json"
+      },
+      "source_changes": [
+        {
+          "path": "game/features/actors/storybook_actor.gdshader.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "c4297bf73172109ac0134e9cb4d825e27ef5470eca9f283e0495619aeb366e32"
+        },
+        {
+          "path": "game/features/actors/storybook_actor_material.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "2291c25c8d29c6f4cf66d98e64125e24b1179b27a5f545ec11e6f9f75e373e4f"
+        },
+        {
+          "path": "game/tests/art_direction_actor_render.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "1c13e6448ea02657d98046fbd2ee16c3ab34a81c1dc1b322d679c896af2314f7"
+        },
+        {
+          "path": "game/tests/art_direction_home_render.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "a2c9c6347de2d78c914feb8aa261069d20ff55d674e1ae6585694cc745e7de3b"
+        },
+        {
+          "path": "game/tests/art_direction_hud_render.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "5e4b41cbe5e1869638a57800fe4986c3786f9d60a614aabb6c25cf5e7c137d7e"
+        },
+        {
+          "path": "game/tests/art_direction_inn_journey_render.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "538bd9b949759d714b0a35062285cb0e2ae8db0dfa6b641e724d28380923d728"
+        },
+        {
+          "path": "game/tests/art_direction_inn_render.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "55a4a5a07548344c8dafe1291f8247376577f564a283eb6e278c55e4c148511e"
+        },
+        {
+          "path": "game/tests/art_direction_integration_render.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "a1b1549f9558f4cbfa8ed347b59b1773ede65288825308db8e7a021e72f1c489"
+        },
+        {
+          "path": "game/tests/art_direction_performance_profile.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "96ead474dcae89c88fb9c083736efa9ed2a13e25c1e06779041dbe598f9c69e9"
+        },
+        {
+          "path": "game/tests/art_direction_tollworks_render.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "4342bc8509123d1803cd09a09b7871f9a6f64e891b2853af1f481322b8e8f40d"
+        },
+        {
+          "path": "game/tests/storybook_actor_checks.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "00902956b31ba66a0031935be963c8755faab31225d6fe50e0cdc7d600ea1ab6"
+        },
+        {
+          "path": "game/tests/storybook_home_checks.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "5151f097b1fc68ad7f964437ad8cb023ea2c359419ca9031a572c73306d0363d"
+        },
+        {
+          "path": "game/tests/storybook_inn_checks.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "0b1128ead2cec9ad6814aeba2a4405f04a90b9485fd20beb30406b3d0903c715"
+        },
+        {
+          "path": "game/tests/storybook_tollworks_checks.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "b63c70fb1ad9461992ef042e056804466a0ea891af23ffa6a5a5b8b35da3fde0"
+        },
+        {
+          "path": "game/world/storybook_inn.gdshader.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "3d441a414e39f8430fd5e982df27b6cb2d6116fe8a74ab957c7b7a48d3880df0"
+        },
+        {
+          "path": "game/world/storybook_inn_material.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "a175a5a0a865af9e52f997e37d72c49d39571874bcdf60d66b6968459226753f"
+        },
+        {
+          "path": "game/world/storybook_tollworks_material.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "3f0597909d056c8d5a31550a873e00a7952be5946d408c4510c60cdf1cbb3881"
+        }
+      ],
+      "failure_summary": {
+        "reason": "source_changed",
+        "message": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+        "failed_assertion": null,
+        "diagnostic_context": [
+          {
+            "stream": "stderr",
+            "line_number": 9,
+            "text": "WARNING: Missing .uid file for path \"res://features/actors/storybook_actor.gdshader\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 10,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 11,
+            "text": "WARNING: Missing .uid file for path \"res://features/actors/storybook_actor_material.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 12,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 13,
+            "text": "WARNING: Missing .uid file for path \"res://tests/art_direction_actor_render.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 14,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 15,
+            "text": "WARNING: Missing .uid file for path \"res://tests/art_direction_home_render.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 16,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 17,
+            "text": "WARNING: Missing .uid file for path \"res://tests/art_direction_inn_journey_render.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 18,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 19,
+            "text": "WARNING: Missing .uid file for path \"res://tests/art_direction_inn_render.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 20,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 21,
+            "text": "WARNING: Missing .uid file for path \"res://tests/art_direction_tollworks_render.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 22,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 23,
+            "text": "WARNING: Missing .uid file for path \"res://tests/storybook_actor_checks.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 24,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 25,
+            "text": "WARNING: Missing .uid file for path \"res://tests/storybook_home_checks.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 26,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 27,
+            "text": "WARNING: Missing .uid file for path \"res://tests/storybook_inn_checks.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 28,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 29,
+            "text": "WARNING: Missing .uid file for path \"res://tests/storybook_tollworks_checks.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 30,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 31,
+            "text": "WARNING: Missing .uid file for path \"res://world/storybook_inn.gdshader\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 32,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          }
+        ],
+        "stack": [
+          {
+            "stream": "stderr",
+            "line_number": 10,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 12,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 14,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 16,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 18,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 20,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 22,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 24,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 26,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 28,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 30,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 32,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          }
+        ],
+        "log_tail": [
+          {
+            "stream": "stdout",
+            "line_number": 20,
+            "text": "[  77% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 21,
+            "text": "\u001b[92m[ DONE ]\u001b[39m \u001b[1mupdate_scripts_classes\u001b[22m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 22,
+            "text": "\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 23,
+            "text": "[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 24,
+            "text": "[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 25,
+            "text": "[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 26,
+            "text": "\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 27,
+            "text": "\u001b[0m"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 29,
+            "text": "WARNING: Missing .uid file for path \"res://tests/storybook_tollworks_checks.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 30,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 31,
+            "text": "WARNING: Missing .uid file for path \"res://world/storybook_inn.gdshader\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 32,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 33,
+            "text": "WARNING: Missing .uid file for path \"res://world/storybook_inn_material.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 34,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 35,
+            "text": "WARNING: Missing .uid file for path \"res://world/storybook_tollworks_material.gd\". The file was re-created from cache."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 36,
+            "text": "   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)"
+          }
+        ],
+        "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\01-import.stdout.log",
+        "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-124937350-a33137ff\\01-import.stderr.log"
+      },
+      "error": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+      "started_utc": "2026-10-11T12:49:40.3037221Z",
+      "finished_utc": "2026-10-11T12:49:45.7508860Z"
+    }
+  ],
+  "parse_scripts": [
+    "res://tests/application_smoke.gd",
+    "res://tests/art_direction_performance_profile.gd",
+    "res://tests/environment_review.gd",
+    "res://tests/map_performance_profile.gd",
+    "res://app/game_root.gd",
+    "res://app/world_host.gd",
+    "res://app/party.gd",
+    "res://app/camera_rig.gd",
+    "res://features/actors/actor_placeholder.gd",
+    "res://tests/live_playtest_bridge.gd",
+    "res://ui/conversation_view.gd",
+    "res://ui/prototype_ui.gd",
+    "res://features/actors/storybook_actor_material.gd",
+    "res://ui/people_journal_view.gd",
+    "res://ui/backpack_view.gd",
+    "res://ui/storybook_hud.gd"
+  ]
+}

@@ -1,0 +1,1726 @@
+{
+  "task": "AD019",
+  "mode": "authorized successful-task commit",
+  "starting_head": "c6325cb76c30ed7ca3ddda1b7058b4f32b5b63a6",
+  "task_path_count": 6,
+  "evidence_path_count": 279,
+  "file_count_excluding_this_manifest": 285,
+  "selected_bytes_excluding_this_manifest": 55888919,
+  "png_count": 52,
+  "validated_source_sha256": "06de66f011592e518852df960b30926363ddfef6198822d749d8e24301567f1e",
+  "protected_files": 3890,
+  "no_AD020_work": true,
+  "no_push": true,
+  "selected_paths": [
+    {
+      "path": "docs/art-direction-storybook/AD019_ACCEPTANCE.md",
+      "bytes": 15496,
+      "sha256": "4ce9af51255516416e67a58c1133aa20ec85834deb9fcc0f8e57a577c693806f",
+      "expected_git_blob": "f80cb5bc4217063e6d12b64e3fc0943b39f64a74"
+    },
+    {
+      "path": "docs/art-direction-storybook/CHECKLIST.md",
+      "bytes": 106319,
+      "sha256": "68ebce7c4d22d9a7be459bc4a76096751cdd6a85b7daed0c47293a80f5e64adc",
+      "expected_git_blob": "6066f812a28ff826e9a77acaa4604e3a847357ca"
+    },
+    {
+      "path": "docs/art-direction-storybook/CURRENT_STATE.md",
+      "bytes": 5779,
+      "sha256": "16a28093be76daa1f0408025dfee37ad72217f692c9c1e91d16816d9742bb1e3",
+      "expected_git_blob": "55062a71b2fc26249c59799e33c58347a5275a13"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/00-engine-version.source-after.json",
+      "bytes": 233768,
+      "sha256": "deb753d9e1aac7f2339fac70a7696111d0b8ea463fae8a1a7bea04dc8c846712",
+      "expected_git_blob": "d960db854ff357b6e5ebef1de2d0564fad0d4192"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/00-engine-version.source-before.json",
+      "bytes": 233768,
+      "sha256": "5b2fe1d3832aa1047d634695c7d76b9351132e61b5c2c4c0eea06499b59280b1",
+      "expected_git_blob": "8c258eda33eca8f65528322c84de72cfdb7be4b7"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/00-engine-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/00-engine-version.stdout.log",
+      "bytes": 38,
+      "sha256": "5d7f7a4d142ab8d22b2d814b7b14bf46616bbf3de695409479541ac536c9161d",
+      "expected_git_blob": "bfa059fc9ef763e2fe7b48b01d19502c5208c343"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/01-import.source-after.json",
+      "bytes": 233768,
+      "sha256": "118e87ab7c317652547af088c23b8bb39dc9ffbc7884129a8cbb12b5888dcd05",
+      "expected_git_blob": "e0b8accdc3a5cc34766ebf8481c526fce335a849"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/01-import.source-before.json",
+      "bytes": 233768,
+      "sha256": "224fe46de72aadbb1bede4aa5564e73c1fc6c3079616dec02cbefc390efce4b8",
+      "expected_git_blob": "92c6f4529aee201114295a3390afd74769f09983"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/01-import.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/01-import.stdout.log",
+      "bytes": 80,
+      "sha256": "6038ffebd796e5e276b58f03c28cf3eba2bbe6d85eea3592e6d3c3d87f0fe143",
+      "expected_git_blob": "a449a721f2303eda06b4aab6054a21a9da540d16"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/results.json",
+      "bytes": 7894,
+      "sha256": "494d7cae43b89a9ddacb41626669aa8fd3d522b1e2f5dde596ca181200012cd8",
+      "expected_git_blob": "29ed9b391054c28f0419612168816ac5634743be"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/source-after.json",
+      "bytes": 233768,
+      "sha256": "7215db663b392d733575aaaaffe58980aa46a925d2a550aed5086f2367d62a1d",
+      "expected_git_blob": "83300340bbe974211d87e784083fa1ee49291f28"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124915514-664fb29f/source-before.json",
+      "bytes": 233768,
+      "sha256": "99858802ec9a3eb32fa4245e55e27bceee1747037e51c8e4b1d47a740315bcfe",
+      "expected_git_blob": "d4226c187ee7bb28854d3c41434a91fb0fffaa79"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/00-engine-version.source-after.json",
+      "bytes": 233768,
+      "sha256": "3b3d51cca6c63b5896a84df7b39ec38157814a82befe9dba601e08ec0739b412",
+      "expected_git_blob": "cbcb7410cd33e3bc189463aa155aa89aedf50941"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/00-engine-version.source-before.json",
+      "bytes": 233768,
+      "sha256": "d9a08e046d679b8ada021e5aec9d2f88e1fe213f63f5e6d7876da4bd93899093",
+      "expected_git_blob": "067c32956c868421e73a13e0438a9bc85f88419d"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/00-engine-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/00-engine-version.stdout.log",
+      "bytes": 38,
+      "sha256": "5d7f7a4d142ab8d22b2d814b7b14bf46616bbf3de695409479541ac536c9161d",
+      "expected_git_blob": "bfa059fc9ef763e2fe7b48b01d19502c5208c343"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/01-import.source-after.json",
+      "bytes": 236529,
+      "sha256": "c8e09d4c64a9afe56e4420e3e77ad6e3e69eaa32f261a15f2dc69498d6d7ce3f",
+      "expected_git_blob": "03b3f6b7cc59e987a3917c64d6253083e832f1d3"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/01-import.source-before.json",
+      "bytes": 233768,
+      "sha256": "d981179abb2c0a9cbd66a4f4c0ae379aed8ec92cf2b4daabcde753d15679f7fd",
+      "expected_git_blob": "42a03e1abe05a159829dd219ad090ad78d262bc7"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/01-import.stderr.log",
+      "bytes": 4233,
+      "sha256": "f4c7bd6e02aaa96a91e4978324696f6d770b9ec31a2e4995ba93a5b3ed7d79c4",
+      "expected_git_blob": "ada151a1df82e52b43a850d3a81adafabeb23c11"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/01-import.stdout.log",
+      "bytes": 1696,
+      "sha256": "f4aa590829cfe8c3ccc1b2630fd30b187407e1d9160470dbe4d7bfdecb249ab2",
+      "expected_git_blob": "58b2ad7b948b24e55ab2d6e52d045b8b69190942"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/results.json",
+      "bytes": 33827,
+      "sha256": "0d62bbc998e7880bd26e3e9bfe640cadd8ca9f0a78b40dd1405e4e911e4ebf7b",
+      "expected_git_blob": "bdee222bddab95870c2cb7579f605d8fd2e62dfb"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/source-after.json",
+      "bytes": 236529,
+      "sha256": "6f8ba865fb56b26442da18877e6fdefebe0ecad1784bc59ba7dda12344c357f6",
+      "expected_git_blob": "788b92870cb934d4f6290f4c6c729b0d80420b0d"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-124937350-a33137ff/source-before.json",
+      "bytes": 233768,
+      "sha256": "b42bec7c382c67b57f1f8be3a0dbaa3fe5750aea3828a8cef08f326da8109d23",
+      "expected_git_blob": "decc06db2ecf097ad96f44d384c1e624d098f260"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/00-engine-version.source-after.json",
+      "bytes": 236529,
+      "sha256": "2588c297cb238b7edcac5e9187e96081a84c093853f38a8a0d4820a15bcdaf34",
+      "expected_git_blob": "f01ecce23db989da534996e3c785b156644a0f34"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/00-engine-version.source-before.json",
+      "bytes": 236529,
+      "sha256": "0da01a6f8e5f9d3acac4bb6ea01ae886896f07e98f85b2697967bb15ce31174b",
+      "expected_git_blob": "01939f3b7f9c27d9baea90273b1980e9cb40b518"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/00-engine-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/00-engine-version.stdout.log",
+      "bytes": 38,
+      "sha256": "5d7f7a4d142ab8d22b2d814b7b14bf46616bbf3de695409479541ac536c9161d",
+      "expected_git_blob": "bfa059fc9ef763e2fe7b48b01d19502c5208c343"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/01-parse-preflight.source-after.json",
+      "bytes": 236529,
+      "sha256": "8eb5adb675eaafd6ba76491ba16eaae3ac64224a6a7a7b190f9021aa18a347ca",
+      "expected_git_blob": "e2c66309f0359dbfe49e3608824486d1ac4be62b"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/01-parse-preflight.source-before.json",
+      "bytes": 236529,
+      "sha256": "d83108f78758241c9e1aee805a1382a58909bf0cf6f37db1adba9931c8db709d",
+      "expected_git_blob": "0791e113240fbff9ba5f9f5d03522bb31b218b52"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/01-parse-preflight.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/01-parse-preflight.stdout.log",
+      "bytes": 80,
+      "sha256": "6038ffebd796e5e276b58f03c28cf3eba2bbe6d85eea3592e6d3c3d87f0fe143",
+      "expected_git_blob": "a449a721f2303eda06b4aab6054a21a9da540d16"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/02-application_smoke.source-after.json",
+      "bytes": 236529,
+      "sha256": "bcb78b9bc9ae899db7b15e336e7e9c3dbb1d9f90097a310817aed324b98b885f",
+      "expected_git_blob": "9dc2d6ae2c144d2ee379b25325e86978fba60a7e"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/02-application_smoke.source-before.json",
+      "bytes": 236529,
+      "sha256": "7e8be3b53aeda297d3f4f95e440f6aa522d10e39882679726b780869c0d8704e",
+      "expected_git_blob": "f144f062903da1cafc2a925d548fe84017420ac0"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/02-application_smoke.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/02-application_smoke.stdout.log",
+      "bytes": 508,
+      "sha256": "571c9e5838336c568aa80e02255ab8b74117558454bc3cb5893b550262284419",
+      "expected_git_blob": "da2224d2ee0fd704dadc95f53e189fa66d03bf9c"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/results.json",
+      "bytes": 11235,
+      "sha256": "0a835d395a4e551d1a48eaff4f53f610076cb970158604968fd662cea5de5ff8",
+      "expected_git_blob": "fb13817e795e651f9a528e4d75e87fb132ec7c0d"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/source-after.json",
+      "bytes": 236529,
+      "sha256": "33e100e2b5f639af97182f14bb7de4a862b6aa3e47568fad31017ef00cd328d2",
+      "expected_git_blob": "59a2e45713a2ad61662b1da8e93225dab2f8bf74"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125005008-9a89484b/source-before.json",
+      "bytes": 236529,
+      "sha256": "5c5912626e91ba63396223361a711ad638c2621847b51e5ebcad42f3f3bca0d9",
+      "expected_git_blob": "0a16e6f211141949082d57422050cc7fd0a4ae20"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/00-engine-version.source-after.json",
+      "bytes": 236529,
+      "sha256": "e16d6f0a5bcbfa4c4adeb7a90d70cd4ab362b8ef1b930ff57c9961467ee0dcb8",
+      "expected_git_blob": "283863ff3628910e2d4b451eccc3f48438781052"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/00-engine-version.source-before.json",
+      "bytes": 236529,
+      "sha256": "dc190fd1c99d00b8df099960e5bd25c9ca91768a716fc63da4105474b63c6815",
+      "expected_git_blob": "8ee38af5a16eb2d3f04c8fa4dfe8a4ed6ccaed3d"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/00-engine-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/00-engine-version.stdout.log",
+      "bytes": 38,
+      "sha256": "5d7f7a4d142ab8d22b2d814b7b14bf46616bbf3de695409479541ac536c9161d",
+      "expected_git_blob": "bfa059fc9ef763e2fe7b48b01d19502c5208c343"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/01-parse-preflight.source-after.json",
+      "bytes": 236529,
+      "sha256": "89f4971b40042c7ff1284c3b772c616bb89ef70e656d3b48b644fcb53f71fece",
+      "expected_git_blob": "7096d889469d1ef4418838bcd4536135e33c5878"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/01-parse-preflight.source-before.json",
+      "bytes": 236529,
+      "sha256": "68487f6d7d3ba3cf3cbaf1c2bd6bbd6996f837b666aa521f9788641c7844c330",
+      "expected_git_blob": "d75b1922d9ebab72d83ab77b963c823fb621e26d"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/01-parse-preflight.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/01-parse-preflight.stdout.log",
+      "bytes": 80,
+      "sha256": "6038ffebd796e5e276b58f03c28cf3eba2bbe6d85eea3592e6d3c3d87f0fe143",
+      "expected_git_blob": "a449a721f2303eda06b4aab6054a21a9da540d16"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/02-application_smoke.source-after.json",
+      "bytes": 236529,
+      "sha256": "6b1c1161aba7c3c15210cfab9486df7812ebdd4ed7b63a5c86e0870a896f8c02",
+      "expected_git_blob": "b6653c6dab8e8fc323412e303e11f0d700d4f125"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/02-application_smoke.source-before.json",
+      "bytes": 236529,
+      "sha256": "68a0afad26f5f07bdcf410669898946f15d5ca815834dc901f962b80dae1ee73",
+      "expected_git_blob": "caa2ceb20df91804586f45896595cd7c0a344693"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/02-application_smoke.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/02-application_smoke.stdout.log",
+      "bytes": 508,
+      "sha256": "a99ab25a100ae59eac53ebae4b75e2674f5747a147b76be2b0f3106e2f89b9a3",
+      "expected_git_blob": "a93481ecc2fcdcac12241cdc293a39a2f8d5586d"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/results.json",
+      "bytes": 11296,
+      "sha256": "ef9b876e0bb27c07241558b1acd9e3973647294171d162299f70add153a84115",
+      "expected_git_blob": "d839c97d06418e317c266cf22f3bbc86a6c99dad"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/source-after.json",
+      "bytes": 236529,
+      "sha256": "bdfcfd6ea0e21b90b2acbf214665c28c7d18f3a10dcfadd638dbb4228af9124f",
+      "expected_git_blob": "f94da3210c79ad3a8f24bcd3e8bdfc3fac0663c7"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125325013-f7baf41a/source-before.json",
+      "bytes": 236529,
+      "sha256": "2ed61ec79ce916e3708921fe684903f49efc4518b21cb627a93a6d32e267bbbf",
+      "expected_git_blob": "64d55ee66a2b8625a0e5925b985c460e99b11f6e"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/00-engine-version.source-after.json",
+      "bytes": 233937,
+      "sha256": "822040b9f6c6587dc2beb732982d89d947ed690660ffaa2a6a0e4c209f5df2e7",
+      "expected_git_blob": "f20774d906f29c20f3ef8d10cccb967920a3f039"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/00-engine-version.source-before.json",
+      "bytes": 233937,
+      "sha256": "e1025dcc23a798cddb9b2753a6e049897495744df91c97a5033080dd73a05593",
+      "expected_git_blob": "c71a1a93f584b43c795f88123e14e59446f480ec"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/00-engine-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/00-engine-version.stdout.log",
+      "bytes": 38,
+      "sha256": "5d7f7a4d142ab8d22b2d814b7b14bf46616bbf3de695409479541ac536c9161d",
+      "expected_git_blob": "bfa059fc9ef763e2fe7b48b01d19502c5208c343"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/01-parse-preflight.source-after.json",
+      "bytes": 233937,
+      "sha256": "5915d5e232754af710f79ae14d65234f339cd89f7437cb7885da7c68b1618491",
+      "expected_git_blob": "1475fed21f1ee972c570656d08fd92fe6d017b24"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/01-parse-preflight.source-before.json",
+      "bytes": 233937,
+      "sha256": "650df11360852cfa1c089f442f6034f1399b8b95af4f7b112cb34bcb081bbcb5",
+      "expected_git_blob": "5f6413d563cec26b3144febc388c11a33ed2a826"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/01-parse-preflight.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/01-parse-preflight.stdout.log",
+      "bytes": 80,
+      "sha256": "6038ffebd796e5e276b58f03c28cf3eba2bbe6d85eea3592e6d3c3d87f0fe143",
+      "expected_git_blob": "a449a721f2303eda06b4aab6054a21a9da540d16"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/02-application_smoke.source-after.json",
+      "bytes": 233937,
+      "sha256": "6a04623b0f8a0cc32337069ed19483c75e538f53840f8aa7129c5e0bb2507027",
+      "expected_git_blob": "f738abb81e3656485192843149a089e5a79bd1a7"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/02-application_smoke.source-before.json",
+      "bytes": 233937,
+      "sha256": "1d9409e602253d47c423d6a1a9fd8a5ee70cdcf42f9ba1dba57d791177bf0b2c",
+      "expected_git_blob": "3a4014dcb18b952dce916eaa2c8600a24449670b"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/02-application_smoke.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/02-application_smoke.stdout.log",
+      "bytes": 508,
+      "sha256": "7b33a2647179722e425e41131b0ac27781d178df13eb03ae2fd3b345e572b80b",
+      "expected_git_blob": "b69f72f9eb6d1f18ad6bdab4ebc77b244f97bb79"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/results.json",
+      "bytes": 10333,
+      "sha256": "8f1820ab83c09d7349c08783a0d199a8a6d337459f53c69002c1db94c6adf5ee",
+      "expected_git_blob": "bc23138f61df96a3569b1f0d8d050fb39f905e5b"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/source-after.json",
+      "bytes": 233937,
+      "sha256": "ceb6d746f390173ee2311d0b5be36baef747d40e646e2d5aa4067117dc1e5c70",
+      "expected_git_blob": "ee67767da5d5d74e299d61cfa34f5ce51e0362c5"
+    },
+    {
+      "path": "docs/evidence/AD019/20261011-125416781-c6bc5c25/source-before.json",
+      "bytes": 233937,
+      "sha256": "47203c854b65334409ca6cd2798a5b1a5ba09882549cc4838a6e4ae47a4d45bf",
+      "expected_git_blob": "09fcbf799a932d1409614c32e2890d70e6f4bb65"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/acceptance-audit.json",
+      "bytes": 4176,
+      "sha256": "8a2d009a7c7e3122a886608694b39db2c55fdd6c390a342d0a5f94fd0e7f523f",
+      "expected_git_blob": "f18d69fae8c76d73c26a53c7b426880dd6a1b4dc"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/baseline-import-differences.json",
+      "bytes": 26572,
+      "sha256": "a54ee30ddf2861e6974e18362b6761eb7683c865c49e3f9a98f955a83f299af3",
+      "expected_git_blob": "4e16581d9e1792d7e929ca2ff1475cf502e272d4"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/baseline-preparation.json",
+      "bytes": 499,
+      "sha256": "6b2a3c0eb016dfecea2fb18bba16c2719ab414acde14bcbc766c886230114965",
+      "expected_git_blob": "fa89d4d566af92d6286325bdc4dbab583fc65d4c"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/capture-helper.log",
+      "bytes": 994,
+      "sha256": "54f77de683797b8eec479563f9f72c3a540b98b5b3d3627c53b41897b07ef041",
+      "expected_git_blob": "f03a6ae51593125ef4a2ff4750994efda5e41820"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/cleanup-pids.json",
+      "bytes": 2926,
+      "sha256": "5681be63d5636391708df0bb7bebc3e5a84a8774d6282482805313eb52ce5f86",
+      "expected_git_blob": "0d86ede59e6ac121bc0fd43078fb6c8882a05650"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/final-audit.log",
+      "bytes": 303,
+      "sha256": "c5c98b39d02f776f1348f9c9b3793aee90be9767cd8370c46f35a9b00e18ec7d",
+      "expected_git_blob": "c2aa20fbc9e7249105858737a2bc0bd8756bf9ff"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/generated-uid-cleanup.json",
+      "bytes": 3781,
+      "sha256": "8c115dde56b5b29f96719b8a2df6b1e4035a9d3bb84ab447a5a417cda0ee5477",
+      "expected_git_blob": "a2c8c0d109ef6628c89d1725d02baa839454205d"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/paired-summary.json",
+      "bytes": 1922,
+      "sha256": "8bf4a2b7d9ee2614154b0ff30f9974338cb0ab2efe61698c5415d3abfc89235a",
+      "expected_git_blob": "67af231eacd4130e08e4cc363572523dc8d7371f"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/prepaint-capture-helper.log",
+      "bytes": 967,
+      "sha256": "07689527fab455d4114b670fdfb1a8d4d643fe452fb8fe55d316cff809c2eba6",
+      "expected_git_blob": "e2f2586eec2b26f73309cabb1e8d1e450bd6229e"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/preservation-audit.json",
+      "bytes": 1432,
+      "sha256": "82d251dc93b502518c440a66866fba6940aee69479d9d8cd3478e6efc3cfdc9b",
+      "expected_git_blob": "806684bd0cc7cdaf5c85f6e757424e4c8c246f7a"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/preservation-before.json",
+      "bytes": 551899,
+      "sha256": "ae9d1ba1303c7b3db0d3b4726577d5d61b7823a02382d10c735837ce84083fa5",
+      "expected_git_blob": "39753524f8c2d2f2a64266209afa8cf2c9112816"
+    },
+    {
+      "path": "docs/evidence/AD019/authoring-20261011/profile-data-audit.json",
+      "bytes": 31640,
+      "sha256": "e772db950fac080ca1d1923c64416ae74c89e918ab8da4e659cf2ffee6b7b0c5",
+      "expected_git_blob": "2eb377df643f6f2c1d2a3cd6111a652cfe9b8df7"
+    },
+    {
+      "path": "docs/evidence/AD019/authorized-commit-20261011/pre-commit-validation.json",
+      "bytes": 759,
+      "sha256": "2dd9d40eba0929948ce3c9d68cdb1f722348d7c54f8cd7f4ea3c972ea10c3fdc",
+      "expected_git_blob": "2b7faed4227ecd97ae0d454922a3ee8b76ba18cf"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/00-engine-version.source-after.json",
+      "bytes": 217923,
+      "sha256": "7eef62a76fc2307ac4e11ee6dd724538b14870c27cd698bc0d53a16397cb3ebe",
+      "expected_git_blob": "5b262629fdcb5ba17ff1e653d8248efc3a031ccc"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/00-engine-version.source-before.json",
+      "bytes": 217923,
+      "sha256": "ca8e07a8d68ffaebde206b1a3535bdaceb7728453e90d1426ff2ffb2dc51c913",
+      "expected_git_blob": "7f80033c6dfa91184d2d268a2d5b6818afaef8a2"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/00-engine-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/00-engine-version.stdout.log",
+      "bytes": 38,
+      "sha256": "5d7f7a4d142ab8d22b2d814b7b14bf46616bbf3de695409479541ac536c9161d",
+      "expected_git_blob": "bfa059fc9ef763e2fe7b48b01d19502c5208c343"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/01-import.source-after.json",
+      "bytes": 217923,
+      "sha256": "a44d4625917bf64a1ea210fed0255dc90962b480bbe04ec41d2b45571d41fa7c",
+      "expected_git_blob": "630b1e6b7bd976c9b7cbc2c197d88accf8fc6af1"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/01-import.source-before.json",
+      "bytes": 217923,
+      "sha256": "496ee61f965cde52148fe27a64b4fce8c1ca0490d082ac30d541fab4c2dbef3d",
+      "expected_git_blob": "955f5ff9d68efcea10afd91a4c22998aa4b1950a"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/01-import.stderr.log",
+      "bytes": 1493,
+      "sha256": "86d36ac070933db763425c1fe55f6af93bf116fb4cb68d8953020539a0b9bd6b",
+      "expected_git_blob": "879f8a0abf8c3e7a7958216212b578edb8fdb5d9"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/01-import.stdout.log",
+      "bytes": 50549,
+      "sha256": "26f7d5e46ffbe63549d652a3286af52436627255d915ecc6c94677e649f947ab",
+      "expected_git_blob": "71feb7b618c14117de41f421b054378fcfb10d48"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/results.json",
+      "bytes": 114723,
+      "sha256": "caf78baf7a5bc6045fc3c4f9bfcedb2a6d806ab90bdc16c92b3ebbab2a72f21e",
+      "expected_git_blob": "d73fe9a9fe8bb408f24f050d90f808cb6cf4939d"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/source-after.json",
+      "bytes": 217923,
+      "sha256": "d8de1cc4b11031d40e659e302e2e7bbc0b9d62c6da8e6ca8faf09b6c0ebbaeee",
+      "expected_git_blob": "6274135813d03e215e513b220c166fe9ac0b132c"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125144244-dccf7c6f/source-before.json",
+      "bytes": 217923,
+      "sha256": "cc9fbffe7456275f29002cbb92890ede076b6d20937ae134d820f637d33dfadf",
+      "expected_git_blob": "023822d7586ea2da547e765f106a114890465c69"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/00-engine-version.source-after.json",
+      "bytes": 217923,
+      "sha256": "0b72121bcafe00730aee5ba6d5829dd98da1f0d43afc1b2b2b0b2be382ebd611",
+      "expected_git_blob": "60493269c06e280558275de7e29dee7ef424d1b9"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/00-engine-version.source-before.json",
+      "bytes": 217923,
+      "sha256": "368ea2bc95fffe7fc7e15127e707242a7085098659fb21a554432e81047b18aa",
+      "expected_git_blob": "4f576022b837da55ae066bd6f25d967940af63ff"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/00-engine-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/00-engine-version.stdout.log",
+      "bytes": 38,
+      "sha256": "5d7f7a4d142ab8d22b2d814b7b14bf46616bbf3de695409479541ac536c9161d",
+      "expected_git_blob": "bfa059fc9ef763e2fe7b48b01d19502c5208c343"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/01-parse-preflight.source-after.json",
+      "bytes": 217923,
+      "sha256": "fada8df9b9a17b67513a6c89ce7b96a81b9e7b2e82007b1f54e881361baf9f3f",
+      "expected_git_blob": "bd49d8fbc3d5f0f2f1aceeae5dd7ec67c0ebc7d3"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/01-parse-preflight.source-before.json",
+      "bytes": 217923,
+      "sha256": "168636f82c268cab621d66684cdee8d98fb3c9f19fc14197adee9de03492cd77",
+      "expected_git_blob": "632d69abf40c043213fa355d789e40920125c545"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/01-parse-preflight.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/01-parse-preflight.stdout.log",
+      "bytes": 80,
+      "sha256": "6038ffebd796e5e276b58f03c28cf3eba2bbe6d85eea3592e6d3c3d87f0fe143",
+      "expected_git_blob": "a449a721f2303eda06b4aab6054a21a9da540d16"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/02-application_smoke.source-after.json",
+      "bytes": 217923,
+      "sha256": "dc0f1eee13cb7745649024afbbb6414a5789bbd73edf935eeed43a9ae9625257",
+      "expected_git_blob": "63401651027d100509b2ce0f8d694568e9e48810"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/02-application_smoke.source-before.json",
+      "bytes": 217923,
+      "sha256": "3ebe550989496fac69be9c1f4ff18e56e3c7b5b329acdacc4f9badec3797182f",
+      "expected_git_blob": "30877d6a9b2de106a1cf478c8e145e7a4d95b750"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/02-application_smoke.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/02-application_smoke.stdout.log",
+      "bytes": 508,
+      "sha256": "455a94858b1d83782ae28cb403faef3319c8f6bbf9091f3672fa9590a80ebd27",
+      "expected_git_blob": "cb9221526de4e2103f707bfbe7009914e87dc03c"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/results.json",
+      "bytes": 11067,
+      "sha256": "dac45adb27f37d1622c1bb7a461301b2d7e8a567a3b1acc14352e35bc5835534",
+      "expected_git_blob": "869c09c7836ff7c817cbb09d53ec40990b23ba38"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/source-after.json",
+      "bytes": 217923,
+      "sha256": "869b0b47fc8cd2a9911b932e36f47e2c4ac32decfeae44b3a2bed005eb246e31",
+      "expected_git_blob": "9498dab4a0a003fea172a4d7b7ed37ae66e9f36b"
+    },
+    {
+      "path": "docs/evidence/AD019/baseline-preflight/20261011-125319617-61e7c3fb/source-before.json",
+      "bytes": 217923,
+      "sha256": "6a49fdd1910ef1974cfcd198a7076efaead3e50a56b6804390eda6c5ffdecce3",
+      "expected_git_blob": "499af6c7a47a9935a9b9222e024ee56f38d45f0c"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/capture-index.json",
+      "bytes": 144267,
+      "sha256": "8097a403d914ad7c75b6d39791351c132d35795cee0c02cd9595438273098b4a",
+      "expected_git_blob": "3db225fab76dc647aaa2d0d370e25fec98476441"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/hardware-command.json",
+      "bytes": 41,
+      "sha256": "a24c2605ca5ad92e4cb72ad78b430bb862ee6467081565540e96e17fcc2658b8",
+      "expected_git_blob": "d20b8a37593c906e681290eda2a9a874ff03d4ae"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/hardware.json",
+      "bytes": 534,
+      "sha256": "aa228b0394e4116303401acb49fc0d8c70f2305715bb99c8120e5bb1e405abfd",
+      "expected_git_blob": "70b92e205f2e0bd61cc6cb8e4f4a02daa868a6f6"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/launch.json",
+      "bytes": 1251,
+      "sha256": "d51df166852f77789b36a39fc22dbae6183fb9346651cfcd555c25e9b2653400",
+      "expected_git_blob": "0566b72273135cadac95be79d94502564ae3bd66"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/process-results.json",
+      "bytes": 836,
+      "sha256": "cc1d4ababc96136d4d6c607d7b6efc08aa0173487bb1ecfd0cff21fef24905e0",
+      "expected_git_blob": "2053dda5f1501b47b2e16b516c1d4732bac0ab11"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/bridge-west-clear-day-0.csv",
+      "bytes": 8483,
+      "sha256": "12246b5c95adc9f5922d8336fea7e1f26c70f33efe8a16c804b6db8e4159f92d",
+      "expected_git_blob": "0c3ed94822c383bcf3f60ed0c93344129b0f8b42"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/bridge-west-storm-night-all-lamps-0.csv",
+      "bytes": 8767,
+      "sha256": "07bc5bb937027b274228d2ed3952f9e8ab2179cfa4ce01ca3ac8b59d99d5d8a8",
+      "expected_git_blob": "3f1eaa78d81389574afd586db605d6f197c45a1a"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/dense-forest-clear-day-0.csv",
+      "bytes": 8370,
+      "sha256": "aaf4b422aa6158c05e30f012a13c7127082b5719a7589e47b77dcc8468d23534",
+      "expected_git_blob": "229f412ab8ff68acfbdcc971f8cd0620af121491"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/dense-forest-storm-night-all-lamps-0.csv",
+      "bytes": 8470,
+      "sha256": "db041388fb91292378b0aea321b834d2aa0271a5c102724f7ad1c49b37c62efc",
+      "expected_git_blob": "89037abc17192ceebd9b7c3a357a4e9ca893d97e"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/ford-west-clear-day-0.csv",
+      "bytes": 8962,
+      "sha256": "e40730b1a7b35660d8cd27a91f76dc6c73c8ce2c71b8da19060f1496de3bef9f",
+      "expected_git_blob": "d3cbbb91cae82d5e8ebee6e02f7f61d52866d557"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/ford-west-storm-night-all-lamps-0.csv",
+      "bytes": 9226,
+      "sha256": "e6c1724c810f18dc6284067ace337b8404df45ea2cefd3768b71bcb9d27ce10c",
+      "expected_git_blob": "0425465c54119ae83f3a4303ac16b949dcf57b26"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/maris-clear-day-0.csv",
+      "bytes": 7959,
+      "sha256": "49977535a8243571836ef53cac7cbd02aa1fa1f45f72a64c5dd88a4ae53570bf",
+      "expected_git_blob": "0a6c3b3737cd04a33af9ad2b83987f8773147b8f"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/maris-storm-night-all-lamps-0.csv",
+      "bytes": 7653,
+      "sha256": "44aeea56401d2f6061220437279706df9611b2a2ee81af837f672ce71278e819",
+      "expected_git_blob": "69df7f97a64ef96b8bf0bb9d810646f7e9ed9a61"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/report.json",
+      "bytes": 127067,
+      "sha256": "8556ec29646f288bcc4a529e7cedab9003e41e582045058749a83e9161a298a4",
+      "expected_git_blob": "74efc4b92a66bacda17604011dabbf021673ec71"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/render/stage.json",
+      "bytes": 61,
+      "sha256": "280142cd1ed8ba20c6dc3ae7622df2a42bde3fbc88fd38adeccd0fecbd42edf9",
+      "expected_git_blob": "9300698f6e25a80e8dc17a508ce0217daae4721e"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/runtime.log",
+      "bytes": 7884,
+      "sha256": "1557e72c9788cf6a1167c0e6c06d4d3909dfa020e5db51a144aa25d6524bd695",
+      "expected_git_blob": "5185ac1bc0c3951e24beaefe5a0d8740ce8155f6"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/source-after.json",
+      "bytes": 177754,
+      "sha256": "1d5b3d32c1438c239db4559215bc2741c7d41a815d6e31226a1092799924f031",
+      "expected_git_blob": "dcae3b700b866bb1f79bd3ef8d32b38db1af4b1a"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/source-before.json",
+      "bytes": 177754,
+      "sha256": "1d5b3d32c1438c239db4559215bc2741c7d41a815d6e31226a1092799924f031",
+      "expected_git_blob": "dcae3b700b866bb1f79bd3ef8d32b38db1af4b1a"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125026-9a0f9744/working-set.csv",
+      "bytes": 14488,
+      "sha256": "36132169e26540f7c2c18d46a5d85d58a4c55dfb29b2e701c7144a5d76d74b5f",
+      "expected_git_blob": "0e4726c162fbba7bc4f1db9f2ad9b74186b79a2d"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/capture-index.json",
+      "bytes": 144236,
+      "sha256": "da50752ae2d810545726eea9b998f85679264a0494585ffcb05cef450a810aa7",
+      "expected_git_blob": "127c4d74e92159c2bc9e2c2974a775c51ff8cb80"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/hardware-command.json",
+      "bytes": 41,
+      "sha256": "a24c2605ca5ad92e4cb72ad78b430bb862ee6467081565540e96e17fcc2658b8",
+      "expected_git_blob": "d20b8a37593c906e681290eda2a9a874ff03d4ae"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/hardware.json",
+      "bytes": 534,
+      "sha256": "aa228b0394e4116303401acb49fc0d8c70f2305715bb99c8120e5bb1e405abfd",
+      "expected_git_blob": "70b92e205f2e0bd61cc6cb8e4f4a02daa868a6f6"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/launch.json",
+      "bytes": 1251,
+      "sha256": "5590314ef6d8eeb3591d0020f0651b1b926a6c3c89654ae704eed9d6f607af2e",
+      "expected_git_blob": "159af624f4ea76ad09e3e9f9c411883d0f182437"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/process-results.json",
+      "bytes": 764,
+      "sha256": "3297e547c8c3d11398e15863d65b524b786f39ed31c4e79abd5ac4b5ed89365d",
+      "expected_git_blob": "021c72b7d9e20f3bedfef4ee3475fba6536ac33d"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/bridge-west-clear-day-0.csv",
+      "bytes": 8926,
+      "sha256": "a29b54c99e87c1ea7c288a43c049f4c179c387e9004b4851374c94cf3a3f6578",
+      "expected_git_blob": "4737d071b4ba7841f65e1a3476fe5472e3a6898d"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/bridge-west-storm-night-all-lamps-0.csv",
+      "bytes": 9043,
+      "sha256": "1ab09080d899b0d2f6f2c7daf91daeb5ea3becd40f58710f3b04a3578011e32a",
+      "expected_git_blob": "7e40b8c032f80e26883dc4795e3d423332805b58"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/dense-forest-clear-day-0.csv",
+      "bytes": 9225,
+      "sha256": "58cd082ba8d247d0332cd843ab479b6bbf084c2f00435d8fa5b1def5f4479f5d",
+      "expected_git_blob": "27b51af0c1f99348d3b8caccc33de76e1da9d0f7"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/dense-forest-storm-night-all-lamps-0.csv",
+      "bytes": 8930,
+      "sha256": "4facaca0a43ae5336bafdae460a54136f9193078eb7441ba26b0359cb5e84697",
+      "expected_git_blob": "19e7fa6ee2a11be37554f7273085a5165e9d4ef3"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/ford-west-clear-day-0.csv",
+      "bytes": 9144,
+      "sha256": "fe595b1b91cd9fc13d8c964dc65cc6575266347f9490574cffdfeb736095bee6",
+      "expected_git_blob": "650d74f90bc227356499879e69797a9a55181ebc"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/ford-west-storm-night-all-lamps-0.csv",
+      "bytes": 9444,
+      "sha256": "370fd1b87a748ab28f6c4e6629a398e9fbc31b29cec1387b2c6165fa7f5733b1",
+      "expected_git_blob": "d6e27b01f165aec503c016317d928b11187bc5e4"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/maris-clear-day-0.csv",
+      "bytes": 8524,
+      "sha256": "2edcdc0b544355d949dbaae83588fba50297b15c7ced3c6352040bb88bb72dd1",
+      "expected_git_blob": "4543cf79e548a50a64fc258e88141a9aac77285a"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/maris-storm-night-all-lamps-0.csv",
+      "bytes": 7946,
+      "sha256": "f083418f25fab28263e87d67b74f4c771089ab947c77b64f26a849d482df193d",
+      "expected_git_blob": "2025b8d4bf5b23b2f71f36732f51d79a2fcc1bf6"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/report.json",
+      "bytes": 127398,
+      "sha256": "be14a48245825698185ebbe0e718fca7e1bb2e674968fdb4fa90a76502fd3a3b",
+      "expected_git_blob": "738cc92b9070ccc647f06dc062abd6e139b71a17"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/render/stage.json",
+      "bytes": 61,
+      "sha256": "996dc67a5e87fe3c5235c90867a96460ad5590963e60f958561f7d79b8d18a35",
+      "expected_git_blob": "16009a9309f0640982e1c8178c920d795b3515f7"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/runtime.log",
+      "bytes": 7653,
+      "sha256": "f0bc5953e312af18eca3edafc8a2d9231dcd16c6475ef347f7a834bd6e008e4f",
+      "expected_git_blob": "760dd34447859a25eb0f1eb97b81c4162ede7edb"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/source-after.json",
+      "bytes": 177754,
+      "sha256": "304c45aee0b3a498ecc07986baf701696b3fb1d99e549dafb692590a2b98c327",
+      "expected_git_blob": "3e1af61d3dbff3420a924499f06f21f91e8180df"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/source-before.json",
+      "bytes": 177754,
+      "sha256": "304c45aee0b3a498ecc07986baf701696b3fb1d99e549dafb692590a2b98c327",
+      "expected_git_blob": "3e1af61d3dbff3420a924499f06f21f91e8180df"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125232-90112a97/working-set.csv",
+      "bytes": 14192,
+      "sha256": "bad9477da0ee87eca9628155e378542eaf8d1b970cd8e8ab852342664b3f151a",
+      "expected_git_blob": "e764a2f29bdb49927f6d00d5a7ac7eb4a7f6dd92"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/capture-index.json",
+      "bytes": 432626,
+      "sha256": "a82704a37c39c6d8f7e98ae4dc6ec15fad6599e7c858b866697f442d77a95e8b",
+      "expected_git_blob": "38fd44359aa3a4a60732a88ad99171123dcd5115"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/derived/20261011-132352-a4f19cfa/capture-report.json",
+      "bytes": 439739,
+      "sha256": "d0aa1d0f2af030188f0bc567a10cb22d653e744b883981d266298a9490b10d32",
+      "expected_git_blob": "4ea21ae916d118ff6dd84e24b7f28148295eda12"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/derived/20261011-132352-a4f19cfa/contact-01.png",
+      "bytes": 492500,
+      "sha256": "30e5dec7fa605a7b49659bfc1e2ac3b875bb36b3e497032d352f44863c988d69",
+      "expected_git_blob": "185ad88dcc29859e465da7aad7db70682ab324a0"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/derived/20261011-132352-a4f19cfa/contact-02.png",
+      "bytes": 483847,
+      "sha256": "5813c7836f8656d5b121ef58b111d52b1e1baf7f0ea7919c54af1e49edaa77f7",
+      "expected_git_blob": "1f675520efad967b7e5ef539c27aeee8ac3a4377"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/hardware-command.json",
+      "bytes": 41,
+      "sha256": "a24c2605ca5ad92e4cb72ad78b430bb862ee6467081565540e96e17fcc2658b8",
+      "expected_git_blob": "d20b8a37593c906e681290eda2a9a874ff03d4ae"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/hardware.json",
+      "bytes": 534,
+      "sha256": "aa228b0394e4116303401acb49fc0d8c70f2305715bb99c8120e5bb1e405abfd",
+      "expected_git_blob": "70b92e205f2e0bd61cc6cb8e4f4a02daa868a6f6"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/launch.json",
+      "bytes": 1171,
+      "sha256": "d177d67d4cfd743940c15babf6388248e2bcdb88416f5ca51555c498a827608a",
+      "expected_git_blob": "790d9f478000c1bd0f8fb2631dcde9c941109440"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/process-results.json",
+      "bytes": 766,
+      "sha256": "3c580118924083aca95e632d2f14fb34d2540a3e0cb0da45f522d62f893d0702",
+      "expected_git_blob": "4573c2f0d8fbb930e397728ea6896790fd0ae141"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-clear-day-0.csv",
+      "bytes": 296658,
+      "sha256": "8617f92d6c84a2c4347780fe10af07dfa7415e4046d2deca37dd5c12cd1ef4f5",
+      "expected_git_blob": "bc13c13c938c7560ab5fcb391c228c644357db5e"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-clear-day-0.png",
+      "bytes": 356549,
+      "sha256": "38d6641c44f4fe480b382237054a6f940ce232260126cded5afb9392ce91892b",
+      "expected_git_blob": "39eba65cac9b8360a8b51272b8a3e880d199c868"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-clear-day-1.csv",
+      "bytes": 293820,
+      "sha256": "65d9a1ea52be713c93e8ba0698fde1c9d2879e4fe00e6a42e04ee4268b47a4f1",
+      "expected_git_blob": "eadc97589b3f8f56e0b44960b48b5e876aa017f7"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-clear-day-1.png",
+      "bytes": 354453,
+      "sha256": "3b87eb9211e47146b93335446e16a0478584a561e9aa57ea06f7fbf5faad83a9",
+      "expected_git_blob": "9e25d74a4348e933237507d7d3399b45fde45ddf"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-clear-day-2.csv",
+      "bytes": 298698,
+      "sha256": "1b3ff2b4b2fd6f5702bf32214ee07b4cdcc1c73bdd4b986edde034045f10604e",
+      "expected_git_blob": "ff8d4845d8fb13fc772b7c0d3dece9c2b6b78b9b"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-clear-day-2.png",
+      "bytes": 354774,
+      "sha256": "f95ebfefde1ac7b4d48366cf8e2238e1f332e397ec5d69dcf3628e76e1b43f96",
+      "expected_git_blob": "50428872bc0ba0e9c43ea9bf047b226f466f4440"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-storm-night-all-lamps-0.csv",
+      "bytes": 276763,
+      "sha256": "800a02b0288ae8e00208f5325073b8520093a7a16e8dd332283b170a56593490",
+      "expected_git_blob": "f18a676e11765181a0be7bec557d8a8159cb607b"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-storm-night-all-lamps-0.png",
+      "bytes": 350910,
+      "sha256": "2d82d296b819f161cd760929d117e7aaa54c13fb5e689ff7da06ec698effd6e1",
+      "expected_git_blob": "93121b1fa64e3c92177addbad351ed90ac42691d"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-storm-night-all-lamps-1.csv",
+      "bytes": 277707,
+      "sha256": "a52bb93a260ceb9f32ab16908c13d28fcb51ca089e703b36a46eb8cb6246d2b0",
+      "expected_git_blob": "99c87aa43913585e3453dd6aec05fbbba5a28613"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-storm-night-all-lamps-1.png",
+      "bytes": 350066,
+      "sha256": "ecec16efe87dfe69aa74c0a7f69171ffeb0a9eda1ae37ba8478555e364699bae",
+      "expected_git_blob": "8951e9044f983180b7cd2af474e41a3bb1e15063"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-storm-night-all-lamps-2.csv",
+      "bytes": 277713,
+      "sha256": "c91a309a152faf92478df427c0a7ca9ee63b6e8968024d3aa08b49b14d92e7a4",
+      "expected_git_blob": "bce9fa53d991f804ea32093708cd998b14d09af8"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/bridge-west-storm-night-all-lamps-2.png",
+      "bytes": 350506,
+      "sha256": "0bec7fffead02db45f59aab2147e90ae219c271e769dfceb6e857c67955d9ea2",
+      "expected_git_blob": "7549a089669ac2bcd72eef0ab44e5c758826373f"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-clear-day-0.csv",
+      "bytes": 276899,
+      "sha256": "e1ecf313a992ef5d3e185b87eb911359cb7f0d60c1586e45d99cfc453a6929da",
+      "expected_git_blob": "3e4d78e6a78b70950d69cdd86e6baa11cd254fc3"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-clear-day-0.png",
+      "bytes": 381444,
+      "sha256": "0e074cd344742809c22e4a76a1f1bb368dd22283fae5f4caddd19715c9a765a4",
+      "expected_git_blob": "f207bd73401b9bebeb8b6e765cdebe7470e3d36d"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-clear-day-1.csv",
+      "bytes": 281867,
+      "sha256": "78e16be6137aed76fd847089ef129e9cbc0fa60913324f05af0d49ac6258dd86",
+      "expected_git_blob": "ea0c99e99a712bae73a62c7dc2e320526dd2ec05"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-clear-day-1.png",
+      "bytes": 381433,
+      "sha256": "9a94814fe9f5e26075a982dd5e099065bea68367a2cac24ce045c3facf546860",
+      "expected_git_blob": "b6be02a9571f02787b90d4130f5e38b31fbdf016"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-clear-day-2.csv",
+      "bytes": 290183,
+      "sha256": "785dc9e75dae0ae3d79cb35039273ba0572b8fb6499b800ed3c8c574652676bf",
+      "expected_git_blob": "8cac6fe6a489841dd1b6588628f3bc64724b5e6a"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-clear-day-2.png",
+      "bytes": 381656,
+      "sha256": "ab0a571955904f99fa4ad3c975ba79c02e928581cd5b2bd3b9a079bd3103adc6",
+      "expected_git_blob": "625f6b6104d4e39b8e5f70eb97d42af6a1a5f7f1"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-storm-night-all-lamps-0.csv",
+      "bytes": 282966,
+      "sha256": "b6b01e427b4f958a2670c5875d24fd2aedc91daae8b948e60c5e1e1ee4648935",
+      "expected_git_blob": "0bd4612480a072a51c7782b24f7ba8271cd8c329"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-storm-night-all-lamps-0.png",
+      "bytes": 346100,
+      "sha256": "8298b132d6c5ab475375992e80c360ec5b582956b9d149111d31c422d0977c1a",
+      "expected_git_blob": "d645005a476565f90ec0c3ceff2f641e3a95d796"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-storm-night-all-lamps-1.csv",
+      "bytes": 278221,
+      "sha256": "8193d1eee1c73d2c0957966a22093cc8dcc7c9aa7400f465d3ed5630ac7cddd5",
+      "expected_git_blob": "d769c01fd8d21dd6ff99924345231b9f871d6fd3"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-storm-night-all-lamps-1.png",
+      "bytes": 346034,
+      "sha256": "a20ed955cdf18ec4a4c64527f85c6568c4afe0d965638bf851e9f046daffa2ff",
+      "expected_git_blob": "2008c11074ff61f6c70f5edbf6461a90c9d818ad"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-storm-night-all-lamps-2.csv",
+      "bytes": 280398,
+      "sha256": "8d188f533d5905bec5881704ee32b50cc029fcb9cbd6db1b50de9dae4d3af24f",
+      "expected_git_blob": "9eea1a739b4495fbae7d303b2e0939e27d8dbd91"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/dense-forest-storm-night-all-lamps-2.png",
+      "bytes": 345983,
+      "sha256": "3ed7f354a5e32e3fbd14dacd112fc2de38df9ca250b16e1d8a7aa24a092bc6f4",
+      "expected_git_blob": "eb66ff35136e07c84d21206a7a13c1f466bf26da"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-clear-day-0.csv",
+      "bytes": 296949,
+      "sha256": "3c5f208a6caa7b3b0be8b40bc5e87b553517101406373ea7943f4f2f7fe9adfb",
+      "expected_git_blob": "fed29ab41087a424d27ffea0782b48be2e6d4496"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-clear-day-0.png",
+      "bytes": 351831,
+      "sha256": "a637a301adec2e07f058b39d3f53a95b0981444f4bcd9f3131b333fbf32b142a",
+      "expected_git_blob": "ca1b16ecb016a0c65c7add63bf7967fd460966ff"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-clear-day-1.csv",
+      "bytes": 295832,
+      "sha256": "f80cc95b35cccf2c7e5039ca118d056d02e5924db6cc13770b1036a42a62494b",
+      "expected_git_blob": "c6685bac2e692c7ede3655e9013da65f5453a411"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-clear-day-1.png",
+      "bytes": 350867,
+      "sha256": "0f2f73bca0fe6ce9e2a5ac8e6f63df7691c7394ce20034259c459c7d94d3da33",
+      "expected_git_blob": "1b69018b895d6f73c3bf92d2a0f6501280940c36"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-clear-day-2.csv",
+      "bytes": 283162,
+      "sha256": "54f90f06841430a2f14923461e182903602ae7f0289142b4cc526cc860d5d720",
+      "expected_git_blob": "d62e832194244176f6a2e445403aa764c3d5c258"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-clear-day-2.png",
+      "bytes": 351054,
+      "sha256": "ae8dfc13f2ab72ada1284ccf47f1e72f3455f977398c785cc15a6f3a7f214026",
+      "expected_git_blob": "79e4d62e43fc9d5f086f1a11f7777b5c1e9cfd78"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-storm-night-all-lamps-0.csv",
+      "bytes": 283542,
+      "sha256": "5823c5eab9a3c3066e89a5905d5bfc3b0c7d6cef62f2d10d1fcb7d796701046f",
+      "expected_git_blob": "372054d64b8c136d561dce1fc2252a921643484b"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-storm-night-all-lamps-0.png",
+      "bytes": 339948,
+      "sha256": "c102d46f107855d4238e683e125a9e5964b52c082b7d35eccf45ad9143c4ef17",
+      "expected_git_blob": "2c0929f3d4b12c93a758330c3a29bd8b36002ad5"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-storm-night-all-lamps-1.csv",
+      "bytes": 282891,
+      "sha256": "c01972af2f760287d7ee10f61073f41384408e2c74e4907cef2c562c28d9a8a4",
+      "expected_git_blob": "f81bd6828b1e1553aa4008c472300fe5824130e2"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-storm-night-all-lamps-1.png",
+      "bytes": 338071,
+      "sha256": "5b0f57856bbb18ef3521d7dd3cbe1aca2dadc23470e267d440b441162bea3063",
+      "expected_git_blob": "343c294ac5f31a66d3dc4ee6140c1c5a20d34e16"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-storm-night-all-lamps-2.csv",
+      "bytes": 282638,
+      "sha256": "9f7101950b646c35e64a3845765127dab93d27f324680145fe52e52ef72b5dbe",
+      "expected_git_blob": "077fb7e303f1ceec4f4d012a20522751032c1fa1"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/ford-west-storm-night-all-lamps-2.png",
+      "bytes": 338364,
+      "sha256": "330fb9ab17dbce04ebaa525784669f8442981b18aed9338854026b2340a792f7",
+      "expected_git_blob": "ed4f25b0437401f388494fc31a46cede1d596c2a"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-clear-day-0.csv",
+      "bytes": 262282,
+      "sha256": "75656f5252a9d18f4df4f34c8f368feaf7744d0c72d73c19775a9fa9b0d85597",
+      "expected_git_blob": "2024b294f9167a8a13994b0312eff04a001f8351"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-clear-day-0.png",
+      "bytes": 343237,
+      "sha256": "4853d63a7b7985e366350f501c44bb27b051623c21bc4d4f89ecc99fc3a26ce9",
+      "expected_git_blob": "1266a6da5314d4e1de4210242a986edaa90ec182"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-clear-day-1.csv",
+      "bytes": 262904,
+      "sha256": "993bcf27f6ac02f88c50e7543e8e549cceefc54e466288bbae57b411690c176a",
+      "expected_git_blob": "aa9dce2802229965d473f726f8b41a4fc1299cd2"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-clear-day-1.png",
+      "bytes": 349308,
+      "sha256": "1c768de3a78996c9393c0f284adc3711b9295b0a538a737fdf1423a8b93f28ec",
+      "expected_git_blob": "dff5fd926973cac089f74506d3f3c359da7463a6"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-clear-day-2.csv",
+      "bytes": 263857,
+      "sha256": "7c4452bd26a06a5682cce4967d68312550e7127769571ba22d3a19339665d833",
+      "expected_git_blob": "fb528f81459db3b79cdffc236f17785db3fced3c"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-clear-day-2.png",
+      "bytes": 345889,
+      "sha256": "f22d4d6c3fc7df491b40276335e760b4e803c496d4ecc53fe25b82cc31e3c0b1",
+      "expected_git_blob": "94688c25b61ea5bce6b3d78148f70761c04b5028"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-storm-night-all-lamps-0.csv",
+      "bytes": 259340,
+      "sha256": "e657bdf295a1719744cee689ee4320945926b53d69e9b48b537863db73189ce8",
+      "expected_git_blob": "2b2b74d32d5641fc2278acf0ac4854b5deff9347"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-storm-night-all-lamps-0.png",
+      "bytes": 378022,
+      "sha256": "c52fbc0656b94ef1159b2769b4e58921da47bd8d7193430227dff9f9c19ab8ba",
+      "expected_git_blob": "a98b4d986b5cbb0342837fce270c4d6a65892a23"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-storm-night-all-lamps-1.csv",
+      "bytes": 255756,
+      "sha256": "5f419bd18100e12dd23e40d0157c5610d8122caa438ed03099ab848e88c9383c",
+      "expected_git_blob": "caae990dec784c085610e352e722008959fcb1a5"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-storm-night-all-lamps-1.png",
+      "bytes": 378946,
+      "sha256": "a87d9439b9ad33fd8755215bb4706236889331f58ccb4fdc2a23217ff909a162",
+      "expected_git_blob": "470556cbbbcc3bce3870a4778cbd5b8b2e339925"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-storm-night-all-lamps-2.csv",
+      "bytes": 263985,
+      "sha256": "6457bc10adc23dd255f170aa0567c2ff11475dc20a0b7ce49ce4afac3d4a5741",
+      "expected_git_blob": "b20bbc7f892cc449fb14b6ea6982162d39508a7c"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/maris-storm-night-all-lamps-2.png",
+      "bytes": 378961,
+      "sha256": "5586246d2b696452c926fa84cbbd2aabf1a33f48b381ed6170e2cc051e3e34fc",
+      "expected_git_blob": "3ecaac0653036d301050f24262b35d6337767b27"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/report.json",
+      "bytes": 369170,
+      "sha256": "6b20c2eb9662cb5797b18cd1b89ba09c94db992ea2993d4b2a5fed7e8d41d5f6",
+      "expected_git_blob": "bba67907b9ecf3766a61e1e1a3f1e336102017a6"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/render/stage.json",
+      "bytes": 63,
+      "sha256": "918b37761d2ec0a7570fa99a8df7299c188ad29e4a51ba9486bc621e68b88a91",
+      "expected_git_blob": "321149e2a755eb7d78812419a4387164e7f25d74"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/runtime.log",
+      "bytes": 15033,
+      "sha256": "9160ece2c8f1bbd765319fce36fd29d633c0e96ca23030972378b3791dd42430",
+      "expected_git_blob": "e3e93b8842c6cac0943ec08086ee7e016f0e4a44"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/source-after.json",
+      "bytes": 175818,
+      "sha256": "7b03a7e37e06b16414ce317e0fea0ed337909543906fb7a9348e5c757e8483bc",
+      "expected_git_blob": "d17c308cb2e9e09cabec4ed11d7688ff5bd92864"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/source-before.json",
+      "bytes": 175818,
+      "sha256": "7b03a7e37e06b16414ce317e0fea0ed337909543906fb7a9348e5c757e8483bc",
+      "expected_git_blob": "d17c308cb2e9e09cabec4ed11d7688ff5bd92864"
+    },
+    {
+      "path": "docs/evidence/AD019/painted-20261011-125512-9ac131ac/working-set.csv",
+      "bytes": 474918,
+      "sha256": "b409cecf4c055c04b7563bf3691f74d4bb35ce902d8e946154fd785a2c88a192",
+      "expected_git_blob": "45d95021896b4be888951b170989bb56cd9445c4"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/capture-index.json",
+      "bytes": 144532,
+      "sha256": "76d6414c2def5dfd5a012918ff03c0e6fd0c6f00993f21e3ad790655371d4beb",
+      "expected_git_blob": "50278016d044cd5b7657ba86bce29453374981d5"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/hardware-command.json",
+      "bytes": 41,
+      "sha256": "a24c2605ca5ad92e4cb72ad78b430bb862ee6467081565540e96e17fcc2658b8",
+      "expected_git_blob": "d20b8a37593c906e681290eda2a9a874ff03d4ae"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/hardware.json",
+      "bytes": 534,
+      "sha256": "aa228b0394e4116303401acb49fc0d8c70f2305715bb99c8120e5bb1e405abfd",
+      "expected_git_blob": "70b92e205f2e0bd61cc6cb8e4f4a02daa868a6f6"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/launch.json",
+      "bytes": 1428,
+      "sha256": "4253eae39edc8faadc14240a1f0dbb64093e29c1bf988bba0f343f6ad0977278",
+      "expected_git_blob": "a253ee8a99b9a125084480527149f6c22bd1d2c8"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/process-results.json",
+      "bytes": 789,
+      "sha256": "2afcfa95da6a1658a60e36016e47c47aae7e46901c0863961b0382836104ebb0",
+      "expected_git_blob": "30a0cfc419dc357ee419a7ebf462f2441dd55e9d"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/runtime.log",
+      "bytes": 7653,
+      "sha256": "95285bfe91ec4d08a40511a423da957ec0c5be42058c44e1b5418106dda45c1f",
+      "expected_git_blob": "264b16b54713c98eb7ecb8e88b7b2a87c74ae317"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/source-after.json",
+      "bytes": 163781,
+      "sha256": "733b425b3f6db91a1e3d53d59210a835aa4ae665f0c426f8e3bc285c4b9d94c6",
+      "expected_git_blob": "78af1e05dbc6232cfcb1c0db02f5ac79c5ee7026"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/source-before.json",
+      "bytes": 163781,
+      "sha256": "733b425b3f6db91a1e3d53d59210a835aa4ae665f0c426f8e3bc285c4b9d94c6",
+      "expected_git_blob": "78af1e05dbc6232cfcb1c0db02f5ac79c5ee7026"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-125352-6cdf0cb4/working-set.csv",
+      "bytes": 14646,
+      "sha256": "ffe348ec9c5eb4e16f502354b578dd6251f0046a5083904c9b192da242919973",
+      "expected_git_blob": "a1847a4c30be116f2d3150672cf9e33af9407351"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archive-provenance.json",
+      "bytes": 11969,
+      "sha256": "baa395bdc43910d43e495d9bbebf6811ef122a83c1758e5b921c712aca61423b",
+      "expected_git_blob": "3f34b8e9c1f5515eccfd5ceea1d1801463a9178d"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-capture-index.json",
+      "bytes": 441378,
+      "sha256": "37b84852c042ffa1212317d58e47a15d3a875f6af6ac6f660c63b41feae48e08",
+      "expected_git_blob": "5827583a9d0a70e982add340970c9bea43b38ebc"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-clear-day-0.csv",
+      "bytes": 305962,
+      "sha256": "abefe5741ca2c749c6590bb238d742ba38958def57966ecae1bddde5aab16d86",
+      "expected_git_blob": "e6f4a556ab18dd9452028cf40ba0e560a220ef7f"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-clear-day-0.png",
+      "bytes": 534941,
+      "sha256": "6c75940cca18d2bf8f308ee36df08d22b98988e08ef6322dff4c403925803bc3",
+      "expected_git_blob": "4b8be403a0480bf045bae24c1e2f12ef665c871d"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-clear-day-1.csv",
+      "bytes": 310842,
+      "sha256": "aea022e1b08b2c2f664392b99ac0c0791f24e3d50fd4e3205e4748ee0f71def2",
+      "expected_git_blob": "84e9cf5d172fb9ca0c31f6f9ee402202ec6137ff"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-clear-day-1.png",
+      "bytes": 534993,
+      "sha256": "10b9dfa8a94b37c89a9c34153cf7e610da9dba450409bbdb1f796850bb629972",
+      "expected_git_blob": "1dedade88dbf869f0f9f88ab52ede5c87a48868e"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-clear-day-2.csv",
+      "bytes": 309421,
+      "sha256": "cb13a022c67cc139121698391d9ac851d9e84a77362bfbbd2f255fca45530f7a",
+      "expected_git_blob": "9e7728c5cb59d710e5564b31124e383f5711ee59"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-clear-day-2.png",
+      "bytes": 534882,
+      "sha256": "7dc68d374a7cea5227f07b34508c1a325f31536550fe82ad6af0fde408b0a604",
+      "expected_git_blob": "d61567fcab52bc54f4f60b482089d1f08cb17dc4"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-storm-night-all-lamps-0.csv",
+      "bytes": 306227,
+      "sha256": "41ba8a57bbad0b57399aa2ae650c8e500f6daee23a15cb95a682ca0e5f0c3721",
+      "expected_git_blob": "037facf0a227436584c7466bbeaad34a0a589e11"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-storm-night-all-lamps-0.png",
+      "bytes": 468188,
+      "sha256": "4297663e4f69c2a37585753d8687cf8357cd4a8ec55d82a4c3ae62aa3b0d2eb5",
+      "expected_git_blob": "edc3cd109d48107d82e9644247867f96e02c2e23"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-storm-night-all-lamps-1.csv",
+      "bytes": 311534,
+      "sha256": "9ce1d310796247b10914b47707ebb867dbdbb3804ad8bd04ad67c62c320fa411",
+      "expected_git_blob": "708440b41bbd82952ee8f31538d6154080f36d88"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-storm-night-all-lamps-1.png",
+      "bytes": 468542,
+      "sha256": "f028a4122ff68b80a89c47babb6292f08a2b91ca11d12bbd44634b5e011d9182",
+      "expected_git_blob": "cbd18e8dda43aca029a0b37cea1ee7a2b6ee66b8"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-storm-night-all-lamps-2.csv",
+      "bytes": 309839,
+      "sha256": "deae6495bee12f3a80cb2f50d241fb98a3c8e3f825582ddfac98cd19fa1cef55",
+      "expected_git_blob": "154587de53a4de45a1fe4178d2527eb505ef043b"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/bridge-west-storm-night-all-lamps-2.png",
+      "bytes": 467705,
+      "sha256": "003fd91ec8eb425ed1052af37f59fe581ff4b51e7c0213d1dd2ba43233ef1096",
+      "expected_git_blob": "db7b6cd9cba2527693899d8c38e96841852d00fc"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-clear-day-0.csv",
+      "bytes": 285154,
+      "sha256": "35cacc72202289f2077416b6c73754937101532314b85685abab482f4e567efb",
+      "expected_git_blob": "07874a15dd4d5e91e6379b9688600438624c565d"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-clear-day-0.png",
+      "bytes": 602993,
+      "sha256": "67bacdb272c2023206c34f6268540f1b4a5600d53eed9ceac2fb55413314a418",
+      "expected_git_blob": "14cda658e7da662a8296d648ee2aa9d4aa6f5742"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-clear-day-1.csv",
+      "bytes": 297367,
+      "sha256": "9e66d32eb2e830cac5d2acca5a33337feaa10d1abaa845e0db0ed64db6ef7307",
+      "expected_git_blob": "0fd211bc27efd9fde4d005f085108f23075afb0a"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-clear-day-1.png",
+      "bytes": 602862,
+      "sha256": "67f128ad1626ad7bb3653e4aac7fe267bf3bb4bb44754978919e729cc4291a09",
+      "expected_git_blob": "10ececd5829b79af8eb9f0f1cdea619bdce3de4d"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-clear-day-2.csv",
+      "bytes": 301328,
+      "sha256": "36366c040c690277fba3e3543a0bc5b63f1fc6f7a96db0c0e6bc0158edc64339",
+      "expected_git_blob": "8804453615b393b4f1a3d4c256bd7f043e718e89"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-clear-day-2.png",
+      "bytes": 602766,
+      "sha256": "7fea317688bc231b833c597d5b191e8f667b33931e35a17d69b4f8341554f5f3",
+      "expected_git_blob": "4faf695110cc08d4de7b9b7289a7668e79b34014"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-storm-night-all-lamps-0.csv",
+      "bytes": 313256,
+      "sha256": "80554046295eb7469abd8ddb121a8091ae35e6a24e49a47515a945f0c7023c3d",
+      "expected_git_blob": "b5ef3bcd13786b674f562916f25a273a81c0b56b"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-storm-night-all-lamps-0.png",
+      "bytes": 484374,
+      "sha256": "17c7d96836006d561caa668db4327c755f9b7a3cfe77ef17d08250042597e4a0",
+      "expected_git_blob": "6814e39fd2c1e5c0045226c32ca46374d50e4d5c"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-storm-night-all-lamps-1.csv",
+      "bytes": 316472,
+      "sha256": "80e7912515134e614597fc50d9945082248f1357d5b6e4d737652ec77face13b",
+      "expected_git_blob": "e633ef9171ba6cda2052460de635e41f5262b813"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-storm-night-all-lamps-1.png",
+      "bytes": 484498,
+      "sha256": "bb65e380e61fbc7b9ccf2b260d6f8405d79421dbff44e86a1e344744b34a1ca0",
+      "expected_git_blob": "0d85a53b286c157e1ac269824620e7f32e84b792"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-storm-night-all-lamps-2.csv",
+      "bytes": 311703,
+      "sha256": "ca434f72f87e914f6a56fdd66d0552de34c64df51da6858fca9ec8f4f1d3250f",
+      "expected_git_blob": "97227932285fe5d1de12092bf6314c32ded6b09c"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/dense-forest-storm-night-all-lamps-2.png",
+      "bytes": 484379,
+      "sha256": "104eff646dcb10e5b05ae29e52f0e7791c853198824dc2f20ad10aed1817aba9",
+      "expected_git_blob": "11091c30dbedb40b327a3c8ec3c3a0e8bcbae4dc"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-clear-day-0.csv",
+      "bytes": 321694,
+      "sha256": "d37d31759cff857f7e710c4f27efd841bbc8182048c1407662b0e212af462800",
+      "expected_git_blob": "3b15e2d7c69ce47ff5645e252479e35b17cd00c6"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-clear-day-0.png",
+      "bytes": 534209,
+      "sha256": "51abd30333c5ce664363cc5bb5ebf215f09e0536a6a7881c223333ff71926a40",
+      "expected_git_blob": "24b540c6eae8a9f8cbb13fabaa265b6ff5fcd2a3"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-clear-day-1.csv",
+      "bytes": 321865,
+      "sha256": "7d1bc2d00432811bd82a0f07fb155916c5a44ea04ab48f2beb6c5d122dc77a81",
+      "expected_git_blob": "0c5d4fbe593e72d8db42c9e0c3168ec1c31b2198"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-clear-day-1.png",
+      "bytes": 534877,
+      "sha256": "210ca167453d0fe10586f1f69627d7bd379d240820a672fec6ffc682bbb477a3",
+      "expected_git_blob": "ea293fc2aa0ba22ea6abceeaeb9b477817930399"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-clear-day-2.csv",
+      "bytes": 322048,
+      "sha256": "b1d38b40e2fdd18b90d2bd9393fb02a07fda7c37e54b9b329697300ea3e36df1",
+      "expected_git_blob": "680496140f0e134d1d01f9dd8fa1077c1f24d0a6"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-clear-day-2.png",
+      "bytes": 534766,
+      "sha256": "d607432419647a873106023ce064628272ec6f2fcf633336f6ab87392ce508bf",
+      "expected_git_blob": "e2fe142e13872eee912a3013abb27212d6b0936c"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-storm-night-all-lamps-0.csv",
+      "bytes": 319973,
+      "sha256": "9d577d61d539e64720abc3f0ffe0b9889c8a21f297e8cf57b75dcd7c8ebf117f",
+      "expected_git_blob": "cb450e2c908617d5202e9fe52181d79f49a1ce1c"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-storm-night-all-lamps-0.png",
+      "bytes": 461587,
+      "sha256": "58cfbc483c33c6a0d44e84bf335b38138578d6e33f236a394a8553b91e6eb5ef",
+      "expected_git_blob": "9878f6bdd9590fe40abb36de6540e3b465e97307"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-storm-night-all-lamps-1.csv",
+      "bytes": 318238,
+      "sha256": "3e4d67128b9a582d0c67fef189e401183efcaf26718e1a55ebc5f8fbed557f2b",
+      "expected_git_blob": "ad00eb5a4bb27914c617bbea019bff2f336abf61"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-storm-night-all-lamps-1.png",
+      "bytes": 461794,
+      "sha256": "00b0064cf44d9717d0f728fbe9497206d48a62ac53ca9f00fa5041b9df3542c8",
+      "expected_git_blob": "82a23fbbca1d6e232593eca88aa24c39e8cecdd7"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-storm-night-all-lamps-2.csv",
+      "bytes": 324362,
+      "sha256": "4809ef82d88d94070985e1fd75913b74088fa2a0e88dd1ec374d6356fdaad199",
+      "expected_git_blob": "fb2aa133f929a3a362cfd2e327e3472a200b0219"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/ford-west-storm-night-all-lamps-2.png",
+      "bytes": 461369,
+      "sha256": "b3fdf9abe61663385d0f78f9ce38fcf69858ebcb3edeb86d4ee7145f79ecc535",
+      "expected_git_blob": "24143f436eb531f56b6aef06ed212bdd837c93a5"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-clear-day-0.csv",
+      "bytes": 266546,
+      "sha256": "1fcbf0048bd07a890e767d07ba868d0fe70dda96bdd16e3ac35abede80bcf662",
+      "expected_git_blob": "659a37d0c8839bf4da80ed8787b6098159ce9477"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-clear-day-0.png",
+      "bytes": 487279,
+      "sha256": "ba6486420fd6aee2d097dffa142d7a0dd489b8755e6d49a266be30da7bc7dae4",
+      "expected_git_blob": "62986c06ee495541aa8c14c33285c9e62014c7cb"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-clear-day-1.csv",
+      "bytes": 264650,
+      "sha256": "913a6c70a3357f982b0523ce6d54934560b08195b2e36d2d95f5c40bbfd7a968",
+      "expected_git_blob": "0b71809bd975600d1b7473d767957e8cc7bfaae9"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-clear-day-1.png",
+      "bytes": 487845,
+      "sha256": "88bd5811a8ab818b0a2374bf5427965204bad9be688e5aa53ccc7856722204fb",
+      "expected_git_blob": "c91a7153342fc042da037adfe38cbee653b1be6b"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-clear-day-2.csv",
+      "bytes": 267184,
+      "sha256": "137d1385b1c917de8e92794466a6c63e3d58768e703dbb7b99a979a107e47fbc",
+      "expected_git_blob": "13507d3e0dc613efa969111da31d6e113168abcb"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-clear-day-2.png",
+      "bytes": 488954,
+      "sha256": "89634da655464ef8fcaaacd8f723ba166c5c6152ba98ab881f7da41356949495",
+      "expected_git_blob": "6330e334b0bfd8d1639b73705bfd5fb322fce14b"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-storm-night-all-lamps-0.csv",
+      "bytes": 287348,
+      "sha256": "a649f8a5fb90db86984a13ee67890dc001ece1871d782100d25bd1d9bbffed1f",
+      "expected_git_blob": "a28dcab9dfd42eb8c19df9e08f8ee9c658ba1d3f"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-storm-night-all-lamps-0.png",
+      "bytes": 450807,
+      "sha256": "5b9f0ca4e2079998ab56d9f6516ab5929302844b8635b807f43d67118306f855",
+      "expected_git_blob": "38d24a22d6f5b17a44d781dfde265cc3bb5ce29f"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-storm-night-all-lamps-1.csv",
+      "bytes": 287863,
+      "sha256": "770b0edceb7072d4aed273b19a482fb1b06d22fb54b20e5558e7ca669d577c47",
+      "expected_git_blob": "72e64ed5f5b821978dc8053f21b3a4c8713c531b"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-storm-night-all-lamps-1.png",
+      "bytes": 450309,
+      "sha256": "26c0e17176e2d87a05406abf5b95ec10062eab1b183230be1395213f5ce84f8f",
+      "expected_git_blob": "2f653f20fd2a1a5969e7701929e1f946e2e88b0d"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-storm-night-all-lamps-2.csv",
+      "bytes": 281157,
+      "sha256": "8aa6636272258559e567044a6adaf2e05a144703550c8bea6907ef36ef649b76",
+      "expected_git_blob": "fb483414e2e1c62309984de4af6f84a8745caa02"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/maris-storm-night-all-lamps-2.png",
+      "bytes": 450965,
+      "sha256": "e78c6d7609be23dc80f216d1bb9b5c40fd8977019e8ef508766fdad5c90e620f",
+      "expected_git_blob": "e9133377eae483fe2ef8aab010be4f6d89d909cd"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/report.json",
+      "bytes": 370038,
+      "sha256": "899166cbebb89eeba536084660c5bd37377a370db9d3dcc8f23889951012d3fd",
+      "expected_git_blob": "60bc95061d3a9b3f6b2b1e87e50d38429415db2d"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/archived-render/stage.json",
+      "bytes": 62,
+      "sha256": "887d00733186e3a83b685d115e54742df312f60d2a8a15bee543c11347e01b77",
+      "expected_git_blob": "80a3f2607a6b0647fb8c5eed9e3d06bf29f4d60c"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/capture-index.json",
+      "bytes": 433500,
+      "sha256": "dae3722830eca8e377a46751d498dbd77d81f5bd75da6829d202ba217be9a502",
+      "expected_git_blob": "022b7b237a248d6d4b06149479a5d931890cf6f2"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/derived/20261011-135012-818b6ffc/capture-report.json",
+      "bytes": 448517,
+      "sha256": "db60209b391303f7a64261ba7385789c04b9b9c3c10f4f5c31ab9fee11e96580",
+      "expected_git_blob": "42c81448cefc54a7d729b2c85d0b5d438e11a755"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/derived/20261011-135012-818b6ffc/contact-01.png",
+      "bytes": 644497,
+      "sha256": "eaf77d8df10fcbf3772d107a4493f0f8109da2a3f930aa6c778f07b0abee4a5e",
+      "expected_git_blob": "47b16893d35db17e7c6ae171d3fc6b87424a865a"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/derived/20261011-135012-818b6ffc/contact-02.png",
+      "bytes": 574256,
+      "sha256": "e19e5b0f67dbec9115dc95104fd7dab9aebb94b626198ba55bfc9d82741cd7e9",
+      "expected_git_blob": "245231fdb78cde0d0960ac6881020ea5508ef31a"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/hardware-command.json",
+      "bytes": 41,
+      "sha256": "a24c2605ca5ad92e4cb72ad78b430bb862ee6467081565540e96e17fcc2658b8",
+      "expected_git_blob": "d20b8a37593c906e681290eda2a9a874ff03d4ae"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/hardware.json",
+      "bytes": 534,
+      "sha256": "aa228b0394e4116303401acb49fc0d8c70f2305715bb99c8120e5bb1e405abfd",
+      "expected_git_blob": "70b92e205f2e0bd61cc6cb8e4f4a02daa868a6f6"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/launch.json",
+      "bytes": 1348,
+      "sha256": "39f28cab6be58cff743c08308773385b96949b37c4bf3dc023f15fd61eb8f941",
+      "expected_git_blob": "d95fe8bdde11f980ac5296cd4e3448b09ce23447"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/process-results.json",
+      "bytes": 805,
+      "sha256": "72aa5ddb6b6e899500f97735683c8eef667f30a1953c7e2f25a0f0fafaaaa54f",
+      "expected_git_blob": "91d1a58f8502d1c2e677543cff6a03b8fee00db9"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/runtime.log",
+      "bytes": 15032,
+      "sha256": "f9c51dbabc5ac85f13ede5caa0c76b007058b4ce355a4ed65e9d6422e86df210",
+      "expected_git_blob": "8dd50214159f7995cdc2b1268ee3436626be21b9"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/source-after.json",
+      "bytes": 163781,
+      "sha256": "733b425b3f6db91a1e3d53d59210a835aa4ae665f0c426f8e3bc285c4b9d94c6",
+      "expected_git_blob": "78af1e05dbc6232cfcb1c0db02f5ac79c5ee7026"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/source-before.json",
+      "bytes": 163781,
+      "sha256": "733b425b3f6db91a1e3d53d59210a835aa4ae665f0c426f8e3bc285c4b9d94c6",
+      "expected_git_blob": "78af1e05dbc6232cfcb1c0db02f5ac79c5ee7026"
+    },
+    {
+      "path": "docs/evidence/AD019/prepaint-20261011-132146-b4aa67ad/working-set.csv",
+      "bytes": 475639,
+      "sha256": "c090c2749b4bcca4d4e0555702b1b9a99d52620ebd390f3a41fd2bff30ebbad4",
+      "expected_git_blob": "7f2b2bdf202473433c4ef59e29cc37d325903330"
+    },
+    {
+      "path": "game/tests/art_direction_performance_profile.gd",
+      "bytes": 10596,
+      "sha256": "2f43866ce1a9b12e70df0b2562dca81044177f764b0494e6f66d2816a0d53374",
+      "expected_git_blob": "8b9553ab5679625eb8959b91c3ec9d141c0f628e"
+    },
+    {
+      "path": "game/tests/art_direction_performance_profile.gd.uid",
+      "bytes": 19,
+      "sha256": "96ead474dcae89c88fb9c083736efa9ed2a13e25c1e06779041dbe598f9c69e9",
+      "expected_git_blob": "52f3f7ae19a626643230eb0284eaa0636c71db3c"
+    },
+    {
+      "path": "tools/art_direction/profile_storybook.py",
+      "bytes": 9768,
+      "sha256": "1516be6ec16177bcbbc8b9d74089f3683d1a9087fc7fb87e08004e146ebbbf81",
+      "expected_git_blob": "36b4456caf189d008e41215a17b82dba553418d3"
+    }
+  ]
+}

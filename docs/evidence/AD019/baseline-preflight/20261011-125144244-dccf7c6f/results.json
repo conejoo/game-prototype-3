@@ -1,0 +1,2236 @@
+{
+  "schema_version": 2,
+  "task": "AD019",
+  "run_id": "20261011-125144244-dccf7c6f",
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d",
+  "engine_path": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe",
+  "engine_version": "4.7.2.stable.mono.official.ed1daf0bf",
+  "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\builds\\testing\\AD019\\20261011-125144244-dccf7c6f\\appdata",
+  "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\builds\\testing\\AD019\\20261011-125144244-dccf7c6f\\localappdata",
+  "save_groups": [],
+  "source": {
+    "before": {
+      "sha256": "ac376995e68983da981fbfedd8d350b57a88bb1b25506e9ebc7117f8772158e8",
+      "captured_utc": "2026-10-11T12:52:04.1711346Z",
+      "file_count": 1314,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\source-before.json"
+    },
+    "after": {
+      "sha256": "7f9e9259d5640c74146dad8c0110bc81ee62ce1fd1ab842dd3b32f7e6e0dd6c1",
+      "captured_utc": "2026-10-11T12:52:21.7845468Z",
+      "file_count": 1314,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\source-after.json"
+    },
+    "git": {
+      "head": null,
+      "working_tree_dirty": null,
+      "status": [],
+      "error": "Git HEAD unavailable."
+    },
+    "changed": true,
+    "changes": [
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/environment/alderwake_landmark_kit.glb.import",
+        "change": "modified",
+        "before_sha256": "6a4124a4dc412b3a88a0c53930599f5599dfde75e8b366aecd79317d9bc30280",
+        "after_sha256": "f399dd1acab2cac678c34035d5babac936baf7d92ed18d0a4bf7baedd6ba288c"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/environment/alderwake_town_kit.glb.import",
+        "change": "modified",
+        "before_sha256": "705827d50c6d4eef7368bb3122c3e9b807a069e64d36765903684af74f515319",
+        "after_sha256": "33e4232c50761f7b7f1cbe929e0b13ec8e1a4aa1a265c80e1e87cb41ace79bf1"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/environment/exterior_light_kit.glb.import",
+        "change": "modified",
+        "before_sha256": "ded736e38f538ead778e389d36fb26ea944da046e65066217e36a2da7fb3c6dc",
+        "after_sha256": "fd67702d96161706f536702b6d3f0260a3b1b2f851480637dc36238bccb8277b"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/environment/moonwood_tree_kit.glb.import",
+        "change": "modified",
+        "before_sha256": "1068f179ef4c7f6d6dc8554c0bf708afb4efde55d9ce19697d06976b704fe410",
+        "after_sha256": "b913f7742de73f26a7212add916ae9b862d9e7c4f8ae6d729fb10f9248d514a8"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/items/bluegill.png.import",
+        "change": "modified",
+        "before_sha256": "483264afc94ca63e850f0348b8a812eacb7a13412328c6467bfc5d249723d301",
+        "after_sha256": "c592edd9198832776ca61a7cf774e1427719a66785cfbbe0721b27cf18406495"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/items/fishing_rod.svg.import",
+        "change": "modified",
+        "before_sha256": "3c5163b0575fa4acd417319984e5110f2709625e5253ec660f4e1e496e33e09f",
+        "after_sha256": "85caf4f92d8c8e9c7c32da704abfd92f4f59cdca78f730fe0036b56d592aae0f"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/items/golden_carp.png.import",
+        "change": "modified",
+        "before_sha256": "4128972ebe7e2a8ef186b0d7948f6e693f359c483668545072b068e3d66f1b3b",
+        "after_sha256": "4a8a3c40b4d3e35a4e876fe07b538a39231fadf0ce5ec3d424b122b36a5e7acf"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/items/moonflower.svg.import",
+        "change": "modified",
+        "before_sha256": "6588d3b6b46146b0f22138df4e062a09769f97ac2f1c340887a821a488c9750c",
+        "after_sha256": "f912d5090cc2223085c6f0be87f11eda4c012531ef9a6281de1fc04d732034e3"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/items/river_trout.png.import",
+        "change": "modified",
+        "before_sha256": "0c82cf9444e7ca024b6ae4d52b6b8d92c9d30c0945450fa0c9e37190a6eda229",
+        "after_sha256": "36eb1fb6eab46a32c49a4f24b668710b94a61007b5ae374af665b3f4f5931cb1"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/guardian.glb.import",
+        "change": "modified",
+        "before_sha256": "d0b844713546d28dce9fdb581a31bdd23d57d5388860a5463437889ad201249e",
+        "after_sha256": "49d9ac39e361e7164a5988abdde1baae0f0a316a08d6f82c4ff49fe05eea5136"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-01-actions.glb.import",
+        "change": "modified",
+        "before_sha256": "bc6c0458431793928c40f347a3b4a250c63687399464eb80947ec4c9e820122d",
+        "after_sha256": "7b43d2641204bc4d2400d3c5369f4acfa1aca054c383f5fea7487c11bd0b7c9b"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png.import",
+        "change": "modified",
+        "before_sha256": "fdf33d2f76d8dd2139d554d4494073e09eaf0855dc9024707d353b65313ef161",
+        "after_sha256": "de64ed8c9bd5250ed3e9d8251d48f0780d29208f3104d3066d5be8603ff35488"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-01.glb.import",
+        "change": "modified",
+        "before_sha256": "2387de3013c69066aecd87df263c70ed9585cecc85c5218d36ab80d1a014c3f5",
+        "after_sha256": "9e3bea905984078c2af70c622d0d89da4b80c88d1d5c0e5a85fa7f19f0e812ad"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-01_TEX-npc-01-palette.png.import",
+        "change": "modified",
+        "before_sha256": "33ce2da564a0f197fb396ebc1f33f5e8b724dbb29ca0e6c9381223cf0d346379",
+        "after_sha256": "51f3b35ff2442e174152ca6a1e30ebe87d081f6d81ef68010000a56c616d83b5"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-02-actions.glb.import",
+        "change": "modified",
+        "before_sha256": "9a177ea3096667227881317c8098dc86366923e035acdbc067e144b4920185b1",
+        "after_sha256": "bc7cb72039de34a2cae258451332d0faccf1e26d5eecadbd779d161d08804ac9"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png.import",
+        "change": "modified",
+        "before_sha256": "2448a7fd0a5e5212342263385ddc7a4618c633e12409e869be554330ab03e32a",
+        "after_sha256": "d74eb637e570fe5537279338b5d074d76e1276aeb41f4ab0d7eda15ea0dc019c"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-02.glb.import",
+        "change": "modified",
+        "before_sha256": "348ffbe38ac1dee3f8621f2414630bb103f78e37508997b569a94cbed04e94de",
+        "after_sha256": "0d555eab6adc6ea5069a39c3459b166144fc494e2910e10a5738f5cf1ca21a28"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-02_TEX-npc-02-palette.png.import",
+        "change": "modified",
+        "before_sha256": "7eca67558f79d69c95d79fb4a00211a98f752ee6b0e47333890bd3000ffb9093",
+        "after_sha256": "ed78ec964e4cc1500a410d451d702f3f331405a2e49d58d93a51b4708ad35565"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-03.glb.import",
+        "change": "modified",
+        "before_sha256": "16cb7c6fde44db4cc9118d42b0489433953cf68ec58632313be243f0c58c52ea",
+        "after_sha256": "29768c91593d3dde3dac5897fa03e25d6f6e2d3303ce1f6af1503b7b1ba7f6ff"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-03_TEX-npc-03-palette.png.import",
+        "change": "modified",
+        "before_sha256": "9b32e51aec8d2138488a0997b205da3075412b83be753bcb631eb3648a24b89a",
+        "after_sha256": "a28e6c142e2f928352e61e597aeff8b9008f3713b3c2b6122b0bfebb537495d4"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-04.glb.import",
+        "change": "modified",
+        "before_sha256": "b626d0985a45e7589a16a2e7831ca8427aafa7ac3f462686f4b870a7a4c05416",
+        "after_sha256": "b00fcf772004d7692662bf24fa23d12875b86acda2d1bcca1e6c6c39573b94e3"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-04_TEX-npc-04-palette.png.import",
+        "change": "modified",
+        "before_sha256": "3e66f3b5dfc91fc623606b1b6c81fcee73c3fe154c496d0493a06d3eeab063d3",
+        "after_sha256": "c1b84e5d8d2ba3ce94707403152b8bb34a9fc5e234d36947529fbb8f0f563fcd"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-06.glb.import",
+        "change": "modified",
+        "before_sha256": "2ecd8a939bef166359ed22b79dc4c1b558f0cf39df3d58ca1b46a2b5e28af996",
+        "after_sha256": "2a88a7b6ae6e3e2edd7059060317f249d9eeadd6c3c3d8a58bd2ec705f716e72"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-06_TEX-npc-06-palette.png.import",
+        "change": "modified",
+        "before_sha256": "25b5a28c8dc83562b0edb90fbaae6d8c44783aead8d3a1d0ff629ef098ae7e20",
+        "after_sha256": "4ab700da7e140fdbeb295ad5b6ed452369a3e88c022bbf6f0e9d0ed4e1a8f74b"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-07.glb.import",
+        "change": "modified",
+        "before_sha256": "603474f13522e901393bbefe4833d526ea4218dfabea812f8dc6742e881de341",
+        "after_sha256": "8064fc4ad9db949f574b779800ad9d456e2c0c473179872007510579303e507b"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-07_TEX-npc-07-palette.png.import",
+        "change": "modified",
+        "before_sha256": "c91dc64b4853967ea28ae5f35937f24a0aae026188af77de97e020b581195b51",
+        "after_sha256": "c3aec4c8b75c0f52277ac93076ed148a8340224fcd7c106b7047121e260b88fe"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-08.glb.import",
+        "change": "modified",
+        "before_sha256": "353c73602fa6bf6dfce46eba8499a1681a9038903a6bb5b6ef7733c62330b58d",
+        "after_sha256": "9caead662067632427010d2d3f97d8b51e0dd1177c7b654ada7ad88c1c9eeff0"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-08_TEX-npc-08-palette.png.import",
+        "change": "modified",
+        "before_sha256": "d4949e9373610d2917c7173704005b8faa2d3b69d994877a07133cb673e5dec0",
+        "after_sha256": "72c34c384e582efff9cd864ad316870317ca231fa9466cac5075877a836260d3"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-14.glb.import",
+        "change": "modified",
+        "before_sha256": "e104bd116477c29f0217cce98193e5fab8c0592aa0283cbc2257f8cef3b93329",
+        "after_sha256": "4c94c6819fac0f673908209f765b052602a56bb9793bbbbbf799df403bff78cf"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc-14_TEX-npc-14-palette.png.import",
+        "change": "modified",
+        "before_sha256": "b1616601508b633263de45b9cb015064151503725df9dcc3cd5368663f150644",
+        "after_sha256": "dc4663325d17d55fcefd65474a3992463964c46c084e23d63911b0f6d544e338"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc_calibration.glb.import",
+        "change": "modified",
+        "before_sha256": "8ea0c21e3cf432e590a08db8e8cca7e2985c6854469d12c7d231ad5f1d6a10bb",
+        "after_sha256": "3297b546b037b3e65e72785da44a99fc05cb73793f60b23774ad4267cfb181f7"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/npcs/npc_calibration_TEX-npc-calibration-checker.png.import",
+        "change": "modified",
+        "before_sha256": "356071f401a1171831d5698a55d39285392c2370bbd504bba1b7d3974f14d96b",
+        "after_sha256": "09e0e5ccb3755a4dddbbffad7febb0db42be16f8874d136cf25ee7339100c954"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/recovery_vessel.glb.import",
+        "change": "modified",
+        "before_sha256": "9918aa7c38219a05bdbf60ba43f439b856ec8cd566927af6319a3dd93cfa7cf1",
+        "after_sha256": "8c249987810020b22db7a7b990e6f555454b15f93280cf90619c7f64e0513d54"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/models/tollworks_plinth.glb.import",
+        "change": "modified",
+        "before_sha256": "afd49479215207a6e1d145d8a88f027ddb281bb2d5b1d0922e9abcd5337f2aa3",
+        "after_sha256": "d71a2a127720a59a50652a6525b39a6eecdf2cb5df1ed76100798c9871bce451"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-01/fishing-gear.png.import",
+        "change": "modified",
+        "before_sha256": "02b4e5e4d59d99c45cc64c2f4ed66910ef82219e2855b8e67cf4ab5ba572f2ae",
+        "after_sha256": "04b0a7ed4092aa65ef7c64023d57787ffe932f2d5fb20fba1ef431cb45952bd7"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-01/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "6a12bf09ba2d3e2841aa1111052b218eea041990e62edcff4a5b26fa8c1f47c2",
+        "after_sha256": "fea77f84753d56a571223c2b340764a2de47ddd61a31c59d2f28da7a723edb7f"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-01/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "7c18a039f5998c891d3fa899548aaa249e4c146e0e78a5569160199574717787",
+        "after_sha256": "d094d6f401115ad4b53416af6b61152ff1751846cafff52263507c535903ddea"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-01/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "c0fbedc45a29b59358fa90992b11c21161aee48f66ed0ee23aed57ab1d9c0db4",
+        "after_sha256": "db39ab1e0e761a08b879a93300d15a8e356c36314ad1f058144dded8d2690209"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-01/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "2c9128c899e84add852e92316a1ed850be747f1d88995aa9c02917ea600a377a",
+        "after_sha256": "320e1004844ed919bd8d6ef30df70db35ca66665aa60d4dd62ff8a4085798c66"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-01/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "9ca4fca15eb7a2d5a0ec985a185a48caaf26899a5d599e59d0c0e8db4ba532f1",
+        "after_sha256": "16a1a236853848dc47db43889b97c22f32e26519efcb8e3301feb1bd9b59a54d"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-02/archive-work.png.import",
+        "change": "modified",
+        "before_sha256": "3a0ad93306d6e7ed633f0336653b2a0a56d8cbcc371b4a50d0eb5036dadbedfd",
+        "after_sha256": "b2d02e8621bff04784c98a17e22eb738ea0a992a5c1163d4ee68b917928cecf7"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-02/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "638fbd68e817d9fc7e5b478bce9e21c3e5ad5c375595a491f1bbfe5e10a41bef",
+        "after_sha256": "7243936aff4aa84da93872b2bb13078864f543fe7c47af410a373d7564556595"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-02/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "f0fc3622dd7fd76e70d91403b6a2f0a9c5738cff61f1a7f53be4aab2587a4143",
+        "after_sha256": "2080e2c1754b63fc3ab933f37a634ec4cb085da9dfb9a4f17a872440ca37fd7d"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-02/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "4c00c5f56781bd119be524b30df9b584c2d4be960a7e9c46bd991634eb05926b",
+        "after_sha256": "3e2f4a5e9c564c2440cd261dc2a8d409251e8203ed3eacc9320ba43d5bad8ebd"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-02/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "f56334515c4f7baf9408a6680415ef385a16d80acf273180625b7957a183c2a5",
+        "after_sha256": "c9a8ddbe51ef2a7dc40a7af8a126cab1adb6681f44b2d96a39750ebbbb60c869"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-02/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "33794d409969c155a91d592878a17223a71ca1b136d26c22b887f75279b976f4",
+        "after_sha256": "c04ec9a70f333da9e741cfaa064c833b477ebda316abbaae177b7eceb793c081"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-03/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "c397f97f0c44cbdd5ed51a69052d9dbad4824e9e348f17bc808bc257f5a38068",
+        "after_sha256": "1729d360c332dd4aab2ce12576ab8316e70e9042498dbcb91ad798dd3692baf1"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-03/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "e9d3b25297344190b8a4f4b72655d34d38a689b91e98a0715c27a9a1ce7965d6",
+        "after_sha256": "1954cc66e3747b762b180d79039de17007697d3f570d8993ca3d68b756922702"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-03/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "73261213704526b53a4b8ea51fe9dc0fd521c822c125317512c92dfd298980be",
+        "after_sha256": "39ffc3c45ffaabbe4a2150c1b8584e089349a146909c6da390f3a93f4b0bcb13"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-03/ropework.png.import",
+        "change": "modified",
+        "before_sha256": "2761f6d5f91b71e0bea818f9da39c5ca5c0edf2650da91d7c5c7f1bfc531ce28",
+        "after_sha256": "bc857c1689e634464f1f6bdb98e745a836a9aaa47e7f2daac389f588cb27aa67"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-03/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "7548f0fc62e98b7438fa348620dbc17dd10d86a3b3204abfd065acc8ea4ae9c6",
+        "after_sha256": "14de993075fc0bc44d243999fbdceeb8545b717f33b3148673c4f69559edce88"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-03/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "b8a99d3468a4a8e11700b417ed7c7e37a818dfc86e23ceb8f3b2b02d8a03d0e6",
+        "after_sha256": "5fe7078914100330562dfa39fd28afd82a724fb99b9e43de05b5f29337b8bec8"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-04/birdwatching.png.import",
+        "change": "modified",
+        "before_sha256": "36ed76a1a74c35d7626259a81242c9bdf01ca21cbe9679b2fc66fef9ac325abd",
+        "after_sha256": "28f4f3877de230c6ff6483ccdf504f4a6a17f0049cd813379e949e767b7c6ef6"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-04/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "7f812a3e9ee383c4dd482a651bcc30c935f6b7d2856b24d6d60da30fa0b5f27c",
+        "after_sha256": "7423c366093cf89f42dd3be9607af448c0ad6d6571878e79f0e143246b9df9b9"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-04/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "7956167c3fcd1eebe84a3ca5801e60e0f8af32bf1b26e84a8e73aeb68acf1022",
+        "after_sha256": "df0c22a9158ac797fc2228b797d0670df3055feaeec48a995484dce99447ab7a"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-04/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "78d5e9f0b2905ffb7afef6cf15df2b3e86337e47e04328b6689abe6b3df365e5",
+        "after_sha256": "0444a062cb4994932f31cae9efca418a23ad764d9ad7b5fbd6c054ce33a4aaab"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-04/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "029c58914c57fad22ba9158c3b122715b6356ec4aafba2d6d1bebbcc9c3b5d18",
+        "after_sha256": "4038e18ef55a89a4f3d7c80547c8b5e79f623343454c5f9e68b7650534558bb9"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-04/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "27e8a4a9327eea834fc5425e62c4d4c7af414dc3e0202c40d857fadcc44bf342",
+        "after_sha256": "b94ebd1fa487d19e1ec5cf7a1b8bda598de4ea1ecd335caee75fd7c3eb201d68"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-06/flower-pressing.png.import",
+        "change": "modified",
+        "before_sha256": "e260441a3fafd5885d4f2b5c801d8eb3ea9816e719b324139dc929b3d6cff2dd",
+        "after_sha256": "4ef2e8075a97e8c15551144cd0105b04ffc3d057a5a31e53ec236d8abfe93b69"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-06/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "bd5d1d4d20705574eb8d396165654d17cc5d75ff884e0c6c4016b82c1cbfbfb7",
+        "after_sha256": "65293245bf41b24be90f2b3ece1675c75a1efee1d10b9b0bd2b71d57fb903838"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-06/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "4686c888eecceee0ddf8adee0e9ad73abe4350047b74d7a0b5082b231e1c169a",
+        "after_sha256": "970d192a9649d28f5fcb83d94d191a8793a202f2f7ad68881da41f5df4bd870d"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-06/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "8b196abce90e4d5435f40a3ff4114b492eafe095637857e2c106f2555671cc0a",
+        "after_sha256": "f4a701595f3055f6df6d8a7251cd853dca886ed3408082bc03133b6dee5bbf2e"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-06/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "7337355351de28550f502dbd2839d960d9a8b4b398137ba416aeabc3008a3b97",
+        "after_sha256": "4c41c90bd3d397687833e94c3adf198b0b0c754eef1bcea8a1321031f69070f0"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-06/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "20f31b00264fc9d6467f4a2b0b393276c9e2f93315f642ec7a3f795b17d0a2e0",
+        "after_sha256": "a4a16dc6d6eadd67a8144d494a387258b7a51b31d1a241a202be4a264e307d4a"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-07/knotwork.png.import",
+        "change": "modified",
+        "before_sha256": "e4c5f8976b0a620feb6a094ed7db8328b7ab4282a1c478f91d7bd32c8d5a8861",
+        "after_sha256": "ce32e56a74d0510b1af9b4b0aa0da0020378329b9372b9dd898f96f603077d95"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-07/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "34ba91b7f9f236d5473ba695de3bfd171ca135f782885585358ac5f38c0c968d",
+        "after_sha256": "a87a856caf6968f5068acd1762d0c2e35f761c3a7e6d46b224e6ed6e6e0a25c6"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-07/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "9bec0c67263d5df93ef3e9910e2288cc2fc413358da2417c7dfcfce203ccb3ec",
+        "after_sha256": "334174bba4dd1acab57334dac4cf1e64b7cd3f68486295a42e8bb272acb57fa8"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-07/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "db0042e69e3d556e2c13944509f9429eddbc5bc3b3c32fc1d961808369486495",
+        "after_sha256": "87c311b73e23c208cd8d5bb88b033f558dfe2fba6409b364201b4ac864600778"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-07/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "acf11d11788701bccecf02869c318a219bbbf6a0657c1200af720dec4aa979ca",
+        "after_sha256": "beaba76366c787fa28c6866e68852cf7045c4d7309a5e96d513df7ed9a3b761b"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-07/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "5128abd2a640d68d3f6a4b484a759e1f509335635678a727ef16916ad8e7a88f",
+        "after_sha256": "f44bb7c60d3c2e874aa274b64cdeb05e1dea2e6454faff950ba354932fae57b9"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-08/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "66a51e80696a1269be071dfce17a603f722f754855426b41f7399577115389d0",
+        "after_sha256": "e6192838870ee661af4c505c96e802685ea4428c154636059c0c251de9084b3b"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-08/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "35ca59dd4f122259fd3766be0cff4629ca84a0d1a77ef9beb803cba41617c496",
+        "after_sha256": "d499890ba76a5d43739922565444ca65bfcf696e31ac30015dfb5856e5ce455f"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-08/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "5e4a84cb7587d71b47915f5ec8af5d2e050d2bf00148d4f96b9b7521c992e63a",
+        "after_sha256": "9bdec2ba7e73aeb045450febefc859611b2d60eacb4c494805b7cb841f37b154"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-08/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "8d212fb560ffabb36dbd993a5b649ccc72f7f8e68c39cac196ad9ff37c5525cb",
+        "after_sha256": "1b1d1dfb47b45917d13091444b34517710284e653310f9eecda60a4967e99fd9"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-08/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "b771cee16bc269cea71f3b0f34b0f55ba590890bb2756d96f1c4ec1615cfa895",
+        "after_sha256": "d66cce7f04918c447b7f86d65ccd3b7194fee14dc29423ed2f1bc129f787e209"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-08/woodcarving.png.import",
+        "change": "modified",
+        "before_sha256": "eefd29a43e7fe486ec7aa335f8d53859e1dc703583d1b2d73222402e906f279e",
+        "after_sha256": "1e315031a76210cb309a62d2abd96a0a70d019dad036c4da68fdb98bdcbb0ea4"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-14/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "e3d1efafa93d65ee3c585390a5f2ff3ccc6d101bdeeccb76f8a3b842704265ef",
+        "after_sha256": "562ad131053099026b23fed80b154d940c08a24714ceaeee0bc0057a2124b27b"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-14/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "56a53b8c3ab3b1fdc8fa91e15dc34aaeef755b2cd8bd0c4d5de77e68de9e088a",
+        "after_sha256": "6a881687b4913d50400996785b7e9e6a7fabe4ea046dcdaa7ad0c9673123e72f"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-14/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "9f1e21c118b6e6298f9a11c3e6bf92a2dd7f2a157f1e32713fb78c8b82f23e4c",
+        "after_sha256": "6a9594a35ab403032325f2a9adfa05e7be05954f84cab6757167180000a4a391"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-14/quilting.png.import",
+        "change": "modified",
+        "before_sha256": "cd74f94ce9d2a677d803e9f6bc58fcc4a4653d6cb05db4b113121dd9168503ef",
+        "after_sha256": "ba497f6e9cf4547ebe4b9a2440ba253e8107fc98ecec8b128e78c2cb1c7da693"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-14/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "45344d6338eb57e9a462a062f0776f1998df4e80dc48d401c11e08cc198dcc48",
+        "after_sha256": "671e9797c6ac54e519b172faa3d19ca34a2e0378ab2720fc5a875569e8e8aa3c"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/portraits/npc-14/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "d55c1e016789223dbe2442ee31ba2919998a304d2d13faded53a65b5c489abdd",
+        "after_sha256": "2c17fb651e3bb0354d44b6212c4f7163373073608385134d37bac12d4af3e85a"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-01/npc_01_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "7f4fe115e04d388641c5d91f6756fa1df08ae3dd7c3e6de1439982a7c55a08ba",
+        "after_sha256": "5226e482b931d209e66d343f9d1a7332f8929813f15bb427c6afa92cc558d754"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-01/npc_01_river_fishing_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "5f4a05e6bd34503ae3eeb2fc57a9f81c5801476847b6287aaf8f5b09870bf544",
+        "after_sha256": "68b8dcb858fb360d75d920c6430d9f1b5ac3cd5a2bb57618e9edce1db838a11c"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-01/npc_01_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "4f4a0b2926fa3f33e05116847588dffbf6d9ac98a0559eecaff17c36a21c921b",
+        "after_sha256": "c0b638afe3c4a96e521d366689e03463db5cc4cc0154b8c63ce07477b3eebccf"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-02/npc_02_archive_work_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "97645056c8484ea5f8d5f17eea9cf5b847696a9ed57957114e21ff32bcd74bfd",
+        "after_sha256": "d1cd0673ebbb05aeeb34cb1a73d73ec23bb1e247406b589fd228e7e0ceb5580d"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-02/npc_02_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "1ec018e22652c6790b23da57683e7f74f19ff460501bb76003e095a6d29728b2",
+        "after_sha256": "1cf7241d752101bd18c6948df15f38d49c4ec46dcad92e8519e219ba2e8d6f91"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-02/npc_02_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "6a60412fa0e233575905043e12470788336a7f90c444331c51d685e1e3440b0d",
+        "after_sha256": "44c11f632782d6f7e831ca3b0aaf445e559d3ec6601d64231499ba5c1013cdb2"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-03/npc_03_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "575c7d6158218272032f34088b0d61edf53b69446c02d2d80c30e20ca70ff905",
+        "after_sha256": "6103a7ed9a18b63df54d9a5f7a7eea10d371d4aa67331682da3a6d28bed3ff90"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-03/npc_03_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "029b2a558bf1e55e58714fa28cfebf341564691aeea23def4df95f06657879b8",
+        "after_sha256": "da8296604cdf301ffcf6debd091c94ec9667a79c2556201171139b25aad37c69"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-04/npc_04_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "d14375e08fad8ea1af70bc03a6d78682561179456d80b39a37953121b17da773",
+        "after_sha256": "090d9a18076b4c8f6c7751d93792043bc4fe886c89a1235361bbff82d99bf559"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-04/npc_04_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "90951192e079e8c7443fcd54793e7e90e864b9e8078ef4658a659f9429def50f",
+        "after_sha256": "411da57976585c20490ad6a03a135512dec6a197a1d805a570f5b32328504326"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-06/npc_06_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "f50eedc5e902725776074bccd285c2dfb3529b76e0bd302098c0899dfa18b6f8",
+        "after_sha256": "ff4cfc340fab7cd12267b72a7b6d8367b4fd128da9f1ae382b7eebf764eb7843"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-06/npc_06_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "d52ddccb0680a40bdff4e3cd830dc0c4217b89eaff34b17fe572e6de069422b8",
+        "after_sha256": "35f275e238f5656ae5b34e6d90015f7a2b1c2838707f6e531bc4e29886ff3171"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-07/npc_07_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "be2201806a0fca6caa0bf69a835896964a3a40c383dce11be8a569ae95f26fe6",
+        "after_sha256": "bd7f0d6c410aae0d7d9953648e7fe346cdac801949464b09dca22766c622979d"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-07/npc_07_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "1460f3db991079f741feb44f8f5f1b47fe2b58580412bdc4e56ffacf57e046a5",
+        "after_sha256": "dea1655e0148cebb32c2f0e8989bb4e2b41dab6cb4b17c6118f8cf66b64e70de"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-08/npc_08_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "9a9e4351af04b6e427baa434627c5c0548a06703da6c890ce4b50111e0ff0ba5",
+        "after_sha256": "4c032dc0e731566f17ce3536aa93dd01b5919d8bd580902fde3590b941ef4126"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-08/npc_08_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "6f00f6224c4313e1b75d1eaa24a1fb4a60d7b675dd6a21e109a0a19bca99c1a2",
+        "after_sha256": "41b03bce88ac0b251539976b390f8584f56e01805ef94e7986d8caf97a330035"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-14/npc_14_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "057457a898c4c8d507529646d0cb5efa717cc5fd9a733d3b5fee1ba87623d030",
+        "after_sha256": "cc2693685d8a58438cfca1f767cbd36358b9e1238f5777d5486af76438bf2417"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/assets/npcs/reference/npc-14/npc_14_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "47d95d07f75a5b728f7dfe5c6a2a35f408006a0d9358e67ed7f804727dcbdbac",
+        "after_sha256": "3dd1b8a40a2200cb57c695d5c41d9c00f93893ac0f87d1cdce601859f062e6b3"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/environment/alderwake_landmark_kit.glb.import",
+        "change": "modified",
+        "before_sha256": "6a4124a4dc412b3a88a0c53930599f5599dfde75e8b366aecd79317d9bc30280",
+        "after_sha256": "f399dd1acab2cac678c34035d5babac936baf7d92ed18d0a4bf7baedd6ba288c"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/environment/alderwake_town_kit.glb.import",
+        "change": "modified",
+        "before_sha256": "705827d50c6d4eef7368bb3122c3e9b807a069e64d36765903684af74f515319",
+        "after_sha256": "33e4232c50761f7b7f1cbe929e0b13ec8e1a4aa1a265c80e1e87cb41ace79bf1"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/environment/exterior_light_kit.glb.import",
+        "change": "modified",
+        "before_sha256": "ded736e38f538ead778e389d36fb26ea944da046e65066217e36a2da7fb3c6dc",
+        "after_sha256": "fd67702d96161706f536702b6d3f0260a3b1b2f851480637dc36238bccb8277b"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/environment/moonwood_tree_kit.glb.import",
+        "change": "modified",
+        "before_sha256": "1068f179ef4c7f6d6dc8554c0bf708afb4efde55d9ce19697d06976b704fe410",
+        "after_sha256": "b913f7742de73f26a7212add916ae9b862d9e7c4f8ae6d729fb10f9248d514a8"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/items/bluegill.png.import",
+        "change": "modified",
+        "before_sha256": "483264afc94ca63e850f0348b8a812eacb7a13412328c6467bfc5d249723d301",
+        "after_sha256": "c592edd9198832776ca61a7cf774e1427719a66785cfbbe0721b27cf18406495"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/items/fishing_rod.svg.import",
+        "change": "modified",
+        "before_sha256": "3c5163b0575fa4acd417319984e5110f2709625e5253ec660f4e1e496e33e09f",
+        "after_sha256": "85caf4f92d8c8e9c7c32da704abfd92f4f59cdca78f730fe0036b56d592aae0f"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/items/golden_carp.png.import",
+        "change": "modified",
+        "before_sha256": "4128972ebe7e2a8ef186b0d7948f6e693f359c483668545072b068e3d66f1b3b",
+        "after_sha256": "4a8a3c40b4d3e35a4e876fe07b538a39231fadf0ce5ec3d424b122b36a5e7acf"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/items/moonflower.svg.import",
+        "change": "modified",
+        "before_sha256": "6588d3b6b46146b0f22138df4e062a09769f97ac2f1c340887a821a488c9750c",
+        "after_sha256": "f912d5090cc2223085c6f0be87f11eda4c012531ef9a6281de1fc04d732034e3"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/items/river_trout.png.import",
+        "change": "modified",
+        "before_sha256": "0c82cf9444e7ca024b6ae4d52b6b8d92c9d30c0945450fa0c9e37190a6eda229",
+        "after_sha256": "36eb1fb6eab46a32c49a4f24b668710b94a61007b5ae374af665b3f4f5931cb1"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/guardian.glb.import",
+        "change": "modified",
+        "before_sha256": "d0b844713546d28dce9fdb581a31bdd23d57d5388860a5463437889ad201249e",
+        "after_sha256": "49d9ac39e361e7164a5988abdde1baae0f0a316a08d6f82c4ff49fe05eea5136"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-01-actions.glb.import",
+        "change": "modified",
+        "before_sha256": "bc6c0458431793928c40f347a3b4a250c63687399464eb80947ec4c9e820122d",
+        "after_sha256": "7b43d2641204bc4d2400d3c5369f4acfa1aca054c383f5fea7487c11bd0b7c9b"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png.import",
+        "change": "modified",
+        "before_sha256": "fdf33d2f76d8dd2139d554d4494073e09eaf0855dc9024707d353b65313ef161",
+        "after_sha256": "de64ed8c9bd5250ed3e9d8251d48f0780d29208f3104d3066d5be8603ff35488"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-01.glb.import",
+        "change": "modified",
+        "before_sha256": "2387de3013c69066aecd87df263c70ed9585cecc85c5218d36ab80d1a014c3f5",
+        "after_sha256": "9e3bea905984078c2af70c622d0d89da4b80c88d1d5c0e5a85fa7f19f0e812ad"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-01_TEX-npc-01-palette.png.import",
+        "change": "modified",
+        "before_sha256": "33ce2da564a0f197fb396ebc1f33f5e8b724dbb29ca0e6c9381223cf0d346379",
+        "after_sha256": "51f3b35ff2442e174152ca6a1e30ebe87d081f6d81ef68010000a56c616d83b5"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-02-actions.glb.import",
+        "change": "modified",
+        "before_sha256": "9a177ea3096667227881317c8098dc86366923e035acdbc067e144b4920185b1",
+        "after_sha256": "bc7cb72039de34a2cae258451332d0faccf1e26d5eecadbd779d161d08804ac9"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png.import",
+        "change": "modified",
+        "before_sha256": "2448a7fd0a5e5212342263385ddc7a4618c633e12409e869be554330ab03e32a",
+        "after_sha256": "d74eb637e570fe5537279338b5d074d76e1276aeb41f4ab0d7eda15ea0dc019c"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-02.glb.import",
+        "change": "modified",
+        "before_sha256": "348ffbe38ac1dee3f8621f2414630bb103f78e37508997b569a94cbed04e94de",
+        "after_sha256": "0d555eab6adc6ea5069a39c3459b166144fc494e2910e10a5738f5cf1ca21a28"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-02_TEX-npc-02-palette.png.import",
+        "change": "modified",
+        "before_sha256": "7eca67558f79d69c95d79fb4a00211a98f752ee6b0e47333890bd3000ffb9093",
+        "after_sha256": "ed78ec964e4cc1500a410d451d702f3f331405a2e49d58d93a51b4708ad35565"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-03.glb.import",
+        "change": "modified",
+        "before_sha256": "16cb7c6fde44db4cc9118d42b0489433953cf68ec58632313be243f0c58c52ea",
+        "after_sha256": "29768c91593d3dde3dac5897fa03e25d6f6e2d3303ce1f6af1503b7b1ba7f6ff"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-03_TEX-npc-03-palette.png.import",
+        "change": "modified",
+        "before_sha256": "9b32e51aec8d2138488a0997b205da3075412b83be753bcb631eb3648a24b89a",
+        "after_sha256": "a28e6c142e2f928352e61e597aeff8b9008f3713b3c2b6122b0bfebb537495d4"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-04.glb.import",
+        "change": "modified",
+        "before_sha256": "b626d0985a45e7589a16a2e7831ca8427aafa7ac3f462686f4b870a7a4c05416",
+        "after_sha256": "b00fcf772004d7692662bf24fa23d12875b86acda2d1bcca1e6c6c39573b94e3"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-04_TEX-npc-04-palette.png.import",
+        "change": "modified",
+        "before_sha256": "3e66f3b5dfc91fc623606b1b6c81fcee73c3fe154c496d0493a06d3eeab063d3",
+        "after_sha256": "c1b84e5d8d2ba3ce94707403152b8bb34a9fc5e234d36947529fbb8f0f563fcd"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-06.glb.import",
+        "change": "modified",
+        "before_sha256": "2ecd8a939bef166359ed22b79dc4c1b558f0cf39df3d58ca1b46a2b5e28af996",
+        "after_sha256": "2a88a7b6ae6e3e2edd7059060317f249d9eeadd6c3c3d8a58bd2ec705f716e72"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-06_TEX-npc-06-palette.png.import",
+        "change": "modified",
+        "before_sha256": "25b5a28c8dc83562b0edb90fbaae6d8c44783aead8d3a1d0ff629ef098ae7e20",
+        "after_sha256": "4ab700da7e140fdbeb295ad5b6ed452369a3e88c022bbf6f0e9d0ed4e1a8f74b"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-07.glb.import",
+        "change": "modified",
+        "before_sha256": "603474f13522e901393bbefe4833d526ea4218dfabea812f8dc6742e881de341",
+        "after_sha256": "8064fc4ad9db949f574b779800ad9d456e2c0c473179872007510579303e507b"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-07_TEX-npc-07-palette.png.import",
+        "change": "modified",
+        "before_sha256": "c91dc64b4853967ea28ae5f35937f24a0aae026188af77de97e020b581195b51",
+        "after_sha256": "c3aec4c8b75c0f52277ac93076ed148a8340224fcd7c106b7047121e260b88fe"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-08.glb.import",
+        "change": "modified",
+        "before_sha256": "353c73602fa6bf6dfce46eba8499a1681a9038903a6bb5b6ef7733c62330b58d",
+        "after_sha256": "9caead662067632427010d2d3f97d8b51e0dd1177c7b654ada7ad88c1c9eeff0"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-08_TEX-npc-08-palette.png.import",
+        "change": "modified",
+        "before_sha256": "d4949e9373610d2917c7173704005b8faa2d3b69d994877a07133cb673e5dec0",
+        "after_sha256": "72c34c384e582efff9cd864ad316870317ca231fa9466cac5075877a836260d3"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-14.glb.import",
+        "change": "modified",
+        "before_sha256": "e104bd116477c29f0217cce98193e5fab8c0592aa0283cbc2257f8cef3b93329",
+        "after_sha256": "4c94c6819fac0f673908209f765b052602a56bb9793bbbbbf799df403bff78cf"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc-14_TEX-npc-14-palette.png.import",
+        "change": "modified",
+        "before_sha256": "b1616601508b633263de45b9cb015064151503725df9dcc3cd5368663f150644",
+        "after_sha256": "dc4663325d17d55fcefd65474a3992463964c46c084e23d63911b0f6d544e338"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc_calibration.glb.import",
+        "change": "modified",
+        "before_sha256": "8ea0c21e3cf432e590a08db8e8cca7e2985c6854469d12c7d231ad5f1d6a10bb",
+        "after_sha256": "3297b546b037b3e65e72785da44a99fc05cb73793f60b23774ad4267cfb181f7"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/npcs/npc_calibration_TEX-npc-calibration-checker.png.import",
+        "change": "modified",
+        "before_sha256": "356071f401a1171831d5698a55d39285392c2370bbd504bba1b7d3974f14d96b",
+        "after_sha256": "09e0e5ccb3755a4dddbbffad7febb0db42be16f8874d136cf25ee7339100c954"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/recovery_vessel.glb.import",
+        "change": "modified",
+        "before_sha256": "9918aa7c38219a05bdbf60ba43f439b856ec8cd566927af6319a3dd93cfa7cf1",
+        "after_sha256": "8c249987810020b22db7a7b990e6f555454b15f93280cf90619c7f64e0513d54"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/models/tollworks_plinth.glb.import",
+        "change": "modified",
+        "before_sha256": "afd49479215207a6e1d145d8a88f027ddb281bb2d5b1d0922e9abcd5337f2aa3",
+        "after_sha256": "d71a2a127720a59a50652a6525b39a6eecdf2cb5df1ed76100798c9871bce451"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-01/fishing-gear.png.import",
+        "change": "modified",
+        "before_sha256": "02b4e5e4d59d99c45cc64c2f4ed66910ef82219e2855b8e67cf4ab5ba572f2ae",
+        "after_sha256": "04b0a7ed4092aa65ef7c64023d57787ffe932f2d5fb20fba1ef431cb45952bd7"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-01/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "6a12bf09ba2d3e2841aa1111052b218eea041990e62edcff4a5b26fa8c1f47c2",
+        "after_sha256": "fea77f84753d56a571223c2b340764a2de47ddd61a31c59d2f28da7a723edb7f"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-01/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "7c18a039f5998c891d3fa899548aaa249e4c146e0e78a5569160199574717787",
+        "after_sha256": "d094d6f401115ad4b53416af6b61152ff1751846cafff52263507c535903ddea"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-01/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "c0fbedc45a29b59358fa90992b11c21161aee48f66ed0ee23aed57ab1d9c0db4",
+        "after_sha256": "db39ab1e0e761a08b879a93300d15a8e356c36314ad1f058144dded8d2690209"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-01/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "2c9128c899e84add852e92316a1ed850be747f1d88995aa9c02917ea600a377a",
+        "after_sha256": "320e1004844ed919bd8d6ef30df70db35ca66665aa60d4dd62ff8a4085798c66"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-01/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "9ca4fca15eb7a2d5a0ec985a185a48caaf26899a5d599e59d0c0e8db4ba532f1",
+        "after_sha256": "16a1a236853848dc47db43889b97c22f32e26519efcb8e3301feb1bd9b59a54d"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-02/archive-work.png.import",
+        "change": "modified",
+        "before_sha256": "3a0ad93306d6e7ed633f0336653b2a0a56d8cbcc371b4a50d0eb5036dadbedfd",
+        "after_sha256": "b2d02e8621bff04784c98a17e22eb738ea0a992a5c1163d4ee68b917928cecf7"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-02/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "638fbd68e817d9fc7e5b478bce9e21c3e5ad5c375595a491f1bbfe5e10a41bef",
+        "after_sha256": "7243936aff4aa84da93872b2bb13078864f543fe7c47af410a373d7564556595"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-02/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "f0fc3622dd7fd76e70d91403b6a2f0a9c5738cff61f1a7f53be4aab2587a4143",
+        "after_sha256": "2080e2c1754b63fc3ab933f37a634ec4cb085da9dfb9a4f17a872440ca37fd7d"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-02/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "4c00c5f56781bd119be524b30df9b584c2d4be960a7e9c46bd991634eb05926b",
+        "after_sha256": "3e2f4a5e9c564c2440cd261dc2a8d409251e8203ed3eacc9320ba43d5bad8ebd"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-02/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "f56334515c4f7baf9408a6680415ef385a16d80acf273180625b7957a183c2a5",
+        "after_sha256": "c9a8ddbe51ef2a7dc40a7af8a126cab1adb6681f44b2d96a39750ebbbb60c869"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-02/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "33794d409969c155a91d592878a17223a71ca1b136d26c22b887f75279b976f4",
+        "after_sha256": "c04ec9a70f333da9e741cfaa064c833b477ebda316abbaae177b7eceb793c081"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-03/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "c397f97f0c44cbdd5ed51a69052d9dbad4824e9e348f17bc808bc257f5a38068",
+        "after_sha256": "1729d360c332dd4aab2ce12576ab8316e70e9042498dbcb91ad798dd3692baf1"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-03/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "e9d3b25297344190b8a4f4b72655d34d38a689b91e98a0715c27a9a1ce7965d6",
+        "after_sha256": "1954cc66e3747b762b180d79039de17007697d3f570d8993ca3d68b756922702"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-03/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "73261213704526b53a4b8ea51fe9dc0fd521c822c125317512c92dfd298980be",
+        "after_sha256": "39ffc3c45ffaabbe4a2150c1b8584e089349a146909c6da390f3a93f4b0bcb13"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-03/ropework.png.import",
+        "change": "modified",
+        "before_sha256": "2761f6d5f91b71e0bea818f9da39c5ca5c0edf2650da91d7c5c7f1bfc531ce28",
+        "after_sha256": "bc857c1689e634464f1f6bdb98e745a836a9aaa47e7f2daac389f588cb27aa67"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-03/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "7548f0fc62e98b7438fa348620dbc17dd10d86a3b3204abfd065acc8ea4ae9c6",
+        "after_sha256": "14de993075fc0bc44d243999fbdceeb8545b717f33b3148673c4f69559edce88"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-03/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "b8a99d3468a4a8e11700b417ed7c7e37a818dfc86e23ceb8f3b2b02d8a03d0e6",
+        "after_sha256": "5fe7078914100330562dfa39fd28afd82a724fb99b9e43de05b5f29337b8bec8"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-04/birdwatching.png.import",
+        "change": "modified",
+        "before_sha256": "36ed76a1a74c35d7626259a81242c9bdf01ca21cbe9679b2fc66fef9ac325abd",
+        "after_sha256": "28f4f3877de230c6ff6483ccdf504f4a6a17f0049cd813379e949e767b7c6ef6"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-04/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "7f812a3e9ee383c4dd482a651bcc30c935f6b7d2856b24d6d60da30fa0b5f27c",
+        "after_sha256": "7423c366093cf89f42dd3be9607af448c0ad6d6571878e79f0e143246b9df9b9"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-04/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "7956167c3fcd1eebe84a3ca5801e60e0f8af32bf1b26e84a8e73aeb68acf1022",
+        "after_sha256": "df0c22a9158ac797fc2228b797d0670df3055feaeec48a995484dce99447ab7a"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-04/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "78d5e9f0b2905ffb7afef6cf15df2b3e86337e47e04328b6689abe6b3df365e5",
+        "after_sha256": "0444a062cb4994932f31cae9efca418a23ad764d9ad7b5fbd6c054ce33a4aaab"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-04/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "029c58914c57fad22ba9158c3b122715b6356ec4aafba2d6d1bebbcc9c3b5d18",
+        "after_sha256": "4038e18ef55a89a4f3d7c80547c8b5e79f623343454c5f9e68b7650534558bb9"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-04/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "27e8a4a9327eea834fc5425e62c4d4c7af414dc3e0202c40d857fadcc44bf342",
+        "after_sha256": "b94ebd1fa487d19e1ec5cf7a1b8bda598de4ea1ecd335caee75fd7c3eb201d68"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-06/flower-pressing.png.import",
+        "change": "modified",
+        "before_sha256": "e260441a3fafd5885d4f2b5c801d8eb3ea9816e719b324139dc929b3d6cff2dd",
+        "after_sha256": "4ef2e8075a97e8c15551144cd0105b04ffc3d057a5a31e53ec236d8abfe93b69"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-06/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "bd5d1d4d20705574eb8d396165654d17cc5d75ff884e0c6c4016b82c1cbfbfb7",
+        "after_sha256": "65293245bf41b24be90f2b3ece1675c75a1efee1d10b9b0bd2b71d57fb903838"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-06/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "4686c888eecceee0ddf8adee0e9ad73abe4350047b74d7a0b5082b231e1c169a",
+        "after_sha256": "970d192a9649d28f5fcb83d94d191a8793a202f2f7ad68881da41f5df4bd870d"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-06/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "8b196abce90e4d5435f40a3ff4114b492eafe095637857e2c106f2555671cc0a",
+        "after_sha256": "f4a701595f3055f6df6d8a7251cd853dca886ed3408082bc03133b6dee5bbf2e"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-06/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "7337355351de28550f502dbd2839d960d9a8b4b398137ba416aeabc3008a3b97",
+        "after_sha256": "4c41c90bd3d397687833e94c3adf198b0b0c754eef1bcea8a1321031f69070f0"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-06/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "20f31b00264fc9d6467f4a2b0b393276c9e2f93315f642ec7a3f795b17d0a2e0",
+        "after_sha256": "a4a16dc6d6eadd67a8144d494a387258b7a51b31d1a241a202be4a264e307d4a"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-07/knotwork.png.import",
+        "change": "modified",
+        "before_sha256": "e4c5f8976b0a620feb6a094ed7db8328b7ab4282a1c478f91d7bd32c8d5a8861",
+        "after_sha256": "ce32e56a74d0510b1af9b4b0aa0da0020378329b9372b9dd898f96f603077d95"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-07/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "34ba91b7f9f236d5473ba695de3bfd171ca135f782885585358ac5f38c0c968d",
+        "after_sha256": "a87a856caf6968f5068acd1762d0c2e35f761c3a7e6d46b224e6ed6e6e0a25c6"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-07/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "9bec0c67263d5df93ef3e9910e2288cc2fc413358da2417c7dfcfce203ccb3ec",
+        "after_sha256": "334174bba4dd1acab57334dac4cf1e64b7cd3f68486295a42e8bb272acb57fa8"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-07/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "db0042e69e3d556e2c13944509f9429eddbc5bc3b3c32fc1d961808369486495",
+        "after_sha256": "87c311b73e23c208cd8d5bb88b033f558dfe2fba6409b364201b4ac864600778"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-07/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "acf11d11788701bccecf02869c318a219bbbf6a0657c1200af720dec4aa979ca",
+        "after_sha256": "beaba76366c787fa28c6866e68852cf7045c4d7309a5e96d513df7ed9a3b761b"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-07/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "5128abd2a640d68d3f6a4b484a759e1f509335635678a727ef16916ad8e7a88f",
+        "after_sha256": "f44bb7c60d3c2e874aa274b64cdeb05e1dea2e6454faff950ba354932fae57b9"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-08/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "66a51e80696a1269be071dfce17a603f722f754855426b41f7399577115389d0",
+        "after_sha256": "e6192838870ee661af4c505c96e802685ea4428c154636059c0c251de9084b3b"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-08/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "35ca59dd4f122259fd3766be0cff4629ca84a0d1a77ef9beb803cba41617c496",
+        "after_sha256": "d499890ba76a5d43739922565444ca65bfcf696e31ac30015dfb5856e5ce455f"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-08/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "5e4a84cb7587d71b47915f5ec8af5d2e050d2bf00148d4f96b9b7521c992e63a",
+        "after_sha256": "9bdec2ba7e73aeb045450febefc859611b2d60eacb4c494805b7cb841f37b154"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-08/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "8d212fb560ffabb36dbd993a5b649ccc72f7f8e68c39cac196ad9ff37c5525cb",
+        "after_sha256": "1b1d1dfb47b45917d13091444b34517710284e653310f9eecda60a4967e99fd9"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-08/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "b771cee16bc269cea71f3b0f34b0f55ba590890bb2756d96f1c4ec1615cfa895",
+        "after_sha256": "d66cce7f04918c447b7f86d65ccd3b7194fee14dc29423ed2f1bc129f787e209"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-08/woodcarving.png.import",
+        "change": "modified",
+        "before_sha256": "eefd29a43e7fe486ec7aa335f8d53859e1dc703583d1b2d73222402e906f279e",
+        "after_sha256": "1e315031a76210cb309a62d2abd96a0a70d019dad036c4da68fdb98bdcbb0ea4"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-14/official-neutral.png.import",
+        "change": "modified",
+        "before_sha256": "e3d1efafa93d65ee3c585390a5f2ff3ccc6d101bdeeccb76f8a3b842704265ef",
+        "after_sha256": "562ad131053099026b23fed80b154d940c08a24714ceaeee0bc0057a2124b27b"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-14/pleased.png.import",
+        "change": "modified",
+        "before_sha256": "56a53b8c3ab3b1fdc8fa91e15dc34aaeef755b2cd8bd0c4d5de77e68de9e088a",
+        "after_sha256": "6a881687b4913d50400996785b7e9e6a7fabe4ea046dcdaa7ad0c9673123e72f"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-14/practiced-smile.png.import",
+        "change": "modified",
+        "before_sha256": "9f1e21c118b6e6298f9a11c3e6bf92a2dd7f2a157f1e32713fb78c8b82f23e4c",
+        "after_sha256": "6a9594a35ab403032325f2a9adfa05e7be05954f84cab6757167180000a4a391"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-14/quilting.png.import",
+        "change": "modified",
+        "before_sha256": "cd74f94ce9d2a677d803e9f6bc58fcc4a4653d6cb05db4b113121dd9168503ef",
+        "after_sha256": "ba497f6e9cf4547ebe4b9a2440ba253e8107fc98ecec8b128e78c2cb1c7da693"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-14/skeptical.png.import",
+        "change": "modified",
+        "before_sha256": "45344d6338eb57e9a462a062f0776f1998df4e80dc48d401c11e08cc198dcc48",
+        "after_sha256": "671e9797c6ac54e519b172faa3d19ca34a2e0378ab2720fc5a875569e8e8aa3c"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/portraits/npc-14/tired-rumpled.png.import",
+        "change": "modified",
+        "before_sha256": "d55c1e016789223dbe2442ee31ba2919998a304d2d13faded53a65b5c489abdd",
+        "after_sha256": "2c17fb651e3bb0354d44b6212c4f7163373073608385134d37bac12d4af3e85a"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-01/npc_01_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "7f4fe115e04d388641c5d91f6756fa1df08ae3dd7c3e6de1439982a7c55a08ba",
+        "after_sha256": "5226e482b931d209e66d343f9d1a7332f8929813f15bb427c6afa92cc558d754"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-01/npc_01_river_fishing_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "5f4a05e6bd34503ae3eeb2fc57a9f81c5801476847b6287aaf8f5b09870bf544",
+        "after_sha256": "68b8dcb858fb360d75d920c6430d9f1b5ac3cd5a2bb57618e9edce1db838a11c"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-01/npc_01_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "4f4a0b2926fa3f33e05116847588dffbf6d9ac98a0559eecaff17c36a21c921b",
+        "after_sha256": "c0b638afe3c4a96e521d366689e03463db5cc4cc0154b8c63ce07477b3eebccf"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-02/npc_02_archive_work_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "97645056c8484ea5f8d5f17eea9cf5b847696a9ed57957114e21ff32bcd74bfd",
+        "after_sha256": "d1cd0673ebbb05aeeb34cb1a73d73ec23bb1e247406b589fd228e7e0ceb5580d"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-02/npc_02_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "1ec018e22652c6790b23da57683e7f74f19ff460501bb76003e095a6d29728b2",
+        "after_sha256": "1cf7241d752101bd18c6948df15f38d49c4ec46dcad92e8519e219ba2e8d6f91"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-02/npc_02_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "6a60412fa0e233575905043e12470788336a7f90c444331c51d685e1e3440b0d",
+        "after_sha256": "44c11f632782d6f7e831ca3b0aaf445e559d3ec6601d64231499ba5c1013cdb2"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-03/npc_03_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "575c7d6158218272032f34088b0d61edf53b69446c02d2d80c30e20ca70ff905",
+        "after_sha256": "6103a7ed9a18b63df54d9a5f7a7eea10d371d4aa67331682da3a6d28bed3ff90"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-03/npc_03_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "029b2a558bf1e55e58714fa28cfebf341564691aeea23def4df95f06657879b8",
+        "after_sha256": "da8296604cdf301ffcf6debd091c94ec9667a79c2556201171139b25aad37c69"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-04/npc_04_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "d14375e08fad8ea1af70bc03a6d78682561179456d80b39a37953121b17da773",
+        "after_sha256": "090d9a18076b4c8f6c7751d93792043bc4fe886c89a1235361bbff82d99bf559"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-04/npc_04_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "90951192e079e8c7443fcd54793e7e90e864b9e8078ef4658a659f9429def50f",
+        "after_sha256": "411da57976585c20490ad6a03a135512dec6a197a1d805a570f5b32328504326"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-06/npc_06_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "f50eedc5e902725776074bccd285c2dfb3529b76e0bd302098c0899dfa18b6f8",
+        "after_sha256": "ff4cfc340fab7cd12267b72a7b6d8367b4fd128da9f1ae382b7eebf764eb7843"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-06/npc_06_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "d52ddccb0680a40bdff4e3cd830dc0c4217b89eaff34b17fe572e6de069422b8",
+        "after_sha256": "35f275e238f5656ae5b34e6d90015f7a2b1c2838707f6e531bc4e29886ff3171"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-07/npc_07_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "be2201806a0fca6caa0bf69a835896964a3a40c383dce11be8a569ae95f26fe6",
+        "after_sha256": "bd7f0d6c410aae0d7d9953648e7fe346cdac801949464b09dca22766c622979d"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-07/npc_07_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "1460f3db991079f741feb44f8f5f1b47fe2b58580412bdc4e56ffacf57e046a5",
+        "after_sha256": "dea1655e0148cebb32c2f0e8989bb4e2b41dab6cb4b17c6118f8cf66b64e70de"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-08/npc_08_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "9a9e4351af04b6e427baa434627c5c0548a06703da6c890ce4b50111e0ff0ba5",
+        "after_sha256": "4c032dc0e731566f17ce3536aa93dd01b5919d8bd580902fde3590b941ef4126"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-08/npc_08_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "6f00f6224c4313e1b75d1eaa24a1fb4a60d7b675dd6a21e109a0a19bca99c1a2",
+        "after_sha256": "41b03bce88ac0b251539976b390f8584f56e01805ef94e7986d8caf97a330035"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-14/npc_14_idle_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "057457a898c4c8d507529646d0cb5efa717cc5fd9a733d3b5fee1ba87623d030",
+        "after_sha256": "cc2693685d8a58438cfca1f767cbd36358b9e1238f5777d5486af76438bf2417"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/assets/npcs/reference/npc-14/npc_14_walk_sheet.png.import",
+        "change": "modified",
+        "before_sha256": "47d95d07f75a5b728f7dfe5c6a2a35f408006a0d9358e67ed7f804727dcbdbac",
+        "after_sha256": "3dd1b8a40a2200cb57c695d5c41d9c00f93893ac0f87d1cdce601859f062e6b3"
+      }
+    ],
+    "error": null
+  },
+  "started_utc": "2026-10-11T12:51:44.3041198Z",
+  "finished_utc": "2026-10-11T12:52:21.8824326Z",
+  "status": "failed",
+  "error": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+  "cases": [
+    {
+      "label": "engine-version",
+      "arguments": [
+        "--headless",
+        "--version"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\builds\\testing\\AD019\\20261011-125144244-dccf7c6f\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\builds\\testing\\AD019\\20261011-125144244-dccf7c6f\\localappdata",
+      "launcher_pid": 9636,
+      "engine_pids": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\00-engine-version.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\00-engine-version.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "ac376995e68983da981fbfedd8d350b57a88bb1b25506e9ebc7117f8772158e8",
+        "captured_utc": "2026-10-11T12:52:05.1121474Z",
+        "file_count": 1314,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\00-engine-version.source-before.json"
+      },
+      "source_after": {
+        "sha256": "ac376995e68983da981fbfedd8d350b57a88bb1b25506e9ebc7117f8772158e8",
+        "captured_utc": "2026-10-11T12:52:05.9716590Z",
+        "file_count": 1314,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\00-engine-version.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T12:52:04.5278998Z",
+      "finished_utc": "2026-10-11T12:52:06.0664738Z"
+    },
+    {
+      "label": "import",
+      "arguments": [
+        "--headless",
+        "--editor",
+        "--path",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\game",
+        "--import",
+        "--quit"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\builds\\testing\\AD019\\20261011-125144244-dccf7c6f\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\builds\\testing\\AD019\\20261011-125144244-dccf7c6f\\localappdata",
+      "launcher_pid": 55836,
+      "engine_pids": [
+        28740
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "failed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\01-import.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\01-import.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [
+        "ERROR: .NET Sdk not found. The required version is '10.0.9'."
+      ],
+      "source_before": {
+        "sha256": "ac376995e68983da981fbfedd8d350b57a88bb1b25506e9ebc7117f8772158e8",
+        "captured_utc": "2026-10-11T12:52:06.6909315Z",
+        "file_count": 1314,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\01-import.source-before.json"
+      },
+      "source_after": {
+        "sha256": "7f9e9259d5640c74146dad8c0110bc81ee62ce1fd1ab842dd3b32f7e6e0dd6c1",
+        "captured_utc": "2026-10-11T12:52:21.0465484Z",
+        "file_count": 1314,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\01-import.source-after.json"
+      },
+      "source_changes": [
+        {
+          "path": "game/assets/environment/alderwake_landmark_kit.glb.import",
+          "change": "modified",
+          "before_sha256": "6a4124a4dc412b3a88a0c53930599f5599dfde75e8b366aecd79317d9bc30280",
+          "after_sha256": "f399dd1acab2cac678c34035d5babac936baf7d92ed18d0a4bf7baedd6ba288c"
+        },
+        {
+          "path": "game/assets/environment/alderwake_town_kit.glb.import",
+          "change": "modified",
+          "before_sha256": "705827d50c6d4eef7368bb3122c3e9b807a069e64d36765903684af74f515319",
+          "after_sha256": "33e4232c50761f7b7f1cbe929e0b13ec8e1a4aa1a265c80e1e87cb41ace79bf1"
+        },
+        {
+          "path": "game/assets/environment/exterior_light_kit.glb.import",
+          "change": "modified",
+          "before_sha256": "ded736e38f538ead778e389d36fb26ea944da046e65066217e36a2da7fb3c6dc",
+          "after_sha256": "fd67702d96161706f536702b6d3f0260a3b1b2f851480637dc36238bccb8277b"
+        },
+        {
+          "path": "game/assets/environment/moonwood_tree_kit.glb.import",
+          "change": "modified",
+          "before_sha256": "1068f179ef4c7f6d6dc8554c0bf708afb4efde55d9ce19697d06976b704fe410",
+          "after_sha256": "b913f7742de73f26a7212add916ae9b862d9e7c4f8ae6d729fb10f9248d514a8"
+        },
+        {
+          "path": "game/assets/items/bluegill.png.import",
+          "change": "modified",
+          "before_sha256": "483264afc94ca63e850f0348b8a812eacb7a13412328c6467bfc5d249723d301",
+          "after_sha256": "c592edd9198832776ca61a7cf774e1427719a66785cfbbe0721b27cf18406495"
+        },
+        {
+          "path": "game/assets/items/fishing_rod.svg.import",
+          "change": "modified",
+          "before_sha256": "3c5163b0575fa4acd417319984e5110f2709625e5253ec660f4e1e496e33e09f",
+          "after_sha256": "85caf4f92d8c8e9c7c32da704abfd92f4f59cdca78f730fe0036b56d592aae0f"
+        },
+        {
+          "path": "game/assets/items/golden_carp.png.import",
+          "change": "modified",
+          "before_sha256": "4128972ebe7e2a8ef186b0d7948f6e693f359c483668545072b068e3d66f1b3b",
+          "after_sha256": "4a8a3c40b4d3e35a4e876fe07b538a39231fadf0ce5ec3d424b122b36a5e7acf"
+        },
+        {
+          "path": "game/assets/items/moonflower.svg.import",
+          "change": "modified",
+          "before_sha256": "6588d3b6b46146b0f22138df4e062a09769f97ac2f1c340887a821a488c9750c",
+          "after_sha256": "f912d5090cc2223085c6f0be87f11eda4c012531ef9a6281de1fc04d732034e3"
+        },
+        {
+          "path": "game/assets/items/river_trout.png.import",
+          "change": "modified",
+          "before_sha256": "0c82cf9444e7ca024b6ae4d52b6b8d92c9d30c0945450fa0c9e37190a6eda229",
+          "after_sha256": "36eb1fb6eab46a32c49a4f24b668710b94a61007b5ae374af665b3f4f5931cb1"
+        },
+        {
+          "path": "game/assets/models/guardian.glb.import",
+          "change": "modified",
+          "before_sha256": "d0b844713546d28dce9fdb581a31bdd23d57d5388860a5463437889ad201249e",
+          "after_sha256": "49d9ac39e361e7164a5988abdde1baae0f0a316a08d6f82c4ff49fe05eea5136"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-01-actions.glb.import",
+          "change": "modified",
+          "before_sha256": "bc6c0458431793928c40f347a3b4a250c63687399464eb80947ec4c9e820122d",
+          "after_sha256": "7b43d2641204bc4d2400d3c5369f4acfa1aca054c383f5fea7487c11bd0b7c9b"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png.import",
+          "change": "modified",
+          "before_sha256": "fdf33d2f76d8dd2139d554d4494073e09eaf0855dc9024707d353b65313ef161",
+          "after_sha256": "de64ed8c9bd5250ed3e9d8251d48f0780d29208f3104d3066d5be8603ff35488"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-01.glb.import",
+          "change": "modified",
+          "before_sha256": "2387de3013c69066aecd87df263c70ed9585cecc85c5218d36ab80d1a014c3f5",
+          "after_sha256": "9e3bea905984078c2af70c622d0d89da4b80c88d1d5c0e5a85fa7f19f0e812ad"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-01_TEX-npc-01-palette.png.import",
+          "change": "modified",
+          "before_sha256": "33ce2da564a0f197fb396ebc1f33f5e8b724dbb29ca0e6c9381223cf0d346379",
+          "after_sha256": "51f3b35ff2442e174152ca6a1e30ebe87d081f6d81ef68010000a56c616d83b5"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-02-actions.glb.import",
+          "change": "modified",
+          "before_sha256": "9a177ea3096667227881317c8098dc86366923e035acdbc067e144b4920185b1",
+          "after_sha256": "bc7cb72039de34a2cae258451332d0faccf1e26d5eecadbd779d161d08804ac9"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png.import",
+          "change": "modified",
+          "before_sha256": "2448a7fd0a5e5212342263385ddc7a4618c633e12409e869be554330ab03e32a",
+          "after_sha256": "d74eb637e570fe5537279338b5d074d76e1276aeb41f4ab0d7eda15ea0dc019c"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-02.glb.import",
+          "change": "modified",
+          "before_sha256": "348ffbe38ac1dee3f8621f2414630bb103f78e37508997b569a94cbed04e94de",
+          "after_sha256": "0d555eab6adc6ea5069a39c3459b166144fc494e2910e10a5738f5cf1ca21a28"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-02_TEX-npc-02-palette.png.import",
+          "change": "modified",
+          "before_sha256": "7eca67558f79d69c95d79fb4a00211a98f752ee6b0e47333890bd3000ffb9093",
+          "after_sha256": "ed78ec964e4cc1500a410d451d702f3f331405a2e49d58d93a51b4708ad35565"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-03.glb.import",
+          "change": "modified",
+          "before_sha256": "16cb7c6fde44db4cc9118d42b0489433953cf68ec58632313be243f0c58c52ea",
+          "after_sha256": "29768c91593d3dde3dac5897fa03e25d6f6e2d3303ce1f6af1503b7b1ba7f6ff"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-03_TEX-npc-03-palette.png.import",
+          "change": "modified",
+          "before_sha256": "9b32e51aec8d2138488a0997b205da3075412b83be753bcb631eb3648a24b89a",
+          "after_sha256": "a28e6c142e2f928352e61e597aeff8b9008f3713b3c2b6122b0bfebb537495d4"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-04.glb.import",
+          "change": "modified",
+          "before_sha256": "b626d0985a45e7589a16a2e7831ca8427aafa7ac3f462686f4b870a7a4c05416",
+          "after_sha256": "b00fcf772004d7692662bf24fa23d12875b86acda2d1bcca1e6c6c39573b94e3"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-04_TEX-npc-04-palette.png.import",
+          "change": "modified",
+          "before_sha256": "3e66f3b5dfc91fc623606b1b6c81fcee73c3fe154c496d0493a06d3eeab063d3",
+          "after_sha256": "c1b84e5d8d2ba3ce94707403152b8bb34a9fc5e234d36947529fbb8f0f563fcd"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-06.glb.import",
+          "change": "modified",
+          "before_sha256": "2ecd8a939bef166359ed22b79dc4c1b558f0cf39df3d58ca1b46a2b5e28af996",
+          "after_sha256": "2a88a7b6ae6e3e2edd7059060317f249d9eeadd6c3c3d8a58bd2ec705f716e72"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-06_TEX-npc-06-palette.png.import",
+          "change": "modified",
+          "before_sha256": "25b5a28c8dc83562b0edb90fbaae6d8c44783aead8d3a1d0ff629ef098ae7e20",
+          "after_sha256": "4ab700da7e140fdbeb295ad5b6ed452369a3e88c022bbf6f0e9d0ed4e1a8f74b"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-07.glb.import",
+          "change": "modified",
+          "before_sha256": "603474f13522e901393bbefe4833d526ea4218dfabea812f8dc6742e881de341",
+          "after_sha256": "8064fc4ad9db949f574b779800ad9d456e2c0c473179872007510579303e507b"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-07_TEX-npc-07-palette.png.import",
+          "change": "modified",
+          "before_sha256": "c91dc64b4853967ea28ae5f35937f24a0aae026188af77de97e020b581195b51",
+          "after_sha256": "c3aec4c8b75c0f52277ac93076ed148a8340224fcd7c106b7047121e260b88fe"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-08.glb.import",
+          "change": "modified",
+          "before_sha256": "353c73602fa6bf6dfce46eba8499a1681a9038903a6bb5b6ef7733c62330b58d",
+          "after_sha256": "9caead662067632427010d2d3f97d8b51e0dd1177c7b654ada7ad88c1c9eeff0"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-08_TEX-npc-08-palette.png.import",
+          "change": "modified",
+          "before_sha256": "d4949e9373610d2917c7173704005b8faa2d3b69d994877a07133cb673e5dec0",
+          "after_sha256": "72c34c384e582efff9cd864ad316870317ca231fa9466cac5075877a836260d3"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-14.glb.import",
+          "change": "modified",
+          "before_sha256": "e104bd116477c29f0217cce98193e5fab8c0592aa0283cbc2257f8cef3b93329",
+          "after_sha256": "4c94c6819fac0f673908209f765b052602a56bb9793bbbbbf799df403bff78cf"
+        },
+        {
+          "path": "game/assets/models/npcs/npc-14_TEX-npc-14-palette.png.import",
+          "change": "modified",
+          "before_sha256": "b1616601508b633263de45b9cb015064151503725df9dcc3cd5368663f150644",
+          "after_sha256": "dc4663325d17d55fcefd65474a3992463964c46c084e23d63911b0f6d544e338"
+        },
+        {
+          "path": "game/assets/models/npcs/npc_calibration.glb.import",
+          "change": "modified",
+          "before_sha256": "8ea0c21e3cf432e590a08db8e8cca7e2985c6854469d12c7d231ad5f1d6a10bb",
+          "after_sha256": "3297b546b037b3e65e72785da44a99fc05cb73793f60b23774ad4267cfb181f7"
+        },
+        {
+          "path": "game/assets/models/npcs/npc_calibration_TEX-npc-calibration-checker.png.import",
+          "change": "modified",
+          "before_sha256": "356071f401a1171831d5698a55d39285392c2370bbd504bba1b7d3974f14d96b",
+          "after_sha256": "09e0e5ccb3755a4dddbbffad7febb0db42be16f8874d136cf25ee7339100c954"
+        },
+        {
+          "path": "game/assets/models/recovery_vessel.glb.import",
+          "change": "modified",
+          "before_sha256": "9918aa7c38219a05bdbf60ba43f439b856ec8cd566927af6319a3dd93cfa7cf1",
+          "after_sha256": "8c249987810020b22db7a7b990e6f555454b15f93280cf90619c7f64e0513d54"
+        },
+        {
+          "path": "game/assets/models/tollworks_plinth.glb.import",
+          "change": "modified",
+          "before_sha256": "afd49479215207a6e1d145d8a88f027ddb281bb2d5b1d0922e9abcd5337f2aa3",
+          "after_sha256": "d71a2a127720a59a50652a6525b39a6eecdf2cb5df1ed76100798c9871bce451"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-01/fishing-gear.png.import",
+          "change": "modified",
+          "before_sha256": "02b4e5e4d59d99c45cc64c2f4ed66910ef82219e2855b8e67cf4ab5ba572f2ae",
+          "after_sha256": "04b0a7ed4092aa65ef7c64023d57787ffe932f2d5fb20fba1ef431cb45952bd7"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-01/official-neutral.png.import",
+          "change": "modified",
+          "before_sha256": "6a12bf09ba2d3e2841aa1111052b218eea041990e62edcff4a5b26fa8c1f47c2",
+          "after_sha256": "fea77f84753d56a571223c2b340764a2de47ddd61a31c59d2f28da7a723edb7f"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-01/pleased.png.import",
+          "change": "modified",
+          "before_sha256": "7c18a039f5998c891d3fa899548aaa249e4c146e0e78a5569160199574717787",
+          "after_sha256": "d094d6f401115ad4b53416af6b61152ff1751846cafff52263507c535903ddea"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-01/practiced-smile.png.import",
+          "change": "modified",
+          "before_sha256": "c0fbedc45a29b59358fa90992b11c21161aee48f66ed0ee23aed57ab1d9c0db4",
+          "after_sha256": "db39ab1e0e761a08b879a93300d15a8e356c36314ad1f058144dded8d2690209"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-01/skeptical.png.import",
+          "change": "modified",
+          "before_sha256": "2c9128c899e84add852e92316a1ed850be747f1d88995aa9c02917ea600a377a",
+          "after_sha256": "320e1004844ed919bd8d6ef30df70db35ca66665aa60d4dd62ff8a4085798c66"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-01/tired-rumpled.png.import",
+          "change": "modified",
+          "before_sha256": "9ca4fca15eb7a2d5a0ec985a185a48caaf26899a5d599e59d0c0e8db4ba532f1",
+          "after_sha256": "16a1a236853848dc47db43889b97c22f32e26519efcb8e3301feb1bd9b59a54d"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-02/archive-work.png.import",
+          "change": "modified",
+          "before_sha256": "3a0ad93306d6e7ed633f0336653b2a0a56d8cbcc371b4a50d0eb5036dadbedfd",
+          "after_sha256": "b2d02e8621bff04784c98a17e22eb738ea0a992a5c1163d4ee68b917928cecf7"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-02/official-neutral.png.import",
+          "change": "modified",
+          "before_sha256": "638fbd68e817d9fc7e5b478bce9e21c3e5ad5c375595a491f1bbfe5e10a41bef",
+          "after_sha256": "7243936aff4aa84da93872b2bb13078864f543fe7c47af410a373d7564556595"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-02/pleased.png.import",
+          "change": "modified",
+          "before_sha256": "f0fc3622dd7fd76e70d91403b6a2f0a9c5738cff61f1a7f53be4aab2587a4143",
+          "after_sha256": "2080e2c1754b63fc3ab933f37a634ec4cb085da9dfb9a4f17a872440ca37fd7d"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-02/practiced-smile.png.import",
+          "change": "modified",
+          "before_sha256": "4c00c5f56781bd119be524b30df9b584c2d4be960a7e9c46bd991634eb05926b",
+          "after_sha256": "3e2f4a5e9c564c2440cd261dc2a8d409251e8203ed3eacc9320ba43d5bad8ebd"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-02/skeptical.png.import",
+          "change": "modified",
+          "before_sha256": "f56334515c4f7baf9408a6680415ef385a16d80acf273180625b7957a183c2a5",
+          "after_sha256": "c9a8ddbe51ef2a7dc40a7af8a126cab1adb6681f44b2d96a39750ebbbb60c869"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-02/tired-rumpled.png.import",
+          "change": "modified",
+          "before_sha256": "33794d409969c155a91d592878a17223a71ca1b136d26c22b887f75279b976f4",
+          "after_sha256": "c04ec9a70f333da9e741cfaa064c833b477ebda316abbaae177b7eceb793c081"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-03/official-neutral.png.import",
+          "change": "modified",
+          "before_sha256": "c397f97f0c44cbdd5ed51a69052d9dbad4824e9e348f17bc808bc257f5a38068",
+          "after_sha256": "1729d360c332dd4aab2ce12576ab8316e70e9042498dbcb91ad798dd3692baf1"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-03/pleased.png.import",
+          "change": "modified",
+          "before_sha256": "e9d3b25297344190b8a4f4b72655d34d38a689b91e98a0715c27a9a1ce7965d6",
+          "after_sha256": "1954cc66e3747b762b180d79039de17007697d3f570d8993ca3d68b756922702"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-03/practiced-smile.png.import",
+          "change": "modified",
+          "before_sha256": "73261213704526b53a4b8ea51fe9dc0fd521c822c125317512c92dfd298980be",
+          "after_sha256": "39ffc3c45ffaabbe4a2150c1b8584e089349a146909c6da390f3a93f4b0bcb13"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-03/ropework.png.import",
+          "change": "modified",
+          "before_sha256": "2761f6d5f91b71e0bea818f9da39c5ca5c0edf2650da91d7c5c7f1bfc531ce28",
+          "after_sha256": "bc857c1689e634464f1f6bdb98e745a836a9aaa47e7f2daac389f588cb27aa67"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-03/skeptical.png.import",
+          "change": "modified",
+          "before_sha256": "7548f0fc62e98b7438fa348620dbc17dd10d86a3b3204abfd065acc8ea4ae9c6",
+          "after_sha256": "14de993075fc0bc44d243999fbdceeb8545b717f33b3148673c4f69559edce88"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-03/tired-rumpled.png.import",
+          "change": "modified",
+          "before_sha256": "b8a99d3468a4a8e11700b417ed7c7e37a818dfc86e23ceb8f3b2b02d8a03d0e6",
+          "after_sha256": "5fe7078914100330562dfa39fd28afd82a724fb99b9e43de05b5f29337b8bec8"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-04/birdwatching.png.import",
+          "change": "modified",
+          "before_sha256": "36ed76a1a74c35d7626259a81242c9bdf01ca21cbe9679b2fc66fef9ac325abd",
+          "after_sha256": "28f4f3877de230c6ff6483ccdf504f4a6a17f0049cd813379e949e767b7c6ef6"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-04/official-neutral.png.import",
+          "change": "modified",
+          "before_sha256": "7f812a3e9ee383c4dd482a651bcc30c935f6b7d2856b24d6d60da30fa0b5f27c",
+          "after_sha256": "7423c366093cf89f42dd3be9607af448c0ad6d6571878e79f0e143246b9df9b9"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-04/pleased.png.import",
+          "change": "modified",
+          "before_sha256": "7956167c3fcd1eebe84a3ca5801e60e0f8af32bf1b26e84a8e73aeb68acf1022",
+          "after_sha256": "df0c22a9158ac797fc2228b797d0670df3055feaeec48a995484dce99447ab7a"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-04/practiced-smile.png.import",
+          "change": "modified",
+          "before_sha256": "78d5e9f0b2905ffb7afef6cf15df2b3e86337e47e04328b6689abe6b3df365e5",
+          "after_sha256": "0444a062cb4994932f31cae9efca418a23ad764d9ad7b5fbd6c054ce33a4aaab"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-04/skeptical.png.import",
+          "change": "modified",
+          "before_sha256": "029c58914c57fad22ba9158c3b122715b6356ec4aafba2d6d1bebbcc9c3b5d18",
+          "after_sha256": "4038e18ef55a89a4f3d7c80547c8b5e79f623343454c5f9e68b7650534558bb9"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-04/tired-rumpled.png.import",
+          "change": "modified",
+          "before_sha256": "27e8a4a9327eea834fc5425e62c4d4c7af414dc3e0202c40d857fadcc44bf342",
+          "after_sha256": "b94ebd1fa487d19e1ec5cf7a1b8bda598de4ea1ecd335caee75fd7c3eb201d68"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-06/flower-pressing.png.import",
+          "change": "modified",
+          "before_sha256": "e260441a3fafd5885d4f2b5c801d8eb3ea9816e719b324139dc929b3d6cff2dd",
+          "after_sha256": "4ef2e8075a97e8c15551144cd0105b04ffc3d057a5a31e53ec236d8abfe93b69"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-06/official-neutral.png.import",
+          "change": "modified",
+          "before_sha256": "bd5d1d4d20705574eb8d396165654d17cc5d75ff884e0c6c4016b82c1cbfbfb7",
+          "after_sha256": "65293245bf41b24be90f2b3ece1675c75a1efee1d10b9b0bd2b71d57fb903838"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-06/pleased.png.import",
+          "change": "modified",
+          "before_sha256": "4686c888eecceee0ddf8adee0e9ad73abe4350047b74d7a0b5082b231e1c169a",
+          "after_sha256": "970d192a9649d28f5fcb83d94d191a8793a202f2f7ad68881da41f5df4bd870d"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-06/practiced-smile.png.import",
+          "change": "modified",
+          "before_sha256": "8b196abce90e4d5435f40a3ff4114b492eafe095637857e2c106f2555671cc0a",
+          "after_sha256": "f4a701595f3055f6df6d8a7251cd853dca886ed3408082bc03133b6dee5bbf2e"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-06/skeptical.png.import",
+          "change": "modified",
+          "before_sha256": "7337355351de28550f502dbd2839d960d9a8b4b398137ba416aeabc3008a3b97",
+          "after_sha256": "4c41c90bd3d397687833e94c3adf198b0b0c754eef1bcea8a1321031f69070f0"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-06/tired-rumpled.png.import",
+          "change": "modified",
+          "before_sha256": "20f31b00264fc9d6467f4a2b0b393276c9e2f93315f642ec7a3f795b17d0a2e0",
+          "after_sha256": "a4a16dc6d6eadd67a8144d494a387258b7a51b31d1a241a202be4a264e307d4a"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-07/knotwork.png.import",
+          "change": "modified",
+          "before_sha256": "e4c5f8976b0a620feb6a094ed7db8328b7ab4282a1c478f91d7bd32c8d5a8861",
+          "after_sha256": "ce32e56a74d0510b1af9b4b0aa0da0020378329b9372b9dd898f96f603077d95"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-07/official-neutral.png.import",
+          "change": "modified",
+          "before_sha256": "34ba91b7f9f236d5473ba695de3bfd171ca135f782885585358ac5f38c0c968d",
+          "after_sha256": "a87a856caf6968f5068acd1762d0c2e35f761c3a7e6d46b224e6ed6e6e0a25c6"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-07/pleased.png.import",
+          "change": "modified",
+          "before_sha256": "9bec0c67263d5df93ef3e9910e2288cc2fc413358da2417c7dfcfce203ccb3ec",
+          "after_sha256": "334174bba4dd1acab57334dac4cf1e64b7cd3f68486295a42e8bb272acb57fa8"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-07/practiced-smile.png.import",
+          "change": "modified",
+          "before_sha256": "db0042e69e3d556e2c13944509f9429eddbc5bc3b3c32fc1d961808369486495",
+          "after_sha256": "87c311b73e23c208cd8d5bb88b033f558dfe2fba6409b364201b4ac864600778"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-07/skeptical.png.import",
+          "change": "modified",
+          "before_sha256": "acf11d11788701bccecf02869c318a219bbbf6a0657c1200af720dec4aa979ca",
+          "after_sha256": "beaba76366c787fa28c6866e68852cf7045c4d7309a5e96d513df7ed9a3b761b"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-07/tired-rumpled.png.import",
+          "change": "modified",
+          "before_sha256": "5128abd2a640d68d3f6a4b484a759e1f509335635678a727ef16916ad8e7a88f",
+          "after_sha256": "f44bb7c60d3c2e874aa274b64cdeb05e1dea2e6454faff950ba354932fae57b9"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-08/official-neutral.png.import",
+          "change": "modified",
+          "before_sha256": "66a51e80696a1269be071dfce17a603f722f754855426b41f7399577115389d0",
+          "after_sha256": "e6192838870ee661af4c505c96e802685ea4428c154636059c0c251de9084b3b"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-08/pleased.png.import",
+          "change": "modified",
+          "before_sha256": "35ca59dd4f122259fd3766be0cff4629ca84a0d1a77ef9beb803cba41617c496",
+          "after_sha256": "d499890ba76a5d43739922565444ca65bfcf696e31ac30015dfb5856e5ce455f"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-08/practiced-smile.png.import",
+          "change": "modified",
+          "before_sha256": "5e4a84cb7587d71b47915f5ec8af5d2e050d2bf00148d4f96b9b7521c992e63a",
+          "after_sha256": "9bdec2ba7e73aeb045450febefc859611b2d60eacb4c494805b7cb841f37b154"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-08/skeptical.png.import",
+          "change": "modified",
+          "before_sha256": "8d212fb560ffabb36dbd993a5b649ccc72f7f8e68c39cac196ad9ff37c5525cb",
+          "after_sha256": "1b1d1dfb47b45917d13091444b34517710284e653310f9eecda60a4967e99fd9"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-08/tired-rumpled.png.import",
+          "change": "modified",
+          "before_sha256": "b771cee16bc269cea71f3b0f34b0f55ba590890bb2756d96f1c4ec1615cfa895",
+          "after_sha256": "d66cce7f04918c447b7f86d65ccd3b7194fee14dc29423ed2f1bc129f787e209"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-08/woodcarving.png.import",
+          "change": "modified",
+          "before_sha256": "eefd29a43e7fe486ec7aa335f8d53859e1dc703583d1b2d73222402e906f279e",
+          "after_sha256": "1e315031a76210cb309a62d2abd96a0a70d019dad036c4da68fdb98bdcbb0ea4"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-14/official-neutral.png.import",
+          "change": "modified",
+          "before_sha256": "e3d1efafa93d65ee3c585390a5f2ff3ccc6d101bdeeccb76f8a3b842704265ef",
+          "after_sha256": "562ad131053099026b23fed80b154d940c08a24714ceaeee0bc0057a2124b27b"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-14/pleased.png.import",
+          "change": "modified",
+          "before_sha256": "56a53b8c3ab3b1fdc8fa91e15dc34aaeef755b2cd8bd0c4d5de77e68de9e088a",
+          "after_sha256": "6a881687b4913d50400996785b7e9e6a7fabe4ea046dcdaa7ad0c9673123e72f"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-14/practiced-smile.png.import",
+          "change": "modified",
+          "before_sha256": "9f1e21c118b6e6298f9a11c3e6bf92a2dd7f2a157f1e32713fb78c8b82f23e4c",
+          "after_sha256": "6a9594a35ab403032325f2a9adfa05e7be05954f84cab6757167180000a4a391"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-14/quilting.png.import",
+          "change": "modified",
+          "before_sha256": "cd74f94ce9d2a677d803e9f6bc58fcc4a4653d6cb05db4b113121dd9168503ef",
+          "after_sha256": "ba497f6e9cf4547ebe4b9a2440ba253e8107fc98ecec8b128e78c2cb1c7da693"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-14/skeptical.png.import",
+          "change": "modified",
+          "before_sha256": "45344d6338eb57e9a462a062f0776f1998df4e80dc48d401c11e08cc198dcc48",
+          "after_sha256": "671e9797c6ac54e519b172faa3d19ca34a2e0378ab2720fc5a875569e8e8aa3c"
+        },
+        {
+          "path": "game/assets/npcs/portraits/npc-14/tired-rumpled.png.import",
+          "change": "modified",
+          "before_sha256": "d55c1e016789223dbe2442ee31ba2919998a304d2d13faded53a65b5c489abdd",
+          "after_sha256": "2c17fb651e3bb0354d44b6212c4f7163373073608385134d37bac12d4af3e85a"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-01/npc_01_idle_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "7f4fe115e04d388641c5d91f6756fa1df08ae3dd7c3e6de1439982a7c55a08ba",
+          "after_sha256": "5226e482b931d209e66d343f9d1a7332f8929813f15bb427c6afa92cc558d754"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-01/npc_01_river_fishing_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "5f4a05e6bd34503ae3eeb2fc57a9f81c5801476847b6287aaf8f5b09870bf544",
+          "after_sha256": "68b8dcb858fb360d75d920c6430d9f1b5ac3cd5a2bb57618e9edce1db838a11c"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-01/npc_01_walk_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "4f4a0b2926fa3f33e05116847588dffbf6d9ac98a0559eecaff17c36a21c921b",
+          "after_sha256": "c0b638afe3c4a96e521d366689e03463db5cc4cc0154b8c63ce07477b3eebccf"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-02/npc_02_archive_work_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "97645056c8484ea5f8d5f17eea9cf5b847696a9ed57957114e21ff32bcd74bfd",
+          "after_sha256": "d1cd0673ebbb05aeeb34cb1a73d73ec23bb1e247406b589fd228e7e0ceb5580d"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-02/npc_02_idle_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "1ec018e22652c6790b23da57683e7f74f19ff460501bb76003e095a6d29728b2",
+          "after_sha256": "1cf7241d752101bd18c6948df15f38d49c4ec46dcad92e8519e219ba2e8d6f91"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-02/npc_02_walk_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "6a60412fa0e233575905043e12470788336a7f90c444331c51d685e1e3440b0d",
+          "after_sha256": "44c11f632782d6f7e831ca3b0aaf445e559d3ec6601d64231499ba5c1013cdb2"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-03/npc_03_idle_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "575c7d6158218272032f34088b0d61edf53b69446c02d2d80c30e20ca70ff905",
+          "after_sha256": "6103a7ed9a18b63df54d9a5f7a7eea10d371d4aa67331682da3a6d28bed3ff90"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-03/npc_03_walk_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "029b2a558bf1e55e58714fa28cfebf341564691aeea23def4df95f06657879b8",
+          "after_sha256": "da8296604cdf301ffcf6debd091c94ec9667a79c2556201171139b25aad37c69"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-04/npc_04_idle_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "d14375e08fad8ea1af70bc03a6d78682561179456d80b39a37953121b17da773",
+          "after_sha256": "090d9a18076b4c8f6c7751d93792043bc4fe886c89a1235361bbff82d99bf559"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-04/npc_04_walk_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "90951192e079e8c7443fcd54793e7e90e864b9e8078ef4658a659f9429def50f",
+          "after_sha256": "411da57976585c20490ad6a03a135512dec6a197a1d805a570f5b32328504326"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-06/npc_06_idle_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "f50eedc5e902725776074bccd285c2dfb3529b76e0bd302098c0899dfa18b6f8",
+          "after_sha256": "ff4cfc340fab7cd12267b72a7b6d8367b4fd128da9f1ae382b7eebf764eb7843"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-06/npc_06_walk_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "d52ddccb0680a40bdff4e3cd830dc0c4217b89eaff34b17fe572e6de069422b8",
+          "after_sha256": "35f275e238f5656ae5b34e6d90015f7a2b1c2838707f6e531bc4e29886ff3171"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-07/npc_07_idle_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "be2201806a0fca6caa0bf69a835896964a3a40c383dce11be8a569ae95f26fe6",
+          "after_sha256": "bd7f0d6c410aae0d7d9953648e7fe346cdac801949464b09dca22766c622979d"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-07/npc_07_walk_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "1460f3db991079f741feb44f8f5f1b47fe2b58580412bdc4e56ffacf57e046a5",
+          "after_sha256": "dea1655e0148cebb32c2f0e8989bb4e2b41dab6cb4b17c6118f8cf66b64e70de"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-08/npc_08_idle_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "9a9e4351af04b6e427baa434627c5c0548a06703da6c890ce4b50111e0ff0ba5",
+          "after_sha256": "4c032dc0e731566f17ce3536aa93dd01b5919d8bd580902fde3590b941ef4126"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-08/npc_08_walk_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "6f00f6224c4313e1b75d1eaa24a1fb4a60d7b675dd6a21e109a0a19bca99c1a2",
+          "after_sha256": "41b03bce88ac0b251539976b390f8584f56e01805ef94e7986d8caf97a330035"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-14/npc_14_idle_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "057457a898c4c8d507529646d0cb5efa717cc5fd9a733d3b5fee1ba87623d030",
+          "after_sha256": "cc2693685d8a58438cfca1f767cbd36358b9e1238f5777d5486af76438bf2417"
+        },
+        {
+          "path": "game/assets/npcs/reference/npc-14/npc_14_walk_sheet.png.import",
+          "change": "modified",
+          "before_sha256": "47d95d07f75a5b728f7dfe5c6a2a35f408006a0d9358e67ed7f804727dcbdbac",
+          "after_sha256": "3dd1b8a40a2200cb57c695d5c41d9c00f93893ac0f87d1cdce601859f062e6b3"
+        }
+      ],
+      "failure_summary": {
+        "reason": "source_changed",
+        "message": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+        "failed_assertion": null,
+        "diagnostic_context": [],
+        "stack": [],
+        "log_tail": [
+          {
+            "stream": "stdout",
+            "line_number": 763,
+            "text": "[   0% ] \u001b[90m\u001b[1mreimport\u001b[22m | Executing post-reimport operations...\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 764,
+            "text": "\u001b[92m[ DONE ]\u001b[39m \u001b[1mreimport\u001b[22m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 765,
+            "text": "\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 766,
+            "text": "[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 767,
+            "text": "[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 768,
+            "text": "[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 769,
+            "text": "\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 770,
+            "text": "\u001b[0m"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 1,
+            "text": "ERROR: .NET Sdk not found. The required version is '10.0.9'."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 2,
+            "text": "   at: void GodotTools.GodotSharpEditor._EnablePlugin() (/root/godot/modules/mono/editor/GodotTools/GodotTools/GodotSharpEditor.cs:484)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 3,
+            "text": "   C# backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 4,
+            "text": "       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 5,
+            "text": "       [1] void GodotTools.GodotSharpEditor._EnablePlugin() (/root/godot/modules/mono/editor/GodotTools/GodotTools/GodotSharpEditor.cs:484)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 6,
+            "text": "       [2] bool Godot.EditorPlugin.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharpEditor/Generated/GodotObjects/EditorPlugin.cs:1444)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 7,
+            "text": "       [3] bool GodotTools.GodotSharpEditor.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/editor/GodotTools/GodotTools/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/GodotTools.GodotSharpEditor_ScriptMethods.generated.cs:210)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 8,
+            "text": "       [4] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)"
+          }
+        ],
+        "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\01-import.stdout.log",
+        "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-125144244-dccf7c6f\\01-import.stderr.log"
+      },
+      "error": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+      "started_utc": "2026-10-11T12:52:06.1023535Z",
+      "finished_utc": "2026-10-11T12:52:21.1634900Z"
+    }
+  ],
+  "parse_scripts": [
+    "res://tests/application_smoke.gd",
+    "res://tests/art_direction_performance_profile.gd",
+    "res://tests/environment_review.gd",
+    "res://tests/map_performance_profile.gd",
+    "res://app/game_root.gd",
+    "res://app/world_host.gd",
+    "res://app/party.gd",
+    "res://app/camera_rig.gd",
+    "res://features/actors/actor_placeholder.gd",
+    "res://tests/live_playtest_bridge.gd",
+    "res://ui/conversation_view.gd",
+    "res://ui/prototype_ui.gd",
+    "res://ui/people_journal_view.gd",
+    "res://ui/backpack_view.gd"
+  ]
+}

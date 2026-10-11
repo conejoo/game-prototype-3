@@ -1,0 +1,7 @@
+{
+  "head": "8bbf35d8edbc327b1df5aa15a9a2a780af1360c3",
+  "archive_sha256": "53497abf2bccfb54f5fb3a35ea87079938a313e0e3ee26a4d6d11ae7db88e132",
+  "directory": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d",
+  "fixture_sha256": "3fc7f182d36059fbd675b5fe256546c05b9ca4f5dc069f7c45b969ece0b973c7",
+  "setup": "exact git archive of prepaint production; only AD019 profile fixture and UID added; no checkout/reset or external source"
+}

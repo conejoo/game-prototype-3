@@ -1,0 +1,958 @@
+{
+  "painted": {
+    "run": "painted-20261011-125512-9ac131ac",
+    "frames": 242139,
+    "windows": [
+      {
+        "view": "maris-clear-day",
+        "run": 0,
+        "samples": 9489,
+        "seconds": 60.001588,
+        "p95_ms": 8.062,
+        "p99_ms": 10.035,
+        "draw_p95": 264,
+        "csv_sha256": "75656f5252a9d18f4df4f34c8f368feaf7744d0c72d73c19775a9fa9b0d85597"
+      },
+      {
+        "view": "maris-clear-day",
+        "run": 1,
+        "samples": 9494,
+        "seconds": 60.005533,
+        "p95_ms": 8.188,
+        "p99_ms": 10.629,
+        "draw_p95": 264,
+        "csv_sha256": "993bcf27f6ac02f88c50e7543e8e549cceefc54e466288bbae57b411690c176a"
+      },
+      {
+        "view": "maris-clear-day",
+        "run": 2,
+        "samples": 9525,
+        "seconds": 60.004244,
+        "p95_ms": 8.153,
+        "p99_ms": 10.502,
+        "draw_p95": 264,
+        "csv_sha256": "7c4452bd26a06a5682cce4967d68312550e7127769571ba22d3a19339665d833"
+      },
+      {
+        "view": "dense-forest-clear-day",
+        "run": 0,
+        "samples": 10008,
+        "seconds": 60.001525,
+        "p95_ms": 7.724,
+        "p99_ms": 9.756,
+        "draw_p95": 149,
+        "csv_sha256": "e1ecf313a992ef5d3e185b87eb911359cb7f0d60c1586e45d99cfc453a6929da"
+      },
+      {
+        "view": "dense-forest-clear-day",
+        "run": 1,
+        "samples": 10172,
+        "seconds": 60.001417,
+        "p95_ms": 7.943,
+        "p99_ms": 10.436,
+        "draw_p95": 149,
+        "csv_sha256": "78e16be6137aed76fd847089ef129e9cbc0fa60913324f05af0d49ac6258dd86"
+      },
+      {
+        "view": "dense-forest-clear-day",
+        "run": 2,
+        "samples": 10479,
+        "seconds": 60.007214,
+        "p95_ms": 7.862,
+        "p99_ms": 10.368,
+        "draw_p95": 149,
+        "csv_sha256": "785dc9e75dae0ae3d79cb35039273ba0572b8fb6499b800ed3c8c574652676bf"
+      },
+      {
+        "view": "bridge-west-clear-day",
+        "run": 0,
+        "samples": 10729,
+        "seconds": 60.004247,
+        "p95_ms": 7.596,
+        "p99_ms": 9.894,
+        "draw_p95": 130,
+        "csv_sha256": "8617f92d6c84a2c4347780fe10af07dfa7415e4046d2deca37dd5c12cd1ef4f5"
+      },
+      {
+        "view": "bridge-west-clear-day",
+        "run": 1,
+        "samples": 10595,
+        "seconds": 60.004303,
+        "p95_ms": 8.327,
+        "p99_ms": 10.687,
+        "draw_p95": 130,
+        "csv_sha256": "65d9a1ea52be713c93e8ba0698fde1c9d2879e4fe00e6a42e04ee4268b47a4f1"
+      },
+      {
+        "view": "bridge-west-clear-day",
+        "run": 2,
+        "samples": 10772,
+        "seconds": 60.003855,
+        "p95_ms": 7.688,
+        "p99_ms": 10.01,
+        "draw_p95": 130,
+        "csv_sha256": "1b3ff2b4b2fd6f5702bf32214ee07b4cdcc1c73bdd4b986edde034045f10604e"
+      },
+      {
+        "view": "ford-west-clear-day",
+        "run": 0,
+        "samples": 10711,
+        "seconds": 60.000267,
+        "p95_ms": 7.876,
+        "p99_ms": 10.038,
+        "draw_p95": 127,
+        "csv_sha256": "3c5f208a6caa7b3b0be8b40bc5e87b553517101406373ea7943f4f2f7fe9adfb"
+      },
+      {
+        "view": "ford-west-clear-day",
+        "run": 1,
+        "samples": 10639,
+        "seconds": 60.000828,
+        "p95_ms": 7.955,
+        "p99_ms": 10.767,
+        "draw_p95": 127,
+        "csv_sha256": "f80cc95b35cccf2c7e5039ca118d056d02e5924db6cc13770b1036a42a62494b"
+      },
+      {
+        "view": "ford-west-clear-day",
+        "run": 2,
+        "samples": 10227,
+        "seconds": 60.004663,
+        "p95_ms": 7.746,
+        "p99_ms": 10.194,
+        "draw_p95": 127,
+        "csv_sha256": "54f90f06841430a2f14923461e182903602ae7f0289142b4cc526cc860d5d720"
+      },
+      {
+        "view": "maris-storm-night-all-lamps",
+        "run": 0,
+        "samples": 9319,
+        "seconds": 60.00351,
+        "p95_ms": 8.514,
+        "p99_ms": 11.192,
+        "draw_p95": 288,
+        "csv_sha256": "e657bdf295a1719744cee689ee4320945926b53d69e9b48b537863db73189ce8"
+      },
+      {
+        "view": "maris-storm-night-all-lamps",
+        "run": 1,
+        "samples": 9246,
+        "seconds": 60.000304,
+        "p95_ms": 8.289,
+        "p99_ms": 10.203,
+        "draw_p95": 288,
+        "csv_sha256": "5f419bd18100e12dd23e40d0157c5610d8122caa438ed03099ab848e88c9383c"
+      },
+      {
+        "view": "maris-storm-night-all-lamps",
+        "run": 2,
+        "samples": 9487,
+        "seconds": 60.003008,
+        "p95_ms": 8.852,
+        "p99_ms": 11.407,
+        "draw_p95": 288,
+        "csv_sha256": "6457bc10adc23dd255f170aa0567c2ff11475dc20a0b7ce49ce4afac3d4a5741"
+      },
+      {
+        "view": "dense-forest-storm-night-all-lamps",
+        "run": 0,
+        "samples": 10216,
+        "seconds": 60.000711,
+        "p95_ms": 7.929,
+        "p99_ms": 10.28,
+        "draw_p95": 155,
+        "csv_sha256": "b6b01e427b4f958a2670c5875d24fd2aedc91daae8b948e60c5e1e1ee4648935"
+      },
+      {
+        "view": "dense-forest-storm-night-all-lamps",
+        "run": 1,
+        "samples": 10083,
+        "seconds": 60.005947,
+        "p95_ms": 7.772,
+        "p99_ms": 9.829,
+        "draw_p95": 155,
+        "csv_sha256": "8193d1eee1c73d2c0957966a22093cc8dcc7c9aa7400f465d3ed5630ac7cddd5"
+      },
+      {
+        "view": "dense-forest-storm-night-all-lamps",
+        "run": 2,
+        "samples": 10129,
+        "seconds": 60.005705,
+        "p95_ms": 7.584,
+        "p99_ms": 9.637,
+        "draw_p95": 155,
+        "csv_sha256": "8d188f533d5905bec5881704ee32b50cc029fcb9cbd6db1b50de9dae4d3af24f"
+      },
+      {
+        "view": "bridge-west-storm-night-all-lamps",
+        "run": 0,
+        "samples": 10018,
+        "seconds": 60.005599,
+        "p95_ms": 7.702,
+        "p99_ms": 9.406,
+        "draw_p95": 139,
+        "csv_sha256": "800a02b0288ae8e00208f5325073b8520093a7a16e8dd332283b170a56593490"
+      },
+      {
+        "view": "bridge-west-storm-night-all-lamps",
+        "run": 1,
+        "samples": 10038,
+        "seconds": 60.002384,
+        "p95_ms": 7.913,
+        "p99_ms": 10.41,
+        "draw_p95": 139,
+        "csv_sha256": "a52bb93a260ceb9f32ab16908c13d28fcb51ca089e703b36a46eb8cb6246d2b0"
+      },
+      {
+        "view": "bridge-west-storm-night-all-lamps",
+        "run": 2,
+        "samples": 10065,
+        "seconds": 60.001694,
+        "p95_ms": 7.777,
+        "p99_ms": 9.557,
+        "draw_p95": 139,
+        "csv_sha256": "c91a309a152faf92478df427c0a7ca9ee63b6e8968024d3aa08b49b14d92e7a4"
+      },
+      {
+        "view": "ford-west-storm-night-all-lamps",
+        "run": 0,
+        "samples": 10256,
+        "seconds": 60.007629,
+        "p95_ms": 7.513,
+        "p99_ms": 9.7,
+        "draw_p95": 126,
+        "csv_sha256": "5823c5eab9a3c3066e89a5905d5bfc3b0c7d6cef62f2d10d1fcb7d796701046f"
+      },
+      {
+        "view": "ford-west-storm-night-all-lamps",
+        "run": 1,
+        "samples": 10217,
+        "seconds": 60.000843,
+        "p95_ms": 7.573,
+        "p99_ms": 9.476,
+        "draw_p95": 126,
+        "csv_sha256": "c01972af2f760287d7ee10f61073f41384408e2c74e4907cef2c562c28d9a8a4"
+      },
+      {
+        "view": "ford-west-storm-night-all-lamps",
+        "run": 2,
+        "samples": 10225,
+        "seconds": 60.001045,
+        "p95_ms": 7.585,
+        "p99_ms": 9.663,
+        "draw_p95": 126,
+        "csv_sha256": "9f7101950b646c35e64a3845765127dab93d27f324680145fe52e52ef72b5dbe"
+      }
+    ],
+    "worst_p95_ms": 8.852,
+    "worst_p99_ms": 11.407,
+    "worst_draw_p95": 288,
+    "memory": {
+      "task": "AD019",
+      "label": "painted",
+      "launcher_pid": 14120,
+      "engine_pid": 59200,
+      "engine_exit": 0,
+      "runtime_errors": [],
+      "failure": null,
+      "source_changed": false,
+      "peak_working_set_bytes": 570249216,
+      "baseline_working_set_bytes": [
+        495259648,
+        495259648,
+        495259648,
+        495259648
+      ],
+      "final_working_set_bytes": [
+        496594944,
+        496594944,
+        496594944,
+        496594944
+      ],
+      "growth_bytes": 1335296,
+      "memory_pass": true,
+      "sample_period_seconds": 0.25,
+      "elapsed_seconds": 1565.2800711998716,
+      "smoke": false,
+      "render_output": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\painted-20261011-125512-9ac131ac\\render",
+      "owned_launcher_exited": true
+    },
+    "settings": {
+      "adapter": "NVIDIA GeForce RTX 4070 Laptop GPU",
+      "api": "3.3.0 NVIDIA 581.29",
+      "engine": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "max_fps": 0,
+      "pid": 59200,
+      "projection": "orthographic",
+      "renderer": "gl_compatibility",
+      "run_seconds": 60.0,
+      "runs_per_view_condition": 3,
+      "setup": "synthetic detached review; full unpaused production root/actors/AI/UI/shadows/rain; clock advances naturally inside each sample; clear-day defaults and storm-night all six lamps enabled",
+      "vendor": "NVIDIA",
+      "viewport": [
+        960,
+        640
+      ],
+      "vsync_mode": 0,
+      "warmup_seconds": 10.0,
+      "zoom": 1.0
+    },
+    "lifecycle": [
+      {
+        "nodes": 4066,
+        "objects": 8420,
+        "orphan_nodes": 0,
+        "party": 2,
+        "regions": 1,
+        "resources": 519,
+        "static_memory_bytes": 138226893,
+        "trip": 1,
+        "world_children": 1
+      },
+      {
+        "nodes": 4066,
+        "objects": 8420,
+        "orphan_nodes": 0,
+        "party": 2,
+        "regions": 1,
+        "resources": 519,
+        "static_memory_bytes": 138246585,
+        "trip": 11,
+        "world_children": 1
+      }
+    ],
+    "effects": [
+      {
+        "batches": 12,
+        "consumers": 23,
+        "emitters": 8,
+        "presenters": 1,
+        "rain_owners": 1
+      },
+      {
+        "batches": 12,
+        "consumers": 23,
+        "emitters": 8,
+        "presenters": 1,
+        "rain_owners": 1
+      }
+    ],
+    "contact_inventory": [
+      {
+        "contacts": [
+          "npc-01",
+          "npc-03",
+          "npc-04",
+          "npc-06",
+          "npc-07",
+          "npc-08"
+        ],
+        "live_character_bodies": 6,
+        "physics_nodes": 824
+      },
+      {
+        "contacts": [
+          "npc-03",
+          "npc-04",
+          "npc-06",
+          "npc-07",
+          "npc-08"
+        ],
+        "live_character_bodies": 5,
+        "physics_nodes": 823
+      }
+    ],
+    "inventory": {
+      "batches": 106,
+      "landmark_instances": 7,
+      "nav_polygons": 6352,
+      "physics_nodes": 818,
+      "riser_batches": 9,
+      "terrain_batches": 6,
+      "town_structures": 24,
+      "trees": 395,
+      "variants": 21
+    },
+    "source_sha256": "06de66f011592e518852df960b30926363ddfef6198822d749d8e24301567f1e",
+    "source_count": 1411
+  },
+  "prepaint": {
+    "run": "prepaint-20261011-132146-b4aa67ad",
+    "frames": 261709,
+    "windows": [
+      {
+        "view": "maris-clear-day",
+        "run": 0,
+        "samples": 9613,
+        "seconds": 60.004034,
+        "p95_ms": 8.036,
+        "p99_ms": 10.237,
+        "draw_p95": 282,
+        "csv_sha256": "1fcbf0048bd07a890e767d07ba868d0fe70dda96bdd16e3ac35abede80bcf662"
+      },
+      {
+        "view": "maris-clear-day",
+        "run": 1,
+        "samples": 9592,
+        "seconds": 60.001158,
+        "p95_ms": 7.99,
+        "p99_ms": 10.134,
+        "draw_p95": 282,
+        "csv_sha256": "913a6c70a3357f982b0523ce6d54934560b08195b2e36d2d95f5c40bbfd7a968"
+      },
+      {
+        "view": "maris-clear-day",
+        "run": 2,
+        "samples": 9626,
+        "seconds": 60.004337,
+        "p95_ms": 8.052,
+        "p99_ms": 10.136,
+        "draw_p95": 282,
+        "csv_sha256": "137d1385b1c917de8e92794466a6c63e3d58768e703dbb7b99a979a107e47fbc"
+      },
+      {
+        "view": "dense-forest-clear-day",
+        "run": 0,
+        "samples": 10295,
+        "seconds": 60.007589,
+        "p95_ms": 7.524,
+        "p99_ms": 9.511,
+        "draw_p95": 151,
+        "csv_sha256": "35cacc72202289f2077416b6c73754937101532314b85685abab482f4e567efb"
+      },
+      {
+        "view": "dense-forest-clear-day",
+        "run": 1,
+        "samples": 10738,
+        "seconds": 60.000419,
+        "p95_ms": 7.759,
+        "p99_ms": 9.728,
+        "draw_p95": 151,
+        "csv_sha256": "9e66d32eb2e830cac5d2acca5a33337feaa10d1abaa845e0db0ed64db6ef7307"
+      },
+      {
+        "view": "dense-forest-clear-day",
+        "run": 2,
+        "samples": 10871,
+        "seconds": 60.003445,
+        "p95_ms": 7.722,
+        "p99_ms": 9.924,
+        "draw_p95": 151,
+        "csv_sha256": "36366c040c690277fba3e3543a0bc5b63f1fc6f7a96db0c0e6bc0158edc64339"
+      },
+      {
+        "view": "bridge-west-clear-day",
+        "run": 0,
+        "samples": 11012,
+        "seconds": 60.000049,
+        "p95_ms": 7.597,
+        "p99_ms": 9.593,
+        "draw_p95": 136,
+        "csv_sha256": "abefe5741ca2c749c6590bb238d742ba38958def57966ecae1bddde5aab16d86"
+      },
+      {
+        "view": "bridge-west-clear-day",
+        "run": 1,
+        "samples": 11200,
+        "seconds": 60.004354,
+        "p95_ms": 7.592,
+        "p99_ms": 9.613,
+        "draw_p95": 136,
+        "csv_sha256": "aea022e1b08b2c2f664392b99ac0c0791f24e3d50fd4e3205e4748ee0f71def2"
+      },
+      {
+        "view": "bridge-west-clear-day",
+        "run": 2,
+        "samples": 11180,
+        "seconds": 60.000235,
+        "p95_ms": 7.679,
+        "p99_ms": 9.762,
+        "draw_p95": 136,
+        "csv_sha256": "cb13a022c67cc139121698391d9ac851d9e84a77362bfbbd2f255fca45530f7a"
+      },
+      {
+        "view": "ford-west-clear-day",
+        "run": 0,
+        "samples": 11608,
+        "seconds": 60.007543,
+        "p95_ms": 7.407,
+        "p99_ms": 9.449,
+        "draw_p95": 129,
+        "csv_sha256": "d37d31759cff857f7e710c4f27efd841bbc8182048c1407662b0e212af462800"
+      },
+      {
+        "view": "ford-west-clear-day",
+        "run": 1,
+        "samples": 11589,
+        "seconds": 60.002026,
+        "p95_ms": 7.407,
+        "p99_ms": 9.323,
+        "draw_p95": 129,
+        "csv_sha256": "7d1bc2d00432811bd82a0f07fb155916c5a44ea04ab48f2beb6c5d122dc77a81"
+      },
+      {
+        "view": "ford-west-clear-day",
+        "run": 2,
+        "samples": 11592,
+        "seconds": 60.005215,
+        "p95_ms": 7.223,
+        "p99_ms": 9.309,
+        "draw_p95": 129,
+        "csv_sha256": "b1d38b40e2fdd18b90d2bd9393fb02a07fda7c37e54b9b329697300ea3e36df1"
+      },
+      {
+        "view": "maris-storm-night-all-lamps",
+        "run": 0,
+        "samples": 10309,
+        "seconds": 60.001458,
+        "p95_ms": 8.274,
+        "p99_ms": 10.555,
+        "draw_p95": 306,
+        "csv_sha256": "a649f8a5fb90db86984a13ee67890dc001ece1871d782100d25bd1d9bbffed1f"
+      },
+      {
+        "view": "maris-storm-night-all-lamps",
+        "run": 1,
+        "samples": 10351,
+        "seconds": 60.002382,
+        "p95_ms": 8.162,
+        "p99_ms": 10.364,
+        "draw_p95": 306,
+        "csv_sha256": "770b0edceb7072d4aed273b19a482fb1b06d22fb54b20e5558e7ca669d577c47"
+      },
+      {
+        "view": "maris-storm-night-all-lamps",
+        "run": 2,
+        "samples": 10136,
+        "seconds": 60.00049,
+        "p95_ms": 8.352,
+        "p99_ms": 10.272,
+        "draw_p95": 306,
+        "csv_sha256": "8aa6636272258559e567044a6adaf2e05a144703550c8bea6907ef36ef649b76"
+      },
+      {
+        "view": "dense-forest-storm-night-all-lamps",
+        "run": 0,
+        "samples": 11314,
+        "seconds": 60.003383,
+        "p95_ms": 7.515,
+        "p99_ms": 9.633,
+        "draw_p95": 157,
+        "csv_sha256": "80554046295eb7469abd8ddb121a8091ae35e6a24e49a47515a945f0c7023c3d"
+      },
+      {
+        "view": "dense-forest-storm-night-all-lamps",
+        "run": 1,
+        "samples": 11383,
+        "seconds": 60.000479,
+        "p95_ms": 7.555,
+        "p99_ms": 9.858,
+        "draw_p95": 157,
+        "csv_sha256": "80e7912515134e614597fc50d9945082248f1357d5b6e4d737652ec77face13b"
+      },
+      {
+        "view": "dense-forest-storm-night-all-lamps",
+        "run": 2,
+        "samples": 11244,
+        "seconds": 60.003035,
+        "p95_ms": 7.674,
+        "p99_ms": 9.668,
+        "draw_p95": 157,
+        "csv_sha256": "ca434f72f87e914f6a56fdd66d0552de34c64df51da6858fca9ec8f4f1d3250f"
+      },
+      {
+        "view": "bridge-west-storm-night-all-lamps",
+        "run": 0,
+        "samples": 11008,
+        "seconds": 60.002288,
+        "p95_ms": 7.741,
+        "p99_ms": 9.856,
+        "draw_p95": 145,
+        "csv_sha256": "41ba8a57bbad0b57399aa2ae650c8e500f6daee23a15cb95a682ca0e5f0c3721"
+      },
+      {
+        "view": "bridge-west-storm-night-all-lamps",
+        "run": 1,
+        "samples": 11246,
+        "seconds": 60.000652,
+        "p95_ms": 7.622,
+        "p99_ms": 9.567,
+        "draw_p95": 145,
+        "csv_sha256": "9ce1d310796247b10914b47707ebb867dbdbb3804ad8bd04ad67c62c320fa411"
+      },
+      {
+        "view": "bridge-west-storm-night-all-lamps",
+        "run": 2,
+        "samples": 11172,
+        "seconds": 60.002612,
+        "p95_ms": 8.0,
+        "p99_ms": 10.14,
+        "draw_p95": 145,
+        "csv_sha256": "deae6495bee12f3a80cb2f50d241fb98a3c8e3f825582ddfac98cd19fa1cef55"
+      },
+      {
+        "view": "ford-west-storm-night-all-lamps",
+        "run": 0,
+        "samples": 11526,
+        "seconds": 60.002056,
+        "p95_ms": 7.085,
+        "p99_ms": 9.317,
+        "draw_p95": 128,
+        "csv_sha256": "9d577d61d539e64720abc3f0ffe0b9889c8a21f297e8cf57b75dcd7c8ebf117f"
+      },
+      {
+        "view": "ford-west-storm-night-all-lamps",
+        "run": 1,
+        "samples": 11446,
+        "seconds": 60.000134,
+        "p95_ms": 7.052,
+        "p99_ms": 9.357,
+        "draw_p95": 128,
+        "csv_sha256": "3e4d67128b9a582d0c67fef189e401183efcaf26718e1a55ebc5f8fbed557f2b"
+      },
+      {
+        "view": "ford-west-storm-night-all-lamps",
+        "run": 2,
+        "samples": 11658,
+        "seconds": 60.001927,
+        "p95_ms": 7.556,
+        "p99_ms": 9.668,
+        "draw_p95": 128,
+        "csv_sha256": "4809ef82d88d94070985e1fd75913b74088fa2a0e88dd1ec374d6356fdaad199"
+      }
+    ],
+    "worst_p95_ms": 8.352,
+    "worst_p99_ms": 10.555,
+    "worst_draw_p95": 306,
+    "memory": {
+      "task": "AD019",
+      "label": "prepaint",
+      "launcher_pid": 29548,
+      "engine_pid": 3052,
+      "engine_exit": 0,
+      "runtime_errors": [],
+      "failure": null,
+      "source_changed": false,
+      "peak_working_set_bytes": 543637504,
+      "baseline_working_set_bytes": [
+        461602816,
+        461602816,
+        461602816,
+        461602816
+      ],
+      "final_working_set_bytes": [
+        462462976,
+        462462976,
+        462462976,
+        462462976
+      ],
+      "growth_bytes": 860160,
+      "memory_pass": true,
+      "sample_period_seconds": 0.25,
+      "elapsed_seconds": 1566.1571737998165,
+      "smoke": false,
+      "render_output": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-132146-b4aa67ad\\render",
+      "owned_launcher_exited": true
+    },
+    "settings": {
+      "adapter": "NVIDIA GeForce RTX 4070 Laptop GPU",
+      "api": "3.3.0 NVIDIA 581.29",
+      "engine": {
+        "build": "official",
+        "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+        "hex": 263938,
+        "major": 4,
+        "minor": 7,
+        "patch": 2,
+        "status": "stable",
+        "string": "4.7.2-stable (official)",
+        "timestamp": 0
+      },
+      "max_fps": 0,
+      "pid": 3052,
+      "projection": "orthographic",
+      "renderer": "gl_compatibility",
+      "run_seconds": 60.0,
+      "runs_per_view_condition": 3,
+      "setup": "synthetic detached review; full unpaused production root/actors/AI/UI/shadows/rain; clock advances naturally inside each sample; clear-day defaults and storm-night all six lamps enabled",
+      "vendor": "NVIDIA",
+      "viewport": [
+        960,
+        640
+      ],
+      "vsync_mode": 0,
+      "warmup_seconds": 10.0,
+      "zoom": 1.0
+    },
+    "lifecycle": [
+      {
+        "nodes": 4064,
+        "objects": 8330,
+        "orphan_nodes": 0,
+        "party": 2,
+        "regions": 1,
+        "resources": 414,
+        "static_memory_bytes": 137524892,
+        "trip": 1,
+        "world_children": 1
+      },
+      {
+        "nodes": 4064,
+        "objects": 8330,
+        "orphan_nodes": 0,
+        "party": 2,
+        "regions": 1,
+        "resources": 414,
+        "static_memory_bytes": 137544584,
+        "trip": 11,
+        "world_children": 1
+      }
+    ],
+    "effects": [
+      {
+        "batches": 12,
+        "consumers": 23,
+        "emitters": 8,
+        "presenters": 1,
+        "rain_owners": 1
+      },
+      {
+        "batches": 12,
+        "consumers": 23,
+        "emitters": 8,
+        "presenters": 1,
+        "rain_owners": 1
+      }
+    ],
+    "contact_inventory": [
+      {
+        "contacts": [
+          "npc-01",
+          "npc-03",
+          "npc-04",
+          "npc-06",
+          "npc-07",
+          "npc-08"
+        ],
+        "live_character_bodies": 6,
+        "physics_nodes": 824
+      },
+      {
+        "contacts": [
+          "npc-03",
+          "npc-04",
+          "npc-06",
+          "npc-07",
+          "npc-08"
+        ],
+        "live_character_bodies": 5,
+        "physics_nodes": 823
+      }
+    ],
+    "inventory": {
+      "batches": 106,
+      "landmark_instances": 7,
+      "nav_polygons": 6352,
+      "physics_nodes": 818,
+      "riser_batches": 9,
+      "terrain_batches": 6,
+      "town_structures": 24,
+      "trees": 395,
+      "variants": 21
+    },
+    "source_sha256": "e96cba7f456886dbe02e41306be1d18b4b8aa26e2a09c7f63c63af8699a8a6b0",
+    "source_count": 1314
+  },
+  "paired": [
+    {
+      "view": "bridge-west-clear-day",
+      "painted_p95_max": 8.327,
+      "prepaint_p95_max": 7.679,
+      "painted_p99_max": 10.687,
+      "prepaint_p99_max": 9.762,
+      "painted_draw_p95": 130,
+      "prepaint_draw_p95": 136
+    },
+    {
+      "view": "bridge-west-storm-night-all-lamps",
+      "painted_p95_max": 7.913,
+      "prepaint_p95_max": 8.0,
+      "painted_p99_max": 10.41,
+      "prepaint_p99_max": 10.14,
+      "painted_draw_p95": 139,
+      "prepaint_draw_p95": 145
+    },
+    {
+      "view": "dense-forest-clear-day",
+      "painted_p95_max": 7.943,
+      "prepaint_p95_max": 7.759,
+      "painted_p99_max": 10.436,
+      "prepaint_p99_max": 9.924,
+      "painted_draw_p95": 149,
+      "prepaint_draw_p95": 151
+    },
+    {
+      "view": "dense-forest-storm-night-all-lamps",
+      "painted_p95_max": 7.929,
+      "prepaint_p95_max": 7.674,
+      "painted_p99_max": 10.28,
+      "prepaint_p99_max": 9.858,
+      "painted_draw_p95": 155,
+      "prepaint_draw_p95": 157
+    },
+    {
+      "view": "ford-west-clear-day",
+      "painted_p95_max": 7.955,
+      "prepaint_p95_max": 7.407,
+      "painted_p99_max": 10.767,
+      "prepaint_p99_max": 9.449,
+      "painted_draw_p95": 127,
+      "prepaint_draw_p95": 129
+    },
+    {
+      "view": "ford-west-storm-night-all-lamps",
+      "painted_p95_max": 7.585,
+      "prepaint_p95_max": 7.556,
+      "painted_p99_max": 9.7,
+      "prepaint_p99_max": 9.668,
+      "painted_draw_p95": 126,
+      "prepaint_draw_p95": 128
+    },
+    {
+      "view": "maris-clear-day",
+      "painted_p95_max": 8.188,
+      "prepaint_p95_max": 8.052,
+      "painted_p99_max": 10.629,
+      "prepaint_p99_max": 10.237,
+      "painted_draw_p95": 264,
+      "prepaint_draw_p95": 282
+    },
+    {
+      "view": "maris-storm-night-all-lamps",
+      "painted_p95_max": 8.852,
+      "prepaint_p95_max": 8.352,
+      "painted_p99_max": 11.407,
+      "prepaint_p99_max": 10.555,
+      "painted_draw_p95": 288,
+      "prepaint_draw_p95": 306
+    }
+  ],
+  "accepted_ad018_unchanged_files": 1408,
+  "final_game_tools_exact": true,
+  "prepaint_archive_differences": {
+    "line_ending_normalized_imports": [
+      "game/assets/environment/alderwake_landmark_kit.glb.import",
+      "game/assets/environment/alderwake_town_kit.glb.import",
+      "game/assets/environment/exterior_light_kit.glb.import",
+      "game/assets/environment/moonwood_tree_kit.glb.import",
+      "game/assets/items/bluegill.png.import",
+      "game/assets/items/fishing_rod.svg.import",
+      "game/assets/items/golden_carp.png.import",
+      "game/assets/items/moonflower.svg.import",
+      "game/assets/items/river_trout.png.import",
+      "game/assets/models/guardian.glb.import",
+      "game/assets/models/npcs/npc-01-actions.glb.import",
+      "game/assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png.import",
+      "game/assets/models/npcs/npc-01.glb.import",
+      "game/assets/models/npcs/npc-01_TEX-npc-01-palette.png.import",
+      "game/assets/models/npcs/npc-02-actions.glb.import",
+      "game/assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png.import",
+      "game/assets/models/npcs/npc-02.glb.import",
+      "game/assets/models/npcs/npc-02_TEX-npc-02-palette.png.import",
+      "game/assets/models/npcs/npc-03.glb.import",
+      "game/assets/models/npcs/npc-03_TEX-npc-03-palette.png.import",
+      "game/assets/models/npcs/npc-04.glb.import",
+      "game/assets/models/npcs/npc-04_TEX-npc-04-palette.png.import",
+      "game/assets/models/npcs/npc-06.glb.import",
+      "game/assets/models/npcs/npc-06_TEX-npc-06-palette.png.import",
+      "game/assets/models/npcs/npc-07.glb.import",
+      "game/assets/models/npcs/npc-07_TEX-npc-07-palette.png.import",
+      "game/assets/models/npcs/npc-08.glb.import",
+      "game/assets/models/npcs/npc-08_TEX-npc-08-palette.png.import",
+      "game/assets/models/npcs/npc-14.glb.import",
+      "game/assets/models/npcs/npc-14_TEX-npc-14-palette.png.import",
+      "game/assets/models/npcs/npc_calibration.glb.import",
+      "game/assets/models/npcs/npc_calibration_TEX-npc-calibration-checker.png.import",
+      "game/assets/models/recovery_vessel.glb.import",
+      "game/assets/models/tollworks_plinth.glb.import",
+      "game/assets/npcs/portraits/npc-01/fishing-gear.png.import",
+      "game/assets/npcs/portraits/npc-01/official-neutral.png.import",
+      "game/assets/npcs/portraits/npc-01/pleased.png.import",
+      "game/assets/npcs/portraits/npc-01/practiced-smile.png.import",
+      "game/assets/npcs/portraits/npc-01/skeptical.png.import",
+      "game/assets/npcs/portraits/npc-01/tired-rumpled.png.import",
+      "game/assets/npcs/portraits/npc-02/archive-work.png.import",
+      "game/assets/npcs/portraits/npc-02/official-neutral.png.import",
+      "game/assets/npcs/portraits/npc-02/pleased.png.import",
+      "game/assets/npcs/portraits/npc-02/practiced-smile.png.import",
+      "game/assets/npcs/portraits/npc-02/skeptical.png.import",
+      "game/assets/npcs/portraits/npc-02/tired-rumpled.png.import",
+      "game/assets/npcs/portraits/npc-03/official-neutral.png.import",
+      "game/assets/npcs/portraits/npc-03/pleased.png.import",
+      "game/assets/npcs/portraits/npc-03/practiced-smile.png.import",
+      "game/assets/npcs/portraits/npc-03/ropework.png.import",
+      "game/assets/npcs/portraits/npc-03/skeptical.png.import",
+      "game/assets/npcs/portraits/npc-03/tired-rumpled.png.import",
+      "game/assets/npcs/portraits/npc-04/birdwatching.png.import",
+      "game/assets/npcs/portraits/npc-04/official-neutral.png.import",
+      "game/assets/npcs/portraits/npc-04/pleased.png.import",
+      "game/assets/npcs/portraits/npc-04/practiced-smile.png.import",
+      "game/assets/npcs/portraits/npc-04/skeptical.png.import",
+      "game/assets/npcs/portraits/npc-04/tired-rumpled.png.import",
+      "game/assets/npcs/portraits/npc-06/flower-pressing.png.import",
+      "game/assets/npcs/portraits/npc-06/official-neutral.png.import",
+      "game/assets/npcs/portraits/npc-06/pleased.png.import",
+      "game/assets/npcs/portraits/npc-06/practiced-smile.png.import",
+      "game/assets/npcs/portraits/npc-06/skeptical.png.import",
+      "game/assets/npcs/portraits/npc-06/tired-rumpled.png.import",
+      "game/assets/npcs/portraits/npc-07/knotwork.png.import",
+      "game/assets/npcs/portraits/npc-07/official-neutral.png.import",
+      "game/assets/npcs/portraits/npc-07/pleased.png.import",
+      "game/assets/npcs/portraits/npc-07/practiced-smile.png.import",
+      "game/assets/npcs/portraits/npc-07/skeptical.png.import",
+      "game/assets/npcs/portraits/npc-07/tired-rumpled.png.import",
+      "game/assets/npcs/portraits/npc-08/official-neutral.png.import",
+      "game/assets/npcs/portraits/npc-08/pleased.png.import",
+      "game/assets/npcs/portraits/npc-08/practiced-smile.png.import",
+      "game/assets/npcs/portraits/npc-08/skeptical.png.import",
+      "game/assets/npcs/portraits/npc-08/tired-rumpled.png.import",
+      "game/assets/npcs/portraits/npc-08/woodcarving.png.import",
+      "game/assets/npcs/portraits/npc-14/official-neutral.png.import",
+      "game/assets/npcs/portraits/npc-14/pleased.png.import",
+      "game/assets/npcs/portraits/npc-14/practiced-smile.png.import",
+      "game/assets/npcs/portraits/npc-14/quilting.png.import",
+      "game/assets/npcs/portraits/npc-14/skeptical.png.import",
+      "game/assets/npcs/portraits/npc-14/tired-rumpled.png.import",
+      "game/assets/npcs/reference/npc-01/npc_01_idle_sheet.png.import",
+      "game/assets/npcs/reference/npc-01/npc_01_river_fishing_sheet.png.import",
+      "game/assets/npcs/reference/npc-01/npc_01_walk_sheet.png.import",
+      "game/assets/npcs/reference/npc-02/npc_02_archive_work_sheet.png.import",
+      "game/assets/npcs/reference/npc-02/npc_02_idle_sheet.png.import",
+      "game/assets/npcs/reference/npc-02/npc_02_walk_sheet.png.import",
+      "game/assets/npcs/reference/npc-03/npc_03_idle_sheet.png.import",
+      "game/assets/npcs/reference/npc-03/npc_03_walk_sheet.png.import",
+      "game/assets/npcs/reference/npc-04/npc_04_idle_sheet.png.import",
+      "game/assets/npcs/reference/npc-04/npc_04_walk_sheet.png.import",
+      "game/assets/npcs/reference/npc-06/npc_06_idle_sheet.png.import",
+      "game/assets/npcs/reference/npc-06/npc_06_walk_sheet.png.import",
+      "game/assets/npcs/reference/npc-07/npc_07_idle_sheet.png.import",
+      "game/assets/npcs/reference/npc-07/npc_07_walk_sheet.png.import",
+      "game/assets/npcs/reference/npc-08/npc_08_idle_sheet.png.import",
+      "game/assets/npcs/reference/npc-08/npc_08_walk_sheet.png.import",
+      "game/assets/npcs/reference/npc-14/npc_14_idle_sheet.png.import",
+      "game/assets/npcs/reference/npc-14/npc_14_walk_sheet.png.import"
+    ],
+    "other_differences": [],
+    "added_fixture_sha256": "2f43866ce1a9b12e70df0b2562dca81044177f764b0494e6f66d2816a0d53374"
+  }
+}

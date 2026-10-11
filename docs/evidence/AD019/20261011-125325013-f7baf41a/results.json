@@ -1,0 +1,227 @@
+{
+  "schema_version": 2,
+  "task": "AD019",
+  "run_id": "20261011-125325013-f7baf41a",
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype",
+  "engine_path": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe",
+  "engine_version": "4.7.2.stable.mono.official.ed1daf0bf",
+  "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\appdata",
+  "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\localappdata",
+  "save_groups": [
+    {
+      "id": "check-000",
+      "kind": "check",
+      "script": "res://tests/application_smoke.gd",
+      "save_slot": "check-20261011-125325013-f7baf41a-000",
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\appdata\\check-000",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\localappdata\\check-000"
+    }
+  ],
+  "source": {
+    "before": {
+      "sha256": "fc6fd95373ab26c43c8b7c02b3ea0c88e3e54066a81a26fea7294969451b7e84",
+      "captured_utc": "2026-10-11T12:53:25.9775739Z",
+      "file_count": 1427,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\source-before.json"
+    },
+    "after": {
+      "sha256": "fc6fd95373ab26c43c8b7c02b3ea0c88e3e54066a81a26fea7294969451b7e84",
+      "captured_utc": "2026-10-11T12:53:43.0389644Z",
+      "file_count": 1427,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\source-after.json"
+    },
+    "git": {
+      "head": "c6325cb76c30ed7ca3ddda1b7058b4f32b5b63a6",
+      "working_tree_dirty": true,
+      "status": [
+        " M docs/art-direction-storybook/CHECKLIST.md",
+        " M docs/art-direction-storybook/CURRENT_STATE.md",
+        "?? art/direction/",
+        "?? docs/art-direction-storybook/AGENT_PROMPT.md",
+        "?? docs/art-direction-storybook/CONTRACT.md",
+        "?? docs/interiors-map-migration/",
+        "?? game/features/actors/storybook_actor.gdshader.uid",
+        "?? game/features/actors/storybook_actor_material.gd.uid",
+        "?? game/tests/art_direction_actor_render.gd.uid",
+        "?? game/tests/art_direction_home_render.gd.uid",
+        "?? game/tests/art_direction_hud_render.gd.uid",
+        "?? game/tests/art_direction_inn_journey_render.gd.uid",
+        "?? game/tests/art_direction_inn_render.gd.uid",
+        "?? game/tests/art_direction_integration_render.gd.uid",
+        "?? game/tests/art_direction_performance_profile.gd",
+        "?? game/tests/art_direction_performance_profile.gd.uid",
+        "?? game/tests/art_direction_tollworks_render.gd.uid",
+        "?? game/tests/storybook_actor_checks.gd.uid",
+        "?? game/tests/storybook_home_checks.gd.uid",
+        "?? game/tests/storybook_inn_checks.gd.uid",
+        "?? game/tests/storybook_tollworks_checks.gd.uid",
+        "?? game/world/storybook_inn.gdshader.uid",
+        "?? game/world/storybook_inn_material.gd.uid",
+        "?? game/world/storybook_tollworks_material.gd.uid",
+        "?? tools/art_direction/profile_storybook.py"
+      ],
+      "error": null
+    },
+    "changed": false,
+    "changes": [],
+    "error": null
+  },
+  "started_utc": "2026-10-11T12:53:25.0741488Z",
+  "finished_utc": "2026-10-11T12:53:43.1410471Z",
+  "status": "passed",
+  "error": null,
+  "cases": [
+    {
+      "label": "engine-version",
+      "arguments": [
+        "--headless",
+        "--version"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\localappdata",
+      "launcher_pid": 24820,
+      "engine_pids": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\00-engine-version.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\00-engine-version.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "fc6fd95373ab26c43c8b7c02b3ea0c88e3e54066a81a26fea7294969451b7e84",
+        "captured_utc": "2026-10-11T12:53:28.3461046Z",
+        "file_count": 1427,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\00-engine-version.source-before.json"
+      },
+      "source_after": {
+        "sha256": "fc6fd95373ab26c43c8b7c02b3ea0c88e3e54066a81a26fea7294969451b7e84",
+        "captured_utc": "2026-10-11T12:53:31.1855441Z",
+        "file_count": 1427,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\00-engine-version.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T12:53:26.4432821Z",
+      "finished_utc": "2026-10-11T12:53:31.4954007Z"
+    },
+    {
+      "label": "parse-preflight",
+      "arguments": [
+        "--headless",
+        "--path",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\game",
+        "--check-only",
+        "--script",
+        "res://../builds/testing/AD019/20261011-125325013-f7baf41a/parse_preflight.gd"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\localappdata",
+      "launcher_pid": 69276,
+      "engine_pids": [
+        68424
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\01-parse-preflight.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\01-parse-preflight.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "fc6fd95373ab26c43c8b7c02b3ea0c88e3e54066a81a26fea7294969451b7e84",
+        "captured_utc": "2026-10-11T12:53:33.9331117Z",
+        "file_count": 1427,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\01-parse-preflight.source-before.json"
+      },
+      "source_after": {
+        "sha256": "fc6fd95373ab26c43c8b7c02b3ea0c88e3e54066a81a26fea7294969451b7e84",
+        "captured_utc": "2026-10-11T12:53:38.7720472Z",
+        "file_count": 1427,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\01-parse-preflight.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T12:53:31.5670274Z",
+      "finished_utc": "2026-10-11T12:53:38.8738083Z"
+    },
+    {
+      "label": "application_smoke",
+      "arguments": [
+        "--headless",
+        "--path",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\game",
+        "--script",
+        "res://tests/application_smoke.gd",
+        "--",
+        "--save-slot=check-20261011-125325013-f7baf41a-000",
+        "--report-dir=res://../docs/evidence/AD019/20261011-125325013-f7baf41a/checks/application_smoke"
+      ],
+      "save_group": "check-000",
+      "save_slot": "check-20261011-125325013-f7baf41a-000",
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\appdata\\check-000",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD019\\20261011-125325013-f7baf41a\\localappdata\\check-000",
+      "launcher_pid": 13196,
+      "engine_pids": [
+        62092
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\checks\\application_smoke",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\02-application_smoke.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\02-application_smoke.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "fc6fd95373ab26c43c8b7c02b3ea0c88e3e54066a81a26fea7294969451b7e84",
+        "captured_utc": "2026-10-11T12:53:39.5078997Z",
+        "file_count": 1427,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\02-application_smoke.source-before.json"
+      },
+      "source_after": {
+        "sha256": "fc6fd95373ab26c43c8b7c02b3ea0c88e3e54066a81a26fea7294969451b7e84",
+        "captured_utc": "2026-10-11T12:53:42.4088036Z",
+        "file_count": 1427,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\20261011-125325013-f7baf41a\\02-application_smoke.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T12:53:38.8883418Z",
+      "finished_utc": "2026-10-11T12:53:42.4988588Z"
+    }
+  ],
+  "parse_scripts": [
+    "res://tests/application_smoke.gd",
+    "res://tests/art_direction_performance_profile.gd",
+    "res://tests/environment_review.gd",
+    "res://tests/map_performance_profile.gd",
+    "res://app/game_root.gd",
+    "res://app/world_host.gd",
+    "res://app/party.gd",
+    "res://app/camera_rig.gd",
+    "res://features/actors/actor_placeholder.gd",
+    "res://tests/live_playtest_bridge.gd",
+    "res://ui/conversation_view.gd",
+    "res://ui/prototype_ui.gd",
+    "res://features/actors/storybook_actor_material.gd",
+    "res://ui/people_journal_view.gd",
+    "res://ui/backpack_view.gd",
+    "res://ui/storybook_hud.gd"
+  ]
+}

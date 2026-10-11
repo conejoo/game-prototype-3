@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "reviewed_task_hashes_verified": 6,
+  "validated_source_sha256": "06de66f011592e518852df960b30926363ddfef6198822d749d8e24301567f1e",
+  "validated_source_files": 1411,
+  "full_profile_windows": 48,
+  "capture_hashes_verified": 48,
+  "sheet_hashes_verified": 4,
+  "original_acceptance_audit_sha256": "8a2d009a7c7e3122a886608694b39db2c55fdd6c390a342d0a5f94fd0e7f523f",
+  "selected_files_before_manifest": 284,
+  "selected_bytes": 55885223,
+  "png_count": 52,
+  "exclusions": [
+    "unrelated direction/interiors/user prompt and contract",
+    "build/save snapshots and prepaint archive",
+    "temporary authoring Python scripts",
+    "duplicate tooling-smoke PNGs"
+  ],
+  "no_AD020_work": true,
+  "no_push": true
+}

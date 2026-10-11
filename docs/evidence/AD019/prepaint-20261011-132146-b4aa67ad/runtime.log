@@ -1,0 +1,176 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 581.29 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 Laptop GPU
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=2
+P001: Paused at play time 0.00s.
+P001: Resumed at play time 0.00s.
+AD019 STAGE warmup-maris-clear-day
+P001: Paused at play time 10.01s.
+P001: Resumed at play time 10.01s.
+AD019 STAGE sample-maris-clear-day-0
+M018 SAMPLE { "view": "maris-clear-day", "run": 0, "seconds": 60.004034, "samples": 9613, "frame_p50_ms": 5.943, "frame_p95_ms": 8.036, "frame_p99_ms": 10.237, "frame_max_ms": 24.904, "draw_p95": 282, "focused_samples": 9613, "hero": [-5.99597787857056, 0.0, 10.5802192687988], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 70.16s.
+P001: Resumed at play time 70.16s.
+AD019 STAGE sample-maris-clear-day-1
+M018 SAMPLE { "view": "maris-clear-day", "run": 1, "seconds": 60.001158, "samples": 9592, "frame_p50_ms": 5.959, "frame_p95_ms": 7.99, "frame_p99_ms": 10.134, "frame_max_ms": 26.365, "draw_p95": 282, "focused_samples": 9592, "hero": [-5.99597787857056, 0.0, 10.5802192687988], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 130.30s.
+P001: Resumed at play time 130.30s.
+AD019 STAGE sample-maris-clear-day-2
+M018 SAMPLE { "view": "maris-clear-day", "run": 2, "seconds": 60.004337, "samples": 9626, "frame_p50_ms": 5.92, "frame_p95_ms": 8.052, "frame_p99_ms": 10.136, "frame_max_ms": 24.812, "draw_p95": 282, "focused_samples": 9626, "hero": [-5.99597787857056, 0.0, 10.5802192687988], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 190.44s.
+P001: Resumed at play time 190.44s.
+AD019 STAGE warmup-dense-forest-clear-day
+P001: Paused at play time 200.44s.
+P001: Resumed at play time 200.44s.
+AD019 STAGE sample-dense-forest-clear-day-0
+M018 SAMPLE { "view": "dense-forest-clear-day", "run": 0, "seconds": 60.007589, "samples": 10295, "frame_p50_ms": 5.527, "frame_p95_ms": 7.524, "frame_p99_ms": 9.511, "frame_max_ms": 27.425, "draw_p95": 151, "focused_samples": 10295, "hero": [81.9547424316406, 0.0, 35.1094398498535], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 260.61s.
+P001: Resumed at play time 260.61s.
+AD019 STAGE sample-dense-forest-clear-day-1
+M018 SAMPLE { "view": "dense-forest-clear-day", "run": 1, "seconds": 60.000419, "samples": 10738, "frame_p50_ms": 5.29, "frame_p95_ms": 7.759, "frame_p99_ms": 9.728, "frame_max_ms": 25.208, "draw_p95": 151, "focused_samples": 10738, "hero": [81.9547424316406, 0.0, 35.1094398498535], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 320.78s.
+P001: Resumed at play time 320.78s.
+AD019 STAGE sample-dense-forest-clear-day-2
+M018 SAMPLE { "view": "dense-forest-clear-day", "run": 2, "seconds": 60.003445, "samples": 10871, "frame_p50_ms": 5.181, "frame_p95_ms": 7.722, "frame_p99_ms": 9.924, "frame_max_ms": 35.544, "draw_p95": 151, "focused_samples": 10871, "hero": [81.9547424316406, 0.0, 35.1094398498535], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 380.95s.
+P001: Resumed at play time 380.95s.
+AD019 STAGE warmup-bridge-west-clear-day
+P001: Paused at play time 390.95s.
+P001: Resumed at play time 390.95s.
+AD019 STAGE sample-bridge-west-clear-day-0
+M018 SAMPLE { "view": "bridge-west-clear-day", "run": 0, "seconds": 60.000049, "samples": 11012, "frame_p50_ms": 5.053, "frame_p95_ms": 7.597, "frame_p99_ms": 9.593, "frame_max_ms": 28.312, "draw_p95": 136, "focused_samples": 11012, "hero": [92.9237289428711, 0.0, -0.41957199573517], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 451.12s.
+P001: Resumed at play time 451.12s.
+AD019 STAGE sample-bridge-west-clear-day-1
+M018 SAMPLE { "view": "bridge-west-clear-day", "run": 1, "seconds": 60.004354, "samples": 11200, "frame_p50_ms": 4.969, "frame_p95_ms": 7.592, "frame_p99_ms": 9.613, "frame_max_ms": 28.423, "draw_p95": 136, "focused_samples": 11200, "hero": [92.9237289428711, 0.0, -0.41957199573517], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 511.29s.
+P001: Resumed at play time 511.29s.
+AD019 STAGE sample-bridge-west-clear-day-2
+M018 SAMPLE { "view": "bridge-west-clear-day", "run": 2, "seconds": 60.000235, "samples": 11180, "frame_p50_ms": 4.97, "frame_p95_ms": 7.679, "frame_p99_ms": 9.762, "frame_max_ms": 24.32, "draw_p95": 136, "focused_samples": 11180, "hero": [92.9237289428711, 0.0, -0.41957199573517], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 571.46s.
+P001: Resumed at play time 571.46s.
+AD019 STAGE warmup-ford-west-clear-day
+P001: Paused at play time 581.46s.
+P001: Resumed at play time 581.46s.
+AD019 STAGE sample-ford-west-clear-day-0
+M018 SAMPLE { "view": "ford-west-clear-day", "run": 0, "seconds": 60.007543, "samples": 11608, "frame_p50_ms": 4.787, "frame_p95_ms": 7.407, "frame_p99_ms": 9.449, "frame_max_ms": 24.487, "draw_p95": 129, "focused_samples": 11608, "hero": [66.007926940918, 0.00000000372529, 12.4766654968262], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 641.63s.
+P001: Resumed at play time 641.63s.
+AD019 STAGE sample-ford-west-clear-day-1
+M018 SAMPLE { "view": "ford-west-clear-day", "run": 1, "seconds": 60.002026, "samples": 11589, "frame_p50_ms": 4.784, "frame_p95_ms": 7.407, "frame_p99_ms": 9.323, "frame_max_ms": 27.596, "draw_p95": 129, "focused_samples": 11589, "hero": [66.007926940918, 0.00000000372529, 12.4766654968262], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 701.81s.
+P001: Resumed at play time 701.81s.
+AD019 STAGE sample-ford-west-clear-day-2
+M018 SAMPLE { "view": "ford-west-clear-day", "run": 2, "seconds": 60.005215, "samples": 11592, "frame_p50_ms": 4.829, "frame_p95_ms": 7.223, "frame_p99_ms": 9.309, "frame_max_ms": 24.215, "draw_p95": 129, "focused_samples": 11592, "hero": [66.007926940918, 0.00000000372529, 12.4766654968262], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 761.97s.
+P001: Resumed at play time 761.97s.
+AD019 STAGE warmup-maris-storm-night-all-lamps
+P001: Paused at play time 771.97s.
+P001: Resumed at play time 771.97s.
+AD019 STAGE sample-maris-storm-night-all-lamps-0
+M018 SAMPLE { "view": "maris-storm-night-all-lamps", "run": 0, "seconds": 60.001458, "samples": 10309, "frame_p50_ms": 5.429, "frame_p95_ms": 8.274, "frame_p99_ms": 10.555, "frame_max_ms": 22.684, "draw_p95": 306, "focused_samples": 10309, "hero": [-5.99597787857056, 0.0, 10.5802192687988], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 832.09s.
+P001: Resumed at play time 832.09s.
+AD019 STAGE sample-maris-storm-night-all-lamps-1
+M018 SAMPLE { "view": "maris-storm-night-all-lamps", "run": 1, "seconds": 60.002382, "samples": 10351, "frame_p50_ms": 5.403, "frame_p95_ms": 8.162, "frame_p99_ms": 10.364, "frame_max_ms": 28.716, "draw_p95": 306, "focused_samples": 10351, "hero": [-5.99597787857056, 0.0, 10.5802192687988], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 892.22s.
+P001: Resumed at play time 892.22s.
+AD019 STAGE sample-maris-storm-night-all-lamps-2
+M018 SAMPLE { "view": "maris-storm-night-all-lamps", "run": 2, "seconds": 60.00049, "samples": 10136, "frame_p50_ms": 5.477, "frame_p95_ms": 8.352, "frame_p99_ms": 10.272, "frame_max_ms": 25.426, "draw_p95": 306, "focused_samples": 10136, "hero": [-5.99597787857056, 0.0, 10.5802192687988], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 952.34s.
+P001: Resumed at play time 952.34s.
+AD019 STAGE warmup-dense-forest-storm-night-all-lamps
+P001: Paused at play time 962.34s.
+P001: Resumed at play time 962.34s.
+AD019 STAGE sample-dense-forest-storm-night-all-lamps-0
+M018 SAMPLE { "view": "dense-forest-storm-night-all-lamps", "run": 0, "seconds": 60.003383, "samples": 11314, "frame_p50_ms": 4.929, "frame_p95_ms": 7.515, "frame_p99_ms": 9.633, "frame_max_ms": 23.344, "draw_p95": 157, "focused_samples": 11314, "hero": [81.9547424316406, 0.0, 35.1094398498535], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1022.48s.
+P001: Resumed at play time 1022.48s.
+AD019 STAGE sample-dense-forest-storm-night-all-lamps-1
+M018 SAMPLE { "view": "dense-forest-storm-night-all-lamps", "run": 1, "seconds": 60.000479, "samples": 11383, "frame_p50_ms": 4.888, "frame_p95_ms": 7.555, "frame_p99_ms": 9.858, "frame_max_ms": 25.604, "draw_p95": 157, "focused_samples": 11383, "hero": [81.9547424316406, 0.0, 35.1094398498535], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1082.64s.
+P001: Resumed at play time 1082.64s.
+AD019 STAGE sample-dense-forest-storm-night-all-lamps-2
+M018 SAMPLE { "view": "dense-forest-storm-night-all-lamps", "run": 2, "seconds": 60.003035, "samples": 11244, "frame_p50_ms": 4.922, "frame_p95_ms": 7.674, "frame_p99_ms": 9.668, "frame_max_ms": 23.845, "draw_p95": 157, "focused_samples": 11244, "hero": [81.9547424316406, 0.0, 35.1094398498535], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1142.79s.
+P001: Resumed at play time 1142.79s.
+AD019 STAGE warmup-bridge-west-storm-night-all-lamps
+P001: Paused at play time 1152.79s.
+P001: Resumed at play time 1152.79s.
+AD019 STAGE sample-bridge-west-storm-night-all-lamps-0
+M018 SAMPLE { "view": "bridge-west-storm-night-all-lamps", "run": 0, "seconds": 60.002288, "samples": 11008, "frame_p50_ms": 5.04, "frame_p95_ms": 7.741, "frame_p99_ms": 9.856, "frame_max_ms": 25.686, "draw_p95": 145, "focused_samples": 11008, "hero": [92.9237289428711, 0.0, -0.41957199573517], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1212.92s.
+P001: Resumed at play time 1212.92s.
+AD019 STAGE sample-bridge-west-storm-night-all-lamps-1
+M018 SAMPLE { "view": "bridge-west-storm-night-all-lamps", "run": 1, "seconds": 60.000652, "samples": 11246, "frame_p50_ms": 4.958, "frame_p95_ms": 7.622, "frame_p99_ms": 9.567, "frame_max_ms": 23.036, "draw_p95": 145, "focused_samples": 11246, "hero": [92.9237289428711, 0.0, -0.41957199573517], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1273.08s.
+P001: Resumed at play time 1273.08s.
+AD019 STAGE sample-bridge-west-storm-night-all-lamps-2
+M018 SAMPLE { "view": "bridge-west-storm-night-all-lamps", "run": 2, "seconds": 60.002612, "samples": 11172, "frame_p50_ms": 4.931, "frame_p95_ms": 8.0, "frame_p99_ms": 10.14, "frame_max_ms": 23.827, "draw_p95": 145, "focused_samples": 11172, "hero": [92.9237289428711, 0.0, -0.41957199573517], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1333.23s.
+P001: Resumed at play time 1333.23s.
+AD019 STAGE warmup-ford-west-storm-night-all-lamps
+P001: Paused at play time 1343.24s.
+P001: Resumed at play time 1343.24s.
+AD019 STAGE sample-ford-west-storm-night-all-lamps-0
+M018 SAMPLE { "view": "ford-west-storm-night-all-lamps", "run": 0, "seconds": 60.002056, "samples": 11526, "frame_p50_ms": 4.893, "frame_p95_ms": 7.085, "frame_p99_ms": 9.317, "frame_max_ms": 24.296, "draw_p95": 128, "focused_samples": 11526, "hero": [66.007926940918, 0.00000000372529, 12.4766654968262], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1403.37s.
+P001: Resumed at play time 1403.37s.
+AD019 STAGE sample-ford-west-storm-night-all-lamps-1
+M018 SAMPLE { "view": "ford-west-storm-night-all-lamps", "run": 1, "seconds": 60.000134, "samples": 11446, "frame_p50_ms": 4.955, "frame_p95_ms": 7.052, "frame_p99_ms": 9.357, "frame_max_ms": 24.202, "draw_p95": 128, "focused_samples": 11446, "hero": [66.007926940918, 0.00000000372529, 12.4766654968262], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1463.51s.
+P001: Resumed at play time 1463.51s.
+AD019 STAGE sample-ford-west-storm-night-all-lamps-2
+M018 SAMPLE { "view": "ford-west-storm-night-all-lamps", "run": 2, "seconds": 60.001927, "samples": 11658, "frame_p50_ms": 4.754, "frame_p95_ms": 7.556, "frame_p99_ms": 9.668, "frame_max_ms": 24.195, "draw_p95": 128, "focused_samples": 11658, "hero": [66.007926940918, 0.00000000372529, 12.4766654968262], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 1523.65s.
+P001: Resumed at play time 1523.65s.
+AD019 STAGE swap-0
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=3
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=4
+AD019 STAGE swap-1
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=5
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=6
+P001: Paused at play time 1523.65s.
+P001: Resumed at play time 1523.65s.
+AD019 STAGE idle-baseline
+AD019 STAGE checkpoint-baseline
+AD019 STAGE swap-2
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=7
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=8
+AD019 STAGE swap-3
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=9
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=10
+AD019 STAGE swap-4
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=11
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=12
+AD019 STAGE swap-5
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=13
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=14
+AD019 STAGE swap-6
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=15
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=16
+AD019 STAGE swap-7
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=17
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=18
+AD019 STAGE swap-8
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=19
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=20
+AD019 STAGE swap-9
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=21
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=22
+AD019 STAGE swap-10
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=23
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=24
+AD019 STAGE swap-11
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=25
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=26
+P001: Paused at play time 1534.71s.
+P001: Resumed at play time 1534.71s.
+AD019 STAGE idle-final
+AD019 STAGE checkpoint-final
+AD019 STAGE done
+AD019 profile PASS failures=[]

@@ -1,0 +1,30 @@
+{
+  "task": "AD019",
+  "label": "prepaint",
+  "launcher_pid": 29548,
+  "engine_pid": 3052,
+  "engine_exit": 0,
+  "runtime_errors": [],
+  "failure": null,
+  "source_changed": false,
+  "peak_working_set_bytes": 543637504,
+  "baseline_working_set_bytes": [
+    461602816,
+    461602816,
+    461602816,
+    461602816
+  ],
+  "final_working_set_bytes": [
+    462462976,
+    462462976,
+    462462976,
+    462462976
+  ],
+  "growth_bytes": 860160,
+  "memory_pass": true,
+  "sample_period_seconds": 0.25,
+  "elapsed_seconds": 1566.1571737998165,
+  "smoke": false,
+  "render_output": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-132146-b4aa67ad\\render",
+  "owned_launcher_exited": true
+}

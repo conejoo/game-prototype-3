@@ -1,0 +1,36 @@
+ERROR: .NET Sdk not found. The required version is '10.0.9'.
+   at: void GodotTools.GodotSharpEditor._EnablePlugin() (/root/godot/modules/mono/editor/GodotTools/GodotTools/GodotSharpEditor.cs:484)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void GodotTools.GodotSharpEditor._EnablePlugin() (/root/godot/modules/mono/editor/GodotTools/GodotTools/GodotSharpEditor.cs:484)
+       [2] bool Godot.EditorPlugin.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharpEditor/Generated/GodotObjects/EditorPlugin.cs:1444)
+       [3] bool GodotTools.GodotSharpEditor.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/editor/GodotTools/GodotTools/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/GodotTools.GodotSharpEditor_ScriptMethods.generated.cs:210)
+       [4] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)
+WARNING: Missing .uid file for path "res://features/actors/storybook_actor.gdshader". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://features/actors/storybook_actor_material.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/art_direction_actor_render.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/art_direction_home_render.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/art_direction_inn_journey_render.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/art_direction_inn_render.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/art_direction_tollworks_render.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/storybook_actor_checks.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/storybook_home_checks.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/storybook_inn_checks.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://tests/storybook_tollworks_checks.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://world/storybook_inn.gdshader". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://world/storybook_inn_material.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)
+WARNING: Missing .uid file for path "res://world/storybook_tollworks_material.gd". The file was re-created from cache.
+   at: _process_file_system (editor/file_system/editor_file_system.cpp:1391)

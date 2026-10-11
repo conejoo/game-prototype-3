@@ -1,0 +1,23 @@
+{
+  "task": "AD019",
+  "label": "prepaint",
+  "argv": [
+    "D:\\development\\Godot_v4.7.2-stable_mono_win64\\Godot_v4.7.2-stable_mono_win64_console.exe",
+    "--path",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\game",
+    "--disable-vsync",
+    "--max-fps",
+    "0",
+    "--script",
+    "res://tests/art_direction_performance_profile.gd",
+    "--",
+    "--save-slot=ad019-20261011-132146-b4aa67ad",
+    "--profile-output=D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-132146-b4aa67ad\\render"
+  ],
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d",
+  "render_output": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\prepaint-8bbf35d\\docs\\evidence\\AD019\\20261011-132146-b4aa67ad\\render",
+  "APPDATA": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\20261011-132146-b4aa67ad\\appdata",
+  "LOCALAPPDATA": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD019\\20261011-132146-b4aa67ad\\localappdata",
+  "smoke": false,
+  "platform": "Windows-11-10.0.26200-SP0"
+}

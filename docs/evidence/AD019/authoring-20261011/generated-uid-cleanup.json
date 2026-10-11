@@ -1,0 +1,82 @@
+[
+  {
+    "path": "game/features/actors/storybook_actor_material.gd.uid",
+    "sha256": "2291c25c8d29c6f4cf66d98e64125e24b1179b27a5f545ec11e6f9f75e373e4f",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/features/actors/storybook_actor.gdshader.uid",
+    "sha256": "c4297bf73172109ac0134e9cb4d825e27ef5470eca9f283e0495619aeb366e32",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/art_direction_actor_render.gd.uid",
+    "sha256": "1c13e6448ea02657d98046fbd2ee16c3ab34a81c1dc1b322d679c896af2314f7",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/art_direction_home_render.gd.uid",
+    "sha256": "a2c9c6347de2d78c914feb8aa261069d20ff55d674e1ae6585694cc745e7de3b",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/art_direction_hud_render.gd.uid",
+    "sha256": "5e4b41cbe5e1869638a57800fe4986c3786f9d60a614aabb6c25cf5e7c137d7e",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/art_direction_inn_journey_render.gd.uid",
+    "sha256": "538bd9b949759d714b0a35062285cb0e2ae8db0dfa6b641e724d28380923d728",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/art_direction_inn_render.gd.uid",
+    "sha256": "55a4a5a07548344c8dafe1291f8247376577f564a283eb6e278c55e4c148511e",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/art_direction_integration_render.gd.uid",
+    "sha256": "a1b1549f9558f4cbfa8ed347b59b1773ede65288825308db8e7a021e72f1c489",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/art_direction_tollworks_render.gd.uid",
+    "sha256": "4342bc8509123d1803cd09a09b7871f9a6f64e891b2853af1f481322b8e8f40d",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/storybook_actor_checks.gd.uid",
+    "sha256": "00902956b31ba66a0031935be963c8755faab31225d6fe50e0cdc7d600ea1ab6",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/storybook_home_checks.gd.uid",
+    "sha256": "5151f097b1fc68ad7f964437ad8cb023ea2c359419ca9031a572c73306d0363d",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/storybook_inn_checks.gd.uid",
+    "sha256": "0b1128ead2cec9ad6814aeba2a4405f04a90b9485fd20beb30406b3d0903c715",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/tests/storybook_tollworks_checks.gd.uid",
+    "sha256": "b63c70fb1ad9461992ef042e056804466a0ea891af23ffa6a5a5b8b35da3fde0",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/world/storybook_inn_material.gd.uid",
+    "sha256": "a175a5a0a865af9e52f997e37d72c49d39571874bcdf60d66b6968459226753f",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/world/storybook_inn.gdshader.uid",
+    "sha256": "3d441a414e39f8430fd5e982df27b6cb2d6116fe8a74ab957c7b7a48d3880df0",
+    "reason": "incidental import generation; absent in initial source manifest"
+  },
+  {
+    "path": "game/world/storybook_tollworks_material.gd.uid",
+    "sha256": "3f0597909d056c8d5a31550a873e00a7952be5946d408c4510c60cdf1cbb3881",
+    "reason": "incidental import generation; absent in initial source manifest"
+  }
+]

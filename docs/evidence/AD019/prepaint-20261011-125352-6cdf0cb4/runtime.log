@@ -1,0 +1,112 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 581.29 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 Laptop GPU
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=2
+P001: Paused at play time 0.00s.
+P001: Resumed at play time 0.00s.
+AD019 STAGE warmup-maris-clear-day
+P001: Paused at play time 1.00s.
+P001: Resumed at play time 1.00s.
+AD019 STAGE sample-maris-clear-day-0
+M018 SAMPLE { "view": "maris-clear-day", "run": 0, "seconds": 2.000464, "samples": 322, "frame_p50_ms": 5.719, "frame_p95_ms": 9.419, "frame_p99_ms": 11.739, "frame_max_ms": 18.82, "draw_p95": 274, "focused_samples": 322, "hero": [-5.99597787857056, 0.0, 10.5802192687988], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 3.14s.
+P001: Resumed at play time 3.14s.
+AD019 STAGE warmup-dense-forest-clear-day
+P001: Paused at play time 4.14s.
+P001: Resumed at play time 4.14s.
+AD019 STAGE sample-dense-forest-clear-day-0
+M018 SAMPLE { "view": "dense-forest-clear-day", "run": 0, "seconds": 2.003965, "samples": 373, "frame_p50_ms": 5.096, "frame_p95_ms": 7.165, "frame_p99_ms": 9.525, "frame_max_ms": 15.757, "draw_p95": 135, "focused_samples": 373, "hero": [81.9547424316406, 0.0, 35.1094398498535], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 6.30s.
+P001: Resumed at play time 6.30s.
+AD019 STAGE warmup-bridge-west-clear-day
+P001: Paused at play time 7.31s.
+P001: Resumed at play time 7.31s.
+AD019 STAGE sample-bridge-west-clear-day-0
+M018 SAMPLE { "view": "bridge-west-clear-day", "run": 0, "seconds": 2.00168, "samples": 359, "frame_p50_ms": 5.216, "frame_p95_ms": 7.287, "frame_p99_ms": 10.52, "frame_max_ms": 27.026, "draw_p95": 134, "focused_samples": 359, "hero": [92.9237289428711, 0.0, -0.41957199573517], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 9.46s.
+P001: Resumed at play time 9.46s.
+AD019 STAGE warmup-ford-west-clear-day
+P001: Paused at play time 10.46s.
+P001: Resumed at play time 10.46s.
+AD019 STAGE sample-ford-west-clear-day-0
+M018 SAMPLE { "view": "ford-west-clear-day", "run": 0, "seconds": 2.004336, "samples": 335, "frame_p50_ms": 5.475, "frame_p95_ms": 9.188, "frame_p99_ms": 10.934, "frame_max_ms": 22.839, "draw_p95": 117, "focused_samples": 335, "hero": [66.007926940918, 0.00000000372529, 12.4766654968262], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 12.64s.
+P001: Resumed at play time 12.64s.
+AD019 STAGE warmup-maris-storm-night-all-lamps
+P001: Paused at play time 13.65s.
+P001: Resumed at play time 13.65s.
+AD019 STAGE sample-maris-storm-night-all-lamps-0
+M018 SAMPLE { "view": "maris-storm-night-all-lamps", "run": 0, "seconds": 2.003974, "samples": 314, "frame_p50_ms": 6.204, "frame_p95_ms": 7.625, "frame_p99_ms": 10.621, "frame_max_ms": 15.17, "draw_p95": 289, "focused_samples": 314, "hero": [-5.99597787857056, 0.0, 10.5802192687988], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 15.77s.
+P001: Resumed at play time 15.77s.
+AD019 STAGE warmup-dense-forest-storm-night-all-lamps
+P001: Paused at play time 16.77s.
+P001: Resumed at play time 16.77s.
+AD019 STAGE sample-dense-forest-storm-night-all-lamps-0
+M018 SAMPLE { "view": "dense-forest-storm-night-all-lamps", "run": 0, "seconds": 2.001709, "samples": 349, "frame_p50_ms": 5.373, "frame_p95_ms": 7.482, "frame_p99_ms": 11.547, "frame_max_ms": 20.523, "draw_p95": 144, "focused_samples": 349, "hero": [81.9547424316406, 0.0, 35.1094398498535], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 18.92s.
+P001: Resumed at play time 18.92s.
+AD019 STAGE warmup-bridge-west-storm-night-all-lamps
+P001: Paused at play time 19.92s.
+P001: Resumed at play time 19.92s.
+AD019 STAGE sample-bridge-west-storm-night-all-lamps-0
+M018 SAMPLE { "view": "bridge-west-storm-night-all-lamps", "run": 0, "seconds": 2.000084, "samples": 333, "frame_p50_ms": 5.721, "frame_p95_ms": 8.149, "frame_p99_ms": 10.656, "frame_max_ms": 15.703, "draw_p95": 143, "focused_samples": 333, "hero": [92.9237289428711, 0.0, -0.41957199573517], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 22.06s.
+P001: Resumed at play time 22.06s.
+AD019 STAGE warmup-ford-west-storm-night-all-lamps
+P001: Paused at play time 23.06s.
+P001: Resumed at play time 23.06s.
+AD019 STAGE sample-ford-west-storm-night-all-lamps-0
+M018 SAMPLE { "view": "ford-west-storm-night-all-lamps", "run": 0, "seconds": 2.001409, "samples": 345, "frame_p50_ms": 5.47, "frame_p95_ms": 8.244, "frame_p99_ms": 11.413, "frame_max_ms": 14.556, "draw_p95": 127, "focused_samples": 345, "hero": [66.007926940918, 0.00000000372529, 12.4766654968262], "tree_count": 395, "tree_batches": 106 }
+P001: Paused at play time 25.22s.
+P001: Resumed at play time 25.22s.
+AD019 STAGE swap-0
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=3
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=4
+AD019 STAGE swap-1
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=5
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=6
+P001: Paused at play time 25.22s.
+P001: Resumed at play time 25.22s.
+AD019 STAGE idle-baseline
+AD019 STAGE checkpoint-baseline
+AD019 STAGE swap-2
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=7
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=8
+AD019 STAGE swap-3
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=9
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=10
+AD019 STAGE swap-4
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=11
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=12
+AD019 STAGE swap-5
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=13
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=14
+AD019 STAGE swap-6
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=15
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=16
+AD019 STAGE swap-7
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=17
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=18
+AD019 STAGE swap-8
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=19
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=20
+AD019 STAGE swap-9
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=21
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=22
+AD019 STAGE swap-10
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=23
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=24
+AD019 STAGE swap-11
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=25
+P004: arrived prototype-alderwake/alderwake-from-tollworks; party=2; transition=26
+P001: Paused at play time 36.26s.
+P001: Resumed at play time 36.26s.
+AD019 STAGE idle-final
+AD019 STAGE checkpoint-final
+AD019 STAGE done
+AD019 profile PASS failures=[]

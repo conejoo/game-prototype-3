@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "task": "AD019",
+  "task_paths": [
+    {
+      "path": "tools/art_direction/profile_storybook.py",
+      "sha256": "1516be6ec16177bcbbc8b9d74089f3683d1a9087fc7fb87e08004e146ebbbf81"
+    },
+    {
+      "path": "game/tests/art_direction_performance_profile.gd",
+      "sha256": "2f43866ce1a9b12e70df0b2562dca81044177f764b0494e6f66d2816a0d53374"
+    },
+    {
+      "path": "game/tests/art_direction_performance_profile.gd.uid",
+      "sha256": "96ead474dcae89c88fb9c083736efa9ed2a13e25c1e06779041dbe598f9c69e9"
+    },
+    {
+      "path": "docs/art-direction-storybook/AD019_ACCEPTANCE.md",
+      "sha256": "b71a53d464cceaea2a95ffa5f2d797bbbe44640cb1bc6c4d834fbc7a9aa01ff0"
+    },
+    {
+      "path": "docs/art-direction-storybook/CHECKLIST.md",
+      "sha256": "39ba75895b43214133d757ad67fde6eda3d28b3c8050f5cf14e2c0de04b47b4e"
+    },
+    {
+      "path": "docs/art-direction-storybook/CURRENT_STATE.md",
+      "sha256": "10d56b77b1b922901800a03a14e9cb3dbbae6a0b1f7b469828c62e91841671d0"
+    }
+  ],
+  "validated_source_sha256": "06de66f011592e518852df960b30926363ddfef6198822d749d8e24301567f1e",
+  "validated_files": 1411,
+  "protected_files": 3890,
+  "unexpected_changes": [],
+  "head": "c6325cb76c30ed7ca3ddda1b7058b4f32b5b63a6",
+  "index_empty": true,
+  "owned_pids_exited": 38,
+  "visual_review": [
+    {
+      "provenance_report": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\painted-20261011-125512-9ac131ac\\derived\\20261011-132352-a4f19cfa\\capture-report.json",
+      "all_24_frames_inspected": true,
+      "contact_sheets_inspected": [
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\painted-20261011-125512-9ac131ac\\derived\\20261011-132352-a4f19cfa\\contact-01.png",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\painted-20261011-125512-9ac131ac\\derived\\20261011-132352-a4f19cfa\\contact-02.png"
+      ],
+      "sheets_sha256": {
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\painted-20261011-125512-9ac131ac\\derived\\20261011-132352-a4f19cfa\\contact-01.png": "30e5dec7fa605a7b49659bfc1e2ac3b875bb36b3e497032d352f44863c988d69",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\painted-20261011-125512-9ac131ac\\derived\\20261011-132352-a4f19cfa\\contact-02.png": "5813c7836f8656d5b121ef58b111d52b1e1baf7f0ea7919c54af1e49edaa77f7"
+      }
+    },
+    {
+      "provenance_report": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\prepaint-20261011-132146-b4aa67ad\\derived\\20261011-135012-818b6ffc\\capture-report.json",
+      "all_24_frames_inspected": true,
+      "contact_sheets_inspected": [
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\prepaint-20261011-132146-b4aa67ad\\derived\\20261011-135012-818b6ffc\\contact-01.png",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\prepaint-20261011-132146-b4aa67ad\\derived\\20261011-135012-818b6ffc\\contact-02.png"
+      ],
+      "sheets_sha256": {
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\prepaint-20261011-132146-b4aa67ad\\derived\\20261011-135012-818b6ffc\\contact-01.png": "eaf77d8df10fcbf3772d107a4493f0f8109da2a3f930aa6c778f07b0abee4a5e",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\prepaint-20261011-132146-b4aa67ad\\derived\\20261011-135012-818b6ffc\\contact-02.png": "e19e5b0f67dbec9115dc95104fd7dab9aebb94b626198ba55bfc9d82741cd7e9"
+      }
+    }
+  ],
+  "critical_fullsize_inspected": [
+    "painted/maris-clear-day-0",
+    "painted/dense-forest-storm-night-all-lamps-0",
+    "painted/bridge-west-storm-night-all-lamps-0",
+    "painted/ford-west-storm-night-all-lamps-2",
+    "prepaint/maris-storm-night-all-lamps-0"
+  ],
+  "blockers": [],
+  "unrun_required_criteria": [],
+  "unfinished_ids": [
+    "AD020"
+  ],
+  "all_through_AD020_complete": false
+}

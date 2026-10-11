@@ -1,0 +1,30 @@
+{
+  "task": "AD019",
+  "label": "painted",
+  "launcher_pid": 27540,
+  "engine_pid": 59644,
+  "engine_exit": 0,
+  "runtime_errors": [],
+  "failure": null,
+  "source_changed": false,
+  "peak_working_set_bytes": 574726144,
+  "baseline_working_set_bytes": [
+    493182976,
+    493187072,
+    493187072,
+    493191168
+  ],
+  "final_working_set_bytes": [
+    496275456,
+    496275456,
+    496275456,
+    497233920
+  ],
+  "growth_bytes": 4042752,
+  "memory_pass": true,
+  "sample_period_seconds": 0.25,
+  "elapsed_seconds": 66.18326479988173,
+  "smoke": true,
+  "render_output": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\painted-20261011-125232-90112a97\\render",
+  "owned_launcher_exited": true
+}

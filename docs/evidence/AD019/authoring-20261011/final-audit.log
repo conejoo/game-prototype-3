@@ -1,0 +1,2 @@
+Failed to find real location of C:\Program Files\Blender Foundation\Blender 5.2\5.2\python\bin\python.exe
+{"status": "passed", "task": "AD019", "validated_files": 1411, "protected_files": 3890, "owned_pids_exited": 38, "blockers": [], "unfinished_ids": ["AD020"], "all_through_AD020_complete": false}

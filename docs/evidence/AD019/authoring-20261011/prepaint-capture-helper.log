@@ -1,0 +1,5 @@
+INFO add_decision: Id::<PubGrubPackage>(0) @ 0a0.dev0 without checking dependencies    
+INFO add_decision: Id::<PubGrubPackage>(1) @ 12.3.0 without checking dependencies    
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\aldoc\\AppData\\Local\\uv\\cache\\blender.shared'
+{"report": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\prepaint-20261011-132146-b4aa67ad\\derived\\20261011-135012-818b6ffc\\capture-report.json", "status": "ready-for-visual-review", "count": 24, "sheets": ["D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\prepaint-20261011-132146-b4aa67ad\\derived\\20261011-135012-818b6ffc\\contact-01.png", "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\prepaint-20261011-132146-b4aa67ad\\derived\\20261011-135012-818b6ffc\\contact-02.png"]}

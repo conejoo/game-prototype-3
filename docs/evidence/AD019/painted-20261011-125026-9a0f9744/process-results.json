@@ -1,0 +1,32 @@
+{
+  "task": "AD019",
+  "label": "painted",
+  "launcher_pid": 44200,
+  "engine_pid": 67396,
+  "engine_exit": 1,
+  "runtime_errors": [
+    "ERROR: map inventory changed"
+  ],
+  "failure": "Runtime diagnostic; see retained log",
+  "source_changed": false,
+  "peak_working_set_bytes": 609480704,
+  "baseline_working_set_bytes": [
+    556109824,
+    556113920,
+    556118016,
+    556118016
+  ],
+  "final_working_set_bytes": [
+    561172480,
+    561172480,
+    561172480,
+    561172480
+  ],
+  "growth_bytes": 5054464,
+  "memory_pass": true,
+  "sample_period_seconds": 0.25,
+  "elapsed_seconds": 66.063253399916,
+  "smoke": true,
+  "render_output": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD019\\painted-20261011-125026-9a0f9744\\render",
+  "owned_launcher_exited": true
+}

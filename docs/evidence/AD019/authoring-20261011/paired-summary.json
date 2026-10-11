@@ -1,0 +1,74 @@
+[
+  {
+    "view": "bridge-west-clear-day",
+    "painted_p95_max": 8.327,
+    "prepaint_p95_max": 7.679,
+    "painted_p99_max": 10.687,
+    "prepaint_p99_max": 9.762,
+    "painted_draw_p95": 130,
+    "prepaint_draw_p95": 136
+  },
+  {
+    "view": "bridge-west-storm-night-all-lamps",
+    "painted_p95_max": 7.913,
+    "prepaint_p95_max": 8.0,
+    "painted_p99_max": 10.41,
+    "prepaint_p99_max": 10.14,
+    "painted_draw_p95": 139,
+    "prepaint_draw_p95": 145
+  },
+  {
+    "view": "dense-forest-clear-day",
+    "painted_p95_max": 7.943,
+    "prepaint_p95_max": 7.759,
+    "painted_p99_max": 10.436,
+    "prepaint_p99_max": 9.924,
+    "painted_draw_p95": 149,
+    "prepaint_draw_p95": 151
+  },
+  {
+    "view": "dense-forest-storm-night-all-lamps",
+    "painted_p95_max": 7.929,
+    "prepaint_p95_max": 7.674,
+    "painted_p99_max": 10.28,
+    "prepaint_p99_max": 9.858,
+    "painted_draw_p95": 155,
+    "prepaint_draw_p95": 157
+  },
+  {
+    "view": "ford-west-clear-day",
+    "painted_p95_max": 7.955,
+    "prepaint_p95_max": 7.407,
+    "painted_p99_max": 10.767,
+    "prepaint_p99_max": 9.449,
+    "painted_draw_p95": 127,
+    "prepaint_draw_p95": 129
+  },
+  {
+    "view": "ford-west-storm-night-all-lamps",
+    "painted_p95_max": 7.585,
+    "prepaint_p95_max": 7.556,
+    "painted_p99_max": 9.7,
+    "prepaint_p99_max": 9.668,
+    "painted_draw_p95": 126,
+    "prepaint_draw_p95": 128
+  },
+  {
+    "view": "maris-clear-day",
+    "painted_p95_max": 8.188,
+    "prepaint_p95_max": 8.052,
+    "painted_p99_max": 10.629,
+    "prepaint_p99_max": 10.237,
+    "painted_draw_p95": 264,
+    "prepaint_draw_p95": 282
+  },
+  {
+    "view": "maris-storm-night-all-lamps",
+    "painted_p95_max": 8.852,
+    "prepaint_p95_max": 8.352,
+    "painted_p99_max": 11.407,
+    "prepaint_p99_max": 10.555,
+    "painted_draw_p95": 288,
+    "prepaint_draw_p95": 306
+  }
+]

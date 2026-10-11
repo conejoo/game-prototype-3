@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "starting_snapshot_files": 3911,
+  "protected_files": 3890,
+  "unexpected_changes": [],
+  "incidental_generated_uids_removed": 16,
+  "hardware_equal": true,
+  "head": "c6325cb76c30ed7ca3ddda1b7058b4f32b5b63a6",
+  "index_empty": true,
+  "allowlist": [
+    "docs/art-direction-storybook/CHECKLIST.md",
+    "docs/art-direction-storybook/CURRENT_STATE.md",
+    "game/tests/art_direction_performance_profile.gd",
+    "game/tests/art_direction_performance_profile.gd.uid",
+    "tools/art_direction/profile_storybook.py"
+  ],
+  "removed": [
+    "game/features/actors/storybook_actor.gdshader.uid",
+    "game/features/actors/storybook_actor_material.gd.uid",
+    "game/tests/art_direction_actor_render.gd.uid",
+    "game/tests/art_direction_home_render.gd.uid",
+    "game/tests/art_direction_hud_render.gd.uid",
+    "game/tests/art_direction_inn_journey_render.gd.uid",
+    "game/tests/art_direction_inn_render.gd.uid",
+    "game/tests/art_direction_integration_render.gd.uid",
+    "game/tests/art_direction_tollworks_render.gd.uid",
+    "game/tests/storybook_actor_checks.gd.uid",
+    "game/tests/storybook_home_checks.gd.uid",
+    "game/tests/storybook_inn_checks.gd.uid",
+    "game/tests/storybook_tollworks_checks.gd.uid",
+    "game/world/storybook_inn.gdshader.uid",
+    "game/world/storybook_inn_material.gd.uid",
+    "game/world/storybook_tollworks_material.gd.uid"
+  ]
+}
