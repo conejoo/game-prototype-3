@@ -1,0 +1,68 @@
+{
+  "task": "AD006",
+  "seed": 6006,
+  "size": [
+    1024,
+    1024
+  ],
+  "gutter": 16,
+  "density_texels_per_m": 64,
+  "regions": {
+    "dock": {
+      "rect_pixels": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "safe_pixels": [
+        16,
+        16,
+        496,
+        496
+      ],
+      "srgb": "#62442E"
+    },
+    "plaza": {
+      "rect_pixels": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "safe_pixels": [
+        528,
+        16,
+        1008,
+        496
+      ],
+      "srgb": "#777C73"
+    },
+    "wall": {
+      "rect_pixels": [
+        0,
+        512,
+        1024,
+        1024
+      ],
+      "safe_pixels": [
+        16,
+        528,
+        1008,
+        1008
+      ],
+      "srgb": "#74796F"
+    }
+  },
+  "coverage": "Original module planar face UVs; shared world-metre stone projection for exact low-wall prisms and semantic cobblestone.",
+  "joints_m": {
+    "plaza_row": 0.5,
+    "wall_row": 0.375,
+    "stone_width": [
+      0.625,
+      0.75,
+      0.875
+    ]
+  },
+  "import": "RGB sRGB, lossless, mipmaps, linear mip filter, clamp; no alpha/normal/displacement/directional shadow"
+}

@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001-AD005 baseline/shop/tree/ground/river work is Done. AD006-AD020 remain Pending; next eligible task is AD006.
+AD001-AD006 baseline/shop/tree/ground/river/dock work is Done. AD007-AD020 remain Pending; next eligible task is AD007.
 
 ## Selection and completion
 
@@ -22,7 +22,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | AD003 | Done | AD002 | Painted tree pilot with working canopy visibility |
 | AD004 | Done | AD002 | Paint meadow, dirt paths and elevation surfaces |
 | AD005 | Done | AD004 | Paint river and shore transitions |
-| AD006 | Pending | AD002, AD005 | Paint dock, plaza and low-wall modules |
+| AD006 | Done | AD002, AD005 | Paint dock, plaza and low-wall modules |
 | AD007 | Pending | AD003, AD004, AD005, AD006 | Calibrate storybook day, night and weather lighting |
 | AD008 | Pending | AD007 | Accept playable Maris and Dock Row pilot |
 | AD009 | Pending | AD008 | Roll painted materials through town buildings |
@@ -253,3 +253,15 @@ Final83 actual Godot frames/seven sheets inspected: both projections/zoom extrem
 
 Retained CIM/UID-import failures and timer rounding395/398ms/stale close-HUD label corrections in acceptance; no guards/bounds relaxed. Nine task paths ready for review, unrelated user direction/interiors/instructions/source pins byte-preserved. Every owned PID exited including final engine51324/launcher24120; no cleanup owed. Schema8/content1 and historical R016 incomplete status retained. All criteria complete, no blockers/unrun required checks. No ordinary cast/route/native GUI Save/Load/new-process/package claim. No commit/push or successor work. Next eligible AD006 only. Remaining unfinished AD006-AD020; final checklist AD020; every item complete: no.
 Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit scope is exactly nine AD005 paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence remain excluded. Accepted source bytes and unrelated-file preservation verified before documentation-only updates/staging; exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD005/authorized-commit-20261011/commit-audit.json`. AD001-AD005 remain Done, AD006-AD020 Pending. No push or AD006 implementation.
+
+### AD006 - 2026-10-11 UTC - Done
+
+[AD006_ACCEPTANCE](AD006_ACCEPTANCE.md): shared1024 RGB painted dock/plaza/low-wall atlas, editable sibling Blender/recipe and portable two-module GLB. Full-face64texels/m UVs,16px gutters, shared matte material; semantic plaza and ten existing low-wall prisms use world-metre atlas projection. One shared fractional UV-crop mesh preserves64texels/m on four half-metre edge pieces. Full-precision UV import avoids thin-face attribute quantization. Original144 module triangles, all source kit/mapping/physics/IDs/deck heights/dry masks/navigation unchanged; no per-instance material/node/alpha surface.22 task paths ready for review.
+
+Repository cwd; fresh before RenderOnly art_direction_dock_render passes3/3 exit0 in `docs/evidence/AD006/20261011-062651202-81a1fbfc/`. Final import/density gate passes4/4 exit0 in `20261011-064303716-f48cf80e/`. Final `./tools/run_checks.ps1 -Task AD006 -Names application_smoke,map_town_art_checks,map_town_checks,map_crossing_checks -RenderScript art_direction_dock_render -RenderPhases pilot,approach -TimeoutSeconds 180` passes8/8 exit0 in `20261011-064336010-9cef4899/`; stable1352-file digest`c296990f309b3b790f229675b009da71c38300451206ffbabcfdb12541698284`, source.changed=false/error=null. Town37325 physical probes/18325 path samples/74 routes; crossings4032 clearance/floor probes/94 walk-dodge lanes/four rail slides. Per-triangle density/material/opaque/mip/wall/footprint assertions pass without relaxed guards.
+
+All50 final engine frames/five provenance sheets inspected: both projections/zoom bounds, street/river/plaza/quay, day/night, close/checker/static-repeat and five ordinary input frames.35 before/after views retain exact camera/feet/environment; semantic/floor/all16 terrain-water-riser fingerprints identical. Fresh D preflight/four WASD routes reach dock and return with unchanged arrival/focus/stall/ownership guards; no position/fact/weather setup in that process. Dock/wall repeat crops pixel-identical. Plaza fine pixel delta6.021 to2.359; routes/role hues/white rod readable. Texture memory adds8,388,606 bytes for two resident atlas copies; nodes4067/draw516 unchanged. Short quay p95/p99 before2.852/3.420ms, final2.742/3.346ms. Pre-existing quay516 draws exceeds future500 target; these paused observations do not accept AD019.
+
+Retained CIM/import-generation/nil-index/phase-output/unsafe-waypoint/crop/palette/UV-compression/helper corrections detailed in acceptance; no failed run promoted. Asset/pixel/capture/preservation/whitespace audits exit0;1592 baseline paths checked, unrelated direction/interiors/instructions/schema8/content1 and historical R016 incomplete preserved. Every owned attempt PID exited; final pilot36984/launcher62024, approach22200/launcher23056. No input/editor cleanup owed, blockers or unrun required criteria. No native/export/GUI Save/Load/restart/full profiling claim. No staging/commit/push; user requested separate post-review commit instruction. Next eligible AD007 only. Remaining unfinished AD007-AD020; final checklist AD020; every item complete: no.
+
+Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit scope is exactly22 AD006 paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence remain excluded. Accepted source bytes and unrelated-file preservation verified before documentation-only updates/staging. Exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD006/authorized-commit-20261011/commit-audit.json`. Pre-existing quay516-draw observation and AD019 profiling limit retained. AD001-AD006 remain Done, AD007-AD020 Pending. No push or AD007 implementation.

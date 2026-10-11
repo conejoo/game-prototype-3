@@ -5,6 +5,7 @@ uniform vec4 base_color : source_color;
 uniform vec4 meadow_color : source_color = vec4(0.57255, 0.61176, 0.29804, 1.0);
 uniform int kind = 1;
 uniform sampler2D semantic_mask : filter_nearest, repeat_disable;
+uniform sampler2D painted_stone_atlas : source_color, filter_linear_mipmap, repeat_disable;
 uniform vec2 map_origin;
 uniform vec2 map_size;
 varying vec3 world_position;
@@ -51,12 +52,10 @@ void fragment() {
 		vec2 face = abs(world_normal.x) > abs(world_normal.z) ? world_position.zy : world_position.xy;
 		color = painted_surface(face, base_color.rgb, 0.08);
 	} else if (kind == 4) {
-		// World-aligned irregular cobbles, no per-tile UV seam or image dependency.
-		vec2 row = vec2(p.x * 2.8 + mod(floor(p.y * 2.6), 2.0) * 0.5, p.y * 2.6);
-		vec2 f = fract(row);
-		float joint = 1.0 - smoothstep(0.015, 0.055, min(min(f.x, 1.0 - f.x), min(f.y, 1.0 - f.y)));
-		color *= 0.90 + hash(floor(row)) * 0.15;
-		color = mix(color, vec3(0.27, 0.28, 0.22), joint * 0.38);
+		// AD006 shared plaza patch,64texels/m; broad low-contrast painted joints.
+		// Existing semantic coverage and all physical terrain remain unchanged.
+		vec2 pixel = vec2(528.0,16.0) + fract(p * (64.0/480.0)) * 480.0;
+		color = texture(painted_stone_atlas,pixel/1024.0).rgb;
 	} else if (kind == 6) {
 		// Retained source grass-tuft centers become tiny matte flecks, not dots.
 		vec2 local = fract(p) - vec2(0.5);

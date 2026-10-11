@@ -4,6 +4,7 @@ extends RefCounted
 
 const TERRAIN_SHADER: Shader = preload("res://world/map_candidate/landscape.gdshader")
 const WATER_SHADER: Shader = preload("res://world/map_candidate/river.gdshader")
+const STONE_ATLAS: Texture2D = preload("res://assets/environment/storybook/dock-painted-albedo.png")
 const KINDS: Dictionary[String, int] = {"grass": 1, "dirt": 2, "sand": 3, "cobblestone": 4, "wet_shoreline": 5, "raw-marker": 6}
 const COLORS: Dictionary[String, Color] = {
 	"grass": Color("949f68"), "dirt": Color("e1bf94"),
@@ -48,6 +49,7 @@ func terrain(kind: String) -> ShaderMaterial:
 	material.set_shader_parameter("base_color", COLORS[kind].srgb_to_linear() if kind in ["grass", "dirt", "wet_shoreline"] else COLORS[kind])
 	material.set_shader_parameter("kind", KINDS[kind])
 	material.set_shader_parameter("meadow_color", COLORS.grass.srgb_to_linear())
+	if kind == "cobblestone": material.set_shader_parameter("painted_stone_atlas", STONE_ATLAS)
 	_common(material)
 	return material
 

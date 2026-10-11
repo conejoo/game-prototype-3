@@ -29,9 +29,11 @@ func _run() -> void:
 		var arrays: Array = mesh.surface_get_arrays(0)
 		var material: StandardMaterial3D = mesh.surface_get_material(0)
 		_check(material != null and material.metallic == 0 and material.roughness > 0.85, "Portable matte material: " + id)
-		if id == "reed-chandlery":
+		if id in ["reed-chandlery", "dock-plank-module", "quay-stone-module"]:
 			_check(not material.vertex_color_use_as_albedo and material.albedo_color == Color.WHITE, "Painted shop receives old palette tint")
-			_check(material.albedo_texture == AlderwakeTownArt.PAINTED_ATLAS and material.albedo_texture.get_size() == Vector2(1024, 1024), "Missing/shared painted atlas")
+			var expected_atlas: Texture2D = AlderwakeTownArt.PAINTED_ATLAS if id == "reed-chandlery" else AlderwakeTownArt.DOCK_ATLAS
+			_check(material.albedo_texture == expected_atlas and material.albedo_texture.get_size() == Vector2(1024, 1024), "Missing/shared painted atlas")
+			_check(material.albedo_texture.get_image().has_mipmaps() and material.transparency == BaseMaterial3D.TRANSPARENCY_DISABLED, "Painted mip/opaque policy")
 			_check(material.texture_filter == BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS and not material.texture_repeat, "Atlas mip/clamp policy")
 			var uvs: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV]
 			_check(uvs.size() == arrays[Mesh.ARRAY_VERTEX].size(), "Painted UV coverage incomplete")
@@ -92,6 +94,17 @@ func _run() -> void:
 			var world_transform: Transform3D = wrapper.transform * visual.transform
 			_check(world_transform.origin.distance_to(Vector3(rect.position.x, 0, rect.position.y)) < 0.001, "Dock module registration")
 			_check(world_transform.basis.is_equal_approx(Basis.from_scale(Vector3(rect.size.x, 1, rect.size.y))), "Dock module scale/yaw")
+			var module_arrays: Array = visual.mesh.surface_get_arrays(0)
+			var module_vertices: PackedVector3Array = module_arrays[Mesh.ARRAY_VERTEX]
+			var module_uv: PackedVector2Array = module_arrays[Mesh.ARRAY_TEX_UV]
+			var module_indices: PackedInt32Array = module_arrays[Mesh.ARRAY_INDEX]
+			for triangle: int in range(0,module_indices.size(),3):
+				var a: int = module_indices[triangle]
+				var b: int = module_indices[triangle+1]
+				var c: int = module_indices[triangle+2]
+				var physical_area: float = ((world_transform * module_vertices[b])-(world_transform * module_vertices[a])).cross((world_transform * module_vertices[c])-(world_transform * module_vertices[a])).length()
+				var texture_area: float = absf((module_uv[b]-module_uv[a]).cross(module_uv[c]-module_uv[a]))
+				_check(absf(sqrt(texture_area/physical_area)*1024.0-64.0) < 0.05, "Module world texel density: " + str(visual.name))
 			var covered: bool = false
 			for approved: Rect2 in AlderwakeDockSurfaces.SURFACES[record.id]:
 				covered = covered or approved.encloses(rect)
@@ -100,6 +113,9 @@ func _run() -> void:
 		module_area += actual_area
 	_check(absf(module_area - 48) < 0.001 and art.dock_rectangles.size() == 7, "Approved dock movement mask changed")
 	_check(art.quay_cells == location.town.get_node("QuayArtPreview/VisualRoot").get_child_count(), "Quay art missing")
+	_check(art.meshes["GEO-dock-plank-module"].surface_get_material(0) == art.meshes["GEO-quay-stone-module"].surface_get_material(0), "Dock/quay must share material")
+	_check(art.partial_module_meshes.size() == 1, "Fractional edge pieces must share one UV crop mesh")
+	_check(art.painted_wall_count == 10 and art.wall_material.get_shader_parameter("painted_atlas") == AlderwakeTownArt.DOCK_ATLAS, "Exact low-wall coverage/shared atlas")
 	_check(location.interactables().is_empty() and location.destination_id.is_empty() and location.town.portal_pads.size() == 6, "Inactive doors installed gameplay")
 	var report: Dictionary = {"structures": ids.size(), "kit_meshes": art.meshes.size(), "kit_triangles": triangles, "exact_base_samples": base_samples, "dock_area_m2": module_area, "deck_modules": art.module_count, "quay_cells": art.quay_cells, "failures": failures}
 	# Read-only navigation guide for subsequent ordinary-input rendered tour.
