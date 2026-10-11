@@ -1,0 +1,194 @@
+{
+  "task": "AD014",
+  "rows": [
+    [
+      "AD001",
+      "Done"
+    ],
+    [
+      "AD002",
+      "Done"
+    ],
+    [
+      "AD003",
+      "Done"
+    ],
+    [
+      "AD004",
+      "Done"
+    ],
+    [
+      "AD005",
+      "Done"
+    ],
+    [
+      "AD006",
+      "Done"
+    ],
+    [
+      "AD007",
+      "Done"
+    ],
+    [
+      "AD008",
+      "Done"
+    ],
+    [
+      "AD009",
+      "Done"
+    ],
+    [
+      "AD010",
+      "Done"
+    ],
+    [
+      "AD011",
+      "Done"
+    ],
+    [
+      "AD012",
+      "Done"
+    ],
+    [
+      "AD013",
+      "Done"
+    ],
+    [
+      "AD014",
+      "Done"
+    ],
+    [
+      "AD015",
+      "Pending"
+    ],
+    [
+      "AD016",
+      "Pending"
+    ],
+    [
+      "AD017",
+      "Pending"
+    ],
+    [
+      "AD018",
+      "Pending"
+    ],
+    [
+      "AD019",
+      "Pending"
+    ],
+    [
+      "AD020",
+      "Pending"
+    ]
+  ],
+  "all_through_AD020_complete": false,
+  "remaining": [
+    "AD015",
+    "AD016",
+    "AD017",
+    "AD018",
+    "AD019",
+    "AD020"
+  ],
+  "next_eligible": "AD015",
+  "links_verified": 23,
+  "links": [
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/authoring-20261011/task-scope.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/20261011-103551439-374cfd54/render/archive-ortho-115-painted.png"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/20261011-103551439-374cfd54/render/parlor-perspective-80-painted.png"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/authoring-20261011/pixel-audit.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/authoring-20261011/acceptance-audit.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/authoring-20261011/preservation.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/20261011-102730681-121d9195/results.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/20261011-103551439-374cfd54/results.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/20261011-103717462-962e22fa/results.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/authoring-20261011/legacy-fixture-comparison.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../../builds/testing/AD014/prepaint-03a6e989/docs/evidence/AD014/20261011-102523667-cb9bf2fd/results.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\AD014_ACCEPTANCE.md",
+      "target": "../evidence/AD014/authoring-20261011/cleanup-pids.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "CHECKLIST.md"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "CONTRACT.md"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "AGENT_PROMPT.md"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "AD014_ACCEPTANCE.md"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "../evidence/AD014/authoring-20261011/task-scope.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "../evidence/AD014/20261011-102730681-121d9195/results.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "../evidence/AD014/20261011-103551439-374cfd54/results.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "../evidence/AD014/20261011-103717462-962e22fa/results.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "../evidence/AD014/authoring-20261011/acceptance-audit.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "../evidence/AD014/authoring-20261011/preservation.json"
+    },
+    {
+      "file": "docs\\art-direction-storybook\\CURRENT_STATE.md",
+      "target": "../evidence/AD014/authoring-20261011/cleanup-pids.json"
+    }
+  ],
+  "head_unchanged": "03a6e9894e36c59647bb4301450a4378e4f53fdf",
+  "staged": false,
+  "cleanup_owned_pids": 78,
+  "blockers": []
+}

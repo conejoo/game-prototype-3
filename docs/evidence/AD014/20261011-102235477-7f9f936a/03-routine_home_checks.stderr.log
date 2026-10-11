@@ -1,0 +1,92 @@
+ERROR: no duplicate/fake Vale contacts before routine execution task
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: 0.4m Vale capsule dry/clear at helena-archive-desk
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint arrival-to-helena-archive-desk (3.333333, 0.0, -0.380952) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep arrival-to-helena-archive-desk (3.333333, 0.0, -0.380952) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint helena-archive-desk-return (3.933333, 0.0, -0.038095) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep helena-archive-desk-return (3.933333, 0.0, -0.038095) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint arrival-to-helena-archive-shelves (3.435714, 0.0, -0.5) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep arrival-to-helena-archive-shelves (3.435714, 0.0, -0.5) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint helena-archive-shelves-return (4.614286, 0.0, -0.5) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep helena-archive-shelves-return (4.614286, 0.0, -0.5) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint helena-afternoon-archive/check-archive-shelves (4.057693, 0.0, -0.032967) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep helena-afternoon-archive/check-archive-shelves (4.057693, 0.0, -0.032967) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint helena-afternoon-ledger-review/check-archive-shelves (4.057693, 0.0, -0.032967) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep helena-afternoon-ledger-review/check-archive-shelves (4.057693, 0.0, -0.032967) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint helena-afternoon-moonflower-records/check-archive-shelves (4.057693, 0.0, -0.032967) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep helena-afternoon-moonflower-records/check-archive-shelves (4.057693, 0.0, -0.032967) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint helena-evening-archive/check-evening-shelves (4.057693, 0.0, -0.032967) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep helena-evening-archive/check-evening-shelves (4.057693, 0.0, -0.032967) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint vale-evening-home/take-evening-seat (3.933333, 0.0, -0.038095) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep vale-evening-home/take-evening-seat (3.933333, 0.0, -0.038095) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous dry capsule footprint vale-morning-work/open-archive (3.333333, 0.0, -0.380952) ["NPC/contact capsule obstructed"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: continuous physical Vale sweep vale-morning-work/open-archive (3.333333, 0.0, -0.380952) hit=ContactBody
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)
+ERROR: full party plus both actual Vale capsule bodies fit ["edric-home-study", "helena-archive-desk"]
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _finish (res://tests/routine_home_checks.gd:199)

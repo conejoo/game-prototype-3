@@ -1,0 +1,53 @@
+{
+  "task": "AD014",
+  "status": "passed",
+  "reports": [
+    {
+      "path": "docs\\evidence\\AD014\\20261011-102730681-121d9195",
+      "cases": 10,
+      "sha256": "7f6eb2d382544448319176e412d1048ccb6c2aafc2c6c5bc766b5cd3045f5622",
+      "files": 1396
+    },
+    {
+      "path": "docs\\evidence\\AD014\\20261011-103551439-374cfd54",
+      "cases": 7,
+      "sha256": "99f3698b1456cec3a33ee2e9dc8884ee8211d7845486f615dd7d5bc182375de8",
+      "files": 1396
+    },
+    {
+      "path": "docs\\evidence\\AD014\\20261011-103717462-962e22fa",
+      "cases": 3,
+      "sha256": "99f3698b1456cec3a33ee2e9dc8884ee8211d7845486f615dd7d5bc182375de8",
+      "files": 1396
+    }
+  ],
+  "original_home_code_exact_after_removing_single_override_line": true,
+  "boxes": 165,
+  "shared_materials": 21,
+  "families": 15,
+  "colliders": 32,
+  "stations": 9,
+  "physical_sweeps": 2586,
+  "routes": 25,
+  "material_assertions": 1002,
+  "routine_assertions": 2609,
+  "routines": 25,
+  "ordinary_journey_captures": 28,
+  "ordinary_routes": 7,
+  "all_plane_gutters_density_sampling_pass": true,
+  "task_hashes": {
+    "docs/art-direction-storybook/CHECKLIST.md": "bcee0c54929366e20268ab2f7e1bb345399129e84412c1afaaee1d0d43a0b2a3",
+    "docs/art-direction-storybook/CURRENT_STATE.md": "b2107642b906df986f793ea9a664e810bb0b16892775760d1cf8d7adc8fcdc2a",
+    "docs/art-direction-storybook/AD014_ACCEPTANCE.md": "3cb45f2a16794ec3648cd0159c08b4301b5008b87dcf81c606932dc20c3e5c69",
+    "game/world/mayor_vale_home.gd": "f54d64ef6cf9c4d2240a20d71c37ae596c5e17877f361c3d55bfcb58eadc1567",
+    "game/world/storybook_home_material.gd": "e96fe61f8949b140a34c6f5e0a0657fb41b0004b83a02317587c4ddac4e87bd4",
+    "game/world/storybook_home_material.gd.uid": "6d89d7a8b0bbcbdd79ce49d4b680e3851a05e8b54f3e556346bf094efb19a256",
+    "game/world/storybook_home.gdshader": "f7d2a4fc4cf1ee7bea15f343e56be41c42936ac912ac6eacb6fefd4f08a347ed",
+    "game/world/storybook_home.gdshader.uid": "7ad5e74172e3b8c5f751fd4e2da28a2b5c178dbc0426cf65d47c8057c2f0873c",
+    "game/tests/storybook_home_checks.gd": "407124e9963c5803f3160838df18d996ccc4e91fd04b755390b73fc603b185c6",
+    "game/tests/art_direction_home_render.gd": "c549439f4fd0a76d218567c108b27170f7265bfd00b207b2bb99f18cec14c908",
+    "game/tests/routine_home_checks.gd": "6e10e4c7bfcdc388655d372f45b4fef6c83eb5678f8dc96d11677ebb3265e401",
+    "game/tests/routine_home_render.gd": "7de3c542e5e042fb66723d75b9450862fdd4bc86410eb03be2d9bbe9df37e831",
+    "art/source/storybook/home-painted-recipe.json": "45685399a2c15322a35cb9ca880ee0c1eedcd07a2665e94e545f104f7545e676"
+  }
+}

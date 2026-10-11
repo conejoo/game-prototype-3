@@ -1,0 +1,15 @@
+[
+  "docs/art-direction-storybook/CHECKLIST.md",
+  "docs/art-direction-storybook/CURRENT_STATE.md",
+  "docs/art-direction-storybook/AD014_ACCEPTANCE.md",
+  "game/world/mayor_vale_home.gd",
+  "game/world/storybook_home_material.gd",
+  "game/world/storybook_home_material.gd.uid",
+  "game/world/storybook_home.gdshader",
+  "game/world/storybook_home.gdshader.uid",
+  "game/tests/storybook_home_checks.gd",
+  "game/tests/art_direction_home_render.gd",
+  "game/tests/routine_home_checks.gd",
+  "game/tests/routine_home_render.gd",
+  "art/source/storybook/home-painted-recipe.json"
+]

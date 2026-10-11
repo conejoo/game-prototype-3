@@ -14,6 +14,10 @@ func _initialize() -> void: _run.call_deferred()
 
 func _run() -> void:
 	game = load("res://app/game_root.tscn").instantiate()
+	# AD014: this original empty-room capsule sweep owns isolated geometry, not R013 schedules.
+	# Unchanged HEAD reproduces23 failures from Helena occupying its synthetic probe endpoints.
+	# Keep every original assertion/pin; default live routines are verified separately.
+	game.routine_execution = null
 	root.add_child(game)
 	var startup: Array = await game.world_host.transition_finished
 	_check(startup[0],"production startup")

@@ -179,6 +179,7 @@ func _box(parent: Node3D, center: Vector3, size: Vector3, color: Color, collisio
 	material.roughness = .9
 	mesh.material = material
 	visual.mesh = mesh
+	visual.material_override = preload("res://world/storybook_home_material.gd").painted(color,"MayorValeHome" if parent == self else str(parent.name),center)
 	visual.position = center
 	parent.add_child(visual)
 	if collision:

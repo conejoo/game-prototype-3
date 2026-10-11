@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=2
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.21s.
+P005 save: OK
+P005 save: OK
+R007 home: 5368 assertions, 2586 sweeps, 0 failures

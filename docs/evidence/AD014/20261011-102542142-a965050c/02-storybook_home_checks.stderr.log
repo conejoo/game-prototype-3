@@ -1,0 +1,16 @@
+ERROR: original stable lamp state
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_home_checks.gd:43)
+ERROR: original stable lamp state
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_home_checks.gd:43)
+ERROR: original stable lamp state
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_home_checks.gd:43)
+ERROR: original stable lamp state
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_home_checks.gd:43)

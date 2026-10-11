@@ -1,0 +1,64 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 581.29 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 Laptop GPU
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 2.04s.
+P001: Resumed at play time 2.04s.
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=2
+P001: Paused at play time 2.15s.
+P001: Resumed at play time 2.15s.
+P001: Paused at play time 3.07s.
+P001: Resumed at play time 3.07s.
+P001: Paused at play time 3.18s.
+P001: Resumed at play time 3.18s.
+P001: Paused at play time 3.27s.
+P001: Resumed at play time 3.27s.
+P001: Paused at play time 3.39s.
+P001: Resumed at play time 3.39s.
+P001: Paused at play time 3.50s.
+P001: Resumed at play time 3.50s.
+P001: Paused at play time 3.59s.
+P001: Resumed at play time 3.59s.
+P001: Paused at play time 5.58s.
+P001: Resumed at play time 5.58s.
+P001: Paused at play time 5.69s.
+P001: Resumed at play time 5.69s.
+P001: Paused at play time 5.79s.
+P001: Resumed at play time 5.79s.
+P001: Paused at play time 5.93s.
+P001: Resumed at play time 5.93s.
+P001: Paused at play time 6.03s.
+P001: Resumed at play time 6.03s.
+P001: Paused at play time 6.11s.
+P001: Resumed at play time 6.11s.
+P001: Paused at play time 9.35s.
+P001: Resumed at play time 9.35s.
+P001: Paused at play time 9.46s.
+P001: Resumed at play time 9.46s.
+P001: Paused at play time 9.55s.
+P001: Resumed at play time 9.55s.
+P001: Paused at play time 9.67s.
+P001: Resumed at play time 9.67s.
+P001: Paused at play time 9.80s.
+P001: Resumed at play time 9.80s.
+P001: Paused at play time 9.88s.
+P001: Resumed at play time 9.88s.
+P001: Paused at play time 12.21s.
+P001: Resumed at play time 12.21s.
+P001: Paused at play time 12.32s.
+P001: Resumed at play time 12.32s.
+P001: Paused at play time 12.41s.
+P001: Resumed at play time 12.41s.
+P001: Paused at play time 12.53s.
+P001: Resumed at play time 12.53s.
+P001: Paused at play time 12.64s.
+P001: Resumed at play time 12.64s.
+P001: Paused at play time 12.72s.
+P001: Resumed at play time 12.72s.
+P004: arrived prototype-alderwake/alderwake-from-mayor-vale-home; party=2; transition=3
+P001: Paused at play time 16.12s.
+P001: Resumed at play time 16.12s.
+P001: Paused at play time 17.91s.
+R007 rendered home: 125 assertions, 28 captures, 0 failures

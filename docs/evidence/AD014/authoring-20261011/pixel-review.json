@@ -1,0 +1,23 @@
+{
+  "task": "AD014",
+  "final_images_inspected": 78,
+  "synthetic_sheets": [
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\derived\\20261011-103720-1a938290\\contact-01.png",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\derived\\20261011-103720-1a938290\\contact-02.png",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\derived\\20261011-103720-1a938290\\contact-03.png",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\derived\\20261011-103720-1a938290\\contact-04.png",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\derived\\20261011-103720-1a938290\\contact-05.png"
+  ],
+  "ordinary_sheets": [
+    "docs\\evidence\\AD014\\20261011-103717462-962e22fa\\render\\derived\\20261011-103954-24cae236\\contact-01.png",
+    "docs\\evidence\\AD014\\20261011-103717462-962e22fa\\render\\derived\\20261011-103954-24cae236\\contact-02.png",
+    "docs\\evidence\\AD014\\20261011-103717462-962e22fa\\render\\derived\\20261011-103954-24cae236\\contact-03.png"
+  ],
+  "critical_full_size_views": [
+    "final parlor-perspective-80-painted: coincident face speckles removed",
+    "painted/archive/control pairs: exact composition and role visibility",
+    "ordinary archive/bedroom/parlor/kitchen and town return",
+    "actual Helena walk/shelf frames"
+  ],
+  "findings": "Warm coherent rooms, broad brush texture and clear routes/contact feet. No new seam/density/contact problem. Original cutaway crop and small ground label remain unchanged. Final white partition speckles eliminated."
+}

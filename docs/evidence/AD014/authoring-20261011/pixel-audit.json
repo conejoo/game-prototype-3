@@ -1,0 +1,191 @@
+{
+  "task": "AD014",
+  "run": "20261011-103551439-374cfd54",
+  "paired_views": [
+    {
+      "label": "entry-ortho-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 194950
+    },
+    {
+      "label": "entry-ortho-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 117653
+    },
+    {
+      "label": "entry-perspective-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 177519
+    },
+    {
+      "label": "entry-perspective-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 95891
+    },
+    {
+      "label": "archive-ortho-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 137656
+    },
+    {
+      "label": "archive-ortho-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 95396
+    },
+    {
+      "label": "archive-perspective-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 116665
+    },
+    {
+      "label": "archive-perspective-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 74289
+    },
+    {
+      "label": "bedroom-ortho-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 157638
+    },
+    {
+      "label": "bedroom-ortho-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 116749
+    },
+    {
+      "label": "bedroom-perspective-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 153283
+    },
+    {
+      "label": "bedroom-perspective-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 95420
+    },
+    {
+      "label": "parlor-ortho-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 223309
+    },
+    {
+      "label": "parlor-ortho-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 129780
+    },
+    {
+      "label": "parlor-perspective-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 219016
+    },
+    {
+      "label": "parlor-perspective-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 131386
+    },
+    {
+      "label": "kitchen-ortho-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 198607
+    },
+    {
+      "label": "kitchen-ortho-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 125690
+    },
+    {
+      "label": "kitchen-perspective-80-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 195394
+    },
+    {
+      "label": "kitchen-perspective-115-painted",
+      "registration_exact": true,
+      "world_changed_pixels": 109583
+    }
+  ],
+  "world_roi": [
+    0,
+    160,
+    960,
+    510
+  ],
+  "weather_world_pixel_difference": 0,
+  "weather_sun_exact": true,
+  "moving_contacts": 3,
+  "endpoint": [
+    6.000000476837158,
+    0.0,
+    -1.5000001192092896
+  ],
+  "samples": [
+    {
+      "draw_p95": 360.0,
+      "engine_static_bytes": 83662484,
+      "frame_p95_ms": 2.795,
+      "frame_p99_ms": 3.042,
+      "hud": "ordinary HUD; pause overlay hidden; synthetic review banner",
+      "label": "home-painted-paused",
+      "nodes": 472.0,
+      "note": "nearest rank; frozen simulation; short frame cadence observation only; memory counters are not process working set or travel-growth acceptance",
+      "paused": true,
+      "render_buffer_bytes": 15548480.0,
+      "render_texture_bytes": 32528618.0,
+      "resources": 506.0,
+      "sample_frames": 120,
+      "warmup_frames": 120
+    }
+  ],
+  "files": {
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\entry-ortho-80-painted.png": "80ba4b487d66994299a4c9e50a6d1174bdaf9c9c883f52e521652527db74aa82",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\entry-ortho-80-original.png": "f1f76d93f218e9d85bdd3a87809a0e35739b67d91ad8bc26a5c534554a799732",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\entry-ortho-115-painted.png": "05f833c5c8d5a3eb29e199b7be9797bb176dddcbfa4af235849407f11efa8cc4",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\entry-ortho-115-original.png": "6a26764d88281c19db5bb3eda3879d12a05b94b76a9a9d073081fc3517a1a1d4",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\entry-perspective-80-painted.png": "1007f88cb5b0ddfc3a1995ae94ea73713f1dc8ab61ab0f22ded4fd5d468a6885",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\entry-perspective-80-original.png": "4fa374e83ca1d05cc99eae528e3f1a8674265dd71068a062057b6b9e9017e020",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\entry-perspective-115-painted.png": "7cce0ac9d879a01e7ecb4ab233c93c32d9307671e0a85ce8e3b058eb14217777",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\entry-perspective-115-original.png": "c67c02a0b0c6d04d1306ebcabef8f5fa234f9c992769e28ba9c89f89ad224af0",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\archive-ortho-80-painted.png": "3881de307e07b71fefd480b899594947ae2883d7ecdcec66ca4e3193063c85ef",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\archive-ortho-80-original.png": "4ae46810b132fa0083c483ad28a6d1e40b71793083d1407984d1795048f6328f",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\archive-ortho-115-painted.png": "1a23c3f1784c7767115e7873eeed43814fc24d38a22f08edb3d75adffe2e33a8",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\archive-ortho-115-original.png": "b3f58c6f25d479a1a2733cece7026c1773a85ae8a3c4be21db2108c11c6085f7",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\archive-perspective-80-painted.png": "76b94c53c9087d88ab0dc4554735f8e1c1a98199e970d59af69b0f392399a49c",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\archive-perspective-80-original.png": "d60a1e4f6026e5968bd40e83cf1c979908f438935521861aa7f38512fefc316b",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\archive-perspective-115-painted.png": "12160671ecd36699d63c45cfd12a8e62a5e31a093f4214a54bc62603f1115095",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\archive-perspective-115-original.png": "36a10da81d6c24bb1415dc6f1cecf4cdd3ad3744f1ee743bd97f979441173fb4",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\bedroom-ortho-80-painted.png": "9a8ade067c00186f5fb50a0efb5057dd71f3b82703456d41708a1e73ad934f1a",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\bedroom-ortho-80-original.png": "5871a38316ea23a6965e2858877fff275b77d5c100536ff41217406b7690e0f8",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\bedroom-ortho-115-painted.png": "a8d1fdeca99ec85ec63f057a8742ea4e006e9c80f0e8db7761d5971865e12ce1",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\bedroom-ortho-115-original.png": "c9de1295443f60b1ff1618b6e99df2d417a0a80b9eef9c8f9089238a58bf407e",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\bedroom-perspective-80-painted.png": "877ef76fc90b55b1290a9342fe11759207387ca01e895bfa7d9e5eb57154e217",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\bedroom-perspective-80-original.png": "931525a09107e5f6b5817f80ecb7840e05e9257c2ad5da2ca42f9a58655f147e",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\bedroom-perspective-115-painted.png": "877d1f52d78454d4a9d34ac3f1733b2f8f3ab5122ca659fdc52167eda6081398",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\bedroom-perspective-115-original.png": "dcad9db7a1d68b26ee25c283aa5bdb05c715da517e2e6ab78f667633014abaea",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\parlor-ortho-80-painted.png": "016ce89c439cf084f5f8cefbc55193f80141227964e68ee62c4624a9b98b1c19",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\parlor-ortho-80-original.png": "6188f8f139d1e36009b71fa07ed5ff35a95d7ade6944b917e87b48c9f33462fb",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\parlor-ortho-115-painted.png": "b1a0f3eb03638675b515569840f5b6a931c3bbe6f32df30dc6bfca832813e6cd",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\parlor-ortho-115-original.png": "d1d9f4ba035d751aafe78b1094d7d85a99874ab4fa48d38b9b5eb2fcd12a4e74",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\parlor-perspective-80-painted.png": "a9700d38669b4cfe427fc43683d7b2fdf54bb24bea0d8b94fef9e217cd32eab5",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\parlor-perspective-80-original.png": "7ffe4a4f6a060f233a47adb4c8fe25ad3d3bdd07bad87b9f7c80336e8bc51775",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\parlor-perspective-115-painted.png": "8a613db399fe35313a33dd97ab732e6edd3b4d0d1141bc259712e308fafa634d",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\parlor-perspective-115-original.png": "61d664bd7fa9721f2d1e46bf748d810c17a8e2208292d53fd6612b9e8174b689",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\kitchen-ortho-80-painted.png": "224f6056cc19d5d23f6a1329db4856214e5c68c4f7c3eeb3710ee58b625cd481",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\kitchen-ortho-80-original.png": "4ce0efee0bb4daaeb2e5a3ebce7287dc81e9497897f0d622941e9c85b290b406",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\kitchen-ortho-115-painted.png": "06d369803c7397b16941cd0eacf5f636837530c93d0614f7d2da4bfc0865ce31",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\kitchen-ortho-115-original.png": "076a6c63c5787c998a7818ef59961dfcab31c36fc2ec8ec954d0d6dbdcad763b",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\kitchen-perspective-80-painted.png": "bff7ae0ee9c1b28fac46ab39f65a708a00e04051813ecf214fe9e0087ee25f11",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\kitchen-perspective-80-original.png": "da79761ba1a7eaddf9637350619fbecf551af4b5fd103b49aa7fe3e3b9154b3c",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\kitchen-perspective-115-painted.png": "10453e3235e3d4bb269389112a466a3221bff9a3482d0c45c8f5be759f10bdcc",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\kitchen-perspective-115-original.png": "7a54a56bdec3aa90cd016c1a8fe3a0a57720e24da8e428023eeba66970bd047c",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\indoor-clear-day.png": "19861501ceb52c97f5ce72772f43f675512962b2652cb0360d65e199804a3fa9",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\indoor-storm-night.png": "3236c1264092049eefe798c54e7ef3dbb22d56623fccb1680b4fb4d8a694b021",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\cutaway-surface-0.png": "6f304b4a9a7ec240a81f224604403597a1c7651ff88bc524708d8583a4fcd9db",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\cutaway-surface-90.png": "b3cf0fb777f5a8244122678f2f6de2f66bf4fbd3b9591bbb8e91d2ef05786a6e",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\cutaway-surface-180.png": "24de791209b4f4d1878aaa772c197e92dc61665b9baf4ffeaa02997664fdb835",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\helena-stationary.png": "71fdf44fa33cc7ac4866e6d3cf218945d7da62603c0cd52a52ce28a94f8ffc82",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\helena-motion-15.png": "8974c086f2e9a0434fcf206f4a2c13d48b46060a3b16a1c264ead8ff900612cf",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\helena-motion-35.png": "871c6bce80b72b428128de3e8d53b5f3f3777931cd6bdce82030948c57022ab6",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\helena-motion-65.png": "0ca367339a8408eec69e8811d0ab0bc2996629652ab712d30e82eed637e524b1",
+    "docs\\evidence\\AD014\\20261011-103551439-374cfd54\\render\\helena-shelves-arrival.png": "d100dbc729c6601731f0b0c6f7af93b02b42a37137a29707285fd6e5e77667aa"
+  },
+  "visual_review_required": true
+}

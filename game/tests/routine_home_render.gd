@@ -39,7 +39,8 @@ func _journey() -> void:
 	await _capture("home-arrival",true)
 	await _resume()
 	for stop: Dictionary in [
-		{"id":"archive","foot":Vector3(4,0,0)},
+		# AD014: public approach at existing Edric station; Helena now occupies desk(4,0,0).
+		{"id":"archive","foot":Vector3(2,0,0)},
 		{"id":"bedroom","foot":Vector3(-3.5,0,.25)},
 		{"id":"parlor","foot":Vector3(-3,0,-6.75)},
 		{"id":"breakfast-kitchen","foot":Vector3(4.5,0,-6.5)}]:

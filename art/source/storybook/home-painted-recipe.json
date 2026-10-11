@@ -1,0 +1,20 @@
+{
+  "task": "AD014",
+  "scope": "Existing Mayor Vale four-room cutaway only. Original procedural box/torus/label/collision/layout/station/light sources remain authoritative.",
+  "editable_sources": ["game/world/storybook_home_material.gd", "game/world/storybook_home.gdshader"],
+  "atlas": "game/assets/environment/storybook/town-painted-albedo.png",
+  "density_texels_per_m": 64,
+  "gutter_texels": 16,
+  "coverage": "All six box faces use room/world-metre triplanar projection, fourth-power normal weights. Continuous mirrored folds; adjacent floor rectangles share phase and density regardless of dimensions. No box UV, transform, geometry or collision change.",
+  "atlas_families": ["timber", "plaster", "stone", "linen"],
+  "semantic_families": ["oak-floor", "plaster", "glass", "hearth-dark", "hearth-ember", "stone", "ink", "linen", "worktop", "bed-cloth", "upholstery", "book", "rug", "plank-seam", "timber"],
+  "palette": {"oak-floor":"#956a40", "plaster":"#dcc49a", "timber":"#735033", "linen":"#e3cf9f", "upholstery":"#597a73", "stone":"#929080"},
+  "stroke": "Family patch/reference ratio normalized once, clamped0.84-1.16 and blended0.70; tiny books/ink/glass/seams/hearth0.30. No fixed directional shadow or emitter.",
+  "cache": "Immutable shared shader resources keyed by semantic family and palette. Repeated books/shelves/walls/floor/furniture and room reloads reuse resources. Original StandardMaterial3D stays on BoxMesh; override can be removed for exact original controls.",
+  "preserved": "Floor footprint and seams,32 colliders including existing two source repairs,nine station feet/facing,full-party arrival/exit pocket,all furniture/wall/prop geometry,torus travel cue,labels,original four warm lamps,stable indoor environment,routines,schema8/content1.",
+  "new_textures": 0,
+  "new_geometry": 0,
+  "new_emitters": 0,
+  "coincident_surface_policy": "Existing sofa/island/rug faces overlap the middle partition at z=-5.5. All coincident vertical fragments below0.65m share identical plaster color/patch/strength. This suppresses inherited color speckles without any vertex/depth/transform/visibility/physics edit; other cloth/timber/rug faces retain their treatment.",
+  "renderer": "Godot4.7.2 Mono GL Compatibility. Existing1024RGB atlas import/mips/filter unchanged; new shader linear_mipmap/clamp sampling. Runtime uses local project assets only."
+}
