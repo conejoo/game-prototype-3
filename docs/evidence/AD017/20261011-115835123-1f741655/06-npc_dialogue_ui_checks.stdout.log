@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-test-room/prototype-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P005 save: ["close dialogue before save/load"]
+P005 save: ["close dialogue before save/load"]
+P005 save: ["close dialogue before save/load"]
+P005 save: ["close dialogue before save/load"]
+P005 save: ["close dialogue before save/load"]
+P005 save: ["close dialogue before save/load"]
+P005 save: ["close dialogue before save/load"]
+P005 save: ["close dialogue before save/load"]
+P004: arrived prototype-test-room/prototype-start; party=2; transition=2
+P001: Paused at play time 1.28s.
+P005 save: OK
+P004: arrived prototype-test-room/prototype-start; party=2; transition=3
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 1.28s.
+P001: Paused at play time 1.28s.
+N005_UI PASS assertions=384 portraits=48 people=8 captures=0 rendered=false

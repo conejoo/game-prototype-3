@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 50 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.00s.
+FS006 fishing ui PASS assertions=75

@@ -10,6 +10,7 @@ func _initialize() -> void: _run.call_deferred()
 func _run() -> void:
 	root.size = Vector2i(960, 640)
 	game = load("res://app/game_root.tscn").instantiate()
+	game.routine_execution = null # Explicit synthetic social/UI contacts; active owner verified separately.
 	game.initial_location_id = "prototype-test-room"
 	game.initial_spawn_id = "prototype-start"
 	root.add_child(game)

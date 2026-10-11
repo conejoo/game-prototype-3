@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-test-room/prototype-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.03s.
+P001: Resumed at play time 0.03s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=2
+P001: Paused at play time 0.03s.
+P001: Resumed at play time 0.03s.
+Settings/debug PASS: flag, GUI toggles, FPS, pause/focus, exact hour/rollovers, gates, weather refresh and clock cap.

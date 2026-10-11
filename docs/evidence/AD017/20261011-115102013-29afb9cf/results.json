@@ -1,0 +1,24 @@
+{
+  "schema_version": 2,
+  "task": "AD017",
+  "run_id": "20261011-115102013-29afb9cf",
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype",
+  "engine_path": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe",
+  "engine_version": null,
+  "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-115102013-29afb9cf\\appdata",
+  "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-115102013-29afb9cf\\localappdata",
+  "save_groups": [],
+  "source": {
+    "before": null,
+    "after": null,
+    "git": null,
+    "changed": false,
+    "changes": [],
+    "error": null
+  },
+  "started_utc": "2026-10-11T11:51:02.0869747Z",
+  "finished_utc": "2026-10-11T11:51:02.1978394Z",
+  "status": "failed",
+  "error": "Check script absent: combat_root_checks",
+  "cases": []
+}

@@ -1,0 +1,19 @@
+{
+	"assertions": 383,
+	"engine_pid": 59892,
+	"failures": [],
+	"kind": "synthetic UI fixtures with real viewport input",
+	"rendered": false,
+	"schema": 8,
+	"viewport_sizes": [
+		[
+			960,
+			640
+		],
+		[
+			1440,
+			900
+		]
+	],
+	"views": []
+}

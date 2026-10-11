@@ -1,0 +1,7 @@
+{
+	"assertions": 75,
+	"failures": [],
+	"proof": "synthetic positions, deterministic RNG, capacity/lifecycle fixtures; actual production root and viewport input; no ordinary catch/native claim",
+	"rows": [],
+	"task": "FS006"
+}

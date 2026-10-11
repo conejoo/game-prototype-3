@@ -1,0 +1,14 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-test-room/prototype-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+G007_ASSERTION_FAILED entered-only partial roster has no inferred facts
+G007_ASSERTION_FAILED all eight met independently
+G007_ASSERTION_FAILED cannot open during dialogue
+G007_ASSERTION_FAILED cannot open during backpack
+G007_ASSERTION_FAILED cannot open during pause
+G007_ASSERTION_FAILED cannot open during travel
+G007_ASSERTION_FAILED cannot open during load
+G007_ASSERTION_FAILED cannot open during retry
+P008 hero defeated; R retries at arrival anchor, quest facts retained.

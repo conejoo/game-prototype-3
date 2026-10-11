@@ -1,0 +1,537 @@
+{
+  "schema_version": 2,
+  "task": "AD017",
+  "run_id": "20261011-114842059-098b1413",
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype",
+  "engine_path": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe",
+  "engine_version": "4.7.2.stable.mono.official.ed1daf0bf",
+  "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\appdata",
+  "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\localappdata",
+  "save_groups": [
+    {
+      "id": "render-000",
+      "kind": "render",
+      "script": "res://tests/art_direction_hud_render.gd",
+      "save_slot": "check-20261011-114842059-098b1413-000",
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\appdata\\render-000",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\localappdata\\render-000"
+    }
+  ],
+  "source": {
+    "before": {
+      "sha256": "4e13edfa96855af6889d69b5cf54dc2b2eaf54c771fcf805af7e65b63f7afa53",
+      "captured_utc": "2026-10-11T11:48:42.9367120Z",
+      "file_count": 1421,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\source-before.json"
+    },
+    "after": {
+      "sha256": "4e13edfa96855af6889d69b5cf54dc2b2eaf54c771fcf805af7e65b63f7afa53",
+      "captured_utc": "2026-10-11T11:48:57.6573168Z",
+      "file_count": 1421,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\source-after.json"
+    },
+    "git": {
+      "head": "b287bf49bc58a773206440747196e5320e7af1c0",
+      "working_tree_dirty": true,
+      "status": [
+        " M docs/art-direction-storybook/CHECKLIST.md",
+        " M game/ui/prototype_ui.gd",
+        "?? art/direction/",
+        "?? docs/art-direction-storybook/AGENT_PROMPT.md",
+        "?? docs/art-direction-storybook/CONTRACT.md",
+        "?? docs/interiors-map-migration/",
+        "?? game/features/actors/storybook_actor.gdshader.uid",
+        "?? game/features/actors/storybook_actor_material.gd.uid",
+        "?? game/tests/art_direction_actor_render.gd.uid",
+        "?? game/tests/art_direction_home_render.gd.uid",
+        "?? game/tests/art_direction_hud_render.gd",
+        "?? game/tests/art_direction_inn_journey_render.gd.uid",
+        "?? game/tests/art_direction_inn_render.gd.uid",
+        "?? game/tests/art_direction_tollworks_render.gd.uid",
+        "?? game/tests/storybook_actor_checks.gd.uid",
+        "?? game/tests/storybook_home_checks.gd.uid",
+        "?? game/tests/storybook_inn_checks.gd.uid",
+        "?? game/tests/storybook_tollworks_checks.gd.uid",
+        "?? game/ui/storybook_hud.gd",
+        "?? game/ui/storybook_hud.gd.uid",
+        "?? game/world/storybook_inn.gdshader.uid",
+        "?? game/world/storybook_inn_material.gd.uid",
+        "?? game/world/storybook_tollworks_material.gd.uid"
+      ],
+      "error": null
+    },
+    "changed": false,
+    "changes": [],
+    "error": null
+  },
+  "started_utc": "2026-10-11T11:48:42.1170133Z",
+  "finished_utc": "2026-10-11T11:48:57.7655268Z",
+  "status": "failed",
+  "error": null,
+  "cases": [
+    {
+      "label": "engine-version",
+      "arguments": [
+        "--headless",
+        "--version"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\localappdata",
+      "launcher_pid": 61904,
+      "engine_pids": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\00-engine-version.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\00-engine-version.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "4e13edfa96855af6889d69b5cf54dc2b2eaf54c771fcf805af7e65b63f7afa53",
+        "captured_utc": "2026-10-11T11:48:43.9684211Z",
+        "file_count": 1421,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\00-engine-version.source-before.json"
+      },
+      "source_after": {
+        "sha256": "4e13edfa96855af6889d69b5cf54dc2b2eaf54c771fcf805af7e65b63f7afa53",
+        "captured_utc": "2026-10-11T11:48:44.7702717Z",
+        "file_count": 1421,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\00-engine-version.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T11:48:43.3622216Z",
+      "finished_utc": "2026-10-11T11:48:44.8668258Z"
+    },
+    {
+      "label": "parse-preflight",
+      "arguments": [
+        "--headless",
+        "--path",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\game",
+        "--check-only",
+        "--script",
+        "res://../builds/testing/AD017/20261011-114842059-098b1413/parse_preflight.gd"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\localappdata",
+      "launcher_pid": 23512,
+      "engine_pids": [
+        39228
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\01-parse-preflight.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\01-parse-preflight.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "4e13edfa96855af6889d69b5cf54dc2b2eaf54c771fcf805af7e65b63f7afa53",
+        "captured_utc": "2026-10-11T11:48:45.5288193Z",
+        "file_count": 1421,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\01-parse-preflight.source-before.json"
+      },
+      "source_after": {
+        "sha256": "4e13edfa96855af6889d69b5cf54dc2b2eaf54c771fcf805af7e65b63f7afa53",
+        "captured_utc": "2026-10-11T11:48:47.5890661Z",
+        "file_count": 1421,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\01-parse-preflight.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T11:48:44.8931267Z",
+      "finished_utc": "2026-10-11T11:48:47.6987266Z"
+    },
+    {
+      "label": "render-check",
+      "arguments": [
+        "--path",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\game",
+        "--script",
+        "res://tests/art_direction_hud_render.gd",
+        "--",
+        "--save-slot=check-20261011-114842059-098b1413-000",
+        "--phase=check",
+        "--report-dir=res://../docs/evidence/AD017/20261011-114842059-098b1413/render"
+      ],
+      "save_group": "render-000",
+      "save_slot": "check-20261011-114842059-098b1413-000",
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\appdata\\render-000",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD017\\20261011-114842059-098b1413\\localappdata\\render-000",
+      "launcher_pid": 37496,
+      "engine_pids": [
+        21672
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\render",
+      "mode": "rendered-debug",
+      "status": "failed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\02-render-check.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\02-render-check.stderr.log",
+      "diagnostics": [
+        "ERROR: synthetic speaker begin: Routine contact instance is stale or foreign.",
+        "ERROR: 960-dialogue: dialogue capture requires visible modal and blocked actors",
+        "ERROR: dialogue blocks world pointer",
+        "ERROR: synthetic speaker begin: Routine contact instance is stale or foreign.",
+        "ERROR: 1872-dialogue: dialogue capture requires visible modal and blocked actors",
+        "ERROR: dialogue blocks world pointer"
+      ],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "4e13edfa96855af6889d69b5cf54dc2b2eaf54c771fcf805af7e65b63f7afa53",
+        "captured_utc": "2026-10-11T11:48:48.1963917Z",
+        "file_count": 1421,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\02-render-check.source-before.json"
+      },
+      "source_after": {
+        "sha256": "4e13edfa96855af6889d69b5cf54dc2b2eaf54c771fcf805af7e65b63f7afa53",
+        "captured_utc": "2026-10-11T11:48:57.0632300Z",
+        "file_count": 1421,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\02-render-check.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": {
+        "reason": "diagnostic",
+        "message": "ERROR: synthetic speaker begin: Routine contact instance is stale or foreign.",
+        "failed_assertion": null,
+        "diagnostic_context": [
+          {
+            "stream": "stderr",
+            "line_number": 1,
+            "text": "ERROR: synthetic speaker begin: Routine contact instance is stale or foreign."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 2,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 3,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 4,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 5,
+            "text": "ERROR: 960-dialogue: dialogue capture requires visible modal and blocked actors"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 6,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 7,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 8,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 9,
+            "text": "ERROR: dialogue blocks world pointer"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 10,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 11,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 12,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 13,
+            "text": "ERROR: synthetic speaker begin: Routine contact instance is stale or foreign."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 14,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 15,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 16,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 17,
+            "text": "ERROR: 1872-dialogue: dialogue capture requires visible modal and blocked actors"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 18,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 19,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 20,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 21,
+            "text": "ERROR: dialogue blocks world pointer"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 22,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 23,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 24,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          }
+        ],
+        "stack": [
+          {
+            "stream": "stderr",
+            "line_number": 2,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 3,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 4,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 6,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 7,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 8,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 10,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 11,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 12,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 14,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 15,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 16,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 18,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 19,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 20,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 22,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 23,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 24,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          }
+        ],
+        "log_tail": [
+          {
+            "stream": "stdout",
+            "line_number": 17,
+            "text": "P001: Paused at play time 1.43s."
+          },
+          {
+            "stream": "stdout",
+            "line_number": 18,
+            "text": "P001: Resumed at play time 1.43s."
+          },
+          {
+            "stream": "stdout",
+            "line_number": 19,
+            "text": "P001: Paused at play time 1.90s."
+          },
+          {
+            "stream": "stdout",
+            "line_number": 20,
+            "text": "P001: Resumed at play time 1.90s."
+          },
+          {
+            "stream": "stdout",
+            "line_number": 21,
+            "text": "P001: Paused at play time 2.20s."
+          },
+          {
+            "stream": "stdout",
+            "line_number": 22,
+            "text": "P001: Resumed at play time 2.20s."
+          },
+          {
+            "stream": "stdout",
+            "line_number": 23,
+            "text": "P001: Paused at play time 2.20s."
+          },
+          {
+            "stream": "stdout",
+            "line_number": 24,
+            "text": "AD017 HUD captures=26 assertions=131 failures=6"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 17,
+            "text": "ERROR: 1872-dialogue: dialogue capture requires visible modal and blocked actors"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 18,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 19,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 20,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 21,
+            "text": "ERROR: dialogue blocks world pointer"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 22,
+            "text": "   at: push_error (core/variant/variant_utility.cpp:1023)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 23,
+            "text": "   GDScript backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 24,
+            "text": "       [0] _run (res://tests/art_direction_hud_render.gd:77)"
+          }
+        ],
+        "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\02-render-check.stdout.log",
+        "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD017\\20261011-114842059-098b1413\\02-render-check.stderr.log"
+      },
+      "error": null,
+      "started_utc": "2026-10-11T11:48:47.7130837Z",
+      "finished_utc": "2026-10-11T11:48:57.1704127Z"
+    }
+  ],
+  "parse_scripts": [
+    "res://tests/art_direction_hud_render.gd",
+    "res://tests/support/fishing_root_fixture.gd",
+    "res://app/game_root.gd",
+    "res://app/world_host.gd",
+    "res://app/party.gd",
+    "res://app/camera_rig.gd",
+    "res://features/actors/actor_placeholder.gd",
+    "res://world/prototype_location.gd",
+    "res://world/spawn_anchor.gd",
+    "res://features/interaction/interactable.gd",
+    "res://tests/environment_review.gd",
+    "res://tests/live_playtest_bridge.gd",
+    "res://ui/conversation_view.gd",
+    "res://ui/prototype_ui.gd",
+    "res://features/actors/storybook_actor_material.gd",
+    "res://world/maris_counter.gd",
+    "res://ui/people_journal_view.gd",
+    "res://ui/backpack_view.gd",
+    "res://ui/storybook_hud.gd"
+  ]
+}

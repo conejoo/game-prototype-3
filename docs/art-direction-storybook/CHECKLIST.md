@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001-AD016 baseline/material/lighting/playable pilot/town/forest/landmark/prop/villager/party/home/inn/Tollworks work is Done. AD017-AD020 remain Pending.
+AD001-AD017 baseline/material/lighting/playable pilot/town/forest/landmark/prop/villager/party/home/inn/Tollworks/HUD work is Done. AD018-AD020 remain Pending.
 
 ## Selection and completion
 
@@ -33,7 +33,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | AD014 | Done | AD008 | Paint existing Mayor Vale home |
 | AD015 | Done | AD008 | Paint existing Lantern Rest |
 | AD016 | Done | AD008 | Paint existing Tollworks and recovery scene |
-| AD017 | Pending | AD008 | Make gameplay HUD fit the painted scene |
+| AD017 | Done | AD008 | Make gameplay HUD fit the painted scene |
 | AD018 | Pending | AD009, AD010, AD011, AD012, AD013, AD014, AD015, AD016, AD017 | Verify integrated visual and gameplay readability |
 | AD019 | Pending | AD018 | Profile and optimize painted build within budget |
 | AD020 | Pending | AD019 | Deliver local Windows art build and bounded native smoke |
@@ -386,3 +386,15 @@ Read-only background Blender5.2.2 opens/hashes three original sources without sa
 No staging/commit/push;separate post-review commit instruction awaits. Next eligible AD017 only;unfinished AD017,AD018,AD019,AD020. Final AD020;every checklist item complete:no. Stop before AD017.
 
 Authorized commit follow-up (2026-10-11 UTC):user supplied separate successful-task commit instruction after review,including acceptance evidence. Scope:eight AD016 task paths plus selected reports/logs/source manifests,46 final engine frames/four sheets,retained sandbox-failure record and acceptance/preservation/pixel/process/pre-commit audits. All eight reviewed task hashes,1,404 validated source files,13/13 main cases,46 capture hashes and3,259 protected inputs reverified before documentation-only follow-up edits/staging. Temporary scripts/build/save archives and unrelated direction/interiors/prompt/contract excluded. [Commit review](../evidence/AD016/commit-review.json) records final scope/hashes;local `docs/evidence/AD016/authorized-commit-20261011/commit-audit.json` records verified commit/tree/path/blob identity and final status after commit. AD001-AD016 remain Done;AD017-AD020 Pending. No push or AD017 implementation.
+
+## AD017 completion - 2026-10-11 UTC
+
+[AD017_ACCEPTANCE](AD017_ACCEPTANCE.md): existing HUD/modal controls share warm cream typography, quiet olive/timber panels and apricot focus. Header75px/footer76px leave76.4% of960x640 outside persistent bars; complete quest text wraps, current prompt/feedback stays above footer. Hero/ally health, trust/mode and active tool remain visible during fishing; original fishing panel reserves health bar. Existing debug/settings mode retains full camera/control/FPS diagnostics. At most one original nearby static world label; selected prompt replaces duplicate interaction/counter signs. Routine speech/fishing timing, unsupported text, all original controls/focus/IDs/physics/assets/camera/interaction/gameplay/schema8/content1 preserved. Seven source paths plus three workflow documents; no new texture/font/baked text/durable field.
+
+Repository-cwd final command in acceptance passes10/10 exit0 at `docs/evidence/AD017/20261011-115835123-1f741655/results.json`: application/settings-debug/backpack/fishing/dialogue/People/combat suites and parse/version/render gates. Inventory148/fishing75/dialogue384/People134 plus174 rendered HUD assertions pass. Source.changed=false/error=null;stable1,407-file digest `4d70437e843bd48ae43da3d1854178b5f5b97de99603ee936508f42c13722527`;all final game/tools bytes reverified. All32 final actual Godot frames/three provenance sheets and critical full-size views inspected at960x640/1872x872,both projections,synthetic feet/rod/seed/day-night setup. Actual selected Maris E/Enter,bag/journal/People/fishing/pause/settings keyboard/mouse outcomes and visible-HUD click blocking verified. Default routine owner active in rendered process. No ordinary route/native/GUI Save-Load/restart/package/full-profile claim.
+
+Retained sandbox-CIM/import-generation/viewport/layout/freed-detached-label/stale-binding/health-spacing and mistyped-check preflight attempts;scoped elevation approved,no automatic-review rejection. Stable isolated starting HEAD reproduces old People synthetic-contact failures;one fixture-only optional-owner disable retains every original assertion. Fourteen incidental older generated UIDs hash-checked/removed;new HUD UID retained. Preservation1,400 protected initial game/tools paths,zero unexpected source changes;index unchanged;all98 recorded owned Godot PIDs exited,no held input/editor/Blender change/cleanup owed. Unrelated direction/interiors/user instructions and historical R016 Blocked/incomplete retained.
+
+Every AD017 criterion verified;blockers/unrun required checks:none. No staging/commit/push;separate post-review commit instruction awaits. Next eligible AD018 only;unfinished AD018,AD019,AD020. Final AD020;every checklist item complete:no. Stop before AD018.
+
+Authorized commit follow-up (2026-10-11 UTC): user supplied separate successful-task commit instruction after review, including acceptance evidence. All ten reviewed task hashes,1,407 validated source files,10/10 final cases,32 capture hashes and3,389 protected tracked/untracked inputs reverified before documentation-only follow-up edits/staging. Scope includes ten task paths plus final32 engine frames/three sheets,reports/logs/source manifests,retained failed-run records,compact prepaint proof and implementation/cleanup/pre-commit audits. Intermediate duplicate/rejected images,temporary scripts/build/save archives and unrelated direction/interiors/AGENT_PROMPT/CONTRACT remain excluded. [Commit review](../evidence/AD017/commit-review.json) records exact selected paths/hashes;local `docs/evidence/AD017/authorized-commit-20261011/commit-audit.json` records verified commit/tree/blob identity and final working-tree status. AD001-AD017 Done;AD018-AD020 Pending. No push,AD018 implementation or cleanup owed.

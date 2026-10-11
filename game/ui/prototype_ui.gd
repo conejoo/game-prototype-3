@@ -25,6 +25,7 @@ signal debug_mode_requested(enabled: bool)
 @onready var location_label: Label = $Screen/Header/Margin/Row/Titles/Subtitle
 @onready var travel_label: Label = $Screen/TravelPrompt
 @onready var combat_label: Label = $Screen/CombatStatus
+@onready var companion_label: Label = $Screen/Footer/Margin/TextBox/CompanionStatus
 @onready var save_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Save
 @onready var load_button: Button = $Screen/PauseOverlay/Center/Panel/Margin/Options/Load
 @onready var save_status: Label = $Screen/PauseOverlay/Center/Panel/Margin/Options/SaveStatus
@@ -68,6 +69,7 @@ var journal_tabs: HBoxContainer
 var quest_tab: Button
 var people_tab: Button
 var journal_tab: String = "quests"
+var storybook: Node
 
 
 func _ready() -> void:
@@ -193,6 +195,9 @@ func _ready() -> void:
 	$Screen/PauseOverlay/Center/Panel/Margin/Options/Quit.pressed.connect(
 		func() -> void: quit_requested.emit()
 	)
+	storybook = preload("res://ui/storybook_hud.gd").new()
+	add_child(storybook)
+	storybook.initialize(self)
 
 
 func show_inventory(snapshot: InventorySnapshot, catalog: ContentCatalog) -> void:
@@ -308,6 +313,7 @@ func accepts_world_pointer(point: Vector2) -> bool:
 		and not dialogue_overlay.visible
 		and not $Screen/Header.get_global_rect().has_point(point)
 		and not ($Screen/Footer.visible and $Screen/Footer.get_global_rect().has_point(point))
+		and not (storybook != null and storybook.owns_pointer(point))
 		and not fishing_view.accepts_pointer(point)
 		and $Screen.get_global_rect().has_point(point)
 	)
@@ -322,7 +328,7 @@ func show_location(description: String) -> void:
 
 
 func show_companion(actor: ActorState, mode: String, trust: int = 0) -> void:
-	$Screen/Footer/Margin/TextBox/CompanionStatus.text = "Temporary companion (prototype) · %d/%d · Trust %d · %s" % [actor.health, actor.max_health, trust, "Down — recovers 3s after combat" if actor.health == 0 else mode.capitalize()]
+	companion_label.text = "Ally %d/%d · Trust %d · %s" % [actor.health, actor.max_health, trust, "Down - recovers 3s after combat" if actor.health == 0 else mode.capitalize()]
 
 
 func show_combat(actor: ActorState, guardian: ActorPlaceholder, retrying: bool, damage: int = 25) -> void:

@@ -1,0 +1,50 @@
+{
+  "task": "AD017",
+  "status": "verified",
+  "head": "b287bf49bc58a773206440747196e5320e7af1c0",
+  "task_paths": [
+    "game/app/game_root.gd",
+    "game/ui/prototype_ui.gd",
+    "game/ui/fishing_view.gd",
+    "game/ui/storybook_hud.gd",
+    "game/ui/storybook_hud.gd.uid",
+    "game/tests/art_direction_hud_render.gd",
+    "game/tests/people_journal_checks.gd",
+    "docs/art-direction-storybook/CHECKLIST.md",
+    "docs/art-direction-storybook/CURRENT_STATE.md",
+    "docs/art-direction-storybook/AD017_ACCEPTANCE.md"
+  ],
+  "source_sha256": "4d70437e843bd48ae43da3d1854178b5f5b97de99603ee936508f42c13722527",
+  "source_files": 1407,
+  "protected_starting_source_files": 1400,
+  "unexpected_source_changes": [],
+  "current_source_mismatches": [],
+  "cases_passed": 10,
+  "hud_assertions": 174,
+  "captures": 32,
+  "provenance_sheets": 3,
+  "all_final_pixels_inspected": true,
+  "owned_pids_exited": 98,
+  "task_hashes": {
+    "game/app/game_root.gd": "814d6f586ac35dc0b0be3e720bfe32a9c4546d7b1b6e1a2e85c761cae70cbfea",
+    "game/ui/prototype_ui.gd": "5cf7cf9de646163be0eb62e2d464a0dbdc066ef6f1ee31d0332012b0036970eb",
+    "game/ui/fishing_view.gd": "3ec59744d3b730c11efd2607a27d3489251c30ba36ed1f8ef9147114426a12b2",
+    "game/ui/storybook_hud.gd": "0a402a2f4fc07c0ac5d42c2024fa6d656f1038d7c9e67c8c727228466e86c289",
+    "game/ui/storybook_hud.gd.uid": "c47a39bedea4a9909babf387ae15e042286b81ae6263d106ec3b111ef054f91a",
+    "game/tests/art_direction_hud_render.gd": "cc459e87c290af639c61139811715a3cffb38b46f12d35f2887768b219899236",
+    "game/tests/people_journal_checks.gd": "3f7ffc8be1eb97a918ab2d9e535b673b6f6b252f773dcab47ccb8133355ec27c",
+    "docs/art-direction-storybook/CHECKLIST.md": "22f95f9b581e71bc332b6235e834c7056829c13eb5b2e2366509799bf1471a24",
+    "docs/art-direction-storybook/CURRENT_STATE.md": "9fe3cccbf76c752b9d3426155ab132d959b8d53d05d55dfbff81feed0e597b5b",
+    "docs/art-direction-storybook/AD017_ACCEPTANCE.md": "29d8412d9e7d23cb4816ee9b71334efe1ab17156d53f0fd5c2cf6455e9377584"
+  },
+  "working_tree_status": " M docs/art-direction-storybook/CHECKLIST.md\n M docs/art-direction-storybook/CURRENT_STATE.md\n M game/app/game_root.gd\n M game/tests/people_journal_checks.gd\n M game/ui/fishing_view.gd\n M game/ui/prototype_ui.gd\n?? art/direction/\n?? docs/art-direction-storybook/AD017_ACCEPTANCE.md\n?? docs/art-direction-storybook/AGENT_PROMPT.md\n?? docs/art-direction-storybook/CONTRACT.md\n?? docs/interiors-map-migration/\n?? game/tests/art_direction_hud_render.gd\n?? game/ui/storybook_hud.gd\n?? game/ui/storybook_hud.gd.uid\n",
+  "index_unchanged": true,
+  "commit_or_push": false,
+  "unrelated_inputs_retained": [
+    "art/direction/",
+    "docs/art-direction-storybook/AGENT_PROMPT.md",
+    "docs/art-direction-storybook/CONTRACT.md",
+    "docs/interiors-map-migration/"
+  ],
+  "limits": "Synthetic feet/window content-scale sizes/rod pickup/seed/time/weather; actual selected Maris E/Enter, GUI and viewport input. No ordinary route/native/GUI Save-Load/restart/profile/package claim."
+}

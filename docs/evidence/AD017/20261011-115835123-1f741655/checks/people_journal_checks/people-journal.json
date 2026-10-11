@@ -1,0 +1,8 @@
+{
+	"assertions": 134,
+	"failures": [],
+	"proof": "synthetic social/lifecycle/long-fact fixtures; actual production root and viewport input",
+	"rendered": false,
+	"task": "G007",
+	"views": []
+}

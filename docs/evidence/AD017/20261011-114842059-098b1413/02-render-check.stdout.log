@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 581.29 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 Laptop GPU
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.30s.
+P001: Resumed at play time 0.30s.
+P001: Paused at play time 0.51s.
+P001: Resumed at play time 0.51s.
+P001: Paused at play time 0.77s.
+P001: Resumed at play time 0.77s.
+P001: Paused at play time 0.94s.
+P001: Resumed at play time 0.94s.
+P001: Paused at play time 1.16s.
+P001: Resumed at play time 1.16s.
+P001: Paused at play time 1.43s.
+P001: Resumed at play time 1.43s.
+P001: Paused at play time 1.90s.
+P001: Resumed at play time 1.90s.
+P001: Paused at play time 2.20s.
+P001: Resumed at play time 2.20s.
+P001: Paused at play time 2.20s.
+AD017 HUD captures=26 assertions=131 failures=6

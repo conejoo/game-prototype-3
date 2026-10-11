@@ -26,6 +26,7 @@ var reel_button: Button
 var cancel_button: Button
 var _snapshot: Dictionary = {}
 var _pointer_held: bool = false
+var bottom_inset: float = 18.0 # Parent HUD can reserve its persistent health bar.
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -91,7 +92,7 @@ func _label(column: VBoxContainer, font_size: int) -> Label:
 
 func _fit() -> void:
 	panel.custom_minimum_size.x = minf(400,maxf(0,size.x-48))
-	panel.position = Vector2(size.x-24-panel.size.x,size.y-(18 if _snapshot.get("mode","idle") != "idle" else 142)-panel.size.y)
+	panel.position = Vector2(size.x-24-panel.size.x,size.y-(bottom_inset if _snapshot.get("mode","idle") != "idle" else 142)-panel.size.y)
 
 func accepts_pointer(point: Vector2) -> bool:
 	return visible and panel.get_global_rect().has_point(point)

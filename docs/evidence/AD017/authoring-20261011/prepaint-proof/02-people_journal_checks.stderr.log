@@ -1,0 +1,170 @@
+SCRIPT ERROR: Assertion failed.
+   at: introduce (res://tests/support/social_save_fixture.gd:18)
+   GDScript backtrace (most recent call first):
+       [0] introduce (res://tests/support/social_save_fixture.gd:18)
+       [1] _people (res://tests/people_journal_checks.gd:78)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: preference (res://tests/support/social_save_fixture.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] preference (res://tests/support/social_save_fixture.gd:31)
+       [1] _people (res://tests/people_journal_checks.gd:79)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: introduce (res://tests/support/social_save_fixture.gd:18)
+   GDScript backtrace (most recent call first):
+       [0] introduce (res://tests/support/social_save_fixture.gd:18)
+       [1] _people (res://tests/people_journal_checks.gd:78)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: preference (res://tests/support/social_save_fixture.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] preference (res://tests/support/social_save_fixture.gd:31)
+       [1] _people (res://tests/people_journal_checks.gd:79)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: introduce (res://tests/support/social_save_fixture.gd:18)
+   GDScript backtrace (most recent call first):
+       [0] introduce (res://tests/support/social_save_fixture.gd:18)
+       [1] _people (res://tests/people_journal_checks.gd:78)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: preference (res://tests/support/social_save_fixture.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] preference (res://tests/support/social_save_fixture.gd:31)
+       [1] _people (res://tests/people_journal_checks.gd:79)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: introduce (res://tests/support/social_save_fixture.gd:18)
+   GDScript backtrace (most recent call first):
+       [0] introduce (res://tests/support/social_save_fixture.gd:18)
+       [1] _people (res://tests/people_journal_checks.gd:78)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: preference (res://tests/support/social_save_fixture.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] preference (res://tests/support/social_save_fixture.gd:31)
+       [1] _people (res://tests/people_journal_checks.gd:79)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: introduce (res://tests/support/social_save_fixture.gd:18)
+   GDScript backtrace (most recent call first):
+       [0] introduce (res://tests/support/social_save_fixture.gd:18)
+       [1] _people (res://tests/people_journal_checks.gd:78)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: preference (res://tests/support/social_save_fixture.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] preference (res://tests/support/social_save_fixture.gd:31)
+       [1] _people (res://tests/people_journal_checks.gd:79)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: introduce (res://tests/support/social_save_fixture.gd:18)
+   GDScript backtrace (most recent call first):
+       [0] introduce (res://tests/support/social_save_fixture.gd:18)
+       [1] _people (res://tests/people_journal_checks.gd:78)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: preference (res://tests/support/social_save_fixture.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] preference (res://tests/support/social_save_fixture.gd:31)
+       [1] _people (res://tests/people_journal_checks.gd:79)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: introduce (res://tests/support/social_save_fixture.gd:18)
+   GDScript backtrace (most recent call first):
+       [0] introduce (res://tests/support/social_save_fixture.gd:18)
+       [1] _people (res://tests/people_journal_checks.gd:78)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: preference (res://tests/support/social_save_fixture.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] preference (res://tests/support/social_save_fixture.gd:31)
+       [1] _people (res://tests/people_journal_checks.gd:79)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: introduce (res://tests/support/social_save_fixture.gd:18)
+   GDScript backtrace (most recent call first):
+       [0] introduce (res://tests/support/social_save_fixture.gd:18)
+       [1] _people (res://tests/people_journal_checks.gd:78)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: preference (res://tests/support/social_save_fixture.gd:31)
+   GDScript backtrace (most recent call first):
+       [0] preference (res://tests/support/social_save_fixture.gd:31)
+       [1] _people (res://tests/people_journal_checks.gd:79)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: gift (res://tests/support/social_save_fixture.gd:51)
+   GDScript backtrace (most recent call first):
+       [0] gift (res://tests/support/social_save_fixture.gd:51)
+       [1] _people (res://tests/people_journal_checks.gd:81)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Assertion failed.
+   at: gift (res://tests/support/social_save_fixture.gd:51)
+   GDScript backtrace (most recent call first):
+       [0] gift (res://tests/support/social_save_fixture.gd:51)
+       [1] _people (res://tests/people_journal_checks.gd:82)
+       [2] _run (res://tests/people_journal_checks.gd:20)
+       [3] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [4] _click (res://tests/people_journal_checks.gd:256)
+       [5] _frames (res://tests/people_journal_checks.gd:245)
+SCRIPT ERROR: Out of bounds get index '6' (on base: 'Array[Button]')
+   at: _people (res://tests/people_journal_checks.gd:92)
+   GDScript backtrace (most recent call first):
+       [0] _people (res://tests/people_journal_checks.gd:92)
+       [1] _run (res://tests/people_journal_checks.gd:20)
+       [2] _empty_and_modal (res://tests/people_journal_checks.gd:73)
+       [3] _click (res://tests/people_journal_checks.gd:256)
+       [4] _frames (res://tests/people_journal_checks.gd:245)

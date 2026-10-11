@@ -1292,7 +1292,7 @@ func _present_fishing() -> void:
 	view["fish_name"] = item.display_name if item != null else "fish"
 	var available: bool = window_focused and not get_tree().paused and not world_host.transitioning and not loading_save and not backpack_open and not journal_open and not dialogue.active()
 	ui.fishing_view.present(view,available)
-	ui.get_node("Screen/Footer").visible = view.mode == "idle" or not available
+	ui.get_node("Screen/Footer").visible = true # AD017 footer now retains party health during fishing.
 	fishing_effects.present(view if available else {},player_placeholder.global_position)
 	if view.mode == "idle": return
 	ui.travel_label.hide()
