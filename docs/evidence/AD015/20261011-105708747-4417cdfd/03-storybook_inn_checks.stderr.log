@@ -1,0 +1,12 @@
+ERROR: Cannot open file 'res://world/mayor_vale_inn.tscn'.
+   at: load (scene/resources/resource_format_text.cpp:1442)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_inn_checks.gd:9)
+ERROR: Failed loading resource: res://world/mayor_vale_inn.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_inn_checks.gd:9)
+SCRIPT ERROR: Attempt to call function 'instantiate' in base 'null instance' on a null instance.
+   at: _run (res://tests/storybook_inn_checks.gd:9)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_inn_checks.gd:9)

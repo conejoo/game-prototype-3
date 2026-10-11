@@ -1,0 +1,5 @@
+{
+	"assertions": 363,
+	"failures": [],
+	"provenance": "synthetic three-room/multi-exit setup; production selector dispatch uses labeled direct placement; no ordinary walking/room delivery claim"
+}

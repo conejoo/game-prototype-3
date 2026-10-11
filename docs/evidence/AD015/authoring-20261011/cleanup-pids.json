@@ -1,0 +1,234 @@
+{
+  "all_exited": true,
+  "held_input": "All synchronous key events released; TestRunJourney releases in finally; final captured verified pause then scene disposal",
+  "owned": [
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 44852
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 54180
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 37236
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 48032
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 31328
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 27132
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 68416
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 20392
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 56292
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 38084
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 36344
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 22028
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 47508
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 11548
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 40392
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 44904
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 52256
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 19692
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 38380
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 28240
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 47468
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 35364
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 19464
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 44320
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 65256
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 14600
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 35272
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 21052
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 41880
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 23628
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 27328
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 20196
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 65792
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 57560
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 14888
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 51476
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 34764
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 38592
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 47836
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 67520
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 62220
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 21676
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 692
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 19960
+    },
+    {
+      "exited": true,
+      "current_name": null,
+      "pid": 65960
+    }
+  ],
+  "observed_utc": "2026-10-11T11:03:42.0731002Z",
+  "cleanup_owed": false,
+  "count": 45
+}

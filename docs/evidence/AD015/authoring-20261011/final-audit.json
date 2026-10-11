@@ -1,0 +1,32 @@
+{
+  "validated_source_files_still_exact": 1401,
+  "source_digest": "90781252604f174bc20aa9a1cb426a181be2e75837b06f4bb89f2236c82016c7",
+  "checklist_statuses": {
+    "AD001": "Done",
+    "AD002": "Done",
+    "AD003": "Done",
+    "AD004": "Done",
+    "AD005": "Done",
+    "AD006": "Done",
+    "AD007": "Done",
+    "AD008": "Done",
+    "AD009": "Done",
+    "AD010": "Done",
+    "AD011": "Done",
+    "AD012": "Done",
+    "AD013": "Done",
+    "AD014": "Done",
+    "AD015": "Done",
+    "AD016": "Pending",
+    "AD017": "Pending",
+    "AD018": "Pending",
+    "AD019": "Pending",
+    "AD020": "Pending"
+  },
+  "relative_links_verified": 23,
+  "index_untouched": true,
+  "blockers": [],
+  "required_unrun": [],
+  "next_eligible": "AD016",
+  "all_through_AD020_complete": false
+}

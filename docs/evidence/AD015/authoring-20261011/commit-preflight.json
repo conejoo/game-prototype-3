@@ -1,0 +1,27 @@
+{
+  "task": "AD015",
+  "starting_head": "0e2e170e38222b022dc8b871b7c3bbad676b295b",
+  "reviewed_task_paths": 10,
+  "reviewed_task_hashes": {
+    "art/source/storybook/inn-painted-recipe.json": "342d4f759a1772ba9bd06aea934085b76c14bbe69b3053c75d3f9bf4e652f310",
+    "docs/art-direction-storybook/AD015_ACCEPTANCE.md": "0d421dce2e1616ee12334b69c7cc0d28853c56df741541101e55fa4706e84376",
+    "docs/art-direction-storybook/CHECKLIST.md": "fe09300d301ef768f1b2f2cd3ee5984e689a80fee4728e5a49ee55402acdc7ae",
+    "docs/art-direction-storybook/CURRENT_STATE.md": "dfe1cc927ac60e45f832f84fdea58aae3906bce6a74a49caadf503f06ae292a0",
+    "game/tests/art_direction_inn_journey_render.gd": "7ea760bdd86c9c795bda7f672467c853dc31fe361a903ed24c7146f0704dc0fc",
+    "game/tests/art_direction_inn_render.gd": "e6d3aa945571c6b087cce33409203be2512d85ad6a9aed4c8e83e4b182bd5542",
+    "game/tests/storybook_inn_checks.gd": "29f26f49c7e44ba31694ac85692473722f2a93f18cbeaf9d60a8ac30598c229b",
+    "game/world/lantern_rest.gd": "da9fb2b41f2fbe14b1c97a91761583a5fdbb55346e89ebed5fc23ccc2c836643",
+    "game/world/storybook_inn.gdshader": "b279da5234fe08b6317f79042a7a45a62a34c1a2d0bbb3acc7ea7b04518c280a",
+    "game/world/storybook_inn_material.gd": "190dd704cc9320684864aebcee122b4ef0f94121775f497ae3a0a0c1f9b6c266"
+  },
+  "protected_inputs_verified": 3029,
+  "validated_source_files_verified": 1401,
+  "accepted_cases": [
+    10,
+    3
+  ],
+  "capture_hashes_verified": 90,
+  "source_stable": true,
+  "unrelated_preserved": true,
+  "initial_index_empty": true
+}

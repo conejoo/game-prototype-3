@@ -1,0 +1,114 @@
+{
+  "registered_original_painted_pairs": [
+    "entry-ortho-80",
+    "entry-ortho-115",
+    "entry-perspective-80",
+    "entry-perspective-115",
+    "host-meals-ortho-80",
+    "host-meals-ortho-115",
+    "host-meals-perspective-80",
+    "host-meals-perspective-115",
+    "lounge-ortho-80",
+    "lounge-ortho-115",
+    "lounge-perspective-80",
+    "lounge-perspective-115",
+    "breakfast-ortho-80",
+    "breakfast-ortho-115",
+    "breakfast-perspective-80",
+    "breakfast-perspective-115",
+    "guest-desk-ortho-80",
+    "guest-desk-ortho-115",
+    "guest-desk-perspective-80",
+    "guest-desk-perspective-115",
+    "kitchen-ortho-80",
+    "kitchen-ortho-115",
+    "kitchen-perspective-80",
+    "kitchen-perspective-115",
+    "guest-bed-ortho-80",
+    "guest-bed-ortho-115",
+    "guest-bed-perspective-80",
+    "guest-bed-perspective-115"
+  ],
+  "pair_count": 28,
+  "camera_feet_sun_contacts_equal": true,
+  "clear_storm_world_roi": [
+    0,
+    120,
+    960,
+    500
+  ],
+  "clear_storm_world_changed_pixels": 0,
+  "all_face_sampling_checks": 90624,
+  "density_texels_per_m": 64,
+  "gutter": 16,
+  "families": {
+    "bed-cloth": 1,
+    "ceramic": 4,
+    "glass": 3,
+    "linen": 6,
+    "oak-floor": 2,
+    "plank-seam": 46,
+    "plaster": 7,
+    "rug": 4,
+    "timber": 33,
+    "upholstery": 6,
+    "worktop": 6
+  },
+  "boxes": 118,
+  "materials": 14,
+  "samples": [
+    {
+      "draw_p95": 266.0,
+      "engine_static_bytes": 83667468,
+      "frame_p95_ms": 2.44,
+      "frame_p99_ms": 2.803,
+      "hud": "ordinary HUD; pause overlay hidden; synthetic review banner",
+      "label": "inn-painted-paused",
+      "nodes": 393.0,
+      "note": "nearest rank; frozen simulation; short frame cadence observation only; memory counters are not process working set or travel-growth acceptance",
+      "paused": true,
+      "render_buffer_bytes": 17645172.0,
+      "render_texture_bytes": 32528618.0,
+      "resources": 505.0,
+      "sample_frames": 120,
+      "warmup_frames": 120
+    }
+  ],
+  "source_before_after": {
+    "before": {
+      "sha256": "90781252604f174bc20aa9a1cb426a181be2e75837b06f4bb89f2236c82016c7",
+      "captured_utc": "2026-10-11T10:58:45.6082099Z",
+      "file_count": 1401,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD015\\20261011-105844807-2a81f230\\source-before.json"
+    },
+    "after": {
+      "sha256": "90781252604f174bc20aa9a1cb426a181be2e75837b06f4bb89f2236c82016c7",
+      "captured_utc": "2026-10-11T11:00:07.1294193Z",
+      "file_count": 1401,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD015\\20261011-105844807-2a81f230\\source-after.json"
+    },
+    "git": {
+      "head": "0e2e170e38222b022dc8b871b7c3bbad676b295b",
+      "working_tree_dirty": true,
+      "status": [
+        " M docs/art-direction-storybook/CHECKLIST.md",
+        " M game/world/lantern_rest.gd",
+        "?? art/direction/",
+        "?? art/source/storybook/inn-painted-recipe.json",
+        "?? docs/art-direction-storybook/AGENT_PROMPT.md",
+        "?? docs/art-direction-storybook/CONTRACT.md",
+        "?? docs/interiors-map-migration/",
+        "?? game/tests/art_direction_inn_journey_render.gd",
+        "?? game/tests/art_direction_inn_render.gd",
+        "?? game/tests/storybook_inn_checks.gd",
+        "?? game/world/storybook_inn.gdshader",
+        "?? game/world/storybook_inn_material.gd"
+      ],
+      "error": null
+    },
+    "changed": false,
+    "changes": [],
+    "error": null
+  },
+  "kind": "read-only source/pixel/projection audit; visual review remains separate"
+}

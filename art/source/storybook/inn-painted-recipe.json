@@ -1,0 +1,51 @@
+{
+  "task": "AD015",
+  "scope": "Existing Lantern Rest only; source geometry/layout/host/party/light/portal ownership unchanged.",
+  "editable_sources": [
+    "game/world/storybook_inn_material.gd",
+    "game/world/storybook_inn.gdshader"
+  ],
+  "atlas": "game/assets/environment/storybook/town-painted-albedo.png",
+  "density_texels_per_m": 64,
+  "gutter_texels": 16,
+  "coverage": "All six box faces use room/world-metre triplanar projection, fourth-power normal weights. Continuous mirrored folds; adjacent floor rectangles share phase and density regardless of dimensions. No box UV, transform, geometry or collision change.",
+  "atlas_families": [
+    "timber",
+    "plaster",
+    "stone",
+    "linen"
+  ],
+  "semantic_families": [
+    "oak-floor",
+    "plaster",
+    "glass",
+    "linen",
+    "worktop",
+    "bed-cloth",
+    "upholstery",
+    "rug",
+    "plank-seam",
+    "timber",
+    "ceramic"
+  ],
+  "palette": {
+    "oak-floor": "#956a40",
+    "plaster": "#dcc49a",
+    "timber": "#735033",
+    "linen": "#e3cf9f",
+    "upholstery": "#597a73",
+    "stone": "#929080",
+    "rugs": [
+      "#626d83",
+      "#a17a60"
+    ],
+    "ceramic": "#a5ad89"
+  },
+  "stroke": "Family patch/reference ratio normalized once, clamped0.84-1.16 and blended0.70; tiny books/ink/glass/seams/hearth0.30. No fixed directional shadow or emitter.",
+  "cache": "Immutable shared shader resources keyed by semantic family and palette. Repeated books/shelves/walls/floor/furniture and room reloads reuse resources. Original StandardMaterial3D stays on BoxMesh; override can be removed for exact original controls.",
+  "preserved": "19 exact colliders, two floor boxes, 46 seams, one host station/facing, arrival/return, furniture/labels/cue, original four warm unshadowed lamps, stable indoor environment, default routines, schema8/content1.",
+  "new_textures": 0,
+  "new_geometry": 0,
+  "new_emitters": 0,
+  "renderer": "Godot4.7.2 Mono GL Compatibility. Existing1024RGB atlas import/mips/filter unchanged; new shader linear_mipmap/clamp sampling. Runtime uses local project assets only."
+}
