@@ -25,15 +25,32 @@ func _run() -> void:
 	_check(art.tree_ids.size() == 395 and art.mappings.size() == 21 and art.meshes.size() == 21, "Tree/variant/import inventory")
 	_check(art.find_children("*", "CollisionObject3D", true, false).is_empty(), "Tree art added physics")
 	var ids: Dictionary = {}
+	_check(art.visibility_materials.size() == 21 and art.batches.size() == 106, "Per-instance material/batch expansion")
+	_check(AlderwakeTreeArt.VISIBILITY_SHADER.code.contains("source_color, filter_linear_mipmap, repeat_disable"), "Atlas sampling/color-space contract")
 	var triangles: int = 0
 	for definition: String in art.mappings:
 		var mapping: Dictionary = art.mappings[definition]
 		var mesh: Mesh = art.meshes[mapping.mesh_name]
 		_check(mesh.get_surface_count() == 1, "Tree mesh surface count: " + definition)
 		var arrays: Array = mesh.surface_get_arrays(0)
-		_check(not arrays[Mesh.ARRAY_COLOR].is_empty(), "Portable vertex colors missing: " + definition)
+		var painted: bool = mapping.species == "oak"
+		var no_colors: bool = arrays[Mesh.ARRAY_COLOR] == null or arrays[Mesh.ARRAY_COLOR].is_empty()
+		_check(no_colors == painted, "Portable vertex color policy: " + definition)
 		var material: ShaderMaterial = mesh.surface_get_material(0)
-		_check(material != null and material.shader == AlderwakeTreeArt.VISIBILITY_SHADER and arrays[Mesh.ARRAY_COLOR].size() > 0, "Tree palette import missing: " + definition)
+		_check(material != null and material.shader == AlderwakeTreeArt.VISIBILITY_SHADER, "Tree material import missing: " + definition)
+		_check(material.get_shader_parameter("use_painted_texture") == painted and material.get_shader_parameter("use_vertex_tint") != painted, "Tree texture/tint policy: " + definition)
+		if painted:
+			_check(material.get_shader_parameter("base_color") == Color.WHITE, "Painted palette multiplied twice: " + definition)
+			_check(material.get_shader_parameter("painted_albedo") == AlderwakeTreeArt.PAINTED_ATLAS, "Unshared painted atlas: " + definition)
+			_check(AlderwakeTreeArt.PAINTED_ATLAS.get_width() == 1024 and AlderwakeTreeArt.PAINTED_ATLAS.get_height() == 1024 and AlderwakeTreeArt.PAINTED_ATLAS.get_image().has_mipmaps(), "Atlas dimensions/mips: " + definition)
+			var uvs: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV]
+			_check(uvs.size() == arrays[Mesh.ARRAY_VERTEX].size(), "Painted UV coverage: " + definition)
+			var indices: PackedInt32Array = arrays[Mesh.ARRAY_INDEX]
+			for offset: int in range(0, indices.size(), 3):
+				var family: int = int(uvs[indices[offset]].x >= 0.5)
+				for corner: int in range(3):
+					var uv: Vector2 = uvs[indices[offset + corner]]
+					_check(uv.x >= (16.0 + family * 512.0) / 1024.0 and uv.x <= (496.0 + family * 512.0) / 1024.0 and uv.y >= 16.0/1024.0 and uv.y <= 1008.0/1024.0, "UV crossed safe atlas region: " + definition)
 		_check(float(material.get_shader_parameter("surface_roughness")) > 0.85, "Tree material not matte: " + definition)
 		var bounds: AABB = mesh.get_aabb()
 		_check(absf(bounds.position.y) < 0.001 and absf(bounds.end.y - float(mapping.height_m)) < 0.005, "Tree up-axis/height mismatch: " + definition)
@@ -70,7 +87,9 @@ func _run() -> void:
 		# Octagonal bole root corners are inset, preserving source bbox extents.
 		_check(art_rect.position.distance_to(physical_rect.position) < 0.10 and art_rect.end.distance_to(physical_rect.end) < 0.10, "Trunk visual/collision disagreement: " + record.id)
 		_check(mapping.species == record.tree.species and mapping.size == record.tree.size, "Tree identity lost")
+	_check(triangles == 28298, "Original triangle inventory changed")
 	var report: Dictionary = {"trees": ids.size(), "variants": art.mappings.size(), "batches": art.batches.size(), "kit_triangles": triangles, "failures": failures}
+	report["visibility_materials"] = art.visibility_materials.size()
 	var file: FileAccess = FileAccess.open(TestRunEvidence.path("tree-report.json"), FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "\t") + "\n")
 	print("M012 tree report: ", JSON.stringify(report))

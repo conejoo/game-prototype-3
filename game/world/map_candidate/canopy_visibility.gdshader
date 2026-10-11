@@ -2,6 +2,9 @@ shader_type spatial;
 render_mode cull_back;
 uniform vec4 base_color : source_color = vec4(1.0);
 uniform float surface_roughness = 0.9;
+uniform sampler2D painted_albedo : source_color, filter_linear_mipmap, repeat_disable;
+uniform bool use_painted_texture = false;
+uniform bool use_vertex_tint = true;
 uniform vec3 hero_center;
 uniform vec3 ally_center;
 uniform bool protect_party = false;
@@ -29,6 +32,8 @@ void fragment() {
     // Keep authored tree shadows: only the main camera's art pass cuts holes.
     vec3 fragment_view = (camera_view * vec4(world_position, 1.0)).xyz;
     if (protect_party && main_view > 0.5 && (covers_subject(hero_center, fragment_view) || covers_subject(ally_center, fragment_view))) discard;
-    ALBEDO = COLOR.rgb * base_color.rgb;
+    vec3 vertex_tint = use_vertex_tint ? COLOR.rgb : vec3(1.0);
+    vec3 painted = use_painted_texture ? texture(painted_albedo, UV).rgb : vec3(1.0);
+    ALBEDO = vertex_tint * base_color.rgb * painted;
     ROUGHNESS = surface_roughness;
 }

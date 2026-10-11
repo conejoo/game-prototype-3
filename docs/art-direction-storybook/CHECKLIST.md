@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001 baseline and AD002 shop/counter pilot are Done. AD003-AD020 remain Pending; next eligible task is AD003.
+AD001-AD003 baseline/shop/tree pilots are Done. AD004-AD020 remain Pending; next eligible task is AD004.
 
 ## Selection and completion
 
@@ -19,7 +19,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | --- | --- | --- | --- |
 | AD001 | Done | Verified current project; no AD prerequisite | Pin art baseline and measurable look brief |
 | AD002 | Done | AD001 | Painted shop and counter material pilot |
-| AD003 | Pending | AD002 | Painted tree pilot with working canopy visibility |
+| AD003 | Done | AD002 | Painted tree pilot with working canopy visibility |
 | AD004 | Pending | AD002 | Paint meadow, dirt paths and elevation surfaces |
 | AD005 | Pending | AD004 | Paint river and shore transitions |
 | AD006 | Pending | AD002, AD005 | Paint dock, plaza and low-wall modules |
@@ -223,3 +223,13 @@ Repository cwd; `./tools/run_checks.ps1 -Task AD002 -Import -Names application_s
 Retained failed import/fixture/palette/export attempts and exact corrections in acceptance; no allowances weakened. Existing.NET editor warning only. Two resident RGB8 atlas copies (portable embedded import plus active shared runtime image) cost8MiB total with full mips; no per-instance material/node expansion. Every AD002 criterion complete, no blockers/unrun checks/cleanup owed; owned enginePID20844/launcher21568 and all attempt processes exited. Original direction/interiors/instructions, schema8/content1 and historical R016 incomplete status preserved. No ordinary/native route/build/new-process GUI Load/full profiling claim. User requested separate post-review commit instruction; no commit/push here. Next eligible AD003 only. Remaining unfinished AD003-AD020; final task AD020; every checklist item complete: no.
 
 Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit contains exactly20 AD002 task paths, including this acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence stay excluded. Validated source bytes and preservation scope verified; exact commit identity/tree/status and audit recorded after commit in `docs/evidence/AD002/authorized-commit-20261011/commit-audit.json`. AD001/AD002 remain Done, AD003-AD020 Pending. No push or AD003 implementation.
+
+### AD003 - 2026-10-11 UTC - Done
+
+[AD003_ACCEPTANCE](AD003_ACCEPTANCE.md): painted oak small/standard/large using one1024 shared foliage/bark atlas,48texels/m and16px gutters; editable sibling/recipe/background scripts and portable GLB. Optional sRGB texture sampling/vertex-tint controls integrate into existing visibility shader/adapter. Other18 variants keep original palette. Original kit/mapping/source/body geometry preserved;2916 exported oak triangles match original at1e-5m. Narrow null-or-empty painted COLOR policy plus meaningful UV/mip/shared-atlas/material checks retain every physical invariant.
+
+Repository cwd; `./tools/run_checks.ps1 -Task AD003 -Import -Names application_smoke,map_camera_checks -RenderScript art_direction_tree_render -RenderPhases pilot -TimeoutSeconds 180` passed6/6 exit0 in `docs/evidence/AD003/20261011-053341212-a75cd76b/`; `-RenderOnly -RenderScript map_tree_art_checks -RenderPhases check` passed3/3 exit0 in `20261011-053453086-55df92f2/`. Both stable1336-file digest`f7dc61df9873f18c4fe0161f357d1927efd6ed1672bf4ab5bb8323157de7fe16`. All46 actual Godot frames/four provenance sheets inspected: both projections/zoom bounds, cutout-on/off controls,18 synthetic moving-camera frames, six close angles/three checker views, four shadow-only controls. Ground shadow PNGs pixel-identical on/off; all12 local actor hue samples improve with protection.395 trees/21 variants/106 batches/21 materials/28298 triangles pass;4067 nodes/443 resources unchanged across motion. Two identical RGB8 atlas copies add8MiB/full mips, recorded rather than treated as full profiling.
+
+Authoring/geometry/image/pin/capture/role/CRLF-aware whitespace audits exit0. Retained CIM/import-generation/animated-water/null-color/diagnostic-camera corrections detailed in acceptance. All criteria complete; no blockers/unrun checks/cleanup owed. Every owned engine/launcher/child exited, including final enginePID60152/launcher13404. Original direction/interiors/instructions and schema8/content1 preserved; R016 remains incomplete. Synthetic frozen/interpolated review does not prove ordinary route/native release/restart/full profiling.19 task paths ready for review; no commit/push. Next eligible AD004 only. Remaining unfinished AD004-AD020; final checklist AD020; every item complete: no.
+
+Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit contains exactly19 AD003 task paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence stay excluded. Accepted source bytes and preservation scope verified; exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD003/authorized-commit-20261011/commit-audit.json`. AD001-AD003 remain Done, AD004-AD020 Pending. No push or AD004 implementation.

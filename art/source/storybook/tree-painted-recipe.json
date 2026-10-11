@@ -1,0 +1,31 @@
+{
+  "task": "AD003",
+  "seed": 3003,
+  "size": [
+    1024,
+    1024
+  ],
+  "gutter": 16,
+  "density_texels_per_m": 48,
+  "regions": {
+    "foliage": {
+      "safe_pixels": [
+        16,
+        16,
+        496,
+        1008
+      ],
+      "srgb": "#738c36"
+    },
+    "bark": {
+      "safe_pixels": [
+        528,
+        16,
+        1008,
+        1008
+      ],
+      "srgb": "#735033"
+    }
+  },
+  "policy": "broad low-contrast dabs; vertical bark strokes; no directional light baked"
+}

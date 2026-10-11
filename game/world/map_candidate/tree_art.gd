@@ -6,6 +6,8 @@ const VISIBILITY_SHADER: Shader = preload("res://world/map_candidate/canopy_visi
 var visibility_materials: Array[ShaderMaterial] = []
 
 const KIT: PackedScene = preload("res://assets/environment/moonwood_tree_kit.glb")
+const PAINTED_KIT: PackedScene = preload("res://assets/environment/storybook/moonwood_oak_pilot.glb")
+const PAINTED_ATLAS: Texture2D = preload("res://assets/environment/storybook/tree-painted-albedo.png")
 const MAPPING_PATH: String = "res://assets/environment/moonwood_tree_mapping.json"
 const CHUNK_SIZE: float = 32.0
 var build_errors: PackedStringArray = []
@@ -22,17 +24,27 @@ func build(population: AlderwakeForestPopulation) -> void:
 		build_errors.append("Tree mapping missing or wrong snapshot")
 		return
 	var kit: Node3D = KIT.instantiate()
+	var painted_kit: Node3D = PAINTED_KIT.instantiate()
+	var painted_visuals: Dictionary[String, MeshInstance3D] = {}
+	for visual: Node in painted_kit.find_children("*", "MeshInstance3D", true, false):
+		painted_visuals[str(visual.name)] = visual
 	for visual: Node in kit.find_children("*", "MeshInstance3D", true, false):
 		# Godot importer can place glTF materials on the instance rather than
 		# the mesh. MultiMesh has no per-surface instance overrides.
-		var mesh: ArrayMesh = visual.mesh.duplicate()
+		var source_visual: MeshInstance3D = painted_visuals.get(str(visual.name), visual)
+		var painted: bool = painted_visuals.has(str(visual.name))
+		var mesh: ArrayMesh = source_visual.mesh.duplicate()
 		for surface: int in range(mesh.get_surface_count()):
-			var material: StandardMaterial3D = visual.get_active_material(surface)
-			# Shader consumes exported COLOR_0 and the original matte palette.
+			var material: StandardMaterial3D = source_visual.get_active_material(surface)
+			# Painted oak samples shared sRGB atlas once; other species retain COLOR_0.
 			var visibility: ShaderMaterial = ShaderMaterial.new()
 			visibility.shader = VISIBILITY_SHADER
 			visibility.set_shader_parameter("base_color", material.albedo_color)
 			visibility.set_shader_parameter("surface_roughness", material.roughness)
+			visibility.set_shader_parameter("use_painted_texture", painted)
+			visibility.set_shader_parameter("use_vertex_tint", not painted)
+			if painted:
+				visibility.set_shader_parameter("painted_albedo", PAINTED_ATLAS)
 			visibility_materials.append(visibility)
 			mesh.surface_set_material(surface, visibility)
 		meshes[str(visual.name)] = mesh
@@ -42,6 +54,7 @@ func build(population: AlderwakeForestPopulation) -> void:
 			continue
 		mappings[record.definition_id] = record
 	kit.free()
+	painted_kit.free()
 	var grouped: Dictionary[String, Array] = {}
 	for record: Dictionary in population.prop_records:
 		if record.tree == null:
