@@ -1,0 +1,103 @@
+{
+  "task": "AD008",
+  "purpose": "Reusable accepted Maris/Dock Row pilot integration; appearance guidance only, no geometry authority",
+  "reference": "art/direction/2026-10-10/01-painted-coastal-storybook.png",
+  "reference_sha256": "57cbfbbaf4b011c0e393aa13f3fde3237a722dfd31be62c1e4dc50aa8bac6e8a",
+  "components": [
+    {
+      "recipe": "art/source/storybook/town-painted-recipe.json",
+      "sha256": "31f28938d17922ce0ce1f7e96227353f4dabd36b2b311e6e4d5a15c4d536145e"
+    },
+    {
+      "recipe": "art/source/storybook/tree-painted-recipe.json",
+      "sha256": "6f881f21ae5de1ef7a3366adf336b10ec33be7a0a81c9d15fa80c370dff4c24a"
+    },
+    {
+      "recipe": "art/source/storybook/ground-painted-recipe.json",
+      "sha256": "9259b134c6832983d21ccd6c7eb4ff053bce9ff255441b9291530c5b1d8d6b57"
+    },
+    {
+      "recipe": "art/source/storybook/river-painted-recipe.json",
+      "sha256": "2754da29df2c914e3774d66c1f89d3cd62cedeb321fe1c57227dc6e4666f1424"
+    },
+    {
+      "recipe": "art/source/storybook/dock-painted-recipe.json",
+      "sha256": "5067f1b1e8c700ae0f9825d34d8c82eb64acab8a2ca0655a5d2cb6ab38c7a3bb"
+    },
+    {
+      "recipe": "art/source/storybook/lighting-painted-recipe.json",
+      "sha256": "5ab5fda7911c5527696331c47b95118c775cd0a52869d7ce07c5e735ce6c0d10"
+    }
+  ],
+  "shared_atlases": {
+    "oak": {
+      "source": "art/source/storybook/tree-painted-albedo.png",
+      "density_texels_per_m": 48,
+      "runtime": "game/assets/environment/storybook/tree-painted-albedo.png"
+    },
+    "town": {
+      "source": "art/source/storybook/town-painted-albedo.png",
+      "density_texels_per_m": 64,
+      "runtime": "game/assets/environment/storybook/town-painted-albedo.png"
+    },
+    "dock": {
+      "source": "art/source/storybook/dock-painted-albedo.png",
+      "density_texels_per_m": 64,
+      "runtime": "game/assets/environment/storybook/dock-painted-albedo.png"
+    }
+  },
+  "sampling": "1024 RGB sRGB albedo; full mips, linear mip filtering, clamp, 16px dilated gutters; imported palette multiplier disabled only for painted surfaces; full-precision dock UV import",
+  "authoring_blends": [
+    "art/source/storybook/alderwake_shop_pilot.blend",
+    "art/source/storybook/moonwood_oak_pilot.blend",
+    "art/source/storybook/alderwake_dock_pilot.blend"
+  ],
+  "runtime_owners": [
+    "game/world/map_candidate/town_art.gd",
+    "game/world/maris_counter.gd",
+    "game/world/map_candidate/tree_art.gd",
+    "game/world/map_candidate/canopy_visibility.gdshader",
+    "game/world/map_candidate/landscape_materials.gd",
+    "game/world/map_candidate/landscape.gdshader",
+    "game/world/map_candidate/river.gdshader",
+    "game/world/map_candidate/elevation_surfaces.gd",
+    "game/features/environment/environment_lighting.gd",
+    "game/features/environment/environment_presenter.gd"
+  ],
+  "integration_rules": [
+    "Keep current silhouette, original source pins, colliders, navigation, tree batches, cutout and intact shadow pass.",
+    "Use restrained world-metre ground/water brushwork and broad atlas patches. No directional cast-shadow baking.",
+    "Use current sun, weather, rain and local-light owners. Stable dry indoor branch unchanged.",
+    "Hero/ally remain cyan/purple capsules; villagers retain current identities. HUD polish belongs to AD017.",
+    "AD008 introduces no new production asset, shader, material, node, texture or renderer change."
+  ],
+  "reproduction": {
+    "renderer": "gl_compatibility",
+    "ordinary_phase": "journey",
+    "camera": {
+      "perspective_fov_degrees": 45,
+      "zooms": [
+        0.8,
+        1,
+        1.15
+      ],
+      "orthographic_size": 18
+    },
+    "vsync": 0,
+    "visual_phase": "pilot",
+    "script": "game/tests/art_direction_pilot_render.gd",
+    "viewport": [
+      960,
+      640
+    ],
+    "short_samples": {
+      "simulation": "paused; no full AD019 gate claim",
+      "measure_frames": 120,
+      "warmup_frames": 120
+    },
+    "max_fps": 0
+  },
+  "physical_layout_sha256": "7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be",
+  "preservation": "schema8/content1; all original assets and source identities; no town rollout, interior expansion or R016 completion",
+  "incremental_AD008_runtime_cost": 0
+}
