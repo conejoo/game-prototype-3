@@ -1,12 +1,12 @@
 class_name AlderwakeLandscapeMaterials
 extends RefCounted
-## M011 appearance only. Semantic half-metre mask is never physics/nav input.
+## Appearance only. Semantic half-metre mask is never physics/nav input.
 
 const TERRAIN_SHADER: Shader = preload("res://world/map_candidate/landscape.gdshader")
 const WATER_SHADER: Shader = preload("res://world/map_candidate/river.gdshader")
 const KINDS: Dictionary[String, int] = {"grass": 1, "dirt": 2, "sand": 3, "cobblestone": 4, "wet_shoreline": 5, "raw-marker": 6}
 const COLORS: Dictionary[String, Color] = {
-	"grass": Color(0.36, 0.46, 0.18), "dirt": Color(0.64, 0.46, 0.25),
+	"grass": Color("949f68"), "dirt": Color("e1bf94"),
 	"sand": Color(0.82, 0.71, 0.43), "cobblestone": Color(0.48, 0.47, 0.40),
 	"wet_shoreline": Color(0.32, 0.38, 0.17), "raw-marker": Color(0.43, 0.49, 0.21),
 }
@@ -43,9 +43,21 @@ func build(layout: Dictionary, water: AlderwakeWaterBlockers, map_bounds: Rect2)
 func terrain(kind: String) -> ShaderMaterial:
 	var material: ShaderMaterial = ShaderMaterial.new()
 	material.shader = TERRAIN_SHADER
-	material.set_shader_parameter("base_color", COLORS[kind])
+	# Supply calibrated painted colors in linear form. Keep legacy kinds
+	# unchanged; convert only new painted authoring sRGB swatches once.
+	material.set_shader_parameter("base_color", COLORS[kind].srgb_to_linear() if kind in ["grass", "dirt"] else COLORS[kind])
 	material.set_shader_parameter("kind", KINDS[kind])
+	material.set_shader_parameter("meadow_color", COLORS.grass.srgb_to_linear())
 	_common(material)
+	return material
+
+
+static func painted_riser() -> ShaderMaterial:
+	# One resource shared by every existing riser chunk; geometry stays untouched.
+	var material: ShaderMaterial = ShaderMaterial.new()
+	material.shader = TERRAIN_SHADER
+	material.set_shader_parameter("base_color", Color("8b8c7b").srgb_to_linear())
+	material.set_shader_parameter("kind", 7)
 	return material
 
 

@@ -119,9 +119,7 @@ func _add_cliff(cell: Vector2i, direction: Vector2i, a: Vector2, b: Vector2, hei
 
 
 func _finish_risers() -> void:
-	var material: StandardMaterial3D = StandardMaterial3D.new()
-	material.albedo_color = Color(0.36, 0.30, 0.22)
-	material.cull_mode = BaseMaterial3D.CULL_DISABLED
+	var material: ShaderMaterial = AlderwakeLandscapeMaterials.painted_riser()
 	for chunk: Vector2i in riser_surfaces:
 		var surface: SurfaceTool = riser_surfaces[chunk]
 		surface.generate_normals()

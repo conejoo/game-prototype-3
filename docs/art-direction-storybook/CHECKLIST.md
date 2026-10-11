@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001-AD003 baseline/shop/tree pilots are Done. AD004-AD020 remain Pending; next eligible task is AD004.
+AD001-AD004 baseline/shop/tree/ground work is Done. AD005-AD020 remain Pending; next eligible task is AD005.
 
 ## Selection and completion
 
@@ -20,7 +20,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | AD001 | Done | Verified current project; no AD prerequisite | Pin art baseline and measurable look brief |
 | AD002 | Done | AD001 | Painted shop and counter material pilot |
 | AD003 | Done | AD002 | Painted tree pilot with working canopy visibility |
-| AD004 | Pending | AD002 | Paint meadow, dirt paths and elevation surfaces |
+| AD004 | Done | AD002 | Paint meadow, dirt paths and elevation surfaces |
 | AD005 | Pending | AD004 | Paint river and shore transitions |
 | AD006 | Pending | AD002, AD005 | Paint dock, plaza and low-wall modules |
 | AD007 | Pending | AD003, AD004, AD005, AD006 | Calibrate storybook day, night and weather lighting |
@@ -233,3 +233,13 @@ Repository cwd; `./tools/run_checks.ps1 -Task AD003 -Import -Names application_s
 Authoring/geometry/image/pin/capture/role/CRLF-aware whitespace audits exit0. Retained CIM/import-generation/animated-water/null-color/diagnostic-camera corrections detailed in acceptance. All criteria complete; no blockers/unrun checks/cleanup owed. Every owned engine/launcher/child exited, including final enginePID60152/launcher13404. Original direction/interiors/instructions and schema8/content1 preserved; R016 remains incomplete. Synthetic frozen/interpolated review does not prove ordinary route/native release/restart/full profiling.19 task paths ready for review; no commit/push. Next eligible AD004 only. Remaining unfinished AD004-AD020; final checklist AD020; every item complete: no.
 
 Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit contains exactly19 AD003 task paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence stay excluded. Accepted source bytes and preservation scope verified; exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD003/authorized-commit-20261011/commit-audit.json`. AD001-AD003 remain Done, AD004-AD020 Pending. No push or AD004 implementation.
+
+### AD004 - 2026-10-11 UTC - Done
+
+[AD004_ACCEPTANCE](AD004_ACCEPTANCE.md): quiet world-aligned sage meadow/apricot dirt and restrained painted stone elevation risers through measured shared procedural shader/recipe. Derivative-filtered0.4×0.588m dabs, broad3.125m wash/5.882m meadow pools; explicit painted color calibration, existing semantic dirt shoulder retained. No bitmap/geometry/node/draw-surface addition; legacy shore/cobble/water shading and all physical/gameplay owners preserved. Original layout hash and paired semantic/floor/all16 render mesh fingerprints identical; six terrain/nine riser batches,472 levels/16 slopes/238 cliffs/8598 wet cells retained.
+
+Repository cwd; fresh before `./tools/run_checks.ps1 -Task AD004 -RenderOnly -RenderScript art_direction_ground_render -RenderPhases before -TimeoutSeconds 180` passed3/3 exit0 in `docs/evidence/AD004/20261011-054933078-b64923b9/`. Final `-Names application_smoke,map_landscape_checks,map_layout_checks,map_camera_checks -RenderScript art_direction_ground_render -RenderPhases pilot -TimeoutSeconds 180` passed7/7 exit0 in `20261011-055745162-bd79f882/`; unchanged1338-file game/tools digest`cf12cbf582e5d301822b15cf2b79981c26740456c22ecca0ba436ff1dbcd5dfd`. All50 actual Godot captures/five sheets inspected: town/ramp/forest both projections/zoom bounds, cloudy at four fixed poses,20 interpolated camera frames and close/static-repeat controls.48 shared captures retain exact camera/feet/environment; static100×80 ground crop pixel-identical. Local meadow luma170.11→124.10 and fine pixel delta1.036→0.320; dirt191.09→204.91/delta0.975→0.254. Party hues/white forage remain readable. Draw273/134,4067 nodes/443 resources/24,101,267 texture bytes unchanged; short paused samples do not accept AD019.
+
+Preservation/capture/comparison/CRLF-aware whitespace helpers exit0. Retained CIM/UID-generated source invalidation/bright initial palette and diagnostic crop corrections in acceptance, no guards loosened. Every owned PID exited, final engine70684/launcher35580; no input/editor cleanup owed. Schema8/content1, unrelated user direction/interiors/instructions and historical R016 incomplete status preserved. All criteria complete, no blockers/unrun required checks. Nine task paths ready for review; no commit/push. Next eligible AD005 only. Remaining unfinished AD005-AD020; final checklist AD020; every item complete: no.
+
+Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit contains exactly nine AD004 task paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence stay excluded. Accepted source bytes and preservation scope verified; exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD004/authorized-commit-20261011/commit-audit.json`. AD001-AD004 remain Done, AD005-AD020 Pending. No push or AD005 implementation.

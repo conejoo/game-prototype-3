@@ -1,0 +1,23 @@
+{
+  "task": "AD004",
+  "method": "editable deterministic Godot world-space procedural albedo; no bitmap or mesh changes",
+  "runtime_sources": [
+    "game/world/map_candidate/landscape_materials.gd",
+    "game/world/map_candidate/landscape.gdshader",
+    "game/world/map_candidate/elevation_surfaces.gd"
+  ],
+  "authoring_srgb": {"meadow": "#949f68", "dirt": "#e1bf94", "riser_stone": "#8b8c7b"},
+  "palette_calibration": "paired actual clear/cloudy engine previews: increase meadow blue and dirt blue/green from LOOK_SPEC starting swatches to compensate existing warm light, reduce orange saturation; lighting untouched",
+  "world_scale_metres": {"dab_x": 0.4, "dab_second_axis": 0.588235, "wash": 3.125, "meadow_pool": 5.882353},
+  "dab_peak_to_peak_multiplier": {"meadow": 0.06, "dirt": 0.08, "stone": 0.08},
+  "wash_peak_to_peak_multiplier": 0.04,
+  "meadow_pool_darkening_max": 0.05,
+  "color_space": "authoring hex sRGB converted once using Color.srgb_to_linear for painted shader uniforms; legacy kinds unchanged",
+  "filter": "smooth interpolation and fwidth fade between 0.25 and 0.65 pixel footprints; no TIME, cell-local seeds or periodic UVs",
+  "projection": "ground world XZ; risers world ZY or XY by dominant world normal; all coordinates measured in metres",
+  "edge_policy": "existing semantic-mask four-neighbor 0.065m shoulder retained; dirt shoulder uses matching painted meadow; sand/cobble retain original policy",
+  "roughness": 0.97,
+  "extra_texture_bytes": 0,
+  "extra_nodes_draw_surfaces": 0,
+  "scope": "grass/dirt and existing shared elevation riser material only; sand/cobble/wet-shoreline/raw-marker/water keep previous shading"
+}
