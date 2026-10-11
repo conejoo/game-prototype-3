@@ -1,0 +1,2865 @@
+{
+	"actions": {
+		"npc-01": {
+			"asset": "res://assets/models/npcs/npc-01-actions.glb",
+			"clip": "action_river_fishing",
+			"runtime": true
+		},
+		"npc-02": {
+			"asset": "res://assets/models/npcs/npc-02-actions.glb",
+			"clip": "action_archive_work",
+			"runtime": true
+		}
+	},
+	"catalog_sha256": "9a3a59fcce470d356e13f492cd1364e942b110c8e93d54d535a363218766bdd7",
+	"content_version": 1,
+	"execution": {
+		"actors": {
+			"npc-01": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(-0.5, 0.0, -1.5)",
+				"index": 3,
+				"map_id": "prototype-alderwake",
+				"npc_id": "npc-01",
+				"phase": "",
+				"remaining": 50.218796491622925,
+				"routine_id": "vale-morning-work",
+				"state": 2,
+				"step_id": "hold-office-hours",
+				"transitions": 3
+			},
+			"npc-02": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(4.0, 0.0, 0.0)",
+				"index": 2,
+				"map_id": "prototype-mayor-vale-home",
+				"npc_id": "npc-02",
+				"phase": "",
+				"remaining": 23.25960111618042,
+				"routine_id": "vale-morning-work",
+				"state": 3,
+				"step_id": "morning-index",
+				"transitions": 2
+			},
+			"npc-03": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(-7.5, 0.0, 11.0)",
+				"index": 1,
+				"map_id": "prototype-alderwake",
+				"npc_id": "npc-03",
+				"phase": "",
+				"remaining": 300.0,
+				"routine_id": "maris-chandlery-day",
+				"state": 2,
+				"step_id": "tend-ordinary-stock",
+				"transitions": 1
+			},
+			"npc-04": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(41.0, 0.0, 17.0)",
+				"index": 1,
+				"map_id": "prototype-alderwake",
+				"npc_id": "npc-04",
+				"phase": "",
+				"remaining": 300.0,
+				"routine_id": "harlan-docks-day",
+				"state": 2,
+				"step_id": "coordinate-dock-work",
+				"transitions": 1
+			},
+			"npc-06": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(7.5, 0.0, 5.0)",
+				"index": 1,
+				"map_id": "prototype-alderwake",
+				"npc_id": "npc-06",
+				"phase": "",
+				"remaining": 300.0,
+				"routine_id": "tess-store-day",
+				"state": 2,
+				"step_id": "listen-to-supply-needs",
+				"transitions": 1
+			},
+			"npc-07": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(36.0, 0.0, 20.0)",
+				"index": 5,
+				"map_id": "prototype-alderwake",
+				"npc_id": "npc-07",
+				"phase": "",
+				"remaining": 370.0,
+				"routine_id": "ivo-docks-day",
+				"state": 2,
+				"step_id": "remain-available-at-berth",
+				"transitions": 5
+			},
+			"npc-08": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(-3.5, 0.0, 12.0)",
+				"index": 1,
+				"map_id": "prototype-alderwake",
+				"npc_id": "npc-08",
+				"phase": "",
+				"remaining": 300.0,
+				"routine_id": "celia-repairs-day",
+				"state": 2,
+				"step_id": "remain-available-for-repairs",
+				"transitions": 1
+			},
+			"npc-14": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(-6.0, 0.0, -12.0)",
+				"index": 1,
+				"map_id": "prototype-lantern-rest",
+				"npc_id": "npc-14",
+				"phase": "",
+				"remaining": 300.0,
+				"routine_id": "della-inn-day",
+				"state": 2,
+				"step_id": "remain-available-for-guests",
+				"transitions": 1
+			}
+		},
+		"day": 0,
+		"error": "",
+		"group_lane": "",
+		"positions": {
+			"npc-01": {
+				"foot": "(-0.5, 0.0, -1.5)",
+				"map": "prototype-alderwake"
+			},
+			"npc-02": {
+				"foot": "(4.0, 0.0, 0.0)",
+				"map": "prototype-mayor-vale-home"
+			},
+			"npc-03": {
+				"foot": "(-7.5, 0.0, 11.0)",
+				"map": "prototype-alderwake"
+			},
+			"npc-04": {
+				"foot": "(41.0, 0.0, 17.0)",
+				"map": "prototype-alderwake"
+			},
+			"npc-06": {
+				"foot": "(7.5, 0.0, 5.0)",
+				"map": "prototype-alderwake"
+			},
+			"npc-07": {
+				"foot": "(36.0, 0.0, 20.0)",
+				"map": "prototype-alderwake"
+			},
+			"npc-08": {
+				"foot": "(-3.5, 0.0, 12.0)",
+				"map": "prototype-alderwake"
+			},
+			"npc-14": {
+				"foot": "(-6.0, 0.0, -12.0)",
+				"map": "prototype-lantern-rest"
+			}
+		},
+		"revisions": 2
+	},
+	"failures": [],
+	"files": [
+		"res://.godot/global_script_class_cache.cfg",
+		"res://.godot/imported/alderwake_dock_pilot.glb-f60a344b24c50cc9cc31b4cefdd5134a.scn",
+		"res://.godot/imported/alderwake_dock_pilot_dock-painted-albedo.png-19878b7af5d56bdc61dd9193de6944a6.ctex",
+		"res://.godot/imported/alderwake_landmark_kit.glb-340b7c281d97b6857333d5f401689fac.scn",
+		"res://.godot/imported/alderwake_landmark_painted.glb-a5bfba94efcb5da4d36d6049dacedc0f.scn",
+		"res://.godot/imported/alderwake_shop_pilot.glb-9b54d7adc6c124148d7f95470492ebec.scn",
+		"res://.godot/imported/alderwake_shop_pilot_town-painted-albedo.png-cf2b1d3bd445976fac2675bc50427bb3.ctex",
+		"res://.godot/imported/alderwake_town_kit.glb-55062a719292448092652a373a733489.scn",
+		"res://.godot/imported/alderwake_town_rollout.glb-bf014fd437c7610b437371409659e5bd.scn",
+		"res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex",
+		"res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex",
+		"res://.godot/imported/bluegill.png-681c258f76a2a3ec99279ee839d85ca8.ctex",
+		"res://.godot/imported/dock-painted-albedo.png-f1bcbc921309368a60a3558a04c4fa78.ctex",
+		"res://.godot/imported/exterior_light_kit.glb-37e62ed831746e5602adf9b343a69c90.scn",
+		"res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex",
+		"res://.godot/imported/fishing_rod.svg-484a76bfee4d800320042b16c50fb6c8.ctex",
+		"res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex",
+		"res://.godot/imported/golden_carp.png-670e492517685823e797316d530e0499.ctex",
+		"res://.godot/imported/guardian.glb-8e0281d95e975b783d034b5055c57bf0.scn",
+		"res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex",
+		"res://.godot/imported/moonflower.svg-61ff33369e767c88d26494c198af778f.ctex",
+		"res://.godot/imported/moonwood_oak_pilot.glb-3829f05510fd65fc96f19766e1635c01.scn",
+		"res://.godot/imported/moonwood_oak_pilot_tree-painted-albedo.png-37cf624087d7409e91b5ed589107753b.ctex",
+		"res://.godot/imported/moonwood_tree_kit.glb-73b1e594d2695d9abddd5f085366f2b6.scn",
+		"res://.godot/imported/moonwood_tree_rollout.glb-33c365ec9a3eed59bc58102a47554e0d.scn",
+		"res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn",
+		"res://.godot/imported/npc-01-actions_TEX-npc-01-palette.png-001670a69762a95e9dc15fec74ecacef.ctex",
+		"res://.godot/imported/npc-01.glb-83b37d753173c3a910f7e30454b25121.scn",
+		"res://.godot/imported/npc-01_TEX-npc-01-palette.png-255a4df1ac828e9452a2c8366262d3b3.ctex",
+		"res://.godot/imported/npc-02-actions.glb-45d9a10e46139c4bf56bd3f963b661e3.scn",
+		"res://.godot/imported/npc-02-actions_TEX-npc-02-palette.png-f601a51c7f5048aaf2fd4dfb90f7ffb7.ctex",
+		"res://.godot/imported/npc-02.glb-6155a444778721253063de3b44b246a3.scn",
+		"res://.godot/imported/npc-02_TEX-npc-02-palette.png-4b53616418c85877cf184848dc7f361e.ctex",
+		"res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn",
+		"res://.godot/imported/npc-03_TEX-npc-03-palette.png-cd2841de80cda48763aef2d3dcfe5d65.ctex",
+		"res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn",
+		"res://.godot/imported/npc-04_TEX-npc-04-palette.png-6cc83f19e2e5f1054c4c4769e69ff83d.ctex",
+		"res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn",
+		"res://.godot/imported/npc-06_TEX-npc-06-palette.png-978d2d722821ce27c79bc25bff67048c.ctex",
+		"res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn",
+		"res://.godot/imported/npc-07_TEX-npc-07-palette.png-031bdf5d4bd405e84511dd3d267b4f1c.ctex",
+		"res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn",
+		"res://.godot/imported/npc-08_TEX-npc-08-palette.png-4648e2ecca224e865335d626d1274ebd.ctex",
+		"res://.godot/imported/npc-14.glb-041d5505f9e9b71478351fccc745f820.scn",
+		"res://.godot/imported/npc-14_TEX-npc-14-palette.png-bc10c9531d7ea7dcf1b895ddc8270518.ctex",
+		"res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex",
+		"res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex",
+		"res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex",
+		"res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex",
+		"res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex",
+		"res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex",
+		"res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex",
+		"res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex",
+		"res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex",
+		"res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex",
+		"res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex",
+		"res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex",
+		"res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex",
+		"res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex",
+		"res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex",
+		"res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex",
+		"res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex",
+		"res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex",
+		"res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex",
+		"res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex",
+		"res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex",
+		"res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex",
+		"res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex",
+		"res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex",
+		"res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex",
+		"res://.godot/imported/recovery_vessel.glb-105a9685986d68811abfd5efa21d1a57.scn",
+		"res://.godot/imported/river_trout.png-1398cb75143a07dea51a330b74ea5ddf.ctex",
+		"res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex",
+		"res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex",
+		"res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex",
+		"res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex",
+		"res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex",
+		"res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex",
+		"res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex",
+		"res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex",
+		"res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex",
+		"res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex",
+		"res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex",
+		"res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex",
+		"res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex",
+		"res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex",
+		"res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex",
+		"res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex",
+		"res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex",
+		"res://.godot/imported/tollworks_plinth.glb-f735e0f0bfbd5171ce21ea27fe0097b6.scn",
+		"res://.godot/imported/town-painted-albedo.png-c3d3c931bedd1626d13c3a197f6bf4af.ctex",
+		"res://.godot/imported/tree-painted-albedo.png-9bff90c80118141c335127338e266f86.ctex",
+		"res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex",
+		"res://.godot/uid_cache.bin",
+		"res://app/camera_rig.gd.remap",
+		"res://app/camera_rig.gdc",
+		"res://app/game_root.gd.remap",
+		"res://app/game_root.gdc",
+		"res://app/game_root.tscn",
+		"res://app/game_session.gd.remap",
+		"res://app/game_session.gdc",
+		"res://app/party.gd.remap",
+		"res://app/party.gdc",
+		"res://app/world_host.gd.remap",
+		"res://app/world_host.gdc",
+		"res://assets/environment/alderwake_landmark_kit.glb.import",
+		"res://assets/environment/alderwake_landmark_mapping.json",
+		"res://assets/environment/alderwake_town_kit.glb.import",
+		"res://assets/environment/alderwake_town_mapping.json",
+		"res://assets/environment/exterior_light_kit.glb.import",
+		"res://assets/environment/exterior_light_mapping.json",
+		"res://assets/environment/moonwood_tree_kit.glb.import",
+		"res://assets/environment/moonwood_tree_mapping.json",
+		"res://assets/environment/storybook/alderwake_dock_pilot.glb.import",
+		"res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png.import",
+		"res://assets/environment/storybook/alderwake_landmark_painted.glb.import",
+		"res://assets/environment/storybook/alderwake_shop_pilot.glb.import",
+		"res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png.import",
+		"res://assets/environment/storybook/alderwake_town_rollout.glb.import",
+		"res://assets/environment/storybook/dock-painted-albedo.png.import",
+		"res://assets/environment/storybook/moonwood_oak_pilot.glb.import",
+		"res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png.import",
+		"res://assets/environment/storybook/moonwood_tree_rollout.glb.import",
+		"res://assets/environment/storybook/town-painted-albedo.png.import",
+		"res://assets/environment/storybook/tree-painted-albedo.png.import",
+		"res://assets/items/bluegill.png.import",
+		"res://assets/items/fishing_rod.svg.import",
+		"res://assets/items/golden_carp.png.import",
+		"res://assets/items/moonflower.svg.import",
+		"res://assets/items/river_trout.png.import",
+		"res://assets/models/guardian.glb.import",
+		"res://assets/models/npcs/npc-01-actions.glb.import",
+		"res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png.import",
+		"res://assets/models/npcs/npc-01.glb.import",
+		"res://assets/models/npcs/npc-01_TEX-npc-01-palette.png.import",
+		"res://assets/models/npcs/npc-02-actions.glb.import",
+		"res://assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png.import",
+		"res://assets/models/npcs/npc-02.glb.import",
+		"res://assets/models/npcs/npc-02_TEX-npc-02-palette.png.import",
+		"res://assets/models/npcs/npc-03.glb.import",
+		"res://assets/models/npcs/npc-03_TEX-npc-03-palette.png.import",
+		"res://assets/models/npcs/npc-04.glb.import",
+		"res://assets/models/npcs/npc-04_TEX-npc-04-palette.png.import",
+		"res://assets/models/npcs/npc-06.glb.import",
+		"res://assets/models/npcs/npc-06_TEX-npc-06-palette.png.import",
+		"res://assets/models/npcs/npc-07.glb.import",
+		"res://assets/models/npcs/npc-07_TEX-npc-07-palette.png.import",
+		"res://assets/models/npcs/npc-08.glb.import",
+		"res://assets/models/npcs/npc-08_TEX-npc-08-palette.png.import",
+		"res://assets/models/npcs/npc-14.glb.import",
+		"res://assets/models/npcs/npc-14_TEX-npc-14-palette.png.import",
+		"res://assets/models/recovery_vessel.glb.import",
+		"res://assets/models/tollworks_plinth.glb.import",
+		"res://assets/npcs/portraits/npc-01/fishing-gear.png.import",
+		"res://assets/npcs/portraits/npc-01/official-neutral.png.import",
+		"res://assets/npcs/portraits/npc-01/pleased.png.import",
+		"res://assets/npcs/portraits/npc-01/practiced-smile.png.import",
+		"res://assets/npcs/portraits/npc-01/skeptical.png.import",
+		"res://assets/npcs/portraits/npc-01/tired-rumpled.png.import",
+		"res://assets/npcs/portraits/npc-02/archive-work.png.import",
+		"res://assets/npcs/portraits/npc-02/official-neutral.png.import",
+		"res://assets/npcs/portraits/npc-02/pleased.png.import",
+		"res://assets/npcs/portraits/npc-02/practiced-smile.png.import",
+		"res://assets/npcs/portraits/npc-02/skeptical.png.import",
+		"res://assets/npcs/portraits/npc-02/tired-rumpled.png.import",
+		"res://assets/npcs/portraits/npc-03/official-neutral.png.import",
+		"res://assets/npcs/portraits/npc-03/pleased.png.import",
+		"res://assets/npcs/portraits/npc-03/practiced-smile.png.import",
+		"res://assets/npcs/portraits/npc-03/ropework.png.import",
+		"res://assets/npcs/portraits/npc-03/skeptical.png.import",
+		"res://assets/npcs/portraits/npc-03/tired-rumpled.png.import",
+		"res://assets/npcs/portraits/npc-04/birdwatching.png.import",
+		"res://assets/npcs/portraits/npc-04/official-neutral.png.import",
+		"res://assets/npcs/portraits/npc-04/pleased.png.import",
+		"res://assets/npcs/portraits/npc-04/practiced-smile.png.import",
+		"res://assets/npcs/portraits/npc-04/skeptical.png.import",
+		"res://assets/npcs/portraits/npc-04/tired-rumpled.png.import",
+		"res://assets/npcs/portraits/npc-06/flower-pressing.png.import",
+		"res://assets/npcs/portraits/npc-06/official-neutral.png.import",
+		"res://assets/npcs/portraits/npc-06/pleased.png.import",
+		"res://assets/npcs/portraits/npc-06/practiced-smile.png.import",
+		"res://assets/npcs/portraits/npc-06/skeptical.png.import",
+		"res://assets/npcs/portraits/npc-06/tired-rumpled.png.import",
+		"res://assets/npcs/portraits/npc-07/knotwork.png.import",
+		"res://assets/npcs/portraits/npc-07/official-neutral.png.import",
+		"res://assets/npcs/portraits/npc-07/pleased.png.import",
+		"res://assets/npcs/portraits/npc-07/practiced-smile.png.import",
+		"res://assets/npcs/portraits/npc-07/skeptical.png.import",
+		"res://assets/npcs/portraits/npc-07/tired-rumpled.png.import",
+		"res://assets/npcs/portraits/npc-08/official-neutral.png.import",
+		"res://assets/npcs/portraits/npc-08/pleased.png.import",
+		"res://assets/npcs/portraits/npc-08/practiced-smile.png.import",
+		"res://assets/npcs/portraits/npc-08/skeptical.png.import",
+		"res://assets/npcs/portraits/npc-08/tired-rumpled.png.import",
+		"res://assets/npcs/portraits/npc-08/woodcarving.png.import",
+		"res://assets/npcs/portraits/npc-14/official-neutral.png.import",
+		"res://assets/npcs/portraits/npc-14/pleased.png.import",
+		"res://assets/npcs/portraits/npc-14/practiced-smile.png.import",
+		"res://assets/npcs/portraits/npc-14/quilting.png.import",
+		"res://assets/npcs/portraits/npc-14/skeptical.png.import",
+		"res://assets/npcs/portraits/npc-14/tired-rumpled.png.import",
+		"res://content/actors/guardian.tres",
+		"res://content/actors/hero.tres",
+		"res://content/actors/maris.tres",
+		"res://content/actors/temporary_companion.tres",
+		"res://content/dialogue/maris_counter.tres",
+		"res://content/dialogue/maris_fitting.tres",
+		"res://content/dialogue/maris_specialist.tres",
+		"res://content/dialogue/practice_marker.tres",
+		"res://content/dialogue/recovery_vessel.tres",
+		"res://content/dialogue/temporary_companion.tres",
+		"res://content/items/bluegill.tres",
+		"res://content/items/fishing_rod.tres",
+		"res://content/items/golden_carp.tres",
+		"res://content/items/moonflower.tres",
+		"res://content/items/river_trout.tres",
+		"res://content/locations/alderwake.tres",
+		"res://content/locations/lantern_rest.tres",
+		"res://content/locations/mayor_vale_home.tres",
+		"res://content/locations/test_room.tres",
+		"res://content/locations/tollworks.tres",
+		"res://content/maps/alderwake_layout.json",
+		"res://content/maps/lantern_rest.json",
+		"res://content/maps/mayor_vale_home.json",
+		"res://content/npcs/catalog.json",
+		"res://content/npcs/reference_sheet_manifest.json",
+		"res://content/portals/alderwake_home.tres",
+		"res://content/portals/alderwake_inn.tres",
+		"res://content/portals/alderwake_tollworks.tres",
+		"res://content/portals/home_alderwake.tres",
+		"res://content/portals/inn_alderwake.tres",
+		"res://content/portals/tollworks_alderwake.tres",
+		"res://content/progression/deliberate_strike.tres",
+		"res://content/prototype_catalog.tres",
+		"res://content/quests/maris_recovery.tres",
+		"res://content/relationships/orders.tres",
+		"res://content/relationships/shared_plan.tres",
+		"res://content/resources/fishing_rod.tres",
+		"res://content/resources/moonflower.tres",
+		"res://content/routines/catalog.json",
+		"res://content/routines/celia-repairs-day.json",
+		"res://content/routines/celia-repairs-evening.json",
+		"res://content/routines/conversion.json",
+		"res://content/routines/della-inn-day.json",
+		"res://content/routines/della-inn-evening.json",
+		"res://content/routines/edric-afternoon-river-notes.json",
+		"res://content/routines/edric-afternoon-rounds.json",
+		"res://content/routines/edric-evening-fishing.json",
+		"res://content/routines/edric-evening-rain-shelter.json",
+		"res://content/routines/harlan-docks-day.json",
+		"res://content/routines/harlan-docks-evening.json",
+		"res://content/routines/helena-afternoon-archive.json",
+		"res://content/routines/helena-afternoon-ledger-review.json",
+		"res://content/routines/helena-afternoon-moonflower-records.json",
+		"res://content/routines/helena-evening-archive.json",
+		"res://content/routines/ivo-docks-day.json",
+		"res://content/routines/ivo-docks-evening.json",
+		"res://content/routines/maris-chandlery-day.json",
+		"res://content/routines/maris-chandlery-evening.json",
+		"res://content/routines/references.json",
+		"res://content/routines/tess-store-day.json",
+		"res://content/routines/tess-store-evening.json",
+		"res://content/routines/vale-breakfast.json",
+		"res://content/routines/vale-evening-home.json",
+		"res://content/routines/vale-midday-briefing.json",
+		"res://content/routines/vale-morning-work.json",
+		"res://content/routines/vale-overnight-home.json",
+		"res://core/content_catalog.gd.remap",
+		"res://core/content_catalog.gdc",
+		"res://core/content_definition.gd.remap",
+		"res://core/content_definition.gdc",
+		"res://core/content_manifest.gd.remap",
+		"res://core/content_manifest.gdc",
+		"res://core/save_codec.gd.remap",
+		"res://core/save_codec.gdc",
+		"res://core/save_json_fields.gd.remap",
+		"res://core/save_json_fields.gdc",
+		"res://core/save_number.gd.remap",
+		"res://core/save_number.gdc",
+		"res://core/save_repository.gd.remap",
+		"res://core/save_repository.gdc",
+		"res://features/actors/actor_definition.gd.remap",
+		"res://features/actors/actor_definition.gdc",
+		"res://features/actors/actor_placeholder.gd.remap",
+		"res://features/actors/actor_placeholder.gdc",
+		"res://features/actors/actor_state.gd.remap",
+		"res://features/actors/actor_state.gdc",
+		"res://features/actors/companion.tscn",
+		"res://features/actors/companion_controller.gd.remap",
+		"res://features/actors/companion_controller.gdc",
+		"res://features/actors/storybook_actor.gdshader",
+		"res://features/actors/storybook_actor_material.gd.remap",
+		"res://features/actors/storybook_actor_material.gdc",
+		"res://features/combat/combat_state.gd.remap",
+		"res://features/combat/combat_state.gdc",
+		"res://features/combat/guardian.tscn",
+		"res://features/combat/guardian_controller.gd.remap",
+		"res://features/combat/guardian_controller.gdc",
+		"res://features/dialogue/conversation_definition.gd.remap",
+		"res://features/dialogue/conversation_definition.gdc",
+		"res://features/environment/environment_clock.gd.remap",
+		"res://features/environment/environment_clock.gdc",
+		"res://features/environment/environment_lighting.gd.remap",
+		"res://features/environment/environment_lighting.gdc",
+		"res://features/environment/environment_presenter.gd.remap",
+		"res://features/environment/environment_presenter.gdc",
+		"res://features/environment/environment_state.gd.remap",
+		"res://features/environment/environment_state.gdc",
+		"res://features/environment/exterior_light_consumer.gd.remap",
+		"res://features/environment/exterior_light_consumer.gdc",
+		"res://features/environment/exterior_lights.gd.remap",
+		"res://features/environment/exterior_lights.gdc",
+		"res://features/environment/light_source_registry.gd.remap",
+		"res://features/environment/light_source_registry.gdc",
+		"res://features/environment/weather_condition_service.gd.remap",
+		"res://features/environment/weather_condition_service.gdc",
+		"res://features/environment/weather_schedule.gd.remap",
+		"res://features/environment/weather_schedule.gdc",
+		"res://features/environment/weather_visuals.gd.remap",
+		"res://features/environment/weather_visuals.gdc",
+		"res://features/environment/world_rain.gd.remap",
+		"res://features/environment/world_rain.gdc",
+		"res://features/environment/world_rain.gdshader",
+		"res://features/fishing/fishing_activity_resolver.gd.remap",
+		"res://features/fishing/fishing_activity_resolver.gdc",
+		"res://features/fishing/fishing_area_adapter.gd.remap",
+		"res://features/fishing/fishing_area_adapter.gdc",
+		"res://features/fishing/fishing_area_definition.gd.remap",
+		"res://features/fishing/fishing_area_definition.gdc",
+		"res://features/fishing/fishing_challenge_controller.gd.remap",
+		"res://features/fishing/fishing_challenge_controller.gdc",
+		"res://features/fishing/fishing_challenge_definition.gd.remap",
+		"res://features/fishing/fishing_challenge_definition.gdc",
+		"res://features/fishing/fishing_session_service.gd.remap",
+		"res://features/fishing/fishing_session_service.gdc",
+		"res://features/fishing/fishing_target_preview.gd.remap",
+		"res://features/fishing/fishing_target_preview.gdc",
+		"res://features/fishing/fishing_water_target_resolver.gd.remap",
+		"res://features/fishing/fishing_water_target_resolver.gdc",
+		"res://features/fishing/rod_activation_definition.gd.remap",
+		"res://features/fishing/rod_activation_definition.gdc",
+		"res://features/interaction/foraging_action.gd.remap",
+		"res://features/interaction/foraging_action.gdc",
+		"res://features/interaction/interactable.gd.remap",
+		"res://features/interaction/interactable.gdc",
+		"res://features/interaction/interaction_selector.gd.remap",
+		"res://features/interaction/interaction_selector.gdc",
+		"res://features/interaction/light_switch_action.gd.remap",
+		"res://features/interaction/light_switch_action.gdc",
+		"res://features/interaction/npc_interaction.tscn",
+		"res://features/interaction/prop_interaction.tscn",
+		"res://features/interaction/recovery_vessel.tscn",
+		"res://features/items/foraging_command_result.gd.remap",
+		"res://features/items/foraging_command_result.gdc",
+		"res://features/items/foraging_hold_controller.gd.remap",
+		"res://features/items/foraging_hold_controller.gdc",
+		"res://features/items/foraging_placement_geometry.gd.remap",
+		"res://features/items/foraging_placement_geometry.gdc",
+		"res://features/items/foraging_registry.gd.remap",
+		"res://features/items/foraging_registry.gdc",
+		"res://features/items/foraging_resource_definition.gd.remap",
+		"res://features/items/foraging_resource_definition.gdc",
+		"res://features/items/foraging_save_data.gd.remap",
+		"res://features/items/foraging_save_data.gdc",
+		"res://features/items/foraging_state.gd.remap",
+		"res://features/items/foraging_state.gdc",
+		"res://features/items/inventory_snapshot.gd.remap",
+		"res://features/items/inventory_snapshot.gdc",
+		"res://features/items/inventory_state.gd.remap",
+		"res://features/items/inventory_state.gdc",
+		"res://features/items/item_definition.gd.remap",
+		"res://features/items/item_definition.gdc",
+		"res://features/items/world_item_drag.gd.remap",
+		"res://features/items/world_item_drag.gdc",
+		"res://features/items/world_item_placement.gd.remap",
+		"res://features/items/world_item_placement.gdc",
+		"res://features/npcs/conversation_memory.gd.remap",
+		"res://features/npcs/conversation_memory.gdc",
+		"res://features/npcs/npc_content_availability.gd.remap",
+		"res://features/npcs/npc_content_availability.gdc",
+		"res://features/npcs/npc_content_catalog.gd.remap",
+		"res://features/npcs/npc_content_catalog.gdc",
+		"res://features/npcs/npc_conversation_state.gd.remap",
+		"res://features/npcs/npc_conversation_state.gdc",
+		"res://features/npcs/npc_definition.gd.remap",
+		"res://features/npcs/npc_definition.gdc",
+		"res://features/npcs/npc_dialogue_graph.gd.remap",
+		"res://features/npcs/npc_dialogue_graph.gdc",
+		"res://features/npcs/npc_dialogue_rules.gd.remap",
+		"res://features/npcs/npc_dialogue_rules.gdc",
+		"res://features/npcs/npc_dialogue_service.gd.remap",
+		"res://features/npcs/npc_dialogue_service.gdc",
+		"res://features/npcs/npc_event_memory.gd.remap",
+		"res://features/npcs/npc_event_memory.gdc",
+		"res://features/npcs/npc_gift_rules.gd.remap",
+		"res://features/npcs/npc_gift_rules.gdc",
+		"res://features/npcs/npc_registry.gd.remap",
+		"res://features/npcs/npc_registry.gdc",
+		"res://features/npcs/npc_save_data.gd.remap",
+		"res://features/npcs/npc_save_data.gdc",
+		"res://features/npcs/npc_visual_presenter.gd.remap",
+		"res://features/npcs/npc_visual_presenter.gdc",
+		"res://features/npcs/npc_world_adapter.gd.remap",
+		"res://features/npcs/npc_world_adapter.gdc",
+		"res://features/npcs/npc_world_events.gd.remap",
+		"res://features/npcs/npc_world_events.gdc",
+		"res://features/npcs/people_snapshot.gd.remap",
+		"res://features/npcs/people_snapshot.gdc",
+		"res://features/npcs/storybook_npc.gdshader",
+		"res://features/npcs/storybook_npc_material.gd.remap",
+		"res://features/npcs/storybook_npc_material.gdc",
+		"res://features/progression/progression_service.gd.remap",
+		"res://features/progression/progression_service.gdc",
+		"res://features/progression/progression_state.gd.remap",
+		"res://features/progression/progression_state.gdc",
+		"res://features/progression/upgrade_definition.gd.remap",
+		"res://features/progression/upgrade_definition.gdc",
+		"res://features/quests/quest_definition.gd.remap",
+		"res://features/quests/quest_definition.gdc",
+		"res://features/quests/quest_service.gd.remap",
+		"res://features/quests/quest_service.gdc",
+		"res://features/quests/quest_state.gd.remap",
+		"res://features/quests/quest_state.gdc",
+		"res://features/quests/quest_step.gd.remap",
+		"res://features/quests/quest_step.gdc",
+		"res://features/relationships/reaction_definition.gd.remap",
+		"res://features/relationships/reaction_definition.gdc",
+		"res://features/relationships/relationship_service.gd.remap",
+		"res://features/relationships/relationship_service.gdc",
+		"res://features/relationships/relationship_state.gd.remap",
+		"res://features/relationships/relationship_state.gdc",
+		"res://features/routines/routine_assignment_director.gd.remap",
+		"res://features/routines/routine_assignment_director.gdc",
+		"res://features/routines/routine_assignment_plan.gd.remap",
+		"res://features/routines/routine_assignment_plan.gdc",
+		"res://features/routines/routine_content_catalog.gd.remap",
+		"res://features/routines/routine_content_catalog.gdc",
+		"res://features/routines/routine_definition.gd.remap",
+		"res://features/routines/routine_definition.gdc",
+		"res://features/routines/routine_dialogue_context.gd.remap",
+		"res://features/routines/routine_dialogue_context.gdc",
+		"res://features/routines/routine_execution_director.gd.remap",
+		"res://features/routines/routine_execution_director.gdc",
+		"res://features/routines/routine_execution_world.gd.remap",
+		"res://features/routines/routine_execution_world.gdc",
+		"res://features/routines/routine_executor.gd.remap",
+		"res://features/routines/routine_executor.gdc",
+		"res://features/routines/routine_exterior_registry.gd.remap",
+		"res://features/routines/routine_exterior_registry.gdc",
+		"res://features/routines/routine_fact_command.gd.remap",
+		"res://features/routines/routine_fact_command.gdc",
+		"res://features/routines/routine_facts.gd.remap",
+		"res://features/routines/routine_facts.gdc",
+		"res://features/routines/routine_json.gd.remap",
+		"res://features/routines/routine_json.gdc",
+		"res://features/routines/routine_movement.gd.remap",
+		"res://features/routines/routine_movement.gdc",
+		"res://features/routines/routine_occupancy.gd.remap",
+		"res://features/routines/routine_occupancy.gdc",
+		"res://features/routines/routine_presentation.gd.remap",
+		"res://features/routines/routine_presentation.gdc",
+		"res://features/routines/routine_resolution_context.gd.remap",
+		"res://features/routines/routine_resolution_context.gdc",
+		"res://features/routines/routine_resolver.gd.remap",
+		"res://features/routines/routine_resolver.gdc",
+		"res://project.binary",
+		"res://ui/backpack_view.gd.remap",
+		"res://ui/backpack_view.gdc",
+		"res://ui/conversation_view.gd.remap",
+		"res://ui/conversation_view.gdc",
+		"res://ui/fishing_view.gd.remap",
+		"res://ui/fishing_view.gdc",
+		"res://ui/people_journal_view.gd.remap",
+		"res://ui/people_journal_view.gdc",
+		"res://ui/prototype_ui.gd.remap",
+		"res://ui/prototype_ui.gdc",
+		"res://ui/prototype_ui.tscn",
+		"res://ui/storybook_hud.gd.remap",
+		"res://ui/storybook_hud.gdc",
+		"res://world/alderwake.tscn",
+		"res://world/alderwake_exterior.gd.remap",
+		"res://world/alderwake_exterior.gdc",
+		"res://world/fishing_effects.gd.remap",
+		"res://world/fishing_effects.gdc",
+		"res://world/foraging_item_visual.gd.remap",
+		"res://world/foraging_item_visual.gdc",
+		"res://world/foraging_world_adapter.gd.remap",
+		"res://world/foraging_world_adapter.gdc",
+		"res://world/lantern_rest.gd.remap",
+		"res://world/lantern_rest.gdc",
+		"res://world/lantern_rest.tscn",
+		"res://world/location_definition.gd.remap",
+		"res://world/location_definition.gdc",
+		"res://world/map_candidate/alderwake_candidate.tscn",
+		"res://world/map_candidate/canopy_visibility.gdshader",
+		"res://world/map_candidate/crossings.gd.remap",
+		"res://world/map_candidate/crossings.gdc",
+		"res://world/map_candidate/dock_surfaces.gd.remap",
+		"res://world/map_candidate/dock_surfaces.gdc",
+		"res://world/map_candidate/elevation_surfaces.gd.remap",
+		"res://world/map_candidate/elevation_surfaces.gdc",
+		"res://world/map_candidate/forest_population.gd.remap",
+		"res://world/map_candidate/forest_population.gdc",
+		"res://world/map_candidate/landmark_art.gd.remap",
+		"res://world/map_candidate/landmark_art.gdc",
+		"res://world/map_candidate/landscape.gdshader",
+		"res://world/map_candidate/landscape_materials.gd.remap",
+		"res://world/map_candidate/landscape_materials.gdc",
+		"res://world/map_candidate/painted_building.gdshader",
+		"res://world/map_candidate/painted_wall.gdshader",
+		"res://world/map_candidate/prop_grayboxes.gd.remap",
+		"res://world/map_candidate/prop_grayboxes.gdc",
+		"res://world/map_candidate/river.gdshader",
+		"res://world/map_candidate/terrain_preview.gd.remap",
+		"res://world/map_candidate/terrain_preview.gdc",
+		"res://world/map_candidate/town_art.gd.remap",
+		"res://world/map_candidate/town_art.gdc",
+		"res://world/map_candidate/town_footprints.gd.remap",
+		"res://world/map_candidate/town_footprints.gdc",
+		"res://world/map_candidate/tree_art.gd.remap",
+		"res://world/map_candidate/tree_art.gdc",
+		"res://world/map_candidate/water_blockers.gd.remap",
+		"res://world/map_candidate/water_blockers.gdc",
+		"res://world/maris_counter.gd.remap",
+		"res://world/maris_counter.gdc",
+		"res://world/maris_counter.tscn",
+		"res://world/mayor_vale_home.gd.remap",
+		"res://world/mayor_vale_home.gdc",
+		"res://world/mayor_vale_home.tscn",
+		"res://world/portal_binding.gd.remap",
+		"res://world/portal_binding.gdc",
+		"res://world/portal_routes.gd.remap",
+		"res://world/portal_routes.gdc",
+		"res://world/prototype_location.gd.remap",
+		"res://world/prototype_location.gdc",
+		"res://world/spawn_anchor.gd.remap",
+		"res://world/spawn_anchor.gdc",
+		"res://world/storybook_home.gdshader",
+		"res://world/storybook_home_material.gd.remap",
+		"res://world/storybook_home_material.gdc",
+		"res://world/storybook_inn.gdshader",
+		"res://world/storybook_inn_material.gd.remap",
+		"res://world/storybook_inn_material.gdc",
+		"res://world/storybook_prop.gdshader",
+		"res://world/storybook_prop_material.gd.remap",
+		"res://world/storybook_prop_material.gdc",
+		"res://world/storybook_tollworks_material.gd.remap",
+		"res://world/storybook_tollworks_material.gdc",
+		"res://world/test_room.gd.remap",
+		"res://world/test_room.gdc",
+		"res://world/test_room.tscn",
+		"res://world/tollworks.tscn"
+	],
+	"fresh_snapshot": {
+		"actors": [
+			{
+				"definition_id": "prototype-hero",
+				"health": 100,
+				"instance_id": "party-player"
+			},
+			{
+				"definition_id": "prototype-companion",
+				"health": 100,
+				"instance_id": "party-companion"
+			}
+		],
+		"collected_resource_ids": [],
+		"completed_effect_ids": [],
+		"content_version": 1,
+		"conversations": {
+			"events": {
+				"facts": [],
+				"last_sequence": 0
+			},
+			"people": {
+				"npc-01": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-01",
+					"seen_node_ids": []
+				},
+				"npc-02": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-02",
+					"seen_node_ids": []
+				},
+				"npc-03": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-03",
+					"seen_node_ids": []
+				},
+				"npc-04": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-04",
+					"seen_node_ids": []
+				},
+				"npc-06": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-06",
+					"seen_node_ids": []
+				},
+				"npc-07": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-07",
+					"seen_node_ids": []
+				},
+				"npc-08": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-08",
+					"seen_node_ids": []
+				},
+				"npc-14": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-14",
+					"seen_node_ids": []
+				}
+			}
+		},
+		"elapsed_play_seconds": 0.0,
+		"environment": {
+			"day_cycle_progress": 0.0,
+			"day_index": 0,
+			"weather_seed": 2433184444
+		},
+		"inventory": {
+			"active_item_id": null,
+			"item_counts": {}
+		},
+		"light_source_overrides": [],
+		"location_id": "prototype-alderwake",
+		"party_member_ids": [
+			"party-player",
+			"party-companion"
+		],
+		"player_instance_id": "party-player",
+		"progression": {
+			"upgrade_ids": []
+		},
+		"quests": {
+			"prototype-maris-recovery": []
+		},
+		"relationship": {
+			"companion_id": "prototype-companion",
+			"reaction_ids": [],
+			"trust": 0
+		},
+		"routine_facts": {
+			"authored_event_ids": [],
+			"suppressed_routine_ids": []
+		},
+		"schema_version": 8,
+		"spawn_id": "alderwake-start",
+		"world_item_placements": []
+	},
+	"layout_sha256": "7477b17b82025ba6089fdad12bbb86f814cac8bb813d3fe9f7694b3cb53c78be",
+	"mode": "release",
+	"people": {
+		"npc-01": {
+			"asset": "res://assets/models/npcs/npc-01-actions.glb",
+			"clips": [
+				"action_river_fishing",
+				"idle",
+				"walk"
+			],
+			"failures": [],
+			"name": "Mayor Edric Vale",
+			"portraits": {
+				"fishing-gear": {
+					"path": "res://assets/npcs/portraits/npc-01/fishing-gear.png",
+					"size": "(512.0, 512.0)"
+				},
+				"official-neutral": {
+					"path": "res://assets/npcs/portraits/npc-01/official-neutral.png",
+					"size": "(512.0, 512.0)"
+				},
+				"pleased": {
+					"path": "res://assets/npcs/portraits/npc-01/pleased.png",
+					"size": "(512.0, 512.0)"
+				},
+				"practiced-smile": {
+					"path": "res://assets/npcs/portraits/npc-01/practiced-smile.png",
+					"size": "(512.0, 512.0)"
+				},
+				"skeptical": {
+					"path": "res://assets/npcs/portraits/npc-01/skeptical.png",
+					"size": "(512.0, 512.0)"
+				},
+				"tired-rumpled": {
+					"path": "res://assets/npcs/portraits/npc-01/tired-rumpled.png",
+					"size": "(512.0, 512.0)"
+				}
+			}
+		},
+		"npc-02": {
+			"asset": "res://assets/models/npcs/npc-02-actions.glb",
+			"clips": [
+				"action_archive_work",
+				"idle",
+				"walk"
+			],
+			"failures": [],
+			"name": "Helena Vale",
+			"portraits": {
+				"archive-work": {
+					"path": "res://assets/npcs/portraits/npc-02/archive-work.png",
+					"size": "(512.0, 512.0)"
+				},
+				"official-neutral": {
+					"path": "res://assets/npcs/portraits/npc-02/official-neutral.png",
+					"size": "(512.0, 512.0)"
+				},
+				"pleased": {
+					"path": "res://assets/npcs/portraits/npc-02/pleased.png",
+					"size": "(512.0, 512.0)"
+				},
+				"practiced-smile": {
+					"path": "res://assets/npcs/portraits/npc-02/practiced-smile.png",
+					"size": "(512.0, 512.0)"
+				},
+				"skeptical": {
+					"path": "res://assets/npcs/portraits/npc-02/skeptical.png",
+					"size": "(512.0, 512.0)"
+				},
+				"tired-rumpled": {
+					"path": "res://assets/npcs/portraits/npc-02/tired-rumpled.png",
+					"size": "(512.0, 512.0)"
+				}
+			}
+		},
+		"npc-03": {
+			"asset": "res://assets/models/npcs/npc-03.glb",
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"failures": [],
+			"name": "Maris Reed",
+			"portraits": {
+				"official-neutral": {
+					"path": "res://assets/npcs/portraits/npc-03/official-neutral.png",
+					"size": "(512.0, 512.0)"
+				},
+				"pleased": {
+					"path": "res://assets/npcs/portraits/npc-03/pleased.png",
+					"size": "(512.0, 512.0)"
+				},
+				"practiced-smile": {
+					"path": "res://assets/npcs/portraits/npc-03/practiced-smile.png",
+					"size": "(512.0, 512.0)"
+				},
+				"ropework": {
+					"path": "res://assets/npcs/portraits/npc-03/ropework.png",
+					"size": "(512.0, 512.0)"
+				},
+				"skeptical": {
+					"path": "res://assets/npcs/portraits/npc-03/skeptical.png",
+					"size": "(512.0, 512.0)"
+				},
+				"tired-rumpled": {
+					"path": "res://assets/npcs/portraits/npc-03/tired-rumpled.png",
+					"size": "(512.0, 512.0)"
+				}
+			}
+		},
+		"npc-04": {
+			"asset": "res://assets/models/npcs/npc-04.glb",
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"failures": [],
+			"name": "Harlan Reed",
+			"portraits": {
+				"birdwatching": {
+					"path": "res://assets/npcs/portraits/npc-04/birdwatching.png",
+					"size": "(512.0, 512.0)"
+				},
+				"official-neutral": {
+					"path": "res://assets/npcs/portraits/npc-04/official-neutral.png",
+					"size": "(512.0, 512.0)"
+				},
+				"pleased": {
+					"path": "res://assets/npcs/portraits/npc-04/pleased.png",
+					"size": "(512.0, 512.0)"
+				},
+				"practiced-smile": {
+					"path": "res://assets/npcs/portraits/npc-04/practiced-smile.png",
+					"size": "(512.0, 512.0)"
+				},
+				"skeptical": {
+					"path": "res://assets/npcs/portraits/npc-04/skeptical.png",
+					"size": "(512.0, 512.0)"
+				},
+				"tired-rumpled": {
+					"path": "res://assets/npcs/portraits/npc-04/tired-rumpled.png",
+					"size": "(512.0, 512.0)"
+				}
+			}
+		},
+		"npc-06": {
+			"asset": "res://assets/models/npcs/npc-06.glb",
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"failures": [],
+			"name": "Tess Reed",
+			"portraits": {
+				"flower-pressing": {
+					"path": "res://assets/npcs/portraits/npc-06/flower-pressing.png",
+					"size": "(512.0, 512.0)"
+				},
+				"official-neutral": {
+					"path": "res://assets/npcs/portraits/npc-06/official-neutral.png",
+					"size": "(512.0, 512.0)"
+				},
+				"pleased": {
+					"path": "res://assets/npcs/portraits/npc-06/pleased.png",
+					"size": "(512.0, 512.0)"
+				},
+				"practiced-smile": {
+					"path": "res://assets/npcs/portraits/npc-06/practiced-smile.png",
+					"size": "(512.0, 512.0)"
+				},
+				"skeptical": {
+					"path": "res://assets/npcs/portraits/npc-06/skeptical.png",
+					"size": "(512.0, 512.0)"
+				},
+				"tired-rumpled": {
+					"path": "res://assets/npcs/portraits/npc-06/tired-rumpled.png",
+					"size": "(512.0, 512.0)"
+				}
+			}
+		},
+		"npc-07": {
+			"asset": "res://assets/models/npcs/npc-07.glb",
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"failures": [],
+			"name": "Ivo Oran",
+			"portraits": {
+				"knotwork": {
+					"path": "res://assets/npcs/portraits/npc-07/knotwork.png",
+					"size": "(512.0, 512.0)"
+				},
+				"official-neutral": {
+					"path": "res://assets/npcs/portraits/npc-07/official-neutral.png",
+					"size": "(512.0, 512.0)"
+				},
+				"pleased": {
+					"path": "res://assets/npcs/portraits/npc-07/pleased.png",
+					"size": "(512.0, 512.0)"
+				},
+				"practiced-smile": {
+					"path": "res://assets/npcs/portraits/npc-07/practiced-smile.png",
+					"size": "(512.0, 512.0)"
+				},
+				"skeptical": {
+					"path": "res://assets/npcs/portraits/npc-07/skeptical.png",
+					"size": "(512.0, 512.0)"
+				},
+				"tired-rumpled": {
+					"path": "res://assets/npcs/portraits/npc-07/tired-rumpled.png",
+					"size": "(512.0, 512.0)"
+				}
+			}
+		},
+		"npc-08": {
+			"asset": "res://assets/models/npcs/npc-08.glb",
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"failures": [],
+			"name": "Celia Oran",
+			"portraits": {
+				"official-neutral": {
+					"path": "res://assets/npcs/portraits/npc-08/official-neutral.png",
+					"size": "(512.0, 512.0)"
+				},
+				"pleased": {
+					"path": "res://assets/npcs/portraits/npc-08/pleased.png",
+					"size": "(512.0, 512.0)"
+				},
+				"practiced-smile": {
+					"path": "res://assets/npcs/portraits/npc-08/practiced-smile.png",
+					"size": "(512.0, 512.0)"
+				},
+				"skeptical": {
+					"path": "res://assets/npcs/portraits/npc-08/skeptical.png",
+					"size": "(512.0, 512.0)"
+				},
+				"tired-rumpled": {
+					"path": "res://assets/npcs/portraits/npc-08/tired-rumpled.png",
+					"size": "(512.0, 512.0)"
+				},
+				"woodcarving": {
+					"path": "res://assets/npcs/portraits/npc-08/woodcarving.png",
+					"size": "(512.0, 512.0)"
+				}
+			}
+		},
+		"npc-14": {
+			"asset": "res://assets/models/npcs/npc-14.glb",
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"failures": [],
+			"name": "Della Pike",
+			"portraits": {
+				"official-neutral": {
+					"path": "res://assets/npcs/portraits/npc-14/official-neutral.png",
+					"size": "(512.0, 512.0)"
+				},
+				"pleased": {
+					"path": "res://assets/npcs/portraits/npc-14/pleased.png",
+					"size": "(512.0, 512.0)"
+				},
+				"practiced-smile": {
+					"path": "res://assets/npcs/portraits/npc-14/practiced-smile.png",
+					"size": "(512.0, 512.0)"
+				},
+				"quilting": {
+					"path": "res://assets/npcs/portraits/npc-14/quilting.png",
+					"size": "(512.0, 512.0)"
+				},
+				"skeptical": {
+					"path": "res://assets/npcs/portraits/npc-14/skeptical.png",
+					"size": "(512.0, 512.0)"
+				},
+				"tired-rumpled": {
+					"path": "res://assets/npcs/portraits/npc-14/tired-rumpled.png",
+					"size": "(512.0, 512.0)"
+				}
+			}
+		}
+	},
+	"pid": 19592,
+	"rooms": {
+		"prototype-lantern-rest": {
+			"nodes": 98,
+			"portals": 1,
+			"scene": "res://world/lantern_rest.tscn",
+			"spawns": [
+				"lantern-rest-from-alderwake"
+			]
+		},
+		"prototype-mayor-vale-home": {
+			"nodes": 82,
+			"portals": 1,
+			"scene": "res://world/mayor_vale_home.tscn",
+			"spawns": [
+				"mayor-vale-home-from-alderwake"
+			]
+		}
+	},
+	"routine_inventory": {
+		"celia-repairs-day": {
+			"definition": {
+				"conditions": [],
+				"id": "celia-repairs-day",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-08",
+						"steps": [
+							{
+								"id": "reach-basic-repair-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "celia-basic-repairs-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "remain-available-for-repairs",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-08"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "22:00",
+					"start": "06:00"
+				}
+			},
+			"sha256": "7693b8c258849c1ac7534429c8695211e719e72a1da7e110574fe0386b370cc9"
+		},
+		"celia-repairs-evening": {
+			"definition": {
+				"conditions": [],
+				"id": "celia-repairs-evening",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-08",
+						"steps": [
+							{
+								"id": "reach-basic-repair-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "celia-basic-repairs-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "remain-available-for-repairs",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-08"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "06:00",
+					"start": "22:00"
+				}
+			},
+			"sha256": "6f1492c58935694f512e236b1d8deb862f6eb2b22f92a926f91edd8539f647bf"
+		},
+		"della-inn-day": {
+			"definition": {
+				"conditions": [],
+				"id": "della-inn-day",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-14",
+						"steps": [
+							{
+								"id": "reach-inn-host-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "inn-host-01",
+									"mapId": "prototype-lantern-rest"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "remain-available-for-guests",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-14"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "22:00",
+					"start": "06:00"
+				}
+			},
+			"sha256": "3116f0c978ef0f36e113fe7eb2638ba483cad0aff1a9c9d8c23baca088a5d5c1"
+		},
+		"della-inn-evening": {
+			"definition": {
+				"conditions": [],
+				"id": "della-inn-evening",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-14",
+						"steps": [
+							{
+								"id": "reach-inn-host-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "inn-host-01",
+									"mapId": "prototype-lantern-rest"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "remain-available-for-guests",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-14"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "06:00",
+					"start": "22:00"
+				}
+			},
+			"sha256": "8f0a7bd8c8ec4a67383988cd11dd028ed100e4e1d470e81967058117fe93b7da"
+		},
+		"edric-afternoon-river-notes": {
+			"definition": {
+				"conditions": [
+					{
+						"factId": "npc-01-river-fishing",
+						"kind": "learnedFact",
+						"npcId": "npc-01"
+					}
+				],
+				"id": "edric-afternoon-river-notes",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "leave-civic-briefing",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-town-square",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "inspect-river-bank",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-river-bank",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "share-river-observation",
+								"kind": "speech",
+								"text": "The river is quieter beyond the Old Ford."
+							},
+							{
+								"actionId": "river-fishing",
+								"durationSeconds": 86.0,
+								"id": "note-river-conditions",
+								"kind": "action"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01"
+				],
+				"priority": 200.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "17:00",
+					"start": "13:00"
+				}
+			},
+			"sha256": "e1c31d7ee5f08a89c24616182e29c7ed8e59ec67ba2de2dcd0f63b796cbb9083"
+		},
+		"edric-afternoon-rounds": {
+			"definition": {
+				"conditions": [],
+				"id": "edric-afternoon-rounds",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "leave-civic-briefing",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-town-square",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "walk-market-rounds",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-market-rounds",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "check-market-lane",
+								"kind": "speech",
+								"text": "Market Lane appears orderly this afternoon."
+							},
+							{
+								"durationSeconds": 90.0,
+								"id": "receive-town-reports",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "17:00",
+					"start": "13:00"
+				}
+			},
+			"sha256": "8ec4e6db5deaee504ae6b73ca3b47735c5bdc628d1edbc8618ba3d060b996c80"
+		},
+		"edric-evening-fishing": {
+			"definition": {
+				"conditions": [
+					{
+						"eventId": "heavy-rain",
+						"kind": "worldEventInactive"
+					}
+				],
+				"id": "edric-evening-fishing",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "finish-afternoon-rounds",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-market-rounds",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "walk-to-river-bank",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-river-bank",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "greet-river",
+								"kind": "speech",
+								"text": "A quiet river rewards patience more than ceremony."
+							},
+							{
+								"actionId": "river-fishing",
+								"durationSeconds": 66.0,
+								"id": "fish-river",
+								"kind": "action"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "20:00",
+					"start": "17:00"
+				}
+			},
+			"sha256": "da085f4c07f1da041b58761bd1858f665e0ee9d46bc576b42e9a73b6f7fd259b"
+		},
+		"edric-evening-rain-shelter": {
+			"definition": {
+				"conditions": [
+					{
+						"eventId": "heavy-rain",
+						"kind": "worldEventActive"
+					}
+				],
+				"id": "edric-evening-rain-shelter",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "reach-home-shelter",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-rain-shelter",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "review-notices-indoors",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-home-study",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "postpone-fishing",
+								"kind": "speech",
+								"text": "The river can wait until the heavy rain passes."
+							},
+							{
+								"durationSeconds": 70.0,
+								"id": "review-civic-notices",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01"
+				],
+				"priority": 200.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "20:00",
+					"start": "17:00"
+				}
+			},
+			"sha256": "5c496131c450320b9b0629ec1032e9965f30fc9fd82c3070a4aac5e2506585f3"
+		},
+		"harlan-docks-day": {
+			"definition": {
+				"conditions": [],
+				"id": "harlan-docks-day",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-04",
+						"steps": [
+							{
+								"id": "reach-dock-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "harlan-sluice-practice-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "coordinate-dock-work",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-04"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "22:00",
+					"start": "06:00"
+				}
+			},
+			"sha256": "fd4f17ae2da335397a2355759ba6a27340c357861f6e465e9d649fd44326fa9c"
+		},
+		"harlan-docks-evening": {
+			"definition": {
+				"conditions": [],
+				"id": "harlan-docks-evening",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-04",
+						"steps": [
+							{
+								"id": "reach-dock-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "harlan-sluice-practice-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "review-dock-notes",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-04"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "06:00",
+					"start": "22:00"
+				}
+			},
+			"sha256": "019a6e41348550efcdb6f50abc64847f13ac8456fd3e5f1dcd76a6dacb264c0d"
+		},
+		"helena-afternoon-archive": {
+			"definition": {
+				"conditions": [
+					{
+						"flagId": "npc-02-archive-lead-shared",
+						"kind": "relationshipFlagUnset",
+						"npcId": "npc-02"
+					}
+				],
+				"id": "helena-afternoon-archive",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+					"outcomeDirectives": [
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-indexing"
+						},
+						{
+							"directive": {
+								"kind": "jumpToStep",
+								"participantId": "npc-02",
+								"stepId": "afternoon-review-ledger"
+							},
+							"outcomeTag": "npc-02-review-archive-ledger"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-indexing"
+						}
+					],
+					"stepDialogueEntries": [
+						{
+							"dialogueEntryNodeId": "npc-02-routine-archive-indexing",
+							"participantId": "npc-02",
+							"stepId": "afternoon-index"
+						}
+					]
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "leave-civic-briefing",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-town-square",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "return-to-archive",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-desk",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 70.0,
+								"id": "afternoon-index",
+								"kind": "action"
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "confirm-index-progress",
+								"kind": "speech",
+								"text": "These entries now agree with their shelf marks."
+							},
+							{
+								"id": "check-archive-shelves",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-shelves",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 24.0,
+								"id": "afternoon-review-ledger",
+								"kind": "action"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-02"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "17:00",
+					"start": "13:00"
+				}
+			},
+			"sha256": "e68186009c5e0e2f04ae6199d788a105bddaf013979e74a3e59a8462f76af0bd"
+		},
+		"helena-afternoon-ledger-review": {
+			"definition": {
+				"conditions": [
+					{
+						"flagId": "npc-02-archive-lead-shared",
+						"kind": "relationshipFlagSet",
+						"npcId": "npc-02"
+					}
+				],
+				"id": "helena-afternoon-ledger-review",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+					"outcomeDirectives": [
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-indexing"
+						},
+						{
+							"directive": {
+								"kind": "jumpToStep",
+								"participantId": "npc-02",
+								"stepId": "afternoon-review-ledger"
+							},
+							"outcomeTag": "npc-02-review-archive-ledger"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-indexing"
+						}
+					],
+					"stepDialogueEntries": [
+						{
+							"dialogueEntryNodeId": "npc-02-routine-archive-indexing",
+							"participantId": "npc-02",
+							"stepId": "afternoon-index"
+						}
+					]
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "leave-civic-briefing",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-town-square",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "return-to-archive",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-desk",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 58.0,
+								"id": "afternoon-index",
+								"kind": "action"
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "confirm-ledger-lead",
+								"kind": "speech",
+								"text": "That ledger reference deserves a careful review."
+							},
+							{
+								"id": "check-archive-shelves",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-shelves",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 36.0,
+								"id": "afternoon-review-ledger",
+								"kind": "action"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-02"
+				],
+				"priority": 300.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "17:00",
+					"start": "13:00"
+				}
+			},
+			"sha256": "1cf8c0b2b84d9fe78afcebf7563dd680bd42b784c468cad97c771ef6bd127841"
+		},
+		"helena-afternoon-moonflower-records": {
+			"definition": {
+				"conditions": [
+					{
+						"flagId": "npc-02-archive-lead-shared",
+						"kind": "relationshipFlagUnset",
+						"npcId": "npc-02"
+					},
+					{
+						"eventKind": "resourceGathered",
+						"kind": "playerEvent",
+						"maximumCount": null,
+						"minimumCount": 1.0,
+						"occurredWithinActiveSeconds": null,
+						"subjectId": "moonflower",
+						"targetId": null
+					}
+				],
+				"id": "helena-afternoon-moonflower-records",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+					"outcomeDirectives": [
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-indexing"
+						},
+						{
+							"directive": {
+								"kind": "jumpToStep",
+								"participantId": "npc-02",
+								"stepId": "afternoon-review-ledger"
+							},
+							"outcomeTag": "npc-02-review-archive-ledger"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-indexing"
+						}
+					],
+					"stepDialogueEntries": [
+						{
+							"dialogueEntryNodeId": "npc-02-routine-archive-indexing",
+							"participantId": "npc-02",
+							"stepId": "afternoon-index"
+						}
+					]
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "leave-civic-briefing",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-town-square",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "return-to-archive",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-desk",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 70.0,
+								"id": "afternoon-index",
+								"kind": "action"
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "record-moonflower-season",
+								"kind": "speech",
+								"text": "A Moonflower sighting belongs in the seasonal index."
+							},
+							{
+								"id": "check-archive-shelves",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-shelves",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 24.0,
+								"id": "afternoon-review-ledger",
+								"kind": "action"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-02"
+				],
+				"priority": 200.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "17:00",
+					"start": "13:00"
+				}
+			},
+			"sha256": "e8d7b14598f42c61191c68a449ac83450b9fdc01ff46ff93797d6b73ff7385b5"
+		},
+		"helena-evening-archive": {
+			"definition": {
+				"conditions": [],
+				"id": "helena-evening-archive",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": "npc-02-routine-archive-default",
+					"outcomeDirectives": [
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-indexing"
+						},
+						{
+							"directive": {
+								"kind": "jumpToStep",
+								"participantId": "npc-02",
+								"stepId": "evening-review-ledger"
+							},
+							"outcomeTag": "npc-02-review-archive-ledger"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-indexing"
+						}
+					],
+					"stepDialogueEntries": [
+						{
+							"dialogueEntryNodeId": "npc-02-routine-archive-indexing",
+							"participantId": "npc-02",
+							"stepId": "evening-index"
+						}
+					]
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "return-to-archive-desk",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-desk",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 48.0,
+								"id": "evening-index",
+								"kind": "action"
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "prepare-shelf-check",
+								"kind": "speech",
+								"text": "One final shelf check, then the folios can rest."
+							},
+							{
+								"id": "check-evening-shelves",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-shelves",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 24.0,
+								"id": "evening-review-ledger",
+								"kind": "action"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-02"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "20:00",
+					"start": "17:00"
+				}
+			},
+			"sha256": "3c52e2f6d128e4d9db68861494f04391d554bc3c3ae0284b37d1889e07acd9b8"
+		},
+		"ivo-docks-day": {
+			"definition": {
+				"conditions": [],
+				"id": "ivo-docks-day",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-07",
+						"steps": [
+							{
+								"id": "reach-booking-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "passenger-booking-ivo-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 45.0,
+								"id": "listen-to-dock-questions",
+								"kind": "wait"
+							},
+							{
+								"id": "check-shore-handoff",
+								"kind": "move",
+								"target": {
+									"anchorId": "passenger-salvage-handoff-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 20.0,
+								"id": "review-shore-lines",
+								"kind": "wait"
+							},
+							{
+								"id": "return-to-booking-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "passenger-booking-ivo-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "remain-available-at-berth",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-07"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "22:00",
+					"start": "06:00"
+				}
+			},
+			"sha256": "d72376a2cbc9a1ba49fae87444448e2639ef61f739a338b6438dd33a581e8a1b"
+		},
+		"ivo-docks-evening": {
+			"definition": {
+				"conditions": [],
+				"id": "ivo-docks-evening",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-07",
+						"steps": [
+							{
+								"id": "reach-booking-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "passenger-booking-ivo-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 45.0,
+								"id": "listen-to-dock-questions",
+								"kind": "wait"
+							},
+							{
+								"id": "check-shore-handoff",
+								"kind": "move",
+								"target": {
+									"anchorId": "passenger-salvage-handoff-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 20.0,
+								"id": "review-shore-lines",
+								"kind": "wait"
+							},
+							{
+								"id": "return-to-booking-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "passenger-booking-ivo-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "remain-available-at-berth",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-07"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "06:00",
+					"start": "22:00"
+				}
+			},
+			"sha256": "ec34ebdc86535f2acd3196ebf83e56deb26ecd387b0f1833f5725f311bbbfc9a"
+		},
+		"maris-chandlery-day": {
+			"definition": {
+				"conditions": [],
+				"id": "maris-chandlery-day",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-03",
+						"steps": [
+							{
+								"id": "reach-chandlery",
+								"kind": "move",
+								"target": {
+									"anchorId": "maris-fitting-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "tend-ordinary-stock",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-03"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "22:00",
+					"start": "06:00"
+				}
+			},
+			"sha256": "a13615de7df4b7f273b56701cd80bc84e3a47da46fc0dd539c55f1f76c873fea"
+		},
+		"maris-chandlery-evening": {
+			"definition": {
+				"conditions": [],
+				"id": "maris-chandlery-evening",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-03",
+						"steps": [
+							{
+								"id": "reach-chandlery",
+								"kind": "move",
+								"target": {
+									"anchorId": "maris-fitting-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "sort-evening-stock",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-03"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "06:00",
+					"start": "22:00"
+				}
+			},
+			"sha256": "ac634457d91b873398facabddf4bf6910be7fa817dceb328f79f12b81a516dfe"
+		},
+		"tess-store-day": {
+			"definition": {
+				"conditions": [],
+				"id": "tess-store-day",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-06",
+						"steps": [
+							{
+								"id": "reach-store-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "store-service-tess-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "listen-to-supply-needs",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-06"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "22:00",
+					"start": "06:00"
+				}
+			},
+			"sha256": "90fc7a8b95bfd7d93a58275859892c90f0cf6adc618f2fa016a5ace24796fe7d"
+		},
+		"tess-store-evening": {
+			"definition": {
+				"conditions": [],
+				"id": "tess-store-evening",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-06",
+						"steps": [
+							{
+								"id": "reach-store-station",
+								"kind": "move",
+								"target": {
+									"anchorId": "store-service-tess-01",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 400.0,
+								"id": "review-store-list",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-06"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "06:00",
+					"start": "22:00"
+				}
+			},
+			"sha256": "c9169c8e9a2993e10f3aeb57a17d7372fa08adf3f3225ca6c35e5f13c087aba8"
+		},
+		"vale-breakfast": {
+			"definition": {
+				"conditions": [],
+				"id": "vale-breakfast",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "take-breakfast-seat",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-breakfast",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "review-town-notices",
+								"kind": "speech",
+								"text": "The morning notices are ready for Market Lane."
+							},
+							{
+								"durationSeconds": 45.0,
+								"id": "finish-breakfast",
+								"kind": "wait"
+							}
+						]
+					},
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "take-breakfast-seat",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-breakfast",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "check-archive-list",
+								"kind": "speech",
+								"text": "I have three archive references to cross-check today."
+							},
+							{
+								"durationSeconds": 45.0,
+								"id": "finish-breakfast",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01",
+					"npc-02"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "08:00",
+					"start": "06:00"
+				}
+			},
+			"sha256": "40b20c5a27a55cddfd40b8b5e6a37678a0fee1dd16588a887fb1ca7f237f82d7"
+		},
+		"vale-evening-home": {
+			"definition": {
+				"conditions": [],
+				"id": "vale-evening-home",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "leave-evening-post",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-rain-shelter",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "take-evening-seat",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-evening-seat",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"durationSeconds": 50.0,
+								"id": "evening-at-home",
+								"kind": "wait"
+							}
+						]
+					},
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "close-archive",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-desk",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"id": "take-evening-seat",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-evening-seat",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"durationSeconds": 50.0,
+								"id": "evening-at-home",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01",
+					"npc-02"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "22:00",
+					"start": "20:00"
+				}
+			},
+			"sha256": "53e0574b9ea4de4e444b1df2ed888a8532d55bb1c8f2bbfc7b87871f271e57b2"
+		},
+		"vale-midday-briefing": {
+			"definition": {
+				"conditions": [],
+				"id": "vale-midday-briefing",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "leave-morning-post",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-market-rounds",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"id": "join-civic-briefing",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-town-square",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "open-civic-briefing",
+								"kind": "speech",
+								"text": "Let us compare the council notes with the public record."
+							},
+							{
+								"durationSeconds": 20.0,
+								"id": "hold-civic-briefing",
+								"kind": "wait"
+							}
+						]
+					},
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "leave-archive",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-desk",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"id": "join-civic-briefing",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-town-square",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "answer-civic-briefing",
+								"kind": "speech",
+								"text": "The archive copy and the council note now agree."
+							},
+							{
+								"durationSeconds": 20.0,
+								"id": "hold-civic-briefing",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01",
+					"npc-02"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "13:00",
+					"start": "12:00"
+				}
+			},
+			"sha256": "3a926df47abdc5dbc48c1b856b878a552f4b8123a4212d115bd661db93e94ed6"
+		},
+		"vale-morning-work": {
+			"definition": {
+				"conditions": [],
+				"id": "vale-morning-work",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "resume"
+							},
+							"outcomeTag": "npc-02-resume-archive-indexing"
+						},
+						{
+							"directive": {
+								"kind": "jumpToStep",
+								"participantId": "npc-02",
+								"stepId": "morning-review-ledger"
+							},
+							"outcomeTag": "npc-02-review-archive-ledger"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-default"
+						},
+						{
+							"directive": {
+								"kind": "endRoutineForDay"
+							},
+							"outcomeTag": "npc-02-end-archive-indexing"
+						}
+					],
+					"stepDialogueEntries": [
+						{
+							"dialogueEntryNodeId": "npc-02-routine-archive-indexing",
+							"participantId": "npc-02",
+							"stepId": "morning-index"
+						}
+					]
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "leave-breakfast",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-breakfast",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"id": "open-town-office",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-town-square",
+									"mapId": "prototype-alderwake"
+								}
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "announce-office-hours",
+								"kind": "speech",
+								"text": "Town questions can be brought here before noon."
+							},
+							{
+								"durationSeconds": 90.0,
+								"id": "hold-office-hours",
+								"kind": "wait"
+							}
+						]
+					},
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "leave-breakfast",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-breakfast",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"id": "open-archive",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-archive-desk",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 70.0,
+								"id": "morning-index",
+								"kind": "action"
+							},
+							{
+								"durationSeconds": 4.0,
+								"id": "mark-index-mismatch",
+								"kind": "speech",
+								"text": "This shelf index needs one more check."
+							},
+							{
+								"actionId": "archive-work",
+								"durationSeconds": 24.0,
+								"id": "morning-review-ledger",
+								"kind": "action"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01",
+					"npc-02"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "12:00",
+					"start": "08:00"
+				}
+			},
+			"sha256": "373cef88c171f1084c9d2f78f44e671bb02be2cee5ebe431207351b5cd916f9a"
+		},
+		"vale-overnight-home": {
+			"definition": {
+				"conditions": [],
+				"id": "vale-overnight-home",
+				"interactionPolicy": {
+					"allowDialogue": true,
+					"defaultDialogueEntryNodeId": null,
+					"outcomeDirectives": [],
+					"stepDialogueEntries": []
+				},
+				"participantSteps": [
+					{
+						"participantId": "npc-01",
+						"steps": [
+							{
+								"id": "settle-for-night",
+								"kind": "move",
+								"target": {
+									"anchorId": "edric-rest",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"durationSeconds": 240.0,
+								"id": "rest-until-morning",
+								"kind": "wait"
+							}
+						]
+					},
+					{
+						"participantId": "npc-02",
+						"steps": [
+							{
+								"id": "settle-for-night",
+								"kind": "move",
+								"target": {
+									"anchorId": "helena-rest",
+									"mapId": "prototype-mayor-vale-home"
+								}
+							},
+							{
+								"durationSeconds": 240.0,
+								"id": "rest-until-morning",
+								"kind": "wait"
+							}
+						]
+					}
+				],
+				"participants": [
+					"npc-01",
+					"npc-02"
+				],
+				"priority": 100.0,
+				"schemaVersion": 1.0,
+				"timeWindow": {
+					"end": "06:00",
+					"start": "22:00"
+				}
+			},
+			"sha256": "5db90b61d4317a7e5cc661902d9fbb76e3cb6e54046394beb103f8cb6e69945c"
+		}
+	},
+	"schema": 8,
+	"social": {
+		"choices": 53,
+		"facts": 22,
+		"gift_rules": 8,
+		"nodes": 69
+	},
+	"task": "R016",
+	"tests": []
+}

@@ -1,0 +1,8 @@
+{
+  "command": "\"C:\\Users\\aldoc\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe\" -NoProfile -File \"D:\\development\\game-dev-blender\\returning-fair-prototype\\tools\\art_direction\\launch_native.ps1\" -Session ad020-20261011-restart -Phase writer",
+  "provenance": "Owned guarded launch controller only; no input, bridge or save setup",
+  "phase": "writer",
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype",
+  "task": "AD020",
+  "controller_pid": 65932
+}

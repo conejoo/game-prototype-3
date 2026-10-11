@@ -1,0 +1,23 @@
+{
+  "steps": [
+    {
+      "keys": [
+        "B"
+      ],
+      "duration_ms": 70,
+      "op": "hold"
+    },
+    {
+      "from_y": 50,
+      "to_x": 220,
+      "to_y": 110,
+      "from_x": 40,
+      "op": "drag",
+      "duration_ms": 101
+    },
+    {
+      "label": "after-drag",
+      "op": "capture"
+    }
+  ]
+}

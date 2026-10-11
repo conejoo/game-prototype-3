@@ -1,0 +1,88 @@
+{
+  "id": "a947d65b5c1d4ff384ef49044ddb7b16",
+  "ok": true,
+  "failed_step": null,
+  "steps": [
+    {
+      "index": 0,
+      "elapsed_ms": 110.2123,
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:46:01.3465643Z"
+    },
+    {
+      "index": 1,
+      "elapsed_ms": 161.78369999999998,
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 150
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:46:01.5149234Z"
+    },
+    {
+      "index": 2,
+      "elapsed_ms": 74.36099999999999,
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "reader-restored-home-art"
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:46:01.5893985Z"
+    },
+    {
+      "index": 3,
+      "elapsed_ms": 81.44689999999997,
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:46:01.6708957Z"
+    },
+    {
+      "index": 4,
+      "elapsed_ms": 215.90840000000003,
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 200
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:46:01.8869117Z"
+    },
+    {
+      "index": 5,
+      "elapsed_ms": 25.487700000000018,
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "reader-restored-home-paused"
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:46:01.9124701Z"
+    }
+  ],
+  "requested_duration_ms": 490,
+  "target_pid": 26528,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart\\ReturningFair.exe",
+  "mouse_unreleased": false,
+  "error": null,
+  "cleanup_errors": [],
+  "elapsed_ms": 912.2062,
+  "schema_version": 2,
+  "unreleased_keys": []
+}

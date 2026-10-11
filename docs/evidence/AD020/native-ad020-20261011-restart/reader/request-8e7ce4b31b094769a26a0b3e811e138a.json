@@ -1,0 +1,19 @@
+{
+  "steps": [
+    {
+      "op": "hold",
+      "keys": [
+        "ENTER"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "wait",
+      "duration_ms": 5000
+    },
+    {
+      "op": "capture",
+      "label": "reader-verified-resave-success"
+    }
+  ]
+}

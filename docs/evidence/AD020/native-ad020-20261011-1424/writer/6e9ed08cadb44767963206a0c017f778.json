@@ -1,0 +1,63 @@
+{
+  "ok": true,
+  "requested_duration_ms": 210,
+  "schema_version": 2,
+  "failed_step": null,
+  "elapsed_ms": 522.0094,
+  "cleanup_errors": [],
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe",
+  "unreleased_keys": [],
+  "target_pid": 53324,
+  "id": "6e9ed08cadb44767963206a0c017f778",
+  "error": null,
+  "mouse_unreleased": false,
+  "steps": [
+    {
+      "ok": true,
+      "step": {
+        "label": "walk-home-c423e87e-world",
+        "op": "capture"
+      },
+      "elapsed_ms": 99.4384,
+      "completed_utc": "2026-10-11T14:24:50.0750032Z",
+      "index": 0,
+      "error": null
+    },
+    {
+      "ok": true,
+      "step": {
+        "keys": [
+          "ESC"
+        ],
+        "op": "hold",
+        "duration_ms": 60
+      },
+      "elapsed_ms": 70.0932,
+      "completed_utc": "2026-10-11T14:24:50.1451327Z",
+      "index": 1,
+      "error": null
+    },
+    {
+      "ok": true,
+      "step": {
+        "duration_ms": 150,
+        "op": "wait"
+      },
+      "elapsed_ms": 155.6534,
+      "completed_utc": "2026-10-11T14:24:50.3008273Z",
+      "index": 2,
+      "error": null
+    },
+    {
+      "ok": true,
+      "step": {
+        "label": "walk-home-c423e87e-paused",
+        "op": "capture"
+      },
+      "elapsed_ms": 33.9452,
+      "completed_utc": "2026-10-11T14:24:50.3348319Z",
+      "index": 3,
+      "error": null
+    }
+  ]
+}

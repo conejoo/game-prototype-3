@@ -1,0 +1,17 @@
+{
+  "steps": [
+    {
+      "op": "click",
+      "x": 480,
+      "y": 338
+    },
+    {
+      "op": "wait",
+      "duration_ms": 300
+    },
+    {
+      "op": "capture",
+      "label": "writer-gui-save-success"
+    }
+  ]
+}

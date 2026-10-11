@@ -1,0 +1,23 @@
+{
+  "steps": [
+    {
+      "op": "capture",
+      "label": "retry-fresh-town"
+    },
+    {
+      "op": "hold",
+      "keys": [
+        "ESC"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "wait",
+      "duration_ms": 200
+    },
+    {
+      "op": "capture",
+      "label": "retry-start-paused"
+    }
+  ]
+}

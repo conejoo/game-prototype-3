@@ -1,0 +1,63 @@
+{
+  "failed_step": null,
+  "ok": true,
+  "target_pid": 71804,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart\\ReturningFair.exe",
+  "steps": [
+    {
+      "ok": true,
+      "completed_utc": "2026-10-11T14:37:21.0305532Z",
+      "elapsed_ms": 89.273,
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "walk-home-ce718d5c-world"
+      },
+      "index": 0
+    },
+    {
+      "ok": true,
+      "completed_utc": "2026-10-11T14:37:21.1052904Z",
+      "elapsed_ms": 74.6951,
+      "error": null,
+      "step": {
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 60,
+        "op": "hold"
+      },
+      "index": 1
+    },
+    {
+      "ok": true,
+      "completed_utc": "2026-10-11T14:37:21.2606235Z",
+      "elapsed_ms": 155.2878,
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 150
+      },
+      "index": 2
+    },
+    {
+      "ok": true,
+      "completed_utc": "2026-10-11T14:37:21.2945746Z",
+      "elapsed_ms": 33.90229999999997,
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "walk-home-ce718d5c-paused"
+      },
+      "index": 3
+    }
+  ],
+  "elapsed_ms": 517.9936,
+  "requested_duration_ms": 210,
+  "error": null,
+  "id": "fc99f6fa877e42fc888178928c386864",
+  "mouse_unreleased": false,
+  "cleanup_errors": [],
+  "schema_version": 2,
+  "unreleased_keys": []
+}

@@ -1,0 +1,6 @@
+{
+  "task": "AD020",
+  "status": "passed",
+  "assertions": 7,
+  "proof": "Synthetic exact-hash/path/reparse guards; no OS input"
+}

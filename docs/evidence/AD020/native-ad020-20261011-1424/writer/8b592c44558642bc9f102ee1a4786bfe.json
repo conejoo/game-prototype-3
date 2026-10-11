@@ -1,0 +1,63 @@
+{
+  "target_pid": 53324,
+  "error": null,
+  "failed_step": null,
+  "cleanup_errors": [],
+  "id": "8b592c44558642bc9f102ee1a4786bfe",
+  "mouse_unreleased": false,
+  "elapsed_ms": 494.1156,
+  "schema_version": 2,
+  "requested_duration_ms": 210,
+  "steps": [
+    {
+      "index": 0,
+      "elapsed_ms": 87.643,
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "walk-tollworks-d690035c-world"
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:30:24.9147519Z"
+    },
+    {
+      "index": 1,
+      "elapsed_ms": 66.595,
+      "error": null,
+      "step": {
+        "keys": [
+          "ESC"
+        ],
+        "op": "hold",
+        "duration_ms": 60
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:30:24.9813746Z"
+    },
+    {
+      "index": 2,
+      "elapsed_ms": 154.91450000000003,
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 150
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:30:25.1363236Z"
+    },
+    {
+      "index": 3,
+      "elapsed_ms": 26.243300000000033,
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "walk-tollworks-d690035c-paused"
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:30:25.1625983Z"
+    }
+  ],
+  "ok": true,
+  "unreleased_keys": [],
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe"
+}

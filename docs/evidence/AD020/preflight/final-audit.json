@@ -1,0 +1,156 @@
+{
+  "task": "AD020",
+  "status": "passed",
+  "original_files": 4176,
+  "protected_original_files": 4170,
+  "unexpected_changes": [],
+  "verified_current_source_files": 1435,
+  "current_source_sha256": "8e9874d015fbba02be8d8a9f272cc90520d5f22e1af0397b70049b241ac5fc50",
+  "source_mismatch": [],
+  "packages": {
+    "validation": {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\20261011-142239-03737612\\windows-validation",
+      "files": {
+        "ReturningFairValidation.console.exe": {
+          "bytes": 188928,
+          "sha256": "5514c7645ee897a01f540d3cf22ede5badf92394521a08bfab66a54d7369e6e6"
+        },
+        "ReturningFairValidation.exe": {
+          "bytes": 103176704,
+          "sha256": "51498b72b3a237f882ebd7d1787f06a4bc1eaf0572daab93837adcfd3cfdc107"
+        },
+        "ReturningFairValidation.pck": {
+          "bytes": 19046812,
+          "sha256": "08ffdba571ee35bc24ee15ab9a92b2e7cd215deb06cd227ff55be6c98ab4f370"
+        }
+      },
+      "preset": "Windows Validation"
+    },
+    "release": {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\20261011-142239-03737612\\windows",
+      "files": {
+        "ReturningFair.exe": {
+          "bytes": 109268480,
+          "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+        },
+        "ReturningFair.pck": {
+          "bytes": 19046812,
+          "sha256": "08ffdba571ee35bc24ee15ab9a92b2e7cd215deb06cd227ff55be6c98ab4f370"
+        }
+      },
+      "preset": "Windows Desktop"
+    }
+  },
+  "preserved": {
+    "windows-validation": {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\20261011-142239-03737612\\previous-packages\\windows-validation",
+      "files": {
+        "ReturningFairValidation.console.exe": {
+          "bytes": 188928,
+          "sha256": "5514c7645ee897a01f540d3cf22ede5badf92394521a08bfab66a54d7369e6e6"
+        },
+        "ReturningFairValidation.exe": {
+          "bytes": 103176704,
+          "sha256": "51498b72b3a237f882ebd7d1787f06a4bc1eaf0572daab93837adcfd3cfdc107"
+        },
+        "ReturningFairValidation.pck": {
+          "bytes": 20801688,
+          "sha256": "c9944be0d3c9b3b17702ce2977e3bfb632c03373d8a945b4c39c0c1eb4b930c9"
+        }
+      }
+    },
+    "windows": {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\20261011-142239-03737612\\previous-packages\\windows",
+      "files": {
+        "override.cfg": {
+          "bytes": 113,
+          "sha256": "8f5fc180acedec304e626cb811982472a2e867a28ee3f50920ccb45b38a74654"
+        },
+        "ReturningFair.exe": {
+          "bytes": 109268480,
+          "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+        },
+        "ReturningFair.pck": {
+          "bytes": 20801688,
+          "sha256": "c9944be0d3c9b3b17702ce2977e3bfb632c03373d8a945b4c39c0c1eb4b930c9"
+        }
+      }
+    }
+  },
+  "native_requests": 271,
+  "native_frames": 49,
+  "visual_review": "All49 pixels inspected via nine individual sheets plus critical full-size room/Save/Load frames. Early labels are not proof of outcomes.",
+  "native_exits": [
+    {
+      "pid": 53324,
+      "exit_code": 0,
+      "finished_utc": "2026-10-11T14:35:26.5840917Z"
+    },
+    {
+      "exit_code": 0,
+      "pid": 71804,
+      "finished_utc": "2026-10-11T14:40:29.9608563Z"
+    },
+    {
+      "exit_code": 0,
+      "pid": 26528,
+      "finished_utc": "2026-10-11T14:46:46.0590559Z"
+    }
+  ],
+  "validation_exit": {
+    "finished_utc": "2026-10-11T14:26:04.3089642Z",
+    "pid": 33648,
+    "exit_code": 0
+  },
+  "oracle_exact": true,
+  "cleanup": {
+    "utc": "2026-10-11T14:49:31.4922411Z",
+    "removed_verified_temp_copies": [
+      "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424",
+      "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart",
+      "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-validation-20261011-1426"
+    ],
+    "inputs_held": false,
+    "task": "AD020",
+    "cleanup_owed": false,
+    "owned_pids": [
+      7420,
+      10352,
+      14088,
+      15576,
+      19592,
+      22916,
+      23968,
+      26528,
+      28224,
+      29516,
+      32600,
+      33648,
+      35240,
+      38440,
+      41828,
+      41964,
+      48224,
+      52240,
+      53092,
+      53324,
+      53608,
+      53812,
+      53864,
+      55500,
+      56016,
+      63696,
+      64676,
+      65932,
+      66164,
+      71804,
+      72508
+    ],
+    "active_owned_processes": []
+  },
+  "head": "c7667c6edc9f47bcf93d771a06feef26dd3d34ba",
+  "index_empty": true,
+  "commit_deferred": true,
+  "blockers": [],
+  "required_unrun": []
+}

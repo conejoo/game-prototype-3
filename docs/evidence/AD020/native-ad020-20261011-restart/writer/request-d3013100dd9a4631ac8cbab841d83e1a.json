@@ -1,0 +1,48 @@
+{
+  "steps": [
+    {
+      "op": "hold",
+      "keys": [
+        "ESC"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "hold",
+      "keys": [
+        "E"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "wait",
+      "duration_ms": 700
+    },
+    {
+      "op": "capture",
+      "label": "writer-home-world"
+    },
+    {
+      "op": "hold",
+      "keys": [
+        "ESC"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "wait",
+      "duration_ms": 200
+    },
+    {
+      "op": "hold",
+      "keys": [
+        "TAB"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "capture",
+      "label": "writer-save-keyboard-focus"
+    }
+  ]
+}

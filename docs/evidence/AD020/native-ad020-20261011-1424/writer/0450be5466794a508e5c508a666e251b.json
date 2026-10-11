@@ -1,0 +1,102 @@
+{
+  "cleanup_errors": [],
+  "id": "0450be5466794a508e5c508a666e251b",
+  "target_pid": 53324,
+  "schema_version": 2,
+  "mouse_unreleased": false,
+  "error": null,
+  "steps": [
+    {
+      "error": null,
+      "index": 0,
+      "completed_utc": "2026-10-11T14:25:21.8891469Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "elapsed_ms": 97.90849999999999
+    },
+    {
+      "error": null,
+      "index": 1,
+      "completed_utc": "2026-10-11T14:25:21.9715659Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "E"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "elapsed_ms": 76.49110000000002
+    },
+    {
+      "error": null,
+      "index": 2,
+      "completed_utc": "2026-10-11T14:25:23.1731295Z",
+      "step": {
+        "op": "wait",
+        "duration_ms": 1200
+      },
+      "ok": true,
+      "elapsed_ms": 1201.414
+    },
+    {
+      "error": null,
+      "index": 3,
+      "completed_utc": "2026-10-11T14:25:23.2708810Z",
+      "step": {
+        "op": "capture",
+        "label": "mayor-home-world"
+      },
+      "ok": true,
+      "elapsed_ms": 97.67269999999985
+    },
+    {
+      "error": null,
+      "index": 4,
+      "completed_utc": "2026-10-11T14:25:23.3577635Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "elapsed_ms": 86.81579999999985
+    },
+    {
+      "error": null,
+      "index": 5,
+      "completed_utc": "2026-10-11T14:25:23.5719644Z",
+      "step": {
+        "op": "wait",
+        "duration_ms": 200
+      },
+      "ok": true,
+      "elapsed_ms": 214.0864999999999
+    },
+    {
+      "error": null,
+      "index": 6,
+      "completed_utc": "2026-10-11T14:25:23.5954360Z",
+      "step": {
+        "op": "capture",
+        "label": "mayor-home-paused"
+      },
+      "ok": true,
+      "elapsed_ms": 23.394800000000032
+    }
+  ],
+  "elapsed_ms": 2036.3532,
+  "ok": true,
+  "failed_step": null,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe",
+  "unreleased_keys": [],
+  "requested_duration_ms": 1610
+}

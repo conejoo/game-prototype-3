@@ -1,0 +1,1649 @@
+WorkerThreadPool: 22 threads, 6 max low-priority.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Accessibility: AccessKit driver loaded.
+Native OpenGL API detected: 3.3: NVIDIA - NVIDIA GeForce RTX 4070 Laptop GPU
+NVAPI: Init OK!
+NVAPI: Disabled OpenGL threaded optimization successfully
+NVAPI: Disabled G-SYNC for windowed mode successfully
+Accessibility: window 0 adapter created.
+SDL: Init OK!
+Using "winink" pen tablet driver...
+Shader 'CanvasSdfShaderGLES3' SHA256: 60129af54e44a5868038d6dcb74fe2c4452b49d829426ac60ce2addcdb781765
+Shader 'SkeletonShaderGLES3' SHA256: 4eb2810791cc666a7f3ce1aeef50c50544c8276217872dd8f397e199e45ebd1f
+Shader 'ParticlesShaderGLES3' SHA256: 3c34d1d2f7c8eef3d62a83039b4145b5143c3c793cdf6b6fd8e4e974bc621508
+Shader 'ParticlesCopyShaderGLES3' SHA256: 55dc5326ee774d20ae1064204afc52724e2da4991288b0eabd7d64a1c4f6a1b0
+Shader 'CopyShaderGLES3' SHA256: be593363da933fe9ca6834e8a81fe5c0878ce50346f86ad70f92ed2f5b850b2d
+Shader 'CubemapFilterShaderGLES3' SHA256: c6605b715fbfeb3b95127bcf7ef1056a196300ed68591843279850c66745d2db
+Shader 'GlowShaderGLES3' SHA256: 6492cf55a7612485641c53fd815f8d28bf70d31f0afe2dbbd1e312d4e645c8e6
+Shader 'PostShaderGLES3' SHA256: e039db79d5d7b39eb23f9459cdde53663fbd411248fe1defd747ad73e2aa374e
+Shader 'FeedShaderGLES3' SHA256: 5c237e6454eff1421943cd587e5ff13a729eb63814aab50804eb8f875cbb1bef
+Shader 'CanvasShaderGLES3' SHA256: be6a46139029150561c5d2ca6bc7d35fa7dfe27b7c10220f3a84e4d26a3bceca
+Shader 'CanvasOcclusionShaderGLES3' SHA256: 1e1ef62c74cb393f38ed2d055add92735b3f4d60386024ab0b7aa17226c986be
+Shader 'SceneShaderGLES3' SHA256: 1bfc812540e6826b38a2f69395d5186817db889a0fa3280e2b68967e18e313cb
+Shader 'SkyShaderGLES3' SHA256: 7da09f868dcff2acacb4ef71d11713423789d587f8803796cd9cd69a105655ae
+Shader 'TexBlitShaderGLES3' SHA256: 59b2da5096123e7726139c6f1538ca7b8cc7486a66c23978fccd84b0bbd82343
+OpenGL API 3.3.0 NVIDIA 581.29 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 Laptop GPU
+WASAPI: Activated output_device using IAudioClient3 interface
+WASAPI: wFormatTag = 65534
+WASAPI: nChannels = 2
+WASAPI: nSamplesPerSec = 48000
+WASAPI: nAvgBytesPerSec = 384000
+WASAPI: nBlockAlign = 8
+WASAPI: wBitsPerSample = 32
+WASAPI: cbSize = 22
+WASAPI: mix_rate = 48000
+WASAPI: fundamental_period_frames = 480
+WASAPI: min_period_frames = 480
+WASAPI: max_period_frames = 480
+WASAPI: selected a period frame size of 480
+WASAPI: detected 2 channels
+WASAPI: audio buffer frames: 480 calculated latency: 10ms
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 0
+EDITOR API HASH: 0
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://app/game_root.tscn remapped: res://app/game_root.tscn
+Loading resource: res://app/game_root.gdc remapped: res://app/game_root.gdc
+Loading resource: res://content/prototype_catalog.tres remapped: res://content/prototype_catalog.tres
+Loading resource: res://core/content_manifest.gdc remapped: res://core/content_manifest.gdc
+Completed load for: 'res://core/content_manifest.gd' remapped 'res://core/content_manifest.gdc' at thread -1
+Loading resource: res://content/actors/hero.tres remapped: res://content/actors/hero.tres
+Loading resource: res://features/actors/actor_definition.gdc remapped: res://features/actors/actor_definition.gdc
+Completed load for: 'res://features/actors/actor_definition.gd' remapped 'res://features/actors/actor_definition.gdc' at thread -1
+Completed load for: 'res://content/actors/hero.tres' remapped 'res://content/actors/hero.tres' at thread -1
+Loading resource: res://content/actors/maris.tres remapped: res://content/actors/maris.tres
+Completed load for: 'res://content/actors/maris.tres' remapped 'res://content/actors/maris.tres' at thread -1
+Loading resource: res://content/actors/temporary_companion.tres remapped: res://content/actors/temporary_companion.tres
+Completed load for: 'res://content/actors/temporary_companion.tres' remapped 'res://content/actors/temporary_companion.tres' at thread -1
+Loading resource: res://content/locations/test_room.tres remapped: res://content/locations/test_room.tres
+Loading resource: res://world/location_definition.gdc remapped: res://world/location_definition.gdc
+Completed load for: 'res://world/location_definition.gd' remapped 'res://world/location_definition.gdc' at thread -1
+Completed load for: 'res://content/locations/test_room.tres' remapped 'res://content/locations/test_room.tres' at thread -1
+Loading resource: res://content/dialogue/temporary_companion.tres remapped: res://content/dialogue/temporary_companion.tres
+Loading resource: res://features/dialogue/conversation_definition.gdc remapped: res://features/dialogue/conversation_definition.gdc
+Completed load for: 'res://features/dialogue/conversation_definition.gd' remapped 'res://features/dialogue/conversation_definition.gdc' at thread -1
+Completed load for: 'res://content/dialogue/temporary_companion.tres' remapped 'res://content/dialogue/temporary_companion.tres' at thread -1
+Loading resource: res://content/locations/alderwake.tres remapped: res://content/locations/alderwake.tres
+Loading resource: res://content/portals/alderwake_tollworks.tres remapped: res://content/portals/alderwake_tollworks.tres
+Completed load for: 'res://content/portals/alderwake_tollworks.tres' remapped 'res://content/portals/alderwake_tollworks.tres' at thread -1
+Loading resource: res://content/portals/alderwake_home.tres remapped: res://content/portals/alderwake_home.tres
+Completed load for: 'res://content/portals/alderwake_home.tres' remapped 'res://content/portals/alderwake_home.tres' at thread -1
+Loading resource: res://content/portals/alderwake_inn.tres remapped: res://content/portals/alderwake_inn.tres
+Completed load for: 'res://content/portals/alderwake_inn.tres' remapped 'res://content/portals/alderwake_inn.tres' at thread -1
+Completed load for: 'res://content/locations/alderwake.tres' remapped 'res://content/locations/alderwake.tres' at thread -1
+Loading resource: res://content/locations/tollworks.tres remapped: res://content/locations/tollworks.tres
+Loading resource: res://content/portals/tollworks_alderwake.tres remapped: res://content/portals/tollworks_alderwake.tres
+Completed load for: 'res://content/portals/tollworks_alderwake.tres' remapped 'res://content/portals/tollworks_alderwake.tres' at thread -1
+Completed load for: 'res://content/locations/tollworks.tres' remapped 'res://content/locations/tollworks.tres' at thread -1
+Loading resource: res://content/dialogue/practice_marker.tres remapped: res://content/dialogue/practice_marker.tres
+Completed load for: 'res://content/dialogue/practice_marker.tres' remapped 'res://content/dialogue/practice_marker.tres' at thread -1
+Loading resource: res://content/quests/maris_recovery.tres remapped: res://content/quests/maris_recovery.tres
+Loading resource: res://features/quests/quest_definition.gdc remapped: res://features/quests/quest_definition.gdc
+Completed load for: 'res://features/quests/quest_definition.gd' remapped 'res://features/quests/quest_definition.gdc' at thread -1
+Completed load for: 'res://content/quests/maris_recovery.tres' remapped 'res://content/quests/maris_recovery.tres' at thread -1
+Loading resource: res://content/dialogue/maris_counter.tres remapped: res://content/dialogue/maris_counter.tres
+Completed load for: 'res://content/dialogue/maris_counter.tres' remapped 'res://content/dialogue/maris_counter.tres' at thread -1
+Loading resource: res://content/dialogue/recovery_vessel.tres remapped: res://content/dialogue/recovery_vessel.tres
+Completed load for: 'res://content/dialogue/recovery_vessel.tres' remapped 'res://content/dialogue/recovery_vessel.tres' at thread -1
+Loading resource: res://content/actors/guardian.tres remapped: res://content/actors/guardian.tres
+Completed load for: 'res://content/actors/guardian.tres' remapped 'res://content/actors/guardian.tres' at thread -1
+Loading resource: res://content/relationships/shared_plan.tres remapped: res://content/relationships/shared_plan.tres
+Loading resource: res://features/relationships/reaction_definition.gdc remapped: res://features/relationships/reaction_definition.gdc
+Completed load for: 'res://features/relationships/reaction_definition.gd' remapped 'res://features/relationships/reaction_definition.gdc' at thread -1
+Completed load for: 'res://content/relationships/shared_plan.tres' remapped 'res://content/relationships/shared_plan.tres' at thread -1
+Loading resource: res://content/relationships/orders.tres remapped: res://content/relationships/orders.tres
+Completed load for: 'res://content/relationships/orders.tres' remapped 'res://content/relationships/orders.tres' at thread -1
+Loading resource: res://content/progression/deliberate_strike.tres remapped: res://content/progression/deliberate_strike.tres
+Loading resource: res://features/progression/upgrade_definition.gdc remapped: res://features/progression/upgrade_definition.gdc
+Completed load for: 'res://features/progression/upgrade_definition.gd' remapped 'res://features/progression/upgrade_definition.gdc' at thread -1
+Completed load for: 'res://content/progression/deliberate_strike.tres' remapped 'res://content/progression/deliberate_strike.tres' at thread -1
+Loading resource: res://content/dialogue/maris_fitting.tres remapped: res://content/dialogue/maris_fitting.tres
+Completed load for: 'res://content/dialogue/maris_fitting.tres' remapped 'res://content/dialogue/maris_fitting.tres' at thread -1
+Loading resource: res://content/dialogue/maris_specialist.tres remapped: res://content/dialogue/maris_specialist.tres
+Completed load for: 'res://content/dialogue/maris_specialist.tres' remapped 'res://content/dialogue/maris_specialist.tres' at thread -1
+Loading resource: res://content/items/moonflower.tres remapped: res://content/items/moonflower.tres
+Loading resource: res://features/items/item_definition.gdc remapped: res://features/items/item_definition.gdc
+Completed load for: 'res://features/items/item_definition.gd' remapped 'res://features/items/item_definition.gdc' at thread -1
+Completed load for: 'res://content/items/moonflower.tres' remapped 'res://content/items/moonflower.tres' at thread -1
+Loading resource: res://content/items/fishing_rod.tres remapped: res://content/items/fishing_rod.tres
+Completed load for: 'res://content/items/fishing_rod.tres' remapped 'res://content/items/fishing_rod.tres' at thread -1
+Loading resource: res://content/resources/moonflower.tres remapped: res://content/resources/moonflower.tres
+Loading resource: res://features/items/foraging_resource_definition.gdc remapped: res://features/items/foraging_resource_definition.gdc
+Completed load for: 'res://features/items/foraging_resource_definition.gd' remapped 'res://features/items/foraging_resource_definition.gdc' at thread -1
+Completed load for: 'res://content/resources/moonflower.tres' remapped 'res://content/resources/moonflower.tres' at thread -1
+Loading resource: res://content/resources/fishing_rod.tres remapped: res://content/resources/fishing_rod.tres
+Completed load for: 'res://content/resources/fishing_rod.tres' remapped 'res://content/resources/fishing_rod.tres' at thread -1
+Loading resource: res://content/items/bluegill.tres remapped: res://content/items/bluegill.tres
+Completed load for: 'res://content/items/bluegill.tres' remapped 'res://content/items/bluegill.tres' at thread -1
+Loading resource: res://content/items/river_trout.tres remapped: res://content/items/river_trout.tres
+Completed load for: 'res://content/items/river_trout.tres' remapped 'res://content/items/river_trout.tres' at thread -1
+Loading resource: res://content/items/golden_carp.tres remapped: res://content/items/golden_carp.tres
+Completed load for: 'res://content/items/golden_carp.tres' remapped 'res://content/items/golden_carp.tres' at thread -1
+Loading resource: res://content/locations/mayor_vale_home.tres remapped: res://content/locations/mayor_vale_home.tres
+Loading resource: res://content/portals/home_alderwake.tres remapped: res://content/portals/home_alderwake.tres
+Completed load for: 'res://content/portals/home_alderwake.tres' remapped 'res://content/portals/home_alderwake.tres' at thread -1
+Completed load for: 'res://content/locations/mayor_vale_home.tres' remapped 'res://content/locations/mayor_vale_home.tres' at thread -1
+Loading resource: res://content/locations/lantern_rest.tres remapped: res://content/locations/lantern_rest.tres
+Loading resource: res://content/portals/inn_alderwake.tres remapped: res://content/portals/inn_alderwake.tres
+Completed load for: 'res://content/portals/inn_alderwake.tres' remapped 'res://content/portals/inn_alderwake.tres' at thread -1
+Completed load for: 'res://content/locations/lantern_rest.tres' remapped 'res://content/locations/lantern_rest.tres' at thread -1
+Completed load for: 'res://content/prototype_catalog.tres' remapped 'res://content/prototype_catalog.tres' at thread -1
+Loading resource: res://features/actors/companion.tscn remapped: res://features/actors/companion.tscn
+Loading resource: res://features/actors/actor_placeholder.gdc remapped: res://features/actors/actor_placeholder.gdc
+Loading resource: res://assets/items/moonflower.svg remapped: res://assets/items/moonflower.svg
+Loading resource: res://.godot/imported/moonflower.svg-61ff33369e767c88d26494c198af778f.ctex remapped: res://.godot/imported/moonflower.svg-61ff33369e767c88d26494c198af778f.ctex
+Completed load for: 'res://assets/items/moonflower.svg' remapped 'res://assets/items/moonflower.svg' at thread -1
+Loading resource: res://assets/items/bluegill.png remapped: res://assets/items/bluegill.png
+Loading resource: res://.godot/imported/bluegill.png-681c258f76a2a3ec99279ee839d85ca8.ctex remapped: res://.godot/imported/bluegill.png-681c258f76a2a3ec99279ee839d85ca8.ctex
+Completed load for: 'res://assets/items/bluegill.png' remapped 'res://assets/items/bluegill.png' at thread -1
+Loading resource: res://assets/items/river_trout.png remapped: res://assets/items/river_trout.png
+Loading resource: res://.godot/imported/river_trout.png-1398cb75143a07dea51a330b74ea5ddf.ctex remapped: res://.godot/imported/river_trout.png-1398cb75143a07dea51a330b74ea5ddf.ctex
+Completed load for: 'res://assets/items/river_trout.png' remapped 'res://assets/items/river_trout.png' at thread -1
+Loading resource: res://assets/items/golden_carp.png remapped: res://assets/items/golden_carp.png
+Loading resource: res://.godot/imported/golden_carp.png-670e492517685823e797316d530e0499.ctex remapped: res://.godot/imported/golden_carp.png-670e492517685823e797316d530e0499.ctex
+Completed load for: 'res://assets/items/golden_carp.png' remapped 'res://assets/items/golden_carp.png' at thread -1
+Loading resource: res://assets/items/fishing_rod.svg remapped: res://assets/items/fishing_rod.svg
+Loading resource: res://.godot/imported/fishing_rod.svg-484a76bfee4d800320042b16c50fb6c8.ctex remapped: res://.godot/imported/fishing_rod.svg-484a76bfee4d800320042b16c50fb6c8.ctex
+Completed load for: 'res://assets/items/fishing_rod.svg' remapped 'res://assets/items/fishing_rod.svg' at thread -1
+Loading resource: res://world/map_candidate/landscape.gdshader remapped: res://world/map_candidate/landscape.gdshader
+Completed load for: 'res://world/map_candidate/landscape.gdshader' remapped 'res://world/map_candidate/landscape.gdshader' at thread -1
+Loading resource: res://world/map_candidate/river.gdshader remapped: res://world/map_candidate/river.gdshader
+Completed load for: 'res://world/map_candidate/river.gdshader' remapped 'res://world/map_candidate/river.gdshader' at thread -1
+Loading resource: res://assets/environment/storybook/dock-painted-albedo.png remapped: res://assets/environment/storybook/dock-painted-albedo.png
+Loading resource: res://.godot/imported/dock-painted-albedo.png-f1bcbc921309368a60a3558a04c4fa78.ctex remapped: res://.godot/imported/dock-painted-albedo.png-f1bcbc921309368a60a3558a04c4fa78.ctex
+Completed load for: 'res://assets/environment/storybook/dock-painted-albedo.png' remapped 'res://assets/environment/storybook/dock-painted-albedo.png' at thread -1
+Loading resource: res://world/storybook_prop.gdshader remapped: res://world/storybook_prop.gdshader
+Completed load for: 'res://world/storybook_prop.gdshader' remapped 'res://world/storybook_prop.gdshader' at thread -1
+Loading resource: res://assets/environment/storybook/town-painted-albedo.png remapped: res://assets/environment/storybook/town-painted-albedo.png
+Loading resource: res://.godot/imported/town-painted-albedo.png-c3d3c931bedd1626d13c3a197f6bf4af.ctex remapped: res://.godot/imported/town-painted-albedo.png-c3d3c931bedd1626d13c3a197f6bf4af.ctex
+Completed load for: 'res://assets/environment/storybook/town-painted-albedo.png' remapped 'res://assets/environment/storybook/town-painted-albedo.png' at thread -1
+Loading resource: res://world/map_candidate/canopy_visibility.gdshader remapped: res://world/map_candidate/canopy_visibility.gdshader
+Completed load for: 'res://world/map_candidate/canopy_visibility.gdshader' remapped 'res://world/map_candidate/canopy_visibility.gdshader' at thread -1
+Loading resource: res://assets/environment/moonwood_tree_kit.glb remapped: res://assets/environment/moonwood_tree_kit.glb
+Loading resource: res://.godot/imported/moonwood_tree_kit.glb-73b1e594d2695d9abddd5f085366f2b6.scn remapped: res://.godot/imported/moonwood_tree_kit.glb-73b1e594d2695d9abddd5f085366f2b6.scn
+Completed load for: 'res://assets/environment/moonwood_tree_kit.glb' remapped 'res://assets/environment/moonwood_tree_kit.glb' at thread -1
+Loading resource: res://assets/environment/storybook/moonwood_oak_pilot.glb remapped: res://assets/environment/storybook/moonwood_oak_pilot.glb
+Loading resource: res://.godot/imported/moonwood_oak_pilot.glb-3829f05510fd65fc96f19766e1635c01.scn remapped: res://.godot/imported/moonwood_oak_pilot.glb-3829f05510fd65fc96f19766e1635c01.scn
+Loading resource: res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png remapped: res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png
+Loading resource: res://.godot/imported/moonwood_oak_pilot_tree-painted-albedo.png-37cf624087d7409e91b5ed589107753b.ctex remapped: res://.godot/imported/moonwood_oak_pilot_tree-painted-albedo.png-37cf624087d7409e91b5ed589107753b.ctex
+Completed load for: 'res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png' remapped 'res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png' at thread -1
+Completed load for: 'res://assets/environment/storybook/moonwood_oak_pilot.glb' remapped 'res://assets/environment/storybook/moonwood_oak_pilot.glb' at thread -1
+Loading resource: res://assets/environment/storybook/moonwood_tree_rollout.glb remapped: res://assets/environment/storybook/moonwood_tree_rollout.glb
+Loading resource: res://.godot/imported/moonwood_tree_rollout.glb-33c365ec9a3eed59bc58102a47554e0d.scn remapped: res://.godot/imported/moonwood_tree_rollout.glb-33c365ec9a3eed59bc58102a47554e0d.scn
+Loading resource: res://assets/environment/storybook/tree-painted-albedo.png remapped: res://assets/environment/storybook/tree-painted-albedo.png
+Loading resource: res://.godot/imported/tree-painted-albedo.png-9bff90c80118141c335127338e266f86.ctex remapped: res://.godot/imported/tree-painted-albedo.png-9bff90c80118141c335127338e266f86.ctex
+Completed load for: 'res://assets/environment/storybook/tree-painted-albedo.png' remapped 'res://assets/environment/storybook/tree-painted-albedo.png' at thread -1
+Completed load for: 'res://assets/environment/storybook/moonwood_tree_rollout.glb' remapped 'res://assets/environment/storybook/moonwood_tree_rollout.glb' at thread -1
+Loading resource: res://assets/environment/alderwake_town_kit.glb remapped: res://assets/environment/alderwake_town_kit.glb
+Loading resource: res://.godot/imported/alderwake_town_kit.glb-55062a719292448092652a373a733489.scn remapped: res://.godot/imported/alderwake_town_kit.glb-55062a719292448092652a373a733489.scn
+Completed load for: 'res://assets/environment/alderwake_town_kit.glb' remapped 'res://assets/environment/alderwake_town_kit.glb' at thread -1
+Loading resource: res://assets/environment/storybook/alderwake_shop_pilot.glb remapped: res://assets/environment/storybook/alderwake_shop_pilot.glb
+Loading resource: res://.godot/imported/alderwake_shop_pilot.glb-9b54d7adc6c124148d7f95470492ebec.scn remapped: res://.godot/imported/alderwake_shop_pilot.glb-9b54d7adc6c124148d7f95470492ebec.scn
+Loading resource: res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png remapped: res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png
+Loading resource: res://.godot/imported/alderwake_shop_pilot_town-painted-albedo.png-cf2b1d3bd445976fac2675bc50427bb3.ctex remapped: res://.godot/imported/alderwake_shop_pilot_town-painted-albedo.png-cf2b1d3bd445976fac2675bc50427bb3.ctex
+Completed load for: 'res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png' remapped 'res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png' at thread -1
+Completed load for: 'res://assets/environment/storybook/alderwake_shop_pilot.glb' remapped 'res://assets/environment/storybook/alderwake_shop_pilot.glb' at thread -1
+Loading resource: res://assets/environment/storybook/alderwake_town_rollout.glb remapped: res://assets/environment/storybook/alderwake_town_rollout.glb
+Loading resource: res://.godot/imported/alderwake_town_rollout.glb-bf014fd437c7610b437371409659e5bd.scn remapped: res://.godot/imported/alderwake_town_rollout.glb-bf014fd437c7610b437371409659e5bd.scn
+Completed load for: 'res://assets/environment/storybook/alderwake_town_rollout.glb' remapped 'res://assets/environment/storybook/alderwake_town_rollout.glb' at thread -1
+Loading resource: res://world/map_candidate/painted_building.gdshader remapped: res://world/map_candidate/painted_building.gdshader
+Completed load for: 'res://world/map_candidate/painted_building.gdshader' remapped 'res://world/map_candidate/painted_building.gdshader' at thread -1
+Loading resource: res://assets/environment/storybook/alderwake_dock_pilot.glb remapped: res://assets/environment/storybook/alderwake_dock_pilot.glb
+Loading resource: res://.godot/imported/alderwake_dock_pilot.glb-f60a344b24c50cc9cc31b4cefdd5134a.scn remapped: res://.godot/imported/alderwake_dock_pilot.glb-f60a344b24c50cc9cc31b4cefdd5134a.scn
+Loading resource: res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png remapped: res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png
+Loading resource: res://.godot/imported/alderwake_dock_pilot_dock-painted-albedo.png-19878b7af5d56bdc61dd9193de6944a6.ctex remapped: res://.godot/imported/alderwake_dock_pilot_dock-painted-albedo.png-19878b7af5d56bdc61dd9193de6944a6.ctex
+Completed load for: 'res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png' remapped 'res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png' at thread -1
+Completed load for: 'res://assets/environment/storybook/alderwake_dock_pilot.glb' remapped 'res://assets/environment/storybook/alderwake_dock_pilot.glb' at thread -1
+Loading resource: res://world/map_candidate/painted_wall.gdshader remapped: res://world/map_candidate/painted_wall.gdshader
+Completed load for: 'res://world/map_candidate/painted_wall.gdshader' remapped 'res://world/map_candidate/painted_wall.gdshader' at thread -1
+Loading resource: res://assets/environment/storybook/alderwake_landmark_painted.glb remapped: res://assets/environment/storybook/alderwake_landmark_painted.glb
+Loading resource: res://.godot/imported/alderwake_landmark_painted.glb-a5bfba94efcb5da4d36d6049dacedc0f.scn remapped: res://.godot/imported/alderwake_landmark_painted.glb-a5bfba94efcb5da4d36d6049dacedc0f.scn
+Completed load for: 'res://assets/environment/storybook/alderwake_landmark_painted.glb' remapped 'res://assets/environment/storybook/alderwake_landmark_painted.glb' at thread -1
+Loading resource: res://features/npcs/storybook_npc.gdshader remapped: res://features/npcs/storybook_npc.gdshader
+Completed load for: 'res://features/npcs/storybook_npc.gdshader' remapped 'res://features/npcs/storybook_npc.gdshader' at thread -1
+Loading resource: res://world/maris_counter.tscn remapped: res://world/maris_counter.tscn
+Loading resource: res://world/maris_counter.gdc remapped: res://world/maris_counter.gdc
+Completed load for: 'res://world/maris_counter.gd' remapped 'res://world/maris_counter.gdc' at thread -1
+Completed load for: 'res://world/maris_counter.tscn' remapped 'res://world/maris_counter.tscn' at thread -1
+Loading resource: res://features/interaction/npc_interaction.tscn remapped: res://features/interaction/npc_interaction.tscn
+Completed load for: 'res://features/interaction/npc_interaction.tscn' remapped 'res://features/interaction/npc_interaction.tscn' at thread -1
+Loading resource: res://assets/environment/exterior_light_kit.glb remapped: res://assets/environment/exterior_light_kit.glb
+Loading resource: res://.godot/imported/exterior_light_kit.glb-37e62ed831746e5602adf9b343a69c90.scn remapped: res://.godot/imported/exterior_light_kit.glb-37e62ed831746e5602adf9b343a69c90.scn
+Completed load for: 'res://assets/environment/exterior_light_kit.glb' remapped 'res://assets/environment/exterior_light_kit.glb' at thread -1
+Loading resource: res://features/environment/world_rain.gdshader remapped: res://features/environment/world_rain.gdshader
+Completed load for: 'res://features/environment/world_rain.gdshader' remapped 'res://features/environment/world_rain.gdshader' at thread -1
+Loading resource: res://world/storybook_inn.gdshader remapped: res://world/storybook_inn.gdshader
+Completed load for: 'res://world/storybook_inn.gdshader' remapped 'res://world/storybook_inn.gdshader' at thread -1
+Loading resource: res://world/storybook_home.gdshader remapped: res://world/storybook_home.gdshader
+Completed load for: 'res://world/storybook_home.gdshader' remapped 'res://world/storybook_home.gdshader' at thread -1
+Loading resource: res://features/actors/storybook_actor.gdshader remapped: res://features/actors/storybook_actor.gdshader
+Completed load for: 'res://features/actors/storybook_actor.gdshader' remapped 'res://features/actors/storybook_actor.gdshader' at thread -1
+Completed load for: 'res://features/actors/actor_placeholder.gd' remapped 'res://features/actors/actor_placeholder.gdc' at thread -1
+Completed load for: 'res://features/actors/companion.tscn' remapped 'res://features/actors/companion.tscn' at thread -1
+Loading resource: res://features/combat/guardian.tscn remapped: res://features/combat/guardian.tscn
+Loading resource: res://assets/models/guardian.glb remapped: res://assets/models/guardian.glb
+Loading resource: res://.godot/imported/guardian.glb-8e0281d95e975b783d034b5055c57bf0.scn remapped: res://.godot/imported/guardian.glb-8e0281d95e975b783d034b5055c57bf0.scn
+Completed load for: 'res://assets/models/guardian.glb' remapped 'res://assets/models/guardian.glb' at thread -1
+Completed load for: 'res://features/combat/guardian.tscn' remapped 'res://features/combat/guardian.tscn' at thread -1
+Completed load for: 'res://app/game_root.gd' remapped 'res://app/game_root.gdc' at thread -1
+Loading resource: res://ui/prototype_ui.tscn remapped: res://ui/prototype_ui.tscn
+Completed load for: 'res://ui/prototype_ui.tscn' remapped 'res://ui/prototype_ui.tscn' at thread -1
+Completed load for: 'res://app/game_root.tscn' remapped 'res://app/game_root.tscn' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/official-neutral.png remapped: res://assets/npcs/portraits/npc-01/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex remapped: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-01/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/practiced-smile.png remapped: res://assets/npcs/portraits/npc-01/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex remapped: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-01/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/skeptical.png remapped: res://assets/npcs/portraits/npc-01/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex remapped: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/skeptical.png' remapped 'res://assets/npcs/portraits/npc-01/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/pleased.png remapped: res://assets/npcs/portraits/npc-01/pleased.png
+Loading resource: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex remapped: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/pleased.png' remapped 'res://assets/npcs/portraits/npc-01/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-01/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex remapped: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/fishing-gear.png remapped: res://assets/npcs/portraits/npc-01/fishing-gear.png
+Loading resource: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex remapped: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/fishing-gear.png' remapped 'res://assets/npcs/portraits/npc-01/fishing-gear.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/official-neutral.png remapped: res://assets/npcs/portraits/npc-02/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex remapped: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-02/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/practiced-smile.png remapped: res://assets/npcs/portraits/npc-02/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex remapped: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-02/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/skeptical.png remapped: res://assets/npcs/portraits/npc-02/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex remapped: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/skeptical.png' remapped 'res://assets/npcs/portraits/npc-02/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/pleased.png remapped: res://assets/npcs/portraits/npc-02/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex remapped: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/pleased.png' remapped 'res://assets/npcs/portraits/npc-02/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-02/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex remapped: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/archive-work.png remapped: res://assets/npcs/portraits/npc-02/archive-work.png
+Loading resource: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex remapped: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/archive-work.png' remapped 'res://assets/npcs/portraits/npc-02/archive-work.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/official-neutral.png remapped: res://assets/npcs/portraits/npc-03/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex remapped: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-03/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/practiced-smile.png remapped: res://assets/npcs/portraits/npc-03/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex remapped: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-03/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/skeptical.png remapped: res://assets/npcs/portraits/npc-03/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex remapped: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/skeptical.png' remapped 'res://assets/npcs/portraits/npc-03/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/pleased.png remapped: res://assets/npcs/portraits/npc-03/pleased.png
+Loading resource: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex remapped: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/pleased.png' remapped 'res://assets/npcs/portraits/npc-03/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-03/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex remapped: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/ropework.png remapped: res://assets/npcs/portraits/npc-03/ropework.png
+Loading resource: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex remapped: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/ropework.png' remapped 'res://assets/npcs/portraits/npc-03/ropework.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/official-neutral.png remapped: res://assets/npcs/portraits/npc-04/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex remapped: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-04/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/practiced-smile.png remapped: res://assets/npcs/portraits/npc-04/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex remapped: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-04/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/skeptical.png remapped: res://assets/npcs/portraits/npc-04/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex remapped: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/skeptical.png' remapped 'res://assets/npcs/portraits/npc-04/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/pleased.png remapped: res://assets/npcs/portraits/npc-04/pleased.png
+Loading resource: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex remapped: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/pleased.png' remapped 'res://assets/npcs/portraits/npc-04/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-04/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex remapped: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/birdwatching.png remapped: res://assets/npcs/portraits/npc-04/birdwatching.png
+Loading resource: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex remapped: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/birdwatching.png' remapped 'res://assets/npcs/portraits/npc-04/birdwatching.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/official-neutral.png remapped: res://assets/npcs/portraits/npc-06/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex remapped: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-06/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/practiced-smile.png remapped: res://assets/npcs/portraits/npc-06/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex remapped: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-06/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/skeptical.png remapped: res://assets/npcs/portraits/npc-06/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex remapped: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/skeptical.png' remapped 'res://assets/npcs/portraits/npc-06/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/pleased.png remapped: res://assets/npcs/portraits/npc-06/pleased.png
+Loading resource: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex remapped: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/pleased.png' remapped 'res://assets/npcs/portraits/npc-06/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-06/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex remapped: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/flower-pressing.png remapped: res://assets/npcs/portraits/npc-06/flower-pressing.png
+Loading resource: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex remapped: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/flower-pressing.png' remapped 'res://assets/npcs/portraits/npc-06/flower-pressing.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/official-neutral.png remapped: res://assets/npcs/portraits/npc-07/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex remapped: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-07/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/practiced-smile.png remapped: res://assets/npcs/portraits/npc-07/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex remapped: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-07/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/skeptical.png remapped: res://assets/npcs/portraits/npc-07/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex remapped: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/skeptical.png' remapped 'res://assets/npcs/portraits/npc-07/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/pleased.png remapped: res://assets/npcs/portraits/npc-07/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex remapped: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/pleased.png' remapped 'res://assets/npcs/portraits/npc-07/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-07/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex remapped: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/knotwork.png remapped: res://assets/npcs/portraits/npc-07/knotwork.png
+Loading resource: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex remapped: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/knotwork.png' remapped 'res://assets/npcs/portraits/npc-07/knotwork.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/official-neutral.png remapped: res://assets/npcs/portraits/npc-08/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex remapped: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-08/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/practiced-smile.png remapped: res://assets/npcs/portraits/npc-08/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex remapped: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-08/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/skeptical.png remapped: res://assets/npcs/portraits/npc-08/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex remapped: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/skeptical.png' remapped 'res://assets/npcs/portraits/npc-08/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/pleased.png remapped: res://assets/npcs/portraits/npc-08/pleased.png
+Loading resource: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex remapped: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/pleased.png' remapped 'res://assets/npcs/portraits/npc-08/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-08/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex remapped: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/woodcarving.png remapped: res://assets/npcs/portraits/npc-08/woodcarving.png
+Loading resource: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex remapped: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/woodcarving.png' remapped 'res://assets/npcs/portraits/npc-08/woodcarving.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/official-neutral.png remapped: res://assets/npcs/portraits/npc-14/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex remapped: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-14/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/practiced-smile.png remapped: res://assets/npcs/portraits/npc-14/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex remapped: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-14/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/skeptical.png remapped: res://assets/npcs/portraits/npc-14/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex remapped: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/skeptical.png' remapped 'res://assets/npcs/portraits/npc-14/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/pleased.png remapped: res://assets/npcs/portraits/npc-14/pleased.png
+Loading resource: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex remapped: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/pleased.png' remapped 'res://assets/npcs/portraits/npc-14/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-14/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex remapped: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/quilting.png remapped: res://assets/npcs/portraits/npc-14/quilting.png
+Loading resource: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex remapped: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/quilting.png' remapped 'res://assets/npcs/portraits/npc-14/quilting.png' at thread -1
+Loading resource: res://world/alderwake.tscn remapped: res://world/alderwake.tscn
+Loading resource: res://features/interaction/prop_interaction.tscn remapped: res://features/interaction/prop_interaction.tscn
+Completed load for: 'res://features/interaction/prop_interaction.tscn' remapped 'res://features/interaction/prop_interaction.tscn' at thread -1
+Completed load for: 'res://world/alderwake.tscn' remapped 'res://world/alderwake.tscn' at thread -1
+Loading resource: res://assets/models/npcs/npc-01-actions.glb remapped: res://assets/models/npcs/npc-01-actions.glb
+Loading resource: res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn remapped: res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn
+Loading resource: res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png remapped: res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png
+Loading resource: res://.godot/imported/npc-01-actions_TEX-npc-01-palette.png-001670a69762a95e9dc15fec74ecacef.ctex remapped: res://.godot/imported/npc-01-actions_TEX-npc-01-palette.png-001670a69762a95e9dc15fec74ecacef.ctex
+Completed load for: 'res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png' remapped 'res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-01-actions.glb' remapped 'res://assets/models/npcs/npc-01-actions.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-03.glb remapped: res://assets/models/npcs/npc-03.glb
+Loading resource: res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn remapped: res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn
+Loading resource: res://assets/models/npcs/npc-03_TEX-npc-03-palette.png remapped: res://assets/models/npcs/npc-03_TEX-npc-03-palette.png
+Loading resource: res://.godot/imported/npc-03_TEX-npc-03-palette.png-cd2841de80cda48763aef2d3dcfe5d65.ctex remapped: res://.godot/imported/npc-03_TEX-npc-03-palette.png-cd2841de80cda48763aef2d3dcfe5d65.ctex
+Completed load for: 'res://assets/models/npcs/npc-03_TEX-npc-03-palette.png' remapped 'res://assets/models/npcs/npc-03_TEX-npc-03-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-03.glb' remapped 'res://assets/models/npcs/npc-03.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-04.glb remapped: res://assets/models/npcs/npc-04.glb
+Loading resource: res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn remapped: res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn
+Loading resource: res://assets/models/npcs/npc-04_TEX-npc-04-palette.png remapped: res://assets/models/npcs/npc-04_TEX-npc-04-palette.png
+Loading resource: res://.godot/imported/npc-04_TEX-npc-04-palette.png-6cc83f19e2e5f1054c4c4769e69ff83d.ctex remapped: res://.godot/imported/npc-04_TEX-npc-04-palette.png-6cc83f19e2e5f1054c4c4769e69ff83d.ctex
+Completed load for: 'res://assets/models/npcs/npc-04_TEX-npc-04-palette.png' remapped 'res://assets/models/npcs/npc-04_TEX-npc-04-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-04.glb' remapped 'res://assets/models/npcs/npc-04.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-06.glb remapped: res://assets/models/npcs/npc-06.glb
+Loading resource: res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn remapped: res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn
+Loading resource: res://assets/models/npcs/npc-06_TEX-npc-06-palette.png remapped: res://assets/models/npcs/npc-06_TEX-npc-06-palette.png
+Loading resource: res://.godot/imported/npc-06_TEX-npc-06-palette.png-978d2d722821ce27c79bc25bff67048c.ctex remapped: res://.godot/imported/npc-06_TEX-npc-06-palette.png-978d2d722821ce27c79bc25bff67048c.ctex
+Completed load for: 'res://assets/models/npcs/npc-06_TEX-npc-06-palette.png' remapped 'res://assets/models/npcs/npc-06_TEX-npc-06-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-06.glb' remapped 'res://assets/models/npcs/npc-06.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-07.glb remapped: res://assets/models/npcs/npc-07.glb
+Loading resource: res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn remapped: res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn
+Loading resource: res://assets/models/npcs/npc-07_TEX-npc-07-palette.png remapped: res://assets/models/npcs/npc-07_TEX-npc-07-palette.png
+Loading resource: res://.godot/imported/npc-07_TEX-npc-07-palette.png-031bdf5d4bd405e84511dd3d267b4f1c.ctex remapped: res://.godot/imported/npc-07_TEX-npc-07-palette.png-031bdf5d4bd405e84511dd3d267b4f1c.ctex
+Completed load for: 'res://assets/models/npcs/npc-07_TEX-npc-07-palette.png' remapped 'res://assets/models/npcs/npc-07_TEX-npc-07-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-07.glb' remapped 'res://assets/models/npcs/npc-07.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-08.glb remapped: res://assets/models/npcs/npc-08.glb
+Loading resource: res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn remapped: res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn
+Loading resource: res://assets/models/npcs/npc-08_TEX-npc-08-palette.png remapped: res://assets/models/npcs/npc-08_TEX-npc-08-palette.png
+Loading resource: res://.godot/imported/npc-08_TEX-npc-08-palette.png-4648e2ecca224e865335d626d1274ebd.ctex remapped: res://.godot/imported/npc-08_TEX-npc-08-palette.png-4648e2ecca224e865335d626d1274ebd.ctex
+Completed load for: 'res://assets/models/npcs/npc-08_TEX-npc-08-palette.png' remapped 'res://assets/models/npcs/npc-08_TEX-npc-08-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-08.glb' remapped 'res://assets/models/npcs/npc-08.glb' at thread -1
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 7.36s.
+P001: Resumed at play time 7.36s.
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(0.678399, 0.0, -0.423999)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(1.41333, 0.0, -0.883332)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(2.148262, 0.0, -1.342664)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(2.826659, 0.0, -1.766664)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(3.151455, 0.0, -1.69171)
+P003 input release move_back: position=(3.151455, 0.0, -1.69171)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(3.321055, 0.0, -1.79771)
+P003 key: logical=68 physical=68
+P003 key: logical=87 physical=87
+P003 input release move_right: position=(3.557475, 0.0, -2.612557)
+P003 input release move_forward: position=(3.557475, 0.0, -2.612557)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(4.235873, 0.0, -3.036555)
+P003 key: logical=68 physical=68
+P003 key: logical=87 physical=87
+P003 input release move_right: position=(4.415762, 0.0, -3.81607)
+P003 input release move_forward: position=(4.415762, 0.0, -3.81607)
+P003 key: logical=68 physical=68
+P003 key: logical=87 physical=87
+P003 input release move_right: position=(4.595652, 0.0, -4.595584)
+P003 input release move_forward: position=(4.595652, 0.0, -4.595584)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(5.104452, 0.0, -4.913582)
+P003 key: logical=87 physical=87
+P003 input release move_forward: position=(4.998453, 0.0, -5.083182)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 17.71s.
+P001: Resumed at play time 17.71s.
+P003 key: logical=69 physical=69
+Loading resource: res://world/mayor_vale_home.tscn remapped: res://world/mayor_vale_home.tscn
+Completed load for: 'res://world/mayor_vale_home.tscn' remapped 'res://world/mayor_vale_home.tscn' at thread -1
+Loading resource: res://assets/models/npcs/npc-02-actions.glb remapped: res://assets/models/npcs/npc-02-actions.glb
+Loading resource: res://.godot/imported/npc-02-actions.glb-45d9a10e46139c4bf56bd3f963b661e3.scn remapped: res://.godot/imported/npc-02-actions.glb-45d9a10e46139c4bf56bd3f963b661e3.scn
+Loading resource: res://assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png remapped: res://assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png
+Loading resource: res://.godot/imported/npc-02-actions_TEX-npc-02-palette.png-f601a51c7f5048aaf2fd4dfb90f7ffb7.ctex remapped: res://.godot/imported/npc-02-actions_TEX-npc-02-palette.png-f601a51c7f5048aaf2fd4dfb90f7ffb7.ctex
+Completed load for: 'res://assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png' remapped 'res://assets/models/npcs/npc-02-actions_TEX-npc-02-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-02-actions.glb' remapped 'res://assets/models/npcs/npc-02-actions.glb' at thread -1
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=2
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 18.31s.
+P001: Resumed at play time 18.31s.
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(-0.179888, 0.0, -1.220487)
+P003 input release move_back: position=(-0.179888, 0.0, -1.220487)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(0.244112, 0.0, -0.542089)
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(0.094205, 0.0, 0.107506)
+P003 input release move_back: position=(0.094205, 0.0, 0.107506)
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(0.049233, 0.0, 0.302384)
+P003 input release move_back: position=(0.049233, 0.0, 0.302384)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 22.40s.
+P001: Resumed at play time 22.40s.
+P003 key: logical=69 physical=69
+Loading resource: res://world/alderwake.tscn remapped: res://world/alderwake.tscn
+Loading resource: res://features/interaction/prop_interaction.tscn remapped: res://features/interaction/prop_interaction.tscn
+Completed load for: 'res://features/interaction/prop_interaction.tscn' remapped 'res://features/interaction/prop_interaction.tscn' at thread -1
+Completed load for: 'res://world/alderwake.tscn' remapped 'res://world/alderwake.tscn' at thread -1
+Loading resource: res://assets/models/npcs/npc-01-actions.glb remapped: res://assets/models/npcs/npc-01-actions.glb
+Loading resource: res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn remapped: res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn
+Completed load for: 'res://assets/models/npcs/npc-01-actions.glb' remapped 'res://assets/models/npcs/npc-01-actions.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-03.glb remapped: res://assets/models/npcs/npc-03.glb
+Loading resource: res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn remapped: res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn
+Completed load for: 'res://assets/models/npcs/npc-03.glb' remapped 'res://assets/models/npcs/npc-03.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-04.glb remapped: res://assets/models/npcs/npc-04.glb
+Loading resource: res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn remapped: res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn
+Completed load for: 'res://assets/models/npcs/npc-04.glb' remapped 'res://assets/models/npcs/npc-04.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-06.glb remapped: res://assets/models/npcs/npc-06.glb
+Loading resource: res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn remapped: res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn
+Completed load for: 'res://assets/models/npcs/npc-06.glb' remapped 'res://assets/models/npcs/npc-06.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-07.glb remapped: res://assets/models/npcs/npc-07.glb
+Loading resource: res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn remapped: res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn
+Completed load for: 'res://assets/models/npcs/npc-07.glb' remapped 'res://assets/models/npcs/npc-07.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-08.glb remapped: res://assets/models/npcs/npc-08.glb
+Loading resource: res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn remapped: res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn
+Completed load for: 'res://assets/models/npcs/npc-08.glb' remapped 'res://assets/models/npcs/npc-08.glb' at thread -1
+P004: arrived prototype-alderwake/alderwake-from-mayor-vale-home; party=2; transition=3
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 22.91s.
+P001: Resumed at play time 22.91s.
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(3.820113, 0.0, -3.820486)
+P003 input release move_back: position=(3.820113, 0.0, -3.820486)
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(3.655217, 0.0, -3.105931)
+P003 input release move_back: position=(3.655217, 0.0, -3.105931)
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(3.47533, 0.0, -2.326416)
+P003 input release move_back: position=(3.47533, 0.0, -2.326416)
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(3.370396, 0.0, -1.8717)
+P003 input release move_back: position=(3.370396, 0.0, -1.8717)
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(3.295443, 0.0, -1.546903)
+P003 input release move_back: position=(3.295443, 0.0, -1.546903)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(2.617046, 0.0, -1.122904)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(1.995182, 0.0, -0.734238)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(1.26025, 0.0, -0.274905)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(0.638385, 0.0, 0.113761)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-0.040014, 0.0, 0.53776)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-0.718412, 0.0, 0.961759)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-1.453344, 0.0, 1.421092)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-2.075209, 0.0, 1.809758)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-2.753607, 0.0, 2.233757)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-3.375471, 0.0, 2.622421)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-4.053868, 0.0, 3.046419)
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(-4.173794, 0.0, 3.566095)
+P003 input release move_back: position=(-4.173794, 0.0, 3.566095)
+P003 key: logical=65 physical=65
+P003 key: logical=87 physical=87
+P003 input release move_left: position=(-4.368673, 0.0, 3.521124)
+P003 input release move_forward: position=(-4.368673, 0.0, 3.521124)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-5.103606, 0.0, 3.980455)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-5.782006, 0.0, 4.404453)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-6.51694, 0.0, 4.863784)
+P003 key: logical=65 physical=65
+P003 input release move_left: position=(-6.969206, 0.0, 5.146449)
+P003 key: logical=65 physical=65
+P003 key: logical=83 physical=83
+P003 input release move_left: position=(-7.014179, 0.0, 5.341328)
+P003 input release move_back: position=(-7.014179, 0.0, 5.341328)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 41.73s.
+P001: Resumed at play time 41.73s.
+P003 key: logical=69 physical=69
+Loading resource: res://world/lantern_rest.tscn remapped: res://world/lantern_rest.tscn
+Completed load for: 'res://world/lantern_rest.tscn' remapped 'res://world/lantern_rest.tscn' at thread -1
+Loading resource: res://assets/models/npcs/npc-14.glb remapped: res://assets/models/npcs/npc-14.glb
+Loading resource: res://.godot/imported/npc-14.glb-041d5505f9e9b71478351fccc745f820.scn remapped: res://.godot/imported/npc-14.glb-041d5505f9e9b71478351fccc745f820.scn
+Loading resource: res://assets/models/npcs/npc-14_TEX-npc-14-palette.png remapped: res://assets/models/npcs/npc-14_TEX-npc-14-palette.png
+Loading resource: res://.godot/imported/npc-14_TEX-npc-14-palette.png-bc10c9531d7ea7dcf1b895ddc8270518.ctex remapped: res://.godot/imported/npc-14_TEX-npc-14-palette.png-bc10c9531d7ea7dcf1b895ddc8270518.ctex
+Completed load for: 'res://assets/models/npcs/npc-14_TEX-npc-14-palette.png' remapped 'res://assets/models/npcs/npc-14_TEX-npc-14-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-14.glb' remapped 'res://assets/models/npcs/npc-14.glb' at thread -1
+P004: arrived prototype-lantern-rest/lantern-rest-from-alderwake; party=2; transition=4
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 42.53s.
+P001: Resumed at play time 42.53s.
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(0.494666, 0.0, 0.791465)
+P003 key: logical=69 physical=69
+Loading resource: res://world/alderwake.tscn remapped: res://world/alderwake.tscn
+Loading resource: res://features/interaction/prop_interaction.tscn remapped: res://features/interaction/prop_interaction.tscn
+Completed load for: 'res://features/interaction/prop_interaction.tscn' remapped 'res://features/interaction/prop_interaction.tscn' at thread -1
+Completed load for: 'res://world/alderwake.tscn' remapped 'res://world/alderwake.tscn' at thread -1
+Loading resource: res://assets/models/npcs/npc-01-actions.glb remapped: res://assets/models/npcs/npc-01-actions.glb
+Loading resource: res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn remapped: res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn
+Completed load for: 'res://assets/models/npcs/npc-01-actions.glb' remapped 'res://assets/models/npcs/npc-01-actions.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-03.glb remapped: res://assets/models/npcs/npc-03.glb
+Loading resource: res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn remapped: res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn
+Completed load for: 'res://assets/models/npcs/npc-03.glb' remapped 'res://assets/models/npcs/npc-03.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-04.glb remapped: res://assets/models/npcs/npc-04.glb
+Loading resource: res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn remapped: res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn
+Completed load for: 'res://assets/models/npcs/npc-04.glb' remapped 'res://assets/models/npcs/npc-04.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-06.glb remapped: res://assets/models/npcs/npc-06.glb
+Loading resource: res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn remapped: res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn
+Completed load for: 'res://assets/models/npcs/npc-06.glb' remapped 'res://assets/models/npcs/npc-06.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-07.glb remapped: res://assets/models/npcs/npc-07.glb
+Loading resource: res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn remapped: res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn
+Completed load for: 'res://assets/models/npcs/npc-07.glb' remapped 'res://assets/models/npcs/npc-07.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-08.glb remapped: res://assets/models/npcs/npc-08.glb
+Loading resource: res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn remapped: res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn
+Completed load for: 'res://assets/models/npcs/npc-08.glb' remapped 'res://assets/models/npcs/npc-08.glb' at thread -1
+P004: arrived prototype-alderwake/alderwake-from-lantern-rest; party=2; transition=5
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 43.30s.
+P001: Resumed at play time 43.30s.
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(-10.72049, 0.0, 4.67989)
+P003 input release move_back: position=(-10.72049, 0.0, 4.67989)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-9.985559, 0.0, 4.220559)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(-9.271004, 0.0, 4.385458)
+P003 input release move_back: position=(-9.271004, 0.0, 4.385458)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-8.592609, 0.0, 3.96146)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(-7.821522, 0.0, 4.091024)
+P003 input release move_back: position=(-7.821522, 0.0, 4.091024)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-7.143122, 0.0, 3.667027)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(-6.428567, 0.0, 3.831923)
+P003 input release move_back: position=(-6.428567, 0.0, 3.831923)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(-5.649053, 0.0, 4.01181)
+P003 input release move_back: position=(-5.649053, 0.0, 4.01181)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-4.970653, 0.0, 3.587812)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(-4.515936, 0.0, 3.692746)
+P003 input release move_back: position=(-4.515936, 0.0, 3.692746)
+Loading resource: res://assets/models/npcs/npc-02-actions.glb remapped: res://assets/models/npcs/npc-02-actions.glb
+Loading resource: res://.godot/imported/npc-02-actions.glb-45d9a10e46139c4bf56bd3f963b661e3.scn remapped: res://.godot/imported/npc-02-actions.glb-45d9a10e46139c4bf56bd3f963b661e3.scn
+Completed load for: 'res://assets/models/npcs/npc-02-actions.glb' remapped 'res://assets/models/npcs/npc-02-actions.glb' at thread -1
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-4.402869, 0.0, 3.62208)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-3.72447, 0.0, 3.198082)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-3.102606, 0.0, 2.809417)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-2.480742, 0.0, 2.420752)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-1.802345, 0.0, 1.996754)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-1.123946, 0.0, 1.572755)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(-0.445547, 0.0, 1.148756)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(0.232851, 0.0, 0.724756)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(0.854717, 0.0, 0.33609)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(1.533115, 0.0, -0.087909)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(2.268046, 0.0, -0.547241)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(2.946444, 0.0, -0.971241)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(3.681374, 0.0, -1.430573)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(4.359773, 0.0, -1.854573)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(5.038173, 0.0, -2.278571)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(5.947606, 0.0, -2.068703)
+P003 input release move_back: position=(5.947606, 0.0, -2.068703)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(6.626006, 0.0, -2.492701)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(7.304406, 0.0, -2.916699)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(7.982806, 0.0, -3.340697)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 67.83s.
+P001: Resumed at play time 67.83s.
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(8.661201, 0.0, -3.764694)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(9.339595, 0.0, -4.188693)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(9.961456, 0.0, -4.577357)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(10.63985, 0.0, -5.001355)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(11.43131, 0.0, -5.496019)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(12.1097, 0.0, -5.920017)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(12.84463, 0.0, -6.379348)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(13.52303, 0.0, -6.803346)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(14.20142, 0.0, -7.227344)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(14.82328, 0.0, -7.616009)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(15.50168, 0.0, -8.040008)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(16.12354, 0.0, -8.428678)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(16.63235, 0.0, -8.74668)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(16.70301, 0.0, -8.633615)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(17.38142, 0.0, -9.057618)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(18.05982, 0.0, -9.481622)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(18.73823, 0.0, -9.905625)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(19.47317, 0.0, -10.36496)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(20.25267, 0.0, -10.18507)
+P003 input release move_back: position=(20.25267, 0.0, -10.18507)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(20.93108, 0.0, -10.60908)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(21.60948, 0.0, -11.03308)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(22.40096, 0.0, -11.52775)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(23.07936, 0.0, -11.95175)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(23.70123, 0.0, -12.34042)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(24.0176, 0.0, -12.31579)
+P003 input release move_back: position=(24.0176, 0.0, -12.31579)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(24.69601, 0.0, -12.7398)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(25.47551, 0.0, -12.55991)
+P003 input release move_back: position=(25.47551, 0.0, -12.55991)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(26.15392, 0.0, -12.98391)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(26.83232, 0.0, -13.40792)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(27.41695, 0.0, -13.273)
+P003 input release move_back: position=(27.41695, 0.0, -13.273)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 92.52s.
+P001: Resumed at play time 92.52s.
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(27.58655, 0.0, -13.379)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(28.32149, 0.0, -13.83834)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(29.05643, 0.0, -14.29767)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(29.83593, 0.0, -14.11778)
+P003 input release move_back: position=(29.83593, 0.0, -14.11778)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(30.40127, 0.0, -14.47112)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(30.53119, 0.0, -14.44114)
+P003 input release move_back: position=(30.53119, 0.0, -14.44114)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 collision cliff-52-4-east: position=(30.92034, 0.0, -14.35398)
+P003 collision cliff-53-3-south: position=(31.10998, 0.0, -14.36094)
+P003 input release move_right: position=(31.30486, 0.0, -14.36094)
+P003 input release move_back: position=(31.30486, 0.0, -14.36094)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(31.98326, 0.0, -14.78495)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(32.76279, 0.0, -14.60506)
+P003 input release move_back: position=(32.76279, 0.0, -14.60506)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(33.54232, 0.0, -14.42517)
+P003 input release move_back: position=(33.54232, 0.0, -14.42517)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(34.22072, 0.0, -14.84917)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(35.00025, 0.0, -14.66928)
+P003 input release move_back: position=(35.00025, 0.0, -14.66928)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(35.83631, 0.0, -14.52472)
+P003 input release move_back: position=(35.83631, 0.0, -14.52472)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(36.34511, 0.0, -14.84273)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(36.60495, 0.0, -14.78276)
+P003 input release move_back: position=(36.60495, 0.0, -14.78276)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(37.38448, 0.0, -14.60287)
+P003 input release move_back: position=(37.38448, 0.0, -14.60287)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(37.94982, 0.0, -14.95621)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(38.20966, 0.0, -14.89625)
+P003 input release move_back: position=(38.20966, 0.0, -14.89625)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(38.85926, 0.0, -14.74634)
+P003 input release move_back: position=(38.85926, 0.0, -14.74634)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(38.92993, 0.0, -14.63327)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(39.44961, 0.0, -14.51335)
+P003 input release move_back: position=(39.44961, 0.0, -14.51335)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(39.55561, 0.0, -14.34375)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(40.33513, 0.0, -14.16386)
+P003 input release move_back: position=(40.33513, 0.0, -14.16386)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(40.44113, 0.0, -13.99426)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(41.15569, 0.0, -13.82936)
+P003 input release move_back: position=(41.15569, 0.0, -13.82936)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(41.61501, 0.0, -13.09443)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(42.39453, 0.0, -12.91455)
+P003 input release move_back: position=(42.39453, 0.0, -12.91455)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(43.17406, 0.0, -12.73466)
+P003 input release move_back: position=(43.17406, 0.0, -12.73466)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(43.88862, 0.0, -12.56976)
+P003 input release move_back: position=(43.92395, 0.0, -12.51322)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(44.34793, 0.0, -11.83483)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(45.11903, 0.0, -11.70526)
+P003 input release move_back: position=(45.11903, 0.0, -11.70526)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 117.35s.
+P001: Resumed at play time 117.35s.
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(46.02848, 0.0, -11.49539)
+P003 input release move_back: position=(46.02848, 0.0, -11.49539)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(46.45246, 0.0, -10.817)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(47.23199, 0.0, -10.63711)
+P003 input release move_back: position=(47.23199, 0.0, -10.63711)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(48.01151, 0.0, -10.45722)
+P003 input release move_back: position=(48.01151, 0.0, -10.45722)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(48.43549, 0.0, -9.778825)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(49.15006, 0.0, -9.613926)
+P003 input release move_back: position=(49.15006, 0.0, -9.613926)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(49.98612, 0.0, -9.46937)
+P003 input release move_back: position=(49.98612, 0.0, -9.46937)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(50.44543, 0.0, -8.734443)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(51.22496, 0.0, -8.554553)
+P003 input release move_back: position=(51.22496, 0.0, -8.554553)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(52.06944, 0.0, -8.359673)
+P003 input release move_back: position=(52.06944, 0.0, -8.359673)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(52.49342, 0.0, -7.681275)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(53.27295, 0.0, -7.501386)
+P003 input release move_back: position=(53.27295, 0.0, -7.501386)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(54.11744, 0.0, -7.306505)
+P003 input release move_back: position=(54.11744, 0.0, -7.306505)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(54.57675, 0.0, -6.571572)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(55.29131, 0.0, -6.406673)
+P003 input release move_back: position=(55.29131, 0.0, -6.406673)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(56.07084, 0.0, -6.226783)
+P003 input release move_back: position=(56.07084, 0.0, -6.226783)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(56.49482, 0.0, -5.548383)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(57.27435, 0.0, -5.368494)
+P003 input release move_back: position=(57.27435, 0.0, -5.368494)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(57.98891, 0.0, -5.203595)
+P003 input release move_back: position=(57.98891, 0.0, -5.203595)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(58.44822, 0.0, -4.468661)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(59.29271, 0.0, -4.273781)
+P003 input release move_back: position=(59.29271, 0.0, -4.273781)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(60.06381, 0.0, -4.144215)
+P003 input release move_back: position=(60.06381, 0.0, -4.144215)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(60.48779, 0.0, -3.465815)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(61.26731, 0.0, -3.285928)
+P003 input release move_back: position=(61.26731, 0.0, -3.285928)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(62.04684, 0.0, -3.106041)
+P003 input release move_back: position=(62.04684, 0.0, -3.106041)
+P003 key: logical=83 physical=83
+P003 input release move_back: position=(62.36483, 0.0, -2.597241)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(62.62467, 0.0, -2.537279)
+P003 input release move_back: position=(62.62467, 0.0, -2.537279)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(63.46073, 0.0, -2.392725)
+P003 input release move_back: position=(63.46073, 0.0, -2.392725)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(64.24024, 0.0, -2.212839)
+P003 input release move_back: position=(64.24024, 0.0, -2.212839)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(65.08468, 0.0, -2.017961)
+P003 input release move_back: position=(65.08468, 0.0, -2.017961)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 142.07s.
+P001: Resumed at play time 142.07s.
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(65.76308, 0.0, -2.441959)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(66.54256, 0.0, -2.262072)
+P003 input release move_back: position=(66.54256, 0.0, -2.262072)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(67.32204, 0.0, -2.082186)
+P003 input release move_back: position=(67.32204, 0.0, -2.082186)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(68.10152, 0.0, -1.902298)
+P003 input release move_back: position=(68.13686, 0.0, -1.845765)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(68.91634, 0.0, -1.665876)
+P003 input release move_back: position=(68.91634, 0.0, -1.665876)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(69.69582, 0.0, -1.485988)
+P003 input release move_back: position=(69.69582, 0.0, -1.485988)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(70.31769, 0.0, -1.874654)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(71.03221, 0.0, -1.709757)
+P003 input release move_back: position=(71.03221, 0.0, -1.709757)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(71.55186, 0.0, -1.589831)
+P003 input release move_back: position=(71.55186, 0.0, -1.589831)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(72.33134, 0.0, -1.409943)
+P003 input release move_back: position=(72.33134, 0.0, -1.409943)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(73.11082, 0.0, -1.230055)
+P003 input release move_back: position=(73.11082, 0.0, -1.230055)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(73.78923, 0.0, -1.654054)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(74.56871, 0.0, -1.474166)
+P003 input release move_back: position=(74.56871, 0.0, -1.474166)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(75.34819, 0.0, -1.294277)
+P003 input release move_back: position=(75.34819, 0.0, -1.294277)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(76.12767, 0.0, -1.114389)
+P003 input release move_back: position=(76.12767, 0.0, -1.114389)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(76.80608, 0.0, -1.538388)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(77.58556, 0.0, -1.3585)
+P003 input release move_back: position=(77.58556, 0.0, -1.3585)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(78.36504, 0.0, -1.178612)
+P003 input release move_back: position=(78.36504, 0.0, -1.178612)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(79.20947, 0.0, -0.983733)
+P003 input release move_back: position=(79.20947, 0.0, -0.983733)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(79.94441, 0.0, -1.443066)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(80.72389, 0.0, -1.263178)
+P003 input release move_back: position=(80.72389, 0.0, -1.263178)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(81.50337, 0.0, -1.083289)
+P003 input release move_back: position=(81.50337, 0.0, -1.083289)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(82.34781, 0.0, -0.888411)
+P003 input release move_back: position=(82.34781, 0.0, -0.888411)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(83.02621, 0.0, -1.31241)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(83.80569, 0.0, -1.132522)
+P003 input release move_back: position=(83.80569, 0.0, -1.132522)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(84.58517, 0.0, -0.952634)
+P003 input release move_back: position=(84.58517, 0.0, -0.952634)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(85.2997, 0.0, -0.787737)
+P003 input release move_back: position=(85.2997, 0.0, -0.787737)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(86.03464, 0.0, -1.247069)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(86.87907, 0.0, -1.052191)
+P003 input release move_back: position=(86.87907, 0.0, -1.052191)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(87.65855, 0.0, -0.872303)
+P003 input release move_back: position=(87.65855, 0.0, -0.872303)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 166.97s.
+P001: Resumed at play time 166.97s.
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(88.43803, 0.0, -0.692415)
+P003 input release move_back: position=(88.43803, 0.0, -0.692415)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(89.21751, 0.0, -0.512528)
+P003 input release move_back: position=(89.21751, 0.0, -0.512528)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(89.95245, 0.0, -0.97186)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(90.66698, 0.0, -0.806963)
+P003 input release move_back: position=(90.66698, 0.0, -0.806963)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(91.3815, 0.0, -0.642067)
+P003 input release move_back: position=(91.3815, 0.0, -0.642067)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(92.22594, 0.0, -0.447188)
+P003 input release move_back: position=(92.22594, 0.0, -0.447188)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(92.90434, 0.0, -0.871188)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(93.68382, 0.0, -0.6913)
+P003 input release move_back: position=(93.68382, 0.0, -0.6913)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(94.39835, 0.0, -0.526403)
+P003 input release move_back: position=(94.39835, 0.0, -0.526403)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(95.17782, 0.0, -0.346517)
+P003 input release move_back: position=(95.17782, 0.0, -0.346517)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(95.85622, 0.0, -0.770517)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(96.6357, 0.0, -0.590629)
+P003 input release move_back: position=(96.6357, 0.0, -0.590629)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(97.48014, 0.0, -0.395751)
+P003 input release move_back: position=(97.48014, 0.0, -0.395751)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(98.25962, 0.0, -0.215863)
+P003 input release move_back: position=(98.25962, 0.0, -0.215863)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(98.93803, 0.0, -0.639863)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(99.71751, 0.0, -0.459975)
+P003 input release move_back: position=(99.71751, 0.0, -0.459975)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(99.71751, 0.0, -0.459975)
+P003 input release move_back: position=(99.71751, 0.0, -0.459975)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(100.5619, 0.0, -0.265097)
+P003 input release move_back: position=(100.5619, 0.0, -0.265097)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(101.3414, 0.0, -0.08521)
+P003 input release move_back: position=(101.3414, 0.0, -0.08521)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(102.0198, 0.0, -0.509209)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(102.7993, 0.0, -0.329321)
+P003 input release move_back: position=(102.7993, 0.0, -0.329321)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(103.6437, 0.0, -0.134443)
+P003 input release move_back: position=(103.6437, 0.0, -0.134443)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(104.4232, 0.0, 0.045445)
+P003 input release move_back: position=(104.4232, 0.0, 0.045445)
+P003 key: logical=68 physical=68
+P003 input release move_right: position=(105.1016, 0.0, -0.378555)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(105.8811, 0.0, -0.198667)
+P003 input release move_back: position=(105.8811, 0.0, -0.198667)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(106.7821, 0.0, -0.039122)
+P003 input release move_back: position=(106.7821, 0.0, -0.039122)
+P003 key: logical=68 physical=68
+P003 key: logical=83 physical=83
+P003 input release move_right: position=(107.1718, 0.0, 0.050822)
+P003 input release move_back: position=(107.1718, 0.0, 0.050822)
+P003 key: logical=68 physical=68
+P003 key: logical=87 physical=87
+P003 input release move_right: position=(107.2168, 0.0, -0.144057)
+P003 input release move_forward: position=(107.2168, 0.0, -0.144057)
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 189.42s.
+P001: Resumed at play time 189.42s.
+P003 key: logical=69 physical=69
+Loading resource: res://world/tollworks.tscn remapped: res://world/tollworks.tscn
+Loading resource: res://features/interaction/prop_interaction.tscn remapped: res://features/interaction/prop_interaction.tscn
+Completed load for: 'res://features/interaction/prop_interaction.tscn' remapped 'res://features/interaction/prop_interaction.tscn' at thread -1
+Loading resource: res://features/interaction/recovery_vessel.tscn remapped: res://features/interaction/recovery_vessel.tscn
+Loading resource: res://assets/models/recovery_vessel.glb remapped: res://assets/models/recovery_vessel.glb
+Loading resource: res://.godot/imported/recovery_vessel.glb-105a9685986d68811abfd5efa21d1a57.scn remapped: res://.godot/imported/recovery_vessel.glb-105a9685986d68811abfd5efa21d1a57.scn
+Completed load for: 'res://assets/models/recovery_vessel.glb' remapped 'res://assets/models/recovery_vessel.glb' at thread -1
+Completed load for: 'res://features/interaction/recovery_vessel.tscn' remapped 'res://features/interaction/recovery_vessel.tscn' at thread -1
+Loading resource: res://assets/models/tollworks_plinth.glb remapped: res://assets/models/tollworks_plinth.glb
+Loading resource: res://.godot/imported/tollworks_plinth.glb-f735e0f0bfbd5171ce21ea27fe0097b6.scn remapped: res://.godot/imported/tollworks_plinth.glb-f735e0f0bfbd5171ce21ea27fe0097b6.scn
+Completed load for: 'res://assets/models/tollworks_plinth.glb' remapped 'res://assets/models/tollworks_plinth.glb' at thread -1
+Loading resource: res://world/storybook_tollworks_material.gdc remapped: res://world/storybook_tollworks_material.gdc
+Completed load for: 'res://world/storybook_tollworks_material.gd' remapped 'res://world/storybook_tollworks_material.gdc' at thread -1
+Completed load for: 'res://world/tollworks.tscn' remapped 'res://world/tollworks.tscn' at thread -1
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=6
+P003 key: logical=4194305 physical=4194305
+P001: Paused at play time 190.14s.
+Loading resource: res://assets/npcs/portraits/npc-01/official-neutral.png remapped: res://assets/npcs/portraits/npc-01/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex remapped: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-01/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/practiced-smile.png remapped: res://assets/npcs/portraits/npc-01/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex remapped: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-01/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/skeptical.png remapped: res://assets/npcs/portraits/npc-01/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex remapped: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/skeptical.png' remapped 'res://assets/npcs/portraits/npc-01/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/pleased.png remapped: res://assets/npcs/portraits/npc-01/pleased.png
+Loading resource: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex remapped: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/pleased.png' remapped 'res://assets/npcs/portraits/npc-01/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-01/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex remapped: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/fishing-gear.png remapped: res://assets/npcs/portraits/npc-01/fishing-gear.png
+Loading resource: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex remapped: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/fishing-gear.png' remapped 'res://assets/npcs/portraits/npc-01/fishing-gear.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/official-neutral.png remapped: res://assets/npcs/portraits/npc-02/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex remapped: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-02/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/practiced-smile.png remapped: res://assets/npcs/portraits/npc-02/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex remapped: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-02/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/skeptical.png remapped: res://assets/npcs/portraits/npc-02/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex remapped: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/skeptical.png' remapped 'res://assets/npcs/portraits/npc-02/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/pleased.png remapped: res://assets/npcs/portraits/npc-02/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex remapped: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/pleased.png' remapped 'res://assets/npcs/portraits/npc-02/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-02/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex remapped: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/archive-work.png remapped: res://assets/npcs/portraits/npc-02/archive-work.png
+Loading resource: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex remapped: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/archive-work.png' remapped 'res://assets/npcs/portraits/npc-02/archive-work.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/official-neutral.png remapped: res://assets/npcs/portraits/npc-03/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex remapped: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-03/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/practiced-smile.png remapped: res://assets/npcs/portraits/npc-03/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex remapped: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-03/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/skeptical.png remapped: res://assets/npcs/portraits/npc-03/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex remapped: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/skeptical.png' remapped 'res://assets/npcs/portraits/npc-03/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/pleased.png remapped: res://assets/npcs/portraits/npc-03/pleased.png
+Loading resource: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex remapped: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/pleased.png' remapped 'res://assets/npcs/portraits/npc-03/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-03/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex remapped: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/ropework.png remapped: res://assets/npcs/portraits/npc-03/ropework.png
+Loading resource: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex remapped: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/ropework.png' remapped 'res://assets/npcs/portraits/npc-03/ropework.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/official-neutral.png remapped: res://assets/npcs/portraits/npc-04/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex remapped: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-04/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/practiced-smile.png remapped: res://assets/npcs/portraits/npc-04/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex remapped: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-04/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/skeptical.png remapped: res://assets/npcs/portraits/npc-04/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex remapped: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/skeptical.png' remapped 'res://assets/npcs/portraits/npc-04/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/pleased.png remapped: res://assets/npcs/portraits/npc-04/pleased.png
+Loading resource: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex remapped: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/pleased.png' remapped 'res://assets/npcs/portraits/npc-04/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-04/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex remapped: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/birdwatching.png remapped: res://assets/npcs/portraits/npc-04/birdwatching.png
+Loading resource: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex remapped: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/birdwatching.png' remapped 'res://assets/npcs/portraits/npc-04/birdwatching.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/official-neutral.png remapped: res://assets/npcs/portraits/npc-06/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex remapped: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-06/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/practiced-smile.png remapped: res://assets/npcs/portraits/npc-06/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex remapped: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-06/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/skeptical.png remapped: res://assets/npcs/portraits/npc-06/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex remapped: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/skeptical.png' remapped 'res://assets/npcs/portraits/npc-06/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/pleased.png remapped: res://assets/npcs/portraits/npc-06/pleased.png
+Loading resource: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex remapped: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/pleased.png' remapped 'res://assets/npcs/portraits/npc-06/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-06/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex remapped: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/flower-pressing.png remapped: res://assets/npcs/portraits/npc-06/flower-pressing.png
+Loading resource: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex remapped: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/flower-pressing.png' remapped 'res://assets/npcs/portraits/npc-06/flower-pressing.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/official-neutral.png remapped: res://assets/npcs/portraits/npc-07/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex remapped: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-07/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/practiced-smile.png remapped: res://assets/npcs/portraits/npc-07/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex remapped: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-07/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/skeptical.png remapped: res://assets/npcs/portraits/npc-07/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex remapped: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/skeptical.png' remapped 'res://assets/npcs/portraits/npc-07/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/pleased.png remapped: res://assets/npcs/portraits/npc-07/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex remapped: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/pleased.png' remapped 'res://assets/npcs/portraits/npc-07/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-07/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex remapped: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/knotwork.png remapped: res://assets/npcs/portraits/npc-07/knotwork.png
+Loading resource: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex remapped: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/knotwork.png' remapped 'res://assets/npcs/portraits/npc-07/knotwork.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/official-neutral.png remapped: res://assets/npcs/portraits/npc-08/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex remapped: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-08/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/practiced-smile.png remapped: res://assets/npcs/portraits/npc-08/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex remapped: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-08/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/skeptical.png remapped: res://assets/npcs/portraits/npc-08/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex remapped: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/skeptical.png' remapped 'res://assets/npcs/portraits/npc-08/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/pleased.png remapped: res://assets/npcs/portraits/npc-08/pleased.png
+Loading resource: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex remapped: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/pleased.png' remapped 'res://assets/npcs/portraits/npc-08/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-08/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex remapped: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/woodcarving.png remapped: res://assets/npcs/portraits/npc-08/woodcarving.png
+Loading resource: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex remapped: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/woodcarving.png' remapped 'res://assets/npcs/portraits/npc-08/woodcarving.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/official-neutral.png remapped: res://assets/npcs/portraits/npc-14/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex remapped: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-14/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/practiced-smile.png remapped: res://assets/npcs/portraits/npc-14/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex remapped: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-14/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/skeptical.png remapped: res://assets/npcs/portraits/npc-14/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex remapped: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/skeptical.png' remapped 'res://assets/npcs/portraits/npc-14/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/pleased.png remapped: res://assets/npcs/portraits/npc-14/pleased.png
+Loading resource: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex remapped: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/pleased.png' remapped 'res://assets/npcs/portraits/npc-14/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-14/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex remapped: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/quilting.png remapped: res://assets/npcs/portraits/npc-14/quilting.png
+Loading resource: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex remapped: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/quilting.png' remapped 'res://assets/npcs/portraits/npc-14/quilting.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/official-neutral.png remapped: res://assets/npcs/portraits/npc-01/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex remapped: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-01/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/practiced-smile.png remapped: res://assets/npcs/portraits/npc-01/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex remapped: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-01/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/skeptical.png remapped: res://assets/npcs/portraits/npc-01/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex remapped: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/skeptical.png' remapped 'res://assets/npcs/portraits/npc-01/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/pleased.png remapped: res://assets/npcs/portraits/npc-01/pleased.png
+Loading resource: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex remapped: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/pleased.png' remapped 'res://assets/npcs/portraits/npc-01/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-01/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex remapped: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/fishing-gear.png remapped: res://assets/npcs/portraits/npc-01/fishing-gear.png
+Loading resource: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex remapped: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/fishing-gear.png' remapped 'res://assets/npcs/portraits/npc-01/fishing-gear.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/official-neutral.png remapped: res://assets/npcs/portraits/npc-02/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex remapped: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-02/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/practiced-smile.png remapped: res://assets/npcs/portraits/npc-02/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex remapped: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-02/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/skeptical.png remapped: res://assets/npcs/portraits/npc-02/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex remapped: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/skeptical.png' remapped 'res://assets/npcs/portraits/npc-02/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/pleased.png remapped: res://assets/npcs/portraits/npc-02/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex remapped: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/pleased.png' remapped 'res://assets/npcs/portraits/npc-02/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-02/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex remapped: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/archive-work.png remapped: res://assets/npcs/portraits/npc-02/archive-work.png
+Loading resource: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex remapped: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/archive-work.png' remapped 'res://assets/npcs/portraits/npc-02/archive-work.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/official-neutral.png remapped: res://assets/npcs/portraits/npc-03/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex remapped: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-03/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/practiced-smile.png remapped: res://assets/npcs/portraits/npc-03/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex remapped: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-03/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/skeptical.png remapped: res://assets/npcs/portraits/npc-03/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex remapped: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/skeptical.png' remapped 'res://assets/npcs/portraits/npc-03/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/pleased.png remapped: res://assets/npcs/portraits/npc-03/pleased.png
+Loading resource: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex remapped: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/pleased.png' remapped 'res://assets/npcs/portraits/npc-03/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-03/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex remapped: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/ropework.png remapped: res://assets/npcs/portraits/npc-03/ropework.png
+Loading resource: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex remapped: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/ropework.png' remapped 'res://assets/npcs/portraits/npc-03/ropework.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/official-neutral.png remapped: res://assets/npcs/portraits/npc-04/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex remapped: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-04/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/practiced-smile.png remapped: res://assets/npcs/portraits/npc-04/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex remapped: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-04/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/skeptical.png remapped: res://assets/npcs/portraits/npc-04/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex remapped: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/skeptical.png' remapped 'res://assets/npcs/portraits/npc-04/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/pleased.png remapped: res://assets/npcs/portraits/npc-04/pleased.png
+Loading resource: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex remapped: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/pleased.png' remapped 'res://assets/npcs/portraits/npc-04/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-04/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex remapped: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/birdwatching.png remapped: res://assets/npcs/portraits/npc-04/birdwatching.png
+Loading resource: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex remapped: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/birdwatching.png' remapped 'res://assets/npcs/portraits/npc-04/birdwatching.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/official-neutral.png remapped: res://assets/npcs/portraits/npc-06/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex remapped: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-06/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/practiced-smile.png remapped: res://assets/npcs/portraits/npc-06/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex remapped: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-06/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/skeptical.png remapped: res://assets/npcs/portraits/npc-06/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex remapped: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/skeptical.png' remapped 'res://assets/npcs/portraits/npc-06/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/pleased.png remapped: res://assets/npcs/portraits/npc-06/pleased.png
+Loading resource: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex remapped: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/pleased.png' remapped 'res://assets/npcs/portraits/npc-06/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-06/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex remapped: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/flower-pressing.png remapped: res://assets/npcs/portraits/npc-06/flower-pressing.png
+Loading resource: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex remapped: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/flower-pressing.png' remapped 'res://assets/npcs/portraits/npc-06/flower-pressing.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/official-neutral.png remapped: res://assets/npcs/portraits/npc-07/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex remapped: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-07/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/practiced-smile.png remapped: res://assets/npcs/portraits/npc-07/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex remapped: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-07/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/skeptical.png remapped: res://assets/npcs/portraits/npc-07/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex remapped: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/skeptical.png' remapped 'res://assets/npcs/portraits/npc-07/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/pleased.png remapped: res://assets/npcs/portraits/npc-07/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex remapped: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/pleased.png' remapped 'res://assets/npcs/portraits/npc-07/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-07/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex remapped: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/knotwork.png remapped: res://assets/npcs/portraits/npc-07/knotwork.png
+Loading resource: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex remapped: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/knotwork.png' remapped 'res://assets/npcs/portraits/npc-07/knotwork.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/official-neutral.png remapped: res://assets/npcs/portraits/npc-08/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex remapped: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-08/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/practiced-smile.png remapped: res://assets/npcs/portraits/npc-08/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex remapped: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-08/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/skeptical.png remapped: res://assets/npcs/portraits/npc-08/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex remapped: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/skeptical.png' remapped 'res://assets/npcs/portraits/npc-08/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/pleased.png remapped: res://assets/npcs/portraits/npc-08/pleased.png
+Loading resource: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex remapped: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/pleased.png' remapped 'res://assets/npcs/portraits/npc-08/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-08/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex remapped: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/woodcarving.png remapped: res://assets/npcs/portraits/npc-08/woodcarving.png
+Loading resource: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex remapped: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/woodcarving.png' remapped 'res://assets/npcs/portraits/npc-08/woodcarving.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/official-neutral.png remapped: res://assets/npcs/portraits/npc-14/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex remapped: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-14/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/practiced-smile.png remapped: res://assets/npcs/portraits/npc-14/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex remapped: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-14/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/skeptical.png remapped: res://assets/npcs/portraits/npc-14/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex remapped: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/skeptical.png' remapped 'res://assets/npcs/portraits/npc-14/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/pleased.png remapped: res://assets/npcs/portraits/npc-14/pleased.png
+Loading resource: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex remapped: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/pleased.png' remapped 'res://assets/npcs/portraits/npc-14/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-14/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex remapped: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/quilting.png remapped: res://assets/npcs/portraits/npc-14/quilting.png
+Loading resource: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex remapped: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/quilting.png' remapped 'res://assets/npcs/portraits/npc-14/quilting.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/official-neutral.png remapped: res://assets/npcs/portraits/npc-01/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex remapped: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-01/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/practiced-smile.png remapped: res://assets/npcs/portraits/npc-01/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex remapped: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-01/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/skeptical.png remapped: res://assets/npcs/portraits/npc-01/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex remapped: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/skeptical.png' remapped 'res://assets/npcs/portraits/npc-01/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/pleased.png remapped: res://assets/npcs/portraits/npc-01/pleased.png
+Loading resource: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex remapped: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/pleased.png' remapped 'res://assets/npcs/portraits/npc-01/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-01/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex remapped: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/fishing-gear.png remapped: res://assets/npcs/portraits/npc-01/fishing-gear.png
+Loading resource: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex remapped: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/fishing-gear.png' remapped 'res://assets/npcs/portraits/npc-01/fishing-gear.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/official-neutral.png remapped: res://assets/npcs/portraits/npc-02/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex remapped: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-02/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/practiced-smile.png remapped: res://assets/npcs/portraits/npc-02/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex remapped: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-02/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/skeptical.png remapped: res://assets/npcs/portraits/npc-02/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex remapped: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/skeptical.png' remapped 'res://assets/npcs/portraits/npc-02/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/pleased.png remapped: res://assets/npcs/portraits/npc-02/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex remapped: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/pleased.png' remapped 'res://assets/npcs/portraits/npc-02/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-02/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex remapped: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/archive-work.png remapped: res://assets/npcs/portraits/npc-02/archive-work.png
+Loading resource: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex remapped: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/archive-work.png' remapped 'res://assets/npcs/portraits/npc-02/archive-work.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/official-neutral.png remapped: res://assets/npcs/portraits/npc-03/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex remapped: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-03/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/practiced-smile.png remapped: res://assets/npcs/portraits/npc-03/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex remapped: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-03/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/skeptical.png remapped: res://assets/npcs/portraits/npc-03/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex remapped: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/skeptical.png' remapped 'res://assets/npcs/portraits/npc-03/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/pleased.png remapped: res://assets/npcs/portraits/npc-03/pleased.png
+Loading resource: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex remapped: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/pleased.png' remapped 'res://assets/npcs/portraits/npc-03/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-03/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex remapped: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/ropework.png remapped: res://assets/npcs/portraits/npc-03/ropework.png
+Loading resource: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex remapped: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/ropework.png' remapped 'res://assets/npcs/portraits/npc-03/ropework.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/official-neutral.png remapped: res://assets/npcs/portraits/npc-04/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex remapped: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-04/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/practiced-smile.png remapped: res://assets/npcs/portraits/npc-04/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex remapped: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-04/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/skeptical.png remapped: res://assets/npcs/portraits/npc-04/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex remapped: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/skeptical.png' remapped 'res://assets/npcs/portraits/npc-04/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/pleased.png remapped: res://assets/npcs/portraits/npc-04/pleased.png
+Loading resource: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex remapped: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/pleased.png' remapped 'res://assets/npcs/portraits/npc-04/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-04/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex remapped: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/birdwatching.png remapped: res://assets/npcs/portraits/npc-04/birdwatching.png
+Loading resource: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex remapped: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/birdwatching.png' remapped 'res://assets/npcs/portraits/npc-04/birdwatching.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/official-neutral.png remapped: res://assets/npcs/portraits/npc-06/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex remapped: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-06/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/practiced-smile.png remapped: res://assets/npcs/portraits/npc-06/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex remapped: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-06/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/skeptical.png remapped: res://assets/npcs/portraits/npc-06/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex remapped: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/skeptical.png' remapped 'res://assets/npcs/portraits/npc-06/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/pleased.png remapped: res://assets/npcs/portraits/npc-06/pleased.png
+Loading resource: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex remapped: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/pleased.png' remapped 'res://assets/npcs/portraits/npc-06/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-06/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex remapped: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/flower-pressing.png remapped: res://assets/npcs/portraits/npc-06/flower-pressing.png
+Loading resource: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex remapped: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/flower-pressing.png' remapped 'res://assets/npcs/portraits/npc-06/flower-pressing.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/official-neutral.png remapped: res://assets/npcs/portraits/npc-07/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex remapped: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-07/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/practiced-smile.png remapped: res://assets/npcs/portraits/npc-07/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex remapped: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-07/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/skeptical.png remapped: res://assets/npcs/portraits/npc-07/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex remapped: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/skeptical.png' remapped 'res://assets/npcs/portraits/npc-07/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/pleased.png remapped: res://assets/npcs/portraits/npc-07/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex remapped: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/pleased.png' remapped 'res://assets/npcs/portraits/npc-07/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-07/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex remapped: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/knotwork.png remapped: res://assets/npcs/portraits/npc-07/knotwork.png
+Loading resource: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex remapped: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/knotwork.png' remapped 'res://assets/npcs/portraits/npc-07/knotwork.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/official-neutral.png remapped: res://assets/npcs/portraits/npc-08/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex remapped: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-08/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/practiced-smile.png remapped: res://assets/npcs/portraits/npc-08/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex remapped: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-08/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/skeptical.png remapped: res://assets/npcs/portraits/npc-08/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex remapped: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/skeptical.png' remapped 'res://assets/npcs/portraits/npc-08/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/pleased.png remapped: res://assets/npcs/portraits/npc-08/pleased.png
+Loading resource: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex remapped: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/pleased.png' remapped 'res://assets/npcs/portraits/npc-08/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-08/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex remapped: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/woodcarving.png remapped: res://assets/npcs/portraits/npc-08/woodcarving.png
+Loading resource: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex remapped: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/woodcarving.png' remapped 'res://assets/npcs/portraits/npc-08/woodcarving.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/official-neutral.png remapped: res://assets/npcs/portraits/npc-14/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex remapped: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-14/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/practiced-smile.png remapped: res://assets/npcs/portraits/npc-14/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex remapped: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-14/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/skeptical.png remapped: res://assets/npcs/portraits/npc-14/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex remapped: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/skeptical.png' remapped 'res://assets/npcs/portraits/npc-14/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/pleased.png remapped: res://assets/npcs/portraits/npc-14/pleased.png
+Loading resource: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex remapped: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/pleased.png' remapped 'res://assets/npcs/portraits/npc-14/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-14/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex remapped: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/quilting.png remapped: res://assets/npcs/portraits/npc-14/quilting.png
+Loading resource: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex remapped: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/quilting.png' remapped 'res://assets/npcs/portraits/npc-14/quilting.png' at thread -1
+P005 save: OK
+P001: Quit requested while paused.
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"
+Accessibility: window 0 adapter destroyed.

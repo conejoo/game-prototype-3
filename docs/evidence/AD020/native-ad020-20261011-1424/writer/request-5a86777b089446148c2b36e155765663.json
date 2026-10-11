@@ -1,0 +1,41 @@
+{
+  "steps": [
+    {
+      "op": "hold",
+      "keys": [
+        "ESC"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "hold",
+      "keys": [
+        "E"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "wait",
+      "duration_ms": 1200
+    },
+    {
+      "op": "capture",
+      "label": "mayor-home-world"
+    },
+    {
+      "op": "hold",
+      "keys": [
+        "ESC"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "wait",
+      "duration_ms": 200
+    },
+    {
+      "op": "capture",
+      "label": "mayor-home-paused"
+    }
+  ]
+}

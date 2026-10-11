@@ -1,0 +1,2924 @@
+{
+  "status": "passed",
+  "requests": [
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\004f4a976aee4fdcb4451ec630c1cc8f.json",
+      "id": "004f4a976aee4fdcb4451ec630c1cc8f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0139b86b990c48378e4b7927c49e1d89.json",
+      "id": "0139b86b990c48378e4b7927c49e1d89",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\01c0a0b64b6e4b8ca8811f3acf50f1f9.json",
+      "id": "01c0a0b64b6e4b8ca8811f3acf50f1f9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\03605b83bf764261aed0c7f8fe802f3a.json",
+      "id": "03605b83bf764261aed0c7f8fe802f3a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\038b5e8e6790400d868aa4243311303c.json",
+      "id": "038b5e8e6790400d868aa4243311303c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0437793fca404cbb86b787b686ad97e9.json",
+      "id": "0437793fca404cbb86b787b686ad97e9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0450be5466794a508e5c508a666e251b.json",
+      "id": "0450be5466794a508e5c508a666e251b",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\05a945e8d0544e54a501d73a4be84b52.json",
+      "id": "05a945e8d0544e54a501d73a4be84b52",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\065d2ab85ec241a5a74d06fe2c335f08.json",
+      "id": "065d2ab85ec241a5a74d06fe2c335f08",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\070761739fe54a31824c527527137966.json",
+      "id": "070761739fe54a31824c527527137966",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\078d916937584c2483bd36c09a2c8b83.json",
+      "id": "078d916937584c2483bd36c09a2c8b83",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\082fc808c5984d4dad6ab4d31a85496a.json",
+      "id": "082fc808c5984d4dad6ab4d31a85496a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\083b02148a504235a94b757b4c20a56a.json",
+      "id": "083b02148a504235a94b757b4c20a56a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0853b60e7ce84e24bba14c3403ab7b1f.json",
+      "id": "0853b60e7ce84e24bba14c3403ab7b1f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0927ec2d43ad42f0860cce847e0e792d.json",
+      "id": "0927ec2d43ad42f0860cce847e0e792d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\09efe220954247919126b69ea0273618.json",
+      "id": "09efe220954247919126b69ea0273618",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0bf44d93977e4e8aa26251b4e65b15fb.json",
+      "id": "0bf44d93977e4e8aa26251b4e65b15fb",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0c2090e3cf954376bfe9439d4e732eee.json",
+      "id": "0c2090e3cf954376bfe9439d4e732eee",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0c63a496e6224a52a7d1002344c5aeff.json",
+      "id": "0c63a496e6224a52a7d1002344c5aeff",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0d938c66c24a4da0a65e4abfca874a6f.json",
+      "id": "0d938c66c24a4da0a65e4abfca874a6f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0ee2d2ba64d146eda5064860fc159ce4.json",
+      "id": "0ee2d2ba64d146eda5064860fc159ce4",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0f95a1c8b6d24d289155985c4df3cfa4.json",
+      "id": "0f95a1c8b6d24d289155985c4df3cfa4",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0fbe9033bf104be6aae60f62bf44bdf7.json",
+      "id": "0fbe9033bf104be6aae60f62bf44bdf7",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1104a3211f1c4672a29a2f73fdb689fe.json",
+      "id": "1104a3211f1c4672a29a2f73fdb689fe",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1202574367e7454482e0de7f47747168.json",
+      "id": "1202574367e7454482e0de7f47747168",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\144852c159124085a6e422f894f6c56f.json",
+      "id": "144852c159124085a6e422f894f6c56f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\146dab5b41b540e18c52a2686a4a5ab8.json",
+      "id": "146dab5b41b540e18c52a2686a4a5ab8",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\148f6b16de3a462d93f8a6347206dc30.json",
+      "id": "148f6b16de3a462d93f8a6347206dc30",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\157274c318da4e64b134aa97d83d3cfc.json",
+      "id": "157274c318da4e64b134aa97d83d3cfc",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\15e0db27a020479fbb3475ad6471b8f6.json",
+      "id": "15e0db27a020479fbb3475ad6471b8f6",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1651c20566844d1bacd58efd596f54ba.json",
+      "id": "1651c20566844d1bacd58efd596f54ba",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\175e3f8f088844d4b84370b9f0d64d21.json",
+      "id": "175e3f8f088844d4b84370b9f0d64d21",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\17bb6936cbba4d0cbf8439b021421be7.json",
+      "id": "17bb6936cbba4d0cbf8439b021421be7",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1817ca97f24940f69ade3d4ebee56cd4.json",
+      "id": "1817ca97f24940f69ade3d4ebee56cd4",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1c91d75f15de4262844e5e7d33aa0091.json",
+      "id": "1c91d75f15de4262844e5e7d33aa0091",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1ddb76a1df974b129931cf42bdefcec8.json",
+      "id": "1ddb76a1df974b129931cf42bdefcec8",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1ebb0cfbe0b54afea5de889c558ec48a.json",
+      "id": "1ebb0cfbe0b54afea5de889c558ec48a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1ee22fa520e8489eaec67820711a3fea.json",
+      "id": "1ee22fa520e8489eaec67820711a3fea",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1eee00c47bd04abb842d26064914c110.json",
+      "id": "1eee00c47bd04abb842d26064914c110",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1f011e2e5fb34f7895d3ef145e7dd692.json",
+      "id": "1f011e2e5fb34f7895d3ef145e7dd692",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\20d5fd8e25a24966b7e870285dbdf04d.json",
+      "id": "20d5fd8e25a24966b7e870285dbdf04d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\211bc3f44456404ca6b3b174d8edcd45.json",
+      "id": "211bc3f44456404ca6b3b174d8edcd45",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\21b82832c1db4e1faf6df22558ac8f06.json",
+      "id": "21b82832c1db4e1faf6df22558ac8f06",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\21fcb80dd5b34efdae6681532b96b2f6.json",
+      "id": "21fcb80dd5b34efdae6681532b96b2f6",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\22329be162f7483aa56296effdb0ec22.json",
+      "id": "22329be162f7483aa56296effdb0ec22",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\228b57ff377f4ede8142b833d3d64bd5.json",
+      "id": "228b57ff377f4ede8142b833d3d64bd5",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\235f02d1d5c645d19ead31bf13590238.json",
+      "id": "235f02d1d5c645d19ead31bf13590238",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\24b693dcd3ee4fb58a358357529b72b3.json",
+      "id": "24b693dcd3ee4fb58a358357529b72b3",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\26533c112b074554a04689290fcaf2bb.json",
+      "id": "26533c112b074554a04689290fcaf2bb",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\26e4da3645e84f8c84d1214c22de654a.json",
+      "id": "26e4da3645e84f8c84d1214c22de654a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\28203d9a6d5841a9bdd8a3e414b1a02d.json",
+      "id": "28203d9a6d5841a9bdd8a3e414b1a02d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\283c0addc72b49d8859ec6f6cc484de1.json",
+      "id": "283c0addc72b49d8859ec6f6cc484de1",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\2929aaec72884a6186962307745b2e60.json",
+      "id": "2929aaec72884a6186962307745b2e60",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\2a8907591da64ed6b4ac378100d8c5b0.json",
+      "id": "2a8907591da64ed6b4ac378100d8c5b0",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\2aa231fab7e942998ea104c49ed4e01c.json",
+      "id": "2aa231fab7e942998ea104c49ed4e01c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\2b6ef265ede645c486f845d54e17497c.json",
+      "id": "2b6ef265ede645c486f845d54e17497c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\2c01da72e5b447f0ac4342e871e0d7b1.json",
+      "id": "2c01da72e5b447f0ac4342e871e0d7b1",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\2c79c06e2dbd47d38e569d1bc2dbef46.json",
+      "id": "2c79c06e2dbd47d38e569d1bc2dbef46",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\2eee1c032086461d939dbb620fce2cd2.json",
+      "id": "2eee1c032086461d939dbb620fce2cd2",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\3122d7c21e2843699dc1263a206532ac.json",
+      "id": "3122d7c21e2843699dc1263a206532ac",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\32d75cadd49440b684f3d58ecfa48023.json",
+      "id": "32d75cadd49440b684f3d58ecfa48023",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\330962ea843041bc8fc0e0e8616731d1.json",
+      "id": "330962ea843041bc8fc0e0e8616731d1",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\350b2219d94d4bf9875b590503c02a3f.json",
+      "id": "350b2219d94d4bf9875b590503c02a3f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\36280185ae7b4a4eba2ceb04e3ac14ce.json",
+      "id": "36280185ae7b4a4eba2ceb04e3ac14ce",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\385ac5ed718440a89084cb6c71c31981.json",
+      "id": "385ac5ed718440a89084cb6c71c31981",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\39dacf1bd82d4912b57b682c27542c1e.json",
+      "id": "39dacf1bd82d4912b57b682c27542c1e",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\3ae13d2cf6604cf88408bf79ce4538f1.json",
+      "id": "3ae13d2cf6604cf88408bf79ce4538f1",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\3bed759d5a5e404281723dd175868627.json",
+      "id": "3bed759d5a5e404281723dd175868627",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\3d98f4374bb740a9b0c7b180b5d87d76.json",
+      "id": "3d98f4374bb740a9b0c7b180b5d87d76",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\3ebf56fc88a94f46aa61bc8229587373.json",
+      "id": "3ebf56fc88a94f46aa61bc8229587373",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\41f85c6e90fd49568e16e89888215183.json",
+      "id": "41f85c6e90fd49568e16e89888215183",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\43059e3073cc4b2fab4d559e57edd483.json",
+      "id": "43059e3073cc4b2fab4d559e57edd483",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\439cfa70fd804d80bd11b18c39cf9640.json",
+      "id": "439cfa70fd804d80bd11b18c39cf9640",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\439ef46f26bd4b5e91db97b2ef64be9e.json",
+      "id": "439ef46f26bd4b5e91db97b2ef64be9e",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\444862a871db436ea592ab20325d4412.json",
+      "id": "444862a871db436ea592ab20325d4412",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\44853d7a7e7e4649a2b8906bdd7a885d.json",
+      "id": "44853d7a7e7e4649a2b8906bdd7a885d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\44dbaa57b11b4824990a95219b853833.json",
+      "id": "44dbaa57b11b4824990a95219b853833",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\465c89157017450a865d18de17a52116.json",
+      "id": "465c89157017450a865d18de17a52116",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\469d74f8e176491abc66af81fb7346c9.json",
+      "id": "469d74f8e176491abc66af81fb7346c9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\47e848572abb4c58acafd2832b761bcb.json",
+      "id": "47e848572abb4c58acafd2832b761bcb",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\48747de68e5b40c0ae0ed0205bf4d193.json",
+      "id": "48747de68e5b40c0ae0ed0205bf4d193",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\488e19d19c8847298bde3e356748adee.json",
+      "id": "488e19d19c8847298bde3e356748adee",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\492eb1bbb7b64d3cb8700ad495af7f52.json",
+      "id": "492eb1bbb7b64d3cb8700ad495af7f52",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\49e8ceb6aa6246f49a219ac410197874.json",
+      "id": "49e8ceb6aa6246f49a219ac410197874",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\4b41b94c68e740168e64c9dcf4c06e27.json",
+      "id": "4b41b94c68e740168e64c9dcf4c06e27",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\4b5ab8310a2b49a697e648185866fb73.json",
+      "id": "4b5ab8310a2b49a697e648185866fb73",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\4c080538348140aca15431d1d80f771c.json",
+      "id": "4c080538348140aca15431d1d80f771c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\4dbfa9904f714f48af617b96552ebf9c.json",
+      "id": "4dbfa9904f714f48af617b96552ebf9c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\525382d7a71a467fa7ae5891dd37254f.json",
+      "id": "525382d7a71a467fa7ae5891dd37254f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\542abe6e39a64df3ae87b46dc3b8d4f7.json",
+      "id": "542abe6e39a64df3ae87b46dc3b8d4f7",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\5543ec9df5134ec98a1f6676ae7e87b6.json",
+      "id": "5543ec9df5134ec98a1f6676ae7e87b6",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\5731154a6728480f92baf95448fd40d0.json",
+      "id": "5731154a6728480f92baf95448fd40d0",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\5789e21ac4c449118868a20e9e2af6fb.json",
+      "id": "5789e21ac4c449118868a20e9e2af6fb",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\5799ef9e35c34b1a9b26fada25114a76.json",
+      "id": "5799ef9e35c34b1a9b26fada25114a76",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\584f7b1d9eee4ef3a981f84270fb05db.json",
+      "id": "584f7b1d9eee4ef3a981f84270fb05db",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\5982d60b255a4b0b90bb2d35f7f99695.json",
+      "id": "5982d60b255a4b0b90bb2d35f7f99695",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\5c5603c9419f4884b0c86a07e91bd0f9.json",
+      "id": "5c5603c9419f4884b0c86a07e91bd0f9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\5c7775370bab432a8b7ebbeb42b06065.json",
+      "id": "5c7775370bab432a8b7ebbeb42b06065",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\5dd4cf70c8224542957446fda89c573a.json",
+      "id": "5dd4cf70c8224542957446fda89c573a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\603c7dac79504801b66a2a95e2533633.json",
+      "id": "603c7dac79504801b66a2a95e2533633",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\62b66627b1064569bf57510d04fd4c5e.json",
+      "id": "62b66627b1064569bf57510d04fd4c5e",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\646e025d4cda4ba983ce80f20414ae68.json",
+      "id": "646e025d4cda4ba983ce80f20414ae68",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\64dee452541e4a8c91152495ee1e02bf.json",
+      "id": "64dee452541e4a8c91152495ee1e02bf",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\656b0c89852b4b69a68c746cb8c19573.json",
+      "id": "656b0c89852b4b69a68c746cb8c19573",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6679771ecc8b43ecbd77aeafbef2126b.json",
+      "id": "6679771ecc8b43ecbd77aeafbef2126b",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\674998337a73463fa5e404ce6849586b.json",
+      "id": "674998337a73463fa5e404ce6849586b",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\67a460c9e92844c8a89c9210b29dcfa6.json",
+      "id": "67a460c9e92844c8a89c9210b29dcfa6",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\69834953812f4a7299acf58f55dd482d.json",
+      "id": "69834953812f4a7299acf58f55dd482d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\69a64761687e46e9bb109905c8e1b785.json",
+      "id": "69a64761687e46e9bb109905c8e1b785",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6abdb14b358f4af297b2ef763bbf18d8.json",
+      "id": "6abdb14b358f4af297b2ef763bbf18d8",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6b02d0d82df9408ea19181585799158e.json",
+      "id": "6b02d0d82df9408ea19181585799158e",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6b316a761f0044f0b428dbd46d8f6a28.json",
+      "id": "6b316a761f0044f0b428dbd46d8f6a28",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6b341b6f27e243f88d751877bdcc5636.json",
+      "id": "6b341b6f27e243f88d751877bdcc5636",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6c32b8a3503c4e6490f760f846562560.json",
+      "id": "6c32b8a3503c4e6490f760f846562560",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6e9ed08cadb44767963206a0c017f778.json",
+      "id": "6e9ed08cadb44767963206a0c017f778",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6f2ea167863e47f29e508c26b7bae66a.json",
+      "id": "6f2ea167863e47f29e508c26b7bae66a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6fa06bdafca6451aab797150e526033f.json",
+      "id": "6fa06bdafca6451aab797150e526033f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7010c90f20b94c868ca28b2fc5d9483f.json",
+      "id": "7010c90f20b94c868ca28b2fc5d9483f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7471ffcc401f41b489daae50144669d2.json",
+      "id": "7471ffcc401f41b489daae50144669d2",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\749a4a345c7e469490c59129b42f74fa.json",
+      "id": "749a4a345c7e469490c59129b42f74fa",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\777b0e6864ff47dda5556334998d5b9d.json",
+      "id": "777b0e6864ff47dda5556334998d5b9d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\77febdd5a45545f7b58365c37cffbb4e.json",
+      "id": "77febdd5a45545f7b58365c37cffbb4e",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7896496d7a4d406fb53610229211dbd5.json",
+      "id": "7896496d7a4d406fb53610229211dbd5",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\794bd4c9f6bf4754a66d33fef0923395.json",
+      "id": "794bd4c9f6bf4754a66d33fef0923395",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7a96e53a592d4d4f9d8084c738d0f8d1.json",
+      "id": "7a96e53a592d4d4f9d8084c738d0f8d1",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7aa313726b124f4381ac36875c2afb15.json",
+      "id": "7aa313726b124f4381ac36875c2afb15",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7c4f9df8d2ab4205835ef74442324340.json",
+      "id": "7c4f9df8d2ab4205835ef74442324340",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7db956bcd4514a4faf7dc07a48ad194f.json",
+      "id": "7db956bcd4514a4faf7dc07a48ad194f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7f26d6957fd7441aa6d0638202ee9831.json",
+      "id": "7f26d6957fd7441aa6d0638202ee9831",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\81f3cc2e004e45d8b35799c0189192ed.json",
+      "id": "81f3cc2e004e45d8b35799c0189192ed",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8268f8a7276d4f10834b68a016c24317.json",
+      "id": "8268f8a7276d4f10834b68a016c24317",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\82811d47f37f4f828534fac66dfab31e.json",
+      "id": "82811d47f37f4f828534fac66dfab31e",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\83a658ff2b7d40319af15e4c78a4112a.json",
+      "id": "83a658ff2b7d40319af15e4c78a4112a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\862e9331ed824db8a5e423999ff8ed4f.json",
+      "id": "862e9331ed824db8a5e423999ff8ed4f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\880531b1f01d4864829340e5ff6a57e4.json",
+      "id": "880531b1f01d4864829340e5ff6a57e4",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8b592c44558642bc9f102ee1a4786bfe.json",
+      "id": "8b592c44558642bc9f102ee1a4786bfe",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8bf68100a03447549dee99033e902518.json",
+      "id": "8bf68100a03447549dee99033e902518",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8c427262d69b49aba1219b5802943ad7.json",
+      "id": "8c427262d69b49aba1219b5802943ad7",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8ccc4a5f5e1845d59624b6c628e0eeca.json",
+      "id": "8ccc4a5f5e1845d59624b6c628e0eeca",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8d7986ee3d4347f19d36c30cf5f99ac8.json",
+      "id": "8d7986ee3d4347f19d36c30cf5f99ac8",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8f23b01014334d2fb9a066b3e294bbaf.json",
+      "id": "8f23b01014334d2fb9a066b3e294bbaf",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9101b2e7bf9c40d692ed546a3e395fda.json",
+      "id": "9101b2e7bf9c40d692ed546a3e395fda",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\931f0b90fbe14151aadfb4a9aba131de.json",
+      "id": "931f0b90fbe14151aadfb4a9aba131de",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\93538039dfdc49a68aff90026680d28c.json",
+      "id": "93538039dfdc49a68aff90026680d28c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\940382ded4284034a3b2b31ffe72959c.json",
+      "id": "940382ded4284034a3b2b31ffe72959c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\96eda6a7420f43ebb39c0d6821612a58.json",
+      "id": "96eda6a7420f43ebb39c0d6821612a58",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9791c43eb4ac42cfb4e57fb51b8f5225.json",
+      "id": "9791c43eb4ac42cfb4e57fb51b8f5225",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\97d534e860734a46a2a40c2577506745.json",
+      "id": "97d534e860734a46a2a40c2577506745",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9952a02d95284ef9a3d005d6804d2454.json",
+      "id": "9952a02d95284ef9a3d005d6804d2454",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\995818a8dbdb4af89182cad8e1d96acb.json",
+      "id": "995818a8dbdb4af89182cad8e1d96acb",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9c0e1ee7e81a466797d5b1d39114285c.json",
+      "id": "9c0e1ee7e81a466797d5b1d39114285c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9c13211d152b4d37bece7d3ba0c507c2.json",
+      "id": "9c13211d152b4d37bece7d3ba0c507c2",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9c59e6f4a72144e189f1e81e25dd954e.json",
+      "id": "9c59e6f4a72144e189f1e81e25dd954e",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9c7a5bcc54064ecfbf5ebbae93e62038.json",
+      "id": "9c7a5bcc54064ecfbf5ebbae93e62038",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9d0fa25af6464ce6a151d15bb78ffdca.json",
+      "id": "9d0fa25af6464ce6a151d15bb78ffdca",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9de853c5297c40b2a843eaf33f8aeaf3.json",
+      "id": "9de853c5297c40b2a843eaf33f8aeaf3",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9ea588096bf642b285cecd0b3256647c.json",
+      "id": "9ea588096bf642b285cecd0b3256647c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\a1c4f7841e0a4138bb5ef13b5b4855c9.json",
+      "id": "a1c4f7841e0a4138bb5ef13b5b4855c9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\a254e6b2f78c4317be994a9cb02949e1.json",
+      "id": "a254e6b2f78c4317be994a9cb02949e1",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\a5377b54aec54b7986c1826a31a5d21d.json",
+      "id": "a5377b54aec54b7986c1826a31a5d21d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\a5eba161f431493eb554f44561298cac.json",
+      "id": "a5eba161f431493eb554f44561298cac",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\aa9620b2617e4bbdb816fc135fa98def.json",
+      "id": "aa9620b2617e4bbdb816fc135fa98def",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\ab718b616df74746aea0a8eb06e833ac.json",
+      "id": "ab718b616df74746aea0a8eb06e833ac",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\ac203120c4f541fa837b22383e9864cf.json",
+      "id": "ac203120c4f541fa837b22383e9864cf",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\acc11ff5e3b14da893e86bb32a1ebd07.json",
+      "id": "acc11ff5e3b14da893e86bb32a1ebd07",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\ad718fc6a3d4455da0ae0e115fab73b4.json",
+      "id": "ad718fc6a3d4455da0ae0e115fab73b4",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\afb787de1c854d71b4061bc3ee4e7e7a.json",
+      "id": "afb787de1c854d71b4061bc3ee4e7e7a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b06808e4680a40e98df3b73639ee93a7.json",
+      "id": "b06808e4680a40e98df3b73639ee93a7",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b3131be52d1b40d79d604fa8e1234ca0.json",
+      "id": "b3131be52d1b40d79d604fa8e1234ca0",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b36441a1a2564cf1bc74e555c84f1240.json",
+      "id": "b36441a1a2564cf1bc74e555c84f1240",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b39bdddc12034730adf5ee5e11d8ff62.json",
+      "id": "b39bdddc12034730adf5ee5e11d8ff62",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b4d91f0b374b4e21a2d3dca27d058354.json",
+      "id": "b4d91f0b374b4e21a2d3dca27d058354",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b5c42ae4de11412b960b9cc45f0603c6.json",
+      "id": "b5c42ae4de11412b960b9cc45f0603c6",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b715391b20c744b28f24ac36af9c60df.json",
+      "id": "b715391b20c744b28f24ac36af9c60df",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b7a1b969c0324f8da6c292ca9def3df9.json",
+      "id": "b7a1b969c0324f8da6c292ca9def3df9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b83302c9b336448f815a7c07fa21a382.json",
+      "id": "b83302c9b336448f815a7c07fa21a382",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\ba8addd597724da28f4d9d92ee93f5a3.json",
+      "id": "ba8addd597724da28f4d9d92ee93f5a3",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bb1cf3146810402fa2e5ed17a161ed48.json",
+      "id": "bb1cf3146810402fa2e5ed17a161ed48",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bb1d027fe35b49f3b65da8781f337c35.json",
+      "id": "bb1d027fe35b49f3b65da8781f337c35",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bbe4751101ed462998412cc5126ed913.json",
+      "id": "bbe4751101ed462998412cc5126ed913",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bbeb18c1f3554ab5b4cf523054c670e3.json",
+      "id": "bbeb18c1f3554ab5b4cf523054c670e3",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bbf799306dec404fa3ebbf91ff42d3b4.json",
+      "id": "bbf799306dec404fa3ebbf91ff42d3b4",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bc89538a408e422993999e639ad707dd.json",
+      "id": "bc89538a408e422993999e639ad707dd",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bcd659e3bae84d6dadc53479a2ee8a25.json",
+      "id": "bcd659e3bae84d6dadc53479a2ee8a25",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bd521660aee34ac8a0e443bb53a14bea.json",
+      "id": "bd521660aee34ac8a0e443bb53a14bea",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bdda8039573a48a199fdc75d200f9fbe.json",
+      "id": "bdda8039573a48a199fdc75d200f9fbe",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\be38bd9b09bd46e892557b01e3d37348.json",
+      "id": "be38bd9b09bd46e892557b01e3d37348",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\be5455bdf906430aaa6e0bf09735e17c.json",
+      "id": "be5455bdf906430aaa6e0bf09735e17c",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\be64aed1a86c4845b53bcd493ca637db.json",
+      "id": "be64aed1a86c4845b53bcd493ca637db",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c0498681377b41858a857caa79f956be.json",
+      "id": "c0498681377b41858a857caa79f956be",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c0bfe04701804d8fb000f9d486d1e7c2.json",
+      "id": "c0bfe04701804d8fb000f9d486d1e7c2",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c29c4b75d6554b9587b2453eea1fc3dd.json",
+      "id": "c29c4b75d6554b9587b2453eea1fc3dd",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c46ae0c8fb8a46b98c68e036267385f4.json",
+      "id": "c46ae0c8fb8a46b98c68e036267385f4",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c810ffa99cfb4b8ab5eb4ee3a9ce05f9.json",
+      "id": "c810ffa99cfb4b8ab5eb4ee3a9ce05f9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c8194683a34c4270926c676d7d660a6d.json",
+      "id": "c8194683a34c4270926c676d7d660a6d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c88c58c2f0b744deb69dae68256f43b9.json",
+      "id": "c88c58c2f0b744deb69dae68256f43b9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c8ca803d8a6143b7a66cf4401cdba6cb.json",
+      "id": "c8ca803d8a6143b7a66cf4401cdba6cb",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\c8de69ee8c18491db40535586bc4f687.json",
+      "id": "c8de69ee8c18491db40535586bc4f687",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\cae5c18cf2244033813c46390e8448f0.json",
+      "id": "cae5c18cf2244033813c46390e8448f0",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\cca01bb8621d4387a85c1ca5df50784e.json",
+      "id": "cca01bb8621d4387a85c1ca5df50784e",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\ccb7f0eaaf3043aa8638939cbb302c9a.json",
+      "id": "ccb7f0eaaf3043aa8638939cbb302c9a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d0ef906dc4194864a71c2dc705da1c66.json",
+      "id": "d0ef906dc4194864a71c2dc705da1c66",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d326b9749f14495d8e0ade034bb8d481.json",
+      "id": "d326b9749f14495d8e0ade034bb8d481",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d3bddd8b42fc47e49e8a5b1647a91dda.json",
+      "id": "d3bddd8b42fc47e49e8a5b1647a91dda",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d3db5cdc251a45ab8d27b152bc664ffe.json",
+      "id": "d3db5cdc251a45ab8d27b152bc664ffe",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d5ab98a1f6294e548634397850942aa5.json",
+      "id": "d5ab98a1f6294e548634397850942aa5",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d6267849794348698a26e844467b768d.json",
+      "id": "d6267849794348698a26e844467b768d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d749343ee6414095a245ef635221fecf.json",
+      "id": "d749343ee6414095a245ef635221fecf",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d96abd1785754a939e77f36dd118ba20.json",
+      "id": "d96abd1785754a939e77f36dd118ba20",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\dafa00df194c4cdb8bf46056fdf81e17.json",
+      "id": "dafa00df194c4cdb8bf46056fdf81e17",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\ddf03d82f1444275b5c5687b3ddb8407.json",
+      "id": "ddf03d82f1444275b5c5687b3ddb8407",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\dead414d07a84c268f26fa028fbfcda5.json",
+      "id": "dead414d07a84c268f26fa028fbfcda5",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\deec1001074048b18961009efd48f822.json",
+      "id": "deec1001074048b18961009efd48f822",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\df992750ff894c4794db2af2367b737f.json",
+      "id": "df992750ff894c4794db2af2367b737f",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e0252731931547e99f293977b5efbf81.json",
+      "id": "e0252731931547e99f293977b5efbf81",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e11bfc5f9b8c4f77a379d71a87f879d2.json",
+      "id": "e11bfc5f9b8c4f77a379d71a87f879d2",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e152f714c2224d9e9e441bf7b637cf06.json",
+      "id": "e152f714c2224d9e9e441bf7b637cf06",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e1a569f2e37048a28ef8ef33cb1a4dd9.json",
+      "id": "e1a569f2e37048a28ef8ef33cb1a4dd9",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e23737c51d7c4f0f9c6052c6aabc3159.json",
+      "id": "e23737c51d7c4f0f9c6052c6aabc3159",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e2ca7b9973ab427486e7669c0956b4e6.json",
+      "id": "e2ca7b9973ab427486e7669c0956b4e6",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e38c9a10857d465a857a9fe2b9676883.json",
+      "id": "e38c9a10857d465a857a9fe2b9676883",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e5283caa03b74d74b008df36b436d288.json",
+      "id": "e5283caa03b74d74b008df36b436d288",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\e7f19849d69d42e9b20576166bb04155.json",
+      "id": "e7f19849d69d42e9b20576166bb04155",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\edddbf07d75545e1849fe80257d2a377.json",
+      "id": "edddbf07d75545e1849fe80257d2a377",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\eeda611f46cd463eb300160bc545c626.json",
+      "id": "eeda611f46cd463eb300160bc545c626",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\eee4c33c47cc469b95394d12ce9408e2.json",
+      "id": "eee4c33c47cc469b95394d12ce9408e2",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\eee9243de31f4ac7a5e9106ce88186ce.json",
+      "id": "eee9243de31f4ac7a5e9106ce88186ce",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\ef2691f4bd2c4b6480f2b6ff02494fd1.json",
+      "id": "ef2691f4bd2c4b6480f2b6ff02494fd1",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\ef49b5a17b574ab28b79434e0a610ff5.json",
+      "id": "ef49b5a17b574ab28b79434e0a610ff5",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f071274d1ed04341849b8684acbc038a.json",
+      "id": "f071274d1ed04341849b8684acbc038a",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f09256fa9fd84fa89d651bd579aac8e3.json",
+      "id": "f09256fa9fd84fa89d651bd579aac8e3",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f18857c2aac145bf9202c487d861dc04.json",
+      "id": "f18857c2aac145bf9202c487d861dc04",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f2368df162b94e9d8b7ab7211a2441e8.json",
+      "id": "f2368df162b94e9d8b7ab7211a2441e8",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f2d087bc0f1d4cbca228e4cf7cc1c04d.json",
+      "id": "f2d087bc0f1d4cbca228e4cf7cc1c04d",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f54b136d1b734189b1335a28a7b68627.json",
+      "id": "f54b136d1b734189b1335a28a7b68627",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f6820ae15a414583ae55e6cc64b139a3.json",
+      "id": "f6820ae15a414583ae55e6cc64b139a3",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f79145eabc27428f8804db0e82403275.json",
+      "id": "f79145eabc27428f8804db0e82403275",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f7f4ff852e7649e8bc8667fc2f891735.json",
+      "id": "f7f4ff852e7649e8bc8667fc2f891735",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\fb669e3c122d4ac78f1e039e3de34134.json",
+      "id": "fb669e3c122d4ac78f1e039e3de34134",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\fbf4a53b2a494ace93cb52c7814f08dd.json",
+      "id": "fbf4a53b2a494ace93cb52c7814f08dd",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\fcc5577af2ea47e08bbb2502e85a8ab3.json",
+      "id": "fcc5577af2ea47e08bbb2502e85a8ab3",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\fced4c8b476d48fa9f3d1b6b9bc9f1dd.json",
+      "id": "fced4c8b476d48fa9f3d1b6b9bc9f1dd",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\fd8e552712a64439aeb18eaf3df1e084.json",
+      "id": "fd8e552712a64439aeb18eaf3df1e084",
+      "pid": 53324,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\097e39b7ec704368877fbbd44dc79461.json",
+      "id": "097e39b7ec704368877fbbd44dc79461",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\2fb61a0579b9484aa85f0c0cd59e9685.json",
+      "id": "2fb61a0579b9484aa85f0c0cd59e9685",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\3046a911f5e144e198ee276e1a62e5fa.json",
+      "id": "3046a911f5e144e198ee276e1a62e5fa",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\4ed5ed72d8854b869923b11613b42784.json",
+      "id": "4ed5ed72d8854b869923b11613b42784",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\5b7d4c58f07144b9af496eafc74bb4fb.json",
+      "id": "5b7d4c58f07144b9af496eafc74bb4fb",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\5cc1a33ad292423b879fcae3d64f2b30.json",
+      "id": "5cc1a33ad292423b879fcae3d64f2b30",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\70d03b42e0d2477caa2296597869518b.json",
+      "id": "70d03b42e0d2477caa2296597869518b",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\89c2ebf283d04ed2832dd94ed0009dd0.json",
+      "id": "89c2ebf283d04ed2832dd94ed0009dd0",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\8f2d2294d1ac407da44881bda2c1a654.json",
+      "id": "8f2d2294d1ac407da44881bda2c1a654",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\a5f337c654bb4c15b750b3e65649638f.json",
+      "id": "a5f337c654bb4c15b750b3e65649638f",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\a64409a1a7d6485c9f0004b6539ac54f.json",
+      "id": "a64409a1a7d6485c9f0004b6539ac54f",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\a974f9b4c6f4430e95fd05f2ea478a85.json",
+      "id": "a974f9b4c6f4430e95fd05f2ea478a85",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\b3594709519b406192af265236958983.json",
+      "id": "b3594709519b406192af265236958983",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\c0e9e19e85384f6e90c18919eafb9f49.json",
+      "id": "c0e9e19e85384f6e90c18919eafb9f49",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\c65937b0996b421db6742240715a737a.json",
+      "id": "c65937b0996b421db6742240715a737a",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\d4a1f9127d7d4829b0328a6bcec0acb8.json",
+      "id": "d4a1f9127d7d4829b0328a6bcec0acb8",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\d771513d6650464aaef74e04ce56cc4e.json",
+      "id": "d771513d6650464aaef74e04ce56cc4e",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\f7723c570df54b7a8a006f64d7ede133.json",
+      "id": "f7723c570df54b7a8a006f64d7ede133",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\fc99f6fa877e42fc888178928c386864.json",
+      "id": "fc99f6fa877e42fc888178928c386864",
+      "pid": 71804,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\041266df4f994f539c312affb933b8fe.json",
+      "id": "041266df4f994f539c312affb933b8fe",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\3b17e131dda04078afff42bf81eb6928.json",
+      "id": "3b17e131dda04078afff42bf81eb6928",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\4601f2a8a4554457856d694f72b23319.json",
+      "id": "4601f2a8a4554457856d694f72b23319",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\70d3f9525804481d87e9a89347b538b1.json",
+      "id": "70d3f9525804481d87e9a89347b538b1",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\8e9facb91368496e93649851da7c3467.json",
+      "id": "8e9facb91368496e93649851da7c3467",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\a8eda85ae39b4f36a3f1f152c31bb0ee.json",
+      "id": "a8eda85ae39b4f36a3f1f152c31bb0ee",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\a947d65b5c1d4ff384ef49044ddb7b16.json",
+      "id": "a947d65b5c1d4ff384ef49044ddb7b16",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\a9f8386fcb7749e592715fe8f35fbee0.json",
+      "id": "a9f8386fcb7749e592715fe8f35fbee0",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\d7e62fdae1904f3a956eb09eda2a1d11.json",
+      "id": "d7e62fdae1904f3a956eb09eda2a1d11",
+      "pid": 26528,
+      "ok": true,
+      "failed_step": null,
+      "errors": []
+    }
+  ],
+  "captures": [
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\desktop-startup-town.png",
+      "label": "desktop-startup-town",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d5ab98a1f6294e548634397850942aa5.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:24:10.9329896Z",
+      "order_utc": "2026-10-11T14:24:10.932989+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "8d5f5b4d9c6b826bcbef0e71e5ddfc95278c94cf10fa4197f71792d43597cd07"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\desktop-startup-paused.png",
+      "label": "desktop-startup-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\d5ab98a1f6294e548634397850942aa5.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:24:11.2501448Z",
+      "order_utc": "2026-10-11T14:24:11.250144+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "c20a1c747c13847fe02828771d58be0e50057eac31da791e8c0a5000300bc8bf"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-home-c423e87e-world.png",
+      "label": "walk-home-c423e87e-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6e9ed08cadb44767963206a0c017f778.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:24:50.0750032Z",
+      "order_utc": "2026-10-11T14:24:50.075003+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "c1597bb87e1030e1b564397838c7f9476b20132a78f21c097820c5c2a284f4bc"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-home-c423e87e-paused.png",
+      "label": "walk-home-c423e87e-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\6e9ed08cadb44767963206a0c017f778.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:24:50.3348319Z",
+      "order_utc": "2026-10-11T14:24:50.334831+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "65ed9fd81df8fd2a76d0a9dd13fec35a27083d48bbc08a4c722404d8a68d32b0"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\mayor-home-world.png",
+      "label": "mayor-home-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0450be5466794a508e5c508a666e251b.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:25:23.2708810Z",
+      "order_utc": "2026-10-11T14:25:23.270881+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "ab639abd8ffb7222484d463039ccf401554bccaca82d69732ca5c08e77b0ac96"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\mayor-home-paused.png",
+      "label": "mayor-home-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\0450be5466794a508e5c508a666e251b.json",
+      "request_ok": true,
+      "step": 6,
+      "completed_utc": "2026-10-11T14:25:23.5954360Z",
+      "order_utc": "2026-10-11T14:25:23.595436+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "438bd818ceba3d74a34db530b48a6d726180210107db961fd08b67f0f8cbdbf1"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-home-exit-f25f089f-world.png",
+      "label": "walk-home-exit-f25f089f-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\3ae13d2cf6604cf88408bf79ce4538f1.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:26:33.3444415Z",
+      "order_utc": "2026-10-11T14:26:33.344441+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "e774e1e04d87789287dc6e7ae366b2db74c23a0762f360e316633375e6b4dda2"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-home-exit-f25f089f-paused.png",
+      "label": "walk-home-exit-f25f089f-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\3ae13d2cf6604cf88408bf79ce4538f1.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:26:33.5921212Z",
+      "order_utc": "2026-10-11T14:26:33.592121+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "6550f5a01b8efac79e519140dc77806bd42f077682108cc57cede6ada643b54c"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\home-return-town.png",
+      "label": "home-return-town",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9c7a5bcc54064ecfbf5ebbae93e62038.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:26:55.1862831Z",
+      "order_utc": "2026-10-11T14:26:55.186283+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "4783bdef37738998dd2b25121971e896e9077f623a8d79e7a6d70400cba022e8"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\home-return-paused.png",
+      "label": "home-return-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\9c7a5bcc54064ecfbf5ebbae93e62038.json",
+      "request_ok": true,
+      "step": 6,
+      "completed_utc": "2026-10-11T14:26:55.5126692Z",
+      "order_utc": "2026-10-11T14:26:55.512669+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "cb859d9de1c5bbe930710c282b611b14edfef94ef24a9d71b5a6df8feff2b54b"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-inn-ef3885ba-world.png",
+      "label": "walk-inn-ef3885ba-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\004f4a976aee4fdcb4451ec630c1cc8f.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:27:30.9283074Z",
+      "order_utc": "2026-10-11T14:27:30.928307+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "54afad294e712ae5f4a195c0dd445c869ba773562ded4b36aee0df83cee9557c"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-inn-ef3885ba-paused.png",
+      "label": "walk-inn-ef3885ba-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\004f4a976aee4fdcb4451ec630c1cc8f.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:27:31.1968324Z",
+      "order_utc": "2026-10-11T14:27:31.196832+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "2e7edc1c22bdee03cd3973dbd57ab706ae770ce685799d58006f94581f2bbf72"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\lantern-rest-world.png",
+      "label": "lantern-rest-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\43059e3073cc4b2fab4d559e57edd483.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:27:54.5086824Z",
+      "order_utc": "2026-10-11T14:27:54.508682+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "feb56f31952229a4f8074db63043e52dc70c0174570e6f50c6374d9eb828a2c6"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\lantern-rest-paused.png",
+      "label": "lantern-rest-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\43059e3073cc4b2fab4d559e57edd483.json",
+      "request_ok": true,
+      "step": 6,
+      "completed_utc": "2026-10-11T14:27:54.8377401Z",
+      "order_utc": "2026-10-11T14:27:54.837740+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "5f5bdf8c393c43fd76d4260a09b7c3312d46933a74a11a0134405fa8c563b144"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\inn-return-town.png",
+      "label": "inn-return-town",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1651c20566844d1bacd58efd596f54ba.json",
+      "request_ok": true,
+      "step": 4,
+      "completed_utc": "2026-10-11T14:28:44.9569200Z",
+      "order_utc": "2026-10-11T14:28:44.956920+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "a322cba7a9cbb49112d1d6036c9572dd3e1e819418ac4dec55ec44443e8abfb5"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\inn-return-paused.png",
+      "label": "inn-return-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1651c20566844d1bacd58efd596f54ba.json",
+      "request_ok": true,
+      "step": 7,
+      "completed_utc": "2026-10-11T14:28:45.2818955Z",
+      "order_utc": "2026-10-11T14:28:45.281895+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "60eaf67ef483dfc54ca7b6d935b31a3fbef815b26cf06007abca6458e835d5ca"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-6237a167-world.png",
+      "label": "walk-tollworks-6237a167-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b7a1b969c0324f8da6c292ca9def3df9.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:29:30.9528389Z",
+      "order_utc": "2026-10-11T14:29:30.952838+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "a8d65396af0913ac17a6b276666cc54dd8ab0146d44365be7fa5e3eb539d9e37"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-6237a167-paused.png",
+      "label": "walk-tollworks-6237a167-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\b7a1b969c0324f8da6c292ca9def3df9.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:29:31.2169820Z",
+      "order_utc": "2026-10-11T14:29:31.216982+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "d00e33d13bbfd0fcc6732c4d06875790bf7440bb1643e29d341516af48f309b9"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-d690035c-world.png",
+      "label": "walk-tollworks-d690035c-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8b592c44558642bc9f102ee1a4786bfe.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:30:24.9147519Z",
+      "order_utc": "2026-10-11T14:30:24.914751+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "af4e9d8a7cf7ddbc6ee4307fa235216fdd74f7c1d55d8063a7fa73b130849364"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-d690035c-paused.png",
+      "label": "walk-tollworks-d690035c-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\8b592c44558642bc9f102ee1a4786bfe.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:30:25.1625983Z",
+      "order_utc": "2026-10-11T14:30:25.162598+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "c916b85d71037a646c17969b2e98325ddd99a4bcd80a181d16854f33bb3f8cff"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-f2dae9c4-world.png",
+      "label": "walk-tollworks-f2dae9c4-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bcd659e3bae84d6dadc53479a2ee8a25.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:31:16.8269744Z",
+      "order_utc": "2026-10-11T14:31:16.826974+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "adcb122c2209c9ce4c0f8a855ab39ec0750b6f501f7933681aa0885bcdde39e6"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-f2dae9c4-paused.png",
+      "label": "walk-tollworks-f2dae9c4-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\bcd659e3bae84d6dadc53479a2ee8a25.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:31:17.0699299Z",
+      "order_utc": "2026-10-11T14:31:17.069929+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "ab00a87bfcf2524604942dad0b29cc967812c7538e84547f47a13a3ed38bc774"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-7e442050-world.png",
+      "label": "walk-tollworks-7e442050-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7f26d6957fd7441aa6d0638202ee9831.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:32:09.1469217Z",
+      "order_utc": "2026-10-11T14:32:09.146921+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "1886e4109e0de1a8e7429773a9e39784c32f4e2272e081d59615ba5224064a22"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-7e442050-paused.png",
+      "label": "walk-tollworks-7e442050-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\7f26d6957fd7441aa6d0638202ee9831.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:32:09.4003983Z",
+      "order_utc": "2026-10-11T14:32:09.400398+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "6284c8c15035263a1116272f1604d92ef15eff24047b7a320832bb0c87a869ca"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-7815081b-world.png",
+      "label": "walk-tollworks-7815081b-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\39dacf1bd82d4912b57b682c27542c1e.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:32:57.6208875Z",
+      "order_utc": "2026-10-11T14:32:57.620887+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "f24163db5bb7d78a102f05a831aa6b7f5ff84e43db1f55744b46c5fdd8c5ba12"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-7815081b-paused.png",
+      "label": "walk-tollworks-7815081b-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\39dacf1bd82d4912b57b682c27542c1e.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:32:57.8803384Z",
+      "order_utc": "2026-10-11T14:32:57.880338+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "5b680a5abdad6e65d10fb3d40bcf6c32e39bc3ada1b8401e34f2ed7c00564692"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-943e7533-world.png",
+      "label": "walk-tollworks-943e7533-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f54b136d1b734189b1335a28a7b68627.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:33:41.6365996Z",
+      "order_utc": "2026-10-11T14:33:41.636599+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "0104e941981c5dac3a98c61e5c19a556178a79f033b953798411119c7a96f38c"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\walk-tollworks-943e7533-paused.png",
+      "label": "walk-tollworks-943e7533-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\f54b136d1b734189b1335a28a7b68627.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:33:41.8998784Z",
+      "order_utc": "2026-10-11T14:33:41.899878+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "856921d5792e61729c319b793db4a948e3ff92c5ee2bafa642bb8b287f8616ff"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\tollworks-world.png",
+      "label": "tollworks-world",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\542abe6e39a64df3ae87b46dc3b8d4f7.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:34:14.2852680Z",
+      "order_utc": "2026-10-11T14:34:14.285268+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "b9a4a25bb31f50658b1ff45086017ae0ef71566697349cafbc708a9793c19ffe"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\tollworks-paused.png",
+      "label": "tollworks-paused",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\542abe6e39a64df3ae87b46dc3b8d4f7.json",
+      "request_ok": true,
+      "step": 6,
+      "completed_utc": "2026-10-11T14:34:14.5951213Z",
+      "order_utc": "2026-10-11T14:34:14.595121+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "63968083bc829d8a286fd6ec7089ca9244f62a2e1ec71a966da5beb4434151a0"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\writer-gui-save-success.png",
+      "label": "writer-gui-save-success",
+      "pid": 53324,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-1424\\writer\\1c91d75f15de4262844e5e7d33aa0091.json",
+      "request_ok": true,
+      "step": 2,
+      "completed_utc": "2026-10-11T14:35:09.3936570Z",
+      "order_utc": "2026-10-11T14:35:09.393657+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "64d80236d9ece76f957cf20e38f00b09bb36baa934a166d6d3738e9f32c42efd"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\retry-fresh-town.png",
+      "label": "retry-fresh-town",
+      "pid": 71804,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\5cc1a33ad292423b879fcae3d64f2b30.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:36:34.4604749Z",
+      "order_utc": "2026-10-11T14:36:34.460474+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "9f65744ec1e74da5a4849b64df163181b18a2a1f8b926267de383e354c8c50af"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\retry-start-paused.png",
+      "label": "retry-start-paused",
+      "pid": 71804,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\5cc1a33ad292423b879fcae3d64f2b30.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:36:34.7874512Z",
+      "order_utc": "2026-10-11T14:36:34.787451+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "f0e16fb25bd5cc21fbc5da973b29fc817d16be426ccda5eae8a60215ab51e210"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\walk-home-ce718d5c-world.png",
+      "label": "walk-home-ce718d5c-world",
+      "pid": 71804,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\fc99f6fa877e42fc888178928c386864.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:37:21.0305532Z",
+      "order_utc": "2026-10-11T14:37:21.030553+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "90ecc7be1af9d92d8de8429c151576ab3f11935158489b6c5cde62a33ad0861b"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\walk-home-ce718d5c-paused.png",
+      "label": "walk-home-ce718d5c-paused",
+      "pid": 71804,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\fc99f6fa877e42fc888178928c386864.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:37:21.2945746Z",
+      "order_utc": "2026-10-11T14:37:21.294574+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "ef9b399c48ea6be47a6005a6225dc148aba7914f3aba469e4cdcf9ef7742b5e4"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\writer-home-world.png",
+      "label": "writer-home-world",
+      "pid": 71804,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\c65937b0996b421db6742240715a737a.json",
+      "request_ok": true,
+      "step": 3,
+      "completed_utc": "2026-10-11T14:37:55.1494539Z",
+      "order_utc": "2026-10-11T14:37:55.149453+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "85a6ff2ed89b0186bf63f4e92401ae04c441c1cf559a7f344da4c91a80e7f7d8"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\writer-save-keyboard-focus.png",
+      "label": "writer-save-keyboard-focus",
+      "pid": 71804,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\c65937b0996b421db6742240715a737a.json",
+      "request_ok": true,
+      "step": 7,
+      "completed_utc": "2026-10-11T14:37:55.5499608Z",
+      "order_utc": "2026-10-11T14:37:55.549960+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "5f10124fac58da320f7ca8b905a06dd128d64a20cf9c1711aff3f26fc636f00f"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\writer-save-outcome.png",
+      "label": "writer-save-outcome",
+      "pid": 71804,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\2fb61a0579b9484aa85f0c0cd59e9685.json",
+      "request_ok": true,
+      "step": 2,
+      "completed_utc": "2026-10-11T14:38:23.0296067Z",
+      "order_utc": "2026-10-11T14:38:23.029606+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "6da1de5dfb94d40b0b99c60d320f197a5d168d497b6b5f44de4d087f9941ec67"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\writer-save-settled-success.png",
+      "label": "writer-save-settled-success",
+      "pid": 71804,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\4ed5ed72d8854b869923b11613b42784.json",
+      "request_ok": true,
+      "step": 1,
+      "completed_utc": "2026-10-11T14:39:44.9646296Z",
+      "order_utc": "2026-10-11T14:39:44.964629+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "469590d9d7ed866738d5e1f2fa22ccaa3306cd7b0840dfdc998935156cab9479"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-fresh-town.png",
+      "label": "reader-fresh-town",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\a9f8386fcb7749e592715fe8f35fbee0.json",
+      "request_ok": true,
+      "step": 0,
+      "completed_utc": "2026-10-11T14:41:17.2425892Z",
+      "order_utc": "2026-10-11T14:41:17.242589+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "da564e91332954bbf42d2a0bd904fb9d875b54a756d11a3eec7ff7adf93445ca"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-load-keyboard-focus.png",
+      "label": "reader-load-keyboard-focus",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\a9f8386fcb7749e592715fe8f35fbee0.json",
+      "request_ok": true,
+      "step": 6,
+      "completed_utc": "2026-10-11T14:41:17.7861851Z",
+      "order_utc": "2026-10-11T14:41:17.786185+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "592871b5cbfe611028fcb09fb8ac8159d32c4b3e7001df4e6b01f02b378de36b"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-load-settled-outcome.png",
+      "label": "reader-load-settled-outcome",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\70d3f9525804481d87e9a89347b538b1.json",
+      "request_ok": true,
+      "step": 2,
+      "completed_utc": "2026-10-11T14:41:40.0585743Z",
+      "order_utc": "2026-10-11T14:41:40.058574+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "79062c1ab378648f8c6029ab83b4f1db1140c41ff416c9016ea384a4b9fe2138"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-save-keyboard-focus.png",
+      "label": "reader-save-keyboard-focus",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\d7e62fdae1904f3a956eb09eda2a1d11.json",
+      "request_ok": true,
+      "step": 1,
+      "completed_utc": "2026-10-11T14:42:00.5294953Z",
+      "order_utc": "2026-10-11T14:42:00.529495+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "fe0f01112f3cc134c99548e9ead3817684bdd683398920e591de3783052d5beb"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-save-settled-success.png",
+      "label": "reader-save-settled-success",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\041266df4f994f539c312affb933b8fe.json",
+      "request_ok": true,
+      "step": 2,
+      "completed_utc": "2026-10-11T14:42:46.5343550Z",
+      "order_utc": "2026-10-11T14:42:46.534355+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "b653fb4ff1dbfb4e73c5a67ddd8e30a9bd9577d892ebc7b58beb52692e2f80f9"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-back-to-pause.png",
+      "label": "reader-back-to-pause",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\8e9facb91368496e93649851da7c3467.json",
+      "request_ok": true,
+      "step": 2,
+      "completed_utc": "2026-10-11T14:43:34.8999961Z",
+      "order_utc": "2026-10-11T14:43:34.899996+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "4c87b7f5c26867cde74e09f1f1dd4a48e078877da7437563a23bff740ce7cb7d"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-verified-save-focus.png",
+      "label": "reader-verified-save-focus",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\3b17e131dda04078afff42bf81eb6928.json",
+      "request_ok": true,
+      "step": 5,
+      "completed_utc": "2026-10-11T14:44:12.8798017Z",
+      "order_utc": "2026-10-11T14:44:12.879801+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "f98b3e582b42fbe3490472c1495f24cc9302b7642aeb058012682ea810f14f9e"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-verified-resave-success.png",
+      "label": "reader-verified-resave-success",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\a8eda85ae39b4f36a3f1f152c31bb0ee.json",
+      "request_ok": true,
+      "step": 2,
+      "completed_utc": "2026-10-11T14:44:46.4394472Z",
+      "order_utc": "2026-10-11T14:44:46.439447+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "abaacba0b8e7be050eaca8ba00058ece97c22a11db23b7660a7cf073096045f5"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-restored-home-art.png",
+      "label": "reader-restored-home-art",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\a947d65b5c1d4ff384ef49044ddb7b16.json",
+      "request_ok": true,
+      "step": 2,
+      "completed_utc": "2026-10-11T14:46:01.5893985Z",
+      "order_utc": "2026-10-11T14:46:01.589398+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "716af55cc1fcbddcf306fbc880e126945068b38234f3ec43b7911d9cac16568e"
+    },
+    {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\reader-restored-home-paused.png",
+      "label": "reader-restored-home-paused",
+      "pid": 26528,
+      "request": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\reader\\a947d65b5c1d4ff384ef49044ddb7b16.json",
+      "request_ok": true,
+      "step": 5,
+      "completed_utc": "2026-10-11T14:46:01.9124701Z",
+      "order_utc": "2026-10-11T14:46:01.912470+00:00",
+      "size": [
+        960,
+        640
+      ],
+      "sha256": "10cd60cc74f10dceb18a623b89175a08b06bf013507b7f8a0c60cbcde38fcbbc"
+    }
+  ],
+  "failures": [],
+  "visual_review": "Required separately; no pause/focus/gameplay outcome inferred",
+  "selected_count": 49,
+  "sheets": [
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-01.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-02.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-03.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-04.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-05.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-06.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-07.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-08.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\testing-tools\\native-review-20261011-144652-dd73d15d\\sheet-09.png"
+  ]
+}

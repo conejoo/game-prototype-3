@@ -1,0 +1,292 @@
+{
+	"content_version": 1,
+	"engine_pid": 15576,
+	"failures": [],
+	"forecast_exact": true,
+	"proof": "Detached packed production codec/forecast replay of ordinary native GUI Save/Load/Save outputs",
+	"reader_snapshot": {
+		"actors": [
+			{
+				"definition_id": "prototype-hero",
+				"health": 100,
+				"instance_id": "party-player"
+			},
+			{
+				"definition_id": "prototype-companion",
+				"health": 100,
+				"instance_id": "party-companion"
+			}
+		],
+		"collected_resource_ids": [],
+		"completed_effect_ids": [],
+		"content_version": 1,
+		"conversations": {
+			"events": {
+				"facts": [],
+				"last_sequence": 0
+			},
+			"people": {
+				"npc-01": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-01",
+					"seen_node_ids": []
+				},
+				"npc-02": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-02",
+					"seen_node_ids": []
+				},
+				"npc-03": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-03",
+					"seen_node_ids": []
+				},
+				"npc-04": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-04",
+					"seen_node_ids": []
+				},
+				"npc-06": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-06",
+					"seen_node_ids": []
+				},
+				"npc-07": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-07",
+					"seen_node_ids": []
+				},
+				"npc-08": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-08",
+					"seen_node_ids": []
+				},
+				"npc-14": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-14",
+					"seen_node_ids": []
+				}
+			}
+		},
+		"elapsed_play_seconds": 25.457731121212376,
+		"environment": {
+			"day_cycle_progress": 0.042429551868686154,
+			"day_index": 0,
+			"weather_seed": 2433035180
+		},
+		"inventory": {
+			"active_item_id": null,
+			"item_counts": {}
+		},
+		"light_source_overrides": [],
+		"location_id": "prototype-mayor-vale-home",
+		"party_member_ids": [
+			"party-player",
+			"party-companion"
+		],
+		"player_instance_id": "party-player",
+		"progression": {
+			"upgrade_ids": []
+		},
+		"quests": {
+			"prototype-maris-recovery": []
+		},
+		"relationship": {
+			"companion_id": "prototype-companion",
+			"reaction_ids": [],
+			"trust": 0
+		},
+		"routine_facts": {
+			"authored_event_ids": [],
+			"suppressed_routine_ids": []
+		},
+		"schema_version": 8,
+		"spawn_id": "mayor-vale-home-from-alderwake",
+		"world_item_placements": []
+	},
+	"reader_weather": {
+		"blend": 1.0,
+		"condition": 0,
+		"end": 243,
+		"heavy_rain": false,
+		"period": 0,
+		"previous": 0,
+		"start": 0
+	},
+	"schema": 8,
+	"task": "AD020",
+	"typed_snapshot_exact": true,
+	"writer_snapshot": {
+		"actors": [
+			{
+				"definition_id": "prototype-hero",
+				"health": 100,
+				"instance_id": "party-player"
+			},
+			{
+				"definition_id": "prototype-companion",
+				"health": 100,
+				"instance_id": "party-companion"
+			}
+		],
+		"collected_resource_ids": [],
+		"completed_effect_ids": [],
+		"content_version": 1,
+		"conversations": {
+			"events": {
+				"facts": [],
+				"last_sequence": 0
+			},
+			"people": {
+				"npc-01": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-01",
+					"seen_node_ids": []
+				},
+				"npc-02": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-02",
+					"seen_node_ids": []
+				},
+				"npc-03": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-03",
+					"seen_node_ids": []
+				},
+				"npc-04": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-04",
+					"seen_node_ids": []
+				},
+				"npc-06": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-06",
+					"seen_node_ids": []
+				},
+				"npc-07": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-07",
+					"seen_node_ids": []
+				},
+				"npc-08": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-08",
+					"seen_node_ids": []
+				},
+				"npc-14": {
+					"affinity": 0,
+					"applied_choice_ids": [],
+					"flags": [],
+					"learned_fact_ids": [],
+					"level": 0,
+					"npc_id": "npc-14",
+					"seen_node_ids": []
+				}
+			}
+		},
+		"elapsed_play_seconds": 25.457731121212376,
+		"environment": {
+			"day_cycle_progress": 0.042429551868686154,
+			"day_index": 0,
+			"weather_seed": 2433035180
+		},
+		"inventory": {
+			"active_item_id": null,
+			"item_counts": {}
+		},
+		"light_source_overrides": [],
+		"location_id": "prototype-mayor-vale-home",
+		"party_member_ids": [
+			"party-player",
+			"party-companion"
+		],
+		"player_instance_id": "party-player",
+		"progression": {
+			"upgrade_ids": []
+		},
+		"quests": {
+			"prototype-maris-recovery": []
+		},
+		"relationship": {
+			"companion_id": "prototype-companion",
+			"reaction_ids": [],
+			"trust": 0
+		},
+		"routine_facts": {
+			"authored_event_ids": [],
+			"suppressed_routine_ids": []
+		},
+		"schema_version": 8,
+		"spawn_id": "mayor-vale-home-from-alderwake",
+		"world_item_placements": []
+	},
+	"writer_weather": {
+		"blend": 1.0,
+		"condition": 0,
+		"end": 243,
+		"heavy_rain": false,
+		"period": 0,
+		"previous": 0,
+		"start": 0
+	}
+}

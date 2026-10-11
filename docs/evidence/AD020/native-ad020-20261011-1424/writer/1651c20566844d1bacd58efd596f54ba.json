@@ -1,0 +1,116 @@
+{
+  "id": "1651c20566844d1bacd58efd596f54ba",
+  "target_pid": 53324,
+  "unreleased_keys": [],
+  "error": null,
+  "elapsed_ms": 2049.061,
+  "requested_duration_ms": 1610,
+  "mouse_unreleased": false,
+  "schema_version": 2,
+  "ok": true,
+  "cleanup_errors": [],
+  "failed_step": null,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe",
+  "steps": [
+    {
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:28:43.5582358Z",
+      "ok": true,
+      "index": 0,
+      "elapsed_ms": 98.1234
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "S"
+        ],
+        "duration_ms": 200
+      },
+      "completed_utc": "2026-10-11T14:28:43.7855381Z",
+      "ok": true,
+      "index": 1,
+      "elapsed_ms": 222.54889999999997
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "E"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:28:43.8604608Z",
+      "ok": true,
+      "index": 2,
+      "elapsed_ms": 74.83590000000004
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 1000
+      },
+      "completed_utc": "2026-10-11T14:28:44.8672519Z",
+      "ok": true,
+      "index": 3,
+      "elapsed_ms": 1006.7072000000001
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "inn-return-town"
+      },
+      "completed_utc": "2026-10-11T14:28:44.9569200Z",
+      "ok": true,
+      "index": 4,
+      "elapsed_ms": 89.41800000000012
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:28:45.0394146Z",
+      "ok": true,
+      "index": 5,
+      "elapsed_ms": 82.39530000000013
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 200
+      },
+      "completed_utc": "2026-10-11T14:28:45.2538086Z",
+      "ok": true,
+      "index": 6,
+      "elapsed_ms": 214.32169999999996
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "inn-return-paused"
+      },
+      "completed_utc": "2026-10-11T14:28:45.2818955Z",
+      "ok": true,
+      "index": 7,
+      "elapsed_ms": 28.002100000000155
+    }
+  ]
+}

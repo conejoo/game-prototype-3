@@ -1,0 +1,102 @@
+{
+  "mouse_unreleased": false,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe",
+  "schema_version": 2,
+  "requested_duration_ms": 910,
+  "error": null,
+  "target_pid": 53324,
+  "ok": true,
+  "failed_step": null,
+  "elapsed_ms": 1343.661,
+  "steps": [
+    {
+      "ok": true,
+      "index": 0,
+      "elapsed_ms": 107.55919999999999,
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:34:13.5806926Z"
+    },
+    {
+      "ok": true,
+      "index": 1,
+      "elapsed_ms": 83.42110000000002,
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "E"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:34:13.6692080Z"
+    },
+    {
+      "ok": true,
+      "index": 2,
+      "elapsed_ms": 513.3747000000001,
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 500
+      },
+      "completed_utc": "2026-10-11T14:34:14.1826650Z"
+    },
+    {
+      "ok": true,
+      "index": 3,
+      "elapsed_ms": 102.24349999999993,
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "tollworks-world"
+      },
+      "completed_utc": "2026-10-11T14:34:14.2852680Z"
+    },
+    {
+      "ok": true,
+      "index": 4,
+      "elapsed_ms": 84.0743,
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:34:14.3694713Z"
+    },
+    {
+      "ok": true,
+      "index": 5,
+      "elapsed_ms": 201.71630000000005,
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 200
+      },
+      "completed_utc": "2026-10-11T14:34:14.5712671Z"
+    },
+    {
+      "ok": true,
+      "index": 6,
+      "elapsed_ms": 23.794799999999896,
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "tollworks-paused"
+      },
+      "completed_utc": "2026-10-11T14:34:14.5951213Z"
+    }
+  ],
+  "unreleased_keys": [],
+  "cleanup_errors": [],
+  "id": "542abe6e39a64df3ae87b46dc3b8d4f7"
+}

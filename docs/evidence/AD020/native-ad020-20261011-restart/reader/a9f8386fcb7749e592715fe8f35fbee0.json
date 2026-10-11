@@ -1,0 +1,102 @@
+{
+  "mouse_unreleased": false,
+  "target_pid": 26528,
+  "error": null,
+  "failed_step": null,
+  "elapsed_ms": 889.6391,
+  "steps": [
+    {
+      "completed_utc": "2026-10-11T14:41:17.2425892Z",
+      "index": 0,
+      "elapsed_ms": 101.09009999999999,
+      "step": {
+        "op": "capture",
+        "label": "reader-fresh-town"
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "completed_utc": "2026-10-11T14:41:17.3380386Z",
+      "index": 1,
+      "elapsed_ms": 91.0437,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "completed_utc": "2026-10-11T14:41:17.5393917Z",
+      "index": 2,
+      "elapsed_ms": 201.242,
+      "step": {
+        "op": "wait",
+        "duration_ms": 200
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "completed_utc": "2026-10-11T14:41:17.6178211Z",
+      "index": 3,
+      "elapsed_ms": 78.35999999999996,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "TAB"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "completed_utc": "2026-10-11T14:41:17.6795617Z",
+      "index": 4,
+      "elapsed_ms": 61.66810000000004,
+      "step": {
+        "op": "wait",
+        "duration_ms": 50
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "completed_utc": "2026-10-11T14:41:17.7587093Z",
+      "index": 5,
+      "elapsed_ms": 79.09140000000002,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "TAB"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "completed_utc": "2026-10-11T14:41:17.7861851Z",
+      "index": 6,
+      "elapsed_ms": 27.420399999999972,
+      "step": {
+        "op": "capture",
+        "label": "reader-load-keyboard-focus"
+      },
+      "ok": true,
+      "error": null
+    }
+  ],
+  "schema_version": 2,
+  "requested_duration_ms": 460,
+  "unreleased_keys": [],
+  "id": "a9f8386fcb7749e592715fe8f35fbee0",
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart\\ReturningFair.exe",
+  "ok": true,
+  "cleanup_errors": []
+}

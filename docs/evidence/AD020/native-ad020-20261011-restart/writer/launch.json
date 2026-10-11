@@ -1,0 +1,25 @@
+{
+  "LOCALAPPDATA": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\native-ad020-20261011-restart\\restart\\localappdata",
+  "phase": "writer",
+  "arguments": [
+    "--resolution",
+    "960x640",
+    "--position",
+    "40,40",
+    "--verbose",
+    "--log-file",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\native-ad020-20261011-restart\\writer\\runtime.log",
+    "--",
+    "--p003-evidence"
+  ],
+  "release_sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+  "provenance": "Native public controls only; read-only movement log; no bridge/fixture/position/fact setup",
+  "pack_sha256": "08FFDBA571EE35BC24EE15AB9A92B2E7CD215DEB06CD227FF55BE6C98AB4F370",
+  "pid": 71804,
+  "exe": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart\\ReturningFair.exe",
+  "APPDATA": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\native-ad020-20261011-restart\\restart\\appdata",
+  "override_sha256": "8F5FC180ACEDEC304E626CB811982472A2E867A28EE3F50920CCB45B38A74654",
+  "save_path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\native-ad020-20261011-restart\\restart\\appdata\\ReturningFair-P014-ReleaseValidation\\saves\\returning-fair.json",
+  "cwd": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart",
+  "task": "AD020"
+}

@@ -1,0 +1,102 @@
+{
+  "mouse_unreleased": false,
+  "target_pid": 53324,
+  "elapsed_ms": 1817.175,
+  "ok": true,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe",
+  "schema_version": 2,
+  "steps": [
+    {
+      "elapsed_ms": 97.2543,
+      "index": 0,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:26:54.0152699Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "error": null
+    },
+    {
+      "elapsed_ms": 74.17410000000001,
+      "index": 1,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:26:54.0959806Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "E"
+        ],
+        "duration_ms": 70
+      },
+      "error": null
+    },
+    {
+      "elapsed_ms": 1013.848,
+      "index": 2,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:26:55.1099464Z",
+      "step": {
+        "op": "wait",
+        "duration_ms": 1000
+      },
+      "error": null
+    },
+    {
+      "elapsed_ms": 76.26850000000013,
+      "index": 3,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:26:55.1862831Z",
+      "step": {
+        "op": "capture",
+        "label": "home-return-town"
+      },
+      "error": null
+    },
+    {
+      "elapsed_ms": 80.8601000000001,
+      "index": 4,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:26:55.2672056Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "error": null
+    },
+    {
+      "elapsed_ms": 214.26499999999987,
+      "index": 5,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:26:55.4815876Z",
+      "step": {
+        "op": "wait",
+        "duration_ms": 200
+      },
+      "error": null
+    },
+    {
+      "elapsed_ms": 31.016399999999976,
+      "index": 6,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:26:55.5126692Z",
+      "step": {
+        "op": "capture",
+        "label": "home-return-paused"
+      },
+      "error": null
+    }
+  ],
+  "id": "9c7a5bcc54064ecfbf5ebbae93e62038",
+  "requested_duration_ms": 1410,
+  "unreleased_keys": [],
+  "error": null,
+  "failed_step": null,
+  "cleanup_errors": []
+}

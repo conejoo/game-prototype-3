@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "promoted": true,
+  "packages": {
+    "validation": {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\20261011-142239-03737612\\windows-validation",
+      "files": {
+        "ReturningFairValidation.console.exe": {
+          "bytes": 188928,
+          "sha256": "5514c7645ee897a01f540d3cf22ede5badf92394521a08bfab66a54d7369e6e6"
+        },
+        "ReturningFairValidation.exe": {
+          "bytes": 103176704,
+          "sha256": "51498b72b3a237f882ebd7d1787f06a4bc1eaf0572daab93837adcfd3cfdc107"
+        },
+        "ReturningFairValidation.pck": {
+          "bytes": 19046812,
+          "sha256": "08ffdba571ee35bc24ee15ab9a92b2e7cd215deb06cd227ff55be6c98ab4f370"
+        }
+      },
+      "preset": "Windows Validation"
+    },
+    "release": {
+      "path": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\20261011-142239-03737612\\windows",
+      "files": {
+        "ReturningFair.exe": {
+          "bytes": 109268480,
+          "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+        },
+        "ReturningFair.pck": {
+          "bytes": 19046812,
+          "sha256": "08ffdba571ee35bc24ee15ab9a92b2e7cd215deb06cd227ff55be6c98ab4f370"
+        }
+      },
+      "preset": "Windows Desktop"
+    }
+  }
+}

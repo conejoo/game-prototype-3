@@ -1,0 +1,14 @@
+{
+  "index": 4,
+  "capture": "walk-home-ce718d5c-paused.png",
+  "points": 4,
+  "error": null,
+  "position": [
+    4.964774,
+    0.0,
+    -5.182851
+  ],
+  "seconds": 11.6808889,
+  "complete": true,
+  "goal": "home"
+}

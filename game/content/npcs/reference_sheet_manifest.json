@@ -1,0 +1,131 @@
+{
+  "sheets": {
+    "res://assets/npcs/reference/npc-01/npc_01_idle_sheet.png": {
+      "sha256": "f0a3c9b3757cd42f0f8132f388f5f6cfd91b8958a7e18582d01c5b839a6a93b9",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-01/npc_01_river_fishing_sheet.png": {
+      "sha256": "9744b485513ecbe5b00c176eb5229f7a42f308c4d48ce4400093f62da0368b74",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-01/npc_01_walk_sheet.png": {
+      "sha256": "a3be1612ecdd1205d2739c81b6724773ae15bfefb1d0309fa288204dd171d497",
+      "size": [
+        576,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-02/npc_02_archive_work_sheet.png": {
+      "sha256": "a874907c43823f50bfd4d49a4c191bb97f6a5ee5790aa29d88bfab7900d2cae8",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-02/npc_02_idle_sheet.png": {
+      "sha256": "ecbe11281d8891fff673b8b4fdec92140dafacb7dc5f1b684e2dcc4c984e2f94",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-02/npc_02_walk_sheet.png": {
+      "sha256": "3adf1e561ed30fb9fe27c8a61fced9da10e01361d25e822bbef3d85fbc8f616f",
+      "size": [
+        576,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-03/npc_03_idle_sheet.png": {
+      "sha256": "e8784cd38dbee8d8d21563231f99f1cf755ee35649d964630fe00ee0d45a9e4e",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-03/npc_03_walk_sheet.png": {
+      "sha256": "6476799dea0008b7ab54210ca7c861f47ab85a23e6576d3a34d660ace246bc12",
+      "size": [
+        576,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-04/npc_04_idle_sheet.png": {
+      "sha256": "a2bed41deae90115c26d69229c17dcf259afd9fbce623f76d4ef588b52a30d11",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-04/npc_04_walk_sheet.png": {
+      "sha256": "78b8590117861b636cdabd79911072cc88fe72ffa018a187f557a9487f53c7b9",
+      "size": [
+        576,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-06/npc_06_idle_sheet.png": {
+      "sha256": "438fbec50c4507ae29d442473f85a262078590d5f3c0664c41d331dc49dae7bc",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-06/npc_06_walk_sheet.png": {
+      "sha256": "5e52f774dd720264ab981b637081c9b87c61d85cc842189d6aff8e663e3edcd5",
+      "size": [
+        576,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-07/npc_07_idle_sheet.png": {
+      "sha256": "c68a14094d1a30235be5467a1143d5ccc758dc88b4e36b6038410c1fcc58ec9a",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-07/npc_07_walk_sheet.png": {
+      "sha256": "174974767dc2e3ed079170217e69d671f7e235909aded761cfdc9a84add4b0d7",
+      "size": [
+        576,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-08/npc_08_idle_sheet.png": {
+      "sha256": "20bd8cd67609702d373bf7f014577dd18e2e0ffc25fafc6bd2fa4edad856ba89",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-08/npc_08_walk_sheet.png": {
+      "sha256": "afddbe68899a660e73b9361df2abe2394bfd03f2fd02eaf46eb18ec44e1157a3",
+      "size": [
+        576,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-14/npc_14_idle_sheet.png": {
+      "sha256": "a6ca1a4096fccf0c61027c69232b21ab70f04439815eb95d61a32c391f34efcb",
+      "size": [
+        768,
+        768
+      ]
+    },
+    "res://assets/npcs/reference/npc-14/npc_14_walk_sheet.png": {
+      "sha256": "e9bab23e377c4ff7a9cdbde52dc1eb2f0355995f4012591e11788f677e08d3ca",
+      "size": [
+        576,
+        768
+      ]
+    }
+  },
+  "source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf"
+}

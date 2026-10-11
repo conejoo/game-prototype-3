@@ -1,0 +1,12 @@
+{
+  "steps": [
+    {
+      "op": "wait",
+      "duration_ms": 500
+    },
+    {
+      "op": "capture",
+      "label": "writer-save-settled-success"
+    }
+  ]
+}

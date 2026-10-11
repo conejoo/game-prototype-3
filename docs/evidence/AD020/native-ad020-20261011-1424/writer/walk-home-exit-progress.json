@@ -1,0 +1,14 @@
+{
+  "points": 2,
+  "capture": "walk-home-exit-f25f089f-paused.png",
+  "seconds": 6.1353355,
+  "index": 2,
+  "complete": true,
+  "error": null,
+  "goal": "home-exit",
+  "position": [
+    0.049233,
+    0.0,
+    0.302384
+  ]
+}

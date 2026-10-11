@@ -1,0 +1,102 @@
+{
+  "target_pid": 53324,
+  "requested_duration_ms": 1610,
+  "steps": [
+    {
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:27:53.1230501Z",
+      "elapsed_ms": 105.4669,
+      "index": 0
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "E"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:27:53.2062225Z",
+      "elapsed_ms": 77.1472,
+      "index": 1
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 1200
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:27:54.4233348Z",
+      "elapsed_ms": 1217.0168,
+      "index": 2
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "lantern-rest-world"
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:27:54.5086824Z",
+      "elapsed_ms": 85.26620000000003,
+      "index": 3
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:27:54.5938566Z",
+      "elapsed_ms": 85.11710000000016,
+      "index": 4
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "wait",
+        "duration_ms": 200
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:27:54.8094637Z",
+      "elapsed_ms": 215.48710000000005,
+      "index": 5
+    },
+    {
+      "error": null,
+      "step": {
+        "op": "capture",
+        "label": "lantern-rest-paused"
+      },
+      "ok": true,
+      "completed_utc": "2026-10-11T14:27:54.8377401Z",
+      "elapsed_ms": 28.198399999999992,
+      "index": 6
+    }
+  ],
+  "ok": true,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe",
+  "failed_step": null,
+  "cleanup_errors": [],
+  "mouse_unreleased": false,
+  "elapsed_ms": 2043.4803,
+  "error": null,
+  "id": "43059e3073cc4b2fab4d559e57edd483",
+  "unreleased_keys": [],
+  "schema_version": 2
+}

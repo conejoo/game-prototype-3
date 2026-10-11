@@ -1,0 +1,540 @@
+{
+	"assertions": 431,
+	"failures": [],
+	"profile": "RULE/content",
+	"rejections": [
+		{
+			"errors": [
+				"catalog: must be object",
+				"format_version: must be integer in 1..1",
+				"source_revision: must be nonempty string",
+				"source_revision must match N001 pin",
+				"packages: must be array",
+				"catalog must contain exactly eight selected packages"
+			],
+			"expected": "must be object"
+		},
+		{
+			"errors": [
+				"catalog: must be object",
+				"format_version: must be integer in 1..1",
+				"source_revision: must be nonempty string",
+				"source_revision must match N001 pin",
+				"packages: must be array",
+				"catalog must contain exactly eight selected packages"
+			],
+			"expected": "must be object"
+		},
+		{
+			"errors": [
+				"catalog: missing key packages",
+				"packages: must be array",
+				"catalog must contain exactly eight selected packages"
+			],
+			"expected": "missing key"
+		},
+		{
+			"errors": [
+				"catalog: unsupported key extra"
+			],
+			"expected": "unsupported key"
+		},
+		{
+			"errors": [
+				"format_version: must be integer in 1..1"
+			],
+			"expected": "must be integer"
+		},
+		{
+			"errors": [
+				"source_revision must match N001 pin"
+			],
+			"expected": "source_revision"
+		},
+		{
+			"errors": [
+				"packages: must be array",
+				"catalog must contain exactly eight selected packages"
+			],
+			"expected": "must be array"
+		},
+		{
+			"errors": [
+				"catalog must contain exactly eight selected packages"
+			],
+			"expected": "exactly eight"
+		},
+		{
+			"errors": [
+				"packages[1]: selected roster order mismatch",
+				"packages[1]: duplicate NPC ID"
+			],
+			"expected": "duplicate NPC ID"
+		},
+		{
+			"errors": [
+				"packages[0]: unrequested NPC identity",
+				"packages[0]: illegal actor identity mapping",
+				"npc-05: cross-person runtime identity",
+				"npc-05: cross-person flag npc-01-first-conversation-complete",
+				"npc-05: cross-person flag npc-01-helpful-response",
+				"npc-05: cross-person flag npc-01-neutral-response",
+				"npc-05: cross-person flag npc-01-helpful-reward-applied",
+				"npc-05: cross-person flag npc-01-neutral-reward-applied",
+				"npc-05: cross-person flag relationshipLevel1Seen",
+				"npc-05.facts: cross-person ID npc-01-public-role",
+				"npc-05.facts: cross-person ID npc-01-moonflower-preference",
+				"npc-05.facts: cross-person ID npc-01-river-fishing",
+				"npc-05.gifts: cross-person ID npc-01-moonflower-gift",
+				"npc-05: cross-person graph identity",
+				"npc-05.nodes: cross-person ID npc-01-initial-conversation",
+				"npc-05.nodes: cross-person ID npc-01-initial-helpful-end",
+				"npc-05.nodes: cross-person ID npc-01-initial-guarded-end",
+				"npc-05.nodes: cross-person ID npc-01-woods-first",
+				"npc-05.nodes: cross-person ID npc-01-woods-repeat",
+				"npc-05.nodes: cross-person ID npc-01-moonflower-hint",
+				"npc-05.nodes: cross-person ID npc-01-follow-up-conversation",
+				"npc-05.nodes: cross-person ID npc-01-gift-response",
+				"npc-05.nodes: cross-person ID npc-01-level-1-milestone",
+				"npc-05: cross-person visual identity",
+				"npc-05.portrait: image must be owned target-local PNG",
+				"npc-05.portrait: image must be owned target-local PNG",
+				"npc-05.portrait: image must be owned target-local PNG",
+				"npc-05.portrait: image must be owned target-local PNG",
+				"npc-05.portrait: image must be owned target-local PNG",
+				"npc-05.portrait: image must be owned target-local PNG",
+				"npc-05.sheet: image must be owned target-local PNG",
+				"npc-05.sheet: image must be owned target-local PNG",
+				"npc-05.sheet: image must be owned target-local PNG"
+			],
+			"expected": "unrequested NPC"
+		},
+		{
+			"errors": [
+				"packages[2]: illegal actor identity mapping"
+			],
+			"expected": "illegal actor identity"
+		},
+		{
+			"errors": [
+				"npc-01: cross-person runtime identity"
+			],
+			"expected": "cross-person runtime"
+		},
+		{
+			"errors": [
+				"npc-01: cross-person graph identity"
+			],
+			"expected": "cross-person graph"
+		},
+		{
+			"errors": [
+				"npc-01: cross-person visual identity"
+			],
+			"expected": "cross-person visual"
+		},
+		{
+			"errors": [
+				"npc-01.displayName: must be nonempty string"
+			],
+			"expected": "nonempty string"
+		},
+		{
+			"errors": [
+				"npc-01.relationship: unsupported key hidden"
+			],
+			"expected": "unsupported key"
+		},
+		{
+			"errors": [
+				"npc-01.levelOneAffinity: must be integer in 1..2147483647"
+			],
+			"expected": "must be integer"
+		},
+		{
+			"errors": [
+				"npc-01.hitWidth: must be finite number in range"
+			],
+			"expected": "must be finite"
+		},
+		{
+			"errors": [
+				"npc-01.hitHeight: must be finite number in range"
+			],
+			"expected": "must be finite"
+		},
+		{
+			"errors": [
+				"npc-01.flags: duplicate ID npc-01-first-conversation-complete"
+			],
+			"expected": "duplicate ID"
+		},
+		{
+			"errors": [
+				"npc-01: cross-person flag npc-02-flag"
+			],
+			"expected": "cross-person flag"
+		},
+		{
+			"errors": [
+				"facts: duplicate ID npc-01-public-role"
+			],
+			"expected": "duplicate ID"
+		},
+		{
+			"errors": [
+				"npc-01.facts: cross-person ID npc-02-public-role"
+			],
+			"expected": "cross-person ID"
+		},
+		{
+			"errors": [
+				"npc-01-moonflower-gift.requiredFactId: missing/cross-person reference npc-02-public-role"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01-moonflower-gift: unsupported gift item reference"
+			],
+			"expected": "unsupported gift item"
+		},
+		{
+			"errors": [
+				"npc-01.milestone.node: missing/cross-person reference absent"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01.entries: duplicate ID npc-01-level-1-milestone"
+			],
+			"expected": "duplicate ID"
+		},
+		{
+			"errors": [
+				"npc-01.entry: missing/cross-person reference absent"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"nodes: duplicate ID npc-01-initial-conversation"
+			],
+			"expected": "duplicate ID"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.text: must be nonempty string"
+			],
+			"expected": "nonempty string"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.priority: must be integer in -2147483647..2147483647"
+			],
+			"expected": "must be integer"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.portraitId: missing/cross-person reference absent"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01.portrait: missing image res://assets/npcs/portraits/npc-01/absent.png"
+			],
+			"expected": "missing image"
+		},
+		{
+			"errors": [
+				"npc-01.portrait: image must be owned target-local PNG"
+			],
+			"expected": "owned target-local"
+		},
+		{
+			"errors": [
+				"npc-01.portrait: image must be owned target-local PNG"
+			],
+			"expected": "owned target-local"
+		},
+		{
+			"errors": [
+				"npc-01: requires six portraits"
+			],
+			"expected": "requires six portraits"
+		},
+		{
+			"errors": [
+				"npc-01.sheet: invalid image dimensions"
+			],
+			"expected": "invalid image dimensions"
+		},
+		{
+			"errors": [
+				"npc-01: missing declared action river-fishing"
+			],
+			"expected": "missing declared action"
+		},
+		{
+			"errors": [
+				"npc-01: unsupported facing row order"
+			],
+			"expected": "unsupported facing"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.revealedFactIds: missing/cross-person reference npc-02-public-role"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.conditions: unsupported key questComplete"
+			],
+			"expected": "unsupported key"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.conditions: must be object"
+			],
+			"expected": "must be object"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.excludedFlags: must be array"
+			],
+			"expected": "must be array"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.excludedFlags: missing/cross-person reference npc-02-flag"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.requiredSeenNodeIds: missing/cross-person reference absent"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation: inverted affinity bounds"
+			],
+			"expected": "inverted affinity"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation: contradictory conditions"
+			],
+			"expected": "contradictory conditions"
+		},
+		{
+			"errors": [
+				"npc-01-woods-first: unsupported event kind"
+			],
+			"expected": "unsupported event"
+		},
+		{
+			"errors": [
+				"npc-01-woods-first.maximumCount: must be integer in 1..2147483647"
+			],
+			"expected": "must be integer"
+		},
+		{
+			"errors": [
+				"npc-01-woods-first.minimumCount: must be integer in 0..2147483647"
+			],
+			"expected": "must be integer"
+		},
+		{
+			"errors": [
+				"npc-01-woods-first.event.window: must be finite number in range"
+			],
+			"expected": "must be finite"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation.choices: duplicate ID npc-01-helpful-response"
+			],
+			"expected": "duplicate ID"
+		},
+		{
+			"errors": [
+				"npc-01-helpful-response: duplicate global choice ID"
+			],
+			"expected": "duplicate global choice"
+		},
+		{
+			"errors": [
+				"npc-01.npc-01-initial-conversation.choices: missing key text",
+				"npc-01-helpful-response.text: must be nonempty string"
+			],
+			"expected": "missing key text"
+		},
+		{
+			"errors": [
+				"npc-01-helpful-response.oneTime: must be boolean"
+			],
+			"expected": "must be boolean"
+		},
+		{
+			"errors": [
+				"npc-01-helpful-response.affinityDelta: must be integer in -1..1"
+			],
+			"expected": "must be integer"
+		},
+		{
+			"errors": [
+				"npc-01-helpful-response.targetNodeId: missing/cross-person reference npc-02-initial-careful-end"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01-helpful-response.rewardFlag: missing/cross-person reference absent"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01-helpful-response.addedFlags: missing/cross-person reference absent"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01-gift-moonflower-from-hint.giftRuleId: missing/cross-person reference absent"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01-helpful-response: transition requires exactly target or end"
+			],
+			"expected": "exactly target or end"
+		},
+		{
+			"errors": [
+				"npc-01-helpful-response: transition requires exactly target or end"
+			],
+			"expected": "exactly target or end"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation: choices and continue cannot coexist"
+			],
+			"expected": "choices and continue"
+		},
+		{
+			"errors": [
+				"npc-01-initial-conversation: cyclic finite graph transition"
+			],
+			"expected": "cyclic finite"
+		},
+		{
+			"errors": [
+				"npc-01-initial-helpful-end.continueTargetId: missing/cross-person reference absent"
+			],
+			"expected": "missing/cross-person reference"
+		},
+		{
+			"errors": [
+				"npc-01.coverage: unsupported key extra"
+			],
+			"expected": "unsupported key"
+		},
+		{
+			"errors": [
+				"npc-01.coverage.node: coverage count mismatch",
+				"npc-01.coverage.node: missing coverage ID npc-01-initial-conversation"
+			],
+			"expected": "missing coverage ID"
+		},
+		{
+			"errors": [
+				"npc-01.coverage.node: unsupported availability status"
+			],
+			"expected": "unsupported availability"
+		},
+		{
+			"errors": [
+				"npc-01.coverage.node.reason: must be nonempty string"
+			],
+			"expected": "nonempty string"
+		},
+		{
+			"errors": [
+				"npc-01-gift-moonflower-from-hint: approved social capability must be enabled"
+			],
+			"expected": "must be enabled"
+		},
+		{
+			"errors": [
+				"npc-01-moonflower-gift: approved social capability must be enabled"
+			],
+			"expected": "must be enabled"
+		},
+		{
+			"errors": [
+				"npc-01-gift-response: approved social capability must be enabled",
+				"npc-01-gift-response: approved social capability must be enabled",
+				"npc-01-gift-moonflower-from-hint: enabled choice targets deferred node",
+				"npc-01-gift-moonflower-follow-up: enabled choice targets deferred node"
+			],
+			"expected": "must be enabled"
+		},
+		{
+			"errors": [
+				"npc-01-level-1-milestone: approved social capability must be enabled"
+			],
+			"expected": "must be enabled"
+		},
+		{
+			"errors": [
+				"npc-14-room: unavailable capability must stay deferred"
+			],
+			"expected": "must stay deferred"
+		},
+		{
+			"errors": [
+				"npc-02-archive-practice: fact disclosure classification mismatch"
+			],
+			"expected": "fact disclosure classification"
+		},
+		{
+			"errors": [
+				"npc-14-ask-room: unavailable capability must stay deferred",
+				"npc-14-ask-room: enabled choice targets deferred node"
+			],
+			"expected": "must stay deferred"
+		},
+		{
+			"errors": [
+				"npc-14-careful-end: enabled continue targets deferred node"
+			],
+			"expected": "enabled continue targets deferred"
+		},
+		{
+			"errors": [
+				"npc-01.portrait: image must be owned target-local PNG"
+			],
+			"expected": "owned target-local"
+		}
+	],
+	"runtime_catalog_sha256": "9a3a59fcce470d356e13f492cd1364e942b110c8e93d54d535a363218766bdd7",
+	"source_revision": "60c20eb2816e7271fb84afaba286af006ebe3ccf",
+	"task": "N002",
+	"totals": {
+		"choices": 54,
+		"deferred_choices": 1,
+		"deferred_nodes": 1,
+		"facts": 24,
+		"gifts": 8,
+		"nodes": 70,
+		"portraits": 48,
+		"sheets": 18
+	}
+}

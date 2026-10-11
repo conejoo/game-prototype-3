@@ -1,0 +1,23 @@
+{
+  "steps": [
+    {
+      "label": "walk-inn-ef3885ba-world",
+      "op": "capture"
+    },
+    {
+      "duration_ms": 60,
+      "op": "hold",
+      "keys": [
+        "ESC"
+      ]
+    },
+    {
+      "duration_ms": 150,
+      "op": "wait"
+    },
+    {
+      "label": "walk-inn-ef3885ba-paused",
+      "op": "capture"
+    }
+  ]
+}

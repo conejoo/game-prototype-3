@@ -1,0 +1,37 @@
+{
+  "steps": [
+    {
+      "op": "hold",
+      "keys": [
+        "TAB"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "wait",
+      "duration_ms": 50
+    },
+    {
+      "op": "hold",
+      "keys": [
+        "TAB"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "wait",
+      "duration_ms": 50
+    },
+    {
+      "op": "hold",
+      "keys": [
+        "TAB"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "capture",
+      "label": "reader-verified-save-focus"
+    }
+  ]
+}

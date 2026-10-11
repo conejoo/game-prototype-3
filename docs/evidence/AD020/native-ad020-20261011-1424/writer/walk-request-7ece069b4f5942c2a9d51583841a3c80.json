@@ -1,0 +1,12 @@
+{
+  "steps": [
+    {
+      "duration_ms": 39,
+      "op": "hold",
+      "keys": [
+        "A",
+        "S"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": 2,
+  "ok": true,
+  "elapsed_ms": 1605.3063,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart\\ReturningFair.exe",
+  "failed_step": null,
+  "id": "c65937b0996b421db6742240715a737a",
+  "steps": [
+    {
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:37:54.2680158Z",
+      "index": 0,
+      "elapsed_ms": 102.77570000000001,
+      "ok": true,
+      "error": null
+    },
+    {
+      "step": {
+        "op": "hold",
+        "keys": [
+          "E"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:37:54.3645032Z",
+      "index": 1,
+      "elapsed_ms": 88.6413,
+      "ok": true,
+      "error": null
+    },
+    {
+      "step": {
+        "op": "wait",
+        "duration_ms": 700
+      },
+      "completed_utc": "2026-10-11T14:37:55.0710181Z",
+      "index": 2,
+      "elapsed_ms": 706.4122,
+      "ok": true,
+      "error": null
+    },
+    {
+      "step": {
+        "op": "capture",
+        "label": "writer-home-world"
+      },
+      "completed_utc": "2026-10-11T14:37:55.1494539Z",
+      "index": 3,
+      "elapsed_ms": 78.35489999999993,
+      "ok": true,
+      "error": null
+    },
+    {
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:37:55.2280793Z",
+      "index": 4,
+      "elapsed_ms": 78.55759999999987,
+      "ok": true,
+      "error": null
+    },
+    {
+      "step": {
+        "op": "wait",
+        "duration_ms": 200
+      },
+      "completed_utc": "2026-10-11T14:37:55.4450085Z",
+      "index": 5,
+      "elapsed_ms": 216.82200000000012,
+      "ok": true,
+      "error": null
+    },
+    {
+      "step": {
+        "op": "hold",
+        "keys": [
+          "TAB"
+        ],
+        "duration_ms": 70
+      },
+      "completed_utc": "2026-10-11T14:37:55.5230725Z",
+      "index": 6,
+      "elapsed_ms": 77.93280000000004,
+      "ok": true,
+      "error": null
+    },
+    {
+      "step": {
+        "op": "capture",
+        "label": "writer-save-keyboard-focus"
+      },
+      "completed_utc": "2026-10-11T14:37:55.5499608Z",
+      "index": 7,
+      "elapsed_ms": 26.79210000000012,
+      "ok": true,
+      "error": null
+    }
+  ],
+  "unreleased_keys": [],
+  "mouse_unreleased": false,
+  "error": null,
+  "requested_duration_ms": 1180,
+  "cleanup_errors": [],
+  "target_pid": 71804
+}

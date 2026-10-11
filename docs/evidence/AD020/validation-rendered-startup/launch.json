@@ -1,0 +1,22 @@
+{
+  "hashes": {
+    "ReturningFairValidation.pck": "08FFDBA571EE35BC24EE15AB9A92B2E7CD215DEB06CD227FF55BE6C98AB4F370",
+    "ReturningFairValidation.exe": "51498B72B3A237F882EBD7D1787F06A4BC1EAF0572DAAB93837ADCFD3CFDC107"
+  },
+  "provenance": "Actual rendered Validation startup; bounded automatic engine quit, no input/gameplay claim",
+  "LOCALAPPDATA": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\validation-rendered\\localappdata",
+  "cwd": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-validation-20261011-1426",
+  "task": "AD020",
+  "exe": null,
+  "APPDATA": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\art-direction\\AD020\\validation-rendered\\appdata",
+  "arguments": [
+    "--resolution",
+    "960x640",
+    "--verbose",
+    "--quit-after",
+    "240",
+    "--log-file",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD020\\validation-rendered-startup\\runtime.log"
+  ],
+  "pid": 33648
+}

@@ -1,0 +1,91 @@
+{
+  "failed_step": null,
+  "ok": true,
+  "cleanup_errors": [],
+  "id": "3b17e131dda04078afff42bf81eb6928",
+  "mouse_unreleased": false,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart\\ReturningFair.exe",
+  "requested_duration_ms": 310,
+  "target_pid": 26528,
+  "error": null,
+  "elapsed_ms": 693.049,
+  "schema_version": 2,
+  "steps": [
+    {
+      "index": 0,
+      "elapsed_ms": 101.51689999999999,
+      "completed_utc": "2026-10-11T14:44:12.5099037Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "TAB"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "index": 1,
+      "elapsed_ms": 55.29679999999999,
+      "completed_utc": "2026-10-11T14:44:12.5723649Z",
+      "step": {
+        "op": "wait",
+        "duration_ms": 50
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "index": 2,
+      "elapsed_ms": 78.88589999999999,
+      "completed_utc": "2026-10-11T14:44:12.6513576Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "TAB"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "index": 3,
+      "elapsed_ms": 60.752099999999984,
+      "completed_utc": "2026-10-11T14:44:12.7122165Z",
+      "step": {
+        "op": "wait",
+        "duration_ms": 50
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "index": 4,
+      "elapsed_ms": 78.56650000000002,
+      "completed_utc": "2026-10-11T14:44:12.7908741Z",
+      "step": {
+        "op": "hold",
+        "keys": [
+          "TAB"
+        ],
+        "duration_ms": 70
+      },
+      "ok": true,
+      "error": null
+    },
+    {
+      "index": 5,
+      "elapsed_ms": 88.8141,
+      "completed_utc": "2026-10-11T14:44:12.8798017Z",
+      "step": {
+        "op": "capture",
+        "label": "reader-verified-save-focus"
+      },
+      "ok": true,
+      "error": null
+    }
+  ],
+  "unreleased_keys": []
+}

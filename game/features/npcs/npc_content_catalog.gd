@@ -4,6 +4,8 @@ extends RefCounted
 ## Canonical dictionaries never escape; typed lookups and document snapshots detach.
 
 const PATH: String = "res://content/npcs/catalog.json"
+const REFERENCE_SHEET_MANIFEST: String = "res://content/npcs/reference_sheet_manifest.json"
+const REFERENCE_SHEET_MANIFEST_SHA256: String = "51d32379c24db0fbac0c91e1ff70af2d3cf424ac8946f4bca2a8a010ef0e13fa"
 const ROSTER: PackedStringArray = ["npc-01", "npc-02", "npc-03", "npc-04", "npc-06", "npc-07", "npc-08", "npc-14"]
 const SOURCE_REVISION: String = "60c20eb2816e7271fb84afaba286af006ebe3ccf"
 const MAX_INTEGER: int = 2147483647
@@ -402,6 +404,18 @@ func _image(value: Variant, prefix: String, size: Vector2i, label: String, error
 	var path: String = _text(value, label + ".path", errors)
 	if not path.begins_with(prefix) or not path.ends_with(".png") or path.contains("..") or path.contains("\\") or path.trim_prefix(prefix).contains("/"):
 		errors.append(label + ": image must be owned target-local PNG")
+		return
+	# Exported packs retain exact authoring references and pinned dimensions,
+	# while GLBs own runtime animation. Source runs still validate real rasters.
+	if prefix.begins_with("res://assets/npcs/reference/") and FileAccess.file_exists("res://project.binary") and not FileAccess.file_exists("res://project.godot"):
+		if FileAccess.get_sha256(REFERENCE_SHEET_MANIFEST) != REFERENCE_SHEET_MANIFEST_SHA256:
+			errors.append(label + ": reference sheet manifest pin differs")
+			return
+		var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(REFERENCE_SHEET_MANIFEST))
+		var entry: Dictionary = manifest.sheets.get(path, {})
+		var dimensions: Array = entry.get("size", [])
+		if manifest.source_revision != SOURCE_REVISION or dimensions.size() != 2 or Vector2i(int(dimensions[0]), int(dimensions[1])) != size:
+			errors.append(label + ": invalid pinned reference image dimensions")
 		return
 	if not ResourceLoader.exists(path, "Texture2D"):
 		errors.append(label + ": missing image " + path)

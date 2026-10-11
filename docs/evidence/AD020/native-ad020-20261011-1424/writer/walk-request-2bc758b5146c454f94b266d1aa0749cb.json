@@ -1,0 +1,23 @@
+{
+  "steps": [
+    {
+      "label": "walk-home-exit-f25f089f-world",
+      "op": "capture"
+    },
+    {
+      "duration_ms": 60,
+      "keys": [
+        "ESC"
+      ],
+      "op": "hold"
+    },
+    {
+      "op": "wait",
+      "duration_ms": 150
+    },
+    {
+      "label": "walk-home-exit-f25f089f-paused",
+      "op": "capture"
+    }
+  ]
+}

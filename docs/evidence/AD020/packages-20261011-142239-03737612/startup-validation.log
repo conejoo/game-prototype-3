@@ -1,0 +1,388 @@
+WorkerThreadPool: 22 threads, 6 max low-priority.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Using "default" pen tablet driver...
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 3998044206
+EDITOR API HASH: 3612401625
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://app/game_root.tscn remapped: res://app/game_root.tscn
+Loading resource: res://app/game_root.gdc remapped: res://app/game_root.gdc
+Loading resource: res://content/prototype_catalog.tres remapped: res://content/prototype_catalog.tres
+Loading resource: res://core/content_manifest.gdc remapped: res://core/content_manifest.gdc
+Completed load for: 'res://core/content_manifest.gd' remapped 'res://core/content_manifest.gdc' at thread -1
+Loading resource: res://content/actors/hero.tres remapped: res://content/actors/hero.tres
+Loading resource: res://features/actors/actor_definition.gdc remapped: res://features/actors/actor_definition.gdc
+Completed load for: 'res://features/actors/actor_definition.gd' remapped 'res://features/actors/actor_definition.gdc' at thread -1
+Completed load for: 'res://content/actors/hero.tres' remapped 'res://content/actors/hero.tres' at thread -1
+Loading resource: res://content/actors/maris.tres remapped: res://content/actors/maris.tres
+Completed load for: 'res://content/actors/maris.tres' remapped 'res://content/actors/maris.tres' at thread -1
+Loading resource: res://content/actors/temporary_companion.tres remapped: res://content/actors/temporary_companion.tres
+Completed load for: 'res://content/actors/temporary_companion.tres' remapped 'res://content/actors/temporary_companion.tres' at thread -1
+Loading resource: res://content/locations/test_room.tres remapped: res://content/locations/test_room.tres
+Loading resource: res://world/location_definition.gdc remapped: res://world/location_definition.gdc
+Completed load for: 'res://world/location_definition.gd' remapped 'res://world/location_definition.gdc' at thread -1
+Completed load for: 'res://content/locations/test_room.tres' remapped 'res://content/locations/test_room.tres' at thread -1
+Loading resource: res://content/dialogue/temporary_companion.tres remapped: res://content/dialogue/temporary_companion.tres
+Loading resource: res://features/dialogue/conversation_definition.gdc remapped: res://features/dialogue/conversation_definition.gdc
+Completed load for: 'res://features/dialogue/conversation_definition.gd' remapped 'res://features/dialogue/conversation_definition.gdc' at thread -1
+Completed load for: 'res://content/dialogue/temporary_companion.tres' remapped 'res://content/dialogue/temporary_companion.tres' at thread -1
+Loading resource: res://content/locations/alderwake.tres remapped: res://content/locations/alderwake.tres
+Loading resource: res://content/portals/alderwake_tollworks.tres remapped: res://content/portals/alderwake_tollworks.tres
+Completed load for: 'res://content/portals/alderwake_tollworks.tres' remapped 'res://content/portals/alderwake_tollworks.tres' at thread -1
+Loading resource: res://content/portals/alderwake_home.tres remapped: res://content/portals/alderwake_home.tres
+Completed load for: 'res://content/portals/alderwake_home.tres' remapped 'res://content/portals/alderwake_home.tres' at thread -1
+Loading resource: res://content/portals/alderwake_inn.tres remapped: res://content/portals/alderwake_inn.tres
+Completed load for: 'res://content/portals/alderwake_inn.tres' remapped 'res://content/portals/alderwake_inn.tres' at thread -1
+Completed load for: 'res://content/locations/alderwake.tres' remapped 'res://content/locations/alderwake.tres' at thread -1
+Loading resource: res://content/locations/tollworks.tres remapped: res://content/locations/tollworks.tres
+Loading resource: res://content/portals/tollworks_alderwake.tres remapped: res://content/portals/tollworks_alderwake.tres
+Completed load for: 'res://content/portals/tollworks_alderwake.tres' remapped 'res://content/portals/tollworks_alderwake.tres' at thread -1
+Completed load for: 'res://content/locations/tollworks.tres' remapped 'res://content/locations/tollworks.tres' at thread -1
+Loading resource: res://content/dialogue/practice_marker.tres remapped: res://content/dialogue/practice_marker.tres
+Completed load for: 'res://content/dialogue/practice_marker.tres' remapped 'res://content/dialogue/practice_marker.tres' at thread -1
+Loading resource: res://content/quests/maris_recovery.tres remapped: res://content/quests/maris_recovery.tres
+Loading resource: res://features/quests/quest_definition.gdc remapped: res://features/quests/quest_definition.gdc
+Completed load for: 'res://features/quests/quest_definition.gd' remapped 'res://features/quests/quest_definition.gdc' at thread -1
+Completed load for: 'res://content/quests/maris_recovery.tres' remapped 'res://content/quests/maris_recovery.tres' at thread -1
+Loading resource: res://content/dialogue/maris_counter.tres remapped: res://content/dialogue/maris_counter.tres
+Completed load for: 'res://content/dialogue/maris_counter.tres' remapped 'res://content/dialogue/maris_counter.tres' at thread -1
+Loading resource: res://content/dialogue/recovery_vessel.tres remapped: res://content/dialogue/recovery_vessel.tres
+Completed load for: 'res://content/dialogue/recovery_vessel.tres' remapped 'res://content/dialogue/recovery_vessel.tres' at thread -1
+Loading resource: res://content/actors/guardian.tres remapped: res://content/actors/guardian.tres
+Completed load for: 'res://content/actors/guardian.tres' remapped 'res://content/actors/guardian.tres' at thread -1
+Loading resource: res://content/relationships/shared_plan.tres remapped: res://content/relationships/shared_plan.tres
+Loading resource: res://features/relationships/reaction_definition.gdc remapped: res://features/relationships/reaction_definition.gdc
+Completed load for: 'res://features/relationships/reaction_definition.gd' remapped 'res://features/relationships/reaction_definition.gdc' at thread -1
+Completed load for: 'res://content/relationships/shared_plan.tres' remapped 'res://content/relationships/shared_plan.tres' at thread -1
+Loading resource: res://content/relationships/orders.tres remapped: res://content/relationships/orders.tres
+Completed load for: 'res://content/relationships/orders.tres' remapped 'res://content/relationships/orders.tres' at thread -1
+Loading resource: res://content/progression/deliberate_strike.tres remapped: res://content/progression/deliberate_strike.tres
+Loading resource: res://features/progression/upgrade_definition.gdc remapped: res://features/progression/upgrade_definition.gdc
+Completed load for: 'res://features/progression/upgrade_definition.gd' remapped 'res://features/progression/upgrade_definition.gdc' at thread -1
+Completed load for: 'res://content/progression/deliberate_strike.tres' remapped 'res://content/progression/deliberate_strike.tres' at thread -1
+Loading resource: res://content/dialogue/maris_fitting.tres remapped: res://content/dialogue/maris_fitting.tres
+Completed load for: 'res://content/dialogue/maris_fitting.tres' remapped 'res://content/dialogue/maris_fitting.tres' at thread -1
+Loading resource: res://content/dialogue/maris_specialist.tres remapped: res://content/dialogue/maris_specialist.tres
+Completed load for: 'res://content/dialogue/maris_specialist.tres' remapped 'res://content/dialogue/maris_specialist.tres' at thread -1
+Loading resource: res://content/items/moonflower.tres remapped: res://content/items/moonflower.tres
+Loading resource: res://features/items/item_definition.gdc remapped: res://features/items/item_definition.gdc
+Completed load for: 'res://features/items/item_definition.gd' remapped 'res://features/items/item_definition.gdc' at thread -1
+Completed load for: 'res://content/items/moonflower.tres' remapped 'res://content/items/moonflower.tres' at thread -1
+Loading resource: res://content/items/fishing_rod.tres remapped: res://content/items/fishing_rod.tres
+Completed load for: 'res://content/items/fishing_rod.tres' remapped 'res://content/items/fishing_rod.tres' at thread -1
+Loading resource: res://content/resources/moonflower.tres remapped: res://content/resources/moonflower.tres
+Loading resource: res://features/items/foraging_resource_definition.gdc remapped: res://features/items/foraging_resource_definition.gdc
+Completed load for: 'res://features/items/foraging_resource_definition.gd' remapped 'res://features/items/foraging_resource_definition.gdc' at thread -1
+Completed load for: 'res://content/resources/moonflower.tres' remapped 'res://content/resources/moonflower.tres' at thread -1
+Loading resource: res://content/resources/fishing_rod.tres remapped: res://content/resources/fishing_rod.tres
+Completed load for: 'res://content/resources/fishing_rod.tres' remapped 'res://content/resources/fishing_rod.tres' at thread -1
+Loading resource: res://content/items/bluegill.tres remapped: res://content/items/bluegill.tres
+Completed load for: 'res://content/items/bluegill.tres' remapped 'res://content/items/bluegill.tres' at thread -1
+Loading resource: res://content/items/river_trout.tres remapped: res://content/items/river_trout.tres
+Completed load for: 'res://content/items/river_trout.tres' remapped 'res://content/items/river_trout.tres' at thread -1
+Loading resource: res://content/items/golden_carp.tres remapped: res://content/items/golden_carp.tres
+Completed load for: 'res://content/items/golden_carp.tres' remapped 'res://content/items/golden_carp.tres' at thread -1
+Loading resource: res://content/locations/mayor_vale_home.tres remapped: res://content/locations/mayor_vale_home.tres
+Loading resource: res://content/portals/home_alderwake.tres remapped: res://content/portals/home_alderwake.tres
+Completed load for: 'res://content/portals/home_alderwake.tres' remapped 'res://content/portals/home_alderwake.tres' at thread -1
+Completed load for: 'res://content/locations/mayor_vale_home.tres' remapped 'res://content/locations/mayor_vale_home.tres' at thread -1
+Loading resource: res://content/locations/lantern_rest.tres remapped: res://content/locations/lantern_rest.tres
+Loading resource: res://content/portals/inn_alderwake.tres remapped: res://content/portals/inn_alderwake.tres
+Completed load for: 'res://content/portals/inn_alderwake.tres' remapped 'res://content/portals/inn_alderwake.tres' at thread -1
+Completed load for: 'res://content/locations/lantern_rest.tres' remapped 'res://content/locations/lantern_rest.tres' at thread -1
+Completed load for: 'res://content/prototype_catalog.tres' remapped 'res://content/prototype_catalog.tres' at thread -1
+Loading resource: res://features/actors/companion.tscn remapped: res://features/actors/companion.tscn
+Loading resource: res://features/actors/actor_placeholder.gdc remapped: res://features/actors/actor_placeholder.gdc
+Loading resource: res://assets/items/moonflower.svg remapped: res://assets/items/moonflower.svg
+Loading resource: res://.godot/imported/moonflower.svg-61ff33369e767c88d26494c198af778f.ctex remapped: res://.godot/imported/moonflower.svg-61ff33369e767c88d26494c198af778f.ctex
+Completed load for: 'res://assets/items/moonflower.svg' remapped 'res://assets/items/moonflower.svg' at thread -1
+Loading resource: res://assets/items/bluegill.png remapped: res://assets/items/bluegill.png
+Loading resource: res://.godot/imported/bluegill.png-681c258f76a2a3ec99279ee839d85ca8.ctex remapped: res://.godot/imported/bluegill.png-681c258f76a2a3ec99279ee839d85ca8.ctex
+Completed load for: 'res://assets/items/bluegill.png' remapped 'res://assets/items/bluegill.png' at thread -1
+Loading resource: res://assets/items/river_trout.png remapped: res://assets/items/river_trout.png
+Loading resource: res://.godot/imported/river_trout.png-1398cb75143a07dea51a330b74ea5ddf.ctex remapped: res://.godot/imported/river_trout.png-1398cb75143a07dea51a330b74ea5ddf.ctex
+Completed load for: 'res://assets/items/river_trout.png' remapped 'res://assets/items/river_trout.png' at thread -1
+Loading resource: res://assets/items/golden_carp.png remapped: res://assets/items/golden_carp.png
+Loading resource: res://.godot/imported/golden_carp.png-670e492517685823e797316d530e0499.ctex remapped: res://.godot/imported/golden_carp.png-670e492517685823e797316d530e0499.ctex
+Completed load for: 'res://assets/items/golden_carp.png' remapped 'res://assets/items/golden_carp.png' at thread -1
+Loading resource: res://assets/items/fishing_rod.svg remapped: res://assets/items/fishing_rod.svg
+Loading resource: res://.godot/imported/fishing_rod.svg-484a76bfee4d800320042b16c50fb6c8.ctex remapped: res://.godot/imported/fishing_rod.svg-484a76bfee4d800320042b16c50fb6c8.ctex
+Completed load for: 'res://assets/items/fishing_rod.svg' remapped 'res://assets/items/fishing_rod.svg' at thread -1
+Loading resource: res://world/map_candidate/landscape.gdshader remapped: res://world/map_candidate/landscape.gdshader
+Completed load for: 'res://world/map_candidate/landscape.gdshader' remapped 'res://world/map_candidate/landscape.gdshader' at thread -1
+Loading resource: res://world/map_candidate/river.gdshader remapped: res://world/map_candidate/river.gdshader
+Completed load for: 'res://world/map_candidate/river.gdshader' remapped 'res://world/map_candidate/river.gdshader' at thread -1
+Loading resource: res://assets/environment/storybook/dock-painted-albedo.png remapped: res://assets/environment/storybook/dock-painted-albedo.png
+Loading resource: res://.godot/imported/dock-painted-albedo.png-f1bcbc921309368a60a3558a04c4fa78.ctex remapped: res://.godot/imported/dock-painted-albedo.png-f1bcbc921309368a60a3558a04c4fa78.ctex
+Completed load for: 'res://assets/environment/storybook/dock-painted-albedo.png' remapped 'res://assets/environment/storybook/dock-painted-albedo.png' at thread -1
+Loading resource: res://world/storybook_prop.gdshader remapped: res://world/storybook_prop.gdshader
+Completed load for: 'res://world/storybook_prop.gdshader' remapped 'res://world/storybook_prop.gdshader' at thread -1
+Loading resource: res://assets/environment/storybook/town-painted-albedo.png remapped: res://assets/environment/storybook/town-painted-albedo.png
+Loading resource: res://.godot/imported/town-painted-albedo.png-c3d3c931bedd1626d13c3a197f6bf4af.ctex remapped: res://.godot/imported/town-painted-albedo.png-c3d3c931bedd1626d13c3a197f6bf4af.ctex
+Completed load for: 'res://assets/environment/storybook/town-painted-albedo.png' remapped 'res://assets/environment/storybook/town-painted-albedo.png' at thread -1
+Loading resource: res://world/map_candidate/canopy_visibility.gdshader remapped: res://world/map_candidate/canopy_visibility.gdshader
+Completed load for: 'res://world/map_candidate/canopy_visibility.gdshader' remapped 'res://world/map_candidate/canopy_visibility.gdshader' at thread -1
+Loading resource: res://assets/environment/moonwood_tree_kit.glb remapped: res://assets/environment/moonwood_tree_kit.glb
+Loading resource: res://.godot/imported/moonwood_tree_kit.glb-73b1e594d2695d9abddd5f085366f2b6.scn remapped: res://.godot/imported/moonwood_tree_kit.glb-73b1e594d2695d9abddd5f085366f2b6.scn
+Completed load for: 'res://assets/environment/moonwood_tree_kit.glb' remapped 'res://assets/environment/moonwood_tree_kit.glb' at thread -1
+Loading resource: res://assets/environment/storybook/moonwood_oak_pilot.glb remapped: res://assets/environment/storybook/moonwood_oak_pilot.glb
+Loading resource: res://.godot/imported/moonwood_oak_pilot.glb-3829f05510fd65fc96f19766e1635c01.scn remapped: res://.godot/imported/moonwood_oak_pilot.glb-3829f05510fd65fc96f19766e1635c01.scn
+Loading resource: res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png remapped: res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png
+Loading resource: res://.godot/imported/moonwood_oak_pilot_tree-painted-albedo.png-37cf624087d7409e91b5ed589107753b.ctex remapped: res://.godot/imported/moonwood_oak_pilot_tree-painted-albedo.png-37cf624087d7409e91b5ed589107753b.ctex
+Completed load for: 'res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png' remapped 'res://assets/environment/storybook/moonwood_oak_pilot_tree-painted-albedo.png' at thread -1
+Completed load for: 'res://assets/environment/storybook/moonwood_oak_pilot.glb' remapped 'res://assets/environment/storybook/moonwood_oak_pilot.glb' at thread -1
+Loading resource: res://assets/environment/storybook/moonwood_tree_rollout.glb remapped: res://assets/environment/storybook/moonwood_tree_rollout.glb
+Loading resource: res://.godot/imported/moonwood_tree_rollout.glb-33c365ec9a3eed59bc58102a47554e0d.scn remapped: res://.godot/imported/moonwood_tree_rollout.glb-33c365ec9a3eed59bc58102a47554e0d.scn
+Loading resource: res://assets/environment/storybook/tree-painted-albedo.png remapped: res://assets/environment/storybook/tree-painted-albedo.png
+Loading resource: res://.godot/imported/tree-painted-albedo.png-9bff90c80118141c335127338e266f86.ctex remapped: res://.godot/imported/tree-painted-albedo.png-9bff90c80118141c335127338e266f86.ctex
+Completed load for: 'res://assets/environment/storybook/tree-painted-albedo.png' remapped 'res://assets/environment/storybook/tree-painted-albedo.png' at thread -1
+Completed load for: 'res://assets/environment/storybook/moonwood_tree_rollout.glb' remapped 'res://assets/environment/storybook/moonwood_tree_rollout.glb' at thread -1
+Loading resource: res://assets/environment/alderwake_town_kit.glb remapped: res://assets/environment/alderwake_town_kit.glb
+Loading resource: res://.godot/imported/alderwake_town_kit.glb-55062a719292448092652a373a733489.scn remapped: res://.godot/imported/alderwake_town_kit.glb-55062a719292448092652a373a733489.scn
+Completed load for: 'res://assets/environment/alderwake_town_kit.glb' remapped 'res://assets/environment/alderwake_town_kit.glb' at thread -1
+Loading resource: res://assets/environment/storybook/alderwake_shop_pilot.glb remapped: res://assets/environment/storybook/alderwake_shop_pilot.glb
+Loading resource: res://.godot/imported/alderwake_shop_pilot.glb-9b54d7adc6c124148d7f95470492ebec.scn remapped: res://.godot/imported/alderwake_shop_pilot.glb-9b54d7adc6c124148d7f95470492ebec.scn
+Loading resource: res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png remapped: res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png
+Loading resource: res://.godot/imported/alderwake_shop_pilot_town-painted-albedo.png-cf2b1d3bd445976fac2675bc50427bb3.ctex remapped: res://.godot/imported/alderwake_shop_pilot_town-painted-albedo.png-cf2b1d3bd445976fac2675bc50427bb3.ctex
+Completed load for: 'res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png' remapped 'res://assets/environment/storybook/alderwake_shop_pilot_town-painted-albedo.png' at thread -1
+Completed load for: 'res://assets/environment/storybook/alderwake_shop_pilot.glb' remapped 'res://assets/environment/storybook/alderwake_shop_pilot.glb' at thread -1
+Loading resource: res://assets/environment/storybook/alderwake_town_rollout.glb remapped: res://assets/environment/storybook/alderwake_town_rollout.glb
+Loading resource: res://.godot/imported/alderwake_town_rollout.glb-bf014fd437c7610b437371409659e5bd.scn remapped: res://.godot/imported/alderwake_town_rollout.glb-bf014fd437c7610b437371409659e5bd.scn
+Completed load for: 'res://assets/environment/storybook/alderwake_town_rollout.glb' remapped 'res://assets/environment/storybook/alderwake_town_rollout.glb' at thread -1
+Loading resource: res://world/map_candidate/painted_building.gdshader remapped: res://world/map_candidate/painted_building.gdshader
+Completed load for: 'res://world/map_candidate/painted_building.gdshader' remapped 'res://world/map_candidate/painted_building.gdshader' at thread -1
+Loading resource: res://assets/environment/storybook/alderwake_dock_pilot.glb remapped: res://assets/environment/storybook/alderwake_dock_pilot.glb
+Loading resource: res://.godot/imported/alderwake_dock_pilot.glb-f60a344b24c50cc9cc31b4cefdd5134a.scn remapped: res://.godot/imported/alderwake_dock_pilot.glb-f60a344b24c50cc9cc31b4cefdd5134a.scn
+Loading resource: res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png remapped: res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png
+Loading resource: res://.godot/imported/alderwake_dock_pilot_dock-painted-albedo.png-19878b7af5d56bdc61dd9193de6944a6.ctex remapped: res://.godot/imported/alderwake_dock_pilot_dock-painted-albedo.png-19878b7af5d56bdc61dd9193de6944a6.ctex
+Completed load for: 'res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png' remapped 'res://assets/environment/storybook/alderwake_dock_pilot_dock-painted-albedo.png' at thread -1
+Completed load for: 'res://assets/environment/storybook/alderwake_dock_pilot.glb' remapped 'res://assets/environment/storybook/alderwake_dock_pilot.glb' at thread -1
+Loading resource: res://world/map_candidate/painted_wall.gdshader remapped: res://world/map_candidate/painted_wall.gdshader
+Completed load for: 'res://world/map_candidate/painted_wall.gdshader' remapped 'res://world/map_candidate/painted_wall.gdshader' at thread -1
+Loading resource: res://assets/environment/storybook/alderwake_landmark_painted.glb remapped: res://assets/environment/storybook/alderwake_landmark_painted.glb
+Loading resource: res://.godot/imported/alderwake_landmark_painted.glb-a5bfba94efcb5da4d36d6049dacedc0f.scn remapped: res://.godot/imported/alderwake_landmark_painted.glb-a5bfba94efcb5da4d36d6049dacedc0f.scn
+Completed load for: 'res://assets/environment/storybook/alderwake_landmark_painted.glb' remapped 'res://assets/environment/storybook/alderwake_landmark_painted.glb' at thread -1
+Loading resource: res://features/npcs/storybook_npc.gdshader remapped: res://features/npcs/storybook_npc.gdshader
+Completed load for: 'res://features/npcs/storybook_npc.gdshader' remapped 'res://features/npcs/storybook_npc.gdshader' at thread -1
+Loading resource: res://world/maris_counter.tscn remapped: res://world/maris_counter.tscn
+Loading resource: res://world/maris_counter.gdc remapped: res://world/maris_counter.gdc
+Completed load for: 'res://world/maris_counter.gd' remapped 'res://world/maris_counter.gdc' at thread -1
+Completed load for: 'res://world/maris_counter.tscn' remapped 'res://world/maris_counter.tscn' at thread -1
+Loading resource: res://features/interaction/npc_interaction.tscn remapped: res://features/interaction/npc_interaction.tscn
+Completed load for: 'res://features/interaction/npc_interaction.tscn' remapped 'res://features/interaction/npc_interaction.tscn' at thread -1
+Loading resource: res://assets/environment/exterior_light_kit.glb remapped: res://assets/environment/exterior_light_kit.glb
+Loading resource: res://.godot/imported/exterior_light_kit.glb-37e62ed831746e5602adf9b343a69c90.scn remapped: res://.godot/imported/exterior_light_kit.glb-37e62ed831746e5602adf9b343a69c90.scn
+Completed load for: 'res://assets/environment/exterior_light_kit.glb' remapped 'res://assets/environment/exterior_light_kit.glb' at thread -1
+Loading resource: res://features/environment/world_rain.gdshader remapped: res://features/environment/world_rain.gdshader
+Completed load for: 'res://features/environment/world_rain.gdshader' remapped 'res://features/environment/world_rain.gdshader' at thread -1
+Loading resource: res://world/storybook_inn.gdshader remapped: res://world/storybook_inn.gdshader
+Completed load for: 'res://world/storybook_inn.gdshader' remapped 'res://world/storybook_inn.gdshader' at thread -1
+Loading resource: res://world/storybook_home.gdshader remapped: res://world/storybook_home.gdshader
+Completed load for: 'res://world/storybook_home.gdshader' remapped 'res://world/storybook_home.gdshader' at thread -1
+Loading resource: res://features/actors/storybook_actor.gdshader remapped: res://features/actors/storybook_actor.gdshader
+Completed load for: 'res://features/actors/storybook_actor.gdshader' remapped 'res://features/actors/storybook_actor.gdshader' at thread -1
+Completed load for: 'res://features/actors/actor_placeholder.gd' remapped 'res://features/actors/actor_placeholder.gdc' at thread -1
+Completed load for: 'res://features/actors/companion.tscn' remapped 'res://features/actors/companion.tscn' at thread -1
+Loading resource: res://features/combat/guardian.tscn remapped: res://features/combat/guardian.tscn
+Loading resource: res://assets/models/guardian.glb remapped: res://assets/models/guardian.glb
+Loading resource: res://.godot/imported/guardian.glb-8e0281d95e975b783d034b5055c57bf0.scn remapped: res://.godot/imported/guardian.glb-8e0281d95e975b783d034b5055c57bf0.scn
+Completed load for: 'res://assets/models/guardian.glb' remapped 'res://assets/models/guardian.glb' at thread -1
+Completed load for: 'res://features/combat/guardian.tscn' remapped 'res://features/combat/guardian.tscn' at thread -1
+Completed load for: 'res://app/game_root.gd' remapped 'res://app/game_root.gdc' at thread -1
+Loading resource: res://ui/prototype_ui.tscn remapped: res://ui/prototype_ui.tscn
+Completed load for: 'res://ui/prototype_ui.tscn' remapped 'res://ui/prototype_ui.tscn' at thread -1
+Completed load for: 'res://app/game_root.tscn' remapped 'res://app/game_root.tscn' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/official-neutral.png remapped: res://assets/npcs/portraits/npc-01/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex remapped: res://.godot/imported/official-neutral.png-35448d413f77921677ea26375350d607.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-01/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/practiced-smile.png remapped: res://assets/npcs/portraits/npc-01/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex remapped: res://.godot/imported/practiced-smile.png-8fcc7fa181cb022d6ef8727fd33ee7cd.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-01/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/skeptical.png remapped: res://assets/npcs/portraits/npc-01/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex remapped: res://.godot/imported/skeptical.png-87dffe1290841d6deb332783911a47ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/skeptical.png' remapped 'res://assets/npcs/portraits/npc-01/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/pleased.png remapped: res://assets/npcs/portraits/npc-01/pleased.png
+Loading resource: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex remapped: res://.godot/imported/pleased.png-005e515d73b4ecc648d9019fa4fce3e2.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/pleased.png' remapped 'res://assets/npcs/portraits/npc-01/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-01/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex remapped: res://.godot/imported/tired-rumpled.png-1bd15c9c45cf06af8fc6c892ccd66a33.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-01/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-01/fishing-gear.png remapped: res://assets/npcs/portraits/npc-01/fishing-gear.png
+Loading resource: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex remapped: res://.godot/imported/fishing-gear.png-9449a7b9f5dce51c23378e93c201ee66.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-01/fishing-gear.png' remapped 'res://assets/npcs/portraits/npc-01/fishing-gear.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/official-neutral.png remapped: res://assets/npcs/portraits/npc-02/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex remapped: res://.godot/imported/official-neutral.png-1b798dd5c7c6bf34c526bedafc94c010.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-02/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/practiced-smile.png remapped: res://assets/npcs/portraits/npc-02/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex remapped: res://.godot/imported/practiced-smile.png-343b41066aaa07a963b8de65eb40f6ee.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-02/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/skeptical.png remapped: res://assets/npcs/portraits/npc-02/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex remapped: res://.godot/imported/skeptical.png-d3dbd4952250006b1e5d88cf6e841e4c.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/skeptical.png' remapped 'res://assets/npcs/portraits/npc-02/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/pleased.png remapped: res://assets/npcs/portraits/npc-02/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex remapped: res://.godot/imported/pleased.png-c7828a60758a2ae1b6f5854080410399.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/pleased.png' remapped 'res://assets/npcs/portraits/npc-02/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-02/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex remapped: res://.godot/imported/tired-rumpled.png-eb2ddd011fb74a7c7ef6d53144fe123d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-02/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-02/archive-work.png remapped: res://assets/npcs/portraits/npc-02/archive-work.png
+Loading resource: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex remapped: res://.godot/imported/archive-work.png-cf693c627467fe20f2a187fc6655f562.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-02/archive-work.png' remapped 'res://assets/npcs/portraits/npc-02/archive-work.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/official-neutral.png remapped: res://assets/npcs/portraits/npc-03/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex remapped: res://.godot/imported/official-neutral.png-e0f4bceb3250404413c081b27337c6e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-03/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/practiced-smile.png remapped: res://assets/npcs/portraits/npc-03/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex remapped: res://.godot/imported/practiced-smile.png-0a4a664670eb059271ff96c288bc90ab.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-03/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/skeptical.png remapped: res://assets/npcs/portraits/npc-03/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex remapped: res://.godot/imported/skeptical.png-2b0266ccadeeda6413ae8fb1aab34cdb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/skeptical.png' remapped 'res://assets/npcs/portraits/npc-03/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/pleased.png remapped: res://assets/npcs/portraits/npc-03/pleased.png
+Loading resource: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex remapped: res://.godot/imported/pleased.png-a08b684db98e27fa5a758fcd027bb67a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/pleased.png' remapped 'res://assets/npcs/portraits/npc-03/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-03/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex remapped: res://.godot/imported/tired-rumpled.png-1a9bf80b1e3706481918b1a0158c23db.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-03/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-03/ropework.png remapped: res://assets/npcs/portraits/npc-03/ropework.png
+Loading resource: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex remapped: res://.godot/imported/ropework.png-a4a575b6152bda070b75d54d04102e17.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-03/ropework.png' remapped 'res://assets/npcs/portraits/npc-03/ropework.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/official-neutral.png remapped: res://assets/npcs/portraits/npc-04/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex remapped: res://.godot/imported/official-neutral.png-78a50b47cdefea0577dfb25c4658e868.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-04/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/practiced-smile.png remapped: res://assets/npcs/portraits/npc-04/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex remapped: res://.godot/imported/practiced-smile.png-8dd3f33d89056c3eaa1194831863d4e6.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-04/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/skeptical.png remapped: res://assets/npcs/portraits/npc-04/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex remapped: res://.godot/imported/skeptical.png-d8bbeeb63ff91997c1012047e706ba18.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/skeptical.png' remapped 'res://assets/npcs/portraits/npc-04/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/pleased.png remapped: res://assets/npcs/portraits/npc-04/pleased.png
+Loading resource: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex remapped: res://.godot/imported/pleased.png-0ab541b69e19568e88d2e93c22a63452.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/pleased.png' remapped 'res://assets/npcs/portraits/npc-04/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-04/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex remapped: res://.godot/imported/tired-rumpled.png-7c1649dc0d4c0d602eed7d180484760d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-04/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-04/birdwatching.png remapped: res://assets/npcs/portraits/npc-04/birdwatching.png
+Loading resource: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex remapped: res://.godot/imported/birdwatching.png-046bdbda58b927444ad00c1cc6081fb0.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-04/birdwatching.png' remapped 'res://assets/npcs/portraits/npc-04/birdwatching.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/official-neutral.png remapped: res://assets/npcs/portraits/npc-06/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex remapped: res://.godot/imported/official-neutral.png-a54ac85951dec4e642f3ddc5ad8d105d.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-06/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/practiced-smile.png remapped: res://assets/npcs/portraits/npc-06/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex remapped: res://.godot/imported/practiced-smile.png-00351062a721532497f718a4e595e120.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-06/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/skeptical.png remapped: res://assets/npcs/portraits/npc-06/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex remapped: res://.godot/imported/skeptical.png-b648a3b4e89e9bc4919d8f3ebbdf44b4.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/skeptical.png' remapped 'res://assets/npcs/portraits/npc-06/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/pleased.png remapped: res://assets/npcs/portraits/npc-06/pleased.png
+Loading resource: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex remapped: res://.godot/imported/pleased.png-068a756a0614e689260ba8c4762ae433.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/pleased.png' remapped 'res://assets/npcs/portraits/npc-06/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-06/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex remapped: res://.godot/imported/tired-rumpled.png-5e6d7a6a53c37430e8b42b50423b7533.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-06/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-06/flower-pressing.png remapped: res://assets/npcs/portraits/npc-06/flower-pressing.png
+Loading resource: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex remapped: res://.godot/imported/flower-pressing.png-9da4e1da915b170b484327f22a86b846.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-06/flower-pressing.png' remapped 'res://assets/npcs/portraits/npc-06/flower-pressing.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/official-neutral.png remapped: res://assets/npcs/portraits/npc-07/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex remapped: res://.godot/imported/official-neutral.png-217374e6b0d2674f3b790913df338777.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-07/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/practiced-smile.png remapped: res://assets/npcs/portraits/npc-07/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex remapped: res://.godot/imported/practiced-smile.png-1ba74a6de4cf22dba584430639711524.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-07/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/skeptical.png remapped: res://assets/npcs/portraits/npc-07/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex remapped: res://.godot/imported/skeptical.png-cac542c3cd4d3b8a5503b16cc6302184.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/skeptical.png' remapped 'res://assets/npcs/portraits/npc-07/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/pleased.png remapped: res://assets/npcs/portraits/npc-07/pleased.png
+Loading resource: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex remapped: res://.godot/imported/pleased.png-c48294192d919ec1bc531b58260b7015.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/pleased.png' remapped 'res://assets/npcs/portraits/npc-07/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-07/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex remapped: res://.godot/imported/tired-rumpled.png-ed0322110496fb88046bdd7ab88ba97a.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-07/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-07/knotwork.png remapped: res://assets/npcs/portraits/npc-07/knotwork.png
+Loading resource: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex remapped: res://.godot/imported/knotwork.png-5c9d9155b1a160716bd70d4ede1ea681.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-07/knotwork.png' remapped 'res://assets/npcs/portraits/npc-07/knotwork.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/official-neutral.png remapped: res://assets/npcs/portraits/npc-08/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex remapped: res://.godot/imported/official-neutral.png-d3410568ee97d1858ffbb9102b8d31f9.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-08/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/practiced-smile.png remapped: res://assets/npcs/portraits/npc-08/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex remapped: res://.godot/imported/practiced-smile.png-0192c11e536ef202b175bb0f7e5ce5ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-08/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/skeptical.png remapped: res://assets/npcs/portraits/npc-08/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex remapped: res://.godot/imported/skeptical.png-89a8560c857436cde460890c83f24acb.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/skeptical.png' remapped 'res://assets/npcs/portraits/npc-08/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/pleased.png remapped: res://assets/npcs/portraits/npc-08/pleased.png
+Loading resource: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex remapped: res://.godot/imported/pleased.png-8aee6eb8b7e9f50ce8df5669085d647f.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/pleased.png' remapped 'res://assets/npcs/portraits/npc-08/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-08/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex remapped: res://.godot/imported/tired-rumpled.png-0535dbe49411a1ce071add4e153e6d88.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-08/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-08/woodcarving.png remapped: res://assets/npcs/portraits/npc-08/woodcarving.png
+Loading resource: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex remapped: res://.godot/imported/woodcarving.png-222ecf824e4081b87866a4baab2918ff.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-08/woodcarving.png' remapped 'res://assets/npcs/portraits/npc-08/woodcarving.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/official-neutral.png remapped: res://assets/npcs/portraits/npc-14/official-neutral.png
+Loading resource: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex remapped: res://.godot/imported/official-neutral.png-e41291a2b2cd1c6e72723ce19ef7dace.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/official-neutral.png' remapped 'res://assets/npcs/portraits/npc-14/official-neutral.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/practiced-smile.png remapped: res://assets/npcs/portraits/npc-14/practiced-smile.png
+Loading resource: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex remapped: res://.godot/imported/practiced-smile.png-ca14de7945d8ee35afff3985f52ffd57.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/practiced-smile.png' remapped 'res://assets/npcs/portraits/npc-14/practiced-smile.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/skeptical.png remapped: res://assets/npcs/portraits/npc-14/skeptical.png
+Loading resource: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex remapped: res://.godot/imported/skeptical.png-31175ae6fa48ee0e58334bfc144ba2e5.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/skeptical.png' remapped 'res://assets/npcs/portraits/npc-14/skeptical.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/pleased.png remapped: res://assets/npcs/portraits/npc-14/pleased.png
+Loading resource: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex remapped: res://.godot/imported/pleased.png-4bb2be21fb3569ac62a00dae4aea47d8.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/pleased.png' remapped 'res://assets/npcs/portraits/npc-14/pleased.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/tired-rumpled.png remapped: res://assets/npcs/portraits/npc-14/tired-rumpled.png
+Loading resource: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex remapped: res://.godot/imported/tired-rumpled.png-2ccc005f549d95bc820f1b69710b1222.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' remapped 'res://assets/npcs/portraits/npc-14/tired-rumpled.png' at thread -1
+Loading resource: res://assets/npcs/portraits/npc-14/quilting.png remapped: res://assets/npcs/portraits/npc-14/quilting.png
+Loading resource: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex remapped: res://.godot/imported/quilting.png-8bfdc8d662b50e08c67b5c30d2014d65.ctex
+Completed load for: 'res://assets/npcs/portraits/npc-14/quilting.png' remapped 'res://assets/npcs/portraits/npc-14/quilting.png' at thread -1
+Loading resource: res://world/alderwake.tscn remapped: res://world/alderwake.tscn
+Loading resource: res://features/interaction/prop_interaction.tscn remapped: res://features/interaction/prop_interaction.tscn
+Completed load for: 'res://features/interaction/prop_interaction.tscn' remapped 'res://features/interaction/prop_interaction.tscn' at thread -1
+Completed load for: 'res://world/alderwake.tscn' remapped 'res://world/alderwake.tscn' at thread -1
+Loading resource: res://assets/models/npcs/npc-01-actions.glb remapped: res://assets/models/npcs/npc-01-actions.glb
+Loading resource: res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn remapped: res://.godot/imported/npc-01-actions.glb-4e51fb52192b6b81246dccea04c7c176.scn
+Loading resource: res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png remapped: res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png
+Loading resource: res://.godot/imported/npc-01-actions_TEX-npc-01-palette.png-001670a69762a95e9dc15fec74ecacef.ctex remapped: res://.godot/imported/npc-01-actions_TEX-npc-01-palette.png-001670a69762a95e9dc15fec74ecacef.ctex
+Completed load for: 'res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png' remapped 'res://assets/models/npcs/npc-01-actions_TEX-npc-01-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-01-actions.glb' remapped 'res://assets/models/npcs/npc-01-actions.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-03.glb remapped: res://assets/models/npcs/npc-03.glb
+Loading resource: res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn remapped: res://.godot/imported/npc-03.glb-9348989c3c11927795557bede448b5e6.scn
+Loading resource: res://assets/models/npcs/npc-03_TEX-npc-03-palette.png remapped: res://assets/models/npcs/npc-03_TEX-npc-03-palette.png
+Loading resource: res://.godot/imported/npc-03_TEX-npc-03-palette.png-cd2841de80cda48763aef2d3dcfe5d65.ctex remapped: res://.godot/imported/npc-03_TEX-npc-03-palette.png-cd2841de80cda48763aef2d3dcfe5d65.ctex
+Completed load for: 'res://assets/models/npcs/npc-03_TEX-npc-03-palette.png' remapped 'res://assets/models/npcs/npc-03_TEX-npc-03-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-03.glb' remapped 'res://assets/models/npcs/npc-03.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-04.glb remapped: res://assets/models/npcs/npc-04.glb
+Loading resource: res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn remapped: res://.godot/imported/npc-04.glb-dbbcc934bfe0f82a05a090d9ff2a10f0.scn
+Loading resource: res://assets/models/npcs/npc-04_TEX-npc-04-palette.png remapped: res://assets/models/npcs/npc-04_TEX-npc-04-palette.png
+Loading resource: res://.godot/imported/npc-04_TEX-npc-04-palette.png-6cc83f19e2e5f1054c4c4769e69ff83d.ctex remapped: res://.godot/imported/npc-04_TEX-npc-04-palette.png-6cc83f19e2e5f1054c4c4769e69ff83d.ctex
+Completed load for: 'res://assets/models/npcs/npc-04_TEX-npc-04-palette.png' remapped 'res://assets/models/npcs/npc-04_TEX-npc-04-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-04.glb' remapped 'res://assets/models/npcs/npc-04.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-06.glb remapped: res://assets/models/npcs/npc-06.glb
+Loading resource: res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn remapped: res://.godot/imported/npc-06.glb-d9a0be9fa3d815f972dba79624809b2f.scn
+Loading resource: res://assets/models/npcs/npc-06_TEX-npc-06-palette.png remapped: res://assets/models/npcs/npc-06_TEX-npc-06-palette.png
+Loading resource: res://.godot/imported/npc-06_TEX-npc-06-palette.png-978d2d722821ce27c79bc25bff67048c.ctex remapped: res://.godot/imported/npc-06_TEX-npc-06-palette.png-978d2d722821ce27c79bc25bff67048c.ctex
+Completed load for: 'res://assets/models/npcs/npc-06_TEX-npc-06-palette.png' remapped 'res://assets/models/npcs/npc-06_TEX-npc-06-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-06.glb' remapped 'res://assets/models/npcs/npc-06.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-07.glb remapped: res://assets/models/npcs/npc-07.glb
+Loading resource: res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn remapped: res://.godot/imported/npc-07.glb-465858a52fb4e865d5c45e681248d4a7.scn
+Loading resource: res://assets/models/npcs/npc-07_TEX-npc-07-palette.png remapped: res://assets/models/npcs/npc-07_TEX-npc-07-palette.png
+Loading resource: res://.godot/imported/npc-07_TEX-npc-07-palette.png-031bdf5d4bd405e84511dd3d267b4f1c.ctex remapped: res://.godot/imported/npc-07_TEX-npc-07-palette.png-031bdf5d4bd405e84511dd3d267b4f1c.ctex
+Completed load for: 'res://assets/models/npcs/npc-07_TEX-npc-07-palette.png' remapped 'res://assets/models/npcs/npc-07_TEX-npc-07-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-07.glb' remapped 'res://assets/models/npcs/npc-07.glb' at thread -1
+Loading resource: res://assets/models/npcs/npc-08.glb remapped: res://assets/models/npcs/npc-08.glb
+Loading resource: res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn remapped: res://.godot/imported/npc-08.glb-92ceaf527c7a8dac0ead71a2e9e2e096.scn
+Loading resource: res://assets/models/npcs/npc-08_TEX-npc-08-palette.png remapped: res://assets/models/npcs/npc-08_TEX-npc-08-palette.png
+Loading resource: res://.godot/imported/npc-08_TEX-npc-08-palette.png-4648e2ecca224e865335d626d1274ebd.ctex remapped: res://.godot/imported/npc-08_TEX-npc-08-palette.png-4648e2ecca224e865335d626d1274ebd.ctex
+Completed load for: 'res://assets/models/npcs/npc-08_TEX-npc-08-palette.png' remapped 'res://assets/models/npcs/npc-08_TEX-npc-08-palette.png' at thread -1
+Completed load for: 'res://assets/models/npcs/npc-08.glb' remapped 'res://assets/models/npcs/npc-08.glb' at thread -1
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"

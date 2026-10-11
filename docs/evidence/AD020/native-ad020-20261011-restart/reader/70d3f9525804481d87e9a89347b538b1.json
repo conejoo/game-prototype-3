@@ -1,0 +1,52 @@
+{
+  "steps": [
+    {
+      "step": {
+        "op": "hold",
+        "keys": [
+          "ENTER"
+        ],
+        "duration_ms": 70
+      },
+      "error": null,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:41:34.9443410Z",
+      "elapsed_ms": 94.326,
+      "index": 0
+    },
+    {
+      "step": {
+        "op": "wait",
+        "duration_ms": 5000
+      },
+      "error": null,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:41:39.9643954Z",
+      "elapsed_ms": 5016.0027,
+      "index": 1
+    },
+    {
+      "step": {
+        "op": "capture",
+        "label": "reader-load-settled-outcome"
+      },
+      "error": null,
+      "ok": true,
+      "completed_utc": "2026-10-11T14:41:40.0585743Z",
+      "elapsed_ms": 93.96679999999924,
+      "index": 2
+    }
+  ],
+  "id": "70d3f9525804481d87e9a89347b538b1",
+  "schema_version": 2,
+  "requested_duration_ms": 5070,
+  "target_pid": 26528,
+  "elapsed_ms": 5432.4478,
+  "unreleased_keys": [],
+  "cleanup_errors": [],
+  "mouse_unreleased": false,
+  "ok": true,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-restart\\ReturningFair.exe",
+  "error": null,
+  "failed_step": null
+}

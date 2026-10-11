@@ -1,0 +1,23 @@
+{
+  "steps": [
+    {
+      "op": "capture",
+      "label": "walk-tollworks-d690035c-world"
+    },
+    {
+      "keys": [
+        "ESC"
+      ],
+      "op": "hold",
+      "duration_ms": 60
+    },
+    {
+      "op": "wait",
+      "duration_ms": 150
+    },
+    {
+      "op": "capture",
+      "label": "walk-tollworks-d690035c-paused"
+    }
+  ]
+}

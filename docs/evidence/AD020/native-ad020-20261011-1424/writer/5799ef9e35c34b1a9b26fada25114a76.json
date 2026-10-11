@@ -1,0 +1,31 @@
+{
+  "mouse_unreleased": false,
+  "target_pid": 53324,
+  "steps": [
+    {
+      "elapsed_ms": 201.1039,
+      "step": {
+        "op": "hold",
+        "keys": [
+          "D",
+          "S"
+        ],
+        "duration_ms": 188
+      },
+      "index": 0,
+      "completed_utc": "2026-10-11T14:33:19.8659655Z",
+      "ok": true,
+      "error": null
+    }
+  ],
+  "error": null,
+  "cleanup_errors": [],
+  "unreleased_keys": [],
+  "ok": true,
+  "id": "5799ef9e35c34b1a9b26fada25114a76",
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe",
+  "requested_duration_ms": 188,
+  "failed_step": null,
+  "schema_version": 2,
+  "elapsed_ms": 361.5706
+}

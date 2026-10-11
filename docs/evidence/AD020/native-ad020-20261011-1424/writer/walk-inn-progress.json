@@ -1,0 +1,14 @@
+{
+  "index": 5,
+  "error": null,
+  "points": 5,
+  "complete": true,
+  "goal": "inn",
+  "position": [
+    -7.014179,
+    0.0,
+    5.341328
+  ],
+  "seconds": 20.3677742,
+  "capture": "walk-inn-ef3885ba-paused.png"
+}

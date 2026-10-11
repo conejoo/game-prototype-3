@@ -1,0 +1,15 @@
+{
+  "steps": [
+    {
+      "op": "hold",
+      "keys": [
+        "TAB"
+      ],
+      "duration_ms": 70
+    },
+    {
+      "op": "capture",
+      "label": "reader-save-keyboard-focus"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "elapsed_ms": 521.1459,
+  "executable": "C:\\Users\\aldoc\\AppData\\Local\\Temp\\ReturningFair-AD020-ad020-20261011-1424\\ReturningFair.exe",
+  "target_pid": 53324,
+  "unreleased_keys": [],
+  "failed_step": null,
+  "id": "004f4a976aee4fdcb4451ec630c1cc8f",
+  "cleanup_errors": [],
+  "ok": true,
+  "schema_version": 2,
+  "requested_duration_ms": 210,
+  "error": null,
+  "steps": [
+    {
+      "step": {
+        "label": "walk-inn-ef3885ba-world",
+        "op": "capture"
+      },
+      "completed_utc": "2026-10-11T14:27:30.9283074Z",
+      "ok": true,
+      "elapsed_ms": 97.18079999999999,
+      "error": null,
+      "index": 0
+    },
+    {
+      "step": {
+        "duration_ms": 60,
+        "op": "hold",
+        "keys": [
+          "ESC"
+        ]
+      },
+      "completed_utc": "2026-10-11T14:27:31.0052989Z",
+      "ok": true,
+      "elapsed_ms": 76.958,
+      "error": null,
+      "index": 1
+    },
+    {
+      "step": {
+        "duration_ms": 150,
+        "op": "wait"
+      },
+      "completed_utc": "2026-10-11T14:27:31.1602810Z",
+      "ok": true,
+      "elapsed_ms": 154.9253,
+      "error": null,
+      "index": 2
+    },
+    {
+      "step": {
+        "label": "walk-inn-ef3885ba-paused",
+        "op": "capture"
+      },
+      "completed_utc": "2026-10-11T14:27:31.1968324Z",
+      "ok": true,
+      "elapsed_ms": 36.49959999999999,
+      "error": null,
+      "index": 3
+    }
+  ],
+  "mouse_unreleased": false
+}
