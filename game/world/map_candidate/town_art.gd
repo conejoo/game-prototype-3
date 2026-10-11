@@ -3,6 +3,8 @@ extends Node3D
 ## Imported appearance only; existing source wrappers/floors/physics stay owned by town.
 
 const KIT: PackedScene = preload("res://assets/environment/alderwake_town_kit.glb")
+const SHOP_PILOT: PackedScene = preload("res://assets/environment/storybook/alderwake_shop_pilot.glb")
+const PAINTED_ATLAS: Texture2D = preload("res://assets/environment/storybook/town-painted-albedo.png")
 const MAPPING_PATH: String = "res://assets/environment/alderwake_town_mapping.json"
 var build_errors: PackedStringArray = []
 var mappings: Dictionary[String, Dictionary] = {}
@@ -28,6 +30,21 @@ func build(town: AlderwakeTownFootprints, layout: Dictionary) -> void:
 			mesh.surface_set_material(surface, material)
 		meshes[str(visual.name)] = mesh
 	kit.free()
+	# AD002: one mapped shop only. Original kit and other palette meshes stay intact.
+	# Painted albedo supplies color; old vertex palette must not multiply it again.
+	var pilot: Node3D = SHOP_PILOT.instantiate()
+	for visual: Node in pilot.find_children("*", "MeshInstance3D", true, false):
+		var mesh: ArrayMesh = visual.mesh.duplicate()
+		for surface: int in range(mesh.get_surface_count()):
+			var material: StandardMaterial3D = visual.get_active_material(surface).duplicate()
+			material.vertex_color_use_as_albedo = false
+			material.albedo_color = Color.WHITE
+			material.albedo_texture = PAINTED_ATLAS
+			material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+			material.texture_repeat = false
+			mesh.surface_set_material(surface, material)
+		meshes[str(visual.name)] = mesh
+	pilot.free()
 	for mapping: Dictionary in parsed.mappings:
 		var id: String = str(mapping.get("definition_id", mapping.get("module_id", "")))
 		if id.is_empty() or mappings.has(id) or not meshes.has(mapping.mesh_name):

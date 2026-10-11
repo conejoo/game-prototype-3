@@ -1,0 +1,117 @@
+{
+  "task": "AD002",
+  "seed": 2002,
+  "size": [
+    1024,
+    1024
+  ],
+  "gutter": 16,
+  "density_texels_per_m": 64,
+  "regions": {
+    "plaster": {
+      "rect_pixels": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "safe_pixels": [
+        16,
+        16,
+        496,
+        496
+      ],
+      "srgb": "#E7C98F"
+    },
+    "slate": {
+      "rect_pixels": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "safe_pixels": [
+        528,
+        16,
+        1008,
+        496
+      ],
+      "srgb": "#344664"
+    },
+    "timber": {
+      "rect_pixels": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "safe_pixels": [
+        16,
+        528,
+        496,
+        1008
+      ],
+      "srgb": "#735033"
+    },
+    "stone": {
+      "rect_pixels": [
+        512,
+        512,
+        768,
+        768
+      ],
+      "safe_pixels": [
+        528,
+        528,
+        752,
+        752
+      ],
+      "srgb": "#8B8C7B"
+    },
+    "amber": {
+      "rect_pixels": [
+        768,
+        512,
+        1024,
+        768
+      ],
+      "safe_pixels": [
+        784,
+        528,
+        1008,
+        752
+      ],
+      "srgb": "#D8A45E"
+    },
+    "sage": {
+      "rect_pixels": [
+        512,
+        768,
+        768,
+        1024
+      ],
+      "safe_pixels": [
+        528,
+        784,
+        752,
+        1008
+      ],
+      "srgb": "#71844E"
+    },
+    "linen": {
+      "rect_pixels": [
+        768,
+        768,
+        1024,
+        1024
+      ],
+      "safe_pixels": [
+        784,
+        784,
+        1008,
+        1008
+      ],
+      "srgb": "#E3CF9F"
+    }
+  }
+}

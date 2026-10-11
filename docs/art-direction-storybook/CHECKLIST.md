@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001 baseline is Done. AD002-AD020 remain Pending; next eligible task is AD002.
+AD001 baseline and AD002 shop/counter pilot are Done. AD003-AD020 remain Pending; next eligible task is AD003.
 
 ## Selection and completion
 
@@ -18,7 +18,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | ID | Status | Prerequisites | Observable outcome |
 | --- | --- | --- | --- |
 | AD001 | Done | Verified current project; no AD prerequisite | Pin art baseline and measurable look brief |
-| AD002 | Pending | AD001 | Painted shop and counter material pilot |
+| AD002 | Done | AD001 | Painted shop and counter material pilot |
 | AD003 | Pending | AD002 | Painted tree pilot with working canopy visibility |
 | AD004 | Pending | AD002 | Paint meadow, dirt paths and elevation surfaces |
 | AD005 | Pending | AD004 | Paint river and shore transitions |
@@ -213,3 +213,13 @@ Repository cwd; `./tools/run_checks.ps1 -Task AD001 -RenderOnly -RenderScript ar
 Retained initial CIM sandbox failure, enum typo and excluded stale-session first captures; corrected fixture-only restore binding and rendered HUD time check before final acceptance. All AD001 criteria complete, no blockers/cleanup owed. Short paused samples do not accept AD019; synthetic room/quest/pose/time review does not prove ordinary/native gameplay. Historical R016 incomplete, unrelated direction/interiors inputs preserved. User requested review before separate commit instruction; no commit/push here. Next eligible AD002 only. Remaining unfinished AD002-AD020; final task AD020; every checklist item complete: no.
 
 Authorized commit follow-up (2026-10-11 UTC): user supplied the separate post-review successful-task commit instruction. Commit includes only seven AD001 changed paths and this acceptance/checklist/handoff; untouched planning instructions, direction/interiors inputs and ignored raw evidence stay excluded. Exact commit identity and byte/scope/preservation audit recorded after commit in `docs/evidence/AD001/authorized-commit-20261011/commit-audit.json`. AD001 remains Done, AD002-AD020 remain Pending; no push or successor work.
+
+### AD002 - 2026-10-11 UTC - Done
+
+[AD002_ACCEPTANCE](AD002_ACCEPTANCE.md): painted Reed Chandlery and current counter/supplies/gear pilot using one1024 reusable plaster/timber/slate atlas. Editable sibling .blend/PNG/recipe and background authoring scripts; portable one-mesh/one-surface GLB; shared atlas/mip/clamp wiring. Original town source/export/mappings unchanged;15 unpainted meshes retain palette. Narrow town-test material/UV adaptation retains every inventory/height/footprint/physics invariant. All500 shop triangles match original;48 original source/runtime pins and counter nonmaterial content verified unchanged.
+
+Repository cwd; `./tools/run_checks.ps1 -Task AD002 -Import -Names application_smoke,map_town_art_checks,recovery_presentation_checks -RenderScript art_direction_shop_render -RenderPhases pilot -TimeoutSeconds 180` passed7/7 exit0 in `docs/evidence/AD002/20261011-050946355-a0b97d26/`, unchanged1326-file source digest`b7366860625c020db2a2a978b3c94a8012c59f0681248da149948d585ddc4618`. Actual20 synthetic frozen Godot captures: both projections/zoom bounds, clear day/night storm, six close angles/three checker views/three counter states. Both provenance sheets and critical full-size frames inspected. Authoring, packed-image/geometry/pin audit and capture-evidence helper exit0. No missing texture, double tint, UV gap/atlas bleed or physical regression. Counter lifecycle/dialogue/cancel/travel/synthetic restore passed.
+
+Retained failed import/fixture/palette/export attempts and exact corrections in acceptance; no allowances weakened. Existing.NET editor warning only. Two resident RGB8 atlas copies (portable embedded import plus active shared runtime image) cost8MiB total with full mips; no per-instance material/node expansion. Every AD002 criterion complete, no blockers/unrun checks/cleanup owed; owned enginePID20844/launcher21568 and all attempt processes exited. Original direction/interiors/instructions, schema8/content1 and historical R016 incomplete status preserved. No ordinary/native route/build/new-process GUI Load/full profiling claim. User requested separate post-review commit instruction; no commit/push here. Next eligible AD003 only. Remaining unfinished AD003-AD020; final task AD020; every checklist item complete: no.
+
+Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit contains exactly20 AD002 task paths, including this acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence stay excluded. Validated source bytes and preservation scope verified; exact commit identity/tree/status and audit recorded after commit in `docs/evidence/AD002/authorized-commit-20261011/commit-audit.json`. AD001/AD002 remain Done, AD003-AD020 Pending. No push or AD003 implementation.

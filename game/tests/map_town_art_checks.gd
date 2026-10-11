@@ -27,9 +27,23 @@ func _run() -> void:
 		var mesh: Mesh = art.meshes[mapping.mesh_name]
 		_check(mesh.get_surface_count() == 1, "Single shared palette surface: " + id)
 		var arrays: Array = mesh.surface_get_arrays(0)
-		_check(not arrays[Mesh.ARRAY_COLOR].is_empty(), "Vertex palette missing: " + id)
 		var material: StandardMaterial3D = mesh.surface_get_material(0)
-		_check(material != null and material.vertex_color_use_as_albedo and material.albedo_texture == null and material.metallic == 0 and material.roughness > 0.85, "Portable matte palette: " + id)
+		_check(material != null and material.metallic == 0 and material.roughness > 0.85, "Portable matte material: " + id)
+		if id == "reed-chandlery":
+			_check(not material.vertex_color_use_as_albedo and material.albedo_color == Color.WHITE, "Painted shop receives old palette tint")
+			_check(material.albedo_texture == AlderwakeTownArt.PAINTED_ATLAS and material.albedo_texture.get_size() == Vector2(1024, 1024), "Missing/shared painted atlas")
+			_check(material.texture_filter == BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS and not material.texture_repeat, "Atlas mip/clamp policy")
+			var uvs: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV]
+			_check(uvs.size() == arrays[Mesh.ARRAY_VERTEX].size(), "Painted UV coverage incomplete")
+			for uv: Vector2 in uvs:
+				_check(uv.x >= 16.0/1024 and uv.x <= 1008.0/1024 and uv.y >= 16.0/1024 and uv.y <= 1008.0/1024, "UV exceeds padded atlas")
+			for i: int in range(0, arrays[Mesh.ARRAY_INDEX].size(), 3):
+				var a: Vector2 = uvs[arrays[Mesh.ARRAY_INDEX][i]]
+				var b: Vector2 = uvs[arrays[Mesh.ARRAY_INDEX][i+1]]
+				var c: Vector2 = uvs[arrays[Mesh.ARRAY_INDEX][i+2]]
+				_check(absf((b-a).cross(c-a)) > 0.000000001, "Degenerate painted UV triangle")
+		else:
+			_check(not arrays[Mesh.ARRAY_COLOR].is_empty() and material.vertex_color_use_as_albedo and material.albedo_texture == null, "Unpainted palette changed: " + id)
 		var bounds: AABB = mesh.get_aabb()
 		_check(absf(bounds.end.y - float(mapping.height_m)) < 0.005, "Imported up-axis/height: " + id)
 		triangles += arrays[Mesh.ARRAY_INDEX].size() / 3
