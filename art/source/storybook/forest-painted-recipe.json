@@ -1,0 +1,167 @@
+{
+  "task": "AD010",
+  "sources": [
+    "art/source/moonwood_tree_kit.blend",
+    "art/source/alderwake_landmark_kit.blend"
+  ],
+  "editable_siblings": [
+    "art/source/storybook/moonwood_tree_rollout.blend",
+    "art/source/storybook/alderwake_landmark_painted.blend"
+  ],
+  "runtime": [
+    "game/assets/environment/storybook/moonwood_tree_rollout.glb",
+    "game/assets/environment/storybook/alderwake_landmark_painted.glb"
+  ],
+  "preserved_oak": "game/assets/environment/storybook/moonwood_oak_pilot.glb",
+  "atlases": [
+    "tree-painted-albedo.png",
+    "town-painted-albedo.png"
+  ],
+  "density": {
+    "trees_nominal": 48,
+    "trees_measured_range": [
+      46.32,
+      48.021
+    ],
+    "landmarks_measured_range": [
+      59.499,
+      64.044
+    ],
+    "units": "texels/metre",
+    "source_nonplanar_quad_skew_max_percent": 7.369
+  },
+  "uv_semantics": {
+    "UV": "Every polygon orthonormal face coordinates inside existing 16px safe region; vertical bark/longitudinal timber",
+    "UV2_x": {
+      "0": "bark",
+      "1": "canopy",
+      "2": "cherry blossom",
+      "3": "rowan berry"
+    },
+    "UV2_y": 0
+  },
+  "species_ratios": {
+    "alder": [
+      [
+        0.9,
+        0.97,
+        0.9
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "birch": [
+      [
+        1.12,
+        1.08,
+        0.91
+      ],
+      [
+        1.85,
+        2.15,
+        2.45
+      ]
+    ],
+    "cherry": [
+      [
+        0.96,
+        0.99,
+        0.96
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "maple": [
+      [
+        1.85,
+        0.78,
+        0.6
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "oak": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "pine": [
+      [
+        0.7,
+        0.84,
+        1.12
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "rowan": [
+      [
+        1.12,
+        0.99,
+        0.84
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "spruce": [
+      [
+        0.65,
+        0.78,
+        1.2
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "willow": [
+      [
+        1.1,
+        1.07,
+        0.91
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ]
+  },
+  "accent_ratios": {
+    "blossom": [
+      2.05,
+      0.9,
+      2.2
+    ],
+    "berry": [
+      1.8,
+      0.36,
+      0.38
+    ]
+  },
+  "material": "existing sRGB albedo sampled once; white base factor; original vertex colors omitted; shared variant ratios, no per-instance material",
+  "import": "external sibling PNG shared with accepted pilots; full precision UV/mesh; root_scale1 Y-up; lossless/mips/clamp existing atlas; no extra texture/node/alpha/light/collision"
+}

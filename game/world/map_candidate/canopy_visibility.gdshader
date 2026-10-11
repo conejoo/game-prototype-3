@@ -5,6 +5,10 @@ uniform float surface_roughness = 0.9;
 uniform sampler2D painted_albedo : source_color, filter_linear_mipmap, repeat_disable;
 uniform bool use_painted_texture = false;
 uniform bool use_vertex_tint = true;
+uniform vec3 painted_canopy_tint = vec3(1.0);
+uniform vec3 painted_bark_tint = vec3(1.0);
+uniform vec3 painted_blossom_tint = vec3(2.05, 0.90, 2.20);
+uniform vec3 painted_berry_tint = vec3(1.80, 0.36, 0.38);
 uniform vec3 hero_center;
 uniform vec3 ally_center;
 uniform bool protect_party = false;
@@ -34,6 +38,12 @@ void fragment() {
     if (protect_party && main_view > 0.5 && (covers_subject(hero_center, fragment_view) || covers_subject(ally_center, fragment_view))) discard;
     vec3 vertex_tint = use_vertex_tint ? COLOR.rgb : vec3(1.0);
     vec3 painted = use_painted_texture ? texture(painted_albedo, UV).rgb : vec3(1.0);
+    if (use_painted_texture) {
+        vec3 family_tint = UV.x >= 0.5 ? painted_bark_tint : painted_canopy_tint;
+        if (UV2.x > 2.5) family_tint = painted_berry_tint;
+        else if (UV2.x > 1.5) family_tint = painted_blossom_tint;
+        painted *= family_tint;
+    }
     ALBEDO = vertex_tint * base_color.rgb * painted;
     ROUGHNESS = surface_roughness;
 }

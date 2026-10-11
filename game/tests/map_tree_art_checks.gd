@@ -33,7 +33,7 @@ func _run() -> void:
 		var mesh: Mesh = art.meshes[mapping.mesh_name]
 		_check(mesh.get_surface_count() == 1, "Tree mesh surface count: " + definition)
 		var arrays: Array = mesh.surface_get_arrays(0)
-		var painted: bool = mapping.species == "oak"
+		var painted: bool = true # AD010 all original definitions now painted.
 		var no_colors: bool = arrays[Mesh.ARRAY_COLOR] == null or arrays[Mesh.ARRAY_COLOR].is_empty()
 		_check(no_colors == painted, "Portable vertex color policy: " + definition)
 		var material: ShaderMaterial = mesh.surface_get_material(0)
@@ -41,6 +41,16 @@ func _run() -> void:
 		_check(material.get_shader_parameter("use_painted_texture") == painted and material.get_shader_parameter("use_vertex_tint") != painted, "Tree texture/tint policy: " + definition)
 		if painted:
 			_check(material.get_shader_parameter("base_color") == Color.WHITE, "Painted palette multiplied twice: " + definition)
+			_check(material.get_shader_parameter("painted_canopy_tint") == AlderwakeTreeArt.SPECIES_TINTS[mapping.species][0] and material.get_shader_parameter("painted_bark_tint") == AlderwakeTreeArt.SPECIES_TINTS[mapping.species][1], "Species palette identity: " + definition)
+			if mapping.species != "oak":
+				var semantics: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV2]
+				_check(semantics.size() == arrays[Mesh.ARRAY_VERTEX].size(), "Source family semantic coverage: " + definition)
+				var groups: Dictionary = {}
+				for semantic: Vector2 in semantics:
+					_check(semantic.x in [0.0,1.0,2.0,3.0], "Unknown tree source family: " + definition)
+					groups[semantic.x] = true
+				_check(groups.has(0.0) and groups.has(1.0), "Missing bark or canopy: " + definition)
+				_check(groups.has(2.0) == (mapping.species == "cherry") and groups.has(3.0) == (mapping.species == "rowan"), "Blossom/fruit identity: " + definition)
 			_check(material.get_shader_parameter("painted_albedo") == AlderwakeTreeArt.PAINTED_ATLAS, "Unshared painted atlas: " + definition)
 			_check(AlderwakeTreeArt.PAINTED_ATLAS.get_width() == 1024 and AlderwakeTreeArt.PAINTED_ATLAS.get_height() == 1024 and AlderwakeTreeArt.PAINTED_ATLAS.get_image().has_mipmaps(), "Atlas dimensions/mips: " + definition)
 			var uvs: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV]

@@ -7,6 +7,7 @@ var visibility_materials: Array[ShaderMaterial] = []
 
 const KIT: PackedScene = preload("res://assets/environment/moonwood_tree_kit.glb")
 const PAINTED_KIT: PackedScene = preload("res://assets/environment/storybook/moonwood_oak_pilot.glb")
+const ROLLOUT_KIT: PackedScene = preload("res://assets/environment/storybook/moonwood_tree_rollout.glb")
 const PAINTED_ATLAS: Texture2D = preload("res://assets/environment/storybook/tree-painted-albedo.png")
 const MAPPING_PATH: String = "res://assets/environment/moonwood_tree_mapping.json"
 const CHUNK_SIZE: float = 32.0
@@ -15,6 +16,19 @@ var mappings: Dictionary[String, Dictionary] = {}
 var meshes: Dictionary[String, Mesh] = {}
 var batches: Dictionary[String, MultiMeshInstance3D] = {}
 var tree_ids: PackedStringArray = []
+
+# Shared per-variant ratios over neutral painted atlas, not original vertex tint.
+const SPECIES_TINTS: Dictionary = {
+	"alder":[Vector3(.90,.97,.90),Vector3.ONE],
+	"birch":[Vector3(1.12,1.08,.91),Vector3(1.85,2.15,2.45)],
+	"cherry":[Vector3(.96,.99,.96),Vector3.ONE],
+	"maple":[Vector3(1.85,.78,.60),Vector3.ONE],
+	"oak":[Vector3.ONE,Vector3.ONE],
+	"pine":[Vector3(.70,.84,1.12),Vector3.ONE],
+	"rowan":[Vector3(1.12,.99,.84),Vector3.ONE],
+	"spruce":[Vector3(.65,.78,1.20),Vector3.ONE],
+	"willow":[Vector3(1.10,1.07,.91),Vector3.ONE],
+}
 
 
 func build(population: AlderwakeForestPopulation) -> void:
@@ -25,8 +39,11 @@ func build(population: AlderwakeForestPopulation) -> void:
 		return
 	var kit: Node3D = KIT.instantiate()
 	var painted_kit: Node3D = PAINTED_KIT.instantiate()
+	var rollout_kit: Node3D = ROLLOUT_KIT.instantiate()
 	var painted_visuals: Dictionary[String, MeshInstance3D] = {}
 	for visual: Node in painted_kit.find_children("*", "MeshInstance3D", true, false):
+		painted_visuals[str(visual.name)] = visual
+	for visual: Node in rollout_kit.find_children("*", "MeshInstance3D", true, false):
 		painted_visuals[str(visual.name)] = visual
 	for visual: Node in kit.find_children("*", "MeshInstance3D", true, false):
 		# Godot importer can place glTF materials on the instance rather than
@@ -36,7 +53,7 @@ func build(population: AlderwakeForestPopulation) -> void:
 		var mesh: ArrayMesh = source_visual.mesh.duplicate()
 		for surface: int in range(mesh.get_surface_count()):
 			var material: StandardMaterial3D = source_visual.get_active_material(surface)
-			# Painted oak samples shared sRGB atlas once; other species retain COLOR_0.
+			# Every species samples existing atlas once; source family accents use UV2.
 			var visibility: ShaderMaterial = ShaderMaterial.new()
 			visibility.shader = VISIBILITY_SHADER
 			visibility.set_shader_parameter("base_color", material.albedo_color)
@@ -45,6 +62,9 @@ func build(population: AlderwakeForestPopulation) -> void:
 			visibility.set_shader_parameter("use_vertex_tint", not painted)
 			if painted:
 				visibility.set_shader_parameter("painted_albedo", PAINTED_ATLAS)
+				var species: String = str(visual.name).split("-")[1]
+				visibility.set_shader_parameter("painted_canopy_tint", SPECIES_TINTS[species][0])
+				visibility.set_shader_parameter("painted_bark_tint", SPECIES_TINTS[species][1])
 			visibility_materials.append(visibility)
 			mesh.surface_set_material(surface, visibility)
 		meshes[str(visual.name)] = mesh
@@ -55,6 +75,7 @@ func build(population: AlderwakeForestPopulation) -> void:
 		mappings[record.definition_id] = record
 	kit.free()
 	painted_kit.free()
+	rollout_kit.free()
 	var grouped: Dictionary[String, Array] = {}
 	for record: Dictionary in population.prop_records:
 		if record.tree == null:

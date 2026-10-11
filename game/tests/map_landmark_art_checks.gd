@@ -26,9 +26,21 @@ func _run() -> void:
 		var mesh: Mesh = art.meshes[mapping.mesh_name]
 		_check(mesh.get_surface_count() == 1, "Single palette surface: " + id)
 		var arrays: Array = mesh.surface_get_arrays(0)
-		_check(not arrays[Mesh.ARRAY_COLOR].is_empty(), "Missing vertex palette: " + id)
+		_check(arrays[Mesh.ARRAY_COLOR] == null or arrays[Mesh.ARRAY_COLOR].is_empty(), "Original palette multiplied twice: " + id)
 		var material: StandardMaterial3D = mesh.surface_get_material(0)
-		_check(material != null and material.vertex_color_use_as_albedo and material.albedo_texture == null and material.metallic == 0 and material.roughness > 0.85, "Portable palette: " + id)
+		_check(material != null and not material.vertex_color_use_as_albedo and material.albedo_color == Color.WHITE and material.albedo_texture == AlderwakeLandmarkArt.PAINTED_ATLAS and material.metallic == 0 and material.roughness > 0.85, "Shared painted matte surface: " + id)
+		_check(material.texture_filter == BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS and not material.texture_repeat and material.albedo_texture.get_image().has_mipmaps(), "Atlas sampling/mips: " + id)
+		var uvs: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV]
+		_check(uvs.size() == arrays[Mesh.ARRAY_VERTEX].size(), "Landmark face UV coverage: " + id)
+		var indices: PackedInt32Array = arrays[Mesh.ARRAY_INDEX]
+		var regions: Array[Rect2] = [Rect2(0,0,.5,.5),Rect2(.5,0,.5,.5),Rect2(0,.5,.5,.5),Rect2(.5,.5,.25,.25),Rect2(.75,.5,.25,.25),Rect2(.5,.75,.25,.25),Rect2(.75,.75,.25,.25)]
+		for offset: int in range(0,indices.size(),3):
+			var inside: bool = false
+			for region: Rect2 in regions:
+				var safe: Rect2 = region.grow(-16.0/1024.0)
+				if safe.has_point(uvs[indices[offset]]) and safe.has_point(uvs[indices[offset+1]]) and safe.has_point(uvs[indices[offset+2]]): inside = true
+			_check(inside,"Landmark UV triangle crosses atlas gutter: "+id)
+			_check(absf((uvs[indices[offset+1]]-uvs[indices[offset]]).cross(uvs[indices[offset+2]]-uvs[indices[offset]])) > 0.000000001,"Degenerate landmark UV: "+id)
 		triangles += arrays[Mesh.ARRAY_INDEX].size() / 3
 		var a: Array = mapping.bounds_xzy_m[0]
 		var b: Array = mapping.bounds_xzy_m[1]

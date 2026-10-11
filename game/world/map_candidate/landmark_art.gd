@@ -2,7 +2,8 @@ class_name AlderwakeLandmarkArt
 extends Node3D
 ## Imported appearance only. Source wrappers, physics/nav and stable IDs stay fixed.
 
-const KIT: PackedScene = preload("res://assets/environment/alderwake_landmark_kit.glb")
+const KIT: PackedScene = preload("res://assets/environment/storybook/alderwake_landmark_painted.glb")
+const PAINTED_ATLAS: Texture2D = preload("res://assets/environment/storybook/town-painted-albedo.png")
 const MAPPING_PATH: String = "res://assets/environment/alderwake_landmark_mapping.json"
 var build_errors: PackedStringArray = []
 var mappings: Dictionary[String, Dictionary] = {}
@@ -22,7 +23,11 @@ func build(crossings: AlderwakeCrossings, forest: AlderwakeForestPopulation, lay
 		var mesh: ArrayMesh = visual.mesh.duplicate()
 		for surface: int in range(mesh.get_surface_count()):
 			var material: StandardMaterial3D = visual.get_active_material(surface).duplicate()
-			material.vertex_color_use_as_albedo = true
+			material.vertex_color_use_as_albedo = false
+			material.albedo_color = Color.WHITE
+			material.albedo_texture = PAINTED_ATLAS
+			material.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+			material.texture_repeat = false
 			mesh.surface_set_material(surface, material)
 		meshes[str(visual.name)] = mesh
 	kit.free()
