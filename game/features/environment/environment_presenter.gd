@@ -42,10 +42,11 @@ func present(authored_profile: LocationDefinition.LightingProfile, progress: flo
 		environment.ambient_light_energy = lighting.ambient_energy
 		environment.background_color = lighting.background_color
 		if weather != null:
-			sun.light_color = sun.light_color.lerp(Color(.70, .78, .88), weather.overcast * .55)
-			sun.light_energy *= lerpf(1.0, .32, weather.overcast)
+			# Neutral cloud fill preserves painted hues and readable nighttime paths.
+			sun.light_color = sun.light_color.lerp(Color(.78, .82, .88), weather.overcast * .42)
+			sun.light_energy *= lerpf(1.0, .42, weather.overcast)
 			sun.shadow_opacity *= lerpf(1.0, .16, weather.overcast)
-			environment.ambient_light_color = environment.ambient_light_color.lerp(Color(.48, .58, .72), weather.overcast * .65)
-			environment.ambient_light_energy = maxf(.44, environment.ambient_light_energy * lerpf(1.0, .84, weather.overcast)) + weather.flash
-			environment.background_color = environment.background_color.lerp(Color(.045, .057, .075), weather.overcast * .8) + Color(.32, .38, .46) * weather.flash
+			environment.ambient_light_color = environment.ambient_light_color.lerp(Color(.62, .67, .75), weather.overcast * .45)
+			environment.ambient_light_energy = maxf(.54, environment.ambient_light_energy * lerpf(1.0, .90, weather.overcast)) + weather.flash
+			environment.background_color = environment.background_color.lerp(Color(.055, .065, .080), weather.overcast * .65) + Color(.32, .38, .46) * weather.flash
 	return true

@@ -1,6 +1,6 @@
 class_name EnvironmentLighting
 extends RefCounted
-## Pure presentation sampling. Source knots/shadow sense adapted to physical 3D.
+## Pure presentation sampling. Painted palette; original knots/ray sense retained.
 
 class Sample:
 	extends RefCounted
@@ -13,12 +13,14 @@ class Sample:
 	var sun_direction: Vector3
 
 const KNOTS: PackedFloat64Array = [0.0, 0.25, 0.30, 0.375, 0.50, 0.75, 0.80, 0.875, 0.96, 1.0]
-const DIRECT_COLORS: Array[Color] = [Color(1,.89,.73), Color(1,.77,.54), Color(1,.65,.43), Color(1,.50,.34), Color(.42,.52,.90), Color(.42,.52,.90), Color(.52,.57,.85), Color(.76,.62,.91), Color(1,.82,.65), Color(1,.89,.73)]
-const DIRECT_ENERGIES: PackedFloat64Array = [1.1, 1.0, .86, .65, .18, .18, .28, .65, 1.02, 1.1]
-const AMBIENT_COLORS: Array[Color] = [Color(.65,.76,.86), Color(.70,.69,.80), Color(.69,.62,.77), Color(.62,.55,.74), Color(.36,.46,.74), Color(.36,.46,.74), Color(.43,.48,.73), Color(.60,.57,.78), Color(.67,.72,.83), Color(.65,.76,.86)]
-const AMBIENT_ENERGIES: PackedFloat64Array = [.65, .60, .55, .50, .48, .48, .50, .54, .62, .65]
-const BACKGROUNDS: Array[Color] = [Color(.055,.075,.095), Color(.085,.065,.085), Color(.10,.05,.07), Color(.07,.035,.07), Color(.014,.022,.065), Color(.014,.022,.065), Color(.035,.04,.08), Color(.075,.055,.095), Color(.065,.07,.09), Color(.055,.075,.095)]
-const SHADOWS: PackedFloat64Array = [.85, .95, .90, .75, 0.0, 0.0, .45, .95, .90, .85]
+# Cream daylight, restrained apricot dusk and pale indigo moonlight. Broad fill
+# keeps painted albedo groups readable without adding emission or post effects.
+const DIRECT_COLORS: Array[Color] = [Color(1,.94,.83), Color(1,.86,.70), Color(1,.79,.64), Color(1,.72,.57), Color(.65,.70,.88), Color(.65,.70,.88), Color(.72,.72,.85), Color(.83,.75,.90), Color(1,.90,.77), Color(1,.94,.83)]
+const DIRECT_ENERGIES: PackedFloat64Array = [.98, .92, .80, .62, .18, .18, .28, .62, .94, .98]
+const AMBIENT_COLORS: Array[Color] = [Color(.73,.77,.80), Color(.76,.74,.79), Color(.74,.70,.77), Color(.70,.65,.77), Color(.62,.67,.80), Color(.62,.67,.80), Color(.65,.67,.79), Color(.70,.69,.80), Color(.73,.75,.81), Color(.73,.77,.80)]
+const AMBIENT_ENERGIES: PackedFloat64Array = [.68, .66, .64, .62, .60, .60, .61, .63, .67, .68]
+const BACKGROUNDS: Array[Color] = [Color(.065,.080,.090), Color(.090,.075,.090), Color(.105,.065,.080), Color(.085,.055,.080), Color(.025,.035,.065), Color(.025,.035,.065), Color(.045,.050,.080), Color(.080,.070,.095), Color(.075,.080,.090), Color(.065,.080,.090)]
+const SHADOWS: PackedFloat64Array = [.62, .68, .65, .58, 0.0, 0.0, .35, .58, .62, .62]
 const SHADOW_X: PackedFloat64Array = [.05, .28, .36, .50, .50, -.50, -.50, -.34, -.08, .05]
 const SHADOW_Z: PackedFloat64Array = [.03, .12, .15, .20, .20, .20, .20, .14, .05, .03]
 

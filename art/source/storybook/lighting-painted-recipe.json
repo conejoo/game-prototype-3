@@ -1,0 +1,308 @@
+{
+  "task": "AD007",
+  "name": "Painted coastal storybook outdoor lighting",
+  "authority": "Runtime GDScript arrays are editable source of truth; this recipe records calibration and regeneration targets.",
+  "runtime_owners": [
+    "game/features/environment/environment_lighting.gd",
+    "game/features/environment/environment_presenter.gd"
+  ],
+  "channel_encoding": "Godot Color/light-property channel values; rendered measurements use display-weighted sRGB PNG luma.",
+  "arrays": {
+    "KNOTS": [
+      0.0,
+      0.25,
+      0.3,
+      0.375,
+      0.5,
+      0.75,
+      0.8,
+      0.875,
+      0.96,
+      1.0
+    ],
+    "DIRECT_COLORS": [
+      [
+        1,
+        0.94,
+        0.83
+      ],
+      [
+        1,
+        0.86,
+        0.7
+      ],
+      [
+        1,
+        0.79,
+        0.64
+      ],
+      [
+        1,
+        0.72,
+        0.57
+      ],
+      [
+        0.65,
+        0.7,
+        0.88
+      ],
+      [
+        0.65,
+        0.7,
+        0.88
+      ],
+      [
+        0.72,
+        0.72,
+        0.85
+      ],
+      [
+        0.83,
+        0.75,
+        0.9
+      ],
+      [
+        1,
+        0.9,
+        0.77
+      ],
+      [
+        1,
+        0.94,
+        0.83
+      ]
+    ],
+    "DIRECT_ENERGIES": [
+      0.98,
+      0.92,
+      0.8,
+      0.62,
+      0.18,
+      0.18,
+      0.28,
+      0.62,
+      0.94,
+      0.98
+    ],
+    "AMBIENT_COLORS": [
+      [
+        0.73,
+        0.77,
+        0.8
+      ],
+      [
+        0.76,
+        0.74,
+        0.79
+      ],
+      [
+        0.74,
+        0.7,
+        0.77
+      ],
+      [
+        0.7,
+        0.65,
+        0.77
+      ],
+      [
+        0.62,
+        0.67,
+        0.8
+      ],
+      [
+        0.62,
+        0.67,
+        0.8
+      ],
+      [
+        0.65,
+        0.67,
+        0.79
+      ],
+      [
+        0.7,
+        0.69,
+        0.8
+      ],
+      [
+        0.73,
+        0.75,
+        0.81
+      ],
+      [
+        0.73,
+        0.77,
+        0.8
+      ]
+    ],
+    "AMBIENT_ENERGIES": [
+      0.68,
+      0.66,
+      0.64,
+      0.62,
+      0.6,
+      0.6,
+      0.61,
+      0.63,
+      0.67,
+      0.68
+    ],
+    "BACKGROUNDS": [
+      [
+        0.065,
+        0.08,
+        0.09
+      ],
+      [
+        0.09,
+        0.075,
+        0.09
+      ],
+      [
+        0.105,
+        0.065,
+        0.08
+      ],
+      [
+        0.085,
+        0.055,
+        0.08
+      ],
+      [
+        0.025,
+        0.035,
+        0.065
+      ],
+      [
+        0.025,
+        0.035,
+        0.065
+      ],
+      [
+        0.045,
+        0.05,
+        0.08
+      ],
+      [
+        0.08,
+        0.07,
+        0.095
+      ],
+      [
+        0.075,
+        0.08,
+        0.09
+      ],
+      [
+        0.065,
+        0.08,
+        0.09
+      ]
+    ],
+    "SHADOWS": [
+      0.62,
+      0.68,
+      0.65,
+      0.58,
+      0.0,
+      0.0,
+      0.35,
+      0.58,
+      0.62,
+      0.62
+    ],
+    "SHADOW_X": [
+      0.05,
+      0.28,
+      0.36,
+      0.5,
+      0.5,
+      -0.5,
+      -0.5,
+      -0.34,
+      -0.08,
+      0.05
+    ],
+    "SHADOW_Z": [
+      0.03,
+      0.12,
+      0.15,
+      0.2,
+      0.2,
+      0.2,
+      0.2,
+      0.14,
+      0.05,
+      0.03
+    ]
+  },
+  "interpolation": "Original smoothstep and knots; original normalized sun ray unchanged.",
+  "weather_composition": {
+    "direct_color": [
+      0.78,
+      0.82,
+      0.88
+    ],
+    "direct_color_mix": 0.42,
+    "direct_energy_storm_multiplier": 0.42,
+    "shadow_storm_multiplier": 0.16,
+    "ambient_color": [
+      0.62,
+      0.67,
+      0.75
+    ],
+    "ambient_color_mix": 0.45,
+    "ambient_energy_storm_multiplier": 0.9,
+    "ambient_energy_floor": 0.54,
+    "background_color": [
+      0.055,
+      0.065,
+      0.08
+    ],
+    "background_mix": 0.65,
+    "flash_addition": "Existing weather.flash and Color(.32,.38,.46) background pulse unchanged."
+  },
+  "preserved": [
+    "STABLE_INDOOR values and dry profiles",
+    "sun ray/knots and 600 active-second clock",
+    "forecast seeds/periods/blend/lightning timing/rain registration",
+    "23 source identities, overrides, emission and eight unshadowed fixed local emitters",
+    "camera/input/focus/pause/travel semantics",
+    "schema8/content1, geometry/UV/material assets"
+  ],
+  "capture_fixture": "game/tests/art_direction_lighting_render.gd",
+  "capture_settings": {
+    "engine": "Godot4.7.2 Mono Compatibility",
+    "viewport": [
+      960,
+      640
+    ],
+    "zoom": [
+      0.8,
+      1,
+      1.15
+    ],
+    "projections": [
+      "orthographic size18",
+      "perspective FOV45"
+    ],
+    "vsync": 0,
+    "max_fps": 0,
+    "phases": [
+      0.05,
+      0.375,
+      0.625,
+      0.875
+    ],
+    "noon": 0.08333333333333333,
+    "conditions": [
+      "sunny",
+      "cloudy",
+      "rainy",
+      "thunderstorm"
+    ],
+    "setup": "Detached synthetic paused review; deterministic fully blended forecast seeds, fixed feet; scheduled flash peak; one logical lamp override; bounded .35s resume."
+  },
+  "limits": "Lighting calibration only. AD008 owns pilot route/short samples; AD018 integration, AD019 full profiling, AD020 native package/restart. Historical R016 remains incomplete."
+}

@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001-AD006 baseline/shop/tree/ground/river/dock work is Done. AD007-AD020 remain Pending; next eligible task is AD007.
+AD001-AD007 baseline/material/lighting work is Done. AD008-AD020 remain Pending; next eligible task is AD008.
 
 ## Selection and completion
 
@@ -23,7 +23,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | AD004 | Done | AD002 | Paint meadow, dirt paths and elevation surfaces |
 | AD005 | Done | AD004 | Paint river and shore transitions |
 | AD006 | Done | AD002, AD005 | Paint dock, plaza and low-wall modules |
-| AD007 | Pending | AD003, AD004, AD005, AD006 | Calibrate storybook day, night and weather lighting |
+| AD007 | Done | AD003, AD004, AD005, AD006 | Calibrate storybook day, night and weather lighting |
 | AD008 | Pending | AD007 | Accept playable Maris and Dock Row pilot |
 | AD009 | Pending | AD008 | Roll painted materials through town buildings |
 | AD010 | Pending | AD008 | Extend painted treatment through forest and landmarks |
@@ -265,3 +265,15 @@ All50 final engine frames/five provenance sheets inspected: both projections/zoo
 Retained CIM/import-generation/nil-index/phase-output/unsafe-waypoint/crop/palette/UV-compression/helper corrections detailed in acceptance; no failed run promoted. Asset/pixel/capture/preservation/whitespace audits exit0;1592 baseline paths checked, unrelated direction/interiors/instructions/schema8/content1 and historical R016 incomplete preserved. Every owned attempt PID exited; final pilot36984/launcher62024, approach22200/launcher23056. No input/editor cleanup owed, blockers or unrun required criteria. No native/export/GUI Save/Load/restart/full profiling claim. No staging/commit/push; user requested separate post-review commit instruction. Next eligible AD007 only. Remaining unfinished AD007-AD020; final checklist AD020; every item complete: no.
 
 Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit scope is exactly22 AD006 paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence remain excluded. Accepted source bytes and unrelated-file preservation verified before documentation-only updates/staging. Exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD006/authorized-commit-20261011/commit-audit.json`. Pre-existing quay516-draw observation and AD019 profiling limit retained. AD001-AD006 remain Done, AD007-AD020 Pending. No push or AD007 implementation.
+
+### AD007 - 2026-10-11 UTC - Done
+
+[AD007_ACCEPTANCE](AD007_ACCEPTANCE.md): cream daylight/soft shadows, restrained dusk/dawn, pale indigo moonlight and neutral weather fill through two outdoor presentation owners. Exact original sun rays/knots/smooth interpolation, stable dry indoor branch, clock/forecast/rain/lightning timing, 23 source identities/eight unshadowed local emitters/overrides, camera/input/holds, all geometry/material assets and schema8/content1 retained. Editable lighting recipe and reusable engine-review fixture; seven task paths ready for review.
+
+Repository cwd; fresh RenderOnly art_direction_lighting_render/before passes3/3 exit0 in `docs/evidence/AD007/20261011-070114676-bddc30ed/`. Final `./tools/run_checks.ps1 -Task AD007 -Names application_smoke,environment_lighting_checks,weather_presentation_checks,environment_lifecycle_checks,light_interaction_checks -RenderScript art_direction_lighting_render -RenderPhases pilot -TimeoutSeconds 180` passes8/8 exit0 in `20261011-070220411-223c996b/`; stable1353-file digest`d06d2e5f610727aaf3b60799ae725baac1270754e58976f7a18ebd62342873db`, source.changed=false/error=null. Lighting30053/weather193417/lifecycle157/light interaction151 assertions pass unchanged. Capture/comparison/preservation/whitespace audits exit0.
+
+All65 final real Godot frames/six provenance sheets and critical full-size views inspected: both projections/four day phases/four weather states/noon/night forest and Moonwell/storm zoom bounds/local lamp off-on/scheduled flash/rain pause/resume/three dry rooms.52 fixed before/after camera/feet/environment/rain-flash pairs exact; semantic/floor/all16 render fingerprints identical. Night path luma68.69 to114.19, storm-night65.39 to96.20; cyan/purple roles readable. Noon shaded-gable/roof separation42.97; plaster detail retained. Rainy meadow saturation0.60377 vs clear0.60294. Local lamp changed-pixel upper bound0.7977% world crop; maximum active1, allocated8/consumers23. Rain/flash-only pause images pixel-identical after0.5s; bounded0.35s resume advances phase. All12 indoor day/storm world-crop pairs identical across both runs; before/after indoor light values exact.
+
+Retained CIM sandbox/fixture expected-lamp-state/rain node count/comparison-helper diagnostic corrections detailed in acceptance; no production guard or test loosened.1478 starting paths and exact final runner bytes audited; unrelated direction/interiors/user instructions preserved.28 owned PIDs exited, final engine11288/launcher63272; no input/editor cleanup owed. All AD007 criteria complete; no blockers or required unrun checks. Historical R016 incomplete and prior AD006 quay516 draws/full AD019 profiling limit retained. No ordinary/native route, GUI Save/Load/restart/package/full-profile claim. No staging/commit/push; user requested separate post-review commit instruction. Next eligible AD008 only. Remaining unfinished AD008-AD020; final checklist AD020; every item complete: no.
+
+Authorized commit follow-up (2026-10-11 UTC): user supplied the separate successful-task commit instruction after review. Commit scope is exactly seven AD007 paths, including acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract inputs and ignored raw evidence remain excluded. Accepted source/task hashes and1474 protected inputs reverified before documentation-only follow-up updates/staging. Exact verified commit identity/tree/path/blob scope and final status recorded after commit in `docs/evidence/AD007/authorized-commit-20261011/commit-audit.json`. AD001-AD007 remain Done, AD008-AD020 Pending; no push or AD008 implementation.
