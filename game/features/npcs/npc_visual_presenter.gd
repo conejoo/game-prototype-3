@@ -72,6 +72,7 @@ func mount(asset: PackedScene, walk_speed: float = 0.8) -> PackedStringArray:
 		_accessories.append(prop)
 		prop.visible = false
 	add_child(model)
+	StorybookNpcMaterial.apply(model, asset.resource_path)
 	player.play("idle")
 	player.advance(0)
 	return []

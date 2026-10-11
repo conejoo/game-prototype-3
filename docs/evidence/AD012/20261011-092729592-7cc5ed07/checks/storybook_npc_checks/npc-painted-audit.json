@@ -1,0 +1,101 @@
+{
+	"assertions": 523,
+	"failures": [],
+	"inventory": [
+		{
+			"bones": 16,
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-01.glb",
+			"surfaces": 1
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"action_river_fishing",
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-01-actions.glb",
+			"surfaces": 2
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-02.glb",
+			"surfaces": 1
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"action_archive_work",
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-02-actions.glb",
+			"surfaces": 2
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-03.glb",
+			"surfaces": 1
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-04.glb",
+			"surfaces": 1
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-06.glb",
+			"surfaces": 1
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-07.glb",
+			"surfaces": 1
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-08.glb",
+			"surfaces": 1
+		},
+		{
+			"bones": 16,
+			"clips": [
+				"idle",
+				"walk"
+			],
+			"path": "res://assets/models/npcs/npc-14.glb",
+			"surfaces": 1
+		}
+	],
+	"new_texture_bytes": 0,
+	"shared_materials": 10,
+	"source": "original portable assets; shared town brush atlas"
+}

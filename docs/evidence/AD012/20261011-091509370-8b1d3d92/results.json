@@ -1,0 +1,341 @@
+{
+  "schema_version": 2,
+  "task": "AD012",
+  "run_id": "20261011-091509370-8b1d3d92",
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype",
+  "engine_path": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe",
+  "engine_version": "4.7.2.stable.mono.official.ed1daf0bf",
+  "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091509370-8b1d3d92\\appdata",
+  "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091509370-8b1d3d92\\localappdata",
+  "save_groups": [],
+  "source": {
+    "before": {
+      "sha256": "efaa195e76780e95a8d37ba5b5274fc34883a4db008289538a3bf719371dcb05",
+      "captured_utc": "2026-10-11T09:15:10.1995372Z",
+      "file_count": 1382,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\source-before.json"
+    },
+    "after": {
+      "sha256": "9771b37fb4ca70d01ae227ee20284e88235e6f529b6af0b69a5609136773b3e6",
+      "captured_utc": "2026-10-11T09:15:19.2170256Z",
+      "file_count": 1386,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\source-after.json"
+    },
+    "git": {
+      "head": "64d6e7cba99d4e9da99dbf9b7db8802a2a50a274",
+      "working_tree_dirty": true,
+      "status": [
+        " M docs/art-direction-storybook/CHECKLIST.md",
+        " M game/features/npcs/npc_visual_presenter.gd",
+        "?? art/direction/",
+        "?? art/source/storybook/npc-painted-recipe.json",
+        "?? docs/art-direction-storybook/AGENT_PROMPT.md",
+        "?? docs/art-direction-storybook/CONTRACT.md",
+        "?? docs/interiors-map-migration/",
+        "?? game/features/npcs/storybook_npc.gdshader",
+        "?? game/features/npcs/storybook_npc_material.gd",
+        "?? game/tests/art_direction_npc_render.gd",
+        "?? game/tests/storybook_npc_checks.gd"
+      ],
+      "error": null
+    },
+    "changed": true,
+    "changes": [
+      {
+        "checkpoint": "import-after",
+        "path": "game/features/npcs/storybook_npc.gdshader.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "4b3b9a4817ca0988e6f62688085081fb96417a85f30996376b1a05eeba275c9a"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/features/npcs/storybook_npc_material.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "55b2e57bc4e13a794ad807cb1bfb8f5cb36bf3066aa4c00e976c5343b4f6af06"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/art_direction_npc_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "0114592bf1e17583b28fc6a1d017a2deb0fc154c404dbb8c0ccfa84021f76ed3"
+      },
+      {
+        "checkpoint": "import-after",
+        "path": "game/tests/storybook_npc_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "fb3a064d0df7976e63fa770d3798585a12754d61d1db47bb82686c6a2f89b3e8"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/features/npcs/storybook_npc.gdshader.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "4b3b9a4817ca0988e6f62688085081fb96417a85f30996376b1a05eeba275c9a"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/features/npcs/storybook_npc_material.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "55b2e57bc4e13a794ad807cb1bfb8f5cb36bf3066aa4c00e976c5343b4f6af06"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/art_direction_npc_render.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "0114592bf1e17583b28fc6a1d017a2deb0fc154c404dbb8c0ccfa84021f76ed3"
+      },
+      {
+        "checkpoint": "run-final",
+        "path": "game/tests/storybook_npc_checks.gd.uid",
+        "change": "added",
+        "before_sha256": null,
+        "after_sha256": "fb3a064d0df7976e63fa770d3798585a12754d61d1db47bb82686c6a2f89b3e8"
+      }
+    ],
+    "error": null
+  },
+  "started_utc": "2026-10-11T09:15:09.4326063Z",
+  "finished_utc": "2026-10-11T09:15:19.3082147Z",
+  "status": "failed",
+  "error": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+  "cases": [
+    {
+      "label": "engine-version",
+      "arguments": [
+        "--headless",
+        "--version"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091509370-8b1d3d92\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091509370-8b1d3d92\\localappdata",
+      "launcher_pid": 22792,
+      "engine_pids": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\00-engine-version.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\00-engine-version.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "efaa195e76780e95a8d37ba5b5274fc34883a4db008289538a3bf719371dcb05",
+        "captured_utc": "2026-10-11T09:15:11.1935420Z",
+        "file_count": 1382,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\00-engine-version.source-before.json"
+      },
+      "source_after": {
+        "sha256": "efaa195e76780e95a8d37ba5b5274fc34883a4db008289538a3bf719371dcb05",
+        "captured_utc": "2026-10-11T09:15:12.0949941Z",
+        "file_count": 1382,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\00-engine-version.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T09:15:10.6004972Z",
+      "finished_utc": "2026-10-11T09:15:12.1927261Z"
+    },
+    {
+      "label": "import",
+      "arguments": [
+        "--headless",
+        "--editor",
+        "--path",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\game",
+        "--import",
+        "--quit"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091509370-8b1d3d92\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091509370-8b1d3d92\\localappdata",
+      "launcher_pid": 28372,
+      "engine_pids": [
+        56940
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "failed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\01-import.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\01-import.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [
+        "ERROR: .NET Sdk not found. The required version is '10.0.9'."
+      ],
+      "source_before": {
+        "sha256": "efaa195e76780e95a8d37ba5b5274fc34883a4db008289538a3bf719371dcb05",
+        "captured_utc": "2026-10-11T09:15:12.7813876Z",
+        "file_count": 1382,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\01-import.source-before.json"
+      },
+      "source_after": {
+        "sha256": "9771b37fb4ca70d01ae227ee20284e88235e6f529b6af0b69a5609136773b3e6",
+        "captured_utc": "2026-10-11T09:15:18.6646468Z",
+        "file_count": 1386,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\01-import.source-after.json"
+      },
+      "source_changes": [
+        {
+          "path": "game/features/npcs/storybook_npc.gdshader.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "4b3b9a4817ca0988e6f62688085081fb96417a85f30996376b1a05eeba275c9a"
+        },
+        {
+          "path": "game/features/npcs/storybook_npc_material.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "55b2e57bc4e13a794ad807cb1bfb8f5cb36bf3066aa4c00e976c5343b4f6af06"
+        },
+        {
+          "path": "game/tests/art_direction_npc_render.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "0114592bf1e17583b28fc6a1d017a2deb0fc154c404dbb8c0ccfa84021f76ed3"
+        },
+        {
+          "path": "game/tests/storybook_npc_checks.gd.uid",
+          "change": "added",
+          "before_sha256": null,
+          "after_sha256": "fb3a064d0df7976e63fa770d3798585a12754d61d1db47bb82686c6a2f89b3e8"
+        }
+      ],
+      "failure_summary": {
+        "reason": "source_changed",
+        "message": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+        "failed_assertion": null,
+        "diagnostic_context": [],
+        "stack": [],
+        "log_tail": [
+          {
+            "stream": "stdout",
+            "line_number": 17,
+            "text": "[  66% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 18,
+            "text": "\u001b[92m[ DONE ]\u001b[39m \u001b[1mupdate_scripts_classes\u001b[22m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 19,
+            "text": "\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 20,
+            "text": "[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 21,
+            "text": "[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 22,
+            "text": "[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 23,
+            "text": "\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 24,
+            "text": "\u001b[0m"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 1,
+            "text": "ERROR: .NET Sdk not found. The required version is '10.0.9'."
+          },
+          {
+            "stream": "stderr",
+            "line_number": 2,
+            "text": "   at: void GodotTools.GodotSharpEditor._EnablePlugin() (/root/godot/modules/mono/editor/GodotTools/GodotTools/GodotSharpEditor.cs:484)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 3,
+            "text": "   C# backtrace (most recent call first):"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 4,
+            "text": "       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 5,
+            "text": "       [1] void GodotTools.GodotSharpEditor._EnablePlugin() (/root/godot/modules/mono/editor/GodotTools/GodotTools/GodotSharpEditor.cs:484)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 6,
+            "text": "       [2] bool Godot.EditorPlugin.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharpEditor/Generated/GodotObjects/EditorPlugin.cs:1444)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 7,
+            "text": "       [3] bool GodotTools.GodotSharpEditor.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/editor/GodotTools/GodotTools/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/GodotTools.GodotSharpEditor_ScriptMethods.generated.cs:210)"
+          },
+          {
+            "stream": "stderr",
+            "line_number": 8,
+            "text": "       [4] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)"
+          }
+        ],
+        "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\01-import.stdout.log",
+        "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091509370-8b1d3d92\\01-import.stderr.log"
+      },
+      "error": "Source changed during run; evidence is not valid for stable source. Rerun after edits stop.",
+      "started_utc": "2026-10-11T09:15:12.2158073Z",
+      "finished_utc": "2026-10-11T09:15:18.7548268Z"
+    }
+  ],
+  "parse_scripts": [
+    "res://tests/application_smoke.gd",
+    "res://tests/storybook_npc_checks.gd",
+    "res://tests/npc_asset_pipeline_checks.gd",
+    "res://tests/npc_01_checks.gd",
+    "res://tests/npc_02_checks.gd",
+    "res://tests/npc_03_checks.gd",
+    "res://tests/npc_04_checks.gd",
+    "res://tests/npc_06_checks.gd",
+    "res://tests/npc_07_checks.gd",
+    "res://tests/npc_08_checks.gd",
+    "res://tests/npc_14_checks.gd",
+    "res://tests/npc_action_checks.gd",
+    "res://tests/routine_presentation_checks.gd",
+    "res://tests/art_direction_npc_render.gd",
+    "res://tests/support/routine_execution_fixture.gd",
+    "res://tests/art_direction_baseline_render.gd",
+    "res://app/game_root.gd",
+    "res://app/world_host.gd",
+    "res://app/party.gd",
+    "res://app/camera_rig.gd",
+    "res://features/actors/actor_placeholder.gd",
+    "res://tests/environment_review.gd",
+    "res://tests/live_playtest_bridge.gd",
+    "res://ui/conversation_view.gd",
+    "res://ui/prototype_ui.gd",
+    "res://ui/people_journal_view.gd",
+    "res://ui/backpack_view.gd"
+  ]
+}

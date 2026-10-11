@@ -1,0 +1,20 @@
+{
+  "task": "AD012",
+  "approach": "Surface overrides on existing named imports; original portable palettes, geometry, UVs, skins and actions retained",
+  "brush_texture": "game/assets/environment/storybook/town-painted-albedo.png",
+  "brush_source": "art/source/storybook/town-painted-albedo.png",
+  "shader": "game/features/npcs/storybook_npc.gdshader",
+  "adapter": "game/features/npcs/storybook_npc_material.gd",
+  "palette_source": "Each original embedded 32x32 RGBA palette and original albedo/vertex multipliers",
+  "projection": "Local rest-position triplanar, fourth-power rest-normal weights, mirrored plaster patch inside 16px gutters",
+  "texels_per_metre": 96,
+  "stroke_range": [0.90, 1.08],
+  "desaturation": 0.06,
+  "roughness": 0.94,
+  "specular": 0.25,
+  "metallic": 0.0,
+  "culling": "disabled, matching every original named source material",
+  "new_texture_bytes": 0,
+  "scope": "npc-01/02 ordinary and action variants; npc-03/04/06/07/08/14; calibration excluded",
+  "preservation": "No source/export/portrait/reference/rig/clip/accessory edits; no movement/routine/facing/speech/save changes"
+}

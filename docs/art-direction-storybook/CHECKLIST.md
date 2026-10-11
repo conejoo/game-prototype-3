@@ -3,7 +3,7 @@
 Prepared: 2026-10-10, America/Vancouver. Goal and architectural boundaries: [CONTRACT](CONTRACT.md).
 Target repository: D:/development/game-dev-blender/returning-fair-prototype; Godot application: game/.
 This checklist is the sole task-status authority. [CURRENT_STATE](CURRENT_STATE.md) records continuation; [AGENT_PROMPT](AGENT_PROMPT.md) starts a session.
-AD001-AD011 baseline/material/lighting/playable pilot/town/forest/landmark/prop rollout work is Done. AD012-AD020 remain Pending.
+AD001-AD012 baseline/material/lighting/playable pilot/town/forest/landmark/prop/villager work is Done. AD013-AD020 remain Pending.
 
 ## Selection and completion
 
@@ -28,7 +28,7 @@ Dependencies describe capabilities; the ready branches after AD008 can be worked
 | AD009 | Done | AD008 | Roll painted materials through town buildings |
 | AD010 | Done | AD008 | Extend painted treatment through forest and landmarks |
 | AD011 | Done | AD008 | Unify small props, lights and collectible visuals |
-| AD012 | Pending | AD008 | Harmonize existing villagers with painted world |
+| AD012 | Done | AD008 | Harmonize existing villagers with painted world |
 | AD013 | Pending | AD008 | Harmonize party, guardian and combat cues |
 | AD014 | Pending | AD008 | Paint existing Mayor Vale home |
 | AD015 | Pending | AD008 | Paint existing Lantern Rest |
@@ -324,3 +324,13 @@ All154 final engine images inspected:123 synthetic pilot,12 fresh ordinary inter
 Short frozen day p95/p99 2.221/2.513ms,253 draws,4067nodes/524resources,32,489,873 texture bytes unchanged against matched before; observations only, full profile AD019.1628 protected starting files unchanged; all1378 validated source files stable;158 owned recorded PIDs exited/no held input or cleanup. No blocker, every AD011 criterion verified. No staging/commit/push; separate user commit instruction awaits. Next eligible AD012 only; unfinished AD012,AD013,AD014,AD015,AD016,AD017,AD018,AD019,AD020. Final AD020; every checklist item complete: no. Historical R016 remains Blocked/incomplete and prior AD010 dock arrival fixture/prior quay516-draw limitations remain documented.
 
 Authorized commit follow-up (2026-10-11 UTC): the user supplied the separate successful-task commit instruction after review. Scope is exactly 19 AD011 paths, including durable acceptance/checklist/handoff; unrelated direction/interiors/prompt/contract and ignored raw evidence/builds remain preserved/excluded. All 19 reviewed task hashes, 1,378 validated source files, 15/15 main and 3/3 supplemental results, 1,628 protected inputs and 1,240 local evidence files were reverified before documentation-only follow-up edits and staging. Existing observations, failures and limitations remain in the acceptance record. Exact verified commit/tree/path/blob scope and final status are recorded after commit in `docs/evidence/AD011/authorized-commit-20261011/commit-audit.json`. AD001-AD011 remain Done; AD012-AD020 Pending. No push or AD012 implementation.
+
+## AD012 completion - 2026-10-11 UTC
+
+[AD012_ACCEPTANCE](AD012_ACCEPTANCE.md): all eight existing villagers and both current action variants receive restrained shared brush/matte finish under the accepted presenter. Original nearest-sampled identity palettes, silhouettes, Blender/GLB/import/portrait/reference bytes, UVs, feet, skins, clips and accessories retained. Existing town atlas reused; zero new texture bytes, ten cached material keys, no extra surface/emitter. Runtime roster66,842 triangles/128bones/ten surfaces remains below per-person caps. No movement/routine/facing/speech/schema8/content1 change. Exactly24 task paths ready for review.
+
+Repository cwd; final run_checks command in acceptance passes16/16 exit0 at `docs/evidence/AD012/20261011-092729592-7cc5ed07/results.json`. Final RenderOnly art_direction_npc_render/pilot passes3/3 exit0 at `20261011-093006695-2beeef8b/results.json`; both source.changed=false/error=null. Final1386-file digest `b9b7fee810f02a3fe101a866f9f7b13a512bb00f44227bde9d95d521033af60f`; only diagnostic night HUD camera-description line differs from main, all production/check bytes match.523 surface/resource assertions; all named/calibration/action/routine-presentation checks pass, raw eight-person/two-action audits pass. Supplementary original current-owner activation covers25 routines/2610 assertions before final culling repair; no production behavior change.
+
+All152 final actual Godot images inspected through13 provenance sheets and critical full-size views:32 gallery/control,32 town zoom/projection,16 forest,16 inn,16 storm-night,40 walk/fishing/archive phases/mixer frames. Eight registered camera/feet/pose pairs and silhouette masks exact. Four motion endpoints pixel-identical; Maris walk only one blue LSB at(519,368), strictly bounded and recorded. No visible texture popping; original rod/book/support hands intact. Synthetic review copies/feet/facing/time/weather/room transition/elevated gallery/manual poses are explicitly labeled; no ordinary/native/GUI Save-Load/restart/package/profile claim.
+
+Retained sandbox CIM/import-UID/Mono editor SDK and visual camera/culling/loop-diagnostic failures documented. Ten legacy fixed-contact failures reproduce from stable isolated prepaint HEAD. Fixtures now explicitly disable their optional routine owner; Edric/Helena body envelopes use their exact original ordinary assets. No original assertion/pin removed; current active routines verified separately. Preservation1647 starting/1633 protected paths, zero unexpected changes; all177 recorded owned PIDs exited. No held input, editor/Blender mutation or cleanup owed. Every AD012 criterion complete; blockers/unrun required checks:none. Historical R016 remains Blocked/incomplete, unrelated direction/interiors/user instructions and prior route/profile limits preserved. No staging/commit/push; separate post-review commit instruction awaits. Next eligible AD013 only; unfinished AD013,AD014,AD015,AD016,AD017,AD018,AD019,AD020. Final AD020; every item complete:no.

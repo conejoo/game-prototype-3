@@ -1,0 +1,33 @@
+{
+  "unexpected": [],
+  "starting_files": 1647,
+  "protected_files": 1633,
+  "allowed_added": [
+    "art/source/storybook/npc-painted-recipe.json",
+    "docs/art-direction-storybook/AD012_ACCEPTANCE.md",
+    "game/features/npcs/storybook_npc.gdshader",
+    "game/features/npcs/storybook_npc.gdshader.uid",
+    "game/features/npcs/storybook_npc_material.gd",
+    "game/features/npcs/storybook_npc_material.gd.uid",
+    "game/tests/art_direction_npc_render.gd",
+    "game/tests/art_direction_npc_render.gd.uid",
+    "game/tests/storybook_npc_checks.gd",
+    "game/tests/storybook_npc_checks.gd.uid"
+  ],
+  "allowed_existing_changes": [
+    "game/features/npcs/npc_visual_presenter.gd",
+    "game/tests/npc_03_checks.gd",
+    "docs/art-direction-storybook/CHECKLIST.md",
+    "game/tests/npc_01_checks.gd",
+    "game/tests/npc_04_checks.gd",
+    "game/tests/npc_07_checks.gd",
+    "docs/art-direction-storybook/CURRENT_STATE.md",
+    "game/tests/npc_14_checks.gd",
+    "game/tests/npc_asset_pipeline_checks.gd",
+    "game/tests/npc_02_checks.gd",
+    "game/tests/npc_08_checks.gd",
+    "game/tests/npc_06_checks.gd",
+    "art/exports/NPC_PIPELINE.md",
+    "game/tests/npc_action_checks.gd"
+  ]
+}

@@ -150,3 +150,34 @@ Current named deliveries: [Edric](NPC_01_PACKAGE.md) and [Helena](NPC_02_PACKAGE
 are enabled after N008/N009; historical empty-activation/calibration evidence above
 retains its original N007 scope. Fixed runtime idle and review-only walk retain the
 same export/presenter contract; semantic actions remain N016.
+
+## AD012 painted surface adapter
+
+The current named roster receives its storybook finish inside `NpcVisualPresenter.mount`
+after the original portable asset passes the unchanged import audit. The explicit
+`StorybookNpcMaterial.ASSETS` list includes all eight named ordinary packages and
+the two existing action variants; calibration and unknown assets remain unchanged.
+Surface overrides retain original mesh/UV/skin/animation resources, palette PNGs,
+portraits, feet, bounds and accessory visibility. Do not bake this runtime finish
+back over the recoverable original identity sources.
+
+[Editable recipe](../source/storybook/npc-painted-recipe.json) and the native Godot
+adapter/shader own the appearance. Original 32x32 RGBA identity palettes remain
+nearest-sampled. The already-resident town atlas contributes only broad, bounded
+brush value through local rest-space triplanar projection at 96 texels/m; mirrored
+16px-safe plaster sampling covers front/back/sides without changing palette UVs.
+Six-percent desaturation retains costume distinctions; .90-1.08 brush multiplier,
+.94 roughness, .25 specular and zero metallic provide a quiet matte finish.
+Double-sided rendering matches every original named body/accessory material.
+There is no time/world-space input, alpha, emission, outline, new texture, material
+surface or light. Materials cache by immutable imported source material and reuse
+across mounts. Eight unique identity palettes still cost 32KiB before mips; the
+shared brush atlas is existing world residency, not another per-person allocation.
+Original per-person triangle/bone/surface and texture-memory caps remain intact.
+
+Historical named/calibration checks explicitly disable the optional routine owner
+in their fixed-contact fixtures. Edric/Helena body-envelope fixtures explicitly
+mount their original ordinary packages; action variants retain separate checks.
+All original physical, identity, clip and lifecycle assertions remain. Current
+routine presentation/activation tests exercise the active production mappings
+separately. This fixture adaptation makes no production routine or placement change.

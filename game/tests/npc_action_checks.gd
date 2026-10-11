@@ -126,6 +126,8 @@ func _asset(index: int) -> void:
 
 func _owners() -> void:
 	var game: Node3D = load("res://app/game_root.tscn").instantiate()
+	# AD012: explicit historical fixed-contact fixture; current routines verified separately.
+	game.routine_execution = null
 	root.add_child(game)
 	_check((await game.world_host.transition_finished)[0], "actual startup")
 	var memories: String = TestRunSnapshot.exact_json(game.session.conversations.snapshot())

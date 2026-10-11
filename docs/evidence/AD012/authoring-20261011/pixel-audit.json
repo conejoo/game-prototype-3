@@ -1,0 +1,212 @@
+{
+  "task": "AD012",
+  "captures": 152,
+  "pairs": [
+    {
+      "id": "npc-01",
+      "camera_feet_pose_exact": true,
+      "silhouette_mask_identical": true,
+      "body_pixels": 49572,
+      "rgb_difference_extrema": [
+        [
+          0,
+          29
+        ],
+        [
+          0,
+          26
+        ],
+        [
+          0,
+          27
+        ]
+      ]
+    },
+    {
+      "id": "npc-02",
+      "camera_feet_pose_exact": true,
+      "silhouette_mask_identical": true,
+      "body_pixels": 52603,
+      "rgb_difference_extrema": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          27
+        ],
+        [
+          0,
+          29
+        ]
+      ]
+    },
+    {
+      "id": "npc-03",
+      "camera_feet_pose_exact": true,
+      "silhouette_mask_identical": true,
+      "body_pixels": 48658,
+      "rgb_difference_extrema": [
+        [
+          0,
+          27
+        ],
+        [
+          0,
+          28
+        ],
+        [
+          0,
+          28
+        ]
+      ]
+    },
+    {
+      "id": "npc-04",
+      "camera_feet_pose_exact": true,
+      "silhouette_mask_identical": true,
+      "body_pixels": 49799,
+      "rgb_difference_extrema": [
+        [
+          0,
+          25
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          27
+        ]
+      ]
+    },
+    {
+      "id": "npc-06",
+      "camera_feet_pose_exact": true,
+      "silhouette_mask_identical": true,
+      "body_pixels": 50058,
+      "rgb_difference_extrema": [
+        [
+          0,
+          29
+        ],
+        [
+          0,
+          28
+        ],
+        [
+          0,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "npc-07",
+      "camera_feet_pose_exact": true,
+      "silhouette_mask_identical": true,
+      "body_pixels": 49422,
+      "rgb_difference_extrema": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          28
+        ],
+        [
+          0,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "npc-08",
+      "camera_feet_pose_exact": true,
+      "silhouette_mask_identical": true,
+      "body_pixels": 48857,
+      "rgb_difference_extrema": [
+        [
+          0,
+          25
+        ],
+        [
+          0,
+          28
+        ],
+        [
+          0,
+          26
+        ]
+      ]
+    },
+    {
+      "id": "npc-14",
+      "camera_feet_pose_exact": true,
+      "silhouette_mask_identical": true,
+      "body_pixels": 58632,
+      "rgb_difference_extrema": [
+        [
+          0,
+          21
+        ],
+        [
+          0,
+          22
+        ],
+        [
+          0,
+          23
+        ]
+      ]
+    }
+  ],
+  "loops": [
+    {
+      "clip": "walk",
+      "duration": 0.8,
+      "endpoint_total_8bit_byte_delta": 1,
+      "endpoints_pixel_identical": false,
+      "id": "npc-03",
+      "maximum_allowed_total_byte_delta": 1
+    },
+    {
+      "clip": "walk",
+      "duration": 0.8,
+      "endpoint_total_8bit_byte_delta": 0,
+      "endpoints_pixel_identical": true,
+      "id": "npc-01",
+      "maximum_allowed_total_byte_delta": 1
+    },
+    {
+      "clip": "walk",
+      "duration": 0.8,
+      "endpoint_total_8bit_byte_delta": 0,
+      "endpoints_pixel_identical": true,
+      "id": "npc-14",
+      "maximum_allowed_total_byte_delta": 1
+    },
+    {
+      "clip": "action_river_fishing",
+      "duration": 4.0,
+      "endpoint_total_8bit_byte_delta": 0,
+      "endpoints_pixel_identical": true,
+      "id": "npc-01",
+      "maximum_allowed_total_byte_delta": 1
+    },
+    {
+      "clip": "action_archive_work",
+      "duration": 4.0,
+      "endpoint_total_8bit_byte_delta": 0,
+      "endpoints_pixel_identical": true,
+      "id": "npc-02",
+      "maximum_allowed_total_byte_delta": 1
+    }
+  ],
+  "headless_to_final_source_changes": [
+    "game/tests/art_direction_npc_render.gd"
+  ],
+  "note": "Only final synthetic night HUD camera description changed; all production/check source bytes match the 16/16 main run. Visual inspection recorded separately."
+}

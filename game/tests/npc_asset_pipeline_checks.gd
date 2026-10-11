@@ -147,6 +147,8 @@ func _budget(p: NpcVisualPresenter) -> void:
 
 func _wrappers() -> void:
 	var game: Node3D = load("res://app/game_root.tscn").instantiate()
+	# AD012: explicit historical fixed-contact fixture; current routines verified separately.
+	game.routine_execution = null
 	root.add_child(game)
 	await game.world_host.transition_finished
 	_check(game.world_host.current_location.npc_contacts.targets.keys() == Array(NpcRegistry.enabled_for(NpcRegistry.LOCATION)),"production activates only completed named villagers")

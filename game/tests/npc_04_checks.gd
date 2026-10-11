@@ -9,6 +9,8 @@ func _initialize() -> void: _run.call_deferred()
 
 func _run() -> void:
 	game = load("res://app/game_root.tscn").instantiate()
+	# AD012: explicit historical fixed-contact fixture; current routines verified separately.
+	game.routine_execution = null
 	root.add_child(game)
 	var startup: Array = await game.world_host.transition_finished
 	_check(startup[0], "production arrival")

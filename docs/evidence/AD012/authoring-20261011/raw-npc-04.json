@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "glb_sha256": "7ea634f11a34a5962a67fac2cba77fec27399627d8112b7e9804c154976d5c2b",
+  "glb_bytes": 304660,
+  "triangles": 7387,
+  "clips": {
+    "idle": {
+      "seconds": 4.0,
+      "raw_endpoint_max_error": 0,
+      "channels": 48
+    },
+    "walk": {
+      "seconds": 0.800000011920929,
+      "raw_endpoint_max_error": 0,
+      "channels": 48
+    }
+  },
+  "embedded_png": true,
+  "external_uris": 0,
+  "blend_sha256": "dd1721d4233efd556597778d539646fd47a573e2420860de57f5c0be214ac479"
+}

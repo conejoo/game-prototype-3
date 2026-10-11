@@ -1,0 +1,102 @@
+{
+  "task": "AD012",
+  "paths": [
+    {
+      "sha256": "890D251271D6515898846F7F287E2AA148EAEFC0AE44A3704308F80E04923A0E",
+      "path": "art/exports/NPC_PIPELINE.md"
+    },
+    {
+      "sha256": "90BC10293319C0FA586D7659E5102A24F704BF024F9ED15EC9D85FB392D0A146",
+      "path": "art/source/storybook/npc-painted-recipe.json"
+    },
+    {
+      "sha256": "E2C0E2172BA8EB9B09157A0B48D277F322F643EF314D84D906583966AE10CBD6",
+      "path": "docs/art-direction-storybook/AD012_ACCEPTANCE.md"
+    },
+    {
+      "sha256": "074EFDD8523A40A5B0CD9A5943FF158BAC4098ED78811C80F927951574BDC4FC",
+      "path": "docs/art-direction-storybook/CHECKLIST.md"
+    },
+    {
+      "sha256": "0469B0E704D5330DCA9CBF61C3736F94EEA6D14CB5607F86B82305BF9BA03E06",
+      "path": "docs/art-direction-storybook/CURRENT_STATE.md"
+    },
+    {
+      "sha256": "51687559DB4043CDEBBEAA08042BF12A9D5448A0A380AE1BACB6B9D440D73360",
+      "path": "game/features/npcs/npc_visual_presenter.gd"
+    },
+    {
+      "sha256": "F87010028F859DDEC8C6ECBA979C14C4F05F487B8B3208B8D19C1938149034A5",
+      "path": "game/features/npcs/storybook_npc_material.gd"
+    },
+    {
+      "sha256": "55B2E57BC4E13A794AD807CB1BFB8F5CB36BF3066AA4C00E976C5343B4F6AF06",
+      "path": "game/features/npcs/storybook_npc_material.gd.uid"
+    },
+    {
+      "sha256": "AA33CABAF5020D6A778C00BF034C7872DA7BB6D01F5AB497CE8644D44751677D",
+      "path": "game/features/npcs/storybook_npc.gdshader"
+    },
+    {
+      "sha256": "4B3B9A4817CA0988E6F62688085081FB96417A85F30996376B1A05EEBA275C9A",
+      "path": "game/features/npcs/storybook_npc.gdshader.uid"
+    },
+    {
+      "sha256": "166A602002AE5BD1DDBACD7FF9FD566449DA4D5CB86F4CAAA735C2DBD8EECF73",
+      "path": "game/tests/storybook_npc_checks.gd"
+    },
+    {
+      "sha256": "FB3A064D0DF7976E63FA770D3798585A12754D61D1DB47BB82686C6A2F89B3E8",
+      "path": "game/tests/storybook_npc_checks.gd.uid"
+    },
+    {
+      "sha256": "738DE9EFA88FAFF05868EBE2DB00BFE810ECED8521537ED03DF39ADCA22905F1",
+      "path": "game/tests/art_direction_npc_render.gd"
+    },
+    {
+      "sha256": "0114592BF1E17583B28FC6A1D017A2DEB0FC154C404DBB8C0CCFA84021F76ED3",
+      "path": "game/tests/art_direction_npc_render.gd.uid"
+    },
+    {
+      "sha256": "ED63446425561B5383BEFB055E2BBE66B262CC38A5C6A4316CF570CC5CDF828F",
+      "path": "game/tests/npc_asset_pipeline_checks.gd"
+    },
+    {
+      "sha256": "3FF4E31D6E473A28280463D89736886E5E58994E09B6AEB6B7E722C3887C6557",
+      "path": "game/tests/npc_action_checks.gd"
+    },
+    {
+      "sha256": "7F20571FA129CF1B61C7E3CE222802C7C33D6847A921D613B233AC4B39E6D3DA",
+      "path": "game/tests/npc_01_checks.gd"
+    },
+    {
+      "sha256": "5264C6BA87674E07F7753AA5D6B9CBA77AF52ADE3505773199F5BA80EBC3C1E6",
+      "path": "game/tests/npc_02_checks.gd"
+    },
+    {
+      "sha256": "3698983F1056004C18A2CFD529D45E23AAF14972B352C932E3AC6AD77033A7C3",
+      "path": "game/tests/npc_03_checks.gd"
+    },
+    {
+      "sha256": "81C617725933572E8496F2D4C659C30D9E2BF6A956D0A05DF5446D668F4867B6",
+      "path": "game/tests/npc_04_checks.gd"
+    },
+    {
+      "sha256": "6768F15DCEDCB6EA7D58105D95176DABAA6DB4AF4EF7491F5D20490186408327",
+      "path": "game/tests/npc_06_checks.gd"
+    },
+    {
+      "sha256": "AA81592494281681AC552FAC35DB1F0ED4A0995276FB487A4F7A088E130A0883",
+      "path": "game/tests/npc_07_checks.gd"
+    },
+    {
+      "sha256": "2803D2D0C4D1FD99A3029089E7C28387ACADF1A6B48C9F2E30884D20FFB9B341",
+      "path": "game/tests/npc_08_checks.gd"
+    },
+    {
+      "sha256": "17ABCE19429B4A675316C990F1706BB9C34431D20B4ED791615B7C476D750250",
+      "path": "game/tests/npc_14_checks.gd"
+    }
+  ],
+  "count": 24
+}

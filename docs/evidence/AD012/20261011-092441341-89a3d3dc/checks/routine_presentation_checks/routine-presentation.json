@@ -1,0 +1,59 @@
+{
+	"assertions": 94,
+	"failures": [],
+	"observations": [
+		{
+			"clip": "action_river_fishing",
+			"fallback": false,
+			"foot": "(15.0, 0.0, 1.5)",
+			"id": "npc-01",
+			"model": "res://assets/models/npcs/npc-01-actions.glb"
+		},
+		{
+			"clip": "action_archive_work",
+			"fallback": false,
+			"foot": "(4.0, 0.0, 0.0)",
+			"id": "npc-02",
+			"model": "res://assets/models/npcs/npc-02-actions.glb"
+		},
+		{
+			"ally": "(12.0, 0.0, -1.0)",
+			"blocker": "",
+			"case": "original full river leg with ordinary stationary contacts",
+			"cursor": {
+				"failure": 0,
+				"failure_detail": {},
+				"foot": "(15.0, 0.0, 1.5)",
+				"index": 2,
+				"map_id": "prototype-alderwake",
+				"npc_id": "npc-01",
+				"phase": "",
+				"remaining": 3.9,
+				"routine_id": "edric-evening-fishing",
+				"state": 4,
+				"step_id": "greet-river",
+				"transitions": 2
+			},
+			"hero": "(13.0, 0.0, -1.0)",
+			"movement": 0
+		},
+		{
+			"detours": [
+				{
+					"blocker": "npc-06",
+					"path": "[(6.6001, 0.0, 4.6001), (6.2001, 0.0, 4.6001), (6.2001, 0.0, 4.6001), (6.2001, 0.0, 4.431472), (6.220634, 0.0, 4.431472), (6.220634, 0.0, 4.431472), (6.2001, 0.0, 4.6001), (6.908089, 0.0, 6.284384), (6.908089, 0.0, 6.284384), (6.908089, 0.0, 6.284384), (7.44006, 0.0, 6.088052), (7.846236, 0.0, 5.938148), (7.846236, 0.0, 5.938148), (7.846236, 0.0, 5.938148), (8.784384, 0.0, 5.591911), (8.784384, 0.0, 5.591911), (8.784384, 0.0, 5.591911), (8.908716, 0.0, 5.548116), (11.3136, 0.0, 4.701017), (11.317, 0.0, 4.699819), (11.32163, 0.0, 4.698189), (11.35735, 0.0, 4.685609), (11.42111, 0.0, 4.663146), (11.43813, 0.0, 4.657151), (11.6001, 0.0, 4.6001), (11.8001, 0.0, 4.417736), (11.99147, 0.0, 4.243238), (12.02031, 0.0, 4.216942), (12.02343, 0.0, 4.214098), (12.02656, 0.0, 4.211242), (15.0, 0.0, 1.5), (15.0, 0.0, 1.5)]",
+					"side": 1.0,
+					"valid": true
+				},
+				{
+					"blocker": "npc-06",
+					"path": "[(6.6001, 0.0, 4.6001), (6.2001, 0.0, 4.6001), (6.2001, 0.0, 4.6001), (6.2001, 0.0, 4.431472), (6.220634, 0.0, 4.431472), (6.220634, 0.0, 4.431472), (6.2001, 0.0, 4.408089), (6.215616, 0.0, 4.408089)]",
+					"side": -1.0,
+					"valid": false
+				}
+			]
+		}
+	],
+	"provenance": "synthetic initial clocks/cursor/action/party cases; real wrappers, active holds, unload/dispose and R013 repaired full physical river leg; no ordinary schedule/native claim",
+	"task": "R012"
+}

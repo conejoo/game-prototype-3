@@ -1,0 +1,62 @@
+[
+  {
+    "npc_id": "npc-01",
+    "status": "PASS",
+    "triangles": 7686,
+    "body_byte_values_unchanged": true,
+    "bones": 16,
+    "material_surfaces": 2,
+    "embedded_png": true,
+    "external_uris": 0,
+    "clips": {
+      "idle": {
+        "seconds": 4.0,
+        "endpoint_error": 0,
+        "channels": 48
+      },
+      "walk": {
+        "seconds": 0.800000011920929,
+        "endpoint_error": 0,
+        "channels": 48
+      },
+      "action_river_fishing": {
+        "seconds": 4.0,
+        "endpoint_error": 0,
+        "channels": 48
+      }
+    },
+    "glb_sha256": "eda2b6639a8229baf90d9220367156a63cc46ab00f9cae414bb76d125ef09544",
+    "blend_sha256": "73b97d3973ccc8f04e64d7736eca82170c936c9f5fbdc6609c8619f8f27bfc25",
+    "reference_sha256": "9744b485513ecbe5b00c176eb5229f7a42f308c4d48ce4400093f62da0368b74"
+  },
+  {
+    "npc_id": "npc-02",
+    "status": "PASS",
+    "triangles": 8497,
+    "body_byte_values_unchanged": true,
+    "bones": 16,
+    "material_surfaces": 2,
+    "embedded_png": true,
+    "external_uris": 0,
+    "clips": {
+      "idle": {
+        "seconds": 4.0,
+        "endpoint_error": 0,
+        "channels": 48
+      },
+      "walk": {
+        "seconds": 0.800000011920929,
+        "endpoint_error": 0,
+        "channels": 48
+      },
+      "action_archive_work": {
+        "seconds": 4.0,
+        "endpoint_error": 0,
+        "channels": 48
+      }
+    },
+    "glb_sha256": "61d668f5976ea5f3d93b2e770bfd0357d4585daf0d3b87245b6f94787268a330",
+    "blend_sha256": "342828b29a47c6ed4e553dcdd601082e8eb453d3e0259ef422cd2cdfb4023220",
+    "reference_sha256": "a874907c43823f50bfd4d49a4c191bb97f6a5ee5790aa29d88bfab7900d2cae8"
+  }
+]

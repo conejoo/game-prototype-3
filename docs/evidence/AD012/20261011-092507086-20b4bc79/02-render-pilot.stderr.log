@@ -1,0 +1,4 @@
+ERROR: rendered loop seam npc-03 walk
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/art_direction_npc_render.gd:67)

@@ -1,0 +1,45 @@
+{
+	"assertions": 1813,
+	"failures": [],
+	"metrics": {
+		"action_archive_work": {
+			"blend_max_step": 0.05763633921742439,
+			"bounds_min": [
+				-0.3415961265563965,
+				0.0,
+				-0.45399999618530273
+			],
+			"bounds_size": [
+				0.702314019203186,
+				1.56167733669281,
+				0.6019107103347778
+			],
+			"hold_position_unchanged": true,
+			"hold_vertex_drift": 0.0,
+			"max_120hz_step": 0.0006571360281668603,
+			"planted_foot_drift": 0.0,
+			"samples": 481,
+			"seam": 0.0
+		},
+		"action_river_fishing": {
+			"blend_max_step": 0.1352301388978958,
+			"bounds_min": [
+				-0.2999873161315918,
+				0.0,
+				-1.0849984884262085
+			],
+			"bounds_size": [
+				0.5995696187019348,
+				1.6105237007141113,
+				1.2359986305236816
+			],
+			"hold_position_unchanged": true,
+			"hold_vertex_drift": 0.0,
+			"max_120hz_step": 0.006241084076464176,
+			"planted_foot_drift": 0.0,
+			"samples": 481,
+			"seam": 0.0
+		}
+	},
+	"scope": "synthetic review variants; ordinary assets unchanged"
+}

@@ -1,0 +1,126 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 29 definitions validated; player instance 'party-player' initialized.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=2
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=3
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=4
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=5
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=6
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=7
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=8
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=9
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=10
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=11
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=12
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=13
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=14
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=15
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=16
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=17
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=18
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=19
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=20
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+R013_PHYSICAL_START edric-evening-fishing
+R013_PHYSICAL_END edric-evening-fishing failures=0
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=21
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+R013_PHYSICAL_START ivo-docks-day
+R013_PHYSICAL_END ivo-docks-day failures=0
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=22
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+R013_PHYSICAL_START ivo-docks-evening
+R013_PHYSICAL_END ivo-docks-evening failures=0
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=23
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+R013_PHYSICAL_START vale-midday-briefing
+R013_PHYSICAL_END vale-midday-briefing failures=0
+P001: Paused at play time 0.00s.
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=24
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+R013_PHYSICAL_START vale-evening-home
+R013_PHYSICAL_END vale-evening-home failures=0
+P001: Paused at play time 0.00s.
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=25
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+R013_PHYSICAL_START vale-overnight-home
+R013_PHYSICAL_END vale-overnight-home failures=0
+P001: Paused at play time 0.00s.
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=26
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+R013_PHYSICAL_START vale-breakfast
+R013_PHYSICAL_END vale-breakfast failures=0
+P001: Paused at play time 0.00s.
+P004: arrived prototype-mayor-vale-home/mayor-vale-home-from-alderwake; party=2; transition=27
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 0.00s.
+R013_PHYSICAL_START vale-morning-work
+R013_PHYSICAL_END vale-morning-work failures=0
+R013 activation 2610 assertions 25 routines 0 failures

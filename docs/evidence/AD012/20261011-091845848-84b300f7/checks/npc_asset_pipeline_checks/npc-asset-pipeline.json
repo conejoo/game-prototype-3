@@ -1,0 +1,36 @@
+{
+	"assertions": 838,
+	"failures": [],
+	"fixture": "exported calibration only",
+	"measurements": {
+		"budget": {
+			"eight_bones": 128,
+			"eight_surface_draws": 24,
+			"eight_triangles": 1632,
+			"maximum_eight_bones": 256,
+			"maximum_eight_triangles": 96000,
+			"one_triangles": 204
+		},
+		"idle": {
+			"deformed_bounds": "[P: (-0.34, 0.0, -0.189467), S: (0.68, 1.560481, 0.309467)]",
+			"length": 4.0,
+			"loop_seam_m": 0.0,
+			"max_120hz_delta_m": 0.00017683941405266523,
+			"tracks": 23
+		},
+		"stance": {
+			"max_slide_m": 1.1920928955078125e-07,
+			"max_sole_error_m": 1.7881393449270533e-09,
+			"samples": 196,
+			"speed_mps": 0.8
+		},
+		"transition_max_step_m": 0.01253996230661869,
+		"walk": {
+			"deformed_bounds": "[P: (-0.340523, 0.0, -0.34), S: (0.681046, 1.560196, 0.6)]",
+			"length": 0.800000011920929,
+			"loop_seam_m": 0.0,
+			"max_120hz_delta_m": 0.012263629585504532,
+			"tracks": 23
+		}
+	}
+}

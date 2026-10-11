@@ -9,6 +9,8 @@ func _initialize() -> void: _run.call_deferred()
 
 func _run() -> void:
 	game = load("res://app/game_root.tscn").instantiate()
+	# AD012: explicit historical fixed-contact fixture; current routines verified separately.
+	game.routine_execution = null
 	root.add_child(game)
 	var startup: Array = await game.world_host.transition_finished
 	_check(startup[0], "production arrival")
@@ -18,6 +20,8 @@ func _run() -> void:
 	var target: PrototypeInteractable = room.npc_contacts.targets["npc-01"]
 	var p: NpcVisualPresenter = room.npc_contacts.presenters["npc-01"]
 	_check(target.instance_id == "alderwake-npc-01-contact" and target.prompt == "Talk to Mayor Vale" and target.global_position == Vector3(-.5,0,-1.5), "source identity/approved foot/prompt")
+	# Original ordinary body envelope excludes the later action accessory variant.
+	_check(p.mount(load("res://assets/models/npcs/npc-01.glb")).is_empty(), "original named body fixture mount")
 	_check(p.model.scene_file_path == "res://assets/models/npcs/npc-01.glb" and p.skeleton.get_bone_count() == 16, "named exported skin")
 	_check(game.party.members().size() == 2 and game.session.actors.size() == 2, "noncombatant outside party")
 	p.player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL

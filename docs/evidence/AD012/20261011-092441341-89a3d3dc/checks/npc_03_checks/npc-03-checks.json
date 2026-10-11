@@ -1,0 +1,46 @@
+{
+	"assertions": 728,
+	"failures": [],
+	"metrics": {
+		"blend": {
+			"max_vertex_step": 0.012193012982606888,
+			"samples": 120
+		},
+		"idle": {
+			"bounds_min": [
+				-0.35543522238731384,
+				0.0,
+				-0.19582290947437286
+			],
+			"bounds_size": [
+				0.7108705043792725,
+				1.5604811906814575,
+				0.3538212776184082
+			],
+			"max_vertex_step": 0.00017611471412237734,
+			"samples": 481,
+			"seam": 0.0
+		},
+		"stance": {
+			"max_slide": 9.5367431640625e-07,
+			"samples": 196,
+			"speed": 0.8
+		},
+		"walk": {
+			"bounds_min": [
+				-0.35543519258499146,
+				0.0,
+				-0.32499998807907104
+			],
+			"bounds_size": [
+				0.7108703851699829,
+				1.560196042060852,
+				0.5619999170303345
+			],
+			"max_vertex_step": 0.011799356900155544,
+			"samples": 98,
+			"seam": 0.0
+		}
+	},
+	"proof": "synthetic production skin/lifecycle fixtures; no ordinary movement"
+}

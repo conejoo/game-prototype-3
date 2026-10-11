@@ -1,0 +1,66 @@
+{
+	"assertions": 737,
+	"failures": [],
+	"metrics": {
+		"blend": {
+			"max_vertex_step": 0.019757837057113647,
+			"samples": 120
+		},
+		"idle": {
+			"bounds_min": [
+				-0.35247087478637695,
+				0.0,
+				-0.21928825974464417
+			],
+			"bounds_size": [
+				0.7049417495727539,
+				1.6004812717437744,
+				0.42001521587371826
+			],
+			"max_vertex_step": 0.00026924515259452164,
+			"samples": 481,
+			"seam": 0.0
+		},
+		"placement": {
+			"approach": [
+				-6,
+				0,
+				-10.8
+			],
+			"policy": "exact indoor transform; no duplicate exterior actor",
+			"source_anchor": "inn-host-01",
+			"source_map": "lantern-rest",
+			"source_placement": "della-inn-host-01",
+			"source_units": [
+				256,
+				288
+			],
+			"target_foot": [
+				-6,
+				0,
+				-12
+			]
+		},
+		"stance": {
+			"max_slide": 9.5367431640625e-07,
+			"samples": 196,
+			"speed": 0.8
+		},
+		"walk": {
+			"bounds_min": [
+				-0.35247087478637695,
+				0.0,
+				-0.36702775955200195
+			],
+			"bounds_size": [
+				0.7049417495727539,
+				1.600196123123169,
+				0.6735165119171143
+			],
+			"max_vertex_step": 0.01936018280684948,
+			"samples": 98,
+			"seam": 0.0
+		}
+	},
+	"proof": "synthetic production skin/lifecycle fixtures; no ordinary movement"
+}

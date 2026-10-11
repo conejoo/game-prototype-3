@@ -1,0 +1,28 @@
+{
+  "findings": "All eight recognizable. Original silhouette/control masks identical. Skin/cream groups read above dark clothes in real town/forest/inn/storm-night. Paint and source accessories stable through manually sampled phases and actual mixer advances. Maris single blue LSB recorded; no visible texture popping.",
+  "inspected_capture_count": 152,
+  "capture_report": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\capture-report.json",
+  "task": "AD012",
+  "full_size": [
+    "npc-03-painted-front",
+    "npc-02-forest-false-1_0",
+    "npc-14-inn-true-1_0",
+    "npc-03-storm-night-true"
+  ],
+  "accepted": true,
+  "inspected_contact_sheets": [
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-01.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-02.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-03.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-04.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-05.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-06.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-07.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-08.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-09.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-10.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-11.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-12.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-093006695-2beeef8b\\render\\derived\\20261011-093127-165701f2\\contact-13.png"
+  ]
+}

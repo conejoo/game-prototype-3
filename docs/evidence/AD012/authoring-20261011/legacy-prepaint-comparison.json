@@ -1,0 +1,99 @@
+{
+  "baseline_source": {
+    "before": {
+      "sha256": "4e03408606245bd1590f27973ec53135fa371a95f1b8fc19231d75b437a6ad18",
+      "captured_utc": "2026-10-11T09:18:49.6183298Z",
+      "file_count": 1377,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\prepaint-baseline\\docs\\evidence\\AD012\\20261011-091832187-285243d0\\source-before.json"
+    },
+    "after": {
+      "sha256": "4e03408606245bd1590f27973ec53135fa371a95f1b8fc19231d75b437a6ad18",
+      "captured_utc": "2026-10-11T09:20:13.4227093Z",
+      "file_count": 1377,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\prepaint-baseline\\docs\\evidence\\AD012\\20261011-091832187-285243d0\\source-after.json"
+    },
+    "git": {
+      "head": null,
+      "working_tree_dirty": null,
+      "status": [],
+      "error": "Git HEAD unavailable."
+    },
+    "changed": false,
+    "changes": [],
+    "error": null
+  },
+  "head": "64d6e7cba99d4e9da99dbf9b7db8802a2a50a274",
+  "rows": [
+    {
+      "label": "npc_asset_pipeline_checks",
+      "baseline_message": "ERROR: production activates only completed named villagers",
+      "current_message": "ERROR: production activates only completed named villagers",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_01_checks",
+      "baseline_message": "ERROR: each enabled named person activated once",
+      "current_message": "ERROR: each enabled named person activated once",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_02_checks",
+      "baseline_message": "SCRIPT ERROR: Invalid access to property or key 'npc-02' on a base object of type 'Dictionary[String, PrototypeInteractable]'.",
+      "current_message": "SCRIPT ERROR: Invalid access to property or key 'npc-02' on a base object of type 'Dictionary[String, PrototypeInteractable]'.",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_03_checks",
+      "baseline_message": "ERROR: each enabled named person activated once",
+      "current_message": "ERROR: each enabled named person activated once",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_04_checks",
+      "baseline_message": "ERROR: each enabled named person activated once",
+      "current_message": "ERROR: each enabled named person activated once",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_06_checks",
+      "baseline_message": "ERROR: each enabled named person activated once",
+      "current_message": "ERROR: each enabled named person activated once",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_07_checks",
+      "baseline_message": "ERROR: each enabled named person activated once",
+      "current_message": "ERROR: each enabled named person activated once",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_08_checks",
+      "baseline_message": "ERROR: each enabled named person activated once",
+      "current_message": "ERROR: each enabled named person activated once",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_14_checks",
+      "baseline_message": "ERROR: town retains seven contacts and no Della",
+      "current_message": "ERROR: town retains seven contacts and no Della",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    },
+    {
+      "label": "npc_action_checks",
+      "baseline_message": "SCRIPT ERROR: Invalid access to property or key 'npc-02' on a base object of type 'Dictionary[String, NpcVisualPresenter]'.",
+      "current_message": "SCRIPT ERROR: Invalid access to property or key 'npc-02' on a base object of type 'Dictionary[String, NpcVisualPresenter]'.",
+      "current_unadapted_status": "failed",
+      "baseline_status": "failed"
+    }
+  ],
+  "baseline_report": "builds/testing/AD012/prepaint-baseline/docs/evidence/AD012/20261011-091832187-285243d0/results.json"
+}

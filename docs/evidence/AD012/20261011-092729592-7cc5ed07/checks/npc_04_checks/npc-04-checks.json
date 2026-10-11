@@ -1,0 +1,68 @@
+{
+	"assertions": 737,
+	"failures": [],
+	"metrics": {
+		"arbitration": [
+			"dock-lamp-01",
+			"dock-lamp-02",
+			"dock-lamp-03",
+			"dock-lamp-04",
+			"dock-lamp-05",
+			"dock-row-lamp-01",
+			"fishing-rod-dock-01"
+		],
+		"blend": {
+			"max_vertex_step": 0.012204223312437534,
+			"samples": 120
+		},
+		"dock": {
+			"approach": [
+				42.5,
+				0,
+				17
+			],
+			"foot": [
+				41,
+				0,
+				17
+			],
+			"negative_samples": 3
+		},
+		"idle": {
+			"bounds_min": [
+				-0.35836517810821533,
+				0.0,
+				-0.21799999475479126
+			],
+			"bounds_size": [
+				0.7167303562164307,
+				1.580397129058838,
+				0.3777552843093872
+			],
+			"max_vertex_step": 0.00017649357323534787,
+			"samples": 481,
+			"seam": 0.0
+		},
+		"stance": {
+			"max_slide": 1.9073486328125e-06,
+			"samples": 196,
+			"speed": 0.8
+		},
+		"walk": {
+			"bounds_min": [
+				-0.35836517810821533,
+				0.0,
+				-0.3310000002384186
+			],
+			"bounds_size": [
+				0.7167303562164307,
+				1.5801119804382324,
+				0.5720000267028809
+			],
+			"max_vertex_step": 0.011804495938122272,
+			"samples": 98,
+			"seam": 0.0
+		}
+	},
+	"proof": "synthetic production skin/lifecycle fixtures; no ordinary movement"
+}

@@ -1,0 +1,170 @@
+{
+  "schema_version": 2,
+  "task": "AD012",
+  "run_id": "20261011-091326573-5c4fa50c",
+  "cwd": "D:\\development\\game-dev-blender\\returning-fair-prototype",
+  "engine_path": "D:/development/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe",
+  "engine_version": "4.7.2.stable.mono.official.ed1daf0bf",
+  "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091326573-5c4fa50c\\appdata",
+  "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091326573-5c4fa50c\\localappdata",
+  "save_groups": [],
+  "source": {
+    "before": {
+      "sha256": "3809f92e75d9b343d9ced17b35faebee9222afc96a7a55d3bdfdb4ab4e2f72b6",
+      "captured_utc": "2026-10-11T09:13:28.0039049Z",
+      "file_count": 1381,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\source-before.json"
+    },
+    "after": {
+      "sha256": "3809f92e75d9b343d9ced17b35faebee9222afc96a7a55d3bdfdb4ab4e2f72b6",
+      "captured_utc": "2026-10-11T09:13:34.3795493Z",
+      "file_count": 1381,
+      "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\source-after.json"
+    },
+    "git": {
+      "head": "64d6e7cba99d4e9da99dbf9b7db8802a2a50a274",
+      "working_tree_dirty": true,
+      "status": [
+        " M docs/art-direction-storybook/CHECKLIST.md",
+        " M game/features/npcs/npc_visual_presenter.gd",
+        "?? art/direction/",
+        "?? docs/art-direction-storybook/AGENT_PROMPT.md",
+        "?? docs/art-direction-storybook/CONTRACT.md",
+        "?? docs/interiors-map-migration/",
+        "?? game/features/npcs/storybook_npc.gdshader",
+        "?? game/features/npcs/storybook_npc_material.gd",
+        "?? game/tests/storybook_npc_checks.gd"
+      ],
+      "error": null
+    },
+    "changed": false,
+    "changes": [],
+    "error": null
+  },
+  "started_utc": "2026-10-11T09:13:26.6286088Z",
+  "finished_utc": "2026-10-11T09:13:34.4666378Z",
+  "status": "failed",
+  "error": "Import failed.",
+  "cases": [
+    {
+      "label": "engine-version",
+      "arguments": [
+        "--headless",
+        "--version"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091326573-5c4fa50c\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091326573-5c4fa50c\\localappdata",
+      "launcher_pid": 8388,
+      "engine_pids": [],
+      "exit_code": 0,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "passed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\00-engine-version.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\00-engine-version.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "3809f92e75d9b343d9ced17b35faebee9222afc96a7a55d3bdfdb4ab4e2f72b6",
+        "captured_utc": "2026-10-11T09:13:29.6875507Z",
+        "file_count": 1381,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\00-engine-version.source-before.json"
+      },
+      "source_after": {
+        "sha256": "3809f92e75d9b343d9ced17b35faebee9222afc96a7a55d3bdfdb4ab4e2f72b6",
+        "captured_utc": "2026-10-11T09:13:30.8958187Z",
+        "file_count": 1381,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\00-engine-version.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": null,
+      "error": null,
+      "started_utc": "2026-10-11T09:13:28.5361002Z",
+      "finished_utc": "2026-10-11T09:13:30.9923395Z"
+    },
+    {
+      "label": "import",
+      "arguments": [
+        "--headless",
+        "--editor",
+        "--path",
+        "D:\\development\\game-dev-blender\\returning-fair-prototype\\game",
+        "--import",
+        "--quit"
+      ],
+      "save_group": null,
+      "save_slot": null,
+      "appdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091326573-5c4fa50c\\appdata",
+      "localappdata": "D:\\development\\game-dev-blender\\returning-fair-prototype\\builds\\testing\\AD012\\20261011-091326573-5c4fa50c\\localappdata",
+      "launcher_pid": 50620,
+      "engine_pids": [],
+      "exit_code": null,
+      "timed_out": false,
+      "stopped_on_diagnostic": false,
+      "evidence_directory": "",
+      "mode": "headless",
+      "status": "failed",
+      "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\01-import.stdout.log",
+      "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\01-import.stderr.log",
+      "diagnostics": [],
+      "allowed_diagnostics": [],
+      "source_before": {
+        "sha256": "3809f92e75d9b343d9ced17b35faebee9222afc96a7a55d3bdfdb4ab4e2f72b6",
+        "captured_utc": "2026-10-11T09:13:31.9614559Z",
+        "file_count": 1381,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\01-import.source-before.json"
+      },
+      "source_after": {
+        "sha256": "3809f92e75d9b343d9ced17b35faebee9222afc96a7a55d3bdfdb4ab4e2f72b6",
+        "captured_utc": "2026-10-11T09:13:33.4146762Z",
+        "file_count": 1381,
+        "manifest": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\01-import.source-after.json"
+      },
+      "source_changes": [],
+      "failure_summary": {
+        "reason": "runner_error",
+        "message": "Access to a CIM resource was not available to the client.",
+        "failed_assertion": null,
+        "diagnostic_context": [],
+        "stack": [],
+        "log_tail": [
+          {
+            "stream": "stdout",
+            "line_number": 1,
+            "text": "Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org"
+          },
+          {
+            "stream": "stdout",
+            "line_number": 2,
+            "text": ""
+          }
+        ],
+        "stdout": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\01-import.stdout.log",
+        "stderr": "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD012\\20261011-091326573-5c4fa50c\\01-import.stderr.log"
+      },
+      "error": "Access to a CIM resource was not available to the client.",
+      "started_utc": "2026-10-11T09:13:31.0213290Z",
+      "finished_utc": "2026-10-11T09:13:33.5067923Z"
+    }
+  ],
+  "parse_scripts": [
+    "res://tests/application_smoke.gd",
+    "res://tests/storybook_npc_checks.gd",
+    "res://tests/npc_asset_pipeline_checks.gd",
+    "res://app/game_root.gd",
+    "res://app/world_host.gd",
+    "res://app/party.gd",
+    "res://app/camera_rig.gd",
+    "res://features/actors/actor_placeholder.gd",
+    "res://tests/environment_review.gd",
+    "res://tests/live_playtest_bridge.gd",
+    "res://ui/conversation_view.gd",
+    "res://ui/prototype_ui.gd",
+    "res://ui/people_journal_view.gd",
+    "res://ui/backpack_view.gd"
+  ]
+}
