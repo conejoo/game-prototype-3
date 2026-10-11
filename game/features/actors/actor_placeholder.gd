@@ -27,6 +27,7 @@ signal defeated(actor: ActorPlaceholder)
 
 
 func _ready() -> void:
+	preload("res://features/actors/storybook_actor_material.gd").apply(self)
 	if combat_marker != null:
 		combat_marker.material_override = combat_marker.material_override.duplicate()
 	if state != null:

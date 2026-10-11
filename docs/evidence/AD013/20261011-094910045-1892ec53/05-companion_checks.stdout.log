@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.mono.official.ed1daf0bf - https://godotengine.org
+
+P004: arrived prototype-alderwake/alderwake-start; party=2; transition=1
+P001: GameRoot ready; WorldHost, Party, CameraRig, UI initialized.
+P002: 26 definitions validated; player instance 'party-player' initialized.
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=2
+P001: Paused at play time 10.65s.
+P001: Resumed at play time 10.65s.
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=3
+P008 guardian defeat: Recorded. Identify Maris's vessel and open its return path (southeast).
+P001: Paused at play time 21.35s.
+P005 save: OK
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=4
+P005 load: Loaded saved run at arrival anchor.
+P001: Resumed at play time 21.35s.
+P008 hero defeated; R retries at arrival anchor, quest facts retained.
+P004: arrived prototype-tollworks/tollworks-from-alderwake; party=2; transition=5
+P009 checks: PASS ΓÇö both obstacle routes, stale-barrier catch-up rejection, separated safe catch-up, incapacitation/recovery, assist, once-only guardian effect, party restore and identity.

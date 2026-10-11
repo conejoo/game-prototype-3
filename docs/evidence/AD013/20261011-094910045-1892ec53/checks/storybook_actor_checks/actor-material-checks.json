@@ -1,0 +1,23 @@
+{
+	"assertions": 162,
+	"cache_keys": 7,
+	"failures": [
+		"original capsule hitbox",
+		"prototype capsule retained",
+		"white damage/squash",
+		"flattened death/no collision",
+		"original capsule hitbox",
+		"prototype capsule retained",
+		"red active boundary",
+		"attack end boundary",
+		"dodge accepted",
+		"cyan invulnerable dodge",
+		"white damage/squash",
+		"flattened death/no collision",
+		"original capsule hitbox",
+		"white damage/squash",
+		"flattened death/no collision"
+	],
+	"kind": "synthetic isolated feedback/rules and resource checks",
+	"task": "AD013"
+}

@@ -1,0 +1,43 @@
+{
+  "task": "AD013",
+  "paths": [
+    {
+      "path": "game/features/actors/actor_placeholder.gd",
+      "sha256": "50f8dda2b6013230dea4e0c895e7ffec19c811089c07a0ea9c6436aa6a72031c"
+    },
+    {
+      "path": "game/features/actors/storybook_actor_material.gd",
+      "sha256": "0713e4bcea5afbe43f2d02a2a84f2e3069ef0c902b72bc51ef9286d344778e9a"
+    },
+    {
+      "path": "game/features/actors/storybook_actor.gdshader",
+      "sha256": "7b2fb51a04bf081c1d1f37624d84c8f307ec425654c42a11aec60539a6f530c1"
+    },
+    {
+      "path": "game/tests/storybook_actor_checks.gd",
+      "sha256": "3e25266cd384d2a68bb5d7a2c1eb284e89460d87a1b555a867751c4c1a650672"
+    },
+    {
+      "path": "game/tests/art_direction_actor_render.gd",
+      "sha256": "26384ec063cbbd483e3ddbe23e6511cfdda9590d6a01698d14681ceafc0dfdc6"
+    },
+    {
+      "path": "art/source/storybook/actors-painted-recipe.json",
+      "sha256": "8ef6d17e6b9bba0dc30c1bf61dd08f1417957cc1ec03d47c177bcb727f1bcc82"
+    },
+    {
+      "path": "docs/art-direction-storybook/AD013_ACCEPTANCE.md",
+      "sha256": "8ee762d38eaa9917cac514ba70b46adbffc51f890eec3e9b731e1de6995ee691"
+    },
+    {
+      "path": "docs/art-direction-storybook/CHECKLIST.md",
+      "sha256": "44abcd7b516c41c576614a43282449dad1f1b3dba604aa61b9be3b4eb3befe40"
+    },
+    {
+      "path": "docs/art-direction-storybook/CURRENT_STATE.md",
+      "sha256": "54d45d66a29b70e7495a2ca24a53248b6acbbe160aac535467249abed4658ba6"
+    }
+  ],
+  "count": 9,
+  "staging_commit_push": false
+}

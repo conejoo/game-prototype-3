@@ -1,0 +1,52 @@
+{
+  "task": "AD013",
+  "scope": "Existing capsule party and guardian finish only; future humanoid party replacement excluded",
+  "authoring_owner": "game/features/actors/storybook_actor_material.gd and storybook_actor.gdshader",
+  "original_pins": {
+    "game/app/game_root.tscn": "53fcfd8b417a33a6b93c6be1bcaab32b646faf54f99b84bc4b8baa10e5573e6d",
+    "game/features/combat/guardian.tscn": "f4164f1f4f52f01c56de341db8f9448082e38191bf02b00a3a4f1dc75101dcef",
+    "game/assets/models/guardian.glb.import": "49d9ac39e361e7164a5988abdde1baae0f0a316a08d6f82c4ff49fe05eea5136",
+    "art/source/guardian.blend": "f284cae441a1fdf43cf7935d1aac8e57dc7a178c760b125fb1b7152595d12222",
+    "game/features/combat/combat_state.gd": "63a724ba096103a348038632b64428cac7afa93ea57c9fc3f1af8f253c45c16f",
+    "game/features/actors/companion.tscn": "8de812e3d7663ac4cde009dc6c0984a76fa577a147590c11d1aaa2689538f227",
+    "game/assets/models/guardian.glb": "18e1882293d468261b684dfe9c53e416104b92c62d53645491812794193c8124"
+  },
+  "atlas": "game/assets/environment/storybook/town-painted-albedo.png",
+  "sampling": {
+    "coordinates": "local rest-position triplanar, normal weights power4",
+    "texels_per_metre": 96,
+    "region_pixels": [
+      16,
+      16,
+      496,
+      496
+    ],
+    "folding": "mirrored inside existing plaster region",
+    "gutter_pixels": 16,
+    "filter": "linear mipmapped, clamp",
+    "roughness": 0.94,
+    "metal_roughness_minimum": 0.78,
+    "stroke_range": [
+      0.9,
+      1.08
+    ],
+    "new_texture_bytes": 0
+  },
+  "roles": {
+    "hero_srgb": [
+      0.26,
+      0.8,
+      0.88
+    ],
+    "ally_srgb": [
+      0.6,
+      0.46,
+      0.88
+    ],
+    "capsule_role_fill": 0.045,
+    "guardian": "Original five source colors, exact metallic and teal core emission; matte/broad brush finish"
+  },
+  "cache": "Semantic role/color/metal/roughness/emission key; shared across objects and room reloads",
+  "feedback": "Original unshaded marker colors, dimensions, aim heading and timing retained verbatim",
+  "preservation": "No Blender/export/import/geometry/physics/navigation/controls/clock/gameplay/schema/content change"
+}

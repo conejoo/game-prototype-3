@@ -1,0 +1,33 @@
+{
+  "task": "AD013",
+  "run": "20261011-100230613-9ce2eb69",
+  "status": "accepted",
+  "paused_images_reviewed": 72,
+  "live_images_reviewed": 2,
+  "contact_sheets_opened": [
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\derived\\20261011-100317-f2bed91f\\contact-01.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\derived\\20261011-100317-f2bed91f\\contact-02.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\derived\\20261011-100317-f2bed91f\\contact-03.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\derived\\20261011-100317-f2bed91f\\contact-04.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\derived\\20261011-100317-f2bed91f\\contact-05.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\derived\\20261011-100317-f2bed91f\\contact-06.png"
+  ],
+  "full_size_opened": [
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\input-ortho-live-aim.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\input-perspective-live-aim.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\Guardian-close-180-painted.png",
+    "D:\\development\\game-dev-blender\\returning-fair-prototype\\docs\\evidence\\AD013\\20261011-100230613-9ce2eb69\\render\\shore-night-perspective-1_0-painted.png"
+  ],
+  "observations": [
+    "Cyan/purple roles separate from olive grass and dark water in both projections and storm-night",
+    "Guardian copper/slate silhouette and teal core retained; all surface angles covered without obvious seam",
+    "Gold/red/cyan/white combat meanings and flattened death readable",
+    "Live aim rings directly visible on unobstructed floor, 63/71 cyan pixels; original pause intentionally hides them",
+    "No hero/ally humanoid replacement claim"
+  ],
+  "limitations": [
+    "Synthetic art feet/time/weather/gallery/feedback",
+    "Input sample after synthetic lead/direct room only",
+    "No native input, ordinary route, GUI save/restart, package or performance acceptance"
+  ]
+}

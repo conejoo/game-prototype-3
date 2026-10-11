@@ -1,0 +1,60 @@
+ERROR: original capsule hitbox
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: prototype capsule retained
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: white damage/squash
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: flattened death/no collision
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: original capsule hitbox
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: prototype capsule retained
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: red active boundary
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: attack end boundary
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: dodge accepted
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: cyan invulnerable dodge
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: white damage/squash
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: flattened death/no collision
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: original capsule hitbox
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: white damage/squash
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
+ERROR: flattened death/no collision
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/storybook_actor_checks.gd:67)
