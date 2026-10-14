@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "intent": "style-transfer edit of original tile; concept is style reference",
+  "prompt": "Use case: style-transfer. Asset type: seamless square grass ground albedo texture for a small storybook Godot game, viewed from above at isometric gameplay distance. Image 1 is the existing texture to repaint; image 2 is style reference only, especially its softly painted meadow ground. Repaint image 1 into a more artistic, less defined gouache/oil-brush meadow surface. Keep its general warm meadow-green hue and average brightness, with gentle olive/sage pools and soft yellow-green broken brush dabs. Greatly reduce individually recognizable grass blades, outlined leaf rosettes, flower clusters, and sharp botanical shapes. Most detail should be suggestive overlapping painted marks, soft irregular brush edges and subtle color variation; retain brushwork rather than simply applying Gaussian blur. No isolated high-contrast grass clumps baked into the image. No directional shadows, no perspective, no objects, no buildings, no path, no text, no border, no watermark. Even coverage across whole square with seamless tileable edges and no obvious repeated motifs or huge dark/light patches. Output only the flat opaque square texture, not a scene, not a texture sphere, and do not edit the town concept.",
+  "generated_source": "C:/Users/aldoc/.codex/generated_images/01a13448-bbcd-7352-a521-c103930faeff/exec-8230045d-de47-4546-9807-128dee71a15d.png",
+  "workspace_source": "art/source/storybook/grass-painterly-albedo-v2.png",
+  "runtime": "game/assets/environment/storybook/grass-painterly-albedo-v2.png",
+  "runtime_conversion": "Pillow RGB + Lanczos downsample512x512; no pixel painting/filtering of engine captures",
+  "references": [
+    "game/assets/environment/storybook/grass-pilot-albedo-v1.png",
+    "art/direction/2026-10-12-grass-pilot/target.png"
+  ]
+}

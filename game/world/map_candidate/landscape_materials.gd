@@ -5,6 +5,9 @@ extends RefCounted
 const TERRAIN_SHADER: Shader = preload("res://world/map_candidate/landscape.gdshader")
 const WATER_SHADER: Shader = preload("res://world/map_candidate/river.gdshader")
 const STONE_ATLAS: Texture2D = preload("res://assets/environment/storybook/dock-painted-albedo.png")
+const GRASS_PILOT: Script = preload("res://world/map_candidate/grass_pilot_material.gd")
+const MEADOW_TEXTURE: Texture2D = preload("res://assets/environment/storybook/grass-meadow-albedo-v3.png")
+const DIRT_TEXTURE: Texture2D = preload("res://assets/environment/storybook/dirt-path-albedo-v1.png")
 const KINDS: Dictionary[String, int] = {"grass": 1, "dirt": 2, "sand": 3, "cobblestone": 4, "wet_shoreline": 5, "raw-marker": 6}
 const COLORS: Dictionary[String, Color] = {
 	"grass": Color("949f68"), "dirt": Color("e1bf94"),
@@ -14,10 +17,18 @@ const COLORS: Dictionary[String, Color] = {
 var mask: ImageTexture
 var mask_image: Image
 var bounds: Rect2
+var pilot_layout: Dictionary = {}
+var meadow_context: ImageTexture
+var meadow_context_image: Image
+
+
+static func meadow_active() -> bool:
+	return GRASS_PILOT.command_variant().is_empty() and "--meadow=off" not in OS.get_cmdline_user_args()
 
 
 func build(layout: Dictionary, water: AlderwakeWaterBlockers, map_bounds: Rect2) -> void:
 	bounds = map_bounds
+	pilot_layout = layout
 	mask_image = Image.create(294, 160, false, Image.FORMAT_RGBA8)
 	mask_image.fill(Color(1.0 / 255.0, 0, 0, 0))
 	# Resolve defaults/clears independently, matching the retained terrain layer.
@@ -39,6 +50,35 @@ func build(layout: Dictionary, water: AlderwakeWaterBlockers, map_bounds: Rect2)
 		value.a = 1.0
 		mask_image.set_pixelv(cell, value)
 	mask = ImageTexture.create_from_image(mask_image)
+	meadow_context_image = Image.create(588, 320, false, Image.FORMAT_RG8)
+	for z: int in range(320):
+		for x: int in range(588):
+			var semantic: Color = mask_image.get_pixel(x / 2, z / 2)
+			meadow_context_image.set_pixel(x, z, Color(1.0 if roundi(semantic.r * 255.0) == 1 and semantic.a < 0.5 else 0.0, 0, 0))
+	meadow_context = ImageTexture.create_from_image(meadow_context_image)
+
+
+func configure_meadow_contacts(outlines: Array) -> void:
+	# Narrow visual occlusion follows measured stone bases, never collision padding.
+	var pixels_per_metre: Vector2 = Vector2(meadow_context_image.get_size()) / bounds.size
+	for values: Array in outlines:
+		var outline: PackedVector2Array = []
+		for point: Array in values: outline.append(Vector2(point[0], point[1]))
+		var rect: Rect2 = Rect2(outline[0], Vector2.ZERO)
+		for point: Vector2 in outline: rect = rect.expand(point)
+		var low: Vector2i = Vector2i((rect.position - Vector2.ONE * .65 - bounds.position) * pixels_per_metre).max(Vector2i.ZERO)
+		var high: Vector2i = Vector2i((rect.end + Vector2.ONE * .65 - bounds.position) * pixels_per_metre).min(meadow_context_image.get_size() - Vector2i.ONE)
+		for z: int in range(low.y, high.y + 1):
+			for x: int in range(low.x, high.x + 1):
+				var point: Vector2 = bounds.position + (Vector2(x,z) + Vector2.ONE * .5) / pixels_per_metre
+				var distance: float = 1.0
+				for edge: int in range(outline.size() - 1):
+					distance = minf(distance, point.distance_to(Geometry2D.get_closest_point_to_segment(point, outline[edge], outline[edge + 1])))
+				var contact: float = 1.0 - smoothstep(.02, .52, distance)
+				var value: Color = meadow_context_image.get_pixel(x,z)
+				value.g = maxf(value.g, contact)
+				meadow_context_image.set_pixel(x,z,value)
+	meadow_context.update(meadow_context_image)
 
 
 func terrain(kind: String) -> ShaderMaterial:
@@ -51,6 +91,15 @@ func terrain(kind: String) -> ShaderMaterial:
 	material.set_shader_parameter("meadow_color", COLORS.grass.srgb_to_linear())
 	if kind == "cobblestone": material.set_shader_parameter("painted_stone_atlas", STONE_ATLAS)
 	_common(material)
+	material.set_shader_parameter("meadow_enabled", meadow_active())
+	material.set_shader_parameter("meadow_albedo", MEADOW_TEXTURE)
+	material.set_shader_parameter("meadow_context", meadow_context)
+	material.set_shader_parameter("dirt_paint_enabled", kind == "dirt" and "--dirt=original" not in OS.get_cmdline_user_args())
+	if kind == "dirt":
+		material.set_shader_parameter("dirt_painted_albedo", DIRT_TEXTURE)
+	if kind == "grass": GRASS_PILOT.apply(material, pilot_layout, bounds, mask_image, GRASS_PILOT.command_variant())
+	# Depth is opt-in, and only accompanies the pinned A pilot.
+	material.set_shader_parameter("grass_depth_grounding_enabled", GRASS_PILOT.command_variant() == "a" and ("--grass-depth=grounding" in OS.get_cmdline_user_args() or "--grass-depth=edges" in OS.get_cmdline_user_args() or "--grass-depth=tufts" in OS.get_cmdline_user_args()))
 	return material
 
 

@@ -1,0 +1,10 @@
+{
+  "date_local": "2026-10-13",
+  "tool": "Built-in image_gen",
+  "reference": "C:/Users/aldoc/Downloads/artbook-style.png",
+  "source": "grass-meadow-albedo-v3.png",
+  "runtime": "game/assets/environment/storybook/grass-meadow-albedo-v3.png",
+  "sha256": "aac23b849d4b81ff3a73920e52c824e2299aaa84b1dcc876d0a62469ca36f09a",
+  "processing": "Source copied unchanged into runtime. Godot mipmaps and shader palette calibration only. No generated or retouched gameplay captures.",
+  "prompt": "Use case: stylized-concept. Create a new production game ground albedo texture, square seamless tile filling the entire image, true orthographic overhead view. Input attached town concept is style and palette reference only: extract the look of its grassy lawns, NOT the town composition. Hand painted storybook summer grass: dominant warm yellow olive green approximately #95a53d, soft darker olive #82943b patches and warm lime #abba4c highlights. Hundreds of tiny sparse tapered grass blade brushstrokes with occasional little 3-blade fans and irregular horizontal gouache dabs embedded in mostly quiet meadow. Fine strokes, low-medium contrast, broad irregular soft color fields, subtle readable botanical texture. Even scale across image, flat diffuse albedo with NO baked lighting, no cast shadows, no perspective, no upright tall clumps, no flower/clover/star/rosette shapes, no yellow dots, no isolated bushes, no buildings, no paths, no trees, no soil, no borders, no objects, no lettering, no vignette. Keep greens warm and olive, not blue-green or emerald, avoid high-frequency photographic noise. Tile edges seamlessly in both axes. Output 1024x1024."
+}

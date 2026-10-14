@@ -1,0 +1,168 @@
+{
+  "asset": "res://assets/environment/storybook/schoolhouse-reference-v1.glb",
+  "mesh_name": "GEO-schoolhouse-reference-v1",
+  "scene": "RF-HouseReference",
+  "seed": 72111,
+  "previous_scene_preserved": "RF-HouseReference",
+  "target_prop_id": "mill-road-schoolhouse-exterior-building",
+  "definition_id": "mill-road-schoolhouse",
+  "local_polygon_xz_m": [
+    [
+      -3.3125,
+      -1.625
+    ],
+    [
+      2.90625,
+      -1.625
+    ],
+    [
+      2.90625,
+      -0.15625
+    ],
+    [
+      -3.3125,
+      -0.15625
+    ]
+  ],
+  "blender_bounds_xyz_m": [
+    [
+      -3.4579999446868896,
+      0.003750000149011612,
+      0.0
+    ],
+    [
+      3.0517499446868896,
+      1.777500033378601,
+      2.4600000381469727
+    ]
+  ],
+  "godot_bounds_xyz_m": [
+    [
+      -3.4579999446868896,
+      0.0,
+      -1.777500033378601
+    ],
+    [
+      3.0517499446868896,
+      2.4600000381469727,
+      -0.003750000149011612
+    ]
+  ],
+  "height_m": 2.46,
+  "vertices": 6924,
+  "triangles": 11354,
+  "materials": [
+    "MAT-house-plaster",
+    "MAT-house-roof",
+    "MAT-house-timber",
+    "MAT-house-stone",
+    "MAT-house-glass",
+    "MAT-house-door",
+    "MAT-house-iron"
+  ],
+  "part_counts": {
+    "foundation_footing": 1,
+    "foundation_core": 1,
+    "foundation_stone": 102,
+    "plaster_body": 1,
+    "timber_post": 8,
+    "lower_sill": 2,
+    "wall_plate": 2,
+    "gable_sill": 2,
+    "gable_tie": 2,
+    "gable_kingpost": 2,
+    "gable_rake": 4,
+    "window_recess": 8,
+    "window_pane": 32,
+    "window_frame": 48,
+    "window_sill": 8,
+    "door_recess": 1,
+    "door_plank": 10,
+    "door_jamb": 2,
+    "door_lintel": 1,
+    "door_strap": 2,
+    "door_latch": 1,
+    "threshold": 1,
+    "roof_tile": 328,
+    "eave_fascia": 2,
+    "roof_rake": 4,
+    "ridge_cap": 22,
+    "chimney_core": 1,
+    "chimney_stone": 40,
+    "chimney_cap": 1
+  },
+  "roof_tile_profile": {
+    "rows_per_slope": 8,
+    "columns": 20,
+    "overlap_m": 0.025,
+    "joint_width_m": 0.004,
+    "leading_lip_height_m": 0.006,
+    "leading_bevel_length_m": 0.018,
+    "maximum_offset_m": 0.024
+  },
+  "color_contract": "Color CORNER float RGB grayscale 0.42..0.58 centered at 0.50; runtime controls contrast independently",
+  "uv_contract": "UV-metre: metres on every face; timber UV.y follows beam length; roof UV.x ridge direction, UV.y slope",
+  "windows": {
+    "centers_local_xyz_m": [
+      [
+        -1.8821873664855957,
+        0.7699999809265137,
+        -1.625
+      ],
+      [
+        1.4759374856948853,
+        0.7699999809265137,
+        -1.625
+      ],
+      [
+        2.90625,
+        0.7699999809265137,
+        -1.2871875762939453
+      ],
+      [
+        2.90625,
+        0.7699999809265137,
+        -0.49406254291534424
+      ],
+      [
+        1.4759374856948853,
+        0.7699999809265137,
+        -0.15625
+      ],
+      [
+        -1.8821873664855957,
+        0.7699999809265137,
+        -0.15625
+      ],
+      [
+        -3.3125,
+        0.7699999809265137,
+        -0.49406254291534424
+      ],
+      [
+        -3.3125,
+        0.7699999809265137,
+        -1.2871875762939453
+      ]
+    ],
+    "center_policy": "all original eight centers preserved",
+    "front_back_width_m": 0.56,
+    "gable_width_m": 0.31,
+    "emission": "none; schoolhouse has no light mapping"
+  },
+  "door": {
+    "center_local_xyz_m": [
+      -0.203125,
+      0.645,
+      -0.15625
+    ],
+    "original_width_m": 0.8706250000000001,
+    "policy": "south centered door retained, no gameplay doorway change"
+  },
+  "provenance": {
+    "reference": "C:/Users/aldoc/Downloads/artbook-style.png",
+    "reference_sha256": "57cbfbbaf4b011c0e393aa13f3fde3237a722dfd31be62c1e4dc50aa8bac6e8a",
+    "method": "Original Blender geometry authored against supplied style reference and existing game footprint; no external models or textures"
+  },
+  "scope": "one visual mesh; no collision/navigation/terrain changes; unseen north facade uses same construction"
+}

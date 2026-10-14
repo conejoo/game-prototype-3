@@ -17,6 +17,7 @@ func _run() -> void:
 	var art: AlderwakeTownArt = location.town_art
 	_check(location.build_errors.is_empty(), "Candidate art construction errors")
 	_check(art.structure_ids.size() == 24 and art.mappings.size() == 16 and art.meshes.size() == 16, "Structure/kit inventory")
+	_check(art.houses_references.size() == 20 and art.houses_reference_meshes.size() == 13, "Detailed remaining-house coverage")
 	var triangles: int = 0
 	var base_samples: int = 0
 	var definitions: Dictionary = {}
@@ -91,7 +92,14 @@ func _run() -> void:
 		if not str(record.definition_id).begins_with("dock-"):
 			_check(visual_root.get_child_count() == 1, "Old graybox duplicate: " + record.id)
 			var visual: MeshInstance3D = visual_root.get_child(0)
-			_check(visual.transform == Transform3D.IDENTITY and visual.mesh == art.meshes[art.mappings[record.definition_id].mesh_name], "Shared local-foot mesh changed: " + record.id)
+			var expected_mesh: Mesh = art.meshes[art.mappings[record.definition_id].mesh_name]
+			if record.id == art.HOUSE_REFERENCE.PROP_ID:
+				_check(not art.house_reference.is_empty() and art.house_reference.original_mesh == expected_mesh, "Schoolhouse lost original shared-kit comparison")
+				expected_mesh = art.house_reference.reference_mesh
+			elif art.houses_reference_meshes.has(record.definition_id):
+				_check(visual.get_meta("meadow_foundation_mesh", null) == expected_mesh, "House lost original ground-contact mesh: " + record.id)
+				expected_mesh = art.houses_reference_meshes[record.definition_id]
+			_check(visual.transform == Transform3D.IDENTITY and visual.mesh == expected_mesh, "Shared local-foot mesh changed: " + record.id)
 			continue
 		var expected_area: float = 0
 		for rect: Rect2 in AlderwakeDockSurfaces.SURFACES[record.id]:

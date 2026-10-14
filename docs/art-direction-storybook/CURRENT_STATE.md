@@ -1,5 +1,31 @@
 # Painted coastal storybook current state
 
+## 2026-10-13: remaining reference houses enabled in source game
+
+[House rollout](HOUSES_REFERENCE.md) extends the accepted study to all 20 remaining exterior instances across 13 designs. Tiled roofs, plaster/timber walls, layered windows, foundations and chimneys retain each building's footprint and identity. Registered night lights and gameplay geometry remain intact; accepted schoolhouse files and complete meadow inventory are unchanged. Nine guarded cases pass; all 56 actual Godot frames were reviewed. Start normally; `--houses=original` compares only the remaining houses. Windows packages unchanged. User visual acceptance remains separate.
+
+## 2026-10-13: one reference house enabled in source game
+
+[House study](HOUSE_REFERENCE.md) replaces the mill-road schoolhouse exterior with an editable Blender model: 328 overlapping beveled tiles, calibrated cream plaster, timber framing, layered windows/sills, plank door hardware, two foundation courses and a capped chimney. This initial study changed one house; original footprint/collision/navigation and opening centers are retained. Nine guarded cases and 30 actual Godot frames pass, including both projections, all sides and night/rain. Start normally for the new house; `--house=original` compares the previous exterior. Existing Windows packages remain unchanged. Subsequent house rollout is recorded above.
+
+## 2026-10-13: reference stone walls enabled in source game
+
+[Stone wall revision](STONE_WALLS_REFERENCE.md) replaces ten garden/quay wall visuals and four perimeter rims with staggered masonry and actual beveled capstones, calibrated warm gray tops and neutral gray faces. Exact source bounds and original collision/navigation retained. Startup/town-art/terrain/camera checks and30 actual engine comparison frames pass. Clear grass/dirt samples remain identical; nearby wall contact shadows reflect new bevel geometry. Default source startup needs no flags; `--walls=original` compares previous walls. Windows packages unchanged.
+
+## 2026-10-13: reference dirt paths enabled in source game
+
+User accepted the grass improvement and requested closer dirt paths. [Dirt revision](DIRT_REFERENCE.md) now enables painted golden earth by default: fine ochre dabs, worn patches and softened pale flecks. Approved meadow and existing irregular shoulders retained; only dirt albedo changes. Full startup/landscape/camera checks and26 actual engine comparison frames pass, with unchanged grass sample pixels and protected geometry/navigation. Existing Windows packages unchanged. `--dirt=original` compares the previous dirt; normal source startup needs no flags.
+
+## 2026-10-13: reference grass enabled in source game
+
+New user-requested [meadow revision](MEADOW_REFERENCE.md) supersedes the older opt-in restriction. Default source startup now uses calibrated painted grass, irregular path shoulders, actual foundation contact shading and3,333 upright clumps across the map. Final parse/render plus preceding startup/landscape/camera checks pass. New fixture `meadow_reference_render` compares default meadow against prior A/local depth. Existing Windows packages remain unchanged. Grass is closer to the reference; overall concept fidelity and user visual acceptance are not claimed. Historical records below remain historical.
+
+## 2026-10-12: user-requested grass fidelity pilot
+
+GRASS01 implemented outside the historical AD001-AD020 checklist. [Grass pilot](GRASS_PILOT.md) owns review, commands and evidence. Original ground remains default; opt-in A/B/C cover one Maris/Dock Row patch. Actual engine captures and targeted checks passed; User selected A as preferred material. Depth acceptance pending: flat ground, hard path edges and repeated groups still fall short of target. User requested a fresh-agent checklist: [grass-depth workflow](grass-depth/CHECKLIST.md) now plans five sequential GD tasks. GD001 next; all Pending, implementation not started. New workflow keeps A fixed and tests local grounding/edge/tuft cues. Historical AD completion below must not be treated as reference fidelity. No package rebuild, commit or push.
+
+## Historical AD020 delivery
+
 Updated: 2026-10-11 UTC. [CHECKLIST](CHECKLIST.md) owns status; [CONTRACT](CONTRACT.md) owns scope; [AGENT_PROMPT](AGENT_PROMPT.md) starts one-task invocations.
 
 **AD020 Done. AD001-AD020 all Done.** Unfinished IDs:none; every checklist item through AD020 complete: **yes**. Next eligible task:none. Blockers:none; required remaining/unrun criteria:none. User supplied the separate post-review successful-task commit instruction. [Commit review](../evidence/AD020/commit-review.json) records the exact selected task/evidence paths and hashes; local `docs/evidence/AD020/authorized-commit-20261011/commit-audit.json` records verified commit/tree/blob identity and final status after commit. No push or additional task. Stop here; a future workflow invocation finds all tasks complete and makes no implementation change. R016 remains user-stopped as-is.

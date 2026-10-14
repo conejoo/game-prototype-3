@@ -1,5 +1,33 @@
 # Current prototype state
 
+House rollout (2026-10-13): [remaining reference houses](art-direction-storybook/HOUSES_REFERENCE.md)
+now enabled across all 20 remaining instances and 13 designs. Detailed tiled roofs,
+plaster/timber walls, layered windows, foundations and chimneys extend the accepted
+schoolhouse treatment. Original lights, entrances, collision/navigation and accepted
+meadow inventory retained; schoolhouse unchanged. Nine guarded checks pass and
+56 actual engine frames were reviewed. Restart source game with F5; existing
+Windows exports remain unchanged.
+
+House follow-up (2026-10-13): [reference schoolhouse](art-direction-storybook/HOUSE_REFERENCE.md)
+now enabled on one long blue-roof house beside the mill-road wall. Blender-authored
+overlapping tiles, cream plaster, timber framing, layered windows, door hardware,
+stone foundation and capped chimney replace flat details. Nine guarded checks and
+30 actual engine frames pass. Remaining houses now use the rollout above;
+existing Windows exports remain unchanged.
+
+Stone wall follow-up (2026-10-13): [reference masonry](art-direction-storybook/STONE_WALLS_REFERENCE.md)
+now enabled on ten garden/quay walls and four perimeter rims. Staggered stone
+courses, beveled caps and calibrated gray palette replace smooth beams. Original
+bounds/collision/navigation retained; startup/town-art/landscape/camera checks and
+30 actual engine frames pass. Existing Windows exports remain unchanged.
+
+Visual follow-up (2026-10-13): source startup now enables the user-requested
+[reference meadow](art-direction-storybook/MEADOW_REFERENCE.md) and
+[painted dirt paths](art-direction-storybook/DIRT_REFERENCE.md). Dirt adds fine
+golden/ochre brush marks with calibrated color and contrast; accepted grass stays
+unchanged. Final startup/landscape/camera checks and26 actual rendered comparison
+frames pass. Existing Windows packages require rebuilding to include these changes.
+
 Save compatibility cleanup (2026-10-08): user explicitly requires no backward
 compatibility for this new project. Runtime accepts only schema6/content1; old
 schema branches, migration flags and load notices removed. Reusable map/environment

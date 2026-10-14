@@ -1,5 +1,9 @@
 shader_type spatial;
 render_mode cull_disabled;
+#include "res://world/map_candidate/grass_pilot.gdshaderinc"
+#include "res://world/map_candidate/grass_depth.gdshaderinc"
+#include "res://world/map_candidate/meadow.gdshaderinc"
+#include "res://world/map_candidate/dirt_path.gdshaderinc"
 
 uniform vec4 base_color : source_color;
 uniform vec4 meadow_color : source_color = vec4(0.57255, 0.61176, 0.29804, 1.0);
@@ -42,8 +46,11 @@ void fragment() {
 		// Low-contrast sage wash and soft elongated dabs, beneath actor detail.
 		color = painted_surface(p, base_color.rgb, 0.06);
 		color *= 1.0 - smoothstep(0.45, 0.85, noise(p * 0.17)) * 0.05;
+		color = grass_pilot_paint(p, color);
+		if (meadow_enabled) color = meadow_paint(p) * (0.97 + noise(p * 0.18) * 0.06);
 	} else if (kind == 2) {
 		color = painted_surface(p + vec2(7.3, -3.7), base_color.rgb, 0.08);
+		if (dirt_paint_enabled) color = dirt_path_paint(p);
 	} else if (kind == 5) {
 		// Existing authored wet-shoreline cells only; no mask or sand-path change.
 		color = painted_surface(p, base_color.rgb, 0.06);
@@ -62,7 +69,7 @@ void fragment() {
 		if (length(local * vec2(1.0, 1.65)) > 0.055) { discard; }
 		color *= 0.85 + smoothstep(-0.04, 0.04, local.x) * 0.2;
 	}
-	if (kind == 2 || kind == 3 || kind == 4) {
+	if (!meadow_enabled && (kind == 2 || kind == 3 || kind == 4)) {
 		// Blend only the outer few centimetres toward neighboring grass.
 		// Semantic placement/layer grids and physical surface do not move.
 		float shoulder = 0.0;
@@ -75,6 +82,22 @@ void fragment() {
 		vec3 shoulder_color = kind == 2 ? painted_surface(p, meadow_color.rgb, 0.06) : vec3(0.36, 0.46, 0.18);
 		color = mix(color, shoulder_color, min(shoulder, 1.0) * 0.40);
 	}
-	ALBEDO = color;
+	if (meadow_enabled && (kind == 1 || kind == 2 || kind == 3 || kind == 4)) {
+		// Round the half-metre paint corners, then scallop with unequal brush marks.
+		// Existing grass underlay remains full coverage; this changes only albedo.
+		vec2 warp = vec2(noise(p * 5.3), noise(p * 5.3 + 17.0)) - vec2(0.5);
+		vec2 uv = (p + warp * 0.23 - map_origin) / map_size;
+		float cover = texture(meadow_context, uv).r * 0.40;
+		cover += texture(meadow_context, uv + vec2(0.16,0.0) / map_size).r * 0.15;
+		cover += texture(meadow_context, uv - vec2(0.16,0.0) / map_size).r * 0.15;
+		cover += texture(meadow_context, uv + vec2(0.0,0.16) / map_size).r * 0.15;
+		cover += texture(meadow_context, uv - vec2(0.0,0.16) / map_size).r * 0.15;
+		float threshold = (kind == 4 ? 0.47 : 0.32) + (noise(p * vec2(13.0,8.0)) - 0.5) * 0.24;
+		float fringe = smoothstep(threshold - 0.06, threshold + 0.06, cover);
+		if (kind != 1) color = mix(color, meadow_paint(p) * (0.97 + noise(p * 0.18) * 0.06), fringe);
+		float contact = texture(meadow_context, (p - map_origin) / map_size).g;
+		color *= 1.0 - contact * 0.25 * (0.85 + noise(p * 8.0) * 0.15);
+	}
+	ALBEDO = grass_depth_ground(world_position, world_normal, kind, color);
 	ROUGHNESS = 0.97;
 }

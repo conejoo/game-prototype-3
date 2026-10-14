@@ -2,6 +2,9 @@ class_name AlderwakeTerrainPreview
 extends PrototypeLocation
 ## Isolated source-derived landscape with independent physical elevation/props.
 
+const GRASS_DEPTH_TUFTS: Script = preload("res://world/map_candidate/grass_depth_tufts.gd")
+const GRASS_DEPTH_EDGES: Script = preload("res://world/map_candidate/grass_depth_edges.gd")
+const MEADOW_GROWTH: Script = preload("res://world/map_candidate/meadow_growth.gd")
 const LAYOUT_PATH: String = "res://content/maps/alderwake_layout.json"
 const COLORS: Dictionary[String, Color] = {
 	"grass": Color(0.29, 0.43, 0.25),
@@ -114,6 +117,14 @@ func _init() -> void:
 	preview_report["town_art"] = {"structure_ids": town_art.structure_ids.size(), "kit_meshes": town_art.mappings.size(), "deck_modules": town_art.module_count, "quay_cells": town_art.quay_cells}
 	preview_report["landmark_art"] = {"landmark_ids": landmark_art.landmark_ids, "kit_meshes": landmark_art.mappings.size(), "instances": landmark_art.instance_count}
 	preview_report["limits"] = "M014 landmark/town/tree/landscape art; all portals/interactions inactive. Routines/resources/NPCs/zones/activities retained data only."
+	if GRASS_DEPTH_EDGES.command_enabled():
+		add_child(GRASS_DEPTH_EDGES.build())
+	if GRASS_DEPTH_TUFTS.command_enabled():
+		add_child(GRASS_DEPTH_TUFTS.build())
+	if AlderwakeLandscapeMaterials.meadow_active():
+		var meadow: Node3D = MEADOW_GROWTH.build(self)
+		add_child(meadow)
+		landscape.configure_meadow_contacts(meadow.get_meta("meadow_inventory").get("foundation_outlines", []))
 	construction_usec = Time.get_ticks_usec() - started
 
 

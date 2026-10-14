@@ -10,6 +10,9 @@ const PAINTED_ATLAS: Texture2D = preload("res://assets/environment/storybook/tow
 const DOCK_PILOT: PackedScene = preload("res://assets/environment/storybook/alderwake_dock_pilot.glb")
 const DOCK_ATLAS: Texture2D = preload("res://assets/environment/storybook/dock-painted-albedo.png")
 const WALL_SHADER: Shader = preload("res://world/map_candidate/painted_wall.gdshader")
+const STONE_WALL_MESH: Script = preload("res://world/map_candidate/stone_wall_mesh.gd")
+const HOUSE_REFERENCE: Script = preload("res://world/map_candidate/schoolhouse_reference.gd")
+const HOUSES_REFERENCE: Script = preload("res://world/map_candidate/houses_reference.gd")
 const MAPPING_PATH: String = "res://assets/environment/alderwake_town_mapping.json"
 var build_errors: PackedStringArray = []
 var mappings: Dictionary[String, Dictionary] = {}
@@ -20,6 +23,12 @@ var dock_rectangles: Array[Rect2] = []
 var quay_cells: int = 0
 var painted_wall_count: int = 0
 var wall_material: ShaderMaterial
+var stone_walls: Array[Dictionary] = []
+var house_reference: Dictionary = {}
+var house_reference_materials: Dictionary = {}
+var houses_references: Array[Dictionary] = []
+var houses_reference_meshes: Dictionary = {}
+var houses_reference_materials: Dictionary = {}
 var partial_module_meshes: Dictionary[String, Mesh] = {}
 var building_materials: Dictionary[String, ShaderMaterial] = {}
 
@@ -95,6 +104,9 @@ func build(town: AlderwakeTownFootprints, layout: Dictionary) -> void:
 	wall_material = ShaderMaterial.new()
 	wall_material.shader = WALL_SHADER
 	wall_material.set_shader_parameter("painted_atlas", DOCK_ATLAS)
+	wall_material.set_shader_parameter("stone_enabled", true)
+	var previous_wall_material: ShaderMaterial = wall_material.duplicate()
+	previous_wall_material.set_shader_parameter("stone_enabled", false)
 	for wrapper: Node in town.get_children():
 		var definition: String = str(wrapper.get_meta("definition_id", ""))
 		var collider_id: String = str(wrapper.get_meta("source_collider_id", ""))
@@ -102,8 +114,14 @@ func build(town: AlderwakeTownFootprints, layout: Dictionary) -> void:
 			continue
 		for visual: Node in wrapper.get_node("VisualRoot").get_children():
 			if visual is MeshInstance3D:
-				visual.material_override = wall_material
+				_register_stone_wall(visual, previous_wall_material)
 				painted_wall_count += 1
+	# Perimeter keeps its separate tall escape collider and existing low rim.
+	for boundary: String in ["BoundaryWest", "BoundaryEast", "BoundaryNorth", "BoundarySouth"]:
+		for visual: Node in town.get_parent().get_node(boundary).get_children():
+			if visual is MeshInstance3D:
+				_register_stone_wall(visual, visual.material_override)
+	set_stone_walls_enabled("--walls=original" not in OS.get_cmdline_user_args())
 	for mapping: Dictionary in parsed.mappings:
 		var id: String = str(mapping.get("definition_id", mapping.get("module_id", "")))
 		if id.is_empty() or mappings.has(id) or not meshes.has(mapping.mesh_name):
@@ -137,6 +155,8 @@ func build(town: AlderwakeTownFootprints, layout: Dictionary) -> void:
 			continue
 		structure_ids.append(record.id)
 		wrapper.set_meta("town_art_source_id", record.id)
+	_register_house_reference(town)
+	_register_remaining_houses(town)
 	# Existing quay grid becomes shared stone modules; authored quay edge bodies remain.
 	var quay: Node3D = town.get_node("QuayArtPreview/VisualRoot")
 	_clear_visuals(quay)
@@ -148,6 +168,59 @@ func build(town: AlderwakeTownFootprints, layout: Dictionary) -> void:
 				continue
 			_tile_rect(quay, Transform3D.IDENTITY, Rect2(float(cell.cell[0]) - 22, float(cell.cell[1]) - 18, 1, 1), "quay-stone-module")
 			quay_cells += 1
+
+
+func _register_house_reference(town: AlderwakeTownFootprints) -> void:
+	var visual: MeshInstance3D = town.get_node(HOUSE_REFERENCE.PROP_ID + "/VisualRoot/ImportedExterior")
+	var built: Dictionary = HOUSE_REFERENCE.build()
+	build_errors.append_array(built.errors)
+	if built.mesh == null or not built.errors.is_empty(): return
+	house_reference_materials = built.materials
+	house_reference = {"visual":visual, "original_mesh":visual.mesh, "reference_mesh":built.mesh}
+	set_house_reference_enabled("--house=original" not in OS.get_cmdline_user_args())
+
+
+func set_house_reference_enabled(enabled: bool) -> void:
+	if house_reference.is_empty(): return
+	house_reference.visual.mesh = house_reference.reference_mesh if enabled else house_reference.original_mesh
+
+
+func _register_remaining_houses(town: AlderwakeTownFootprints) -> void:
+	var groups: Dictionary = {}
+	for definition: String in HOUSES_REFERENCE.DEFINITIONS:
+		groups[definition] = building_group(definition)
+	var built: Dictionary = HOUSES_REFERENCE.build(groups)
+	build_errors.append_array(built.errors)
+	if not built.errors.is_empty(): return
+	houses_reference_meshes = built.meshes
+	houses_reference_materials = built.materials
+	for record: Dictionary in town.prop_records:
+		if not houses_reference_meshes.has(record.definition_id): continue
+		var visual: MeshInstance3D = town.get_node(NodePath(record.id + "/VisualRoot/ImportedExterior"))
+		houses_references.append({"prop_id":record.id, "definition_id":record.definition_id,
+			"visual":visual, "original_mesh":visual.mesh,
+			"reference_mesh":houses_reference_meshes[record.definition_id]})
+		# Keep the accepted contact hull stable despite GLB vertex quantization.
+		visual.set_meta("meadow_foundation_mesh", visual.mesh)
+	if houses_references.size() != 20:
+		build_errors.append("Expected twenty remaining house instances")
+	set_houses_reference_enabled("--houses=original" not in OS.get_cmdline_user_args())
+
+
+func set_houses_reference_enabled(enabled: bool) -> void:
+	for record: Dictionary in houses_references:
+		record.visual.mesh = record.reference_mesh if enabled else record.original_mesh
+
+
+func _register_stone_wall(visual: MeshInstance3D, original_material: Material) -> void:
+	stone_walls.append({"visual": visual, "original_mesh": visual.mesh,
+		"original_material": original_material, "stone_mesh": STONE_WALL_MESH.build(visual.mesh)})
+
+
+func set_stone_walls_enabled(enabled: bool) -> void:
+	for wall: Dictionary in stone_walls:
+		wall.visual.mesh = wall.stone_mesh if enabled else wall.original_mesh
+		wall.visual.material_override = wall_material if enabled else wall.original_material
 
 
 func _clear_visuals(visual_root: Node3D) -> void:
